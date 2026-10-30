@@ -1182,7 +1182,9 @@ export function FigureTable({ t }: { t: FigureTableData }) {
                     borderLeft: i === v.total_col || stated(i) ? '1px solid var(--grid)' : undefined,
                     fontStyle: stated(i) ? 'italic' : undefined,
                   }}>
-                  {c}{stated(i) ? <span className="block text-[10.5px] font-normal">not from the books</span> : null}
+                  {/* an asterisk, and ONE footnote under the table: "not from the books" under every
+                      heading repeated itself across the row (TJ, 30 October 2026) */}
+                  {c}{stated(i) ? <span aria-hidden>*</span> : null}
                 </th>
               ))}
             </tr>
@@ -1220,6 +1222,9 @@ export function FigureTable({ t }: { t: FigureTableData }) {
         </table>
       </div>
       <p className="text-[12.5px] leading-snug mt-1.5" style={{ color: 'var(--text-muted)' }}>{v.note}</p>
+      {v.kinds.some((_, i) => stated(i)) ? (
+        <p className="text-[12.5px] leading-snug mt-1" style={{ color: 'var(--text-muted)' }}>
+          * Not from the books: a figure somebody assembled, not a printout from the accounting system.</p>) : null}
       {(v.lines ?? []).map((l, i) => (
         <p key={i} className="text-[12.5px] leading-snug mt-1" style={{ color: 'var(--text-muted)' }}>{l}</p>
       ))}

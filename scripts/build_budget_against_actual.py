@@ -67,6 +67,13 @@ D0 = Decimal(0)
 # ---------------------------------------------------------------- thresholds, ours
 FLOOR, SHARE = LF.FLOOR, LF.SHARE   # OURS, line_flags.py: the same for both pages
 TRACK = 0.02                   # the August report's own: a miss within 2% is not a miss (same-way test)
+# THE USUAL MISS (TJ, 30 October 2026: "something that shows if its generally over or under budget
+# ... 10% over/under or 50k over or under on 'average' (median?)"). OURS: a line's MEDIAN year,
+# spent against its vote, at least TREND_SHARE off (and FLOOR in dollars, the flags' own floor,
+# so a $400 supply line is not a trend) or TREND_DOLLARS off, over at least TREND_YEARS years.
+TREND_SHARE = Decimal('0.10')
+TREND_DOLLARS = Decimal('50000')
+TREND_YEARS = 3
 
 BOOK_YEARS = (2018, 2019, 2020, 2021, 2022)
 
@@ -90,10 +97,27 @@ class Texts(BFB.Texts):
         self.figures.add(t)
         return t
 
+    def dpct(self, x, dp=1):
+        self.figures.add('%.*f%%' % (dp, abs(x)))
+        return dpct(x, dp)
+
 
 def spct(x, dp=1):
     """A signed percentage the way the prose prints it: +0.5%, −2.6%."""
     return ('%+.*f%%' % (dp, x)).replace('-', '−')
+
+
+def dpct(x, dp=1):
+    """Spent against the vote, in words, because a bare percentage does not say which way it is
+    read (TJ, 30 October 2026): 12.0% over budget, 2.6% under budget."""
+    t = '%.*f%%' % (dp, abs(x))
+    return t + (' over budget' if x > 0 else ' under budget' if x < 0 else ' on budget')
+
+
+def median(v):
+    v = sorted(v)
+    n = len(v)
+    return v[n // 2] if n % 2 else (v[n // 2 - 1] + v[n // 2]) / 2
 
 
 # ---------------------------------------------------------------- the budget documents
@@ -189,36 +213,25 @@ def book_years():
 journal_lines = LF.journal_lines
 
 
-def same_way_journal(J_):
-    per = collections.defaultdict(list)
-    for fy, rows in J_.items():
-        for x in rows:
-            if x['usable']:
-                per[x['r']['account']].append(fl(x['r']['gf_spent'] / x['r']['voted']) - 1)
-    full = {k: v for k, v in per.items() if len(v) == len(J_)}
-    same = [k for k, v in full.items() if all(d > TRACK for d in v) or all(d < -TRACK for d in v)]
-    return full, same
-
-
 # ---------------------------------------------------------------- payload pieces
 def ratio_label(r):
     return spct((r - 1) * 100, 0)
 
 
-def across(T, B, JL):
-    """The signature: every comparable line, every year, as dots around its own vote."""
+def across(T, B, JL, WL):
+    """The signature: every comparable line, every year, as dots around its own vote. FY2021's
+    budget documents print the budget in the actual column, so that one year is read from the
+    Finance Committee workbook instead -- the record the grid below reads for it."""
     years = []
     for fy in sorted(set(BOOK_YEARS) | set(JL)):
-        if fy in JL:
-            rs = [x for x in JL[fy] if x['usable']]
+        if fy in JL or fy == 2021:
+            rs = [x for x in (JL[fy] if fy in JL else WL[fy]) if x['usable']]
             lines = [dict(name=T.lit(BFB.line_name(x['r'])), b=round(fl(x['r']['voted'])),
                           a=round(fl(x['r']['gf_spent'])), s=1 if x['sal'] else 0,
                           bt=T.usd(x['r']['voted']), at=T.usd(x['r']['gf_spent']),
-                          pt=T.pct(fl(x['r']['gf_spent'] / x['r']['voted'] - 1) * 100))
+                          pt=T.dpct(fl(x['r']['gf_spent'] / x['r']['voted'] - 1) * 100))
                      for x in rs]
-            src = 'ledger'
-        elif fy == 2021:
-            lines, src = [], 'none'
+            src = 'ledger' if fy in JL else 'workbook'
         else:
             lines = []
             for k, y, b, a in B['recs']:
@@ -227,20 +240,26 @@ def across(T, B, JL):
                 s = B['sec'].get(k)
                 lines.append(dict(name=T.lit(B['label'][k]), b=round(b), a=round(a),
                                   s=1 if s == 'SALARIES' else 0 if s == 'EXPENSES' else 2,
-                                  bt=T.usd(b), at=T.usd(a), pt=T.pct((a / b - 1) * 100)))
+                                  bt=T.usd(b), at=T.usd(a), pt=T.dpct((a / b - 1) * 100)))
             src = 'books'
         tb, ta = sum(l['b'] for l in lines), sum(l['a'] for l in lines)
         years.append(dict(fy=T.fy(fy), src=src, lines=sorted(lines, key=lambda l: l['a'] / l['b']),
-                          total=T.pct((ta / tb - 1) * 100, 2) if lines else '',
+                          total=T.dpct((ta / tb - 1) * 100, 2) if lines else '',
                           tr=round(ta / tb, 5) if lines else None))
-    ticks = [(0.25, '−75%'), (0.5, '−50%'), (1, 'the vote'), (2, '+100%'), (4, '+300%')]
-    return dict(years=years, ticks=[dict(r=r, t=T.lit(t)) for r, t in ticks], lo=0.25, hi=4,
+    ticks = [(0.25, '75%', 'under budget'), (0.5, '50%', 'under budget'), (1, 'the vote', ''),
+             (2, '100%', 'over budget'), (4, '300%', 'over budget')]
+    n21, same21 = B['fy21']
+    return dict(years=years, ticks=[dict(r=r, t=T.lit(t), sub=w) for r, t, w in ticks], lo=0.25, hi=4,
                 text=dict(
                     books=T.lit('Budget documents'), ledger=T.lit('Accounting system'),
-                    none=T.lit('Not comparable'),
+                    workbook=T.lit('Workbook'),
                     books_note='The district’s budget and actual columns, side by side',
                     ledger_note='The school journal, tied to the Town’s year-end report',
-                    none_note='The budget documents print the budget in the actual column',
+                    workbook_note=T.lit(
+                        '%s only. The district’s budget documents print the budget in its actual column '
+                        'that year (%s of %s lines identical to the dollar), so the year is read from the '
+                        'Finance Committee workbook, which the grid below reads too'
+                        % (T.fy(2021), T.num(same21), T.num(n21))),
                     sal='Salary lines', oth='Everything else', unk='Not in today’s budget workbook',
                     total='All the dots together',
                     clipped='Beyond the edge: drawn at it',
@@ -258,6 +277,19 @@ def short_usd(T, v):
     return t
 
 
+def usual(xs):
+    """A line's usual miss: the MEDIAN year's spent-against-vote share and dollars, and which way
+    it leans by the page's rule (TREND_*), or '' when it does not. `xs`: its line-years."""
+    if len(xs) < TREND_YEARS:
+        return None
+    sh = [x['r']['gf_spent'] / x['r']['voted'] - 1 for x in xs if x['r']['voted'] > 0]
+    md = median([x['r']['gf_spent'] - x['r']['voted'] for x in xs])
+    mp = median(sh) if sh else None
+    o = (mp is not None and mp >= TREND_SHARE and md >= FLOOR) or md >= TREND_DOLLARS
+    u = (mp is not None and mp <= -TREND_SHARE and md <= -FLOOR) or md <= -TREND_DOLLARS
+    return dict(share=mp, dollars=md, years=len(xs), way='over' if o and not u else 'under' if u and not o else '')
+
+
 def grid(T, JL, WL, tied):
     """EVERY LINE, EVERY YEAR, FY2018 ON: one row per account, one column per year, each cell
     that year's miss (spent less the vote) with its flags. Workbook years and journal years are
@@ -272,9 +304,10 @@ def grid(T, JL, WL, tied):
             rows[a]['cells'][fy] = x
             rows[a]['names'][fy] = LF.line_name(x['r'])
             rows[a]['cat'][fy] = x['r']['category']
-    out = []
+    out, trend = [], []
     for a, v in rows.items():
         last = max(v['names'])
+        us = usual([v['cells'][fy] for fy in sorted(v['cells'])])
         cells, tot, nf = [], D0, 0
         for fy in years:
             x = v['cells'].get(fy)
@@ -288,8 +321,15 @@ def grid(T, JL, WL, tied):
             cells.append([short_usd(T, miss), ''.join(k[0] for k in LF.KEYS if k in x['flags']),
                           round(fl(r['gf_spent'] / r['voted']), 3) if r['voted'] > 0 else None,
                           T.usd(r['voted']), T.usd(r['gf_spent'])])
+        u = None
+        if us:
+            u = [T.dpct(fl(us['share']) * 100, 0) if us['share'] is not None else '',
+                 short_usd(T, us['dollars']), us['way'],
+                 round(fl(us['share']) + 1, 3) if us['share'] is not None else None]
+            if us['way']:
+                trend.append(dict(name=v['names'][last], account=a, **us))
         out.append(dict(name=T.lit(v['names'][last]), account=T.lit(a), cat=S.CAT_LABEL[v['cat'][last]],
-                        c=cells, s=round(fl(tot)), nf=nf))
+                        c=cells, s=round(fl(tot)), nf=nf, u=u))
     out.sort(key=lambda r: (-r['s'], r['name']))
     first_j = min(JL)
     cols = []
@@ -303,7 +343,10 @@ def grid(T, JL, WL, tied):
                          lines=LF._num(T, len(rs))))
     ftext = LF.flag_text(T)
     tie = ' and '.join('%s lines in %s' % (LF._num(T, n), T.fy(fy)) for fy, n in tied)
+    rule = trend_rule(T)
     return dict(years=cols, rows=out, flags={k: ftext[k]['name'] for k in LF.KEYS}, text=dict(
+        usual='Usual year', usual_sub='the median', usual_over='usually over', usual_under='usually under',
+        usual_note=rule, only_usual='Usually over or under',
         workbook=T.lit('Finance Committee workbook'), ledger=T.lit('School journal'),
         workbook_note=T.lit(
             '%s to %s: the Finance Committee’s workbook, built from MUNIS exports a year at a time. '
@@ -324,7 +367,17 @@ def grid(T, JL, WL, tied):
         sort='Sorted by the size of its misses, all years together; click a heading to sort',
         none='not on this account that year',
         mark=dict(u='U', o='O', r='R'), over='spent past the vote', under='spent under the vote',
-        scroll='More years: scroll the table sideways'))
+        scroll='More years: scroll the table sideways')), trend
+
+
+def trend_rule(T):
+    """The usual-miss rule in words, the same sentence wherever it is applied (rule 2)."""
+    sh = C.pct(fl(TREND_SHARE) * 100, 0)
+    T.figures.add(sh)
+    return T.lit('Usual year: the median of a line’s years, spent against its vote. A line usually '
+                 'misses one way when that median is %s or more over or under budget (and at least %s), '
+                 'or %s or more either way, over %s or more years. Thresholds of ours.'
+                 % (sh, T.usd(FLOOR), T.usd(TREND_DOLLARS), T.num(TREND_YEARS)))
 
 
 def fund_series(JL):
@@ -360,7 +413,8 @@ def page(m=None):
     first, last = ys[0], ys[-1]
     T = Texts()
     U = lambda v: figure(fl(v), C.usd(fl(v)))
-    P = lambda v, dp=1: figure(v, spct(v, dp), '%')
+    P = lambda v, dp=1: figure(v, dpct(v, dp), '%')
+    Pt = lambda v, dp=1: figure(v, dpct(v, dp).replace(' budget', ''), '%')   # a tile: 14 characters
     F = lambda y: figure(y, C.fy(y), 'fiscal year')
     N = lambda n, unit: figure(n, C.num(n), unit)
 
@@ -374,7 +428,6 @@ def page(m=None):
             sal[(fy, k)] = fl(s_ / v - 1) * 100
     sal_under = [fy for fy in ys if sal[(fy, 'sal')] < 0]
     oth_over = [fy for fy in ys if sal[(fy, 'oth')] > 0]
-    full, same = same_way_journal(JL)
     bsal = B['sections']['SALARIES']
     both = B['sections']['EXPENSES']
     bs_pct = (bsal[1] / bsal[0] - 1) * 100
@@ -402,6 +455,10 @@ def page(m=None):
     usable_n = {fy: sum(1 for x in JL[fy] if x['usable']) for fy in ys}
 
     WL, tied = LF.workbook_lines(JL, by)
+    G = Texts()
+    gr, trend = grid(G, JL, WL, tied)
+    t_over = [x for x in trend if x['way'] == 'over']
+    t_n = sum(1 for r in gr['rows'] if r['u'])
     fund = fund_series(JL)
     f0, f1 = min(fund), max(fund)
     BV = B['aug']
@@ -411,23 +468,21 @@ def page(m=None):
     span = '%s–%s' % (C.fy(first), C.fy(last))
     bspan = '%s–%s' % (C.fy(min(B['by_year'])), C.fy(max(B['by_year'])))
     facts = [
-        f('bsal', P(bs_pct, 2), 'salary lines against budget, documents, %s' % bspan, 'published',
+        f('bsal', Pt(bs_pct, 2), 'salary lines against budget, documents, %s' % bspan, 'published',
           label_figures={'a': F(min(B['by_year'])), 'b': F(max(B['by_year']))}),
-        f('both', P(bo_pct, 2), 'everything else against budget, documents, %s' % bspan, 'published',
+        f('both', Pt(bo_pct, 2), 'everything else against budget, documents, %s' % bspan, 'published',
           label_figures={'a': F(min(B['by_year'])), 'b': F(max(B['by_year']))}),
         f('jsal', N(len(sal_under), 'years'), 'years of %d salary lines spent under the vote, journal'
           % len(ys), 'published', label_figures={'n': N(len(ys), 'years')}),
         f('joth', N(len(oth_over), 'years'), 'years of %d everything else spent over the vote, journal'
           % len(ys), 'published', label_figures={'n': N(len(ys), 'years')}),
-        f('jsame', N(len(same), 'lines'), 'lines of %d missing the same way all %d journal years'
-          % (len(full), len(ys)), 'published',
-          label_figures={'n': N(len(full), 'lines'), 'y': N(len(ys), 'years')}),
-        f('bsame', N(B['same'], 'lines'), 'lines of %d missing the same way every year, documents'
-          % B['multi'], 'published', label_figures={'n': N(B['multi'], 'lines')}),
+        f('trend', N(len(trend), 'lines'), 'lines of %d usually missing one way, by median'
+          % t_n, 'published', label_figures={'n': N(t_n, 'lines')}),
+        f('tover', N(len(t_over), 'lines'), 'of them usually over budget', 'published'),
         f('w2', N(w2, 'line-years'), 'line-years of %d within 2%% of budget, documents' % ly,
           'published', label_figures={'n': N(ly, 'line-years')}, allow=('2%',)),
-        f('thi', P(t_hi), 'out-of-district tuition, its worst year over', 'published'),
-        f('tlo', P(t_lo), 'out-of-district tuition, its worst year under', 'published'),
+        f('thi', Pt(t_hi), 'out-of-district tuition, its worst year over', 'published'),
+        f('tlo', Pt(t_lo), 'out-of-district tuition, its worst year under', 'published'),
         f('cut', N(len(after_cut), 'line-years'), 'of %d giving budget up, restarted high next year'
           % len(cut_lines), 'published', label_figures={'n': N(len(cut_lines), 'line-years')}),
         f('track', N(within[last], 'lines'), 'lines of %d within 2%% of their vote, %s'
@@ -441,17 +496,19 @@ def page(m=None):
         return TP.conclusion(text, rests, figs, so=so, so_figures=so_figs)
     conclusions = [
         con('Salary lines came in under their vote in %d of %d journal years; the documents agree, at %s.'
-            % (len(sal_under), len(ys), spct(bs_pct, 2)), ['jsal', 'joth', 'bsal', 'both'],
+            % (len(sal_under), len(ys), dpct(bs_pct, 2)), ['jsal', 'joth', 'bsal', 'both'],
             {'a': N(len(sal_under), 'years'), 'b': N(len(ys), 'years'), 'c': P(bs_pct, 2)},
             'A salary vote leaves room the year usually does not use; that room is where a surplus '
             'starts. Why, post by post, the books do not say.'),
-        con('Only %d of %d lines missed the same way in all %d journal years; in the documents, %d of %d.'
-            % (len(same), len(full), len(ys), B['same'], B['multi']), ['jsame', 'bsame', 'w2'],
-            {'a': N(len(same), 'lines'), 'b': N(len(full), 'lines'), 'y': N(len(ys), 'years'),
-             'c': N(B['same'], 'lines'), 'd': N(B['multi'], 'lines')},
-            'Lines miss in both directions and cancel; a total near its vote says little about any line in it.'),
-        con('Out-of-district tuition missed from %s to %s, in both directions, %s–%s.'
-            % (spct(t_hi), spct(t_lo), C.fy(min(btu)), C.fy(last)), ['thi', 'tlo'],
+        con('%d of %d lines usually miss one way, %s–%s: %d over budget, %d under.'
+            % (len(trend), t_n, C.fy(min(WL)), C.fy(last), len(t_over), len(trend) - len(t_over)),
+            ['trend', 'tover', 'w2'],
+            {'a': N(len(trend), 'lines'), 'b': N(t_n, 'lines'), 'x': F(min(WL)), 'y': F(last),
+             'c': N(len(t_over), 'lines'), 'd': N(len(trend) - len(t_over), 'lines')},
+            'Most lines miss both ways and cancel; the few that lean one way are where a vote and its '
+            'line part company year after year.'),
+        con('Out-of-district tuition ran from %s to %s, %s–%s.'
+            % (dpct(t_hi), dpct(t_lo), C.fy(min(btu)), C.fy(last)), ['thi', 'tlo'],
             {'a': P(t_hi), 'b': P(t_lo), 'x': F(min(btu)), 'y': F(last)},
             'No trend to project: the site’s projection holds this line flat rather than growing it at a rate.'),
         con('%d of %d times a line gave budget up mid-year, its next vote was %s or more above its spending.'
@@ -461,9 +518,7 @@ def page(m=None):
             'Each is a question for the next budget: was the cut a one-year saving, or a line set high?'),
     ]
     yrs = sorted(set(BOOK_YEARS) | set(JL))
-    sig = across(T, B, JL)
-    G = Texts()
-    gr = grid(G, JL, WL, tied)
+    sig = across(T, B, JL, WL)
     fsrc = lambda k: [fl(fund[y][1] - fund[y][2]) if fund[y][0] == k else None for y in sorted(fund)]
     fund_chart = TP.series(
         'What the school fund left unspent', [C.fy(y) for y in sorted(fund)],
@@ -476,13 +531,16 @@ def page(m=None):
     blocks = [
         TB.custom('bva-across', 'Every line, every year', sig, place='lead',
                   figures=sorted(T.figures), allow=sorted(T.literals),
-                  basis=('record', 'The budget documents, then the school journal; never added together'),
+                  basis=('record', 'The budget documents (one year the workbook), then the school journal; never added'),
                   alt='Dot chart, one column per fiscal year from %s to %s: each dot one school line, '
                       'placed by what it spent against what it was voted, salary lines and the rest in '
                       'two colours, with a mark for all the lines together; the years from the budget '
-                      'documents and from the accounting system shaded apart' % (C.fy(yrs[0]), C.fy(yrs[-1])),
+                      'documents, the workbook and the accounting system shaded apart' % (C.fy(yrs[0]), C.fy(yrs[-1])),
                   so=('Each year’s mark sits near the vote while its dots spread far above and below '
                       'it: the total is quiet because lines miss both ways and cancel.', None, ())),
+        TB.chart(fund_chart, place='lead',
+                 so=('Every bar is above zero: the fund as a whole never spent past its final budget, '
+                     'while the lines inside it missed both ways.', None, ())),
         TB.custom('bva-grid', 'Each line, year by year', gr, place='lead',
                   figures=sorted(G.figures), allow=sorted(G.literals),
                   basis=('record', 'The Finance Committee workbook, then the school journal; a year from one only'),
@@ -493,13 +551,11 @@ def page(m=None):
                       'that year in the FY breakdown' % (C.fy(min(WL)), C.fy(last)),
                   so=('A line flagged year after year is a pattern in how it is budgeted; one flagged '
                       'once is a year’s event, and that year’s FY breakdown shows what moved.', None, ())),
-        TB.chart(fund_chart, place='end',
-                 so=('Every bar is above zero: the fund as a whole never spent past its final budget, '
-                     'while the lines inside it missed both ways.', None, ())),
         TB.explain('How the three records differ', [
             ('**The budget documents** print a budget and an actual column the district wrote. Lines '
              'are read with the rules of the August analysis: a line under $10,000, a cell two '
-             'documents disagree about, and FY2021 are not counted. The dot chart reads them.',
+             'documents disagree about, and FY2021 are not counted: that year the documents print the '
+             'budget in the actual column. The dot chart reads them, and FY2021 from the workbook.',
              None, ('$10,000', 'FY2021')),
             ('**The Finance Committee workbook** pastes per-year MUNIS exports side by side, by '
              'account, with transfers. A person assembled it, so it is stated, not proof; in %s and '
@@ -517,20 +573,22 @@ def page(m=None):
                                        for y in sorted(set(btu) | set(tu))], 'stated', 'bar'),
          TP.track('School journal', [tu.get(y) for y in sorted(set(btu) | set(tu))], 'published', 'bar')],
         '%', kind='bar', decimals=1,
-        note='Spent against the vote, private and collaborative tuition together. The documents’ '
-             'years before the journal; the journal’s from %s.' % C.fy(first),
+        note='Private and collaborative tuition: above zero, spent over budget; below, under. The '
+             'documents, then the journal from %s.' % C.fy(first),
         note_figures={'y': F(first)})
-    # CARRIED FROM THE RETIRED line-level-misses PAGE (30 October 2026): the lines the August
-    # report found missing the same way in every year it measured.
-    sw_ = sorted(BV['same_way'], key=lambda r: r['mean_dollars'])
-    table = dict(caption='Lines that missed the same way every year', views=[dict(
-        key='same', label='Budget documents, four or more years', total_col=-1, kinds=['stated'] * 3,
-        columns=['Direction', 'Years', 'Average a year'],
-        rows=[dict(label=r['line'], cells=[r['direction'], C.num(r['years']), C.usd(r['mean_dollars'])])
-              for r in sw_],
-        note='Each year’s budget against the same year’s actual, out of the district’s own budget '
-             'documents. A line counts only if it was more than %s off in every year.'
-             % C.pct(100 * BV['coverage']['same_way_threshold'], 0))])
+    # THE SAME LIST AS THE GRID'S "Usual year" column (TJ, 30 October 2026: "'Lines that missed
+    # the same way every year' should feed off the same list"): every line whose median year
+    # leans one way by the page's rule. It replaced the August report's every-year test here.
+    tw = sorted(trend, key=lambda x: (x['way'] != 'over', -abs(x['dollars'])))
+    table = dict(caption='Lines that usually miss the same way', views=[dict(
+        key='usual', label='Usual year', total_col=-1, kinds=['stated'] * 4,
+        columns=['Usually', 'Years', 'Usual year, share of the vote', 'Usual year, dollars'],
+        rows=[dict(label=x['name'], cells=[
+            'over budget' if x['way'] == 'over' else 'under budget', C.num(x['years']),
+            C.pct(abs(fl(x['share'])) * 100, 0) if x['share'] is not None else None,
+            C.usd(abs(fl(x['dollars'])))]) for x in tw],
+        note=trend_rule(Texts()) + ' %s–%s: the Finance Committee workbook, then the school journal.'
+             % (C.fy(min(WL)), C.fy(last)))])
     return TP.page(
         ID,
         'School lines land near their vote in total every year, and far from it one by one, in '

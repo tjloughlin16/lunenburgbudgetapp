@@ -7,6 +7,9 @@
  *  line-year is read from one record only (scripts/line_flags.py). Each journal year's heading
  *  opens that year in the FY breakdown, where the year's flagged lines are listed with their
  *  transfers: the pattern across years here, the year's story there (TJ, 29 October 2026).
+ *  The column after the category is each line's USUAL year -- the median of its years -- marked where it leans
+ *  one way by the page's rule (TJ, 30 October 2026); the table of lines that usually miss the
+ *  same way, further down, is that same list.
  *  Every string and figure is the payload's (scripts/build_budget_against_actual.py, grid()). */
 import { useMemo, useState } from 'react'
 import type { CustomProps } from './index'
@@ -16,7 +19,9 @@ import { FLAG_TONE, type FlagKey } from './fy-flags'
 
 /** [miss text, flag letters, spent / voted (null: nothing voted), voted text, spent text] */
 type Cell = [string, string, number | null, string, string] | null
-type Row = { name: string; account: string; cat: string; c: Cell[]; s: number; nf: number }
+/** [share in words, dollars, 'over' | 'under' | '' (leans that way by the rule), spent / voted] */
+type Usual = [string, string, '' | 'over' | 'under', number | null] | null
+type Row = { name: string; account: string; cat: string; c: Cell[]; s: number; nf: number; u: Usual }
 type Col = { fy: string; src: 'workbook' | 'ledger'; href: string | null; n: Record<FlagKey, string>; lines: string }
 type Data = { years: Col[]; rows: Row[]; flags: Record<FlagKey, string>; text: Record<string, string> & { mark: Record<'u' | 'o' | 'r', string> } }
 
@@ -39,17 +44,19 @@ export default function BvaGrid({ data, alt }: CustomProps) {
   const t = d.text
   const hrefs = itemHrefs(useItemIndex())
   const [q, setQ] = useState('')
-  const [only, setOnly] = useState(false)
+  const [only, setOnly] = useState<'' | 'flag' | 'usual'>('')
   const [all, setAll] = useState(false)
-  const [sort, setSort] = useState<{ k: number | 'name' | 'cat' | 'nf' | 's'; dir: 1 | -1 }>({ k: 's', dir: -1 })
+  const [sort, setSort] = useState<{ k: number | 'name' | 'cat' | 'nf' | 's' | 'u'; dir: 1 | -1 }>({ k: 's', dir: -1 })
   const rows = useMemo(() => {
     const ql = q.trim().toLowerCase()
-    const out = d.rows.filter(r => (!only || r.nf > 0) && (!ql || `${r.name} ${r.cat}`.toLowerCase().includes(ql)))
+    const out = d.rows.filter(r => (only !== 'flag' || r.nf > 0) && (only !== 'usual' || !!r.u?.[2])
+      && (!ql || `${r.name} ${r.cat}`.toLowerCase().includes(ql)))
     const k = sort.k
     return [...out].sort((a, b) => k === 'name' ? sort.dir * a.name.localeCompare(b.name)
       : k === 'cat' ? sort.dir * a.cat.localeCompare(b.cat) || b.s - a.s
         : k === 'nf' ? sort.dir * (a.nf - b.nf) || b.s - a.s
           : k === 's' ? sort.dir * (a.s - b.s)
+            : k === 'u' ? ((a.u?.[3] == null ? 1 : 0) - (b.u?.[3] == null ? 1 : 0)) || sort.dir * ((a.u?.[3] ?? 1) - (b.u?.[3] ?? 1))
             : ((a.c[k] ? 0 : 1) - (b.c[k] ? 0 : 1)) || sort.dir * ((a.c[k]?.[2] ?? 1) - (b.c[k]?.[2] ?? 1)))
   }, [d, q, only, sort])
   const shown = all || q ? rows : rows.slice(0, FIRST)
@@ -70,15 +77,16 @@ export default function BvaGrid({ data, alt }: CustomProps) {
       <div className="flex flex-wrap gap-2 items-center mt-3">
         <input value={q} onChange={e => setQ(e.target.value)} placeholder={t.filter} aria-label={t.filter}
           className="w-full max-w-xs px-2 py-1 rounded border text-[13px]" style={{ borderColor: 'var(--grid)', background: 'var(--surface-1)', color: 'var(--text-primary)' }} />
-        <Chip on={!only} onClick={() => setOnly(false)}>{t.every}</Chip>
-        <Chip on={only} onClick={() => setOnly(true)}>{t.only}</Chip>
+        <Chip on={!only} onClick={() => setOnly('')}>{t.every}</Chip>
+        <Chip on={only === 'flag'} onClick={() => setOnly('flag')}>{t.only}</Chip>
+        <Chip on={only === 'usual'} onClick={() => setOnly('usual')}>{t.only_usual}</Chip>
         <span className="text-[12px]" style={muted}>{rows.length} {t.lines_n} · {t.sort}</span>
       </div>
       <WideScroll cue={t.scroll}>
-        <table className="w-full text-[12.5px] tabular-nums border-collapse min-w-[980px]">
+        <table className="w-full text-[12.5px] tabular-nums border-collapse min-w-[1060px]">
           <thead>
             <tr className="text-[11.5px] font-semibold" style={{ color: 'var(--text-secondary)' }}>
-              <th colSpan={2} />
+              <th colSpan={3} />
               {firstLedger > 0 ? <th colSpan={firstLedger} className="px-1 pt-1 text-center border-b" style={{ borderColor: 'var(--grid)', background: 'var(--surface-3)' }}>{t.workbook}</th> : null}
               <th colSpan={d.years.length - Math.max(0, firstLedger)} className="px-1 pt-1 text-center border-b border-l" style={{ borderColor: 'var(--grid)' }}>{t.ledger}</th>
               <th />
@@ -87,6 +95,9 @@ export default function BvaGrid({ data, alt }: CustomProps) {
               <th className="px-2 py-1 text-left font-semibold cursor-pointer select-none sticky left-0 z-10 min-w-[15rem]" style={{ background: 'var(--surface-1)' }}
                 onClick={() => by('name')}>{t.line}{arrow('name')}</th>
               <th className="px-2 py-1 text-left font-semibold cursor-pointer select-none" onClick={() => by('cat')}>{t.cat}{arrow('cat')}</th>
+              <th className="px-2 py-1 text-right font-semibold cursor-pointer select-none border-r whitespace-nowrap" style={{ borderColor: 'var(--grid)' }}
+                onClick={() => by('u')} title={t.usual_note}>{t.usual}{arrow('u')}
+                <span className="block text-[10.5px] font-normal" style={muted}>{t.usual_sub}</span></th>
               {d.years.map((y, i) => (
                 <th key={y.fy} className={`px-1.5 py-1 text-right font-semibold align-bottom ${i === firstLedger ? 'border-l' : ''}`}
                   style={{ borderColor: 'var(--grid)', background: y.src === 'workbook' ? 'var(--surface-3)' : undefined }}>
@@ -109,6 +120,12 @@ export default function BvaGrid({ data, alt }: CustomProps) {
                   <td className="px-2 py-1 sticky left-0 z-10" style={{ background: 'var(--surface-1)' }}>
                     {h ? <a href={h} className="underline" style={link}>{r.name}</a> : r.name}</td>
                   <td className="px-2 py-1 text-[11.5px] whitespace-nowrap" style={muted}>{r.cat}</td>
+                  <td className="px-2 py-1 text-right border-r whitespace-nowrap" title={r.u ? `${r.name} · ${t.usual}: ${r.u[0]}, ${r.u[1]}` : undefined}
+                    style={{ borderColor: 'var(--grid)', background: r.u?.[2] ? shade(r.u[3]) : undefined }}>
+                    {r.u ? <>
+                      <span className={r.u[2] ? 'font-semibold' : undefined}>{r.u[1]}</span>
+                      <span className="block text-[10.5px]" style={muted}>{r.u[2] ? (r.u[2] === 'over' ? t.usual_over : t.usual_under) : r.u[0]}</span>
+                    </> : <span style={muted}>·</span>}</td>
                   {r.c.map((c, i) => (
                     <td key={i} className={`px-1.5 py-1 text-right whitespace-nowrap ${i === firstLedger ? 'border-l' : ''}`}
                       style={{ borderColor: 'var(--grid)', background: c ? shade(c[2]) : undefined }}
@@ -125,7 +142,8 @@ export default function BvaGrid({ data, alt }: CustomProps) {
       {!q && rows.length > FIRST ? (
         <button type="button" className="mt-2 text-[12.5px] underline" style={link} onClick={() => setAll(a => !a)}>
           {all ? t.show_fewer : `${t.show_all} (${rows.length})`}</button>) : null}
-      <p className="text-[12px] mt-2" style={muted}>{t.workbook}: {t.workbook_note}</p>
+      <p className="text-[12px] mt-2" style={muted}>{t.usual_note}</p>
+      <p className="text-[12px] mt-1" style={muted}>{t.workbook}: {t.workbook_note}</p>
       <p className="text-[12px] mt-1" style={muted}>{t.workbook_restart} {t.no_restart}</p>
       <p className="text-[12px] mt-1" style={muted}>{t.ledger}: {t.ledger_note}</p>
     </figure>)
