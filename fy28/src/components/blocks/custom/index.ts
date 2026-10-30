@@ -10,7 +10,8 @@
  *  second page, promote it to a named block in Blocks.tsx and scripts/topic_blocks.py. */
 import type { ComponentType } from 'react'
 import BvaAcross from './bva-across'
-import BvaYear from './bva-year'
+import BvaGrid from './bva-grid'
+import FyFlags from './fy-flags'
 import FyLineTable from './fy-line-table'
 import FyYearFacts from './fy-year-facts'
 import FyYearPicker from './fy-year-picker'
@@ -40,7 +41,8 @@ export type CustomProps = { data: unknown; alt: string }
 
 export const CUSTOM_BLOCKS: Record<string, ComponentType<CustomProps>> = {
   'bva-across': BvaAcross,
-  'bva-year': BvaYear,
+  'bva-grid': BvaGrid,
+  'fy-flags': FyFlags,
   'fy-line-table': FyLineTable,
   'fy-year-facts': FyYearFacts,
   'fy-year-picker': FyYearPicker,

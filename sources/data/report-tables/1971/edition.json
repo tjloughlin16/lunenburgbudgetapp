@@ -1,0 +1,102 @@
+{
+  "edition": "1971",
+  "fy": 1971,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1971 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION whose financial statements are for the calendar year ended December 31, 1971 -- see periods",
+  "stem": "4493-1971-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4493-1971-annual-town-report.pdf",
+  "label": "1971 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4493-1971-annual-town-report.cells.tsv",
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true,
+  "dash_zero": true,
+  "accountant_marks_wide": true,
+  "year_labels": true,
+  "colon_heading_subtotals": true,
+  "receipts_stop_at_grand": true,
+  "recon_no_transfers": true,
+  "cash_book_list": true,
+  "periods": [
+    {
+      "what": "population, school enrollment and town expenditures at five-year intervals",
+      "period": "calendar years 1950, 1955, 1960, 1965, 1970, 1971",
+      "cited": "p8: table header `1950 | 1955 | 1960 | 1965 | 1970 | 1971`; prose `Exactly 70% of all amounts spent for services in Lunenburg in 1971`"
+    },
+    {
+      "what": "veterans' services case loads",
+      "period": "calendar years 1969, 1970, 1971",
+      "cited": "p33: `The year 1971 has been a year of unemployment ... from 1969 through 1971`; header `1969 | 1970 | 1971`"
+    },
+    {
+      "what": "general fund balance sheet",
+      "period": "December 31, 1971",
+      "cited": "p40: `Balance Sheet - December 31, 1971`"
+    },
+    {
+      "what": "Tax Collector's report",
+      "period": "calendar year 1971",
+      "cited": "p42: `YEAR ENDING DECEMBER 31, 1971`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation and cash by bank",
+      "period": "January 1 - December 31, 1971",
+      "cited": "p42: `Balance December 31, 1970`, `Receipts January 1, thru December 31, 1971`, `Balance December 31, 1971 per cash book`"
+    },
+    {
+      "what": "detailed statement of receipts",
+      "period": "calendar year 1971",
+      "cited": "p43: `Detailed Statement of Receipts / For Year Ending December 31, 1971`"
+    },
+    {
+      "what": "detailed statement of payments",
+      "period": "calendar year 1971",
+      "cited": "p47: `Detailed Statement of Payments / For Year Ending December 31, 1971`"
+    },
+    {
+      "what": "accountant's summary and classification of accounts",
+      "period": "NOT PRINTED as a year on the page; the carry-forward column is headed `Balance to 1972`, so the schedule closes calendar 1971",
+      "cited": "p51-62: `Summary and Classification of Accounts`; `Balance to Revenue | Balance to 1972`"
+    },
+    {
+      "what": "bonded indebtedness",
+      "period": "payments in 1971, balance 12-31-71, payments scheduled 1972-1987",
+      "cited": "p63: `Paid 1971`, `Bal. Prin. 12-31-71`; schedule rows `1972` ... `1987`"
+    },
+    {
+      "what": "trust funds (Trust Fund Commission and School Committee)",
+      "period": "December 31, 1970 to December 31, 1971",
+      "cited": "p65: `December 31, 1970`, `Balance December 31, 1971`; p66: `Balance December 31, 1971`"
+    },
+    {
+      "what": "voted budget, and special articles",
+      "period": "calendar year 1971, as VOTED at the Annual Town Meeting of March 6, 1971, Article 4 (a budget, not an actual)",
+      "cited": "p69-71 and the Article 4 vote (text, `Excerpts From Annual Town Meeting Minutes / March 6, 1971`): `to fix for the calendar year 1971 the salaries`; p70: `Total Budget Voted`"
+    },
+    {
+      "what": "school spending by category",
+      "period": "calendar year 1971 (the School Committee's `spent in 1971`)",
+      "cited": "p98: `how the $1,892,474.75 for schools was spent in 1971`"
+    },
+    {
+      "what": "school lunch program",
+      "period": "school year September 1970 - June 1971",
+      "cited": "p127: `LUNENBURG SCHOOL LUNCH PROGRAM REPORT FOR 1970-71`; p126: `school year September 1970 to September 1971`"
+    },
+    {
+      "what": "school statistics",
+      "period": "school year ending June 30, 1971, and calendar year 1971",
+      "cited": "p128: `SCHOOL YEAR ENDING JUNE 30, 1971`; `AVERAGE MEMBERSHIP for Calendar Year 1971`"
+    },
+    {
+      "what": "School Department summary of accounts, receipts and special accounts",
+      "period": "calendar 1971 appropriation and spending; 1972 request and estimate",
+      "cited": "p129: `Summary of Accounts, 1971 & Budget Request, 1972`; p130: `Actual Receipts 1971 | Estimated Receipts 1972`"
+    }
+  ]
+}

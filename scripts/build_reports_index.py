@@ -705,7 +705,7 @@ ABSORBED_INTO = {
     'spedroute': 'special-education',
     'parastaff': 'school-staffing', 'schoolstaff': 'school-staffing',
     'formula': 'state-aid', 'minaid': 'state-aid', 'required': 'state-aid',
-    'peers': 'school-spending', 'variance': 'school-spending',
+    'peers': 'school-spending', 'variance': 'school-all-funds',
     'bythenumbers': 'homes-and-taxes', 'homestudents': 'homes-and-taxes',
     'growth': 'homes-and-taxes',
     'insurance': 'health-insurance',

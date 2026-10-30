@@ -1,0 +1,117 @@
+{
+  "edition": "1978",
+  "fy": 1978,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "stem": "4500-1978-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4500-1978-annual-town-report.pdf",
+  "label": "1978 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4500-1978-annual-town-report.cells.tsv",
+  "basis_source": "the label `1978 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION whose financial statements are for fiscal 1978",
+  "dash_zero": true,
+  "accountant_marks_wide": true,
+  "year_labels": true,
+  "colon_heading_subtotals": true,
+  "receipts_stop_at_grand": true,
+  "recon_no_transfers": true,
+  "cash_book_list": true,
+  "periods": [
+    {
+      "what": "Treasurer's cash reconciliation",
+      "period": "fiscal year 1978, July 1, 1977 - June 30, 1978",
+      "cited": "p37: `Fiscal Year 1978`; `Balance June 30, 1977`; `Receipts July 1, 1977 through June 30, 1978`"
+    },
+    {
+      "what": "detailed statement of receipts",
+      "period": "July 1, 1977 through June 30, 1978",
+      "cited": "p38: `Detailed Statement of Receipts / July 1, 1977 through June 30, 1978`"
+    },
+    {
+      "what": "detailed statement of payments",
+      "period": "July 1, 1977 through June 30, 1978",
+      "cited": "p42: `Detailed Statement of Payments / July 1, 1977 through June 30, 1978`"
+    },
+    {
+      "what": "general accounts balance sheet, debt accounts, trust and investment accounts",
+      "period": "June 30, 1978",
+      "cited": "p47: `Balance Sheet - June 30, 1978`"
+    },
+    {
+      "what": "revenue sharing reconciliation, receipts, payments and balance sheet",
+      "period": "fiscal 1978, July 1, 1977 - June 30, 1978",
+      "cited": "p51: `Reconciliation of Treasurer's Cash`; `Receipts July 1, 1977 through June 30, 1978`"
+    },
+    {
+      "what": "bonded indebtedness by issue",
+      "period": "through fiscal 1979",
+      "cited": "p53: columns `Due Fiscal 1979`, `Total Pmts. thru Fiscal 1979`, `BALANCE 6-30-79`"
+    },
+    {
+      "what": "debt repayment schedule",
+      "period": "payments FY1980-FY1988",
+      "cited": "p53: `FISCAL YEAR 1980 ... 1988 Grand Total`"
+    },
+    {
+      "what": "accountant's summary and classification of accounts",
+      "period": "July 1, 1977 through June 30, 1978; carry-forward column `Balance to Fiscal 1979`",
+      "cited": "p54: `Summary and Classification of Accounts / July 1, 1977 through June 30, 1978`"
+    },
+    {
+      "what": "tax collector's report",
+      "period": "July 1, 1977 - June 30, 1978",
+      "cited": "p66: `Tax Collector's Report Period July 1, 1977 - June 30, 1978`"
+    },
+    {
+      "what": "trust funds",
+      "period": "July 1, 1977 through June 30, 1978",
+      "cited": "p67: `Trust Funds / July 1, 1977 through June 30, 1978`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation, July 1 - December 31, 1978",
+      "period": "six months July 1, 1978 - December 31, 1978",
+      "cited": "p69: `Receipts July 1, 1978 through December 31, 1978`; `Balance December 31, 1978 per General Ledger`"
+    },
+    {
+      "what": "recapitulation of revenue cash invested",
+      "period": "7/1/77-12/31/77, 1/1/78-6/30/78 (FY 1978), 7/1/78-12/31/78",
+      "cited": "p70: `RECAPITULATION OF REVENUE CASH INVESTED`; `TOTAL FY 1978`, `TOTAL CALENDAR YEAR 1978`, `TOTAL FIRST 6 MOS. FY 1979`"
+    },
+    {
+      "what": "omnibus budget and special articles",
+      "period": "fiscal year 1979, as VOTED at the Annual Town Meeting of April 1, 1978 (a budget, not an actual)",
+      "cited": "p76: `Excerpts from Annual Town Meeting Minutes / April 1, 1978`; p77: Article 4 `for Fiscal Year 1979`; p78: `TOTAL BUDGET VOTED`"
+    },
+    {
+      "what": "school tuition rates",
+      "period": "September 1 - December 31, 1978 and January 1 - December 31, 1979",
+      "cited": "p104: `EFFECTIVE for period September 1, 1978 - December 31, 1978`; `EFFECTIVE for period January 1, 1979 - December 31, 1979`"
+    },
+    {
+      "what": "school lunch program financial and statistical report",
+      "period": "school year 1977-78 (July 1977 - June 1978)",
+      "cited": "p173: `SCHOOL LUNCH PROGRAM FINANCIAL AND STATISTICAL REPORT for 1977-78`"
+    },
+    {
+      "what": "school department statistics, monies returned, summary of accounts, special accounts",
+      "period": "school year ending June 30, 1978; FY-78 and FY-79 columns",
+      "cited": "p175: `FOR SCHOOL YEAR ENDING JUNE 30, 1978`; p176: `FY-78 ACTUAL RECEIPTS (7/1/77-6/30/78)`; p177: `Summary of Accounts, FY78 and Budget Request, FY79`; p178: `Summary of Special Accounts, FY78`"
+    },
+    {
+      "what": "per capita expenditure and property tax comparison",
+      "period": "fiscal year 1976",
+      "cited": "p36: `FISCAL YEAR 1976`, `Fiscal Year 1976 U. S. Census Bureau data`"
+    },
+    {
+      "what": "anniversary committee income and expenses",
+      "period": "the 1978 observance (no period printed on the table)",
+      "cited": "p89: table with `Total Income`, `Total Expenses`; text on p88-89 about Old Home Week and the 250th Anniversary"
+    }
+  ],
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true
+}

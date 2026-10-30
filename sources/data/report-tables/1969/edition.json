@@ -1,0 +1,95 @@
+{
+  "edition": "1969",
+  "fy": 1969,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1969 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION whose financial statements are for the calendar year ended December 31, 1969 -- see periods",
+  "stem": "4512-1969-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4512-1969-annual-town-report.pdf",
+  "label": "1969 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4512-1969-annual-town-report.cells.tsv",
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true,
+  "periods": [
+    {
+      "what": "opening facts of the town (assessed valuation, tax rate, population)",
+      "period": "valuation and rate as printed, undated; population `1965`",
+      "cited": "p3: `ASSESSED VALUATION: $12,036,520 (Real Estate) $ 1, 195, 130 (Personal Property)`, `TAX RATE: $133.00`, `POPULATION 1965`; the page prints no year for the valuation or the rate"
+    },
+    {
+      "what": "Personnel Board's proposed classification and salary schedule",
+      "period": "to be voted at the Annual Town Meeting of March 7, 1970 (a proposal)",
+      "cited": "p17: `CLASSIFICATION AND SALARY SCHEDULE - to be voted on at Annual Town Meeting on March 7, 1970`"
+    },
+    {
+      "what": "general fund balance sheet",
+      "period": "December 31, 1969",
+      "cited": "p20: `Balance Sheet - December 31, 1969`"
+    },
+    {
+      "what": "Tax Collector's report",
+      "period": "calendar year 1969",
+      "cited": "p22: `YEAR ENDING DECEMBER 31, 1969`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation and cash by bank",
+      "period": "January 1 - December 31, 1969",
+      "cited": "p22: `Receipts January 1, thru December 31, 1969`; `Balance December 31, 1969 per cash book`"
+    },
+    {
+      "what": "detailed statement of receipts",
+      "period": "calendar year 1969",
+      "cited": "p23: `For Year Ending December 31, 1969`"
+    },
+    {
+      "what": "detailed statement of payments",
+      "period": "calendar year 1969",
+      "cited": "p27: `For Year Ending December 31, 1969`"
+    },
+    {
+      "what": "accountant's summary and classification of accounts",
+      "period": "NOT PRINTED as a year on the page; the carry-forward column is headed `Balance to 1970`, so the schedule closes calendar 1969",
+      "cited": "p31: `Summary and Classification of Accounts`, column `Balance to 1970`"
+    },
+    {
+      "what": "bonded indebtedness",
+      "period": "payments in 1969, balance 12-31-69, payments scheduled 1970-1987",
+      "cited": "p43: `Paid 1969`, `Bal.Prin. 12-31-69`, schedule rows 1970 onward"
+    },
+    {
+      "what": "trust funds (Trust Fund Commission, School Committee, Town Treasurer's Stabilization Fund)",
+      "period": "December 31, 1968 to December 31, 1969",
+      "cited": "p44-46: `December 31, 1968 Balance` ... `Balance December 31, 1969`"
+    },
+    {
+      "what": "voted budget and special articles",
+      "period": "calendar year 1969, as VOTED at the Annual Town Meeting of March 1, 1969, Article 5 (a budget, not an actual)",
+      "cited": "p64: `Excerpts From Annual Town Meeting / March 1, 1969`; p65 `Article 5 ... to fix for the calendar year 1969 the salaries ...`; p65-66 `THE BUDGET`, `TOTAL BUDGET VOTED`"
+    },
+    {
+      "what": "school lunch program",
+      "period": "school year 1968-69, September 1968 - June 1969",
+      "cited": "p118: `LUNENBURG SCHOOL LUNCH PROGRAM REPORT for 1968-69`"
+    },
+    {
+      "what": "school statistics",
+      "period": "school year ending June 30, 1969; and calendar year ending December 31, 1969",
+      "cited": "p121: `SCHOOL YEAR ENDING JUNE 30, 1969`, `CALENDAR YEAR ENDING DECEMBER 31, 1969`"
+    },
+    {
+      "what": "School Department summary of accounts and budget request",
+      "period": "calendar 1969 appropriation and spending; 1970 request",
+      "cited": "p122: `BUDGET APPROPRIATION 1969`, `BUDGET REQUEST 1970`"
+    },
+    {
+      "what": "School receipts returned to the town, federal funds, and special school accounts",
+      "period": "actual receipts 1969, estimated receipts 1970; calendar 1969 account histories",
+      "cited": "p123: `Actual Receipts 1969 | Estimated Receipts 1970`; p124-128: `Balance on Hand, January 1, 1969` ... `December 31, 1969`"
+    }
+  ]
+}

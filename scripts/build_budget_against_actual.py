@@ -56,6 +56,7 @@ import journal as J  # noqa: E402
 import build_school_surplus as S  # noqa: E402
 import fy_breakdown as FB  # noqa: E402
 import build_fy_breakdown as BFB  # noqa: E402
+import line_flags as LF  # noqa: E402
 
 ID = 'budget-against-actual'
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics', '%s.json' % ID)
@@ -64,9 +65,7 @@ AUGUST = os.path.join(ROOT, 'fy28', 'public', 'data', 'budget-vs-actual.json')
 D0 = Decimal(0)
 
 # ---------------------------------------------------------------- thresholds, ours
-FLOOR = Decimal('5000')        # OURS: no flag under this many dollars (the FY breakdown's ADJ_MIN)
-SHARE = Decimal('0.10')        # OURS: and at least this share of the vote (of prior spending, restarted)
-THIN = Decimal('0.5')         # OURS: a prior year spending under half its final budget is marked (rule 6)
+FLOOR, SHARE = LF.FLOOR, LF.SHARE   # OURS, line_flags.py: the same for both pages
 TRACK = 0.02                   # the August report's own: a miss within 2% is not a miss (same-way test)
 
 BOOK_YEARS = (2018, 2019, 2020, 2021, 2022)
@@ -181,71 +180,13 @@ def book_years():
         fail('FY21: the identical-to-the-dollar count differs from the August report')
     return dict(cell=cell, label=label, sec=sec, thin=thin, recs=recs, by_year=dict(by_year),
                 sections=dict(sections), tuition=dict(tuition), multi=len(multi), same=len(same),
-                fy21=(len(fy21), sum(1 for b, a in fy21 if abs(b - a) < 1)))
+                fy21=(len(fy21), sum(1 for b, a in fy21 if abs(b - a) < 1)), aug=aug)
 
 
-# ---------------------------------------------------------------- the journal
-SAL = {c[0] for c in S.CATEGORIES if c[3].startswith('salary lines')}
-
-
-def journal_lines(m):
-    """Every school line, every journal year, with the three flags. Lines by account."""
-    by = collections.defaultdict(dict)
-    for r in m['rows']:
-        if r['account']:
-            by[r['account']][r['fy']] = r
-    out = {}
-    for fy in BFB.YEARS():
-        rows = []
-        for acct, ys in by.items():
-            r = ys.get(fy)
-            if not r:
-                continue
-            budget = r['voted'] + r['transfers'] + r['carried_budget']
-            if budget - r['gf_spent'] != r['left']:
-                fail('FY%d %s: budget less spent is not left' % (fy, acct))
-            vals = (r['voted'], r['transfers'], r['carried_budget'], r['gf_spent'])
-            if all(round(v) == 0 for v in vals):
-                continue
-            own = r['voted'] + r['carried_budget']
-            gap = r['gf_spent'] - own
-            big = lambda v, base: v >= FLOOR and (base <= 0 or v >= SHARE * base)
-            x = dict(fy=fy, r=r, budget=budget, gap=gap, flags={})
-            if r['transfers'] > 0 and big(gap, r['voted']):
-                cov = min(r['transfers'], gap)
-                x['flags']['under'] = dict(gap=gap, covered=cov, uncovered=gap - cov)
-            if (r['transfers'] < 0 or r['left'] > 0) and big(-gap, r['voted']):
-                x['flags']['over'] = dict(unspent=-gap, out=max(-r['transfers'], D0),
-                                          left=max(r['left'], D0))
-            p = ys.get(fy - 1)
-            if p is not None:
-                # LAST YEAR'S SPENDING ON THE LINE, BEFORE RE-CHARGES: a bill the school budget paid
-                # and a journal entry later put on a grant was still this line's spending. Against
-                # the after-re-charge figure, a line a grant took over at year end would read as one
-                # that stopped costing anything (FY2024 special-education paras: -$157,886).
-                ps = p['gf_spent'] + p['moved_off'] - p['moved_on']
-                pb = p['voted'] + p['transfers'] + p['carried_budget']
-                x['prior'] = dict(spent=ps, budget=pb, transfers=p['transfers'], voted=p['voted'],
-                                  recharged=p['moved_off'] - p['moved_on'])
-                if big(r['voted'] - ps, ps):
-                    x['flags']['restart'] = dict(
-                        over=r['voted'] - ps, prior_spent=ps, prior_budget=pb,
-                        recharged=p['moved_off'] - p['moved_on'],
-                        cut=p['transfers'] < 0, above_budget=r['voted'] > pb,
-                        # rule 6: an account that spent nothing, or under half its final budget, the
-                        # year before may have had its cost moved to another account. Marked, not
-                        # dropped: the page says to read its history (THIN, ours).
-                        thin=ps <= 0 or (pb > 0 and ps < THIN * pb))
-            rc = r['moved_off'] - r['moved_on']
-            for k in ('under', 'over'):
-                if k in x['flags']:
-                    x['flags'][k]['recharged'] = rc
-            x['usable'] = (r['voted'] >= 10_000 and r['gf_spent'] >= 1_000
-                           and Decimal('0.02') <= r['gf_spent'] / r['voted'] <= 20)
-            x['sal'] = r['category'] in SAL
-            rows.append(x)
-        out[fy] = rows
-    return out, by
+# ---------------------------------------------------------------- the journal and the workbook
+# The flags, the journal's line-years and the workbook's are line_flags.py's, shared with the FY
+# breakdown, so one rule cannot read two ways on two pages.
+journal_lines = LF.journal_lines
 
 
 def same_way_journal(J_):
@@ -289,15 +230,9 @@ def across(T, B, JL):
                                   bt=T.usd(b), at=T.usd(a), pt=T.pct((a / b - 1) * 100)))
             src = 'books'
         tb, ta = sum(l['b'] for l in lines), sum(l['a'] for l in lines)
-        flags = None
-        if fy in JL:
-            flags = {k: T.num(sum(1 for x in JL[fy] if k in x['flags'])) for k in ('under', 'over', 'restart')}
-            if fy - 1 not in JL:
-                flags['restart'] = '—'
         years.append(dict(fy=T.fy(fy), src=src, lines=sorted(lines, key=lambda l: l['a'] / l['b']),
-                          n=T.num(len(lines)) if lines else '',
                           total=T.pct((ta / tb - 1) * 100, 2) if lines else '',
-                          tr=round(ta / tb, 5) if lines else None, flags=flags))
+                          tr=round(ta / tb, 5) if lines else None))
     ticks = [(0.25, '−75%'), (0.5, '−50%'), (1, 'the vote'), (2, '+100%'), (4, '+300%')]
     return dict(years=years, ticks=[dict(r=r, t=T.lit(t)) for r, t in ticks], lo=0.25, hi=4,
                 text=dict(
@@ -307,167 +242,113 @@ def across(T, B, JL):
                     ledger_note='The school journal, tied to the Town’s year-end report',
                     none_note='The budget documents print the budget in the actual column',
                     sal='Salary lines', oth='Everything else', unk='Not in today’s budget workbook',
-                    total='All the dots together', lines='lines compared',
-                    flags='Lines flagged', under='Underfunded', over='Overbudgeted',
-                    restart='Restarted high', not_read='not read', dash_note=T.lit(
-                        '— : not shown. The budget documents print no transfers, and %s has no '
-                        'year before it in the journal.' % T.fy(min(JL))),
+                    total='All the dots together',
                     clipped='Beyond the edge: drawn at it',
                     hover='Hover or tap a dot for the line'))
 
 
-def flag_text(T):
-    fl_ = T.usd(FLOOR)
-    sh = T.pct(fl(SHARE) * 100, 0, signed=False)
-    return dict(
-        under=dict(name='Underfunded', rule=T.lit(
-            'Budget was transferred in during the year, and the line spent past its vote and any '
-            'orders carried in by at least %s and %s of the vote.' % (fl_, sh)),
-            means='The vote was below what the line cost that year; transfers from other lines closed '
-                  'some or all of the gap.'),
-        over=dict(name='Overbudgeted', rule=T.lit(
-            'The vote and any orders carried in came to at least %s and %s of the vote more than '
-            'the line spent, and budget was moved out or left at year end.' % (fl_, sh)),
-            means='The line was voted more than it spent; the rest went to other lines or into the surplus.'),
-        restart=dict(name='Restarted high', rule=T.lit(
-            'This year’s vote is at least %s and %s above what the same account spent the year '
-            'before, counting bills later re-charged to other funds.' % (fl_, sh)),
-            means='The new budget started above what the line had just cost. Compared with the prior '
-                  'year’s spending and its final budget; both are shown.'),
-        ours=T.lit('Thresholds of ours: %s and %s, the same for all three flags.' % (fl_, sh)),
-        why='A flag is a measurement. Why a line was set where it was is not shown by the books: a '
-            'vacancy, a placement, a price or a plan can each produce it.')
+def short_usd(T, v):
+    """A cell's miss, short enough for a grid of nine years: +$640, −$12k, +$1.2M."""
+    v = float(v)
+    a = abs(v)
+    t = ('$%.0f' % a if a < 1000 else '$%.0fk' % (a / 1000) if a < 999_500
+         else '$%.1fM' % (a / 1_000_000))
+    t = ('+' if v > 0 else '−' if v < 0 else '') + t
+    T.figures.add(t)
+    return t
 
 
-def moves_of(T, r, names):
-    return [dict(date=T.lit(BFB.long_date(x['date'])), memo=T.lit(x['memo'].strip() or 'no memo'),
-                 v=BFB.signed(T, x['amount']),
-                 others=[T.lit(names.get(o['account'], o['description'].strip().title()))
-                         for o in x.get('others', [])][:6])
-            for x in sorted(r['moves_in'], key=lambda x: x['date'])]
-
-
-def year_views(T, B, JL):
-    names = {}
-    for rows in JL.values():
-        for x in rows:
-            names[x['r']['account']] = BFB.line_name(x['r'])
+def grid(T, JL, WL, tied):
+    """EVERY LINE, EVERY YEAR, FY2018 ON: one row per account, one column per year, each cell
+    that year's miss (spent less the vote) with its flags. Workbook years and journal years are
+    each one record; a line-year is never read from both (line_flags.py)."""
+    years = sorted(set(WL) | set(JL))
+    src = {fy: 'ledger' if fy in JL else 'workbook' for fy in years}
+    rows = {}
+    for fy in years:
+        for x in (JL.get(fy) or WL.get(fy)):
+            a = x['r']['account']
+            rows.setdefault(a, dict(cells={}, names={}, cat={}))
+            rows[a]['cells'][fy] = x
+            rows[a]['names'][fy] = LF.line_name(x['r'])
+            rows[a]['cat'][fy] = x['r']['category']
     out = []
-    for fy in sorted(set(BOOK_YEARS) | set(JL)):
-        if fy in JL:
-            rows = []
-            for x in sorted(JL[fy], key=lambda x: (S.CAT_LABEL[x['r']['category']], BFB.line_name(x['r']))):
-                r = x['r']
-                n = dict(voted=r['voted'], transfers=r['transfers'], carried=r['carried_budget'],
-                         budget=x['budget'], spent=r['gf_spent'], left=r['left'])
-                row = dict(name=T.lit(BFB.line_name(r)), account=T.lit(r['account']),
-                           cat=S.CAT_LABEL[r['category']],
-                           n={k: round(fl(v), 2) for k, v in n.items()},
-                           t={k: (BFB.signed(T, v) if k == 'transfers' and v else T.usd(v)) for k, v in n.items()},
-                           f=sorted(x['flags']))
-                fx = x['flags']
-                if 'under' in fx:
-                    u = fx['under']
-                    row['under'] = dict(gap=T.usd(u['gap']), covered=T.usd(u['covered']),
-                                        uncovered=T.usd(u['uncovered']), n=round(fl(u['gap']), 2),
-                                        recharged=BFB.signed(T, -u['recharged']) if round(u['recharged']) else '')
-                if 'over' in fx:
-                    o = fx['over']
-                    row['over'] = dict(unspent=T.usd(o['unspent']), out=T.usd(o['out']),
-                                       left=T.usd(o['left']), n=round(fl(o['unspent']), 2),
-                                       recharged=BFB.signed(T, -o['recharged']) if round(o['recharged']) else '')
-                if 'restart' in fx:
-                    h = fx['restart']
-                    row['restart'] = dict(over=T.usd(h['over']), prior_spent=T.usd(h['prior_spent']),
-                                          prior_budget=T.usd(h['prior_budget']), cut=h['cut'],
-                                          above_budget=h['above_budget'], thin=h['thin'],
-                                          recharged=BFB.signed(T, -h['recharged']) if round(h['recharged']) else '',
-                                          n=round(fl(h['over']), 2))
-                if 'prior' in x:
-                    row['prior'] = dict(spent=T.usd(x['prior']['spent']), budget=T.usd(x['prior']['budget']))
-                if r['moves_in'] and fx:
-                    row['moves'] = moves_of(T, r, names)
-                rows.append(row)
-            new = sum(1 for x in JL[fy] if 'prior' not in x and x['r']['voted'] > 0)
-            out.append(dict(fy=T.fy(fy), src='ledger', rows=rows,
-                            counts={k: T.num(sum(1 for x in JL[fy] if k in x['flags']))
-                                    for k in ('under', 'over', 'restart')},
-                            new=T.lit('%s lines on an account the year before did not have: never '
-                                      'flagged restarted high.' % T.num(new)) if fy - 1 in JL else None,
-                            no_restart=T.lit('Not shown for %s: %s is not in the school journal this '
-                                             'page reads, so no line has a year before it.'
-                                             % (T.fy(fy), T.fy(fy - 1))) if fy - 1 not in JL else None,
-                            totals=dict(voted=T.usd(sum((x['r']['voted'] for x in JL[fy]), D0)),
-                                        spent=T.usd(sum((x['r']['gf_spent'] for x in JL[fy]), D0)),
-                                        left=T.usd(sum((x['r']['left'] for x in JL[fy]), D0)))))
-            continue
-        rows = []
-        for (k, y), v in B['cell'].items():
-            if y != fy or 'settled' not in v or 'restated' not in v:
+    for a, v in rows.items():
+        last = max(v['names'])
+        cells, tot, nf = [], D0, 0
+        for fy in years:
+            x = v['cells'].get(fy)
+            if x is None:
+                cells.append(None)
                 continue
-            b, a = v['settled'], v['restated']
-            if fy == 2021:
-                why = 'actual printed as the budget'
-            elif usable(fy, b, a):
-                why = ''
-            elif b[1] or a[1]:
-                why = 'documents disagree'
-            elif b[0] < 10_000:
-                why = 'budget under %s' % T.usd(10_000)
-            else:
-                why = 'not comparable'
-            rows.append(dict(name=T.lit(B['label'][k]), b=round(b[0]), a=round(a[0]),
-                             bt=T.usd(b[0]), at=T.usd(a[0]), dt=BFB.signed(T, round(a[0] - b[0])),
-                             d=round(a[0] - b[0]),
-                             pt=T.pct((a[0] / b[0] - 1) * 100) if b[0] else '', why=T.lit(why)))
-        rows.sort(key=lambda r: -r['b'])
-        out.append(dict(fy=T.fy(fy), src='none' if fy == 2021 else 'books', rows=rows,
-                        counted=T.num(sum(1 for r in rows if not r['why']))))
+            r = x['r']
+            miss = r['gf_spent'] - r['voted']
+            tot += abs(miss)
+            nf += 1 if x['flags'] else 0
+            cells.append([short_usd(T, miss), ''.join(k[0] for k in LF.KEYS if k in x['flags']),
+                          round(fl(r['gf_spent'] / r['voted']), 3) if r['voted'] > 0 else None,
+                          T.usd(r['voted']), T.usd(r['gf_spent'])])
+        out.append(dict(name=T.lit(v['names'][last]), account=T.lit(a), cat=S.CAT_LABEL[v['cat'][last]],
+                        c=cells, s=round(fl(tot)), nf=nf))
+    out.sort(key=lambda r: (-r['s'], r['name']))
+    first_j = min(JL)
+    cols = []
+    for fy in years:
+        rs = JL.get(fy) or WL.get(fy)
+        cnt = {k: sum(1 for x in rs if k in x['flags']) for k in LF.KEYS}
+        no_restart = fy - 1 not in JL and fy in JL
+        cols.append(dict(fy=T.fy(fy), src=src[fy],
+                         href='/school-all-funds/fy-breakdown?fy=%s' % C.fy(fy) if fy in JL else None,
+                         n={k: ('—' if k == 'restart' and no_restart else LF._num(T, cnt[k])) for k in LF.KEYS},
+                         lines=LF._num(T, len(rs))))
+    ftext = LF.flag_text(T)
+    tie = ' and '.join('%s lines in %s' % (LF._num(T, n), T.fy(fy)) for fy, n in tied)
+    return dict(years=cols, rows=out, flags={k: ftext[k]['name'] for k in LF.KEYS}, text=dict(
+        workbook=T.lit('Finance Committee workbook'), ledger=T.lit('School journal'),
+        workbook_note=T.lit(
+            '%s to %s: the Finance Committee’s workbook, built from MUNIS exports a year at a time. '
+            'Assembled by a person, so stated, not proof. Read against the journal where both exist, '
+            'it gives the same vote, transfers, final budget and spending on every line: %s.'
+            % (T.fy(min(WL)), T.fy(max(WL)), tie)),
+        workbook_restart=T.lit(
+            'In the workbook years, last year’s spending is after re-charges to other funds: the '
+            'workbook cannot show them. From %s it is before them.' % T.fy(first_j + 1)),
+        no_restart=T.lit('%s: no restarted-high count. %s is in the workbook, not the journal, and a '
+                         'flag reads one record.' % (T.fy(first_j), T.fy(first_j - 1))),
+        ledger_note='From the school journal, every line tied to the Town’s year-end report.',
+        cell='Each cell: spent less the vote that year. Shaded by how far, against the vote.',
+        open_year='Open the year in the FY breakdown',
+        line='School line', cat='Category', flagged_years='Years flagged',
+        filter='Find a line', every='Every line', only='Flagged in any year',
+        show_all='Show every line', show_fewer='Show the largest', lines_n='lines',
+        sort='Sorted by the size of its misses, all years together; click a heading to sort',
+        none='not on this account that year',
+        mark=dict(u='U', o='O', r='R'), over='spent past the vote', under='spent under the vote',
+        scroll='More years: scroll the table sideways'))
+
+
+def fund_series(JL):
+    """The whole school general fund, FY2010 on: what its final budget left unspent, workbook
+    years then journal years, on one footing (carried from the retired school-budget-against-
+    actual page, 30 October 2026)."""
+    wt = LF.workbook_totals()
+    out = {}
+    for fy, (b, sp) in wt.items():
+        if fy not in JL:
+            out[fy] = ('workbook', b, sp)
+    for fy in JL:
+        out[fy] = ('ledger', sum((x['budget'] for x in JL[fy]), D0), sum((x['r']['gf_spent'] for x in JL[fy]), D0))
+    for fy in set(wt) & set(JL):
+        jb, js = out[fy][1], out[fy][2]
+        if abs(wt[fy][0] - jb) > 1 or abs(wt[fy][1] - js) > 1:
+            fail('FY%d: the workbook’s school fund reads %s / %s, the journal %s / %s'
+                 % (fy, wt[fy][0], wt[fy][1], jb, js))
+    ys = sorted(out)
+    if ys != list(range(ys[0], ys[-1] + 1)):
+        fail('the school fund series has a hole: %s' % ys)
+    if any(b - sp <= 0 for _, b, sp in out.values()):
+        fail('a year spent past its final budget; the page says none did')
     return out
-
-
-def year_text(T, JL, B):
-    first = min(JL)
-    return dict(
-        banner_books=T.lit('From the district’s budget documents only. They print no mid-year '
-                           'transfers and no account numbers, so the three flags are not shown. The '
-                           'accounting system’s figures for each line this year are in a Finance '
-                           'Committee workbook this page does not read yet.'),
-        banner_none=T.lit('From the district’s budget documents only, and not comparable: in %s of '
-                          '%s lines the documents print this year’s budget, to the dollar, in the '
-                          'column headed actual.' % (T.num(B['fy21'][1]), T.num(B['fy21'][0]))),
-        banner_ledger=T.lit('From the school journal: the Town’s accounting system, every line tied '
-                            'to its year-end report. Spent counts orders still owed at 30 June.'),
-        not_shown='Not shown for this year: it needs each line’s transfers, which the budget documents do not print.',
-        not_shown_restart='Not shown for this year: this flag matches lines by account number, and the '
-                          'budget documents print names, not accounts.',
-        books_cols=dict(name='Line, as the documents name it', b='Budget', a='Actual', d='Difference',
-                        p='Against budget', why='Counted'),
-        books_counted='lines counted across the years', yes='counted', no_link=T.lit(
-            'Lines here are the district’s printed names, not account numbers, so they do not link '
-            'to a line’s page; those pages begin in %s.' % T.fy(first)),
-        cols=dict(name='School line', cat='Category', voted='Voted', transfers='Transfers',
-                  carried='Carried in', budget='Final budget', spent='Spent', left='Left', flags='Flags'),
-        means=dict(
-            voted='What Town Meeting voted for this line.',
-            transfers='Budget moved to or from other lines during the year.',
-            carried='Last year’s orders still owed, carried in with the money to pay them.',
-            budget='Voted, plus transfers, plus carried in.',
-            spent=T.lit('Payments, plus orders still owed at 30 June.'),
-            left='Final budget less spent. Above zero it added to the surplus.'),
-        flagged='flagged', every='Every line', only='Flagged lines only', filter='Find a line',
-        show_all='Show every flagged line', show_fewer='Show the largest', open='Its page',
-        gap='Spent past the vote', covered='Covered by transfers', uncovered='Not covered',
-        unspent='Not spent', moved_out='Moved out', left_end='Left at year end',
-        over_by='Vote above last year’s spending', prior_spent='Spent the year before',
-        prior_budget='Final budget the year before',
-        cut='Budget was moved off it the year before',
-        above='Above last year’s final budget too', below='At or below last year’s final budget',
-        thin=T.lit('Spent under half its final budget the year before (a mark of ours): its history '
-                   'may show the cost moved to another account.'),
-        recharged='Re-charged to other funds after the school budget paid',
-        transfers='Transfers', other_side='with', none='None this year.',
-        total='All lines', lines_n='lines', sort='Click a heading to sort')
 
 
 # ---------------------------------------------------------------- the page
@@ -520,6 +401,12 @@ def page(m=None):
               for fy in ys}
     usable_n = {fy: sum(1 for x in JL[fy] if x['usable']) for fy in ys}
 
+    WL, tied = LF.workbook_lines(JL, by)
+    fund = fund_series(JL)
+    f0, f1 = min(fund), max(fund)
+    BV = B['aug']
+    ly, w2 = BV['coverage']['line_years'], BV['within_2pct']
+
     f = LD.fact
     span = '%s–%s' % (C.fy(first), C.fy(last))
     bspan = '%s–%s' % (C.fy(min(B['by_year'])), C.fy(max(B['by_year'])))
@@ -537,14 +424,17 @@ def page(m=None):
           label_figures={'n': N(len(full), 'lines'), 'y': N(len(ys), 'years')}),
         f('bsame', N(B['same'], 'lines'), 'lines of %d missing the same way every year, documents'
           % B['multi'], 'published', label_figures={'n': N(B['multi'], 'lines')}),
+        f('w2', N(w2, 'line-years'), 'line-years of %d within 2%% of budget, documents' % ly,
+          'published', label_figures={'n': N(ly, 'line-years')}, allow=('2%',)),
         f('thi', P(t_hi), 'out-of-district tuition, its worst year over', 'published'),
         f('tlo', P(t_lo), 'out-of-district tuition, its worst year under', 'published'),
-        f('cut', N(len(after_cut), 'line-years'), 'restarted high after budget was moved off them',
-          'published'),
-        f('cuts', N(len(cut_lines), 'line-years'), 'line-years that gave budget up mid-year', 'published'),
+        f('cut', N(len(after_cut), 'line-years'), 'of %d giving budget up, restarted high next year'
+          % len(cut_lines), 'published', label_figures={'n': N(len(cut_lines), 'line-years')}),
         f('track', N(within[last], 'lines'), 'lines of %d within 2%% of their vote, %s'
           % (usable_n[last], C.fy(last)), 'published',
           label_figures={'y': F(last), 'n': N(usable_n[last], 'lines')}, allow=('2%',)),
+        f('fund', N(len(fund), 'years'), 'years of %d the school fund spent under its final budget'
+          % len(fund), 'published', label_figures={'n': N(len(fund), 'years')}),
     ]
 
     def con(text, rests, figs, so, so_figs=None):
@@ -556,7 +446,7 @@ def page(m=None):
             'A salary vote leaves room the year usually does not use; that room is where a surplus '
             'starts. Why, post by post, the books do not say.'),
         con('Only %d of %d lines missed the same way in all %d journal years; in the documents, %d of %d.'
-            % (len(same), len(full), len(ys), B['same'], B['multi']), ['jsame', 'bsame'],
+            % (len(same), len(full), len(ys), B['same'], B['multi']), ['jsame', 'bsame', 'w2'],
             {'a': N(len(same), 'lines'), 'b': N(len(full), 'lines'), 'y': N(len(ys), 'years'),
              'c': N(B['same'], 'lines'), 'd': N(B['multi'], 'lines')},
             'Lines miss in both directions and cancel; a total near its vote says little about any line in it.'),
@@ -565,16 +455,24 @@ def page(m=None):
             {'a': P(t_hi), 'b': P(t_lo), 'x': F(min(btu)), 'y': F(last)},
             'No trend to project: the site’s projection holds this line flat rather than growing it at a rate.'),
         con('%d of %d times a line gave budget up mid-year, its next vote was %s or more above its spending.'
-            % (len(after_cut), len(cut_lines), C.pct(fl(SHARE) * 100, 0)), ['cut', 'cuts'],
+            % (len(after_cut), len(cut_lines), C.pct(fl(SHARE) * 100, 0)), ['cut'],
             {'a': N(len(after_cut), 'line-years'), 'b': N(len(cut_lines), 'line-years'),
              's': figure(fl(SHARE) * 100, C.pct(fl(SHARE) * 100, 0), '%')},
             'Each is a question for the next budget: was the cut a one-year saving, or a line set high?'),
     ]
     yrs = sorted(set(BOOK_YEARS) | set(JL))
     sig = across(T, B, JL)
-    views = year_views(T, B, JL)
-    ftext = flag_text(T)
-    ytext = year_text(T, JL, B)
+    G = Texts()
+    gr = grid(G, JL, WL, tied)
+    fsrc = lambda k: [fl(fund[y][1] - fund[y][2]) if fund[y][0] == k else None for y in sorted(fund)]
+    fund_chart = TP.series(
+        'What the school fund left unspent', [C.fy(y) for y in sorted(fund)],
+        [TP.track('Finance Committee workbook', fsrc('workbook'), 'stated', 'bar'),
+         TP.track('School journal', fsrc('ledger'), 'published', 'bar')], '$', kind='bar',
+        note='The school general fund, final budget less spent, orders still owed counted. The '
+             'workbook to %s, the journal from %s; where both exist they agree.'
+             % (C.fy(first - 1), C.fy(first)),
+        note_figures={'a': F(first - 1), 'b': F(first)})
     blocks = [
         TB.custom('bva-across', 'Every line, every year', sig, place='lead',
                   figures=sorted(T.figures), allow=sorted(T.literals),
@@ -582,35 +480,35 @@ def page(m=None):
                   alt='Dot chart, one column per fiscal year from %s to %s: each dot one school line, '
                       'placed by what it spent against what it was voted, salary lines and the rest in '
                       'two colours, with a mark for all the lines together; the years from the budget '
-                      'documents and from the accounting system shaded apart, and a row of flag counts '
-                      'under each journal year' % (C.fy(yrs[0]), C.fy(yrs[-1])),
+                      'documents and from the accounting system shaded apart' % (C.fy(yrs[0]), C.fy(yrs[-1])),
                   so=('Each year’s mark sits near the vote while its dots spread far above and below '
                       'it: the total is quiet because lines miss both ways and cancel.', None, ())),
-        TB.custom('fy-year-picker', 'Fiscal year', dict(
-            bare=True, years=[C.fy(y) for y in yrs], label='Change year',
-            spans={C.fy(y): '1 July %d to 30 June %d' % (y - 1, y) for y in yrs}),
-                  place='end', figures=[C.fy(y) for y in yrs],
-                  allow=['1 July %d to 30 June %d' % (y - 1, y) for y in yrs],
-                  alt='The fiscal year the line-by-line view below shows',
-                  so=('The view below shows the year picked here; how much it can show depends on '
-                      'which record holds that year.', None, ())),
-        TB.custom('bva-year', 'Line by line', dict(years=views, flags=ftext, text=ytext),
-                  place='end', figures=sorted(T.figures), allow=sorted(T.literals),
-                  basis=('record', 'Each line’s vote, transfers and spending, from the record named in the banner'),
-                  alt='For the fiscal year picked: a banner naming the record it comes from; for a '
-                      'journal year, the lines flagged underfunded, overbudgeted and restarted high, '
-                      'each with its figures and threshold, then every school line with voted, '
-                      'transfers, carried in, final budget, spent and left; for a budget-document '
-                      'year, every line’s budget against its actual',
-                  so=('A flag marks where the vote and the year parted; the transfers listed under it '
-                      'show where the budget went. The books do not record why.', None, ())),
-        TB.explain('How the two records differ', [
+        TB.custom('bva-grid', 'Each line, year by year', gr, place='lead',
+                  figures=sorted(G.figures), allow=sorted(G.literals),
+                  basis=('record', 'The Finance Committee workbook, then the school journal; a year from one only'),
+                  alt='Table, one row per school line and one column per fiscal year from %s to %s: each '
+                      'cell what the line spent less what it was voted that year, shaded by how far, '
+                      'marked U, O or R where it was flagged underfunded, overbudgeted or restarted '
+                      'high; each column headed with its flag counts, and the journal years linking to '
+                      'that year in the FY breakdown' % (C.fy(min(WL)), C.fy(last)),
+                  so=('A line flagged year after year is a pattern in how it is budgeted; one flagged '
+                      'once is a year’s event, and that year’s FY breakdown shows what moved.', None, ())),
+        TB.chart(fund_chart, place='end',
+                 so=('Every bar is above zero: the fund as a whole never spent past its final budget, '
+                     'while the lines inside it missed both ways.', None, ())),
+        TB.explain('How the three records differ', [
             ('**The budget documents** print a budget and an actual column the district wrote. Lines '
              'are read with the rules of the August analysis: a line under $10,000, a cell two '
-             'documents disagree about, and FY2021 are not counted.', None, ('$10,000', 'FY2021')),
+             'documents disagree about, and FY2021 are not counted. The dot chart reads them.',
+             None, ('$10,000', 'FY2021')),
+            ('**The Finance Committee workbook** pastes per-year MUNIS exports side by side, by '
+             'account, with transfers. A person assembled it, so it is stated, not proof; in %s and '
+             '%s it equals the journal on every line. The grid reads it before %s.'
+             % (C.fy(tied[0][0]), C.fy(tied[1][0]), C.fy(first)),
+             {'a': F(tied[0][0]), 'b': F(tied[1][0]), 'c': F(first)}, ()),
             '**The school journal** is the Town’s own accounting record, and every line here ties to '
-            'its year-end report. It records transfers between lines, which the documents never do.',
-            '**They are never added together.** Where both cover a year, this page reads the journal.',
+            'its year-end report. It also records re-charges to other funds, which the workbook does not.',
+            '**They are never added together.** A line-year is read from one record only.',
         ], place='end', tone='define'),
     ]
     tu_chart = TP.series(
@@ -622,14 +520,30 @@ def page(m=None):
         note='Spent against the vote, private and collaborative tuition together. The documents’ '
              'years before the journal; the journal’s from %s.' % C.fy(first),
         note_figures={'y': F(first)})
+    # CARRIED FROM THE RETIRED line-level-misses PAGE (30 October 2026): the lines the August
+    # report found missing the same way in every year it measured.
+    sw_ = sorted(BV['same_way'], key=lambda r: r['mean_dollars'])
+    table = dict(caption='Lines that missed the same way every year', views=[dict(
+        key='same', label='Budget documents, four or more years', total_col=-1, kinds=['stated'] * 3,
+        columns=['Direction', 'Years', 'Average a year'],
+        rows=[dict(label=r['line'], cells=[r['direction'], C.num(r['years']), C.usd(r['mean_dollars'])])
+              for r in sw_],
+        note='Each year’s budget against the same year’s actual, out of the district’s own budget '
+             'documents. A line counts only if it was more than %s off in every year.'
+             % C.pct(100 * BV['coverage']['same_way_threshold'], 0))])
     return TP.page(
         ID,
         'School lines land near their vote in total every year, and far from it one by one, in '
         'both directions.',
-        facts, conclusions, chart=tu_chart, blocks=blocks,
+        facts, conclusions, chart=tu_chart, table=table, blocks=blocks,
         sources=[
             dict(label='Lunenburg Budget Project — line-history.csv (every line the district’s '
                        'budget documents print, budget and actual)', href='/data/line-history.csv'),
+            dict(label='Finance Committee — General fund budget against actuals, %s, by account '
+                       '(a workbook assembled from MUNIS exports; stated)' % ('%s–%s' % (C.fy(2010), C.fy(2025))),
+                 href='/docs/budget-workbooks/finance-committee/fy26-budget/general-fund-budget-vs-actuals-history.xlsx'),
+            dict(label='Lunenburg Budget Project — gl-history.csv (that workbook, one row an account '
+                       'a year)', href='/docs/data/gl-history.csv'),
             dict(label='Lunenburg Budget Project — munis-school-journal.csv (every school journal '
                        'line, %s)' % span, href=J.PUBLIC['journal']),
             dict(label='Town of Lunenburg — school general fund period-13 reports, %s (each line '
@@ -637,9 +551,6 @@ def page(m=None):
             dict(label='Lunenburg Budget Project — Budget versus actual, August 2026 (the findings '
                        'from the budget documents carried over here)',
                  href='/docs/analyses/budget-vs-actual.md')],
-        # LISTED (TJ, 29 October 2026, by way of the coordinator: built as a normal page now that
-        # the FY breakdown goes public). Registered in scripts/topic_registry/school_all_funds.py;
-        # the draft form remains only so the page still builds before that registration exists.
         draft=None if ID in REG.TOPICS else dict(title='School lines against budget', home='school-all-funds'))
 
 
@@ -649,7 +560,8 @@ def render(m=None):
         'Why any line was voted above or below what it spent: a vacancy, a placement, a price '
         'change and a plan all produce the same figures.',
         'Which line a renamed line continued: lines are matched by account number only.',
-        'Transfers before %s: the Finance Committee workbook that holds them is not read here yet.'
+        'Re-charges to other funds before %s: the Finance Committee workbook carries the general '
+        'fund only, so a workbook year’s restarted-high flag reads spending after them.'
         % C.fy(min(BFB.YEARS())),
     ]
     return json.dumps(p, ensure_ascii=False, sort_keys=True, separators=(',', ':')) + '\n'

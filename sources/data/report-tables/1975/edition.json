@@ -1,0 +1,122 @@
+{
+  "edition": "1975",
+  "fy": 1975,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1975 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION, whose financial statements are for fiscal 1975 -- see periods",
+  "stem": "4497-1975-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4497-1975-annual-town-report.pdf",
+  "label": "1975 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4497-1975-annual-town-report.cells.tsv",
+  "dash_zero": true,
+  "accountant_marks_wide": true,
+  "year_labels": true,
+  "colon_heading_subtotals": true,
+  "receipts_stop_at_grand": true,
+  "recon_no_transfers": true,
+  "cash_book_list": true,
+  "periods": [
+    {
+      "what": "voted omnibus budget and special articles",
+      "period": "fiscal year 1976, as VOTED at the Annual Town Meeting of April 5, 1975 (a budget, not an actual)",
+      "cited": "p41: `Excerpts From Annual Town Meeting Minutes / April 5, 1975`; p42: `Article 5 ... the Town for Fiscal Year 1976`; p43: `TOTAL BUDGET VOTED: $4,192,790.00`"
+    },
+    {
+      "what": "general fund balance sheet",
+      "period": "June 30, 1975",
+      "cited": "p52: `Balance Sheet - June 30, 1975 / GENERAL ACCOUNTS`"
+    },
+    {
+      "what": "trust funds and investment accounts in custody",
+      "period": "June 30, 1975",
+      "cited": "p55: `TRUST AND INVESTMENT ACCOUNTS`; p81: `Trust Funds / July 1, 1974 through June 30, 1975`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation",
+      "period": "fiscal year 1975, July 1, 1974 - June 30, 1975",
+      "cited": "p56: `Reconciliation of Treasurer's Cash`; `Balance June 30, 1974`; `Receipts July 1, 1974 through June 30, 1975`; `Balance June 30, 1975 per cash book`"
+    },
+    {
+      "what": "detailed statement of receipts",
+      "period": "July 1, 1974 through June 30, 1975",
+      "cited": "p56: `Receipts July 1, 1974 through June 30, 1975`; p60: `Total Receipts: $13,413,744.46`"
+    },
+    {
+      "what": "detailed statement of payments",
+      "period": "July 1, 1974 through June 30, 1975",
+      "cited": "p61: `Detailed Statement of Payments / July 1, 1974 through June 30, 1975`"
+    },
+    {
+      "what": "general revenue sharing balance sheet, reconciliation, receipts and payments",
+      "period": "June 30, 1975 (balance sheet); July 1, 1974 through June 30, 1975 (flows)",
+      "cited": "p65: `General Revenue Sharing / Balance Sheet / June 30, 1975`; `Receipts July 1, 1974 through June 30, 1975`; p66: `Detailed Statement of Receipts / FEDERAL REVENUE SHARING FUNDS / July 1, 1974 through June 30, 1975`"
+    },
+    {
+      "what": "bonded indebtedness by issue",
+      "period": "through fiscal 1976",
+      "cited": "p67: `Due Fiscal 1976`, `Total Pmts. thru Fiscal 1976`, `BALANCE 6-30-76`"
+    },
+    {
+      "what": "debt repayment schedule",
+      "period": "payments FY1977-FY1988",
+      "cited": "p67: `FISCAL YEAR` column 1977 ... 1988 beside `MIDDLE SCHOOL` and `CONSERVATION LAND`"
+    },
+    {
+      "what": "accountant's summary and classification of accounts",
+      "period": "July 1, 1974 through June 30, 1975",
+      "cited": "p68: `Summary and Classification of Accounts / July 1, 1974 through June 30, 1975`; column `Balance to Fiscal 1976`"
+    },
+    {
+      "what": "tax collector's report",
+      "period": "July 1, 1974 - June 30, 1975",
+      "cited": "p80: `Tax Collector's Report - July 1, 1974 - June 30, 1975`"
+    },
+    {
+      "what": "trust funds",
+      "period": "July 1, 1974 through June 30, 1975",
+      "cited": "p81: `Trust Funds / July 1, 1974 through June 30, 1975`; p82-83: `June 30, 1974 Balance` ... `Balance June 30, 1975`"
+    },
+    {
+      "what": "school lunch program",
+      "period": "school year 1974-75 (September 1974 - June 1975 meals; July 1974 - June 1975 finances)",
+      "cited": "p144: `LUNENBURG SCHOOL LUNCH PROGRAM REPORT for 1974-75`; `OPENING CASH BALANCE, July 1, 1974`; `BALANCE ON HAND, 7/1/75`"
+    },
+    {
+      "what": "school department statistics",
+      "period": "school year ending June 30, 1975",
+      "cited": "p145: `Statistics / FOR SCHOOL YEAR ENDING JUNE 30, 1975`"
+    },
+    {
+      "what": "school department summary of accounts",
+      "period": "FY-75 appropriation and spent (July 1, 1974 - June 30, 1975); FY-76 budget request",
+      "cited": "p146: `SUMMARY OF ACCOUNTS / COVERING - Period July 1, 1974 June 30, 1975`; `FY-76 BUDGET REQUEST`"
+    },
+    {
+      "what": "school monies returned to the Town",
+      "period": "actual receipts 1974-75 (7/1/74-6/30/75); estimated receipts FY-76 (7/1/75-6/30/76)",
+      "cited": "p147: `Actual Receipts 1974-75 (7/1/74-6/30/75)`, `ESTIMATED RECEIPTS FY-76 (7/1/75-6/30/76)`"
+    },
+    {
+      "what": "school special accounts",
+      "period": "FY-75 appropriation and spent 1974-75; FY-76 request",
+      "cited": "p148: `SUMMARY OF SPECIAL ACCOUNTS (July 1, 1974 - June 30, 1975)`; `FY-76 REQUEST`"
+    },
+    {
+      "what": "cemetery fees",
+      "period": "as amended; no date printed on the table",
+      "cited": "p13: `CEMETERY RULES AND REGULATIONS / AS AMENDED`"
+    },
+    {
+      "what": "property tax exemptions",
+      "period": "statutory clauses in force; no date printed",
+      "cited": "p9: Assessors' text listing `Section 17 ... Clause 61 A-Section 9`"
+    }
+  ],
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true
+}

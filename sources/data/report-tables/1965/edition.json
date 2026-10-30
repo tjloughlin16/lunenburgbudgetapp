@@ -1,0 +1,125 @@
+{
+  "edition": "1965",
+  "fy": 1965,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1965 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION whose financial statements are for the calendar year ended December 31, 1965 -- see periods",
+  "stem": "4508-1965-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4508-1965-annual-town-report.pdf",
+  "label": "1965 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4508-1965-annual-town-report.cells.tsv",
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true,
+  "periods": [
+    {
+      "what": "town facts, committees and meeting schedule",
+      "period": "the edition's year, 1965; valuation and tax rate carry no printed year",
+      "cited": "p4: `About the Town`, `Population, 1965: 7,321`, `Tax Rate: $89.00`"
+    },
+    {
+      "what": "assessed valuation and tax rate history",
+      "period": "calendar years 1950-1965",
+      "cited": "p8: table header `Year | Assessed Valuation | ... | Tax Rate` rows 1950 ... 1965"
+    },
+    {
+      "what": "Town Clerk, Tax Collector and Treasurer activity counts",
+      "period": "calendar 1965",
+      "cited": "p12: `Total Treasurer's Receipts $2,712,954.04`, `Total Payroll`; the report's year"
+    },
+    {
+      "what": "pie legends of the 1965 tax dollar",
+      "period": "calendar 1965",
+      "cited": "p18: `Where Did Your 1965 Tax Dollar Go?`; p19: `Analysis of Treasurer's Receipts and Payments`, `We Received 1965`"
+    },
+    {
+      "what": "general fund balance sheet, debt accounts and trust and investment accounts",
+      "period": "December 31, 1965",
+      "cited": "p20: `Town of Lunenburg Balance Sheet December 31, 1965`; p22: `Debt Accounts`, `Trust and Investment Accounts`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation",
+      "period": "calendar year, January 1 - December 31, 1965",
+      "cited": "p23: `Reconciliation of Treasurer's Cash`, `Balance December 31, 1964`, `Receipts January 1 thru December 31, 1965`, `Disbursements January 1 thru December 31, 1965`"
+    },
+    {
+      "what": "detailed statement of receipts",
+      "period": "year ending December 31, 1965",
+      "cited": "p23: `Detailed Statement of Receipts For Year Ending December 31, 1965`; p26: `Total Receipts $2,712,954.04`"
+    },
+    {
+      "what": "detailed statement of payments",
+      "period": "year ending December 31, 1965",
+      "cited": "p27: `Detailed Statement of Payments For Year Ending December 31, 1965`; p30: `Total Payments $2,813,603.77`"
+    },
+    {
+      "what": "tax collector's report",
+      "period": "calendar 1965, by levy year 1963, 1964, 1965",
+      "cited": "p30: levy-year rows `1963`, `1964`, `1965`; `Grand Total Collected 1965`"
+    },
+    {
+      "what": "accountant's summary and classification of accounts",
+      "period": "calendar 1965 (the carry-forward column is `Balance to 1966`)",
+      "cited": "p31: `Summary and Classification of Accounts`, column `Balance to 1966`; no year is printed in the heading"
+    },
+    {
+      "what": "bonded indebtedness and debt repayment schedules",
+      "period": "payments to December 31, 1965; due 1966-1970",
+      "cited": "p44: `1965 Interest`, `Bal. Prin. 12-31-65`; rows `1966` ... `1970`"
+    },
+    {
+      "what": "trust funds",
+      "period": "December 31, 1964 to December 31, 1965",
+      "cited": "p46: `December 31, 1964 ... Balance December 31, 1965`; p47 likewise"
+    },
+    {
+      "what": "analysis of revenue accounts and surplus revenue",
+      "period": "calendar years 1960-1965",
+      "cited": "p50: columns `1960 1961 1962 1963 1964 1965`; row `14. Balance 12/31`"
+    },
+    {
+      "what": "police department activity",
+      "period": "calendar years 1955, 1960, 1965",
+      "cited": "p51: `Year 1955 1960 1965`"
+    },
+    {
+      "what": "welfare department table",
+      "period": "calendar 1965",
+      "cited": "p67: column `Expended 1965`"
+    },
+    {
+      "what": "voted omnibus budget and special articles",
+      "period": "calendar year 1965, as VOTED at the Annual Town Meeting of March 6, 1965 (a budget, not an actual)",
+      "cited": "p75: `Annual Town Meeting March 6, 1965`; p76: `Article 3 ... to fix for the calendar year 1965`; p77: `TOTAL BUDGET VOTED: $1,427,565.00`"
+    },
+    {
+      "what": "school department statistics",
+      "period": "school year ending June 30, 1965",
+      "cited": "p110: `Statistics ... YEAR ENDING JUNE 30, 1965`"
+    },
+    {
+      "what": "school department summary of accounts and budget request",
+      "period": "1965 appropriation and spent (calendar 1965); 1966 appropriation request",
+      "cited": "p111: `APPROPRIATION 1965 | SPENT 1965 | APPROPRIATION 1966`; p111 `Balance on Hand, Dec. 31, 1965`"
+    },
+    {
+      "what": "school special accounts and roll-forwards",
+      "period": "1965 appropriation and spending; calendar 1965 receipts and expenditures; 1966 request",
+      "cited": "p112: `APPROPRIATION 1965 | SPENT 1965 | APPROPRIATION 1966`; p114-115: `Balance on Hand, January 1, 1965` ... `BALANCE ON HAND, December 31, 1965`"
+    },
+    {
+      "what": "school earnings and request less earnings",
+      "period": "earnings during 1965; 1966 appropriation request",
+      "cited": "p113: `EARNINGS DURING 1965`, `1966 General Appropriation`"
+    },
+    {
+      "what": "school lunch program",
+      "period": "school year September 1964 - June 1965",
+      "cited": "p134: `LUNENBURG SCHOOL LUNCH REPORT for 1964-65`; `BALANCE ON HAND, September 1, 1964`"
+    }
+  ]
+}

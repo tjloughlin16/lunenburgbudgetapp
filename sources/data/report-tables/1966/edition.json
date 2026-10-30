@@ -1,0 +1,110 @@
+{
+  "edition": "1966",
+  "fy": 1966,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1966 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION whose financial statements are for the calendar year ended December 31, 1966 -- see periods",
+  "stem": "4509-1966-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4509-1966-annual-town-report.pdf",
+  "label": "1966 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4509-1966-annual-town-report.cells.tsv",
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true,
+  "periods": [
+    {
+      "what": "general fund balance sheet",
+      "period": "December 31, 1966",
+      "cited": "p18: `Town of Lunenburg Balance Sheet December 31, 1966`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation and cash by bank",
+      "period": "January 1 - December 31, 1966",
+      "cited": "p21: `Balance December 31, 1965`, `Receipts January 1 thru December 31, 1966`, `Balance December 31, 1966 per cash book`"
+    },
+    {
+      "what": "detailed statement of receipts",
+      "period": "calendar year 1966, closing `Total Receipts` $2,934,351.10",
+      "cited": "p21-24: opens under `Reconciliation of Treasurer's Cash` (no separate heading is printed); `Total Receipts` on p24"
+    },
+    {
+      "what": "detailed statement of payments",
+      "period": "calendar year 1966",
+      "cited": "p25: `Detailed Statement of Payments / For Year Ending December 31, 1966`"
+    },
+    {
+      "what": "Tax Collector's report",
+      "period": "levy years 1963-1966, balances at the year end",
+      "cited": "p28: rows `1963` ... `1966` under `Commitments | Collected | Abated | Refunds | Tax Titles | Balance`"
+    },
+    {
+      "what": "accountant's summary of appropriations and expenditures",
+      "period": "calendar 1966, carried to 1967",
+      "cited": "p29: `Summary of Appropriations & Expenditures December 31, 1966`; column `Balance to -1967`"
+    },
+    {
+      "what": "bonded indebtedness",
+      "period": "payments to December 31, 1966; payments due 1967-1970",
+      "cited": "p33: `Bal. Prin. 12-31-66`, `1966 Interest`; schedule rows `1967` ... `1970`"
+    },
+    {
+      "what": "trust funds",
+      "period": "December 31, 1965 to December 31, 1966",
+      "cited": "p35: `Balance December 31, 1966`; p36: `Balance December 31, 1966`"
+    },
+    {
+      "what": "analysis of revenue accounts",
+      "period": "calendar years 1961-1966",
+      "cited": "p38: columns `1961 | 1962 | 1963 | 1964 | 1965 | 1966`"
+    },
+    {
+      "what": "welfare",
+      "period": "calendar year 1966",
+      "cited": "p55: `Expended 1966`"
+    },
+    {
+      "what": "classification and salary schedule (a proposal)",
+      "period": "the schedule to be voted on March 4, 1967",
+      "cited": "p60: `CLASSIFICATION AND SALARY SCHEDULE - to be voted on at Annual Meeting on March 4, 1967`"
+    },
+    {
+      "what": "voted budget and special articles",
+      "period": "calendar year 1966, as VOTED at the Annual Town Meeting of March 5, 1966 (a budget, not an actual)",
+      "cited": "p63: `Excerpts From Annual Town Meeting Minutes / March 5, 1966`; p64: `TOTAL BUDGET VOTED`; p65: `TOTAL SPECIAL ARTICLES VOTED`"
+    },
+    {
+      "what": "elections",
+      "period": "March 5, 1966",
+      "cited": "p63: `March 5, 1966 / Article 1`"
+    },
+    {
+      "what": "school lunch program",
+      "period": "school year September 1965 - June 1966",
+      "cited": "p96: `LUNENBURG SCHOOL LUNCH REPORT for 1965-66`; rows `1965:` September-December, `1966:` January-June"
+    },
+    {
+      "what": "school statistics",
+      "period": "school year ending June 30, 1966; cost per pupil on calendar year 1966",
+      "cited": "p111: `SCHOOL YEAR ENDING JUNE 30, 1966`; `Average Membership for calendar year 1966`"
+    },
+    {
+      "what": "School Department summary of accounts",
+      "period": "calendar 1966 appropriation and spending; 1967 request",
+      "cited": "p112: `BUDGET APPROPR. 1966`, `Spent 1966 from Gen. Appropr`, `BUDGET APPROPR. 1967`"
+    },
+    {
+      "what": "school special accounts and federal funds",
+      "period": "calendar year 1966",
+      "cited": "p113: `APPROPRIATION 1966 | SPENT 1966`; p115-118: `Balance on Hand, January 1, 1966`"
+    },
+    {
+      "what": "Regional Vocational School District budget",
+      "period": "the District's approved budget (the year is not printed in the table)",
+      "cited": "p122: `Budget of $28,440.00 was approved`"
+    }
+  ]
+}

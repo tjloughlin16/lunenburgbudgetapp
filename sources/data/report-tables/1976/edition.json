@@ -1,0 +1,97 @@
+{
+  "edition": "1976",
+  "fy": 1976,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1976 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION, whose financial statements are for fiscal 1976 -- see periods",
+  "stem": "4498-1976-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4498-1976-annual-town-report.pdf",
+  "label": "1976 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4498-1976-annual-town-report.cells.tsv",
+  "dash_zero": true,
+  "accountant_marks_wide": true,
+  "year_labels": true,
+  "colon_heading_subtotals": true,
+  "receipts_stop_at_grand": true,
+  "recon_no_transfers": true,
+  "cash_book_list": true,
+  "periods": [
+    {
+      "what": "Tax Collector's report",
+      "period": "July 1, 1975 - June 30, 1976",
+      "cited": "p62: `Tax Collector's Report - July 1, 1975 June 30, 1976`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation",
+      "period": "fiscal year 1976, July 1, 1975 through June 30, 1976",
+      "cited": "p63: `Receipts July 1, 1975 through June 30, 1976`, `Balance June 30, 1976 per cash book`"
+    },
+    {
+      "what": "detailed statement of receipts",
+      "period": "July 1, 1975 through June 30, 1976",
+      "cited": "p64: `Detailed Statement of Receipts / July 1, 1975 through June 30, 1976`"
+    },
+    {
+      "what": "detailed statement of payments",
+      "period": "July 1, 1975 through June 30, 1976",
+      "cited": "p68: `Detailed Statement of Payments / July 1, 1975 through June 30, 1976`"
+    },
+    {
+      "what": "balance sheet",
+      "period": "June 30, 1976",
+      "cited": "p72: `Balance Sheet June 30, 1976`"
+    },
+    {
+      "what": "revenue sharing fund",
+      "period": "July 1, 1975 through June 30, 1976",
+      "cited": "p76: `Receipts July 1, 1975 through June 30, 1976`; `Cash Balance June 30, 1976`"
+    },
+    {
+      "what": "bonded indebtedness",
+      "period": "balance at 6-30-77; fiscal 1977 payments; schedule fiscal 1978-1988",
+      "cited": "p78: column heads `BALANCE 6-30-77`, `Due Fiscal 1977`; schedule `FISCAL YEAR 1978 ... 1988`"
+    },
+    {
+      "what": "accountant's summary and classification of accounts",
+      "period": "July 1, 1975 through June 30, 1976",
+      "cited": "p79: `Summary and Classification of Accounts / July 1, 1975 through June 30, 1976`"
+    },
+    {
+      "what": "trust funds",
+      "period": "June 30, 1975 to June 30, 1976",
+      "cited": "p92-93: `June 30, 1975 ... Balance June 30, 1976`"
+    },
+    {
+      "what": "FY1977 budget",
+      "period": "fiscal year 1977, as VOTED (a budget, not an actual)",
+      "cited": "p45: `ARTICLE 7 ... Fiscal Year 1977`; cemetery rules p12 `Annual Town Meeting, April 3, 1976`"
+    },
+    {
+      "what": "police pay scale",
+      "period": "Special Town Meeting, November 16, 1976",
+      "cited": "p55: `Special Town Meeting / November 16, 1976`"
+    },
+    {
+      "what": "school department statistics, budget, receipts, special accounts",
+      "period": "school year / fiscal 1976 (FY-76 7/1/75-6/30/76; FY-77 estimates and requests)",
+      "cited": "p154: `FOR SCHOOL YEAR ENDING JUNE 30, 1976`; p156: `FY-76 ACTUAL RECEIPTS (7/1/75-6/30/76)`, `FY-77 ESTIMATED RECEIPTS (7/1/76-6/30/77)`; p155: `Summary of Accounts, FY-76 and Budget Request, FY-77`"
+    },
+    {
+      "what": "school lunch program",
+      "period": "school year 1975-76",
+      "cited": "p153: `School Lunch Program Report for 1975-76`"
+    },
+    {
+      "what": "school tuition rates",
+      "period": "September 1 - December 31, 1976 and January 1 - December 31, 1977",
+      "cited": "p98: `EFFECTIVE for period September 1`, `January 1, 1977 - December 31, 1977`"
+    }
+  ],
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true
+}

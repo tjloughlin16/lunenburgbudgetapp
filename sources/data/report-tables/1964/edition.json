@@ -1,0 +1,80 @@
+{
+  "edition": "1964",
+  "fy": 1964,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1964 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION whose financial statements are for the calendar year ended December 31, 1964 -- see periods",
+  "stem": "4507-1964-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4507-1964-annual-town-report.pdf",
+  "label": "1964 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4507-1964-annual-town-report.cells.tsv",
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true,
+  "periods": [
+    {
+      "what": "balance sheet",
+      "period": "December 31, 1964 (the page title prints `December 31, 1965`)",
+      "cited": "p16: `Town of Lunenburg Balance Sheet December 31, 1965`; lines `Real Estate 1964`, `Overlay Deficit - 1964 levy`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation",
+      "period": "January 1 - December 31, 1964",
+      "cited": "p18: `Balance December 31, 1963` / `Receipts January 1 thru December 31, 1964` / `Cash Balance December 31, 1964`"
+    },
+    {
+      "what": "detailed statements of receipts and payments",
+      "period": "calendar year ended December 31, 1964",
+      "cited": "p18: `Detailed Statement of Receipts For Year Ending December 31, 1964`; p22: `Detailed Statement of Payments For Year Ending December 31, 1964`"
+    },
+    {
+      "what": "accountant's schedule",
+      "period": "calendar 1964 (no year printed in the heading)",
+      "cited": "p26: `Summary and Classification of Accounts`; column `Balance to 1965`"
+    },
+    {
+      "what": "debt",
+      "period": "payments to December 31, 1964",
+      "cited": "p38: `Paid 1964`, `Bal. Prin. 12-31-64`"
+    },
+    {
+      "what": "trust funds",
+      "period": "December 31, 1964",
+      "cited": "p41: `Balance December 31, 1964`"
+    },
+    {
+      "what": "Welfare Department",
+      "period": "calendar 1964",
+      "cited": "p54: column `Expended 1964`"
+    },
+    {
+      "what": "Veterans' Service",
+      "period": "calendar years 1959-1964",
+      "cited": "p55: header `1959 | 1960 | 1961 | 1962 | 1963 | 1964`"
+    },
+    {
+      "what": "elections and voted budget",
+      "period": "March 7, 1964, calendar 1964",
+      "cited": "p62: `Annual Town Meeting March 7, 1964`; Article 3 `THE BUDGET`"
+    },
+    {
+      "what": "school budget and special accounts",
+      "period": "appropriation 1964, spent 1964, request 1965",
+      "cited": "p104: `APPROPRIATION 1964 | SPENT 1964 | APPROPRIATION 1965`"
+    },
+    {
+      "what": "school statistics",
+      "period": "school year ending June 30, 1964; cost per pupil calendar 1964",
+      "cited": "p103: `YEAR ENDING JUNE 30, 1964`; `Average Membership for year 1964`"
+    },
+    {
+      "what": "school lunch",
+      "period": "school year 1963-64",
+      "cited": "p121: `LUNENBURG SCHOOL LUNCH PROGRAM REPORT for 1963-64`"
+    }
+  ]
+}

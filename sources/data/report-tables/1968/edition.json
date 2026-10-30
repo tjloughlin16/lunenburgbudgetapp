@@ -1,0 +1,80 @@
+{
+  "edition": "1968",
+  "fy": 1968,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1968 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION whose financial statements are for the calendar year ended December 31, 1968 -- see periods",
+  "stem": "4511-1968-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4511-1968-annual-town-report.pdf",
+  "label": "1968 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4511-1968-annual-town-report.cells.tsv",
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true,
+  "periods": [
+    {
+      "what": "general fund balance sheet",
+      "period": "December 31, 1968",
+      "cited": "p22: `Town of Lunenburg Balance Sheet December 31, 1968`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation and cash by bank",
+      "period": "January 1 - December 31, 1968",
+      "cited": "p26: `Balance December 31, 1967`, `Receipts January 1, thru December 31, 1968`, `Balance December 31, 1968 per cash book`"
+    },
+    {
+      "what": "detailed statement of payments",
+      "period": "calendar year 1968",
+      "cited": "p30: `Detailed Statement of Payments / For Year Ending December 31, 1968`"
+    },
+    {
+      "what": "detailed statement of receipts",
+      "period": "calendar year 1968",
+      "cited": "text: `YEAR ENDING DECEMBER 31, 1968` (Tax Collector / receipts pages)"
+    },
+    {
+      "what": "accountant's summary and classification of accounts",
+      "period": "NOT PRINTED as a year on the page; the carry-forward column is headed `Balance to` (the year is not on the line), so the schedule closes calendar 1968",
+      "cited": "p34-46: `Summary and Classifications of Accounts`; `Balance to Revenue | Balance to ...`"
+    },
+    {
+      "what": "trust funds (Trust Fund Commission and School Committee)",
+      "period": "December 31, 1967 to December 31, 1968",
+      "cited": "p47-49: `December 31, 1967`, `Balance December 31, 1968`"
+    },
+    {
+      "what": "voted budget, and special articles",
+      "period": "calendar year 1968, as VOTED at the Annual Town Meeting of March 4, 1968 (a budget, not an actual)",
+      "cited": "text: `to fix for the calendar year 1968 the salaries`; `TOTAL BUDGET VOTED`; p71-72"
+    },
+    {
+      "what": "proposed classification and salary schedule",
+      "period": "calendar 1969, PROPOSED (to be voted March 1, 1969; a proposal, not a vote)",
+      "cited": "p13: `CLASSIFICATION AND SALARY SCHEDULE - to be voted on at Annual Meeting on March 1, 1969`"
+    },
+    {
+      "what": "School Department summary of accounts, receipts and special accounts",
+      "period": "calendar 1968 appropriation and spending; 1969 request and estimate",
+      "cited": "p138: `Summary of Accounts and Budget Request`; p140: `ACTUAL RECEIPTS 1968 | ESTIMATED RECEIPTS 1969`"
+    },
+    {
+      "what": "school lunch program",
+      "period": "school year 1967-68",
+      "cited": "p136: `LUNENBURG SCHOOL LUNCH PROGRAM REPORT for 1967-68`"
+    },
+    {
+      "what": "school statistics",
+      "period": "school year ending June 30, 1968, and calendar year ending December 31, 1968",
+      "cited": "p137 text: `SCHOOL YEAR ENDING JUNE 30, 1968`; `CALENDAR YEAR ENDING DECEMBER 31, 1968`"
+    },
+    {
+      "what": "school special accounts (athletic, federal funds)",
+      "period": "calendar 1968 (balance on hand Jan 1 and Dec 31, 1968)",
+      "cited": "p142: `Balance on Hand, January 1, 1968`; `BALANCE ON HAND, December 31, 1968`"
+    }
+  ]
+}

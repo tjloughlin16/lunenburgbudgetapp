@@ -931,6 +931,18 @@ def page(m):
             so=('Made by entries after the spending; the bills cost the same either way.', None, ())))
     T = Texts()
     lines = lines_data(m, T)
+    # THE THREE FLAGS, per year (line_flags.py, shared with /school-all-funds/budget-against-actual;
+    # TJ, 29 October 2026: the year's story here, the pattern across years there)
+    import line_flags as LF
+    JL, _ = LF.journal_lines(m)
+    fby = LF.flags_by_line(JL)
+    flagged = LF.year_block(T, JL)
+    for y, fy in zip(lines['years'], YEARS()):
+        for r in y['rows']:
+            if r['line'] and fby[fy].get(r['account']):
+                r['flags'] = fby[fy][r['account']]
+    lines['flag_names'] = {k: flagged['flags'][k]['name'] for k in LF.KEYS}
+    lines['text'].update(flag_any='Every line', flag_filter='Flagged')
     bigch = big_changes(lines, T)
     lines['text'].update(line_chg=bigch['text']['line_chg'], line_chg_means=bigch['text']['line_chg_means'])
     figures = year_facts(m, T)
@@ -1086,6 +1098,15 @@ def page(m):
                       so=('A line’s final budget can be far from what Town Meeting voted. Compare '
                           'spending to the final budget and the line can look on target when the '
                           'vote was not.', None, ())),
+            TB.custom('fy-flags', 'Lines flagged against their vote', flagged, place='top',
+                      figures=sorted(T.figures), allow=sorted(T.literals),
+                      basis=('record', 'Each line’s vote, transfers and spending, from the journal'),
+                      alt='Three panels for one fiscal year: the school lines flagged underfunded, '
+                          'overbudgeted and restarted high, each with its rule and threshold (ours) and '
+                          'its lines, largest first, with the figures behind the flag and the transfers '
+                          'that moved its budget; a line opens on its page',
+                      so=('A flag marks where the vote and the year parted; the transfers listed under it '
+                          'show where the budget went. The books do not record why.', None, ())),
             TB.custom('fy-line-table', 'Every line, budget and cost', lines, place='top',
                       figures=sorted(T.figures), allow=sorted(T.literals),
                       basis=('reading', 'Our placing of other funds’ spending on the lines'),

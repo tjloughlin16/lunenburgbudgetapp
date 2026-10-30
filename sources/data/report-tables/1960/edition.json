@@ -1,0 +1,70 @@
+{
+  "edition": "1960",
+  "fy": 1960,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1960 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION whose financial statements are for the calendar year ended December 31, 1960 -- see periods",
+  "stem": "4551-1960-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4551-1960-annual-town-report.pdf",
+  "label": "1960 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4551-1960-annual-town-report.cells.tsv",
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true,
+  "periods": [
+    {
+      "what": "general fund balance sheet",
+      "period": "December 31, 1960",
+      "cited": "p16: `Town of Lunenburg Balance Sheet December 31, 1960`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation, receipts and payments",
+      "period": "January 1 thru December 31, 1960",
+      "cited": "p18: `Receipts January 1 thru December 31, 1960`; p22: `Detailed Statement of Payments / For Year Ending December 31, 1960`"
+    },
+    {
+      "what": "Tax Collector's report",
+      "period": "calendar year ending December 31, 1960",
+      "cited": "p25: `COLLECTION OF TAXES / Year Ending December 31, 1960`"
+    },
+    {
+      "what": "accountant's schedule",
+      "period": "calendar 1960 (no year ended statement; carry-forward column `Balance to 1961`)",
+      "cited": "p26: `Summary and Classification of Accounts 1960`"
+    },
+    {
+      "what": "voted budget and special articles",
+      "period": "calendar 1960, voted at the Annual Town Meeting of March 5, 1960 (a budget, not an actual)",
+      "cited": "p58: `EXCERPTS FROM TOWN MEETING MINUTES / Annual Town Meeting / March 5, 1960`; p59: `TOTAL BUDGET VOTED`"
+    },
+    {
+      "what": "school budget",
+      "period": "1960 budget and spent, 1961 budget (a budget, an actual and a request)",
+      "cited": "p104: `School Budget for 1961 / 1960 Budget | 1960 Spent | 1961 Budget`"
+    },
+    {
+      "what": "school statistics",
+      "period": "school year ending June 30, 1960",
+      "cited": "p106: `Statistics for the School Year Ending June 30, 1960`"
+    },
+    {
+      "what": "school lunch program",
+      "period": "school year 1959-60, September 1959 - June 1960",
+      "cited": "p117: `LUNENBURG SCHOOL LUNCH PROGRAM REPORT FOR 1959-60`"
+    },
+    {
+      "what": "athletic account",
+      "period": "September 1959 - June 1960, balance on hand 9/1/60",
+      "cited": "p118: `Financial Report for Athletic Account (Chapter 658) / September 1959 - June 1960`"
+    },
+    {
+      "what": "assessors' comparison",
+      "period": "1910 and 1960",
+      "cited": "p9: table header `1910 | 1960`"
+    }
+  ]
+}

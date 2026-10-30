@@ -1,0 +1,105 @@
+{
+  "edition": "1961",
+  "fy": 1961,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1961 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION whose financial statements are for the calendar year ended December 31, 1961 -- see periods",
+  "stem": "4548-1961-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4548-1961-annual-town-report.pdf",
+  "label": "1961 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4548-1961-annual-town-report.cells.tsv",
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true,
+  "periods": [
+    {
+      "what": "budgets, assessed value and tax rate",
+      "period": "calendar years 1956-1961",
+      "cited": "p11: header `1956 | 1957 | 1958 | 1959 | 1960 | 1961`"
+    },
+    {
+      "what": "town offices workload",
+      "period": "1951 and 1961",
+      "cited": "p15: header `1951 | 1961`; `Total receipts, exclusive of bond issues`"
+    },
+    {
+      "what": "general fund balance sheet",
+      "period": "December 31, 1961",
+      "cited": "p20: `Town of Lunenburg Balance Sheet December 31, 1961`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation and cash by bank",
+      "period": "January 1 - December 31, 1961",
+      "cited": "p22: `Balance December 31, 1960`, `Receipts January I thru December 31, 1961`, `Balance December 31, 1961 per cash book`"
+    },
+    {
+      "what": "detailed statement of receipts",
+      "period": "calendar year 1961",
+      "cited": "p22: `Year Ending December 31, 1961` above the taxes list"
+    },
+    {
+      "what": "detailed statement of payments",
+      "period": "calendar year 1961",
+      "cited": "p26: `Detailed Statement of Payments / For Year Ending December 31, 1961`"
+    },
+    {
+      "what": "Tax Collector's report",
+      "period": "levy years 1959-1961, calendar 1961",
+      "cited": "p29: table of Year 1961, 1960, 1959"
+    },
+    {
+      "what": "accountant's summary and classification of accounts",
+      "period": "calendar 1961 (carry-forward column `Balance to 1962`)",
+      "cited": "p30: `Summary and Classification of Accounts 1961`; `Balance to 1962`"
+    },
+    {
+      "what": "bonded indebtedness",
+      "period": "payments in 1961, balance 12-31-61, payments scheduled 1961-1970",
+      "cited": "p42: `Paid 1961`, `Bal. Prin. 12-31-61`; schedule rows `1961` ... `1970`"
+    },
+    {
+      "what": "trust funds (Trust Fund Commission and School Committee)",
+      "period": "December 31, 1960 to December 31, 1961",
+      "cited": "p44: `December 31, 1960`, `Balance December 31, 1961`; p45 `Balance December 31, 1961`"
+    },
+    {
+      "what": "election",
+      "period": "March 4, 1961",
+      "cited": "p72: `Annual Town Meeting March 4, 1961`"
+    },
+    {
+      "what": "voted budget, and special articles",
+      "period": "calendar year 1961, as VOTED at the Annual Town Meeting of March 4, 1961, Article 3 (a budget, not an actual)",
+      "cited": "p72: `Annual Town Meeting March 4, 1961 / Article 3. To see if the Town will vote to raise by taxation and appropriate`"
+    },
+    {
+      "what": "School Department budget, special accounts and receipts",
+      "period": "calendar 1961 budget and spent; 1962 budget request and estimate",
+      "cited": "p111: `1961 Budget | 1961 Spent | 1962 Budget`; p112: `1961 Estimated | 1961 Receipts | 1962 Estimated`"
+    },
+    {
+      "what": "school statistics",
+      "period": "school year ending June 30, 1961",
+      "cited": "p113: `Statistics for the School Year Ending June 30, 1961`"
+    },
+    {
+      "what": "school athletic account",
+      "period": "September 1960 - July 1961",
+      "cited": "p114: `Financial Report for Athletic Account / September 1960 - July 1961`"
+    },
+    {
+      "what": "school lunch program",
+      "period": "school year September 1960 - June 1961",
+      "cited": "p124: `LUNENBURG SCHOOL LUNCH PROGRAM REPORT FOR 1960-61`"
+    },
+    {
+      "what": "School Building Addition Committee",
+      "period": "project cost to completion, no year printed in the table",
+      "cited": "p68: `SCHOOL BUILDING ADDITION COMMITTEE`; `Total Cost of Project`"
+    }
+  ]
+}

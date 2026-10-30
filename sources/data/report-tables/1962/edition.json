@@ -1,0 +1,100 @@
+{
+  "edition": "1962",
+  "fy": 1962,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1962 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION whose financial statements are for the calendar year ended December 31, 1962 -- see periods",
+  "stem": "4505-1962-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4505-1962-annual-town-report.pdf",
+  "label": "1962 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4505-1962-annual-town-report.cells.tsv",
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true,
+  "periods": [
+    {
+      "what": "Assessors' five-year recapitulation of the levy, valuation and tax rate",
+      "period": "calendar years 1958-1962",
+      "cited": "p7: table header `1958 | 1959 | 1960 | 1961 | 1962`; `total increases between 1958 and 1962`"
+    },
+    {
+      "what": "general fund balance sheet",
+      "period": "December 31, 1962",
+      "cited": "p16: `Town of Lunenburg Balance Sheet December 31, 1962`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation and cash in banks",
+      "period": "January 1 - December 31, 1962",
+      "cited": "p18: `Balance December 31, 1961`, `Receipts January 1 thru December 31, 1962`, `Balance December 31, 1962 per cash book`"
+    },
+    {
+      "what": "detailed statement of receipts",
+      "period": "calendar year 1962",
+      "cited": "p18: `Detailed Statement of Receipts For Year Ending December 31, 1962`"
+    },
+    {
+      "what": "detailed statement of payments",
+      "period": "calendar year 1962",
+      "cited": "p22: `Detailed Statement of Payments For Year Ending December 31, 1962`"
+    },
+    {
+      "what": "Analysis of Treasurer's receipts and payments (pies)",
+      "period": "calendar year 1962",
+      "cited": "p15: `Analysis of Treasurer's Receipts and Payments ... 1962`"
+    },
+    {
+      "what": "Tax Collector's report",
+      "period": "calendar year 1962 (levy years 1958-1962)",
+      "cited": "p25: table of levy years `1962`, `1961` ... ; no `Year Ending` heading in the cells"
+    },
+    {
+      "what": "accountant's summary and classification of accounts",
+      "period": "calendar 1962 (p26 `Summary and Classification of Accounts 1962`; carry-forward column `Balance to 1963`; p37 prints `Balance to 1962`)",
+      "cited": "p26-37"
+    },
+    {
+      "what": "bonded indebtedness",
+      "period": "payments in 1962, balance 12-31-62, payments scheduled 1962-1970",
+      "cited": "p38: `Paid 1962`, `Bal. Prin. 12-31-62`; schedule rows `1962` ... `1970`"
+    },
+    {
+      "what": "trust funds (Trust Fund Commission, School Committee, Stabilization Fund)",
+      "period": "December 31, 1961 to December 31, 1962",
+      "cited": "p40: `December 31, 1961`, `Balance December 31, 1962`; p41"
+    },
+    {
+      "what": "welfare",
+      "period": "calendar year 1962",
+      "cited": "p54: column `Expended 1962`"
+    },
+    {
+      "what": "voted budget and special articles",
+      "period": "calendar year 1962, as VOTED at the Annual Town Meeting of March 3, 1962, Article 3 (a budget, not an actual)",
+      "cited": "p65-67: `Annual Town Meeting March 3, 1962`; p66: `TOTAL BUDGET VOTED`"
+    },
+    {
+      "what": "School Department summary of accounts and special accounts",
+      "period": "calendar 1962 appropriation and spending; 1963 request",
+      "cited": "p108: `1962 APPROPRIATION | SPENT 1962`; p109: `Budget and Articles Requested 1963`"
+    },
+    {
+      "what": "school federal funds and athletic fund",
+      "period": "calendar 1962 (federal funds); September 1961 - July 1962 (athletic fund)",
+      "cited": "p110: `RECEIPTS DURING 1962`; p111: `Period reported - September 1961-July 1962`"
+    },
+    {
+      "what": "school statistics",
+      "period": "school year ending June 30, 1962",
+      "cited": "p111: `Statistics Year Ending June 30, 1962`"
+    },
+    {
+      "what": "school lunch program",
+      "period": "school year September 1961 - June 1962",
+      "cited": "p122: `LUNENBURG SCHOOL LUNCH PROGRAM REPORT for 1961-62`"
+    }
+  ]
+}

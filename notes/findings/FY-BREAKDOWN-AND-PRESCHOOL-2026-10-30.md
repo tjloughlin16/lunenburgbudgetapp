@@ -86,8 +86,8 @@ funds. Both editions were read by eye against our extraction — our reading is 
 - FY2018–FY2022 from the district's budget documents; FY2023+ from the journal, with three flags
   (underfunded, overbudgeted, restarted high; $5,000 and 10%, ours).
 - **Decided, not yet built:** switch /budget-vs-actual to it; fill FY2018–FY2022 transfers and flags
-  from the Finance Committee workbook (gl-history.csv — votes match the journal on every line,
-  transfers differ on 12 of 269 and 15 of 265 lines, so labelled); merge the two older pages;
+  from the Finance Committee workbook (gl-history.csv — vote and transfers match the journal on every
+  line; an earlier "transfers differ" was our own join error, withdrawn); merge the two older pages;
   restructure — per-year flags move to the FY breakdown, the report becomes a line × year grid.
 - Next after that: each year's SIGNATURES at the top of the FY breakdown — the announced surplus,
   deficit, cuts, override — as said by whom, beside our figures.

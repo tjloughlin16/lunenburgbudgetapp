@@ -557,8 +557,7 @@
     {
      "title": "Budget against actual",
      "topics": [
-      "school-budget-against-actual",
-      "line-level-misses"
+      "budget-against-actual"
      ]
     },
     {
@@ -1769,12 +1768,13 @@
    "generator": "scripts/build_budget_against_actual.py",
    "home": "school-all-funds",
    "id": "budget-against-actual",
-   "minutes": 1,
+   "minutes": 2,
    "path": "/school-all-funds/budget-against-actual",
    "ready": true,
    "related": [],
    "shelves": [
-    "school-all-funds"
+    "school-all-funds",
+    "school-spending"
    ],
    "title": "School lines against budget"
   },
@@ -3421,20 +3421,6 @@
    ],
    "title": "Level service cost"
   },
-  "line-level-misses": {
-   "finding": "Of 576 budget lines and years the district restated, 198 landed within 2% of the line’s budget.",
-   "generator": "scripts/build_school_spending_topics.py",
-   "home": "school-spending",
-   "id": "line-level-misses",
-   "minutes": 1,
-   "path": "/school-spending/line-level-misses",
-   "ready": true,
-   "related": [],
-   "shelves": [
-    "school-spending"
-   ],
-   "title": "Line-level misses"
-  },
   "lines-cut-to-zero": {
    "finding": "93 of 132 school lines cut to zero were funded again later; the 39 that never were carried $181,180.",
    "generator": "scripts/build_school_programs_topics.py",
@@ -4356,20 +4342,6 @@
     "crisis"
    ],
    "title": "Salary line and staffing"
-  },
-  "school-budget-against-actual": {
-   "finding": "The school general fund spent less than its revised budget in all 17 years, FY2010 to FY2026.",
-   "generator": "scripts/build_school_spending_topics.py",
-   "home": "school-spending",
-   "id": "school-budget-against-actual",
-   "minutes": 1,
-   "path": "/school-spending/school-budget-against-actual",
-   "ready": true,
-   "related": [],
-   "shelves": [
-    "school-spending"
-   ],
-   "title": "Budget against actual"
   },
   "school-choice-flows": {
    "finding": "58 residents left under school choice in FY2026 and 11 arrived; arrivals were 44 in FY2014.",

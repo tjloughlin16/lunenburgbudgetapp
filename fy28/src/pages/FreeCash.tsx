@@ -629,7 +629,7 @@ export function FreeCash() {
               The school department&rsquo;s own year-end position, at the level of accounts,
               is a different measurement and it is on{' '}
               <a className="underline" style={{ color: 'var(--series-cost)' }}
-                href="/school-spending/school-budget-against-actual">budgets against actuals</a>.
+                href="/school-all-funds/budget-against-actual">budgets against actuals</a>.
             </p>
           </div>
           <Body>

@@ -93,14 +93,15 @@ IDENTITIES = {
                             # part carried to FY 1989 (154 of 164 single-line rows by the worker;
                             # blank read as zero as in 1991, on a row printing AVAILABLE)
                             # 1984/1985 head the carried part `BALANCE TO FY 85`, 1981/1982 `Balance to
-                            # Fiscal 1982` beside `Balance to Revenue` (integration pass, 30 Oct 2026)
-                            ('BALANCE (?:TO )?REVENUE', [(1, 'AVAILABLE'), (-1, 'AMOUNT EXPENDED'), (-1, 'BALANCE (?:TO )?(?:FY|FISCAL)')],
+                            # Fiscal 1982` beside `Balance to Revenue` (integration pass, 30 Oct 2026);
+                            # 1971 and 1972 head it with the bare year, `Balance to 1972` (31 Oct 2026)
+                            ('BALANCE (?:TO )?REVENUE', [(1, 'AVAILABLE'), (-1, 'AMOUNT EXPENDED'), (-1, 'BALANCE (?:TO )?(?:FY|FISCAL|19\\d\\d)')],
                              {'absent': ['ENCUMBERED', 'TOTAL EXPENDED'], 'blank_target': 'zero', 'needs': ['AVAILABLE']}),
                             # 1991: no ENCUMBERED column, and the balance split between the part
                             # closed to revenue and the part carried to FY 92. Blank is zero HERE,
                             # on a line that prints an AVAILABLE figure: it held line by line on
                             # 78 of 78 such rows (1991 NEEDS 1c), where on 2010 it did not
-                            ('BALANCE (?:TO )?REVENUE', [(1, 'AVAILABLE'), (-1, 'TOTAL EXPENDED'), (-1, 'BALANCE (?:TO )?(?:FY|FISCAL)')],
+                            ('BALANCE (?:TO )?REVENUE', [(1, 'AVAILABLE'), (-1, 'TOTAL EXPENDED'), (-1, 'BALANCE (?:TO )?(?:FY|FISCAL|19\\d\\d)')],
                              {'absent': ['ENCUMBERED'], 'blank_target': 'zero', 'needs': ['AVAILABLE']})],
     'special-revenue': [('BALANCE', [(1, 'FORWARD 7'), (1, 'RECEIPTS'), (-1, 'DISBURSEMENTS')]),
                         # 1992-1996 head the flows TOTAL REVENUE / TOTAL EXPENDED (1992 41 of
@@ -153,6 +154,13 @@ IDENTITIES = {
     'budget-amendment-proposed': [('^NEW', [(1, '^ADDITIONAL'), (1, 'VOTE|CURRENT APPROP')])],
     # precinct columns are headed `PREC A` in most years and `PRE A` in 2004's state primary
     'elections': [('^TOTAL', [(1, 'PRE\\w* A'), (1, 'PRE\\w* B'), (1, 'PRE\\w* C'), (1, 'PRE\\w* D')])],
+    # 1974's 18-MONTH TRANSITIONAL YEAR (pp46-54): `Jan-Dec 1973 | Jan-Jun 1974 | 18 Month | Totals`.
+    # An account prints its 18-month figure, a section subtotal its Totals; each is the two halves
+    # (164 of 164 receipts rows and 153 of 154 payments rows by the worker, 1974 NEEDS 4)
+    'detailed-receipts-three-periods': [('18 MONTH', [(1, 'JAN-DEC'), (1, 'JAN-JUN')]),
+                                        ('^TOTALS', [(1, 'JAN-DEC'), (1, 'JAN-JUN')])],
+    'detailed-payments-three-periods': [('18 MONTH', [(1, 'JAN-DEC'), (1, 'JAN-JUN')]),
+                                        ('^TOTALS', [(1, 'JAN-DEC'), (1, 'JAN-JUN')])],
     'debt-by-issue': [('^BALANCE', [(1, '^AMOUNT'), (-1, 'PAYMENTS PRINCIPAL')]),
                       # 2007 prints `TOTAL PAYMENTS THRU 2007` over two sub-columns, and the
                       # principal one is named `TOTAL PRINCIPAL` (10 of 10 issues close)
@@ -170,7 +178,9 @@ ID_DOT = re.compile(r'^\d+\.\d$')
 CALENDAR_REPAIRS = [
     # `($135,987.00) *` `($203,501.00) #` `($124,718.00 )*`: a footnote mark after the figure (the
     # note, `INVESTED MONIES NOT TRANSFERRED UNTIL CHECKS ARE ACTUALLY DISBURSED`, is on the page)
-    ('trailing footnote mark', re.compile(r'(\(?\$?\(?[\d,]+\.\d{2}\)?)[*#]'), lambda m: m.group(1)),
+    # `120,000.00**` `40,000.00***` (1973 p67, 1974 p77, 1975 p42): two or three marks, each a
+    # different footnote -- `[*#]+` since the 1971-1980 integration pass (31 Oct 2026)
+    ('trailing footnote mark', re.compile(r'(\(?\$?\(?[\d,]+\.\d{2}\)?)[*#]+'), lambda m: m.group(1)),
     # `($1.76).` (1991 p39): a parenthesised negative followed by a full stop
     ('full stop after a negative', re.compile(r'(\(\$?[\d,]+\.\d{2}\))\.'), lambda m: m.group(1)),
     # `<$ 1,343>` (1995 p21): angle brackets for a negative
@@ -189,7 +199,8 @@ CALENDAR_REPAIRS = [
     # `($280,016)*` `($101,071) *` (1989 p38, 1990 p28): the footnote mark after a WHOLE-DOLLAR
     # negative -- the cents form above wants `.00`. A thousands comma is required, so a bare
     # `12*` is never read as a figure
-    ('trailing footnote mark', re.compile(r'(\(?\$?\(?\d{1,3}(?:,\d{3})+\)?)[*#]'), lambda m: m.group(1)),
+    # and `$ 3,560,880.*` `$1,718.*` (1979 pp152-154): whole dollars, a full stop, then the mark
+    ('trailing footnote mark', re.compile(r'(\(?\$?\(?\d{1,3}(?:,\d{3})+\)?)\.?[*#]+'), lambda m: m.group(1)),
     # `$2523.60 rct` `$5400.00 RF` `$10734.02 Ewd` (1987 pp31-36): the accountant's one-word mark
     # after an APPROPRIATED FORWARD figure, as `fwd` (validate_totals.FWD) already is -- `rct`,
     # `ret`, `RF`, `TR`, and `Ewd`, Textract's `fwd`. With them the column sums to its printed
@@ -215,6 +226,24 @@ CALENDAR_REPAIRS = [
     # edition opt-in (`"colon_for_point": true`), because a cell `10:30` may be a time of day
     ('colon for a decimal point', re.compile(r'(\$?\d{1,3}(?:,\d{3})*):(\d{2})[*#]?'),
      lambda m: '%s.%s' % m.groups(), 'colon_for_point'),
+    # Added by the 1971-1980 integration pass (31 October 2026).
+    # `$ $75,245.06 $` (1978 p67), `$1,261.00$` (1979 p61): a `$` printed AFTER the figure
+    ('dollar sign after the figure', re.compile(r'\$*(\(?[\d,]+\.\d{2}\)?)\$'), lambda m: '$' + m.group(1)),
+    # `-0-` `$ -0-` (1973 p47, 1974 pp46-54, 1979 pp40, 59, 73): a printed zero. An edition opt-in
+    # (`"dash_zero": true`): elsewhere a `-0-` cell was text, and reading it as a figure moves the
+    # ordinals of every value after it in the row
+    ('-0- for zero', re.compile(r'\$?-0-\$?'), lambda m: '0.00', 'dash_zero'),
+    # `TR 610.00` `TR990.00` (1971 pp51-62, 1974 p67): the accountant's mark BEFORE the figure;
+    # and after it, the marks 1973-1980 print that `accountant_marks` does not take: `26,800.00 R`,
+    # `A` (1979 pp64-71), `4.76R` (1980 p62), `9,000.01 F`, `5,000.00 SR` (1973 p58-59; the page's
+    # KEY prints `RS`). An edition opt-in (`"accountant_marks_wide": true`)
+    ('accountant mark before the figure', re.compile(r'(?i:tr|tf|rf|r)(\$?\(?[\d,]+\.\d{2}\)?)'),
+     lambda m: m.group(1), 'accountant_marks_wide'),
+    ('accountant mark after the figure (R, A, F, SR)', re.compile(r'(\$?\(?[\d,]+\.\d{2}\)?)(?i:r|a|f|sr|rs)\.?'),
+     lambda m: m.group(1), 'accountant_marks_wide'),
+    # `19,982.83Cr` (1977 p61, Snow Removal Expense): a deficit marked `Cr`, read as a negative
+    ('Cr for a negative', re.compile(r'\$?([\d,]+\.\d{2})(?i:cr)\.?'), lambda m: '(%s)' % m.group(1),
+     'accountant_marks_wide'),
 ]
 # `$330.000` `$13.390` (1992 pp33-36): a full stop for the thousands comma -- but only in a
 # column of WHOLE DOLLARS (no cents anywhere in it), where three digits after a stop cannot be
@@ -968,6 +997,16 @@ def validator_names(m_rows, tables, drop_titles=False):
     return {k: v for k, v in out.items() if v != raw.get(k)}
 
 
+YEAR_CELL = re.compile(r'\(?(?:19|20)\d\d\)?')
+
+
+def _year_label_col(rows, k):
+    cs = [rr.cells[k] for rr in rows if k in rr.cells and rr.cells[k].text.strip()]
+    vals = [c for c in cs if c.value is not None]
+    words = [c for c in cs if c.value is None and re.search(r'[A-Za-z]', c.text)]
+    return bool(vals) and all(YEAR_CELL.fullmatch(c.text.strip()) for c in vals) and len(words) >= len(vals)
+
+
 def records(m, tables, checks, edition, prev_header):
     """Generic records for one mapped table: dicts with the cells kept for the emitters."""
     p, t = int(m['page']), int(m['table'])
@@ -988,6 +1027,13 @@ def records(m, tables, checks, edition, prev_header):
     for span in spans:
         sub = [V.Row(rr.page, rr.row, {k: c for k, c in rr.cells.items() if k in span}, rr.table) for rr in body]
         fc = set(V.figure_cols(sub)) | {k for rr in sub for k, c in rr.cells.items() if getattr(c, 'ambiguous', None)}
+        if 'year_labels' in OPTS:
+            # A BARE YEAR IN A LABEL COLUMN IS PART OF THE LABEL (1974 p46/2 `1973` under `Motor
+            # Vehicle and Trailer Excise:`, p70/1's levy years, p126 `(1973)`): two of them made
+            # the column a figure column and every label on the table was lost. A column whose
+            # every figure is a bare year, and which holds at least as many text cells, is a label
+            # column. An edition opt-in (`"year_labels": true`, 1971-1980 integration pass)
+            fc -= {k for k in fc if _year_label_col(sub, k)}
         if sum(1 for rr in sub if _nonempty(rr)) < 2:
             # A ONE-ROW TABLE has no column with two figures, so figure_cols found none and the
             # amount went into the label (1992 p52: `310 | Monty Tech Assessment | $8327.`). A
@@ -1207,18 +1253,50 @@ def emit_receipts_span(recs, ed, stated):
         return lab
     grand_rows = [r for r in recs if money_cells(r) and RECEIPTS_GRAND.search(label_of(r))]
     grand = stated if stated is not None else (money_cells(grand_rows[-1])[-1].value if grand_rows else None)
-    summary, items = [], []
+    summary, items, moved = [], [], []
+    # A SECTION SUBTOTAL PRINTED ON THE NEXT SECTION'S HEADING ROW (1971-1980: `Special
+    # Assessments: | | 658.00` is the farm animal excise above it, 102.50 + 555.50). An edition
+    # opt-in (`"colon_heading_subtotals": true`). The row is a subtotal ONLY when its one figure
+    # equals, to the cent, the sum of two or more accounts directly above it that start at a
+    # heading or a subtotal and cross no subtotal -- its own section. Never because the statement
+    # then closes: the grand total plays no part in the decision
+    since, starts = [], {0}
+    colon = 'colon_heading_subtotals' in OPTS
+    past_grand = False
     for rec in recs:
         figs = money_cells(rec)
         rec = dict(rec, label=label_of(rec))
+        if past_grand:
+            # ROWS PRINTED AFTER THE GRAND TOTAL (1980 p43: `Less Payroll Deductions Receivable`,
+            # `Total Receipts in FY 1980`) are a reconciliation of the total, not accounts. An
+            # edition opt-in (`"receipts_stop_at_grand": true`)
+            continue
         if not figs or not rec['label']:
+            if not figs and rec['label']:
+                starts.add(len(since))             # a heading: a section may start here
+            elif figs:
+                since, starts = [], {0}            # an unlabelled subtotal closes a section
             continue
         v = figs[0].value
+        if colon and len(figs) == 1 and rec['label'].rstrip().endswith(':') and \
+                not RECEIPTS_GRAND.search(rec['label']):
+            hit = next((b for b in sorted(starts, reverse=True)
+                        if len(since) - b >= 2 and sum((items[j][1] for j in since[b:]), Decimal(0)) == v), None)
+            if hit is not None:
+                moved.append('p%s row %s `%s` %s = the %d accounts above it' % (
+                    rec['page'], rec['row'], rec['label'], V.money(v), len(since) - hit))
+                since, starts = [], {0}
+                continue
         in_summary = re.search(r'^SUMMARY', rec['group'], re.I) or re.search(r'^SUMMARY', rec['label'], re.I)
         if RECEIPTS_GRAND.search(rec['label']):
             if in_summary and v != grand:
                 summary.append((rec, v))        # `OTHER FINANCING SOURCES GRAND TOTAL` (1988 p33)
+            elif 'receipts_stop_at_grand' in OPTS and grand_rows and rec['page'] == grand_rows[-1]['page'] \
+                    and rec['table'] == grand_rows[-1]['table'] and rec['row'] == grand_rows[-1]['row']:
+                past_grand = True
             continue
+        if not in_summary:
+            since.append(len(items))
         (summary if in_summary else items).append((rec, v))
     how = 'under a SUMMARY heading' if summary else ''
     if not summary and grand is not None and grand_rows:
@@ -1242,6 +1320,9 @@ def emit_receipts_span(recs, ed, stated):
     note = ('accounts sum %s vs the printed GRAND TOTAL %s; categories in the SUMMARY OF RECEIPTS (%s) sum %s '
             '(one statement pooled across p%s)' % (V.money(s_items), V.money(grand) if grand is not None else 'not read',
                                                    how or 'none found', V.money(s_summary), '-'.join(str(p) for p in (pages[0], pages[-1])) if len(pages) > 1 else pages[0]))
+    if moved:
+        note += '; %d section subtotal(s) printed on the next heading row, each equal to its own section, ' \
+                'not counted as accounts: %s' % (len(moved), '; '.join(moved))
     out = [{'fy': ed['fy'], 'source': re.sub(r'^[A-Z &/]+:\s*', '', rec['label']) or rec['label'],
             'amount': num(v), 'status': 'checked' if ok else 'check failed' if grand is not None else 'no check',
             'document': os.path.basename(ed['pdf']), 'page': rec['page']} for rec, v in items]
@@ -1251,6 +1332,7 @@ def emit_receipts_span(recs, ed, stated):
 # `Revenue Cash and Revenue Cash Invested:` (1982 p113, 1983 p40, 1984 p41): the line that opens
 # the account list under the roll-forward in ONE table (integration pass, 30 Oct 2026)
 CASH_INVESTED = re.compile(r'CURRENT CASH INVESTED|^REVENUE CASH AND REVENUE CASH INVESTED', re.I)
+CASH_BOOK_LIST = re.compile(r'^CASH IN BANKS|^BALANCE\b.*PER CASH BOOK', re.I)
 # `TREASURER'S CASH JUNE 30, 1989` (1988 p32, 1989 p38): the list's own total, labelled as the
 # Treasurer's cash at the close, so it is never summed as a twelfth account
 CASH_TOTAL = re.compile(r"^TREASURER\W?S CASH\b", re.I)
@@ -1285,6 +1367,8 @@ def recon_figures(text):
         return figs
     out = []
     for tok in text.split():
+        if tok == '$' and 'dash_zero' in OPTS:
+            continue            # `$ -0- $` (1973 p47): the column's dollar signs around a zero
         hit = calendar_repair(tok.replace('(', '').replace(')', ''))
         v = V.parse(hit[1])[0] if hit else None
         if v is None:
@@ -1303,6 +1387,18 @@ def emit_treasurers_cash(m, recs, ed, raw):
     balance, receipts, disbursed, general ledger balance, then `CURRENT CASH INVESTED:`), those
     lines are not accounts: they go to `report-treasurers-cash-reconciliation`, returned third."""
     start = next((rr.row for rr in raw if any(CASH_INVESTED.search(c.text) for c in rr.cells.values())), None)
+    book = None
+    if start is None and 'cash_book_list' in OPTS:
+        # 1971-1980 print the roll-forward and the bank list in ONE table with no `Revenue Cash
+        # Invested` line: the list opens at `Balance December 31, 1971 per cash book` or `Cash
+        # in Banks:`, whichever comes first, and the cash book balance is the list's total where
+        # nothing else prints one. An edition opt-in (`"cash_book_list": true`, 31 Oct 2026)
+        hit = next((rr for rr in raw if any(CASH_BOOK_LIST.search(' '.join(c.text.split()))
+                                            for c in rr.cells.values())), None)
+        if hit is not None:
+            start = hit.row
+            book = next((r for r in recs if r['row'] == hit.row and r['figs']
+                         and re.search('PER CASH BOOK', r['label'], re.I)), None)
     block = [rr for rr in raw if start is not None and rr.row < start]
     body = [r for r in recs if start is None or r['row'] > start]
     accts = [r for r in body if r['figs'] and not r['is_total']
@@ -1330,6 +1426,8 @@ def emit_treasurers_cash(m, recs, ed, raw):
             printed, where = lone[0].value, 'the unlabelled figure printed under the list (row %d)' % last[0].row
         elif m.get('stated_total'):
             printed, where = Decimal(m['stated_total']), 'the total the page prints outside this table (map `stated_total`)'
+        elif book is not None:
+            printed, where = book['figs'][-1][1].value, 'the printed `%s`' % book['label']
         else:
             printed, where = None, ''
     recon = emit_cash_reconciliation(m, block, ed) if block else []
@@ -1345,7 +1443,10 @@ RECON = [('opening', r'^BALANCE\b(?!.*PER CASH BOOK)'), ('receipts', r'^RECEIPTS
          ('disbursed', r'^DISBURSE'), ('revenue_invested', r'LESS REVENUE (?:SHARING )?CASH'),
          # the federal revenue sharing fund prints its own (1986 p46 `Revenue Sharing Ledger
          # Balance`, 1987 p30 `REV.SHARING LEDGER BALANCE`)
-         ('ledger', r'GENERAL LEDGER BALANCE|REV(?:ENUE|\.)?\s*SHARING LEDGER BALANCE')]
+         ('ledger', r'GENERAL LEDGER BALANCE|REV(?:ENUE|\.)?\s*SHARING LEDGER BALANCE'
+                    # 1972-1980 print the closing line as the cash book's own balance: `Cash
+                    # Balance December 31, 1973`, `Cash Book Balance June 30, 1976` (31 Oct 2026)
+                    r'|^CASH (?:BOOK )?BALANCE')]
 
 
 def emit_cash_reconciliation(m, raw, ed):
@@ -1398,6 +1499,14 @@ def emit_cash_reconciliation(m, raw, ed):
             got.setdefault('net_disbursed', figs[0])
             got['ledger'] = figs[1]
             continue
+        if kind == 'disbursed' and len(figs) == 2 and re.search(r'CASH (?:BOOK )?BALANCE', label, re.I) \
+                and not re.search(RECON[4][1], label, re.I):
+            # TWO LINES IN ONE CELL: `Disbursements ... Cash Book Balance June 30, 1975 |
+            # 13,499,119.17 36,332.40` (1971 p42, 1975 p56, 1977 p39) -- the disbursed and the closing
+            # cash, in the order printed
+            got['disbursed'], got['ledger'] = figs
+            phase = 'disbursed'
+            continue
         if kind == 'receipts' and figs and re.search(RECON[2][1], label, re.I):
             # one printed line holding receipts, the transfer, and the net (2006)
             got['receipts'], got['investments'] = figs[0], figs[1] if len(figs) > 1 else None
@@ -1425,7 +1534,17 @@ def emit_cash_reconciliation(m, raw, ed):
             phase = {'receipts': 'receipts', 'investments': 'receipts', 'disbursed': 'disbursed',
                      'revenue_invested': 'disbursed'}.get(kind, phase)
         elif not label and figs:
-            slot = next((x for x in subtotals.get(phase, []) if x not in got), None)
+            slots = subtotals.get(phase, [])
+            if 'recon_no_transfers' in OPTS and phase == 'receipts' and 'investments' not in got:
+                # NO TRANSFER LINE IS PRINTED (1971-1980), so the unlabelled line under the
+                # receipts is opening + receipts, not a net. An edition opt-in
+                # (`"recon_no_transfers": true`)
+                slots = ['after_receipts']
+            elif 'recon_no_transfers' in OPTS and phase == 'disbursed' and 'revenue_invested' not in got:
+                # ...and the unlabelled line under the closing cash re-adds it (balance +
+                # disbursed = the receipts subtotal): a footing, not a net disbursed
+                slots = []
+            slot = next((x for x in slots if x not in got), None)
             if slot:
                 got[slot] = figs[0]
     A = lambda k: abs(got[k]) if got.get(k) is not None else None  # noqa: E731

@@ -1,0 +1,125 @@
+{
+  "edition": "1963",
+  "fy": 1963,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1963 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION whose financial statements are for the calendar year ended December 31, 1963 -- see periods",
+  "stem": "4506-1963-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4506-1963-annual-town-report.pdf",
+  "label": "1963 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4506-1963-annual-town-report.cells.tsv",
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true,
+  "periods": [
+    {
+      "what": "town facts (population, valuation, tax rate)",
+      "period": "1960 census population; valuation and tax rate for the 1963 tax year, no date printed on the table",
+      "cited": "p4: `Population, 1960: 6,334`; `Assessed Valuation: $11,184,625`; `Tax Rate: $82.00`"
+    },
+    {
+      "what": "Assessors' recapitulation (tax rate worksheet)",
+      "period": "1963 tax year (the tax rate fixed in 1963)",
+      "cited": "p9: `1963 RECAPITULATION`; `Include All Appropriations Voted Since 1962 Tax Rate was Fixed`"
+    },
+    {
+      "what": "Town Clerk's statistics",
+      "period": "calendar year 1963",
+      "cited": "p10: `Statistics of the Town Clerk for the year 1963`"
+    },
+    {
+      "what": "legal debt limit computation",
+      "period": "valuations 1961, 1962, 1963; debt at the date of the report (no date printed)",
+      "cited": "p11: `Valuation, 1961` ... `Valuation, 1963`; `Present Debt $749,000`"
+    },
+    {
+      "what": "Treasurer's analysis of receipts and payments (pie chart legend)",
+      "period": "calendar year 1963",
+      "cited": "p17: `Analysis of Treasurer's Receipts and Payments`; `We Received 1963`"
+    },
+    {
+      "what": "general fund balance sheet",
+      "period": "December 31, 1963",
+      "cited": "p18: `Town of Lunenburg Balance Sheet December 31, 1963`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation and cash in banks",
+      "period": "January 1 - December 31, 1963",
+      "cited": "p20: `Balance December 31, 1962`; `Receipts January 1 thru December 31, 1963`; `Balance December 31, 1963 per cash book`"
+    },
+    {
+      "what": "detailed statement of receipts",
+      "period": "calendar year 1963",
+      "cited": "p20: `Detailed Statement of Receipts / For Year Ending December 31, 1963`"
+    },
+    {
+      "what": "detailed statement of payments",
+      "period": "calendar year 1963",
+      "cited": "p24: `Detailed Statement of Payments / For Year Ending December 31, 1963`"
+    },
+    {
+      "what": "Tax Collector's report",
+      "period": "calendar year 1963",
+      "cited": "p27: `Tax Collector's Report / YEAR ENDING DECEMBER 31, 1963`"
+    },
+    {
+      "what": "accountant's summary and classification of accounts",
+      "period": "1963 (the table is headed `Summary and Classification of Accounts 1963`; the carry-forward column is `Balance to 1964`)",
+      "cited": "p28-39"
+    },
+    {
+      "what": "bonded indebtedness",
+      "period": "payments in 1963, balance 12-31-63, payments scheduled 1964-1970",
+      "cited": "p40: `Paid 1963`, `Bal. Prin. 12-31-63`; rows `1964` ... `1970`"
+    },
+    {
+      "what": "trust funds (Trust Fund Commission and School Committee)",
+      "period": "December 31, 1962 to December 31, 1963",
+      "cited": "p42: `December 31, 1962 ... Balance December 31, 1963`; p43"
+    },
+    {
+      "what": "welfare",
+      "period": "calendar year 1963 (column `Expended 1963`)",
+      "cited": "p55: `Category | Persons Aided | Expended 1963`"
+    },
+    {
+      "what": "annual election results",
+      "period": "Annual Town Meeting and Election of March 2, 1963",
+      "cited": "p64: `Annual Town Meeting March 2, 1963` (`EXCERPTS FROM TOWN MEETING MINUTES`)"
+    },
+    {
+      "what": "voted budget and special articles",
+      "period": "calendar year 1963, as VOTED at the Annual Town Meeting of March 2, 1963 (a budget, not an actual)",
+      "cited": "p64-66: `TOTAL BUDGET VOTED: $1,270,290.88`; `TOTAL SPECIAL ARTICLES VOTED: $230,406.00`; p9 `Amounts voted ... 3/2/63`"
+    },
+    {
+      "what": "School Department request for 1964 against the sum available in 1963",
+      "period": "1963 available, 1964 requested",
+      "cited": "p87-89: `REQUEST 1964 | AVAILABLE 1963 | DIFFERENCE`"
+    },
+    {
+      "what": "School Department gross budget and pupil growth",
+      "period": "1962, 1963, 1964 (appropriation years; October 1 enrollment)",
+      "cited": "p90: header `1962 | 1963 | 1964`; `PUPIL GROWTH BASED ON OCTOBER 1st ENROLLMENT`"
+    },
+    {
+      "what": "School Department summary of accounts and budget request",
+      "period": "1963 appropriation and spending, 1964 appropriation",
+      "cited": "p104: `1963 APPROPRIATION | SPENT 1963 | 1964 APPROPRIATION`"
+    },
+    {
+      "what": "school statistics",
+      "period": "school year ending June 30, 1963; the town-level lines `year 1963`",
+      "cited": "p108: `Statistics / Year Ending June 30, 1963`; `Average membership for year 1963`"
+    },
+    {
+      "what": "school lunch program",
+      "period": "school year, September 1962 - June 1963",
+      "cited": "p120: `LUNENBURG SCHOOL LUNCH PROGRAM REPORT for 1962-63`; rows `September` 1962 to `June` 1963"
+    }
+  ]
+}

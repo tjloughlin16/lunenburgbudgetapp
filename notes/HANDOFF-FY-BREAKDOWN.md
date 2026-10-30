@@ -64,10 +64,11 @@ picker; FY2023+ carries the three flags ($5,000 and 10%, ours); earlier years a 
 its document-years figures equal the August `budget-vs-actual.json`. NOT YET DONE, TJ's go needed:
 point /budget-vs-actual (`variance`) at it and put `budget-vs-actual` in UNLISTED; whether the
 older `school-budget-against-actual` and `line-level-misses` topics merge into it.
-**OPEN DECISION:** `gl-history.csv` (FinCom workbook from MUNIS exports, FY2010-FY2025) could give
-FY2018-FY2022 transfers and the flags. Measured against the journal: votes equal on every line
-(269/269 FY2023, 265/265 FY2024); TRANSFERS differ on 12 and 15 lines (workbook mostly $0 where the
-journal has a transfer). The agent reported "every line" equal -- that was wrong for transfers.
+**WITHDRAWN, 30 Oct:** an earlier note here said the workbook's TRANSFERS differ from the journal on 12
+and 15 lines. Wrong -- our join took the `school_facilities` sheet's row, whose transfer columns are
+blank. On the general-fund sheet transfers equal the journal on every line; the workbook's ACTUAL is
+payments only (journal spent less orders carried into the next year). build_budget_against_actual
+now asserts the tie.
 **DEPLOYED, 29 Oct evening** (deployment 54f87d0c; verified by hash: budget-against-actual.json,
 fy-breakdown.json and a fund file on production equal fy28/dist). Three `deploy_site.sh` runs had
 failed at upload (~10,500 of 12,328, wrangler EPIPE/ECONNRESET): a failed attempt keeps nothing, so
@@ -132,8 +133,8 @@ show the additional funds. And I think we probably need a fund page slug for the
 1. SWITCH: /budget-vs-actual (tab `variance`, `BudgetVsActual.tsx`, aliases routes.ts ~l.592) opens
    /school-all-funds/budget-against-actual; `budget-vs-actual` into sources/analyses/UNLISTED.
    `_redirects` is ignored by Cloudflare -- do it in the app routing.
-2. FY2018-FY2022 from gl-history.csv (FinCom workbook): YES, use it for transfers and the flags,
-   labelled (its transfers miss 12/269 and 15/265 lines against the journal in FY2023/FY2024).
+2. FY2018-FY2022 from gl-history.csv (FinCom workbook): YES, for transfers and the flags. (An
+   earlier "transfers miss 12/269 and 15/265 lines" was our own join error -- withdrawn.)
 3. MERGE the older topics `school-budget-against-actual` and `line-level-misses` into the new
    report if similar (TOPIC_MERGED in routes.ts).
 4. RESTRUCTURE -- DECIDED (TJ, 29 Oct: "use your best judgment"; ours: yes): per-year flags move to

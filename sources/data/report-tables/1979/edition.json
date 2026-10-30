@@ -1,0 +1,102 @@
+{
+  "edition": "1979",
+  "fy": 1979,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1979 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION, whose financial statements are for fiscal 1979 -- see periods",
+  "stem": "4501-1979-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4501-1979-annual-town-report.pdf",
+  "label": "1979 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4501-1979-annual-town-report.cells.tsv",
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true,
+  "dash_zero": true,
+  "accountant_marks_wide": true,
+  "year_labels": true,
+  "colon_heading_subtotals": true,
+  "receipts_stop_at_grand": true,
+  "recon_no_transfers": true,
+  "cash_book_list": true,
+  "periods": [
+    {
+      "what": "statement of receipts, payments, treasurer's reconciliation",
+      "period": "fiscal year 1979, July 1, 1978 - June 30, 1979",
+      "cited": "p43: `Detailed Statement of Receipts / July 1, 1978 through June 30, 1979`; p42: `Receipts July 1, 1978 through June 30, 1979`"
+    },
+    {
+      "what": "general balance sheet, debt accounts, trust funds in custody",
+      "period": "June 30, 1979",
+      "cited": "p52: `Balance Sheet - - June 30, 1979`"
+    },
+    {
+      "what": "revenue sharing fund",
+      "period": "fiscal year 1979, July 1, 1978 - June 30, 1979",
+      "cited": "p57: `General Revenue Sharing / Reconciliation of Treasurer's Cash`; `Receipts July 1, 1978 through June 30, 1979`"
+    },
+    {
+      "what": "accountant's schedule",
+      "period": "fiscal year 1979, July 1, 1978 - June 30, 1979",
+      "cited": "p60: `Summary and Classification of Accounts / July 1, 1978 through June 30, 1979`"
+    },
+    {
+      "what": "half-year treasurer's reconciliation",
+      "period": "six months, July 1 - December 31, 1979",
+      "cited": "p72: `Receipts July 1, 1979 through December 31, 1979`; `Balance December 31, 1979 per General Ledger`"
+    },
+    {
+      "what": "tax collector",
+      "period": "July 1, 1978 - June 30, 1979",
+      "cited": "p73: `Tax Collector's Report Period July 1, 1978 - June 30, 1979`"
+    },
+    {
+      "what": "trust funds",
+      "period": "July 1, 1978 through June 30, 1979",
+      "cited": "p74: `Trust Funds / July 1, 1978 through June 30, 1979`"
+    },
+    {
+      "what": "revenue cash invested",
+      "period": "fiscal 1979 and the first six months of fiscal 1980",
+      "cited": "p77: `7/1/78-12/31/78`, `TOTAL FY 1979`, `7/1/79-12/31/79`"
+    },
+    {
+      "what": "debt schedule",
+      "period": "through fiscal 1980 (balance 6-30-80); payments FY1981-FY1990",
+      "cited": "p59: `Due Fiscal 1980`, `BALANCE 6-30-80`; `FISCAL YEAR 1981 ... 1990`"
+    },
+    {
+      "what": "omnibus budget and special articles",
+      "period": "fiscal year 1980, as VOTED at the Annual Town Meeting of April 7, 1979 (a budget, not an actual)",
+      "cited": "p83: `Excerpts From Annual Town Meeting Minutes / April 7, 1979`; p84: `ARTICLE 4 ... Fiscal Year 1980`"
+    },
+    {
+      "what": "comparison of financial performance data",
+      "period": "FY 1975 - FY 1979",
+      "cited": "p40: `FY 1975` ... `FY 1979`"
+    },
+    {
+      "what": "financial information determining the real estate tax",
+      "period": "FY 1976 - FY 1980",
+      "cited": "p42: `FY 1976` ... `FY 1980`, `Total Increase`"
+    },
+    {
+      "what": "school tuition rates",
+      "period": "September 1 - December 31, 1979 and January 1 - December 31, 1980",
+      "cited": "p96: `EFFECTIVE for period September 1, 1979 - December 31, 1979`; `EFFECTIVE for period January 1, 1980 - December 31, 1980`"
+    },
+    {
+      "what": "school lunch",
+      "period": "school year 1978-79",
+      "cited": "p143: `SCHOOL LUNCH FINANCIAL REPORT FOR 1978-79`"
+    },
+    {
+      "what": "school department statistics, receipts, accounts and special accounts",
+      "period": "school year / fiscal 1979 (FY-79 7/1/78-6/30/79; FY-80 estimates and requests)",
+      "cited": "p152: `FOR SCHOOL YEAR ENDING JUNE 30, 1979`; p153: `FY-79 ACTUAL RECEIPTS (7/1/78-6/30/79)`, `FY-80 ESTIMATED RECEIPTS (7/1/79-6/30/80)`; p154: `Summary of Accounts, FY79 and Budget Request, FY80`"
+    }
+  ]
+}

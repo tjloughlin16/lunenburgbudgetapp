@@ -6,14 +6,13 @@
  *
  *  Years from the district's budget documents and years from the accounting system are shaded
  *  apart and never joined; a year neither can compare (FY2021) is drawn empty, with its reason.
- *  Under each journal year, how many lines carry each flag. Every string and figure is the
- *  payload's (scripts/build_budget_against_actual.py, across()). */
+ *  The flags, line by line and year by year, are the grid below it (bva-grid). Every string and
+ *  figure is the payload's (scripts/build_budget_against_actual.py, across()). */
 import { useMemo, useState } from 'react'
 import type { CustomProps } from './index'
 
 type Dot = { name: string; b: number; a: number; s: 0 | 1 | 2; bt: string; at: string; pt: string }
-type Year = { fy: string; src: 'books' | 'ledger' | 'none'; lines: Dot[]; n: string; total: string; tr: number | null
-  flags: { under: string; over: string; restart: string } | null }
+type Year = { fy: string; src: 'books' | 'ledger' | 'none'; lines: Dot[]; total: string; tr: number | null }
 type Data = { years: Year[]; ticks: { r: number; t: string }[]; lo: number; hi: number; text: Record<string, string> }
 
 const muted = { color: 'var(--text-muted)' }
@@ -93,25 +92,10 @@ export default function BvaAcross({ data, alt }: CustomProps) {
             </pattern>
           </defs>
         </svg>
-        {/* the flag counts, one cell under each year, aligned to the columns above */}
-        <div className="min-w-[640px] grid text-[12px] tabular-nums mt-1" style={{ gridTemplateColumns: `${(LEFT / W) * 100}% repeat(${d.years.length}, 1fr) ${(RIGHT / W) * 100}%` }}>
-          <div className="pr-1 text-right leading-[18px] whitespace-nowrap text-[11px]" style={muted}>
-            <span className="block">{t.lines}</span>
-            <span className="block">{t.under}</span><span className="block">{t.over}</span><span className="block">{t.restart}</span>
-          </div>
-          {d.years.map(y => (
-            <div key={y.fy} className="text-center leading-[18px]" style={y.flags ? undefined : muted}>
-              <span className="block" style={muted}>{y.n || '—'}</span>
-              <span className="block">{y.flags?.under ?? '—'}</span>
-              <span className="block">{y.flags?.over ?? '—'}</span>
-              <span className="block">{y.flags?.restart ?? '—'}</span>
-            </div>))}
-          <div />
-        </div>
       </div>
       <p className="text-[12.5px] mt-2 min-h-[1.5em]" aria-live="polite">
         {hover ? <><span className="font-semibold">{hover.l.name}</span> · {hover.y.fy} · {hover.l.bt} → {hover.l.at} · <span className="font-semibold">{hover.l.pt}</span></>
           : <span style={muted}>{t.hover}</span>}</p>
-      <p className="text-[12px] mt-1" style={muted}>{t.books}: {t.books_note}. {t.ledger}: {t.ledger_note}. {t.none}: {t.none_note}. {t.clipped}. {t.dash_note}</p>
+      <p className="text-[12px] mt-1" style={muted}>{t.books}: {t.books_note}. {t.ledger}: {t.ledger_note}. {t.none}: {t.none_note}. {t.clipped}.</p>
     </figure>)
 }

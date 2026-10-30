@@ -1,0 +1,119 @@
+{
+  "edition": "1980",
+  "fy": 1980,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1980 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION, whose financial statements are for fiscal 1980 -- see periods",
+  "stem": "4502-1980-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4502-1980-annual-town-report.pdf",
+  "label": "1980 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4503-1980-annual-town-report.cells.tsv",
+  "dash_zero": true,
+  "accountant_marks_wide": true,
+  "year_labels": true,
+  "colon_heading_subtotals": true,
+  "receipts_stop_at_grand": true,
+  "recon_no_transfers": true,
+  "cash_book_list": true,
+  "periods": [
+    {
+      "what": "Treasurer's cash reconciliation, free cash analysis, tax recapitulation",
+      "period": "fiscal year 1980, July 1, 1979 - June 30, 1980 (FY1976-FY1981 columns on the recapitulation; fiscal 1981 ESTIMATED on the free cash chart)",
+      "cited": "p38: `Reconciliation of Treasurer's Cash / Fiscal Year 1980`, `Receipts July 1, 1979 through June 30, 1980`; p37: `Fiscal 1981 Estimated`; p38: `FY 1976 ... FY 1981`"
+    },
+    {
+      "what": "detailed statement of receipts",
+      "period": "July 1, 1979 through June 30, 1980",
+      "cited": "p39: `Detailed Statement of Receipts / July 1, 1979 through June 30, 1980`"
+    },
+    {
+      "what": "detailed statement of payments",
+      "period": "July 1, 1979 through June 30, 1980",
+      "cited": "p44: `Detailed Statement of Payments / July 1, 1979 through June 30, 1980`"
+    },
+    {
+      "what": "general fund, debt and trust balance sheets",
+      "period": "June 30, 1980",
+      "cited": "p48: `Balance Sheet - June 30, 1980`"
+    },
+    {
+      "what": "revenue sharing reconciliation, receipts, payments and balance sheet",
+      "period": "fiscal 1980, July 1, 1979 - June 30, 1980",
+      "cited": "p53: `Reconciliation of Treasurer's Cash`, `Receipts July 1, 1979 through June 30, 1980`"
+    },
+    {
+      "what": "bonded indebtedness by issue",
+      "period": "through fiscal 1981",
+      "cited": "p55: `Due Fiscal 1981`, `Total Pmts. thru Fiscal 1981`, `BALANCE 6-30-81`"
+    },
+    {
+      "what": "debt repayment schedule",
+      "period": "payments FY1982-FY1990",
+      "cited": "p55: `FISCAL YEAR 1982 ... 1990 Grand Total`"
+    },
+    {
+      "what": "accountant's summary and classification of accounts",
+      "period": "July 1, 1979 through June 30, 1980",
+      "cited": "p56: `Summary and Classification of Accounts / July 1, 1979 through June 30, 1980`"
+    },
+    {
+      "what": "tax collector's report",
+      "period": "July 1, 1979 - June 30, 1980",
+      "cited": "p67: `Tax Collector's Report Period July 1, 1979 - June 30, 1980`"
+    },
+    {
+      "what": "trust funds",
+      "period": "July 1, 1979 through June 30, 1980",
+      "cited": "p68: `Trust Funds / July 1, 1979 through June 30, 1980`"
+    },
+    {
+      "what": "recapitulation of revenue cash invested",
+      "period": "7/1/79-12/31/79, 1/1/80-6/30/80 (FY 1980), 7/1/80-12/31/80, calendar year 1980",
+      "cited": "p71: `TOTAL FY 1980`, `TOTAL FIRST SIX MONTHS FY1981`, `TOTAL CALENDAR 1980`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation, calendar year",
+      "period": "calendar year January 1 - December 31, 1980",
+      "cited": "p72: `Reconciliation of Treasurer's Cash / Calendar Year Ending December 31, 1980`, `Balance January 1, 1980`"
+    },
+    {
+      "what": "omnibus budget and special articles",
+      "period": "fiscal year 1981, as VOTED at the Annual Town Meeting of April 5, 1980 (a budget, not an actual)",
+      "cited": "p78: `Excerpts From Annual Town Meeting Minutes / April 5, 1980`; article 7 text: `Fiscal Year 1981`; p81: `TOTAL BUDGET VOTED`"
+    },
+    {
+      "what": "school department statistics, receipts, accounts and special accounts",
+      "period": "school year / fiscal 1980 (FY-80 7/1/79-6/30/80; FY-81 estimates and requests)",
+      "cited": "p130: `FOR SCHOOL YEAR ENDING JUNE 30, 1980`; p131: `FY-80 ACTUAL RECEIPTS (7/1/79-6/30/80)`, `FY-81 ESTIMATED RECEIPTS (7/1/80-6/30/81)`; p132: `Summary of Accounts, FY80 and Budget Request, FY81`"
+    },
+    {
+      "what": "school tuition rates",
+      "period": "September 1 - December 31, 1980 and January 1 - December 31, 1981",
+      "cited": "p94: `EFFECTIVE for period September 1, 1980 - December 31, 1980`; `EFFECTIVE for period January 1, 1981 - December 31, 1981`"
+    },
+    {
+      "what": "police and building inspector activity",
+      "period": "calendar 1980",
+      "cited": "p20: `On November 5, 1980, the Police Department`; p29: `permits issued during 1980` (no period printed on the tables)"
+    },
+    {
+      "what": "state primary",
+      "period": "September 16, 1980",
+      "cited": "p86: `State Primary September 16, 1980`"
+    }
+  ],
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true,
+  "unlabeled_subtotals_in": [
+    "report-appropriations",
+    "report-statement-of-payments",
+    "report-revenue-sharing",
+    "report-fund-balance-sheets",
+    "report-trust-funds"
+  ]
+}

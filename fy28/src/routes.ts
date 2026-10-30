@@ -586,11 +586,8 @@ const ALIASES: Record<string, Tab> = {
   // page; since 14 October 2026 they land on the Free cash and Stabilization funds hubs --
   // see TOPIC_ALIASES below.
   reports: 'reports', analyses: 'reports', analysis: 'reports', 'our-analyses': 'reports',
-  // NOT 'actuals' alone as the slug: the page is a COMPARISON, and a reader who lands on
-  // something called "actuals" reasonably expects a spending ledger, which is a different
-  // page in a different area.
-  'budget-vs-actual': 'variance', variance: 'variance', 'budgets-vs-actuals': 'variance',
-  'budget-versus-actual': 'variance', actuals: 'variance', underspend: 'variance',
+  // `budget-vs-actual` and its aliases left this table on 30 October 2026: they open School
+  // lines against budget, which replaced the page (TOPIC_ALIASES below).
   // NOT 'api' or 'data' -- both are live Function prefixes serving real files, and an
   // alias would shadow the archive with an app route.
   agents: 'agents', 'for-agents': 'agents', ai: 'agents', llms: 'agents',
@@ -1070,9 +1067,13 @@ export const TOPIC_MERGED: Record<string, string> = {
   // The fund's cash FY2024-FY2026, one stretch of its whole history: folded 28 October 2026
   // into the page that holds every year (both opened on the FY2025 journal entries).
   'fee-fund-ledger': 'fee-fund-history',
+  // The school fund against its revised budget, and the August report's line-level misses:
+  // merged 30 October 2026 into School lines against budget, which carries both (TJ, 29 Oct).
+  'school-budget-against-actual': 'budget-against-actual', 'line-level-misses': 'budget-against-actual',
 }
 
-/** ONE-SEGMENT ADDRESSES THAT NAME A HUB BY ANOTHER WORD: slug -> category id. These were
+/** ONE-SEGMENT ADDRESSES THAT NAME A HUB BY ANOTHER WORD: slug -> category id (or, for a page
+ *  that replaced a whole report, its topic id). These were
  *  aliases of the old Free cash page (tab `freecash`), which the Free cash hub replaced on
  *  14 October 2026; a stale link lands on the hub that answers it, and Topic.tsx moves the
  *  address bar to the hub's own path. A topic page that changed shelf needs nothing here:
@@ -1087,6 +1088,12 @@ export const TOPIC_ALIASES: Record<string, string> = {
   // The Budget crisis hub took /crisis on 18 October 2026; it was built at /budget-crisis,
   // which was also an alias of the walkthrough, so both words land on the hub.
   'budget-crisis': 'crisis',
+  // A TOPIC PAGE, not a hub: /budget-vs-actual (tab `variance`, the August report's page) and its
+  // aliases open School lines against budget, which replaced it (TJ, 29 October 2026). The
+  // markdown stays served at /analysis/budget-vs-actual, unlisted (sources/analyses/UNLISTED).
+  'budget-vs-actual': 'budget-against-actual', variance: 'budget-against-actual',
+  'budgets-vs-actuals': 'budget-against-actual', 'budget-versus-actual': 'budget-against-actual',
+  actuals: 'budget-against-actual', underspend: 'budget-against-actual',
 }
 
 /** The document a `/analysis/<id>` address names, or null for the bare index.

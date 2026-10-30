@@ -1,0 +1,73 @@
+{
+  "edition": "1977",
+  "fy": 1977,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1977 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION, whose financial statements are for fiscal 1977 -- see periods",
+  "stem": "4499-1977-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4499-1977-annual-town-report.pdf",
+  "label": "1977 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4499-1977-annual-town-report.cells.tsv",
+  "dash_zero": true,
+  "accountant_marks_wide": true,
+  "year_labels": true,
+  "colon_heading_subtotals": true,
+  "receipts_stop_at_grand": true,
+  "recon_no_transfers": true,
+  "cash_book_list": true,
+  "periods": [
+    {
+      "what": "Treasurer's receipts and payments, accountant's schedule, tax collector, balance sheets, trust funds, revenue sharing",
+      "period": "fiscal 1977, July 1, 1976 - June 30, 1977",
+      "cited": "p40: `Detailed Statement of Receipts / July 1, 1976 through June 30, 1977`; p55: `Summary and Classification of Accounts / July 1, 1976 through June 30, 1977`; p67: `Tax Collector's Report - July 1, 1976 - June 30, 1977`; p48: `Balance Sheet June 30, 1977`; p83: `Trust Funds / July 1, 1976 through June 30, 1977`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation",
+      "period": "fiscal 1977",
+      "cited": "p39: `Receipts July 1, 1976 through June 30, 1977`; `Balance June 30, 1977 per cash book`"
+    },
+    {
+      "what": "General revenue sharing fund",
+      "period": "fiscal 1977",
+      "cited": "p52: `Receipts July 1, 1976 through June 30, 1977`; `Balance June 30, 1977 per cash book`"
+    },
+    {
+      "what": "Treasurer's office cost table",
+      "period": "calendar 1970-1973 and fiscal 1975-1979 (1978-1979 estimated)",
+      "cited": "p38: rows `Cal. 1970` ... `F Y 1979`; `*Estimated`"
+    },
+    {
+      "what": "bonded indebtedness",
+      "period": "balances at 6-30-78; payments due fiscal 1978-1988",
+      "cited": "p54: `Due Fiscal 1978`, `BALANCE 6-30-78`, `FISCAL YEAR 1979 ... 1988`"
+    },
+    {
+      "what": "Annual Town Meeting voted budget and special articles",
+      "period": "fiscal 1978, voted April 2, 1977",
+      "cited": "p75: `ARTICLE 5. ... for Fiscal Year 1978 ... VOTED UNANIMOUSLY`; the meeting date `April 2, 1977` is printed in the warrant heading (text line `Annual Town Meeting and Election / April 2, 1977`)"
+    },
+    {
+      "what": "School department statistics, receipts, accounts and special accounts",
+      "period": "school year / fiscal 1977 (FY-77 7/1/76-6/30/77; FY-78 estimates and requests)",
+      "cited": "p157: `FOR SCHOOL YEAR ENDING JUNE 30, 1977`; p158: `FY-77 ACTUAL RECEIPTS (7/1/76-6/30/77)`, `FY-78 ESTIMATED RECEIPTS (7/1/77-6/30/78)`; p159: `Summary of Accounts, FY-77 and Budget Request, FY-78`"
+    },
+    {
+      "what": "School lunch program",
+      "period": "school year 1976-77, July 1976 to June 1977",
+      "cited": "p155: `SCHOOL LUNCH PROGRAM FINANCIAL AND STATISTICAL REPORT FOR 1976-77`"
+    },
+    {
+      "what": "police arrests",
+      "period": "calendar 1977",
+      "cited": "p31: `a summary of the 919 arrests handled by the Police Department during 1977`"
+    }
+  ],
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true,
+  "recon_net_beside_ledger": true
+}

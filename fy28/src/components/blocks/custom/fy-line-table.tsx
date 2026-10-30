@@ -24,6 +24,7 @@ import { HeadTip, WideScroll } from './fy-shared'
 import { itemHrefs, useItemIndex } from './fy-items'
 import { PopupActions } from './fy-item-link'
 import type { CustomProps } from './index'
+import { FLAG_TONE, type FlagKey } from './fy-flags'
 
 type K = 'voted' | 'transfers' | 'carried' | 'budget' | 'before' | 'off' | 'on' | 'left' | 'spent' | 'direct' | 'total'
 type Item = { title: string; sub: string; text: string }
@@ -32,7 +33,9 @@ type Entry = { date: string; memo: string; journal: string; dir: 'in' | 'out'; t
 export type Row = { name: string; account: string; key: string; cat: string; line: boolean; n: Record<K, number>; t: Record<K, string>
   spent_note?: string; bw?: BW
   /** what it cost from every fund, less last year; null in the first year the journal holds */
-  chg?: number | null; t_chg?: string; chips: Record<'off' | 'on' | 'direct', Item[]>; chip_n: Partial<Record<'off' | 'on' | 'direct', string>> }
+  chg?: number | null; t_chg?: string
+  /** the year's flags (scripts/line_flags.py), for the flag filter */
+  flags?: FlagKey[]; chips: Record<'off' | 'on' | 'direct', Item[]>; chip_n: Partial<Record<'off' | 'on' | 'direct', string>> }
 type BW = { walk: string; adj: number; adj_t: string; adj_pct: string; flag: boolean }
 type Year = { fy: string; rows: Row[]; unmatched: { payer: string; why: string; text: string }[]; unmatched_total: string }
 type T = Record<'line_chg' | 'line_chg_means' | 'read' | 'all_cats' | 'show' | 'fewer' | 'sum' | 'moves' | 'nomoves' | 'shared' | 'into' | 'outof' | 'in_' | 'out'
@@ -40,9 +43,10 @@ type T = Record<'line_chg' | 'line_chg_means' | 'read' | 'all_cats' | 'show' | '
   | 'who_paid' | 'every_row' | 'by_payee' | 'every_fund' | 'loading' | 'failed' | 'recharges' | 'no_recharges'
   | 'tab_analysis' | 'an_payee' | 'an_memo' | 'an_week' | 'an_note' | 'an_week_note' | 'an_recharge'
   | 'ex_date' | 'ex_kind' | 'ex_payee' | 'ex_memo' | 'ex_ref' | 'ex_fund' | 'ex_amount' | 'ex_rows' | 'ex_note' | 'tab_moves' | 'mv_transfers' | 'mv_transfers_def' | 'mv_recharges' | 'mv_recharges_def'
-  | 'mv_entries' | 'mv_entries_def' | 'mv_none' | 'mv_with' | 'mv_in' | 'mv_out' | 'any_payee' | 'any_memo' | 'clear_filters' | 'an_click' | 'for_what' | 'paid_to' | 'footing' | 'cost_sum' | 'other_funds' | 'chip_off' | 'chip_on' | 'chip_direct' | 'scroll', string>
+  | 'mv_entries' | 'mv_entries_def' | 'mv_none' | 'mv_with' | 'mv_in' | 'mv_out' | 'any_payee' | 'any_memo' | 'clear_filters' | 'an_click' | 'for_what' | 'paid_to' | 'footing' | 'cost_sum' | 'other_funds' | 'chip_off' | 'chip_on' | 'chip_direct' | 'scroll' | 'flag_any' | 'flag_filter', string>
 type Col = { id: string; key: K; label: string; op: string; group: string; means: string }
-export type Data = { years: Year[]; cats: string[]; groups: { id: string; label: string }[]; columns: Col[]; text: T }
+export type Data = { years: Year[]; cats: string[]; groups: { id: string; label: string }[]; columns: Col[]; text: T
+  flag_names?: Record<FlagKey, string> }
 
 // HEAD AND TAIL (TJ, 26 October 2026: "is there a way to show the TOP left and the BOTTOM left,
 // on both ends of it on the same table?"). Sorted by any column, the table shows both ends --
@@ -525,6 +529,7 @@ export default function FyLineTable({ data, alt }: CustomProps) {
   const [fy] = useFyYear(fys)                     // the page's year (fy-year.ts)
   const yi = Math.max(0, fys.indexOf(fy))
   const [cat, setCat] = useState<string>('')
+  const [fk, setFk] = useState<FlagKey | ''>('')
   const [sort, setSort] = useState<{ k: string; dir: 1 | -1 }>({ k: 'left', dir: -1 })
   const [all, setAll] = useState(false)
   // `?line=<account>` opens that line, so one line can be linked to.
@@ -536,7 +541,7 @@ export default function FyLineTable({ data, alt }: CustomProps) {
   const y = d.years[yi]
   const openRow = open ? y.rows.find(r => `${r.account}|${r.name}|${r.cat}` === open) ?? null : null
   const close = useCallback(() => setOpen(null), [])
-  const rows = useMemo(() => y.rows.filter(r => !cat || r.cat === cat)
+  const rows = useMemo(() => y.rows.filter(r => (!cat || r.cat === cat) && (!fk || r.flags?.includes(fk)))
     .sort((a, b) => {
       // by category: alphabetical, and within one category the line's Left, largest first, so
       // a category's biggest lines sit together
@@ -546,7 +551,7 @@ export default function FyLineTable({ data, alt }: CustomProps) {
       if (sort.k === 'chg') return (a.chg == null ? 1 : 0) - (b.chg == null ? 1 : 0) || sort.dir * ((a.chg ?? 0) - (b.chg ?? 0)) || a.name.localeCompare(b.name)
       const k = d.columns.find(c => c.id === sort.k)?.key ?? 'left'
       return sort.dir * (a.n[k] - b.n[k]) || a.name.localeCompare(b.name)
-    }), [y, cat, sort, d.columns])
+    }), [y, cat, fk, sort, d.columns])
   const cut = !all && rows.length > HEAD + TAIL
   const shown = cut ? rows.filter((r, i) => i < HEAD || i >= rows.length - TAIL || `${r.account}|${r.name}|${r.cat}` === open) : rows
   const pos = new Map(rows.map((r, i) => [r, i]))
@@ -579,6 +584,15 @@ export default function FyLineTable({ data, alt }: CustomProps) {
           <option value="">{d.text.all_cats}</option>
           {d.cats.map(c => <option key={c} value={c}>{c}</option>)}
         </select>
+        {/* THE YEAR'S FLAGS (TJ, 29 October 2026): the lines a flag panel above lists, in this table */}
+        {d.flag_names ? <>
+          <span className="ml-2 text-[12.5px]" style={muted}>{d.text.flag_filter}:</span>
+          <Chip on={!fk} onClick={() => { setFk(''); setOpen(null) }}>{d.text.flag_any}</Chip>
+          {(['under', 'over', 'restart'] as FlagKey[]).map(k => (
+            <Chip key={k} on={fk === k} onClick={() => { setFk(fk === k ? '' : k); setOpen(null) }}>
+              <span className="inline-block w-2 h-2 rounded-full mr-1 align-middle" style={{ background: FLAG_TONE[k] }} />
+              {d.flag_names![k]} <span className="tabular-nums">({y.rows.filter(r => r.flags?.includes(k)).length})</span></Chip>))}
+        </> : null}
       </div>
       <WideScroll cue={d.text.scroll}>
         <table className="w-full text-[13px] tabular-nums border-collapse">
@@ -617,7 +631,9 @@ export default function FyLineTable({ data, alt }: CustomProps) {
                     {r.name}
                     {/* the line's budget moved far from the vote (build_fy_breakdown.budget_walk) */}
                     {r.bw?.flag ? <span title={r.bw.walk} className="block mt-0.5 text-[11.5px] font-semibold" style={{ color: 'var(--thread-3)' }}>
-                      ⚑ {r.bw.adj_t} {r.bw.adj_pct ? `(${r.bw.adj_pct})` : ''}</span> : null}</td>
+                      ⚑ {r.bw.adj_t} {r.bw.adj_pct ? `(${r.bw.adj_pct})` : ''}</span> : null}
+                    {r.flags?.length && d.flag_names ? <span className="block mt-0.5">{r.flags.map(k => (
+                      <span key={k} className="inline-block mr-1 px-1.5 rounded text-[11px]" style={{ border: `1px solid ${FLAG_TONE[k]}` }}>{d.flag_names![k]}</span>))}</span> : null}</td>
                   <td className="px-2 py-1.5 text-left min-w-[9rem]" style={secondary}>{r.cat}</td>
                   {d.columns.map((c, i) => (
                     <td key={c.id} className={`px-2 py-1.5 text-right whitespace-nowrap ${i === firstCost ? 'border-l' : ''}`}

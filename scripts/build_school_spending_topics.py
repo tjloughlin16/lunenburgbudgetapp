@@ -301,19 +301,6 @@ def school_ledger():
     return out, tied
 
 
-def binlabel(b):
-    """A spread bin as a short axis label, from its edges rather than its printed name:
-    '-50/-25' reads in the width a bar has. The edges are fractions; 99 is open-ended."""
-    pc = lambda v: ('%+d' % round(100 * v)).replace('-', '\u2212')
-    if b['lo'] <= -1:
-        return '<%s' % pc(b['hi'])
-    if b['hi'] >= 99:
-        return '>%s' % pc(b['lo'])
-    if b['centred']:
-        return '\u00b1%d' % round(100 * b['hi'])
-    return '%s/%s' % (pc(b['lo']), pc(b['hi']))
-
-
 def short(d):
     """A district's name short enough for a chart row; refused rather than cut mid-word."""
     n = SHORT.get(d, d).replace(' (District)', '').replace(
@@ -1238,158 +1225,16 @@ def build():
     if len(under) != len(yrs):
         fail('a year spent more than its revised budget; the page’s finding no longer holds')
     far = min(yrs, key=lambda y: of_rev[y])
-    near = max(yrs, key=lambda y: of_rev[y])
-    over_orig = [y for y in yrs if SL[y]['spent'] + SL[y]['committed'] > SL[y]['original']]
-    L = SL[yrs[-1]]
     yl = yrs[-1]
-    # SPENT IS PAID PLUS STILL OWED (journal.py, WHAT "SPENT" MEANS). SL keeps the two apart
-    # because the workbook tie compares `spent` with what the workbook prints, which is paid.
-    L_spent = L['spent'] + L['committed']
-    out['school-budget-against-actual'] = TP.page(
-        'school-budget-against-actual',
-        'The school general fund spent less than its revised budget in all %s years, %s to %s.'
-        % (C.num(len(yrs)), C.fy(yrs[0]), C.fy(yl)),
-        [f('under', OF(len(under), len(yrs), 'years'), 'years spent under the revised budget',
-           'published'),
-         f('far', P(100 * (1 - of_rev[far])), 'furthest under, %s' % C.fy(far), 'published',
-           {'y': F(far)}),
-         f('near', P(100 * (1 - of_rev[near]), 2), 'nearest its budget, %s' % C.fy(near),
-           'published',
-           {'y': F(near)}),
-         f('over', OF(len(over_orig), len(yrs), 'years'), 'years spending passed the original '
-           'budget', 'published'),
-         f('rev', U(L['revised']), 'revised budget, %s' % C.fy(yl), 'published', {'y': F(yl)}),
-         f('spent', U(L_spent), 'spent or still owed, %s' % C.fy(yl), 'published', {'y': F(yl)}),
-         f('com', U(L['committed']), 'of it still owed at the close, %s' % C.fy(yl), 'published',
-           {'y': F(yl)}),
-         f('tied', OF(len(tied), len(tied), 'years'), 'years the workbook ties to the ledger, '
-           'to the dollar', 'published')],
-        [con('Each year spent less than that year’s revised budget; %s was furthest under, at %s.'
-             % (C.fy(far), C.pct(100 * (1 - of_rev[far]))), ['under', 'far', 'near'],
-             {'y': F(far), 'p': P(100 * (1 - of_rev[far]))},
-             notes=[step('Why a year came in under — a vacancy, a cut, a grant, a transfer — is '
-                         'not in either source.', 'gap',
-                         closes='payroll detail by position and date for the year, with the '
-                                'grant award records for the same year')]),
-         con('Spending passed the original voted budget in %s years; the revised budget covered '
-             'it each time.' % C.num(len(over_orig)), ['over'], {'n': N(len(over_orig))}),
-         con('For %s: %s revised and %s spent, %s of it still owed at the close.'
-             % (C.fy(yl), C.usd(L['revised']), C.usd(L_spent), C.usd(L['committed'])),
-             ['rev', 'spent', 'com'],
-             {'y': F(yl), 'a': U(L['revised']), 'b': U(L_spent), 'c': U(L['committed'])}),
-         con('Before %s the figures are a workbook assembled from the ledger; where both exist '
-             'they agree.' % C.fy(min(y for y in yrs if SL[y]['source'] == 'ledger')), ['tied'],
-             {'y': F(min(y for y in yrs if SL[y]['source'] == 'ledger'))})],
-        table=dict(caption='The school general fund, budget beside spending', views=[
-            dict(key=k, label=lab, total_col=-1, kinds=[kind] * 4,
-                 columns=['Original budget', 'Revised budget', 'Spent or committed',
-                          'Of revised'],
-                 rows=[dict(label=C.fy(y), cells=[C.usd(SL[y]['original']), C.usd(SL[y]['revised']),
-                                                  C.usd(SL[y]['spent'] + SL[y]['committed']),
-                                                  C.pct(100 * of_rev[y])])
-                       for y in reversed(yrs) if SL[y]['source'] == srcname],
-                 note=nt)
-            for k, lab, kind, srcname, nt in (
-                ('ledger', 'MUNIS, period 13', 'ledger', 'ledger',
-                 'The Town Accountant’s year-end reports. Each year against its own budget; no '
-                 'figure is set against another year’s.'),
-                ('workbook', 'Finance Committee workbook', 'stated', 'workbook',
-                 'Assembled from MUNIS by the Finance Committee; its school account rows, summed. '
-                 'It prints no encumbrance column.'))]),
-        chart=TP.series('School general fund, budget beside spending', [C.fy(y) for y in yrs], [
-            TP.track('Spent or committed, MUNIS', [SL[y]['spent'] + SL[y]['committed']
-                                                   if SL[y]['source'] == 'ledger' else None
-                                                   for y in yrs], 'published', 'bar'),
-            TP.track('Spent, Finance Committee workbook', [SL[y]['spent']
-                                                           if SL[y]['source'] == 'workbook'
-                                                           else None for y in yrs], 'stated', 'bar'),
-            TP.track('Revised budget, MUNIS', [SL[y]['revised'] if SL[y]['source'] == 'ledger'
-                                               else None for y in yrs], 'published', 'line'),
-            TP.track('Revised budget, workbook', [SL[y]['revised'] if SL[y]['source'] == 'workbook'
-                                                  else None for y in yrs], 'stated', 'line')],
-            '$', stacked=True,
-            note='Each year’s spending beside that year’s own budget; nothing is subtracted.'),
-        sources=S('glytdbud-expense-fy2026-p13-gf-school.xlsx',
-                  'glytdbud-expense-fy2025-p13-gf-school.xlsx',
-                  'glytdbud-expense-fy2024-p13-gf-school.xlsx',
-                  'general-fund-budget-vs-actuals-history.xlsx', 'gl-history.csv',
-                  'munis-school-ytd.csv'),
-        finding_figures={'n': N(len(yrs)), 'y': F(yrs[0]), 'z': F(yl)})
-
-    # ---------------------------------------------------------- line-level misses
+    # THE TWO BUDGET-AGAINST-ACTUAL PAGES THIS SHELF HAD -- the school fund against its revised
+    # budget, and the August report's line-level misses -- were merged on 30 October 2026 into
+    # /school-all-funds/budget-against-actual (scripts/build_budget_against_actual.py), which
+    # carries the fund's every year and the lines that missed the same way. The hub keeps its
+    # three figures, computed here, and its group lists that page.
     cv = BV['coverage']
-    spread = {b['bin']: b['count'] for b in BV['spread']}
     within = sum(b['count'] for b in BV['spread'] if b['centred'])
-    quarter = sum(b['count'] for b in BV['spread'] if b['lo'] >= 0.25 or b['hi'] <= -0.25)
-    if within != BV['within_2pct'] or sum(spread.values()) != cv['line_years']:
+    if within != BV['within_2pct'] or sum(b['count'] for b in BV['spread']) != cv['line_years']:
         fail('the spread no longer sums to the line-years measured')
-    cf = {c['figure']: c for c in BV['conclusions']}
-    if cf['within2']['figures']['big_miss']['value'] != quarter:
-        fail('the count missing by more than a quarter no longer recomputes')
-    sw_ = sorted(BV['same_way'], key=lambda r: r['mean_dollars'])
-    sec = {s['section']: s for s in BV['sections']}
-    sal, rest = sec['Salaries'], sec['Everything else']
-    ev = BV['evidence']
-    fy21 = BV['fy21']
-    if ev['document_types'].get('restatement', 0) + ev['document_types'].get('forward', 0) != \
-            ev['documents'] or ev['measured_years_ledger_backed']:
-        fail('a measured year is now ledger-backed; the page’s caveat no longer holds')
-    y1, y2 = cv['first_fy'], cv['last_fy']
-    lyrs = [y for y in yrs if SL[y]['source'] == 'ledger']
-    out['line-level-misses'] = TP.page(
-        'line-level-misses',
-        'Of %s budget lines and years the district restated, %s landed within %s of the line’s '
-        'budget.' % (C.num(cv['line_years']), C.num(within), C.pct(2, 0)),
-        [f('ly', N(cv['line_years'], 'line-years'), 'measured, %s to %s' % (C.fy(y1), C.fy(y2)),
-           'published', {'y': F(y1), 'z': F(y2)}),
-         f('w2', OF(within, cv['line_years'], 'line-years'), 'within %s of their budget'
-           % C.pct(2, 0), 'published', {'p': P(2, 0)}),
-         f('q', N(quarter, 'line-years'), 'missed by more than a quarter, either way',
-           'published'),
-         f('same', OF(len(sw_), BV['lines_with_four_years'], 'lines'),
-           'missed the same way in every year', 'published'),
-         f('big', U(-sw_[0]['mean_dollars']), 'the largest of those, under, a year', 'published'),
-         f('sal', P(-100 * sal['pct']), 'salaries under budget, measured years', 'published'),
-         f('rest', P(100 * rest['pct']), 'everything else over budget', 'published'),
-         f('fy21', OF(fy21['identical'], fy21['lines'], 'lines'), '%s lines whose spent figure is '
-           'the budget' % C.fy(2021), 'published', {'y': F(2021)})],
-        [con('Only %s line-years landed within %s; %s missed by more than a quarter.'
-             % (OF(within, cv['line_years'])['text'], C.pct(2, 0), C.num(quarter)),
-             ['ly', 'w2', 'q'], {'a': OF(within, cv['line_years']), 'p': P(2, 0),
-                                 'b': N(quarter)}),
-         con('Just %s lines missed the same way every year; the largest averaged %s a year under.'
-             % (OF(len(sw_), BV['lines_with_four_years'])['text'],
-                C.usd(-sw_[0]['mean_dollars'])), ['same', 'big'],
-             {'a': OF(len(sw_), BV['lines_with_four_years']), 'b': U(-sw_[0]['mean_dollars'])}),
-         con('Salaries came in %s under across %s line-years; everything else %s over.'
-             % (C.pct(-100 * sal['pct']), C.num(sal['line_years']), C.pct(100 * rest['pct'])),
-             ['sal', 'rest'], {'a': P(-100 * sal['pct']), 'n': N(sal['line_years']),
-                               'b': P(100 * rest['pct'])}),
-         con('The spent column is the district restating its own books; in %s it repeats the '
-             'budget.' % C.fy(2021), ['fy21'], {'y': F(2021)},
-             notes=[step('None of the %s budget books behind it is a ledger, so money moved '
-                         'between lines during a year cannot be seen here.' % C.num(ev['documents']),
-                         'gap', {'n': N(ev['documents'])}, allow=(C.fy(lyrs[0]), C.fy(lyrs[-1])),
-                         closes='the MUNIS year-end expense report for the school department '
-                                'for each year wanted, as held for %s to %s'
-                                % (C.fy(lyrs[0]), C.fy(lyrs[-1])))])],
-        table=dict(caption='Lines that missed the same way every year', views=[dict(
-            key='same', label='Four or more measured years', total_col=-1, kinds=['stated'] * 3,
-            columns=['Direction', 'Years', 'Average a year'],
-            rows=[dict(label=r['line'], cells=[r['direction'], C.num(r['years']),
-                                               C.usd(r['mean_dollars'])]) for r in sw_],
-            note='Each year’s budget against the same year’s restated figure, out of the '
-                 'district’s own budget books. A line counts only if it was more than %s off '
-                 'in every year.' % C.pct(100 * cv['same_way_threshold'], 0))]),
-        chart=TP.series('How far each line landed from its budget',
-                        [binlabel(b) for b in BV['spread']], [
-            TP.track('Line-years, the district’s restated figures',
-                     [b['count'] for b in BV['spread']], 'stated', 'bar')], 'line-years',
-            note='Each bar is a range of percent over or under the same year’s budget. The '
-                 'district’s own budget books, %s to %s.' % (C.fy(y1), C.fy(y2)),
-            note_figures={'y': F(y1), 'z': F(y2)}),
-        sources=S('line-history.csv'),
-        finding_figures={'a': N(cv['line_years']), 'b': N(within), 'p': P(2, 0)})
 
     # ---------------------------------------------------------- the hub
     h = {}

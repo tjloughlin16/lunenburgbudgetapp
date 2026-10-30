@@ -1,0 +1,110 @@
+{
+  "edition": "1967",
+  "fy": 1967,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1967 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION whose financial statements are for the calendar year ended December 31, 1967 -- see periods",
+  "stem": "4510-1967-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4510-1967-annual-town-report.pdf",
+  "label": "1967 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4510-1967-annual-town-report.cells.tsv",
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true,
+  "periods": [
+    {
+      "what": "balance sheet, debt accounts, trust and investment accounts in custody",
+      "period": "December 31, 1967",
+      "cited": "p16: `Town of Lunenburg Balance Sheet December 31, 1967`"
+    },
+    {
+      "what": "tax collector's report",
+      "period": "calendar year ended December 31, 1967 (levy years 1963-1967)",
+      "cited": "p18: columns Commitments, Collected, Abated, Refunds, Tax Titles, Balance; `Grand Total Collected 1967`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation",
+      "period": "January 1 thru December 31, 1967",
+      "cited": "p19: `Balance December 31, 1966`; `Receipts January 1 thru December 31, 1967`; `Balance December 31, 1967 per cash book`"
+    },
+    {
+      "what": "detailed statement of receipts",
+      "period": "For Year Ending December 31, 1967",
+      "cited": "p19: `Detailed Statement of Receipts For Year Ending December 31, 1967`; p22: `Total Receipts`"
+    },
+    {
+      "what": "detailed statement of payments",
+      "period": "For Year Ending December 31, 1967",
+      "cited": "p23: `Detailed Statement of Payments / For Year Ending December 31, 1967`; p26: `Total Payments`"
+    },
+    {
+      "what": "summary and classification of accounts (accountant's schedule)",
+      "period": "calendar 1967; carry-forward column `Balance to 1968`",
+      "cited": "p27: `Summary and Classifications of Accounts`; column `Balance to 1968`"
+    },
+    {
+      "what": "trust funds",
+      "period": "December 31, 1966 to December 31, 1967",
+      "cited": "p40: `December 31, 1966`, `Balance December 31, 1967`; p41: `Balance December 31, 1966`, `Balance December 31, 1967`"
+    },
+    {
+      "what": "bonded indebtedness",
+      "period": "payments to December 31, 1967; balance 12-31-67; payments due 1968-1987",
+      "cited": "p42: `Paid 1967`, `Bal. Prin. 12-31-67`; schedule rows `1968` ... `1971-1987`"
+    },
+    {
+      "what": "analysis of revenue accounts",
+      "period": "calendar years 1962 to 1967",
+      "cited": "p43: `ANALYSIS OF REVENUE ACCOUNTS` with columns 1962 1963 1964 1965 1966 1967"
+    },
+    {
+      "what": "proposed classification and salary schedule",
+      "period": "proposed for the Annual Meeting of March 2, 1968 (a proposal)",
+      "cited": "p45: `CLASSIFICATION AND SALARY SCHEDULE - to be voted on at Annual Meeting on March 2, 1968`"
+    },
+    {
+      "what": "welfare department",
+      "period": "calendar 1967",
+      "cited": "p58: `Expended 1967` and the months January, April, October, December 1967"
+    },
+    {
+      "what": "voted omnibus budget and special articles",
+      "period": "calendar year 1967, as VOTED at the Annual Town Meeting of March 4, 1967 (a budget, not an actual)",
+      "cited": "p71: `Excerpts From Annual Town Meeting / Minutes / March 4, 1967`; p72: `TOTAL BUDGET VOTED: $1,612,336.00`; p73: `TOTAL SPECIAL ARTICLES VOTED`"
+    },
+    {
+      "what": "school lunch program",
+      "period": "school year 1966-67 (September 1966 - June 1967)",
+      "cited": "p126: `LUNENBURG SCHOOL LUNCH REPORT for 1966-67`; `Balance on Hand, Sept. 1, 1966`"
+    },
+    {
+      "what": "school department statistics",
+      "period": "school year ending June 30, 1967; and calendar year 1967 for the cost per pupil",
+      "cited": "p128: `SCHOOL YEAR ENDING JUNE 30, 1967`; `Average Membership for Calendar Year 1967`"
+    },
+    {
+      "what": "school department summary of accounts and special accounts",
+      "period": "1967 appropriation and spent; 1968 budget request",
+      "cited": "p129: `BUDGET APPROPR. 1967`, `BUDGET APPROPR. 1968`; p130: `APPROPRIATION 1967 | SPENT 1967 | APPROPRIATION 1968`"
+    },
+    {
+      "what": "school monies returned to the town",
+      "period": "actual receipts 1967; estimated receipts 1968",
+      "cited": "p131: `Actual Receipts 1967`, `Estimated Receipts 1968`"
+    },
+    {
+      "what": "school federal funds and adult education accounts",
+      "period": "calendar 1967 (balance on hand January 1, 1967 to December 31, 1967)",
+      "cited": "p133-136: `Balance on Hand, January 1, 1967`, `BALANCE ON HAND, December 31, 1967`"
+    },
+    {
+      "what": "cemetery fees",
+      "period": "no date printed on the table",
+      "cited": "p59: `Regular burials $40.00` ... `10 to 12 grave lot $200.00`"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "edition": "1973",
+  "fy": 1973,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1973 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION, whose financial statements are for fiscal 1973 -- see periods",
+  "stem": "4495-1973-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4495-1973-annual-town-report.pdf",
+  "label": "1973 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4495-1973-annual-town-report.cells.tsv",
+  "dash_zero": true,
+  "year_labels": true,
+  "colon_heading_subtotals": true,
+  "receipts_stop_at_grand": true,
+  "recon_no_transfers": true,
+  "cash_book_list": true,
+  "periods": [
+    {
+      "what": "Treasurer's cash reconciliation, tax collector, balance sheet, statements of receipts and payments, revenue sharing",
+      "period": "calendar year January 1 - December 31, 1973 (the transition to an 18-month fiscal year ending June 30, 1974)",
+      "cited": "p46: `Tax Collector's Report / YEAR ENDING DECEMBER 31, 1973`; `Receipts January 1, through December 31, 1973`; p42: `Balance Sheet - December 31, 1973`; p48 and p52: `Detailed Statement of Receipts / For Year Ending December 31, 1973`, `Detailed Statement of Payments / For Year Ending December 31, 1973`; p47: `FEDERAL REVENUE SHARING FUNDS`"
+    },
+    {
+      "what": "appropriations, expended and balances (the accountant's schedule)",
+      "period": "funds available for the 18 months January 1, 1973 - June 30, 1974; expended through December 31, 1973; balance January 1, 1974",
+      "cited": "p57: `APPROPRIATIONS EIGHTEEN MONTH FISCAL YEAR / EXPENDITURES JANUARY 1, 1973 - DECEMBER 31, 1973 / BALANCES JANUARY 1, 1974`; p57-60 column heads `Funds Available 18 mos. 73-74`, `Expended through 12/31/73`, `Balance 1-1-74`"
+    },
+    {
+      "what": "bonded indebtedness",
+      "period": "balance of principal at December 31, 1973; payments scheduled 1974-1975 through 1987-1988",
+      "cited": "p56: `Bal Prin. 12-31-73`; `PRINCIPAL AND INTEREST PAYMENTS DUE ON SCHOOL LOANS 1974-1975 THRU 1987-1988`"
+    },
+    {
+      "what": "trust funds",
+      "period": "December 31, 1973",
+      "cited": "p61-63: `Balance December 31, 1973`"
+    },
+    {
+      "what": "omnibus budget and special articles voted",
+      "period": "eighteen months, January 1, 1973 - June 30, 1974, as voted at the Annual Town Meeting of March 3, 1973 (a budget, not an actual)",
+      "cited": "p65: `March 3, 1973`; p66: `fix for the fiscal year commencing January 1, 1973 and ending June 30, 1974`; p67: `TOTAL BUDGET VOTED`, `TOTAL SPECIAL ARTICLES VOTED`"
+    },
+    {
+      "what": "proposed classification and salary schedule",
+      "period": "proposed for July 1974, annual pay",
+      "cited": "p17: `PROPOSED CLASSIFICATION & SALARY SCHEDULE - JULY, 1974`"
+    },
+    {
+      "what": "school lunch program",
+      "period": "school year 1972-73, September 1972 - June 1973",
+      "cited": "p115: `LUNENBURG SCHOOL LUNCH PROGRAM REPORT FOR 1972-73`"
+    },
+    {
+      "what": "school department statistics",
+      "period": "school year ending June 30, 1973; and calendar year ending December 31, 1973 (two statements on one page)",
+      "cited": "p120: `SCHOOL YEAR ENDING JUNE 30, 1973`; `CALENDAR YEAR ENDING DECEMBER 31, 1973`"
+    },
+    {
+      "what": "school department summary of accounts and special accounts",
+      "period": "18-month budget January 1, 1973 - June 30, 1974; spent January 1 - December 31, 1973; balance on hand January 1, 1974; FY 1975 (July 1, 1974 - June 30, 1975) budget request",
+      "cited": "p121: `Summary of Accounts, (18-month Budget - January 1, 1973 - June 30, 1974) & Budget Request, FY 1975 (July 1, 1974 - June 30, 1975)`"
+    },
+    {
+      "what": "school monies returned to the Town",
+      "period": "actual receipts 1973; estimated receipts 1974",
+      "cited": "p123: `Actual Receipts 1973 | Estimated Receipts 1974`"
+    }
+  ],
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true
+}

@@ -30,7 +30,8 @@ CATEGORY = dict(
                                      'teacher-pay-compared',
                                      'destination-district-spending',
                                      'regional-district-spending']),
-        ('Budget against actual', ['school-budget-against-actual', 'line-level-misses']),
+        # Merged 30 October 2026 into the whole school budget's page, listed here too.
+        ('Budget against actual', ['budget-against-actual']),
         ('School Committee funds', ['school-committee-funds', 'school-revolving-funds',
                                     'school-grant-balances', 'revolving-fund-history']),
         ('Elsewhere on the site', ['net-school-spending', 'net-school-spending-rank',
@@ -53,8 +54,6 @@ TOPICS = {
     'average-teacher-salary': 'Average teacher salary',
     'destination-district-spending': 'Destination districts',
     'regional-district-spending': 'Regional districts',
-    'school-budget-against-actual': 'Budget against actual',
-    'line-level-misses': 'Line-level misses',
     'school-committee-funds': 'School Committee funds',
     'school-revolving-funds': 'School revolving funds',
     'school-grant-balances': 'School grant balances',

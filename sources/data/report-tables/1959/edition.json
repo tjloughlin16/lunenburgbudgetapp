@@ -1,0 +1,100 @@
+{
+  "edition": "1959",
+  "fy": 1959,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1959 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION whose statements are for calendar year ended December 31, 1959 -- see periods",
+  "stem": "4550-1959-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4550-1959-annual-town-report.pdf",
+  "label": "1959 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4550-1959-annual-town-report.cells.tsv",
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true,
+  "periods": [
+    {
+      "what": "general fund balance sheet",
+      "period": "December 31, 1959",
+      "cited": "p16: `Town of Lunenburg Balance Sheet December 31, 1959`"
+    },
+    {
+      "what": "trust and investment accounts",
+      "period": "December 31, 1959",
+      "cited": "p17: `Trust and Investment Accounts` printed under the same balance sheet"
+    },
+    {
+      "what": "Treasurer's cash reconciliation and cash by bank",
+      "period": "January 1 - December 31, 1959",
+      "cited": "p18: `Balance December 31, 1958`, `Receipts January 1 thru December 31, 1959`, `Balance December 31, 1959 per cash book`"
+    },
+    {
+      "what": "detailed statement of receipts",
+      "period": "calendar year 1959",
+      "cited": "p18: `Detailed Statement of Receipts / For Year Ending December 31, 1959`"
+    },
+    {
+      "what": "detailed statement of payments",
+      "period": "calendar year 1959",
+      "cited": "p22: `Detailed Statement of Payments / For Year Ending December 31, 1959`"
+    },
+    {
+      "what": "Treasurer's analysis (pie charts)",
+      "period": "calendar year 1959",
+      "cited": "p15: `FISCAL YEAR ENDING DECEMBER 31, 1959` (the page calls a calendar year ended December 31 a fiscal year)"
+    },
+    {
+      "what": "Tax Collector's report",
+      "period": "levy years 1954-1959, balances at December 31, 1959",
+      "cited": "p25: columns by levy year; no dated heading in the cells"
+    },
+    {
+      "what": "accountant's summary and classification of accounts",
+      "period": "calendar 1959 (carry-forward column `Balance to 1960`)",
+      "cited": "p26: `Summary and Classification of Accounts 1959`; `Balance to 1960`"
+    },
+    {
+      "what": "school financing (bonds)",
+      "period": "payments to December 31, 1959",
+      "cited": "p37: `School Financing December 31, 1959`; column `1959 Interest`"
+    },
+    {
+      "what": "voted budget and special articles",
+      "period": "calendar year 1959, as VOTED at the Annual Town Meeting of March 7, 1959, Article 3 (a budget, not an actual)",
+      "cited": "p57: `Annual Town Meeting / March 7, 1959`; p58: `VOTED THE BUDGET AND SPECIAL ARTICLES AS FOLLOWS`"
+    },
+    {
+      "what": "school budget, spent and request",
+      "period": "1959 budget and spent; 1960 budget",
+      "cited": "p100: `School Budget for 1960`; `1959 Budget | 1959 Spent | 1960 Budget`"
+    },
+    {
+      "what": "school receipts",
+      "period": "1959 estimated and received; 1960 estimated",
+      "cited": "p101: `1959 Estimated | 1959 Receipts | 1960 Estimated`"
+    },
+    {
+      "what": "school statistics",
+      "period": "calendar year ending December 31, 1959",
+      "cited": "p102: `Statistics for the Year Ending December 31, 1959`"
+    },
+    {
+      "what": "school lunch program",
+      "period": "school year September 1958 - June 1959",
+      "cited": "p111: `LUNENBURG SCHOOL LUNCH PROGRAM REPORT FOR 1958-59`"
+    },
+    {
+      "what": "school athletic account",
+      "period": "September 1958 - June 1959",
+      "cited": "p113: `Financial Report for Athletic Account (Chapter 658) / September 1958 - June 1959`"
+    },
+    {
+      "what": "welfare case loads and cost",
+      "period": "calendar 1959",
+      "cited": "p49: `Avg. case load 1959 (individuals)`, `Expended 1959`"
+    }
+  ]
+}

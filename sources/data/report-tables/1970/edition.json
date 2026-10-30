@@ -1,0 +1,85 @@
+{
+  "edition": "1970",
+  "fy": 1970,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1970 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION whose financial statements are for the calendar year ended December 31, 1970 -- see periods",
+  "stem": "4492-1970-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4492-1970-annual-town-report.pdf",
+  "label": "1970 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4492-1970-annual-town-report.cells.tsv",
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true,
+  "periods": [
+    {
+      "what": "proposed classification and salary schedule",
+      "period": "PROPOSED for March 6, 1971 (a proposal, not a voted or paid rate)",
+      "cited": "p21: heading `PROPOSED CLASSIFICATION & SALARY SCHEDULE - March 6, 1971`"
+    },
+    {
+      "what": "general fund balance sheet",
+      "period": "December 31, 1970",
+      "cited": "p28: `Balance Sheet - December 31, 1970`"
+    },
+    {
+      "what": "Tax Collector's report",
+      "period": "calendar year 1970",
+      "cited": "p30: table of commitments by levy year; the page's cash block reads `Receipts January 1, thru December 31, 1970`; the Tax Collector's own heading (`YEAR ENDING DECEMBER 31, 1970`) is in the page-30 list from find_financial_pages"
+    },
+    {
+      "what": "Treasurer's cash reconciliation and cash by bank",
+      "period": "January 1 - December 31, 1970",
+      "cited": "p30 table 2: `Balance December 31, 1969`, `Receipts January 1, thru December 31, 1970`, `Cash Balance December 31, 1970`"
+    },
+    {
+      "what": "detailed statement of receipts",
+      "period": "calendar year 1970",
+      "cited": "p31: `Detailed Statement of Receipts / For Year Ending December 31, 1970`"
+    },
+    {
+      "what": "detailed statement of payments",
+      "period": "calendar year 1970",
+      "cited": "p35: `Detailed Statement of Payments / For Year Ending December 31, 1970`"
+    },
+    {
+      "what": "accountant's summary and classification of accounts",
+      "period": "NOT PRINTED as a year on the page; the carry-forward column is headed `Balance to 1971`, so the schedule closes calendar 1970",
+      "cited": "p39: header `Balance to 1971`"
+    },
+    {
+      "what": "bonded indebtedness",
+      "period": "payments in 1970, balance 12-31-70, payments scheduled 1971-1987",
+      "cited": "p51: headers `Paid 1970`, `Bal.Prin. 12-31-70`; schedule rows 1971-1987"
+    },
+    {
+      "what": "trust funds (Trust Fund Commission and School Committee)",
+      "period": "December 31, 1969 to December 31, 1970",
+      "cited": "p53: `December 31, 1969 Balance` ... `Balance December 31, 1970`"
+    },
+    {
+      "what": "voted budget, and special articles",
+      "period": "calendar year 1970, as VOTED at the Annual Town Meeting of March 7, 1970, Article 4 (a budget, not an actual)",
+      "cited": "p69: `fix for the calendar year 1970 ... Article 4`; p68: `Excerpts From Annual Town Meeting Minutes / March 7, 1970`"
+    },
+    {
+      "what": "school lunch program",
+      "period": "school year 1969-70 (September 1969 - June 1970)",
+      "cited": "p124: `LUNENBURG SCHOOL LUNCH PROGRAM REPORT FOR 1969 - 70`"
+    },
+    {
+      "what": "school statistics",
+      "period": "school year ending June 30, 1970, and calendar year 1970",
+      "cited": "p126: `SCHOOL YEAR ENDING JUNE 30, 1970`; table 2 `Calendar Year 1970`"
+    },
+    {
+      "what": "School Department summary of accounts, receipts and special accounts",
+      "period": "calendar 1970 appropriation and spending; 1971 request and estimate",
+      "cited": "p127: columns `Budget Appropriation 1970`, `Spent ...`, `Budget Request 1971`; p128-132: `Appropriation 1970 | Spent 1970 | Appropriation 1971`"
+    }
+  ]
+}

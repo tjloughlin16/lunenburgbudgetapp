@@ -26,10 +26,12 @@ IT COMPUTES NOTHING IT CAN READ INSTEAD, and re-derives what it reads where a ra
   fy28/public/data/special-education-costs.json   build_sped_costs.py: voted vs spent per
                      line, FY2010-FY2026; the circuit breaker account; the placement snapshots.
                      Each year's need is recomputed here from its own ledger rows.
-  fy28/public/data/topics/school-budget-against-actual.json
-                     build_school_spending_topics.py: the whole school general fund, original
-                     vote and spent, every year. Parsed from its table, and its own claims
-                     (under its revised budget every year) re-asserted.
+  build_school_spending_topics.school_ledger()
+                     the whole school general fund, original vote and spent, every year, read
+                     the way its retired page's table printed it (whole dollars), and its claim
+                     (under its revised budget every year) re-asserted. The page,
+                     school-budget-against-actual, merged into budget-against-actual on 30
+                     October 2026; the reading stayed where it was computed.
   sources/data/dese-circuit-breaker.csv           DESE's payments, read directly.
   sources/data/dese-entitlement-allocations.csv   DESE's IDEA allocations, read directly.
   sources/data/munis-school-journal.csv           every tuition payment, FY2023-FY2026.
@@ -209,20 +211,16 @@ def read_lines(SC):
 
 
 def read_school(ys):
-    """The whole school general fund: {fy: (original vote, spent)}, from the published table."""
-    P = load(os.path.join('topics', 'school-budget-against-actual.json'))
-    want = ['Original budget', 'Revised budget', 'Spent or committed', 'Of revised']
+    """The whole school general fund: {fy: (original vote, spent)}, whole dollars."""
+    import build_school_spending_topics as SS
+    SL, _ = SS.school_ledger()
     out = {}
-    for v in P['table']['views']:
-        if v['columns'] != want:
-            fail('school-budget-against-actual: its columns moved: %s' % v['columns'])
-        for r in v['rows']:
-            y = int(r['label'][2:])
-            o, rv, s = (money(c) for c in r['cells'][:3])
-            if s > rv:
-                fail('FY%d: the school spent more than its revised budget; that page says it '
-                     'never did' % y)
-            out[y] = (o, s)
+    for y, g in SL.items():
+        o, rv, s = (money(C.usd(v)) for v in (g['original'], g['revised'], g['spent'] + g['committed']))
+        if s > rv:
+            fail('FY%d: the school spent more than its revised budget; that page says it '
+                 'never did' % y)
+        out[y] = (o, s)
     if sorted(out) != ys:
         fail('the whole-school years %s are not the special education years' % sorted(out))
     return out
