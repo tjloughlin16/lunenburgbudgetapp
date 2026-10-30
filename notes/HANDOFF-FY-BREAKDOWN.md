@@ -75,6 +75,17 @@ every retry restarted at 9,015. Fix that worked: split build/deploy-stage into 3
 `npx wrangler pages deploy <chunk> --branch upload-staging` each (all succeeded first try; a
 preview branch never touches production), then `deploy_site.sh` uploaded 0 files and succeeded.
 
+**PRESCHOOL BUILT, 30 Oct (a subagent; reviewed, committed, NOT deployed):** /school-all-funds/preschool,
+/town-funds/general-fund (`build_town_funds.py`, `TownFund.tsx`), FY breakdown section "School money
+that goes to the Town" (`fy-town-receipts`); shared reader `scripts/school_receipts.py`. No general-fund
+preschool cost identifiable (build asserts no account or line names preschool; gap row added); IDEA
+preschool 262/264/298; staff pay = annual-report roster x wage list, OUR match, totals only.
+OPEN: (a) `annual-report-receipts.csv` FY2021 PRE-SCHOOL TUITION reads 11.64; the page prints
+$11,648.82 (p25, by eye) -- fix the extractor; (b) FY2023 receipts page is a blocked 93 dpi scan;
+FY2024 only a combined $150,100 from a slide; (c) TJ TO DECIDE: the FY2026 p09 MUNIS revenue report
+(and the p09 expense reports) print a Town user's login and first name; they are ALREADY in the
+public bucket; not registered in redactions.csv, not used by the page. Takedown or accept.
+
 **TOP OF THE QUEUE (TJ, 29 Oct, late): PRESCHOOL TUITION -- a report, an FY breakdown section, and a
 Town general fund page.** TJ: *"let's do a preschool report and put it in the school page. But I also
 want the preschool money to go into the FY breakdown page ... it might have to be its own section to

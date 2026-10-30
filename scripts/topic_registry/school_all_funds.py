@@ -21,6 +21,8 @@ CATEGORY = dict(
         # TJ, 29 October 2026: every school line's vote against what it spent, across the years
         # and one year at a time, with three flags (scripts/build_budget_against_actual.py).
         ('School lines against budget', ['budget-against-actual']),
+        # TJ, 29 October 2026: the preschool's tuition goes to the Town (build_preschool.py)
+        ('Preschool', ['preschool']),
         ('Money in and out', ['school-money-in', 'budget-lines-all-funds',
                               'outside-the-general-fund']),
         ('Left unspent', ['unspent-by-fund', 'carried-over-orders']),
@@ -38,6 +40,7 @@ GENERATOR = 'build_school_all_funds.py'
 # Orders carried from one year into the next (TJ, 23 October 2026): the same journal, read for
 # one question the all-funds generator does not ask, so its own generator.
 TOPIC_GENERATORS = {'budget-against-actual': 'build_budget_against_actual.py',
+                    'preschool': 'build_preschool.py',
                     'fy-breakdown': 'build_fy_breakdown.py',
                     'grant-allocations-compared': 'build_grant_comparison_topics.py',
                     'grants-others-receive': 'build_grant_comparison_topics.py',
@@ -62,4 +65,5 @@ TOPICS = {
     'pay-moved-between-funds': 'Pay moved between funds',
     'positions-and-their-funds': 'Positions and their funds',
     'activities-fund': 'After-school activities fund',
+    'preschool': 'Preschool',
 }

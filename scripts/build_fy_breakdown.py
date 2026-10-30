@@ -41,6 +41,7 @@ import build_school_surplus as S  # noqa: E402
 import fy_breakdown as FB  # noqa: E402
 import fy_payees as PY  # noqa: E402
 import fy_salaries as SAL  # noqa: E402
+import school_receipts as SR  # noqa: E402
 import fy_web as WEB  # noqa: E402
 import fy_items as ITEMS  # noqa: E402
 
@@ -936,6 +937,7 @@ def page(m):
     plan = plan_data(m, T)
     flows = flows_data(T)
     sources_paid = sources_data(m, T)
+    town_rec = town_receipts_data(T)
     yline = year_line_data(m, T)
     sources = funds_data(m, T)
     overlap = overlap_data(m, T)
@@ -1044,6 +1046,15 @@ def page(m):
                       so=('A source whose bar stops short of its mark spent less than it received that '
                           'year; one that runs past it drew on what it held. Which lines it paid moving '
                           'from year to year is a measurement; why is not.', None, ())),
+            TB.custom('fy-town-receipts', 'School money that goes to the Town', town_rec, place='top',
+                      figures=sorted(T.figures), allow=sorted(T.literals),
+                      basis=('record', 'The Town’s own receipts, from its revenue reports and annual reports'),
+                      alt='For one fiscal year: the money the schools bring in that the Town books as its own '
+                          'general fund receipt -- preschool tuition, student parking fees and a school '
+                          'medical reimbursement -- each as received against the Town’s estimate, as a bar '
+                          'with a mark, or the reason a year is not held',
+                      so=('This money is not in any figure above: it is a Town receipt, so it offsets nothing '
+                          'in the school budget, which carries the preschool at full cost.', None, ())),
             TB.custom('fy-year-line', 'Across the year line', yline, place='top',
                       figures=sorted(T.figures), allow=sorted(T.literals),
                       basis=('record', 'Every posting on the school lines; each crossing tied to the other year'),
@@ -1338,6 +1349,41 @@ def big_changes(lines, T):
 
 
 SOURCE_LINES = 6    # OURS: how many school lines get a colour of their own across every bar and year
+
+
+def town_receipts_data(T):
+    """SCHOOL MONEY THAT GOES TO THE TOWN (TJ, 29 October 2026: "i also want the preschool money to
+    go into the FY breakdown page ... its own section to show the additional funds"). The Town's
+    own department 31, DEPT REV - SCHOOL, read once by school_receipts.py and shared with the
+    preschool report and /town-funds/general-fund."""
+    S = SR.series()
+    years = []
+    for fy in YEARS():
+        rows = []
+        for a in SR.ACCOUNTS:
+            e = S.get(fy, {}).get(a['account'])
+            rows.append(dict(
+                id=a['id'], name=a['name'], what=a['what'],
+                received=fl(e['received']) if e else None,
+                estimate=fl(e['estimate']) if e and e['estimate'] is not None else None,
+                t=dict(received=T.usd(e['received']) if e else '',
+                       estimate=T.usd(e['estimate']) if e and e['estimate'] is not None else ''),
+                src=T.lit(e['src']) if e else '', href=T.lit(e['doc']) if e else ''))
+        tog = S.get(fy, {}).get('together')
+        years.append(dict(
+            fy=T.fy(fy), rows=rows, why=T.lit(SR.WHY_MISSING.get(fy, '')),
+            together=dict(received=fl(tog['received']) if tog['received'] is not None else None,
+                          estimate=fl(tog['estimate']) if tog['estimate'] is not None else None,
+                          t=dict(received=T.usd(tog['received']) if tog['received'] is not None else '',
+                                 estimate=T.usd(tog['estimate']) if tog['estimate'] is not None else ''),
+                          src=T.lit(tog['src']), href=T.lit(tog['doc'])) if tog else None))
+    return dict(years=years, text=dict(
+        read='Three receipts the schools generate are booked by the Town, in its general fund, not by '
+             'the schools: none appears in any figure above.',
+        received='Received', estimate='Town’s estimate', none='Not held', together='The three together',
+        fund='The Town general fund page', fund_href='/town-funds/general-fund',
+        preschool='Preschool: tuition against what can be identified of its cost',
+        preschool_href='/school-all-funds/preschool'))
 
 
 def sources_data(m, T):
