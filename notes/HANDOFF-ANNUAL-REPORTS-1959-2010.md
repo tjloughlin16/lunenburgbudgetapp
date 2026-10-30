@@ -4,7 +4,20 @@ Written 28 October 2026, to survive a context reset. **Read this first, then
 `notes/PLAN-ANNUAL-REPORT-PIPELINE.md` (sections 4, 4a), then CLAUDE.md.** A summary in a
 conversation is not a source (rule 13): every state below names the command that re-checks it.
 
-## NOW (29 October 2026): finishing 1991-2010 to the FY standard, BEFORE any new batch
+## DONE (30 October 2026, ~05:45 ET): all 52 older reports read, integrated, deployed
+
+Every report 1959-2010 has Textract tables on its financial pages, a worker folder, and an
+integration pass; committed through 526ab74ec, D1 synced (175 tables, 314,481 rows), deployment
+7a7d0950 verified by hash. Pages (re-derive with the counter below): 1959-70 255/201/5,
+1971-80 223/196/4, 1981-85 75/130/4, 1986-90 55/64/1, 1991-2010 422/179/4. TJ, 30 Oct:
+everything printed in the annual reports is public (no withholding). AWS October: $59.83.
+NEXT: (1) the re-read list -- finder misses and cell-less regions, listed in each edition's
+NEEDS.md and the 1971-80 / 1959-70 integration reports (cents each, Textract); (2) the unproven
+pages to `proven` or `page-blocked.csv` (units 3-5 below); (3) `build_source_index.py` fails on
+1,429 undescribed report-tables files (pre-existing); (4) `map_annual_report_pages.py` refuses
+on another session's `keystone-tuition-rates` until it is added to PROOF.
+
+## EARLIER (29 October 2026): finishing 1991-2010 to the FY standard, BEFORE any new batch
 
 **PICK UP HERE (written 29 Oct ~07:30 ET, before a context clear).** State at that moment:
 
