@@ -459,7 +459,10 @@ def build_html(spec, slug, data):
         e = R(img['emphasis'])
         if e not in head:
             raise SystemExit(f'REFUSING: emphasis {e!r} is not in the headline')
-        head = head.replace(e, f'<em>{e}</em>', 1)
+        # `emphasis_nowrap`: keep the accented phrase on one line (a person's name split across
+        # lines reads wrong). Opt-in, so no existing post's image moves.
+        style = ' style="white-space:nowrap"' if img.get('emphasis_nowrap') else ''
+        head = head.replace(e, f'<em{style}>{e}</em>', 1)
     path = html.escape(img.get('path', ''))
     css = CSS % dict(w=w, h=h, a=color, hs=img.get('headline_size', 66), cs=img.get('conclusion_size', 50))
     if lay in LAYOUT_CSS:
