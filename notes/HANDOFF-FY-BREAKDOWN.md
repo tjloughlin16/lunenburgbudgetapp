@@ -2,10 +2,8 @@
 
 ## NOW -- 30 October 2026, late. READ THIS FIRST; everything below is history
 
-**State.** Everything from this session is committed. This session pushes `main` and deploys
-(`bash scripts/deploy_site.sh`) once its `npm run build:site` finishes. The deploy result goes
-in the section below. If it is still blank, check `git status -sb` and the live page before
-assuming anything.
+**State.** Committed, pushed and deployed (see Deploy below). Nothing from this session is
+pending.
 
 **Shipped this session:**
 - `1e2bd2d82`: the preschool card says "2 teachers, 4 paras", counted from the roster's
@@ -41,7 +39,11 @@ assuming anything.
 page prints $11,648.82. This is an extractor defect.
 
 **Deploy:**
-_(filled in when the deploy finishes)_
+DEPLOYED 30 Oct 2026, `69b72501` (lunenburg-fy28), from `deb071a14`, pushed to origin/main.
+Verified: the live `/data/topics/budget-against-actual.json` is byte-identical to the repo's.
+Left untracked: new files under `views/` and four audit-report text extracts in
+`fy28/public/docs/town-supplementary/text/`. They are generated or from other sessions and
+were not committed; decide whether they belong in git.
 
 ## Earlier NOW -- 30 October 2026, end of day
 
