@@ -485,7 +485,26 @@ def then_and_now(eds):
         trailers=int(float(_row(val, 1960, r'^Trailers', f)['v1'])),
         poll=(int(float(_row(val, 1960, r'poll tax', f)['v1'])),
               int(float(_row(val, 1960, r'poll tax', f)['v2']))),
+        real_estate=(float(_row(val, 1960, r'^Value of real estate', f)['v1']),
+                     float(_row(val, 1960, r'^Value of real estate', f)['v2'])),
+        owners=(int(float(_row(val, 1960, r'^Persons assessed real estate', f)['v1'])),
+                int(float(_row(val, 1960, r'^Persons assessed real estate', f)['v2']))),
+        motor=float(_row(val, 1960, r'^Excise on motor vehicles', f)['v1']),
+        farm=float(_row(val, 1960, r'^Farm animal excise', f)['v1']),
+        years=[int(y) for y in _row(val, 1960, r'^Dwelling houses', f)['columns_as_printed'].split(' | ')],
     )
+    # THE ONE-VALUE ROWS. Camps, trailers and the two excises print `None` under 1910 and a
+    # figure under 1960, and the extract keeps only the figure, in `v1` -- an ordinal, not
+    # the 1910 column (CLAUDE.md rule 13). Checked against the printed page: it must say
+    # `None` once for each of the four rows, or this reading of v1 is not safe.
+    body = pages(eds[1960])[t1910['page']]
+    if len(re.findall(r'\bNone\b', body)) < 4 or t1910['years'] != [1910, 1960]:
+        raise SystemExit('the 1910-1960 table no longer prints four `None`s under 1910 (or '
+                         'its header changed). Refusing to place camps under 1960.')
+    t1910['landscape'] = find(eds, 1960, r'"How much will my valuation\s+be increased if I '
+                                         r'landscape my\s+lot, or paint my house\?"\s+The '
+                                         r'answer is that no increase is ever made for these '
+                                         r'reasons\.', 'the Assessors on landscaping')
     tn = csv_rows('report-treasurers-then-and-now.csv')
     pay61 = _row(tn, 1961, r'persons on payroll')
     pay91 = _row(tn, 1991, r'persons on payroll')
@@ -504,6 +523,7 @@ def then_and_now(eds):
         payroll=(int(float(pay61['v1'])), int(float(pay61['v2'])), int(float(pay91['v2']))),
         population=(int(float(pop61['v1'])), int(float(pop61['v2'])), int(float(pop91['v2']))),
         permits=(int(float(bp61['v1'])), int(float(bp91['v2']))),
+        years=[int(y) for y in pay61['columns_as_printed'].split(' | ')] + [1991],
     )
 
     lunch = csv_rows('report-school-lunch.csv')
@@ -531,6 +551,136 @@ def then_and_now(eds):
 
 
 # --------------------------------------------------------------------------------------
+# 5. Did you know: small things the 1959 report prints, and the lunch-price headers.
+#    Each is read from the extracted text and REFUSES if the passage is gone; where the
+#    same figure is printed twice in one report, the two must agree.
+# --------------------------------------------------------------------------------------
+
+def find_groups(eds, year, pattern, what, page=None):
+    """`find`, but also hands back the regex groups, for a passage whose figures we use."""
+    ed = eds[year]
+    rx = re.compile(pattern, re.I | re.S)
+    for p, body in sorted(pages(ed).items()):
+        if page is not None and p != page:
+            continue
+        m = rx.search(body)
+        if m:
+            return dict(cite(ed, p), quote=' '.join(m.group(0).split())), m.groups()
+    raise SystemExit('%s: /%s/ is no longer found in the %d report. Refusing.'
+                     % (what, pattern, year))
+
+
+def tie_1959(eds):
+    """The 1959 Selectman race: a tie at the March election, settled by a special election
+    in May. The March page prints both candidates' counts; they must be equal, or there was
+    no tie to describe."""
+    ed = eds[1959]
+    march = None
+    for p, body in sorted(pages(ed).items()):
+        if 'Original Count Before Recount' not in body:
+            continue
+        h = re.search(r'Howard A\. Hamel\s*\n\s*(\d+)', body)
+        t = re.search(r'Eino O\. Toko\s*\n\s*(\d+)', body)
+        if h and t:
+            march = dict(cite(ed, p), a=int(h.group(1)), b=int(t.group(1)),
+                         note='*Original Count Before Recount')
+    if not march:
+        raise SystemExit('the 1959 Selectman count is no longer found. Refusing.')
+    if march['a'] != march['b']:
+        raise SystemExit('the 1959 Selectman count reads %d to %d, which is not a tie. '
+                         'Refusing to call it one.' % (march['a'], march['b']))
+    may, g = find_groups(eds, 1959, r'Special Election\s*\nMay 16, 1959.*?BALLOTS CAST AS '
+                                    r'FOLLOWS: Howard A\. Hamel-(\d+); E[il]no O\.\s*Toko-(\d+); '
+                                    r'Blanks-(\d+)\.', 'the May 1959 special election')
+    reason = find(eds, 1959, r'to fill a vacancy in said office caused by the failure to '
+                             r'elect such town\s+officer', 'the special election article')
+    board = find(eds, 1959, r'Due to the un-?\s*precedented tie vote for the office of '
+                            r'Selectman, the recount, and then a\s+special election to fill '
+                            r'the vacancy, your Board was without its full mem-?\s*bership '
+                            r'until the middle of May\.', 'the Selectmen on the tie')
+    rain = find(eds, 1959, r'Even mother nature conspired against us,\s+bringing one of the '
+                           r'rainiest years on record', 'the Selectmen on the rain')
+    board['quote'] = board['quote'].replace('un- precedented', 'unprecedented') \
+                                   .replace('mem- bership', 'membership')
+    return dict(candidates=['Howard A. Hamel', 'Eino O. Toko'], march=march,
+                may=dict(may, a=int(g[0]), b=int(g[1]), blanks=int(g[2])),
+                reason=reason, board=board, rain=rain)
+
+
+def clerk_decade(eds):
+    """The Town Clerk's ten-year chart of births, marriages and deaths, 1950-1959, in the
+    1959 report. Its 1959 column must agree with the list of services on the next page,
+    which prints the same three figures again -- two readings of one office's count."""
+    years = r'\s*\n'.join(str(y) for y in range(1950, 1959)) + r'\s*\n1959\*'
+    col = r'((?:\d+\s*\n){10})'
+    c, g = find_groups(eds, 1959, years + r'\s*\nBIRTHS\s*\n' + col + r'MARRIAGES\s*\n' + col
+                       + r'DEATHS\s*\n' + col, 'the clerk decade chart')
+    births, marriages, deaths = ([int(v) for v in grp.split()] for grp in g)
+    _, h = find_groups(eds, 1959, r'Births\s*\n(\d+)\s*\nMarriage Intentions\s*\n\d+\s*\n'
+                                  r'Mortgages Recorded\s*\n\d+\s*\nMarriages\s*\n(\d+)\s*\n'
+                                  r'Deaths\s*\n(\d+)', 'the 1959 services list')
+    if (births[-1], marriages[-1], deaths[-1]) != tuple(int(v) for v in h):
+        raise SystemExit('the clerk chart 1959 column %s disagrees with the services list '
+                         '%s. Refusing.' % ((births[-1], marriages[-1], deaths[-1]), h))
+    asof = find(eds, 1959, r'\* As of February 3, 1960', 'the clerk chart footnote')
+    rows = [dict(year=1950 + i, births=births[i], marriages=marriages[i], deaths=deaths[i])
+            for i in range(10)]
+    return dict(c, rows=rows, asof=asof['quote'].lstrip('* '))
+
+
+def office_1959(eds):
+    lic, g = find_groups(eds, 1959, r'\nDog\s*\n(\d+)\s*\nFish and Game\s*\n(\d+)',
+                         'the 1959 licences')
+    # The Textract table of the same page must read the same dog count.
+    act = [r for r in csv_rows('report-dept-activity.csv')
+           if r['fy'] == '1959' and r['label'].strip() == 'Dog']
+    if not act or int(float(act[0]['v1'])) != int(g[0]):
+        raise SystemExit('the 1959 dog licences: text reads %s, the table %s. Refusing.'
+                         % (g[0], act[0]['v1'] if act else 'nothing'))
+    prize = find(eds, 1959, r'Last year\'s efforts\s+resulted in a third prize award from '
+                            r'the Massachusetts Selectmen\'s Association "In Recognition of\s+'
+                            r'the Excellence of Lunenburg\'s Town Report for the Year 1958\."',
+                 'the town report prize')
+    fact, f = find_groups(eds, 1959, r'Settled:\s*\n(\d{4})\s*\nIncorporated:\s*\n'
+                                     r'(August 1, (\d{4}))', 'the 1959 fact page')
+    miles, m = find_groups(eds, 1959, r'It is about (\d+) miles from Boston', 'miles to Boston')
+    elev, e = find_groups(eds, 1959, r'Elevation at Town Hall:\s*\nApproximately (\d+)\' '
+                                     r'above mean sea level', 'elevation')
+    jfk = find(eds, 1959, r'Senators\s*\nJOHN F\. KENNEDY, Boston', 'the 1959 senators')
+    return dict(licences=dict(lic, dogs=int(g[0]), fish_game=int(g[1])), prize=prize,
+                settled=dict(fact, year=int(f[0]), incorporated=f[1], inc_year=int(f[2])),
+                boston=dict(miles, miles=int(m[0])), elevation=dict(elev, feet=int(e[0])),
+                jfk=dict(jfk, quote='JOHN F. KENNEDY, Boston'))
+
+
+PRICE = re.compile(r'@\s*(\d\d)\s*[c¢]')
+
+
+def lunch_prices(eds):
+    """What a Type A lunch cost, as the lunch tables' column headers print it. Only a
+    header whose price reads cleanly -- digits then `c` or `¢` -- is used; `@254` and
+    `@30d` are OCR of a cent sign we will not guess at (rule 13)."""
+    out = {'student': [], 'adult': []}
+    for r in csv_rows('report-school-lunch.csv'):
+        if not r['label'].upper().startswith('TOTAL') or not r['columns_as_printed']:
+            continue
+        cols = r['columns_as_printed'].split(' | ')
+        for who, test in (('student', lambda c: re.search(r'Student|"A" Lunches @', c)
+                           and 'Adult' not in c and 'Free' not in c and 'n/c' not in c),
+                          ('adult', lambda c: 'Adult' in c and 'Milk' not in c)):
+            hit = next((c for c in cols if test(c)), None)
+            m = PRICE.search(hit or '')
+            if m and int(r['fy']) in eds:
+                out[who].append(dict(cite(eds[int(r['fy'])], int(r['page'])),
+                                     cents=int(m.group(1)), header=hit))
+    for who in out:
+        if len(out[who]) < 2:
+            raise SystemExit('fewer than two clean %s lunch prices. Refusing.' % who)
+        out[who].sort(key=lambda r: r['edition'])
+    return out
+
+
+# --------------------------------------------------------------------------------------
 # Everything, once.
 # --------------------------------------------------------------------------------------
 
@@ -542,6 +692,8 @@ def gather():
              pop=pop, pop_conflicts=conflicts, roads=roads(eds), gov=government(eds),
              manager=manager_timeline(eds), vote=charter_vote(eds), rosters=rosters(eds))
     d.update(then_and_now(eds))
+    d.update(tie=tie_1959(eds), clerk=clerk_decade(eds), office=office_1959(eds),
+             prices=lunch_prices(eds))
     return d
 
 
@@ -738,6 +890,45 @@ def conclusions_for(d, x):
             basis='`staff-roster-entries.csv`, the entries quoted in the roster section.',
             not_shown='Whether the two careers are one person. Same name is not same person.',
         ))
+    tie = d['tie']
+    m, y = tie['march'], tie['may']
+    rows.append(conclusion(
+        id='a-tie-for-selectman',
+        claim='In 1959 the race for Selectman tied, %s votes to %s' % (C.num(m['a']), C.num(m['b'])),
+        so_what='A special election in May decided it, %s to %s; the board was a member short until then.'
+                % (C.num(y['a']), C.num(y['b'])),
+        figures={'y': figure(1959, '1959'), 'v': figure(m['a'], C.num(m['a']), 'votes each'),
+                 'a': figure(y['a'], C.num(y['a'])), 'b': figure(y['b'], C.num(y['b']))},
+        figure='v', kind='measured', bearing='sizes',
+        detail='The count the report prints as the original, before the recount. %s won the '
+               'May special election over %s.' % (tie['candidates'][0], tie['candidates'][1]),
+        basis='The 1959 report: the election return, the special election, and the '
+              'Selectmen’s own report.',
+        not_shown='What the recount found. The report prints the original count and the '
+                  'special election, not the recount’s figures.',
+    ))
+    cl = d['clerk']['rows']
+    lo, hi = cl[0], max(cl, key=lambda r: r['births'])
+    if not min(r['births'] for r in cl[1:]) > lo['births']:
+        raise SystemExit('the clerk-decade supporting line no longer holds. Refusing.')
+    rows.append(conclusion(
+        id='the-clerks-decade',
+        claim='The Town Clerk recorded %s births in %d and %s in %d'
+              % (C.num(lo['births']), lo['year'], C.num(hi['births']), hi['year']),
+        so_what='No later year in the clerk’s chart fell back to the %d figure.' % lo['year'],
+        figures={'a': figure(lo['births'], C.num(lo['births'])),
+                 'ay': figure(lo['year'], str(lo['year'])),
+                 'b': figure(hi['births'], C.num(hi['births']), 'births'),
+                 'by': figure(hi['year'], str(hi['year'])),
+                 'n': figure(len(cl), C.num(len(cl)))},
+        figure='b', kind='measured', bearing='sizes',
+        detail='From a %s-year chart of births, marriages and deaths the clerk printed in the '
+               'last report of the decade: births the office recorded.'
+               % C.num(len(cl)),
+        basis='The 1959 report, Town Clerk; its last column agrees with the clerk’s '
+              'list of services on the next page.',
+        not_shown='Why births rose. The chart is a count; it gives no cause.',
+    ))
     return emit(ID, rows)
 
 
@@ -882,10 +1073,13 @@ def render(d, x):
     t1 = d['t1910']
     a('**1910 against 1960**, a table the Assessors printed in %s: tax rate %s and %s per '
       '$1,000; dwelling houses %s and %s; people assessed a poll tax %s and %s. 1960 also '
-      'counts %s camps -- seasonal houses, not lived in year-round -- and %s trailers, which 1910 does not.\n\n'
+      'counts %s camps -- seasonal houses, not lived in year-round -- and %s trailers, which 1910 does not. '
+      'Real estate was valued at %s and %s; the motor vehicle excise brought in %s in 1960 '
+      'and is printed “None” for 1910. The same page: “%s”\n\n'
       % (link(t1), rate(t1['rate'][0]), rate(t1['rate'][1]), C.num(t1['houses'][0]),
          C.num(t1['houses'][1]), C.num(t1['poll'][0]), C.num(t1['poll'][1]),
-         C.num(t1['camps']), C.num(t1['trailers'])))
+         C.num(t1['camps']), C.num(t1['trailers']), usd(t1['real_estate'][0]),
+         usd(t1['real_estate'][1]), usd(t1['motor']), t1['landscape']['quote']))
     a('**Building permits**: %s in 1961 and %s in 1991, by the same Treasurer’s tables.\n\n'
       % (C.num(t['permits'][0]), C.num(t['permits'][1])))
     lu = d['lunch']
@@ -899,6 +1093,39 @@ def render(d, x):
       'FY%d at %s (%s). Nominal dollars, and two different assessment bases.\n\n'
       % (usd(lv['v0']), lv['y0'], rate(lv['rate0']), link(lv['c0']), usd(lv['v1']),
          lv['y1'], rate(lv['rate1']), link(lv['c1'])))
+
+    a('## Did you know\n\n')
+    tie = d['tie']
+    a('**The tie of 1959.** The race for Selectman at the March election was printed as %s to '
+      '%s, “%s” (%s). A special election on May 16 settled it: %s %s, %s %s, blanks %s (%s). '
+      'The Selectmen: “%s” (%s) And: “%s.”\n\n'
+      % (C.num(tie['march']['a']), C.num(tie['march']['b']), tie['march']['note'].lstrip('*'),
+         link(tie['march']), tie['candidates'][0], C.num(tie['may']['a']), tie['candidates'][1],
+         C.num(tie['may']['b']), C.num(tie['may']['blanks']), link(tie['may']),
+         tie['board']['quote'], link(tie['board']), tie['rain']['quote']))
+    cl = d['clerk']
+    a('**The Town Clerk’s decade.** The 1959 report charts births, marriages and deaths '
+      'recorded from 1950 (%s; the last column “%s”):\n\n' % (link(cl), cl['asof']))
+    a('| year | births | marriages | deaths |\n|---:|---:|---:|---:|\n')
+    for r in cl['rows']:
+        a('| %d | %s | %s | %s |\n' % (r['year'], C.num(r['births']), C.num(r['marriages']),
+                                      C.num(r['deaths'])))
+    o = d['office']
+    a('\n**The town office in 1959** issued %s dog licences and %s fish and game licences '
+      '(%s). And: “%s” (%s)\n\n'
+      % (C.num(o['licences']['dogs']), C.num(o['licences']['fish_game']), link(o['licences']),
+         o['prize']['quote'], link(o['prize'])))
+    a('**The 1959 fact page**: settled %d, incorporated %s, “%s”, and “%s” (%s). Its '
+      'list of representatives opens “%s” (%s).\n\n'
+      % (o['settled']['year'], o['settled']['incorporated'], o['boston']['quote'],
+         o['elevation']['quote'], link(o['settled']), o['jfk']['quote'], link(o['jfk'])))
+    pr = d['prices']
+    a('**What a school lunch cost**, by the lunch tables’ own column headers: a student '
+      'paid %s cents in %d (%s) and %s cents in %d (%s); an adult %s cents, then %s. Only '
+      'headers whose cent sign reads cleanly are used.\n\n'
+      % (C.num(pr['student'][0]['cents']), pr['student'][0]['edition'], link(pr['student'][0]),
+         C.num(pr['student'][-1]['cents']), pr['student'][-1]['edition'], link(pr['student'][-1]),
+         C.num(pr['adult'][0]['cents']), C.num(pr['adult'][-1]['cents'])))
 
     a('## What this does not show\n\n')
     for s in not_established():
@@ -944,6 +1171,13 @@ def sources(d):
     add(d['lunch'])
     add(d['levy']['c0'])
     add(d['levy']['c1'])
+    for k in ('board', 'may', 'march'):
+        add(d['tie'][k])
+    for r in d['prices']['student'] + d['prices']['adult']:
+        add(r)
+    if d['roads']:
+        add(d['roads'][0])
+        add(d['roads'][-1])
     for r in d['rosters']['top']:
         add(r['first_entry'])
         add(r['last_entry'])
@@ -985,12 +1219,12 @@ def payload(d, x):
                  label='the highest tax rate printed, per $1,000, in the %d report'
                        % x['peak']['edition']),
         ],
-        tax_rate=[dict(edition=r['edition'], rate=r['rate'], page=r['page'],
+        tax_rate=[dict(edition=r['edition'], rate=r['rate'], page=r['page'], label=r['label'],
                        href=r['href'], printed=r['printed']) for r in d['tax']],
         tax_unread=d['tax_unread'],
-        revaluations=[dict(edition=r['edition'], page=r['page'], href=r['href'],
+        revaluations=[dict(edition=r['edition'], page=r['page'], href=r['href'], label=r['label'],
                            quote=r['quote']) for r in d['reval']],
-        population=[dict(year=r['year'], value=r['value'], kind=r['kind'],
+        population=[dict(year=r['year'], value=r['value'], kind=r['kind'], label=r['label'],
                          edition=r['edition'], page=r['page'], href=r['href'])
                     for r in census_ok],
         population_conflicts=[dict(year=k[0], kind=k[1],
@@ -1004,11 +1238,18 @@ def payload(d, x):
         roster_runs=rs['top'], roster_shared=rs['shared'], first_aide=rs['para'],
         roster_rule='A run breaks when a name is missing from more than %d consecutive '
                     'rosters held.' % MAX_ABSENT,
-        town_manager=[dict(edition=s['edition'], page=s['page'], href=s['href'],
+        town_manager=[dict(edition=s['edition'], page=s['page'], href=s['href'], label=s['label'],
                            what=s['what'], quote=s['quote']) for s in d['manager']],
         charter_vote=dict(yes=d['vote']['yes'], no=d['vote']['no'], page=d['vote']['page'],
+                          edition=d['vote']['edition'], label=d['vote']['label'],
                           href=d['vote']['href']),
         then_and_now=dict(t1910=d['t1910'], treasurer=d['tn'], lunch=d['lunch'], levy=lv),
+        did_you_know=dict(
+            tie=d['tie'], clerk=d['clerk'], office=d['office'],
+            prices=dict(student=d['prices']['student'], adult=d['prices']['adult']),
+            government=x['open_from'],
+            area=x['area1'],
+        ),
         sources=sources(d),
         not_established=not_established(),
         conclusions=conclusions_for(d, x),

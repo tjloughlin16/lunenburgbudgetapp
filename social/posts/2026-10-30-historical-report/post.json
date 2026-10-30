@@ -1,0 +1,87 @@
+{
+  "posted": null,
+  "about": "Announcing the historical report: every Lunenburg annual town report from 1959 to FY2025, read. Celebrates the town for writing and printing one every year; leads with four surprises from inside them, each with its caveat on the image.",
+  "data": {
+    "ar": "archive:town-annual-reports",
+    "an": "annual-reports.json",
+    "fin": "annual-reports.json#conclusions[id=a-third-of-the-pages-are-checked-against-the-page-itself].figures",
+    "hr": "historical-report.json",
+    "rate": "historical-report.json#conclusions[id=the-rate-fell-because-the-town-revalued].figures",
+    "after": "historical-report.json#tax_rate[edition=1970]",
+    "reval": "historical-report.json#revaluations[0]",
+    "camp": "historical-report.json#conclusions[id=one-home-in-five-was-a-camp].figures",
+    "lunch": "historical-report.json#then_and_now.lunch",
+    "tm": "historical-report.json#conclusions[id=a-town-manager-took-thirty-three-years].figures",
+    "pop": "historical-report.json#conclusions[id=the-town-nearly-doubled].figures",
+    "ros": "historical-report.json#conclusions[id=the-longest-run-on-the-school-rosters].figures"
+  },
+  "literal": [],
+  "flare": {
+    "accent": "ember",
+    "motif": "contours"
+  },
+  "image": {
+    "layout": "grid",
+    "size": "portrait",
+    "headline": "{ar.editions} town reports, {ar.first} to {ar.last}",
+    "emphasis": "{ar.first} to {ar.last}",
+    "headline_size": 64,
+    "sub": "{ar.pages|n} pages the town wrote and printed, one report every year. We went through every one. Some of what’s inside:",
+    "tiles": [
+      {
+        "eyebrow": "Tax rate, {rate.py.text}",
+        "value": "{rate.peak.text}",
+        "label": "{rate.peak.unit}",
+        "text": "Then the town revalued, and the {after.edition} report prints {after.printed}. A rate only compares within one assessment."
+      },
+      {
+        "eyebrow": "Homes, {camp.a.text}",
+        "value": "{camp.c.text}",
+        "label": "camps, beside {camp.h.text} houses",
+        "text": "A camp: a seasonal house, not lived in year-round. {camp.share.text} of the homes the Assessors counted."
+      },
+      {
+        "eyebrow": "School lunch, {lunch.edition}",
+        "value": "{lunch.cents}¢",
+        "label": "a Type A lunch",
+        "text": "The {lunch.edition} report counts {lunch.total|n} school lunches sold at that price."
+      },
+      {
+        "eyebrow": "Town manager",
+        "value": "{tm.n.text} years",
+        "label": "from study to charter",
+        "text": "A {tm.a.text} study recommended one. The {tm.b.text} charter passed {tm.yes.text} to {tm.no.text}."
+      }
+    ],
+    "path": "/analysis/historical-report",
+    "as_of": "Annual town reports, Town of Lunenburg",
+    "conclusion": "Thank you to every board and town officer who wrote one.",
+    "conclusion_em": "Thank you",
+    "conclusion_size": 40
+  },
+  "text": [
+    "Lunenburg has written itself a report every single year since {ar.first}, and we've now gone through every one of them. 📚",
+    "",
+    "{ar.editions} annual town reports, {ar.first} to {ar.last}: {ar.pages|n} pages in all. Each one is the town's own account of its year: the tax rate, the Assessors' counts, the Treasurer's books, the school rosters, the election results. Town officers, boards and committees wrote them, and the town printed them, year after year, for more than six decades. It is a gift to anyone who wants to know how we got here. Thank you to everyone who wrote one.",
+    "",
+    "Of those {ar.pages|n} pages, {fin.all.text} hold financial tables. We read every one of them, and {fin.proven.text} check out against totals the town itself printed on the page.",
+    "",
+    "A few things we found:",
+    "",
+    "💸 The {rate.py.text} report prints a tax rate of {rate.peak.text} {rate.peak.unit}. Then: \"{reval.quote}\" The {after.edition} report prints {after.printed}. Same town, new assessment. A tax rate only compares within one assessment, so neither number tells you what a household paid.",
+    "",
+    "🏕️ In {camp.a.text} the Assessors counted {camp.c.text} camps beside {camp.h.text} dwelling houses: seasonal places, not lived in year-round, {camp.share.text} of all the homes they counted. In {camp.b.text} there were none.",
+    "",
+    "🥪 The {lunch.edition} report counts {lunch.total|n} school lunches sold at {lunch.cents} cents each.",
+    "",
+    "🏛️ A study committee recommended a town manager in {tm.a.text}. The charter passed in {tm.b.text}, {tm.yes.text} to {tm.no.text}: {tm.n.text} years later.",
+    "",
+    "👩‍🏫 One name appears on the school rosters for {ros.span.text} years, from {ros.a.text} to {ros.b.text}. Can you guess whose? It's on the page.",
+    "",
+    "🏡 The town's fact pages count {pop.a.text} residents in {pop.ay.text} and {pop.b.text} in {pop.by.text}.",
+    "",
+    "Have a look, then tell us: what do you remember about Lunenburg in the Sixties, Seventies or Eighties? 👇",
+    "",
+    "👉 https://lunenburgbudgetproject.org/analysis/historical-report"
+  ]
+}

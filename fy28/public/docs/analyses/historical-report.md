@@ -119,13 +119,38 @@ A run is the years between the first and last roster a name is printed in, broke
 
 ## Then and now
 
-**1910 against 1960**, a table the Assessors printed in [1960 report, p. 9](/docs/town-annual-reports/docs/4551-1960-annual-town-report.pdf#page=9): tax rate $15.00 and $71.50 per $1,000; dwelling houses 430 and 1,734; people assessed a poll tax 381 and 1,844. 1960 also counts 452 camps -- seasonal houses, not lived in year-round -- and 46 trailers, which 1910 does not.
+**1910 against 1960**, a table the Assessors printed in [1960 report, p. 9](/docs/town-annual-reports/docs/4551-1960-annual-town-report.pdf#page=9): tax rate $15.00 and $71.50 per $1,000; dwelling houses 430 and 1,734; people assessed a poll tax 381 and 1,844. 1960 also counts 452 camps -- seasonal houses, not lived in year-round -- and 46 trailers, which 1910 does not. Real estate was valued at $1,074,296 and $9,272,790; the motor vehicle excise brought in $111,623 in 1960 and is printed “None” for 1910. The same page: “"How much will my valuation be increased if I landscape my lot, or paint my house?" The answer is that no increase is ever made for these reasons.”
 
 **Building permits**: 369 in 1961 and 201 in 1991, by the same Treasurer’s tables.
 
 **School lunch, 1959**: 126,016 Type A lunches at 25 cents each over the school year ([1959 report, p. 111](/docs/town-annual-reports/docs/4550-1959-annual-town-report.pdf#page=111)). The printed total equals the sum of the ten months, 126,016.
 
 **The levy**: $251,843 raised by taxation in 1950 at a rate of $52.00 ([1968 report, p. 11](/docs/town-annual-reports/docs/4511-1968-annual-town-report.pdf#page=11)), and $17,427,297 levied in FY2010 at $14.20 ([2010 report, p. 13](/docs/town-annual-reports/docs/4518-2010-annual-town-report.pdf#page=13)). Nominal dollars, and two different assessment bases.
+
+## Did you know
+
+**The tie of 1959.** The race for Selectman at the March election was printed as 853 to 853, “Original Count Before Recount” ([1959 report, p. 58](/docs/town-annual-reports/docs/4550-1959-annual-town-report.pdf#page=58)). A special election on May 16 settled it: Howard A. Hamel 1,238, Eino O. Toko 1,216, blanks 3 ([1959 report, p. 63](/docs/town-annual-reports/docs/4550-1959-annual-town-report.pdf#page=63)). The Selectmen: “Due to the unprecedented tie vote for the office of Selectman, the recount, and then a special election to fill the vacancy, your Board was without its full membership until the middle of May.” ([1959 report, p. 6](/docs/town-annual-reports/docs/4550-1959-annual-town-report.pdf#page=6)) And: “Even mother nature conspired against us, bringing one of the rainiest years on record.”
+
+**The Town Clerk’s decade.** The 1959 report charts births, marriages and deaths recorded from 1950 ([1959 report, p. 10](/docs/town-annual-reports/docs/4550-1959-annual-town-report.pdf#page=10); the last column “As of February 3, 1960”):
+
+| year | births | marriages | deaths |
+|---:|---:|---:|---:|
+| 1950 | 90 | 64 | 23 |
+| 1951 | 120 | 58 | 37 |
+| 1952 | 114 | 50 | 44 |
+| 1953 | 127 | 32 | 43 |
+| 1954 | 110 | 68 | 40 |
+| 1955 | 135 | 57 | 43 |
+| 1956 | 138 | 53 | 46 |
+| 1957 | 115 | 65 | 47 |
+| 1958 | 127 | 62 | 44 |
+| 1959 | 118 | 64 | 51 |
+
+**The town office in 1959** issued 607 dog licences and 662 fish and game licences ([1959 report, p. 11](/docs/town-annual-reports/docs/4550-1959-annual-town-report.pdf#page=11)). And: “Last year's efforts resulted in a third prize award from the Massachusetts Selectmen's Association "In Recognition of the Excellence of Lunenburg's Town Report for the Year 1958."” ([1959 report, p. 11](/docs/town-annual-reports/docs/4550-1959-annual-town-report.pdf#page=11))
+
+**The 1959 fact page**: settled 1718, incorporated August 1, 1728, “It is about 47 miles from Boston”, and “Elevation at Town Hall: Approximately 570' above mean sea level” ([1959 report, p. 4](/docs/town-annual-reports/docs/4550-1959-annual-town-report.pdf#page=4)). Its list of representatives opens “JOHN F. KENNEDY, Boston” ([1959 report, p. 7](/docs/town-annual-reports/docs/4550-1959-annual-town-report.pdf#page=7)).
+
+**What a school lunch cost**, by the lunch tables’ own column headers: a student paid 25 cents in 1959 ([1959 report, p. 111](/docs/town-annual-reports/docs/4550-1959-annual-town-report.pdf#page=111)) and 35 cents in 1973 ([1973 report, p. 115](/docs/town-annual-reports/docs/4495-1973-annual-town-report.pdf#page=115)); an adult 35 cents, then 55. Only headers whose cent sign reads cleanly are used.
 
 ## What this does not show
 

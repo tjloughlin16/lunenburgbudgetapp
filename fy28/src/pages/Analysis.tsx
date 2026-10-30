@@ -11,6 +11,14 @@ import { analysisIdFromPath } from '../routes'
 import { Body, Conclusions, Grain, H2, MoreReports, PageContents, ReportShell, ShortVersion, Stat, splitConclusions } from '../components/report'
 import type { Conclusion, FigureTableData, LadderData } from '../components/report'
 import { BriefTop, type Brief } from '../components/brief'
+import { HistoricalPage, type HistoricalPayload } from '../components/HistoricalPage'
+
+/** REPORTS WITH A PAGE OF THEIR OWN. Rule 7h: the shape is the author's call. These render
+ *  a bespoke component from the SAME payload instead of the generic furniture; the
+ *  markdown is still served at /docs and is what the PDF is made from. */
+const BESPOKE: Record<string, (model: Payload, docUrl: string) => React.ReactNode> = {
+  'historical-report': (m, u) => <HistoricalPage data={m as unknown as HistoricalPayload} docUrl={u} />,
+}
 
 /** THE MARKDOWN ANALYSES, IN THE SAME SHELL AS EVERY OTHER REPORT.
  *
@@ -237,7 +245,7 @@ export function Analysis() {
           document itself, evidence first, inventory after, sources last. No stat row, no
           cards, no fold: the top is complete on its own, and everything under it is one
           scroll or one link away for the reader who doubts it. */}
-      {brief ? (() => {
+      {id && BESPOKE[id] ? (model ? BESPOKE[id](model, `/docs/analyses/${id}.md`) : null) : brief ? (() => {
         // ON THIS PAGE: the top's own sections, then the document's. One list; it replaces
         // the "Further down this page" links, which said the second half of it.
         const toc = [
