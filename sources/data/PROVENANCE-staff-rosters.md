@@ -20,10 +20,67 @@ line on the page is claimed as an entry or a heading, and the leftovers are
 counted. A page where a third of the lines vanished looks exactly like a smaller
 school unless somebody counts.
 
-**7752 of 7752 lines accounted for** across 184 pages, 7349 entries, 37 years.
+**11552 of 11552 lines accounted for** across 241 pages, 8377 entries, 42 years.
 
 | page | FY | school | lines | claimed | unaccounted | entries | misattributed |
 |---|---|---|---:|---:|---:|---:|---:|
+| 1981-p069-middle.json | 1981 | central-office | 63 | 63 | 0 | 18 | 0 |
+| 1981-p077-primary.json | 1981 | district-wide | 59 | 59 | 0 | 26 | 0 |
+| 1981-p072-high.json | 1981 | high | 69 | 69 | 0 | 18 | 0 |
+| 1981-p073-high.json | 1981 | high | 66 | 66 | 0 | 18 | 0 |
+| 1981-p075-passios.json | 1981 | passios | 78 | 78 | 0 | 20 | 0 |
+| 1981-p071-primary.json | 1981 | primary | 75 | 75 | 0 | 21 | 0 |
+| 1981-p076-primary.json | 1981 | primary | 63 | 63 | 0 | 20 | 0 |
+| 1981-p070-high.json | 1981 | turkey-hill | 62 | 62 | 0 | 17 | 0 |
+| 1981-p074-turkey-hill.json | 1981 | turkey-hill | 73 | 73 | 0 | 19 | 0 |
+| 1981-p078-passios.json | 1981 | turkey-hill | 56 | 56 | 0 | 25 | 0 |
+| 1982-p075-high.json | 1982 | central-office | 44 | 44 | 0 | 9 | 0 |
+| 1982-p090-middle.json | 1982 | district-wide | 51 | 51 | 0 | 12 | 0 |
+| 1982-p076-turkey-hill.json | 1982 | high | 46 | 46 | 0 | 10 | 0 |
+| 1982-p079-middle.json | 1982 | high | 53 | 53 | 0 | 10 | 0 |
+| 1982-p081-unknown.json | 1982 | high | 54 | 54 | 0 | 12 | 0 |
+| 1982-p082-unknown.json | 1982 | high | 60 | 60 | 0 | 11 | 0 |
+| 1982-p083-unknown.json | 1982 | high | 52 | 52 | 0 | 11 | 0 |
+| 1982-p077-high.json | 1982 | passios | 59 | 59 | 0 | 8 | 0 |
+| 1982-p078-primary.json | 1982 | passios | 53 | 53 | 0 | 11 | 0 |
+| 1982-p080-high.json | 1982 | passios | 54 | 54 | 0 | 10 | 0 |
+| 1982-p087-unknown.json | 1982 | passios | 65 | 65 | 0 | 14 | 0 |
+| 1982-p088-unknown.json | 1982 | passios | 74 | 74 | 0 | 13 | 0 |
+| 1982-p089-high.json | 1982 | passios | 68 | 68 | 0 | 11 | 0 |
+| 1982-p091-primary.json | 1982 | primary | 40 | 40 | 0 | 12 | 0 |
+| 1982-p084-middle.json | 1982 | turkey-hill | 51 | 51 | 0 | 12 | 0 |
+| 1982-p085-unknown.json | 1982 | turkey-hill | 52 | 52 | 0 | 14 | 0 |
+| 1982-p086-passios.json | 1982 | turkey-hill | 71 | 71 | 0 | 13 | 0 |
+| 1982-p092-unknown.json | 1982 | turkey-hill | 44 | 44 | 0 | 32 | 0 |
+| 1983-p117-central-office.json | 1983 | central-office | 69 | 69 | 0 | 35 | 0 |
+| 1983-p118-high.json | 1983 | high | 73 | 73 | 0 | 39 | 0 |
+| 1983-p119-unknown.json | 1983 | high | 78 | 78 | 0 | 39 | 0 |
+| 1983-p122-unknown.json | 1983 | high | 67 | 67 | 0 | 28 | 0 |
+| 1983-p121-primary.json | 1983 | primary | 71 | 71 | 0 | 31 | 0 |
+| 1983-p120-middle.json | 1983 | turkey-hill | 78 | 78 | 0 | 42 | 0 |
+| 1984-p122-unknown.json | 1984 | central-office | 73 | 73 | 0 | 16 | 0 |
+| 1984-p124-unknown.json | 1984 | district-wide | 67 | 67 | 0 | 15 | 0 |
+| 1984-p123-high.json | 1984 | high | 62 | 62 | 0 | 13 | 0 |
+| 1984-p126-high.json | 1984 | high | 62 | 62 | 0 | 15 | 0 |
+| 1984-p127-unknown.json | 1984 | high | 67 | 67 | 0 | 15 | 0 |
+| 1984-p128-unknown.json | 1984 | high | 70 | 70 | 0 | 17 | 0 |
+| 1984-p131-primary.json | 1984 | passios | 109 | 109 | 0 | 19 | 0 |
+| 1984-p133-turkey-hill.json | 1984 | passios | 68 | 68 | 0 | 20 | 0 |
+| 1984-p125-primary.json | 1984 | primary | 68 | 68 | 0 | 19 | 0 |
+| 1984-p132-primary.json | 1984 | primary | 65 | 65 | 0 | 17 | 0 |
+| 1984-p129-unknown.json | 1984 | turkey-hill | 65 | 65 | 0 | 17 | 0 |
+| 1984-p130-passios.json | 1984 | turkey-hill | 71 | 71 | 0 | 19 | 0 |
+| 1985-p147-central-office.json | 1985 | central-office | 91 | 91 | 0 | 15 | 0 |
+| 1985-p149-primary.json | 1985 | district-wide | 82 | 82 | 0 | 14 | 0 |
+| 1985-p152-unknown.json | 1985 | high | 74 | 74 | 0 | 17 | 0 |
+| 1985-p153-middle.json | 1985 | high | 89 | 89 | 0 | 17 | 0 |
+| 1985-p154-middle.json | 1985 | high | 82 | 82 | 0 | 16 | 0 |
+| 1985-p157-passios.json | 1985 | passios | 70 | 70 | 0 | 18 | 0 |
+| 1985-p158-primary.json | 1985 | passios | 68 | 68 | 0 | 16 | 0 |
+| 1985-p148-middle.json | 1985 | turkey-hill | 73 | 73 | 0 | 15 | 0 |
+| 1985-p151-middle.json | 1985 | turkey-hill | 83 | 83 | 0 | 14 | 0 |
+| 1985-p155-turkey-hill.json | 1985 | turkey-hill | 74 | 74 | 0 | 17 | 0 |
+| 1985-p159-turkey-hill.json | 1985 | turkey-hill | 76 | 76 | 0 | 26 | 0 |
 | 1988-p080-high.json | 1988 | high | 52 | 52 | 0 | 22 | 0 |
 | 1988-p081-high.json | 1988 | high | 69 | 69 | 0 | 20 | 0 |
 | 1988-p076-passios.json | 1988 | passios | 51 | 51 | 0 | 46 | 0 |
@@ -232,9 +289,10 @@ that the taxonomy is wrong.
 
 | times | printed as |
 |---:|---|
-| 1279 | `` |
+| 1286 | `` |
 | 70 | `Teaching Assist.` |
 | 65 | `Dept. Liaison` |
+| 42 | `General Worker` |
 | 26 | `Chairperson` |
 | 25 | `Chair` |
 | 23 | `Parents` |
@@ -244,19 +302,26 @@ that the taxonomy is wrong.
 | 17 | `General workers` |
 | 15 | `(Pri.)` |
 | 15 | `Dept Liaison` |
+| 14 | `Foreign Language` |
+| 13 | `Cook/Manager` |
 | 13 | `Social Worker` |
+| 11 | `Industrial Arts` |
+| 11 | `Baker` |
 | 10 | `AD` |
 | 9 | `Teaching Assistant` |
 | 9 | `Café` |
 | 9 | `Café Manager` |
+| 8 | `Mathematics` |
+| 8 | `Business Education` |
+| 8 | `Business Manager` |
 | 8 | `Coordinator` |
 | 8 | `Health` |
 | 8 | `Greenhouse Mgr.` |
 | 8 | `Achieve Assistant` |
 | 8 | `Vice-Chairperson` |
 | 8 | `7th` |
-| 7 | `Business Manager` |
 | 7 | `Greenhouse Asst.` |
+| 6 | `Administrative Coordinator` |
 | 6 | `Asst. Prin.` |
 | 6 | `Clerk` |
 | 6 | `Phys. Ed.` |
@@ -265,8 +330,10 @@ that the taxonomy is wrong.
 | 6 | `Phys. Therap` |
 | 6 | `Parents:` |
 | 6 | `Cook/Managers` |
+| 5 | `Attendance Clerk` |
+| 5 | `Special Needs Teaching Assistant (Elementary School)` |
+| 5 | `Foreign Languages` |
 | 5 | `*` |
-| 5 | `Foreign Language` |
 | 5 | `School Committee Rep` |
 | 5 | `STEP` |
 | 5 | `Department Liaison` |
@@ -279,19 +346,9 @@ that the taxonomy is wrong.
 | 5 | `Occup Therap.` |
 | 5 | `(Tech) MS` |
 | 5 | `STEM` |
+| 4 | `Senior Clerk/Typist` |
 | 4 | `Team Leader` |
-| 4 | `Industrial Arts` |
 | 4 | `Senior Groundsperson` |
-| 4 | `Mgr.` |
-| 4 | `Administrative Assistant` |
-| 4 | `Coordinator of Special Services` |
-| 4 | `Personnel Manager` |
-| 4 | `Dept. Lialson` |
-| 4 | `Special Services Coordinator` |
-| 4 | `Dean of Students` |
-| 4 | `Accounting/Data Reporting` |
-| 4 | `Lunenburg Primary School Café Manager` |
-| 4 | `Grades 4 & 5` |
 
 ## Two things a count here must not be read as
 

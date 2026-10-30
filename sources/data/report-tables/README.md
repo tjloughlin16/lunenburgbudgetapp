@@ -182,7 +182,7 @@ misread, so it passed all 90 inflated wages as `checked`.
 | `report-statement-of-payments` (NEW) | (1986 only) | the Treasurer's DETAILED STATEMENT OF PAYMENTS by department and object. An actual (rule 1); no other edition prints it | one printed line | 1986 |
 | `report-fund-balance-sheets` (NEW) | (1986 only) | one balance sheet PER FUND with a single amount column (general fund liabilities, assets, fund balance and long-term debt; trust funds in custody; revenue sharing). `balance-sheet` publishes per fund COLUMN of a combined sheet and cannot hold these | one printed line | 1986 |
 | `report-treasurers-cash-calendar-year` (NEW) | (1986 only) | a SECOND Treasurer's reconciliation for the CALENDAR year ended 31 December 1986, with its account list. The same kind of quantity as `report-treasurers-cash-reconciliation` but a different PERIOD in a file whose `fy` would read 1986 for both: kept apart so the two are never summed or compared as one year | one printed line | 1986 |
-| `report-vendor-payments` (NEW) | (1986 only) | payments over $4,000 to one payee in fiscal 1986 (MGL c.40 s.4G), name and address in one cell. Businesses are named (the redaction principle identifies providers); SIX payees printed `Surname, Given` with a street address are private individuals paid as persons and are HELD OUT (`edition.json` `withheld_rows`) until TJ decides | one payee | 1986 |
+| `report-vendor-payments` (NEW) | (1986 only) | payments over $4,000 to one payee in fiscal 1986 (MGL c.40 s.4G), name and address in one cell. Businesses are named (the redaction principle identifies providers); SIX payees printed `Surname, Given` with a street address are private individuals paid as persons and were held out (`edition.json` `withheld_rows`) until TJ decided; RELEASED 30 October 2026, see *Publishing names* below | one payee | 1986 |
 | `report-school-staff-fte` (NEW) | (1986 only) | School Department staff in FTE by role and school -- a headcount-equivalent, not a roster and not a payroll | one role | 1986 |
 | `report-school-state-aid` (NEW) | (1986 only) | the School Committee's table of state aid by chapter against the school appropriation, FY-85 to FY-87: RECEIPTS for the past years, an estimate for the coming one, labelled per column | one chapter | 1986 |
 | `report-school-special-accounts` (NEW) | (1986 only) | the School Department's revolving, grant and article accounts (`Summary of Special Accounts FY 86`) | one account | 1986 |
@@ -233,3 +233,74 @@ The cell witness ran over the batch (`locate_cell_misreads.py`, which now also n
 debt schedule's columns by position -- the last is the row's TOTAL -- for its own row identity):
 three candidates, all 1987 p40, all accepted by the blind scripted reader ($0.009); see
 `1987/witnessed-cells.csv`.
+
+## One name per quantity -- the 1981-1985 batch, decided 30 October 2026 by the integration pass
+
+| one name | was | what it is | grain | editions |
+|---|---|---|---|---|
+| `report-school-budget-summary` (NEW) | `report-school-budget-summary` (1981, 1985), `report-school-appropriations` (1982), family `school-general-appropriation` in `report-school-special-accounts` (1983) | the School Committee's own SUMMARY OF ACCOUNTS for the general appropriation, by account series (`1000 ADMINISTRATION`, `2000 INSTRUCTION` ...), salaries and expenses: the year's appropriation (and amendment), what was spent, and the coming year's request or appropriation SIDE BY SIDE. The columns MIX STAGES: one dataset with the stage in `column_meaning`, never differenced across columns (rule 1). Families: `school-budget-summary`, `budget-by-cost-kind` (the salaries / expenses / capital split, 1981 p88/2, 1982 p103/3), `net-budget-request` (1982 p103/2, a lone figure). 1984 p138 prints the same table and is NOT landed (see 1984 NEEDS 3) | one series or cost kind | 1981, 1982, 1983, 1985 |
+| family `school-receipts-returned-to-town` in `report-school-state-aid` (EXISTING dataset) | `school-receipts-returned-to-town` (1981), `school-state-aid-receipts` (1982), `school-state-aid-vs-appropriation` (1983, 1984 -- 1986's family name, a different layout) | `Monies returned to the Town` by the School Department, by source (Chapter 70, transportation, tuition ...): the past year's ACTUAL receipts beside the coming year's ESTIMATED receipts, each labelled per column. Never summed with 1986's state-aid-against-appropriation layout | one source | 1981-1984 |
+| family `school-receipts-returned-half-years` in `report-school-state-aid` | `report-school-monies-returned` (1985) | the same receipts by source in two half-years and a fiscal-year TOTAL -- actuals only. Its own family because its columns are periods, not stages | one source | 1985 |
+| `report-cash-management` (NEW) | (1981 only) | the State-required monthly cash management chart: month-end cash on hand, in non-interest and interest-bearing accounts. A stock at each month end, never summed across months | one month | 1981 |
+| `report-treasurers-outlook` (NEW) | (1981 only) | the Treasurer's own projection for FY83 and his illustration of a hidden payroll cost. **ESTIMATES**, the Treasurer's -- never an actual and never a budget, and labelled so in `table-semantics.csv` | one printed line | 1981 |
+| `report-office-budget-cuts` (NEW) | (1983 only) | the Town Clerk / Tax Collector / Treasurer table `FY 83 | FY 84 | DECREASE`: two budgets and the difference as printed | one office | 1983 |
+| `report-expenditure-shares` (NEW) | (1983 only) | the FY1983 expenditure pie as PERCENTS, no dollars; nine of fourteen slices reached a cell, the other five are in the page text only and no row is written from them | one category | 1983 |
+
+Families added inside existing datasets by the workers (each its own layout): `report-valuation`
+`raised-by-taxation-five-year` (1981); `report-appropriations` `omnibus-funding-sources`,
+`special-articles-voted`, `special-article-funding-sources` (1981); `report-warrant-article-amounts`
+`special-articles-voted` (1982); `report-fee-schedule` `proposed-license-permit-fees` (1981, a
+PROPOSED stage); `report-debt` `debt-history-selected-years` (1983); `report-fund-balance-sheets`
+`general-fund-long-term-debt` (1983). And `report-vital-records` family `births` (1986 p62, below).
+
+## What the reader does for the 1981-1985 batch (30 October 2026)
+
+Proved the same way as before: all 25 folders 1986-2010 re-run and compared byte for byte with a
+snapshot taken before the first change -- 1987-2010 identical, 1986 changed only by TJ's release
+and the births below. Always on, because no 1986-2010 output moves:
+
+- `RECEIPTS_GRAND` takes `TOTAL RECEIPTS:` with a colon (1981-1983) and the misprint `TOTAL RECIPTS`
+  (1984).
+- `CASH_INVESTED` also finds `Revenue Cash and Revenue Cash Invested:`, the line that opens the
+  account list under the roll-forward in ONE table (1982 p113, 1983 p40, 1984 p41 -- now mapped to
+  `treasurers-cash`, the roll-forward going to the reconciliation).
+- the accountant-schedule identities of 1988 and 1991 are WIDENED, not added to: `BALANCE (?:TO
+  )?REVENUE` = AVAILABLE - EXPENDED - `BALANCE (?:TO )?(?:FY|FISCAL)` (`Balance to Fiscal 1982`,
+  `BALANCE TO FY 85`).
+- a stacked principal/interest pair may follow the column's `$ ` (`$ 65,000 15,015`).
+- the cash reconciliation reads each cell through `recon_figures`: where the raw text yields no
+  figure, every token through CALENDAR_REPAIRS (`20,096,425,52 (11,420,305,18)`, 1981 p95, which
+  raised an IndexError); a `LESS ...` label wrapped over two rows takes its net from the second
+  (1981 p109, 1982 p129); a labelled line whose figure is printed on the row below takes that
+  figure (1982 p129 `Disbursements ...`).
+- CALENDAR_REPAIRS: a footnote letter in brackets (`$ 978.48(A)`), the `$` printed twice
+  (`$ $ 111,474.00`).
+
+Per-edition opt-ins (`edition.json`): `recon_net_beside_ledger` (1983: `General Ledger Balance |
+9,217,865.88 1,154,794.21`, the net disbursed printed beside the ledger balance) and
+`colon_for_point` (1983 `50:00`, 1984 `5,033:74*`; a cell `10:30` elsewhere may be a time).
+
+Not applied, with the reason in each folder's NEEDS.md: every rule that would reclassify a row
+as a subtotal or an account BECAUSE the statement then closes (1982 2a/2d, 1983 2b/2c); the
+validator's block walk (shared with the FY reviews); figures Textract put in no cell (a re-read,
+not a reader rule). The cell witness: `locate_cell_misreads.py 1981 1982 1983 1984 1985` finds
+0 candidates (no misread there is pinned by two printed identities), so nothing was read and
+nothing spent; the misreads the workers named stay in the discrepancy register.
+
+## Publishing names: TJ's decision, 30 October 2026
+
+**30 October 2026, TJ: *"Yes publish. Everything in the annual reports is public."*** Every
+`withheld_rows` entry in 1981-1986 is removed and those rows are published: 1986's six private
+payees and the page heading naming one, the 1981-1985 pupils' prizes and scholarships, and the
+named pension allowances. Named births and burials are publishable too. The reader's
+`withheld_rows` / `heading_pages` mechanism stays in `read_report_tables.py`, unused, for a
+takedown.
+
+Births landed so far: 1986 p62 tables 2-4 (22 rows, `report-vital-records`, family `births`; name,
+birthplace and parents in the label, the day as v1, as the burials land). **Births and marriages
+still NOT landed** (mapped with no dataset; a later pass): 2001 p75-78, 2002 p70-73, 2003 p76-78,
+2004 p78-83, 2005 p75-80 (and 2005 p80 deaths), 2006 p71-75, 2007 p80-83. 1981-1985 sent no
+births page for tables.
+
+Named perpetual-care bequest donors are landed as in 1986: 1982 p143/2 (`Bequests Received`, 18
+donors).

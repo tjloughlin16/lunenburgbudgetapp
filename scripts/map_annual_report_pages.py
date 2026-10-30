@@ -481,6 +481,14 @@ PROOF = {
     'school-state-aid': ('status', VERDICT),
     'school-special-accounts': ('status', VERDICT),
     'agency-funds': ('status', VERDICT),
+    # NEW in the 1981-1985 editions (integration pass, 30 October 2026): the State cash management
+    # chart, the Treasurer's outlook (estimates), the school budget summary, office budget cuts,
+    # and the expenditure shares (percents)
+    'cash-management': ('status', VERDICT),
+    'treasurers-outlook': ('status', VERDICT),
+    'school-budget-summary': ('status', VERDICT),
+    'office-budget-cuts': ('status', VERDICT),
+    'expenditure-shares': ('status', VERDICT),
     # and from the 2001-2009 editions, the same furniture, unified by the integration pass of
     # 28 October 2026 (sources/data/report-tables/README.md, "One name per quantity"): the
     # Treasurer's cash roll-forward, checked down the page (`checked` only when the chain

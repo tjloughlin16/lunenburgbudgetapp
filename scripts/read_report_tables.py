@@ -92,13 +92,15 @@ IDENTITIES = {
                             # balance closed to revenue is AVAILABLE less AMOUNT EXPENDED less the
                             # part carried to FY 1989 (154 of 164 single-line rows by the worker;
                             # blank read as zero as in 1991, on a row printing AVAILABLE)
-                            ('BALANCE REVENUE', [(1, 'AVAILABLE'), (-1, 'AMOUNT EXPENDED'), (-1, 'BALANCE FY')],
+                            # 1984/1985 head the carried part `BALANCE TO FY 85`, 1981/1982 `Balance to
+                            # Fiscal 1982` beside `Balance to Revenue` (integration pass, 30 Oct 2026)
+                            ('BALANCE (?:TO )?REVENUE', [(1, 'AVAILABLE'), (-1, 'AMOUNT EXPENDED'), (-1, 'BALANCE (?:TO )?(?:FY|FISCAL)')],
                              {'absent': ['ENCUMBERED', 'TOTAL EXPENDED'], 'blank_target': 'zero', 'needs': ['AVAILABLE']}),
                             # 1991: no ENCUMBERED column, and the balance split between the part
                             # closed to revenue and the part carried to FY 92. Blank is zero HERE,
                             # on a line that prints an AVAILABLE figure: it held line by line on
                             # 78 of 78 such rows (1991 NEEDS 1c), where on 2010 it did not
-                            ('BALANCE REVENUE', [(1, 'AVAILABLE'), (-1, 'TOTAL EXPENDED'), (-1, 'BALANCE FY')],
+                            ('BALANCE (?:TO )?REVENUE', [(1, 'AVAILABLE'), (-1, 'TOTAL EXPENDED'), (-1, 'BALANCE (?:TO )?(?:FY|FISCAL)')],
                              {'absent': ['ENCUMBERED'], 'blank_target': 'zero', 'needs': ['AVAILABLE']})],
     'special-revenue': [('BALANCE', [(1, 'FORWARD 7'), (1, 'RECEIPTS'), (-1, 'DISBURSEMENTS')]),
                         # 1992-1996 head the flows TOTAL REVENUE / TOTAL EXPENDED (1992 41 of
@@ -204,6 +206,15 @@ CALENDAR_REPAIRS = [
     # thousands separator AND after the whole dollars. Two full stops cannot be one decimal point
     ('full stops for the thousands separator, whole dollars', re.compile(r'(\$?)(\d{1,3}(?:\.\d{3})+)\.'),
      lambda m: m.group(1) + m.group(2).replace('.', ',')),
+    # Added by the 1981-1985 integration pass (30 October 2026).
+    # `$ 978.48(A)` (1985 p14): a footnote LETTER in brackets after the figure
+    ('footnote letter after the figure', re.compile(r'(\$?\(?[\d,]+\.\d{2}\)?)\([A-Za-z]\)'), lambda m: m.group(1)),
+    # `$ $ 111,474.00` (1985 p64): the dollar sign printed twice
+    ('dollar sign printed twice', re.compile(r'\$\$(\(?[\d,]+\.\d{2}\)?)'), lambda m: '$' + m.group(1)),
+    # `50:00` (1983 p43), `5,033:74*` (1984 p139): a colon for the decimal point, in cents. An
+    # edition opt-in (`"colon_for_point": true`), because a cell `10:30` may be a time of day
+    ('colon for a decimal point', re.compile(r'(\$?\d{1,3}(?:,\d{3})*):(\d{2})[*#]?'),
+     lambda m: '%s.%s' % m.groups(), 'colon_for_point'),
 ]
 # `$330.000` `$13.390` (1992 pp33-36): a full stop for the thousands comma -- but only in a
 # column of WHOLE DOLLARS (no cents anywhere in it), where three digits after a stop cannot be
@@ -216,7 +227,11 @@ NEW_GENERIC = {'report-auditors-cash-schedule.csv', 'report-statement-of-payment
                'report-fund-balance-sheets.csv', 'report-revenue-sharing.csv',
                'report-treasurers-cash-calendar-year.csv', 'report-vendor-payments.csv',
                'report-school-staff-fte.csv', 'report-school-state-aid.csv',
-               'report-school-special-accounts.csv', 'report-agency-funds.csv'}
+               'report-school-special-accounts.csv', 'report-agency-funds.csv',
+               # and from the 1981-1985 batch (integration pass, 30 October 2026)
+               'report-cash-management.csv', 'report-treasurers-outlook.csv',
+               'report-school-budget-summary.csv', 'report-office-budget-cuts.csv',
+               'report-expenditure-shares.csv'}
 
 # PER-EDITION OPT-INS, set by build() from `edition.json` (every key whose value is `true`). A
 # reading added for one batch of editions that would change what an earlier edition already
@@ -630,7 +645,9 @@ def apply_calendar_repairs(tables):
                     mark(c, 'S for $, in a column of whole dollars', '$' + x[1:])
 
 
-PAIR = re.compile(r'^(\$?\(?\d{1,3}(?:,\d{3})*\.?\)?)\s+(\$?\(?\d{1,3}(?:,\d{3})*\.?\)?)$')
+# a leading `$ ` before the pair (`$ 65,000 15,015`, 1981 p111, 1983 p55, 1985 p65) is the
+# column's dollar sign, not a third figure (integration pass, 30 Oct 2026)
+PAIR = re.compile(r'^(\$?\s?\(?\d{1,3}(?:,\d{3})*\.?\)?)\s+(\$?\(?\d{1,3}(?:,\d{3})*\.?\)?)$')
 PRIN_INT = re.compile(r'PRINCIPAL\W+INTEREST', re.I)
 
 
@@ -641,7 +658,7 @@ def _pair(text):
         return None
     out = []
     for part in m.groups():
-        v, places, _ = V.parse(part.rstrip('.').replace('(', '').replace(')', ''))
+        v, places, _ = V.parse(part.rstrip('.').replace('(', '').replace(')', '').replace(' ', ''))
         if v is None:
             return None
         out.append((part, -v if '(' in part else v, places))
@@ -1148,7 +1165,9 @@ def emit_receipts(m, recs, ed):
     return out, note
 
 
-RECEIPTS_GRAND = re.compile(r'GRAND TOTAL|^TOTAL RECEIPTS$', re.I)
+# `TOTAL RECEIPTS:` with a colon (1981 p100, 1982 p118, 1983 p45) and the misprint `TOTAL RECIPTS`
+# (1984 p43): the statement's own grand total, never an account (integration pass, 30 Oct 2026)
+RECEIPTS_GRAND = re.compile(r'GRAND TOTAL|^TOTAL REC(?:EI|I)PTS:?$', re.I)
 
 
 def emit_receipts_span(recs, ed, stated):
@@ -1229,7 +1248,9 @@ def emit_receipts_span(recs, ed, stated):
     return out, note, {(rec['page'], rec['table'], rec['row'], rec['panel']) for rec, _ in items}
 
 
-CASH_INVESTED = re.compile(r'CURRENT CASH INVESTED', re.I)
+# `Revenue Cash and Revenue Cash Invested:` (1982 p113, 1983 p40, 1984 p41): the line that opens
+# the account list under the roll-forward in ONE table (integration pass, 30 Oct 2026)
+CASH_INVESTED = re.compile(r'CURRENT CASH INVESTED|^REVENUE CASH AND REVENUE CASH INVESTED', re.I)
 # `TREASURER'S CASH JUNE 30, 1989` (1988 p32, 1989 p38): the list's own total, labelled as the
 # Treasurer's cash at the close, so it is never summed as a twelfth account
 CASH_TOTAL = re.compile(r"^TREASURER\W?S CASH\b", re.I)
@@ -1250,6 +1271,25 @@ def raw_figures(text):
         v = V.parse(tok.replace('(', '').replace(')', ''))[0]
         if v is not None:
             out.append(-v if '(' in tok else v)
+    return out
+
+
+def recon_figures(text):
+    """raw_figures, and where it finds NONE in a cell that is nothing but figures, each
+    whitespace-separated token read through CALENDAR_REPAIRS -- 1981 p95 prints the disbursed
+    line and the revenue cash invested in one cell with commas for decimal points,
+    `20,096,425,52 (11,420,305,18)`. Every token must read as a figure, or the cell is a label
+    (integration pass, 30 Oct 2026)."""
+    figs = raw_figures(text)
+    if figs or not re.search(r'\d', text):
+        return figs
+    out = []
+    for tok in text.split():
+        hit = calendar_repair(tok.replace('(', '').replace(')', ''))
+        v = V.parse(hit[1])[0] if hit else None
+        if v is None:
+            return []
+        out.append(-v if '(' in tok else v)
     return out
 
 
@@ -1325,22 +1365,46 @@ def emit_cash_reconciliation(m, raw, ed):
     lines = []
     for rr in raw:
         label = ' '.join(' '.join(c.text.split()) for k, c in sorted(rr.cells.items())
-                         if c.text.strip() and not raw_figures(c.text))
-        figs = [v for k, c in sorted(rr.cells.items()) for v in raw_figures(c.text)]
+                         if c.text.strip() and not recon_figures(c.text))
+        figs = [v for k, c in sorted(rr.cells.items()) for v in recon_figures(c.text)]
         if label or figs:
             lines.append((rr, label, figs))
     got = {}
     phase = 'before'
     subtotals = {'receipts': ['net_receipts', 'after_receipts'], 'disbursed': ['net_disbursed']}
+    pending = prev = None
     for rr, label, figs in lines:
         kind = next((k for k, rx in RECON if re.search(rx, label, re.I)), None)
-        if kind == 'receipts' and re.search(RECON[2][1], label, re.I):
+        held, pending = pending, None
+        last, prev = prev, kind
+        if kind is None and figs and held and held not in got:
+            # A LABEL WHOSE FIGURE IS PRINTED ON THE ROW BELOW IT (1982 p129: `Disbursements July
+            # 1, 1981 through June 30, 1982`, then 382,182.18 on its own row): that figure is the
+            # labelled line's, not a running subtotal (integration pass, 30 Oct 2026)
+            kind, label = held, label or '(continues the line above)'
+            prev = kind
+        elif kind is None and label and figs and last in ('investments', 'revenue_invested'):
+            # A `LESS ...` LABEL WRAPPED OVER TWO ROWS, the NET on the second (1981 p109, 1982
+            # p129: `Less Investments Transferred to Revenue` / `Sharing Cash Account | 131,931.13`)
+            slot = 'net_receipts' if last == 'investments' else 'net_disbursed'
+            if slot not in got:
+                got[slot] = figs[0]
+            continue
+        if kind and not figs and kind not in got:
+            pending = kind
+        if kind == 'ledger' and len(figs) == 2 and 'recon_net_beside_ledger' in OPTS:
+            # NET DISBURSED PRINTED BESIDE THE LEDGER BALANCE (1983 p40: `General Ledger Balance |
+            # 9,217,865.88 1,154,794.21`). An edition opt-in (`"recon_net_beside_ledger": true`)
+            got.setdefault('net_disbursed', figs[0])
+            got['ledger'] = figs[1]
+            continue
+        if kind == 'receipts' and figs and re.search(RECON[2][1], label, re.I):
             # one printed line holding receipts, the transfer, and the net (2006)
             got['receipts'], got['investments'] = figs[0], figs[1] if len(figs) > 1 else None
             if len(figs) > 2:
                 got['net_receipts'] = figs[2]
             phase = 'receipts'
-        elif kind == 'disbursed' and re.search(RECON[4][1], label, re.I):
+        elif kind == 'disbursed' and figs and re.search(RECON[4][1], label, re.I):
             got['disbursed'], got['revenue_invested'] = figs[0], figs[1] if len(figs) > 1 else None
             if len(figs) > 2:
                 got['net_disbursed'] = figs[2]

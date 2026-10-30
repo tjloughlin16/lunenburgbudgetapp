@@ -1,0 +1,110 @@
+{
+  "edition": "1981",
+  "fy": 1981,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1981 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION, whose financial statements are for fiscal 1981 -- see periods",
+  "stem": "4503-1981-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4503-1981-annual-town-report.pdf",
+  "label": "1981 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4503-1981-annual-town-report.cells.tsv",
+  "periods": [
+    {
+      "what": "school department statistics, receipts, accounts and special accounts",
+      "period": "school year / fiscal 1981 (FY-81 7/1/80-6/30/81; FY-82 estimates and requests)",
+      "cited": "p86: `FOR SCHOOL YEAR ENDING JUNE 30, 1981`; p87: `FY-81 ACTUAL RECEIPTS (7/1/80-6/30/81)`, `FY-82 ESTIMATED RECEIPTS (7/1/81-6/30/82)`; p88: `Summary of Accounts, FY81 and Budget Request, FY82`"
+    },
+    {
+      "what": "school tuition rates",
+      "period": "September 1 - December 31, 1981 and January 1 - December 31, 1982",
+      "cited": "p43: `EFFECTIVE for period September 1, 1981 - December 31, 1981`; `EFFECTIVE for period January 1, 1982 - December 31, 1982`"
+    },
+    {
+      "what": "cash management achievements",
+      "period": "fiscal year ending June 30, 1981",
+      "cited": "p93: `For Fiscal Year Ending June 30, 1981`"
+    },
+    {
+      "what": "Treasurer's outlook for fiscal 1983",
+      "period": "fiscal year 1983, a projection in the 1981 report",
+      "cited": "p94: `Lunenburg's financial well-being in Fiscal Year 1983`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation",
+      "period": "fiscal year 1981, July 1, 1980 - June 30, 1981",
+      "cited": "p95: `Reconciliation of Treasurer's Cash / Fiscal Year 1981`; `Receipts July 1, 1980 through June 30, 1981`"
+    },
+    {
+      "what": "detailed statement of receipts",
+      "period": "July 1, 1980 through June 30, 1981",
+      "cited": "p96: `Detailed Statement of Receipts / July 1, 1980 through June 30, 1981`"
+    },
+    {
+      "what": "detailed statement of payments",
+      "period": "July 1, 1980 through June 30, 1981",
+      "cited": "p101: `Detailed Statement of Payments / July 1, 1980 through June 30, 1981`"
+    },
+    {
+      "what": "general fund balance sheet",
+      "period": "June 30, 1981",
+      "cited": "p105: `Balance Sheet - June 30, 1981`"
+    },
+    {
+      "what": "revenue sharing reconciliation, receipts, payments and balance sheet",
+      "period": "fiscal 1981, July 1, 1980 - June 30, 1981",
+      "cited": "p109: `Reconciliation of Treasurer's Cash` / `Receipts July 1, 1980 through June 30, 1981`"
+    },
+    {
+      "what": "bonded indebtedness by issue",
+      "period": "through fiscal 1982",
+      "cited": "p111: `Due Fiscal 1982`, `Tot. Pmts. thru FY 82`, `Balance 6-30-82`"
+    },
+    {
+      "what": "debt repayment schedule",
+      "period": "payments FY1983-FY1990",
+      "cited": "p111: `SCHEDULE OF PRINCIPAL AND INTEREST PAYMENTS DUE FISCAL YEAR 1983 THROUGH FISCAL 1990`"
+    },
+    {
+      "what": "accountant's summary and classification of accounts",
+      "period": "NOT PRINTED as a year; the carry-forward column is headed `Balance to Fiscal 1982`, so the schedule closes fiscal 1981",
+      "cited": "p112-120: `Summary and Classification of Accounts`; `Balance to Revenue | Balance to Fiscal 1982`"
+    },
+    {
+      "what": "tax collector's report",
+      "period": "July 1, 1980 - June 30, 1981",
+      "cited": "p121: `Period July 1, 1980 - June 30. 1981`"
+    },
+    {
+      "what": "trust funds",
+      "period": "July 1, 1980 through June 30, 1981",
+      "cited": "p122: `Trust Funds / July 1, 1980 through June 30, 1981`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation, calendar year",
+      "period": "calendar year January 1 - December 31, 1981",
+      "cited": "p124: `Balance January 1, 1981`, `Receipts January 1, 1981 through December 31, 1981`, `Balance December 31, 1981 per General Ledger`"
+    },
+    {
+      "what": "omnibus budget and special articles",
+      "period": "fiscal year 1982, as VOTED at the Annual Town Meeting of April 4, 1981 (a budget, not an actual)",
+      "cited": "p129: `FISCAL YEAR 1982 ANNUAL TOWN MEETING WARRANT`, `April 4, 1981`; p132: `TOTAL BUDGET VOTED`"
+    },
+    {
+      "what": "proposed license and permit fee schedule",
+      "period": "proposed for the 1982 Annual Town Meeting, Article 23",
+      "cited": "p134-135: `ARTICLE 23 ... PROPOSED LICENSE AND PERMIT FEE SCHEDULE`"
+    },
+    {
+      "what": "police activity",
+      "period": "calendar 1981",
+      "cited": "p23: `The Department had under investigation 42 hit and run accidents` (the edition's year; no period printed on the table)"
+    }
+  ],
+  "accountant_marks": true,
+  "stop_for_comma_without_dollar": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "stacked_pairs": true,
+  "receipts_span": true
+}

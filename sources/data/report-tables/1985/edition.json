@@ -1,0 +1,105 @@
+{
+  "edition": "1985",
+  "fy": 1985,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "stem": "4485-1985-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4485-1985-annual-town-report.pdf",
+  "label": "1985 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4485-1985-annual-town-report.cells.tsv",
+  "stacked_pairs": true,
+  "accountant_marks": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "receipts_span": true,
+  "opt_ins_why": "set by the 1986-1990 integration pass, 29 October 2026: each is a reading in scripts/read_report_tables.py that would change what an earlier edition publishes, so it applies only where an edition asks (sources/data/report-tables/README.md)",
+  "basis_source": "the label `1985 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION whose financial statements are for fiscal 1985 (and one for calendar 1985) -- see periods",
+  "periods": [
+    {
+      "what": "auditor's schedules (reconciliation of Treasurer's cash; investments)",
+      "period": "fiscal year ended June 30, 1985",
+      "cited": "p13: `the period from July 1, 1984 to June 30, 1985`, columns `Balance July 1, 1984 ... Balance June 30, 1985`; p14: `SCHEDULE OF INVESTMENTS / June 30, 1985`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation",
+      "period": "fiscal year 1985, July 1, 1984 - June 30, 1985",
+      "cited": "p54: `RECONCILIATION OF TREASURER'S CASH / FISCAL YEAR 1985`; `Balance June 30, 1984`; `Receipts July 1, 1984 - June 30, 1985`"
+    },
+    {
+      "what": "detailed statement of receipts",
+      "period": "July 1, 1984 through June 30, 1985",
+      "cited": "p55: `Detailed Statement of Receipts / July 1, 1984 through June 30, 1985`"
+    },
+    {
+      "what": "detailed statement of payments",
+      "period": "July 1, 1984 through June 30, 1985",
+      "cited": "p57: `Detailed Statement of Payments / July 1, 1984 through June 30, 1985`"
+    },
+    {
+      "what": "general fund balance sheet",
+      "period": "June 30, 1985",
+      "cited": "p59: `Town of Lunenburg / Balance Sheet - June 30, 1985`"
+    },
+    {
+      "what": "trust funds in custody, balance sheet",
+      "period": "June 30, 1985",
+      "cited": "p62: `BALANCE SHEET - JUNE 30, 1985 / TRUST FUNDS`"
+    },
+    {
+      "what": "revenue sharing reconciliation and balance sheet",
+      "period": "fiscal 1985, July 1, 1984 - June 30, 1985; balance sheet June 30, 1985",
+      "cited": "p64: `RECONCILIATION OF TREASURER'S CASH / FEDERAL REVENUE SHARING FUNDS / June 30, 1985`, `Receipts July 1, 1984 - June 30, 1985`"
+    },
+    {
+      "what": "debt repayment schedule",
+      "period": "payments FY1987-FY1996",
+      "cited": "p65: `SCHEDULE OF INTEREST AND PRINCIPAL PAYMENTS DUE FISCAL YEAR 1987 THROUGH FISCAL YEAR 1996`"
+    },
+    {
+      "what": "bonded indebtedness by issue",
+      "period": "through fiscal 1986",
+      "cited": "p66: columns `DUE FISCAL 1986`, `Tot. Pmts. thru FY 1986`"
+    },
+    {
+      "what": "tax collector's report",
+      "period": "July 1, 1984 - June 30, 1985",
+      "cited": "p67: `TAX COLLECTOR'S REPORT JULY 1, 1984 - JUNE 30, 1985`"
+    },
+    {
+      "what": "trust and investment accounts",
+      "period": "July 1, 1984 through June 30, 1985",
+      "cited": "p68: `Trust and Investment Accounts / July 1, 1984 through June 30, 1985`; p70 `Balance July 1, 1984` ... `Balance June 30, 1985`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation, calendar year",
+      "period": "calendar year ended December 31, 1985",
+      "cited": "p71: `Calendar Year Ending December 31, 1985`; `Balance January 1, 1985`"
+    },
+    {
+      "what": "accountant's schedule of appropriations, funds available and expended",
+      "period": "NOT PRINTED as a year; the carry-forward column is headed `BALANCE TO FY 85` (p72-77), so the schedule closes fiscal 1985 -- read from the heading, not stated as a period",
+      "cited": "p72-77: `SUMMARY AND CLASSIFICATION OF ACCOUNTS`, columns `APPROPRIATION FORWARD ... TO FY 85`"
+    },
+    {
+      "what": "omnibus budget",
+      "period": "fiscal year 1986, as VOTED (a budget, not an actual)",
+      "cited": "p83: `ANNUAL TOWN MEETING / Saturday May 11, 1985`, `FISCAL YEAR 1986 ANNUAL MEETING WARRANT`; p84 `THE BUDGET:`; p85 `TOTAL BUDGET VOTED`"
+    },
+    {
+      "what": "special town meeting supplement",
+      "period": "fiscal year 1986 budget as supplemented at the Special Town Meeting of December 4, 1985",
+      "cited": "p93: `Special Town Meeting - December 4, 1985`, Article 1 `supplement the amounts voted for the Town's Budget under Article 4 of the May 11, 1985 Annual Town Meeting`"
+    },
+    {
+      "what": "school department statistics, monies returned, summary of accounts, special accounts",
+      "period": "school year ending June 30, 1985; FY-85 and FY-86 columns",
+      "cited": "p162: `YEAR ENDING JUNE 30, 1985`; p163 `Received 7/84-12/84 | Received 1/85-6/85 | TOTAL FY-85`; p164 `SUMMARY OF ACCOUNTS, FY85 & BUDGET REQUEST, FY86`; p165 `SUMMARY OF SPECIAL ACCOUNTS, FY85`"
+    },
+    {
+      "what": "police activity",
+      "period": "calendar 1985",
+      "cited": "p32: `During 1985 we received 24,500 miscellaneous police calls`"
+    }
+  ]
+}

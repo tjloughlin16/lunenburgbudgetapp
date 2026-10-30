@@ -1288,13 +1288,20 @@ REFERENCE = [
     # balance sheets with one amount column (1986); the federal Revenue Sharing fund's receipts
     # and payments (1986; its roll-forward is in the cash reconciliation); a SECOND Treasurer's
     # reconciliation for the CALENDAR year (1986), never summed with the fiscal one; payments to
-    # vendors over $4,000 (1986; six payees who are private individuals held back); the School
+    # vendors over $4,000 (1986; every payee as printed -- TJ, 30 Oct 2026); the School
     # Department's staff in FTE by role, its state aid against the appropriation, and its special
     # accounts (1986); and agency funds the Town holds for others (1987)
     'report-auditors-cash-schedule', 'report-statement-of-payments', 'report-fund-balance-sheets',
     'report-revenue-sharing', 'report-treasurers-cash-calendar-year', 'report-vendor-payments',
     'report-school-staff-fte', 'report-school-state-aid', 'report-school-special-accounts',
     'report-agency-funds',
+    # and from the 1981-1985 editions (integration pass of 30 October 2026, the same README): the
+    # State's monthly cash management chart (1981); the Treasurer's own FY83 outlook, ESTIMATES
+    # (1981); the School Committee's summary of the general appropriation by series, its columns
+    # mixing appropriation, actual and request (1981-1985); three offices' budget cuts FY83 to
+    # FY84 (1983); and the FY1983 expenditure pie as percents (1983)
+    'report-cash-management', 'report-treasurers-outlook', 'report-school-budget-summary',
+    'report-office-budget-cuts', 'report-expenditure-shares',
 
     # THE PROVEN READINGS, each tied to an identity its own table states. These are a
     # different kind of thing from the `report-*` extracts above and must not be read as

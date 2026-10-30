@@ -1,0 +1,103 @@
+{
+  "edition": "1982",
+  "fy": 1982,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1982 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION, whose financial statements are for fiscal 1982 -- see periods",
+  "stem": "4504-1982-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4504-1982-annual-town-report.pdf",
+  "label": "1982 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4504-1982-annual-town-report.cells.tsv",
+  "periods": [
+    {
+      "what": "Treasurer's cash reconciliation",
+      "period": "fiscal year 1982, July 1, 1981 - June 30, 1982",
+      "cited": "p113: `Reconciliation of Treasurer's Cash / Fiscal Year 1982`; `Balance June 30, 1981`; `Receipts July 1, 1981 through June 30, 1982`"
+    },
+    {
+      "what": "detailed statement of receipts",
+      "period": "July 1, 1981 through June 30, 1982",
+      "cited": "p114: `Detailed Statement of Receipts / July 1, 1981 through June 30, 1982`"
+    },
+    {
+      "what": "detailed statement of payments",
+      "period": "July 1, 1981 through June 30, 1982",
+      "cited": "p119: `Detailed Statement of Payments / July 1, 1981 through June 30, 1982`"
+    },
+    {
+      "what": "general fund balance sheet",
+      "period": "June 30, 1982",
+      "cited": "p124: `Town of Lunenburg / Balance Sheet - June 30, 1982 / GENERAL FUND`"
+    },
+    {
+      "what": "trust funds in custody of the Town Treasurer, balance sheet",
+      "period": "June 30, 1982 (continues the p124 statement)",
+      "cited": "p127-128: `In Custody of Town Treasurer:` on the pages continuing the p124 balance sheet; no separate date printed"
+    },
+    {
+      "what": "revenue sharing reconciliation and balance sheet",
+      "period": "fiscal year July 1, 1981 - June 30, 1982; June 30, 1982",
+      "cited": "p129: `FEDERAL REVENUE SHARING FUNDS / June 30, 1982`; `Balance June 30, 1981`; `Receipts July 1, 1981 through June 30, 1982`"
+    },
+    {
+      "what": "bonded indebtedness and debt repayment schedule",
+      "period": "through fiscal 1983; payments FY1984-FY1990",
+      "cited": "p131: column headers `Due Fiscal 1983`, `Tot. Pmts. thru FY 1983`; `FISCAL YEAR 1984 ... 1990`; no `as of` date printed"
+    },
+    {
+      "what": "accountant's schedule of appropriations, funds available and expended",
+      "period": "NOT PRINTED as a year; the carry-forward column is headed `Balance to Fiscal 1983`, so the schedule closes fiscal 1982",
+      "cited": "p132-139: column headers `Approp. Forward | Total Funds Available | Program Name | Amount Expended | Total Expended | Balance to Revenue | Balance to Fiscal 1983`"
+    },
+    {
+      "what": "tax collector's report",
+      "period": "July 1, 1981 - June 30, 1982",
+      "cited": "p140: `Tax Collector's Report July 1, 1981 - June 30, 1982`"
+    },
+    {
+      "what": "trust and investment accounts",
+      "period": "July 1, 1981 through June 30, 1982",
+      "cited": "p141: `Trust and Investment Accounts / July 1, 1981 through June 30, 1982`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation, calendar year",
+      "period": "calendar year ended December 31, 1982",
+      "cited": "p146: `Balance January 1, 1982`; `Receipts January 1, 1982 through December 31, 1982`; `Balance December 31, 1982 per General Ledger`"
+    },
+    {
+      "what": "omnibus budget",
+      "period": "fiscal year 1983, as VOTED (a budget, not an actual)",
+      "cited": "p156: `ARTICLE 4 ... defray the charges and expenses of the Town for Fiscal Year 1983`; minutes headed `Annual Town Meeting Minutes / April 3, 1982` (p155 area)"
+    },
+    {
+      "what": "school department statistics, receipts, accounts and special accounts",
+      "period": "school year ending June 30, 1982; FY-82 and FY-83 columns",
+      "cited": "p101: `FOR SCHOOL YEAR ENDING JUNE 30, 1982`; p102: `FY-82 ACTUAL RECEIPTS (7/1/81-6/30/82)`, `FY-83 ESTIMATED RECEIPTS (7/1/82-6/30/83)`; p104: `(Covers period July 1, 1981 June 30, 1982)`"
+    },
+    {
+      "what": "school tuition rates",
+      "period": "rates effective from January 1983 (second set); the first set Sept 1 - Dec 31, 1982",
+      "cited": "p44: `EFFECTIVE for period September 1, 1982 - December 31, 1982`"
+    },
+    {
+      "what": "police and health activity",
+      "period": "calendar 1982",
+      "cited": "p8: `The following services were provided in 1982`; p23-24 police report"
+    }
+  ],
+  "stacked_pairs": true,
+  "accountant_marks": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "receipts_span": true,
+  "opt_ins_why": "set by the 1986-1990 integration pass, 29 October 2026: each is a reading in scripts/read_report_tables.py that would change what an earlier edition publishes, so it applies only where an edition asks (sources/data/report-tables/README.md)",
+  "unlabeled_subtotals_in": [
+    "report-appropriations",
+    "report-statement-of-payments",
+    "report-fund-balance-sheets",
+    "report-trust-funds",
+    "report-revenue-sharing",
+    "report-school-budget-summary"
+  ]
+}

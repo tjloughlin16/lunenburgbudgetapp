@@ -67,6 +67,13 @@ PROV = os.path.join(DATA, 'PROVENANCE-staff-rosters.md')
 # Order matters -- the first pattern that matches wins -- because `Special Education
 # Teacher` must be tested before `Teacher`, and `Assistant Principal` before `Principal`.
 POSITIONS = [
+    # A title in which PRINCIPAL is the person SERVED, not the post (1982 p76 `Secretary to
+    # High School Principal`, 1984 p123 `Principal Secretary`, 1985 p148 `Principal's
+    # Secretary`, 1985 p147 `Administrative Coordinator to Middle School Principal`). Tested
+    # first, or `\bPRINCIPAL\b` makes each a second principal -- and the one-printing-per-
+    # school rule then drops the whole page as a duplicate. No entry before 1981 carries one
+    ('Administrative Staff',     r"SECRETARY TO .*PRINCIPAL|PRINCIPAL'?S? SECRETARY|"
+                                 r"COORDINATOR TO .*PRINCIPAL"),
     ('Assistant Principal',      r'ASSIST(ANT)?\.?\s*PRINCIPAL|ASST\.?\s*PRINCIPAL'),
     ('Principal',                r'\bPRINCIPAL\b'),
     ('Superintendent',           r'SUPERINTENDENT'),
@@ -292,7 +299,9 @@ def main():
             if pos is None:
                 unmapped[re.sub(r'\s+', ' ', (e.get('role_raw') or '').strip())] += 1
             entries.append({
-                'fy': fy, 'school': school, 'page': page.get('page'),
+                # an ENTRY may name its own school where one page prints two (1981 p73: the
+                # high school's staff, then Turkey Hill's); otherwise the page's
+                'fy': fy, 'school': e.get('school') or school, 'page': page.get('page'),
                 'name': (e.get('name') or '').strip(),
                 'role_raw': (e.get('role_raw') or '').strip(),
                 'position': pos or '',

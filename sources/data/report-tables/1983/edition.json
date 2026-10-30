@@ -1,0 +1,102 @@
+{
+  "edition": "1983",
+  "fy": 1983,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1986 Annual Town Report` (sources/town-annual-reports/index.csv) and the cover (p1: `LUNENBURG / 1986 TOWN ...`); a calendar EDITION, whose financial statements are for fiscal 1986 (and one for calendar 1986) -- see periods",
+  "stem": "4483-1983-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4483-1983-annual-town-report.pdf",
+  "label": "1983 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4483-1983-annual-town-report.cells.tsv",
+  "periods": [
+    {
+      "what": "auditor's schedule of reconciliation of Treasurer's cash and schedule of investments",
+      "period": "December 31, 1983 (the examination covers July 1, 1983 to December 31, 1983)",
+      "cited": "p8: `I have examined, for the period July 1, 1983 to December 31, 1983`; `SCHEDULE OF RECONCILIATION TREASURER'S CASH AT DECEMBER 31, 1983`; `SCHEDULE OF INVESTMENTS AT DECEMBER 31, 1983`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation",
+      "period": "fiscal year 1983, July 1, 1982 - June 30, 1983",
+      "cited": "p40: `RECONCILIATION OF TREASURER'S CASH / FISCAL YEAR 1983`; `Balance June 30, 1982`; `Receipts July 1, 1982 through June 30, 1983`"
+    },
+    {
+      "what": "detailed statement of receipts",
+      "period": "July 1, 1982 through June 30, 1983 (the page heading misprints `July 1, 1983 through June 30, 1983`)",
+      "cited": "p41: `Detailed Statement of Receipts / July 1, 1983 through June 30, 1983`; read as fiscal 1983 because TOTAL RECEIPTS 17,945,256.93 (p45) is the `Receipts July 1, 1982 through June 30, 1983` line of p40"
+    },
+    {
+      "what": "detailed statement of payments",
+      "period": "July 1, 1982 through June 30, 1983",
+      "cited": "p45: `Detailed Statement of Payments / July 1, 1982 through June 30, 1983`"
+    },
+    {
+      "what": "general fund balance sheet and trust funds in custody",
+      "period": "June 30, 1983",
+      "cited": "p49: `TOWN OF LUNENBURG / BALANCE SHEET - JUNE 30, 1983`"
+    },
+    {
+      "what": "revenue sharing balance sheet and reconciliation",
+      "period": "June 30, 1983; fiscal year July 1, 1982 - June 30, 1983",
+      "cited": "p53: `TOWN OF LUNENBURG / June 30, 1983 / BALANCE SHEET - REVENUE SHARING`; p54: `RECONCILIATION OF TREASURER'S CASH ... June 30, 1983`, `Balance June 30, 1982`, `Receipts July 1, 1982 through June 30, 1983`"
+    },
+    {
+      "what": "bonded indebtedness",
+      "period": "through fiscal 1984; payments due fiscal 1985-1990",
+      "cited": "p55: column header `DUE FISCAL 1984`; `SCHEDULE OF PRINCIPAL AND INTEREST PAYMENTS DUE FISCAL YEAR 1985 THROUGH FISCAL 1990`"
+    },
+    {
+      "what": "accountant's summary and classification of accounts",
+      "period": "NOT PRINTED as a year; the carry-forward column is headed `Balance to Fiscal 1984`, so the schedule closes fiscal 1983",
+      "cited": "p56-66: `SUMMARY AND CLASSIFICATION OF ACCOUNTS`; columns `Approp. Forward | Total Funds Available | Program Name | Amount Expended | Total Expended | Balance to Revenue | Balance to Fiscal 1984`"
+    },
+    {
+      "what": "tax collector's report",
+      "period": "July 1, 1982 - June 30, 1983",
+      "cited": "p67: `Tax Collector's Report / July 1, 1982 - June 30, 1983`"
+    },
+    {
+      "what": "trust and investment accounts",
+      "period": "July 1, 1982 through June 30, 1983",
+      "cited": "p68: `Trust and Investment Accounts / July 1, 1982 through June 30, 1983`; p69-70 `Balance July 1, 1982` ... `Balance June 30, 1983`"
+    },
+    {
+      "what": "Treasurer's cash reconciliation, calendar year",
+      "period": "calendar year 1983, January 1 - December 31, 1983",
+      "cited": "p70: `Balance January 1, 1983`; `Receipts January 1, 1983 through December 31, 1983`; `Balance General Ledger December 31, 1983`"
+    },
+    {
+      "what": "omnibus budget",
+      "period": "fiscal year 1984, as VOTED (a budget, not an actual)",
+      "cited": "p63: `FISCAL YEAR 1984 ANNUAL MEETING WARRANT`; the article: `defray the charges and expenses of the Town for Fiscal Year 1984`; p77: `TOTAL BUDGET VOTED: $6,133,681.00`"
+    },
+    {
+      "what": "Treasurer, Tax Collector and Town Clerk administration budgets",
+      "period": "FY 83 and FY 84",
+      "cited": "p37: column headers `FY 83 | FY 84 | DECREASE`"
+    },
+    {
+      "what": "school department statistics, receipts, appropriation and special accounts",
+      "period": "school year ending June 30, 1983; FY-83 and FY-84 columns",
+      "cited": "p124: `STATISTICS FOR SCHOOL YEAR ENDING JUNE 30, 1983`; p125 `FY-83 ACTUAL RECEIPTS (7/1/82 6/30/83) | FY-84 ESTIMATED RECEIPTS (7/1/83 - 6/30/84)`; p127 `SUMMARY OF SPECIAL ACCOUNTS, FY-83 / July 1, 1982 June 30, 1983`"
+    },
+    {
+      "what": "school tuition rates",
+      "period": "effective calendar 1983 and calendar 1984",
+      "cited": "p89: `EFFECTIVE for period January 1, 1983 - December 31, 1983` and `... January 1, 1984 - December 31, 1984`"
+    },
+    {
+      "what": "police activity",
+      "period": "calendar 1983",
+      "cited": "p20: `During the year of 1983, we received 6,716 miscellaneous calls`"
+    }
+  ],
+  "stacked_pairs": true,
+  "accountant_marks": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "receipts_span": true,
+  "opt_ins_why": "set by the 1986-1990 integration pass, 29 October 2026: each is a reading in scripts/read_report_tables.py that would change what an earlier edition publishes, so it applies only where an edition asks (sources/data/report-tables/README.md)",
+  "recon_net_beside_ledger": true,
+  "colon_for_point": true
+}
