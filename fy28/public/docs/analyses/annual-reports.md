@@ -273,7 +273,7 @@ Limits that cannot be closed by better code are registered in `sources/data/mone
 
 | what | where |
 |---|---|
-| The sixteen reports themselves | /docs/town-annual-reports/docs/, each with its sha256 in /data/archive-manifest.csv |
+| The reports themselves | /docs/town-annual-reports/docs/, each with its sha256 in /data/archive-manifest.csv |
 | What is on each page and what proved it | /data/annual-report-pages.csv |
 | What a column means before you quote it | sources/data/PROVENANCE-report-tables.md and `column_meaning` |
 

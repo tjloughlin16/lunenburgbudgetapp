@@ -1,6 +1,49 @@
 # Handoff: one fiscal year, broken down -- why a surplus happened
 
-## NOW -- 30 October 2026, end of day. READ THIS FIRST; everything below is history
+## NOW -- 30 October 2026, late. READ THIS FIRST; everything below is history
+
+**State.** Everything from this session is committed. This session pushes `main` and deploys
+(`bash scripts/deploy_site.sh`) once its `npm run build:site` finishes. The deploy result goes
+in the section below. If it is still blank, check `git status -sb` and the live page before
+assuming anything.
+
+**Shipped this session:**
+- `1e2bd2d82`: the preschool card says "2 teachers, 4 paras", counted from the roster's
+  position titles. The build fails if a post is neither.
+- `86daaf39e`: TJ decided to keep the March 2026 MUNIS reports public. The login they print is
+  `kbarrett` (Karen Barrett, Town Accountant), in her official role. No takedown.
+- `821d5f6fe`: **School lines against budget**, `/school-all-funds/budget-against-actual`
+  (`scripts/build_budget_against_actual.py`, `bva-grid.tsx`, `bva-across.tsx`):
+  - The grid has a **Usual year** column, the median of a line's years, and a filter chip.
+  - **The rule (ours):** a line usually misses one way when its median is >=10% off its vote
+    and >=$5,000 off, or >=$50,000 off either way, over >=3 years. Constants are `TREND_*`.
+  - **"Lines that usually miss the same way"** is the same list: 24 of 288 lines, 15 over
+    budget and 9 under. It replaced the August every-year test, which `book_years()` still
+    checks.
+  - The dot chart's **FY2021** is read from the Finance Committee workbook, starred, with the
+    reason: the budget documents print the budget in the actual column (116 of 117 lines).
+  - Every percentage says "over budget" or "under budget".
+  - "What the school fund left unspent" is now the second chart.
+  - `report.tsx`: a stated column gets an asterisk and one footnote, not "not from the books"
+    under every heading. This applies to every table on the site.
+
+**Open, for TJ:**
+1. The $5,000 floor on the 10% route was added by this session. Without it, 135 lines
+   qualify, mostly $300 supply lines. Keep it?
+2. The axis says "over budget" where TJ wrote "overbudgeted". On this page, *Overbudgeted* is
+   the O flag and means the reverse (voted more than spent). Confirm the wording.
+3. A free cash section on the Town general fund page? Still undecided.
+4. The records request (`notes/outbound/drafts/RECORDS-REQUEST-FY2026-CLOSE.md`) is unsent.
+   The Town Manager's email address is not in the repo, and her Town directory page lists none.
+   `jwarren@lunenburgma.gov` is unconfirmed; the "To" line on the 4 Sep request will settle it.
+
+**Small queued fix:** `annual-report-receipts.csv` FY2021 PRE-SCHOOL TUITION reads 11.64; the
+page prints $11,648.82. This is an extractor defect.
+
+**Deploy:**
+_(filled in when the deploy finishes)_
+
+## Earlier NOW -- 30 October 2026, end of day
 
 **State.** Everything is committed on `main`, local, not pushed by this session. The site build and
 deploy belong to the annual-reports session (`lunenburgbudgets-e4`). It has the list of commits and

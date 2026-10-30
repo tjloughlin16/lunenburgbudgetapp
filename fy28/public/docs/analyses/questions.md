@@ -340,7 +340,7 @@ Returns `dept`, `name`, `fy`, `period`, `pct_used` — for example: dept=None, n
 SELECT fy, role_category, COUNT(*) AS people FROM v_staff_roster WHERE role_category <> 'unknown' GROUP BY fy, role_category ORDER BY fy, people DESC
 ```
 
-Returns `fy`, `role_category`, `people` — for example: fy=1966, role_category=administrator, people=2
+Returns `fy`, `role_category`, `people` — for example: fy=1959, role_category=cafeteria, people=13
 
 > A count of names the town printed. It carries no FTE and no funding source, so it is not a staffing level.
 
@@ -350,7 +350,7 @@ Returns `fy`, `role_category`, `people` — for example: fy=1966, role_category=
 SELECT fy, school, COUNT(*) AS paras FROM v_staff_roster WHERE role_category='paraprofessional' GROUP BY fy, school ORDER BY fy, paras DESC
 ```
 
-Returns `fy`, `school`, `paras` — for example: fy=1991, school=turkey-hill, paras=4
+Returns `fy`, `school`, `paras` — for example: fy=1970, school=passios, paras=1
 
 **How many paraprofessionals were tied to a named grade?**
 
@@ -358,7 +358,7 @@ Returns `fy`, `school`, `paras` — for example: fy=1991, school=turkey-hill, pa
 SELECT fy, role_grade, COUNT(*) AS paras FROM v_staff_roster WHERE role_category='paraprofessional' AND role_grade <> '' GROUP BY fy, role_grade ORDER BY fy, role_grade
 ```
 
-Returns `fy`, `role_grade`, `paras` — for example: fy=2005, role_grade=1, paras=3
+Returns `fy`, `role_grade`, `paras` — for example: fy=1973, role_grade=2, paras=2
 
 **What did the town print as the title for a paraprofessional, year by year?**
 
@@ -366,7 +366,7 @@ Returns `fy`, `role_grade`, `paras` — for example: fy=2005, role_grade=1, para
 SELECT fy, role_raw, COUNT(*) AS rows FROM v_staff_roster WHERE role_category='paraprofessional' AND role_raw <> '' GROUP BY fy, role_raw ORDER BY fy, rows DESC
 ```
 
-Returns `fy`, `role_raw`, `rows` — for example: fy=1991, role_raw=Horticulture Aide, rows=1
+Returns `fy`, `role_raw`, `rows` — for example: fy=1970, role_raw=Teacher Aide for Perceptually Handicapped Program, rows=1
 
 > Tutor, Aide, Tutors/Aides, Paraprofessional, Para, (para), Sped Para. Five names for one job across fifteen years, which is why `role_category` exists.
 
@@ -386,7 +386,7 @@ Returns `role_raw`, `grade_or_dept`, `rows` — for example: role_raw=, grade_or
 SELECT classified_by, role_category, SUM(rows) AS rows FROM role_classification GROUP BY classified_by, role_category ORDER BY rows DESC
 ```
 
-Returns `classified_by`, `role_category`, `rows` — for example: classified_by=heading-department, role_category=teacher, rows=2366
+Returns `classified_by`, `role_category`, `rows` — for example: classified_by=heading-department, role_category=teacher, rows=2898
 
 > A rule beginning `heading-` read the section heading rather than a printed title, which is weaker evidence.
 
@@ -420,7 +420,7 @@ Returns `school`, `years`, `first`, `last`, `rows` — for example: school=high,
 SELECT fy, role_category, COUNT(*) AS people FROM v_staff_roster WHERE role_category IN ('counselor','nurse','psychologist','social_worker','speech_therapist') GROUP BY fy, role_category ORDER BY fy, role_category
 ```
 
-Returns `fy`, `role_category`, `people` — for example: fy=1988, role_category=counselor, people=4
+Returns `fy`, `role_category`, `people` — for example: fy=1959, role_category=nurse, people=2
 
 **How many people did the town print on a roster in total, by year?**
 
@@ -454,7 +454,7 @@ Returns `fy`, `school`, `admins` — for example: fy=2025, school=middle, admins
 SELECT role_grade, COUNT(*) AS rows FROM v_staff_roster WHERE role_grade <> '' GROUP BY role_grade ORDER BY rows DESC
 ```
 
-Returns `role_grade`, `rows` — for example: role_grade=K, rows=236
+Returns `role_grade`, `rows` — for example: role_grade=K, rows=469
 
 ## Athletics and fees
 
