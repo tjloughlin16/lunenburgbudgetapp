@@ -96,3 +96,20 @@ candidates and the fire department names all landed (TJ, 30 Oct 2026: everything
 12. **p43/2 NOT LANDED.** Four fund panels (Library and Sidewalks and Grounds stacked on the left; Worthy Poor and Cemetery
    Perpetual Care stacked on the right) in one eight-column table. Same defect as 1975 NEEDS item 4. The funds' printed totals
    are in `trust-funds-summary` (p43/1), and the roll-forward (p44-45) lands.
+
+## Integration pass, 31 October 2026: what was done
+
+Names and opt-ins are in `sources/data/report-tables/README.md` (1959-1970). Pages proven/unproven/refused:
+17/20/0 as the worker left the folder -> 25/12/0. Renamed: `report-tax-collection-levy-years` -> `report-tax-collection-by-levy-year` (family `tax-types-by-levy-year`); p19 -> `treasurers-receipts-pie`.
+Opt-ins set: `colon_heading_subtotals`, `cash_book_list`, `recon_no_transfers`, `dash_zero`, `accountant_marks_wide`, `accountant_marks_before`, `marks_wide`, `year_labels`, `statement_span`, `receipts_stop_at_grand`, `signed_figures`.
+By kind of item above: the treasurer's-cash roll-forward (`Cash in Banks:` / `per cash book`) -> `cash_book_list` +
+`recon_no_transfers`; the accountant's `Balance to 19xx` identity -> always on since 1971-1980, `TR` before a figure ->
+`accountant_marks_before`; section subtotals printed on the next heading -> `colon_heading_subtotals` (dropped only
+when equal to their own section to the cent, listed in notes.csv); payments over several pages -> `statement_span`;
+the Tax Collector's past-participle columns -> `collector_columns` where it moved a row; `cr`/`CR` credits ->
+`credit_marks`; leading `+`/`*` -> `signed_figures`; unit-suffixed rates -> `unit_rates`; `-0-` -> `dash_zero`.
+NOT APPLIED (reasons in the README): the `rows` map column (one table feeding two datasets), debt schedules wider
+than `MAX_V` 8, a one-issue debt group's repeated subtotal, a figure at the end of a label cell, two figures or a
+figure and words in one cell, `II`/`I`/`O` read as digits (built behind `roman_counts`, measured, not set), a leading
+or trailing `-`, digit groups split one per cell (1963 p9), text-valued town-facts rows, side-by-side trust panels,
+and every figure Textract put in no cell (re-read list). `locate_cell_misreads.py`: 0 candidates.

@@ -108,3 +108,20 @@ A balance sheet whose debt accounts are printed on both sides (`Net Funded or Fi
 $1,235,000); the State's share of school building costs spelled out (p37 note: $40,648.16 a year for 15 years); the
 Welfare Board's own cost table (p49); an Attendance Officer's table (p102); a printed Annual Town Meeting count of
 ballots including a recount (p58, `Original Count Before Recount`, Howard A. Hamel 853, Eino O. Toko 853).
+
+## Integration pass, 31 October 2026: what was done
+
+Names and opt-ins are in `sources/data/report-tables/README.md` (1959-1970). Pages proven/unproven/refused:
+15/15/1 as the worker left the folder -> 24/6/1. Renamed: `report-welfare-cost` -> `report-welfare-aid` (family `welfare-case-loads` kept).
+Opt-ins set: `colon_heading_subtotals`, `cash_book_list`, `recon_no_transfers`, `dash_zero`, `accountant_marks_wide`, `accountant_marks_before`, `marks_wide`, `year_labels`, `statement_span`, `receipts_stop_at_grand`, `collector_columns`, `credit_marks`.
+By kind of item above: the treasurer's-cash roll-forward (`Cash in Banks:` / `per cash book`) -> `cash_book_list` +
+`recon_no_transfers`; the accountant's `Balance to 19xx` identity -> always on since 1971-1980, `TR` before a figure ->
+`accountant_marks_before`; section subtotals printed on the next heading -> `colon_heading_subtotals` (dropped only
+when equal to their own section to the cent, listed in notes.csv); payments over several pages -> `statement_span`;
+the Tax Collector's past-participle columns -> `collector_columns` where it moved a row; `cr`/`CR` credits ->
+`credit_marks`; leading `+`/`*` -> `signed_figures`; unit-suffixed rates -> `unit_rates`; `-0-` -> `dash_zero`.
+NOT APPLIED (reasons in the README): the `rows` map column (one table feeding two datasets), debt schedules wider
+than `MAX_V` 8, a one-issue debt group's repeated subtotal, a figure at the end of a label cell, two figures or a
+figure and words in one cell, `II`/`I`/`O` read as digits (built behind `roman_counts`, measured, not set), a leading
+or trailing `-`, digit groups split one per cell (1963 p9), text-valued town-facts rows, side-by-side trust panels,
+and every figure Textract put in no cell (re-read list). `locate_cell_misreads.py`: 0 candidates.

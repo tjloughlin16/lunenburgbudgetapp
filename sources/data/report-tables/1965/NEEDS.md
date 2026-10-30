@@ -54,15 +54,23 @@ No `withheld_rows` is used.
    other table), so `treasurers-cash` and the reconciliation get 0 rows. By hand: 127,120.62 + 2,712,954.04 = 2,840,074.66
    (printed .67, one cent); 2,840,074.67 - 2,813,603.77 = 26,470.90; 13,226.21 + 10,000.00 + 3,244.69 = 26,470.90. Change: an
    emitter that pools a reconciliation across the tables of one page, or a re-read of the page.
-3. **Accountant's schedule (p31-43), 496 rows `no check`.** Same as 1971 NEEDS item 2: the column is `Balance to 1966`, which
-   `BALANCE (?:TO )?(?:FY|FISCAL)` does not match (widen to `(?:FY|FISCAL|19\d\d)`), and the first two figure columns come
-   BEFORE the account name. By hand from the cells: of 164 rows that print a Total Funds Available figure, 152 satisfy total
-   funds available - total expended - balance to revenue - balance to 1966 = 0 (blank read as zero) and 12 do not, each a
-   misplaced or misread cell, not a rule: p32/23 `52.40` is in the carried column, p36/40 prints `28,000.00` in Total Expended
-   where the Chapter 90 line on p28 spent 22,526.28 and carries 5,473.72, p42/43 reads `15,000,00`, and p39/28 reads
-   `870.598.00` (a full stop for the comma, not a figure the reader takes). Marks printed BEFORE a figure also occur (`37.97 RF`
-   after, `7,504.22 TR`, `300,000.00 B`); `p38/1` has a header that swallowed a data row (`Accounts Aid to Families with
-   Dependent Children ... A.F.D.C. Cash Grants 9,557.49` in the header cell), so its named columns are not trustworthy.
+3. **Accountant's schedule (p31-43): a row with only `Amounts Expended` read as a failure.** The identity now applies (the
+   reader was widened to `Balance to 1966` while this folder was being written: 155 rows `checked`, 15 `check failed`, 326
+   `no check`, the last being rows with no Total Funds Available figure), as 1971 NEEDS item 2 asked. The 15 failures are
+   rows whose only expended figure is printed in `Amounts Expended` with `Total Expended` blank (a one-line account does not
+   repeat it); the reader reads Total Expended as 0 and the row as off by that amount. By hand, with Amounts Expended taken as
+   the total expended, 12 of the 15 close (p32 Purchase Office Equip. 1,698.00 - 1,645.60 - 52.40; Revaluation Study
+   Committee 200.00 - 5.10 - 194.90; Development & Industrial Commission 185.00 - 37.50 - 147.50; p33 Radio Equipment 800.00 -
+   762.26 - 37.74; p36 Chapter 90 Construction 1965 and 1963; p37 Dump Truck and Plow 567.00 and the 4,000.00 line, whose
+   balance prints `07` for .07; p39 Adult Education Self-Supporting 749.00 - 698.00 - 51.00; p41 Resurface Courts, Fence and
+   Gates, Playground Equipment). Three do not: p34 `Transfer` (5,125.00 available, 500.00 expended, no balance), p40
+   `Construct, Equip and Furnish ...` (451.72, nothing else in the cells) and p43 `Interest on Temporary Loans` (available
+   2,218.34, Total Expended 2,218.35: one cent, a digit in the scan or a printed discrepancy; not corrected). Change: when
+   `Total Expended` is blank and `Amounts Expended` has the line's only figure, use it. Other limits: the first two figure
+   columns come BEFORE the account name; marks print after the first figure (`300,000.00 B`) and sometimes before another
+   (`7,504.22 TR`); `p38/1` has a header that swallowed a data row (`Accounts Aid to Families with Dependent Children ...
+   A.F.D.C. Cash Grants 9,557.49` in the header cell), so its named columns are not trustworthy; p39/28 reads `870.598.00`
+   (a full stop for the comma) and is not taken as a figure.
 4. **Bonded indebtedness p44/1: unlabelled group subtotals counted as bonds.** 13 rows read `check failed`: `Paid Principal
    ELEMENTARY ... printed 1,539,000.00, rows sum 2,413,000.00`. The three group subtotals (900,000 / 1,095,000 / 150,000 and
    their paid columns) are rows without a label, and the reader sums them as issues. By hand, the issues sum to the printed
@@ -106,3 +114,20 @@ calendar year; a revenue analysis 1960-1965 (`ANALYSIS OF REVENUE ACCOUNTS`); th
 assistance programs with persons aided and the State and federal reimbursements; the tax dollar pie legend; the valuation
 and tax rate for 1950-1965 (tax rate $89.00 on $11,810,645); federal NDEA and Public Law 874 school accounts with their
 year's roll-forwards; and a Stabilization Fund transfer of $4,000 (Article 11, 1965 Annual Meeting).
+
+## Integration pass, 31 October 2026: what was done
+
+Names and opt-ins are in `sources/data/report-tables/README.md` (1959-1970). Pages proven/unproven/refused:
+6/35/0 as the worker left the folder -> 15/26/0. Renamed: `report-welfare-programs` -> `report-welfare-aid`; p50 family -> `revenue-accounts-analysis`; p19 legend split payments (19/1-2) and receipts (19/3).
+Opt-ins set: `colon_heading_subtotals`, `cash_book_list`, `recon_no_transfers`, `dash_zero`, `accountant_marks_wide`, `accountant_marks_before`, `marks_wide`, `year_labels`, `statement_span`, `receipts_stop_at_grand`, `collector_columns`, `signed_figures`.
+By kind of item above: the treasurer's-cash roll-forward (`Cash in Banks:` / `per cash book`) -> `cash_book_list` +
+`recon_no_transfers`; the accountant's `Balance to 19xx` identity -> always on since 1971-1980, `TR` before a figure ->
+`accountant_marks_before`; section subtotals printed on the next heading -> `colon_heading_subtotals` (dropped only
+when equal to their own section to the cent, listed in notes.csv); payments over several pages -> `statement_span`;
+the Tax Collector's past-participle columns -> `collector_columns` where it moved a row; `cr`/`CR` credits ->
+`credit_marks`; leading `+`/`*` -> `signed_figures`; unit-suffixed rates -> `unit_rates`; `-0-` -> `dash_zero`.
+NOT APPLIED (reasons in the README): the `rows` map column (one table feeding two datasets), debt schedules wider
+than `MAX_V` 8, a one-issue debt group's repeated subtotal, a figure at the end of a label cell, two figures or a
+figure and words in one cell, `II`/`I`/`O` read as digits (built behind `roman_counts`, measured, not set), a leading
+or trailing `-`, digit groups split one per cell (1963 p9), text-valued town-facts rows, side-by-side trust panels,
+and every figure Textract put in no cell (re-read list). `locate_cell_misreads.py`: 0 candidates.

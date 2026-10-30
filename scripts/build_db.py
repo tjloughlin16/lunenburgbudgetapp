@@ -1313,6 +1313,11 @@ REFERENCE = [
     'report-proposed-salary-schedule', 'report-expenditure-history', 'report-veterans-services', 'report-school-spending-shares',
     'report-energy-use', 'report-school-staff-changes', 'report-town-facts', 'report-per-capita-comparison',
     'report-committee-income-expenses', 'report-financial-performance', 'report-surplus-free-cash',
+    # and from the 1959-1970 editions (integration pass of 31 October 2026, the same README): welfare
+    # by program, the Tax Collector by levy year, the SBAC-approved school building cost base (an
+    # approval, never a payment), a building committee's cost to completion, the census of minors
+    'report-welfare-aid', 'report-tax-collection-by-levy-year', 'report-school-building-approved-costs',
+    'report-capital-project-costs', 'report-school-census-minors',
 
     # THE PROVEN READINGS, each tied to an identity its own table states. These are a
     # different kind of thing from the `report-*` extracts above and must not be read as

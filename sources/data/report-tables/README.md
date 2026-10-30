@@ -397,3 +397,59 @@ lunch), stacked-line cells (1977 p37, 1978 p70/1, 1979 p77/1, 1980 p37 and p71/1
 trust panels, `Premium 507.30` sharing a label cell (1976), the 1972 two-column balance sheet, and
 every figure Textract put in no cell (a re-read). The cell witness: `locate_cell_misreads.py
 1971 ... 1980` finds 0 candidates, so nothing was read and nothing spent.
+
+## One name per quantity -- the 1959-1970 batch, decided 31 October 2026 by the integration pass
+
+`HELD` is gone: its last twelve lines were this batch, and every edition folder 1959-2010 is now
+merged. Rule 1 decided each merge -- same quantity, stage and grain -- and every rename is in the
+editions' `map.csv`.
+
+| one name | was | what it is | grain | editions |
+|---|---|---|---|---|
+| `report-welfare-aid` (NEW) | `report-welfare-cost` (1959), `report-welfare-assistance` (1962), `report-welfare-aid` (1963, 1964, 1966), `report-welfare-programs` (1965), `report-welfare-services` (1967) | the Welfare Department's table: expended, reimbursements (State, Federal, cities and towns, recoveries) and net cost to the Town, by program, calendar-year actuals. Family `welfare-aid-by-category` where the count column is PERSONS AIDED (1962-1967); `welfare-case-loads` for 1959, whose count is an AVERAGE CASE LOAD (a different count, never summed with persons aided); `welfare-case-load-months` for 1967 p58/1 (persons aided and expended in four months) | one program (or month) | 1959, 1962-1967 |
+| `report-tax-collection-by-levy-year` (NEW) | `report-tax-collection-levy-years` (1961), `report-tax-collection-by-levy-year` (1962) | the Tax Collector's report by levy year. NOT folded into `tax-collection`: these two print `Abatement Rescinded` (1962: $232.22) and betterments `Apportioned`, which `tax-collection` has no column for, so folding them would drop printed figures. The other 1959-1970 editions print the same table and stay in `tax-collection`, where the `collector_columns` opt-in (below) now reads their Collected / Abated / Refunded columns | one tax type in one levy year | 1961, 1962 |
+| `report-surplus-free-cash`, family `revenue-accounts-analysis` | `report-surplus-free-cash` family `surplus-revenue-free-cash` (1965), `report-fund-balance-sheets` family `revenue-analysis` (1966), `report-revenue-accounts-analysis` (1967) | the Accountant's six-year ANALYSIS OF REVENUE ACCOUNTS (taxes and recap, estimated receipts, unexpended balances, revenue transfer to E & D, balance forward, adjustments, free cash): actuals by year. 1980's comparison keeps its own family `surplus-revenue-free-cash` (another layout, with an ESTIMATED year). Not a balance sheet, so out of `report-fund-balance-sheets` | one line across six years | 1965-1967 |
+| `report-expenditure-shares`, families `treasurers-payments-pie` / `treasurers-receipts-pie` | `report-receipts-payments-chart` (1963) and, inside `report-expenditure-shares`, `treasurers-spending-pie-percent-and-dollars`, `receipts-share-analysis`, `payments-share-analysis`, `receipts-share-pie`, `payments-share-pie`, `tax-dollar-pie-legend`, `receipts-payments-pie-legend`, `treasurer-payments-pie-legend` | the legend of the Treasurer's two pies, `We Received` and `We Spent`: one slice's percent and dollars. Assigned to receipts or payments PER TABLE by the slices it lists (state tax, licenses and permits, departmental offsets = receipts); a percent of receipts is never summed with a percent of payments. 1961 p18 `tax-dollar-distribution` (cents of the TAX dollar) stays its own family, and 1983's percents-only town pie keeps its own | one slice | 1960-1967 |
+| `report-proposed-salary-schedule` | `report-classification-plan` family `salary-schedule-proposed` (1966 p60) | 1966 printed the schedule `to be voted on at Annual Meeting March 4, 1967`: PROPOSED pay by step, the 1968-1970 and 1972-1973 quantity. `report-classification-plan` (2010) is a point-value and grade plan with no pay | one position | 1966, 1968-1970 |
+
+Kept apart, each its own quantity: `report-school-building-approved-costs` (1959 p37: the costs the
+School Building Assistance Commission APPROVED, the State's reimbursement base -- an approval, never
+a payment) and `report-capital-project-costs` (1961 p68: a building committee's cost of the new wing
+TO COMPLETION -- an actual). Different stage (rule 1), so not merged. `report-school-census-minors`
+(1967 p136: children registered by age band, a COUNT) and `report-treasurers-then-and-now` (1961 p15,
+the same quantity as 1991's, family `office-then-and-now-1951-1961`) as named.
+
+## What the reader does for the 1959-1970 batch (31 October 2026)
+
+Every opt-in of 1971-1980 was measured on each edition alone and with the rest (on, then each one
+off). All are set on all twelve except `marks_wide` on 1969 (it turns one `no check` row to `check
+failed` and proves no page). New opt-ins, each set only where it moved a row, and none read by any
+edition before 1959-1970:
+
+- `collector_columns`: the Tax Collector's `Collected` / `Abated` / `Refunded` columns read as
+  payments, abatements and refunds (1959, 1960, 1963-1967; 1968-1970 head them PAYMENTS etc. and
+  are unmoved). Checked by hand on 1966 p28: committed + refunds = collected + abated + tax title +
+  balance on each levy row.
+- `credit_marks`: `cr 180.29*` and `(47,947.90)CR` are credits, read as negatives (1959 p49: the
+  welfare net-cost column then ties, 5,068.67 - 180.29 + 1,141.30 + 547.20 = 6,576.88; 1966 p38,
+  1967 p43).
+- `signed_figures`: a printed `+` or a footnote `*` before a figure (`+ 3,113.54`, `+$1,223.`,
+  `*20,000.00`). A leading or trailing `-` is NOT read (1962 p110 `$ 510.91 -`): nothing on the
+  page says whether the dash is a sign or a rule.
+- `unit_rates`: `1.50hr`, `1300yr`, `40wk` read as the rate; the unit stays in the printed text
+  `reconciliation` quotes. A `1 yr` header (a space) is a step heading and is not read.
+- `list_total_tolerance`: the edition's `rounding_tolerance_usd` also applies to a map
+  `stated_total` list, worded with the same phrase (1964 p62-63: 75 voted lines $0.50 from TOTAL
+  BUDGET VOTED -> 76 rows `checked`).
+
+Built and measured, NOT set: a `roman_counts` reading (`II` -> 11 in a column of counts) proved no
+page and turned one 1959 row to `check failed`; the code is in the reader behind its opt-in, set on
+no edition.
+
+Not applied, each listed at the end of the editions' NEEDS.md: the `rows` map column (one Textract
+table feeding two datasets: 1959 p58-59, 1962 p18, 1963 p20, 1968 p26); debt schedules wider than
+`MAX_V` 8 (adding v9..v13 changes the header of every shared generic file, FY2011+ included); a
+one-issue debt group whose subtotal repeats the issue (a validator grouping change shared with the
+FY reviews); joining digit groups split one per cell (1963 p9: one page, `report-valuation`); a
+figure at the end of a label cell; figures Textract put in no cell (re-reads). The cell witness:
+`locate_cell_misreads.py 1959 ... 1970` finds 0 candidates, so nothing was read and nothing spent.

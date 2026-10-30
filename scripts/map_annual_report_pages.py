@@ -510,6 +510,16 @@ PROOF = {
     'committee-income-expenses': ('status', VERDICT),
     'financial-performance': ('status', VERDICT),
     'surplus-free-cash': ('status', VERDICT),
+    # NEW in the 1959-1970 editions (integration pass, 31 October 2026; names in
+    # sources/data/report-tables/README.md): the Welfare Department's table by program, the Tax
+    # Collector's table by levy year (it prints `Abatement Rescinded`, which tax-collection has no
+    # column for), the School Building Assistance Commission's APPROVED cost base, a building
+    # committee's cost to completion, and the school census of minors
+    'welfare-aid': ('status', VERDICT),
+    'tax-collection-by-levy-year': ('status', VERDICT),
+    'school-building-approved-costs': ('status', VERDICT),
+    'capital-project-costs': ('status', VERDICT),
+    'school-census-minors': ('status', VERDICT),
     # and from the 2001-2009 editions, the same furniture, unified by the integration pass of
     # 28 October 2026 (sources/data/report-tables/README.md, "One name per quantity"): the
     # Treasurer's cash roll-forward, checked down the page (`checked` only when the chain

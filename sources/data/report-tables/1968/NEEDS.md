@@ -70,3 +70,20 @@ for the calendar year; a general-accounts balance sheet with deferred revenue, d
 Department summary with special federal-fund accounts (Public Law 874, Title I, Title III, NDEA, Headstart); the proposed
 classification and salary schedule; the school lunch program month by month; no wage list, no stabilization fund
 statement other than the one in the School Committee's trust report (p49, 11,828.77).
+
+## Integration pass, 31 October 2026: what was done
+
+Names and opt-ins are in `sources/data/report-tables/README.md` (1959-1970). Pages proven/unproven/refused:
+16/26/1 as the worker left the folder -> 21/21/1. Renamed: none.
+Opt-ins set: `colon_heading_subtotals`, `cash_book_list`, `recon_no_transfers`, `dash_zero`, `accountant_marks_wide`, `accountant_marks_before`, `marks_wide`, `year_labels`, `statement_span`, `receipts_stop_at_grand`, `unit_rates`.
+By kind of item above: the treasurer's-cash roll-forward (`Cash in Banks:` / `per cash book`) -> `cash_book_list` +
+`recon_no_transfers`; the accountant's `Balance to 19xx` identity -> always on since 1971-1980, `TR` before a figure ->
+`accountant_marks_before`; section subtotals printed on the next heading -> `colon_heading_subtotals` (dropped only
+when equal to their own section to the cent, listed in notes.csv); payments over several pages -> `statement_span`;
+the Tax Collector's past-participle columns -> `collector_columns` where it moved a row; `cr`/`CR` credits ->
+`credit_marks`; leading `+`/`*` -> `signed_figures`; unit-suffixed rates -> `unit_rates`; `-0-` -> `dash_zero`.
+NOT APPLIED (reasons in the README): the `rows` map column (one table feeding two datasets), debt schedules wider
+than `MAX_V` 8, a one-issue debt group's repeated subtotal, a figure at the end of a label cell, two figures or a
+figure and words in one cell, `II`/`I`/`O` read as digits (built behind `roman_counts`, measured, not set), a leading
+or trailing `-`, digit groups split one per cell (1963 p9), text-valued town-facts rows, side-by-side trust panels,
+and every figure Textract put in no cell (re-read list). `locate_cell_misreads.py`: 0 candidates.

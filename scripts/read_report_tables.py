@@ -258,7 +258,27 @@ CALENDAR_REPAIRS = [
     # `19,982.83Cr` (1977 p61, Snow Removal Expense): a deficit marked `Cr`, read as a negative
     ('Cr for a negative', re.compile(r'\$?([\d,]+\.\d{2})(?i:cr)\.?'), lambda m: '(%s)' % m.group(1),
      'accountant_marks_wide'),
+    # Added by the 1959-1970 integration pass (31 October 2026), each an edition opt-in.
+    # `cr 180.29*` (1959 p49, the Aid to Dependent Children net cost: reimbursements exceeded
+    # expenditure), `(47,947.90)CR` `$ 26,349.42)CR` (1966 p38, 1967 p43): a CREDIT, read as a
+    # negative (`"credit_marks": true`)
+    ('cr before the figure, a credit', re.compile(r'(?i:cr)\$?([\d,]+\.\d{2})[*#]*'), lambda m: '(%s)' % m.group(1),
+     'credit_marks'),
+    ('parenthesised figure marked CR, a credit', re.compile(r'\(?\$?([\d,]+\.\d{2})\)(?i:cr)'),
+     lambda m: '(%s)' % m.group(1), 'credit_marks'),
+    # `+ 3,113.54` `+$1,223.` `*$671.` `+$870.*` `*20,000.00` (1959 p59, 1962 p108, 1963 pp87-89,
+    # 1966 pp112-117): a printed `+` or a footnote `*` BEFORE the figure (`"signed_figures": true`).
+    # A leading `-` and a trailing `-` (`$ 510.91 -`, 1962 p110) are NOT read: nothing on those
+    # pages says whether the dash is a sign or a rule
+    ('plus or footnote mark before the figure', re.compile(r'[+*]\$?(\d{1,3}(?:,\d{3})*\.\d{2})[*#]*'),
+     lambda m: '$' + m.group(1), 'signed_figures'),
+    ('plus or footnote mark before whole dollars', re.compile(r'[+*]\$?(\d{1,3}(?:,\d{3})*)\.?[*#]*'),
+     lambda m: '$' + m.group(1), 'signed_figures'),
 ]
+# `1.50hr` `1300yr` `40wk` (1966 p60, 1970 p21 salary schedules): a RATE with its unit printed
+# against it, no space (`"unit_rates": true`). The unit stays in the cell's printed text, which
+# `reconciliation` quotes; a header `1 yr` (a space) is a step heading and is never read
+UNIT_RATE = re.compile(r'\$?(\d[\d,]*(?:\.\d{2})?)(?:hr|wk|yr)')
 # `$330.000` `$13.390` (1992 pp33-36): a full stop for the thousands comma -- but only in a
 # column of WHOLE DOLLARS (no cents anywhere in it), where three digits after a stop cannot be
 # cents. `S390` in such a column is `$390` (the S-for-$ repair in REPAIRS wants cents).
@@ -280,7 +300,11 @@ NEW_GENERIC = {'report-auditors-cash-schedule.csv', 'report-statement-of-payment
                'report-voted-pay-rates.csv', 'report-proposed-salary-schedule.csv', 'report-expenditure-history.csv',
                'report-veterans-services.csv', 'report-school-spending-shares.csv', 'report-energy-use.csv',
                'report-school-staff-changes.csv', 'report-town-facts.csv', 'report-per-capita-comparison.csv',
-               'report-committee-income-expenses.csv', 'report-financial-performance.csv', 'report-surplus-free-cash.csv'}
+               'report-committee-income-expenses.csv', 'report-financial-performance.csv', 'report-surplus-free-cash.csv',
+               # and from the 1959-1970 batch (integration pass, 31 October 2026)
+               'report-welfare-aid.csv', 'report-tax-collection-by-levy-year.csv',
+               'report-school-building-approved-costs.csv', 'report-capital-project-costs.csv',
+               'report-school-census-minors.csv'}
 
 # PER-EDITION OPT-INS, set by build() from `edition.json` (every key whose value is `true`). A
 # reading added for one batch of editions that would change what an earlier edition already
@@ -668,6 +692,8 @@ def apply_calendar_repairs(tables):
                 hit = calendar_repair(c.text)
                 if hit:
                     mark(c, *hit)
+                elif 'unit_rates' in OPTS and UNIT_RATE.fullmatch(c.text.strip()):
+                    mark(c, 'a rate with its unit printed against it', UNIT_RATE.fullmatch(c.text.strip()).group(1))
         cols = collections.defaultdict(list)
         for r in rows:
             for k, c in r.cells.items():
@@ -675,6 +701,17 @@ def apply_calendar_repairs(tables):
                     cols[k].append(c)
         for k, cs in cols.items():
             texts = [c.text.strip().replace(' ', '') for c in cs]
+            if 'roman_counts' in OPTS:
+                # `II` `I` `O` (1959 p111, 1961 pp114 and 124): Textract read a count's digits as
+                # letters. Read only in a column of WHOLE-NUMBER COUNTS -- three or more bare integers
+                # of three digits or fewer, and at most two other cells (the heading, a `18*`), none
+                # of them money (`"roman_counts": true`)
+                ints = [x for x in texts if re.fullmatch(r'\d{1,3}', x)]
+                others = [x for x in texts if not re.fullmatch(r'\d{1,3}|I|II|O|l', x)]
+                if len(ints) >= 3 and len(others) <= 2 and not any(re.search(r'[$.,]\d', x) for x in others):
+                    for c, x in zip(cs, texts):
+                        if c.value is None and x in ('I', 'l', 'II', 'O'):
+                            mark(c, 'a letter for a digit, in a column of counts', {'I': '1', 'l': '1', 'II': '11', 'O': '0'}[x])
             if not any(CENTS.search(x) for x in texts) and \
                     sum(1 for x in texts if WHOLE_STOP.fullmatch(x) and ',' in x) >= 2:
                 # A COLUMN OF WHOLE DOLLARS EACH ENDING IN A FULL STOP (1993 p37: `64,935.`):
@@ -1709,6 +1746,13 @@ def emit_tax_collection(m, recs, ed):
         # 1971-1980 head the column `Balance` (1971 p42): an opt-in with the year labels that
         # give those rows their levy year
         cols[-1] = ('balance', '^BALANCES?\\b(?!.*FORWARD)')
+    if 'collector_columns' in OPTS:
+        # 1959-1970 head the Tax Collector's columns `Committed | Collected | Abated | Abatement
+        # Rescinded | Refunded | Added to Tax Title | Balance` (1963 p27, 1966 p28): the same
+        # quantities under the past participle. `Abatement Rescinded` has no column here and is
+        # not matched (`^ABATED` does not reach it). An opt-in of the 1959-1970 pass (31 Oct 2026)
+        cols = [(f, {'payments': 'PAYMENTS|^COLLECTED', 'abatements': 'ABATEMENTS|^ABATED\\b',
+                     'refunds': 'REFUNDS?\\b|^REFUNDED'}.get(f, rx)) for f, rx in cols]
     out = []
     for rec in recs:
         if not rec['figs']:
@@ -1831,7 +1875,7 @@ def statement_span(parts):
         run, prev_top = [], (rec, row)
 
 
-def stated_list_totals(m_rows, emitted):
+def stated_list_totals(m_rows, emitted, tol=0):
     """A row the column checks could not reach (`no check`) becomes `checked` when its list sums
     to the printed total, and `check failed` when it does not; a row that already has a verdict
     keeps it and carries the note. The amount is the row's LAST figure (an omnibus line prints a
@@ -1862,11 +1906,18 @@ def stated_list_totals(m_rows, emitted):
         rounded = not tie and total == total.to_integral_value() and \
             any(amount(r) != amount(r).to_integral_value() for r in items) and abs(s - total) < Decimal('0.5')
         tie = tie or rounded
+        # THE EDITION'S ROUNDING TOLERANCE, on a list total too (`"list_total_tolerance": true`, the
+        # 1959-1970 pass, 31 Oct 2026; 1964 p62-63: 75 voted lines sum to 1,327,407.96 against a
+        # printed TOTAL BUDGET VOTED $0.50 away). Worded with validate_totals.TOLERANCE_PHRASE so it
+        # is counted with every other closure the tolerance made
+        within = not tie and tol and abs(s - total) <= Decimal(str(tol))
+        tie = tie or within
         pages = sorted({int(r['page']) for r in rows})
         note = ('LIST TOTAL: %d item rows on p%s sum to %s, %s the printed total %s (map stated_total)'
                 % (len(items), '-'.join(str(x) for x in (pages[0], pages[-1])) if len(pages) > 1 else pages[0],
                    V.money(s), '=' if s == total else '~' if rounded else '!=', V.money(total))
                 + (' -- the total is the sum rounded to whole dollars' if rounded else '')
+                + (' -- %s (off %s)' % (V.TOLERANCE_PHRASE, V.money(total - s)) if within else '')
                 + ('' if tie else ' (off %s)' % V.money(total - s)))
         for r in items + tot_rows:
             if r['status'] == 'no check':
@@ -2220,7 +2271,7 @@ def build(edition, inventory_only=False):
         for k, recs in parts:
             landed[k] += sum(1 for r in recs if r['figs'] and not re.search(r'GRAND TOTAL', r['label'], re.I)
                              and not re.search(r'SUMMARY OF RECEIPTS', r['group'], re.I))
-    stated_list_totals(m_rows, emitted)
+    stated_list_totals(m_rows, emitted, tol=ed.get('rounding_tolerance_usd', 0) if 'list_total_tolerance' in OPTS else 0)
     for (_, fam), parts in spans.items():
         statement_span(parts)
     category_blocks(dataset_rows.get('report-tax-bill-breakdown.csv', []))

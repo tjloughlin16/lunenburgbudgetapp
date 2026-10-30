@@ -20,10 +20,108 @@ line on the page is claimed as an entry or a heading, and the leftovers are
 counted. A page where a third of the lines vanished looks exactly like a smaller
 school unless somebody counts.
 
-**18686 of 18686 lines accounted for** across 390 pages, 10567 entries, 51 years.
+**23117 of 23117 lines accounted for** across 488 pages, 12326 entries, 63 years.
 
 | page | FY | school | lines | claimed | unaccounted | entries | misattributed |
 |---|---|---|---:|---:|---:|---:|---:|
+| 1959-p103-high.json | 1959 | high | 54 | 54 | 0 | 21 | 0 |
+| 1959-p104-high.json | 1959 | high | 52 | 52 | 0 | 22 | 0 |
+| 1959-p105-unknown.json | 1959 | unknown | 48 | 48 | 0 | 28 | 0 |
+| 1959-p106-unknown.json | 1959 | unknown | 46 | 46 | 0 | 32 | 0 |
+| 1960-p108-high.json | 1960 | high | 49 | 49 | 0 | 21 | 1 |
+| 1960-p109-high.json | 1960 | high | 48 | 48 | 0 | 23 | 0 |
+| 1960-p112-high.json | 1960 | high | 42 | 42 | 0 | 23 | 0 |
+| 1960-p110-unknown.json | 1960 | unknown | 48 | 48 | 0 | 26 | 1 |
+| 1960-p111-unknown.json | 1960 | unknown | 50 | 50 | 0 | 26 | 0 |
+| 1961-p115-high.json | 1961 | high | 47 | 47 | 0 | 21 | 0 |
+| 1961-p116-high.json | 1961 | high | 49 | 49 | 0 | 21 | 0 |
+| 1961-p117-passios.json | 1961 | passios | 48 | 48 | 0 | 26 | 1 |
+| 1961-p118-unknown.json | 1961 | unknown | 47 | 47 | 0 | 27 | 0 |
+| 1961-p119-unknown.json | 1961 | unknown | 46 | 46 | 0 | 35 | 0 |
+| 1962-p112-high.json | 1962 | high | 52 | 52 | 0 | 18 | 0 |
+| 1962-p113-high.json | 1962 | high | 56 | 56 | 0 | 17 | 0 |
+| 1962-p114-high.json | 1962 | high | 54 | 54 | 0 | 18 | 0 |
+| 1962-p115-unknown.json | 1962 | unknown | 45 | 45 | 0 | 26 | 0 |
+| 1962-p116-unknown.json | 1962 | unknown | 47 | 47 | 0 | 20 | 0 |
+| 1962-p117-unknown.json | 1962 | unknown | 43 | 43 | 0 | 32 | 0 |
+| 1963-p109-high.json | 1963 | high | 50 | 50 | 0 | 17 | 0 |
+| 1963-p110-high.json | 1963 | high | 56 | 56 | 0 | 15 | 0 |
+| 1963-p111-high.json | 1963 | high | 50 | 50 | 0 | 17 | 0 |
+| 1963-p112-passios.json | 1963 | passios | 42 | 42 | 0 | 20 | 0 |
+| 1963-p084-unknown.json | 1963 | unknown | 7 | 7 | 0 | 3 | 0 |
+| 1963-p113-unknown.json | 1963 | unknown | 43 | 43 | 0 | 22 | 0 |
+| 1963-p114-unknown.json | 1963 | unknown | 43 | 43 | 0 | 16 | 0 |
+| 1963-p115-unknown.json | 1963 | unknown | 45 | 45 | 0 | 24 | 0 |
+| 1963-p116-unknown.json | 1963 | unknown | 40 | 40 | 0 | 9 | 0 |
+| 1964-p111-central-office.json | 1964 | central-office | 41 | 41 | 0 | 17 | 0 |
+| 1964-p112-high.json | 1964 | high | 53 | 53 | 0 | 22 | 0 |
+| 1964-p113-unknown.json | 1964 | unknown | 50 | 50 | 0 | 20 | 0 |
+| 1964-p114-unknown.json | 1964 | unknown | 45 | 45 | 0 | 28 | 0 |
+| 1964-p115-unknown.json | 1964 | unknown | 46 | 46 | 0 | 19 | 0 |
+| 1964-p116-unknown.json | 1964 | unknown | 44 | 44 | 0 | 28 | 0 |
+| 1964-p117-unknown.json | 1964 | unknown | 38 | 38 | 0 | 11 | 0 |
+| 1965-p118-central-office.json | 1965 | central-office | 36 | 36 | 0 | 10 | 0 |
+| 1965-p119-high.json | 1965 | high | 44 | 44 | 0 | 14 | 0 |
+| 1965-p120-high.json | 1965 | high | 37 | 37 | 0 | 11 | 0 |
+| 1965-p121-high.json | 1965 | high | 42 | 42 | 0 | 11 | 0 |
+| 1965-p124-high.json | 1965 | high | 45 | 45 | 0 | 16 | 0 |
+| 1965-p127-high.json | 1965 | high | 38 | 38 | 0 | 17 | 0 |
+| 1965-p122-unknown.json | 1965 | unknown | 45 | 45 | 0 | 12 | 0 |
+| 1965-p123-unknown.json | 1965 | unknown | 44 | 44 | 0 | 12 | 0 |
+| 1965-p125-unknown.json | 1965 | unknown | 43 | 43 | 0 | 18 | 0 |
+| 1965-p126-unknown.json | 1965 | unknown | 44 | 44 | 0 | 12 | 0 |
+| 1965-p128-unknown.json | 1965 | unknown | 36 | 36 | 0 | 30 | 0 |
+| 1966-p100-high.json | 1966 | high | 33 | 33 | 0 | 12 | 0 |
+| 1966-p101-high.json | 1966 | high | 47 | 47 | 0 | 17 | 0 |
+| 1966-p102-high.json | 1966 | high | 45 | 45 | 0 | 18 | 0 |
+| 1966-p107-high.json | 1966 | high | 37 | 37 | 0 | 27 | 0 |
+| 1966-p103-unknown.json | 1966 | unknown | 47 | 47 | 0 | 17 | 0 |
+| 1966-p104-unknown.json | 1966 | unknown | 41 | 41 | 0 | 15 | 0 |
+| 1966-p105-unknown.json | 1966 | unknown | 52 | 52 | 0 | 20 | 0 |
+| 1966-p106-unknown.json | 1966 | unknown | 46 | 46 | 0 | 14 | 0 |
+| 1967-p113-central-office.json | 1967 | central-office | 44 | 44 | 0 | 16 | 0 |
+| 1967-p115-high.json | 1967 | high | 54 | 54 | 0 | 13 | 0 |
+| 1967-p121-high.json | 1967 | high | 42 | 42 | 0 | 25 | 0 |
+| 1967-p114-unknown.json | 1967 | unknown | 53 | 53 | 0 | 14 | 0 |
+| 1967-p116-unknown.json | 1967 | unknown | 56 | 56 | 0 | 16 | 0 |
+| 1967-p117-unknown.json | 1967 | unknown | 51 | 51 | 0 | 17 | 0 |
+| 1967-p118-unknown.json | 1967 | unknown | 43 | 43 | 0 | 19 | 0 |
+| 1967-p119-unknown.json | 1967 | unknown | 46 | 46 | 0 | 21 | 0 |
+| 1967-p120-unknown.json | 1967 | unknown | 42 | 42 | 0 | 16 | 0 |
+| 1968-p120-central-office.json | 1968 | central-office | 42 | 42 | 0 | 15 | 0 |
+| 1968-p121-middle.json | 1968 | middle | 50 | 50 | 0 | 14 | 0 |
+| 1968-p125-middle.json | 1968 | middle | 48 | 48 | 0 | 16 | 0 |
+| 1968-p127-middle.json | 1968 | middle | 44 | 44 | 0 | 17 | 0 |
+| 1968-p122-unknown.json | 1968 | unknown | 49 | 49 | 0 | 13 | 0 |
+| 1968-p123-unknown.json | 1968 | unknown | 53 | 53 | 0 | 12 | 0 |
+| 1968-p124-unknown.json | 1968 | unknown | 53 | 53 | 0 | 12 | 0 |
+| 1968-p126-unknown.json | 1968 | unknown | 42 | 42 | 0 | 19 | 0 |
+| 1968-p128-unknown.json | 1968 | unknown | 48 | 48 | 0 | 19 | 0 |
+| 1968-p129-unknown.json | 1968 | unknown | 47 | 47 | 0 | 12 | 0 |
+| 1968-p130-unknown.json | 1968 | unknown | 46 | 46 | 0 | 15 | 0 |
+| 1968-p131-unknown.json | 1968 | unknown | 34 | 34 | 0 | 22 | 0 |
+| 1969-p107-central-office.json | 1969 | central-office | 44 | 44 | 0 | 16 | 0 |
+| 1969-p108-middle.json | 1969 | middle | 46 | 46 | 0 | 18 | 0 |
+| 1969-p115-middle.json | 1969 | middle | 42 | 42 | 0 | 22 | 0 |
+| 1969-p109-unknown.json | 1969 | unknown | 50 | 50 | 0 | 19 | 0 |
+| 1969-p110-unknown.json | 1969 | unknown | 49 | 49 | 0 | 19 | 0 |
+| 1969-p111-unknown.json | 1969 | unknown | 46 | 46 | 0 | 21 | 0 |
+| 1969-p112-unknown.json | 1969 | unknown | 47 | 47 | 0 | 19 | 0 |
+| 1969-p113-unknown.json | 1969 | unknown | 42 | 42 | 0 | 21 | 0 |
+| 1969-p114-unknown.json | 1969 | unknown | 42 | 42 | 0 | 18 | 0 |
+| 1969-p116-unknown.json | 1969 | unknown | 37 | 37 | 0 | 24 | 0 |
+| 1970-p105-central-office.json | 1970 | central-office | 35 | 35 | 0 | 9 | 0 |
+| 1970-p106-passios.json | 1970 | passios | 44 | 44 | 0 | 15 | 0 |
+| 1970-p112-passios.json | 1970 | passios | 44 | 44 | 0 | 14 | 0 |
+| 1970-p115-passios.json | 1970 | passios | 50 | 50 | 0 | 21 | 0 |
+| 1970-p116-passios.json | 1970 | passios | 42 | 42 | 0 | 26 | 0 |
+| 1970-p110-turkey-hill.json | 1970 | turkey-hill | 46 | 46 | 0 | 14 | 0 |
+| 1970-p107-unknown.json | 1970 | unknown | 46 | 46 | 0 | 17 | 0 |
+| 1970-p108-unknown.json | 1970 | unknown | 58 | 58 | 0 | 16 | 0 |
+| 1970-p109-unknown.json | 1970 | unknown | 47 | 47 | 0 | 14 | 0 |
+| 1970-p111-unknown.json | 1970 | unknown | 42 | 42 | 0 | 17 | 0 |
+| 1970-p113-unknown.json | 1970 | unknown | 43 | 43 | 0 | 17 | 0 |
+| 1970-p114-unknown.json | 1970 | unknown | 36 | 36 | 0 | 19 | 0 |
 | 1971-p101-central-office.json | 1971 | central-office | 34 | 34 | 0 | 8 | 0 |
 | 1971-p103-middle.json | 1971 | high | 42 | 42 | 0 | 13 | 0 |
 | 1971-p104-unknown.json | 1971 | high | 48 | 48 | 0 | 13 | 0 |
@@ -422,12 +520,15 @@ claimed by the **right** line — a column read one row out of step accounts for
 every line perfectly and pairs every person with their neighbour. So every
 entry's name and role tokens are checked back against the printed line.
 
-**4 entries fail this check.** 31 more have a token on
+**7 entries fail this check.** 196 more have a token on
 an adjacent line, which is a title printed across a line break rather than an
 error — listed separately so the distinction rests on evidence.
 
 | page | line | field | token | entry | printed |
 |---|---:|---|---|---|---|
+| 1960-p108-high.json | 46 | name | `MacPhadden` | Gloria V.MacPhadden / S.H.Homemaking; Homeroom Gr. (Rm.#236); Dean of Girls | `Mrs. Gloria V.Mac-    Framingham STC, 1937    BSE    6    1957 S.H.Homemaking; H` |
+| 1960-p110-unknown.json | 8 | name | `McKittrick` | Patricia A. McKittrick / Grade 30 | `Mrs. Patricia A. Mc-` |
+| 1961-p117-passios.json | 33 | name | `Bradstreet` | Frances C.Bradstreet / Grade 3A | `Mrs. Frances C.Brad-    Fitchburg SC, 1961    BSE    4` |
 | 1973-p111-middle.json | 26 | name | `Solovei` | Gertrude A. Solovei / Cook/Manager (7 hrs); resigned 12/7/73 | `Mrs. Gertrude A. Solovel COOK/MANAGER    1974, transferred from Elementary Schoo` |
 | 1973-p111-middle.json | 47 | name | `Gail` | Gail Ferguson / General Worker (3 hrs) | `Mrs. Gall Ferguson - GENERAL WORKER` |
 | 1974-p132-unknown.json | 19 | name | `Jean` | Jean H. Koykka / Mathematics | `Mrs. JBAN H. KOYKKA, Mathematics    Univ. of Mass. 1957    BS/Math` |
@@ -441,32 +542,43 @@ that the taxonomy is wrong.
 
 | times | printed as |
 |---:|---|
-| 1286 | `` |
+| 1291 | `` |
+| 120 | `General Worker` |
 | 70 | `Teaching Assist.` |
 | 65 | `Dept. Liaison` |
-| 64 | `General Worker` |
+| 45 | `Worker` |
+| 32 | `Baker` |
 | 26 | `Business Education` |
 | 26 | `Chairperson` |
+| 25 | `SCHOOL BUS CONTRACTORS` |
 | 25 | `Chair` |
+| 23 | `Cook/Manager` |
 | 23 | `Parents` |
 | 21 | `Mathematics` |
-| 19 | `Cook/Manager` |
 | 19 | `COTA` |
 | 18 | `Manager` |
 | 18 | `Member` |
 | 17 | `General workers` |
 | 16 | `Industrial Arts` |
-| 16 | `Baker` |
 | 15 | `(Pri.)` |
 | 15 | `Dept Liaison` |
 | 14 | `Foreign Language` |
+| 13 | `Head Cook` |
+| 13 | `School Physician` |
 | 13 | `Social Worker` |
+| 12 | `Elementary School` |
+| 11 | `School Bus Contractor` |
+| 10 | `Substitute` |
 | 10 | `Senior Clerk/Typist` |
 | 10 | `AD` |
 | 9 | `General Worker (5 hours)` |
 | 9 | `Teaching Assistant` |
 | 9 | `Café` |
 | 9 | `Café Manager` |
+| 8 | `Reading Supervisor` |
+| 8 | `Grade IC` |
+| 8 | `Grade IF` |
+| 8 | `Assistant` |
 | 8 | `Foreign Languages` |
 | 8 | `Business Manager` |
 | 8 | `Coordinator` |
@@ -475,10 +587,14 @@ that the taxonomy is wrong.
 | 8 | `Achieve Assistant` |
 | 8 | `Vice-Chairperson` |
 | 8 | `7th` |
-| 7 | `Assistant` |
+| 7 | `Grade IB` |
+| 7 | `Grade ID` |
 | 7 | `Business Education Department Chairman` |
 | 7 | `Mathematics Department Chairman` |
 | 7 | `Greenhouse Asst.` |
+| 6 | `Assistant Reading Supervisor` |
+| 6 | `Assistant Cook` |
+| 6 | `Administrative Assistant` |
 | 6 | `H. S. Mathematics` |
 | 6 | `Reading Specialist (Grades K-4)` |
 | 6 | `Grade V` |
@@ -486,21 +602,6 @@ that the taxonomy is wrong.
 | 6 | `Cook/Manager (7 hours)` |
 | 6 | `Administrative Coordinator` |
 | 6 | `Asst. Prin.` |
-| 6 | `Clerk` |
-| 6 | `Phys. Ed.` |
-| 6 | `Occup. Therap.` |
-| 6 | `TLC` |
-| 6 | `Phys. Therap` |
-| 6 | `Parents:` |
-| 6 | `Cook/Managers` |
-| 5 | `Homemaking Department Chairman` |
-| 5 | `School Physician` |
-| 5 | `Grade VII` |
-| 5 | `Grade VI` |
-| 5 | `Part-time Senior Clerk/Typist` |
-| 5 | `Administrative Assistant` |
-| 5 | `Attendance Clerk` |
-| 5 | `Special Needs Teaching Assistant (Elementary School)` |
 
 ## Two things a count here must not be read as
 
