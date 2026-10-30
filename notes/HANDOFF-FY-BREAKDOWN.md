@@ -331,8 +331,15 @@ qualifier in `sub`).
      Town Manager to the Select Board, 1 Sep 2026 (minutes pp6-7; the update itself not held);
      and 29 Jul 2026 "well below" ~$600,000 (Business Manager). Update when the books close.
    - Two gaps registered in money-gaps.csv (FY2023/24 turnback at the close; FY2023/24 season).
-   - NOT done: the $500,000 free cash for FY2026 (Article 12) -- the season file records only the
-     SC's contingent acceptance, so it is not shown. A real phone-width check
+   - NOT done: the $500,000 free cash for FY2026 (Article 12). WITHDRAWN 30 Oct: "the season file
+     records only the SC's contingent acceptance" was a search that stopped early. The vote IS held:
+     `town-meeting-votes.csv`, 2025 annual, article 12, 3 May 2025, Yes 123 No 45 -- $500,000 from
+     Free Cash to the FY2026 school operating budget "only if voters fail to approve a Proposition
+     2 1/2 override ... on or before November 15, 2025" (FY2025 town report p140). No Lunenburg
+     override vote in the DLS register between 18 May 2024 and 16 May 2026. The school journal's
+     FY2026 original budget is $26,287,474 = the $25,787,474 omnibus + $500,000 exactly -- so it
+     appears to have been transferred (an arithmetic match, not a posting that says so). Add it to
+     the FY2026 beginning, as Town Meeting's vote beside the books' figure. A real phone-width check
      (`check_phone_width.sh` builds, so it was not run here).
 
 3. **A WHOLE DIFFERENT REPORT, BOTTOM OF THE QUEUE: school budget vs actuals, line by line over
