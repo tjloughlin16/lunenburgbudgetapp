@@ -61,8 +61,10 @@ METERED_STOP = ROOT / 'build' / 'STOP-METERED'
 # https://aws.amazon.com/textract/pricing/ on 27 October 2026. Re-read it if the region changes.
 PRICE_PER_PAGE = {'tables': 0.015, 'text': 0.0015}
 
-MONTHLY_CAP_USD = 50.00          # ours. The AWS budget in setup_textract.sh sits ABOVE it, at $60,
+MONTHLY_CAP_USD = 58.00          # ours. The AWS budget in setup_textract.sh sits ABOVE it, at $60,
                                  # so this one should always trip first and that one never.
+                                 # Raised from $50 by TJ, 29 Oct 2026, for the 1959-1990 annual reports;
+                                 # kept $2 under AWS's $60, which only TJ can raise (console).
 BUDGET_NAME = 'lunenburg-textract'
 PROFILE = os.environ.get('TEXTRACT_PROFILE', 'lunenburg-textract')   # the narrow user, never default
 if os.environ.get('TEXTRACT_STATE') and os.environ.get('TEXTRACT_TEST_CAP'):
