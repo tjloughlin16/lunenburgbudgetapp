@@ -6,8 +6,13 @@ Accountant's MUNIS account string carries a function code in its fourth segment
 (`0100-3-300-2330-51-2-13-1-511203`); the district's budget workbook prints a function
 code at the head of each group (`2330 - Paraprofessionals Special Education`). Where the
 two disagree, that disagreement is the output. Which coding a given account *should*
-carry is not established by anything in this repository -- DESE's chart of accounts would
-settle it and we do not hold it -- so nothing here says one side is wrong.
+carry is not settled by anything in this repository, so nothing here says one side is wrong.
+DESE's Chart of Accounts is now held (`sources/state-dese/dese-chart-of-accounts-2022-07.docx`, "Criteria for
+Financial Reporting", last updated July 2022), and it names the function codes a district
+reports to the state on the End of Year Report. It does not say how the Town's ledger or the
+district's budget book must code their own lines, so it bounds this question rather than
+settling it: 0300, 2310 and 2900 are not function codes in it, and it puts social workers
+under 2800 (Psychological Services) while adjustment counselors go under 2710.
 
 TWO LIMITS, both of which matter for reading the output:
 

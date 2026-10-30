@@ -10,8 +10,10 @@ would be quoted back at us. Every number in the output is derived here.
 
 **This is a request for clarification, not a finding.** Two documents in the archive code
 the same accounts to different function codes. Nothing in the archive establishes which
-coding is correct -- DESE's chart of accounts would, and we do not hold it -- so the
-letter asks which is authoritative and does not assert that either is wrong. Rule 8: a
+coding is correct. DESE's Chart of Accounts is now held (`sources/state-dese/dese-chart-of-accounts-2022-07.docx`)
+and it defines the codes a district reports to the STATE; it does not say how the Town's
+ledger or the budget book must code their own lines. So the letter asks which is
+authoritative and does not assert that either is wrong. Rule 8: a
 discrepancy reaches an outside reader as a question about planning, never as a charge.
 """
 import collections
@@ -160,8 +162,11 @@ def main():
     A('')
     A('This is a request for clarification, not a finding. Two documents we hold code the')
     A('same school accounts to different function codes. **Nothing here establishes that')
-    A('either coding is wrong** — we do not hold the chart of accounts that would settle')
-    A('it, which is why we are asking rather than concluding.')
+    A('either coding is wrong.** DESE’s Chart of Accounts (July 2022, held at')
+    A('`sources/state-dese/dese-chart-of-accounts-2022-07.docx`) defines the function codes the district')
+    A('reports to the state on its End of Year Report; it does not say how the Town’s ledger')
+    A('or the budget book must code their own lines, which is why we are asking rather than')
+    A('concluding.')
     A('')
     A('The reason it matters: this project groups school spending by function to describe')
     A('where the budget goes. If we group by the wrong one, our published figures')

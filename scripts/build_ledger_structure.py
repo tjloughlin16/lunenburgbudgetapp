@@ -194,9 +194,10 @@ def render(c):
       '*at* a school are in five departments and are not school money at all.\n')
     a('- **Function codes outrun their names.** The district’s budget book names 45 of '
       'them. The ledger uses more. A code the book does not name is shown here by the '
-      'accounts inside it rather than named from the DESE chart of accounts, because '
-      'naming it from general knowledge would be a derived thing quoted as an observed '
-      'one.\n')
+      'accounts inside it rather than named from DESE’s Chart of Accounts (held at '
+      '`sources/state-dese/dese-chart-of-accounts-2022-07.docx`), because DESE’s name for a code is the state’s '
+      'reporting category, not the Town’s description of what it put there, and quoting '
+      'one as the other would be a derived thing quoted as an observed one.\n')
     return '\n'.join(L) + '\n'
 
 

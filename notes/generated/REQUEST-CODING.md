@@ -5,12 +5,15 @@
 
 **To:** Superintendent of Schools, Lunenburg Public Schools  
 **Subject:** Which function coding is authoritative for the school budget  
-**Generated:** 2026-09-04 by `scripts/build_coding_questions.py`
+**Generated:** 2026-10-30 by `scripts/build_coding_questions.py`
 
 This is a request for clarification, not a finding. Two documents we hold code the
 same school accounts to different function codes. **Nothing here establishes that
-either coding is wrong** — we do not hold the chart of accounts that would settle
-it, which is why we are asking rather than concluding.
+either coding is wrong.** DESE’s Chart of Accounts (July 2022, held at
+`sources/state-dese/dese-chart-of-accounts-2022-07.docx`) defines the function codes the district
+reports to the state on its End of Year Report; it does not say how the Town’s ledger
+or the budget book must code their own lines, which is why we are asking rather than
+concluding.
 
 The reason it matters: this project groups school spending by function to describe
 where the budget goes. If we group by the wrong one, our published figures

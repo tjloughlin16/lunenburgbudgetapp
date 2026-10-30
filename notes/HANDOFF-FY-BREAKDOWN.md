@@ -112,15 +112,41 @@ show the additional funds. And I think we probably need a fund page slug for the
   if the district did; show both, labelled (rule 11).
 - ESTIMATE vs RECEIVED: the Town budgets this receipt low (FY2026 $10,000 vs $75,279 by March);
   the excess falls to free cash. Why it is estimated low is NOT established.
-- QUEUED WITH IT (TJ, 30 Oct: "Sure. Yes."): FETCH DESE's Chart of Accounts for Massachusetts
-  school districts and the End of Year Financial Report instructions -- public; through
-  `ingest.land` (stage/secure, sha256, publisher filename, address: CLAUDE.md rule 12), in an
-  ISOLATED session or subagent (rule 7g). Settles: does DESE carry preschool / early childhood as a
-  program or function category, and must a district report preschool spending by program. Three
-  scripts already name the gap ("we do not hold it"): build_coding_questions.py,
-  check_function_crosswalk.py, build_ledger_structure.py -- update their wording once it is held.
-  Lunenburg's own End of Year Report is NOT held (TJ has asked for it); it would show whether the
-  district reports preschool spending to the state at all.
+- DONE 30 Oct (subagent): DESE's Chart of Accounts and End of Year Report instructions FETCHED,
+  through `ingest` (stage/secure, read back), described in `sources/state-dese/index.csv`:
+  `dese-chart-of-accounts-2022-07.docx` (published `eoy/chartofaccounts.docx`, "Chart of Accounts
+  — Criteria for Financial Reporting", last updated July 2022, sha 20f0f483), and
+  `dese-eoyr-fy2023-printing-version.pdf` (`eoy/fy2023/printing-version.pdf`, pdf_kind digital,
+  sha 44759524) beside the FY2025 printing version already held; crosswalks for FY2023, FY2024 and
+  FY2026 too. DESE published no FY2024 or FY2026 printing version (both 404). WHAT THEY SAY:
+  * NO preschool function code and NO preschool program column. The chart's 89 function codes
+    (1110-9500) name none; Schedule 1's program columns are Regular Day, Special Education, Ch 74
+    Vocational, Adult Ed and Other, Undistributed (FY2023 p9; FY2025 eoy25!A213-B225).
+  * Preschool appears in exactly three places: Schedule 4 column 1, "3-5 Yr. Olds all placements
+    (doe032-- 30 - 48)" -- SPECIAL EDUCATION only, by function (FY2023 p79; eoy25!E2182-E2186);
+    Schedule 7 line 4020 "To and from Regular Pre-School" (p82-83; eoy25!D2255, D2277), and the
+    Schedule 1 instruction that preschool transportation goes in Column 1, Regular Day (p28;
+    eoy25!D683). So regular-education preschool spending is NOT reported separately: it sits in
+    Regular Day by function. Only special education preschool (Schedule 4) and transport are split.
+  * Tuition revenue: general fund lines 30-50 (30 "Tuition From Individuals") are "revenue earned
+    as tuition payments for pupils tuitioned in" (p10; eoy25!D241, D284); revolving line 640 names
+    adult ed, community school, summer school, out-of-district -- not preschool (p12; eoy25!D330).
+    Preschool tuition is NOT named anywhere: registered in money-gaps (last row, 30 Oct).
+  * Town-side receipt: a municipality's general fund tuition receipts REDUCE net school spending
+    (p103, 603 CMR 10.06: "the school district's or municipality's general fund receipts for
+    tuition received for students attending the district's schools"). Read, not inferred.
+- CORRECTION to the line this replaced, which said Lunenburg's own End of Year Report is NOT held:
+  the FY2023 and FY2024 WORKING COPIES are held and extracted (`scripts/extract_eoyr.py`,
+  `sources/data/eoyr-schedule1/4/7.csv`) -- not the filed reports. In them: Schedule 1 line 30 is
+  $43,058 in FY2023 and $0 in FY2024 (J17); Schedule 4 column 1 is $344,170 in FY2023 and
+  $95,276 (grants only) in FY2024 (E1024); Schedule 7 line 4020 is $0 both years. Whether the
+  FY2023 $43,058 is preschool tuition is NOT established.
+- Wording updated to cite the held chart: check_function_crosswalk.py, build_coding_questions.py
+  (REQUEST-CODING.md regenerated), build_ledger_structure.py (LEDGER-STRUCTURE.md regenerated).
+  The chart does not settle the crosswalk -- it defines what a district REPORTS to the state, not
+  how the Town codes its ledger -- but: 0300, 2310 and 2900 are not chart codes; social workers
+  are 2800 (Psychological Services; EOYR-EPIMS crosswalk maps EPIMS 3370/3371 there) and
+  adjustment counselors 2710, so the $369k at MUNIS 2710 / book 2900 is neither, by name.
 - NOT ESTABLISHED, and do not write it: that the preschool has "no budget". No line is NAMED
   preschool; its staff are most likely budgeted inside Primary School lines ("P.S." = Primary
   School). The finding is that the budget does not SHOW what the preschool costs.
