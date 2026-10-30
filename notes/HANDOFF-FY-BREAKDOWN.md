@@ -113,10 +113,10 @@ show the additional funds. And I think we probably need a fund page slug for the
    labelled (its transfers miss 12/269 and 15/265 lines against the journal in FY2023/FY2024).
 3. MERGE the older topics `school-budget-against-actual` and `line-level-misses` into the new
    report if similar (TOPIC_MERGED in routes.ts).
-4. RESTRUCTURE, proposed and TJ leaning yes ("showing the misses per FY seems to be a good place
-   ... on the FY breakdown page"): per-year flags move to the FY breakdown (block + every-line
-   table filter); the report drops its year picker for a line x year grid FY2018-FY2026 linking
-   each FY2023+ column to that year's breakdown. Confirm with TJ before building.
+4. RESTRUCTURE -- DECIDED (TJ, 29 Oct: "use your best judgment"; ours: yes): per-year flags move to
+   the FY breakdown (block + every-line table filter); the report drops its year picker for a line x
+   year grid FY2018-FY2026 linking each FY2023+ column to that year's breakdown. One question per
+   page: the year's story there, the pattern across years here.
 Then item 4 below (the year's signatures).
 
 **QUICK CLEANUP FIRST (TJ, 29 Oct) -- small, do before item 0:** on every fund and line page,
