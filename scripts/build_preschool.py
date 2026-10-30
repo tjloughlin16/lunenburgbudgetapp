@@ -171,7 +171,7 @@ def page():
         'Tuition received beside identifiable cost', xs,
         [TP.track('Tuition received, a Town receipt', [fl(tu[y]['received']) if tu[y] else None for y in years],
                   'published', 'bar'),
-         TP.track('Town’s estimate of the tuition', [fl(est[y]) if y in est else None for y in years],
+         TP.track('Tuition the Town planned on', [fl(est[y]) if y in est else None for y in years],
                   'published', 'bar'),
          TP.track('IDEA preschool grants spent', [fl(gtot[y]) if y in gtot else None for y in years],
                   'published', 'bar'),
@@ -184,7 +184,7 @@ def page():
     f = LD.fact
     facts = [
         f('tu25', U(r25), 'tuition received by the Town, %s' % C.fy(2025), 'published', label_figures={'y': F(2025)}),
-        f('es25', U(e25), 'the Town’s estimate of it, %s' % C.fy(2025), 'published', label_figures={'y': F(2025)}),
+        f('es25', U(e25), 'tuition the Town planned on, %s' % C.fy(2025), 'published', label_figures={'y': F(2025)}),
         f('tu19', U(r19), 'tuition received, %s' % C.fy(2019), 'published', label_figures={'y': F(2019)}),
         f('gr25', U(gtot[2025]), 'IDEA preschool grant spent, %s' % C.fy(2025), 'published', label_figures={'y': F(2025)}),
         f('pay', U(full[lastp]['total']), 'pay of %d staff rostered under preschool, %s, ours'
@@ -198,12 +198,12 @@ def page():
         con('Families paid %s in preschool tuition in %s; it went to the Town’s general fund, not the schools.'
             % (C.usd(fl(r25)), C.fy(2025)), ['tu25'], {'a': U(r25), 'y': F(2025)},
             'The school budget carries the preschool at full cost; the tuition offsets none of it there.'),
-        con('The Town estimated %s of it, and received %s times that.'
+        con('The Town planned on %s of it, and received %s times that.'
             % (C.usd(fl(e25)), '%.1f' % rate), ['es25', 'tu25'],
             {'a': U(e25), 'b': figure(rate, '%.1f' % rate, 'times')},
-            'The difference reaches the Town as unbudgeted receipts. Why the estimate is low is not recorded.'),
-        con('The %s estimate and the %s one were both %s: %s’s tuition, cents dropped.'
-            % (C.fy(2020), C.fy(2025), C.usd(fl(e25)), C.fy(2019)), ['tu19', 'es25'],
+            'The difference reaches the Town as unbudgeted receipts. Why it plans so low is not recorded.'),
+        con('The Town planned on %s in both %s and %s: %s’s tuition, cents dropped.'
+            % (C.usd(fl(e25)), C.fy(2020), C.fy(2025), C.fy(2019)), ['tu19', 'es25'],
             {'a': F(2020), 'b': F(2025), 'c': U(e25), 'd': F(2019)},
             'The figure looks carried forward from one year; nothing written says how it was set.'),
         con('The IDEA preschool grant spent %s in %s; no general fund cost is identifiable at all.'
@@ -216,7 +216,7 @@ def page():
     blocks = [
         TB.panels('Who carries what', [
             TB.panel('Tuition, to the Town', [('Received', C.usd(fl(r25)), None),
-                                              ('The Town’s estimate', C.usd(fl(e25)), None)],
+                                              ('Planned by the Town', C.usd(fl(e25)), None)],
                      sub='A Town general fund receipt', so='Pays into the Town’s general fund, not the school budget.'),
             TB.panel('IDEA preschool grant', [('Spent', C.usd(fl(gtot[2025])), None)],
                      sub='A federal grant to the schools', so='Federal money, awarded to the district year by year.'),
@@ -231,7 +231,7 @@ def page():
             'Nothing is spent from the line, and it does not carry over: each year it starts again at zero.',
             '**Not a revolving fund.** In a revolving fund, such as Extended Day, the fees stay with the '
             'program and pay its costs. The school’s books credit none of this tuition to the preschool.',
-            ('**Above the estimate, it becomes part of free cash.** The %s received above the Town’s estimate '
+            ('**Above plan, it becomes part of free cash.** The %s received above what the Town planned on '
              'in %s is part of the receipts over estimate that the state counts when it certifies free cash. '
              'That is how Massachusetts free cash is calculated; we have not seen the Town’s own closing entry '
              'for this account.' % (C.usd(fl(r25 - e25)), C.fy(2025)),
@@ -274,13 +274,13 @@ def page():
     ]
     p = TP.page(
         ID,
-        'Families’ preschool tuition goes to the Town, not the schools; in %s the Town had budgeted '
-        'for %s of it.' % (C.fy(2025), C.pct(share, 0)),
-        facts, conclusions, finding_figures={'y': F(2025), 'p': figure(share, C.pct(share, 0), '%')}, chart=chart, blocks=blocks, sources=sources,
+        'Preschool tuition goes to the Town, not the schools; in %s it brought in %s times what the Town '
+        'planned.' % (C.fy(2025), '%.1f' % rate),
+        facts, conclusions, finding_figures={'y': F(2025), 'b': figure(rate, '%.1f' % rate, 'times')}, chart=chart, blocks=blocks, sources=sources,
         draft=None if ID in REG.TOPICS else dict(title='Preschool', home='school-all-funds'))
     p['not_established'] = [
         'The general fund cost of the preschool: no line, account or program code separates it from the Primary School.',
-        'Why the Town estimates the tuition where it does.',
+        'Why the Town plans on the tuition it does.',
         'Whether the IDEA preschool grant paid any of the rostered preschool staff.',
         'Tuition for FY2023, FY2024 and FY2026 alone: ' + ' '.join(SR.WHY_MISSING[y] for y in (2023, 2024, 2026)),
     ]
