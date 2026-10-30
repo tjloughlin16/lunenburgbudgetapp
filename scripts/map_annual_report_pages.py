@@ -350,8 +350,12 @@ CATALOGUE_COLUMNS = {'state', 'rows_published', 'figures_reversed'}
 #
 #   `capital-plan-field-lines.csv` is the same case: its `page` is a page of a CAPITAL PLAN
 #   presentation, and its `fy` the plan's year. Named UNDECLARED on 23 October 2026.
+#
+#   `keystone-tuition-rates.csv` likewise: its `page` is a page of the Keystone
+#   Collaborative's tuition rate sheet. Named UNDECLARED on 30 October 2026.
 NOT_READINGS = {'annual-report-pages', 'ingest-benchmark', 'extraction-blocked',
-                'table-corrections', 'teacher-salary-schedules', 'capital-plan-field-lines'}
+                'table-corrections', 'teacher-salary-schedules', 'capital-plan-field-lines',
+                'keystone-tuition-rates'}
 
 # WHICH COLUMN HOLDS THE YEAR OF THE BOOK THE PAGE IS IN. Requiring the literal name `fy`
 # made `outstanding-debt.csv` invisible: it names that column `report_fy`, so 1,038 proven
