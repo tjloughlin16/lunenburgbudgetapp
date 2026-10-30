@@ -188,14 +188,17 @@ summary: one line per account, no memo, no payee. If requested, family names mus
 
 ## 7. Decisions waiting on TJ
 
-1. **The Town's March 2026 MUNIS reports print a Town user's login and first name.** They are
-   already in the public bucket and were never through the privacy gate. Take them down
-   (`takedown.py`) or accept as a work login on a Town report?
+1. ~~**The Town's March 2026 MUNIS reports print a Town user's login and first name.**~~
+   **DECIDED 30 Oct 2026, TJ: keep them public.** The login is `kbarrett` and the name is Karen
+   Barrett, Town Accountant -- the official who ran the reports, printed in her official role
+   (`User: kbarrett` on all 29 report headers; the address is already in the Town's own staff
+   directory). The twelve fy2026-p09 files in `town-ledgers/` stay as they are; no takedown.
 2. Records requests to add: the special revenue fund-balance report at 30 June 2025; the account
    detail for 0100-01001-431900 (names masked).
 3. Queue a "free cash" section on the Town general fund page (school receipts over estimate and the
    school turnback against CL#6 / CL#11)?
-4. The preschool card could say "2 teachers, 4 paras" instead of "6 posts".
+4. ~~The preschool card could say "2 teachers, 4 paras" instead of "6 posts".~~ **DONE 30 Oct,
+   `1e2bd2d82`**, counted from the roster's position titles.
 
 ## 8. To restart
 

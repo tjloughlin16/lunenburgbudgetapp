@@ -49,10 +49,10 @@ budget (`/budget-vs-actual` points there), per-year flags, the preschool report,
 (`town-meeting-votes.csv`, 2025 article 12).
 
 **TJ's decisions still open** (`notes/findings/FY-BREAKDOWN-AND-PRESCHOOL-2026-10-30.md` §7):
-1. MUNIS March 2026 reports print a Town user's login and first name. They are in the public
-   bucket. Take down or accept?
+1. ~~MUNIS March 2026 reports print a Town user's login and first name.~~ **Decided: keep.** It is
+   `kbarrett` / Karen Barrett, Town Accountant, in her official role. No takedown.
 2. A free cash section on the Town general fund page?
-3. The preschool card: "2 teachers, 4 paras" instead of "6 posts"?
+3. ~~The preschool card: "2 teachers, 4 paras" instead of "6 posts"?~~ **Done, `1e2bd2d82`.**
 
 **Small queued fix:** `annual-report-receipts.csv` FY2021 PRE-SCHOOL TUITION reads 11.64; the
 page prints $11,648.82. This is an extractor defect.
