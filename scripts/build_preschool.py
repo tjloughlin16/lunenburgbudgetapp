@@ -226,6 +226,17 @@ def page():
                      sub='Every fund; pay only, no benefits', so='The grant may pay part of this pay, so the two do not add.'),
         ], place='lead', note=('%s, from three different records and payers. None of them is what the preschool '
                                'costs.' % C.fy(2025), None, (C.fy(2025),))),
+        TB.explain('What kind of account this is', [
+            '**A revenue line, not a fund.** The tuition is counted as revenue of the Town’s general fund. '
+            'Nothing is spent from the line, and it does not carry over: each year it starts again at zero.',
+            '**Not a revolving fund.** In a revolving fund, such as Extended Day, the fees stay with the '
+            'program and pay its costs. The school’s books credit none of this tuition to the preschool.',
+            ('**Above the estimate, it becomes part of free cash.** The %s received above the Town’s estimate '
+             'in %s is part of the receipts over estimate that the state counts when it certifies free cash. '
+             'That is how Massachusetts free cash is calculated; we have not seen the Town’s own closing entry '
+             'for this account.' % (C.usd(fl(r25 - e25)), C.fy(2025)),
+             {'a': U(r25 - e25), 'y': F(2025)}),
+        ], place='lead', tone='define'),
         TB.explain('What could be identified', [
             '**The school budget names no preschool line.** No account, organization or budget line is named for '
             'it, and the account codes put the preschool in with the whole Primary School. A “P.S.” in a line '
