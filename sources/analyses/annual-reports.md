@@ -124,13 +124,13 @@ A **dedicated** extractor knows what its table means and can check it against a 
 
 | dataset | rows | years | built by | checked | check failed | no check |
 |---|---:|---|---|---:|---:|---:|
-| `report-appropriations.csv` | 11,708 | 1991–2025 | generic | 3602 | 6594 | 1512 |
+| `report-appropriations.csv` | 11,708 | 1991–2025 | generic | 3600 | 6596 | 1512 |
 | `report-gross-wages.csv` | 11,446 | 1995–2025 | generic | 7644 | 255 | 3547 |
 | `staff-roster-entries.csv` | 7,025 | 1991–2025 | dedicated |  — | — | —  |
 | `special-revenue-funds.csv` | 4,532 | 1992–2025 | dedicated | 3016 | 1370 | 146 |
 | `report-elections.csv` | 3,438 | 1992–2025 | generic | 1664 | 1725 | 49 |
 | `annual-report-receipts.csv` | 3,192 | 1991–2023 | dedicated | 2340 | 304 | 548 |
-| `report-debt.csv` | 2,254 | 1991–2025 | generic | 1583 | 473 | 198 |
+| `report-debt.csv` | 2,254 | 1991–2025 | generic | 1577 | 479 | 198 |
 | `report-trust-funds.csv` | 2,172 | 1991–2025 | generic | 1200 | 621 | 351 |
 | `report-officials.csv` | 1,741 | 1991–2024 | generic | 0 | 0 | 1741 |
 | `report-dept-activity.csv` | 1,377 | 1991–2025 | generic | 0 | 0 | 1377 |

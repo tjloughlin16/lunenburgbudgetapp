@@ -140,6 +140,63 @@ def read_with_claude(limit):
     print('%d call(s)' % sent)
 
 
+BSCHEMA = {'type': 'object', 'additionalProperties': False, 'required': ['cells'], 'properties': {
+    'cells': {'type': 'array', 'items': {'type': 'object', 'additionalProperties': False,
+                                         'required': ['n', 'text', 'legible'],
+                                         'properties': {'n': {'type': 'integer'}, 'text': {'type': 'string'},
+                                                        'legible': {'type': 'boolean'}}}}}}
+
+
+def read_batch(keys, size, force=True):
+    """Blind batched reader: several crops per call, copied to neutral names (cell-01.png...)
+    so neither the filename nor the prompt says what or where the cell is. Prints the running
+    total. Same system prompt, schema semantics and reader label as read_with_claude."""
+    import shutil
+    total = 0.0
+    keys = list(keys)
+    for i in range(0, len(keys), size):
+        chunk = keys[i:i + size]
+        d = os.path.join(BASE, 'blind')
+        shutil.rmtree(d, ignore_errors=True)
+        os.makedirs(d)
+        lines = []
+        for n, k in enumerate(chunk, 1):
+            ed, pg, t, rw, c = k.split(':')
+            src = crop_path({'edition': ed, 'page': pg, 'table': t, 'row': rw, 'col': c})
+            shutil.copy(src, os.path.join(d, 'cell-%02d.png' % n))
+            lines.append('%d. %s' % (n, os.path.join(d, 'cell-%02d.png' % n)))
+        prompt = ('Each image below is ONE cell cropped from a scanned page of a town report. For each, '
+                  'transcribe the figure printed in it exactly as printed, with any $ sign, commas, '
+                  'decimal point, minus sign or parentheses. Read every image with the Read tool. '
+                  'Set legible false if you cannot read it. Return one entry per image, n = its number.\n'
+                  + '\n'.join(lines))
+        p = claude_lean.run(['claude', '-p', '--model', MODEL, '--tools', 'Read', '--allowedTools', 'Read',
+                            '--system-prompt', SYSTEM, '--json-schema', json.dumps(BSCHEMA),
+                            '--output-format', 'json', '--max-budget-usd', '1.0'],
+                           input=prompt, capture_output=True, text=True, timeout=600, add_dirs=[d],
+                           env={**os.environ, 'CLAUDE_CODE_ENTRYPOINT': 'witness_cell_crops'})
+        if p.returncode != 0:
+            raise SystemExit('claude failed on batch %d:\n%s' % (i, (p.stdout + p.stderr)[-1000:]))
+        res = json.loads(p.stdout)
+        body = res.get('structured_output') or res.get('result')
+        body = json.loads(body) if isinstance(body, str) else body
+        cost = float(res.get('total_cost_usd') or 0)
+        total += cost
+        got = {c['n']: c for c in body['cells']}
+        if sorted(got) != list(range(1, len(chunk) + 1)):
+            raise SystemExit('batch %d returned cells %s' % (i, sorted(got)))
+        for n, k in enumerate(chunk, 1):
+            ed, pg, t, rw, c = k.split(':')
+            save_reading({'key': k, 'reader': 'claude-p:' + MODEL, 'text': got[n]['text'],
+                          'legible': str(bool(got[n]['legible'])),
+                          'crop': os.path.relpath(crop_path({'edition': ed, 'page': pg, 'table': t,
+                                                              'row': rw, 'col': c}), ROOT),
+                          'date': datetime.date.today().isoformat(), 'cost_usd': '%.4f' % (cost / len(chunk))})
+            print('%s -> %r (legible %s)' % (k, got[n]['text'], got[n]['legible']))
+        print('batch of %d: $%.4f; running total $%.4f' % (len(chunk), cost, total))
+    return total
+
+
 def stamp_register(r, reading, note):
     if not os.path.exists(REGISTER):
         return 0
