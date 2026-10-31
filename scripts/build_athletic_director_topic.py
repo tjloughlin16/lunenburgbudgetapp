@@ -279,6 +279,17 @@ def people():
     for r in csv.DictReader(open(os.path.join(DATA, 'staff-roster-entries.csv'), encoding='utf-8')):
         role = (r['role_raw'] + ' ' + r['position'] + ' ' + r['grade_or_dept']).lower()
         y = int(r['fy'])
+        # THE PAGE'S WINDOW IS FY2011-FY2027 (YEARS). The 1959-2010 annual reports joined the
+        # roster on 28-30 October 2026 and are outside this page's question; read them here and
+        # the set of names changes without the timeline drawing any of it.
+        if y < YEARS[0]:
+            continue
+        # A ROLE THAT SERVES THE DIRECTOR IS NOT THE DIRECTOR. The 1980 report, p118, prints
+        # 'Patricia A. White / Clerk/Typist to Athletic Director (Part-time) (BEGAN 8/26/80)'
+        # (staff-roster-entries.csv, 4502-1980-annual-town-report.pdf); the substring test
+        # alone named her a director. Secretaries are excluded the same way, below.
+        if re.search(r'\b(clerk|typist|to (the )?athletic director)', role):
+            continue
         if ('athletic director' in role or r['role_raw'].strip() == 'AD') and 'secret' not in role:
             if y in LATER_VANTAGE:
                 continue
@@ -290,6 +301,8 @@ def people():
     for r in csv.DictReader(open(os.path.join(DATA, 'staff-roster-entries.csv'), encoding='utf-8')):
         role = (r['role_raw'] + ' ' + r['grade_or_dept']).lower()
         y = int(r['fy'])
+        if y < YEARS[0]:     # the page's window, as for the directors above
+            continue
         if re.search(r'athletic\W*sec|ad secretary', role):
             # the FY2025 report's roster is written from February 2026: it names FY2026's staff
             sec[r['name'].replace('Steele, Darlene', 'Darlene Steele')].add(2026 if y in LATER_VANTAGE else y)

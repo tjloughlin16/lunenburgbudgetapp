@@ -917,10 +917,16 @@ def assert_untouched(db):
     if not rows:
         fail('report_monty_tech is empty. It is not read by this page, but the page says '
              'in its own text why it is not, and that sentence is now about nothing.')
-    if any(r['column_meaning'] for r in rows) or {r['status'] for r in rows} != {'no check'}:
-        fail('report_monty_tech now states a column meaning or a status other than '
-             '`no check`. This page says in prose that it does not, and that prose is '
-             'now wrong. Decide deliberately whether the table is usable.')
+    # 31 October 2026: the 1966 report (read with the 1959-2010 set) added rows whose
+    # column_meaning is written out -- and every column in it says `not established`. That is
+    # still no meaning, so the guard is on ESTABLISHED meanings: it refuses the day any column
+    # is named. A footing check passing on two of those rows names no column either.
+    named = [m for r in rows for m in re.findall(r'v\d+=([^|(]+)', r['column_meaning'] or '')
+             if m.strip() != 'not established']
+    if named:
+        fail('report_monty_tech now names a column (%s). This page says in prose that no column '
+             'in it is established, and that prose is now wrong. Decide deliberately whether the '
+             'table is usable.' % sorted(set(m.strip() for m in named)))
     return dict(rows=q(db, 'SELECT COUNT(*) n FROM report_monty_tech')[0]['n'],
                 editions=sorted({r['edition'] for r in rows}))
 
@@ -1104,7 +1110,7 @@ def candidates(db, req, led):
             over_pct=round(v1 / q_row['mt_rlc'] - 1, 6) if (v1 and q_row) else None,
             document=d['document'], publisher_label=d['publisher_label'],
             sha256=d['sha256'], upstream=d['upstream'].split(' ')[0],
-            docs_url='/docs/town-annual-reports/' + d['document'],
+            docs_url='/docs/town-annual-reports/docs/' + d['document'],
         ))
 
     usable = [c for c in out if c['usable']]

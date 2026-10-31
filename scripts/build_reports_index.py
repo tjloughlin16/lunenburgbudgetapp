@@ -52,7 +52,10 @@ OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'reports.json')
 # Birthdays only; the site decides what still counts as new against today, so it decays
 # daily without this file changing.
 RECENT_OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'reports-recent.json')
-RECENT_DAYS = 7           # = NEW_DAYS in fy28/src/components/SiteMenu.tsx. Was 21; TJ, 14 Oct 2026: a week, so the 12-13 Oct conversion clears fast
+# 60, not NEW_DAYS: the file now also feeds /new-reports and /feeds/new-reports.xml (TJ, 31 October
+# 2026: "lets put new-reports as its own page ... and have it follow-able"). The menu strip and the
+# badges still decay at NEW_DAYS (SiteMenu.tsx), against today, so a week there is still a week.
+RECENT_DAYS = 60
 SITE = 'https://lunenburgbudgetproject.org'
 
 # Order the reader should meet them in, not alphabetical. Anything not listed is appended

@@ -12,7 +12,7 @@ import TOPIC_CATEGORIES from './data/topic-categories.json'
 
 export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' | 'context' | 'why' | 'curve' | 'override'
   | 'priorities' | 'adjust' | 'development' | 'solved' | 'sources' | 'athletics' | 'rates' | 'freecash'
-  | 'dataroom' | 'reports' | 'agents' | 'ask' | 'database' | 'gaps' | 'variance'
+  | 'dataroom' | 'reports' | 'newreports' | 'agents' | 'ask' | 'database' | 'gaps' | 'variance'
   | 'askus'
   | 'funds'
   | 'staffing'
@@ -130,6 +130,8 @@ export const SLUG: Record<Tab, string> = {
   freecash: 'free-cash-calculator',
   // What this project WROTE, as opposed to what it mirrors. Public and linked.
   reports: 'reports',
+  // What is new, on its own page and as a feed (TJ, 31 October 2026), off the top of /reports.
+  newreports: 'new-reports',
   // Budgets against what the district LATER REPORTED it spent. The label says "reported"
   // and not "actuals" on purpose: before FY2026 both columns come out of a district budget
   // book, and a budget book restating itself is not an accounting record. The SLUG does
@@ -511,7 +513,7 @@ export const UNLISTED: ReadonlySet<Tab> = new Set<Tab>(['dataroom', 'analysis', 
  *  "92 min" on /what-we-cannot-answer was true of the words and false of the visit.
  *  Read by components/ReadingTime.tsx and by scripts/build_reading_time.py. */
 export const REFERENCE: ReadonlySet<Tab> = new Set<Tab>([
-  'sources', 'reports', 'database', 'rates', 'gaps', 'recorded', 'boards', 'blog', 'threads',
+  'sources', 'reports', 'newreports', 'database', 'rates', 'gaps', 'recorded', 'boards', 'blog', 'threads',
   'search', 'agents', 'ask', 'dataroom', 'deeper', 'thisweek', 'budgetfeed',
   // Indexes of other pages, and the question form.
   'sped', 'themoney', 'askus',
@@ -827,6 +829,7 @@ export const LABEL: Record<Tab, string> = {
   rates: 'Rates, fees and contracts — the register',
   freecash: 'Free cash calculator',
   reports: 'Reports and analyses',
+  newreports: 'New reports',
   ask: 'How to query this data',
   agents: 'Every address on this site, as links',
   database: 'The database',
@@ -917,7 +920,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   override: 'reports',
   // The athletics HUB now (scripts/topics.py), a report shelf rather than a chapter of the
   // budget-gap walk-through -- so its trail runs back to /reports, as every topic's does.
-  athletics: 'reports', topic: 'reports',
+  athletics: 'reports', topic: 'reports', newreports: 'reports',
   rates: 'themoney',
   // `reports` has NO parent: it sits directly under Home. TJ, 12 October 2026, "Home ->
   // reports -> hub -> etc" -- every report's trail starts Home > Reports, the same as the

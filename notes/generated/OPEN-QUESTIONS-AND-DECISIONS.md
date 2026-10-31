@@ -2,7 +2,7 @@
 
 The Lunenburg Budget Project — for review, 31 October 2026
 
-**4 decisions** and **13 open questions**. The gap registry behind the questions holds **645 rows** across 12 kinds: `comparison`, `curriculum`, `document_wanted`, `extraction`, `held`, `money`, `money_in`, `money_out`, `people`, `record`, `students`, `town-meeting`.
+**4 decisions** and **13 open questions**. The gap registry behind the questions holds **646 rows** across 12 kinds: `comparison`, `curriculum`, `document_wanted`, `extraction`, `held`, `money`, `money_in`, `money_out`, `people`, `record`, `students`, `town-meeting`.
 
 The two lists are kept apart because they behave differently, and section 3 below is the part worth reading first if you read nothing else.
 

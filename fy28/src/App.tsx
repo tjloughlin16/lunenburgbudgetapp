@@ -29,6 +29,7 @@ import { DataRoom } from './pages/DataRoom'
 import { Reports } from './pages/Reports'
 import { Money } from './pages/Money'
 import { Gaps } from './pages/Gaps'
+import { NewReports } from './pages/NewReports'
 import { SchoolStaffing } from './pages/SchoolStaffing'
 import { WhoWorksInEachSchool } from './pages/WhoWorksInEachSchool'
 import { TheParaprofessionals } from './pages/TheParaprofessionals'
@@ -523,6 +524,7 @@ export default function App() {
       {tab === 'freecash' && <FreeCash />}
       {tab === 'themoney' && <Money />}
       {tab === 'gaps' && <Gaps />}
+      {tab === 'newreports' && <NewReports />}
       {/* /budget-vs-actual and its aliases open School lines against budget, which replaced the
           August report's page (TJ, 29 October 2026); Topic.tsx moves the address bar to its path. */}
       {tab === 'variance' && <Topic fallback="budget-against-actual" />}

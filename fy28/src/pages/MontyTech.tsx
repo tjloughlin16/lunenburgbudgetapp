@@ -628,12 +628,10 @@ export function MontyTech() {
       <Body>
         <code>report_monty_tech</code> is not used on this page at all. Its{' '}
         {d.report_monty_tech.rows} rows are Monty Tech&rsquo;s own budget reprinted inside
-        the {d.report_monty_tech.editions.join(', ')} annual town report; its{' '}
-        <code>column_meaning</code> is empty and its <code>status</code> is{' '}
-        <code>no check</code>, so <code>v1</code> there is the first column of that page
-        that held figures and not a column name. Its label column has also absorbed the
-        first printed figure. The generator refuses to run if that table ever silently
-        acquires a column meaning.
+        the {d.report_monty_tech.editions.join(', ')} annual town reports; no column in it
+        has an established meaning, so <code>v1</code> there is the first column of a page
+        that held figures and not a column name. The generator refuses to run if that table
+        ever silently acquires an established column meaning.
       </Body>
 
       {/* ------------------------------------------------------------- 5. THE FORECAST */}

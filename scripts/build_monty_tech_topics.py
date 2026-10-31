@@ -43,6 +43,7 @@ import conclusions as C  # noqa: E402
 from conclusions import figure  # noqa: E402
 import ladder as LD  # noqa: E402
 import topic as TP  # noqa: E402
+import topic_blocks as TB  # noqa: E402
 import topics as REG  # noqa: E402
 from brief import step  # noqa: E402
 import per_pupil_measures as PPM  # noqa: E402
@@ -712,6 +713,29 @@ def build():
                       ['h-pp', 'h-vmed', 'h-cap'],
                       {'a': U(last['monty']), 'b': U(last['vocational_median'])}),
     ])
+    # HISTORY: when Lunenburg joined and what it has paid since (TJ, 31 October 2026). Read from
+    # the page build_monty_tech_history.py writes -- its quotations are asserted against the
+    # annual reports there, and its series against report_appropriations -- so the hub and the
+    # page cannot disagree. Run that generator first.
+    hp = os.path.join(OUT_DIR, 'monty-tech-history.json')
+    if not os.path.exists(hp):
+        fail('%s is not built; run build_monty_tech_history.py first' % os.path.relpath(hp, ROOT))
+    hist = json.load(open(hp, encoding='utf-8'))
+    hf = {x['id']: x for x in hist['facts']}
+    joined = [b for b in hist.get('blocks', []) if b['block'] == 'explain']
+    if len(joined) != 1:
+        fail('monty-tech-history no longer carries one "How Lunenburg joined" block')
+    first_h, last_h = hf['first'], hf['last']
+    history_blocks = [
+        dict(joined[0], place='body'),
+        TB.chart(hist['chart'], place='body', so=(
+            'Lunenburg paid %s in its first year, %s, and %s in %s: dollars of each year, what the '
+            'Town is billed. The years before FY1987, and a table by year, are on the history page.'
+            % (first_h['value']['text'], first_h['label']['figures']['y']['text'],
+               last_h['value']['text'], last_h['label']['figures']['y']['text']),
+            {'a': first_h['value'], 'y': first_h['label']['figures']['y'],
+             'b': last_h['value'], 'z': last_h['label']['figures']['y']}, ('FY1987',))),
+    ]
     out[HUB] = TP.hub(
         HUB,
         'Monty Tech is the regional vocational high school Lunenburg belongs to. Lunenburg’s bill '
@@ -721,7 +745,8 @@ def build():
         chart=TP.parts('Who pays for Monty Tech’s operating budget', parts, '$',
                        note='The district’s own budget summary for the year. Capital and grants '
                             'are outside it.'),
-        answer_figures={'a': bill, 'b': U(last['monty']), 'y': F(y)})
+        answer_figures={'a': bill, 'b': U(last['monty']), 'y': F(y)},
+        blocks=history_blocks)
 
     if sorted(k for k in out if k != HUB) != sorted(MINE):
         fail('the pages built are not the pages the registry gives this script: %s'

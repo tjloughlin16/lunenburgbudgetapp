@@ -168,6 +168,13 @@ CHECKS = [
     # need stops recomputing from its ledger rows, or a quotation stops being verbatim.
     ('build_serf_topics.py', ['--check']),
     ('build_pay_by_fund_topics.py', ['--check']),
+    # 31 October 2026: the Town general fund, the school receipts it books, the preschool page
+    # that shares their reader, and Monty Tech's history (which the Monty Tech hub reads).
+    ('build_town_general_fund.py', ['--check']),
+    ('build_school_receipts_to_town.py', ['--check']),
+    ('build_preschool.py', ['--check']),
+    ('build_monty_tech_history.py', ['--check']),
+    ('build_monty_tech_topics.py', ['--check']),
     ('build_reports_index.py', ['--check']),
     # How long every page is, measured from the build. It changes whenever a page does,
     # which is the point: a page that grew past the table's top row grew on the record.

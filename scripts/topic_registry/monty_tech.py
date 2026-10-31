@@ -19,7 +19,7 @@ CATEGORY = dict(
     id='monty-tech', shelf='Monty Tech', title='Monty Tech finances', area='compare', order=90,
     groups=[
         ('Lunenburg’s pupils there', ['monty-tech-enrolment']),
-        ('What Lunenburg pays', ['monty-tech-assessment']),
+        ('What Lunenburg pays', ['monty-tech-assessment', 'monty-tech-history']),
         ('Where its money comes from', ['monty-tech-funding', 'monty-tech-revenue']),
         ('What it spends a pupil', ['monty-tech-per-pupil', 'monty-tech-line-by-line',
                                     'per-pupil-line-by-line', 'lunenburg-at-monty-tech-rate',
@@ -29,11 +29,14 @@ CATEGORY = dict(
 GENERATOR = 'build_monty_tech_topics.py'
 TOPIC_GENERATORS = {'monty-tech-enrolment': 'build_enrolment_topics.py',
                     'monty-tech-assessment': 'build_enrolment_topics.py',
-                    'monty-tech-funding': 'build_enrolment_topics.py'}
+                    'monty-tech-funding': 'build_enrolment_topics.py',
+                    'monty-tech-history': 'build_monty_tech_history.py'}
 TOPICS = {
     'monty-tech-enrolment': 'Monty Tech enrolment',
     'monty-tech-assessment': 'Monty Tech assessment',
     'monty-tech-funding': 'Monty Tech funding',
+    # TJ, 31 October 2026: when Lunenburg joined, and what it has paid every year since.
+    'monty-tech-history': 'Monty Tech history',
     'monty-tech-per-pupil': 'Monty Tech per pupil',
     'monty-tech-line-by-line': 'Monty Tech per-pupil breakdown',
     'lunenburg-at-monty-tech-rate': 'Monty Tech rate scenario',

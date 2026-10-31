@@ -248,6 +248,16 @@ def build():
             feeds['threads/%s.xml' % tid] = atom(
                 entry_id('feed', 'thread', tid), '%s — Lunenburg Budget Project' % t['label'],
                 t['question'], '/feeds/threads/%s.xml' % tid, '/threads/' + tid, window(mine))
+    # NEW REPORTS (TJ, 31 October 2026: "have it follow-able"): one entry per report, dated the
+    # day it first appeared, from the index build_reports_index.py writes. Its id is the URL, so a
+    # reader that has seen a report once never sees it again.
+    rec = json.load(open(os.path.join(ROOT, 'fy28', 'public', 'data', 'reports-recent.json'), encoding='utf-8'))
+    feeds['new-reports.xml'] = atom(
+        entry_id('feed', 'new-reports'), 'New reports — Lunenburg Budget Project',
+        'Every report and page this project publishes, the day it first appears.',
+        '/feeds/new-reports.xml', '/new-reports',
+        window([dict(seen=r['first_published'], id=entry_id('report', r['url']), title=r['title'],
+                     link=SITE + r['url'], summary=r.get('about') or '') for r in rec['reports']]))
     feeds['all.xml'] = atom(entry_id('feed', 'all'), 'Every board — Lunenburg Budget Project',
                             'Every change to every board, as the refresh sees it.',
                             '/feeds/all.xml', '/boards', window(list(events)))

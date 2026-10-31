@@ -262,8 +262,8 @@ Manager told the Finance Committee on 14 October 2021 that "a reduction in the M
 Assessment will cover that cost". A certified assessment can move downward mid-year.
 
 **`report_monty_tech` is not used here at all.** Its 70 rows are Monty Tech's own budget
-reprinted inside the FY2017 annual town report; its `column_meaning` is empty and its
-`status` is `no check`, so `v1` there is an ordinal — the first column of that page that held
+reprinted inside annual town reports; no column in it has an established meaning, so `v1`
+there is an ordinal — the first column of that page that held
 figures — and not a column name. Its label column has also absorbed the first printed figure.
 Nothing on this page reads it, and the generator refuses to run if it ever silently acquires
 a column meaning.

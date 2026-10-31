@@ -363,7 +363,7 @@ $1,114,569 more of special-fund spending is coded to a round function (2000, 000
 **6. A decision on record.** What the archive holds about a hold on spending:
 
 - *School Committee, 19 November 2025 — the recording at [0:13:45](https://www.youtube.com/watch?v=6PZ-J-oIAkQ&t=825s), our machine captions, not a record:* “last year there was a freeze, so we haven't had that yet”. A speaker answering, in November, whether FY26 spending was on track. The archive’s catalogue of the Town’s postings lists no minutes for this meeting, so the recording is the only record.
-- *School Committee, 7 October 2026 — the recording at [1:44:03](https://www.youtube.com/watch?v=kPZcnFd5COw&t=6243s), our machine captions, not a record:* “We were thrifty and we didn't spend every dime”. A speaker discussing what to do with the money left over. The archive’s catalogue of the Town’s postings lists no minutes for this meeting, so the recording is the only record.
+- *School Committee, 7 October 2026 — the recording at [1:44:03](https://www.youtube.com/watch?v=kPZcnFd5COw&t=6243s), our machine captions, not a record:* “We were thrifty and we didn't spend every dime”. A speaker discussing what to do with the money left over. The archive holds the Town’s minutes of this meeting.
 
 No posted minutes in the archive record a vote or a directive to freeze FY2026 spending; searched for *thrift*, *freeze*, *spending freeze*, *hold on spending*, *frugal* and *conservative* in School Committee, Finance Committee and Select Board documents. *Would settle it:* the general-fund journal by month — thrift would show as discretionary spending slowing late in the year against prior years.
 
@@ -405,7 +405,7 @@ Set beside the period-13 ledger — a statement is evidence of what was said, no
 
 The floor is below the July expectation and the ceiling above it, so the open purchase orders decide whether it holds. *Reading "expense accounts" as every non-salary line is ours; the minutes do not define it, and the statement was made more than two months before this run, so the two rows are not a test of each other.*
 
-The agendas of 2 September 2026 and 9 September 2026 carried "FY26 Year End Budget review". The archive’s catalogue of the Town’s postings lists no minutes for either meeting, so there is no written record here of what was said under that item.
+The agendas of 2 September 2026 and 9 September 2026 carried "FY26 Year End Budget review". The archive’s catalogue of the Town’s postings lists minutes for some for those meetings, so there is no written record here of what was said under that item.
 
 ---
 

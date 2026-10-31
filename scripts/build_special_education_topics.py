@@ -442,7 +442,10 @@ def build():
     # ------------------------------------------------ the circuit breaker
     cbs = {r['fy']: r for r in CB['series']}
     c26 = cbs[CB['last_fy']]
-    kpeak = max(CB['series'], key=lambda r: r['children'])
+    # Over the years DESE printed a count for. FY2023 is withheld in the file (`less than 6`),
+    # and a withheld count is a gap, not a zero and not a rank -- as build_special_education.py
+    # and build_serf_topics.py already treat it.
+    kpeak = max((r for r in CB['series'] if r['children'] is not None), key=lambda r: r['children'])
     if (kpeak['fy'], kpeak['children']) != (CO['cb_peak_students']['fy'],
                                             CO['cb_peak_students']['students']):
         fail('the two payloads disagree on the year most children were claimed')

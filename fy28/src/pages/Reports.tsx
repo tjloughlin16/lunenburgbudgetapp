@@ -1,4 +1,4 @@
-import { useNewReports, NewBadge, NEW_DAYS, useSpecialReports } from '../components/SiteMenu'
+import { useNewReports, NEW_DAYS, useSpecialReports } from '../components/SiteMenu'
 import { todayIso } from '../lib/meetings'
 import MANIFEST from '../data/agent-manifest.json'
 import { useEffect, useState } from 'react'
@@ -705,41 +705,17 @@ export function Reports() {
   )
 }
 
-/** NEW IN THE LAST NEW_DAYS -- the same list as the menu's strip, in full, with the line
- *  that says what each report is. It empties itself: see SiteMenu.useNewReports. */
+/** NEW IN THE LAST NEW_DAYS, as ONE LINE. TJ, 31 October 2026: "the 'new reports' at the top
+ *  of the reports page is too much. lets put new-reports as its own page." The list and its feed
+ *  are /new-reports (pages/NewReports.tsx); the subjects below are what readers came here for. */
 function NewReports() {
   const rows = useNewReports()
-  if (!rows.length) return null
   return (
-    <Section id="new" eyebrow={`First published in the last ${NEW_DAYS} days`} title="New reports">
-      {/* SIX, then the rest folded. A month of building can be two dozen reports, and the
-          subjects below are what most readers came to /reports for. */}
-      <NewGrid rows={rows.slice(0, 6)} />
-      {rows.length > 6 && (
-        <details className="mt-3">
-          <summary className="cursor-pointer text-[13.5px] font-semibold" style={{ color: 'var(--series-cost)' }}>
-            Show all {rows.length} new reports</summary>
-          <div className="mt-3"><NewGrid rows={rows.slice(6)} /></div>
-        </details>
-      )}
-    </Section>
-  )
-}
-
-function NewGrid({ rows }: { rows: ReturnType<typeof useNewReports> }) {
-  return (
-      <ul className="m-0 p-0 list-none grid gap-3 sm:grid-cols-2">
-        {rows.map(r => (
-          <li key={r.url}>
-            <a href={r.url} className="card block p-4 h-full transition-opacity hover:opacity-90 no-underline">
-              <span className="flex items-baseline justify-between gap-3">
-                <span className="text-[15.5px] font-bold leading-tight" style={{ color: 'var(--series-cost)' }}>{r.title} &rarr;</span>
-                <NewBadge age={r.age} />
-              </span>
-              <span className="block text-[13.5px] mt-1 leading-snug" style={{ color: 'var(--text-secondary)' }}>{r.about}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
+    <p id="new" className="text-[14px] mt-6" style={{ color: 'var(--text-secondary)' }}>
+      {rows.length ? <><span className="font-semibold" style={{ color: 'var(--text-primary)' }}>
+        {rows.length} new {rows.length === 1 ? 'report' : 'reports'}</span> in the last {NEW_DAYS} days. </> : null}
+      <a href="/new-reports" className="underline font-semibold" style={{ color: 'var(--series-cost)' }}>New reports &rarr;</a>
+      {' · '}<a href="/feeds/new-reports.xml" className="underline" style={{ color: 'var(--series-cost)' }}>follow them as a feed</a>
+    </p>
   )
 }

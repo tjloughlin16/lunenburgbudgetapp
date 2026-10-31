@@ -223,9 +223,9 @@ function NewStrip({ onPick, max = 5 }: { onPick?: () => void; max?: number }) {
           </li>
         ))}
         <li>
-          <Go to="reports" anchor="new" onClick={onPick} className="text-[13px] font-semibold"
+          <Go to="newreports" onClick={onPick} className="text-[13px] font-semibold"
             style={{ color: 'var(--series-cost)' }}>
-            {rows.length > max ? `All ${rows.length} new →` : 'All reports →'}
+            {rows.length > max ? `All ${rows.length} new →` : 'All new reports →'}
           </Go>
         </li>
       </ul>
