@@ -970,6 +970,10 @@ Do not write a new character-count test. Call `pdf_kind`.
 
 ### 13e. The raw is private. The public copy is ours. The decision is written down
 
+**WHAT IS SHOWN AND WHAT IS MASKED IS SETTLED in `notes/process/DATA-PRIVACY.md`. Read it before
+raising any privacy question.** Staff, vendors, providers, officials, MUNIS logins and everything
+in the annual reports are shown; children and families receiving services are masked.
+
 TJ, 4 October 2026, after a records-request delivery put one employee's number, start date,
 grade and salary into the public bucket -- whose lock refuses deletion unless it is
 deliberately lifted (see *Removing a document* below): *"we
