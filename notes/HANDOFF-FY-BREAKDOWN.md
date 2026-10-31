@@ -1,6 +1,24 @@
 # Handoff: one fiscal year, broken down -- why a surplus happened
 
-## NOW -- 30 October 2026, late. READ THIS FIRST; everything below is history
+## NOW -- 31 October 2026. READ THIS FIRST
+
+**State.** Committed on `main`, NOT pushed, NOT deployed. Nothing open from TJ: he accepted the
+four open questions below as they stand (keep the $5,000 floor, keep "over budget", free cash on
+hold, records request unsent).
+
+**Done 31 Oct:**
+- `24859c5b8` school receipts read the page read by eye (pages-read.csv) over the extract.
+- `4dad4fb63` receipts extractor fixed, with `--check` (details in the 30 Oct section below).
+- Usual year column on `/school-all-funds/budget-against-actual` (`bva-grid.tsx`):
+  - sorts by the median DOLLARS (it sorted by share, so $200 lines at 100% under came first);
+  - each cell has a strip: a dot per year (blue under, orange over), a bar from lowest to
+    highest, the median as a tick, zero dashed. Its own scale per row, always holding zero.
+    TJ asked for the range; "between X and Y" text was tried and he rejected it as too literal.
+
+**Next:** deploy when TJ asks (rule 10). Nothing else queued.
+
+## 30 October 2026, late. History
+
 
 **State.** Committed, pushed and deployed (see Deploy below). Nothing from this session is
 pending.

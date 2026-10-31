@@ -19,8 +19,9 @@ import { FLAG_TONE, type FlagKey } from './fy-flags'
 
 /** [miss text, flag letters, spent / voted (null: nothing voted), voted text, spent text] */
 type Cell = [string, string, number | null, string, string] | null
-/** [share in words, dollars, 'over' | 'under' | '' (leans that way by the rule), spent / voted] */
-type Usual = [string, string, '' | 'over' | 'under', number | null] | null
+/** [share in words, dollars, 'over' | 'under' | '' (leans that way by the rule), spent / voted,
+ *  dollars as a number (the sort), each year's miss in dollars, in year order] */
+type Usual = [string, string, '' | 'over' | 'under', number | null, number, number[]] | null
 type Row = { name: string; account: string; cat: string; c: Cell[]; s: number; nf: number; u: Usual }
 type Col = { fy: string; src: 'workbook' | 'ledger'; href: string | null; n: Record<FlagKey, string>; lines: string }
 type Data = { years: Col[]; rows: Row[]; flags: Record<FlagKey, string>; text: Record<string, string> & { mark: Record<'u' | 'o' | 'r', string> } }
@@ -37,6 +38,26 @@ function shade(r: number | null): string | undefined {
   if (Math.abs(f) < 0.03) return undefined
   const pct = Math.round(8 + Math.abs(f) * 40)
   return `color-mix(in srgb, ${f > 0 ? 'var(--thread-1)' : 'var(--thread-2)'} ${pct}%, transparent)`
+}
+
+/** HOW FAR APART A LINE'S YEARS ARE (TJ, 31 October 2026: the usual year needs its range). A
+ *  strip one text line tall: zero as a rule, a bar from the lowest year to the highest, a dot
+ *  each year, the median as a tick. Its own scale, always holding zero -- the dollars beside it
+ *  carry the size; the strip carries the shape: tight on one side, or straddling the vote. */
+function Strip({ xs, med, tips }: { xs: number[]; med: number; tips: string[] }) {
+  const W = 84, H = 12, P = 3
+  const lo = Math.min(0, ...xs), hi = Math.max(0, ...xs)
+  const x = (v: number) => P + (hi === lo ? 0.5 : (v - lo) / (hi - lo)) * (W - 2 * P)
+  const tone = (v: number) => v > 0 ? 'var(--thread-1)' : v < 0 ? 'var(--thread-2)' : 'var(--text-muted)'
+  return (
+    <svg width={W} height={H} className="block ml-auto mt-0.5" aria-hidden="true">
+      <line x1={x(0)} x2={x(0)} y1={0} y2={H} stroke="var(--text-muted)" strokeWidth={1} strokeDasharray="2 2" opacity={0.6} />
+      <line x1={x(Math.min(...xs))} x2={x(Math.max(...xs))} y1={H / 2} y2={H / 2}
+        stroke="var(--grid)" strokeWidth={3} strokeLinecap="round" />
+      {xs.map((v, i) => <circle key={i} cx={x(v)} cy={H / 2} r={2} fill={tone(v)} opacity={0.75}>
+        <title>{tips[i]}</title></circle>)}
+      <line x1={x(med)} x2={x(med)} y1={1} y2={H - 1} stroke="var(--text-primary)" strokeWidth={2} />
+    </svg>)
 }
 
 export default function BvaGrid({ data, alt }: CustomProps) {
@@ -56,7 +77,7 @@ export default function BvaGrid({ data, alt }: CustomProps) {
       : k === 'cat' ? sort.dir * a.cat.localeCompare(b.cat) || b.s - a.s
         : k === 'nf' ? sort.dir * (a.nf - b.nf) || b.s - a.s
           : k === 's' ? sort.dir * (a.s - b.s)
-            : k === 'u' ? ((a.u?.[3] == null ? 1 : 0) - (b.u?.[3] == null ? 1 : 0)) || sort.dir * ((a.u?.[3] ?? 1) - (b.u?.[3] ?? 1))
+            : k === 'u' ? ((a.u ? 0 : 1) - (b.u ? 0 : 1)) || sort.dir * ((a.u?.[4] ?? 0) - (b.u?.[4] ?? 0))
             : ((a.c[k] ? 0 : 1) - (b.c[k] ? 0 : 1)) || sort.dir * ((a.c[k]?.[2] ?? 1) - (b.c[k]?.[2] ?? 1)))
   }, [d, q, only, sort])
   const shown = all || q ? rows : rows.slice(0, FIRST)
@@ -125,6 +146,8 @@ export default function BvaGrid({ data, alt }: CustomProps) {
                     {r.u ? <>
                       <span className={r.u[2] ? 'font-semibold' : undefined}>{r.u[1]}</span>
                       <span className="block text-[10.5px]" style={muted}>{r.u[2] ? (r.u[2] === 'over' ? t.usual_over : t.usual_under) : r.u[0]}</span>
+                      <Strip xs={r.u[5]} med={r.u[4]}
+                        tips={r.c.flatMap((c, i) => c ? [`${d.years[i].fy} · ${c[0]}`] : [])} />
                     </> : <span style={muted}>·</span>}</td>
                   {r.c.map((c, i) => (
                     <td key={i} className={`px-1.5 py-1 text-right whitespace-nowrap ${i === firstLedger ? 'border-l' : ''}`}

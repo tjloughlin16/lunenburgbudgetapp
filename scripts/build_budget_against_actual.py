@@ -283,11 +283,13 @@ def usual(xs):
     if len(xs) < TREND_YEARS:
         return None
     sh = [x['r']['gf_spent'] / x['r']['voted'] - 1 for x in xs if x['r']['voted'] > 0]
-    md = median([x['r']['gf_spent'] - x['r']['voted'] for x in xs])
+    misses = [x['r']['gf_spent'] - x['r']['voted'] for x in xs]
+    md = median(misses)
     mp = median(sh) if sh else None
     o = (mp is not None and mp >= TREND_SHARE and md >= FLOOR) or md >= TREND_DOLLARS
     u = (mp is not None and mp <= -TREND_SHARE and md <= -FLOOR) or md <= -TREND_DOLLARS
-    return dict(share=mp, dollars=md, years=len(xs), way='over' if o and not u else 'under' if u and not o else '')
+    return dict(share=mp, dollars=md, years=len(xs), misses=misses,
+                way='over' if o and not u else 'under' if u and not o else '')
 
 
 def grid(T, JL, WL, tied):
@@ -325,9 +327,11 @@ def grid(T, JL, WL, tied):
         if us:
             u = [T.dpct(fl(us['share']) * 100, 0) if us['share'] is not None else '',
                  short_usd(T, us['dollars']), us['way'],
-                 round(fl(us['share']) + 1, 3) if us['share'] is not None else None]
+                 round(fl(us['share']) + 1, 3) if us['share'] is not None else None,
+                 round(fl(us['dollars'])), [round(fl(m)) for m in us['misses']]]
             if us['way']:
-                trend.append(dict(name=v['names'][last], account=a, **us))
+                trend.append(dict(name=v['names'][last], account=a,
+                                  **{k: w for k, w in us.items() if k != 'misses'}))
         out.append(dict(name=T.lit(v['names'][last]), account=T.lit(a), cat=S.CAT_LABEL[v['cat'][last]],
                         c=cells, s=round(fl(tot)), nf=nf, u=u))
     out.sort(key=lambda r: (-r['s'], r['name']))
