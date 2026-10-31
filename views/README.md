@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**703 of 5504 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**709 of 5662 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **4801 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **4953 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -45,10 +45,10 @@ documents under wrong years. Every one of them is reachable through `by-group/`.
 | FY21 | 17 |
 | FY22 | 22 |
 | FY23 | 45 |
-| FY24 | 90 |
-| FY25 | 120 |
-| FY26 | 162 |
-| FY27 | 291 |
+| FY24 | 92 |
+| FY25 | 121 |
+| FY26 | 163 |
+| FY27 | 293 |
 | FY28 | 10 |
 | FY29 | 3 |
 | FY30 | 1 |
@@ -71,6 +71,9 @@ Listed so this view cannot look more complete than it is.
 - `analyses/charts/board-composition-where.svg` — Where the town’s seats are, by body
 - `analyses/charts/department-budgets-index.svg` — Chart: town and school starting budgets, indexed to FY2010
 - `analyses/charts/department-budgets-pull.svg` — Chart: each group’s pull on the gap
+- `analyses/charts/historical-population.svg` — Population, as the reports print it
+- `analyses/charts/historical-rosters.svg` — Names printed in the school staff rosters
+- `analyses/charts/historical-tax-rate.svg` — The tax rate on the front of each annual report
 - `analyses/charts/sitting-on-money-balances.svg` — Chart: what each pot held at each 30 June
 - `analyses/charts/sitting-on-money-school.svg` — Chart: the schools’ fourteen funds by kind, FY2011-FY2026
 - `analyses/charts/sitting-on-money-turnback.svg` — Chart: unspent appropriations at the close, town and schools
@@ -120,6 +123,7 @@ Listed so this view cannot look more complete than it is.
 - `analyses/department-budgets.md` — The town departments and the schools, budget by budget, FY2010–FY2025
 - `analyses/free-cash.md` — Free cash: is Lunenburg hoarding, or rebuilding?
 - `analyses/hiring-here-or-placing-there.md` — Hiring here instead of placing there
+- `analyses/historical-report.md` — Lunenburg Historical Report: what sixty-seven annual reports say
 - `analyses/monty-tech.md` — The Monty Tech assessment — the school bill nobody in Lunenburg votes on
 - `analyses/open-seats.md` — Open seats: the town boards a resident could join
 - `analyses/peer-districts.md` — What other districts did
@@ -223,6 +227,10 @@ Listed so this view cannot look more complete than it is.
 - `correspondence/2026-10-21-track-and-field-presentation-superintendent-select-board-2026-10-20.pdf` — The Superintendent’s track and field request
 - `correspondence/2026-10-22-special-education-funding-finance-committee.md` — How this reached us
 - `correspondence/2026-10-22-special-education-funding-superintendent-finance-committee.pptx` — How special education funding flows
+- `correspondence/2026-10-26-oml-response-school-committee-counsel.md` — How this reached us
+- `correspondence/2026-10-26-oml-response-school-committee-counsel.pdf` — Response to the OML complaint
+- `correspondence/2026-10-27-2000-annual-town-report-select-board-chair.pdf` — Lunenburg Town Report 2000
+- `correspondence/2026-10-27-2000-annual-town-report.md` — How this reached us
 - `data/PROVENANCE-annual-report-receipts.md` — Where the receipts came from
 - `data/PROVENANCE-balance-sheet.md` — Why the balance sheet is read rather than OCR’d
 - `data/PROVENANCE-debt-tables.md` — Where both debt tables came from, and every page that refused
@@ -353,6 +361,7 @@ Listed so this view cannot look more complete than it is.
 - `data/fund-1301-cash-journal.csv` — The athletics revolving fund’s cashbook, three years
 - `data/fund-balances-fincom.csv` — Special revenue, Chapter 90 and trust fund balances from the Finance Committee’s files
 - `data/fund-owners.csv` — The account registry: every accounting measure the town prints, and who owns it
+- `data/fy-signatures.csv` — How each school fiscal year began and ended, as announced
 - `data/gl-history.csv` — Every general fund account, budget and actual, FY2010–FY2025
 - `data/grant-watch-state.csv` — What is new from DESE: every grant and award list we have seen, and when
 - `data/gross-wages-refused.csv` — Payroll pages that would not read, and why each refused
@@ -364,6 +373,7 @@ Listed so this view cannot look more complete than it is.
 - `data/ingest-plan.csv` — The plan for the annual-report backlog, in batches
 - `data/j1-unreadable.csv` — Trust fund pages that could not be read reliably
 - `data/job-posting-owners.csv` — Which board or department each job posting is linked from, and why
+- `data/keystone-tuition-rates.csv` — Keystone Collaborative tuition rates, as printed, FY2024–FY2027
 - `data/line-history-coverage.csv` — What the line reader could and could not read, document by document
 - `data/line-history-disagreements.csv` — Where two documents state the same budget line differently
 - `data/line-history.csv` — Every budget line, budget and actual, year by year
@@ -426,38 +436,28 @@ Listed so this view cannot look more complete than it is.
 - `data/recording-minutes-policy.csv` — Which boards TJ has approved minutes for, from when, in what order
 - `data/redactions.csv` — What was redacted or withheld, and why
 - `data/refresh-runs.csv` — Every daily refresh, timed
+- `data/report-agency-funds.csv` — Annual-report extract: agency funds
 - `data/report-anomalies.csv` — What looks wrong in the extracts, and where to look
 - `data/report-appropriations-supplement-refused.csv` — Appropriation programs whose lines do not sum to their own subtotal
 - `data/report-appropriations-supplement.csv` — Appropriation lines from the pages the main extract could not take whole
 - `data/report-appropriations.csv` — The general fund appropriations, both tables, FY2011–FY2025
+- `data/report-auditors-cash-schedule.csv` — Annual-report extract: auditors cash schedule
+- `data/report-capital-project-costs.csv` — Annual-report extract: capital project costs
 - `data/report-capital-projects.csv` — Capital project authorisations
+- `data/report-cash-management.csv` — Annual-report extract: cash management
+- `data/report-classification-plan.csv` — Annual-report extract: classification plan
+- `data/report-committee-income-expenses.csv` — Annual-report extract: committee income expenses
 - `data/report-debt.csv` — Debt outstanding, issued and retired
 - `data/report-dept-activity.csv` — What each department reports doing
 - `data/report-elections.csv` — The vote, by candidate and precinct
+- `data/report-energy-use.csv` — Annual-report extract: energy use
 - `data/report-enrollment-mcas.csv` — Enrollment and MCAS results
+- `data/report-expenditure-history.csv` — Annual-report extract: expenditure history
+- `data/report-expenditure-shares.csv` — Annual-report extract: expenditure shares
+- `data/report-fee-schedule.csv` — Annual-report extract: fee schedule
 - `data/report-filing.csv` — Which bodies file an annual report, and which say they did not
+- `data/report-financial-performance.csv` — Annual-report extract: financial performance
+- `data/report-fund-balance-sheets.csv` — Annual-report extract: fund balance sheets
 - `data/report-gross-wages.csv` — Gross wages paid, by employee
+- `data/report-highway-accounts.csv` — Annual-report extract: highway accounts
 - `data/report-index.csv` — Every department the town lists, and where its report is
-- `data/report-monty-tech.csv` — Montachusett Regional assessment and enrollment
-- `data/report-officials.csv` — Who held which town office
-- `data/report-signatures.csv` — Who signed each department’s report — the head of every body, by year
-- `data/report-trust-funds.csv` — Trust and stabilisation funds
-- `data/report-valuation.csv` — Valuation and tax rate history
-- `data/report-vital-records.csv` — Births, marriages and deaths
-- `data/review-queue.csv` — Structured reads of the town's minutes flagged for a person to check
-- `data/role-classification.csv` — What kind of job each printed roster title is
-- `data/roster-completeness.csv` — How many of a body’s people the org chart holds, against the town’s own count
-- `data/salary-schedule-refused.csv` — Wage-grid rates that nothing confirms, and the rows that came up short
-- `data/salary-schedule.csv` — The town’s wage grid — grade by step, as the annual reports print it
-- `data/school-enrollment-lps-staff.csv` — Enrollment, FY2016–FY2025, as the staffing workbook prints it
-- `data/school-field-maintenance.csv` — What the schools say maintaining the fields and grounds costs, FY2024
-- `data/school-insurance-tiers.csv` — School health insurance subscribers by plan and tier, as totals
-- `data/school-job-posting-changes.csv` — Every change we saw to a district job posting, one row per event
-- `data/school-job-postings.csv` — The district’s job postings, as a history: what was listed, and when it left
-- `data/school-staff-directory.csv` — Who works for the DISTRICT today, off the six sheets the schools publish
-- `data/school-staff-fte.csv` — District staff FTE by DESE job code, FY2016–FY2025
-- `data/school-staff-shared.csv` — The people more than one Lunenburg school lists as its own
-- `data/school-transfer-sheet-lines.csv` — Every account line on the district’s budget transfer sheets
-- `data/search-affinity.csv` — Which words pin which page or document at the top of a search
-- `data/search-vocabulary.csv` — The site’s own vocabulary, for the search box’s suggestions
-- `data/ski-coop.csv` — The ski co-op invoice, line by line and town by town

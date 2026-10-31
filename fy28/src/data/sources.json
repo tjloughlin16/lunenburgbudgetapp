@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-30",
+ "generated": "2026-10-31",
  "origins": [
   {
    "id": "school",
@@ -60,11 +60,11 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 51 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 81 of them link back to the exact file the publisher put up, and 59 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 90 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 51 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 81 of them link back to the exact file the publisher put up, and 68 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 90 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 4920 of these 4936 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 4925 of these 4941 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -4006,7 +4006,7 @@
      "stars": 2,
      "what": "Written by us, from the snapshots of Lunenburg Public Schools’ own SchoolSpring account (employer 11047) that `fetch_school_job_postings.py` takes daily, one row per posting keyed on SchoolSpring’s job id. Post, display and closing dates are the publisher’s. `first_seen`, `last_seen` and `removed_seen` ARE OURS: they are the days we looked, bounded by the fetch cadence, never the day a post went up or came down. A REMOVAL IS NOT A HIRE — a posting leaves when it is filled, closes, is withdrawn or is reposted, and nothing here says which. Pay is printed only where the district shows it.",
      "kind": "Data",
-     "bytes": 11543,
+     "bytes": 11544,
      "url": "/docs/data/school-job-postings.csv",
      "count": 23,
      "unit": "rows",
@@ -7728,9 +7728,9 @@
      "stars": 2,
      "what": "The question underneath the one above. A link can still open and serve a different document — a Drive file can be replaced in place without its URL changing, and nothing in a link check would notice. So every address is fetched and the result compared to our copy by sha256. It also separates the ways bytes can differ without the document differing: a Google Doc is re-zipped on every export, and a PDF can be re-saved with a heading’s line-break in a new place. Only one of those is a change. Rebuild with scripts/verify_source_copies.py.",
      "kind": "Data",
-     "bytes": 219259,
+     "bytes": 259330,
      "url": "/docs/data/copy-status.csv",
-     "count": 682,
+     "count": 799,
      "unit": "rows",
      "textUrl": "/docs/data/copy-status.csv"
     },
@@ -7745,6 +7745,18 @@
      "count": 1035,
      "unit": "rows",
      "textUrl": "/docs/data/department-budgets-fincom-fy27.csv"
+    },
+    {
+     "path": "data/link-status.csv",
+     "title": "Whether each source document is still public",
+     "stars": 2,
+     "what": "For every archived document that records where its publisher put it, whether that address still opens. On 29 August 2026 it mostly did not: 57 of 184 returned a Google sign-in wall, every one of them a Drive or Docs link, while the town’s own web server answered 81 of 81. The district was asked to reopen them and did — on 31 August the same 187 came back 186 open. Both readings are the archive’s reason for existing, measured. Rebuild with scripts/check_source_links.py.",
+     "kind": "Data",
+     "bytes": 176110,
+     "url": "/docs/data/link-status.csv",
+     "count": 936,
+     "unit": "rows",
+     "textUrl": "/docs/data/link-status.csv"
     },
     {
      "path": "data/fy20-q4-reports.csv",
@@ -7781,18 +7793,6 @@
      "count": 499,
      "unit": "rows",
      "textUrl": "/docs/data/capital-requests.csv"
-    },
-    {
-     "path": "data/link-status.csv",
-     "title": "Whether each source document is still public",
-     "stars": 2,
-     "what": "For every archived document that records where its publisher put it, whether that address still opens. On 29 August 2026 it mostly did not: 57 of 184 returned a Google sign-in wall, every one of them a Drive or Docs link, while the town’s own web server answered 81 of 81. The district was asked to reopen them and did — on 31 August the same 187 came back 186 open. Both readings are the archive’s reason for existing, measured. Rebuild with scripts/check_source_links.py.",
-     "kind": "Data",
-     "bytes": 133588,
-     "url": "/docs/data/link-status.csv",
-     "count": 736,
-     "unit": "rows",
-     "textUrl": "/docs/data/link-status.csv"
     },
     {
      "path": "data/warrant-articles-fincom.csv",
@@ -8253,6 +8253,18 @@
      "textUrl": "/docs/data/budget-seasons/fy28.csv"
     },
     {
+     "path": "data/source-checks.csv",
+     "title": "Every time the refresh looked at a slow source",
+     "stars": 2,
+     "what": "Appended by the daily refresh, one row per look: the source, the day, and whether the look succeeded. A source is due again when its cadence has passed since its last successful look, so a failed one is retried the next morning. Written by scripts/refresh.py through scripts/source_cadence.py.",
+     "kind": "Data",
+     "bytes": 2527,
+     "url": "/docs/data/source-checks.csv",
+     "count": 70,
+     "unit": "rows",
+     "textUrl": "/docs/data/source-checks.csv"
+    },
+    {
      "path": "data/ambulance-receipts.csv",
      "title": "Ambulance receipts, FY2014-FY2025",
      "stars": 2,
@@ -8263,18 +8275,6 @@
      "count": 12,
      "unit": "rows",
      "textUrl": "/docs/data/ambulance-receipts.csv"
-    },
-    {
-     "path": "data/source-checks.csv",
-     "title": "Every time the refresh looked at a slow source",
-     "stars": 2,
-     "what": "Appended by the daily refresh, one row per look: the source, the day, and whether the look succeeded. A source is due again when its cadence has passed since its last successful look, so a failed one is retried the next morning. Written by scripts/refresh.py through scripts/source_cadence.py.",
-     "kind": "Data",
-     "bytes": 2164,
-     "url": "/docs/data/source-checks.csv",
-     "count": 57,
-     "unit": "rows",
-     "textUrl": "/docs/data/source-checks.csv"
     },
     {
      "path": "data/athletics-roster-counts.csv",
@@ -8306,9 +8306,9 @@
      "stars": 2,
      "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1513,
+     "bytes": 1544,
      "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 46,
+     "count": 47,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
@@ -30272,7 +30272,7 @@
    "id": "state-law",
    "origin": "state-law",
    "title": "The Open Meeting Law, as the State publishes it",
-   "blurb": "The statute (G.L. c.30A §§18-25), its regulations (940 CMR 29.00), the Attorney General’s guide, FAQ and checklists, and every determination letter the AG has issued since 2010 — 2935 documents, each the publisher’s own file. Held so that a quotation of the law can be checked against the law.",
+   "blurb": "The statute (G.L. c.30A §§18-25), its regulations (940 CMR 29.00), the Attorney General’s guide, FAQ and checklists, and every determination letter the AG has issued since 2010 — 2940 documents, each the publisher’s own file. Held so that a quotation of the law can be checked against the law.",
    "items": [
     {
      "path": "state-law/2026-10-14/603cmr41.html.html",
@@ -61174,6 +61174,61 @@
      "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AXXayGnEtvh5kwzXqpgI7BKwNOH%C3%81eqRJRkId4UysymmaXv%C3%89OEqe8JqQp2X0bxsBns9UtsX%C3%81qrtEg64d4lVgU08k%3D/?ViewerMode=PDF&ForceDownload=true"
     },
     {
+     "path": "state-law/2026-10-31/determinations/determination-10-26-2026-oml-2026-135-provincetown-select-board.pdf",
+     "title": "AG determination OML 2026-135, 10/26/2026, Provincetown Select Board (portal Violation field: YES)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "PDF",
+     "bytes": 310519,
+     "url": "/docs/state-law/2026-10-31/determinations/determination-10-26-2026-oml-2026-135-provincetown-select-board.pdf",
+     "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2026-135.txt",
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AatpRsOWnUd2KMcdNT1Xr6Z%C3%81Rw6GMceLZ7Tv83i60ovP%C3%81IqfC1NbA%C3%81481a6IagdHn8Ry6zzMkKmx7KhPfLO9Kos%3D/?ViewerMode=PDF&ForceDownload=true"
+    },
+    {
+     "path": "state-law/2026-10-31/determinations/determination-10-26-2026-oml-2026-136-southborough-planning-board.pdf",
+     "title": "AG determination OML 2026-136, 10/26/2026, Southborough Planning Board (portal Violation field: YES)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "PDF",
+     "bytes": 209432,
+     "url": "/docs/state-law/2026-10-31/determinations/determination-10-26-2026-oml-2026-136-southborough-planning-board.pdf",
+     "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2026-136.txt",
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AfHPAeo7GI9sprW7k7%C3%81CmxijNNntfOkOcH%C3%89lUY%C3%89lWY6ph2Nl1oQ5BginrLpf7PENvzcxUNCqZCTw4u8bOCM8mhc%3D/?ViewerMode=PDF&ForceDownload=true"
+    },
+    {
+     "path": "state-law/2026-10-31/determinations/determination-10-26-2026-oml-2026-137-hopkinton-library-board-of-trustees.pdf",
+     "title": "AG determination OML 2026-137, 10/26/2026, Hopkinton Library Board Of Trustees (portal Violation field: YES)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "PDF",
+     "bytes": 180550,
+     "url": "/docs/state-law/2026-10-31/determinations/determination-10-26-2026-oml-2026-137-hopkinton-library-board-of-trustees.pdf",
+     "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2026-137.txt",
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AboRljlzuXMleNcc0uU9Qu8JPhsGzhXmTCRRjlDn8PrcDBqwt%C3%892mpgVCAOEfNl%C3%89ohCligpamMIHExPM6RPdLJt4%3D/?ViewerMode=PDF&ForceDownload=true"
+    },
+    {
+     "path": "state-law/2026-10-31/determinations/determination-10-27-2026-oml-2026-138-medfield-housing-authority-board-of-commissioners.pdf",
+     "title": "AG determination OML 2026-138, 10/27/2026, Medfield Housing Authority Board Of Commissioners (portal Violation field: YES)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "PDF",
+     "bytes": 265202,
+     "url": "/docs/state-law/2026-10-31/determinations/determination-10-27-2026-oml-2026-138-medfield-housing-authority-board-of-commissioners.pdf",
+     "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2026-138.txt",
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AaWGsnd1EiYqC%C3%81sw4Jo%C3%8195Hz2tXhxVcPS1eKQMFZrCpCm%C3%89q0WCLi5HTgaWr08IKE%C3%81nIf04n7QTyyR5iYMck72bg%3D/?ViewerMode=PDF&ForceDownload=true"
+    },
+    {
+     "path": "state-law/2026-10-31/determinations/determination-10-27-2026-oml-2026-139-townsend-selectboard.pdf",
+     "title": "AG determination OML 2026-139, 10/27/2026, Townsend Selectboard (portal Violation field: NO)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "PDF",
+     "bytes": 190304,
+     "url": "/docs/state-law/2026-10-31/determinations/determination-10-27-2026-oml-2026-139-townsend-selectboard.pdf",
+     "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2026-139.txt",
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AWv%C3%81bifpnBznBat7%C3%81OWqoyygYwnhJXNR9Hz11GnysS29OKZ9RGKyx%C3%89YzNY8W%C3%89PSKNugLC9Q%C3%891lQJIlGk7BGmIjw%3D/?ViewerMode=PDF&ForceDownload=true"
+    },
+    {
      "path": "state-law/2026-10-09/determinations/determination-1-22-2026-oml-2026-14-somerset-school-committee-redistricting-subcommittee.pdf",
      "title": "AG determination OML 2026-14, 1/22/2026, Somerset School Committee Redistricting Subcommittee (portal Violation field: NO)",
      "stars": 1,
@@ -62782,9 +62837,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 5657,
+  "documents": 5662,
   "groups": 31,
-  "bytes": 7252750493,
+  "bytes": 7253989488,
   "loadBearing": 208
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

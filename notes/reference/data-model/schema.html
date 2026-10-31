@@ -225,7 +225,7 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
 <div class="metrics">
   <div class="metric"><div class="v">191</div><div class="l">tables</div></div>
   <div class="metric"><div class="v">16</div><div class="l">views</div></div>
-  <div class="metric"><div class="v">342,281</div><div class="l">rows</div></div>
+  <div class="metric"><div class="v">342,286</div><div class="l">rows</div></div>
   <div class="metric"><div class="v">3205</div><div class="l">columns</div></div>
   <div class="metric"><div class="v">79%</div><div class="l">columns described</div></div>
 </div>
@@ -5414,7 +5414,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 </details>
-<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>12 tables &middot; 14,373 rows</span></summary>
+<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>12 tables &middot; 14,378 rows</span></summary>
 <p class="cap">Which document a figure came from, what has been read, and what these tables mean.</p>
 <p class="tierhead"><b>Tier 2 · categories</b><span>whether a category — guidance, special education, transport — is over</span></p>
 <details class="t"><summary><span class="srow"><code>build_inputs</code> <span class="tag scope sarchive">archive</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">provenance</span> <span class="n">178 rows</span><button class="open" data-t="build_inputs" data-q="SELECT count(*) AS files FROM build_inputs">Query table</button></span><span class="gr">one row per CSV file this database was built from</span></summary>
@@ -5440,7 +5440,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 <p class="cap sm">First 2 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>key</th><th>value</th></tr>
-<tr><td>built_at</td><td>2026-10-30T15:34:00Z</td></tr>
+<tr><td>built_at</td><td>2026-10-31T11:19:57Z</td></tr>
 <tr><td>inputs</td><td>178</td></tr>
 </table></div>
 </details>
@@ -5560,7 +5560,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>report-monty-tech</td><td>FY2017</td><td>70</td><td>142,143</td><td>2</td><td>0</td><td>0</td><td>4124-fy-2017-annual-town-report.pdf</td><td>FY 2017 Annual Town Report</td><td>https://www.lunenburgma.gov/DocumentCenter/…</td><td>4c6fbf70d0aff247bc2e18914ec1b0dcfddeeb33da8…</td><td>37102314</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>document</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">5,370 rows</span><button class="open" data-t="document">Query table</button></span><span class="gr">one row per source document</span></summary>
+<details class="t"><summary><span class="srow"><code>document</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">5,375 rows</span><button class="open" data-t="document">Query table</button></span><span class="gr">one row per source document</span></summary>
 <p class="ans">One row per source document: its archive path, how it reached us, its publisher URL, whether that link still opens (<code>link_state</code>), whether our copy still matches the publisher&#x27;s (<code>copy_state</code>), and both checksums. Also which columns a workbook HIDES from a reader.</p>
 <p class="warn"><code>link_state</code> says whether the publisher&#x27;s copy still opens; <code>copy_state</code> whether it still matches ours.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -5579,8 +5579,8 @@ to $325</td><td>quoted in source</td></tr>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>doc_id</th><th>path</th><th>source_type</th><th>basis</th><th>ledger_at</th><th>hidden_columns</th><th>url</th><th>link_state</th><th>copy_state</th><th>remote_sha256</th><th>local_sha256</th></tr>
 <tr><td>sources/district-budget/docs/sc-meetings/20…</td><td>sources/district-budget/docs/sc-meetings/20…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>https://drive.google.com/file/d/10TME6PtPRe…</td><td>200</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>886d9f5e5281f9df10015310ff637eda18a4b9c3840…</td></tr>
-<tr><td>sources/district-budget/docs/personnel/staf…</td><td>sources/district-budget/docs/personnel/staf…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>https://docs.google.com/spreadsheets/d/e/2P…</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>63e750f9f64742417a2763f650e63e0514ff57eb2af…</td></tr>
-<tr><td>sources/town-ledgers/expenses/glytdbud-expe…</td><td>sources/town-ledgers/expenses/glytdbud-expe…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>449853bc842b24947643d594132896567bdc0e654e3…</td></tr>
+<tr><td>sources/district-budget/docs/personnel/staf…</td><td>sources/district-budget/docs/personnel/staf…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>https://docs.google.com/spreadsheets/d/e/2P…</td><td>200</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>63e750f9f64742417a2763f650e63e0514ff57eb2af…</td></tr>
+<tr><td>sources/town-ledgers/expenses/glytdbud-expe…</td><td>sources/town-ledgers/expenses/glytdbud-expe…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>745e180a33fa0fe8a0b801186b9d5201790dead640b…</td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>extraction_plan</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">555 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="extraction_plan">Query table</button></span><span class="gr">one row per planned extract</span></summary>
@@ -6658,7 +6658,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') {
 </script>
 
 <p class="gen">Generated by <code>scripts/build_schema_page.py</code> from the live
-database on 2026-10-30. Do not edit — run the script. The CSVs in <code>sources/data/</code>
+database on 2026-10-31. Do not edit — run the script. The CSVs in <code>sources/data/</code>
 are the source of truth; this database is a derived read model, rebuilt from scratch on
 every run.</p>
 </div>
