@@ -30,7 +30,7 @@ pending.
    qualify, mostly $300 supply lines. Keep it?
 2. The axis says "over budget" where TJ wrote "overbudgeted". On this page, *Overbudgeted* is
    the O flag and means the reverse (voted more than spent). Confirm the wording.
-3. A free cash section on the Town general fund page? Still undecided.
+3. Free cash: TJ wants it, but later. It is designed in `notes/PLAN-FREE-CASH-SECTION.md`, ON HOLD.
 4. The records request (`notes/outbound/drafts/RECORDS-REQUEST-FY2026-CLOSE.md`) is unsent.
    The Town Manager's email address is not in the repo, and her Town directory page lists none.
    `jwarren@lunenburgma.gov` is unconfirmed; the "To" line on the 4 Sep request will settle it.
