@@ -47,12 +47,16 @@ THE FOUR CHECKS, AND WHY THEY ARE INDEPENDENT
 A YEAR THAT DOES NOT RECONCILE IS NOT WRITTEN DOWN HERE. `append_balance_sheet_year.py`
 refuses it.
 
-ROUNDING IS A PROPERTY OF THE PAGE, NOT A TOLERANCE WE GRANT
+THE $1 ROUNDING ALLOWANCE, AND HOW IT IS LABELLED
 
-The GENERAL LONG-TERM DEBT column is printed to the DOLLAR in its total rows while its
-detail rows sometimes carry cents (FY2022: detail $38,749,084.72, total $38,749,085). That
-is the town's rounding, so that column alone is checked to within $1. Every other column is
-checked to the cent. The allowance is named and confined rather than applied everywhere.
+TJ approved a $1 rounding allowance on printed totals and row identities on 29-30 October 2026;
+`notes/process/TOLERANCES.md` is the policy. Here it applies to the column footing and the
+identity checks: a difference of a cent or less is `ok`, a difference up to $1.00 is `ok~` and
+prints `within $1 rounding tolerance` (validate_totals.TOLERANCE_PHRASE, the same words every
+other reader uses), and it is counted separately at the end. Many of these sheets print whole
+dollars in every cell, and some print the GENERAL LONG-TERM DEBT totals to the dollar while
+the detail rows carry cents (FY2022: detail $38,749,084.72, total $38,749,085). The allowance
+is not applied to the cross-document check, which compares two different schedules.
 """
 
 import csv
@@ -72,7 +76,9 @@ SECTION_TOTAL = {
     'fund_balances': 'TOTAL FUND EQUITY',
 }
 CENT = 0.005
-DOLLAR = 1.0            # GENERAL LONG-TERM DEBT only; see the docstring.
+DOLLAR = 1.0            # the approved rounding allowance; notes/process/TOLERANCES.md
+TOLERANCE_PHRASE = 'within $1 rounding tolerance'   # == validate_totals.TOLERANCE_PHRASE
+WITHIN = [0]            # checks that closed only inside the allowance, counted for the summary
 
 # PRINTED SHEETS THAT DO NOT BALANCE THEMSELVES.
 #
@@ -107,7 +113,17 @@ def blank(v):
 
 
 def tol(fund):
-    return DOLLAR if fund == 'long_term_debt' else CENT
+    return DOLLAR
+
+
+def mark(d):
+    """`ok  ` to the cent, `ok~ ` inside the $1 allowance (counted), `FAIL` beyond it."""
+    if abs(d) <= CENT:
+        return 'ok  ', ''
+    if abs(d) <= DOLLAR + 1e-9:
+        WITHIN[0] += 1
+        return 'ok~ ', '  ' + TOLERANCE_PHRASE
+    return 'FAIL', ''
 
 
 def load():
@@ -150,10 +166,10 @@ def check_edition(ed, rows, printed, special):
                 continue
             want = num(p['amount'])
             d = got - want
-            ok = abs(d) <= tol(fund)
-            fails += 0 if ok else 1
-            print(f'  {"ok  " if ok else "FAIL"}  {label:29} {fund:16} '
-                  f'{got:>16,.2f}  printed {want:>16,.2f}  {d:+,.2f}')
+            m, why = mark(d)
+            fails += m == 'FAIL'
+            print(f'  {m}  {label:29} {fund:16} '
+                  f'{got:>16,.2f}  printed {want:>16,.2f}  {d:+,.2f}{why}')
 
     # 2. THE IDENTITY THE TABLE STATES, per fund.
     print('  --    the identity: TOTAL LIABILITIES + TOTAL FUND EQUITY = TOTAL ASSETS')
@@ -171,17 +187,21 @@ def check_edition(ed, rows, printed, special):
                   f'{d:+,.2f}')
             print(f'        EXAMINED — {known[1]}')
             continue
-        ok = abs(d) <= tol(fund)
-        fails += 0 if ok else 1
-        print(f'  {"ok  " if ok else "FAIL"}  {fund:16} {liab + eq:>16,.2f}  '
-              f'assets {assets:>16,.2f}  {d:+,.2f}')
+        m, why = mark(d)
+        fails += m == 'FAIL'
+        print(f'  {m}  {fund:16} {liab + eq:>16,.2f}  '
+              f'assets {assets:>16,.2f}  {d:+,.2f}{why}')
 
         # ...and the sheet reprints TOTAL ASSETS at the foot. The two printed rows must
         # agree with each other, which is the town's own restatement of the same identity.
         rep = tot.get(('TOTAL LIABILITIES/FUND EQUITY', fund))
         if rep is not None and not blank(rep['amount']):
             d2 = num(rep['amount']) - (liab + eq)
-            if abs(d2) > tol(fund):
+            if abs(d2) > CENT and abs(d2) <= DOLLAR + 1e-9:
+                WITHIN[0] += 1
+                print(f'  ok~   {fund:16} the printed TOTAL LIABILITIES/FUND EQUITY row is '
+                      f'{num(rep["amount"]):,.2f} against {liab + eq:,.2f}  {TOLERANCE_PHRASE}')
+            elif abs(d2) > tol(fund):
                 if known and abs(abs(num(rep['amount']) - assets) - known[0]) <= CENT:
                     pass  # the same examined defect, already reported above
                 else:
@@ -212,10 +232,10 @@ def check_edition(ed, rows, printed, special):
             and r['section'] == 'liabilities']
     if asset and liab:
         d = sum(num(r['amount']) for r in asset) - sum(num(r['amount']) for r in liab)
-        ok = abs(d) <= DOLLAR
-        fails += 0 if ok else 1
-        print(f'  {"ok  " if ok else "FAIL"}  long-term debt appears as both an asset and '
-              f'a liability; they differ by {d:+,.2f}')
+        m, why = mark(d)
+        fails += m == 'FAIL'
+        print(f'  {m}  long-term debt appears as both an asset and '
+              f'a liability; they differ by {d:+,.2f}{why}')
     return fails
 
 
@@ -232,7 +252,8 @@ def main():
 
     fails = sum(check_edition(ed, rows, printed, special) for ed in editions)
 
-    print(f'\n{len(editions)} edition(s) checked, {fails} failure(s)')
+    print(f'\n{len(editions)} edition(s) checked, {fails} failure(s), '
+          f'{WITHIN[0]} check(s) {TOLERANCE_PHRASE}')
     if fails:
         sys.exit(1)
     n = sum(1 for k in PRINTED_DEFECTS if k[0] in editions)

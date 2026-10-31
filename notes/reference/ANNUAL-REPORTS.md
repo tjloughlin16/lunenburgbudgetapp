@@ -51,7 +51,7 @@ Read `column_meaning` before reading a value.
 | `report-committee-income-expenses.csv` | 22 | 1978–1978 | 22 checked / 0 failed / 0 no check | yes | shared | **no** |
 | `report-debt.csv` | 3,533 | 1959–2025 | 2,876 checked / 315 failed / 342 no check | yes | shared | yes |
 | `report-dept-activity.csv` | 2,264 | 1959–2025 | 15 checked / 0 failed / 2,249 no check | yes | shared | yes |
-| `report-elections.csv` | 3,863 | 1959–2025 | 1,671 checked / 1,718 failed / 474 no check | yes | shared | yes |
+| `report-elections.csv` | 3,863 | 1959–2025 | 1,664 checked / 1,725 failed / 474 no check | yes | shared | yes |
 | `report-energy-use.csv` | 3 | 1976–1976 | 0 checked / 0 failed / 3 no check | yes | shared | **no** |
 | `report-enrollment-mcas.csv` | 747 | 1987–2025 | 36 checked / 4 failed / 707 no check | yes | shared | yes |
 | `report-expenditure-history.csv` | 10 | 1971–1971 | 8 checked / 0 failed / 2 no check | yes | shared | **no** |

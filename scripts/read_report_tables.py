@@ -651,6 +651,9 @@ def debt_row_total(names, cells):
 
 ROW_LABEL = ['']              # the row's label while row_identity runs (records()), for `skip_label`
 DEBT_ROW_TOL = [Decimal(0)]   # set by build() from the edition's rounding_tolerance_usd, debt_row_totals only
+# families whose figures are COUNTS (votes, pupils): a dollar tolerance means nothing there, and a vote
+# total one off its precincts is a misread or a printed error, never rounding (notes/process/TOLERANCES.md)
+COUNT_FAMILIES = {'elections', 'school-statistics'}
 DEBT_ROW_SKIP = set()         # `debt_row_totals_skip`: page/table whose TOTAL spans another page's years
 DEBT_GRAND_ELSEWHERE = set()  # `debt_grand_spans_pages`: page/table whose GRAND TOTALs cover another page's issues
 ROW_TOL = [Decimal(0)]        # `row_identity_tolerance`: the edition's rounding_tolerance_usd for row identities
@@ -849,7 +852,8 @@ def row_identity(family, names, cells):
         got = sum((s * (cells[k].value if cells.get(k) is not None and cells[k].value is not None
                         else Decimal(0)) for s, k in ks), Decimal(0))
         ok = got == target_value
-        if not ok and 'row_identity_tolerance' in OPTS and abs(got - target_value) <= ROW_TOL[0]:
+        if (not ok and 'row_identity_tolerance' in OPTS and abs(got - target_value) <= ROW_TOL[0]
+                and family not in COUNT_FAMILIES and not V.PERCENT_COL.search(names[tk])):
             # the edition's dollar rounding tolerance (TJ, 29 Oct 2026) applied to a ROW's printed
             # balance as it is to a column's printed total -- an opt-in, and worded with the same
             # countable phrase (30 October 2026; whether it should reach row identities is TJ's call)

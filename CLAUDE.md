@@ -774,6 +774,10 @@ Four that happened in a single day:
   `.00` and the regex wanted a digit before the point. Nothing noticed for weeks because
   nothing compared the extract to the report's own GRAND TOTAL. It does now, and refuses
   to write if it does not tie.
+- **A tolerance is policy, not a constant.** A check may close without tying to the cent only
+  as `notes/process/TOLERANCES.md` allows: TJ's $1 rounding allowance (29-30 October 2026),
+  labelled `within $1 rounding tolerance` and counted, plus the few older allowances listed
+  there with their reasons. A new tolerance is written there, and approved, before it is coded.
 
 The general form: **an instrument that reformats before you see it is part of the finding,
 and it has to be checked like one.**

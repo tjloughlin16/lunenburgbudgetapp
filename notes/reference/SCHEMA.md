@@ -260,6 +260,9 @@ records which. Consequences:
 - A sum of N rows cannot equal the report's own GRAND TOTAL to the cent. The tolerance is
   **one dollar per row** for the rounded columns and **exact** for the rest.
 
+Every tolerance in the repo, and TJ's $1 rounding allowance, is listed in
+`notes/process/TOLERANCES.md`.
+
 ---
 
 ## Funds
