@@ -4,7 +4,7 @@ or salary LINE (school line). I'd like to create yet another section to show 'sa
 from outside the general fund'."
 
 The FY breakdown's lens on what two pages already total across four years
-(/school-all-funds/pay-from-grants-and-fees by fund, /school-all-funds/pay-moved-between-funds by
+(/school-all-funds/salaries-from-grants-and-fees by fund, /school-all-funds/pay-moved-between-funds by
 entry): ONE year, read two ways, from the same placements the rest of the page uses.
 
   BY SCHOOL SALARY LINE. Measured: a year-end journal entry that took pay off a school line and

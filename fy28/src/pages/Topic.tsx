@@ -26,7 +26,7 @@ import { InlineTopicChart, isInline, type InlineChart } from '../components/Topi
 import { AccountLedger, type LedgerData } from '../components/AccountLedger'
 import { Brief, Tag, type Chain, type Step } from '../components/brief'
 import { TopicLink, shelfEntry } from '../components/TopicLink'
-import { Blocks, type Block } from '../components/blocks/Blocks'
+import { Blocks, OneBlock, type Block } from '../components/blocks/Blocks'
 
 /** A page declared related to this one (scripts/topic_registry/related.py): a topic, a hub,
  *  or another page on the site, with the one-line reason a reader would go there. */
@@ -69,7 +69,14 @@ type TopicPayload = {
   lead_quote?: LeadQuote
   /** Arranged parts: explain, matrix, timeline, checks, panels, custom (scripts/topic_blocks.py). */
   blocks?: Block[]
+  /** THE PAGE, IN ORDER (scripts/topic.py FLOW). There is no template: this draws exactly the
+   *  parts the generator composed, in the order it gave, and nothing else. */
+  flow: FlowPart[]
+  /** True when the generator composed the flow itself; then every section cites its sources. */
+  composed?: boolean
 }
+type FlowPart = ({ part: 'finding' | 'lead_quote' | 'how' | 'ladder' | 'related' | 'ledger' | 'said' | 'sources' }
+  | { part: 'chart' | 'table' | 'block'; i: number }) & { cites?: number[] }
 type LeadQuote = { quote: string; who: string; board: string; date: string; href: string; label: string
   caption?: boolean }
 type HubPayload = {
@@ -204,17 +211,37 @@ function SaidList({ said }: { said: Said[] }) {
 
 /* NO "FULL REPORT" LINE. TJ, 12 October 2026: "we dont need FULL reports.... we need all
  * the smaller reports broken out". A page ends at its own sources. */
-function Sources({ sources }: { sources: { label: string; href: string }[] }) {
+function Sources({ sources, numbered }: { sources: { label: string; href: string }[]; numbered?: boolean }) {
   return (
     <section className="mt-10 max-w-3xl" data-page-sources="">
       <h2 className={eyebrow} style={{ color: 'var(--text-muted)' }}>Sources</h2>
-      <ul className="mt-2 space-y-1 text-[13px]">
-        {sources.map(s => (
-          <li key={s.href}><a href={abs(s.href)} className="underline" style={link}>{s.label}</a></li>
-        ))}
-      </ul>
+      {numbered ? (
+        <ol className="mt-2 space-y-1 text-[13px]">
+          {sources.map((s, i) => (
+            <li key={s.href} id={`source-${i + 1}`} className="flex gap-2 scroll-mt-20">
+              <span className="tabular-nums shrink-0" style={{ color: 'var(--text-muted)' }}>[{i + 1}]</span>
+              <a href={abs(s.href)} className="underline" style={link}>{s.label}</a></li>
+          ))}
+        </ol>
+      ) : (
+        <ul className="mt-2 space-y-1 text-[13px]">
+          {sources.map(s => (
+            <li key={s.href}><a href={abs(s.href)} className="underline" style={link}>{s.label}</a></li>
+          ))}
+        </ul>)}
     </section>
   )
+}
+
+/** The sources a section rests on, as [n] linked to the numbered list at the foot of the page
+ *  (scripts/topic.py cite()). */
+function Cites({ cites }: { cites?: number[] }) {
+  if (!cites?.length) return null
+  return (
+    <p className="text-[12px] mt-1.5 max-w-3xl" style={{ color: 'var(--text-muted)' }}>
+      Source{cites.length > 1 ? 's' : ''}{' '}
+      {cites.map(i => <a key={i} href={`#source-${i + 1}`} className="underline tabular-nums mr-1" style={link}>[{i + 1}]</a>)}
+    </p>)
 }
 
 /** START HERE: the one to three pages on a shelf that most directly answer it -- the FIRST
@@ -328,6 +355,40 @@ function ShelfNav({ ix, t }: { ix: Index; t: TopicPayload }) {
 
 /** `fallback`: the hub to show for an address that names no topic -- the aliases of
  *  /athletics (`/sports`, `/athletic`) land on the athletics hub, not on transportation. */
+/** One part of a topic page's flow. The order is the generator's; nothing here decides it. */
+function FlowItem({ f, p, ix }: { f: FlowPart; p: TopicPayload; ix: Index }) {
+  const body = <FlowBody f={f} p={p} ix={ix} />
+  return f.cites?.length ? <>{body}<Cites cites={f.cites} /></> : body
+}
+
+function FlowBody({ f, p, ix }: { f: FlowPart; p: TopicPayload; ix: Index }) {
+  switch (f.part) {
+    case 'finding': return <p className="text-[19px] leading-snug font-semibold mt-4 max-w-3xl">{p.finding.text}</p>
+    case 'lead_quote': return p.lead_quote ? <LeadQuoteBlock q={p.lead_quote} /> : null
+    case 'how': return p.how ? <How h={p.how} /> : null
+    case 'ladder': return (
+      <Ladder
+        l={{ tiers: p.facts.length ? [{ title: 'The facts', facts: p.facts }] : [], title: 'What it shows',
+             conclusions: p.conclusions.map((c, i) => ({ ...c, chain: c.notes?.length ? `n${i}` : undefined })) }}
+        evidence={Object.fromEntries(p.conclusions.map((c, i) => [`n${i}`, {
+          tag: null, question: '', body: <Brief steps={c.notes ?? []} base={p.full_report.href} />,
+        } satisfies LadderEvidence]))} />)
+    case 'related': return <RelatedPages ix={ix} rs={ix.topics[p.id]?.related} />
+    case 'ledger': return p.ledger ? <AccountLedger l={p.ledger} /> : null
+    case 'said': return <SaidList said={p.said} />
+    case 'sources': return <Sources sources={p.sources} numbered={p.composed} />
+    case 'chart': {
+      const c = [p.chart, ...(p.also ?? [])].filter(Boolean)[f.i] ?? null
+      return <TopicChart chart={c} alt={p.title} />
+    }
+    case 'table': {
+      const t = [p.table, ...(p.tables ?? [])].filter((x): x is FigureTableData => !!x)[f.i]
+      return t ? <section className="mt-10 max-w-3xl"><FigureTable t={t} /></section> : null
+    }
+    case 'block': return p.blocks?.[f.i] ? <OneBlock b={p.blocks[f.i]} /> : null
+  }
+}
+
 export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
   const id = topicIdFromPath(window.location.pathname) ?? fallback
   const [ix, setIx] = useState<Index | null>(null)
@@ -392,30 +453,7 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
       ) : p && ix && p.kind === 'topic' ? (
         <>
           <Shelf ix={ix} t={p} />
-          {/* The claim under test first, then the page's headline conclusion (TJ, 25 Oct 2026). */}
-          {p.lead_quote ? <LeadQuoteBlock q={p.lead_quote} /> : null}
-          <Blocks blocks={p.blocks} place="top" />
-          <p className="text-[19px] leading-snug font-semibold mt-4 max-w-3xl">{p.finding.text}</p>
-          <Blocks blocks={p.blocks} place="lead" />
-          <TopicChart chart={p.chart} alt={p.title} />
-          <Blocks blocks={p.blocks} place="chart" />
-          {(p.also ?? []).map((c, i) => <div key={i}><TopicChart chart={c} alt={p.title} />
-            <Blocks blocks={p.blocks} place={i === 0 ? 'also1' : 'also2'} /></div>)}
-          {p.how ? <How h={p.how} /> : null}
-          <Blocks blocks={p.blocks} place="body" />
-          <Ladder
-            l={{ tiers: [{ title: 'The facts', facts: p.facts }], title: 'What it shows',
-                 conclusions: p.conclusions.map((c, i) => ({ ...c, chain: c.notes?.length ? `n${i}` : undefined })) }}
-            evidence={Object.fromEntries(p.conclusions.map((c, i) => [`n${i}`, {
-              tag: null, question: '', body: <Brief steps={c.notes ?? []} base={p.full_report.href} />,
-            } satisfies LadderEvidence]))} />
-          <RelatedPages ix={ix} rs={ix.topics[p.id]?.related} />
-          {p.ledger ? <AccountLedger l={p.ledger} /> : null}
-          {[p.table, ...(p.tables ?? [])].filter((t): t is FigureTableData => !!t).map((t, i) => (
-            <section key={i} className={`${i ? 'mt-8' : 'mt-10'} max-w-3xl`}><FigureTable t={t} /></section>))}
-          <Blocks blocks={p.blocks} place="end" />
-          <SaidList said={p.said} />
-          <Sources sources={p.sources} />
+          {p.flow.map((f, k) => <FlowItem key={k} f={f} p={p} ix={ix} />)}
           <ShelfNav ix={ix} t={p} />
         </>
       ) : null}

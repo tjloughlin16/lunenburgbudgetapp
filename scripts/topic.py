@@ -109,8 +109,51 @@ FINDING_MAX = 110
 TOPIC_WORDS_MAX = 320     # prose a reader meets: finding, labels, conclusions, notes, quotes
 HUB_WORDS_MAX = 500   # was 400; TJ, 24 Oct 2026, when the hub's definitions were being cut to fit
 TABLE_ROWS_MAX = 30
-FACTS = (2, 12)
-CONCLUSIONS = (1, 4)
+# A page may hold no tiles and no conclusions: THE TEMPLATE IS GONE (see FLOW below). The upper
+# bounds stay -- past twelve tiles it is a table, past four conclusions it is two pages.
+FACTS = (0, 12)
+CONCLUSIONS = (0, 4)
+
+# THE FLOW: the page, in order, as the generator composed it. TJ, 31 October 2026, after a
+# rebuilt page came out as the same five slots as every other: *"this page is so boring now!"*
+# ... *"we need to just outright remove the topic building template"* ... *"all of our pages have
+# sucked since we added it ... we have the hub and spoke model, so leveraging that when it makes
+# sense is the way to keep things short."*
+#
+# So a topic page is no longer finding -> chart -> tiles -> conclusions -> table with blocks
+# slotted around them. It is `flow`: a list of parts in the order a reader meets them, and the
+# renderer (pages/Topic.tsx) draws exactly that list and nothing else. A part is one of
+#     'finding'  'lead_quote'  'how'  'ladder' (the tiles and conclusions, drawn together so a
+#     conclusion lights the tiles it rests on)  'related'  'ledger'  'said'  'sources'
+#     ('chart', i)   the signature (0) or an `also` chart (1, 2)
+#     ('table', i)   `table` (0) then each of `tables`
+#     ('block', i)   one of `blocks`
+# or a BLOCK ITSELF (a dict from topic_blocks), which page() appends to `blocks` and points at --
+# so a generator writes the page top to bottom as it should read.
+#
+# A generator that passes no flow gets the old order, written out by default_flow() -- that is a
+# migration aid, so the 257 pages built before this render as they did; each is redesigned when
+# its shelf is reworked. Nothing in the renderer knows that order any more.
+#
+# EVERY SECTION CITES ITS SOURCES. TJ, 31 October 2026: *"make sure in the new 'template' it
+# requires putting sources, citations for sections that point to the sources at the bottom of the
+# page. this is a good model to keep strict."* So in a COMPOSED flow every part that shows figures
+# -- a chart, a table, a block, the ladder -- is wrapped in cite(part, *sources), naming the
+# entries of `sources` it rests on (by index, or by a source's `key`). The renderer numbers the
+# sources at the foot of the page and prints [1] [3] under each section, linked to them. A section
+# with figures and no citation is refused, and so is a source no section cites: a list of documents
+# nothing points to is a bibliography, not provenance. Pages still on default_flow are exempt only
+# because nothing has composed them yet; scripts/page_review_progress.py counts them.
+FLOW_PARTS = ('finding', 'lead_quote', 'how', 'ladder', 'related', 'ledger', 'said', 'sources')
+CITED = ('chart', 'table', 'block', 'ladder')   # the parts that show figures
+
+
+def cite(part, *sources):
+    """A flow part and the sources it rests on: cite(TB.panels(...), 0, 'ledger')."""
+    if not sources:
+        raise ConclusionError('cite(%r): name at least one source' % (part,))
+    return dict(cite=part, sources=list(sources))
+FLOW_INDEXED = ('chart', 'table', 'block')
 SAID_MAX = 4
 # EVERY CONCLUSION SAYS WHAT IT MEANS -- a RATCHET, one shelf at a time. TJ, 25 October 2026:
 # "put the conclusions as insights, following the 'what it means' pattern so we dont put
@@ -174,7 +217,7 @@ def check_ledger(l, where):
 
 def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sources=(),
          finding_figures=None, finding_allow=(), draft=None, also=(), lead_quote=None,
-         tables=(), how_it_works=None, blocks=()):
+         tables=(), how_it_works=None, blocks=(), flow=None):
     """`blocks`: arranged parts built by scripts/topic_blocks.py -- explain, matrix,
     timeline, checks, panels, or a custom component drawn for this page alone. Their words do
     not count toward TOPIC_WORDS_MAX (see that module for why); the integrity checks do apply.
@@ -209,6 +252,18 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
                                   % (id, b_['place'], len(also)))
     if not FACTS[0] <= len(facts) <= FACTS[1]:
         raise ConclusionError('%s: %d facts; a topic holds %d to %d' % ((id, len(facts)) + FACTS))
+    blocks = list(blocks)
+    if flow is not None:
+        refs = []
+        for x in flow:
+            cs = None
+            if isinstance(x, dict) and 'cite' in x:
+                x, cs = x['cite'], x['sources']
+            if isinstance(x, dict) and 'block' in x:
+                blocks.append(x)
+                x = ('block', len(blocks) - 1)
+            refs.append((x, cs))
+        flow = refs
     if not CONCLUSIONS[0] <= len(conclusions) <= CONCLUSIONS[1]:
         raise ConclusionError('%s: %d conclusions; a topic holds %d to %d'
                               % ((id, len(conclusions)) + CONCLUSIONS))
@@ -220,7 +275,7 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
         raise ConclusionError('%s: two facts share an id' % id)
     bad = check_unit(f, '%s finding' % id)
     bad += _lead_bad(lead_quote, said, id)
-    bad += check_chart(chart, id, required=CHART_REQUIRED)
+    bad += check_chart(chart, id, required=CHART_REQUIRED and flow is None)
     if len(also) > 2:
         bad.append('%s: %d extra charts; a topic draws its signature and at most two more'
                    % (id, len(also)))
@@ -251,9 +306,65 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
                    'the registry rather than trimming it' % (id, n, TOPIC_WORDS_MAX))
     bad += _tables_bad(([table] if table else []) + list(tables), id, uniform=tables)
     bad += TB.blocks_bad(blocks, id)
+    have = dict(chart=([chart] if chart else []) + list(also),
+                table=([table] if table else []) + list(tables), block=blocks)
+    present = dict(lead_quote=bool(lead_quote), how=bool(how_it_works), ladder=bool(facts or conclusions),
+                   # a ledger is attached after page() (TP.ledger); drawn where named, if present
+                   ledger=True, said=bool(said), sources=True, finding=True, related=True,
+                   n_tables=len(have['table']))
+    composed = flow is not None
+    if flow is None:
+        flow = [(x, None) for x in default_flow(chart, also, blocks, present)]
+    keys = {s_.get('key'): i for i, s_ in enumerate(sources) if s_.get('key')}
+    out_flow, seen, cited = [], set(), set()
+    for x, cs in flow:
+        if isinstance(x, str):
+            if x not in FLOW_PARTS:
+                bad.append('%s: flow part %r is not one of %s' % (id, x, FLOW_PARTS))
+            elif not present.get(x):
+                bad.append('%s: flow names %r and the page has none' % (id, x))
+            key = x
+            out_flow.append(dict(part=x))
+        else:
+            k, i = x
+            if k not in FLOW_INDEXED or not 0 <= i < len(have[k]):
+                bad.append('%s: flow names %r, which the page does not have' % (id, x))
+            key = '%s%d' % (k, i)
+            out_flow.append(dict(part=k, i=i))
+        if key in seen:
+            bad.append('%s: flow names %r twice' % (id, x))
+        seen.add(key)
+        part = out_flow[-1]['part']
+        if cs:
+            idx = []
+            for c in cs:
+                i = keys.get(c) if isinstance(c, str) else c
+                if not isinstance(i, int) or not 0 <= i < len(sources):
+                    bad.append('%s: %r cites %r, which is not one of its sources' % (id, x, c))
+                else:
+                    idx.append(i)
+                    cited.add(i)
+            out_flow[-1]['cites'] = sorted(set(idx))
+        elif composed and part in CITED:
+            bad.append('%s: %r shows figures and cites no source: wrap it in cite()' % (id, x))
+    # Everything a page holds is drawn: a part built and left out of the flow is a figure
+    # nobody can see, checked and published anyway.
+    for k, xs in have.items():
+        bad += ['%s: %s %d is built and not in the flow' % (id, k, i) for i in range(len(xs))
+                if '%s%d' % (k, i) not in seen]
+    bad += ['%s: %r is built and not in the flow' % (id, k) for k in ('lead_quote', 'how', 'ladder', 'said')
+            if present[k] and k not in seen]
+    if 'sources' not in seen:
+        bad.append('%s: the flow does not draw the sources -- rule 12' % id)
+    if composed:
+        bad += ['%s: source %d (%s) is cited by no section' % (id, i, sources[i].get('label'))
+                for i in range(len(sources)) if i not in cited]
     if bad:
         raise ConclusionError('topic %s did not pass:\n  %s' % (id, '\n  '.join(bad)))
     extra = dict(also=list(also)) if also else {}   # absent, not empty: no other payload moves
+    extra['flow'] = out_flow
+    if composed:
+        extra['composed'] = True
     if tables:                                       # likewise
         extra['tables'] = list(tables)
     if how_it_works:                                 # likewise; built by how()
@@ -487,6 +598,21 @@ def _label_bad(s, where, what):
 
 def _note(note, figures, allow, cap, name):
     return _unit(note, figures, allow, cap, name) if note else None
+
+
+def default_flow(chart, also, blocks, present):
+    """The order every topic page had before the template was removed, for a generator that has
+    not composed its own. A migration aid, not a format: see FLOW above."""
+    at = lambda place: [('block', i) for i, b in enumerate(blocks) if b.get('place') == place]
+    f = (['lead_quote'] if present['lead_quote'] else []) + at('top') + ['finding'] + at('lead')
+    f += ([('chart', 0)] if chart else []) + at('chart')
+    for i in range(len(also)):
+        f += [('chart', i + 1 if chart else i)] + at('also%d' % (i + 1))
+    f += (['how'] if present['how'] else []) + at('body')
+    f += (['ladder'] if present['ladder'] else []) + ['related', 'ledger']
+    f += [('table', i) for i in range(present['n_tables'])] + at('end')
+    f += (['said'] if present['said'] else []) + ['sources']
+    return f
 
 
 def track(name, values, basis='published', mark=None, colour=None):

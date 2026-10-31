@@ -22,7 +22,7 @@ CATEGORY = dict(
         # and one year at a time, with three flags (scripts/build_budget_against_actual.py).
         ('School lines against budget', ['budget-against-actual']),
         # TJ, 29 October 2026: the preschool's tuition goes to the Town (build_preschool.py)
-        ('Preschool', ['preschool']),
+        ('Preschool and Town receipts', ['preschool', 'school-receipts-to-town']),
         ('Money in and out', ['school-money-in', 'budget-lines-all-funds',
                               'outside-the-general-fund']),
         ('Left unspent', ['unspent-by-fund', 'carried-over-orders']),
@@ -31,7 +31,7 @@ CATEGORY = dict(
         ('Special education', ['sped-all-funds']),
         # TJ, 24 October 2026: "for all the grants.... have we broken down how that money is
         # spent? I want to have reports on that." Every post read alike; none singled out.
-        ('Who grants and fees pay for', ['pay-from-grants-and-fees', 'pay-moved-between-funds',
+        ('Who grants and fees pay for', ['salaries-from-grants-and-fees', 'pay-moved-between-funds',
                                          'positions-and-their-funds', 'activities-fund']),
     ])
 GENERATOR = 'build_school_all_funds.py'
@@ -41,11 +41,14 @@ GENERATOR = 'build_school_all_funds.py'
 # one question the all-funds generator does not ask, so its own generator.
 TOPIC_GENERATORS = {'budget-against-actual': 'build_budget_against_actual.py',
                     'preschool': 'build_preschool.py',
+                    # TJ, 31 October 2026: the school money the Town books, moved off the
+                    # Town general fund page, which is now the whole fund
+                    'school-receipts-to-town': 'build_school_receipts_to_town.py',
                     'fy-breakdown': 'build_fy_breakdown.py',
                     'grant-allocations-compared': 'build_grant_comparison_topics.py',
                     'grants-others-receive': 'build_grant_comparison_topics.py',
                     'carried-over-orders': 'build_carryover_topics.py',
-                    'pay-from-grants-and-fees': 'build_pay_by_fund_topics.py',
+                    'salaries-from-grants-and-fees': 'build_pay_by_fund_topics.py',
                     'pay-moved-between-funds': 'build_pay_by_fund_topics.py',
                     'positions-and-their-funds': 'build_pay_by_fund_topics.py',
                     # TJ, 28 October 2026: "people always ask me 'what is the activities fee for'"
@@ -61,9 +64,10 @@ TOPICS = {
     'grant-allocations-compared': 'Grant allocations compared',
     'grants-others-receive': 'Grants other districts get',
     'carried-over-orders': 'Carried-over orders',
-    'pay-from-grants-and-fees': 'Pay from grants and fees',
+    'salaries-from-grants-and-fees': 'Salaries from grants and fees',
     'pay-moved-between-funds': 'Pay moved between funds',
     'positions-and-their-funds': 'Positions and their funds',
     'activities-fund': 'After-school activities fund',
     'preschool': 'Preschool',
+    'school-receipts-to-town': 'School receipts to the Town',
 }

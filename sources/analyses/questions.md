@@ -614,7 +614,7 @@ Returns `edition`, `rows` — for example: edition=1959, rows=28
 SELECT fy, source, amount, status FROM annual_report_receipts ORDER BY fy DESC, CAST(amount AS REAL) DESC LIMIT 20
 ```
 
-Returns `fy`, `source`, `amount`, `status` — for example: fy=2023, source=TRAILER PAARE, amount=14124.00, status=no check
+Returns `fy`, `source`, `amount`, `status` — for example: fy=2022, source=REAL ESTATE TAXES, amount=28756474.97, status=checked
 
 **What tables does each annual report contain?**
 
@@ -818,7 +818,7 @@ Returns `dataset`, `edition`, `document`, `publisher_label`, `sha256` — for ex
 SELECT source_type, basis, COUNT(*) AS documents FROM document GROUP BY source_type, basis ORDER BY documents DESC
 ```
 
-Returns `source_type`, `basis`, `documents` — for example: source_type=primary, basis=None, documents=5047
+Returns `source_type`, `basis`, `documents` — for example: source_type=primary, basis=None, documents=5052
 
 **Which documents no longer open at the publisher, or no longer match our copy?**
 
@@ -896,7 +896,7 @@ Returns `t`, `status`, `rows` — for example: t=appropriations, status=checked,
 SELECT source_type, COUNT(*) AS documents FROM document GROUP BY source_type ORDER BY documents DESC
 ```
 
-Returns `source_type`, `documents` — for example: source_type=primary, documents=5047
+Returns `source_type`, `documents` — for example: source_type=primary, documents=5052
 
 **What basis does each document have for the figures it prints?**
 

@@ -18,6 +18,26 @@ always-loaded file to save context. The two ideas that matter most, in TJ's word
    if we dont have templates for them"*. The pages had started to look identical while their
    subjects were very different.
 
+## THE TEMPLATE IS GONE (31 October 2026). Compose the page
+
+TJ: *"this page is so boring now!"* ... *"we need to just outright remove the topic building
+template"* ... *"we need to hold the big CONCEPTS in there, but not the designs."* A topic page is
+now `flow=[...]` in `TP.page()`: the parts in the order a reader meets them, and `Topic.tsx` draws
+exactly that. Nothing but sources is mandatory. Worked example:
+`scripts/build_school_receipts_to_town.py`.
+
+**The concepts (TJ's list), not a layout:** a signature image at the top that IS the page;
+conclusions; metrics with units; short; hub and spoke for every detail. If your page looks like
+the last page you built, it is not showing its data the best way.
+
+**Citations are strict.** In a composed flow every part with figures (chart, table, block,
+ladder) is wrapped in `TP.cite(part, *sources)`, by index or by a source's `key`. Sources are
+numbered at the foot and each section prints [n] linked to them. The build refuses a section with
+no citation, and a source no section cites. TJ: *"this is a good model to keep strict."*
+
+A page with no `flow` gets `default_flow()`, the old order: a migration aid, and the mark of a
+page the review in `notes/PLAN-PAGE-REVIEW.md` has not reached.
+
 ## The split: what binds and what is yours
 
 | integrity: fixed, every page, every block, enforced | shape: the author's call |

@@ -198,16 +198,6 @@ def fy_item_pages():
                   + ['/school-groups/' + x['slug'] for x in d.get('groups', [])])
 
 
-def town_fund_pages():
-    """One page per Town fund (scripts/build_town_funds.py), off the index the page reads; drawn in
-    the browser like the school fund pages."""
-    p = os.path.join(PUB, 'data', 'town-funds', 'index.json')
-    if not os.path.exists(p):
-        return []
-    d = json.load(io.open(p, encoding='utf-8'))
-    return sorted('/town-funds/' + x['slug'] for x in d.get('funds', []))
-
-
 def topic_pages():
     """Every hub and topic page (scripts/topics.py) whose payload exists, off the index the
     shelves read. TOPICS_INDEX may point at a BUILD's own copy (dist/data/topics.json), so a
@@ -331,7 +321,7 @@ def reference():
 
 def render():
     seen, urls = set(), []
-    for u in (routes() + analysis_pages() + blog_pages() + board_pages() + department_pages() + meeting_pages() + people_pages() + fy_item_pages() + town_fund_pages() + feed_pages() + topic_pages() + ENTRY + published_data()
+    for u in (routes() + analysis_pages() + blog_pages() + board_pages() + department_pages() + meeting_pages() + people_pages() + fy_item_pages() + feed_pages() + topic_pages() + ENTRY + published_data()
               + reference() + analyses() + feeds()):
         if u not in seen:
             seen.add(u)

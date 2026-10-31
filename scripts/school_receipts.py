@@ -1,7 +1,7 @@
 """SCHOOL MONEY THAT GOES TO THE TOWN: what the schools bring in that the Town books as its own
 general fund receipt, by year, read from the documents that print it. One module, three readers:
 the preschool report (build_preschool.py), the FY breakdown's section (build_fy_breakdown.py) and
-the Town general fund page (build_town_funds.py) -- so the three cannot disagree (rule 7d).
+the school receipts page (build_school_receipts_to_town.py) -- so the three cannot disagree (rule 7d).
 
 TJ, 29 October 2026: *"i also want the preschool money to go into the FY breakdown page ... it
 might have to be its own section to show the additional funds ... a fund page slug for the town

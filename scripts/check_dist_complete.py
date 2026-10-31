@@ -16,7 +16,6 @@ build_sitemap.py, the file that put them in the sitemap -- never listed here:
   fy_item_pages()  one page per school line, fund and group (/school-lines/<slug> ...), public
                 since 29 October 2026 and drawn in the browser like /people/<slug>. The same
                 known gap, for the same reason.
-  town_fund_pages()  one page per Town fund (/town-funds/<slug>), the same way.
 """
 import os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -26,7 +25,7 @@ DIST = S.DIST
 sm = open(os.path.join(DIST, 'sitemap.xml'), encoding='utf-8').read()
 pages = [re.sub(r'^https?://[^/]+', '', u) for u in re.findall(r'<loc>([^<]+)</loc>', sm)]
 pages = [p for p in pages if not re.search(r'\.[a-z0-9]+$', p) and p not in S.ENTRY]
-browser_only = (set(S.feed_pages()) - {'/budget-feed'}) | set(S.fy_item_pages()) | set(S.town_fund_pages())
+browser_only = (set(S.feed_pages()) - {'/budget-feed'}) | set(S.fy_item_pages())
 
 
 def held(p):

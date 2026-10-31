@@ -408,20 +408,23 @@ function Terms({ b }: { b: Extract<Block, { block: 'terms' }> }) {
   )
 }
 
-/** Every block at one place on the page, in the order the generator gave. */
+/** One block. A topic page draws its blocks one at a time, in its `flow` (scripts/topic.py). */
+export function OneBlock({ b }: { b: Block }) {
+  switch (b.block) {
+    case 'explain': return <Explain b={b} />
+    case 'matrix': return <Matrix b={b} />
+    case 'timeline': return <Timeline b={b} />
+    case 'checks': return <Checks b={b} />
+    case 'panels': return <Panels b={b} />
+    case 'custom': return <Custom b={b} />
+    case 'chart': return <div><InlineTopicChart c={b.spec} /><So u={b.so} /></div>
+    case 'terms': return <Terms b={b} />
+  }
+}
+
+/** Every block at one place on a HUB, in the order the generator gave. */
 export function Blocks({ blocks, place }: { blocks?: Block[]; place: Place }) {
   const bs = (blocks ?? []).filter(b => b.place === place)
   if (!bs.length) return null
-  return <>{bs.map((b, i) => {
-    switch (b.block) {
-      case 'explain': return <Explain key={i} b={b} />
-      case 'matrix': return <Matrix key={i} b={b} />
-      case 'timeline': return <Timeline key={i} b={b} />
-      case 'checks': return <Checks key={i} b={b} />
-      case 'panels': return <Panels key={i} b={b} />
-      case 'custom': return <Custom key={i} b={b} />
-      case 'chart': return <div key={i}><InlineTopicChart c={b.spec} /><So u={b.so} /></div>
-      case 'terms': return <Terms key={i} b={b} />
-    }
-  })}</>
+  return <>{bs.map((b, i) => <OneBlock key={i} b={b} />)}</>
 }

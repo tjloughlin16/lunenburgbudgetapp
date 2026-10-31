@@ -37,6 +37,13 @@ WHY_MAX = 70
 MAX_PER_PAGE = 4
 
 RELATED = [
+    # The Town general fund and the school money it books (TJ, 31 October 2026).
+    [('town-general-fund', 'The whole Town general fund: in, out, and what is left'),
+     ('school-receipts-to-town', 'School receipts the Town books as its own revenue'),
+     ('preschool', 'Preschool tuition, the largest of them, beside its grants')],
+    [('town-general-fund', 'The whole Town general fund: in, out, and what is left'),
+     ('town-voted-total', 'What Town Meeting voted, every year held'),
+     ('free-cash-balance', 'What the general fund left, certified as free cash')],
     # The SERF report: what the reserve meets, against what it would cost to budget instead.
     [('arrivals-and-the-budget', 'Whether a mid-year arrival left the year short'),
      ('surprise-costs', 'Which special education lines run over their vote'),

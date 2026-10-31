@@ -28,15 +28,15 @@
     "name": "Ranked boards",
     "texts": [
      "7 boards",
-     "7 boards",
+     "8 boards",
      "6 boards",
-     "10 boards"
+     "9 boards"
     ],
     "values": [
      7,
-     7,
+     8,
      6,
-     10
+     9
     ]
    }
   ],
@@ -60,9 +60,9 @@
      "value": 7
     },
     "b": {
-     "text": "10",
+     "text": "9",
      "unit": "",
-     "value": 10
+     "value": 9
     },
     "n": {
      "text": "30",
@@ -81,7 +81,7 @@
     "lo50",
     "ranked"
    ],
-   "text": "7 of 30 ranked boards list minutes for 90% or more of meetings; 10 list them for under half."
+   "text": "7 of 30 ranked boards list minutes for 90% or more of meetings; 9 list them for under half."
   },
   {
    "figures": {
@@ -107,7 +107,7 @@
   {
    "figures": {},
    "literals": [
-    "13 October 2026"
+    "31 October 2026"
    ],
    "notes": [
     {
@@ -136,7 +136,7 @@
     "all-n",
     "pf-gap"
    ],
-   "text": "This counts what the Agenda Center listed on 13 October 2026, not what each board wrote."
+   "text": "This counts what the Agenda Center listed on 31 October 2026, not what each board wrote."
   }
  ],
  "facts": [
@@ -160,9 +160,9 @@
     "text": "meetings with minutes listed, FY2023 to FY2026"
    },
    "value": {
-    "text": "1,284",
+    "text": "1,307",
     "unit": "meetings",
-    "value": 1284
+    "value": 1307
    }
   },
   {
@@ -174,9 +174,9 @@
     "text": "meetings with a posted agenda, the same years"
    },
    "value": {
-    "text": "1,934",
+    "text": "1,935",
     "unit": "meetings",
-    "value": 1934
+    "value": 1935
    }
   },
   {
@@ -188,9 +188,9 @@
     "text": "of those meetings with minutes listed"
    },
    "value": {
-    "text": "66%",
+    "text": "68%",
     "unit": "percent",
-    "value": 66.39089968976215
+    "value": 67.5452196382429
    }
   },
   {
@@ -256,9 +256,9 @@
     "text": "ranked boards listing minutes for under half"
    },
    "value": {
-    "text": "10",
+    "text": "9",
     "unit": "boards",
-    "value": 10
+    "value": 9
    }
   },
   {
@@ -328,24 +328,49 @@
     "value": 2026
    },
    "k": {
-    "text": "1,284",
+    "text": "1,307",
     "unit": "",
-    "value": 1284
+    "value": 1307
    },
    "n": {
-    "text": "1,934",
+    "text": "1,935",
     "unit": "",
-    "value": 1934
+    "value": 1935
    },
    "s": {
-    "text": "66%",
+    "text": "68%",
     "unit": "percent",
-    "value": 66.39089968976215
+    "value": 67.5452196382429
    }
   },
   "literals": [],
-  "text": "On the town’s Agenda Center, 1,284 of 1,934 board meetings from FY2023 to FY2026 have minutes listed, 66%."
+  "text": "On the town’s Agenda Center, 1,307 of 1,935 board meetings from FY2023 to FY2026 have minutes listed, 68%."
  },
+ "flow": [
+  {
+   "part": "finding"
+  },
+  {
+   "i": 0,
+   "part": "chart"
+  },
+  {
+   "part": "ladder"
+  },
+  {
+   "part": "related"
+  },
+  {
+   "part": "ledger"
+  },
+  {
+   "i": 0,
+   "part": "table"
+  },
+  {
+   "part": "sources"
+  }
+ ],
  "full_report": {
   "href": "",
   "label": ""
@@ -387,7 +412,7 @@
      "ledger"
     ],
     "label": "By board",
-    "note": "A meeting is a date with a posted agenda. Boards with fewer than 20 meetings are counted in the totals and not ranked. Read 13 October 2026.",
+    "note": "A meeting is a date with a posted agenda. Boards with fewer than 20 meetings are counted in the totals and not ranked. Read 31 October 2026.",
     "rows": [
      {
       "cells": [
@@ -471,6 +496,14 @@
      },
      {
       "cells": [
+       "192",
+       "162",
+       "84.4%"
+      ],
+      "label": "Select Board"
+     },
+     {
+      "cells": [
        "52",
        "42",
        "80.8%"
@@ -495,11 +528,11 @@
      },
      {
       "cells": [
-       "192",
-       "145",
-       "75.5%"
+       "59",
+       "45",
+       "76.3%"
       ],
-      "label": "Select Board"
+      "label": "Agricultural Commission"
      },
      {
       "cells": [
@@ -508,14 +541,6 @@
        "73.3%"
       ],
       "label": "Board of Health"
-     },
-     {
-      "cells": [
-       "58",
-       "42",
-       "72.4%"
-      ],
-      "label": "Agricultural Commission"
      },
      {
       "cells": [
@@ -543,6 +568,14 @@
      },
      {
       "cells": [
+       "22",
+       "12",
+       "54.5%"
+      ],
+      "label": "By-Law Committee"
+     },
+     {
+      "cells": [
        "155",
        "80",
        "51.6%"
@@ -564,14 +597,6 @@
        "46.2%"
       ],
       "label": "Open Space Committee"
-     },
-     {
-      "cells": [
-       "22",
-       "10",
-       "45.5%"
-      ],
-      "label": "By-Law Committee"
      },
      {
       "cells": [

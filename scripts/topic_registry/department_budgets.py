@@ -13,6 +13,9 @@ CATEGORY = dict(
     id='department-budgets', shelf='Department budgets', title='Town departments', area='town',
     order=52,
     groups=[
+        # TJ, 31 October 2026: the whole Town general fund -- money in, money out, what is
+        # left -- and which records hold each, at /town-funds/general-fund too
+        ('The whole general fund', ['town-general-fund']),
         ('The whole budget', ['town-budget-shares', 'town-budget-growth', 'town-voted-total']),
         ('The four largest', ['town-schools-line', 'town-public-safety',
                               'town-employee-benefits', 'town-debt-service']),
@@ -26,7 +29,9 @@ CATEGORY = dict(
                            'fy2026-school-retiree-insurance']),
     ])
 GENERATOR = 'build_department_budgets_topics.py'
+TOPIC_GENERATORS = {'town-general-fund': 'build_town_general_fund.py'}
 TOPICS = {
+    'town-general-fund': 'Town general fund',
     'town-budget-shares': 'Budget by department',
     'town-budget-growth': 'Growth above the cap',
     'town-voted-total': 'Voted budget total',

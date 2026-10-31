@@ -1545,7 +1545,7 @@ def town_receipts_data(T):
     """SCHOOL MONEY THAT GOES TO THE TOWN (TJ, 29 October 2026: "i also want the preschool money to
     go into the FY breakdown page ... its own section to show the additional funds"). The Town's
     own department 31, DEPT REV - SCHOOL, read once by school_receipts.py and shared with the
-    preschool report and /town-funds/general-fund."""
+    preschool report and /school-all-funds/school-receipts-to-town."""
     S = SR.series()
     years = []
     for fy in YEARS():
@@ -1571,7 +1571,7 @@ def town_receipts_data(T):
         read='Three receipts the schools generate are booked by the Town, in its general fund, not by '
              'the schools: none appears in any figure above.',
         received='Received', estimate='Town’s estimate', none='Not held', together='The three together',
-        fund='The Town general fund page', fund_href='/town-funds/general-fund',
+        fund='School receipts to the Town, every year', fund_href='/school-all-funds/school-receipts-to-town',
         preschool='Preschool: tuition against what can be identified of its cost',
         preschool_href='/school-all-funds/preschool'))
 
@@ -2708,7 +2708,7 @@ def move_class_dir(a, b):
 
 def salaries_data(m, T):
     return dict(years=SAL.data(m, T, line_name, fund_label, S.CAT_LABEL, long_date, fail),
-                links=[dict(href='/school-all-funds/pay-from-grants-and-fees', label='Pay from grants and fees'),
+                links=[dict(href='/school-all-funds/salaries-from-grants-and-fees', label='Salaries from grants and fees'),
                        dict(href='/school-all-funds/pay-moved-between-funds', label='Pay moved between funds')],
                 text=dict(
         lead='of school pay ended on funds other than the general fund in', of_all='of all school pay',

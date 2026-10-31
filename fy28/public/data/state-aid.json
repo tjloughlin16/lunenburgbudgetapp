@@ -1436,6 +1436,8 @@
    2015,
    2017,
    2018,
+   2020,
+   2021,
    2022
   ],
   "growth": {
@@ -1482,21 +1484,9 @@
    },
    {
     "fy": 2019,
-    "status": "no check",
-    "unpublished_figure": 7.53,
-    "why": "the receipts page states no total this extract can be reconciled to"
-   },
-   {
-    "fy": 2020,
-    "status": "absent",
-    "unpublished_figure": null,
-    "why": "no Chapter 70 row was extracted from that edition"
-   },
-   {
-    "fy": 2021,
-    "status": "no check",
-    "unpublished_figure": 7.77,
-    "why": "the receipts page states no total this extract can be reconciled to"
+    "status": "check failed",
+    "unpublished_figure": 7538072.0,
+    "why": "the extract does not reconcile to the totals that page prints"
    }
   ],
   "series": [
@@ -1742,9 +1732,9 @@
    },
    {
     "amount": null,
-    "document": "4123-fy-2016-annual-town-report.pdf",
+    "document": "4122-fy-2016-annual-town-report-addendum.pdf",
     "fy": 2016,
-    "page": "23",
+    "page": "1",
     "stage": "actual",
     "status": "no check",
     "unpublished_figure": 5834483.0,
@@ -1776,29 +1766,29 @@
     "fy": 2019,
     "page": "30",
     "stage": "actual",
-    "status": "no check",
-    "unpublished_figure": 7.53,
-    "why": "the receipts page states no total this extract can be reconciled to"
+    "status": "check failed",
+    "unpublished_figure": 7538072.0,
+    "why": "the extract does not reconcile to the totals that page prints"
    },
    {
-    "amount": null,
-    "document": null,
+    "amount": 7774336.0,
+    "document": "4127-fy-2020-annual-town-report.pdf",
     "fy": 2020,
-    "page": null,
+    "page": "24",
     "stage": "actual",
-    "status": "absent",
+    "status": "checked",
     "unpublished_figure": null,
-    "why": "no Chapter 70 row was extracted from that edition"
+    "why": null
    },
    {
-    "amount": null,
+    "amount": 7773938.0,
     "document": "4128-fy-2021-annual-town-report.pdf",
     "fy": 2021,
     "page": "25",
     "stage": "actual",
-    "status": "no check",
-    "unpublished_figure": 7.77,
-    "why": "the receipts page states no total this extract can be reconciled to"
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
    },
    {
     "amount": 7823618.0,

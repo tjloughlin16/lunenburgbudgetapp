@@ -2144,7 +2144,8 @@
      "bytes": 5407670,
      "url": "/docs/correspondence/2026-10-27-2000-annual-town-report-select-board-chair.pdf",
      "count": 134,
-     "unit": "pages"
+     "unit": "pages",
+     "searchableUrl": "/docs/searchable/correspondence/2026-10-27-2000-annual-town-report-select-board-chair.pdf"
     }
    ]
   },
@@ -5069,7 +5070,7 @@
      "stars": 3,
      "what": "Every page across fifteen annual town reports that carries a table of figures, each with the SUBJECT read off its own headings and whether any dataset cites it. It maps the other direction from the rest of the backlog: from the pages to what is on them, rather than from datasets that already exist — so a table nobody has written an extractor for appears in the queue instead of being invisible. `state` is the work queue — `read`, `unread`, or `reversed` for a page whose OCR came out upside down, which is a re-OCR job rather than a reading job. `subject` is a GUESS from the headings and is there to group the queue, never to say what a figure means. See scripts/map_annual_report_pages.py.",
      "kind": "Data",
-     "bytes": 849948,
+     "bytes": 850016,
      "url": "/docs/data/annual-report-pages.csv",
      "count": 2332,
      "unit": "rows",
@@ -5081,9 +5082,9 @@
      "stars": 3,
      "what": "1,137 rows, of which 504 tie to the report’s own printed GRAND TOTAL twice over. Never aggregate without splitting on the status column: 85 rows are in years whose check failed and 548 in years that print no total. See data/PROVENANCE-annual-report-receipts.md.",
      "kind": "Data",
-     "bytes": 631187,
+     "bytes": 631620,
      "url": "/docs/data/annual-report-receipts.csv",
-     "count": 7848,
+     "count": 7856,
      "unit": "rows",
      "textUrl": "/docs/data/annual-report-receipts.csv"
     },
@@ -5165,7 +5166,7 @@
      "stars": 3,
      "what": "107 questions across ten subjects, every one executed against the database on each build — the build fails if one errors or returns nothing. It is a menu for a person, a set of worked examples for anything using /api/query, and a test that the tables still hold what it says they hold. It deliberately does not print the answers: those move when the data does.",
      "kind": "Notes",
-     "bytes": 41030,
+     "bytes": 41036,
      "url": "/docs/analyses/questions.md",
      "count": 952,
      "unit": "lines",
@@ -5573,9 +5574,9 @@
      "stars": 2,
      "what": "The classification behind the money-flow diagrams, as data rather than as code. One row per revenue account, fund, department or grant code, saying what it is, HOW that was established and WHY. `how` is the column that matters: `stated` means the town’s own name says it; `neighbours` means it was read from what an account sits among — which is how `BUS CERTIF` turned out to be business certificates rather than buses; `outside` means it depends on knowledge from beyond this archive and is the weakest kind here; `unresolved` means ten characters is not enough and nothing settles it. Loaded into the database as `money_classification`, with `v_revenue_classified` and `v_spending_classified` joining it to the ledger.",
      "kind": "Data",
-     "bytes": 34508,
+     "bytes": 34854,
      "url": "/docs/data/money-classification.csv",
-     "count": 252,
+     "count": 254,
      "unit": "rows",
      "textUrl": "/docs/data/money-classification.csv"
     },
@@ -5628,18 +5629,6 @@
      "textUrl": "/docs/data/PROVENANCE-balance-sheet.md"
     },
     {
-     "path": "data/PROVENANCE-annual-report-receipts.md",
-     "title": "Where the receipts came from",
-     "stars": 2,
-     "what": "Written by us: the page each year was read from, the two totals each year is checked against, and what the status column means.",
-     "kind": "Notes",
-     "bytes": 12854,
-     "url": "/docs/data/PROVENANCE-annual-report-receipts.md",
-     "count": 134,
-     "unit": "lines",
-     "textUrl": "/docs/data/PROVENANCE-annual-report-receipts.md"
-    },
-    {
      "path": "data/peg-access-printed-totals.csv",
      "title": "The revenue-versus-expenses statement each report prints",
      "stars": 2,
@@ -5662,6 +5651,18 @@
      "count": 75,
      "unit": "rows",
      "textUrl": "/docs/data/enterprise-balance-sheet-printed-totals.csv"
+    },
+    {
+     "path": "data/PROVENANCE-annual-report-receipts.md",
+     "title": "Where the receipts came from",
+     "stars": 2,
+     "what": "Written by us: the page each year was read from, the two totals each year is checked against, and what the status column means.",
+     "kind": "Notes",
+     "bytes": 8141,
+     "url": "/docs/data/PROVENANCE-annual-report-receipts.md",
+     "count": 103,
+     "unit": "lines",
+     "textUrl": "/docs/data/PROVENANCE-annual-report-receipts.md"
     },
     {
      "path": "data/stabilization-balances.csv",
@@ -6636,7 +6637,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 93032448,
+     "bytes": 93061120,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -7615,6 +7616,18 @@
      "textUrl": "/docs/data/town-budget-versions.csv"
     },
     {
+     "path": "data/searchable-pdfs.csv",
+     "title": "Which PDFs have pages that are only pictures, and their searchable copies",
+     "stars": 2,
+     "what": "One row per PDF in the archive: what pdf_kind found (digital, scan, mixed), which pages carry no readable text, how many of those Amazon Textract has read, and whether our searchable copy is built. A searchable copy is the publisher’s file with every page image unchanged and invisible Textract words under the picture pages, served at /docs/searchable/<path>; the original stays at its own address. Ours, not the publisher’s. Rebuild with scripts/searchable_pdfs.py.",
+     "kind": "Data",
+     "bytes": 2599756,
+     "url": "/docs/data/searchable-pdfs.csv",
+     "count": 16252,
+     "unit": "rows",
+     "textUrl": "/docs/data/searchable-pdfs.csv"
+    },
+    {
      "path": "data/meeting-document-timestamps.csv",
      "title": "When each agenda and each set of minutes was MADE, from the document itself",
      "stars": 2,
@@ -7776,7 +7789,7 @@
      "stars": 2,
      "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
      "kind": "Data",
-     "bytes": 147118,
+     "bytes": 147612,
      "url": "/docs/data/refresh-runs.csv",
      "count": 39,
      "unit": "rows",
@@ -62837,9 +62850,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 5662,
+  "documents": 5663,
   "groups": 31,
-  "bytes": 7254005892,
+  "bytes": 7256630954,
   "loadBearing": 208
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

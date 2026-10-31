@@ -1017,8 +1017,8 @@ function resolvePath(pathname: string): Tab | null {
   // (pages/FyItem.tsx). They ride the topic tab, as /people/<slug> rides the org charts', so they
   // are no SLUG of their own: unlisted like the FY breakdown page they belong to.
   if (/^school-(lines|funds|groups)\/[a-z0-9-]+$/.test(seg)) return 'topic'
-  // ONE PAGE PER TOWN FUND, /town-funds/<slug> (pages/TownFund.tsx), the same way.
-  if (/^town-funds\/[a-z0-9-]+$/.test(seg)) return 'topic'
+  // A TOPIC PAGE AT AN ADDRESS OUTSIDE ITS SHELF (TOPIC_PATHS below).
+  if (TOPIC_PATHS[seg]) return 'topic'
   if (TOPIC_ALIASES[seg]) return 'topic'
   // The second. Forty-eight posts share one page component; the slug is in the path.
   if (seg.startsWith('blog/')) return 'blog'
@@ -1042,6 +1042,7 @@ function resolvePath(pathname: string): Tab | null {
  *  the topic id, or the category id for a hub. scripts/topics.py is the registry. */
 export function topicIdFromPath(pathname: string): string | null {
   const m = /^\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?\/?$/.exec(pathname.toLowerCase())
+  if (m && m[2] && TOPIC_PATHS[`${m[1]}/${m[2]}`]) return TOPIC_PATHS[`${m[1]}/${m[2]}`]
   if (m && !m[2] && TOPIC_ALIASES[m[1]]) return TOPIC_ALIASES[m[1]]
   if (!m || !TOPIC_CATEGORIES.includes(m[1])) return null
   return m[2] ? (TOPIC_MERGED[m[2]] ?? m[2]) : m[1]
@@ -1070,6 +1071,17 @@ export const TOPIC_MERGED: Record<string, string> = {
   // The school fund against its revised budget, and the August report's line-level misses:
   // merged 30 October 2026 into School lines against budget, which carries both (TJ, 29 Oct).
   'school-budget-against-actual': 'budget-against-actual', 'line-level-misses': 'budget-against-actual',
+  // TJ, 31 October 2026: "'pay' is too arbitrary ... rename the url too".
+  'pay-from-grants-and-fees': 'salaries-from-grants-and-fees',
+}
+
+/** TWO-SEGMENT ADDRESSES OUTSIDE ANY SHELF THAT OPEN A TOPIC PAGE: path -> topic id. Topic.tsx
+ *  moves the address bar to the page's own path. /town-funds/general-fund was its own page
+ *  (pages/TownFund.tsx) holding only the school receipts the Town books; TJ, 31 October 2026:
+ *  "build another page for the town fund". The receipts went to
+ *  /school-all-funds/school-receipts-to-town, and the address opens the whole fund. */
+export const TOPIC_PATHS: Record<string, string> = {
+  'town-funds/general-fund': 'town-general-fund',
 }
 
 /** ONE-SEGMENT ADDRESSES THAT NAME A HUB BY ANOTHER WORD: slug -> category id (or, for a page

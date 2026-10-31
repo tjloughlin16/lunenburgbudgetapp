@@ -65,7 +65,7 @@ FUND_PAGE = {'IDEA (preschool)': '/school-funds/idea-preschool',
              'IDEA preschool (pandemic relief)': '/school-funds/idea-preschool-pandemic-relief',
              'Preschool special education program improvement':
                  '/school-funds/preschool-special-education-program-improvement'}
-TOWN_FUND = '/town-funds/general-fund'
+TOWN_FUND = '/school-all-funds/school-receipts-to-town'
 NAMED = re.compile(r'PRE[- ]?SCH|PRESCH|PRE-?K\b|EARLY CHILD', re.I)
 # OURS: nicknames the roster prints for the wage list's legal first name, declared one by one.
 NICKNAMES = {'SUE': 'SUSAN'}
@@ -261,7 +261,7 @@ def page():
     ]
     sources = [
         dict(label='Town of Lunenburg — annual town reports, receipts schedules, FY2011–FY2022',
-             href='/data/annual-report-receipts.csv'),
+             href='/docs/data/annual-report-receipts.csv'),
         dict(label='Town of Lunenburg — MUNIS revenue report, FY2020 year end (Finance Committee files)',
              href=SR.DOCS['q4']),
         dict(label='Town of Lunenburg — MUNIS local receipts report, FY2025 (Finance Committee files)',
@@ -272,7 +272,7 @@ def page():
              href='/data/staff-roster-entries.csv'),
         dict(label='School Committee minutes, 7 February 2024 (the FY2025 tuition rate)',
              href='/docs/minutes/text/school-committee/2024-02-07-minutes-6395.txt'),
-        dict(label='Lunenburg Budget Project — the Town general fund page: every school receipt it books',
+        dict(label='Lunenburg Budget Project — school receipts the Town books, all three accounts',
              href=TOWN_FUND),
     ]
     p = TP.page(

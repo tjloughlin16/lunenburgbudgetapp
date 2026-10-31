@@ -40,9 +40,10 @@
      ]
     },
     {
-     "title": "Preschool",
+     "title": "Preschool and Town receipts",
      "topics": [
-      "preschool"
+      "preschool",
+      "school-receipts-to-town"
      ]
     },
     {
@@ -82,7 +83,7 @@
     {
      "title": "Who grants and fees pay for",
      "topics": [
-      "pay-from-grants-and-fees",
+      "salaries-from-grants-and-fees",
       "pay-moved-between-funds",
       "positions-and-their-funds",
       "activities-fund"
@@ -843,6 +844,12 @@
    "elsewhere": [],
    "groups": [
     {
+     "title": "The whole general fund",
+     "topics": [
+      "town-general-fund"
+     ]
+    },
+    {
      "title": "The whole budget",
      "topics": [
       "town-budget-shares",
@@ -1018,7 +1025,7 @@
    "title": "Health insurance costs"
   },
   {
-   "answer": "Across every board, 66% of FY2023 to FY2026 meetings have minutes listed on the town’s site. In FY2025, 87% of the seats the boards state had a name printed, and the median body changes 32% of its seats a year.",
+   "answer": "Across every board, 68% of FY2023 to FY2026 meetings have minutes listed on the town’s site. In FY2025, 87% of the seats the boards state had a name printed, and the median body changes 32% of its seats a year.",
    "area": "town",
    "elsewhere": [
     {
@@ -1680,7 +1687,7 @@
    "title": "Minutes by year"
   },
   "board-minutes-posted": {
-   "finding": "On the town’s Agenda Center, 1,284 of 1,934 board meetings from FY2023 to FY2026 have minutes listed, 66%.",
+   "finding": "On the town’s Agenda Center, 1,307 of 1,935 board meetings from FY2023 to FY2026 have minutes listed, 68%.",
    "generator": "scripts/build_board_records_topics.py",
    "home": "board-records",
    "id": "board-minutes-posted",
@@ -1708,7 +1715,7 @@
    "title": "Open seats"
   },
   "board-recordings": {
-   "finding": "1,173 of 1,934 meetings, FY2023 to FY2026, have a town video matched; 10 of 30 ranked boards have none.",
+   "finding": "1,173 of 1,935 meetings, FY2023 to FY2026, have a town video matched; 10 of 30 ranked boards have none.",
    "generator": "scripts/build_board_records_topics.py",
    "home": "board-records",
    "id": "board-recordings",
@@ -2305,7 +2312,7 @@
    "title": "District health line"
   },
   "district-staff-directory": {
-   "finding": "The district’s staff directory listed 258 people on 23 October 2026; it carries no FTE and no fund.",
+   "finding": "The district’s staff directory listed 257 people on 30 October 2026; it carries no FTE and no fund.",
    "generator": "scripts/build_school_staffing_topics.py",
    "home": "school-staffing",
    "id": "district-staff-directory",
@@ -2443,6 +2450,18 @@
    "path": "/free-cash/free-cash-balance",
    "ready": true,
    "related": [
+    {
+     "id": "town-general-fund",
+     "path": "/department-budgets/town-general-fund",
+     "title": "Town general fund",
+     "why": "The whole Town general fund: in, out, and what is left"
+    },
+    {
+     "id": "town-voted-total",
+     "path": "/department-budgets/town-voted-total",
+     "title": "Voted budget total",
+     "why": "What Town Meeting voted, every year held"
+    },
     {
      "id": "cherry-sheet-variance",
      "path": "/state-aid/cherry-sheet-variance",
@@ -3957,20 +3976,6 @@
    ],
    "title": "Participation"
   },
-  "pay-from-grants-and-fees": {
-   "finding": "Grants and fee funds paid $7,268,170 of school pay in four years; no account names the job.",
-   "generator": "scripts/build_pay_by_fund_topics.py",
-   "home": "school-all-funds",
-   "id": "pay-from-grants-and-fees",
-   "minutes": 2,
-   "path": "/school-all-funds/pay-from-grants-and-fees",
-   "ready": true,
-   "related": [],
-   "shelves": [
-    "school-all-funds"
-   ],
-   "title": "Pay from grants and fees"
-  },
   "pay-moved-between-funds": {
    "finding": "Journal entries moved $545,630 of general fund pay onto other funds in four years, and $617,530 back.",
    "generator": "scripts/build_pay_by_fund_topics.py",
@@ -4086,14 +4091,27 @@
    "title": "Positions and their funds"
   },
   "preschool": {
-   "finding": "Families’ preschool tuition goes to the Town, not the schools; in FY2025 the Town had budgeted for 24% of it.",
+   "finding": "Preschool tuition goes to the Town, not the schools; in FY2025 it brought in 4.2 times what the Town planned.",
    "generator": "scripts/build_preschool.py",
    "home": "school-all-funds",
    "id": "preschool",
    "minutes": 1,
    "path": "/school-all-funds/preschool",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "town-general-fund",
+     "path": "/department-budgets/town-general-fund",
+     "title": "Town general fund",
+     "why": "The whole Town general fund: in, out, and what is left"
+    },
+    {
+     "id": "school-receipts-to-town",
+     "path": "/school-all-funds/school-receipts-to-town",
+     "title": "School receipts to the Town",
+     "why": "School receipts the Town books as its own revenue"
+    }
+   ],
    "shelves": [
     "school-all-funds"
    ],
@@ -4315,6 +4333,20 @@
    ],
    "title": "Revolving fund history"
   },
+  "salaries-from-grants-and-fees": {
+   "finding": "Grants and fee funds paid $7,268,170 of school salaries in four years; no account names the job.",
+   "generator": "scripts/build_pay_by_fund_topics.py",
+   "home": "school-all-funds",
+   "id": "salaries-from-grants-and-fees",
+   "minutes": 3,
+   "path": "/school-all-funds/salaries-from-grants-and-fees",
+   "ready": true,
+   "related": [],
+   "shelves": [
+    "school-all-funds"
+   ],
+   "title": "Salaries from grants and fees"
+  },
   "salary-line-and-staffing": {
    "finding": "Held to 2.5% while pay rises 4.0%, the salary line loses 2.2 positions a year, by our arithmetic.",
    "generator": "scripts/build_budget_options_topics.py",
@@ -4465,6 +4497,33 @@
     "school-all-funds"
    ],
    "title": "School grants and aid"
+  },
+  "school-receipts-to-town": {
+   "finding": "The schools brought in $183,945 in FY2025 that the Town books as general fund revenue, 3.1 times its plan.",
+   "generator": "scripts/build_school_receipts_to_town.py",
+   "home": "school-all-funds",
+   "id": "school-receipts-to-town",
+   "minutes": 1,
+   "path": "/school-all-funds/school-receipts-to-town",
+   "ready": true,
+   "related": [
+    {
+     "id": "town-general-fund",
+     "path": "/department-budgets/town-general-fund",
+     "title": "Town general fund",
+     "why": "The whole Town general fund: in, out, and what is left"
+    },
+    {
+     "id": "preschool",
+     "path": "/school-all-funds/preschool",
+     "title": "Preschool",
+     "why": "Preschool tuition, the largest of them, beside its grants"
+    }
+   ],
+   "shelves": [
+    "school-all-funds"
+   ],
+   "title": "School receipts to the Town"
   },
   "school-revolving-funds": {
    "finding": "The 9 school revolving funds took in $1,031,126 and paid out $1,119,195 in nine months of FY2026.",
@@ -5284,6 +5343,45 @@
    ],
    "title": "Facilities and grounds"
   },
+  "town-general-fund": {
+   "finding": "The Town planned on $49,326,796 of general fund revenue for FY2026; 71.0% of it is the property tax levy.",
+   "generator": "scripts/build_town_general_fund.py",
+   "home": "department-budgets",
+   "id": "town-general-fund",
+   "minutes": 1,
+   "path": "/department-budgets/town-general-fund",
+   "ready": true,
+   "related": [
+    {
+     "id": "school-receipts-to-town",
+     "path": "/school-all-funds/school-receipts-to-town",
+     "title": "School receipts to the Town",
+     "why": "School receipts the Town books as its own revenue"
+    },
+    {
+     "id": "preschool",
+     "path": "/school-all-funds/preschool",
+     "title": "Preschool",
+     "why": "Preschool tuition, the largest of them, beside its grants"
+    },
+    {
+     "id": "town-voted-total",
+     "path": "/department-budgets/town-voted-total",
+     "title": "Voted budget total",
+     "why": "What Town Meeting voted, every year held"
+    },
+    {
+     "id": "free-cash-balance",
+     "path": "/free-cash/free-cash-balance",
+     "title": "Free cash balance",
+     "why": "What the general fund left, certified as free cash"
+    }
+   ],
+   "shelves": [
+    "department-budgets"
+   ],
+   "title": "Town general fund"
+  },
   "town-general-government": {
    "finding": "The town’s own administration grew 10.2% a year, $168,340 past the cap in dollars, third of the twelve.",
    "generator": "scripts/build_department_budgets_topics.py",
@@ -5432,7 +5530,20 @@
    "minutes": 1,
    "path": "/department-budgets/town-voted-total",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "town-general-fund",
+     "path": "/department-budgets/town-general-fund",
+     "title": "Town general fund",
+     "why": "The whole Town general fund: in, out, and what is left"
+    },
+    {
+     "id": "free-cash-balance",
+     "path": "/free-cash/free-cash-balance",
+     "title": "Free cash balance",
+     "why": "What the general fund left, certified as free cash"
+    }
+   ],
    "shelves": [
     "department-budgets"
    ],

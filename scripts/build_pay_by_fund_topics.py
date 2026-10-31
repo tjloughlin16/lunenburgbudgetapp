@@ -44,6 +44,15 @@ import ladder as LD  # noqa: E402
 import topic as TP  # noqa: E402
 from brief import step  # noqa: E402
 import journal as J  # noqa: E402
+import topic_blocks as TB  # noqa: E402
+# The DESE function code is the school's budget line; its name and its class (a voted line, a
+# heading, no code, no voted line) come from the same place budget-lines-all-funds reads them,
+# so a line is named once across the shelf.
+from build_school_all_funds import code_names  # noqa: E402
+# RE-CHARGED OFF A SCHOOL LINE: the school-line pages' own reading of year-end journal entries
+# (fy_breakdown, rule a, one memo at a time), and their own name for a line, so this page and
+# /school-lines/<line> report the same re-charge under the same name.
+# Both imported inside build(): build_fy_breakdown imports fy_salaries, which imports this module.
 
 OUT_DIR = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics')
 CROSSWALK = os.path.join(ROOT, 'sources', 'data', 'position-funds-crosswalk.csv')
@@ -58,6 +67,9 @@ KIND = [('ADMINISTRATOR', 'Administrators'), ('NON INSTR', 'Support staff'),
         ('INSTR', 'Instructional staff'),
         ('STIPEND', 'Stipends')]
 ESSER = ('115', '119')
+# What each function class means on the voted budget (journal.FUNCTION_CLASSES), in words.
+LINE_CLASS = {'line': 'a voted line', 'heading': 'a heading, no one line',
+              'none': 'no function code', 'other': 'a code with no voted line'}
 FEE_FUND = '1301'                      # Chapter 658 school athletics: the athletic fee fund
 MOVE_ROW_MIN = 5000
 
@@ -218,14 +230,107 @@ def build():
                  for p in progs if abs(sum(m['prog'][(y, p)] for y in Y)) >= 0.5]
     if len(prog_rows) > 30:
         fail('the program table runs past 30 rows: %d' % len(prog_rows))
+    # SALARIES BY SCHOOL BUDGET LINE. The account's function code is the line it was charged to;
+    # the account's own description is the kind of work. Neither names a post (PAYROLL_GRAIN).
+    names = code_names()
+    OUT_G = [g for g in OUTS]
+    bl = defaultdict(float)             # (fy, group, code)
+    ba = defaultdict(float)             # (fy, code, row label) -> one fund program's account
+    for (y, k), v in m['acct'].items():
+        a = A[k]
+        g = J.fund_group(a)
+        if g == 'General fund':
+            continue
+        c = J.function(k)
+        if c not in names:
+            fail('function code %s has no name; budget-lines-all-funds names every code' % c)
+        bl[(y, g, c)] += v
+        ba[(y, c, '%s — %s' % (program(a), a['account_description'].title()))] += v
+    line_y = lambda y, c, gs=OUT_G: sum(bl[(y, g, c)] for g in gs)
+    if any(abs(sum(line_y(y, c) for c in {k[2] for k in bl}) - out_y[y]) > 0.01 for y in Y):
+        fail('salaries by budget line do not foot to salaries outside the general fund')
+    codes = sorted({k[2] for k in bl}, key=lambda c: (-line_y(F1, c), -sum(line_y(y, c) for y in Y)))
+    lbl = lambda c: '%s %s' % (c, names[c])
+    cls = {c: J.function_class(c) for c in codes}
+    on_line4 = sum(line_y(y, c) for y in Y for c in codes if cls[c] == 'line')
+    on_line1 = sum(line_y(F1, c) for c in codes if cls[c] == 'line')
+    line_codes = [c for c in codes if cls[c] == 'line']
+    usd_or_blank = lambda v: C.usd(round(v)) if abs(v) >= 0.5 else ''
+
+    def line_view(key, label, gs):
+        rows = [dict(label=lbl(c), cells=[LINE_CLASS[cls[c]]]
+                     + [usd_or_blank(line_y(y, c, gs)) for y in Y]
+                     + [C.usd(round(sum(line_y(y, c, gs) for y in Y)))])
+                for c in codes if any(abs(line_y(y, c, gs)) >= 0.5 for y in Y)]
+        return dict(key=key, label=label, kinds=['stated'] + ['ledger'] * (len(Y) + 1),
+                    columns=['On the voted budget'] + X + ['Four years'], rows=rows,
+                    note='The line is the grant or fee account’s own function code, mostly a '
+                         'heading. Pay re-charged off a school line lands here under that code. '
+                         'Stipends included; no account names a position.')
+    line_views = [line_view('all', 'Grants and fees', OUT_G)] + [
+        line_view('g%d' % i, {'Revolving funds and lunch': 'Fee funds and lunch'}.get(g, g), [g])
+        for i, g in enumerate(OUT_G)]
+    acct_views = []
+    for c in codes:
+        labels = sorted({k[2] for k in ba if k[1] == c},
+                        key=lambda l: (-ba[(F1, c, l)], -sum(ba[(y, c, l)] for y in Y), l))
+        rows = [dict(label=l, cells=[usd_or_blank(ba[(y, c, l)]) for y in Y]
+                     + [C.usd(round(sum(ba[(y, c, l)] for y in Y)))])
+                for l in labels if any(abs(ba[(y, c, l)]) >= 0.5 for y in Y)]
+        if len(rows) > 30:
+            fail('%s: more than 30 accounts on one line' % lbl(c))
+        if rows:
+            acct_views.append(dict(key='c' + c, label=lbl(c), kinds=['ledger'] * (len(Y) + 1),
+                                   columns=X + ['Four years'], rows=rows,
+                                   note='Each row is a fund and the account’s own name for the '
+                                        'kind of work. The ledger posts one line per account per '
+                                        'pay run, so it cannot name the positions behind a row.'))
+    # Re-charges: pay first booked to a school budget line, then moved onto a grant or fee fund
+    # by a year-end entry. The grant side carries the grant account's code, so those dollars
+    # sit above under that code, never under the school line they came off.
+    import fy_breakdown as FB
+    from build_fy_breakdown import line_name
+    rc = defaultdict(float)             # (fy, line name) -> re-charged off it
+    rc_to = defaultdict(set)            # (fy, line name) -> the funds on the other side
+    for r in FB.model()['rows']:
+        if not r['account'] or not is_pay(A[r['account']]):
+            continue
+        for (rule, py), v in r['payers'].items():
+            if rule == 'moved' and not py.startswith('General fund') and v:
+                rc[(r['fy'], line_name(r))] += float(v)
+                rc_to[(r['fy'], line_name(r))].add(py)
+    rc_views = []
+    for y in Y:
+        rows = sorted([(n, v) for (fy, n), v in rc.items() if fy == y and round(v)],
+                      key=lambda kv: (-kv[1], kv[0]))
+        if len(rows) > 30:
+            fail('%s: more than 30 school lines re-charged' % C.fy(y))
+        rc_views.append(dict(key='rc%d' % y, label=C.fy(y), kinds=['ledger', 'ledger'],
+                             columns=['Re-charged off the line', 'Onto'],
+                             rows=[dict(label=n, cells=[C.usd(round(v)), ', '.join(sorted(rc_to[(y, n)]))])
+                                   for n, v in rows],
+                             note='The school-line pages show the same entries as Re-charged to. '
+                                  'One entry can move several lines onto several funds; it does '
+                                  'not pair each line with one fund.'))
+    line_rank = TB.chart(
+        TP.ranking('Grant and fee salaries by budget line',
+                   [(lbl(c), [round(sum(bl[(y, g, c)] for y in Y)) for g in OUT_G]) for c in codes],
+                   '$', highlight=[lbl(c) for c in line_codes], stack=OUT_G,
+                   note='Four years, %s to %s, by the function code each salary account carries. '
+                        'Highlighted: the voted budget lines.' % (C.fy(F0), C.fy(F1)),
+                   note_figures={'y': F(F0), 'z': F(F1)}),
+        place='body',
+        so=('Of %s in grant and fee salaries over four years, %s sat on a line the budget votes; '
+            'the rest is booked to a heading, no code, or food services, so no voted line shows it.'
+            % (C.usd(round(out4)), C.usd(round(on_line4))), {'a': U(out4), 'b': U(on_line4)}))
     KINDS = [k for _, k in KIND] + ['Other pay']
-    out['pay-from-grants-and-fees'] = TP.page(
-        'pay-from-grants-and-fees',
-        'Grants and fee funds paid %s of school pay in four years; no account names the job.'
+    out['salaries-from-grants-and-fees'] = TP.page(
+        'salaries-from-grants-and-fees',
+        'Grants and fee funds paid %s of school salaries in four years; no account names the job.'
         % C.usd(round(out4)),
-        [f('p-out4', U(out4), 'pay outside the general fund, %s to %s' % (C.fy(F0), C.fy(F1)),
+        [f('p-out4', U(out4), 'salaries outside the general fund, %s to %s' % (C.fy(F0), C.fy(F1)),
            'published', {'y': F(F0), 'z': F(F1)}),
-         f('p-share', P(share1), 'of all school pay, %s' % C.fy(F1), 'published', {'y': F(F1)}),
+         f('p-share', P(share1), 'of all school salaries, %s' % C.fy(F1), 'published', {'y': F(F1)}),
          f('p-gr4', U(grants4), 'from grants, four years', 'published'),
          f('p-rv4', U(rev4), 'from fee funds and lunch, four years', 'published'),
          f('p-idea', U(idea4), 'from the IDEA special education grant', 'published'),
@@ -237,7 +342,7 @@ def build():
            {'y': F(F0)}),
          f('p-who', None, 'which jobs each grant pays', 'gap',
            closes='the Town’s payroll distribution report: each employee’s pay by fund and account')],
-        [con('Grants and fee funds paid %s of school pay in four years, and %s of all school pay in %s.'
+        [con('Grants and fee funds paid %s of school salaries in four years, and %s of all of them in %s.'
              % (C.usd(round(out4)), C.pct(share1), C.fy(F1)), ['p-out4', 'p-share', 'p-gr4', 'p-rv4'],
              {'a': U(out4), 'p': P(share1), 'y': F(F1)}),
          con('IDEA paid the most grant pay, %s; grants booked %s of their pay as support salaries.'
@@ -260,21 +365,25 @@ def build():
              % (C.usd(round(g0)), C.fy(F0), C.usd(round(g1)), C.fy(F1), C.usd(round(esser[F0]))),
              ['p-g0', 'p-g1', 'p-es'],
              {'a': U(g0), 'y': F(F0), 'b': U(g1), 'z': F(F1), 'c': U(esser[F0])})],
-        chart=TP.series('School pay outside the general fund', X,
+        chart=TP.series('School salaries outside the general fund', X,
                         [TP.track(g, [round(m['pay'][(y, g)]) for y in Y]) for g in OUTS],
                         '$', kind='bar', stacked=True, totals=True,
                         note='Wages posted to grants and other funds, with pay moved in or out by '
                              'journal entry. Benefits are left out.'),
-        also=[TP.series('Grant pay, by kind of work', X,
+        also=[TP.series('Grant salaries, by kind of work', X,
                         [TP.track(k, [round(m['kind'][(y, k)]) for y in Y]) for k in KINDS
                          if any(abs(m['kind'][(y, k)]) >= 1 for y in Y)],
                         '$', kind='bar', stacked=True,
                         note='The kind is the account’s own name. No account names a job.')],
-        tables=[dict(caption='Pay by fund or grant, each year', views=[dict(
+        tables=[dict(caption='Salaries by fund or grant, each year', views=[dict(
             key='programs', label='Four years', kinds=['ledger'] * (len(Y) + 1),
             columns=X + ['Four years'], rows=prog_rows,
             note='Grants by their DESE program, every award year together; other funds by name. '
-                 'Program names are ours.')])],
+                 'Program names are ours.')]),
+            dict(caption='Salaries by school budget line, each year', views=line_views),
+            dict(caption='Which accounts paid salaries on each line', views=acct_views),
+            dict(caption='School salary lines re-charged onto grants and fees', views=rc_views)],
+        blocks=[line_rank],
         finding_figures={'a': U(out4)},
         sources=src)
 
