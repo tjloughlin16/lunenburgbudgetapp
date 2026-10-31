@@ -29,12 +29,11 @@ ours. `notes/findings/OML-TRAINING-2026-09-23.md` is untracked from an earlier s
 ## Hard constraints (TJ's)
 
 - **No student names, no rosters.** Roster COUNTS only. Names are stripped at fetch time.
-- **Never cite or attribute the ArbiterLive fetching decision to TJ** in any file, commit or
-  page. See memory `arbiter-schedules-facts-not-pages`. Published text describes the robots
-  behaviour neutrally ("The pages are not archived or republished").
-- `scripts/fetch_arbiter_schedules.py` **refuses on robots.txt (exit 3)**. TJ said "we have what
-  we need for analysis". Overriding it needs TJ's direct OK in that turn. Spring 2027 is one
-  manual fetch next June, nothing recurring.
+- Published text describes the robots behaviour neutrally ("The pages are not archived or
+  republished").
+- `scripts/fetch_arbiter_schedules.py` **refuses on robots.txt (exit 3)**. The data needed for
+  analysis is held; ask before overriding it. Spring 2027 is one manual fetch next June, nothing
+  recurring.
 - Rule 10: deploy only when asked. NextLevel tags: `#appdev #lunenburgbudgetapp` + feature tag,
   never `#goalsetters`.
 
