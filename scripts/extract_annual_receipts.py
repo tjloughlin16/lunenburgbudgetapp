@@ -61,7 +61,19 @@ OUT = os.path.join(ROOT, 'sources', 'data', 'annual-report-receipts.csv')
 PROV = os.path.join(ROOT, 'sources', 'data',
                     'PROVENANCE-annual-report-receipts.md')
 
-PAIR = re.compile(r"([A-Z][A-Za-z0-9&/\.\,\'\-\# ]{2,60}?)\s*\$\s?([\d,]+\.\d\d)")
+# The figure takes the multi-separator form FIRST and whole, whichever glyph the scanner chose
+# for the marks, as `pdf_tables.MONEY` does. FY2019-FY2021's scans print `$7.773.938.00`; the
+# ordinary form alone stopped at the first full stop and wrote 7.77 -- Chapter 70 at eight
+# dollars. `(?!\d)` because a two-digit tail is only the cents if nothing follows it.
+PAIR = re.compile(r"([A-Z][A-Za-z0-9&/\.\,\'\-\# ]{2,60}?)\s*\$\s?"
+                  r"(\d{1,3}(?:[.,]\d{3})+[.,]\d\d(?!\d)|[\d,]+\.\d\d(?!\d))")
+PAGES_READ = os.path.join(ROOT, 'sources', 'data', 'pages-read.csv')
+BLOCKED = os.path.join(ROOT, 'sources', 'data', 'page-blocked.csv')
+
+
+def figure(text):
+    """`11.648.82` or `11,648.82` -> 11648.82: the last mark is the decimal point."""
+    return float(re.sub(r'[.,]', '', text[:-3]) + '.' + text[-2:])
 
 
 def loose(phrase):
@@ -232,7 +244,7 @@ def split_summary(lines):
         detail, summary = [], []
         for line in lines:
             for m in PAIR.finditer(line):
-                label, value = m.group(1).strip(), float(m.group(2).replace(',', ''))
+                label, value = m.group(1).strip(), figure(m.group(2))
                 key = squash(label)
                 if key.startswith('GRANDTOTAL'):
                     continue
@@ -250,7 +262,7 @@ def split_summary(lines):
     detail, summary, grand = [], [], None
     for n, line in enumerate(lines):
         for m in PAIR.finditer(line):
-            label, value = m.group(1).strip(), float(m.group(2).replace(',', ''))
+            label, value = m.group(1).strip(), figure(m.group(2))
             key = squash(label)
             if key.startswith('GRANDTOTAL'):
                 grand = value
@@ -293,12 +305,61 @@ def sha256(path):
     return h.hexdigest()
 
 
+# A heading the reader carried in front of a label: `FEES: `, `(right column) `.
+READING_HEAD = re.compile(r'^(?:\([^)]*\)\s*:?\s*|[A-Z][A-Z&/ ]+:\s+)')
+
+
+def reading_label(r):
+    s = r['fund_name'].split('::')[-1].strip()
+    while True:
+        t = READING_HEAD.sub('', s, count=1).strip()
+        if t == s:
+            return s
+        s = t
+
+
+def page_readings():
+    """{(fy, page): (detail [(label, value)], category total)} from pages-read.csv.
+
+    A PAGE READ BY EYE SUPERSEDES THIS EXTRACT (CLAUDE.md, "The annual town reports"). Each
+    page was read by a different worker, so the summary categories are marked four ways: a
+    `summary` column, `SUMMARY` in the heading, an `AMOUNT ::` prefix, or (FY2013) a bare
+    category name with no heading at all. Everything else is a printed detail line.
+    """
+    cats = {squash(c) for c in SUMMARY_CATEGORIES}
+    out = {}
+    for r in csv.DictReader(open(PAGES_READ, encoding='utf-8')):
+        if r['status'] != 'checked' or r['column'] == 'cells_per_row' \
+                or not re.fullmatch(r'-?\d+(\.\d+)?', r['value']):
+            continue
+        k = (int(r['fy']), int(r['page']))
+        ctx = (r['fund_name'] + ' ' + r['fund_number']).upper()
+        label = reading_label(r)
+        summary = (r['column'] == 'summary' or 'SUMMARY' in ctx
+                   or r['fund_name'].startswith('AMOUNT ::')
+                   or (squash(label) in cats and r['fund_name'] == r['fund_number']))
+        detail, total = out.setdefault(k, ([], [0.0]))
+        if summary:
+            total[0] += float(r['value'])
+        else:
+            detail.append((label, float(r['value'])))
+    return {k: (d, round(t[0], 2)) for k, (d, t) in out.items()}
+
+
+def blocked_pages():
+    return {(int(r['fy']), int(r['page'])): r['reason']
+            for r in csv.DictReader(open(BLOCKED, encoding='utf-8'))}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--boxes', default=os.path.join(ROOT, 'sources', 'town-budget', 'ocr'),
                     help='directory of ocr_pdf.swift --boxes TSVs')
+    ap.add_argument('--check', action='store_true',
+                    help='fail if the CSV or its provenance no longer reproduces')
     args = ap.parse_args()
 
+    readings, blocked = page_readings(), blocked_pages()
     rows, ledger = [], []
     pdfs = sorted(fiscal_editions(glob.glob(os.path.join(DOCS, '*annual-town-report*.pdf'))),
                   key=lambda p: fiscal_year(os.path.basename(p)) or 0)
@@ -320,6 +381,37 @@ def main():
         # $31.8M of extracted rows.
         wrote_any = False
         for page in pages:
+            if (fy, page) in blocked:
+                ledger.append({'fy': fy, 'document': name, 'page': page, 'mode': mode_of,
+                               'status': 'not found', 'sources': 0, 'extracted': None,
+                               'printed': None, 'absent': [],
+                               'why': f'page {page} is registered in page-blocked.csv '
+                                      f'({blocked[(fy, page)]}); nothing is written from it'})
+                wrote_any = True
+                continue
+            reading = readings.get((fy, page))
+            if reading and reading[0]:
+                # The page as read by eye. It ties when its detail foots to the categories
+                # the reader footed to the printed GRAND TOTAL. FY2011-FY2013 do not, and
+                # that is the TOWN's page: its detail lines do not sum to its own total
+                # (pages-read.csv, `proof`), so those rows are the reading, unchecked.
+                detail, cat_total = reading
+                sd = round(sum(v for _, v in detail), 2)
+                ok = abs(sd - cat_total) <= 0.005
+                status = 'checked' if ok else 'no check'
+                why = '' if ok else (
+                    f"read by eye (pages-read.csv); the page's own detail lines sum to "
+                    f'{sd:,.2f} and its categories to {cat_total:,.2f} ({sd - cat_total:+,.2f}), '
+                    f'and it does not say which line belongs to which category')
+                ledger.append({'fy': fy, 'document': name, 'page': page,
+                               'mode': 'read by eye (pages-read.csv)', 'status': status,
+                               'sources': len(detail), 'extracted': sd, 'printed': cat_total,
+                               'why': why, 'absent': []})
+                for label, value in detail:
+                    rows.append({'fy': fy, 'source': label, 'amount': f'{value:.2f}',
+                                 'status': status, 'document': name, 'page': page})
+                wrote_any = True
+                continue
             lines = [l for l in lines_by_page[page] if l.strip()]
             detail, summary, grand = split_summary(lines)
             if not detail:
@@ -327,6 +419,11 @@ def main():
             sd = round(sum(v for _, v in detail), 2)
             sc = round(sum(v for _, v in summary), 2)
             absent = missing_figures(lines, detail, summary, grand)
+            if grand is None and reading:
+                # Only the categories were read by eye (FY2019): they foot to the printed
+                # GRAND TOTAL, so the detail can be checked against that.
+                grand = sc = reading[1]
+                absent = [a for a in absent if a != 'GRAND TOTAL']
 
             if grand is None:
                 status = 'check failed' if grand is not None else 'no check'
@@ -362,12 +459,29 @@ def main():
                                   'replaced the accountant section with MUNIS schedules '
                                   'and FY2025 publishes no general fund revenue table'})
 
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, 'w', newline='') as fh:
-        w = csv.DictWriter(fh, fieldnames=['fy', 'source', 'amount', 'status',
-                                           'document', 'page'])
-        w.writeheader()
-        w.writerows(rows)
+    import io
+    import merge_report_tables
+    buf = io.StringIO()
+    w = csv.DictWriter(buf, fieldnames=['fy', 'source', 'amount', 'status',
+                                        'document', 'page'])
+    w.writeheader()
+    w.writerows(rows)
+    # The 1959-2010 editions' rows follow ours (merge_report_tables.py). Writing without them
+    # dropped about 7,000 rows every time this ran on its own.
+    text = merge_report_tables.with_editions(OUT, buf.getvalue())
+    prov = provenance_text(ledger, pdfs)
+    if args.check:
+        stale = [os.path.relpath(p, ROOT) for p, t in ((OUT, text), (PROV, prov))
+                 if not os.path.exists(p) or open(p, newline='', encoding='utf-8').read() != t]
+        if stale:
+            raise SystemExit('STALE: %s no longer reproduces.\n'
+                             '  Run: python3 scripts/extract_annual_receipts.py' % ', '.join(stale))
+        print(f'ok: {os.path.relpath(OUT, ROOT)} still reproduces -- {len(rows):,} source-years')
+        return
+    for path, t in ((OUT, text), (PROV, prov)):
+        with open(path + '.tmp', 'w', newline='', encoding='utf-8') as fh:
+            fh.write(t)
+        os.replace(path + '.tmp', path)
 
     reconciled = [r for r in ledger if r['status'] == 'checked']
     partial = [r for r in ledger if r['status'] in ('check failed', 'no check')]
@@ -394,11 +508,10 @@ def main():
           f"{sum(1 for r in rows if r['status'] != 'checked')} not)")
     print(f'wrote {os.path.relpath(OUT, ROOT)}')
 
-    write_provenance(ledger, pdfs)
     print(f'wrote {os.path.relpath(PROV, ROOT)}')
 
 
-def write_provenance(ledger, pdfs):
+def provenance_text(ledger, pdfs):
     """The provenance report, generated from the run rather than written beside it.
 
     Rule 12 wants the address, the publisher's filename and our copy with a sha256 for
@@ -489,8 +602,7 @@ def write_provenance(ledger, pdfs):
         L.append(f'| `{name}` | `{hashes[name]}` |')
     L.append('')
 
-    with open(PROV, 'w') as fh:
-        fh.write('\n'.join(L) + '\n')
+    return '\n'.join(L) + '\n'
 
 
 if __name__ == '__main__':

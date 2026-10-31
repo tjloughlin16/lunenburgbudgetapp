@@ -41,16 +41,15 @@ and the hand-typed `READ_BY_EYE` figure is gone. Gained: school medical reimburs
 FY2013, parking and medical FY2021 -- so the Town general fund page's three-account total now
 exists for FY2012, FY2013 and FY2021. Where both sources hold a figure they agree to the cent.
 
-**Found, NOT fixed -- `extract_annual_receipts.py` no longer reproduces its committed rows.**
-Its money pattern stops at the first full stop, so a scan that prints `$7.773.938.00` gives 7.77
-(FY2019, FY2020, FY2021 are full of these). Fixing the pattern is easy (the multi-separator form
-`pdf_tables.MONEY` uses), but re-running against TODAY's page cache also changes the label-to-figure
-pairing in FY2011-2013, FY2021 and FY2023 -- the committed rows came from an older cache -- and some
-new pairings are wrong (FY2021 puts HEALTH LICENSES' $2,150 beside INTEREST PERSONAL PROPERTY). It has
-no `--check`, so `check_generated.py` cannot see the drift. Remedy, when somebody picks it up: for
-every year with a proven page in `pages-read.csv`, emit THAT reading instead of the regex pairing.
-Re-running the extractor alone also drops the 1959-2010 rows; always follow it with
-`merge_report_tables.py`.
+**Extractor defect -- FIXED 31 Oct.** `extract_annual_receipts.py` now:
+- reads `$7.773.938.00` whole (multi-separator money form); FY2019-2021 had Chapter 70 at $7.77;
+- takes a page read by eye (`pages-read.csv`) instead of the regex pairing: FY2020 and FY2021 now
+  `checked` (detail foots to the categories to the cent); FY2011-2013 are the readings, `no check`,
+  because the TOWN's detail does not sum to its own total there;
+- writes nothing from a page in `page-blocked.csv` (FY2023 p25; FY2016 p23, a clipped duplicate of p1);
+- checks FY2019's regex detail against the reader's footed grand total: short by ~$1.95M, `check failed`;
+- writes through `with_editions()` and has `--check`, now in `check_generated.py`.
+Result: 7 of 15 years checked (was 5); pre-2011 rows and the five already-tied years byte-identical.
 
 **Deploy:**
 DEPLOYED 30 Oct 2026, `69b72501` (lunenburg-fy28), from `deb071a14`, pushed to origin/main.

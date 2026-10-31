@@ -48,6 +48,7 @@ HOOKED = {
     'annual-report-pages.csv': 'map_annual_report_pages.py',
     'treasurers-cash.csv': 'extract_treasurers_cash.py',
     'special-revenue-funds.csv': 'extract_special_revenue.py',
+    'annual-report-receipts.csv': 'extract_annual_receipts.py',
     'annual-report-catalogue.csv': 'build_report_catalogue.py',
     'report-*.csv (the generic family)': 'extract_tables.py',
 }
