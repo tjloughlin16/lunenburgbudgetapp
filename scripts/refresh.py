@@ -1473,6 +1473,14 @@ def run(a, notes, ctx):
         for fy, closes in (('fy26', '2025-05-17'), ('fy27', '2026-05-16')):
             py('build_budget_feed.py', '--as-of', closes, '--out', 'fy28/public/data/budget-feed-%s.json' % fy)
         metered('tag_document_affinity.py', notes=notes)     # only documents not yet tagged; cents
+        # A SEARCHABLE COPY OF EVERY NEW PDF WITH PICTURE PAGES (TJ, 31 October 2026): surveyed
+        # with pdf_kind, the picture pages read by Textract through its own meter and latch, built,
+        # verified, pushed to the derived bucket and only then registered -- so the
+        # searchable-pdfs.json the site reads names nothing the bucket does not hold. Before the
+        # payloads below are built and the site deployed. check=False: a refused read is a
+        # document left `waiting`, not a reason to lose the night's ingestion.
+        if not a.dry_run:
+            py('searchable_pdfs.py', '--new', *(['--no-push'] if a.no_push else []), check=False)
         # THESE THREE READ fy28/dist, so they hold the site-build lock while they do: a build
         # started by hand empties dist/ and refills it page by page, and on 14 October 2026
         # one did exactly that under build_search_index.py, which died on a deleted page.

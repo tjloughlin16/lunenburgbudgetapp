@@ -700,3 +700,9 @@ a:visited .door-title { color: var(--text-secondary); }
 @keyframes search-pulse { 50% { opacity: 0.4; } }
 .search-spinner { animation: search-spin 700ms linear infinite; }
 @media (prefers-reduced-motion: reduce) { .search-spinner { animation: search-pulse 1.2s ease-in-out infinite; } }
+
+/* The original beside our searchable copy of a scanned PDF (components/SearchableLinks.tsx).
+   Quieter than the link it follows: the searchable copy is the one most readers want. */
+.raw-pdf { font-size: 0.8em; white-space: nowrap; }
+.raw-pdf a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 2px; }
+.raw-pdf a:hover { color: var(--text-secondary); }

@@ -25,7 +25,7 @@
 set -euo pipefail
 
 ALERT_EMAIL="${1:-}"              # where the budget alerts go: the first argument
-LIMIT_USD="60"                    # above textract_spend.py's $50 cap on purpose
+LIMIT_USD="10"                    # above textract_spend.py's $8 cap on purpose (TJ, 31 Oct 2026)
 USER=lunenburg-textract
 BUDGET=lunenburg-textract
 

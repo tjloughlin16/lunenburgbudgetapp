@@ -22,6 +22,7 @@ import { TownFund, townFundFromPath } from './pages/TownFund'
 import { itemFromPath } from './components/blocks/custom/fy-items'
 import { Rates } from './pages/Rates'
 import { DataFooter } from './components/DataFooter'
+import { SearchableLinks } from './components/SearchableLinks'
 import { AgentsIndex } from './components/AgentsIndex'
 import { AskAnAssistant } from './components/AskAnAssistant'
 import { FreeCash } from './pages/FreeCash'
@@ -316,6 +317,7 @@ export default function App() {
   return (
     <NavProvider value={go}>
     <div>
+      <SearchableLinks />
       {/* `no-print`: the header is navigation, and navigation on paper is ink that
           cannot be pressed. See the print block in index.css. */}
       <header className="no-print sticky top-0 z-30 backdrop-blur border-b"

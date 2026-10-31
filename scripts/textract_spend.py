@@ -64,11 +64,11 @@ PRICE_PER_PAGE = {'tables': 0.015, 'text': 0.0015,
                   # (the 1991-2010 close-out, 30 Oct 2026): the same AnalyzeDocument price
                   'tables-reread': 0.015}
 
-MONTHLY_CAP_USD = 70.00          # ours. The AWS budget sits ABOVE it, at $75 (TJ raised it from the
-                                 # $60 setup_textract.sh set, 30 Oct 2026, read back with describe-budget),
-                                 # so this one should always trip first and that one never.
-                                 # Raised $50 -> $58 -> $70 by TJ, 29-30 Oct 2026, for the 1959-1990
-                                 # annual reports.
+MONTHLY_CAP_USD = 8.00           # ours. The AWS budget sits ABOVE it, at $10, so this one should always
+                                 # trip first and that one never. TJ, 31 October 2026, lowering both from
+                                 # $70/$75 once the annual reports were finished: "reduce the textextract
+                                 # limit again, backdown to like $10 a month". History: $50 -> $58 -> $70
+                                 # (29-30 Oct 2026) for the 1959-1990 annual reports.
 BUDGET_NAME = 'lunenburg-textract'
 PROFILE = os.environ.get('TEXTRACT_PROFILE', 'lunenburg-textract')   # the narrow user, never default
 if os.environ.get('TEXTRACT_STATE') and os.environ.get('TEXTRACT_TEST_CAP'):

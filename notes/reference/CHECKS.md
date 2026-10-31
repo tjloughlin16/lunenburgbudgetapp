@@ -238,6 +238,10 @@ load limit; `CLAUDE.md` keeps a pointer here and the handful every session needs
     python3 scripts/textract_pages.py FILE --pages N-M --dry-run   # AMAZON TEXTRACT: page tables with row/col, BILLED IN
                                                 #   DOLLARS through a meter with a latching cut-off; drop --dry-run to send
     python3 scripts/textract_spend.py --status  # ...its spend: 24 hours, month vs the $50 cap, AWS's own figure, the latch.
+    python3 scripts/searchable_pdfs.py --status  # SEARCHABLE COPIES of PDFs with picture pages: surveyed, waiting, built
+    python3 scripts/searchable_pdfs.py --quote   # ...what reading every waiting page with Textract would cost
+    python3 scripts/searchable_pdfs.py --new     # ...the refresh step: survey, Textract (metered), build, verify, push
+    python3 scripts/searchable_pdfs.py --check   # ...every built copy rebuilds byte for byte AND the bucket holds it
                                                 #   Setup, and redoing it on another machine: notes/process/TEXTRACT-SETUP.md
     python3 scripts/generate_report.py --status # AUTO-GENERATION TRIALS: every suggested report an agent drafted, its
                                                 #   status, cost and verdict. Started by the dashboard's Generate button;

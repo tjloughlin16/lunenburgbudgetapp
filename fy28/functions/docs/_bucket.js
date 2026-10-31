@@ -22,7 +22,9 @@ import { TAKEN_DOWN } from './_takedowns.js'
 
 /** A 410 response for a taken-down /docs/ path, or null if the path is not taken down. */
 export function goneFor(path) {
-  const entry = TAKEN_DOWN[bucketKey(path)]
+  // A searchable copy is withdrawn with its original: it carries every word of it.
+  const original = path.startsWith(SEARCHABLE_PREFIX) ? path.slice(SEARCHABLE_PREFIX.length) : path
+  const entry = TAKEN_DOWN[bucketKey(original)]
   if (!entry) return null
   const lines = [
     'This document has been withdrawn from the archive (410 Gone).',
@@ -92,6 +94,17 @@ export async function fromBucket(context, path) {
 // renderings of about two thousand of them, and serving one would be serving a superseded
 // reading under the current address with nothing to say so.
 export const DERIVED_PREFIX = 'minutes/text/'
+
+// OUR SEARCHABLE COPY OF A SCANNED PDF, at `/docs/searchable/<the original's path>`. The town's
+// page images byte for byte, with invisible Textract words under them -- ours, rebuilt when a
+// read improves, so it lives in the unlocked bucket beside our text and never in the archive.
+// scripts/searchable_pdfs.py builds it, pushes it, reads it back, and only then registers it.
+export const SEARCHABLE_PREFIX = 'searchable/'
+
+/** Served from the derived bucket? Our text, and our searchable copies. */
+export function isDerived(path) {
+  return path.startsWith(DERIVED_PREFIX) || path.startsWith(SEARCHABLE_PREFIX)
+}
 
 export async function fromDerived(context, path) {
   const bucket = context.env && context.env.DERIVED
@@ -226,5 +239,5 @@ const CACHE = 'public, max-age=604800'
 const DERIVED_CACHE = 'public, max-age=3600'
 
 export function cacheFor(key) {
-  return key.startsWith('analyses/') || key.startsWith(DERIVED_PREFIX) ? DERIVED_CACHE : CACHE
+  return key.startsWith('analyses/') || isDerived(key) ? DERIVED_CACHE : CACHE
 }

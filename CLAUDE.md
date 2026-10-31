@@ -968,6 +968,16 @@ cannot read, because a picture page is exactly where a screenshot of a staff lis
 
 Do not write a new character-count test. Call `pdf_kind`.
 
+**A PDF WITH PICTURE PAGES GETS A SEARCHABLE COPY, AND THE SITE LINKS THAT COPY.** TJ, 31 October
+2026. `scripts/searchable_pdfs.py` is a refresh step: every PDF `pdf_kind` says has an image,
+unreadable or outlines page is read by Textract (text feature, through the meter) and rebuilt as a
+sandwich -- every original object byte for byte, invisible words under the picture pages only. It is
+OURS, so it lives in the unlocked `lunenburg-derived` bucket at `/docs/searchable/<archive key>`,
+never in the archive; the original keeps its address and its sha256. A copy is built only when EVERY
+picture page has a read (a half-searchable PDF is rule 13c waiting to happen), and registered in
+`sources/data/searchable-pdfs.csv` only after the bucket's listing confirms it. On the site,
+`components/SearchableLinks.tsx` points any link to such a PDF at the copy, with `raw PDF` beside it.
+
 ### 13e. The raw is private. The public copy is ours. The decision is written down
 
 **WHAT IS SHOWN AND WHAT IS MASKED IS SETTLED in `notes/process/DATA-PRIVACY.md`. Read it before

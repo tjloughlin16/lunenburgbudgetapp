@@ -4294,6 +4294,14 @@ GROUPS = [
          'archive before concluding a thing was never discussed, and an unreadable '
          'document and a subject nobody raised produce the identical empty result. '
          'Rebuild with scripts/build_minutes_searchable.py.'),
+        ('data/searchable-pdfs.csv',
+         'Which PDFs have pages that are only pictures, and their searchable copies', 2,
+         'One row per PDF in the archive: what pdf_kind found (digital, scan, mixed), which '
+         'pages carry no readable text, how many of those Amazon Textract has read, and '
+         'whether our searchable copy is built. A searchable copy is the publisher’s file '
+         'with every page image unchanged and invisible Textract words under the picture '
+         'pages, served at /docs/searchable/<path>; the original stays at its own address. '
+         'Ours, not the publisher’s. Rebuild with scripts/searchable_pdfs.py.'),
         ('data/minutes-coverage.csv',
          'Minutes posted against agendas posted, by board and year', 3,
          'A grep of the meeting archive that finds nothing prints nothing, and nothing '
@@ -4965,6 +4973,18 @@ def copy_status():
 COPIES = None           # populated once in main(); see copy_status()
 
 
+def searchable_copies():
+    """{archive key: published path} for every scanned PDF with a searchable copy in the derived
+    bucket -- the `built` rows of searchable-pdfs.csv, which scripts/searchable_pdfs.py writes only
+    after the bucket's own listing has confirmed the bytes."""
+    path = os.path.join(SRC, 'data/searchable-pdfs.csv')
+    if not os.path.exists(path):
+        return {}
+    with open(path, newline='') as fh:
+        return {r['key']: '/docs/searchable/' + r['key'] for r in csv.DictReader(fh)
+                if r['state'] == 'built'}
+
+
 
 # Rule 12: a source link must reach the FILE, not the page that lists it. An index gets
 # reorganised and the document a figure rests on stops being findable from it.
@@ -5606,6 +5626,7 @@ def main():
     global LINKS, COPIES
     LINKS = link_status()
     COPIES = copy_status()
+    searchable = searchable_copies()
     known_upstream = upstream_by_hash()
 
     for g in GROUPS:
@@ -5654,6 +5675,8 @@ def main():
                 'url': '/docs/' + rel,
                 **({'count': count, 'unit': unit} if count else {}),
                 **({'textUrl': '/docs/' + text_rel} if text_rel else {}),
+                # our copy with a text layer under the scanned pages; `url` stays the original
+                **({'searchableUrl': searchable[rel]} if rel in searchable else {}),
             })
         # Load-bearing first, then largest — a reader scanning a group should meet the
         # documents a conclusion actually rests on before the ones kept for completeness.
