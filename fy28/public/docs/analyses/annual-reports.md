@@ -1,6 +1,6 @@
 # The annual town reports
 
-68 documents, 2,332 pages of financial tables, 107,668 rows read out of them.
+68 documents, 2,332 pages of financial tables, 107,676 rows read out of them.
 
 ## The short version
 
@@ -191,11 +191,11 @@ A **dedicated** extractor knows what its table means and can check it against a 
 | `report-appropriations.csv` | 27,799 | 1959–2025 | generic | 12782 | 5845 | 9172 |
 | `staff-roster-entries.csv` | 12,278 | 1959–2025 | dedicated |  — | — | —  |
 | `report-gross-wages.csv` | 11,512 | 1995–2025 | generic | 7965 | 0 | 3547 |
-| `annual-report-receipts.csv` | 7,848 | 1959–2023 | dedicated | 6648 | 652 | 548 |
+| `annual-report-receipts.csv` | 7,856 | 1959–2022 | dedicated | 6848 | 653 | 355 |
 | `report-trust-funds.csv` | 5,508 | 1959–2025 | generic | 3434 | 546 | 1528 |
 | `report-statement-of-payments.csv` | 4,670 | 1959–1986 | generic | 4095 | 0 | 575 |
 | `special-revenue-funds.csv` | 4,532 | 1992–2025 | dedicated | 3018 | 1368 | 146 |
-| `report-elections.csv` | 3,863 | 1959–2025 | generic | 1671 | 1718 | 474 |
+| `report-elections.csv` | 3,863 | 1959–2025 | generic | 1664 | 1725 | 474 |
 | `report-fund-balance-sheets.csv` | 3,720 | 1959–1986 | generic | 2275 | 0 | 1445 |
 | `report-debt.csv` | 3,533 | 1959–2025 | generic | 2876 | 315 | 342 |
 | `staff-position-map.csv` | 3,208 | — | dedicated |  — | — | —  |
