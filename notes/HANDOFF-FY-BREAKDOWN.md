@@ -35,8 +35,22 @@ pending.
    The Town Manager's email address is not in the repo, and her Town directory page lists none.
    `jwarren@lunenburgma.gov` is unconfirmed; the "To" line on the 4 Sep request will settle it.
 
-**Small queued fix:** `annual-report-receipts.csv` FY2021 PRE-SCHOOL TUITION reads 11.64; the
-page prints $11,648.82. This is an extractor defect.
+**Small queued fix -- DONE 31 Oct.** `school_receipts.py` now prefers the page read by eye
+(`pages-read.csv`, `checked`, footed to the page's own category totals) over the generic extract,
+and the hand-typed `READ_BY_EYE` figure is gone. Gained: school medical reimbursement FY2012 and
+FY2013, parking and medical FY2021 -- so the Town general fund page's three-account total now
+exists for FY2012, FY2013 and FY2021. Where both sources hold a figure they agree to the cent.
+
+**Found, NOT fixed -- `extract_annual_receipts.py` no longer reproduces its committed rows.**
+Its money pattern stops at the first full stop, so a scan that prints `$7.773.938.00` gives 7.77
+(FY2019, FY2020, FY2021 are full of these). Fixing the pattern is easy (the multi-separator form
+`pdf_tables.MONEY` uses), but re-running against TODAY's page cache also changes the label-to-figure
+pairing in FY2011-2013, FY2021 and FY2023 -- the committed rows came from an older cache -- and some
+new pairings are wrong (FY2021 puts HEALTH LICENSES' $2,150 beside INTEREST PERSONAL PROPERTY). It has
+no `--check`, so `check_generated.py` cannot see the drift. Remedy, when somebody picks it up: for
+every year with a proven page in `pages-read.csv`, emit THAT reading instead of the regex pairing.
+Re-running the extractor alone also drops the 1959-2010 rows; always follow it with
+`merge_report_tables.py`.
 
 **Deploy:**
 DEPLOYED 30 Oct 2026, `69b72501` (lunenburg-fy28), from `deb071a14`, pushed to origin/main.

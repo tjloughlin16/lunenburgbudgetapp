@@ -16,9 +16,11 @@ Special Education Reimbursement)". All three are general fund 0100, department 0
     437400  STUDENT PARKING FE (annual reports: STUDENT PARKING FEES)
     473000  MEDICAL ASSIST/SPED (annual reports: SCHOOL BASED MEDICARE REIMB; FY2026 "SPED REIMB")
 
-WHERE EACH YEAR COMES FROM, every figure read from a document, never typed -- except the eye
-reads in READ_BY_EYE, each with its page:
-  * FY2011-FY2022: the annual town report's receipts schedule (annual-report-receipts.csv).
+WHERE EACH YEAR COMES FROM, every figure read from a document, never typed:
+  * FY2011-FY2022: the annual town report's receipts schedule. Where the page was read by eye
+    and footed to its own printed category totals (pages-read.csv, `checked`), that reading is
+    used -- it supersedes the generic extract (annual-report-receipts.csv), which is used only
+    for the rest. FY2021's extract read `$11.648.82` as 11.64; the page reading has 11,648.82.
   * FY2020: the Town's own MUNIS fourth-quarter report in the Finance Committee's FY20 files
     (fy20-q4-reports.csv), which also prints the ESTIMATE. The annual report for FY2020 prints the
     same tuition figure (p24), and our extract of that page missed the row.
@@ -74,10 +76,9 @@ PRES_TEXT = dict(
                               'preliminary-budget-presentation-2.19.26/text/preliminary-budget-presentation-2.19.26-final.pptx.txt'))
 PRES_LABEL = 'Dept. Revenue- Schools (Pre-School Tuition, Parking, Special Education Reimbursement)'
 
-# READ BY EYE, where our extract of a printed page is wrong. (fy, account) -> amount, document, page.
-# FY2021 p25: the receipts schedule prints "PRE-SCHOOL TUITION $11,648.82"; the extract carries
-# 11.64 (annual-report-receipts.csv, `no check`), a decimal lost in the OCR. Read 29 Oct 2026.
-READ_BY_EYE = {(2021, '431900'): (Decimal('11648.82'), '4128-fy-2021-annual-town-report.pdf', 25)}
+# FY2021's extract is the case that made the page reading necessary: it carries 11.64 for
+# preschool tuition. The join to pages-read.csv must find that row, or nothing is returned.
+MUST_READ = (2021, '431900')
 # Rows our extract holds that were read by eye against the page before use (rule 13c): the
 # printed row, label and figure side by side. FY2019 p30 by image; FY2011-FY2013 and FY2016 by
 # the OCR's own row pairing, label and figure on one printed line.
@@ -107,21 +108,33 @@ def series():
     for the years only the three combined are printed}."""
     out = {fy: {} for fy in YEARS_SHOWN}
     names = {p: a['account'] for a in ACCOUNTS for p in a['printed']}
+    annual = lambda fy: FIRST_FY <= fy <= 2022 and fy != 2020
+    extract_doc = {}
     for r in csv.DictReader(open(os.path.join(DATA, 'annual-report-receipts.csv'), encoding='utf-8')):
         fy = int(r['fy'])
         acct = names.get(r['source'].strip())
-        if not acct or fy < FIRST_FY or fy > 2022 or fy == 2020:
+        extract_doc[(fy, int(r['page']))] = r['document']
+        if not acct or not annual(fy):
             continue
-        amt, doc, page = _money(r['amount']), r['document'], int(r['page'])
-        check = r['status']
-        if (fy, acct) in READ_BY_EYE:
-            amt, doc, page = READ_BY_EYE[(fy, acct)]
-            check = 'read by eye; our extract had a decimal wrong'
-        elif (fy, acct) in EYE_CHECKED:
-            check = EYE_CHECKED[(fy, acct)]
-        out[fy][acct] = dict(received=amt, estimate=None, basis='published', check=check,
+        out[fy][acct] = dict(received=_money(r['amount']), estimate=None, basis='published',
+                             check=EYE_CHECKED.get((fy, acct), r['status']),
+                             doc=DOCS['annual'] % r['document'], page=int(r['page']),
+                             src='Annual town report, FY%d, receipts, p%s' % (fy, r['page']))
+    # The page read by eye supersedes the extract (CLAUDE.md, "The annual town reports").
+    for r in csv.DictReader(open(os.path.join(DATA, 'pages-read.csv'), encoding='utf-8')):
+        fy, page = int(r['fy']), int(r['page'])
+        acct = names.get(r['fund_name'].split('::')[-1].strip())
+        if not acct or not annual(fy) or r['status'] != 'checked':
+            continue
+        doc = r['document'] or extract_doc.get((fy, page))
+        if not doc:
+            raise SystemExit('school_receipts: FY%d p%d read by eye, but no document names it' % (fy, page))
+        out[fy][acct] = dict(received=_money(r['value']), estimate=None, basis='published',
+                             check='read by eye; footed to the page’s printed totals',
                              doc=DOCS['annual'] % doc, page=page,
                              src='Annual town report, FY%d, receipts, p%d' % (fy, page))
+    if not out[MUST_READ[0]].get(MUST_READ[1], {}).get('check', '').startswith('read by eye'):
+        raise SystemExit('school_receipts: FY%d %s was not found in pages-read.csv' % MUST_READ)
     for r in csv.DictReader(open(os.path.join(DATA, 'fy20-q4-reports.csv'), encoding='utf-8')):
         if r['doc_version'] != 'revised' or r['level'] != 'account':
             continue
