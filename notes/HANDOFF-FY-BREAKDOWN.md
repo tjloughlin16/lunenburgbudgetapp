@@ -41,9 +41,8 @@ page prints $11,648.82. This is an extractor defect.
 **Deploy:**
 DEPLOYED 30 Oct 2026, `69b72501` (lunenburg-fy28), from `deb071a14`, pushed to origin/main.
 Verified: the live `/data/topics/budget-against-actual.json` is byte-identical to the repo's.
-Left untracked: new files under `views/` and four audit-report text extracts in
-`fy28/public/docs/town-supplementary/text/`. They are generated or from other sessions and
-were not committed; decide whether they belong in git.
+Afterwards, every leftover file was committed at TJ's request (229 `views/` symlinks and the
+audit-report text extracts). The working tree was clean.
 
 ## Earlier NOW -- 30 October 2026, end of day
 
