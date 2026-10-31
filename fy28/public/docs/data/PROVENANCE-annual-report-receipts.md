@@ -18,28 +18,25 @@ this reason, and anything that aggregates across years must split on it first.
 
 ## Partial years
 
-### FY2011 — 78 sources, $26,179,344.15 extracted
+### FY2011 — 90 sources, $27,385,752.87 extracted
 
-- **Why it is partial:** the page prints no GRAND TOTAL figure, so neither check can be run; printed with no figure beside it: TAXES & EXCISES, FEES, LICENSES AND PERMITS, LICENSES/PERMITS, STATE REVENUE, SPECIAL ASSESSMENTS, FINES & FORFEITS, INVESTMENT INCOME, EARNINGS ON INVESTMENTS, TRANSFER FROM OTHER FUNDS, TRANSFERS FROM OTHER FUNDS, NON RECURRING REVENUE, DEPARTMENTAL REVENUE, GRAND TOTAL
-- **The report prints no GRAND TOTAL figure on this page.** There is nothing to reconcile against, so the extracted total is unverified in both directions: we cannot show that nothing was dropped, and we cannot show that nothing was double-counted.
-- Printed on the page with **no figure beside it**: TAXES & EXCISES, FEES, LICENSES AND PERMITS, LICENSES/PERMITS, STATE REVENUE, SPECIAL ASSESSMENTS, FINES & FORFEITS, INVESTMENT INCOME, EARNINGS ON INVESTMENTS, TRANSFER FROM OTHER FUNDS, TRANSFERS FROM OTHER FUNDS, NON RECURRING REVENUE, DEPARTMENTAL REVENUE, GRAND TOTAL.
-- Source: `4117-fy-2011-annual-town-report.pdf`, page 58, read by page cache.
+- **Why it is partial:** read by eye (pages-read.csv); the page's own detail lines sum to 27,385,752.87 and its categories to 27,388,537.87 (-2,785.00), and it does not say which line belongs to which category
+- The report prints a GRAND TOTAL of **$27,388,537.87**; we extracted **$27,385,752.87**, a difference of **$-2,785.00**.
+- Source: `4117-fy-2011-annual-town-report.pdf`, page 58, read by read by eye (pages-read.csv).
 - sha256 `551f9edd75d051ae4d863a5d5c13925c0b9a2f93459e63268c507c5226398b81`
 
-### FY2012 — 75 sources, $27,174,923.69 extracted
+### FY2012 — 91 sources, $28,443,455.76 extracted
 
-- **Why it is partial:** the page prints no GRAND TOTAL figure, so neither check can be run; printed with no figure beside it: TAXES & EXCISES, FEES, LICENSES AND PERMITS, LICENSES/PERMITS, STATE REVENUE, SPECIAL ASSESSMENTS, FINES & FORFEITS, INVESTMENT INCOME, EARNINGS ON INVESTMENTS, TRANSFER FROM OTHER FUNDS, TRANSFERS FROM OTHER FUNDS, NON RECURRING REVENUE, DEPARTMENTAL REVENUE, GRAND TOTAL
-- **The report prints no GRAND TOTAL figure on this page.** There is nothing to reconcile against, so the extracted total is unverified in both directions: we cannot show that nothing was dropped, and we cannot show that nothing was double-counted.
-- Printed on the page with **no figure beside it**: TAXES & EXCISES, FEES, LICENSES AND PERMITS, LICENSES/PERMITS, STATE REVENUE, SPECIAL ASSESSMENTS, FINES & FORFEITS, INVESTMENT INCOME, EARNINGS ON INVESTMENTS, TRANSFER FROM OTHER FUNDS, TRANSFERS FROM OTHER FUNDS, NON RECURRING REVENUE, DEPARTMENTAL REVENUE, GRAND TOTAL.
-- Source: `4118-fy-2012-annual-town-report.pdf`, page 58, read by page cache.
+- **Why it is partial:** read by eye (pages-read.csv); the page's own detail lines sum to 28,443,455.76 and its categories to 28,471,842.32 (-28,386.56), and it does not say which line belongs to which category
+- The report prints a GRAND TOTAL of **$28,471,842.32**; we extracted **$28,443,455.76**, a difference of **$-28,386.56**.
+- Source: `4118-fy-2012-annual-town-report.pdf`, page 58, read by read by eye (pages-read.csv).
 - sha256 `75d645ee7055f68c6a7adc0d32f534f49a1fd2a81a421d79536b14e683d25f6a`
 
-### FY2013 — 79 sources, $28,746,004.32 extracted
+### FY2013 — 91 sources, $29,743,947.31 extracted
 
-- **Why it is partial:** the page prints no GRAND TOTAL figure, so neither check can be run; printed with no figure beside it: TAXES & EXCISES, FEES, LICENSES AND PERMITS, LICENSES/PERMITS, STATE REVENUE, SPECIAL ASSESSMENTS, FINES & FORFEITS, INVESTMENT INCOME, EARNINGS ON INVESTMENTS, TRANSFER FROM OTHER FUNDS, NON RECURRING REVENUE, DEPARTMENTAL REVENUE, GRAND TOTAL
-- **The report prints no GRAND TOTAL figure on this page.** There is nothing to reconcile against, so the extracted total is unverified in both directions: we cannot show that nothing was dropped, and we cannot show that nothing was double-counted.
-- Printed on the page with **no figure beside it**: TAXES & EXCISES, FEES, LICENSES AND PERMITS, LICENSES/PERMITS, STATE REVENUE, SPECIAL ASSESSMENTS, FINES & FORFEITS, INVESTMENT INCOME, EARNINGS ON INVESTMENTS, TRANSFER FROM OTHER FUNDS, NON RECURRING REVENUE, DEPARTMENTAL REVENUE, GRAND TOTAL.
-- Source: `4119-fy-2013-annual-town-report.pdf`, page 63, read by page cache.
+- **Why it is partial:** read by eye (pages-read.csv); the page's own detail lines sum to 29,743,947.31 and its categories to 29,744,547.31 (-600.00), and it does not say which line belongs to which category
+- The report prints a GRAND TOTAL of **$29,744,547.31**; we extracted **$29,743,947.31**, a difference of **$-600.00**.
+- Source: `4119-fy-2013-annual-town-report.pdf`, page 63, read by read by eye (pages-read.csv).
 - sha256 `00670845b7d322166015c1b6ce4d3cef6ac2007d1085f326c44ebc9ac6d418bd`
 
 ### FY2016 — 83 sources, $32,332,911.18 extracted
@@ -50,45 +47,13 @@ this reason, and anything that aggregates across years must split on it first.
 - Source: `4122-fy-2016-annual-town-report-addendum.pdf`, page 1, read by page cache.
 - sha256 `b354a3941e2451f71ccaa1278156189ba3e0b5d68dd1391044368ab34d0e4d0d`
 
-### FY2016 — 55 sources, $31,783,046.42 extracted
+### FY2019 — 86 sources, $38,783,860.41 extracted
 
-- **Why it is partial:** the page prints no GRAND TOTAL figure, so neither check can be run; printed with no figure beside it: TAXES & EXCISES, FEES, LICENSES/PERMITS, STATE REVENUE
-- **The report prints no GRAND TOTAL figure on this page.** There is nothing to reconcile against, so the extracted total is unverified in both directions: we cannot show that nothing was dropped, and we cannot show that nothing was double-counted.
-- Printed on the page with **no figure beside it**: TAXES & EXCISES, FEES, LICENSES/PERMITS, STATE REVENUE.
-- Source: `4123-fy-2016-annual-town-report.pdf`, page 23, read by page cache.
-- sha256 `f13af7a7c78d4a14be7897a5a039b189197ea94b9aa752bf913aa2185bf77438`
-
-### FY2019 — 86 sources, $1,941,728.68 extracted
-
-- **Why it is partial:** the page prints no GRAND TOTAL figure, so neither check can be run; printed with no figure beside it: TAXES & EXCISES, FEES, LICENSES AND PERMITS, LICENSES/PERMITS, STATE REVENUE, SPECIAL ASSESSMENTS, FINES & FORFEITS, INVESTMENT INCOME, EARNINGS ON INVESTMENTS, NON RECURRING REVENUE, DEPARTMENTAL REVENUE, GRAND TOTAL
-- **The report prints no GRAND TOTAL figure on this page.** There is nothing to reconcile against, so the extracted total is unverified in both directions: we cannot show that nothing was dropped, and we cannot show that nothing was double-counted.
-- Printed on the page with **no figure beside it**: TAXES & EXCISES, FEES, LICENSES AND PERMITS, LICENSES/PERMITS, STATE REVENUE, SPECIAL ASSESSMENTS, FINES & FORFEITS, INVESTMENT INCOME, EARNINGS ON INVESTMENTS, NON RECURRING REVENUE, DEPARTMENTAL REVENUE, GRAND TOTAL.
+- **Why it is partial:** does not tie: detail 38,783,860.41 (-1,950,143.66), categories 40,734,004.07 (+0.00), printed 40,734,004.07; printed with no figure beside it: TAXES & EXCISES, FEES, LICENSES AND PERMITS, LICENSES/PERMITS, STATE REVENUE, SPECIAL ASSESSMENTS, FINES & FORFEITS, INVESTMENT INCOME, EARNINGS ON INVESTMENTS, NON RECURRING REVENUE, DEPARTMENTAL REVENUE
+- The report prints a GRAND TOTAL of **$40,734,004.07**; we extracted **$38,783,860.41**, a difference of **$-1,950,143.66**.
+- Printed on the page with **no figure beside it**: TAXES & EXCISES, FEES, LICENSES AND PERMITS, LICENSES/PERMITS, STATE REVENUE, SPECIAL ASSESSMENTS, FINES & FORFEITS, INVESTMENT INCOME, EARNINGS ON INVESTMENTS, NON RECURRING REVENUE, DEPARTMENTAL REVENUE.
 - Source: `4126-fy-2019-annual-town-report.pdf`, page 30, read by page cache.
 - sha256 `220f1c778148feb90489cf65c6615569db118f8a4eade1e72a40574058e89582`
-
-### FY2020 — 85 sources, $12,011,922.53 extracted
-
-- **Why it is partial:** does not tie: detail 12,011,922.53 (-31,077,280.01), categories 43,089,202.54 (+0.00), printed 43,089,202.54; printed with no figure beside it: LICENSES/PERMITS, EARNINGS ON INVESTMENTS, TRANSFERS FROM OTHER FUNDS, DEPARTMENTAL REVENUE
-- The report prints a GRAND TOTAL of **$43,089,202.54**; we extracted **$12,011,922.53**, a difference of **$-31,077,280.01**.
-- Printed on the page with **no figure beside it**: LICENSES/PERMITS, EARNINGS ON INVESTMENTS, TRANSFERS FROM OTHER FUNDS, DEPARTMENTAL REVENUE.
-- Source: `4127-fy-2020-annual-town-report.pdf`, page 24, read by page cache.
-- sha256 `c3bf67f1259a5c19f553baefa18e02f16f2bf33c73c5f067a600daf21603ab5d`
-
-### FY2021 — 82 sources, $192,602.78 extracted
-
-- **Why it is partial:** the page prints no GRAND TOTAL figure, so neither check can be run; printed with no figure beside it: TAXES & EXCISES, FEES, LICENSES AND PERMITS, LICENSES/PERMITS, STATE REVENUE, SPECIAL ASSESSMENTS, FINES & FORFEITS, INVESTMENT INCOME, DEPARTMENTAL REVENUE, GRAND TOTAL
-- **The report prints no GRAND TOTAL figure on this page.** There is nothing to reconcile against, so the extracted total is unverified in both directions: we cannot show that nothing was dropped, and we cannot show that nothing was double-counted.
-- Printed on the page with **no figure beside it**: TAXES & EXCISES, FEES, LICENSES AND PERMITS, LICENSES/PERMITS, STATE REVENUE, SPECIAL ASSESSMENTS, FINES & FORFEITS, INVESTMENT INCOME, DEPARTMENTAL REVENUE, GRAND TOTAL.
-- Source: `4128-fy-2021-annual-town-report.pdf`, page 25, read by page cache.
-- sha256 `7ec4740034a2b9bd3aa7450f63c91d10e6ead472450edc5fbe9c0da327fb94d3`
-
-### FY2023 — 10 sources, $20,976.83 extracted
-
-- **Why it is partial:** the page prints no GRAND TOTAL figure, so neither check can be run; printed with no figure beside it: FEES, STATE REVENUE, INVESTMENT INCOME
-- **The report prints no GRAND TOTAL figure on this page.** There is nothing to reconcile against, so the extracted total is unverified in both directions: we cannot show that nothing was dropped, and we cannot show that nothing was double-counted.
-- Printed on the page with **no figure beside it**: FEES, STATE REVENUE, INVESTMENT INCOME.
-- Source: `4131-fy-2023-annual-town-report.pdf`, page 25, read by page cache.
-- sha256 `d273ebb71360e30df1327fa02cc755cc00da98265dc3f28ce841dbc3bc51d4fa`
 
 ## Reconciled years
 
@@ -98,6 +63,8 @@ this reason, and anything that aggregates across years must split on it first.
 | 2015 | 100 | $31,842,092.19 | $31,842,092.19 | 22 | page cache |
 | 2017 | 102 | $37,050,712.82 | $37,050,712.82 | 22 | page cache |
 | 2018 | 103 | $40,193,021.76 | $40,193,021.76 | 28 | page cache |
+| 2020 | 100 | $43,089,202.54 | $43,089,202.54 | 24 | read by eye (pages-read.csv) |
+| 2021 | 100 | $44,252,049.61 | $44,252,049.61 | 25 | read by eye (pages-read.csv) |
 | 2022 | 100 | $46,695,138.62 | $46,695,138.62 | 26 | page cache |
 
 Both checks pass for every row above, so **nothing was dropped**: a source
@@ -108,6 +75,8 @@ a line the extractor lost.
 
 Not years the town published nothing. Each of these needs looking at.
 
+- **FY2016** — page 23 is registered in page-blocked.csv (the report does not print it); nothing is written from it
+- **FY2023** — page 25 is registered in page-blocked.csv (too blurry); nothing is written from it
 - **FY2024** — the catalogue lists no receipts table for this year, and reading the report end to end found none -- FY2024 replaced the accountant section with MUNIS schedules and FY2025 publishes no general fund revenue table
 - **FY2025** — the catalogue lists no receipts table for this year, and reading the report end to end found none -- FY2024 replaced the accountant section with MUNIS schedules and FY2025 publishes no general fund revenue table
 

@@ -26,7 +26,7 @@ prints no total. **Nothing here may be aggregated without splitting on `status` 
 |---|---:|---|---|---|---|---|
 | `placement-counts.csv` | 15 | 2011–2025 | parts sum to the total; each year states its predecessor | yes | yes | yes |
 | `ballot-questions.csv` | 9 | 2012–2025 | every tally against its own precinct figures | yes | — | yes |
-| `annual-report-receipts.csv` | 7,848 | 1959–2023 | 6,648 checked / 652 failed / 548 no check | yes | yes | yes |
+| `annual-report-receipts.csv` | 7,856 | 1959–2022 | 6,848 checked / 653 failed / 355 no check | yes | yes | yes |
 | `special-revenue-funds.csv` | 4,532 | 1992–2025 | 3,018 checked / 1,368 failed / 146 no check | yes | yes | yes |
 | `staff-roster-entries.csv` | 12,278 | 1959–2025 | every line of every page accounted for | yes | — | yes |
 | `staff-roster-counts.csv` | 2,290 | 1959–2025 | derived from the above | yes | — | yes |
@@ -152,7 +152,7 @@ fourteen years of the Montachusett assessment went missing without anybody notic
 | `gross_wages` | 13 | 16 | FY2014, FY2016-addendum, FY2017 |
 | `monty_tech` | 1 | 15 | FY2011, FY2012, FY2013, FY2014, FY2015, FY2016, FY2018, FY2019, FY2020, FY2021, FY2022, FY2023, FY2024, FY2025 |
 | `officials` | 13 | 15 | FY2012, FY2025 |
-| `receipts` | 13 | 14 | FY2016-addendum |
+| `receipts` | 12 | 14 | FY2016-addendum, FY2023 |
 | `trust_funds` | 13 | 14 | FY2022 |
 | `valuation` | 9 | 10 | FY2025 |
 
