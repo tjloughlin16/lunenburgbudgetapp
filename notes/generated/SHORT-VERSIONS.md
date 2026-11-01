@@ -18,9 +18,9 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [The budget gap](/the-situation) | page | 2.6 / 47.2 min | 1. Cutting every extra still funded — $376,207 — covers 40% of next year’s gap, once.<br>2. ~90% — Contracts, insurance and law set about 90% of the budget; after the extras, only classroom positions are big enough to cut.<br>3. 2.25 pts — The published cost increase is 3.98%; the one that comes back every year is 6.23%. |
 | [The money](/the-money) | reference | — / 9.2 min | *(none declared)* |
 | [About this project](/about) | page | — / 6.6 min | *(none declared)* |
-| [The annual town reports](/analysis/annual-reports) | page | 1.9 / 17.6 min | 1. All 2,332 pages holding a financial table have been read.<br>2. 2,158 of 2,332 pages tie to a total the page itself prints.<br>3. Special Revenue is the least checked: 0 of its 147 pages have no check at all. |
+| [The annual town reports](/analysis/annual-reports) | page | 1.9 / 18.1 min | 1. All 2,332 pages holding a financial table have been read.<br>2. 2,158 of 2,332 pages tie to a total the page itself prints.<br>3. Special Revenue is the least checked: 0 of its 147 pages have no check at all. |
 | [Connecting the school budget to the Town&#x27;s books](/analysis/connecting-the-budget) | page | 0.7 / 10.7 min | 1. Following a dollar from the school budget to the Town&#x27;s books works at two levels and stops at the third. |
-| [Lunenburg Historical Report](/analysis/historical-report) | page | — / 18.0 min | *(none declared)* |
+| [Lunenburg Historical Report](/analysis/historical-report) | page | — / 19.0 min | *(none declared)* |
 | [A hundred questions this archive can answer](/analysis/questions) | page | — / 31.2 min | *(none declared)* |
 | [Show your work](/analysis/show-your-work) | page | — / 70.9 min | *(none declared)* |
 | [Towns like us: what they pay, what they spend](/analysis/towns-like-us) | page | 5.0 / 66.2 min | 1. 78th of the 351 Massachusetts towns on the bill as a share of what the home is worth, where 1st asks the most — Lunenburg is middling on the tax bill and in the top quarter of the state on tax EFFORT.<br>2. 29% of the difference in spending per pupil is accounted for by how much taxable property stands behind each child — the strongest of twelve things tested — Taxable property per child predicts school spending. Aid and poverty do not.<br>3. Regional districts do not spend less on administration: $700 a pupil against $693. |
@@ -80,12 +80,13 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Level service cost](/crisis/level-service-cost) | page | — / 6.9 min | *(none declared)* |
 | [Long-run balance rate](/crisis/long-run-balance-rate) | page | — / 6.8 min | *(none declared)* |
 | [Projected school gap](/crisis/projected-gap) | page | — / 6.8 min | *(none declared)* |
-| [Town departments](/department-budgets) | page | — / 8.7 min | *(none declared)* |
+| [Town departments](/department-budgets) | page | — / 8.8 min | *(none declared)* |
 | [Growth above the cap](/department-budgets/town-budget-growth) | page | — / 7.2 min | *(none declared)* |
-| [Budget by department](/department-budgets/town-budget-shares) | page | — / 6.9 min | *(none declared)* |
+| [Budget by department](/department-budgets/town-budget-shares) | page | — / 7.0 min | *(none declared)* |
 | [Debt service](/department-budgets/town-debt-service) | page | — / 6.7 min | *(none declared)* |
 | [Employee benefits](/department-budgets/town-employee-benefits) | page | — / 6.9 min | *(none declared)* |
 | [Facilities and grounds](/department-budgets/town-facilities-grounds) | page | — / 6.7 min | *(none declared)* |
+| [Town general fund](/department-budgets/town-general-fund) | page | — / 8.7 min | *(none declared)* |
 | [General government](/department-budgets/town-general-government) | page | — / 7.2 min | *(none declared)* |
 | [Budgets without headcounts](/department-budgets/town-headcount-coverage) | page | — / 6.8 min | *(none declared)* |
 | [Library budget](/department-budgets/town-library) | page | — / 6.4 min | *(none declared)* |
@@ -95,7 +96,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Smaller departments](/department-budgets/town-smaller-departments) | page | — / 6.8 min | *(none declared)* |
 | [Trash and recycling](/department-budgets/town-solid-waste) | page | — / 6.4 min | *(none declared)* |
 | [Town staff counts](/department-budgets/town-staff-counts) | page | — / 7.2 min | *(none declared)* |
-| [Voted budget total](/department-budgets/town-voted-total) | page | — / 7.5 min | *(none declared)* |
+| [Voted budget total](/department-budgets/town-voted-total) | page | — / 7.7 min | *(none declared)* |
 | [Students and schools](/enrolment) | page | — / 9.0 min | *(none declared)* |
 | [Children schooled elsewhere](/enrolment/children-schooled-elsewhere) | page | — / 7.3 min | *(none declared)* |
 | [Departure scenario](/enrolment/departure-scenario) | page | — / 6.7 min | *(none declared)* |
@@ -112,7 +113,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Free cash](/free-cash) | page | — / 7.5 min | *(none declared)* |
 | [Free cash calculator](/free-cash-calculator) | page | 2.0 / 27.7 min | 1. 47% — Free cash is not money the town saved. It is mostly money the town budgeted and did not spend.<br>2. 45 of 45 — Local receipts have beaten the estimate every single year — and so have all 9 towns.<br>3. 2.49× — The record year was an event, not a stance. Underspending in 2025 was 2.49 times Lunenburg’s own recent average.<br>4. $361,912 — The state’s proof adds up exactly — to a figure that is not the one it certifies.<br>5. These agree with what this project has already published, and that is worth saying. |
 | [Free cash and capital](/free-cash/free-cash-and-capital) | page | — / 7.0 min | *(none declared)* |
-| [Free cash balance](/free-cash/free-cash-balance) | page | — / 7.5 min | *(none declared)* |
+| [Free cash balance](/free-cash/free-cash-balance) | page | — / 7.6 min | *(none declared)* |
 | [Free cash guideline](/free-cash/free-cash-guideline) | page | — / 7.5 min | *(none declared)* |
 | [Free cash for schools](/free-cash/free-cash-redirect) | page | — / 7.0 min | *(none declared)* |
 | [Free cash sources](/free-cash/free-cash-sources) | page | — / 7.3 min | *(none declared)* |
@@ -127,7 +128,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Surplus by category](/fy2026-closeout/fy2026-surplus-by-category) | page | — / 9.0 min | *(none declared)* |
 | [Town unspent balance](/fy2026-closeout/fy2026-town-unspent) | page | — / 7.4 min | *(none declared)* |
 | [Tuition at year end](/fy2026-closeout/fy2026-tuition-lines) | page | — / 7.3 min | *(none declared)* |
-| [Year-end tuition payment](/fy2026-closeout/fy2026-tuition-paid-early) | page | — / 13.1 min | *(none declared)* |
+| [Year-end tuition payment](/fy2026-closeout/fy2026-tuition-paid-early) | page | — / 13.4 min | *(none declared)* |
 | [Surplus by year](/fy2026-closeout/surplus-bridge) | page | — / 9.4 min | *(none declared)* |
 | [Repeat underspending](/fy2026-closeout/surplus-repeat-lines) | page | — / 9.1 min | *(none declared)* |
 | [Surplus suggestions](/fy2026-closeout/surplus-suggestions) | page | — / 10.9 min | *(none declared)* |
@@ -162,11 +163,12 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Years in the home](/homes-and-taxes/years-in-the-home) | page | — / 6.8 min | *(none declared)* |
 | [If students leave — what school choice would cost](/if-students-leave) | page | 4.0 / 48.0 min | 1. If 78 high school students transferred out, $401,700 would leave the town in year one.<br>2. Lunenburg’s state aid changes by $150 if one pupil leaves.<br>3. 58 Lunenburg residents left under school choice in the latest year counted. |
 | [The money outside the budget](/money-outside-the-budget) | page | 2.3 / 27.4 min | 1. The town’s funds outside the budget took in more than they spent in 12 of 13 years, and what they hold multiplied 3.6×.<br>2. 34% of what those funds hold is pandemic-era money, and this series ends before we can see whether it has gone.<br>3. Most of the money held outside the budget is not school money — a large part is water, sewer and trash.<br>4. FY23 was the first year since FY17 that the school funds spent more than they took in. |
-| [Monty Tech finances](/monty-tech) | page | — / 7.6 min | *(none declared)* |
+| [Monty Tech finances](/monty-tech) | page | — / 9.3 min | *(none declared)* |
 | [Monty Tech rate scenario](/monty-tech/lunenburg-at-monty-tech-rate) | page | — / 7.6 min | *(none declared)* |
 | [Monty Tech assessment](/monty-tech/monty-tech-assessment) | page | — / 7.4 min | *(none declared)* |
 | [Monty Tech enrolment](/monty-tech/monty-tech-enrolment) | page | — / 7.4 min | *(none declared)* |
 | [Monty Tech funding](/monty-tech/monty-tech-funding) | page | — / 8.1 min | *(none declared)* |
+| [Monty Tech history](/monty-tech/monty-tech-history) | page | — / 10.5 min | *(none declared)* |
 | [Monty Tech per-pupil breakdown](/monty-tech/monty-tech-line-by-line) | page | — / 8.0 min | *(none declared)* |
 | [Monty Tech per pupil](/monty-tech/monty-tech-per-pupil) | page | — / 7.9 min | *(none declared)* |
 | [Funding sources compared](/monty-tech/monty-tech-revenue) | page | — / 10.0 min | *(none declared)* |
@@ -182,7 +184,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [School facilities fund](/parks/school-facilities-fund) | page | — / 7.1 min | *(none declared)* |
 | [School field upkeep](/parks/school-field-upkeep) | page | — / 6.3 min | *(none declared)* |
 | [Youth league payments](/parks/youth-league-payments) | page | — / 6.5 min | *(none declared)* |
-| [The whole school budget](/school-all-funds) | page | — / 9.5 min | *(none declared)* |
+| [The whole school budget](/school-all-funds) | page | — / 9.6 min | *(none declared)* |
 | [After-school activities fund](/school-all-funds/activities-fund) | page | — / 9.3 min | *(none declared)* |
 | [School lines against budget](/school-all-funds/budget-against-actual) | page | — / 17.6 min | *(none declared)* |
 | [Budget lines, all funds](/school-all-funds/budget-lines-all-funds) | page | — / 8.0 min | *(none declared)* |
@@ -192,11 +194,12 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Grant spending by line](/school-all-funds/grant-coding) | page | — / 7.4 min | *(none declared)* |
 | [Grants other districts get](/school-all-funds/grants-others-receive) | page | — / 25.5 min | *(none declared)* |
 | [Paid outside the general fund](/school-all-funds/outside-the-general-fund) | page | — / 7.9 min | *(none declared)* |
-| [Pay from grants and fees](/school-all-funds/pay-from-grants-and-fees) | page | — / 8.1 min | *(none declared)* |
 | [Pay moved between funds](/school-all-funds/pay-moved-between-funds) | page | — / 7.9 min | *(none declared)* |
 | [Positions and their funds](/school-all-funds/positions-and-their-funds) | page | — / 7.6 min | *(none declared)* |
-| [Preschool](/school-all-funds/preschool) | page | — / 9.6 min | *(none declared)* |
+| [Preschool](/school-all-funds/preschool) | page | — / 9.8 min | *(none declared)* |
+| [Salaries from grants and fees](/school-all-funds/salaries-from-grants-and-fees) | page | — / 11.0 min | *(none declared)* |
 | [School grants and aid](/school-all-funds/school-money-in) | page | — / 12.7 min | *(none declared)* |
+| [School receipts to the Town](/school-all-funds/school-receipts-to-town) | page | — / 9.7 min | *(none declared)* |
 | [Unspent money by fund](/school-all-funds/unspent-by-fund) | page | — / 7.8 min | *(none declared)* |
 | [Programs and cuts](/school-programs) | page | — / 8.6 min | *(none declared)* |
 | [Announced cuts](/school-programs/announced-cuts) | page | — / 7.9 min | *(none declared)* |
@@ -261,7 +264,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Reserve options](/special-education-reserve/reserve-options) | page | — / 11.8 min | *(none declared)* |
 | [Reserve or budget](/special-education-reserve/reserve-or-budget) | page | — / 8.6 min | *(none declared)* |
 | [Grants for surprises](/special-education-reserve/special-education-grants) | page | — / 8.4 min | *(none declared)* |
-| [Surprise costs](/special-education-reserve/surprise-costs) | page | — / 17.7 min | *(none declared)* |
+| [Surprise costs](/special-education-reserve/surprise-costs) | page | — / 16.6 min | *(none declared)* |
 | [Circuit breaker](/special-education/circuit-breaker) | page | — / 12.3 min | *(none declared)* |
 | [Circuit breaker account](/special-education/circuit-breaker-account) | page | — / 8.9 min | *(none declared)* |
 | [Class size limits](/special-education/class-size-limits) | page | — / 7.7 min | *(none declared)* |
@@ -359,7 +362,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Board of Health — votes](/boards/board-of-health/votes) | reference | — / 47.8 min | *(none declared)* |
 | [Board of Registrars](/boards/board-of-registrars) | reference | — / 6.2 min | *(none declared)* |
 | [Board of Registrars — about](/boards/board-of-registrars/about) | reference | — / 5.8 min | *(none declared)* |
-| [Board of Registrars — meetings](/boards/board-of-registrars/meetings) | reference | — / 7.1 min | *(none declared)* |
+| [Board of Registrars — meetings](/boards/board-of-registrars/meetings) | reference | — / 7.3 min | *(none declared)* |
 | [Board of Registrars — missing records](/boards/board-of-registrars/records) | reference | — / 8.7 min | *(none declared)* |
 | [Budget Task Force](/boards/budget-task-force) | reference | — / 7.1 min | *(none declared)* |
 | [Budget Task Force — about](/boards/budget-task-force/about) | reference | — / 8.2 min | *(none declared)* |
@@ -675,7 +678,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Zoning Board of Appeals — missing records](/boards/zoning-board-of-appeals/records) | reference | — / 14.7 min | *(none declared)* |
 | [Zoning Board of Appeals — where the time goes](/boards/zoning-board-of-appeals/time) | reference | — / 5.9 min | *(none declared)* |
 | [Zoning Board of Appeals — votes](/boards/zoning-board-of-appeals/votes) | reference | — / 31.3 min | *(none declared)* |
-| [The budget feed — FY28](/budget-feed) | reference | — / 22.0 min | *(none declared)* |
+| [The budget feed — FY28](/budget-feed) | reference | — / 22.1 min | *(none declared)* |
 | [Build your own budget](/build-your-own-budget) | tool | — / 16.4 min | *(none declared)* |
 | [The database](/database) | reference | — / 7.8 min | *(none declared)* |
 | [The departments](/departments) | reference | — / 7.7 min | *(none declared)* |
@@ -2499,6 +2502,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Zoning Board of Appeals, August 12, 2026](/meeting-minutes/zoning-board-of-appeals/2026-08-12-uNUrTAXxIF8) | reference | — / 8.9 min | *(none declared)* |
 | [Zoning Board of Appeals, August 26, 2026](/meeting-minutes/zoning-board-of-appeals/2026-08-26-62qwUKHEBro) | reference | — / 10.1 min | *(none declared)* |
 | [Zoning Board of Appeals, October 14, 2026](/meeting-minutes/zoning-board-of-appeals/2026-10-14-aW3D8mIw_yw) | reference | — / 10.9 min | *(none declared)* |
+| [New reports](/new-reports) | reference | — / 36.4 min | *(none declared)* |
 | [Town-wide org charts](/org-charts) | reference | — / 18.3 min | *(none declared)* |
 | [Adam Burney](/people/adam-burney) | reference | — / 10.5 min | *(none declared)* |
 | [Alfred Gravelle](/people/alfred-gravelle) | reference | — / 8.9 min | *(none declared)* |
@@ -2961,11 +2965,11 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Zachary Cutting](/people/zachary-cutting) | reference | — / 7.5 min | *(none declared)* |
 | [Priorities](/priorities) | tool | — / 13.3 min | *(none declared)* |
 | [Rates, fees and contracts — the register](/rate-register) | reference | — / 12.9 min | *(none declared)* |
-| [Analysis: Town and Schools](/reports) | reference | — / 55.4 min | *(none declared)* |
+| [Analysis: Town and Schools](/reports) | reference | — / 52.3 min | *(none declared)* |
 | [Search — everything this project holds](/search) | reference | — / 6.5 min | *(none declared)* |
 | [Sources](/sources) | reference | — / 19.7 min | *(none declared)* |
-| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 21.9 min | *(none declared)* |
-| [What the town is deciding now](/threads) | reference | — / 15.4 min | *(none declared)* |
+| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 21.1 min | *(none declared)* |
+| [What the town is deciding now](/threads) | reference | — / 15.5 min | *(none declared)* |
 | [Every Town Meeting vote](/town-meeting-votes) | reference | — / 473.5 min | *(none declared)* |
 | [Commercial growth scenarios](/try-growth) | tool | — / 21.5 min | *(none declared)* |
-| [What we cannot answer](/what-we-cannot-answer) | reference | — / 371.1 min | *(none declared)* |
+| [What we cannot answer](/what-we-cannot-answer) | reference | — / 373.2 min | *(none declared)* |

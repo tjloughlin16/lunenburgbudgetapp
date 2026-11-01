@@ -9,7 +9,6 @@
     "rate": "historical-report.json#conclusions[id=the-rate-fell-because-the-town-revalued].figures",
     "after": "historical-report.json#tax_rate[edition=1970]",
     "reval": "historical-report.json#revaluations[0]",
-    "tm": "historical-report.json#conclusions[id=a-town-manager-took-thirty-three-years].figures",
     "pop": "historical-report.json#conclusions[id=the-town-nearly-doubled].figures",
     "ros": "historical-report.json#conclusions[id=the-longest-run-on-the-school-rosters].figures",
     "aide": "historical-report.json#first_aide.first",
@@ -23,7 +22,8 @@
     "rn0": "historical-report.json#roster_names[0]",
     "rnL": "historical-report.json#roster_names[-1]",
     "fa": "historical-report.json#conclusions[id=the-first-aide-on-the-rosters].figures",
-    "tm2": "historical-report.json#town_manager[1]"
+    "hrall": "historical-report.json",
+    "camp": "historical-report.json#conclusions[id=one-home-in-five-was-a-camp].figures"
   },
   "literal": [],
   "flare": {
@@ -36,39 +36,36 @@
     "headline": "Remember {r0.name}?",
     "emphasis": "{r0.name}",
     "headline_size": 54,
-    "sub": "{ros.span.text} years on the school rosters, traced across all {ar.editions} town reports, {ar.first} to {ar.last}.",
+    "sub": "{ros.span.text} years on the school rosters, traced across all {ar.editions} town reports, {ar.first} to {ar.last}. Every one is searchable.",
     "tiles": [
       {
-        "eyebrow": "Highest tax rate, {ar.first}–{ar.last}",
-        "value": "{rate.peak.text}",
-        "label": "{rate.peak.unit}, in {rate.py.text}. FY{ar.last}: {rate.last.text}",
-        "text": "It fell by more than a third {rate.n.text} times, each when the town revalued. Rates don’t compare across assessments."
+        "eyebrow": "Population",
+        "value": "{pop.a.text} → {pop.b.text}",
+        "label": "residents, {pop.ay.text} vs. {pop.by.text}",
+        "text": "As the reports’ own fact pages count them."
       },
       {
-        "eyebrow": "School rosters",
-        "value": "{rn0.names} → {rnL.names}",
-        "label": "names printed, {rn0.year} vs. {rnL.year}",
-        "text": "Every roster the reports print. Names, not a staffing level."
-      },
-      {
-        "eyebrow": "Teacher aides",
-        "value": "{fa.n.text}",
-        "label": "paraprofessionals on the {fa.b.text} roster",
-        "text": "The first aide is on the {fa.a.text} roster. Now the most common job after teacher."
-      },
-      {
-        "eyebrow": "Town manager",
-        "value": "{tm.n.text} years",
-        "label": "from first study to charter",
-        "text": "A {tm.a.text} study, a second committee, then the {tm.b.text} charter, passed {tm.yes.text} to {tm.no.text}."
+        "eyebrow": "Camps",
+        "value": "{camp.c.text}",
+        "label": "camps in {camp.a.text}: {camp.share.text} of homes",
+        "text": "The only year the reports count them. A camp is a seasonal house."
       }
     ],
     "path": "/analysis/historical-report",
     "as_of": "Annual town reports, Town of Lunenburg",
-    "conclusion": "Written each year by the town’s own clerks, assessors and boards. Thank you.",
-    "conclusion_em": "Thank you.",
-    "conclusion_size": 30,
-    "emphasis_nowrap": true
+    "emphasis_nowrap": true,
+    "chart": {
+      "eyebrow": "The tax rate, {ar.first}–{ar.last}",
+      "series": "hrall.tax_rate",
+      "x": "edition",
+      "y": "rate",
+      "fmt": "${:,.2f}",
+      "marks": "hrall.revaluations",
+      "mark_label": "the town revalued",
+      "text": "Per {rate.k.text} of value. Each big fall came with a revaluation, so rates don’t compare across them.",
+      "height": 380,
+      "gap_label": "years we haven’t read"
+    }
   },
   "text": [
     "Lunenburg has written itself a report every single year since {ar.first}, and we've now gone through every one of them. 📚",
@@ -77,15 +74,13 @@
     "",
     "Of those {ar.pages|n} pages, {fin.all.text} hold financial tables. We read every one of them, and {fin.proven.text} check out against totals the town itself printed on the page.",
     "",
+    "🔎 Every one of them is searchable: search any word across the reports on the site.",
+    "",
     "Some things only reading every report can show:",
     "",
     "💸 Across all {ar.editions} reports, the highest tax rate printed is {rate.peak.text} {rate.peak.unit}, in {rate.py.text}. Today's, in the FY{ar.last} report, is {rate.last.text}. The two are not comparable: the rate fell by more than a third {rate.n.text} times, each in a year the town revalued (\"{reval.quote}\"). A rate only compares within one assessment, so neither number tells you what a household paid.",
     "",
-    "📋 The school rosters printed {rn0.names} names in {rn0.year} and {rnL.names} in {rnL.year}. That counts names, not a staffing level: a roster says nothing about hours or who pays.",
-    "",
-    "🧑‍🏫 The first teacher aide appears on the {fa.a.text} roster: {aide.name}, \"{aide.role}\". The {fa.b.text} roster prints {fa.n.text} paraprofessionals, the second most common job after classroom teacher.",
-    "",
-    "🏛️ A study committee recommended a town manager in {tm.a.text}, a second committee in {tm2.edition}, and the charter passed in {tm.b.text}, {tm.yes.text} to {tm.no.text}: {tm.n.text} years from first study to charter.",
+    "🏕️ In {camp.a.text} the Assessors counted {camp.c.text} camps beside {camp.h.text} dwelling houses: {camp.share.text} of the homes in town were seasonal camps. {camp.a.text} is the only year the reports print a camp count.",
     "",
     "🏡 The fact pages count {pop.a.text} residents in {pop.ay.text} and {pop.b.text} in {pop.by.text}.",
     "",

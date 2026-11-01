@@ -120,11 +120,40 @@ def archive_counts(folder):
             'first': years[0] if years else None, 'last': years[-1] if years else None}
 
 
+def searchable_counts(folder):
+    """`searchable:<folder>` -- how many of a folder's PDFs a reader can search, from the register
+    `scripts/searchable_pdfs.py` keeps (`sources/data/searchable-pdfs.csv`): a PDF is searchable
+    when its own text layer is (`not needed`) or our searchable copy is built and listed (`built`).
+    Added 1 November 2026 for TJ's "every annual report is searchable!" -- so the line says
+    "every" only on the day the register does, and the count otherwise. Every PDF in the folder
+    must have a register row, or this refuses (a PDF the register never saw is not "searchable")."""
+    import csv
+    import glob
+    reg = {r['key']: r for r in csv.DictReader(open(
+        os.path.join(ROOT, 'sources', 'data', 'searchable-pdfs.csv'), encoding='utf-8'))}
+    files = sorted(glob.glob(os.path.join(ROOT, 'sources', folder, 'docs', '*.pdf')))
+    if not files:
+        raise SystemExit(f'REFUSING: searchable:{folder} holds no PDFs')
+    keys = [f'{folder}/docs/{os.path.basename(f)}' for f in files]
+    unseen = [k for k in keys if k not in reg]
+    if unseen:
+        raise SystemExit(f'REFUSING: searchable:{folder} -- {len(unseen)} PDFs have no row in '
+                         f'searchable-pdfs.csv (e.g. {unseen[0]})')
+    n = sum(reg[k]['state'] in ('built', 'not needed') for k in keys)
+    every = n == len(keys)
+    return {'n': n, 'of': len(keys), 'every': every,
+            'line': 'Every one of them is searchable.' if every else
+                    f'{n:,} of {len(keys):,} are searchable so far.'}
+
+
 def load_data(spec):
     out, cache = {}, {}
     for alias, ref in (spec.get('data') or {}).items():
         if ref.startswith('archive:'):
             out[alias] = archive_counts(ref[len('archive:'):])
+            continue
+        if ref.startswith('searchable:'):
+            out[alias] = searchable_counts(ref[len('searchable:'):])
             continue
         fname, _, path = ref.partition('#')
         if fname not in cache:
@@ -322,7 +351,76 @@ def layout_grid(img, R):
         f'<div class="g"><div class="gs">{R(x["eyebrow"])}</div><div class="gv">{R(x["value"])}</div>'
         f'<div class="gu">{R(x["label"])}</div><div class="gt">{R(x.get("text", ""))}</div></div>'
         for x in img['tiles'])
-    return f'<div class="grid">{t}</div>'
+    return f'<div class="grid{" three" if len(img["tiles"]) == 3 else ""}">{t}</div>'
+
+
+def chart_html(img, data, R, color):
+    """A LINE across every year a series holds, above the post's cards. Added 1 November 2026: TJ
+    wanted the historical post to SHOW "years and years of data", and the tax rate is the series.
+    `series` is a data path to a list of rows, `x`/`y` name their keys; `marks` is a data path to
+    rows whose `x` key gets a dot and `mark_label` (the revaluations). Every number drawn comes
+    from the data: the first and last years, the peak and the latest value. This is an image for
+    Facebook, which cannot run a component; rule 7f governs the web page, which draws its own."""
+    c = img['chart']
+    def path(p):
+        alias, _, rest = p.partition('.')
+        return walk(data[alias], rest) if rest else data[alias]
+    rows = [r for r in path(c['series']) if r.get(c['y']) is not None]
+    xs, ys = [r[c['x']] for r in rows], [r[c['y']] for r in rows]
+    W, H, L, Rr, T, B = 960, c.get('height', 250), 60, 70, 22, 34
+    x0, x1, ymax = min(xs), max(xs), max(ys)
+    X = lambda x: L + (x - x0) / (x1 - x0) * (W - L - Rr)   # noqa: E731
+    Y = lambda y: T + (1 - y / ymax) * (H - T - B)          # noqa: E731
+    fmt = lambda v: c.get('fmt', '{:,}').format(v)          # noqa: E731
+    # A YEAR THE SERIES DOES NOT HOLD IS NOT DRAWN AS IF IT WERE: the line breaks there, and a
+    # thin dashed bridge says the years between are missing rather than interpolated.
+    runs, gaps = [[0]], []
+    for i in range(1, len(xs)):
+        if xs[i] - xs[i - 1] > 1:
+            gaps.append((i - 1, i)); runs.append([])
+        runs[-1].append(i)
+    line = ''.join(
+        f'<polyline points="{" ".join(f"{X(xs[i]):.1f},{Y(ys[i]):.1f}" for i in run)}" fill="none" '
+        f'stroke="{color}" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>'
+        for run in runs if len(run) > 1)
+    line += ''.join(f'<circle cx="{X(xs[run[0]]):.1f}" cy="{Y(ys[run[0]]):.1f}" r="3" fill="{color}"/>'
+                    for run in runs if len(run) == 1)
+    line += ''.join(f'<line x1="{X(xs[a]):.1f}" y1="{Y(ys[a]):.1f}" x2="{X(xs[b]):.1f}" y2="{Y(ys[b]):.1f}" '
+                    f'stroke="{color}" stroke-width="2" stroke-dasharray="4 6" opacity=".7"/>' for a, b in gaps)
+    pk = ys.index(ymax)
+    by = dict(zip(xs, ys))
+    marks = ''.join(
+        f'<circle cx="{X(m[c["x"]]):.1f}" cy="{Y(by[m[c["x"]]]):.1f}" r="7" fill="#fff" stroke="#181713" stroke-width="3"/>'
+        for m in (path(c['marks']) if c.get('marks') else []) if m[c['x']] in by)
+    svg = (f'<svg viewBox="0 0 {W} {H}" width="{W}" height="{H}">'
+           f'<line x1="{L}" y1="{H - B}" x2="{W - Rr}" y2="{H - B}" stroke="#d8d6cf" stroke-width="2"/>'
+           f'{line}'
+           f'{marks}'
+           f'<circle cx="{X(xs[pk]):.1f}" cy="{Y(ymax):.1f}" r="8" fill="{color}"/>'
+           f'<text x="{X(xs[pk]) + 14:.1f}" y="{Y(ymax) + 8:.1f}" class="cpk">{html.escape(fmt(ymax))} in {xs[pk]}</text>'
+           f'<circle cx="{X(xs[-1]):.1f}" cy="{Y(ys[-1]):.1f}" r="8" fill="{color}"/>'
+           f'<text x="{X(xs[-1]):.1f}" y="{Y(ys[-1]) - 18:.1f}" text-anchor="middle" class="cpk">{html.escape(fmt(ys[-1]))}</text>'
+           f'<text x="{L}" y="{H - 6}" class="cax">{xs[0]}</text>'
+           f'<text x="{W - Rr}" y="{H - 6}" text-anchor="end" class="cax">{xs[-1]}</text>'
+           f'</svg>')
+    key = ((f'<span class="ckey"><i></i>{R(c["mark_label"])}</span>' if c.get('mark_label') else '')
+           + (f'<span class="ckey"><b></b>{R(c["gap_label"])}</span>' if gaps and c.get('gap_label') else ''))
+    return (f'<div class="chart"><div class="chh"><span class="gs">{R(c["eyebrow"])}</span>'
+            f'<span class="ckeys">{key}</span></div>{svg}'
+            f'<div class="gt">{R(c.get("text", ""))}</div></div>')
+
+
+CHART_CSS = '''
+/* chart */
+.chart{background:#fff;border:2px solid #e4e2dc;border-radius:18px;padding:20px 0 18px;margin-bottom:16px}
+.chart .chh,.chart .gt{padding:0 24px}.chart svg{display:block;margin:6px 0 2px -12px}
+.chh{display:flex;justify-content:space-between;align-items:center}
+.ckey{font-size:19px;font-weight:700;color:#52514e;display:flex;align-items:center;gap:8px}
+.ckey i{width:14px;height:14px;border-radius:50%%;border:3px solid #181713;background:#fff}
+.ckey b{width:26px;border-top:3px dashed %(a)s}.ckeys{display:flex;gap:18px}
+.cpk{font-weight:900;font-size:30px;fill:#181713;font-family:-apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif}
+.cax{font-weight:700;font-size:20px;fill:#898781;font-family:-apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif}
+'''
 
 
 LAYOUTS = {'spotlight': layout_spotlight, 'tiles': layout_tiles, 'hero': layout_hero,
@@ -340,6 +438,9 @@ LAYOUT_CSS = {'grid': '''
 .gv{font-weight:900;font-size:76px;line-height:1;letter-spacing:-.03em;margin-top:14px;color:#181713}
 .gu{font-weight:800;font-size:24px;margin-top:6px;color:%(a)s}
 .gt{font-size:20px;line-height:1.36;color:#52514e;margin-top:10px}
+.grid.three{grid-template-columns:1fr 1fr 1fr;gap:16px}
+.grid.three .g{padding:18px 18px 20px}.grid.three .gs{font-size:18px}
+.grid.three .gv{font-size:54px}.grid.three .gu{font-size:20px}.grid.three .gt{font-size:18px}
 '''}
 # The layouts that read a `tiles` list -- the pool "auto" draws from.
 ITEM_LAYOUTS = ('tiles', 'bands', 'poster', 'split')
@@ -454,6 +555,8 @@ def build_html(spec, slug, data):
     if lay not in LAYOUTS:
         raise SystemExit(f'REFUSING: layout {img["layout"]!r}; choose from auto, {", ".join(LAYOUTS)}')
     body = LAYOUTS[lay](img, R)
+    if img.get('chart'):
+        body = chart_html(img, data, R, color) + body
     head = R(img['headline'])
     if img.get('emphasis'):
         e = R(img['emphasis'])
@@ -467,6 +570,8 @@ def build_html(spec, slug, data):
     css = CSS % dict(w=w, h=h, a=color, hs=img.get('headline_size', 66), cs=img.get('conclusion_size', 50))
     if lay in LAYOUT_CSS:
         css += LAYOUT_CSS[lay] % dict(a=color)
+    if img.get('chart'):
+        css += CHART_CSS % dict(a=color)
     return f'''<!doctype html><html><head><meta charset="utf-8">
 <!-- GENERATED by scripts/build_social_post.py from post.json. Flare: {name} / {motif}. Layout: {lay}. -->
 <style>{css}</style></head><body>
