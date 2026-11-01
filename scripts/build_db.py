@@ -1318,6 +1318,14 @@ REFERENCE = [
     # approval, never a payment), a building committee's cost to completion, the census of minors
     'report-welfare-aid', 'report-tax-collection-by-levy-year', 'report-school-building-approved-costs',
     'report-capital-project-costs', 'report-school-census-minors',
+    # FOUR THAT NEVER ARRIVED, found 1 November 2026 (notes/PLAN-EVERYTHING-IN-THE-REPORTS.md):
+    # this list was kept by hand, so a `report-*.csv` nobody remembered to add here simply was
+    # not in the database, and nothing said so. `check_report_datasets()` now refuses the build
+    # instead. The town's OWN contents page, department by department with its page range or
+    # `No Report Submitted` (FY2011-FY2025); who signed each department's report; per body,
+    # which years it filed (DERIVED from report-index, one row per body, no edition); and the
+    # page of the FY2011 appropriations schedule the generic extract first missed.
+    'report-index', 'report-signatures', 'report-filing', 'report-appropriations-supplement',
 
     # THE PROVEN READINGS, each tied to an identity its own table states. These are a
     # different kind of thing from the `report-*` extracts above and must not be read as
@@ -1353,6 +1361,47 @@ REFERENCE = [
     'capital-plans-refused', 'valuation-refused',
 
 ]
+
+# EVERY `report-*.csv` IS LOADED OR SAYS WHY NOT. The annual-report datasets were loaded from
+# the hand-kept list above, and four (`report-index`, `report-signatures`, `report-filing`,
+# `report-appropriations-supplement`) sat on disk outside the database for weeks because nobody
+# added them -- a join that matches nothing looks exactly like data that is absent. So the build
+# globs the directory and refuses if a `report-*.csv` is neither in REFERENCE/UNLOADED nor named
+# here, with its reason.
+REPORT_NOT_LOADED = {
+    'report-appropriations-supplement-refused':
+        'a refusal log for extract_appropriations_supplement.py: which pages it declined to read '
+        'and why. About our reading, not about the town (notes/PLAN-EVERYTHING-IN-THE-REPORTS.md '
+        'step 2: a refusal log is not data)',
+}
+
+
+def check_report_datasets():
+    """Refuse to build if a `report-*.csv` is neither loaded nor excluded with a reason."""
+    import glob as _g
+    on_disk = sorted(os.path.basename(p)[:-4]
+                     for p in _g.glob(os.path.join(DATA, 'report-*.csv')))
+    loaded = set(REFERENCE) | {n for n, _ in UNLOADED}
+    stray = [n for n in on_disk if n not in loaded and n not in REPORT_NOT_LOADED]
+    both = sorted(set(REPORT_NOT_LOADED) & loaded)
+    gone = sorted(set(REPORT_NOT_LOADED) - set(on_disk))
+    unreasoned = sorted(n for n, why in REPORT_NOT_LOADED.items() if not why.strip())
+    problems = []
+    if stray:
+        problems.append('report dataset(s) neither loaded nor excluded: %s\n'
+                        '  Add each to REFERENCE in scripts/build_db.py, or to REPORT_NOT_LOADED '
+                        'with the reason it is not data.' % ', '.join(stray))
+    if both:
+        problems.append('named in REPORT_NOT_LOADED and also loaded: %s' % ', '.join(both))
+    if gone:
+        problems.append('REPORT_NOT_LOADED names file(s) that no longer exist: %s'
+                        % ', '.join(gone))
+    if unreasoned:
+        problems.append('REPORT_NOT_LOADED entries with no reason: %s' % ', '.join(unreasoned))
+    if problems:
+        raise SystemExit('\n'.join(problems))
+    return len(on_disk)
+
 
 VIEWS = """
 -- Budget against the town's books, by function code. THE ONE JOIN BETWEEN THE TWO SIDES.
@@ -3310,6 +3359,9 @@ def main():
                     help='fail the build if a reconciliation does not tie')
     args = ap.parse_args()
 
+    # Before the old database is removed, so a refusal leaves the last good build in place.
+    n_report = check_report_datasets()
+
     if os.path.exists(DB):
         os.remove(DB)                     # rebuilt from scratch, always
     db = sqlite3.connect(DB)
@@ -3351,7 +3403,8 @@ def main():
           % (load_dese_datasets(db), len(DESE_DATASETS)))
     print('  census figures   %5d  (ACS 5-year, every estimate with its margin)'
           % load_census(db))
-    print('  reference rows   %5d' % load_reference(db))
+    print('  reference rows   %5d  (every one of %d report-*.csv loaded or excluded with a reason)'
+          % (load_reference(db), n_report))
     print('  provenance rows  %5d' % load_provenance(db))
     print('  role vocabulary  %5d' % load_role_classification(db))
     print('  money model      %5d' % load_money_model(db))

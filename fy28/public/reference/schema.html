@@ -245,11 +245,11 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
 </header>
 
 <div class="metrics">
-  <div class="metric"><div class="v">191</div><div class="l">tables</div></div>
+  <div class="metric"><div class="v">195</div><div class="l">tables</div></div>
   <div class="metric"><div class="v">16</div><div class="l">views</div></div>
-  <div class="metric"><div class="v">342,498</div><div class="l">rows</div></div>
-  <div class="metric"><div class="v">3205</div><div class="l">columns</div></div>
-  <div class="metric"><div class="v">79%</div><div class="l">columns described</div></div>
+  <div class="metric"><div class="v">343,537</div><div class="l">rows</div></div>
+  <div class="metric"><div class="v">3243</div><div class="l">columns</div></div>
+  <div class="metric"><div class="v">78%</div><div class="l">columns described</div></div>
 </div>
 
 
@@ -2041,7 +2041,7 @@ to $325</td><td>quoted in source</td></tr>
 <p class="cap sm">No rows. That is the honest state of this table, not a load that failed — see its entry in <code>SCHEMA.md</code>.</p>
 </details>
 </details>
-<details class="scope"><summary class="scopehead"><b>Town money and town subjects</b><span>72 tables &middot; 100,181 rows</span></summary>
+<details class="scope"><summary class="scopehead"><b>Town money and town subjects</b><span>73 tables &middot; 100,213 rows</span></summary>
 <p class="cap">The other 67 departments, the receipts that fund them, and what the annual reports print about the town.</p>
 <p class="tierhead"><b>Tier 1 · totals</b><span>what was appropriated and what is left, by department</span></p>
 <details class="t"><summary><span class="srow"><code>annual_report_receipts</code> <span class="tag scope stown">town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">extract</span> <span class="n">7,856 rows</span> <span class="yr">1959 … 2022 (63 years)</span><button class="open" data-t="annual_report_receipts">Query table</button></span><span class="gr">one row per revenue line per year</span></summary>
@@ -2534,6 +2534,31 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>agency_funds</td><td class="num">1987</td><td>1987</td><td>37</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>County Retirement</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>agency-funds</td><td>t1r5</td><td><span class="nul">empty</span></td><td>101414.98</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>v1=not established (printed header, p37 tab…</td><td>no check</td><td>no total printed</td></tr>
 <tr><td>agency_funds</td><td class="num">1987</td><td>1987</td><td>37</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Medicare/FICA</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>agency-funds</td><td>t1r10</td><td><span class="nul">empty</span></td><td>6083.62</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>v1=not established (printed header, p37 tab…</td><td>no check</td><td>no total printed</td></tr>
 <tr><td>agency_funds</td><td class="num">1987</td><td>1987</td><td>37</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Sch.Custodians Unions Dues</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>agency-funds</td><td>t1r12</td><td><span class="nul">empty</span></td><td>515.90</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>v1=not established (printed header, p37 tab…</td><td>no check</td><td>no total printed</td></tr>
+</table></div>
+</details>
+<details class="t"><summary><span class="srow"><code>report_appropriations_supplement</code> <span class="tag scope stown">town</span> <span class="tag">extract</span> <span class="n">32 rows</span><button class="open" data-t="report_appropriations_supplement" data-q="SELECT program, label, appropriated_or_forward, total_expended FROM report_appropriations_supplement ORDER BY page, line_no">Query table</button></span><span class="gr">one row per printed line</span></summary>
+<p class="ans">Page 60 of the FY2011 appropriations schedule, the page the generic extract first missed, read separately: one row per printed line with its program and the five money columns, published only where a program&#x27;s lines sum to the subtotal printed beneath them.</p>
+<p class="warn">Values are TEXT as printed; cast to compare. report_appropriations now also holds this page (as check failed), so do not add the two together.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>report_fy</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>document</code></td><td class="ty">TEXT</td><td>The source file the figure was read from.</td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td><td>The page number printed on the page, not the PDF&#x27;s index.<br><span class="ccaut">The two differ by a cover offset that is not constant across years.</span></td></tr>
+<tr><td><code>program</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>line_no</code></td><td class="ty">TEXT</td><td>Position of the row on the page, counting from the top.<br><span class="ccaut">Positional, so it identifies a row within a page and nothing beyond it.</span></td></tr>
+<tr><td><code>label</code></td><td class="ty">TEXT</td><td>The row&#x27;s name, as printed.<br><span class="ccaut">Not a key. MUNIS truncates to ten characters, so MS GUIDANC and HS GUIDANC collide.</span></td></tr>
+<tr><td><code>kind</code></td><td class="ty">TEXT</td><td>What sort of row or record this is.<br><span class="ccaut">Meaning differs by table — see the per-table entry.</span></td></tr>
+<tr><td><code>appropriated_or_forward</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>total_funds_available</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>total_expended</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>total_encumbered</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>balance_to_revenue</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>proof</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>report_fy</th><th>document</th><th>page</th><th>program</th><th>line_no</th><th>label</th><th>kind</th><th>appropriated_or_forward</th><th>total_funds_available</th><th>total_expended</th><th>total_encumbered</th><th>balance_to_revenue</th><th>proof</th></tr>
+<tr><td>2011</td><td>4117-fy-2011-annual-town-report.pdf</td><td>60</td><td>Town Manager</td><td>2</td><td>Payroll - Town Manager</td><td>line</td><td>115000.00</td><td>116340.00</td><td>116339.43</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>the lines above sum to this subtotal in 4 c…</td></tr>
+<tr><td>2011</td><td>4117-fy-2011-annual-town-report.pdf</td><td>60</td><td>Technology Director</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>subtotal</td><td>150722.22</td><td>150722.22</td><td>150722.22</td><td><span class="nul">empty</span></td><td>0.00</td><td>the lines above sum to this subtotal in 4 c…</td></tr>
+<tr><td>2011</td><td>4117-fy-2011-annual-town-report.pdf</td><td>60</td><td>Treasurer&#x27;s Administration</td><td>4</td><td>Other Expenses</td><td>line</td><td>7530.50</td><td>7637.48</td><td>6376.19</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>the lines above sum to this subtotal in 4 c…</td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>report_auditors_cash_schedule</code> <span class="tag scope stown">town</span> <span class="tag">extract</span> <span class="n">168 rows</span> <span class="yr">1983–1988</span><button class="open" data-t="report_auditors_cash_schedule" data-q="SELECT edition, page, table_family, label, v1, v2, status FROM report_auditors_cash_schedule ORDER BY edition, line_no">Query table</button></span><span class="gr">one row per fund or account</span></summary>
@@ -4648,7 +4673,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 </details>
-<details class="scope"><summary class="scopehead"><b>Both at once — the ledger and the model</b><span>34 tables &middot; 11,194 rows</span></summary>
+<details class="scope"><summary class="scopehead"><b>Both at once — the ledger and the model</b><span>37 tables &middot; 12,193 rows</span></summary>
 <p class="cap">Tables that carry every department together. The town&#x27;s books do not separate school from town, and neither do these: splitting them would invent a division the source does not make.</p>
 <p class="tierhead"><b>Tier 1 · totals</b><span>what was appropriated and what is left, by department</span></p>
 <details class="t"><summary><span class="srow"><code>balance_sheet</code> <span class="tag scope sboth">school + town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">1,699 rows</span> <span class="yr">1987–2022</span><button class="open" data-t="balance_sheet" data-q="SELECT fy, section, line, fund, amount FROM balance_sheet ORDER BY fy, section, line LIMIT 1000">Query table</button></span><span class="gr">one row per line per fund column per year</span></summary>
@@ -5289,6 +5314,67 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>2026</td><td>bus_fee</td><td>Transportation, to school</td><td>eligibility — grades K-6, under 2 miles</td><td><span class="nul">empty</span></td><td>charged</td><td>2025-05</td><td><span class="nul">empty</span></td><td>Superintendent&#x27;s email, May 2025</td><td>correspondence/2025-05-bus-fees-superintend…</td><td>Grades K-6 :  0-1.99 miles are charged</td><td>verified</td><td>no</td></tr>
 </table></div>
 </details>
+<details class="t"><summary><span class="srow"><code>report_filing</code> <span class="tag scope sboth">school + town</span> <span class="tag">derived</span> <span class="n">119 rows</span><button class="open" data-t="report_filing" data-q="SELECT body, filed, said_none, of_years, first_filed, last_filed FROM report_filing ORDER BY filed DESC">Query table</button></span><span class="gr">one row per body</span></summary>
+<p class="ans">Per body, which years it filed an annual report, which years the contents page printed <code>No Report Submitted</code>, and which years it was not listed at all. DERIVED from report_index; no edition column.</p>
+<p class="warn">Three states, not two: <code>said none</code> is the town recording that a body sent nothing; a year in neither list means the body was not on the contents page. Filing is a convention, not a statutory duty.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>body</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>slug</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>years_filed</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>years_said_none</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>first_filed</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>last_filed</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>filed</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>said_none</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>of_years</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>org_chart_unit</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>body</th><th>slug</th><th>years_filed</th><th>years_said_none</th><th>first_filed</th><th>last_filed</th><th>filed</th><th>said_none</th><th>of_years</th><th>org_chart_unit</th></tr>
+<tr><td>School Reports / Lunenburg</td><td>school-reports-lunenburg</td><td>2013</td><td><span class="nul">empty</span></td><td>2013</td><td>2013</td><td>1</td><td>0</td><td>15</td><td><span class="nul">empty</span></td></tr>
+<tr><td>Sewer Commission •aaaaaaaaaaaaaa</td><td>sewer-commission-aaaaaaaaaaaaaa</td><td>2022</td><td><span class="nul">empty</span></td><td>2022</td><td>2022</td><td>1</td><td>0</td><td>15</td><td><span class="nul">empty</span></td></tr>
+<tr><td>Town Manager Report-Heather R. Lemieux</td><td>town-manager-report-heather-r-lemieux</td><td>2016</td><td><span class="nul">empty</span></td><td>2016</td><td>2016</td><td>1</td><td>0</td><td>15</td><td><span class="nul">empty</span></td></tr>
+</table></div>
+</details>
+<details class="t"><summary><span class="srow"><code>report_index</code> <span class="tag scope sboth">school + town</span> <span class="tag">extract</span> <span class="n">698 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="report_index" data-q="SELECT fy, department, pdf_from, pdf_to, state FROM report_index WHERE state = &#x27;no report submitted&#x27; ORDER BY fy, department">Query table</button></span><span class="gr">one row per department per annual report</span></summary>
+<p class="ans">The town&#x27;s OWN contents page of each annual report, FY2011-FY2025: every department and body it lists, the PRINTED page range of its report and the PDF pages that range lands on, or the town&#x27;s own words <code>No Report Submitted</code>.</p>
+<p class="warn">printed_from/printed_to are the page numbers the book prints at its feet; pdf_from/pdf_to are positions in the PDF. A body absent from the contents page is NOT the same as <code>no report submitted</code>.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
+<tr><td><code>section</code></td><td class="ty">TEXT</td><td>The budget book&#x27;s own section heading.</td></tr>
+<tr><td><code>department</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>printed_from</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>printed_to</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>pdf_from</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>pdf_to</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>state</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>as_printed</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>section</th><th>department</th><th>printed_from</th><th>printed_to</th><th>pdf_from</th><th>pdf_to</th><th>state</th><th>as_printed</th></tr>
+<tr><td class="num">2017</td><td>Protection Of Persons &amp; Property</td><td>Nashoba Associated Boards of Health</td><td>75</td><td>78</td><td>75</td><td>78</td><td>report</td><td>Nashoba Associated Boards of Health 75</td></tr>
+<tr><td class="num">2022</td><td>Planning</td><td>Ad Hoc Open Space Advisory Committee</td><td>96</td><td>96</td><td>96</td><td>96</td><td>report</td><td>Ad Hoc Open Space Advisory Committee 96</td></tr>
+<tr><td class="num">2023</td><td>Town Services</td><td>Finance Committee Green Communities Committ…</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>no report submitted</td><td>Finance Committee Green Communities Committ…</td></tr>
+</table></div>
+</details>
+<details class="t"><summary><span class="srow"><code>report_signatures</code> <span class="tag scope sboth">school + town</span> <span class="tag">extract</span> <span class="n">182 rows</span> <span class="yr">2013–2025</span><button class="open" data-t="report_signatures" data-q="SELECT fy, department, person, title, page FROM report_signatures ORDER BY fy, department">Query table</button></span><span class="gr">one row per signature on a department report</span></summary>
+<p class="ans">Who signed each department&#x27;s report in the FY2013-FY2025 annual reports, with the title they printed beside their name, attributed to the department by the town&#x27;s own contents page.</p>
+<p class="warn">Machine-read from OCR: names and titles carry OCR errors and a few rows are misattributed. A signature is who signed that year&#x27;s report, not a term of office.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
+<tr><td><code>department</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>person</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>title</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>page</code></td><td class="ty">TEXT</td><td>The page number printed on the page, not the PDF&#x27;s index.<br><span class="ccaut">The two differ by a cover offset that is not constant across years.</span></td></tr>
+<tr><td><code>as_printed</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>department</th><th>person</th><th>title</th><th>page</th><th>as_printed</th></tr>
+<tr><td class="num">2017</td><td>School Facilities</td><td>John Londa</td><td>Director of Facilities and Grounds</td><td>100</td><td>Respectfully submitted,</td></tr>
+<tr><td class="num">2020</td><td>Conservation Commission</td><td>Bob Pease</td><td>Chair, Kenneth Jones, Vice-Chair, Jeffrey V…</td><td>56</td><td>Respectfully Submitted,</td></tr>
+<tr><td class="num">2024</td><td>Board of Assessors</td><td>Brian Laffond</td><td>Chair Sarah Cammer, Vice-Chair John Rabbitt…</td><td>32</td><td>Respectfully submitted,</td></tr>
+</table></div>
+</details>
 <details class="t"><summary><span class="srow"><code>special_revenue_printed_totals</code> <span class="tag scope sboth">school + town</span> <span class="tag">provenance</span> <span class="n">13 rows</span> <span class="yr">2011–2023</span><button class="open" data-t="special_revenue_printed_totals">Query table</button></span><span class="gr">one row per edition</span></summary>
 <p class="ans">The GRAND TOTAL each annual report PRINTS for the special revenue schedule, quoted with its page. Four columns.</p>
 <p class="warn">This is the independent check on <code>special_revenue_read</code>, so it must be read off the page and never computed from our own rows — the OCR misread this very figure by $1,010 and the reconciliation was measured against it for months.</p>
@@ -5436,10 +5522,10 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 </details>
-<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>12 tables &middot; 14,379 rows</span></summary>
+<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>12 tables &middot; 14,387 rows</span></summary>
 <p class="cap">Which document a figure came from, what has been read, and what these tables mean.</p>
 <p class="tierhead"><b>Tier 2 · categories</b><span>whether a category — guidance, special education, transport — is over</span></p>
-<details class="t"><summary><span class="srow"><code>build_inputs</code> <span class="tag scope sarchive">archive</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">provenance</span> <span class="n">178 rows</span><button class="open" data-t="build_inputs" data-q="SELECT count(*) AS files FROM build_inputs">Query table</button></span><span class="gr">one row per CSV file this database was built from</span></summary>
+<details class="t"><summary><span class="srow"><code>build_inputs</code> <span class="tag scope sarchive">archive</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">provenance</span> <span class="n">182 rows</span><button class="open" data-t="build_inputs" data-q="SELECT count(*) AS files FROM build_inputs">Query table</button></span><span class="gr">one row per CSV file this database was built from</span></summary>
 <p class="ans">Which files, by sha256, produced the figures in this database — so a reader can tell whether it still matches them. The database is a derived read model rebuilt from the CSVs; this is the only thing that records WHEN and FROM WHAT, which is what makes staleness detectable.</p>
 <p class="warn">A hash here is of the bytes at build time. It says nothing about whether those bytes were correct, only whether they have since changed. Ask scripts/db_freshness.py rather than reading this by hand.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -5448,9 +5534,9 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>path</th><th>sha256</th></tr>
-<tr><td>sources/data/report-debt.csv</td><td>72b0c1a8c68919eb3065ffd86921ea3296185aff4a4…</td></tr>
-<tr><td>sources/data/report-school-spending-shares.…</td><td>885c63ad39aa440feb0de1b41c4dd237919ce618fac…</td></tr>
-<tr><td>sources/data/report-statement-of-payments.c…</td><td>2582db4703ad7d9e7e881ee5d39363c4f1404091ce4…</td></tr>
+<tr><td>sources/data/report-committee-income-expens…</td><td>f77907730999e2150cf56e3875689b3ea82a79c6ead…</td></tr>
+<tr><td>sources/data/report-school-census-minors.csv</td><td>4428b74929a7169253dc2f5c6ef18a0347a9de60b9f…</td></tr>
+<tr><td>sources/data/report-school-staff-fte.csv</td><td>c383e287c5efcb274ff7daf0efbb6583f483ad1c2fc…</td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>build_meta</code> <span class="tag scope sarchive">archive</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">provenance</span> <span class="n">2 rows</span><button class="open" data-t="build_meta" data-q="SELECT key, value FROM build_meta ORDER BY key">Query table</button></span><span class="gr">one row per fact about this build (key, value)</span></summary>
@@ -5462,8 +5548,8 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 <p class="cap sm">First 2 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>key</th><th>value</th></tr>
-<tr><td>built_at</td><td>2026-11-01T14:05:29Z</td></tr>
-<tr><td>inputs</td><td>178</td></tr>
+<tr><td>built_at</td><td>2026-11-01T14:34:10Z</td></tr>
+<tr><td>inputs</td><td>182</td></tr>
 </table></div>
 </details>
 <p class="tierhead"><b>Not about money</b><span>Counts, names, dates and documents — everything this archive holds that is not a dollar figure</span></p>
@@ -5648,7 +5734,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">2020</td><td>FY2020</td><td>4127-fy-2020-annual-town-report.pdf</td><td>40-41</td><td>Trust funds fiscal year 2020 summary</td><td>unreadable / OCR damage</td><td>table note</td><td>Here the table is transposed into column ru…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>table_semantics</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">191 rows</span><button class="open" data-t="table_semantics">Query table</button></span><span class="gr">one row per table in this database</span></summary>
+<details class="t"><summary><span class="srow"><code>table_semantics</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">195 rows</span><button class="open" data-t="table_semantics">Query table</button></span><span class="gr">one row per table in this database</span></summary>
 <p class="ans">This page&#x27;s own source. One row per table: its role, whose money it is, how finely it resolves money, its grain, what it holds, and what goes wrong if it is used carelessly.</p>
 <p class="warn">Self-describing, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>

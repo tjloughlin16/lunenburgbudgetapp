@@ -105,6 +105,8 @@ load limit; `CLAUDE.md` keeps a pointer here and the handful every session needs
                                              #   A year is done when EVERY financial page is `proven`;
                                              #   row-level status is a different question. --next gives
                                              #   the bare year; --check refuses off a stale page map
+    python3 scripts/build_annual_report_coverage.py  # all 67 reports: tables found, in a dataset, in the
+                                             #   database -> notes/reference/EXTRACTION-GAPS.md + two CSVs
     python3 scripts/extract_tables.py <dataset>  # the annual reports, one table family at a time
     python3 scripts/verify_report_tables.py      # every reconciliation those extracts state, recomputed
     python3 scripts/build_report_tables_provenance.py  # what the generic extracts are, generated from them

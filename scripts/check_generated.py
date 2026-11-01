@@ -333,6 +333,10 @@ CHECKS = [
     # What the reports contain that we have not read, or have read without checking.
     # Generated because a count nobody maintains is the only kind that stays true.
     ('build_extraction_gaps.py', ['--check']),
+    # THE COVERAGE REGISTER, all 67 reports: tables found, tables in a dataset, datasets in the
+    # database. notes/reference/EXTRACTION-GAPS.md claimed to be generated for eight weeks while
+    # nothing wrote it; this is the entry that makes the claim true. Reads lunenburg.db.
+    ('build_annual_report_coverage.py', ['--check']),
     # The budget-versus-actual page's series. It reconciles every function group against
     # `variance_by_group` before it will write, so this entry catches two different things
     # going stale: the published file, and the agreement between the database route and
