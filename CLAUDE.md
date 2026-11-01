@@ -981,6 +981,9 @@ never in the archive; the original keeps its address and its sha256. A copy is b
 picture page has a read (a half-searchable PDF is rule 13c waiting to happen), and registered in
 `sources/data/searchable-pdfs.csv` only after the bucket's listing confirms it. On the site,
 `components/SearchableLinks.tsx` points any link to such a PDF at the copy, with `raw PDF` beside it.
+**NEW PDFs ONLY, 1 November 2026.** TJ: *"lets just do it for new pdfs moving forward."* The 3,898
+that were waiting that day are `backlog` in the register: the refresh never reads them, and
+`--key KEY` reads one on request. `--quote` prices the backlog separately.
 
 ### 13e. The raw is private. The public copy is ours. The decision is written down
 

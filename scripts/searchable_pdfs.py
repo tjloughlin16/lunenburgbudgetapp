@@ -4,7 +4,7 @@
     python3 scripts/searchable_pdfs.py --status               # the register, counted
     python3 scripts/searchable_pdfs.py --new                  # the refresh step: survey, read, build, push
     python3 scripts/searchable_pdfs.py --new --no-textract    # the same, spending nothing
-    python3 scripts/searchable_pdfs.py --key KEY [--force]    # one document
+    python3 scripts/searchable_pdfs.py --key KEY [--force]    # one document, read even if `backlog`
     python3 scripts/searchable_pdfs.py --quote                # what reading every waiting page would cost
     python3 scripts/searchable_pdfs.py --check                # every built copy still rebuilds byte for byte
 
@@ -42,6 +42,12 @@ THE STEPS, per document, and each one is resumable:
   5. PUSH     to the derived bucket, and read back by listing: the etag must equal the file's MD5.
               Only then does the register say `built` -- so a key the register names is a key the
               bucket holds, and the site links nothing that would 404.
+
+NEW PDFs ONLY; THE BACKLOG IS HELD. TJ, 1 November 2026: *"i dont think we need to process the rest
+of those docs for now. lets just do it for new pdfs moving forward."* Every PDF that was waiting on
+Textract that day (3,898, mostly meeting files) is `backlog`: never read by `--new`, but built for
+free if its reads turn up in the cache another way, and read on request with `--key`. A PDF surveyed
+after that day -- a new download, or a new sha256 for an old key -- is `waiting` and is read.
 
 THE REGISTER is sources/data/searchable-pdfs.csv, one row per PDF in the archive manifest. The site
 reads the `built` rows (fy28/public/data/searchable-pdfs.json, written here) to decide which links
@@ -339,6 +345,7 @@ def push(key, path):
 
 def process(row, textract=True, upload=True, force=False):
     """Advance one document as far as it will go. Returns a one-line note."""
+    unbuilt = 'backlog' if row['state'] == 'backlog' else 'waiting'   # held stays held until built
     if row['state'] == 'not needed' or row['verdict'] == 'unreadable':
         return ''                      # nothing to add, or a file pdf_kind itself could not open
     if row['state'] == 'built' and not force and row.get('builder', BUILDER) == BUILDER:
@@ -347,13 +354,13 @@ def process(row, textract=True, upload=True, force=False):
         why = read(row)
         if why:
             row['read'] = str(len(unranges(row['need'])) - len(unread(row)))
-            row['state'] = 'waiting'
-            return '%s: waiting -- %s' % (row['key'], why)
+            row['state'] = unbuilt
+            return '%s: %s -- %s' % (row['key'], unbuilt, why)
     left = unread(row)
     row['read'] = str(len(unranges(row['need'])) - len(left))
     if left:
-        row['state'] = 'waiting'
-        return '%s: waiting -- %d of %d needed page(s) unread' % (row['key'], len(left), len(unranges(row['need'])))
+        row['state'] = unbuilt
+        return '%s: %s -- %d of %d needed page(s) unread' % (row['key'], unbuilt, len(left), len(unranges(row['need'])))
     path = OUT / row['key']
     words = build(row, path)
     problems = verify(row, path)
@@ -362,7 +369,7 @@ def process(row, textract=True, upload=True, force=False):
         return '%s: REFUSED -- %s' % (row['key'], '; '.join(problems[:3]))
     row['words'] = str(words)
     if not upload:
-        row['state'] = 'waiting'
+        row['state'] = unbuilt
         return '%s: built locally, %d words, not pushed' % (row['key'], words)
     row['md5'], n = push(row['key'], path)
     row['bytes'] = str(n)
@@ -378,6 +385,9 @@ def quote(rows):
     usd = pages * M.PRICE_PER_PAGE['text']
     print('%d document(s) waiting; %d page(s) without a Textract read: $%.2f at the text price ($%.4f/page)'
           % (len(waiting), pages, usd, M.PRICE_PER_PAGE['text']))
+    held = [r for r in rows.values() if r['state'] == 'backlog']
+    print('%d held as backlog (not read by --new): %d page(s), $%.2f' % (
+        len(held), sum(len(unread(r)) for r in held), sum(len(unread(r)) for r in held) * M.PRICE_PER_PAGE['text']))
     print('this month $%.2f of the $%.2f cap' % (M.spent(month=M.month_of()), M.MONTHLY_CAP_USD))
     return usd
 
@@ -464,18 +474,21 @@ def main():
             surveyed += 1
             if surveyed % 200 == 0:
                 write_register(rows)
-        if textract and r['state'] in ('waiting', 'refused'):
+        # the held backlog is read only when asked for by name; a cached read still builds it
+        reads = textract and (r['state'] != 'backlog' or bool(a.key))
+        if reads and r['state'] in ('waiting', 'refused', 'backlog'):
             # STOP SHORT OF THE CAP, NEVER AT IT. Reaching the monthly cap latches Textract until a
-            # person clears it; this backlog is meant to pace itself across months instead (TJ, 31
-            # October 2026: $8 a month, ~$20 of pages). So a document whose pages would cross the
-            # cap is left for next month, and so is every one after it.
+            # person clears it; new PDFs should instead pace themselves across months (TJ, 31
+            # October 2026: $8 a month). So a document whose pages would cross the cap is left for
+            # next month, and so is every one after it.
             cost = len(unread(r)) * M.PRICE_PER_PAGE['text']
             if cost and M.spent(month=M.month_of()) + cost > M.MONTHLY_CAP_USD - HEADROOM_USD:
+                reads = False
                 textract, why_not = False, 'this month is spent to within $%.2f of the $%.2f cap; resumes next month' % (
                     HEADROOM_USD, M.MONTHLY_CAP_USD)
         before = (r['state'], r['read'])
         try:
-            note = process(r, textract=textract, upload=not a.no_push, force=a.force)
+            note = process(r, textract=reads, upload=not a.no_push, force=a.force)
         except Exception as e:                                   # noqa: BLE001 -- one document, not the run
             note = '%s: FAILED -- %s' % (key, str(e)[:200])
         if textract and note and 'STOPPED' in note:
