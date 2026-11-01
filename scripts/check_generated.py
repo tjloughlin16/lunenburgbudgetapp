@@ -126,6 +126,10 @@ CHECKS = [
     ('extract_personnel.py', ['--check']),
     ('extract_department_staffing.py', ['--check']),
     ('extract_department_rosters.py', ['--check']),
+    # The town officials directories and department rosters of every annual report, from the
+    # per-page reads in sources/data/town-rosters/. Refuses if any page leaves a line
+    # unclaimed or attributes a name to a line it is not printed on.
+    ('build_town_rosters.py', ['--check']),
     ('build_town_personnel_charts.py', ['--check']),
     ('build_open_seats.py', ['--check']),
     ('build_board_composition.py', ['--check']),

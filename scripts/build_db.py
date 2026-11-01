@@ -1244,6 +1244,11 @@ REFERENCE = [
     'annual-report-catalogue', 'annual-report-contents', 'annual-report-survey',
     'staff-roster-entries', 'staff-roster-counts', 'report-anomalies',
     'extraction-plan', 'special-revenue-funds',
+    # The TOWN side of the rosters: every officials directory (elected, appointed, with
+    # printed terms) and department roster in the 1959-2010 and FY2011-FY2025 reports, one
+    # row per name per position per edition, line-accounted per page by
+    # scripts/build_town_rosters.py. `year` is calendar for 1959-2010 and fiscal from FY2011.
+    'town-roster-entries',
 
     # The generic extraction, one table per family. Every row carries `status` and
     # `reconciliation`: `reconciled` means the rows tie to the total the report itself
