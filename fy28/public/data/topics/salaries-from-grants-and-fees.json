@@ -358,6 +358,7 @@
    "FY2026"
   ]
  },
+ "composed": true,
  "conclusions": [
   {
    "figures": {
@@ -714,18 +715,44 @@
    "part": "finding"
   },
   {
+   "cites": [
+    0,
+    1,
+    2
+   ],
+   "i": 0,
+   "part": "table"
+  },
+  {
+   "cites": [
+    0,
+    1
+   ],
    "i": 0,
    "part": "chart"
   },
   {
+   "cites": [
+    0,
+    1
+   ],
    "i": 1,
    "part": "chart"
   },
   {
+   "cites": [
+    0,
+    1
+   ],
    "i": 0,
    "part": "block"
   },
   {
+   "cites": [
+    0,
+    1,
+    2
+   ],
    "part": "ladder"
   },
   {
@@ -735,18 +762,26 @@
    "part": "ledger"
   },
   {
-   "i": 0,
-   "part": "table"
-  },
-  {
+   "cites": [
+    0,
+    1
+   ],
    "i": 1,
    "part": "table"
   },
   {
+   "cites": [
+    0,
+    1
+   ],
    "i": 2,
    "part": "table"
   },
   {
+   "cites": [
+    0,
+    1
+   ],
    "i": 3,
    "part": "table"
   },
@@ -775,20 +810,322 @@
    "label": "Lunenburg Budget Project — munis-school-journal-accounts.csv (every school account)"
   },
   {
-   "href": "/docs/data/position-funds-crosswalk.csv",
-   "label": "Lunenburg Budget Project — position-funds-crosswalk.csv (each post’s title, budget line and account, paired by us)"
-  },
-  {
-   "href": "/docs/data/school-staff-directory.csv",
-   "label": "Lunenburg Public Schools — district staff directory (school-staff-directory.csv)"
-  },
-  {
    "href": "/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md",
    "label": "Town of Lunenburg — how the journal reached us, and what was redacted"
   }
  ],
  "table": null,
  "tables": [
+  {
+   "caption": "Each school salary line grants and fees paid, with its total from every fund",
+   "open": 3,
+   "views": [
+    {
+     "columns": [
+      "All funds",
+      "School budget",
+      "Grants and fees",
+      "Which grants and fees",
+      "Share from grants and fees"
+     ],
+     "key": "role2023",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "FY2023",
+     "note": "Each school salary line a grant or fee fund paid this year, as its own page shows it: the school budget’s spending after re-charges, plus what year-end entries re-charged onto each fund. Pay grants and fees booked to their own accounts is not here: those accounts name a kind of work, never a line or a post. It is in the tables below. Split by us in proportion: one entry moved the pay onto several funds and the books give only its totals.",
+     "rows": [
+      {
+       "cells": [
+        "$281,271.47",
+        "$268,188.47",
+        "$13,083.00",
+        "IDEA (preschool) $13,083.00",
+        "4.7%"
+       ],
+       "href": "/school-lines/p-s-sped-paraprofessionals?fy=FY2023",
+       "label": "P.S. Sped Paraprofessionals"
+      },
+      {
+       "cells": [
+        "$124,282.69",
+        "$120,013.41",
+        "$4,269.28",
+        "Title I $4,269.28",
+        "3.4%"
+       ],
+       "href": "/school-lines/instr-serv-director-salary?fy=FY2023",
+       "label": "Instr Serv Director Salary"
+      },
+      {
+       "cells": [
+        "$78,796.00",
+        "$76,637.99",
+        "$2,158.01",
+        "ESSER II (pandemic) $2,158.01",
+        "2.7%"
+       ],
+       "href": "/school-lines/social-workers-salaries-h-s-guidance-social-workers?fy=FY2023",
+       "label": "Social Workers Salaries"
+      },
+      {
+       "cells": [
+        "$262,565.54",
+        "$260,470.44",
+        "$2,095.10",
+        "IDEA (special education) $2,095.10",
+        "0.8%"
+       ],
+       "href": "/school-lines/m-s-spec-ed-paraprofessionals?fy=FY2023",
+       "label": "M.S. Spec Ed Paraprofessionals"
+      },
+      {
+       "cells": [
+        "$275,976.06",
+        "$274,513.56",
+        "$1,462.50",
+        "IDEA (special education) $1,462.50",
+        "0.5%"
+       ],
+       "href": "/school-lines/hs-spec-ed-paraprofessionals?fy=FY2023",
+       "label": "Hs Spec Ed Paraprofessionals"
+      },
+      {
+       "cells": [
+        "$23,461.75",
+        "$22,206.75",
+        "$1,255.00",
+        "IDEA (special education) $1,255.00",
+        "5.3%"
+       ],
+       "href": "/school-lines/paraprofessionals-ace-spec-ed-paraprofessionals?fy=FY2023",
+       "label": "Paraprofessionals"
+      }
+     ]
+    },
+    {
+     "columns": [
+      "All funds",
+      "School budget",
+      "Grants and fees",
+      "Which grants and fees",
+      "Share from grants and fees"
+     ],
+     "key": "role2024",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "FY2024",
+     "note": "Each school salary line a grant or fee fund paid this year, as its own page shows it: the school budget’s spending after re-charges, plus what year-end entries re-charged onto each fund. Pay grants and fees booked to their own accounts is not here: those accounts name a kind of work, never a line or a post. It is in the tables below. Split by us in proportion: one entry moved the pay onto several funds and the books give only its totals.",
+     "rows": [
+      {
+       "cells": [
+        "$29,452.68",
+        "-$157,886.32",
+        "$187,339.00",
+        "ESSER III (pandemic) $53,888.83 · IDEA (special education) $51,121.58 · Student Opportunity Act $37,381.79 · Title I $34,129.90 · Comprehensive school health $9,719.28 · Title IV $1,097.62 (split by us in proportion)",
+        null
+       ],
+       "href": "/school-lines/paraprofessionals-ace-spec-ed-paraprofessionals?fy=FY2024",
+       "label": "Paraprofessionals"
+      },
+      {
+       "cells": [
+        "$144,686.00",
+        "$26,266.00",
+        "$118,420.00",
+        "ESSER III (pandemic) $34,064.00 · IDEA (special education) $32,314.77 · Student Opportunity Act $23,629.63 · Title I $21,574.06 · Comprehensive school health $6,143.72 · Title IV $693.82 (split by us in proportion)",
+        "81.8%"
+       ],
+       "href": "/school-lines/h-s-guidance-counselors?fy=FY2024",
+       "label": "H.S. Guidance Counselors"
+      },
+      {
+       "cells": [
+        "$513,788.00",
+        "$442,424.00",
+        "$71,364.00",
+        "Title I $71,364.00",
+        "13.9%"
+       ],
+       "href": "/school-lines/hs-sped-resource-room-teacher?fy=FY2024",
+       "label": "Hs Sped Resource Room Teacher"
+      },
+      {
+       "cells": [
+        "$70,104.72",
+        "$48,746.72",
+        "$21,358.00",
+        "ESSER III (pandemic) $6,143.72 · IDEA (special education) $5,828.23 · Student Opportunity Act $4,261.79 · Title I $3,891.05 · Comprehensive school health $1,108.07 · Title IV $125.14 (split by us in proportion)",
+        "30.5%"
+       ],
+       "href": "/school-lines/m-s-nurses?fy=FY2024",
+       "label": "M.S. Nurses"
+      }
+     ]
+    },
+    {
+     "columns": [
+      "All funds",
+      "School budget",
+      "Grants and fees",
+      "Which grants and fees",
+      "Share from grants and fees"
+     ],
+     "key": "role2025",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "FY2025",
+     "note": "Each school salary line a grant or fee fund paid this year, as its own page shows it: the school budget’s spending after re-charges, plus what year-end entries re-charged onto each fund. Pay grants and fees booked to their own accounts is not here: those accounts name a kind of work, never a line or a post. It is in the tables below. Split by us in proportion: one entry moved the pay onto several funds and the books give only its totals.",
+     "rows": [
+      {
+       "cells": [
+        "$274,982.34",
+        "$268,318.20",
+        "$6,664.14",
+        "IDEA (preschool) $6,664.14",
+        "2.4%"
+       ],
+       "href": "/school-lines/p-s-sped-paraprofessionals?fy=FY2025",
+       "label": "P.S. Sped Paraprofessionals"
+      },
+      {
+       "cells": [
+        "$38,456.28",
+        "$31,856.28",
+        "$6,600.00",
+        "Comprehensive school health $6,600.00",
+        "17.2%"
+       ],
+       "href": "/school-lines/h-s-regular-substitutes?fy=FY2025",
+       "label": "H.S. Regular Substitutes"
+      },
+      {
+       "cells": [
+        "$25,555.35",
+        "$21,137.85",
+        "$4,417.50",
+        "Comprehensive school health $4,417.50",
+        "17.3%"
+       ],
+       "href": "/school-lines/p-s-regular-substitutes?fy=FY2025",
+       "label": "P.S. Regular Substitutes"
+      },
+      {
+       "cells": [
+        "$19,982.00",
+        "$18,099.50",
+        "$1,882.50",
+        "Comprehensive school health $1,882.50",
+        "9.4%"
+       ],
+       "href": "/school-lines/e-s-regular-substitutes?fy=FY2025",
+       "label": "E.S. Regular Substitutes"
+      },
+      {
+       "cells": [
+        "$30,629.45",
+        "$29,629.45",
+        "$1,000.00",
+        "Comprehensive school health $1,000.00",
+        "3.3%"
+       ],
+       "href": "/school-lines/m-s-regular-substitutes?fy=FY2025",
+       "label": "M.S. Regular Substitutes"
+      },
+      {
+       "cells": [
+        "$895.44",
+        "$800.00",
+        "$95.44",
+        "School Choice Revolving Fund $89.26 · School Facilities Use Revolv $6.18 (split by us in proportion)",
+        "10.7%"
+       ],
+       "href": "/school-lines/brooks-house-secretarial-o-t?fy=FY2025",
+       "label": "Brooks House Secretarial O/T"
+      }
+     ]
+    },
+    {
+     "columns": [
+      "All funds",
+      "School budget",
+      "Grants and fees",
+      "Which grants and fees",
+      "Share from grants and fees"
+     ],
+     "key": "role2026",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "FY2026",
+     "note": "Each school salary line a grant or fee fund paid this year, as its own page shows it: the school budget’s spending after re-charges, plus what year-end entries re-charged onto each fund. Pay grants and fees booked to their own accounts is not here: those accounts name a kind of work, never a line or a post. It is in the tables below. Split by us in proportion: one entry moved the pay onto several funds and the books give only its totals.",
+     "rows": [
+      {
+       "cells": [
+        "$493,803.69",
+        "$401,693.69",
+        "$92,110.00",
+        "Title I $92,110.00",
+        "18.7%"
+       ],
+       "href": "/school-lines/kindergarten-teachers-regular?fy=FY2026",
+       "label": "Kindergarten Teachers/Regular"
+      },
+      {
+       "cells": [
+        "$1,599,495.67",
+        "$1,556,544.17",
+        "$42,951.50",
+        "Fair Share grant $19,351.39 · Student Opportunity Act $18,644.06 · IDEA (special education) $4,956.05 (split by us in proportion)",
+        "2.7%"
+       ],
+       "href": "/school-lines/e-s-teachers-regular?fy=FY2026",
+       "label": "E.S. Teachers/Regular"
+      },
+      {
+       "cells": [
+        "$49,987.00",
+        "$32,867.00",
+        "$17,120.00",
+        "MyCAP grant $17,120.00",
+        "34.2%"
+       ],
+       "href": "/school-lines/school-stipends?fy=FY2026",
+       "label": "School Stipends"
+      },
+      {
+       "cells": [
+        "$141,858.38",
+        "$137,931.31",
+        "$3,927.07",
+        "Title I $2,635.62 · Title IIA $1,291.45",
+        "2.8%"
+       ],
+       "href": "/school-lines/instr-serv-director-salary?fy=FY2026",
+       "label": "Instr Serv Director Salary"
+      }
+     ]
+    }
+   ]
+  },
   {
    "caption": "Salaries by fund or grant, each year",
    "views": [
@@ -2009,211 +2346,6 @@
         "$53,600"
        ],
        "label": "Family and community engagement — Grant Administrators Salaries"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "caption": "School salary lines re-charged onto grants and fees",
-   "views": [
-    {
-     "columns": [
-      "Re-charged off the line",
-      "Onto"
-     ],
-     "key": "rc2023",
-     "kinds": [
-      "ledger",
-      "ledger"
-     ],
-     "label": "FY2023",
-     "note": "The school-line pages show the same entries as Re-charged to. One entry can move several lines onto several funds; it does not pair each line with one fund.",
-     "rows": [
-      {
-       "cells": [
-        "$13,083",
-        "IDEA (preschool)"
-       ],
-       "label": "P.S. Sped Paraprofessionals"
-      },
-      {
-       "cells": [
-        "$4,269",
-        "Title I"
-       ],
-       "label": "Instr Serv Director Salary · Instr Serv Director Salaries"
-      },
-      {
-       "cells": [
-        "$2,158",
-        "ESSER II (pandemic)"
-       ],
-       "label": "Social Workers Salaries · H.S. Guidance/Social Workers"
-      },
-      {
-       "cells": [
-        "$2,095",
-        "IDEA (special education)"
-       ],
-       "label": "M.S. Spec Ed Paraprofessionals · M.S. Sped Paraprofessionals"
-      },
-      {
-       "cells": [
-        "$1,462",
-        "IDEA (special education)"
-       ],
-       "label": "Hs Spec Ed Paraprofessionals · Hs Sped Paraprofessionals"
-      },
-      {
-       "cells": [
-        "$1,255",
-        "IDEA (special education)"
-       ],
-       "label": "Paraprofessionals · Ace Spec Ed Paraprofessionals"
-      }
-     ]
-    },
-    {
-     "columns": [
-      "Re-charged off the line",
-      "Onto"
-     ],
-     "key": "rc2024",
-     "kinds": [
-      "ledger",
-      "ledger"
-     ],
-     "label": "FY2024",
-     "note": "The school-line pages show the same entries as Re-charged to. One entry can move several lines onto several funds; it does not pair each line with one fund.",
-     "rows": [
-      {
-       "cells": [
-        "$187,339",
-        "Comprehensive school health, ESSER III (pandemic), IDEA (special education), Student Opportunity Act, Title I, Title IV"
-       ],
-       "label": "Paraprofessionals · Ace Spec Ed Paraprofessionals"
-      },
-      {
-       "cells": [
-        "$118,420",
-        "Comprehensive school health, ESSER III (pandemic), IDEA (special education), Student Opportunity Act, Title I, Title IV"
-       ],
-       "label": "H.S. Guidance Counselors · H.S. Guidance/Social Workers"
-      },
-      {
-       "cells": [
-        "$71,364",
-        "Title I"
-       ],
-       "label": "Hs Sped Resource Room Teacher · H.S. Sped Teachers"
-      },
-      {
-       "cells": [
-        "$21,358",
-        "Comprehensive school health, ESSER III (pandemic), IDEA (special education), Student Opportunity Act, Title I, Title IV"
-       ],
-       "label": "M.S. Nurses"
-      }
-     ]
-    },
-    {
-     "columns": [
-      "Re-charged off the line",
-      "Onto"
-     ],
-     "key": "rc2025",
-     "kinds": [
-      "ledger",
-      "ledger"
-     ],
-     "label": "FY2025",
-     "note": "The school-line pages show the same entries as Re-charged to. One entry can move several lines onto several funds; it does not pair each line with one fund.",
-     "rows": [
-      {
-       "cells": [
-        "$6,664",
-        "IDEA (preschool)"
-       ],
-       "label": "P.S. Sped Paraprofessionals"
-      },
-      {
-       "cells": [
-        "$6,600",
-        "Comprehensive school health"
-       ],
-       "label": "H.S. Regular Substitutes · H.S. Substitutes"
-      },
-      {
-       "cells": [
-        "$4,418",
-        "Comprehensive school health"
-       ],
-       "label": "P.S. Regular Substitutes · P.S. Substitutes"
-      },
-      {
-       "cells": [
-        "$1,882",
-        "Comprehensive school health"
-       ],
-       "label": "E.S. Regular Substitutes · E.S. Substitutes"
-      },
-      {
-       "cells": [
-        "$1,000",
-        "Comprehensive school health"
-       ],
-       "label": "M.S. Regular Substitutes · M.S. Substitutes"
-      },
-      {
-       "cells": [
-        "$95",
-        "Revolving funds and lunch"
-       ],
-       "label": "Brooks House Secretarial O/T · Supertindents Office Salaries"
-      }
-     ]
-    },
-    {
-     "columns": [
-      "Re-charged off the line",
-      "Onto"
-     ],
-     "key": "rc2026",
-     "kinds": [
-      "ledger",
-      "ledger"
-     ],
-     "label": "FY2026",
-     "note": "The school-line pages show the same entries as Re-charged to. One entry can move several lines onto several funds; it does not pair each line with one fund.",
-     "rows": [
-      {
-       "cells": [
-        "$92,110",
-        "Title I"
-       ],
-       "label": "Kindergarten Teachers/Regular"
-      },
-      {
-       "cells": [
-        "$42,952",
-        "Fair Share grant, Student Opportunity Act"
-       ],
-       "label": "E.S. Teachers/Regular"
-      },
-      {
-       "cells": [
-        "$17,120",
-        "MyCAP grant"
-       ],
-       "label": "School Stipends · Transition Team Stipends"
-      },
-      {
-       "cells": [
-        "$3,927",
-        "Title I, Title IIA"
-       ],
-       "label": "Instr Serv Director Salary · Instr Serv Director Salaries"
       }
      ]
     }

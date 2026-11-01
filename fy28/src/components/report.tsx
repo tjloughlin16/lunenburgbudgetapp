@@ -1121,9 +1121,12 @@ export type FigureTableView = {
   /** `marks`: per cell, 1 or -1 where the generator found a change of at least its threshold
    *  against the cell it compares with (scripts/topic.py, change_marks); drawn as an arrow.
    *  `code`: the publisher's own code for the row, set in small type under its plain name. */
-  rows: { label: string; code?: string; cells: (string | null)[]; marks?: (1 | -1 | null)[] }[]
+  rows: { label: string; code?: string; href?: string; cells: (string | null)[]; marks?: (1 | -1 | null)[] }[]
 }
-export type FigureTableData = { caption: string; views: FigureTableView[] }
+/** `open`: the view drawn first, by index (default the first). Year tabs set it to the newest
+ *  year (TJ, 1 November 2026), so a table does not open on its oldest year.
+ *  A row's `href`: the page the row is about, its label drawn as a link. */
+export type FigureTableData = { caption: string; views: FigureTableView[]; open?: number }
 
 /** The payload's own figures, every view, for the download (TableDownload.tsx): exact, never
  *  read back off the page. */
@@ -1145,7 +1148,7 @@ export function figureTableSpec(t: FigureTableData, current = 0): ExportSpec {
 }
 
 export function FigureTable({ t }: { t: FigureTableData }) {
-  const [k, setK] = useState(0)
+  const [k, setK] = useState(Math.min(Math.max(t.open ?? 0, 0), t.views.length - 1))
   const v = t.views[k]
   const stated = (i: number) => v.kinds[i] === 'stated'
   return (
@@ -1195,7 +1198,8 @@ export function FigureTable({ t }: { t: FigureTableData }) {
               return (
                 <tr key={r.label} style={{ background: bg }}>
                   <th scope="row" className="sticky left-0 text-left font-semibold px-2.5 py-1.5"
-                    style={{ background: bg, color: 'var(--text-primary)' }}>{r.label}
+                    style={{ background: bg, color: 'var(--text-primary)' }}>
+                    {r.href ? <a href={r.href} className="underline" style={{ color: 'var(--series-cost)' }}>{r.label}</a> : r.label}
                     {r.code ? <span className="block text-[11px] font-normal" style={{ color: 'var(--text-muted)' }}>
                       {r.code}</span> : null}</th>
                   {r.cells.map((c, i) => (

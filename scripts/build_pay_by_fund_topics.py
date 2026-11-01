@@ -35,6 +35,7 @@ import os
 import re
 import sys
 from collections import defaultdict
+from decimal import Decimal
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -52,7 +53,7 @@ from build_school_all_funds import code_names  # noqa: E402
 # RE-CHARGED OFF A SCHOOL LINE: the school-line pages' own reading of year-end journal entries
 # (fy_breakdown, rule a, one memo at a time), and their own name for a line, so this page and
 # /school-lines/<line> report the same re-charge under the same name.
-# Both imported inside build(): build_fy_breakdown imports fy_salaries, which imports this module.
+# Both imported inside role_table(): build_fy_breakdown imports fy_salaries, which imports this module.
 
 OUT_DIR = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics')
 CROSSWALK = os.path.join(ROOT, 'sources', 'data', 'position-funds-crosswalk.csv')
@@ -167,6 +168,117 @@ def sources():
         dict(label='Town of Lunenburg — how the journal reached us, and what was redacted',
              href='/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md'),
     ]
+
+
+LINE_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'fy-breakdown', 'line', '%s.json')
+LINE_INDEX = os.path.join(ROOT, 'fy28', 'public', 'data', 'fy-breakdown', 'index.json')
+
+
+def role_table(A):
+    """EACH SCHOOL SALARY LINE A GRANT OR FEE FUND PAID, AND ITS TOTAL FROM EVERY FUND (TJ,
+    1 November 2026: "i want to see the ROLE or school line and the TOTAL amount given to it
+    across all funds. that should be the first table on that page").
+
+    The figures are the school-line pages' own, read from the same model they are drawn from
+    (fy_breakdown, via fy_web): the school budget's own spending on the line after re-charges
+    (gf_spent less other years' money) and each fund's re-charge (`later`). Every row is then
+    compared, to the cent, with /data/fy-breakdown/line/<slug>.json, so this table and
+    /school-lines/<slug>?fy= cannot disagree; the build refuses if they do.
+
+    Pay a grant or fee fund paid DIRECTLY, on its own accounts, is not joined to a line: those
+    accounts carry a DESE function code shared by many school lines and a kind of work, never a
+    post (rule 7: a code is not proof of the same post). It is in the by-code tables below."""
+    import fy_breakdown as FB
+    from build_fy_breakdown import line_name, money
+    m = FB.model()
+    slug = {x['account']: x['slug'] for x in json.load(open(LINE_INDEX, encoding='utf-8'))['lines']}
+    by_journal = defaultdict(list)
+    for x in J.lines():
+        if x['fund'] != '0100' and J.is_expense(A[x['account']]):
+            by_journal[(x['fy'], x['journal'])].append(x)
+
+    def gainers(fm):
+        """The other funds the entry (its memo, or its pooled memos) put cost on."""
+        memos = None if fm['part'] is None else ({fm['part']} if isinstance(fm['part'], str)
+                                                 else set(fm['part']))
+        return {x['fund'] for x in by_journal[(y, fm['journal'])] if float(x['amt']) > 0
+                and (memos is None or x['description'].strip() in memos)}
+
+    views = []
+    for y in Y:
+        rows = {r['account']: r for r in m['rows'] if r['fy'] == y and r['account']}
+        later = defaultdict(dict)                    # account -> fund -> re-charged onto it
+        paid = set()                                 # accounts a fund paid from the start (payee)
+        for (fy, f), d in m['src'].items():
+            if fy != y:
+                continue
+            for (kind, dest), v in d.items():
+                if dest in rows and is_pay(A[dest]) and round(v, 2):
+                    if kind == 'later':
+                        later[dest][f] = later[dest].get(f, 0) + v
+                    elif kind == 'payee':
+                        paid.add(dest)
+        out = []
+        for acct, by_fund in later.items():
+            r = rows[acct]
+            if acct in paid:
+                fail('%s %s: a fund also paid this line from the start (our payee match); the '
+                     'all-funds table would need to say so' % (C.fy(y), line_name(r)))
+            if any(FB.payer(FB.fund_acct(f)).startswith('General fund') for f in by_fund):
+                fail('%s %s: re-charged onto the general fund outside the school budget, which is '
+                     'not a grant or fee' % (C.fy(y), line_name(r)))
+            school = r['gf_spent'] - r['other_year_spent']
+            gf = sum(by_fund.values())
+            total = school + gf
+            # The line page's own figures, to the cent.
+            if acct not in slug:
+                fail('%s: no school-line page for account %s' % (line_name(r), acct))
+            lp = json.load(open(LINE_JSON % slug[acct], encoding='utf-8'))
+            edges = lp['years'][C.fy(y)]['web']['edges']
+            mine = [e for e in edges if e['b'] == 'l:' + acct]
+            sch = [e['t'] for e in mine if e['k'] == 'school']
+            lat = {e['a'][2:]: e['t'] for e in mine if e['k'] == 'later'}
+            if sch != [money(school)] or lat != {f: money(v) for f, v in by_fund.items()} \
+                    or any(e['k'] == 'paid' for e in mine):
+                fail('%s %s: the all-funds row (school %s, funds %s) is not the line page’s (%s, %s); '
+                     'rebuild build_fy_breakdown.py' % (C.fy(y), line_name(r), money(school),
+                                                       {f: money(v) for f, v in by_fund.items()}, sch, lat))
+            num = lambda t: Decimal(t.replace('$', '').replace(',', ''))
+            if num(sch[0]) + sum(num(t) for t in lat.values()) != total:
+                fail('%s %s: the total is not the line page’s school budget plus its funds'
+                     % (C.fy(y), line_name(r)))
+            prog = defaultdict(lambda: 0)
+            for f, v in by_fund.items():
+                prog[J.grant_program(FB.fund_acct(f))] += v       # the site's one name for a fund
+            # A re-charge entry that moved this line onto two or more programmes: the line page
+            # splits it across them in proportion (fy_breakdown.share); the books give the entry's
+            # totals, not which programme took which line.
+            shared = any(fm['amount'] < 0 and len(gainers(fm)) > 1 for fm in r['fund_moves'])
+            who = ' · '.join('%s %s' % (p, money(v)) for p, v in
+                             sorted(prog.items(), key=lambda kv: (-kv[1], kv[0])))
+            out.append((gf, line_name(r).split(' · ')[0], dict(
+                label=line_name(r).split(' · ')[0],
+                href='/school-lines/%s?fy=%s' % (slug[acct], C.fy(y)),
+                cells=[money(total), money(school), money(gf),
+                       who + (' (split by us in proportion)' if shared else ''),
+                       # a school figure below zero (more pay moved off the line than it paid)
+                       # makes a share meaningless: printed as a dash, not as a share over 100%
+                       C.pct(100 * gf / total) if school >= 0 and total > 0 else None])))
+        out.sort(key=lambda t: (-t[0], t[1]))
+        if len(out) > 30:
+            fail('%s: more than 30 school salary lines paid by grants and fees' % C.fy(y))
+        views.append(dict(
+            key='role%d' % y, label=C.fy(y), kinds=['ledger'] * 5,
+            columns=['All funds', 'School budget', 'Grants and fees', 'Which grants and fees',
+                     'Share from grants and fees'],
+            rows=[x for _, _, x in out],
+            note='Each school salary line a grant or fee fund paid this year, as its own page shows it: '
+                 'the school budget’s spending after re-charges, plus what year-end entries re-charged '
+                 'onto each fund. Pay grants and fees booked to their own accounts is not here: those '
+                 'accounts name a kind of work, never a line or a post. It is in the tables below. '
+                 'Split by us in proportion: one entry moved the pay onto several funds and the books '
+                 'give only its totals.'))
+    return views
 
 
 def build():
@@ -285,33 +397,7 @@ def build():
                                    note='Each row is a fund and the account’s own name for the '
                                         'kind of work. The ledger posts one line per account per '
                                         'pay run, so it cannot name the positions behind a row.'))
-    # Re-charges: pay first booked to a school budget line, then moved onto a grant or fee fund
-    # by a year-end entry. The grant side carries the grant account's code, so those dollars
-    # sit above under that code, never under the school line they came off.
-    import fy_breakdown as FB
-    from build_fy_breakdown import line_name
-    rc = defaultdict(float)             # (fy, line name) -> re-charged off it
-    rc_to = defaultdict(set)            # (fy, line name) -> the funds on the other side
-    for r in FB.model()['rows']:
-        if not r['account'] or not is_pay(A[r['account']]):
-            continue
-        for (rule, py), v in r['payers'].items():
-            if rule == 'moved' and not py.startswith('General fund') and v:
-                rc[(r['fy'], line_name(r))] += float(v)
-                rc_to[(r['fy'], line_name(r))].add(py)
-    rc_views = []
-    for y in Y:
-        rows = sorted([(n, v) for (fy, n), v in rc.items() if fy == y and round(v)],
-                      key=lambda kv: (-kv[1], kv[0]))
-        if len(rows) > 30:
-            fail('%s: more than 30 school lines re-charged' % C.fy(y))
-        rc_views.append(dict(key='rc%d' % y, label=C.fy(y), kinds=['ledger', 'ledger'],
-                             columns=['Re-charged off the line', 'Onto'],
-                             rows=[dict(label=n, cells=[C.usd(round(v)), ', '.join(sorted(rc_to[(y, n)]))])
-                                   for n, v in rows],
-                             note='The school-line pages show the same entries as Re-charged to. '
-                                  'One entry can move several lines onto several funds; it does '
-                                  'not pair each line with one fund.'))
+    role_views = role_table(A)
     line_rank = TB.chart(
         TP.ranking('Grant and fee salaries by budget line',
                    [(lbl(c), [round(sum(bl[(y, g, c)] for y in Y)) for g in OUT_G]) for c in codes],
@@ -375,17 +461,31 @@ def build():
                          if any(abs(m['kind'][(y, k)]) >= 1 for y in Y)],
                         '$', kind='bar', stacked=True,
                         note='The kind is the account’s own name. No account names a job.')],
-        tables=[dict(caption='Salaries by fund or grant, each year', views=[dict(
+        # Year tabs open on the newest year (TJ, 1 November 2026): `open` is the view drawn first.
+        tables=[dict(caption='Each school salary line grants and fees paid, with its total from every fund',
+                     views=role_views, open=len(role_views) - 1),
+            dict(caption='Salaries by fund or grant, each year', views=[dict(
             key='programs', label='Four years', kinds=['ledger'] * (len(Y) + 1),
             columns=X + ['Four years'], rows=prog_rows,
             note='Grants by their DESE program, every award year together; other funds by name. '
                  'Program names are ours.')]),
             dict(caption='Salaries by school budget line, each year', views=line_views),
-            dict(caption='Which accounts paid salaries on each line', views=acct_views),
-            dict(caption='School salary lines re-charged onto grants and fees', views=rc_views)],
+            dict(caption='Which accounts paid salaries on each line', views=acct_views)],
         blocks=[line_rank],
         finding_figures={'a': U(out4)},
-        sources=src)
+        # The crosswalk and the staff directory serve the positions page, not this one.
+        sources=[src[0], src[1], src[4]],
+        flow=['finding',
+              TP.cite(('table', 0), 0, 1, 2),
+              TP.cite(('chart', 0), 0, 1),
+              TP.cite(('chart', 1), 0, 1),
+              TP.cite(('block', 0), 0, 1),
+              TP.cite('ladder', 0, 1, 2),
+              'related', 'ledger',
+              TP.cite(('table', 1), 0, 1),
+              TP.cite(('table', 2), 0, 1),
+              TP.cite(('table', 3), 0, 1),
+              'sources'])
 
     # ================================================== pay moved between funds
     mv = m['moved']
@@ -477,7 +577,7 @@ def build():
             '$', kind='bar',
             note='Entries that move pay between funds and net to zero; accruals and duplicate '
                  'reversals are left out.'),
-        tables=[dict(caption='Every pay move over the floor, by year', views=views)],
+        tables=[dict(caption='Every pay move over the floor, by year', views=views, open=len(views) - 1)],
         finding_figures={'a': U(off4), 'b': U(on4)},
         sources=src)
 
