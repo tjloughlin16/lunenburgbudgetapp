@@ -12,11 +12,11 @@
 | tables in a dataset | 3,336 | not known at table grain |
 | tables whose dataset is in the database | 3,293 | not known at table grain |
 | **tables looked at and NOT in a dataset** | **360** | **866** catalogued, unsorted |
-| catalogued tables on a page some dataset reads (page-level proxy) | | 548 of 866 |
+| catalogued tables on a page some dataset reads (page-level proxy) | | 579 of 866 |
 | named lists found (officers, staff, licences ...) | not surveyed yet (step 3) | not surveyed yet (step 3) |
 
 - **360 of 3,696 tables in the 1959-2010 editions are not in any dataset.** Each was looked at by eye and its reason is in that edition's `map.csv` `note`, beginning `NOT LANDED`.
-- **None of the 866 tables catalogued in FY2011-FY2025 has been sorted** into a repeat of a table already read, prose, or a real gap. 318 of them sit on a page no dataset has a row from, and those are the first place to look.
+- **None of the 866 tables catalogued in FY2011-FY2025 has been sorted** into a repeat of a table already read, prose, or a real gap. 287 of them sit on a page no dataset has a row from, and those are the first place to look.
 - **10 of 92 datasets holding report rows are not in the database:** `treasurers-cash` (1,130 rows), `debt-repayment-detail` (1,032 rows), `salary-schedule` (779 rows), `trust-fund-matrix` (462 rows), `trust-fund-balances` (68 rows), `staff-roster-contractors` (48 rows), `capital-program-options` (38 rows), `monty-tech-expenses` (27 rows), `pages-read` (14 rows), `stabilization-flows` (12 rows).
 - **Lists are not counted yet.** Most years print officers and staff as running text, not tables, and every survey so far looked for tables. `lists_found` and `lists_in_dataset` are empty in the edition CSV until the list survey (step 3) runs.
 
@@ -29,6 +29,7 @@ The proxy row is page grain, not table grain: a catalogued table counts if ANY d
 | dataset | in db | rows from reports | editions (cal / FY) | checked | check failed | no check |
 |---|---|---:|---:|---:|---:|---:|
 | `report-appropriations` | yes | 27,799 | 52 / 15 | 12,782 | 5,845 | 9,172 |
+| `town-roster-entries` | yes | 16,609 | 52 / 15 | - | - | - |
 | `staff-roster-entries` | yes | 12,278 | 48 / 15 | - | - | - |
 | `report-gross-wages` | yes | 11,512 | 15 / 13 | 7,965 | 0 | 3,547 |
 | `annual-report-receipts` | yes | 7,856 | 51 / 12 | 6,848 | 653 | 355 |
@@ -57,7 +58,6 @@ The proxy row is page grain, not table grain: a catalogued table counts if ANY d
 | `report-school-lunch` | yes | 668 | 21 / 0 | 370 | 41 | 257 |
 | `report-school-budget-summary` | yes | 660 | 27 / 0 | 450 | 0 | 210 |
 | `report-treasurers-cash-reconciliation` | yes | 545 | 47 / 0 | 519 | 15 | 11 |
-| `town-roster-entries` | yes | 519 | 2 / 1 | - | - | - |
 | `trust-fund-matrix` | no **NOT IN DB** | 462 | 0 / 1 | - | - | - |
 | `report-school-staff-fte` | yes | 450 | 28 / 0 | 186 | 0 | 264 |
 | `report-school-state-aid` | yes | 378 | 27 / 0 | 283 | 0 | 95 |
@@ -120,7 +120,7 @@ The proxy row is page grain, not table grain: a catalogued table counts if ANY d
 | `report-office-budget-cuts` | yes | 4 | 1 / 0 | 4 | 0 | 0 |
 | `report-energy-use` | yes | 3 | 1 / 0 | 0 | 0 | 3 |
 | `report-per-capita-comparison` | yes | 3 | 1 / 0 | 0 | 0 | 3 |
-| **total** | | **114,077** | | **49,846** | **11,212** | **28,398** |
+| **total** | | **130,167** | | **49,846** | **11,212** | **28,398** |
 
 ## Registers and files about the reading
 
@@ -153,73 +153,73 @@ Not data the reports print, and listed so that nothing disappears. A register re
 
 | edition | pages | financial pages (proven / blocked) | tables found | in a dataset | not landed | dataset in db | datasets fed | not in db |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 1959 | 116 | 31 (30 / 1) | 53 | 51 | 2 | 51 | 20 |  |
-| 1960 | 120 | 31 (29 / 2) | 58 | 46 | 12 | 45 | 15 | `treasurers-cash` |
-| 1961 | 128 | 37 (33 / 4) | 65 | 60 | 5 | 60 | 20 |  |
-| 1962 | 128 | 36 (36 / 0) | 73 | 69 | 4 | 69 | 18 |  |
-| 1963 | 124 | 43 (42 / 1) | 87 | 82 | 5 | 82 | 20 |  |
-| 1964 | 124 | 39 (38 / 1) | 84 | 79 | 5 | 79 | 23 |  |
+| 1959 | 116 | 31 (30 / 1) | 53 | 51 | 2 | 51 | 21 |  |
+| 1960 | 120 | 31 (29 / 2) | 58 | 46 | 12 | 45 | 16 | `treasurers-cash` |
+| 1961 | 128 | 37 (33 / 4) | 65 | 60 | 5 | 60 | 21 |  |
+| 1962 | 128 | 36 (36 / 0) | 73 | 69 | 4 | 69 | 19 |  |
+| 1963 | 124 | 43 (42 / 1) | 87 | 82 | 5 | 82 | 21 |  |
+| 1964 | 124 | 39 (38 / 1) | 84 | 79 | 5 | 79 | 24 |  |
 | 1965 | 138 | 41 (37 / 4) | 73 | 71 | 2 | 70 | 23 | `staff-roster-contractors` |
-| 1966 | 126 | 36 (34 / 2) | 86 | 79 | 7 | 78 | 21 | `treasurers-cash` |
-| 1967 | 140 | 46 (40 / 6) | 89 | 79 | 10 | 78 | 23 | `staff-roster-contractors`, `treasurers-cash` |
-| 1968 | 148 | 43 (39 / 4) | 78 | 71 | 7 | 71 | 15 | `staff-roster-contractors` |
-| 1969 | 132 | 40 (37 / 3) | 79 | 72 | 7 | 71 | 17 | `staff-roster-contractors`, `treasurers-cash` |
-| 1970 | 136 | 38 (37 / 1) | 67 | 60 | 7 | 59 | 17 | `treasurers-cash` |
-| 1971 | 136 | 39 (39 / 0) | 68 | 61 | 7 | 60 | 18 | `treasurers-cash` |
-| 1972 | 132 | 38 (36 / 2) | 69 | 63 | 6 | 62 | 17 | `treasurers-cash` |
-| 1973 | 128 | 30 (27 / 3) | 63 | 52 | 11 | 52 | 16 |  |
-| 1974 | 150 | 44 (43 / 1) | 82 | 79 | 3 | 79 | 20 |  |
-| 1975 | 152 | 41 (39 / 2) | 68 | 63 | 5 | 63 | 17 |  |
-| 1976 | 160 | 42 (41 / 1) | 80 | 75 | 5 | 75 | 20 |  |
-| 1977 | 164 | 46 (44 / 2) | 85 | 73 | 12 | 73 | 18 |  |
-| 1978 | 184 | 47 (45 / 2) | 85 | 79 | 6 | 78 | 23 | `treasurers-cash` |
-| 1979 | 164 | 49 (47 / 2) | 89 | 82 | 7 | 81 | 22 | `treasurers-cash` |
-| 1980 | 140 | 47 (45 / 2) | 89 | 79 | 10 | 78 | 23 | `treasurers-cash` |
-| 1981 | 140 | 42 (39 / 3) | 82 | 74 | 8 | 73 | 24 | `treasurers-cash` |
-| 1982 | 168 | 46 (44 / 2) | 81 | 75 | 6 | 74 | 21 | `treasurers-cash` |
-| 1983 | 132 | 44 (39 / 5) | 83 | 79 | 4 | 78 | 23 | `treasurers-cash` |
-| 1984 | 146 | 39 (38 / 1) | 79 | 72 | 7 | 71 | 22 | `treasurers-cash` |
-| 1985 | 172 | 38 (36 / 2) | 71 | 64 | 7 | 63 | 21 | `treasurers-cash` |
-| 1986 | 122 | 39 (31 / 8) | 80 | 75 | 5 | 74 | 22 | `treasurers-cash` |
-| 1987 | 76 | 22 (12 / 10) | 40 | 36 | 4 | 35 | 16 | `treasurers-cash` |
-| 1988 | 84 | 18 (12 / 6) | 37 | 32 | 5 | 31 | 16 | `treasurers-cash` |
-| 1989 | 84 | 22 (16 / 6) | 37 | 32 | 5 | 31 | 13 | `treasurers-cash` |
+| 1966 | 126 | 36 (34 / 2) | 86 | 79 | 7 | 78 | 22 | `treasurers-cash` |
+| 1967 | 140 | 46 (40 / 6) | 89 | 79 | 10 | 78 | 24 | `staff-roster-contractors`, `treasurers-cash` |
+| 1968 | 148 | 43 (39 / 4) | 78 | 71 | 7 | 71 | 16 | `staff-roster-contractors` |
+| 1969 | 132 | 40 (37 / 3) | 79 | 72 | 7 | 71 | 18 | `staff-roster-contractors`, `treasurers-cash` |
+| 1970 | 136 | 38 (37 / 1) | 67 | 60 | 7 | 59 | 18 | `treasurers-cash` |
+| 1971 | 136 | 39 (39 / 0) | 68 | 61 | 7 | 60 | 19 | `treasurers-cash` |
+| 1972 | 132 | 38 (36 / 2) | 69 | 63 | 6 | 62 | 18 | `treasurers-cash` |
+| 1973 | 128 | 30 (27 / 3) | 63 | 52 | 11 | 52 | 17 |  |
+| 1974 | 150 | 44 (43 / 1) | 82 | 79 | 3 | 79 | 21 |  |
+| 1975 | 152 | 41 (39 / 2) | 68 | 63 | 5 | 63 | 18 |  |
+| 1976 | 160 | 42 (41 / 1) | 80 | 75 | 5 | 75 | 21 |  |
+| 1977 | 164 | 46 (44 / 2) | 85 | 73 | 12 | 73 | 19 |  |
+| 1978 | 184 | 47 (45 / 2) | 85 | 79 | 6 | 78 | 24 | `treasurers-cash` |
+| 1979 | 164 | 49 (47 / 2) | 89 | 82 | 7 | 81 | 23 | `treasurers-cash` |
+| 1980 | 140 | 47 (45 / 2) | 89 | 79 | 10 | 78 | 24 | `treasurers-cash` |
+| 1981 | 140 | 42 (39 / 3) | 82 | 74 | 8 | 73 | 25 | `treasurers-cash` |
+| 1982 | 168 | 46 (44 / 2) | 81 | 75 | 6 | 74 | 22 | `treasurers-cash` |
+| 1983 | 132 | 44 (39 / 5) | 83 | 79 | 4 | 78 | 24 | `treasurers-cash` |
+| 1984 | 146 | 39 (38 / 1) | 79 | 72 | 7 | 71 | 23 | `treasurers-cash` |
+| 1985 | 172 | 38 (36 / 2) | 71 | 64 | 7 | 63 | 22 | `treasurers-cash` |
+| 1986 | 122 | 39 (31 / 8) | 80 | 75 | 5 | 74 | 23 | `treasurers-cash` |
+| 1987 | 76 | 22 (12 / 10) | 40 | 36 | 4 | 35 | 17 | `treasurers-cash` |
+| 1988 | 84 | 18 (12 / 6) | 37 | 32 | 5 | 31 | 17 | `treasurers-cash` |
+| 1989 | 84 | 22 (16 / 6) | 37 | 32 | 5 | 31 | 14 | `treasurers-cash` |
 | 1990 | 76 | 19 (17 / 2) | 31 | 26 | 5 | 25 | 13 | `treasurers-cash` |
-| 1991 | 68 | 21 (17 / 4) | 35 | 32 | 3 | 31 | 16 | `treasurers-cash` |
-| 1992 | 64 | 20 (19 / 1) | 37 | 34 | 3 | 33 | 14 | `treasurers-cash` |
-| 1993 | 60 | 18 (15 / 3) | 28 | 25 | 3 | 24 | 12 | `treasurers-cash` |
-| 1994 | 70 | 16 (14 / 2) | 23 | 18 | 5 | 17 | 10 | `treasurers-cash` |
-| 1995 | 90 | 29 (28 / 1) | 43 | 41 | 2 | 40 | 16 | `treasurers-cash` |
-| 1996 | 104 | 33 (33 / 0) | 45 | 43 | 2 | 42 | 16 | `treasurers-cash` |
-| 1997 | 100 | 31 (27 / 4) | 43 | 40 | 3 | 39 | 15 | `treasurers-cash` |
-| 1998 | 98 | 33 (31 / 2) | 48 | 43 | 5 | 42 | 14 | `treasurers-cash` |
-| 1999 | 110 | 33 (31 / 2) | 43 | 41 | 2 | 40 | 15 | `treasurers-cash` |
-| 2000 | 136 | 37 (33 / 4) | 48 | 46 | 2 | 45 | 15 | `treasurers-cash` |
-| 2001 | 94 | 24 (22 / 2) | 99 | 87 | 12 | 86 | 19 | `treasurers-cash` |
-| 2002 | 110 | 35 (33 / 2) | 121 | 105 | 16 | 104 | 19 | `treasurers-cash` |
-| 2003 | 104 | 36 (30 / 6) | 104 | 92 | 12 | 91 | 20 | `treasurers-cash` |
-| 2004 | 112 | 38 (29 / 9) | 106 | 96 | 10 | 95 | 22 | `treasurers-cash` |
-| 2005 | 104 | 32 (25 / 7) | 97 | 82 | 15 | 81 | 19 | `treasurers-cash` |
-| 2006 | 124 | 39 (32 / 7) | 115 | 105 | 10 | 104 | 21 | `treasurers-cash` |
-| 2007 | 124 | 38 (29 / 9) | 107 | 94 | 13 | 93 | 20 | `treasurers-cash` |
-| 2008 | 112 | 33 (33 / 0) | 88 | 80 | 8 | 79 | 19 | `treasurers-cash` |
-| 2009 | 92 | 29 (25 / 4) | 73 | 61 | 12 | 60 | 18 | `treasurers-cash` |
-| 2010 | 100 | 30 (19 / 11) | 102 | 81 | 21 | 78 | 22 | `salary-schedule`, `treasurers-cash` |
-| FY2011 | 101 | 29 (29 / 0) | 55 catalogued | - | - | - | 27 | `debt-repayment-detail`, `pages-read`, `treasurers-cash` |
-| FY2012 | 116 | 28 (28 / 0) | 64 catalogued | - | - | - | 23 | `debt-repayment-detail`, `pages-read`, `treasurers-cash` |
-| FY2013 | 97 | 31 (31 / 0) | 58 catalogued | - | - | - | 25 | `debt-repayment-detail`, `pages-read`, `treasurers-cash` |
-| FY2014 | 175 | 28 (28 / 0) | 64 catalogued | - | - | - | 27 | `debt-repayment-detail`, `pages-read`, `treasurers-cash` |
-| FY2015 | 215 | 33 (33 / 0) | 60 catalogued | - | - | - | 33 | `debt-repayment-detail`, `pages-read`, `salary-schedule`, `treasurers-cash` |
-| FY2016 | 221 | 47 (45 / 2) | 71 catalogued | - | - | - | 32 | `debt-repayment-detail`, `pages-read`, `salary-schedule`, `treasurers-cash` |
-| FY2017 | 201 | 32 (32 / 0) | 64 catalogued | - | - | - | 33 | `debt-repayment-detail`, `pages-read`, `stabilization-flows`, `treasurers-cash` |
+| 1991 | 68 | 21 (17 / 4) | 35 | 32 | 3 | 31 | 17 | `treasurers-cash` |
+| 1992 | 64 | 20 (19 / 1) | 37 | 34 | 3 | 33 | 15 | `treasurers-cash` |
+| 1993 | 60 | 18 (15 / 3) | 28 | 25 | 3 | 24 | 13 | `treasurers-cash` |
+| 1994 | 70 | 16 (14 / 2) | 23 | 18 | 5 | 17 | 11 | `treasurers-cash` |
+| 1995 | 90 | 29 (28 / 1) | 43 | 41 | 2 | 40 | 17 | `treasurers-cash` |
+| 1996 | 104 | 33 (33 / 0) | 45 | 43 | 2 | 42 | 17 | `treasurers-cash` |
+| 1997 | 100 | 31 (27 / 4) | 43 | 40 | 3 | 39 | 16 | `treasurers-cash` |
+| 1998 | 98 | 33 (31 / 2) | 48 | 43 | 5 | 42 | 15 | `treasurers-cash` |
+| 1999 | 110 | 33 (31 / 2) | 43 | 41 | 2 | 40 | 16 | `treasurers-cash` |
+| 2000 | 136 | 37 (33 / 4) | 48 | 46 | 2 | 45 | 16 | `treasurers-cash` |
+| 2001 | 94 | 24 (22 / 2) | 99 | 87 | 12 | 86 | 20 | `treasurers-cash` |
+| 2002 | 110 | 35 (33 / 2) | 121 | 105 | 16 | 104 | 20 | `treasurers-cash` |
+| 2003 | 104 | 36 (30 / 6) | 104 | 92 | 12 | 91 | 21 | `treasurers-cash` |
+| 2004 | 112 | 38 (29 / 9) | 106 | 96 | 10 | 95 | 23 | `treasurers-cash` |
+| 2005 | 104 | 32 (25 / 7) | 97 | 82 | 15 | 81 | 20 | `treasurers-cash` |
+| 2006 | 124 | 39 (32 / 7) | 115 | 105 | 10 | 104 | 22 | `treasurers-cash` |
+| 2007 | 124 | 38 (29 / 9) | 107 | 94 | 13 | 93 | 21 | `treasurers-cash` |
+| 2008 | 112 | 33 (33 / 0) | 88 | 80 | 8 | 79 | 20 | `treasurers-cash` |
+| 2009 | 92 | 29 (25 / 4) | 73 | 61 | 12 | 60 | 19 | `treasurers-cash` |
+| 2010 | 100 | 30 (19 / 11) | 102 | 81 | 21 | 78 | 23 | `salary-schedule`, `treasurers-cash` |
+| FY2011 | 101 | 29 (29 / 0) | 55 catalogued | - | - | - | 28 | `debt-repayment-detail`, `pages-read`, `treasurers-cash` |
+| FY2012 | 116 | 28 (28 / 0) | 64 catalogued | - | - | - | 24 | `debt-repayment-detail`, `pages-read`, `treasurers-cash` |
+| FY2013 | 97 | 31 (31 / 0) | 58 catalogued | - | - | - | 26 | `debt-repayment-detail`, `pages-read`, `treasurers-cash` |
+| FY2014 | 175 | 28 (28 / 0) | 64 catalogued | - | - | - | 28 | `debt-repayment-detail`, `pages-read`, `treasurers-cash` |
+| FY2015 | 215 | 33 (33 / 0) | 60 catalogued | - | - | - | 34 | `debt-repayment-detail`, `pages-read`, `salary-schedule`, `treasurers-cash` |
+| FY2016 | 221 | 47 (45 / 2) | 71 catalogued | - | - | - | 33 | `debt-repayment-detail`, `pages-read`, `salary-schedule`, `treasurers-cash` |
+| FY2017 | 201 | 32 (32 / 0) | 64 catalogued | - | - | - | 34 | `debt-repayment-detail`, `pages-read`, `stabilization-flows`, `treasurers-cash` |
 | FY2018 | 257 | 42 (42 / 0) | 62 catalogued | - | - | - | 32 | `debt-repayment-detail`, `pages-read`, `stabilization-flows`, `treasurers-cash` |
-| FY2019 | 206 | 39 (39 / 0) | 55 catalogued | - | - | - | 31 | `debt-repayment-detail`, `pages-read`, `treasurers-cash` |
-| FY2020 | 216 | 41 (41 / 0) | 46 catalogued | - | - | - | 30 | `debt-repayment-detail`, `pages-read`, `treasurers-cash` |
-| FY2021 | 170 | 37 (37 / 0) | 56 catalogued | - | - | - | 30 | `debt-repayment-detail`, `pages-read`, `stabilization-flows`, `treasurers-cash` |
-| FY2022 | 194 | 41 (41 / 0) | 56 catalogued | - | - | - | 31 | `debt-repayment-detail`, `pages-read`, `salary-schedule`, `stabilization-flows`, `treasurers-cash` |
-| FY2023 | 200 | 35 (34 / 1) | 42 catalogued | - | - | - | 25 | `pages-read`, `stabilization-flows`, `treasurers-cash` |
-| FY2024 | 195 | 28 (28 / 0) | 44 catalogued | - | - | - | 27 | `pages-read`, `stabilization-flows`, `treasurers-cash`, `trust-fund-balances` |
-| FY2025 | 187 | 23 (23 / 0) | 69 catalogued | - | - | - | 29 | `capital-program-options`, `debt-repayment-detail`, `monty-tech-expenses`, `treasurers-cash`, `trust-fund-balances`, `trust-fund-matrix` |
+| FY2019 | 206 | 39 (39 / 0) | 55 catalogued | - | - | - | 32 | `debt-repayment-detail`, `pages-read`, `treasurers-cash` |
+| FY2020 | 216 | 41 (41 / 0) | 46 catalogued | - | - | - | 31 | `debt-repayment-detail`, `pages-read`, `treasurers-cash` |
+| FY2021 | 170 | 37 (37 / 0) | 56 catalogued | - | - | - | 31 | `debt-repayment-detail`, `pages-read`, `stabilization-flows`, `treasurers-cash` |
+| FY2022 | 194 | 41 (41 / 0) | 56 catalogued | - | - | - | 32 | `debt-repayment-detail`, `pages-read`, `salary-schedule`, `stabilization-flows`, `treasurers-cash` |
+| FY2023 | 200 | 35 (34 / 1) | 42 catalogued | - | - | - | 26 | `pages-read`, `stabilization-flows`, `treasurers-cash` |
+| FY2024 | 195 | 28 (28 / 0) | 44 catalogued | - | - | - | 28 | `pages-read`, `stabilization-flows`, `treasurers-cash`, `trust-fund-balances` |
+| FY2025 | 187 | 23 (23 / 0) | 69 catalogued | - | - | - | 30 | `capital-program-options`, `debt-repayment-detail`, `monty-tech-expenses`, `treasurers-cash`, `trust-fund-balances`, `trust-fund-matrix` |
 
 ## Why 1959-2010 tables were not landed, by what the map calls them
 

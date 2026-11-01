@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-31",
+ "generated": "2026-11-01",
  "origins": [
   {
    "id": "school",
@@ -60,11 +60,11 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 51 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 81 of them link back to the exact file the publisher put up, and 68 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 90 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 51 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 81 of them link back to the exact file the publisher put up, and 75 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 90 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 4925 of these 4941 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 4926 of these 4942 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -5041,6 +5041,18 @@
      "textUrl": "/docs/data/pages-read.csv"
     },
     {
+     "path": "data/town-roster-entries.csv",
+     "title": "Every town official and department roster name the annual reports print, 1959–FY2025",
+     "stars": 3,
+     "what": "Elected and appointed officials with their printed terms, and fire and police rosters, from all 67 annual town reports, every page line-accounted. A name printed in a list, not a proven person; `year` is the calendar year to 2010 and the fiscal year from FY2011. Built by scripts/build_town_rosters.py.",
+     "kind": "Data",
+     "bytes": 3384481,
+     "url": "/docs/data/town-roster-entries.csv",
+     "count": 16609,
+     "unit": "rows",
+     "textUrl": "/docs/data/town-roster-entries.csv"
+    },
+    {
      "path": "data/special-revenue-funds.csv",
      "title": "The special revenue funds, FY2011–FY2025",
      "stars": 3,
@@ -5197,6 +5209,18 @@
      "textUrl": "/docs/data/enterprise-balance-sheet.csv"
     },
     {
+     "path": "data/PROVENANCE-town-rosters.md",
+     "title": "Where the town officials lists came from, and what they do not show",
+     "stars": 3,
+     "what": "Generated. The pages read, the line accounting, the 1991 swapped headings, the rows flagged as minority readings, and the one edition (2008) with no elected list.",
+     "kind": "Notes",
+     "bytes": 16227,
+     "url": "/docs/data/PROVENANCE-town-rosters.md",
+     "count": 397,
+     "unit": "lines",
+     "textUrl": "/docs/data/PROVENANCE-town-rosters.md"
+    },
+    {
      "path": "data/peg-access.csv",
      "title": "PEG Access expenses, line by line, read from the page",
      "stars": 3,
@@ -5214,9 +5238,9 @@
      "stars": 3,
      "what": "One row per new document found by the daily re-walk of the listing pages the mirrors came from -- the district's budget page and the town's budget hub, town meeting and finance pages -- with the day it was first seen, its address and our copy. A first-seen date is an upper bound on posting, no better than the gap since the last walk. See scripts/watch_documents.py.",
      "kind": "Data",
-     "bytes": 11639,
+     "bytes": 11852,
      "url": "/docs/data/document-watch-events.csv",
-     "count": 61,
+     "count": 62,
      "unit": "rows",
      "textUrl": "/docs/data/document-watch-events.csv"
     },
@@ -5526,9 +5550,9 @@
      "stars": 2,
      "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
      "kind": "Data",
-     "bytes": 121918,
+     "bytes": 124207,
      "url": "/docs/data/table-semantics.csv",
-     "count": 191,
+     "count": 195,
      "unit": "rows",
      "textUrl": "/docs/data/table-semantics.csv"
     },
@@ -5567,6 +5591,18 @@
      "count": 2290,
      "unit": "rows",
      "textUrl": "/docs/data/staff-roster-counts.csv"
+    },
+    {
+     "path": "data/annual-report-coverage.csv",
+     "title": "How much of each annual report is data, edition by edition",
+     "stars": 2,
+     "what": "One row per report, 1959 to FY2025: its pages, the tables found in it, how many are in a dataset and whether that dataset is in the database, and the datasets it feeds. Generated by build_annual_report_coverage.py; its readable form is notes/reference/EXTRACTION-GAPS.md.",
+     "kind": "Data",
+     "bytes": 38746,
+     "url": "/docs/data/annual-report-coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/annual-report-coverage.csv"
     },
     {
      "path": "data/money-classification.csv",
@@ -5651,6 +5687,18 @@
      "count": 75,
      "unit": "rows",
      "textUrl": "/docs/data/enterprise-balance-sheet-printed-totals.csv"
+    },
+    {
+     "path": "data/annual-report-coverage-datasets.csv",
+     "title": "Every dataset the annual reports feed, and whether it is in the database",
+     "stars": 2,
+     "what": "One row per dataset holding rows read from an annual report: rows, editions, the checked / check failed / no check split by era, and whether the database has the table. Generated by build_annual_report_coverage.py.",
+     "kind": "Data",
+     "bytes": 10339,
+     "url": "/docs/data/annual-report-coverage-datasets.csv",
+     "count": 112,
+     "unit": "rows",
+     "textUrl": "/docs/data/annual-report-coverage-datasets.csv"
     },
     {
      "path": "data/PROVENANCE-annual-report-receipts.md",
@@ -6637,7 +6685,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 93061120,
+     "bytes": 96862208,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -7621,9 +7669,9 @@
      "stars": 2,
      "what": "One row per PDF in the archive: what pdf_kind found (digital, scan, mixed), which pages carry no readable text, how many of those Amazon Textract has read, and whether our searchable copy is built. A searchable copy is the publisher’s file with every page image unchanged and invisible Textract words under the picture pages, served at /docs/searchable/<path>; the original stays at its own address. Ours, not the publisher’s. Rebuild with scripts/searchable_pdfs.py.",
      "kind": "Data",
-     "bytes": 2599756,
+     "bytes": 2600768,
      "url": "/docs/data/searchable-pdfs.csv",
-     "count": 16252,
+     "count": 16253,
      "unit": "rows",
      "textUrl": "/docs/data/searchable-pdfs.csv"
     },
@@ -7741,11 +7789,23 @@
      "stars": 2,
      "what": "The question underneath the one above. A link can still open and serve a different document — a Drive file can be replaced in place without its URL changing, and nothing in a link check would notice. So every address is fetched and the result compared to our copy by sha256. It also separates the ways bytes can differ without the document differing: a Google Doc is re-zipped on every export, and a PDF can be re-saved with a heading’s line-break in a new place. Only one of those is a change. Rebuild with scripts/verify_source_copies.py.",
      "kind": "Data",
-     "bytes": 259330,
+     "bytes": 297232,
      "url": "/docs/data/copy-status.csv",
-     "count": 799,
+     "count": 907,
      "unit": "rows",
      "textUrl": "/docs/data/copy-status.csv"
+    },
+    {
+     "path": "data/link-status.csv",
+     "title": "Whether each source document is still public",
+     "stars": 2,
+     "what": "For every archived document that records where its publisher put it, whether that address still opens. On 29 August 2026 it mostly did not: 57 of 184 returned a Google sign-in wall, every one of them a Drive or Docs link, while the town’s own web server answered 81 of 81. The district was asked to reopen them and did — on 31 August the same 187 came back 186 open. Both readings are the archive’s reason for existing, measured. Rebuild with scripts/check_source_links.py.",
+     "kind": "Data",
+     "bytes": 215485,
+     "url": "/docs/data/link-status.csv",
+     "count": 1136,
+     "unit": "rows",
+     "textUrl": "/docs/data/link-status.csv"
     },
     {
      "path": "data/department-budgets-fincom-fy27.csv",
@@ -7758,18 +7818,6 @@
      "count": 1035,
      "unit": "rows",
      "textUrl": "/docs/data/department-budgets-fincom-fy27.csv"
-    },
-    {
-     "path": "data/link-status.csv",
-     "title": "Whether each source document is still public",
-     "stars": 2,
-     "what": "For every archived document that records where its publisher put it, whether that address still opens. On 29 August 2026 it mostly did not: 57 of 184 returned a Google sign-in wall, every one of them a Drive or Docs link, while the town’s own web server answered 81 of 81. The district was asked to reopen them and did — on 31 August the same 187 came back 186 open. Both readings are the archive’s reason for existing, measured. Rebuild with scripts/check_source_links.py.",
-     "kind": "Data",
-     "bytes": 176110,
-     "url": "/docs/data/link-status.csv",
-     "count": 936,
-     "unit": "rows",
-     "textUrl": "/docs/data/link-status.csv"
     },
     {
      "path": "data/fy20-q4-reports.csv",
@@ -7789,9 +7837,9 @@
      "stars": 2,
      "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
      "kind": "Data",
-     "bytes": 147612,
+     "bytes": 152142,
      "url": "/docs/data/refresh-runs.csv",
-     "count": 39,
+     "count": 40,
      "unit": "rows",
      "textUrl": "/docs/data/refresh-runs.csv"
     },
@@ -8242,6 +8290,18 @@
      "textUrl": "/docs/data/eoyr-nss.csv"
     },
     {
+     "path": "data/source-checks.csv",
+     "title": "Every time the refresh looked at a slow source",
+     "stars": 2,
+     "what": "Appended by the daily refresh, one row per look: the source, the day, and whether the look succeeded. A source is due again when its cadence has passed since its last successful look, so a failed one is retried the next morning. Written by scripts/refresh.py through scripts/source_cadence.py.",
+     "kind": "Data",
+     "bytes": 2857,
+     "url": "/docs/data/source-checks.csv",
+     "count": 82,
+     "unit": "rows",
+     "textUrl": "/docs/data/source-checks.csv"
+    },
+    {
      "path": "data/socrata-status.csv",
      "title": "Whether DESE has changed a dataset since our copy",
      "stars": 2,
@@ -8264,18 +8324,6 @@
      "count": 15,
      "unit": "rows",
      "textUrl": "/docs/data/budget-seasons/fy28.csv"
-    },
-    {
-     "path": "data/source-checks.csv",
-     "title": "Every time the refresh looked at a slow source",
-     "stars": 2,
-     "what": "Appended by the daily refresh, one row per look: the source, the day, and whether the look succeeded. A source is due again when its cadence has passed since its last successful look, so a failed one is retried the next morning. Written by scripts/refresh.py through scripts/source_cadence.py.",
-     "kind": "Data",
-     "bytes": 2527,
-     "url": "/docs/data/source-checks.csv",
-     "count": 70,
-     "unit": "rows",
-     "textUrl": "/docs/data/source-checks.csv"
     },
     {
      "path": "data/ambulance-receipts.csv",
@@ -8319,11 +8367,23 @@
      "stars": 2,
      "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1544,
+     "bytes": 1575,
      "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 47,
+     "count": 48,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-runs.csv"
+    },
+    {
+     "path": "data/feed-watch-events.csv",
+     "title": "What appeared in those feeds",
+     "stars": 2,
+     "what": "Written by us. One row per item first seen, with when.",
+     "kind": "Data",
+     "bytes": 1529,
+     "url": "/docs/data/feed-watch-events.csv",
+     "count": 9,
+     "unit": "rows",
+     "textUrl": "/docs/data/feed-watch-events.csv"
     },
     {
      "path": "data/departments.csv",
@@ -8372,18 +8432,6 @@
      "count": 13,
      "unit": "rows",
      "textUrl": "/docs/data/budget-cycles.csv"
-    },
-    {
-     "path": "data/feed-watch-events.csv",
-     "title": "What appeared in those feeds",
-     "stars": 2,
-     "what": "Written by us. One row per item first seen, with when.",
-     "kind": "Data",
-     "bytes": 1360,
-     "url": "/docs/data/feed-watch-events.csv",
-     "count": 8,
-     "unit": "rows",
-     "textUrl": "/docs/data/feed-watch-events.csv"
     },
     {
      "path": "data/myths.csv",
@@ -16115,7 +16163,8 @@
      "bytes": 2445802,
      "url": "/docs/district-budget/docs/sc-meetings/2023-09-06-sizer-school-annual-report.pdf",
      "textUrl": "/docs/district-budget/text/sc-meetings/2023-09-06-sizer-school-annual-report.txt",
-     "upstream": "https://drive.google.com/file/d/1yeJ717r-D36nHIhSnwZDD6Sh7_LP8PLj/view?usp=sharing"
+     "upstream": "https://drive.google.com/file/d/1yeJ717r-D36nHIhSnwZDD6Sh7_LP8PLj/view?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget/docs/sc-meetings/2023-09-06-special-education-program-evaluation-report.pdf",
@@ -17456,7 +17505,8 @@
      "bytes": 2445802,
      "url": "/docs/district-budget/docs/sc-meetings/2023-09-06-sizer-school-annual-report.pdf",
      "textUrl": "/docs/district-budget/text/sc-meetings/2023-09-06-sizer-school-annual-report.txt",
-     "upstream": "https://drive.google.com/file/d/1E2zZxHAWDkX3OVLsSxBJGDbNf-gioJiF/view?usp=sharing"
+     "upstream": "https://drive.google.com/file/d/1E2zZxHAWDkX3OVLsSxBJGDbNf-gioJiF/view?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget/docs/sc-meetings/2023-09-06-social-studies-department-update.pdf",
@@ -21960,7 +22010,7 @@
    "id": "town-budget",
    "origin": "town",
    "title": "The town’s budget and finance documents, mirrored",
-   "blurb": "Every budget-relevant document linked from the town’s finance pages — 148 of them, including the audited financial statements and the year-end reports. Reached by walking the budget hub, town meetings and finances, and the finance-adjacent department pages rather than by enumerating the document store, which would have meant thousands of files about dog licenses.",
+   "blurb": "Every budget-relevant document linked from the town’s finance pages — 149 of them, including the audited financial statements and the year-end reports. Reached by walking the budget hub, town meetings and finances, and the finance-adjacent department pages rather than by enumerating the document store, which would have meant thousands of files about dog licenses.",
    "items": [
     {
      "path": "town-budget/docs/4161-2026-annual-town-election-warrant.pdf",
@@ -23554,6 +23604,17 @@
      "url": "/docs/town-budget/docs/4396-november-17-2026-special-town-meeting-legal-notice.pdf",
      "textUrl": "/docs/town-budget/text/4396-november-17-2026-special-town-meeting-legal-notice.txt",
      "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4396"
+    },
+    {
+     "path": "town-budget/docs/4559-november-17-2026-special-town-meeting-warrant.pdf",
+     "title": "November 17, 2026 Special Town Meeting Warrant",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 183929,
+     "url": "/docs/town-budget/docs/4559-november-17-2026-special-town-meeting-warrant.pdf",
+     "textUrl": "/docs/town-budget/text/4559-november-17-2026-special-town-meeting-warrant.txt",
+     "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4559"
     },
     {
      "path": "town-budget/docs/4373-september-3-2026-special-town-meeting-warrant.pdf",
@@ -62850,10 +62911,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 5663,
+  "documents": 5668,
   "groups": 31,
-  "bytes": 7256631708,
-  "loadBearing": 208
+  "bytes": 7264152369,
+  "loadBearing": 210
  },
- "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
+ "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 7 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

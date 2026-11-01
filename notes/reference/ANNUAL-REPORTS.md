@@ -41,7 +41,7 @@ Read `column_meaning` before reading a value.
 |---|---:|---|---|---|---|---|
 | `report-agency-funds.csv` | 26 | 1987–1987 | 0 checked / 0 failed / 26 no check | yes | shared | **no** |
 | `report-appropriations-supplement-refused.csv` | 3 | — | — | **no** | shared | yes |
-| `report-appropriations-supplement.csv` | 32 | — | — | **no** | shared | yes |
+| `report-appropriations-supplement.csv` | 32 | — | — | yes | shared | yes |
 | `report-appropriations.csv` | 27,799 | 1959–2025 | 12,782 checked / 5,845 failed / 9,172 no check | yes | shared | yes |
 | `report-auditors-cash-schedule.csv` | 168 | 1983–1988 | 127 checked / 0 failed / 41 no check | yes | shared | **no** |
 | `report-capital-project-costs.csv` | 13 | 1961–1961 | 2 checked / 0 failed / 11 no check | yes | shared | **no** |
@@ -57,12 +57,12 @@ Read `column_meaning` before reading a value.
 | `report-expenditure-history.csv` | 10 | 1971–1971 | 8 checked / 0 failed / 2 no check | yes | shared | **no** |
 | `report-expenditure-shares.csv` | 104 | 1960–1983 | 0 checked / 0 failed / 104 no check | yes | shared | **no** |
 | `report-fee-schedule.csv` | 218 | 1964–2004 | 8 checked / 0 failed / 210 no check | yes | shared | **no** |
-| `report-filing.csv` | 119 | — | — | **no** | shared | yes |
+| `report-filing.csv` | 119 | — | — | yes | shared | yes |
 | `report-financial-performance.csv` | 19 | 1979–1979 | 11 checked / 3 failed / 5 no check | yes | shared | **no** |
 | `report-fund-balance-sheets.csv` | 3,720 | 1959–1986 | 2,275 checked / 0 failed / 1,445 no check | yes | shared | **no** |
 | `report-gross-wages.csv` | 11,512 | 1995–2025 | 7,965 checked / 0 failed / 3,547 no check | yes | shared | yes |
 | `report-highway-accounts.csv` | 18 | 1995–1995 | 18 checked / 0 failed / 0 no check | yes | shared | **no** |
-| `report-index.csv` | 698 | 2011–2025 | — | **no** | shared | yes |
+| `report-index.csv` | 698 | 2011–2025 | — | yes | shared | yes |
 | `report-library-service-values.csv` | 10 | 2004–2004 | 10 checked / 0 failed / 0 no check | yes | shared | **no** |
 | `report-monty-tech.csv` | 79 | 1966–2017 | 2 checked / 0 failed / 77 no check | yes | shared | yes |
 | `report-office-budget-cuts.csv` | 4 | 1983–1983 | 4 checked / 0 failed / 0 no check | yes | shared | **no** |
@@ -81,7 +81,7 @@ Read `column_meaning` before reading a value.
 | `report-school-staff-changes.csv` | 7 | 1977–1977 | 5 checked / 0 failed / 2 no check | yes | shared | **no** |
 | `report-school-staff-fte.csv` | 450 | 1959–1986 | 186 checked / 0 failed / 264 no check | yes | shared | **no** |
 | `report-school-state-aid.csv` | 378 | 1959–1986 | 283 checked / 0 failed / 95 no check | yes | shared | **no** |
-| `report-signatures.csv` | 182 | 2013–2025 | — | **no** | shared | yes |
+| `report-signatures.csv` | 182 | 2013–2025 | — | yes | shared | yes |
 | `report-special-education.csv` | 46 | 2008–2009 | 0 checked / 0 failed / 46 no check | yes | shared | **no** |
 | `report-statement-of-payments.csv` | 4,670 | 1959–1986 | 4,095 checked / 0 failed / 575 no check | yes | shared | **no** |
 | `report-surplus-free-cash.csv` | 58 | 1965–1980 | 28 checked / 0 failed / 30 no check | yes | shared | **no** |
