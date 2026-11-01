@@ -369,6 +369,7 @@ export function Reports() {
   return (
     <>
       <header className="mx-auto max-w-6xl px-5 pt-12 pb-2">
+        <NewReports />
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
           Reports and analyses
         </h1>
@@ -468,8 +469,6 @@ export function Reports() {
           </a>
         </div>
       )}
-
-      <NewReports />
 
       {/* GROUPED BY SUBJECT, ONE ENTRY PER SUBJECT.
           Every report — page or document — is drawn the same way, because to a reader
@@ -711,7 +710,7 @@ export function Reports() {
 function NewReports() {
   const rows = useNewReports()
   return (
-    <p id="new" className="text-[14px] mt-6" style={{ color: 'var(--text-secondary)' }}>
+    <p id="new" className="text-[14px] mb-3" style={{ color: 'var(--text-secondary)' }}>
       {rows.length ? <><span className="font-semibold" style={{ color: 'var(--text-primary)' }}>
         {rows.length} new {rows.length === 1 ? 'report' : 'reports'}</span> in the last {NEW_DAYS} days. </> : null}
       <a href="/new-reports" className="underline font-semibold" style={{ color: 'var(--series-cost)' }}>New reports &rarr;</a>
