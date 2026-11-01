@@ -34,11 +34,15 @@ type Run = {
   name: string; first: number; last: number; span: number; seen: number; held: number
   first_entry: Entry; last_entry: Entry
 }
-type TownRun = {
-  name: string; first: number; last: number; span: number; seen: number; held: number
-  first_entry: Entry; last_entry: Entry
+/** One row of the town-wide board: a run on the town's lists or on the school rosters,
+ *  never joined across the two (build_historical_report.board says why). */
+type BoardRun = Run & {
+  source: 'town' | 'school'
+  list: 'officers directory' | 'department roster' | 'school roster'
+  rank: number; tied: boolean
   positions: { position: string; years: number }[]; n_positions: number
-  mainly: string; disagree: string; forms: string[]
+  disagree: string; forms: string[]
+  elsewhere: { first: number; last: number; span: number }[]
 }
 type Half = { first: number; last: number; seen: number; first_entry: Entry; last_entry: Entry }
 
@@ -50,12 +54,16 @@ export type HistoricalPayload = {
   population: (Cite & { year: number; value: number; kind: string })[]
   population_conflicts: { year: number; kind: string; printed: (Cite & { value: number })[] }[]
   roster_names: { year: number; names: number }[]
-  roster_runs: Run[]
-  town_runs: TownRun[]
-  town_held_out: TownRun[]
+  board: {
+    rows: BoardRun[]; held_out: BoardRun[]
+    cut: number; size: number; n: number; school: number; town: number; both: number
+    span: [number, number]
+  }
   town_entries: number
   town_distinct: number
   town_held: [number, number, number]
+  school_entries: number
+  school_held: number
   roster_shared: { name: string; naive_span: number; a: Half; b: Half } | null
   roster_rule: string
   first_aide: { first: Entry; last_fy: number; last_count: number }
@@ -202,69 +210,69 @@ export function HistoricalPage({ data: d, docUrl }: { data: HistoricalPayload; d
         </div>
       </section>
 
-      {/* LONGEST SERVICE TO THE TOWN. TJ, 1 November 2026: "i dont know why this is school
-          focused ... i wanted a town-side employee time ranking." So the town's own lists
-          lead, by the same run rule (build_historical_report.name_runs), and the school
-          leaderboard follows. Two boards, not one merged list: the payload's markdown says why. */}
-      <Section id="town-service" eyebrow={`Longest service · the town · ${F('the-longest-run-on-the-town-lists', 'span')} years`}
-        title="Longest on the town’s lists">
+      {/* LONGEST SERVICE, ONE BOARD. TJ, 1 November 2026: "Let's just do one complete
+          town-wide, including the school's ranking" -- and "we do not need a school rank and
+          town rank separately. Combine them." Runs are counted per kind of list by the one rule
+          (build_historical_report.name_runs) and only then ranked together; each row says
+          which kind of list it is on. A name on both kinds is two rows, never one run. */}
+      <Section id="longest-service"
+        eyebrow={`Longest service · town and schools · ${F('the-longest-run-in-town', 'span')} years`}
+        title="Longest on Lunenburg’s lists">
         <p className="text-[14.5px] leading-relaxed mt-3 max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
-          Every name the officers’ directory prints, elected and appointed, and the staff
-          rosters inside department reports, mostly fire and police: {n(d.town_entries)} printed names across{' '}
-          {d.town_held[2]} editions.
+          The town’s officers’ directory and department rosters ({n(d.town_entries)} printed names,{' '}
+          {d.town_held[2]} editions) and the school staff rosters ({n(d.school_entries)},{' '}
+          {d.school_held} editions), ranked together: the longest {d.board.size} runs and every
+          run tied with the last, {d.board.n} in all. {d.board.school} are school rosters; the
+          longest of them {d.board.rows.find(r => r.source === 'school')?.tied ? 'ties for' : 'is'}{' '}
+          {F('the-longest-run-on-the-school-rosters', 'rank')}.
         </p>
-        <Leaderboard runs={d.town_runs} y0={d.town_held[0]} y1={d.town_held[1]}
+        <Leaderboard runs={d.board.rows} y0={d.board.span[0]} y1={d.board.span[1]}
           detail={r => {
-            const t = r as TownRun
-            const more = t.n_positions - t.positions.length
+            const more = r.n_positions - r.positions.length
             return (
               <>
                 <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>
-                  {t.positions.map(p => p.position).join(' · ')}
+                  {r.positions.map(p => p.position).join(' · ')}
                 </span>
                 {more > 0 ? <> and {more} more</> : null}.{' '}
-                Mostly {t.mainly === 'department roster' ? 'a department roster' : 'the officers’ directory'};
-                printed in {t.seen} of the {t.held} editions for those years.{' '}
-                First <Src c={t.first_entry} />, last <Src c={t.last_entry} />.
+                Printed in {r.seen} of the {r.held} {r.source === 'school' ? 'rosters' : 'editions'} for
+                those years. First <Src c={r.first_entry} />, last <Src c={r.last_entry} />.
+                {r.elsewhere.length ? (
+                  <>
+                    {' '}The same name is also on the {r.source === 'town' ? 'school rosters' : 'town’s lists'},{' '}
+                    {r.elsewhere.map(o => (o.first === o.last ? `${o.first}` : `${o.first}–${o.last}`)).join(', ')}:
+                    a separate run, not joined.
+                  </>
+                ) : null}
               </>
             )
           }} />
-        <Ours kind="What a run on these lists is">
-          A name printed in a list, not a person proven: matching drops middle initials and
-          Jr./Sr. Most directory lines are board and committee seats, many unpaid, so a run is
-          years on a list, not years of employment. Positions are as printed.
+        <Ours kind="How a run is counted">
+          {d.roster_rule} That threshold is ours, and the same for both kinds of list. A run is
+          the first and last edition a name is printed in, not a hire or a retirement, and a name
+          is not a person: matching drops middle initials and Jr./Sr. Most directory lines are
+          board and committee seats, many unpaid, so a run there is years on a list, not years of
+          employment. Positions are as printed. A town row is labelled by whichever kind of list
+          holds more of its entries.
         </Ours>
-        {d.town_held_out.length ? (
+        <Ours kind="A name on both kinds of list">
+          Two rows, never one run. A school roster and the town’s directory are printed in
+          different editions, and the same name on both is not shown to be one person, so each
+          run is counted on its own list. {d.board.both} rows on the board have a run on the other
+          kind of list, and say so.
+        </Ours>
+        {d.board.held_out.length ? (
           <Ours kind="Left out of the ranking">
-            {d.town_held_out.map(r => (
-              <span key={r.name}>
-                {r.name}, {r.first}–{r.last}, would run {r.span} years but is {r.disagree}{' '}
+            {d.board.held_out.map(r => (
+              <span key={`${r.source}-${r.name}-${r.first}`}>
+                {r.name} ({r.source === 'town' ? 'town’s lists' : 'school rosters'}), {r.first}–{r.last},
+                would run {r.span} years but is {r.disagree}{' '}
                 ({r.forms.slice(0, 4).map(f => `“${f}”`).join(', ')}).{' '}
               </span>
             ))}
             The print tells those names apart, so the joined run may be two people.
           </Ours>
         ) : null}
-      </Section>
-
-      {/* LONGEST ON THE ROSTERS: a leaderboard drawn as careers on one time axis. */}
-      <Section id="rosters" eyebrow="Longest service · the schools" title="Longest on the school rosters">
-        <p className="text-[14.5px] leading-relaxed mt-3 max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
-          The per-school staff rosters, by the same rule as the town’s lists above.
-        </p>
-        <Leaderboard runs={d.roster_runs} y0={d.roster_names[0].year}
-          y1={d.roster_names[d.roster_names.length - 1].year}
-          detail={r => (
-            <>
-              First: “{r.first_entry.role || r.first_entry.group}” (<Src c={r.first_entry} />).
-              Last: “{r.last_entry.role || r.last_entry.group}” (<Src c={r.last_entry} />).
-              Printed in {r.seen} of the {r.held} rosters we hold for those years.
-            </>
-          )} />
-        <Ours kind="How a run is counted">
-          {d.roster_rule} That threshold is ours. A run is the first and last roster a name is
-          printed in — not a hire date, not a retirement, and a name is not a person.
-        </Ours>
       </Section>
 
       {/* THE MYSTERY. */}
@@ -645,41 +653,57 @@ function CharterVote({ v }: { v: HistoricalPayload['charter_vote'] }) {
   )
 }
 
-function Leaderboard<R extends Run | TownRun>({ runs, y0, y1, detail }: {
-  runs: R[]; y0: number; y1: number; detail: (r: R) => ReactNode
+const WHERE: Record<BoardRun['list'], string> = {
+  'officers directory': 'Town · officers’ directory',
+  'department roster': 'Town · department roster',
+  'school roster': 'School · roster',
+}
+
+function Leaderboard({ runs, y0, y1, detail }: {
+  runs: BoardRun[]; y0: number; y1: number; detail: (r: BoardRun) => ReactNode
 }) {
   const pct = (y: number) => (100 * (y - y0)) / (y1 - y0)
   return (
     <ol className="mt-5 space-y-3">
-      {runs.map((r, i) => (
-        <li key={r.name} className="card p-3.5 min-w-0">
-          <div className="flex items-start gap-3">
-            <span className="text-[26px] font-black leading-none tnum w-7 shrink-0"
-              style={{ color: i === 0 ? 'var(--series-revenue)' : 'var(--text-muted)' }}>{i + 1}</span>
-            <div className="min-w-0 flex-1">
-              <div className="flex items-baseline justify-between gap-2 flex-wrap">
-                <span className="text-[16px] font-bold">{r.name}</span>
-                <span className="text-[14px] tnum" style={{ color: 'var(--text-secondary)' }}>
-                  <strong className="text-[20px]" style={{ color: 'var(--text-primary)' }}>{r.span}</strong> years
-                  · {r.first}–{r.last}
+      {runs.map((r, i) => {
+        const school = r.source === 'school'
+        const tone = i === 0 ? 'var(--series-revenue)' : school ? 'var(--series-cost)' : 'var(--brand)'
+        return (
+          <li key={`${r.source}-${r.name}-${r.first}`} className="card p-3.5 min-w-0">
+            <div className="flex items-start gap-3">
+              <span className="text-[22px] font-black leading-none tnum w-9 shrink-0"
+                title={r.tied ? 'tied' : undefined}
+                style={{ color: i === 0 ? 'var(--series-revenue)' : 'var(--text-muted)' }}>
+                {r.tied ? <span className="text-[13px] align-top">=</span> : null}{r.rank}
+              </span>
+              <div className="min-w-0 flex-1">
+                <div className="flex items-baseline justify-between gap-2 flex-wrap">
+                  <span className="text-[16px] font-bold">{r.name}</span>
+                  <span className="text-[14px] tnum" style={{ color: 'var(--text-secondary)' }}>
+                    <strong className="text-[20px]" style={{ color: 'var(--text-primary)' }}>{r.span}</strong> years
+                    · {r.first}–{r.last}
+                  </span>
+                </div>
+                <span className="inline-block text-[10.5px] font-bold uppercase tracking-[0.08em] rounded px-1.5 py-0.5 mt-1"
+                  style={{ color: school ? 'var(--series-cost)' : 'var(--text-secondary)', border: '1px solid var(--grid)' }}>
+                  {WHERE[r.list]}
                 </span>
+                <div className="relative h-2.5 rounded-full mt-2" style={{ background: 'var(--surface-2)' }}>
+                  <div className="absolute h-2.5 rounded-full" style={{
+                    left: `${pct(r.first)}%`, width: `${pct(r.last) - pct(r.first)}%`, background: tone,
+                  }} />
+                </div>
+                <div className="flex justify-between text-[10.5px] tnum mt-0.5" style={{ color: 'var(--text-muted)' }}>
+                  <span>{y0}</span><span>{y1}</span>
+                </div>
+                <p className="text-[12.5px] leading-snug mt-1.5 break-words" style={{ color: 'var(--text-secondary)' }}>
+                  {detail(r)}
+                </p>
               </div>
-              <div className="relative h-2.5 rounded-full mt-2" style={{ background: 'var(--surface-2)' }}>
-                <div className="absolute h-2.5 rounded-full" style={{
-                  left: `${pct(r.first)}%`, width: `${pct(r.last) - pct(r.first)}%`,
-                  background: i === 0 ? 'var(--series-revenue)' : 'var(--brand)',
-                }} />
-              </div>
-              <div className="flex justify-between text-[10.5px] tnum mt-0.5" style={{ color: 'var(--text-muted)' }}>
-                <span>{y0}</span><span>{y1}</span>
-              </div>
-              <p className="text-[12.5px] leading-snug mt-1.5 break-words" style={{ color: 'var(--text-secondary)' }}>
-                {detail(r)}
-              </p>
             </div>
-          </div>
-        </li>
-      ))}
+          </li>
+        )
+      })}
     </ol>
   )
 }

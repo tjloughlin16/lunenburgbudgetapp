@@ -435,17 +435,18 @@ def name_runs(rows, year_of):
     return runs, by, held
 
 
-def printed_positions(ents, n=3):
+def printed_positions(ents, n=3, field='position', year='year'):
     """The positions a run's entries were printed under, most-printed first, as printed --
     grouped without regard to case or a parenthetical note, and shown in the form most often
     printed, preferring one not set in capitals. A printed term length (`-3 YRS`) is dropped
-    for the grouping. Returns (top n, how many distinct)."""
+    for the grouping. Returns (top n, how many distinct). Town rows print the position in
+    `position` and the year in `year`; school rows in `role_raw` and `fy`."""
     groups = collections.defaultdict(list)
     for e in ents:
-        p = ' '.join(re.sub(r'\(.*?\)', ' ', e['position'] or '').split())
+        p = ' '.join(re.sub(r'\(.*?\)', ' ', e[field] or '').split())
         p = re.sub(r'\s*-\s*\d+\s*YRS?\.?$', '', p, flags=re.I).strip(' :;,.-')
         if p:
-            groups[p.lower()].append((int(e['year']), p))  # town rows: `year`
+            groups[p.lower()].append((int(e[year]), p))
     ranked = sorted(groups.values(), key=lambda g: (-len({y for y, _ in g}), g[0][1].lower()))
     out = []
     for g in ranked[:n]:
@@ -463,10 +464,6 @@ def rosters(eds):
         raise SystemExit('staff-roster-entries.csv holds %d rows; refusing to describe '
                          'sixty years of rosters from that.' % len(rows))
     runs, by, held = name_runs(rows, lambda r: int(r['fy']))
-    if any(r['disagree'] for r in runs[:6]):
-        raise SystemExit('a school run in the top six now has printed forms that disagree '
-                         '(%s); the school section does not yet say so. Refusing.'
-                         % '; '.join(r['name'] for r in runs[:6] if r['disagree']))
     # naive: one span per name, no breaks -- what a reader matching names alone would say
     naive = sorted(((max(int(r['fy']) for r in rs) - min(int(r['fy']) for r in rs), k)
                     for k, rs in by.items()), reverse=True)
@@ -478,11 +475,15 @@ def rosters(eds):
         return dict(c, name=e['name'], role=' '.join((e['role_raw'] or '').split()),
                     group=' '.join((e['grade_or_dept'] or '').split()))
 
-    top = []
-    for r in runs[:6]:
-        top.append(dict(name=r['name'], first=r['first'], last=r['last'],
-                        span=r['span'], seen=r['seen'], held=r['held'],
-                        first_entry=entry(r['first_entry']), last_entry=entry(r['last_entry'])))
+    def show(r):
+        pos, n_pos = printed_positions(r['rows'], field='role_raw', year='fy')
+        return dict(source='school', list='school roster', key=r['key'], name=r['name'],
+                    first=r['first'], last=r['last'], span=r['span'], seen=r['seen'],
+                    held=r['held'], positions=pos, n_positions=n_pos,
+                    first_entry=entry(r['first_entry']), last_entry=entry(r['last_entry']),
+                    disagree=r['disagree'],
+                    forms=[f for f, _n in collections.Counter(
+                        e['name'] for e in r['rows']).most_common()])
 
     # THE SHARED NAME. The longest naive span whose runs split: one name, two careers.
     shared = None
@@ -517,17 +518,27 @@ def rosters(eds):
     names = collections.OrderedDict()
     for y in held:
         names[y] = len({name_key(r['name']) for r in rows if int(r['fy']) == y})
-    return dict(held=held, top=top, shared=shared, para=para, names=names,
-                entries=len(rows), distinct=len(by))
+    return dict(held=held, shared=shared, para=para, names=names,
+                entries=len(rows), distinct=len(by), _runs=runs, _show=show,
+                _cands=candidates(runs, show))
 
 
 # --------------------------------------------------------------------------------------
 # 3b. The town's own lists: the officers' directory and the department rosters.
 # --------------------------------------------------------------------------------------
 
-TOWN_TOP = 10
+BOARD = 25  # the board's cut, extended to every run tied with the 25th; ours (see board())
 FORTY = 40   # a round threshold for one conclusion; ours
 KIND_ORDER = ['elected', 'appointed', 'department roster', 'not stated']
+
+
+def candidates(runs, show):
+    """Every ranked (not held-out) run of one source at least as long as that source's
+    `BOARD`th: a superset of what that source can place on the merged board, because the
+    merged board's cut is never shorter than either source's own."""
+    ranked = [r for r in runs if not r['disagree']]
+    cut = ranked[min(BOARD, len(ranked)) - 1]['span']
+    return [show(r) for r in ranked if r['span'] >= cut]
 
 
 def town_rosters(eds):
@@ -561,8 +572,9 @@ def town_rosters(eds):
         # `kind_flag = minority` rows are the 1993-94 side-by-side columns; not counted here.
         kinds = collections.Counter(e['kind'] for e in r['rows'] if e['kind_flag'] != 'minority')
         dept = kinds['department roster']
-        return dict(mainly=('department roster' if dept > sum(kinds.values()) - dept
-                            else 'officers directory'),name=r['name'], first=r['first'], last=r['last'], span=r['span'],
+        mainly = ('department roster' if dept > sum(kinds.values()) - dept
+                  else 'officers directory')
+        return dict(source='town', list=mainly, key=r['key'], mainly=mainly, name=r['name'], first=r['first'], last=r['last'], span=r['span'],
                     seen=r['seen'], held=r['held'], positions=pos, n_positions=n_pos,
                     kinds=[k for k in KIND_ORDER if kinds[k]],
                     first_entry=entry(r['first_entry']), last_entry=entry(r['last_entry']),
@@ -570,19 +582,55 @@ def town_rosters(eds):
                     forms=[f for f, _n in collections.Counter(
                         e['name'] for e in r['rows']).most_common()])
 
-    ranked = [r for r in runs if not r['disagree']]
-    top = [show(r) for r in ranked[:TOWN_TOP]]
-    cut = top[-1]['span']
-    # Runs that would sit in the ten if the joined name were one person, and the print says
-    # it may not be: listed beside the ranking, never inside it.
-    held_out = [show(r) for r in runs if r['disagree'] and r['span'] >= cut]
-    forty = [show(r) for r in ranked if r['span'] >= FORTY]
-    return dict(held=held, top=top, held_out=held_out, entries=len(rows), distinct=len(by),
-                forty=len(forty),
-                forty_out=len([r for r in held_out if r['span'] >= FORTY]),
-                forty_dept=len([t for t in forty if t['mainly'] == 'department roster']),
-                forty_dir=len([t for t in forty if t['mainly'] == 'officers directory']),
+    return dict(held=held, entries=len(rows), distinct=len(by), _runs=runs, _show=show,
+                _cands=candidates(runs, show),
                 kinds=dict(collections.Counter(r['kind'] for r in rows)))
+
+
+def board(d):
+    """ONE TOWN-WIDE RANKING. TJ, 1 November 2026: *"Let's just do one complete town-wide,
+    including the school's ranking"* -- and then *"we do not need a school rank and town rank
+    separately. Combine them."*
+
+    Runs are computed over each source separately, by the one rule, and merged into one list.
+    A run is never joined across the two sources: a name on the town's lists and the same
+    name on a school roster is not shown to be one person (rule 7), and the two sources hold
+    different editions, so a join would also count absences against the wrong set. Where a
+    name has a run in the other source, the row says so beside its own figures.
+
+    THE CUT: the `BOARD`th run, and every run tied with it. Ties share a rank (1, 2, 2, 4).
+    Twenty-five because the longest school run is shorter than the tenth town run; ours."""
+    tw, rs = d['town'], d['rosters']
+    cands = sorted(tw['_cands'] + rs['_cands'],
+                   key=lambda c: (-c['span'], -c['seen'], c['name'], c['source']))
+    cut = cands[BOARD - 1]['span']
+    rows = [dict(c) for c in cands if c['span'] >= cut]
+    other = {'town': rs['_runs'], 'school': tw['_runs']}
+    for i, r in enumerate(rows):
+        r['rank'] = next(j for j, q in enumerate(rows) if q['span'] == r['span']) + 1
+        r['tied'] = sum(1 for q in rows if q['span'] == r['span']) > 1
+        r['elsewhere'] = [dict(first=o['first'], last=o['last'], span=o['span'])
+                          for o in sorted(other[r['source']], key=lambda o: o['first'])
+                          if o['key'] == r['key']]
+    if not any(r['source'] == 'school' for r in rows):
+        raise SystemExit('the merged board holds no school run at a cut of %d; the page says '
+                         'it does. Refusing.' % BOARD)
+    held_out = sorted([src['_show'](r) for src in (tw, rs) for r in src['_runs']
+                       if r['disagree'] and r['span'] >= cut],
+                      key=lambda c: (-c['span'], c['name']))
+    school = [r for r in rows if r['source'] == 'school']
+    forty = [r for r in rows if r['span'] >= FORTY]
+    if any(r['span'] >= FORTY for src in (tw, rs) for r in src['_runs']
+           if not r['disagree'] and r['span'] >= FORTY and
+           not any(q['key'] == r['key'] and q['first'] == r['first'] for q in forty)):
+        raise SystemExit('a 40-year run is missing from the board. Refusing.')
+    return dict(rows=rows, cut=cut, n=len(rows), held_out=held_out, school=len(school),
+                town=len(rows) - len(school), first_school=school[0],
+                forty=len(forty), forty_school=len([r for r in forty if r['source'] == 'school']),
+                forty_out=len([r for r in held_out if r['span'] >= FORTY]),
+                forty_dept=len([r for r in forty if r['list'] == 'department roster']),
+                forty_dir=len([r for r in forty if r['list'] == 'officers directory']),
+                both=len([r for r in rows if r['elsewhere']]))
 
 
 # --------------------------------------------------------------------------------------
@@ -822,6 +870,7 @@ def gather():
              pop=pop, pop_conflicts=conflicts, roads=roads(eds), gov=government(eds),
              manager=manager_timeline(eds), vote=charter_vote(eds), rosters=rosters(eds),
              town=town_rosters(eds))
+    d['board'] = board(d)
     d.update(then_and_now(eds))
     d.update(tie=tie_1959(eds), clerk=clerk_decade(eds), office=office_1959(eds),
              prices=lunch_prices(eds))
@@ -854,20 +903,28 @@ def derived(d):
 # Conclusions.
 # --------------------------------------------------------------------------------------
 
+def ordinal(k):
+    return '%d%s' % (k, 'th' if 10 <= k % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(k % 10, 'th'))
+
+
 def conclusions_for(d, x):
     rs = d['rosters']
-    top = rs['top'][0]
     lv = d['levy']
     mult = lv['v1'] / lv['v0']
     pf, pl = x['pop_first'], x['pop_last']
     tw = d['town']
-    tt = tw['top'][0]
+    bd = d['board']
+    tt = bd['rows'][0]
+    top = bd['first_school']
+    if tt['source'] != 'town':
+        raise SystemExit('the board now opens on a school run; the first conclusion says the '
+                         'town’s lists. Refusing.')
     rows = [
         conclusion(
-            id='the-longest-run-on-the-town-lists',
+            id='the-longest-run-in-town',
             claim='The name %s is printed on the town’s lists from %d to %d'
                   % (tt['name'], tt['first'], tt['last']),
-            so_what='The longest run of any name in the officers’ directories and department rosters.',
+            so_what='The longest run of any name on the town’s lists or the school rosters.',
             figures={'span': figure(tt['span'], C.num(tt['span']), 'years'),
                      'a': figure(tt['first'], str(tt['first'])),
                      'b': figure(tt['last'], str(tt['last'])),
@@ -880,30 +937,34 @@ def conclusions_for(d, x):
                    'person; a span is first to last listing, not an appointment or a retirement.'
                    % (C.num(tt['span']), C.num(tt['seen']), C.num(tt['held']),
                       C.num(tt['n_positions']), tt['positions'][0]['position']),
-            basis='`town-roster-entries.csv`: every name the officers’ directory (elected and '
-                  'appointed) and the department rosters print, matched by the school rule.',
+            basis='`town-roster-entries.csv` (officers’ directory and department rosters) and '
+                  '`staff-roster-entries.csv` (school rosters), each ranked by the one run rule.',
             not_shown='Whether the post was paid. Most directory lines are board and committee '
                       'seats, so a run is service on a list, not years of employment.',
         ),
         conclusion(
-            id='forty-years-on-the-town-lists',
-            claim='%s names run %s years or more on the town’s lists, %d to FY%d'
-                  % (C.num(tw['forty']), C.num(FORTY), tw['held'][0], tw['held'][-1]),
+            id='forty-years-on-the-lists',
+            claim='%s names run %s years or more, %d to FY%d: %s'
+                  % (C.num(bd['forty']), C.num(FORTY), tw['held'][0], tw['held'][-1],
+                     'every one on the town’s lists' if not bd['forty_school'] else
+                     '%s on school rosters' % C.num(bd['forty_school'])),
             so_what='%s are mostly in the officers’ directory; %s mostly on a department’s staff roster.'
-                    % (C.num(tw['forty_dir']).capitalize(), C.num(tw['forty_dept'])),
-            figures={'n': figure(tw['forty'], C.num(tw['forty']), 'names'),
+                    % (C.num(bd['forty_dir']).capitalize(), C.num(bd['forty_dept'])),
+            figures={'n': figure(bd['forty'], C.num(bd['forty']), 'names'),
                      'k': figure(FORTY, C.num(FORTY), 'years'),
                      'a': figure(tw['held'][0], str(tw['held'][0])),
                      'b': figure(tw['held'][-1], str(tw['held'][-1])),
-                     'dir': figure(tw['forty_dir'], C.num(tw['forty_dir'])),
-                     'dept': figure(tw['forty_dept'], C.num(tw['forty_dept'])),
-                     'out': figure(tw['forty_out'], C.num(tw['forty_out']), 'runs')},
+                     'sch': figure(bd['forty_school'], C.num(bd['forty_school']), 'runs'),
+                     'dir': figure(bd['forty_dir'], C.num(bd['forty_dir'])),
+                     'dept': figure(bd['forty_dept'], C.num(bd['forty_dept'])),
+                     'out': figure(bd['forty_out'], C.num(bd['forty_out']), 'runs')},
             figure='n', kind='measured', bearing='sizes',
             detail='Counted from printed names in lists, not proven people. %s more runs that '
                    'long are left out because the print tells the joined names apart (a Jr. '
-                   'and a Sr., or two middle initials).' % C.num(tw['forty_out']),
-            basis='`town-roster-entries.csv`; “mostly” is whichever kind of list holds more '
-                  'of the run’s entries. The %s-year line is ours.' % C.num(FORTY),
+                   'and a Sr., or two middle initials). School runs on the board: %s at %s years or more.'
+                   % (C.num(bd['forty_out']), C.num(bd['forty_school']), C.num(FORTY)),
+            basis='Both roster files; “mostly” is whichever kind of list holds more of the '
+                  'run’s entries. The %s-year line is ours.' % C.num(FORTY),
             not_shown='Hours, pay or continuous service. A department roster is a name in a '
                       'department’s report, and a directory line is a seat.',
         ),
@@ -933,20 +994,29 @@ def conclusions_for(d, x):
         ),
         conclusion(
             id='the-longest-run-on-the-school-rosters',
-            claim='The name %s is printed on school rosters from %d to %d'
-                  % (top['name'], top['first'], top['last']),
-            so_what='The longest unbroken run of any name across every school roster we hold.',
+            claim='%s, %d to %d, the longest school run, %s %s of %s'
+                  % (top['name'], top['first'], top['last'],
+                     'ties for' if top['tied'] else 'is', ordinal(top['rank']), C.num(bd['n'])),
+            so_what='%s of the board’s %s runs are on school rosters; the rest are on the town’s lists.'
+                    % (C.num(bd['school']).capitalize(), C.num(bd['n'])),
             figures={'span': figure(top['span'], C.num(top['span']), 'years'),
                      'a': figure(top['first'], str(top['first'])),
                      'b': figure(top['last'], str(top['last'])),
                      'seen': figure(top['seen'], C.num(top['seen'])),
-                     'held': figure(top['held'], C.num(top['held']))},
+                     'held': figure(top['held'], C.num(top['held'])),
+                     'rank': figure(top['rank'], ordinal(top['rank']), 'place'),
+                     'n': figure(bd['n'], C.num(bd['n']), 'runs'),
+                     'sch': figure(bd['school'], C.num(bd['school']), 'runs'),
+                     'es': figure(len(rs['held']), C.num(len(rs['held'])), 'editions'),
+                     'et': figure(len(tw['held']), C.num(len(tw['held'])), 'editions')},
             figure='span', kind='measured', bearing='sizes',
-            detail='%s years, printed in %s of the %s roster editions we hold for them. '
-                   'A span is first to last appearance, not a hire or a retirement date.'
-                   % (C.num(top['span']), C.num(top['seen']), C.num(top['held'])),
+            detail='%s years, printed in %s of the %s roster editions we hold for them. The '
+                   'school rosters are printed in %s of the editions we hold, the town’s lists '
+                   'in %s. A span is first to last appearance, not a hire or a retirement date.'
+                   % (C.num(top['span']), C.num(top['seen']), C.num(top['held']),
+                      C.num(len(rs['held'])), C.num(len(tw['held']))),
             basis='`staff-roster-entries.csv`, names matched with middle initials and '
-                  'titles dropped.',
+                  'titles dropped, ranked with the town’s lists by the same rule.',
             not_shown='Years outside the reports we hold, and whether a gap year was '
                       'leave or a roster that left the name out.',
         ),
@@ -1128,17 +1198,17 @@ def render(d, x):
          C.num(len(x['cliffs']))))
 
     a('## The short version\n\n')
-    top = rs['top'][0]
     tw = d['town']
-    tt = tw['top'][0]
-    a('- **The longest run on the town’s lists** is %s, %d to %d: %s years in the officers’ '
-      'directories and department rosters, by the same rule as the school rosters.\n'
-      % (tt['name'], tt['first'], tt['last'], C.num(tt['span'])))
+    bd = d['board']
+    tt = bd['rows'][0]
+    top = bd['first_school']
+    a('- **The longest run of any name in town** is %s, %d to %d: %s years on the town’s '
+      'lists. The longest school run, %s, %s %s of the %s on one town-wide board.\n'
+      % (tt['name'], tt['first'], tt['last'], C.num(tt['span']), top['name'],
+         'ties for' if top['tied'] else 'is', ordinal(top['rank']), C.num(bd['n'])))
     a('- **The tax rate is not the tax.** %s per $1,000 in the %d report, %s in FY2025, and '
       'each big fall sits beside a report recording a revaluation.\n'
       % (rate(x['peak']['rate']), x['peak']['edition'], rate(x['last']['rate'])))
-    a('- **The longest run on the school rosters** is %s, %d to %d.\n'
-      % (top['name'], top['first'], top['last']))
     a('- **A town manager took %s years**, from the first study recommending one (%d) to '
       'the charter that created the post (%d).\n'
       % (C.num(x['years_to_charter']), d['manager'][0]['edition'], d['manager'][2]['edition']))
@@ -1147,58 +1217,66 @@ def render(d, x):
          C.num(x['pop_last']['value']), x['pop_last']['year']))
 
     a('## Longest service to Lunenburg\n\n')
-    a('Two rankings, one rule. A run is the years between the first and last edition a name '
-      'is printed in, broken when the name is missing from more than %s consecutive editions '
-      'we hold; that threshold is ours. Each counts NAMES printed in lists, not people proven '
-      'to be one person.\n\n' % C.num(MAX_ABSENT))
-    if rs['top'][0]['span'] < tw['top'][-1]['span']:
-        a('They are kept as two tables: the longest school run, %s years, is shorter than the '
-          '%s on the town’s lists, %s years, so a combined top %s would hold no school name. '
-          'The town’s lists are printed in %s of the editions we hold, the school rosters in '
-          '%s.\n\n' % (C.num(rs['top'][0]['span']), 'last of the %s' % C.num(len(tw['top'])),
-                        C.num(tw['top'][-1]['span']), C.num(len(tw['top'])),
-                        C.num(len(tw['held'])), C.num(len(rs['held']))))
-    a('### On the town’s lists\n\n')
-    a('Every name the officers’ directory at the front of each report prints, elected and '
-      'appointed, and the staff rosters printed inside a department’s report, mostly fire and '
-      'police: %s entries, %s distinct names after matching. Most directory lines are board '
-      'and committee seats, so a run is years on a list, not years of employment.\n\n'
-      % (C.num(tw['entries']), C.num(tw['distinct'])))
-    a('| # | name | first | last | span | printed in | mostly | positions, most printed first |\n'
-      '|---:|---|---|---|---:|---:|---|---|\n')
-    for i, r in enumerate(tw['top'], 1):
+    a('One ranking, town and schools together. A run is the years between the first and last '
+      'edition a name is printed in, broken when the name is missing from more than %s '
+      'consecutive editions of that list we hold; that threshold is ours. It counts NAMES '
+      'printed in lists, not people proven to be one person.\n\n' % C.num(MAX_ABSENT))
+    a('The town’s lists are every name the officers’ directory at the front of each report '
+      'prints, elected and appointed, and the staff rosters inside a department’s report, '
+      'mostly fire and police: %s entries in %s editions. Most directory lines are board and '
+      'committee seats, so a run there is years on a list, not years of employment. The school '
+      'rosters are the per-school staff lists: %s entries in %s editions.\n\n'
+      % (C.num(tw['entries']), C.num(len(tw['held'])), C.num(rs['entries']),
+         C.num(len(rs['held']))))
+    a('The board is the longest %s runs and every run tied with the %sth, so %s rows, down to '
+      '%s years. Not ten, because the longest school run, %s years, is shorter than the tenth '
+      'run on the town’s lists, %s years: a top ten would hold no school name. Tied runs share '
+      'a rank.\n\n'
+      % (C.num(BOARD), C.num(BOARD), C.num(bd['n']), C.num(bd['cut']),
+         C.num(rs['_cands'][0]['span']), C.num(tw['_cands'][9]['span'])))
+    a('| # | name | where | first | last | span | printed in | positions, most printed first |\n'
+      '|---:|---|---|---|---|---:|---:|---|\n')
+    for r in bd['rows']:
         more = r['n_positions'] - len(r['positions'])
-        a('| %d | %s | %s | %s | %s years | %s of %s | %s | %s%s |\n'
-          % (i, r['name'], link(r['first_entry']), link(r['last_entry']), C.num(r['span']),
-             C.num(r['seen']), C.num(r['held']), r['mainly'].replace('officers', 'officers’'),
+        where = {'officers directory': 'Town, officers’ directory',
+                 'department roster': 'Town, department roster',
+                 'school roster': 'School, roster'}[r['list']]
+        also = ''
+        if r['elsewhere']:
+            also = ' Also printed on the %s, %s; not joined.' % (
+                'school rosters' if r['source'] == 'town' else 'town’s lists',
+                ', '.join('%d' % o['first'] if o['first'] == o['last'] else
+                          '%d to %d' % (o['first'], o['last']) for o in r['elsewhere']))
+        a('| %s%d | %s | %s | %s | %s | %s years | %s of %s | %s%s.%s |\n'
+          % ('=' if r['tied'] else '', r['rank'], r['name'], where, link(r['first_entry']),
+             link(r['last_entry']), C.num(r['span']), C.num(r['seen']), C.num(r['held']),
              '; '.join('%s (%s)' % (p['position'], C.num(p['years'])) for p in r['positions']),
-             ' and %s more' % C.num(more) if more > 0 else ''))
+             ' and %s more' % C.num(more) if more > 0 else '', also))
     a('\nPositions are as printed, grouped regardless of capitals and a printed term '
-      'length; the number is how many editions print the name under it. “Mostly” is whichever '
-      'kind of list holds more of the run’s entries: the officers’ directory or a department '
-      'roster. `year` is the calendar year to 2010 and the fiscal year from FY2011, as the '
-      'reports themselves are.\n\n')
-    if tw['held_out']:
+      'length; the number is how many editions print the name under it. A town row is '
+      'labelled by whichever kind of list holds more of the run’s entries: the officers’ '
+      'directory or a department roster. On the town’s lists `year` is the calendar year to '
+      '2010 and the fiscal year from FY2011, as the reports themselves are; on the school '
+      'rosters it is the fiscal year.\n\n')
+    a('**A name on both kinds of list is two rows, never one run.** Runs are counted over each '
+      'kind of list separately and only then ranked together. The same name printed on a school '
+      'roster and in the town’s directory is not shown to be one person, and the two are printed '
+      'in different editions, so joining them would count absences against the wrong set. Where a '
+      'name on the board has a run on the other kind of list, its row says so. %s rows do.\n\n'
+      % C.num(bd['both']).capitalize())
+    if bd['held_out']:
         a('**Left out of the ranking, because the print tells the names apart.** ')
-        a(' '.join('%s, %d to %d, would run %s years, but is %s (%s).'
-                   % (r['name'], r['first'], r['last'], C.num(r['span']), r['disagree'],
+        a(' '.join('%s (%s), %d to %d, would run %s years, but is %s (%s).'
+                   % (r['name'], 'town’s lists' if r['source'] == 'town' else 'school rosters',
+                      r['first'], r['last'], C.num(r['span']), r['disagree'],
                       ', '.join('“%s”' % f for f in r['forms'][:4]))
-                   for r in tw['held_out']))
+                   for r in bd['held_out']))
         a(' Matching drops middle initials and Jr./Sr. so one person printed two ways is one '
           'run; where the print itself carries both a Jr. and a Sr., or two middle initials, '
           'the joined run may be two people and is not ranked.\n\n')
-    a('### On the school rosters\n\n')
-    a('The per-school staff rosters, by the same rule.\n\n')
-    a('| name | first | last | span | printed in | first entry | last entry |\n'
-      '|---|---|---|---:|---:|---|---|\n')
-    for r in rs['top']:
-        a('| %s | %d | %d | %s years | %s of %s | %s, “%s” | %s, “%s” |\n'
-          % (r['name'], r['first'], r['last'], C.num(r['span']), C.num(r['seen']),
-             C.num(r['held']), link(r['first_entry']), r['first_entry']['role'] or r['first_entry']['group'],
-             link(r['last_entry']), r['last_entry']['role'] or r['last_entry']['group']))
     sh = rs['shared']
     if sh:
-        a('\n**One name, two careers.** Matched on name alone, %s would top that table at '
+        a('\n**One name, two careers.** Matched on name alone, %s would be the longest school run at '
           '%s years. The rosters print the name from %d (%s, “%s”) to %d (%s, “%s”); it '
           'is then absent from %s rosters in a row, and returns in %d (%s) under “%s”, '
           'last printed in %d. Whether that is one person this archive cannot say, which '
@@ -1409,10 +1487,7 @@ def sources(d):
     if d['roads']:
         add(d['roads'][0])
         add(d['roads'][-1])
-    for r in d['rosters']['top']:
-        add(r['first_entry'])
-        add(r['last_entry'])
-    for r in d['town']['top'] + d['town']['held_out']:
+    for r in d['board']['rows'] + d['board']['held_out'] + roster_runs(d):
         add(r['first_entry'])
         add(r['last_entry'])
     out = []
@@ -1430,9 +1505,21 @@ def sources(d):
 # The payload.
 # --------------------------------------------------------------------------------------
 
+def roster_runs(d):
+    """The six longest ranked school runs, kept in the payload as `roster_runs` for what
+    reads it by index (the announcement post in social/posts/2026-10-30-historical-report).
+    The page draws no separate school board; these are the school rows of the one board,
+    plus any below its cut."""
+    return d['rosters']['_cands'][:6]
+
+
+def bare(r):
+    return {k: v for k, v in r.items() if not k.startswith('_') and k != 'key'}
+
+
 def payload(d, x):
     rs = d['rosters']
-    top = rs['top'][0]
+    bd = d['board']
     lv = d['levy']
     census_ok = charted_population(d)
     return dict(
@@ -1449,10 +1536,10 @@ def payload(d, x):
         stats=[
             dict(value='%s editions' % C.num(len(d['eds'])),
                  label='annual town reports read, %d to FY2025' % min(d['eds'])),
-            dict(value='%s years' % C.num(d['town']['top'][0]['span']),
-                 label='the longest run of one name on the town’s officers and staff lists'),
-            dict(value='%s years' % C.num(top['span']),
-                 label='the longest run of one name on the school rosters'),
+            dict(value='%s years' % C.num(bd['rows'][0]['span']),
+                 label='the longest run of one name on any town or school list'),
+            dict(value='%s of %s' % (C.num(bd['school']), C.num(bd['n'])),
+                 label='runs on the town-wide board that are school rosters'),
             dict(value=rate(x['peak']['rate']), tone='var(--series-cost)',
                  label='the highest tax rate printed, per $1,000, in the %d report'
                        % x['peak']['edition']),
@@ -1473,10 +1560,17 @@ def payload(d, x):
                              edition=r['edition'], page=r['page'], href=r['href'])
                         for r in d['pop']],
         roster_names=[dict(year=y, names=n) for y, n in rs['names'].items()],
-        town_runs=d['town']['top'], town_held_out=d['town']['held_out'],
+        board=dict(rows=[bare(r) for r in bd['rows']],
+                   held_out=[bare(r) for r in bd['held_out']],
+                   cut=bd['cut'], size=BOARD, n=bd['n'], school=bd['school'], town=bd['town'],
+                   both=bd['both'],
+                   span=[min(d['town']['held'][0], rs['held'][0]),
+                         max(d['town']['held'][-1], rs['held'][-1])]),
         town_entries=d['town']['entries'], town_distinct=d['town']['distinct'],
         town_held=[d['town']['held'][0], d['town']['held'][-1], len(d['town']['held'])],
-        roster_runs=rs['top'], roster_shared=rs['shared'], first_aide=rs['para'],
+        school_entries=rs['entries'], school_held=len(rs['held']),
+        roster_runs=[bare(r) for r in roster_runs(d)], roster_shared=rs['shared'],
+        first_aide=rs['para'],
         roster_rule='A run breaks when a name is missing from more than %d consecutive '
                     'rosters held.' % MAX_ABSENT,
         town_manager=[dict(edition=s['edition'], page=s['page'], href=s['href'], label=s['label'],
