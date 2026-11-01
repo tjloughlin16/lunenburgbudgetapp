@@ -139,7 +139,7 @@ type Hit = {
   /** 2 = the exact words, 1 = the words together in another form, 0 = anywhere (api/search.js). */
   together?: number
 }
-type Corpus = 'report' | 'post' | 'page' | 'job' | 'person' | 'recorded' | 'annual' | 'source' | 'minutes' | 'transcript'
+type Corpus = 'report' | 'fund' | 'post' | 'page' | 'job' | 'person' | 'recorded' | 'annual' | 'source' | 'minutes' | 'transcript'
 type Count = { hits: number; capped: boolean; holds: number }
 type Payload = {
   q: string
@@ -159,7 +159,7 @@ type Vocab = Record<string, { try: string[]; note: string }>
 /** DOCUMENTS AND MINUTES FIRST, RECORDINGS LAST. The order this page renders in, and the
  *  reason it changed: `post, page, recorded, source, minutes, transcript` put the
  *  archive's own documents FOURTH, under three sections of things we wrote. */
-const ORDER: Corpus[] = ['report', 'job', 'person', 'annual', 'source', 'minutes', 'page', 'post', 'recorded', 'transcript']
+const ORDER: Corpus[] = ['report', 'fund', 'job', 'person', 'annual', 'source', 'minutes', 'page', 'post', 'recorded', 'transcript']
 /* REPORTS GO FIRST OF ALL. TJ, 11 October 2026: *"Does search not have a REPORTS
  * category? I'm looking for a particular report but it's buried under all the minutes and
  * documents."* They were `page` rows, fifth, ranked against every board and meeting page.
@@ -193,6 +193,12 @@ const ORDER: Corpus[] = ['report', 'job', 'person', 'annual', 'source', 'minutes
 const GROUPS: { id: string; label: string; short: string; hint: string; corpora: Corpus[] }[] = [
   { id: 'reports', label: 'Reports', short: 'Reports', corpora: ['report'],
     hint: 'The analyses this project has written, school and town — every one listed on /reports.' },
+  // THE SCHOOL FUNDS, ON THEIR OWN. TJ, 1 November 2026: *"on the search page, i need a way
+  // to focus on the FUND pages specifically."* One page per fund at /school-funds/<slug>, split
+  // out of the site's pages by the API (functions/api/search.js, SPLIT_FUND) by that address.
+  // `?type=funds` with no word is a link to search only them.
+  { id: 'funds', label: 'School funds', short: 'Funds', corpora: ['fund'],
+    hint: 'One page for each fund other than the school budget that spent money on the schools: grants, revolving funds, lunch, gifts, circuit breaker. What each spent, where the money went, year by year.' },
   // THE ANNUAL TOWN REPORTS, ON THEIR OWN. TJ, 28 October 2026: *"They contain so much
   // information that people want to search them only to see what's in them."* Split out of
   // Documents by the API (functions/api/search.js, SPLIT_FROM_SOURCE), so the chip's count
@@ -211,7 +217,7 @@ const GROUPS: { id: string; label: string; short: string; hint: string; corpora:
   { id: 'recordings', label: 'Meeting recordings', short: 'Recordings', corpora: ['transcript'],
     hint: 'Machine captions of the videos, opened at the moment the words were said. A finding aid, never the record.' },
   { id: 'site', label: 'On this site', short: 'This site', corpora: ['page', 'post'],
-    hint: 'The board and meeting pages, the other pages here, and the posts written by this project. Reports have their own chip.' },
+    hint: 'The board and meeting pages, the other pages here, and the posts written by this project. Reports and school funds have their own chips.' },
   { id: 'jobs', label: 'Job postings', short: 'Jobs', corpora: ['job'],
     hint: 'Openings at the town (its own job board) and the school district (SchoolSpring), checked daily since October 2026. Ones no longer listed stay here and say so. All of them: /jobs.' },
   { id: 'people', label: 'People', short: 'People', corpora: ['person'],
@@ -271,6 +277,7 @@ const groupOf = (c: Corpus) => GROUPS.find(g => g.corpora.includes(c))!
 
 const NAME: Record<Corpus, string> = {
   report: 'Reports',
+  fund: 'School funds',
   post: 'Blog posts',
   page: 'Pages on this site',
   job: 'Job postings — the town and the schools',
@@ -283,6 +290,7 @@ const NAME: Record<Corpus, string> = {
 }
 const UNIT: Record<Corpus, [string, string]> = {
   report: ['report', 'reports'],
+  fund: ['fund', 'funds'],
   post: ['post', 'posts'],
   page: ['page', 'pages'],
   job: ['posting', 'postings'],
@@ -309,8 +317,9 @@ const UNIT: Record<Corpus, [string, string]> = {
 const WHAT_ALWAYS: Corpus[] = ['recorded', 'transcript']
 const WHAT: Record<Corpus, string> = {
   report: 'The analyses this project has written, each listed on /reports.',
+  fund: 'A page for each fund other than the school budget that spent money on the schools, from the town’s books, year by year.',
   post: 'What this project has published, one finding at a time.',
-  page: 'Board, meeting and reference pages here. Reports are above.',
+  page: 'Board, meeting and reference pages here. Reports and school funds are above.',
   job: 'The town’s and the school district’s postings. An open one links to the employer’s page, to apply; one no longer listed links to its history on /jobs. Leaving the listing is not the same as being filled.',
   person: 'A name as the org charts print it, with every role and year. The same name in two decades may be two people.',
   recorded: 'Our notes on recorded meetings, written from the captions: votes, transfers, topics. Each links to the video by the second.',
@@ -326,6 +335,7 @@ function badge(h: Hit): string {
   switch (h.corpus) {
     case 'source': return 'Document'
     case 'annual': return 'Annual report'
+    case 'fund': return 'School fund'
     case 'minutes': return h.kind === 'agenda' ? 'Agenda' : 'Minutes'
     case 'transcript': return 'Machine transcript'
     case 'recorded': return 'Our notes from the video'
@@ -850,7 +860,7 @@ export default function Search() {
                   <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>{WHAT[c]}</p>
                 )}
                 <ol className="mt-3 space-y-3">
-                  {hits.map(h => <Result key={h.doc_key} h={h} />)}
+                  {hits.map(h => <Result key={h.doc_key} h={h} section={c} />)}
                 </ol>
                 {count.hits > hits.length && (
                   <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>
@@ -992,7 +1002,11 @@ function Meetings({ data, kinds, sort }: { data: Payload; kinds: Corpus[]; sort:
   )
 }
 
-function Result({ h }: { h: Hit }) {
+/** `section` is the kind the hit is listed under. The API returns a split kind's rows with
+ *  the corpus they are stored in -- a fund page arrives as `page` -- so the card reads its
+ *  badge and its group off the section it is drawn in. */
+function Result({ h: raw, section }: { h: Hit; section?: Corpus }) {
+  const h = section && section !== raw.corpus ? { ...raw, corpus: section } : raw
   const isT = h.corpus === 'transcript'
   // A town document opens its MEETING; the bare text stays one click away.
   const meeting = h.corpus === 'minutes' && h.board_slug && /^\d{4}-\d{2}-\d{2}$/.test(h.date || '')

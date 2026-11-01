@@ -17,7 +17,8 @@
  *               hundred*, *$1,500* and *$50* alike; a figure read off one is never the
  *               record.
  *   source      a page of a document in the archive -- a budget, an annual report.
- *   page        a page of this site.
+ *   page        a page of this site. Two kinds are split out of it at query time:
+ *               `report` (by address list) and `fund` (by the /school-funds/ prefix).
  *   recorded    OUR minutes of a recording, written from the captions. Cited to the
  *               page, which cites the video by the second.
  *   post        a published blog post. Drafts are not on the site and are not here.
@@ -66,7 +67,7 @@
  */
 
 const SITE = 'https://lunenburgbudgetproject.org'
-const CORPORA = ['report', 'post', 'page', 'job', 'person', 'recorded', 'annual', 'source', 'minutes', 'transcript']
+const CORPORA = ['report', 'fund', 'post', 'page', 'job', 'person', 'recorded', 'annual', 'source', 'minutes', 'transcript']
 /** `annual` IS NOT IN THE INDEX EITHER. It is the `source` rows filed under the annual town
  *  reports' folder, split out at query time the way `report` is split from `page`. TJ, 28
  *  October 2026: *"They contain so much information that people want to search them only to
@@ -82,6 +83,15 @@ const ANNUAL_FOLDER = 'town-annual-reports'
  *  board and meeting pages and drawn fifth. Splitting here needs no index rebuild and no
  *  D1 writes; `page` then means every OTHER page on the site. */
 const SPLIT_FROM_PAGE = 'report'
+/** `fund` IS NOT IN THE INDEX EITHER. It is the `page` rows at /school-funds/<slug> -- one per
+ *  fund other than the school budget that spent money on the schools (pages/FyItem.tsx),
+ *  indexed from the page's own payload by build_search_index.py. TJ, 1 November 2026: *"on the
+ *  search page, i need a way to focus on the FUND pages specifically."* Split by address
+ *  prefix, so a fund added to the breakdown joins it with no list to keep. `page` then means
+ *  every page that is neither a report nor a fund. */
+const SPLIT_FUND = 'fund'
+const FUND_PREFIX = SITE + '/school-funds/'
+const isFund = u => typeof u === 'string' && u.startsWith(FUND_PREFIX)
 let reportUrls = null
 async function loadReportUrls(env, request) {
   if (reportUrls) return reportUrls
@@ -303,6 +313,9 @@ export async function onRequest(context) {
   const inReports = new Set(reports)
   const holds = Object.fromEntries(CORPORA.map(c => [c, Number(meta['rows:' + c] || 0)]))
   holds[SPLIT_FROM_PAGE] = reports.length   // reports, not rows: a long one is indexed in parts
+  // The push counts the fund pages in the same scan that counts the corpora; `page` is the rest.
+  holds[SPLIT_FUND] = Number(meta['rows:' + SPLIT_FUND] || 0)
+  holds.page = Math.max(0, holds.page - holds[SPLIT_FUND])
   // The push writes the annual reports' page count beside the corpus counts; `source` is the rest.
   holds[SPLIT_FROM_SOURCE] = Number(meta['rows:annual'] || 0)
   holds.source = Math.max(0, holds.source - holds[SPLIT_FROM_SOURCE])
@@ -312,7 +325,8 @@ export async function onRequest(context) {
     note: 'minutes = documents the town published; transcript = our machine captions of '
       + 'recordings, a finding aid cited to the video at a timestamp; recorded = our minutes '
       + 'of a recording; source = pages of '
-      + 'archive documents; page = this site; post = published posts; job = job postings, the '
+      + 'archive documents; report = a report or topic page; fund = a page for one fund other than '
+      + 'the school budget that spent money on the schools (/school-funds/); page = the rest of this site; post = published posts; job = job postings, the '
       + 'town\'s (its own job board) and the school district\'s (SchoolSpring); person = a name on the org '
       + 'charts, with every role and year it appears under (the same name is not proven to '
       + 'be one person).',
@@ -356,7 +370,8 @@ export async function onRequest(context) {
        FROM affinity WHERE affinity MATCH ?1 ORDER BY bm25(affinity) LIMIT 8`).bind(expr).all()
     rowsRead += (a.meta && a.meta.rows_read) || 0
     for (const row of a.results || []) {
-      const c = row.corpus === 'page' && inReports.has(row.cite_url) ? SPLIT_FROM_PAGE
+      const c = row.corpus === 'page' && isFund(row.cite_url) ? SPLIT_FUND
+        : row.corpus === 'page' && inReports.has(row.cite_url) ? SPLIT_FROM_PAGE
         : row.corpus === 'source' && (row.doc_key || '').startsWith(ANNUAL_FOLDER + '/') ? SPLIT_FROM_SOURCE : row.corpus
       ;(pinned[c] ||= []).push(row)
     }
@@ -386,16 +401,18 @@ export async function onRequest(context) {
       // 'newest first' so why would 7-29 EVER show up before 10-7?"
       const order = byDate
         ? "ORDER BY (date GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]') DESC, date DESC, together DESC, rank"
-        : 'ORDER BY together DESC, ' + (c === SPLIT_FROM_PAGE && titleTerms.length
+        : 'ORDER BY together DESC, ' + ((c === SPLIT_FROM_PAGE || c === SPLIT_FUND) && titleTerms.length
           // A REPORT TITLED WITH YOUR WORDS COMES FIRST. "free cash" ranked /this-week and
           // /meeting-minutes -- long pages that mention it in passing -- above the five
           // pages named for it. Titles hit by more of the words first, then bm25.
           ? `(${titleTerms.map(w => `(instr(lower(title), '${w}') > 0)`).join(' + ')}) DESC, rank`
           : 'rank')
       // `report` and `page` both read the page rows; the address list decides which side.
-      const real = c === SPLIT_FROM_PAGE ? 'page' : c === SPLIT_FROM_SOURCE ? 'source' : c
+      const real = c === SPLIT_FROM_PAGE || c === SPLIT_FUND ? 'page' : c === SPLIT_FROM_SOURCE ? 'source' : c
+      // The prefix is a constant of ours with no quote in it, so it is written as a literal.
       const split = c === SPLIT_FROM_PAGE ? ` AND cite_url IN (${sqlList(reports)})`
-        : c === 'page' ? ` AND cite_url NOT IN (${sqlList(reports)})`
+        : c === SPLIT_FUND ? ` AND cite_url LIKE '${FUND_PREFIX}%'`
+        : c === 'page' ? ` AND cite_url NOT IN (${sqlList(reports)}) AND cite_url NOT LIKE '${FUND_PREFIX}%'`
         : c === SPLIT_FROM_SOURCE ? ` AND board_slug = '${ANNUAL_FOLDER}'`
         : c === 'source' ? ` AND board_slug != '${ANNUAL_FOLDER}'` : ''
       const sql = `

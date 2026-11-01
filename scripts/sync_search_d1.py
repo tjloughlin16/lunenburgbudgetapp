@@ -147,10 +147,24 @@ def remote_counts():
     # The annual reports' share of `source` rides in the SAME scan: /api/search splits them out
     # as their own kind (`annual`) and needs the denominator, and a second GROUP BY would read
     # every row again.
-    rows, _ = command("SELECT corpus, COUNT(*) n, SUM(board_slug = 'town-annual-reports') a "
-                      'FROM search GROUP BY corpus')
+    # The school-fund pages' share of `page` rides in it too (`fund`, split the same way).
+    rows, _ = command(SPLIT_COUNTS)
+    return split_counts(rows)
+
+
+# The kinds /api/search splits out of a corpus at query time, counted in the one scan that
+# counts the corpora -- so the denominators cost no read of their own, on either side.
+FUND_PREFIX = 'https://lunenburgbudgetproject.org/school-funds/'
+SPLIT_COUNTS = ("SELECT corpus, COUNT(*) n, SUM(board_slug = 'town-annual-reports') a, "
+                "SUM(cite_url LIKE '%s%%') f FROM search GROUP BY corpus" % FUND_PREFIX)
+SPLITS = ('annual', 'fund')
+
+
+def split_counts(rows):
+    rows = [dict(r) for r in rows]
     out = {r['corpus']: r['n'] for r in rows}
     out['annual'] = sum(r['a'] or 0 for r in rows if r['corpus'] == 'source')
+    out['fund'] = sum(r['f'] or 0 for r in rows if r['corpus'] == 'page')
     return out
 
 
@@ -331,7 +345,7 @@ def record_counts(written):
     import datetime as dt
     rc = remote_counts()
     with tempfile.NamedTemporaryFile('w', suffix='.sql', delete=False) as fh:
-        for c in list(B.CORPORA) + ['annual']:
+        for c in list(B.CORPORA) + list(SPLITS):
             fh.write("INSERT OR REPLACE INTO build_meta VALUES ('rows:%s', %s);\n" % (c, q(str(rc.get(c, 0)))))
         built = sqlite3.connect(B.DB, timeout=300).execute("SELECT v FROM build_meta WHERE k='built'").fetchone()
         fh.write("INSERT OR REPLACE INTO build_meta VALUES ('built', %s);\n" % q(built[0] if built else ''))
@@ -347,8 +361,7 @@ def record_counts(written):
 def check():
     local = sqlite3.connect(B.DB, timeout=300)
     local.row_factory = sqlite3.Row
-    lc = {r['corpus']: r['n'] for r in
-          local.execute('SELECT corpus, COUNT(*) n FROM search GROUP BY corpus')}
+    lc = split_counts(local.execute(SPLIT_COUNTS))
     rc = remote_counts()
     bad = 0
     # A row present twice is the failure the chunked upload makes possible, and a count

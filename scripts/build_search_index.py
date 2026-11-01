@@ -333,6 +333,10 @@ def page_files():
                 route = ''
             if route.split('/')[0] in PAGE_SKIP or route.startswith('share/'):
                 continue
+            # Read from their payloads by fy_item_rows(); a static twin, if the prerender
+            # ever makes one, must not index the same address twice.
+            if FY_ITEM_ROUTE.match(route):
+                continue
             out.append({'file': path, 'file_key': rel(path), 'corpus': 'page',
                         'route': route})
     return out
@@ -365,6 +369,144 @@ def page_rows(entry):
         'start_s': None, 'seg_starts': None,
         'chars': len(body),
     }, body)]
+
+
+# ------------------------------------------- one school fund, line or group, at its address
+#
+# TJ, 1 November 2026: *"on the search page, i need a way to focus on the FUND pages
+# specifically."* The pages /school-funds/<slug>, /school-lines/<slug> and
+# /school-groups/<slug> (pages/FyItem.tsx) are client-rendered only -- no static twin, by
+# design -- so page_files(), which walks the prerendered build, never saw one of them: 0 of
+# 45 funds and 0 of 294 lines were findable. They are indexed here from the SAME payloads the
+# page renders, as a deterministic text rendering of what the page shows. Prerendering 340
+# more routes would have done it too, at the cost of a slower build and a page corpus that
+# vanishes whenever dist is absent; the payloads are in git and always present.
+#
+# They are `page` rows with the page's own address. /api/search splits the funds out as
+# their own kind (`fund`, by the /school-funds/ prefix) the way it splits `report`; lines and
+# the group stay ordinary pages.
+#
+# Not indexed: the payee and posting tables. They print individual payees -- coaches,
+# refunds -- beside vendors, and nothing in the payload tells the two apart; a search box
+# that finds a person by name is a different exposure from a page that lists them. What is
+# indexed is the fund's name, its numbers and printed titles, its kind, its years and
+# totals, what it spent by its own account, where the money went, and its money in and out.
+FY_DIR = os.path.join(ROOT, 'fy28', 'public', 'data', 'fy-breakdown')
+FY_ITEM_ROUTE = re.compile(r'^school-(funds|lines|groups)/')
+FY_KINDS = {'fund': 'school-funds', 'line': 'school-lines', 'group': 'school-groups'}
+FY_READER = '1'
+
+
+def fy_item_files():
+    ix = os.path.join(FY_DIR, 'index.json')
+    if not os.path.exists(ix):
+        return []
+    # The page's words (kickers, standfirsts) come from index.json's `text`; a change there
+    # changes every row, so it joins every item's fingerprint.
+    import hashlib
+    text = json.load(open(ix, encoding='utf-8')).get('text', {})
+    stamp = hashlib.sha256(json.dumps(text, sort_keys=True).encode()).hexdigest()[:12]
+    out = []
+    for kind, base in FY_KINDS.items():
+        for f in sorted(glob.glob(os.path.join(FY_DIR, kind, '*.json'))):
+            out.append({'file': f, 'file_key': rel(f), 'corpus': 'page', 'reader': 'fy_item',
+                        'fy_kind': kind, 'route': '%s/%s' % (base, _stem(f)),
+                        'fingerprint': 'fy=%s:%s' % (FY_READER, stamp)})
+    return out
+
+
+def _fy_text():
+    return json.load(open(os.path.join(FY_DIR, 'index.json'), encoding='utf-8')).get('text', {})
+
+
+def _fund_body(d, t):
+    out = ['%s. %s · %s.' % (d['name'], t.get('k_fund', 'Fund'), d.get('cat', '')),
+           t.get('fund_what', '')]
+    years = sorted(d.get('years', {}))
+    if years:
+        out.append('Years: %s.' % ', '.join(years))
+    seen = {}
+    for fy in years:
+        for a in d['years'][fy].get('awards', []):
+            r = a['row']
+            seen.setdefault(r['key'], r)
+    if seen:
+        out.append('Fund numbers: %s.' % '; '.join(
+            '%s%s%s' % (k, ' (%s)' % r['printed'] if r.get('printed') else '',
+                        ', ' + r['program'] if r.get('program') else '')
+            for k, r in seen.items()))
+    for fy in years:
+        y = d['years'][fy]
+        for a in y.get('awards', []):
+            r, b = a['row'], a.get('body', {})
+            out.append('%s · %s: spent %s.' % (fy, r['name'], r['t'].get('total', '')))
+            if b.get('a'):
+                out.append('By its own account: %s.' % '; '.join('%s %s' % (x[0], x[1]) for x in b['a']))
+            if b.get('w'):
+                out.append('Where it went: %s.' % '; '.join(
+                    ('%s %s %s' % (x[0], x[1], x[2])).strip() for x in b['w']))
+    for h in d.get('flows') or []:
+        tt = h.get('t', {})
+        out.append('%s: %s %s; %s %s; %s %s.' % (
+            h['fy'], t.get('fl_received', 'Received'), tt.get('received', ''),
+            t.get('fl_spent', 'Spent'), tt.get('spent', ''),
+            t.get('fl_balance', 'Held at 30 June'), tt.get('balance') or t.get('fl_unknown', 'not known')))
+    return out
+
+
+def _line_body(d, t):
+    out = ['%s. %s · %s. Account %s.' % (d['name'], t.get('k_line', 'School line'), d.get('cat', ''),
+                                         d.get('account', '')),
+           t.get('line_what', '')]
+    for h in d.get('history', []):
+        tt = h.get('t', {})
+        s = '%s: voted %s; budget %s; spent %s' % (h['fy'], tt.get('voted', ''), tt.get('budget', ''),
+                                                   tt.get('spent', ''))
+        if h.get('paid'):
+            s += '; other funds paid %s' % '; '.join('%s %s' % (p['fund'], p['t']) for p in h['paid'])
+        out.append(s + '.')
+    return out
+
+
+def _group_body(d, t):
+    out = ['%s. %s · %s.' % (d['name'], t.get('k_group', 'Lines read together'), d.get('cat', '')),
+           d.get('what', '')]
+    names = sorted({r['name'] for r in d.get('table', [])})
+    if names:
+        out.append('Lines: %s.' % '; '.join(names))
+    for h in d.get('history', []):
+        tt = h.get('t', {})
+        s = '%s: voted %s; spent %s' % (h['fy'], tt.get('voted', ''), tt.get('spent', ''))
+        if h.get('paid'):
+            s += '; other funds paid %s' % '; '.join('%s %s' % (p['fund'], p['t']) for p in h['paid'])
+        out.append(s + '.')
+    return out
+
+
+def fy_item_rows(entry):
+    d = json.load(open(entry['file'], encoding='utf-8'))
+    t = _fy_text()
+    render = {'fund': _fund_body, 'line': _line_body, 'group': _group_body}[entry['fy_kind']]
+    body = re.sub(r'\s+', ' ', ' '.join(x for x in render(d, t) if x)).strip()
+    return [({
+        'corpus': 'page',
+        'doc_key': 'page:' + entry['route'],
+        'file_key': entry['file_key'],
+        # The page's title is the item's name: FyItem.tsx passes it to ReportShell.
+        'title': d['name'],
+        'board': None, 'board_slug': None, 'date': '',
+        'kind': entry['fy_kind'],
+        'cite_url': '%s/%s' % (SITE, entry['route']),
+        'source_url': None,
+        'start_s': None, 'seg_starts': None,
+        'chars': len(body),
+    }, body)]
+
+
+def _dist_page(v):
+    """A page row read from the prerendered build -- the only ones a missing or half-built
+    dist says nothing about. The FY item pages come from payloads and are always present."""
+    return v['corpus'] == 'page' and v['file_key'].startswith('fy28/dist/')
 
 
 # ------------------------------------------------------------ our minutes of recordings
@@ -615,13 +757,15 @@ READERS = {
     'page': page_rows,
     'post': post_rows,
     'recorded': recorded_rows,
+    'fy_item': fy_item_rows,   # `page` rows from payloads; selected by the entry's `reader`
 }
 
 
 def wanted():
     out = {}
     for e in (minutes_files() + M.transcript_files() + source_files()
-              + page_files() + post_files() + recorded_files() + job_files() + person_files()):
+              + page_files() + fy_item_files() + post_files() + recorded_files() + job_files()
+              + person_files()):
         e['sha256'] = M.sha256_of(e['file'])
         if e.get('key_stem'):
             # The KEY is part of what the indexer makes, so it is part of the fingerprint:
@@ -630,6 +774,8 @@ def wanted():
             e['sha256'] += ':key=' + e['key_stem']
         if e['corpus'] in READER_VERSION:
             e['sha256'] += ':reader=' + READER_VERSION[e['corpus']]
+        if e.get('fingerprint'):
+            e['sha256'] += ':' + e['fingerprint']
         out[e['file_key']] = e
     if not out:
         raise SystemExit('no inputs found at all; refusing to write an empty index')
@@ -686,7 +832,7 @@ def drift(db):
     # No build on disk means nothing can be said about the pages, not that they are gone.
     # A clone that has never built the site must not report 78 removed files.
     if not os.path.isdir(DIST):
-        h = {k: v for k, v in h.items() if v['corpus'] != 'page'}
+        h = {k: v for k, v in h.items() if not _dist_page(v)}
     else:
         # `dist` EXISTING IS NOT `dist` BEING PRERENDERED, and the difference nearly
         # deleted the index. `vite build` alone -- or a `build:site` whose prerender step
@@ -705,13 +851,13 @@ def drift(db):
         # Same treatment as no dist at all: say nothing about pages rather than trust a
         # build that plainly did not run to completion. Anything actually present still
         # indexes normally; only the DELETIONS are withheld.
-        found = sum(1 for k in w if w[k]['corpus'] == 'page')
-        had = sum(1 for k in h if h[k]['corpus'] == 'page')
+        found = sum(1 for k in w if _dist_page(w[k]))
+        had = sum(1 for k in h if _dist_page(h[k]))
         if had >= 10 and found < had * 0.5:
             print('  NOTE: dist holds %d page(s) against %d in the index - this looks '
                   'like an unfinished build, so no page is treated as removed'
                   % (found, had), file=sys.stderr)
-            h = {k: v for k, v in h.items() if v['corpus'] != 'page'}
+            h = {k: v for k, v in h.items() if not _dist_page(v)}
     added = [k for k in w if k not in h]
     changed = [k for k in w if k in h and w[k]['sha256'] != h[k]['sha256']]
     removed = [k for k in h if k not in w]
@@ -778,7 +924,7 @@ def readable(body):
 
 def index_file(db, entry):
     rows = []
-    for row, body in READERS[entry['corpus']](entry):
+    for row, body in READERS[entry.get('reader', entry['corpus'])](entry):
         if not readable(body):
             continue
         parts = split_body(body)
