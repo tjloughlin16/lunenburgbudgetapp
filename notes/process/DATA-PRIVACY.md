@@ -24,6 +24,7 @@ Over-masking hides exactly the spending this project exists to show.
 | **Everything in the annual town reports**, 1959 to date: pension allowances, pupils' prizes, private payees, births, burials, rosters | The town printed and distributed them; republishing a public document is not a disclosure. No `withheld_rows` for privacy |
 | **Scholarship and prize recipients** | Public honours |
 | **Roster COUNTS** per team or school | Counts identify nobody |
+| **Anything a published page already shows**: payees, coaches, memos, names in postings | Indexing, searching and querying it is the same disclosure as the page. Search, the API and the database take it whole; never a separate question to TJ (1 November 2026: *"ANYTHING on the annual reports is public. dont ask again about redacting."*) |
 
 ## Masked
 

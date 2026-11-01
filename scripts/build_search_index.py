@@ -445,6 +445,13 @@ def _fund_body(d, t):
             if b.get('w'):
                 out.append('Where it went: %s.' % '; '.join(
                     ('%s %s %s' % (x[0], x[1], x[2])).strip() for x in b['w']))
+            # PAYEES AND POSTINGS ARE SEARCHABLE: everything the page shows is public (TJ,
+            # 1 November 2026), so a vendor or a memo a reader remembers finds its fund.
+            if b.get('p'):
+                out.append('Paid to: %s.' % '; '.join('%s %s' % (x[0], x[1]) for x in b['p']))
+            if b.get('r'):
+                out.append('Postings: %s.' % '; '.join(
+                    ' '.join(str(v) for v in (x[1], x[2], x[3], x[4], x[7]) if v) for x in b['r']))
     for h in d.get('flows') or []:
         tt = h.get('t', {})
         out.append('%s: %s %s; %s %s; %s %s.' % (
