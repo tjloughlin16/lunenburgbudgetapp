@@ -157,7 +157,11 @@ CATEGORIES = [
         # districts" and could not find it. It measures the town against the towns around
         # it, so it heads the town's shelf; its card carries a map icon because the map is
         # what people remember it by.
-        ('', ['towns-like-us']),
+        # THE HISTORICAL REPORT, moved here from "How to check any of it" 1 November 2026. TJ:
+        # "its a real report". It reads every annual report for what they say about the town --
+        # the tax rate, the population, the road to the charter -- so it is a finding about the
+        # town, not a way to check one; `annual-reports` (the documents) stays on the method shelf.
+        ('', ['towns-like-us', 'historical-report']),
     ]),
     # A FOURTH SHELF, AND THE ARGUMENT FOR IT.
     #
@@ -211,9 +215,7 @@ CATEGORIES = [
         # `annual-reports` leads this shelf because it is the DOCUMENTS themselves --
         # sixteen files, downloadable, each with its sha256 -- and the state of what we
         # read out of them. A reader checking a figure starts at the page it came from.
-        # `historical-report` sits beside the documents it proves were read, and says what
-        # they say about the town across all of them.
-        ('', ['annual-reports', 'historical-report', 'connecting-the-budget',
+        ('', ['annual-reports', 'connecting-the-budget',
               'what-you-can-ask', 'questions']),
     ]),
 ]
