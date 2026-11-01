@@ -1596,8 +1596,8 @@ GROUPS = [
              'Lunenburg Historical Report: what sixty-seven annual reports say', 3,
              'Every annual town report held, 1959 to FY2025, read for what it says across '
              'all of them: the tax rate on each fact page and the revaluations beside its '
-             'falls, the population by census, the longest runs of a name on the school '
-             'rosters, and the road from a 1966 study to a town manager. Generated, with '
+             'falls, the population by census, the longest runs of a name on the town\u2019s '
+             'officers and staff lists and on the school rosters, and the road from a 1966 study to a town manager. Generated, with '
              'edition and page for every figure, by scripts/build_historical_report.py.'),
             ('analyses/charts/historical-tax-rate.svg',
              'The tax rate on the front of each annual report', 1,
