@@ -285,37 +285,17 @@ def provenance(rows, ledger, why_n, relocated, cost, plan):
 
 
 def runs(rows, top=10):
-    """The longest runs, by the SAME rule the school rosters use: `name_key` and
-    `MAX_ABSENT` are imported from build_historical_report, so the two rankings cannot
-    drift apart. A name's run breaks when it is absent from more than MAX_ABSENT
-    consecutive editions held."""
+    """The longest runs, by the SAME code path the historical report ranks with:
+    `build_historical_report.name_runs`, so this list and the page cannot drift apart. A
+    run whose printed forms tell the joined names apart (Jr. and Sr., two middle initials)
+    is not ranked there and is marked here."""
     sys.path.insert(0, os.path.join(ROOT, 'scripts'))
-    from build_historical_report import MAX_ABSENT, name_key
-    held = sorted({int(r['year']) for r in rows})
-    by = collections.defaultdict(list)
-    for r in rows:
-        by[name_key(r['name'])].append(r)
+    from build_historical_report import name_runs, printed_positions
     out = []
-    for k, rs in by.items():
-        ys = sorted({int(r['year']) for r in rs})
-        cur, chunks = [ys[0]], []
-        for y in ys[1:]:
-            if len([h for h in held if cur[-1] < h < y]) > MAX_ABSENT:
-                chunks.append(cur)
-                cur = [y]
-            else:
-                cur.append(y)
-        chunks.append(cur)
-        for ch in chunks:
-            inside = [r for r in rs if ch[0] <= int(r['year']) <= ch[-1]]
-            forms = [r['name'] for r in inside]
-            pos = collections.Counter(r['position'].split('-')[0].strip().title()
-                                      for r in inside)
-            out.append(dict(key=k, name=max(forms, key=lambda n: (forms.count(n), len(n))),
-                            first=ch[0], last=ch[-1], span=ch[-1] - ch[0], seen=len(ch),
-                            positions=[p for p, _ in pos.most_common(4)]))
-    out.sort(key=lambda r: (-r['span'], -r['seen'], r['key']))
-    return out[:top]
+    for r in name_runs(rows, lambda r: int(r['year']))[0][:top]:
+        pos, _n = printed_positions(r['rows'], n=4)
+        out.append(dict(r, positions=[p['position'] for p in pos]))
+    return out
 
 
 def main():
@@ -352,9 +332,10 @@ def main():
     print('wrote %s, %s' % (os.path.relpath(ENTRIES, ROOT), os.path.relpath(PROV, ROOT)))
     if args.runs:
         for r in runs(rows):
-            print('  %-28s %d-%d  %2d yrs, in %2d editions  %s'
+            print('  %-28s %d-%d  %2d yrs, in %2d editions  %s%s'
                   % (r['name'], r['first'], r['last'], r['span'], r['seen'],
-                     '; '.join(r['positions'])))
+                     '; '.join(r['positions']),
+                     '  [NOT RANKED: %s]' % r['disagree'] if r['disagree'] else ''))
 
 
 if __name__ == '__main__':

@@ -1,5 +1,5 @@
 {
- "about": "What sixty-seven annual town reports say about Lunenburg, 1959 to FY2025: the tax rate, the population, the longest names on the school rosters and the road to a town manager.",
+ "about": "What sixty-seven annual town reports say about Lunenburg, 1959 to FY2025: the tax rate, the population, the longest-listed names on the town’s officers and staff lists and on the school rosters, and the road to a town manager.",
  "charter_vote": {
   "edition": 1999,
   "href": "/docs/town-annual-reports/docs/4525-1999-annual-town-report.pdf#page=80",
@@ -9,6 +9,101 @@
   "yes": 422
  },
  "conclusions": [
+  {
+   "basis": "`town-roster-entries.csv`: every name the officers’ directory (elected and appointed) and the department rosters print, matched by the school rule.",
+   "bearing": "sizes",
+   "claim": "The name Samuel J. Costa is printed on the town’s lists from 1960 to 2007",
+   "detail": "47 years, printed in 45 of the 48 editions we hold for them, under 10 positions, the most printed “BOARD OF APPEALS”. A name on a list, not proven to be one person; a span is first to last listing, not an appointment or a retirement.",
+   "figure": "span",
+   "figures": {
+    "a": {
+     "text": "1960",
+     "unit": "",
+     "value": 1960
+    },
+    "b": {
+     "text": "2007",
+     "unit": "",
+     "value": 2007
+    },
+    "held": {
+     "text": "48",
+     "unit": "",
+     "value": 48
+    },
+    "npos": {
+     "text": "10",
+     "unit": "positions",
+     "value": 10
+    },
+    "seen": {
+     "text": "45",
+     "unit": "",
+     "value": 45
+    },
+    "span": {
+     "text": "47",
+     "unit": "years",
+     "value": 47
+    }
+   },
+   "id": "the-longest-run-on-the-town-lists",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Whether the post was paid. Most directory lines are board and committee seats, so a run is service on a list, not years of employment.",
+   "see": [],
+   "so_what": "The longest run of any name in the officers’ directories and department rosters."
+  },
+  {
+   "basis": "`town-roster-entries.csv`; “mostly” is whichever kind of list holds more of the run’s entries. The 40-year line is ours.",
+   "bearing": "sizes",
+   "claim": "9 names run 40 years or more on the town’s lists, 1959 to FY2025",
+   "detail": "Counted from printed names in lists, not proven people. 2 more runs that long are left out because the print tells the joined names apart (a Jr. and a Sr., or two middle initials).",
+   "figure": "n",
+   "figures": {
+    "a": {
+     "text": "1959",
+     "unit": "",
+     "value": 1959
+    },
+    "b": {
+     "text": "2025",
+     "unit": "",
+     "value": 2025
+    },
+    "dept": {
+     "text": "3",
+     "unit": "",
+     "value": 3
+    },
+    "dir": {
+     "text": "6",
+     "unit": "",
+     "value": 6
+    },
+    "k": {
+     "text": "40",
+     "unit": "years",
+     "value": 40
+    },
+    "n": {
+     "text": "9",
+     "unit": "names",
+     "value": 9
+    },
+    "out": {
+     "text": "2",
+     "unit": "runs",
+     "value": 2
+    }
+   },
+   "id": "forty-years-on-the-town-lists",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Hours, pay or continuous service. A department roster is a name in a department’s report, and a directory line is a seat.",
+   "see": [],
+   "so_what": "6 are mostly in the officers’ directory; 3 mostly on a department’s staff roster."
+  },
   {
    "basis": "The tax rate on each edition’s fact page, and the three revaluation passages quoted below.",
    "bearing": "sizes",
@@ -765,13 +860,15 @@
   "rank": 2
  },
  "generated_by": "scripts/build_historical_report.py",
- "grain": "MIXED, AND EACH FIGURE SAYS WHICH. A tax rate is dollars per $1,000 of assessed value, as printed; a population is residents in the year the figure counts; a roster run is years between first and last appearance of a name. Dollars are nominal.",
+ "grain": "MIXED, AND EACH FIGURE SAYS WHICH. A tax rate is dollars per $1,000 of assessed value, as printed; a population is residents in the year the figure counts; a run is years between the first and last edition a NAME is printed in a list -- the town’s directory and department rosters, or the school rosters -- not a person proven or a post held. Dollars are nominal.",
  "not_established": [
   "Whether a name on two rosters is one person. The rosters print names, not employee numbers.",
   "Hire and retirement dates. A run is first and last appearance in the reports we hold.",
   "Any comparison in real dollars. The price index held here starts in 1990.",
   "What a household paid in tax in any year before the reports printed an average bill.",
   "Staffing levels. A roster line is a name, with no hours and no funding source.",
+  "Years of town employment. Most lines in the officers’ directory are elected or appointed seats on boards and committees, many unpaid; the directory does not say which posts were paid, and a department roster prints names, not hours.",
+  "Whether a name joined across editions is one person on the town’s lists either. Matching drops middle initials and Jr./Sr.; runs whose print carries both are held out of the ranking, and others may still join a parent and a child.",
   "The years the archive has no report for, and the pages our reading did not yield."
  ],
  "population": [
@@ -2159,6 +2256,16 @@
    "url": "https://www.lunenburgma.gov/DocumentCenter/View/4518"
   },
   {
+   "docs_url": "/docs/town-annual-reports/docs/4119-fy-2013-annual-town-report.pdf",
+   "filename": "4119-fy-2013-annual-town-report.pdf",
+   "label": "FY 2013 Annual Town Report",
+   "note": "The annual town report. Figures are read from its extracted text and Textract tables, at the pages cited.",
+   "path": "sources/town-annual-reports/docs/4119-fy-2013-annual-town-report.pdf",
+   "publisher": "Town of Lunenburg",
+   "sha256": "00670845b7d322166015c1b6ce4d3cef6ac2007d1085f326c44ebc9ac6d418bd",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/4119"
+  },
+  {
    "docs_url": "/docs/town-annual-reports/docs/4120-fy-2014-annual-town-report.pdf",
    "filename": "4120-fy-2014-annual-town-report.pdf",
    "label": "FY 2014 Annual Town Report",
@@ -2229,6 +2336,16 @@
    "url": "https://www.lunenburgma.gov/DocumentCenter/View/4127"
   },
   {
+   "docs_url": "/docs/town-annual-reports/docs/4128-fy-2021-annual-town-report.pdf",
+   "filename": "4128-fy-2021-annual-town-report.pdf",
+   "label": "FY 2021 Annual Town Report",
+   "note": "The annual town report. Figures are read from its extracted text and Textract tables, at the pages cited.",
+   "path": "sources/town-annual-reports/docs/4128-fy-2021-annual-town-report.pdf",
+   "publisher": "Town of Lunenburg",
+   "sha256": "7ec4740034a2b9bd3aa7450f63c91d10e6ead472450edc5fbe9c0da327fb94d3",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/4128"
+  },
+  {
    "docs_url": "/docs/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf",
    "filename": "4129-fy-2022-annual-town-report.pdf",
    "label": "FY 2022 Annual Town Report",
@@ -2273,6 +2390,10 @@
   {
    "label": "annual town reports read, 1959 to FY2025",
    "value": "67 editions"
+  },
+  {
+   "label": "the longest run of one name on the town’s officers and staff lists",
+   "value": "47 years"
   },
   {
    "label": "the longest run of one name on the school rosters",
@@ -2888,6 +3009,135 @@
    ]
   }
  },
+ "town_distinct": 2096,
+ "town_entries": 16609,
+ "town_held": [
+  1959,
+  2025,
+  67
+ ],
+ "town_held_out": [
+  {
+   "disagree": "printed with J. and L. middle initials",
+   "first": 1981,
+   "first_entry": {
+    "edition": 1981,
+    "group": "Appointed",
+    "href": "/docs/town-annual-reports/docs/4503-1981-annual-town-report.pdf#page=4",
+    "kind": "appointed",
+    "label": "1981 Annual Town Report",
+    "name": "Brian L. LeBlanc",
+    "page": 4,
+    "role": "CIVIL DEFENSE DIRECTOR"
+   },
+   "forms": [
+    "Brian L. LeBlanc",
+    "Brian LeBlanc",
+    "Brian J. LeBlanc",
+    "Brian Leblanc",
+    "Brian L. LeBlanc."
+   ],
+   "held": 45,
+   "kinds": [
+    "appointed",
+    "department roster",
+    "not stated"
+   ],
+   "last": 2025,
+   "last_entry": {
+    "edition": 2025,
+    "group": "APPOINTED OFFICIALS",
+    "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf#page=17",
+    "kind": "appointed",
+    "label": "FY 2025 Annual Town Report",
+    "name": "Brian L. LeBlanc",
+    "page": 17,
+    "role": "“RACES” (Radio Amateur Civil Emergency Service)"
+   },
+   "mainly": "officers directory",
+   "n_positions": 27,
+   "name": "Brian L. LeBlanc",
+   "positions": [
+    {
+     "position": "CIVIL DEFENSE DIRECTOR",
+     "years": 25
+    },
+    {
+     "position": "Firefighter/EMT",
+     "years": 10
+    },
+    {
+     "position": "TOWN HALL CLOCK WINDERS",
+     "years": 7
+    }
+   ],
+   "seen": 45,
+   "span": 44
+  },
+  {
+   "disagree": "printed as both Jr. and Sr.",
+   "first": 1970,
+   "first_entry": {
+    "edition": 1970,
+    "group": "ROSTER OF FIREMEN FOLLOWS - (Asterisk indicates service on Rescue Unit also.)",
+    "href": "/docs/town-annual-reports/docs/4492-1970-annual-town-report.pdf#page=55",
+    "kind": "department roster",
+    "label": "1970 Annual Town Report",
+    "name": "Charles P. Deming",
+    "page": 55,
+    "role": "Firemen"
+   },
+   "forms": [
+    "Charles P. Deming",
+    "Charles Deming",
+    "Charles Deming, Jr.",
+    "Charles Deming, Sr.",
+    "Charles P. Deming Sr.",
+    "Charles P. Deming, Sr.",
+    "Charles J. Deming, Jr.",
+    "Charles P. Deming Sr",
+    "Charles Deming Jr.",
+    "Charles P. Deming Jr."
+   ],
+   "held": 44,
+   "kinds": [
+    "elected",
+    "appointed",
+    "department roster",
+    "not stated"
+   ],
+   "last": 2013,
+   "last_entry": {
+    "edition": 2013,
+    "group": "Roster of the Lunenburg Fire Department- 2013",
+    "href": "/docs/town-annual-reports/docs/4119-fy-2013-annual-town-report.pdf#page=28",
+    "kind": "department roster",
+    "label": "FY 2013 Annual Town Report",
+    "name": "Charles P. Deming Jr.",
+    "page": 28,
+    "role": "Retirements"
+   },
+   "mainly": "department roster",
+   "n_positions": 32,
+   "name": "Charles P. Deming",
+   "positions": [
+    {
+     "position": "POLICE PATROLMEN & LIC. AUTHORITY AGENTS",
+     "years": 16
+    },
+    {
+     "position": "CEMETERY COMMISSIONERS",
+     "years": 12
+    },
+    {
+     "position": "Firemen",
+     "years": 10
+    }
+   ],
+   "seen": 44,
+   "span": 43
+  }
+ ],
  "town_manager": [
   {
    "edition": 1966,
@@ -2944,6 +3194,538 @@
    "page": 12,
    "quote": "TOWN MANAGER One of the most significant events",
    "what": "The report prints its first section headed TOWN MANAGER."
+  }
+ ],
+ "town_runs": [
+  {
+   "disagree": "",
+   "first": 1960,
+   "first_entry": {
+    "edition": 1960,
+    "group": "DEPARTMENT ROSTER",
+    "href": "/docs/town-annual-reports/docs/4551-1960-annual-town-report.pdf#page=40",
+    "kind": "department roster",
+    "label": "1960 Annual Town Report",
+    "name": "Samuel J. Costa",
+    "page": 40,
+    "role": "DEPARTMENT ROSTER"
+   },
+   "forms": [
+    "Samuel J. Costa",
+    "Samuel Costa",
+    "Samuel 1. Costa"
+   ],
+   "held": 48,
+   "kinds": [
+    "appointed",
+    "department roster",
+    "not stated"
+   ],
+   "last": 2007,
+   "last_entry": {
+    "edition": 2007,
+    "group": "APPOINTMENT LIST",
+    "href": "/docs/town-annual-reports/docs/4515-2007-annual-town-report.pdf#page=8",
+    "kind": "appointed",
+    "label": "2007 Annual Town Report",
+    "name": "Samuel J. Costa",
+    "page": 8,
+    "role": "BOARD OF APPEALS-5 YRS"
+   },
+   "mainly": "officers directory",
+   "n_positions": 10,
+   "name": "Samuel J. Costa",
+   "positions": [
+    {
+     "position": "BOARD OF APPEALS",
+     "years": 36
+    },
+    {
+     "position": "Firemen",
+     "years": 7
+    },
+    {
+     "position": "COMPANY ROSTER",
+     "years": 3
+    }
+   ],
+   "seen": 45,
+   "span": 47
+  },
+  {
+   "disagree": "",
+   "first": 1979,
+   "first_entry": {
+    "edition": 1979,
+    "group": "Appointed",
+    "href": "/docs/town-annual-reports/docs/4501-1979-annual-town-report.pdf#page=5",
+    "kind": "appointed",
+    "label": "1979 Annual Town Report",
+    "name": "Kathleen M. Comeau",
+    "page": 5,
+    "role": "DOG OFFICER"
+   },
+   "forms": [
+    "Kathleen M. Comeau",
+    "Kathleen Comeau"
+   ],
+   "held": 47,
+   "kinds": [
+    "appointed",
+    "department roster",
+    "not stated"
+   ],
+   "last": 2025,
+   "last_entry": {
+    "edition": 2025,
+    "group": "Department Personnel:",
+    "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf#page=79",
+    "kind": "department roster",
+    "label": "FY 2025 Annual Town Report",
+    "name": "Kathleen Comeau",
+    "page": 79,
+    "role": "Animal Control Officer"
+   },
+   "mainly": "officers directory",
+   "n_positions": 15,
+   "name": "Kathleen M. Comeau",
+   "positions": [
+    {
+     "position": "FIELD DRIVER",
+     "years": 40
+    },
+    {
+     "position": "Animal Control Officer",
+     "years": 36
+    },
+    {
+     "position": "INSPECTOR OF ANIMALS",
+     "years": 34
+    }
+   ],
+   "seen": 47,
+   "span": 46
+  },
+  {
+   "disagree": "",
+   "first": 1979,
+   "first_entry": {
+    "edition": 1979,
+    "group": "Elected",
+    "href": "/docs/town-annual-reports/docs/4501-1979-annual-town-report.pdf#page=4",
+    "kind": "elected",
+    "label": "1979 Annual Town Report",
+    "name": "Kathryn M. Herrick",
+    "page": 4,
+    "role": "BOARD OF ASSESSORS"
+   },
+   "forms": [
+    "Kathryn Herrick",
+    "Kathryn M. Herrick"
+   ],
+   "held": 47,
+   "kinds": [
+    "elected",
+    "appointed",
+    "not stated"
+   ],
+   "last": 2025,
+   "last_entry": {
+    "edition": 2025,
+    "group": "ELECTED OFFICIALS",
+    "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf#page=12",
+    "kind": "elected",
+    "label": "FY 2025 Annual Town Report",
+    "name": "Kathryn M. Herrick",
+    "page": 12,
+    "role": "TOWN CLERK – 3 year term"
+   },
+   "mainly": "officers directory",
+   "n_positions": 29,
+   "name": "Kathryn Herrick",
+   "positions": [
+    {
+     "position": "TOWN CLERK",
+     "years": 23
+    },
+    {
+     "position": "REGISTRAR OF VOTERS",
+     "years": 19
+    },
+    {
+     "position": "TAX COLLECTOR",
+     "years": 13
+    }
+   ],
+   "seen": 42,
+   "span": 46
+  },
+  {
+   "disagree": "",
+   "first": 1981,
+   "first_entry": {
+    "edition": 1981,
+    "group": "Appointed",
+    "href": "/docs/town-annual-reports/docs/4503-1981-annual-town-report.pdf#page=5",
+    "kind": "appointed",
+    "label": "1981 Annual Town Report",
+    "name": "Karen A. Kemp",
+    "page": 5,
+    "role": "REGISTRARS OF VOTERS"
+   },
+   "forms": [
+    "Karen A. Kemp",
+    "Karen Kemp",
+    "Karen A, Kemp",
+    "Karen A. Kemp."
+   ],
+   "held": 45,
+   "kinds": [
+    "appointed",
+    "not stated"
+   ],
+   "last": 2025,
+   "last_entry": {
+    "edition": 2025,
+    "group": "APPOINTED OFFICIALS",
+    "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf#page=14",
+    "kind": "appointed",
+    "label": "FY 2025 Annual Town Report",
+    "name": "Karen Kemp",
+    "page": 14,
+    "role": "CULTURAL COUNCIL (no less than 5 and no more than 22 members) 3 year term"
+   },
+   "mainly": "officers directory",
+   "n_positions": 11,
+   "name": "Karen A. Kemp",
+   "positions": [
+    {
+     "position": "REGISTRAR OF VOTERS",
+     "years": 22
+    },
+    {
+     "position": "BOARD OF REGISTRARS OF VOTERS",
+     "years": 11
+    },
+    {
+     "position": "REGISTRARS OF VOTERS",
+     "years": 10
+    }
+   ],
+   "seen": 45,
+   "span": 44
+  },
+  {
+   "disagree": "",
+   "first": 1978,
+   "first_entry": {
+    "edition": 1978,
+    "group": "ROSTER OF FIREMEN FOLLOWS",
+    "href": "/docs/town-annual-reports/docs/4500-1978-annual-town-report.pdf#page=22",
+    "kind": "department roster",
+    "label": "1978 Annual Town Report",
+    "name": "Charles Sampson",
+    "page": 22,
+    "role": "Firefighter"
+   },
+   "forms": [
+    "Charles Sampson"
+   ],
+   "held": 44,
+   "kinds": [
+    "department roster"
+   ],
+   "last": 2021,
+   "last_entry": {
+    "edition": 2021,
+    "group": "Roster of the Lunenburg Fire Department- 2021",
+    "href": "/docs/town-annual-reports/docs/4128-fy-2021-annual-town-report.pdf#page=86",
+    "kind": "department roster",
+    "label": "FY 2021 Annual Town Report",
+    "name": "Charles Sampson",
+    "page": 86,
+    "role": "Call Firefighters"
+   },
+   "mainly": "department roster",
+   "n_positions": 16,
+   "name": "Charles Sampson",
+   "positions": [
+    {
+     "position": "EMT",
+     "years": 12
+    },
+    {
+     "position": "Firefighter",
+     "years": 7
+    },
+    {
+     "position": "Firefighter/EMT",
+     "years": 7
+    }
+   ],
+   "seen": 44,
+   "span": 43
+  },
+  {
+   "disagree": "",
+   "first": 1983,
+   "first_entry": {
+    "edition": 1983,
+    "group": "Roster of Firefighters for 1983",
+    "href": "/docs/town-annual-reports/docs/4483-1983-annual-town-report.pdf#page=18",
+    "kind": "department roster",
+    "label": "1983 Annual Town Report",
+    "name": "Patrick Sullivan",
+    "page": 18,
+    "role": "Firefighters"
+   },
+   "forms": [
+    "Patrick A. Sullivan",
+    "Patrick Sullivan"
+   ],
+   "held": 43,
+   "kinds": [
+    "appointed",
+    "department roster"
+   ],
+   "last": 2025,
+   "last_entry": {
+    "edition": 2025,
+    "group": "Roster of the Lunenburg Fire Department- 2025",
+    "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf#page=78",
+    "kind": "department roster",
+    "label": "FY 2025 Annual Town Report",
+    "name": "Patrick A. Sullivan",
+    "page": 78,
+    "role": "Chief of Department"
+   },
+   "mainly": "department roster",
+   "n_positions": 23,
+   "name": "Patrick A. Sullivan",
+   "positions": [
+    {
+     "position": "Chief of Department",
+     "years": 14
+    },
+    {
+     "position": "Lieutenant",
+     "years": 6
+    },
+    {
+     "position": "Deputy Chief/EMT",
+     "years": 5
+    }
+   ],
+   "seen": 43,
+   "span": 42
+  },
+  {
+   "disagree": "",
+   "first": 1983,
+   "first_entry": {
+    "edition": 1983,
+    "group": "Roster of Firefighters for 1983",
+    "href": "/docs/town-annual-reports/docs/4483-1983-annual-town-report.pdf#page=18",
+    "kind": "department roster",
+    "label": "1983 Annual Town Report",
+    "name": "Joseph Cardone",
+    "page": 18,
+    "role": "Firefighters"
+   },
+   "forms": [
+    "Joseph Cardone",
+    "Joseph A. Cardone"
+   ],
+   "held": 43,
+   "kinds": [
+    "department roster"
+   ],
+   "last": 2025,
+   "last_entry": {
+    "edition": 2025,
+    "group": "Roster of the Lunenburg Fire Department- 2025",
+    "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf#page=78",
+    "kind": "department roster",
+    "label": "FY 2025 Annual Town Report",
+    "name": "Joseph Cardone",
+    "page": 78,
+    "role": "Call Firefighters"
+   },
+   "mainly": "department roster",
+   "n_positions": 17,
+   "name": "Joseph Cardone",
+   "positions": [
+    {
+     "position": "Firefighter/EMT",
+     "years": 10
+    },
+    {
+     "position": "FF/EMT",
+     "years": 6
+    },
+    {
+     "position": "Firefighter",
+     "years": 5
+    }
+   ],
+   "seen": 41,
+   "span": 42
+  },
+  {
+   "disagree": "",
+   "first": 1964,
+   "first_entry": {
+    "edition": 1964,
+    "group": "Appointed",
+    "href": "/docs/town-annual-reports/docs/4507-1964-annual-town-report.pdf#page=5",
+    "kind": "appointed",
+    "label": "1964 Annual Town Report",
+    "name": "Dr. Robert J. Fallon",
+    "page": 5,
+    "role": "Inspectors of Animals"
+   },
+   "forms": [
+    "Dr. Robert J. Fallon"
+   ],
+   "held": 42,
+   "kinds": [
+    "appointed",
+    "not stated"
+   ],
+   "last": 2005,
+   "last_entry": {
+    "edition": 2005,
+    "group": "FY'05 APPOINTMENT LIST",
+    "href": "/docs/town-annual-reports/docs/4513-2005-annual-town-report.pdf#page=8",
+    "kind": "appointed",
+    "label": "2005 Annual Town Report",
+    "name": "Dr. Robert J. Fallon",
+    "page": 8,
+    "role": "INSPECTOR OF ANIMALS-1 YR"
+   },
+   "mainly": "officers directory",
+   "n_positions": 2,
+   "name": "Dr. Robert J. Fallon",
+   "positions": [
+    {
+     "position": "INSPECTOR OF ANIMALS",
+     "years": 36
+    },
+    {
+     "position": "Inspectors of Animals",
+     "years": 5
+    }
+   ],
+   "seen": 41,
+   "span": 41
+  },
+  {
+   "disagree": "",
+   "first": 1974,
+   "first_entry": {
+    "edition": 1974,
+    "group": "Appointed",
+    "href": "/docs/town-annual-reports/docs/4496-1974-annual-town-report.pdf#page=5",
+    "kind": "appointed",
+    "label": "1974 Annual Town Report",
+    "name": "Alphonse J. Baron",
+    "page": 5,
+    "role": "POLICE PATROLMEN"
+   },
+   "forms": [
+    "Alphonse J. Baron",
+    "Alphonse Baron"
+   ],
+   "held": 41,
+   "kinds": [
+    "appointed",
+    "department roster",
+    "not stated"
+   ],
+   "last": 2014,
+   "last_entry": {
+    "edition": 2014,
+    "group": "",
+    "href": "/docs/town-annual-reports/docs/4120-fy-2014-annual-town-report.pdf#page=78",
+    "kind": "department roster",
+    "label": "FY 2014 Annual Town Report",
+    "name": "Alphonse Baron",
+    "page": 78,
+    "role": "Retirements"
+   },
+   "mainly": "officers directory",
+   "n_positions": 17,
+   "name": "Alphonse J. Baron",
+   "positions": [
+    {
+     "position": "RESERVE POLICE OFFICERS",
+     "years": 11
+    },
+    {
+     "position": "POLICE PATROLMEN & LIC. AUTHORITY AGENTS",
+     "years": 9
+    },
+    {
+     "position": "COMPUTER ADVISORY COMMITTEE",
+     "years": 8
+    }
+   ],
+   "seen": 41,
+   "span": 40
+  },
+  {
+   "disagree": "",
+   "first": 1975,
+   "first_entry": {
+    "edition": 1975,
+    "group": "Appointed",
+    "href": "/docs/town-annual-reports/docs/4497-1975-annual-town-report.pdf#page=4",
+    "kind": "appointed",
+    "label": "1975 Annual Town Report",
+    "name": "Albert Poladian",
+    "page": 4,
+    "role": "CONSTABLE"
+   },
+   "forms": [
+    "Albert Poladian",
+    "Albert Poladian."
+   ],
+   "held": 40,
+   "kinds": [
+    "elected",
+    "appointed",
+    "not stated"
+   ],
+   "last": 2014,
+   "last_entry": {
+    "edition": 2014,
+    "group": "APPOINTED OFFICIALS",
+    "href": "/docs/town-annual-reports/docs/4120-fy-2014-annual-town-report.pdf#page=12",
+    "kind": "appointed",
+    "label": "FY 2014 Annual Town Report",
+    "name": "Albert Poladian",
+    "page": 12,
+    "role": "CONSTABLE"
+   },
+   "mainly": "officers directory",
+   "n_positions": 5,
+   "name": "Albert Poladian",
+   "positions": [
+    {
+     "position": "CONSTABLE",
+     "years": 32
+    },
+    {
+     "position": "CONSTABLES",
+     "years": 3
+    },
+    {
+     "position": "COUNCIL ON AGING",
+     "years": 1
+    }
+   ],
+   "seen": 39,
+   "span": 39
   }
  ]
 }

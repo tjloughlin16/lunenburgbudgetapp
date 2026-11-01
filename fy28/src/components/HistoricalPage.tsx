@@ -34,6 +34,12 @@ type Run = {
   name: string; first: number; last: number; span: number; seen: number; held: number
   first_entry: Entry; last_entry: Entry
 }
+type TownRun = {
+  name: string; first: number; last: number; span: number; seen: number; held: number
+  first_entry: Entry; last_entry: Entry
+  positions: { position: string; years: number }[]; n_positions: number
+  mainly: string; disagree: string; forms: string[]
+}
 type Half = { first: number; last: number; seen: number; first_entry: Entry; last_entry: Entry }
 
 export type HistoricalPayload = {
@@ -45,6 +51,11 @@ export type HistoricalPayload = {
   population_conflicts: { year: number; kind: string; printed: (Cite & { value: number })[] }[]
   roster_names: { year: number; names: number }[]
   roster_runs: Run[]
+  town_runs: TownRun[]
+  town_held_out: TownRun[]
+  town_entries: number
+  town_distinct: number
+  town_held: [number, number, number]
   roster_shared: { name: string; naive_span: number; a: Half; b: Half } | null
   roster_rule: string
   first_aide: { first: Entry; last_fy: number; last_count: number }
@@ -191,6 +202,74 @@ export function HistoricalPage({ data: d, docUrl }: { data: HistoricalPayload; d
         </div>
       </section>
 
+      {/* LONGEST SERVICE TO THE TOWN. TJ, 1 November 2026: "i dont know why this is school
+          focused ... i wanted a town-side employee time ranking." So the town's own lists
+          lead, by the same run rule (build_historical_report.name_runs), and the school
+          leaderboard follows. Two boards, not one merged list: the payload's markdown says why. */}
+      <Section id="town-service" eyebrow={`Longest service · the town · ${F('the-longest-run-on-the-town-lists', 'span')} years`}
+        title="Longest on the town’s lists">
+        <p className="text-[14.5px] leading-relaxed mt-3 max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
+          Every name the officers’ directory prints, elected and appointed, and the staff
+          rosters inside department reports, mostly fire and police: {n(d.town_entries)} printed names across{' '}
+          {d.town_held[2]} editions.
+        </p>
+        <Leaderboard runs={d.town_runs} y0={d.town_held[0]} y1={d.town_held[1]}
+          detail={r => {
+            const t = r as TownRun
+            const more = t.n_positions - t.positions.length
+            return (
+              <>
+                <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>
+                  {t.positions.map(p => p.position).join(' · ')}
+                </span>
+                {more > 0 ? <> and {more} more</> : null}.{' '}
+                Mostly {t.mainly === 'department roster' ? 'a department roster' : 'the officers’ directory'};
+                printed in {t.seen} of the {t.held} editions for those years.{' '}
+                First <Src c={t.first_entry} />, last <Src c={t.last_entry} />.
+              </>
+            )
+          }} />
+        <Ours kind="What a run on these lists is">
+          A name printed in a list, not a person proven: matching drops middle initials and
+          Jr./Sr. Most directory lines are board and committee seats, many unpaid, so a run is
+          years on a list, not years of employment. Positions are as printed.
+        </Ours>
+        {d.town_held_out.length ? (
+          <Ours kind="Left out of the ranking">
+            {d.town_held_out.map(r => (
+              <span key={r.name}>
+                {r.name}, {r.first}–{r.last}, would run {r.span} years but is {r.disagree}{' '}
+                ({r.forms.slice(0, 4).map(f => `“${f}”`).join(', ')}).{' '}
+              </span>
+            ))}
+            The print tells those names apart, so the joined run may be two people.
+          </Ours>
+        ) : null}
+      </Section>
+
+      {/* LONGEST ON THE ROSTERS: a leaderboard drawn as careers on one time axis. */}
+      <Section id="rosters" eyebrow="Longest service · the schools" title="Longest on the school rosters">
+        <p className="text-[14.5px] leading-relaxed mt-3 max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
+          The per-school staff rosters, by the same rule as the town’s lists above.
+        </p>
+        <Leaderboard runs={d.roster_runs} y0={d.roster_names[0].year}
+          y1={d.roster_names[d.roster_names.length - 1].year}
+          detail={r => (
+            <>
+              First: “{r.first_entry.role || r.first_entry.group}” (<Src c={r.first_entry} />).
+              Last: “{r.last_entry.role || r.last_entry.group}” (<Src c={r.last_entry} />).
+              Printed in {r.seen} of the {r.held} rosters we hold for those years.
+            </>
+          )} />
+        <Ours kind="How a run is counted">
+          {d.roster_rule} That threshold is ours. A run is the first and last roster a name is
+          printed in — not a hire date, not a retirement, and a name is not a person.
+        </Ours>
+      </Section>
+
+      {/* THE MYSTERY. */}
+      {d.roster_shared ? <Mystery s={d.roster_shared} gap={F('one-name-two-careers', 'g')} /> : null}
+
       {/* 1910 AGAINST 1960: a ledger the Assessors printed, as two postcards. */}
       <Section id="fifty-years" eyebrow={`${t1.years[0]} against ${t1.years[1]}`}
         title="One Assessors’ table, two eras">
@@ -318,18 +397,6 @@ export function HistoricalPage({ data: d, docUrl }: { data: HistoricalPayload; d
           </Ours>
         ) : null}
       </Section>
-
-      {/* LONGEST ON THE ROSTERS: a leaderboard drawn as careers on one time axis. */}
-      <Section id="rosters" eyebrow="Leaderboard" title="Longest on the school rosters">
-        <Leaderboard runs={d.roster_runs} names={d.roster_names} />
-        <Ours kind="How a run is counted">
-          {d.roster_rule} That threshold is ours. A run is the first and last roster a name is
-          printed in — not a hire date, not a retirement, and a name is not a person.
-        </Ours>
-      </Section>
-
-      {/* THE MYSTERY. */}
-      {d.roster_shared ? <Mystery s={d.roster_shared} gap={F('one-name-two-careers', 'g')} /> : null}
 
       {/* THE TOWN CLERK'S DECADE. */}
       <Section id="clerk" eyebrow={`${dy.clerk.rows[0].year} to ${dy.clerk.rows[dy.clerk.rows.length - 1].year}`}
@@ -578,9 +645,9 @@ function CharterVote({ v }: { v: HistoricalPayload['charter_vote'] }) {
   )
 }
 
-function Leaderboard({ runs, names }: { runs: Run[]; names: { year: number }[] }) {
-  const y0 = names[0].year
-  const y1 = names[names.length - 1].year
+function Leaderboard<R extends Run | TownRun>({ runs, y0, y1, detail }: {
+  runs: R[]; y0: number; y1: number; detail: (r: R) => ReactNode
+}) {
   const pct = (y: number) => (100 * (y - y0)) / (y1 - y0)
   return (
     <ol className="mt-5 space-y-3">
@@ -607,9 +674,7 @@ function Leaderboard({ runs, names }: { runs: Run[]; names: { year: number }[] }
                 <span>{y0}</span><span>{y1}</span>
               </div>
               <p className="text-[12.5px] leading-snug mt-1.5 break-words" style={{ color: 'var(--text-secondary)' }}>
-                First: “{r.first_entry.role || r.first_entry.group}” (<Src c={r.first_entry} />).
-                Last: “{r.last_entry.role || r.last_entry.group}” (<Src c={r.last_entry} />).
-                Printed in {r.seen} of the {r.held} rosters we hold for those years.
+                {detail(r)}
               </p>
             </div>
           </div>

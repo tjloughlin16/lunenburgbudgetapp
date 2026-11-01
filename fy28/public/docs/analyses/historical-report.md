@@ -6,10 +6,53 @@ Sixty-seven annual town reports, 1959 to FY2025, read into this archive. Every f
 
 ## The short version
 
+- **The longest run on the town’s lists** is Samuel J. Costa, 1960 to 2007: 47 years in the officers’ directories and department rosters, by the same rule as the school rosters.
 - **The tax rate is not the tax.** $133.00 per $1,000 in the 1969 report, $14.36 in FY2025, and each big fall sits beside a report recording a revaluation.
 - **The longest run on the school rosters** is Richard A. Stachowicz, 1963 to 2001.
 - **A town manager took 33 years**, from the first study recommending one (1966) to the charter that created the post (1999).
 - **Population** went from 5,282 (1955) to 10,280 (2010).
+
+## Longest service to Lunenburg
+
+Two rankings, one rule. A run is the years between the first and last edition a name is printed in, broken when the name is missing from more than 2 consecutive editions we hold; that threshold is ours. Each counts NAMES printed in lists, not people proven to be one person.
+
+They are kept as two tables: the longest school run, 38 years, is shorter than the last of the 10 on the town’s lists, 39 years, so a combined top 10 would hold no school name. The town’s lists are printed in 67 of the editions we hold, the school rosters in 63.
+
+### On the town’s lists
+
+Every name the officers’ directory at the front of each report prints, elected and appointed, and the staff rosters printed inside a department’s report, mostly fire and police: 16,609 entries, 2,096 distinct names after matching. Most directory lines are board and committee seats, so a run is years on a list, not years of employment.
+
+| # | name | first | last | span | printed in | mostly | positions, most printed first |
+|---:|---|---|---|---:|---:|---|---|
+| 1 | Samuel J. Costa | [1960 report, p. 40](/docs/town-annual-reports/docs/4551-1960-annual-town-report.pdf#page=40) | [2007 report, p. 8](/docs/town-annual-reports/docs/4515-2007-annual-town-report.pdf#page=8) | 47 years | 45 of 48 | officers’ directory | BOARD OF APPEALS (36); Firemen (7); COMPANY ROSTER (3) and 7 more |
+| 2 | Kathleen M. Comeau | [1979 report, p. 5](/docs/town-annual-reports/docs/4501-1979-annual-town-report.pdf#page=5) | [FY 2025 report, p. 79](/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf#page=79) | 46 years | 47 of 47 | officers’ directory | FIELD DRIVER (40); Animal Control Officer (36); INSPECTOR OF ANIMALS (34) and 12 more |
+| 3 | Kathryn Herrick | [1979 report, p. 4](/docs/town-annual-reports/docs/4501-1979-annual-town-report.pdf#page=4) | [FY 2025 report, p. 12](/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf#page=12) | 46 years | 42 of 47 | officers’ directory | TOWN CLERK (23); REGISTRAR OF VOTERS (19); TAX COLLECTOR (13) and 26 more |
+| 4 | Karen A. Kemp | [1981 report, p. 5](/docs/town-annual-reports/docs/4503-1981-annual-town-report.pdf#page=5) | [FY 2025 report, p. 14](/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf#page=14) | 44 years | 45 of 45 | officers’ directory | REGISTRAR OF VOTERS (22); BOARD OF REGISTRARS OF VOTERS (11); REGISTRARS OF VOTERS (10) and 8 more |
+| 5 | Charles Sampson | [1978 report, p. 22](/docs/town-annual-reports/docs/4500-1978-annual-town-report.pdf#page=22) | [FY 2021 report, p. 86](/docs/town-annual-reports/docs/4128-fy-2021-annual-town-report.pdf#page=86) | 43 years | 44 of 44 | department roster | EMT (12); Firefighter (7); Firefighter/EMT (7) and 13 more |
+| 6 | Patrick A. Sullivan | [1983 report, p. 18](/docs/town-annual-reports/docs/4483-1983-annual-town-report.pdf#page=18) | [FY 2025 report, p. 78](/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf#page=78) | 42 years | 43 of 43 | department roster | Chief of Department (14); Lieutenant (6); Deputy Chief/EMT (5) and 20 more |
+| 7 | Joseph Cardone | [1983 report, p. 18](/docs/town-annual-reports/docs/4483-1983-annual-town-report.pdf#page=18) | [FY 2025 report, p. 78](/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf#page=78) | 42 years | 41 of 43 | department roster | Firefighter/EMT (10); FF/EMT (6); Firefighter (5) and 14 more |
+| 8 | Dr. Robert J. Fallon | [1964 report, p. 5](/docs/town-annual-reports/docs/4507-1964-annual-town-report.pdf#page=5) | [2005 report, p. 8](/docs/town-annual-reports/docs/4513-2005-annual-town-report.pdf#page=8) | 41 years | 41 of 42 | officers’ directory | INSPECTOR OF ANIMALS (36); Inspectors of Animals (5) |
+| 9 | Alphonse J. Baron | [1974 report, p. 5](/docs/town-annual-reports/docs/4496-1974-annual-town-report.pdf#page=5) | [FY 2014 report, p. 78](/docs/town-annual-reports/docs/4120-fy-2014-annual-town-report.pdf#page=78) | 40 years | 41 of 41 | officers’ directory | RESERVE POLICE OFFICERS (11); POLICE PATROLMEN & LIC. AUTHORITY AGENTS (9); COMPUTER ADVISORY COMMITTEE (8) and 14 more |
+| 10 | Albert Poladian | [1975 report, p. 4](/docs/town-annual-reports/docs/4497-1975-annual-town-report.pdf#page=4) | [FY 2014 report, p. 12](/docs/town-annual-reports/docs/4120-fy-2014-annual-town-report.pdf#page=12) | 39 years | 39 of 40 | officers’ directory | CONSTABLE (32); CONSTABLES (3); COUNCIL ON AGING (1) and 2 more |
+
+Positions are as printed, grouped regardless of capitals and a printed term length; the number is how many editions print the name under it. “Mostly” is whichever kind of list holds more of the run’s entries: the officers’ directory or a department roster. `year` is the calendar year to 2010 and the fiscal year from FY2011, as the reports themselves are.
+
+**Left out of the ranking, because the print tells the names apart.** Brian L. LeBlanc, 1981 to 2025, would run 44 years, but is printed with J. and L. middle initials (“Brian L. LeBlanc”, “Brian LeBlanc”, “Brian J. LeBlanc”, “Brian Leblanc”). Charles P. Deming, 1970 to 2013, would run 43 years, but is printed as both Jr. and Sr. (“Charles P. Deming”, “Charles Deming”, “Charles Deming, Jr.”, “Charles Deming, Sr.”). Matching drops middle initials and Jr./Sr. so one person printed two ways is one run; where the print itself carries both a Jr. and a Sr., or two middle initials, the joined run may be two people and is not ranked.
+
+### On the school rosters
+
+The per-school staff rosters, by the same rule.
+
+| name | first | last | span | printed in | first entry | last entry |
+|---|---|---|---:|---:|---|---|
+| Richard A. Stachowicz | 1963 | 2001 | 38 years | 34 of 35 | [1963 report, p. 111](/docs/town-annual-reports/docs/4506-1963-annual-town-report.pdf#page=111), “Elementary, Jr. and Sr. High Boys Phys. Ed. Instructor” | [2001 report, p. 40](/docs/town-annual-reports/docs/4527-2001-annual-town-report.pdf#page=40), “PHYSICAL EDUCATION” |
+| Peter B. Lincoln | 1964 | 2001 | 37 years | 33 of 34 | [1964 report, p. 112](/docs/town-annual-reports/docs/4507-1964-annual-town-report.pdf#page=112), “Sr. High English” | [2001 report, p. 40](/docs/town-annual-reports/docs/4527-2001-annual-town-report.pdf#page=40), “ENGLISH” |
+| James Besarkarski | 1968 | 2005 | 37 years | 32 of 34 | [1968 report, p. 121](/docs/town-annual-reports/docs/4511-1968-annual-town-report.pdf#page=121), “Gr. 8 (Homeroom Gr. 8 (#250))” | [2005 report, p. 41](/docs/town-annual-reports/docs/4513-2005-annual-town-report.pdf#page=41), “SCIENCE” |
+| Jane Whitney | 1966 | 2003 | 37 years | 32 of 34 | [1966 report, p. 103](/docs/town-annual-reports/docs/4509-1966-annual-town-report.pdf#page=103), “Jr. High Social Studies; Homeroom Gr. 8, Rm. #241.” | [2003 report, p. 41](/docs/town-annual-reports/docs/4529-2003-annual-town-report.pdf#page=41), “Social Studies” |
+| Mary Lynn Conrad | 1969 | 2005 | 36 years | 29 of 33 | [1969 report, p. 114](/docs/town-annual-reports/docs/4512-1969-annual-town-report.pdf#page=114), “Grade 3D” | [2005 report, p. 45](/docs/town-annual-reports/docs/4513-2005-annual-town-report.pdf#page=45), “3D” |
+| Louise A. Morin | 1967 | 2002 | 35 years | 28 of 32 | [1967 report, p. 118](/docs/town-annual-reports/docs/4510-1967-annual-town-report.pdf#page=118), “Grade 4D” | [2002 report, p. 43](/docs/town-annual-reports/docs/4528-2002-annual-town-report.pdf#page=43), “Grade 4” |
+
+**One name, two careers.** Matched on name alone, Genevieve Nass would top that table at 42 years. The rosters print the name from 1961 ([1961 report, p. 119](/docs/town-annual-reports/docs/4548-1961-annual-town-report.pdf#page=119), “Substitute (School Cafeteria Substitutes)”) to 1981 ([1981 report, p. 78](/docs/town-annual-reports/docs/4503-1981-annual-town-report.pdf#page=78), “Cook/Manager”); it is then absent from 14 rosters in a row, and returns in 1999 ([1999 report, p. 43](/docs/town-annual-reports/docs/4525-1999-annual-town-report.pdf#page=43)) under “Phys. Ed.”, last printed in 2003. Whether that is one person this archive cannot say, which is why a run breaks on a long absence.
 
 ## Across all the years
 
@@ -100,21 +143,6 @@ The rosters print 84 names in 1959 and 232 in 2025. A count of printed names, no
 
 The charter was Question 2 on the ballot headed “ANNUAL TOWN ELECTION - SATURDAY MAY 1, 1999” ([1999 report, p. 80](/docs/town-annual-reports/docs/4525-1999-annual-town-report.pdf#page=80)): YES 422, NO 150, precinct by precinct 162, 117, 122, 21 against 57, 43, 44, 6, and the precincts sum to the printed totals. The fact page’s *Type of government* line reads “Town Meeting” until the [2005 report, p. 4](/docs/town-annual-reports/docs/4513-2005-annual-town-report.pdf#page=4), which first prints “Open Town Meeting”.
 
-### The longest runs on the school rosters
-
-A run is the years between the first and last roster a name is printed in, broken when the name is missing from more than 2 consecutive rosters we hold. That threshold is ours.
-
-| name | first | last | span | printed in | first entry | last entry |
-|---|---|---|---:|---:|---|---|
-| Richard A. Stachowicz | 1963 | 2001 | 38 years | 34 of 35 | [1963 report, p. 111](/docs/town-annual-reports/docs/4506-1963-annual-town-report.pdf#page=111), “Elementary, Jr. and Sr. High Boys Phys. Ed. Instructor” | [2001 report, p. 40](/docs/town-annual-reports/docs/4527-2001-annual-town-report.pdf#page=40), “PHYSICAL EDUCATION” |
-| Peter B. Lincoln | 1964 | 2001 | 37 years | 33 of 34 | [1964 report, p. 112](/docs/town-annual-reports/docs/4507-1964-annual-town-report.pdf#page=112), “Sr. High English” | [2001 report, p. 40](/docs/town-annual-reports/docs/4527-2001-annual-town-report.pdf#page=40), “ENGLISH” |
-| James Besarkarski | 1968 | 2005 | 37 years | 32 of 34 | [1968 report, p. 121](/docs/town-annual-reports/docs/4511-1968-annual-town-report.pdf#page=121), “Gr. 8 (Homeroom Gr. 8 (#250))” | [2005 report, p. 41](/docs/town-annual-reports/docs/4513-2005-annual-town-report.pdf#page=41), “SCIENCE” |
-| Jane Whitney | 1966 | 2003 | 37 years | 32 of 34 | [1966 report, p. 103](/docs/town-annual-reports/docs/4509-1966-annual-town-report.pdf#page=103), “Jr. High Social Studies; Homeroom Gr. 8, Rm. #241.” | [2003 report, p. 41](/docs/town-annual-reports/docs/4529-2003-annual-town-report.pdf#page=41), “Social Studies” |
-| Mary Lynn Conrad | 1969 | 2005 | 36 years | 29 of 33 | [1969 report, p. 114](/docs/town-annual-reports/docs/4512-1969-annual-town-report.pdf#page=114), “Grade 3D” | [2005 report, p. 45](/docs/town-annual-reports/docs/4513-2005-annual-town-report.pdf#page=45), “3D” |
-| Louise A. Morin | 1967 | 2002 | 35 years | 28 of 32 | [1967 report, p. 118](/docs/town-annual-reports/docs/4510-1967-annual-town-report.pdf#page=118), “Grade 4D” | [2002 report, p. 43](/docs/town-annual-reports/docs/4528-2002-annual-town-report.pdf#page=43), “Grade 4” |
-
-**One name, two careers.** Matched on name alone, Genevieve Nass would top that table at 42 years. The rosters print the name from 1961 ([1961 report, p. 119](/docs/town-annual-reports/docs/4548-1961-annual-town-report.pdf#page=119), “Substitute (School Cafeteria Substitutes)”) to 1981 ([1981 report, p. 78](/docs/town-annual-reports/docs/4503-1981-annual-town-report.pdf#page=78), “Cook/Manager”); it is then absent from 14 rosters in a row, and returns in 1999 ([1999 report, p. 43](/docs/town-annual-reports/docs/4525-1999-annual-town-report.pdf#page=43)) under “Phys. Ed.”, last printed in 2003. Whether that is one person this archive cannot say, which is why a run breaks on a long absence.
-
 **The first aide.** Dorothy Hillman, [1970 report, p. 112](/docs/town-annual-reports/docs/4492-1970-annual-town-report.pdf#page=112): “Teacher Aide for Perceptually Handicapped Program”. The 2025 roster prints 52 entries classified as paraprofessional.
 
 ## Then and now
@@ -159,6 +187,8 @@ A run is the years between the first and last roster a name is printed in, broke
 - Any comparison in real dollars. The price index held here starts in 1990.
 - What a household paid in tax in any year before the reports printed an average bill.
 - Staffing levels. A roster line is a name, with no hours and no funding source.
+- Years of town employment. Most lines in the officers’ directory are elected or appointed seats on boards and committees, many unpaid; the directory does not say which posts were paid, and a department roster prints names, not hours.
+- Whether a name joined across editions is one person on the town’s lists either. Matching drops middle initials and Jr./Sr.; runs whose print carries both are held out of the ranking, and others may still join a parent and a child.
 - The years the archive has no report for, and the pages our reading did not yield.
 
 ## Sources
@@ -215,6 +245,7 @@ Every annual report is held in this archive with its sha256; the ones quoted her
 - [2008 Annual Town Report](/docs/town-annual-reports/docs/4516-2008-annual-town-report.pdf) — `4516-2008-annual-town-report.pdf`, sha256 `67d682a76def…`. Published by the Town of Lunenburg at https://www.lunenburgma.gov/DocumentCenter/View/4516.
 - [2009 Annual Town Report](/docs/town-annual-reports/docs/4517-2009-annual-town-report.pdf) — `4517-2009-annual-town-report.pdf`, sha256 `a9281e2cf95e…`. Published by the Town of Lunenburg at https://www.lunenburgma.gov/DocumentCenter/View/4517.
 - [2010 Annual Town Report](/docs/town-annual-reports/docs/4518-2010-annual-town-report.pdf) — `4518-2010-annual-town-report.pdf`, sha256 `4f235863ba7a…`. Published by the Town of Lunenburg at https://www.lunenburgma.gov/DocumentCenter/View/4518.
+- [FY 2013 Annual Town Report](/docs/town-annual-reports/docs/4119-fy-2013-annual-town-report.pdf) — `4119-fy-2013-annual-town-report.pdf`, sha256 `00670845b7d3…`. Published by the Town of Lunenburg at https://www.lunenburgma.gov/DocumentCenter/View/4119.
 - [FY 2014 Annual Town Report](/docs/town-annual-reports/docs/4120-fy-2014-annual-town-report.pdf) — `4120-fy-2014-annual-town-report.pdf`, sha256 `f5ef6e9aec78…`. Published by the Town of Lunenburg at https://www.lunenburgma.gov/DocumentCenter/View/4120.
 - [FY 2015 Annual Town Report](/docs/town-annual-reports/docs/4121-fy-2015-annual-town-report.pdf) — `4121-fy-2015-annual-town-report.pdf`, sha256 `712afbb458b2…`. Published by the Town of Lunenburg at https://www.lunenburgma.gov/DocumentCenter/View/4121.
 - [FY 2016 Annual Town Report](/docs/town-annual-reports/docs/4123-fy-2016-annual-town-report.pdf) — `4123-fy-2016-annual-town-report.pdf`, sha256 `f13af7a7c78d…`. Published by the Town of Lunenburg at https://www.lunenburgma.gov/DocumentCenter/View/4123.
@@ -222,9 +253,10 @@ Every annual report is held in this archive with its sha256; the ones quoted her
 - [FY 2018 Annual Town Report](/docs/town-annual-reports/docs/4125-fy-2018-annual-town-report.pdf) — `4125-fy-2018-annual-town-report.pdf`, sha256 `364a1138df75…`. Published by the Town of Lunenburg at https://www.lunenburgma.gov/DocumentCenter/View/4125.
 - [FY 2019 Annual Town Report](/docs/town-annual-reports/docs/4126-fy-2019-annual-town-report.pdf) — `4126-fy-2019-annual-town-report.pdf`, sha256 `220f1c778148…`. Published by the Town of Lunenburg at https://www.lunenburgma.gov/DocumentCenter/View/4126.
 - [FY 2020 Annual Town Report](/docs/town-annual-reports/docs/4127-fy-2020-annual-town-report.pdf) — `4127-fy-2020-annual-town-report.pdf`, sha256 `c3bf67f1259a…`. Published by the Town of Lunenburg at https://www.lunenburgma.gov/DocumentCenter/View/4127.
+- [FY 2021 Annual Town Report](/docs/town-annual-reports/docs/4128-fy-2021-annual-town-report.pdf) — `4128-fy-2021-annual-town-report.pdf`, sha256 `7ec4740034a2…`. Published by the Town of Lunenburg at https://www.lunenburgma.gov/DocumentCenter/View/4128.
 - [FY 2022 Annual Town Report](/docs/town-annual-reports/docs/4129-fy-2022-annual-town-report.pdf) — `4129-fy-2022-annual-town-report.pdf`, sha256 `d1673d634dba…`. Published by the Town of Lunenburg at https://www.lunenburgma.gov/DocumentCenter/View/4129.
 - [FY 2023 Annual Town Report](/docs/town-annual-reports/docs/4131-fy-2023-annual-town-report.pdf) — `4131-fy-2023-annual-town-report.pdf`, sha256 `d273ebb71360…`. Published by the Town of Lunenburg at https://www.lunenburgma.gov/DocumentCenter/View/4131.
 - [FY 2024 Annual Town Report](/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf) — `4132-fy-2024-annual-town-report.pdf`, sha256 `46f14ff8459e…`. Published by the Town of Lunenburg at https://www.lunenburgma.gov/DocumentCenter/View/4132.
 - [FY 2025 Annual Town Report](/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf) — `4130-fy-2025-annual-town-report.pdf`, sha256 `a9ee7b51154d…`. Published by the Town of Lunenburg at https://www.lunenburgma.gov/DocumentCenter/View/4130.
 
-And the extracts: `sources/data/staff-roster-entries.csv` (the rosters), `report-valuation.csv`, `report-treasurers-then-and-now.csv` and `report-school-lunch.csv` (Textract tables), and the reports’ extracted text in `sources/town-annual-reports/text/`. Generated by `scripts/build_historical_report.py`.
+And the extracts: `sources/data/town-roster-entries.csv` (the officers’ directory and department rosters of all 67 editions, one row per printed name with its edition, page and line; what was read and its caveats are in `sources/data/PROVENANCE-town-rosters.md`), `sources/data/staff-roster-entries.csv` (the school rosters), `report-valuation.csv`, `report-treasurers-then-and-now.csv` and `report-school-lunch.csv` (Textract tables), and the reports’ extracted text in `sources/town-annual-reports/text/`. Generated by `scripts/build_historical_report.py`.
