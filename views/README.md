@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**709 of 5664 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**709 of 5668 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **4955 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **4959 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -241,6 +241,7 @@ Listed so this view cannot look more complete than it is.
 - `data/PROVENANCE-special-revenue-funds.md` — Where the special revenue funds came from
 - `data/PROVENANCE-special-revenue-read.md` — Why the schedule is read rather than OCR’d
 - `data/PROVENANCE-staff-rosters.md` — Where the staff rosters came from, and what a name is not
+- `data/PROVENANCE-town-rosters.md` — Where the town officials lists came from, and what they do not show
 - `data/PROVENANCE-youtube-classification.md` — What the video classification is, and what it is not
 - `data/account-names.csv` — What the ledger’s account codes mean — our readings
 - `data/agentic-spend.csv` — What the scripted reading cost, job by job
@@ -248,6 +249,8 @@ Listed so this view cannot look more complete than it is.
 - `data/ambulance-receipts.csv` — Ambulance receipts, FY2014-FY2025
 - `data/annual-report-catalogue.csv` — Every table in every annual report, catalogued
 - `data/annual-report-contents.csv` — What each report contains, section by section
+- `data/annual-report-coverage-datasets.csv` — Every dataset the annual reports feed, and whether it is in the database
+- `data/annual-report-coverage.csv` — How much of each annual report is data, edition by edition
 - `data/annual-report-pages.csv` — Every financial page of every annual report, and what has read it
 - `data/annual-report-reads.csv` — What a model read off each annual-report page, folded into one table
 - `data/annual-report-receipts.csv` — Town receipts by source, FY2011–FY2023
@@ -458,6 +461,3 @@ Listed so this view cannot look more complete than it is.
 - `data/report-filing.csv` — Which bodies file an annual report, and which say they did not
 - `data/report-financial-performance.csv` — Annual-report extract: financial performance
 - `data/report-fund-balance-sheets.csv` — Annual-report extract: fund balance sheets
-- `data/report-gross-wages.csv` — Gross wages paid, by employee
-- `data/report-highway-accounts.csv` — Annual-report extract: highway accounts
-- `data/report-index.csv` — Every department the town lists, and where its report is

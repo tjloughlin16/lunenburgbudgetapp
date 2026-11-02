@@ -1,18 +1,18 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "fy26-school-surplus",
- "picked_at": "2026-10-19T15:22:48Z",
+ "picked_at": "2026-11-02T12:27:38Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.0123,
- "input_sha256": "bcbffaaf285d3f11f97c38fa2adfbfd5346a739581270c4dbb46414e6a03565d",
+ "cost_usd": 0.0076,
+ "input_sha256": "d981e6834201ee8c6aad2c69918eadc0903dcc0b95a2dc4257ed407aeae80ddc",
  "callouts": [
   {
    "kind": "money",
-   "value": "$470K-$600K",
-   "label": "unspent school money projected by the town manager from last fiscal year",
-   "hook": "unspent by the schools",
-   "quote": "between $470,000 and $600,000 in unspent appropriations",
+   "value": "$470,000-$600,000",
+   "label": "unspent school money from last fiscal year, as projected by the town manager",
+   "hook": "projected unspent school funds",
+   "quote": "projecting between $470,000 and $600,000 in unspent appropriations from last fiscal year",
    "heard": [],
    "item_date": "2026-09-03",
    "item_board": "town-meeting",
@@ -24,15 +24,15 @@
    "where": "Town Meeting, 3 Sep 2026",
    "verdict": {
     "keep": true,
-    "why": "Town manager's reported $470k-$600k projection; later says final amount unknown, no contradiction."
+    "why": "Town manager's projection of $470k-$600k was reported at Town Meeting and is labelled as a projection."
    }
   },
   {
    "kind": "money",
-   "value": "$100K-$200K",
-   "label": "what the schools usually return to the town each year; likely more this year",
+   "value": "$100,000-$200,000",
+   "label": "what the school district usually returns unspent to the town each year",
    "hook": "",
-   "quote": "somewhere between 100 and $200,000",
+   "quote": "roughly somewhere between 100 and $200,000",
    "heard": [
     "100 and $200,000"
    ],
@@ -46,7 +46,7 @@
    "where": "School Committee, 9 Sep 2026",
    "verdict": {
     "keep": true,
-    "why": "Member said typical return is $100-200k and more expected this year."
+    "why": "A member said the usual return is roughly $100k-$200k; the label says 'usually' and later items do not contradict it."
    }
   }
  ]

@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-01",
+ "generated": "2026-11-02",
  "origins": [
   {
    "id": "school",
@@ -3443,9 +3443,9 @@
      "stars": 2,
      "what": "One row per raising: the date, board and fiscal year, the question as it was asked THEN, the words as the captions heard them, and the moment in the video. Kept apart so a suggestion first raised years ago still carries its own context.",
      "kind": "Data",
-     "bytes": 379274,
+     "bytes": 380509,
      "url": "/docs/data/suggested-reports-meetings.csv",
-     "count": 825,
+     "count": 828,
      "unit": "rows",
      "textUrl": "/docs/data/suggested-reports-meetings.csv"
     },
@@ -3455,9 +3455,9 @@
      "stars": 2,
      "what": "Written by us, by `build_board_transfers.py`, from the transfers and votes `extract_official_votes.py` reads out of each set of the town’s minutes, each with a verbatim quote. One row per transfer AS THE MINUTES PRINT IT. `counted`/`why_not` keep what is not a voted transfer (tabled, a licence, a town meeting article the board only recommended). `has_form`, `has_minutes`, `has_recording` say which records speak for it; `gold` is the district’s signed transfer form, held only for the schools. `crosses` says whether the money changed school or DESE program, read from the school ledger. Rows from a RECORDING are captions and never counted.",
      "kind": "Data",
-     "bytes": 339085,
+     "bytes": 336537,
      "url": "/docs/data/board-transfers.csv",
-     "count": 557,
+     "count": 551,
      "unit": "rows",
      "textUrl": "/docs/data/board-transfers.csv"
     },
@@ -3503,9 +3503,9 @@
      "stars": 2,
      "what": "One row per suggestion, merged across meetings: the subject, whether a page already answers it, how many meetings raised it, first and last date, fiscal years, and the meetings by date. Read by a model from our minutes of each recording -- a place to start, not a finding.",
      "kind": "Data",
-     "bytes": 202216,
+     "bytes": 203098,
      "url": "/docs/data/suggested-reports.csv",
-     "count": 260,
+     "count": 261,
      "unit": "rows",
      "textUrl": "/docs/data/suggested-reports.csv"
     },
@@ -4329,7 +4329,7 @@
      "stars": 1,
      "what": "OURS, written by a language model (claude -p) in scripts/write_article_summaries.py from the warrant’s own words, heard-figures.csv and our notes of the board discussion, and nothing else. A summary carrying a figure that neither the warrant nor a checked figure carries is refused. Each says what it was written from. The warrant is the record.",
      "kind": "JSON",
-     "bytes": 16494,
+     "bytes": 16426,
      "url": "/docs/data/article-summaries.json",
      "textUrl": "/docs/data/article-summaries.json"
     },
@@ -6707,7 +6707,7 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 3871159,
+     "bytes": 3872400,
      "url": "/docs/data/meeting-register.csv",
      "count": 7107,
      "unit": "rows",
@@ -6899,9 +6899,9 @@
      "stars": 3,
      "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
      "kind": "Data",
-     "bytes": 792696,
+     "bytes": 794269,
      "url": "/docs/data/agentic-spend.csv",
-     "count": 11451,
+     "count": 11471,
      "unit": "rows",
      "textUrl": "/docs/data/agentic-spend.csv"
     },
@@ -7789,9 +7789,9 @@
      "stars": 2,
      "what": "The question underneath the one above. A link can still open and serve a different document — a Drive file can be replaced in place without its URL changing, and nothing in a link check would notice. So every address is fetched and the result compared to our copy by sha256. It also separates the ways bytes can differ without the document differing: a Google Doc is re-zipped on every export, and a PDF can be re-saved with a heading’s line-break in a new place. Only one of those is a change. Rebuild with scripts/verify_source_copies.py.",
      "kind": "Data",
-     "bytes": 297232,
+     "bytes": 331338,
      "url": "/docs/data/copy-status.csv",
-     "count": 907,
+     "count": 1003,
      "unit": "rows",
      "textUrl": "/docs/data/copy-status.csv"
     },
@@ -7801,9 +7801,9 @@
      "stars": 2,
      "what": "For every archived document that records where its publisher put it, whether that address still opens. On 29 August 2026 it mostly did not: 57 of 184 returned a Google sign-in wall, every one of them a Drive or Docs link, while the town’s own web server answered 81 of 81. The district was asked to reopen them and did — on 31 August the same 187 came back 186 open. Both readings are the archive’s reason for existing, measured. Rebuild with scripts/check_source_links.py.",
      "kind": "Data",
-     "bytes": 215485,
+     "bytes": 249535,
      "url": "/docs/data/link-status.csv",
-     "count": 1136,
+     "count": 1336,
      "unit": "rows",
      "textUrl": "/docs/data/link-status.csv"
     },
@@ -8278,6 +8278,18 @@
      "textUrl": "/docs/data/parks-myrec-sales-fy2025.csv"
     },
     {
+     "path": "data/source-checks.csv",
+     "title": "Every time the refresh looked at a slow source",
+     "stars": 2,
+     "what": "Appended by the daily refresh, one row per look: the source, the day, and whether the look succeeded. A source is due again when its cadence has passed since its last successful look, so a failed one is retried the next morning. Written by scripts/refresh.py through scripts/source_cadence.py.",
+     "kind": "Data",
+     "bytes": 3187,
+     "url": "/docs/data/source-checks.csv",
+     "count": 94,
+     "unit": "rows",
+     "textUrl": "/docs/data/source-checks.csv"
+    },
+    {
      "path": "data/eoyr-nss.csv",
      "title": "Net school spending as the End of Year Report computes it, FY2023 and FY2024",
      "stars": 2,
@@ -8288,18 +8300,6 @@
      "count": 50,
      "unit": "rows",
      "textUrl": "/docs/data/eoyr-nss.csv"
-    },
-    {
-     "path": "data/source-checks.csv",
-     "title": "Every time the refresh looked at a slow source",
-     "stars": 2,
-     "what": "Appended by the daily refresh, one row per look: the source, the day, and whether the look succeeded. A source is due again when its cadence has passed since its last successful look, so a failed one is retried the next morning. Written by scripts/refresh.py through scripts/source_cadence.py.",
-     "kind": "Data",
-     "bytes": 2857,
-     "url": "/docs/data/source-checks.csv",
-     "count": 82,
-     "unit": "rows",
-     "textUrl": "/docs/data/source-checks.csv"
     },
     {
      "path": "data/socrata-status.csv",
@@ -8367,9 +8367,9 @@
      "stars": 2,
      "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1575,
+     "bytes": 1606,
      "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 48,
+     "count": 49,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
@@ -62913,7 +62913,7 @@
  "totals": {
   "documents": 5668,
   "groups": 31,
-  "bytes": 7264164657,
+  "bytes": 7264235489,
   "loadBearing": 210
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 7 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
