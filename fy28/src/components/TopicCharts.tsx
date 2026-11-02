@@ -52,6 +52,9 @@ export type SeriesChart = {
   overlay?: boolean
   /** Stacked bars only: each bar's total, as text, printed above it (scripts/topic.py). */
   totals?: string[]
+  /** ONE LINE ON A SECOND AXIS, in its own unit (scripts/topic.py series `secondary`): a ratio drawn
+   *  over the amounts it is a ratio of. Its axis is on the right and labelled with its unit. */
+  secondary?: { name: string; unit: string; basis: Basis; values: (number | null)[]; texts: (string | null)[]; decimals: number | null }
 }
 export type RankingChart = {
   type: 'ranking'; title: string; unit: string; basis: Basis; stack: string[] | null
@@ -204,6 +207,12 @@ function SeriesTip({ active, label, c, payload, offset = 0 }: TipProps & { paylo
         <p className="flex items-center justify-between gap-5 tnum mt-1 pt-1" style={{ borderTop: '1px solid var(--grid)' }}>
           <span style={{ color: 'var(--text-secondary)' }}>Total</span>
           <span className="font-semibold">{c.totals[at]}</span>
+        </p>
+      ) : null}
+      {c.secondary && at >= 0 ? (
+        <p className="flex items-center justify-between gap-5 tnum mt-1 pt-1" style={{ borderTop: '1px solid var(--grid)' }}>
+          <span style={{ color: 'var(--text-secondary)' }}>{c.secondary.name}{BASIS_TAG[c.secondary.basis] ? ` (${BASIS_TAG[c.secondary.basis]})` : ''}</span>
+          <span className="font-semibold">{shown(c.secondary.texts[at])}</span>
         </p>
       ) : null}
     </div>
@@ -420,7 +429,8 @@ function Series({ c }: { c: SeriesChart }) {
   const capH = c.totals ? Math.max(1, ...c.series.flatMap(s => s.values.map(v => Math.abs(v ?? 0)))) * 1e-6 : 0
   const rows = c.x.map((x, i) => Object.fromEntries([['x', x],
     ...c.series.map((s, j) => [`s${j}`, s.values[i]] as const),
-    ...(c.totals ? [['__cap', capH] as const] : [])]))
+    ...(c.totals ? [['__cap', capH] as const] : []),
+    ...(c.secondary ? [['__sec', c.secondary.values[i]] as const] : [])]))
   const negative = c.series.some(s => s.values.some(v => v != null && v < 0))
   // An axis that need not start at zero still starts on a round number, and takes in the
   // reference line, so "the minimum" is never off the bottom of its own chart.
@@ -444,11 +454,13 @@ function Series({ c }: { c: SeriesChart }) {
         <div className="flex flex-wrap gap-x-4 gap-y-1 mb-2">
           {c.series.map((s, i) => <Key key={s.name} colour={colourOf(s, i)} name={s.name} basis={s.basis}
             mark={s.mark} tag={!common} />)}
+          {c.secondary ? <Key colour="var(--text-primary)" name={`${c.secondary.name}, right axis`}
+            basis={c.secondary.basis} mark="line" tag={!common} /> : null}
         </div>
       ) : null}
       <div style={{ height: 260 }} aria-hidden>
         <ResponsiveContainer width="100%" height="100%">
-          <ComposedChart data={rows} margin={{ top: c.totals ? 22 : 6, right: 22, bottom: 0, left: 0 }} barGap={2}>
+          <ComposedChart data={rows} margin={{ top: c.totals ? 22 : 6, right: c.secondary ? 4 : 22, bottom: 0, left: 0 }} barGap={2}>
             <CartesianGrid stroke="var(--grid)" vertical={false} />
             <XAxis dataKey="x" interval={c.x.length <= 12 ? 0 : 'preserveStartEnd'} minTickGap={c.x.length <= 12 ? 2 : 14}
               tick={{ fill: 'var(--text-muted)', fontSize: 11 }} stroke="var(--axis)" tickLine={false} />
@@ -456,6 +468,11 @@ function Series({ c }: { c: SeriesChart }) {
               domain={domain?.range} ticks={domain?.ticks} tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
               stroke="var(--axis)" tickLine={false} axisLine={false}
               tickFormatter={(v: number) => tick(c.unit, v)} />
+            {c.secondary ? (
+              <YAxis yAxisId="sec" orientation="right" width={44} domain={[0, 'auto']}
+                tick={{ fill: 'var(--text-muted)', fontSize: 11 }} stroke="var(--axis)" tickLine={false} axisLine={false}
+                tickFormatter={(v: number) => tick(c.secondary!.unit, v)} />
+            ) : null}
             {negative ? <ReferenceLine y={0} stroke="var(--axis)" /> : null}
             {c.reference ? (
               <ReferenceLine y={c.reference.value} stroke="var(--text-muted)" strokeDasharray="2 3"
@@ -491,6 +508,11 @@ function Series({ c }: { c: SeriesChart }) {
                   connectNulls={false} isAnimationActive={false} type="linear" />
               )
             })}
+            {c.secondary ? (
+              <Line yAxisId="sec" dataKey="__sec" name={c.secondary.name} stroke="var(--text-primary)" strokeWidth={2}
+                strokeDasharray={c.secondary.basis === 'estimate' ? '6 4' : undefined}
+                dot={{ r: 3, fill: 'var(--text-primary)' }} connectNulls={false} isAnimationActive={false} type="linear" />
+            ) : null}
             {/* The whole of each stack, above it: the generator's text, so the label foots to
                 the bands (TJ, 23 October 2026: a share chart hid the scale). */}
             {c.totals ? (
@@ -506,8 +528,9 @@ function Series({ c }: { c: SeriesChart }) {
           </ComposedChart>
         </ResponsiveContainer>
       </div>
-      <SrTable head={['', ...c.series.map(s => s.name)]}
-        rows={c.x.map((x, i) => [x, ...c.series.map(s => shown(s.texts[i]))])} />
+      <SrTable head={['', ...c.series.map(s => s.name), ...(c.secondary ? [c.secondary.name] : [])]}
+        rows={c.x.map((x, i) => [x, ...c.series.map(s => shown(s.texts[i])),
+          ...(c.secondary ? [shown(c.secondary.texts[i])] : [])])} />
     </Frame>
   )
 }

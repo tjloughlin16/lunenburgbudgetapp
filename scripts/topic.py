@@ -643,7 +643,7 @@ def track(name, values, basis='published', mark=None, colour=None):
 
 def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_figures=None,
            note_allow=(), decimals=None, reference=None, from_zero=True, multiples=False,
-           overlay=False, totals=False):
+           overlay=False, totals=False, secondary=None):
     """Named tracks over the same x -- years (C.fy(y)) or categories, as strings.
     reference: (value, label) -- one horizontal line a reader measures the tracks against,
       e.g. (100, 'The state minimum'). Its value is shown by fmt(), like every other.
@@ -664,7 +664,12 @@ def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_f
     totals: a STACKED bar chart prints each bar's total above it, so the size of each whole
       reads without hovering (TJ, 23 October 2026, on a share chart that hid two districts'
       very different scales). The text is fmt() of the sum of the plotted values, written
-      here, so the label foots to the bands it sits on. Written only when set."""
+      here, so the label foots to the bands it sits on. Written only when set.
+    secondary: ONE LINE ON A SECOND AXIS, in its own unit -- a ratio drawn over the amounts it is a
+      ratio of (TJ, 2 November 2026: free cash as a share of the operating budget, "to provide
+      context to the growing numbers"). dict(name, values, unit, basis='published', decimals=None).
+      Its axis is on the right and labelled with its unit, so the two scales are never confused;
+      texts come from fmt() like every other value. Written only when set."""
     if totals and not (stacked and kind == 'bar'):
         raise ConclusionError('chart %r: totals label a stacked bar chart' % title)
     if multiples and overlay:
@@ -680,6 +685,16 @@ def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_f
     if not from_zero and any((t['mark'] or kind) == 'bar' for t in tracks):
         raise ConclusionError('chart %r: from_zero=False with bars -- a bar is measured from zero'
                               % title)
+    sec = None
+    if secondary is not None:
+        if multiples or overlay or len(secondary['values']) != len(x):
+            raise ConclusionError('chart %r: a secondary line is one value per x, on a plain chart' % title)
+        if secondary['unit'] == unit:
+            raise ConclusionError('chart %r: a secondary axis is for a DIFFERENT unit; same unit, same axis' % title)
+        sd = secondary.get('decimals')
+        sec = dict(name=' '.join(secondary['name'].split()), unit=secondary['unit'],
+                   basis=secondary.get('basis', 'published'), values=list(secondary['values']),
+                   decimals=sd, texts=[fmt(secondary['unit'], v, sd) for v in secondary['values']])
     ref = None
     if reference is not None:
         rv, rl = reference
@@ -692,6 +707,7 @@ def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_f
                          note=_note(note, note_figures, note_allow, CHART_NOTE_MAX, 'chart note'),
                          **({'multiples': True} if multiples else {}),
                          **({'overlay': True} if overlay else {}),
+                         **({'secondary': sec} if sec else {}),
                          **({'totals': [fmt(unit, sum(t['values'][i] or 0 for t in tracks),
                                             decimals) for i in range(len(x))]}
                             if totals else {})))

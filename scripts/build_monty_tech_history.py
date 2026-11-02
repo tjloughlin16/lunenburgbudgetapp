@@ -33,8 +33,8 @@ label, with the column that holds the expended figure -- except:
             off the page text, where the figure prints in both money columns.
   FY2011-   read from sources/data/pages-read.csv, where each schedule was read by eye against its
   FY2023    printed header; that reading supersedes the generic extract (which, for one, read FY2011's
-            expended cell as `33,124.01`). FY2016, FY2017 and FY2021 have no expended cell there and
-            stay on the extract, `check failed`.
+            expended cell as `33,124.01`). FY2021 has no expended cell there (FY2016 and FY2017 do, filed under a heading) and
+            stays on the extract, `check failed`.
   FY2024-   not held: neither report prints an accountant's schedule (the page map classifies every
   FY2025    financial page of both, and the OCR of both was searched for the line). A registered gap.
 
@@ -131,13 +131,22 @@ SCHEDULE = [
     (2000, 75), (2001, 59), (2002, 53), (2003, 58), (2004, 59), (2005, 59), (2006, 54), (2007, 63),
     (2008, 67), (2009, 52), (2010, 62))] + [
     (C.fy(y), y, y, 'FY%d' % y, p, 'Monty Tech Assessment', 'v3') for y, p in (
-        (2016, 29), (2017, 27), (2021, 30))]
+        (2021, 30),)]
 # FY2011-FY2023 come first from the PAGE READS (sources/data/pages-read.csv): each schedule read by
 # eye against its printed header, which supersedes the generic extract (CLAUDE.md, the annual
-# reports). Three years have no read expended cell there and stay on the extract above.
+# reports). FY2021 has no read expended cell there (its read took the voted columns only) and stays
+# on the extract above. A read may file the line under its HEADING, with the label in fund_number
+# (`School Department :: Monty Tech Assessment @p29r176`): FY2016 and FY2017 were read that way, and
+# until 2 November 2026 this matched fund_name alone, missed them, and recorded them as not read.
 PAGE_READS = os.path.join(ROOT, 'sources', 'data', 'pages-read.csv')
-READ_PAGES = {2011: 64, 2012: 64, 2013: 69, 2014: 27, 2015: 27, 2018: 33, 2019: 35, 2020: 29,
-              2022: 31, 2023: 31}
+READ_PAGES = {2011: 64, 2012: 64, 2013: 69, 2014: 27, 2015: 27, 2016: 29, 2017: 27, 2018: 33,
+              2019: 35, 2020: 29, 2022: 31, 2023: 31}
+MT_LABEL = 'Monty Tech Assessment'
+
+
+def is_mt_read(r):
+    """The Monty Tech line in a page read: its own row, or a line filed under a heading."""
+    return r['fund_name'] == MT_LABEL or r['fund_number'].split(' @')[0].endswith(':: ' + MT_LABEL)
 # Monty Tech's own table of what it assessed each member town, FY1999-FY2018, printed in the
 # FY2017 annual town report (page 149) and read by eye into the same file. A DIFFERENT document
 # for the same bill: the cross-check, never part of the series.
@@ -151,7 +160,12 @@ NOT_HELD = (2024, 2025)
 # the page prints (`checked`), or the accounting system's report, which ties to its own grand total.
 STATUS_WORDS = {'checked': 'Reconciles on its page', 'check failed': 'Does not reconcile',
                 'no check': 'No total to check against', 'read off the page': 'Read off the page'}
-RECONCILED = lambda o: o['status'] == 'checked' or o['read'] == 'ledger'
+# A YEAR WHOSE PAGE PRINTS NO TOTAL COUNTS AS RECONCILED, FOOTNOTED. TJ, 2 November 2026: "if there
+# are no totals, we need to consider them reconciled ... we can caveat it of course... with a
+# footnote". Its own status still says why (STATUS_WORDS), and each chart's note counts them.
+# Policy: notes/process/TOLERANCES.md.
+NO_TOTAL = ('no check', 'read off the page')
+RECONCILED = lambda o: o['status'] == 'checked' or o['status'] in NO_TOTAL or o['read'] == 'ledger'
 OK_NAME, NOK_NAME = 'Reconciled', 'Not reconciled'
 
 
@@ -256,7 +270,7 @@ def series():
     reads = {}
     for r in csv.DictReader(open(PAGE_READS, encoding='utf-8')):
         y = int(r['fy'])
-        if READ_PAGES.get(y) == int(r['page']) and r['fund_name'] == 'Monty Tech Assessment':
+        if READ_PAGES.get(y) == int(r['page']) and is_mt_read(r):
             reads.setdefault(y, {}).setdefault(r['column'], set()).add((float(r['value']), r['status']))
     for y, pg in sorted(READ_PAGES.items()):
         cols = reads.get(y)
@@ -386,6 +400,9 @@ def page():
                'what the school costs.'),
     ]
 
+    def no_total(rows):
+        return sum(1 for o in rows if o and o['status'] in NO_TOTAL)
+
     def track_split(rows):
         ok = [o['value'] if RECONCILED(o) else None for o in rows]
         nok = [o['value'] if not RECONCILED(o) else None for o in rows]
@@ -400,12 +417,17 @@ def page():
         TP.track(OK_NAME, vals(lambda o: o['value'] if RECONCILED(o) else None)),
         TP.track(NOK_NAME, vals(lambda o: o['value'] if not RECONCILED(o) else None)),
     ], '$', kind='bar', stacked=True,
-        note='Expended, as each year’s annual town report prints it; FY2026 from the Town’s ledger. '
-             'No figure is held for FY2024 or FY2025.', note_allow=('FY2026', 'FY2024', 'FY2025'))
+        note='Expended, as each annual report prints it; FY2026 from the ledger; none held for FY2024-25. '
+             'Reconciled includes %d %s whose page prints no total.'
+             % (no_total(rows_since), 'year' if no_total(rows_since) == 1 else 'years'),
+        note_figures={'n': figure(no_total(rows_since), str(no_total(rows_since)), 'years')},
+        note_allow=('FY2026', 'FY2024-25'))
     also = TP.series('The early years', [o['x'] for o in early], track_split(early), '$',
                      kind='bar', stacked=True,
-                     note='Calendar years to 1972; the 1974 report covers January 1973 to June 1974, '
-                          'eighteen months; fiscal years after.',
+                     note='Calendar years to 1972; the 1974 report covers January 1973 to June 1974; '
+                          'fiscal years after. Reconciled includes %d %s with no printed total.'
+                          % (no_total(early), 'year' if no_total(early) == 1 else 'years'),
+                     note_figures={'n': figure(no_total(early), str(no_total(early)), 'years')},
                      note_allow=('1972', '1974', '1973'))
 
     def table_rows(rows):

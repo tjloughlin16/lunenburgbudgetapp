@@ -72,6 +72,17 @@ AMBER = '#e08214'
 # a fraction of the usual names) and splits a name that vanishes for a decade -- which is
 # the Nass case, eighteen years apart and two different jobs. It is printed on the page.
 MAX_ABSENT = 2
+
+# WHAT A PERSON HAS TOLD US ABOUT WHO IS WHO, where the print cannot say. Keyed by name_key; each
+# entry is what was said, by whom and when, and the page prints it AS what we were told -- no
+# document held establishes it (rule 3). The run rule decides the ranking either way; this only
+# replaces "cannot say" with the answer and its source.
+CONFIRMED_DISTINCT = {
+    # TJ, 2 November 2026: "there are 2 genevieve nass's! One is the mom, the other the daughter.
+    # both worked for lunenburg." The run rule had already split them on the 1982-1998 absence.
+    'genevievenass': dict(who='a mother and her daughter, both of whom worked for Lunenburg',
+                          told='2 November 2026'),
+}
 TITLES = {'mrs', 'mr', 'miss', 'ms', 'dr', 'jr', 'sr', 'ii', 'iii', 'rev', 'sister', 'ed'}
 
 usd = C.usd
@@ -492,7 +503,7 @@ def rosters(eds):
         if len(rs) > 1:
             rs.sort(key=lambda r: r['first'])
             a, b = rs[0], rs[-1]
-            shared = dict(naive_span=span, name=a['first_entry']['name'],
+            shared = dict(naive_span=span, name=a['first_entry']['name'], key=k,
                           a=dict(first=a['first'], last=a['last'], seen=a['seen'],
                                  first_entry=entry(a['first_entry']),
                                  last_entry=entry(a['last_entry'])),
@@ -1123,7 +1134,9 @@ def conclusions_for(d, x):
             id='one-name-two-careers',
             claim='%s: a school cook from %d to %d, then a name under Phys. Ed. from %d'
                   % (sh['name'], sh['a']['first'], sh['a']['last'], sh['b']['first']),
-            so_what='Absent from %s rosters in between; whether it is one person, no report says.'
+            so_what=('Absent from %s rosters in between; two people, a mother and daughter, we were told.'
+                     if sh['key'] in CONFIRMED_DISTINCT else
+                     'Absent from %s rosters in between; whether it is one person, no report says.')
                     % C.num(gap),
             figures={'a': figure(sh['a']['first'], str(sh['a']['first'])),
                      'b': figure(sh['a']['last'], str(sh['a']['last'])),
@@ -1135,7 +1148,9 @@ def conclusions_for(d, x):
                    '%s years. A run here breaks on a long absence for exactly this reason.'
                    % C.num(sh['naive_span']),
             basis='`staff-roster-entries.csv`, the entries quoted in the roster section.',
-            not_shown='Whether the two careers are one person. Same name is not same person.',
+            not_shown=('No document held says they are two people; this project was told so on %s.'
+                       % CONFIRMED_DISTINCT[sh['key']]['told'] if sh['key'] in CONFIRMED_DISTINCT else
+                       'Whether the two careers are one person. Same name is not same person.'),
         ))
     tie = d['tie']
     m, y = tie['march'], tie['may']
@@ -1279,8 +1294,7 @@ def render(d, x):
         a('\n**One name, two careers.** Matched on name alone, %s would be the longest school run at '
           '%s years. The rosters print the name from %d (%s, “%s”) to %d (%s, “%s”); it '
           'is then absent from %s rosters in a row, and returns in %d (%s) under “%s”, '
-          'last printed in %d. Whether that is one person this archive cannot say, which '
-          'is why a run breaks on a long absence.\n\n'
+          'last printed in %d. %s\n\n'
           % (sh['name'], C.num(sh['naive_span']),
              sh['a']['first'], link(sh['a']['first_entry']),
              sh['a']['first_entry']['role'] or sh['a']['first_entry']['group'],
@@ -1289,7 +1303,13 @@ def render(d, x):
              C.num(len([h for h in rs['held'] if sh['a']['last'] < h < sh['b']['first']])),
              sh['b']['first'], link(sh['b']['first_entry']),
              sh['b']['first_entry']['role'] or sh['b']['first_entry']['group'],
-             sh['b']['last']))
+             sh['b']['last'],
+             ('They are two people, %s: this project was told so on %s; no document held says it. '
+              'The break on a long absence keeps them apart.'
+              % (CONFIRMED_DISTINCT[sh['key']]['who'], CONFIRMED_DISTINCT[sh['key']]['told'])
+              if sh['key'] in CONFIRMED_DISTINCT else
+              'Whether that is one person this archive cannot say, which is why a run breaks on a '
+              'long absence.')))
     a('## Across all the years\n\n')
     a('### The tax rate, and the three revaluations\n\n')
     a('The rate each edition prints on its fact page, per $1,000 of assessed value. Until the '

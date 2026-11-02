@@ -323,8 +323,13 @@ def build():
     fx['why-differ'] = f('why-differ', None, 'why the state certifies less than it identifies',
                          'gap', closes='DLS’s free cash certification letter to the Town, '
                                        'stating its adjustments to the submitted balance sheet')
+    # THE SHARE BESIDE THE AMOUNT (TJ, 2 November 2026: "what % of the total budget went to free
+    # cash ... context to the growing numbers"). The Town's own ratio, off its fact sheet, which
+    # fact_sheet() has already re-divided to the hundredth: stated, so set as the Town's.
     dls_rows = [dict(label=str(y), cells=[C.usd(comp[y]['identified']), C.usd(comp[y]['certified']),
-                                          C.fy(y + 1)]) for y in sorted(dls, reverse=True)]
+                                          C.fy(y + 1),
+                                          C.pct(sheet[y + 1]['pct'], 2) if y + 1 in sheet else None])
+                for y in sorted(dls, reverse=True)]
     sheet_rows = [dict(label=C.fy(fy), cells=[C.usd(s['certified']), C.usd(s['base']),
                                               C.pct(s['pct'], 2)])
                   for fy, s in sorted(sheet.items(), reverse=True)]
@@ -337,8 +342,10 @@ def build():
                                                  sheet[fy]['certified']
                                                  for fy in sorted(sheet)], 'stated', 'bar')],
         '$', kind='bar', stacked=True,
-        note='By the fiscal year the money can be spent in. Where both publish a year, '
-             'they agree to the dollar.')
+        secondary=dict(name='Share of the prior year’s operating budget (Town)', unit='%', decimals=2,
+                       basis='stated', values=[sheet[fy]['pct'] for fy in sorted(sheet)]),
+        note='By the year the money can be spent in; where both publish a year, they agree. '
+             'The line, right axis: the Town’s share of the prior year’s operating budget.')
     out['free-cash-balance'] = TP.page(
         'free-cash-balance',
         'The state certified %s of free cash as of 1 July 2025, the most in any year the '
@@ -368,12 +375,13 @@ def build():
         # Town's fact sheet for the years before it -- the two are equal where they overlap.
         chart=fc_chart,
         table=dict(caption='Certified free cash, two publishers', views=[
-            dict(key='dls', label='The state’s proof', total_col=1, kinds=['ledger'] * 3,
-                 columns=['Identified', 'Certified', 'Spent in'],
+            dict(key='dls', label='The state’s proof', total_col=1, kinds=['ledger'] * 3 + ['stated'],
+                 columns=['Identified', 'Certified', 'Spent in', 'Share of the operating budget'],
                  rows=dls_rows,
                  note='Division of Local Services free cash proof, labelled by the year of the '
                       '1 July balance it certifies. Spent in is the Town’s label for the same '
-                      'money.'),
+                      'money. Share: certified free cash over the prior year’s operating budget, '
+                      'as the Town’s fact sheet divides it.'),
             dict(key='sheet', label='The Town’s fact sheet', total_col=0, kinds=['stated'] * 3,
                  columns=['Certified', 'Operating budget it divides by', 'Share'],
                  rows=sheet_rows,

@@ -7,9 +7,41 @@
   "note": {
    "figures": {},
    "literals": [],
-   "text": "By the fiscal year the money can be spent in. Where both publish a year, they agree to the dollar."
+   "text": "By the year the money can be spent in; where both publish a year, they agree. The line, right axis: the Town’s share of the prior year’s operating budget."
   },
   "reference": null,
+  "secondary": {
+   "basis": "stated",
+   "decimals": 2,
+   "name": "Share of the prior year’s operating budget (Town)",
+   "texts": [
+    "0.81%",
+    "2.54%",
+    "2.23%",
+    "3.85%",
+    "2.74%",
+    "4.24%",
+    "6.24%",
+    "6.53%",
+    "3.93%",
+    "4.57%",
+    "6.65%"
+   ],
+   "unit": "%",
+   "values": [
+    0.81,
+    2.54,
+    2.23,
+    3.85,
+    2.74,
+    4.24,
+    6.24,
+    6.53,
+    3.93,
+    4.57,
+    6.65
+   ]
+  },
   "series": [
    {
     "basis": "published",
@@ -393,22 +425,25 @@
     "columns": [
      "Identified",
      "Certified",
-     "Spent in"
+     "Spent in",
+     "Share of the operating budget"
     ],
     "key": "dls",
     "kinds": [
      "ledger",
      "ledger",
-     "ledger"
+     "ledger",
+     "stated"
     ],
     "label": "The state’s proof",
-    "note": "Division of Local Services free cash proof, labelled by the year of the 1 July balance it certifies. Spent in is the Town’s label for the same money.",
+    "note": "Division of Local Services free cash proof, labelled by the year of the 1 July balance it certifies. Spent in is the Town’s label for the same money. Share: certified free cash over the prior year’s operating budget, as the Town’s fact sheet divides it.",
     "rows": [
      {
       "cells": [
        "$3,716,282",
        "$3,354,370",
-       "FY2026"
+       "FY2026",
+       "6.65%"
       ],
       "label": "2025"
      },
@@ -416,7 +451,8 @@
       "cells": [
        "$2,032,579",
        "$2,270,060",
-       "FY2025"
+       "FY2025",
+       "4.57%"
       ],
       "label": "2024"
      },
@@ -424,7 +460,8 @@
       "cells": [
        "$1,923,784",
        "$1,870,612",
-       "FY2024"
+       "FY2024",
+       "3.93%"
       ],
       "label": "2023"
      },
@@ -432,7 +469,8 @@
       "cells": [
        "$3,155,919",
        "$2,923,290",
-       "FY2023"
+       "FY2023",
+       "6.53%"
       ],
       "label": "2022"
      },
@@ -440,7 +478,8 @@
       "cells": [
        "$2,687,134",
        "$2,666,962",
-       "FY2022"
+       "FY2022",
+       "6.24%"
       ],
       "label": "2021"
      }

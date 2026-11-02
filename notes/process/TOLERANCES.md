@@ -59,6 +59,7 @@ These predate the policy. Each is confined to the column or check that needs it.
 | under $5 | `audit_provenance.py` base check | the expense base rebuilt from `fy27_balanced` against the published appropriation. Whole-dollar lines summed |
 | one cent | `extract_gl_history.py` `TOLERANCE` | binary floating-point summation noise only |
 | none, to the cent | `verify_enterprise_balance_sheet.py` | nothing on that page is printed to the dollar |
+| **no printed total counts as reconciled, footnoted** | `build_monty_tech_history.py` (`NO_TOTAL`) | TJ, 2 November 2026: *"if there are no totals, we need to consider them reconciled ... we can caveat it of course... with a footnote"*. A page that prints no total has nothing to fail against, so a reading of it is grouped with the reconciled ones rather than flagged. Its own status still says `No total to check against`, and every chart that groups it says in its note how many such years it counts. A `check failed` reading is NOT covered: that is a page whose total exists and was missed |
 
 ## What is NOT an allowance
 

@@ -87,7 +87,16 @@ will disagree by those ten tables until it is. Pick up at **Next**.
    dataset reads.
 4. **Step 3: the list survey** (licences, dogs, births, committees). The officials and staff
    lists are already done. This is ingest work, so isolated agents; quote it first.
-5. **Small fixes:**
+5. **Two Monty Tech pages to read by eye** (`/monty-tech/monty-tech-history`, 2 November 2026):
+   FY2021 page 30, whose read took only the voted columns, so the expended figure is still the
+   machine reading, `check failed`; and 1987 page 34, `check failed`. Read each against the
+   schedule's printed totals (`notes/process/READING-A-REPORT-PAGE.md`), in an isolated agent.
+   The page map calls FY2021 p30 `proven` because the columns that WERE read close: "proven" is
+   about what was read, not about every column on the page. Of the other eight unreconciled
+   years, seven print no total to check against (1992, 1994-1998, 2008; 2008 agrees to the dollar
+   with Monty Tech's own assessment table), and 1975's row was read off the page text because the
+   extractor missed it.
+6. **Small fixes:**
    - `mirror_group()` in `build_source_index.py` never sets `searchableUrl`.
    - The town rosters' positions still carry tenure text such as "5 year terms".
    - `check_generated.py` runs `build_db.py --check` beside readers of the same database, and
