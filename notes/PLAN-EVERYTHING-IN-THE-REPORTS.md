@@ -43,12 +43,49 @@ identified, but i want to cover anything that is in the reports."*
    row in `notes/reference/SCHEMA.md`; names searchable through the people index where a dataset
    holds people.
 
-## In flight
+## Where it stands (handoff, 2 November 2026)
 
-- The town officials and staff lists: an agent began 1 November with a three-edition pilot
-  (`sources/data/town-rosters/`). It is step 5 for one family, started early because TJ asked for a
-  town-side ranking of who served longest.
-- Searchable copies of the 16 FY2011-FY2025 report PDFs: an agent began 1 November.
+Everything below is committed, pushed and deployed (site `5695ceba2`, D1 synced). Nothing is in
+flight. Pick up at **Next**.
+
+**Done**
+
+- **Step 1, the coverage register.** `scripts/build_annual_report_coverage.py` writes
+  `notes/reference/EXTRACTION-GAPS.md` and two CSVs, and is in `check_generated.py`. Read its
+  numbers from it, not from here.
+- **Step 2, the database guard.** `build_db.py` `check_report_datasets` refuses to build if a
+  `report-*.csv` is neither loaded nor in `REPORT_NOT_LOADED` with a reason.
+- **One family of step 5: the town officials and staff lists.** `scripts/build_town_rosters.py`
+  makes `sources/data/town-roster-entries.csv` (every officers directory and department roster
+  in 67 editions), and the file is in the database. `/analysis/historical-report` ranks town and
+  school staff on ONE board, by span (first year to last year printed). That ranking was TJ's
+  call, 1 November: *"we do not need a school rank and town rank separately. Combine them."*
+  Names with forms that disagree (LeBlanc's middle initial; Deming, Jr. and Sr.) are held out,
+  not joined.
+- **Searchable copies of the 16 FY2011-FY2025 report PDFs** (`searchable-pdfs.csv`).
+
+**Next, in order**
+
+1. **The 10 report datasets that are not in the database.** `EXTRACTION-GAPS.md` names them:
+   `treasurers-cash`, `debt-repayment-detail`, `salary-schedule`, `trust-fund-matrix` and six
+   more. Load each, or add it to `REPORT_NOT_LOADED` with a reason. Then widen the guard past the
+   `report-*` prefix, because these escaped it by their names.
+2. **Two generators do not reproduce:** `report-signatures` and
+   `report-appropriations-supplement`. Fix them before loading them.
+3. **Step 4: sort the 866 FY2011-FY2025 catalogue entries.** Start with the 287 on pages no
+   dataset reads.
+4. **Step 3: the list survey** (licences, dogs, births, committees). The officials and staff
+   lists are already done. This is ingest work, so isolated agents; quote it first.
+5. **Small fixes:**
+   - `mirror_group()` in `build_source_index.py` never sets `searchableUrl`.
+   - The town rosters' positions still carry tenure text such as "5 year terms".
+
+**Open questions for TJ, not decided**
+
+- **Search dates.** Annual-report hits in search carry no date (`build_search_index.py` sets
+  `'date': ''` on archive documents). Dating them was offered and not yet asked for.
+- **Ranking measure.** The board ranks by span, which counts gap years; `held` counts only the
+  years printed. Switching to `held` would reorder some rows. Not raised as a change, only noted.
 
 ## Cost
 
