@@ -1151,6 +1151,16 @@ export function FigureTable({ t }: { t: FigureTableData }) {
   const [k, setK] = useState(Math.min(Math.max(t.open ?? 0, 0), t.views.length - 1))
   const v = t.views[k]
   const stated = (i: number) => v.kinds[i] === 'stated'
+  /* A PROSE COLUMN WRAPS; A FIGURE NEVER DOES. Every cell was nowrap, so a column of text
+     ("Fair Share grant $19,351.39 · Student Opportunity Act $18,644.06") pushed the table past
+     its box, and the browser shrank the only column it could -- the row labels -- to one letter
+     per line (/school-all-funds/salaries-from-grants-and-fees, TJ, 2 November 2026). A column is
+     prose when MOST of its filled cells hold words. Not "any": a figure column carrying one
+     `TBD`, `5th of 5` or `not yet closed` is still a figure column -- 35 across the site. */
+  const prose = v.columns.map((_, i) => {
+    const filled = v.rows.map(r => r.cells[i]).filter((c): c is string => c != null && c !== '' && c !== '—')
+    return filled.filter(c => /[A-Za-z]/.test(c)).length * 2 > filled.length
+  })
   return (
     <figure className="mt-3">
       <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
@@ -1179,7 +1189,7 @@ export function FigureTable({ t }: { t: FigureTableData }) {
                     leaves the corner blank rather than mislabel its rows. */}
                 {v.rows.every(r => /^(FY|SY)\d{4}/.test(r.label)) ? 'Year' : ''}</th>
               {v.columns.map((c, i) => (
-                <th key={c} scope="col" className="text-right font-semibold px-2.5 py-2 align-bottom leading-snug"
+                <th key={c} scope="col" className={`${prose[i] ? 'text-left' : 'text-right'} font-semibold px-2.5 py-2 align-bottom leading-snug`}
                   style={{
                     borderBottom: '2px solid var(--axis)',
                     borderLeft: i === v.total_col || stated(i) ? '1px solid var(--grid)' : undefined,
@@ -1197,13 +1207,13 @@ export function FigureTable({ t }: { t: FigureTableData }) {
               const bg = j % 2 ? 'var(--surface-1)' : 'var(--surface-2)'
               return (
                 <tr key={r.label} style={{ background: bg }}>
-                  <th scope="row" className="sticky left-0 text-left font-semibold px-2.5 py-1.5"
+                  <th scope="row" className="sticky left-0 text-left font-semibold px-2.5 py-1.5 min-w-[9rem] [overflow-wrap:normal] [word-break:normal]"
                     style={{ background: bg, color: 'var(--text-primary)' }}>
                     {r.href ? <a href={r.href} className="underline" style={{ color: 'var(--series-cost)' }}>{r.label}</a> : r.label}
                     {r.code ? <span className="block text-[11px] font-normal" style={{ color: 'var(--text-muted)' }}>
                       {r.code}</span> : null}</th>
                   {r.cells.map((c, i) => (
-                    <td key={i} className="text-right px-2.5 py-1.5 whitespace-nowrap"
+                    <td key={i} className={prose[i] ? 'text-left px-2.5 py-1.5 min-w-[14rem] leading-snug' : 'text-right px-2.5 py-1.5 whitespace-nowrap'}
                       style={{
                         color: c == null || stated(i) ? 'var(--text-muted)' : 'var(--text-primary)',
                         fontWeight: i === v.total_col ? 600 : undefined,
