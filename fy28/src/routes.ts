@@ -1055,6 +1055,9 @@ export function topicIdFromPath(pathname: string): string | null {
  *  fetched by the new id and Topic.tsx moves the address bar to its path, so a shared link
  *  to the old page lands on what replaced it. */
 export const TOPIC_MERGED: Record<string, string> = {
+  // Renamed so it can be found (TJ, 2 November 2026: "I expected, you know, commercial
+  // development as a solution or something").
+  'development-needed': 'commercial-development',
   // TJ, 27 October 2026: "lets call this FY breakdown, unrelated to 2026" -- off the FY2026
   // closeout shelf onto the whole school budget's, at a year-neutral address.
   'fy2026-breakdown': 'fy-breakdown',
@@ -1103,6 +1106,9 @@ export const TOPIC_ALIASES: Record<string, string> = {
   // The Budget crisis hub took /crisis on 18 October 2026; it was built at /budget-crisis,
   // which was also an alias of the walkthrough, so both words land on the hub.
   'budget-crisis': 'crisis',
+  // Budget options, folded into the crisis hub as its Solutions part (TJ, 2 November 2026). Its
+  // pages keep /budget-options/<id>; the shelf's own address opens the hub.
+  'budget-options': 'crisis',
   // A TOPIC PAGE, not a hub: /budget-vs-actual (tab `variance`, the August report's page) and its
   // aliases open School lines against budget, which replaced it (TJ, 29 October 2026). The
   // markdown stays served at /analysis/budget-vs-actual, unlisted (sources/analyses/UNLISTED).

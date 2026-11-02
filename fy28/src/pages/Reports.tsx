@@ -210,8 +210,10 @@ function Row({ o, extra }: { o: Owner; extra: React.ReactNode }) {
 type TopicIndex = {
   areas: { id: string; title: string }[]
   categories: { id: string; shelf: string; title: string; path: string; answer: string | null
-    groups: { title: string | null; topics: string[] }[]
-    elsewhere: { href: string; title: string }[]; area: string | null; archive_after?: string }[]
+    groups: { title: string | null; topics: string[]; section?: string | null }[]
+    elsewhere: { href: string; title: string }[]; area: string | null; archive_after?: string
+    /** Drawn only as part of another hub (scripts/topics.py): not a shelf of its own here. */
+    merged_into?: string }[]
   topics: Record<string, { id: string; title: string; path: string; finding: string | null
     shelves: string[]; ready: boolean }>
 }
@@ -227,7 +229,7 @@ function HubContents() {
   const [ix, setIx] = useState<TopicIndex | null>(null)
   useEffect(() => { fetch('/data/topics.json').then(r => r.json()).then(setIx).catch(() => {}) }, [])
   if (!ix) return null
-  const areas = ix.areas.map(a => ({ ...a, hubs: ix.categories.filter(c => c.area === a.id) }))
+  const areas = ix.areas.map(a => ({ ...a, hubs: ix.categories.filter(c => c.area === a.id && !c.merged_into) }))
     .filter(a => a.hubs.length)
   const pages = (c: TopicIndex['categories'][number]) =>
     c.groups.reduce((n, g) => n + g.topics.filter(id => ix.topics[id]?.ready).length, 0)
@@ -289,7 +291,7 @@ function TopicShelves({ area, archived }: { area: string; archived?: boolean }) 
   const past = (c: TopicIndex['categories'][number]) => !!c.archive_after && c.archive_after < today
   return (
     <>
-      {ix.categories.filter(c => c.area === area && (archived === undefined || past(c) === archived)).map(c => (
+      {ix.categories.filter(c => c.area === area && !c.merged_into && (archived === undefined || past(c) === archived)).map(c => (
         // ONE DOOR TO THE HUB. The heading is the link; its answer sits under it. A boxed
         // card for the hub used to follow, linking the same page under its other title --
         // "Athletics ->" then "Athletics costs ->" -- two doors that looked like two places.
@@ -300,6 +302,11 @@ function TopicShelves({ area, archived }: { area: string; archived?: boolean }) 
           lede={c.answer ?? undefined}>
           {c.groups.map((g, gi) => (
             <div key={gi} className="mt-5">
+              {/* A new part of the hub (the crisis hub's The problem / Solutions). */}
+              {g.section && g.section !== c.groups[gi - 1]?.section ? (
+                <h3 id={`${c.id}-${g.section.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+                  className={`text-[17px] font-bold scroll-mt-20 ${gi ? 'mt-9' : ''} mb-1`}>{g.section}</h3>
+              ) : null}
               {g.title ? (
                 <h3 className="text-[12px] font-semibold uppercase tracking-widest mb-2"
                   style={{ color: 'var(--text-muted)' }}>{g.title}</h3>
@@ -517,7 +524,7 @@ export function Reports() {
             money, and a reader looking for buses or sports has just passed the schools. */}
         {g.key === 'school' ? <TopicShelves area="school" />
           : g.key === 'town' ? <TopicShelves area="town" />
-          : g.key === 'levers' ? <TopicShelves area="options" /> : null}
+          : g.key === 'levers' ? <TopicShelves area="crisis" /> : null}
       </div>))}
 
       {/* COMPARISON DISTRICTS, after every subject of Lunenburg's own: another district it is

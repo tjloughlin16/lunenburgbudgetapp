@@ -110,7 +110,8 @@ CATEGORIES = [
     #
     # The report that used to hold this name is now `The stabilization option`,
     # since a shelf and an item on it cannot be called the same thing.
-    ('levers', 'Solution options', [
+    # Retitled 2 November 2026: the Budget crisis hub and its Solutions part are drawn after it.
+    ('levers', 'Budget crisis and solutions', [
         # In the order a resident weighs them: the two that move the revenue side, the
         # two that move the cost RATE, then the amounts -- free cash, fees, the extras --
         # and last the one every other page exists to avoid.
@@ -685,7 +686,7 @@ def parents():
 
 # reports.json group key -> the topics.py AREA whose shelves /reports draws after it.
 # Mirrors the three-way choice in Reports.tsx.
-GROUP_AREA = {'school': 'school', 'town': 'town', 'levers': 'options'}
+GROUP_AREA = {'school': 'school', 'town': 'town', 'levers': 'crisis'}
 
 
 def topic_categories():
@@ -721,14 +722,16 @@ ABSORBED_INTO = {
     'formula': 'state-aid', 'minaid': 'state-aid', 'required': 'state-aid',
     'peers': 'school-spending', 'variance': 'school-all-funds',
     'bythenumbers': 'homes-and-taxes', 'homestudents': 'homes-and-taxes',
-    'growth': 'homes-and-taxes',
+    # The commercial development report: its solution is the crisis hub's (2 November 2026).
+    'growth': 'crisis',
     'insurance': 'health-insurance',
     'boardcompare': 'board-records',
     'parks': 'parks', 'youthsports': 'parks',
     'sportsmoney': 'athletics',
-    'override': 'budget-options', 'feelever': 'budget-options',
-    'extraslever': 'budget-options', 'positionslever': 'budget-options',
-    'salarylever': 'budget-options', 'freecashlever': 'budget-options',
+    # Budget options was folded into the crisis hub's Solutions part, 2 November 2026.
+    'override': 'crisis', 'feelever': 'crisis',
+    'extraslever': 'crisis', 'positionslever': 'crisis',
+    'salarylever': 'crisis', 'freecashlever': 'crisis',
 }
 
 

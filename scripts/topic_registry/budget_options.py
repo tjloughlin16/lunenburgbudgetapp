@@ -13,8 +13,12 @@ free cash for schools and the stabilization fund (Town reserves), the athletic f
 CATEGORY = dict(
     # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
     start=['fy2027-override', 'override-duration'],
-    id='budget-options', shelf='Budget options', title='Closing the gap', area='options',
-    order=70,
+    # FOLDED INTO THE BUDGET CRISIS HUB as its Solutions part, 2 November 2026 (TJ chose "fold it
+    # in"). The pages keep their /budget-options/<id> addresses, which are cited; the shelf is
+    # not drawn on /reports or the menu, and /budget-options opens the crisis hub. `shelf` is
+    # what a page's breadcrumb reads, so it says Solutions.
+    id='budget-options', shelf='Solutions', title='Closing the gap', area='crisis',
+    merged_into='crisis', order=70,
     groups=[
         ('Overrides', ['override-history', 'fy2027-override', 'override-duration',
                        'override-scope']),

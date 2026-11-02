@@ -277,8 +277,8 @@ export function Upshot() {
             <span className="block text-[12.5px] mt-1 leading-snug" style={{ color: 'var(--text-secondary)' }}>
               The homes, who owns them, and what the bill has done.</span>
           </Go>
-          {/* /override is UNLISTED (13 October 2026); its questions are the Budget options shelf. */}
-          <a href="/budget-options" onClick={() => track('exit', 'override')} className="card px-4 py-3.5 block transition-opacity hover:opacity-90">
+          {/* /override is UNLISTED (13 October 2026); its questions are the crisis hub's Solutions part. */}
+          <a href="/crisis#an-override" onClick={() => track('exit', 'override')} className="card px-4 py-3.5 block transition-opacity hover:opacity-90">
             <span className="block text-[14.5px] font-bold" style={{ color: 'var(--series-cost)' }}>
               What an override would cost &rarr;</span>
             <span className="block text-[12.5px] mt-1 leading-snug" style={{ color: 'var(--text-secondary)' }}>

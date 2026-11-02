@@ -34,7 +34,9 @@ listed on another shelf keeps that one address.
 # Split from one list on 12 October 2026 so several authors -- people or agents -- can each
 # add a category without rewriting a shared file (CLAUDE.md: "a generated file with several
 # authors gets clobbered, not merged"). `area` groups the shelves on /reports:
-AREAS = [('school', 'The schools'), ('town', 'The town'), ('options', 'Budget options'),
+# BUDGET CRISIS FIRST, the problem and its solutions on one hub (TJ, 2 November 2026). It was
+# 'options', 'Budget options', third, and the commercial development page was not findable.
+AREAS = [('crisis', 'Budget crisis'), ('school', 'The schools'), ('town', 'The town'),
          # SPECIAL REPORTS: one-off reports for a decision or a moment, at the bottom of the menu
          # and of /reports, each with an `archive_after` date past which it leaves the menu and
          # moves to the archive on /reports (TJ, 24 October 2026: "reports that wont stay on the
@@ -116,6 +118,24 @@ def check():
         if len(c.get('start', [])) > 3:
             bad.append('%s: more than three start pages is a second index, not a callout'
                        % c['id'])
+        # `sections`: group title -> the part of the hub it sits in. Every group gets one, or none.
+        secs = c.get('sections')
+        if secs is not None:
+            gt = [g for g, _ in c['groups']]
+            if set(secs) != set(gt):
+                bad.append('%s: sections must name every group exactly: %s'
+                           % (c['id'], sorted(set(secs) ^ set(gt))))
+        # `merged_into`: a shelf drawn only as part of another. Every page it is home to must be
+        # listed on that shelf, or folding it in would lose the page.
+        into = c.get('merged_into')
+        if into:
+            if not any(x['id'] == into for x in CATEGORIES):
+                bad.append('%s: merged_into %r is not a category' % (c['id'], into))
+            else:
+                listed = {t for _, ids in category(into)['groups'] for t in ids}
+                lost = [t for t, (_, h, _) in TOPICS.items() if h == c['id'] and t not in listed]
+                if lost:
+                    bad.append('%s is merged into %s, which does not list %s' % (c['id'], into, lost))
     titles = {}
     for c in CATEGORIES:
         if c.get('area') not in dict(AREAS):

@@ -143,7 +143,9 @@ def build(strict):
             id=c['id'], shelf=c['shelf'], title=c['title'], path=REG.path(c['id']),
             answer=h['answer']['text'] if h else None,
             minutes=max(1, math.ceil(words(h) / 200)) if h else None, ready=bool(h),
-            groups=[dict(title=g, topics=list(ids)) for g, ids in c['groups']],
+            groups=[dict(title=g, topics=list(ids), section=c.get('sections', {}).get(g))
+                    for g, ids in c['groups']],
+            **({'merged_into': c['merged_into']} if c.get('merged_into') else {}),
             elsewhere=[dict(href=a, title=b) for a, b in c.get('elsewhere', [])],
             start=list(c.get('start', [])), related=rel.get(c['id'], []),
             area=c.get('area'), order=c.get('order', 99),

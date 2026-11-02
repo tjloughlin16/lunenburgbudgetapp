@@ -797,15 +797,18 @@ def build():
         sources=S('model', 'workbook', 'budget'),
         finding_figures={'a': U(o['all_cuts']), 'y': f28, 'z': f29})
 
-    # ------------------------------------------------ development needed
+    # ------------------------------------------------ commercial development
+    # Was `development-needed`, "Development needed", until 2 November 2026: TJ searched for the
+    # commercial development solution and could not find it under that name. The old id opens
+    # this page (routes.ts TOPIC_MERGED).
     best, last = o['ng_best'], o['ng_last']
     if not o['ng_same_1_5_10']:
         fail('the new growth needed for one, five and ten years no longer agree; the page says '
              'the first year binds')
     vs_best = o['ng_needed'] / best['amount']
     hist = o['ng_history']
-    out['development-needed'] = TP.page(
-        'development-needed',
+    out['commercial-development'] = TP.page(
+        'commercial-development',
         'Growth alone would need %s of new levy a year (ours); the best year on record added %s.'
         % (C.usd(o['ng_needed']), C.usd(best['amount'])),
         [f('need', U(o['ng_needed']), 'new growth a year, to hold the gap (ours)', 'estimate'),

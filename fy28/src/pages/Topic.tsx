@@ -38,7 +38,9 @@ type IndexTopic = {
 }
 type IndexCategory = {
   id: string; shelf: string; title: string; path: string; answer: string | null
-  groups: { title: string | null; topics: string[] }[]
+  /** `section`: the part of the hub a group sits in (scripts/topics.py `sections`), e.g. The
+   *  problem / Solutions on the crisis hub. Null on a hub with one part. */
+  groups: { title: string | null; topics: string[]; section?: string | null }[]
   elsewhere: { href: string; title: string }[]
   /** The hub's most insightful pages, called out under the answer (scripts/topics.py). */
   start?: string[]
@@ -285,9 +287,14 @@ function TopicCards({ ix, cat }: { ix: Index; cat: IndexCategory }) {
           a group left empty by that is not drawn. The shelf's prev/next order is untouched. */}
       {cat.groups.map(g => ({ ...g, topics: g.topics.filter(id => !(cat.start ?? []).includes(id)
           || !ix.topics[id]?.ready) }))
-        .filter(g => g.topics.length).map((g, gi) => (
+        .filter(g => g.topics.length).map((g, gi, all) => (
         <div key={gi} className={gi ? 'mt-6' : undefined}>
-          <h2 className={eyebrow} style={{ color: 'var(--text-muted)' }}>{g.title ?? `${cat.shelf}, topic by topic`}</h2>
+          {/* A NEW PART OF THE HUB starts here: its heading, with an address of its own, so
+              /crisis#solutions can be shared. Every group has one too (#commercial-development). */}
+          {g.section && g.section !== all[gi - 1]?.section ? (
+            <h2 id={anchor(g.section)} className={`text-[22px] font-bold scroll-mt-20 ${gi ? 'mt-10' : ''} mb-3`}>{g.section}</h2>
+          ) : null}
+          <h2 id={g.title ? anchor(g.title) : undefined} className={`${eyebrow} scroll-mt-20`} style={{ color: 'var(--text-muted)' }}>{g.title ?? `${cat.shelf}, topic by topic`}</h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 mt-2">
             {g.topics.map(id => shelfEntry(ix, id)).filter((t): t is NonNullable<typeof t> => !!t).map(t => (
               <li key={t.id}><TopicLink t={t} also={t.shelves.filter(s => s !== cat.id)
@@ -300,6 +307,9 @@ function TopicCards({ ix, cat }: { ix: Index; cat: IndexCategory }) {
     </section>
   )
 }
+
+/** A heading's address on the page: 'Commercial development' -> 'commercial-development'. */
+const anchor = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 
 function Elsewhere({ cat }: { cat: IndexCategory }) {
   return cat.elsewhere.length ? (

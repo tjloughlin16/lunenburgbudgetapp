@@ -110,10 +110,10 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Leaving and arriving](/enrolment/leaving-and-arriving) | page | — / 6.5 min | *(none declared)* |
 | [Nearby district enrolment](/enrolment/nearby-district-enrolment) | page | — / 6.2 min | *(none declared)* |
 | [School choice flows](/enrolment/school-choice-flows) | page | — / 7.2 min | *(none declared)* |
-| [Free cash](/free-cash) | page | — / 7.5 min | *(none declared)* |
+| [Free cash](/free-cash) | page | — / 7.6 min | *(none declared)* |
 | [Free cash calculator](/free-cash-calculator) | page | 2.0 / 27.7 min | 1. 47% — Free cash is not money the town saved. It is mostly money the town budgeted and did not spend.<br>2. 45 of 45 — Local receipts have beaten the estimate every single year — and so have all 9 towns.<br>3. 2.49× — The record year was an event, not a stance. Underspending in 2025 was 2.49 times Lunenburg’s own recent average.<br>4. $361,912 — The state’s proof adds up exactly — to a figure that is not the one it certifies.<br>5. These agree with what this project has already published, and that is worth saying. |
 | [Free cash and capital](/free-cash/free-cash-and-capital) | page | — / 7.0 min | *(none declared)* |
-| [Free cash balance](/free-cash/free-cash-balance) | page | — / 7.6 min | *(none declared)* |
+| [Free cash balance](/free-cash/free-cash-balance) | page | — / 8.3 min | *(none declared)* |
 | [Free cash guideline](/free-cash/free-cash-guideline) | page | — / 7.5 min | *(none declared)* |
 | [Free cash for schools](/free-cash/free-cash-redirect) | page | — / 7.0 min | *(none declared)* |
 | [Free cash sources](/free-cash/free-cash-sources) | page | — / 7.3 min | *(none declared)* |
@@ -168,7 +168,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Monty Tech assessment](/monty-tech/monty-tech-assessment) | page | — / 7.4 min | *(none declared)* |
 | [Monty Tech enrolment](/monty-tech/monty-tech-enrolment) | page | — / 7.4 min | *(none declared)* |
 | [Monty Tech funding](/monty-tech/monty-tech-funding) | page | — / 8.1 min | *(none declared)* |
-| [Monty Tech history](/monty-tech/monty-tech-history) | page | — / 10.5 min | *(none declared)* |
+| [Monty Tech history](/monty-tech/monty-tech-history) | page | — / 10.3 min | *(none declared)* |
 | [Monty Tech per-pupil breakdown](/monty-tech/monty-tech-line-by-line) | page | — / 8.0 min | *(none declared)* |
 | [Monty Tech per pupil](/monty-tech/monty-tech-per-pupil) | page | — / 7.9 min | *(none declared)* |
 | [Funding sources compared](/monty-tech/monty-tech-revenue) | page | — / 10.0 min | *(none declared)* |
@@ -343,10 +343,10 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [BOA Neighborhood ans Site Index Subcommittee](/boards/boa-neighborhood-ans-site-index-subcommittee) | reference | — / 6.1 min | *(none declared)* |
 | [BOA Neighborhood ans Site Index Subcommittee — meetings](/boards/boa-neighborhood-ans-site-index-subcommittee/meetings) | reference | — / 5.9 min | *(none declared)* |
 | [BOA Neighborhood ans Site Index Subcommittee — missing records](/boards/boa-neighborhood-ans-site-index-subcommittee/records) | reference | — / 7.1 min | *(none declared)* |
-| [Board of Assessors](/boards/board-of-assessors) | reference | — / 7.8 min | *(none declared)* |
+| [Board of Assessors](/boards/board-of-assessors) | reference | — / 7.9 min | *(none declared)* |
 | [Board of Assessors — about](/boards/board-of-assessors/about) | reference | — / 8.7 min | *(none declared)* |
 | [Board of Assessors — finances](/boards/board-of-assessors/finance) | reference | — / 15.2 min | *(none declared)* |
-| [Board of Assessors — meetings](/boards/board-of-assessors/meetings) | reference | — / 11.0 min | *(none declared)* |
+| [Board of Assessors — meetings](/boards/board-of-assessors/meetings) | reference | — / 11.1 min | *(none declared)* |
 | [Board of Assessors — missing records](/boards/board-of-assessors/records) | reference | — / 9.9 min | *(none declared)* |
 | [Board of Assessors — budget schedule](/boards/board-of-assessors/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Board of Assessors — where the time goes](/boards/board-of-assessors/time) | reference | — / 6.0 min | *(none declared)* |
@@ -388,7 +388,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Cable Advisory Committee — budget schedule](/boards/cable-advisory-committee/schedule) | reference | — / 5.9 min | *(none declared)* |
 | [Cable Advisory Committee — where the time goes](/boards/cable-advisory-committee/time) | reference | — / 5.9 min | *(none declared)* |
 | [Cable Advisory Committee — votes](/boards/cable-advisory-committee/votes) | reference | — / 10.4 min | *(none declared)* |
-| [Capital Planning Committee](/boards/capital-planning-committee) | reference | — / 7.6 min | *(none declared)* |
+| [Capital Planning Committee](/boards/capital-planning-committee) | reference | — / 7.5 min | *(none declared)* |
 | [Capital Planning Committee — about](/boards/capital-planning-committee/about) | reference | — / 7.5 min | *(none declared)* |
 | [Capital Planning Committee — finances](/boards/capital-planning-committee/finance) | reference | — / 15.6 min | *(none declared)* |
 | [Capital Planning Committee — meetings](/boards/capital-planning-committee/meetings) | reference | — / 10.5 min | *(none declared)* |
@@ -396,10 +396,10 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Capital Planning Committee — budget schedule](/boards/capital-planning-committee/schedule) | reference | — / 6.0 min | *(none declared)* |
 | [Capital Planning Committee — where the time goes](/boards/capital-planning-committee/time) | reference | — / 5.9 min | *(none declared)* |
 | [Capital Planning Committee — votes](/boards/capital-planning-committee/votes) | reference | — / 24.6 min | *(none declared)* |
-| [Cemetery Commission](/boards/cemetery-commission) | reference | — / 7.8 min | *(none declared)* |
+| [Cemetery Commission](/boards/cemetery-commission) | reference | — / 7.9 min | *(none declared)* |
 | [Cemetery Commission — about](/boards/cemetery-commission/about) | reference | — / 6.5 min | *(none declared)* |
 | [Cemetery Commission — finances](/boards/cemetery-commission/finance) | reference | — / 16.2 min | *(none declared)* |
-| [Cemetery Commission — meetings](/boards/cemetery-commission/meetings) | reference | — / 10.3 min | *(none declared)* |
+| [Cemetery Commission — meetings](/boards/cemetery-commission/meetings) | reference | — / 10.4 min | *(none declared)* |
 | [Cemetery Commission — missing records](/boards/cemetery-commission/records) | reference | — / 11.5 min | *(none declared)* |
 | [Cemetery Commission — budget schedule](/boards/cemetery-commission/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Cemetery Commission — where the time goes](/boards/cemetery-commission/time) | reference | — / 5.9 min | *(none declared)* |
@@ -610,7 +610,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [School Committee — missing records](/boards/school-committee/records) | reference | — / 17.6 min | *(none declared)* |
 | [School Committee — budget schedule](/boards/school-committee/schedule) | reference | — / 6.8 min | *(none declared)* |
 | [School Committee — where the time goes](/boards/school-committee/time) | reference | — / 5.9 min | *(none declared)* |
-| [School Committee: line item transfers](/boards/school-committee/transfers) | reference | — / 10.3 min | *(none declared)* |
+| [School Committee: line item transfers](/boards/school-committee/transfers) | reference | — / 7.7 min | *(none declared)* |
 | [School Committee — votes](/boards/school-committee/votes) | reference | — / 101.1 min | *(none declared)* |
 | [Select Board](/boards/select-board) | reference | — / 9.5 min | *(none declared)* |
 | [Select Board Public Hearing](/boards/select-board-public-hearing) | reference | — / 6.2 min | *(none declared)* |
@@ -674,7 +674,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Zoning Board of Appeals](/boards/zoning-board-of-appeals) | reference | — / 7.8 min | *(none declared)* |
 | [Zoning Board of Appeals — about](/boards/zoning-board-of-appeals/about) | reference | — / 7.0 min | *(none declared)* |
 | [Zoning Board of Appeals — finances](/boards/zoning-board-of-appeals/finance) | reference | — / 14.7 min | *(none declared)* |
-| [Zoning Board of Appeals — meetings](/boards/zoning-board-of-appeals/meetings) | reference | — / 10.7 min | *(none declared)* |
+| [Zoning Board of Appeals — meetings](/boards/zoning-board-of-appeals/meetings) | reference | — / 10.8 min | *(none declared)* |
 | [Zoning Board of Appeals — missing records](/boards/zoning-board-of-appeals/records) | reference | — / 14.7 min | *(none declared)* |
 | [Zoning Board of Appeals — where the time goes](/boards/zoning-board-of-appeals/time) | reference | — / 5.9 min | *(none declared)* |
 | [Zoning Board of Appeals — votes](/boards/zoning-board-of-appeals/votes) | reference | — / 31.3 min | *(none declared)* |
@@ -705,7 +705,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Go deeper](/go-deeper) | reference | — / 8.4 min | *(none declared)* |
 | [Grants open to Lunenburg — DESE programs a school district can apply for](/grants-open-to-lunenburg) | reference | — / 17.7 min | *(none declared)* |
 | [Job postings — the town and the schools](/jobs) | reference | — / 13.5 min | *(none declared)* |
-| [Meeting minutes, written from the recordings](/meeting-minutes) | reference | — / 495.2 min | *(none declared)* |
+| [Meeting minutes, written from the recordings](/meeting-minutes) | reference | — / 495.8 min | *(none declared)* |
 | [Agricultural Commission, February 18, 2021](/meeting-minutes/agricultural-commission/2021-02-18-U7h53_4FLaU) | reference | — / 12.7 min | *(none declared)* |
 | [Agricultural Commission, March 18, 2021](/meeting-minutes/agricultural-commission/2021-03-18-YT93Y-l4Kg4) | reference | — / 11.9 min | *(none declared)* |
 | [Agricultural Commission, April 15, 2021](/meeting-minutes/agricultural-commission/2021-04-15-Bs_tC6Pp6bY) | reference | — / 12.2 min | *(none declared)* |
@@ -836,6 +836,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Board of Assessors, September 9, 2026](/meeting-minutes/board-of-assessors/2026-09-09-Qimi3yNAudg) | reference | — / 16.7 min | *(none declared)* |
 | [Board of Assessors, September 23, 2026](/meeting-minutes/board-of-assessors/2026-09-23-8JmJ1wh7HCY) | reference | — / 16.3 min | *(none declared)* |
 | [Board of Assessors, September 30, 2026](/meeting-minutes/board-of-assessors/2026-09-30-PGOQeBuvgog) | reference | — / 10.2 min | *(none declared)* |
+| [Board of Assessors, October 28, 2026](/meeting-minutes/board-of-assessors/2026-10-28-nUUi0uOamJM) | reference | — / 10.9 min | *(none declared)* |
 | [Board of Health, March 1, 2021](/meeting-minutes/board-of-health/2021-03-01-35Ynk6EkD3A) | reference | — / 11.7 min | *(none declared)* |
 | [Board of Health, March 15, 2021](/meeting-minutes/board-of-health/2021-03-15-X2msyanuRDM) | reference | — / 11.1 min | *(none declared)* |
 | [Board of Health, April 5, 2021](/meeting-minutes/board-of-health/2021-04-05-eaB2X8oVH3s) | reference | — / 11.8 min | *(none declared)* |
@@ -931,6 +932,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Cemetery Commission, July 30, 2026](/meeting-minutes/cemetery-commission/2026-07-30-gc8unwrEL3k) | reference | — / 15.4 min | *(none declared)* |
 | [Cemetery Commission, August 19, 2026](/meeting-minutes/cemetery-commission/2026-08-19-9B8uWI7kA7w) | reference | — / 11.6 min | *(none declared)* |
 | [Cemetery Commission, September 24, 2026](/meeting-minutes/cemetery-commission/2026-09-24-I-vEsgVC3hk) | reference | — / 10.9 min | *(none declared)* |
+| [Cemetery Commission, October 28, 2026](/meeting-minutes/cemetery-commission/2026-10-28-W2EEW40mBz8) | reference | — / 9.8 min | *(none declared)* |
 | [Conservation Commission, February 17, 2021](/meeting-minutes/conservation-commission/2021-02-17-HNEMV5LbRk0) | reference | — / 13.4 min | *(none declared)* |
 | [Conservation Commission, March 17, 2021](/meeting-minutes/conservation-commission/2021-03-17-QNjdayDLXW8) | reference | — / 16.1 min | *(none declared)* |
 | [Conservation Commission, April 8, 2021](/meeting-minutes/conservation-commission/2021-04-08-CG8guNfRAKQ) | reference | — / 11.6 min | *(none declared)* |
@@ -2502,7 +2504,8 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Zoning Board of Appeals, August 12, 2026](/meeting-minutes/zoning-board-of-appeals/2026-08-12-uNUrTAXxIF8) | reference | — / 8.9 min | *(none declared)* |
 | [Zoning Board of Appeals, August 26, 2026](/meeting-minutes/zoning-board-of-appeals/2026-08-26-62qwUKHEBro) | reference | — / 10.1 min | *(none declared)* |
 | [Zoning Board of Appeals, October 14, 2026](/meeting-minutes/zoning-board-of-appeals/2026-10-14-aW3D8mIw_yw) | reference | — / 10.9 min | *(none declared)* |
-| [New reports](/new-reports) | reference | — / 36.5 min | *(none declared)* |
+| [Zoning Board of Appeals, October 28, 2026](/meeting-minutes/zoning-board-of-appeals/2026-10-28-vBdjYw_h64M) | reference | — / 9.4 min | *(none declared)* |
+| [New reports](/new-reports) | reference | — / 36.4 min | *(none declared)* |
 | [Town-wide org charts](/org-charts) | reference | — / 18.3 min | *(none declared)* |
 | [Adam Burney](/people/adam-burney) | reference | — / 10.6 min | *(none declared)* |
 | [Alfred Gravelle](/people/alfred-gravelle) | reference | — / 9.1 min | *(none declared)* |
@@ -2968,7 +2971,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Analysis: Town and Schools](/reports) | reference | — / 52.3 min | *(none declared)* |
 | [Search — everything this project holds](/search) | reference | — / 6.7 min | *(none declared)* |
 | [Sources](/sources) | reference | — / 19.7 min | *(none declared)* |
-| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 21.2 min | *(none declared)* |
+| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 21.8 min | *(none declared)* |
 | [What the town is deciding now](/threads) | reference | — / 15.5 min | *(none declared)* |
 | [Every Town Meeting vote](/town-meeting-votes) | reference | — / 483.2 min | *(none declared)* |
 | [Commercial growth scenarios](/try-growth) | tool | — / 21.5 min | *(none declared)* |

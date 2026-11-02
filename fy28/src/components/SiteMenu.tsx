@@ -61,7 +61,7 @@ export const GROUPS: Group[] = [
     { to: 'answers', label: 'Straight answers', sub: 'The questions people actually ask' },
     { to: 'why', label: 'Why it repeats', sub: 'The gap returns each year' },
     { to: 'solutions', label: 'Solutions', sub: 'Every option, and who it costs' },
-    { href: '/budget-options', label: 'Budget options', sub: 'Overrides, fees, cuts, reserves' },
+    { href: '/crisis#solutions', label: 'Each solution, one page', sub: 'Commercial growth, overrides, fees, cuts, state aid' },
     { to: 'solved', label: 'The cost of closing it', sub: 'What “solved” requires' },
     { to: 'deeper', label: 'Go deeper', sub: 'Every chapter of the argument' },
   ] },
