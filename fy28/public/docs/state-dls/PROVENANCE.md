@@ -98,3 +98,94 @@ of the number — which is a share, and therefore does compare.
 
 `sources/data/free-cash-proof.csv`, produced by `scripts/extract_free_cash.py`. 630 rows:
 town, year, line, amount, the role of that line in the proof, and the cell it came from.
+
+---
+
+# DLS free cash calculations — Lunenburg, free cash as of 1 July 2014 to 1 July 2025
+
+## Where they came from
+
+**The DLS Gateway's City & Town Free Cash Report**, the same report named above:
+
+<https://dls-gw.dor.state.ma.us/gateway/dlspublic/certificationfreecashpublicreport/certificationfreecashpublic>
+
+Jurisdiction **162** (Lunenburg), one fiscal year per request, chosen from two dropdowns held in
+session. **There is no file URL**: the page plus the jurisdiction plus the fiscal year is the
+whole address (`build_source_index.py`, `FORM_ONLY`). Downloaded by TJ in a browser on
+**2 November 2026**, and landed through `ingest.py` (pushed to the bucket, read back, compared)
+the same day.
+
+**The report refused some requests, and those refusals are recorded here rather than archived.**
+Fifteen further downloads were one-page refusals, not documents, and are not kept:
+
+- thirteen read *"Free Cash/Excess & Deficiency is not available for years prior to FY 2014"*;
+- two read *"Free Cash has not been certified for the selected jurisdiction and fiscal year"*.
+  **Neither page names the year it refused**, so which fiscal years those were is not
+  established from the pages. Every 1 July from 2014 to 2025 is held below, so the refusals were
+  of years outside that run; the likeliest is the year not yet certified when they were
+  downloaded, and that is a guess, not a reading.
+
+## The files
+
+| our copy | free cash as of | publisher's / downloaded filename | pages | sha256 |
+|---|---|---|---:|---|
+| `free-cash-worksheet-lunenburg-2014-07-01.pdf` | 1 July 2014 | `Lunenburg.pdf` | 4 | `1037cffa49a7dd469a3abe2632c9d7f5b3c1a6dd0c049c4fac1e771aaade7fd0` |
+| `free-cash-worksheet-lunenburg-2015-07-01.pdf` | 1 July 2015 | `Lunenburg FY15.pdf` | 4 | `d732faf626b35284323a9755b4419470c7d901d53293154af854380e45170789` |
+| `free-cash-worksheet-lunenburg-2016-07-01.pdf` | 1 July 2016 | `Lunenburg FY16.pdf` | 4 | `28ca1e9a4da82eb78e9f2889a1f8e2f1af7c385d35ef38b07b0dbce94b32019f` |
+| `free-cash-worksheet-lunenburg-2017-07-01.pdf` | 1 July 2017 | `Lunenburg FY17.pdf` | 4 | `d87c743d9f693510348c36e3a8e7342c40295164de2ea246b1465551ca253822` |
+| `free-cash-worksheet-lunenburg-2018-07-01.pdf` | 1 July 2018 | `Lunenburg FY18.pdf` | 4 | `9e03f2141161628f17c22c85db8d8f5ad2a4ab93af6ac9f60dc474f9153182b5` |
+| `free-cash-worksheet-lunenburg-2019-07-01.pdf` | 1 July 2019 | `Lunenburg FY19.pdf` | 4 | `a8a0fc8e058d138dda02409f37926005c71337837d85c4a5dcb3505e6f32fd17` |
+| `free-cash-worksheet-lunenburg-2020-07-01.pdf` | 1 July 2020 | `Lunenburg FY20.pdf` | 5 | `9e4c500d6f0a35a20a71a00c4b6a8584d5d737c3056fad7801590e01aa3c7831` |
+| `free-cash-certification-lunenburg-fy2022-as-of-2021-07-01.pdf` | 1 July 2021 | `FreeCashCertification (4).PDF` | 5 | `a4752bd1e20d261f688150176ded8d80f5d0770820581f52682e9124b1f183dc` |
+| `free-cash-certification-lunenburg-fy2023-as-of-2022-07-01.pdf` | 1 July 2022 | `FreeCashCertification (3).PDF` | 10 | `33a5ec64fda5fbde325e941f0e0b16516fa62992c708153d55541f7f7d160b85` |
+| `free-cash-certification-lunenburg-fy2024-as-of-2023-07-01.pdf` | 1 July 2023 | `FreeCashCertification (2).PDF` | 10 | `03ce7c49a25bbae93fc8c3d4f1dae1846d8825cec86fda4d24bc67e3b56dd62f` |
+| `free-cash-certification-lunenburg-fy2025-as-of-2024-07-01.pdf` | 1 July 2024 | `FreeCashCertification (1).PDF` | 10 | `519d269a129af05275bdbbcaea9f0101753f7f2dc44e17c62c6d17420f850a14` |
+| `free-cash-certification-lunenburg-fy2026-as-of-2025-07-01.pdf` | 1 July 2025 | `FreeCashCertification.PDF` | 10 | `dd166b84f48d3d632770b0b29cd1fa2b790361549fd125cadf06c8164ff201f9` |
+
+The Gateway names every certification `FreeCashCertification.PDF`; the bracketed numbers are the
+browser's, added because five files arrived under one name. A resident asking DLS for one should
+ask for the **Free Cash Certification for Lunenburg, fiscal year N**.
+
+`pdf_kind.py` reads every page of all twelve as `digital: text`. Nothing was OCR'd.
+
+## How each one's date was established
+
+- **2014-2020, the older worksheet.** The page prints its own result as `FREE CASH, JULY 1,
+  <year>`. `Lunenburg FY15.pdf` prints `FREE CASH, JULY 1, 2015`, so its `FY15` matches the
+  fiscal year that ENDED on that date, not the year the money is spent in.
+- **2021-2025, the Gateway form.** The heading reads `Free Cash Calculation - Fiscal Year <N>`
+  and the result line reads `Free Cash Calculation for <N-1>`, so "Fiscal Year 2026" is the year
+  the free cash can be spent in and the balance is the one at the close of FY2025, 1 July 2025.
+  Two documents corroborate it: the state's own Free Cash Proof above carries the FY2026
+  document's figure under year 2025, and the Town's fact sheet carries it under fiscal year 2026.
+  `extract_free_cash_certifications.py` asserts the `for <N-1>` reading on every document.
+
+**The two series name their years the opposite way round.** `Lunenburg FY15` and
+`Fiscal Year 2016` are the same balance. Every row of the extracted data carries the as-of date
+instead of either label for that reason.
+
+**The older ones are WORKSHEETS, not the certification.** Each says *"PLEASE SEE CERTIFICATION
+LETTER FOR DIRECTOR OF ACCOUNTS APPROVAL"*. The letter is not held. The worksheet's review date
+and the Town fact sheet's certification date differ by days to weeks, which fits a letter issued
+after review, and nothing here tests that.
+
+**Names printed on them are shown, not masked** (CLAUDE.md 13e, `notes/process/DATA-PRIVACY.md`):
+the town's submitting officer and the DLS field representatives and reviewer.
+
+## Our processed copy
+
+`sources/data/free-cash-certifications.csv`, written by
+`scripts/extract_free_cash_certifications.py` (`--check` reproduces it byte for byte). One row per
+printed line: the page and vertical position, the text as printed, the amount, and for every total
+the identity it closed on. The script's docstring states the identities, the sign rule, how a
+printed dash is recorded, and which closings used the $1 allowance in
+`notes/process/TOLERANCES.md`. It also prints a cross-check of each year's result against the
+Town's fact sheet and the Free Cash Proof, and **one year disagrees with both**: the certification
+for fiscal year 2023 (as of 1 July 2022) closes on its own arithmetic at a figure different from
+the one the fact sheet and the proof carry, under the same certification date. Which is the later
+or corrected figure is not established by anything held.
+
+`Additional Sheet` is printed on the receivables block of the 2016-2020 worksheets with a dash
+beside it. It is recorded as a line with no amount; in every year the itemised lines on the page
+sum to the printed total (2019 within the $1 allowance), so nothing on an additional sheet
+carried an amount.

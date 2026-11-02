@@ -1067,6 +1067,66 @@ GROUPS = [
              'Lunenburg free cash proof, 2021–2025', 3,
              'Certified free cash rose from $2,666,962 to $3,354,370 over the five years. '
              'Two thirds of the 2025 figure is money appropriated and not spent.'),
+            ('state-dls/free-cash-worksheet-lunenburg-2014-07-01.pdf',
+             'Lunenburg free cash worksheet, as of 1 July 2014', 2,
+             'The Division of Local Services field review of the town’s free cash: fund balance, '
+             'receivables itemised, deferred revenue, and the enterprise funds’ retained earnings. '
+             'Extracted line by line to data/free-cash-certifications.csv, every identity checked.'),
+            ('state-dls/free-cash-worksheet-lunenburg-2015-07-01.pdf',
+             'Lunenburg free cash worksheet, as of 1 July 2015', 2,
+             'The Division of Local Services field review of the town’s free cash: fund balance, '
+             'receivables itemised, deferred revenue, and the enterprise funds’ retained earnings. '
+             'Extracted line by line to data/free-cash-certifications.csv, every identity checked.'),
+            ('state-dls/free-cash-worksheet-lunenburg-2016-07-01.pdf',
+             'Lunenburg free cash worksheet, as of 1 July 2016', 2,
+             'The Division of Local Services field review of the town’s free cash: fund balance, '
+             'receivables itemised, deferred revenue, and the enterprise funds’ retained earnings. '
+             'Extracted line by line to data/free-cash-certifications.csv, every identity checked.'),
+            ('state-dls/free-cash-worksheet-lunenburg-2017-07-01.pdf',
+             'Lunenburg free cash worksheet, as of 1 July 2017', 2,
+             'The Division of Local Services field review of the town’s free cash: fund balance, '
+             'receivables itemised, deferred revenue, and the enterprise funds’ retained earnings. '
+             'Extracted line by line to data/free-cash-certifications.csv, every identity checked.'),
+            ('state-dls/free-cash-worksheet-lunenburg-2018-07-01.pdf',
+             'Lunenburg free cash worksheet, as of 1 July 2018', 2,
+             'The Division of Local Services field review of the town’s free cash: fund balance, '
+             'receivables itemised, deferred revenue, and the enterprise funds’ retained earnings. '
+             'Extracted line by line to data/free-cash-certifications.csv, every identity checked.'),
+            ('state-dls/free-cash-worksheet-lunenburg-2019-07-01.pdf',
+             'Lunenburg free cash worksheet, as of 1 July 2019', 2,
+             'The Division of Local Services field review of the town’s free cash: fund balance, '
+             'receivables itemised, deferred revenue, and the enterprise funds’ retained earnings. '
+             'Extracted line by line to data/free-cash-certifications.csv, every identity checked.'),
+            ('state-dls/free-cash-worksheet-lunenburg-2020-07-01.pdf',
+             'Lunenburg free cash worksheet, as of 1 July 2020', 2,
+             'The Division of Local Services field review of the town’s free cash: fund balance, '
+             'receivables itemised, deferred revenue, and the enterprise funds’ retained earnings. '
+             'Extracted line by line to data/free-cash-certifications.csv, every identity checked.'),
+            ('state-dls/free-cash-certification-lunenburg-fy2022-as-of-2021-07-01.pdf',
+             'Lunenburg Free Cash Certification, Fiscal Year 2022 (as of 1 July 2021)', 2,
+             'The Gateway’s certification: the general fund calculation, every receivable '
+             'itemised, then one calculation per enterprise fund. Extracted line by line to '
+             'data/free-cash-certifications.csv, every identity checked.'),
+            ('state-dls/free-cash-certification-lunenburg-fy2023-as-of-2022-07-01.pdf',
+             'Lunenburg Free Cash Certification, Fiscal Year 2023 (as of 1 July 2022)', 2,
+             'The Gateway’s certification: the general fund calculation, every receivable '
+             'itemised, then one calculation per enterprise fund. Extracted line by line to '
+             'data/free-cash-certifications.csv, every identity checked.'),
+            ('state-dls/free-cash-certification-lunenburg-fy2024-as-of-2023-07-01.pdf',
+             'Lunenburg Free Cash Certification, Fiscal Year 2024 (as of 1 July 2023)', 2,
+             'The Gateway’s certification: the general fund calculation, every receivable '
+             'itemised, then one calculation per enterprise fund. Extracted line by line to '
+             'data/free-cash-certifications.csv, every identity checked.'),
+            ('state-dls/free-cash-certification-lunenburg-fy2025-as-of-2024-07-01.pdf',
+             'Lunenburg Free Cash Certification, Fiscal Year 2025 (as of 1 July 2024)', 2,
+             'The Gateway’s certification: the general fund calculation, every receivable '
+             'itemised, then one calculation per enterprise fund. Extracted line by line to '
+             'data/free-cash-certifications.csv, every identity checked.'),
+            ('state-dls/free-cash-certification-lunenburg-fy2026-as-of-2025-07-01.pdf',
+             'Lunenburg Free Cash Certification, Fiscal Year 2026 (as of 1 July 2025)', 2,
+             'The Gateway’s certification: the general fund calculation, every receivable '
+             'itemised, then one calculation per enterprise fund. Extracted line by line to '
+             'data/free-cash-certifications.csv, every identity checked.'),
             ('state-dls/PROVENANCE.md', 'Where these came from, and what they cannot do', 2,
              'Written by us. Records the exclusion of a tenth file supplied as Abington '
              'which contains Lunenburg’s data in all 102 cells, and states plainly that no '
@@ -3462,6 +3522,12 @@ GROUPS = [
              'scripts/extract_free_cash.py, which reconciles every town-year against two '
              'totals the source prints itself and refuses to write if any of the 81 checks '
              'fails.'),
+            ('data/free-cash-certifications.csv',
+             'Lunenburg free cash certifications, every printed line, 2014-2025', 3,
+             'One row per printed line of twelve DLS free cash calculations, general fund and '
+             'enterprise funds, with the page, the text as printed and the check it closed on. '
+             'Rebuild with scripts/extract_free_cash_certifications.py, which refuses to write a '
+             'year whose printed identities do not close.'),
             ('data/rate-register.csv',
              'Every rate, with the year it applies to and who set it', 3,
              'Athletic fees, bus fees, collective bargaining raises, facilities and the '
