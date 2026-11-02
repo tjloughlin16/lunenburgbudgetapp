@@ -81,7 +81,7 @@ Read `column_meaning` before reading a value.
 | `report-school-staff-changes.csv` | 7 | 1977–1977 | 5 checked / 0 failed / 2 no check | yes | shared | **no** |
 | `report-school-staff-fte.csv` | 450 | 1959–1986 | 186 checked / 0 failed / 264 no check | yes | shared | **no** |
 | `report-school-state-aid.csv` | 378 | 1959–1986 | 283 checked / 0 failed / 95 no check | yes | shared | **no** |
-| `report-signatures.csv` | 182 | 2013–2025 | — | yes | shared | yes |
+| `report-signatures.csv` | 179 | 2012–2025 | — | yes | shared | yes |
 | `report-special-education.csv` | 46 | 2008–2009 | 0 checked / 0 failed / 46 no check | yes | shared | **no** |
 | `report-statement-of-payments.csv` | 4,670 | 1959–1986 | 4,095 checked / 0 failed / 575 no check | yes | shared | **no** |
 | `report-surplus-free-cash.csv` | 58 | 1965–1980 | 28 checked / 0 failed / 30 no check | yes | shared | **no** |

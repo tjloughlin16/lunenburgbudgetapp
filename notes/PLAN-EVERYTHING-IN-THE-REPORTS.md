@@ -43,10 +43,11 @@ identified, but i want to cover anything that is in the reports."*
    row in `notes/reference/SCHEMA.md`; names searchable through the people index where a dataset
    holds people.
 
-## Where it stands (handoff, 2 November 2026)
+## Where it stands (handoff, 2 November 2026, afternoon)
 
-Everything below is committed, pushed and deployed (site `5695ceba2`, D1 synced). Nothing is in
-flight. Pick up at **Next**.
+Next 1 and 2 of the morning handoff are done locally: the database guard widened, ten datasets
+loaded, both generators reproducing. **Not yet pushed to D1 or deployed** -- `sync_d1.py --check`
+will disagree by those ten tables until it is. Pick up at **Next**.
 
 **Done**
 
@@ -64,14 +65,24 @@ flight. Pick up at **Next**.
   not joined.
 - **Searchable copies of the 16 FY2011-FY2025 report PDFs** (`searchable-pdfs.csv`).
 
+- **Every report-fed dataset is in the database: 92 of 92.** The ten that escaped by name
+  (`treasurers-cash`, `pages-read`, ...) are in `REFERENCE`, and `check_report_datasets` now
+  also demands every CSV `build_annual_report_coverage.scan_datasets` classes as report `data`,
+  not only `report-*` -- one definition shared with `EXTRACTION-GAPS.md`. Shown to fail when one
+  is removed. Costs ~6s of an ~12s `build_db.py`.
+- **Both stale generators reproduce.** `extract_appropriations_supplement.py` refused FY2011 p60
+  because the generic extract had gained rows for it -- all `check failed` -- so it now defers
+  only to `checked` rows. `extract_report_signatures.py` was stale against the 28 Sep / 2 Oct
+  re-OCR; regenerated, with `(Submitted by` and `take any other action` added to `WARRANT`, which
+  removed eight warrant sponsor lines that were being read as signatures.
+- **Every database object has a `table-semantics.csv` row: 206 of 206**, including
+  `town_roster_entries`, which had none.
+
 **Next, in order**
 
-1. **The 10 report datasets that are not in the database.** `EXTRACTION-GAPS.md` names them:
-   `treasurers-cash`, `debt-repayment-detail`, `salary-schedule`, `trust-fund-matrix` and six
-   more. Load each, or add it to `REPORT_NOT_LOADED` with a reason. Then widen the guard past the
-   `report-*` prefix, because these escaped it by their names.
-2. **Two generators do not reproduce:** `report-signatures` and
-   `report-appropriations-supplement`. Fix them before loading them.
+1. **Push D1 and deploy** -- only when TJ asks (rule 10).
+2. **Two junk rows in `report-signatures`:** FY2012 pages 9 and 18 (In Memoriam) give an
+   obituary sentence as the `department`.
 3. **Step 4: sort the 866 FY2011-FY2025 catalogue entries.** Start with the 287 on pages no
    dataset reads.
 4. **Step 3: the list survey** (licences, dogs, births, committees). The officials and staff
@@ -79,6 +90,14 @@ flight. Pick up at **Next**.
 5. **Small fixes:**
    - `mirror_group()` in `build_source_index.py` never sets `searchableUrl`.
    - The town rosters' positions still carry tenure text such as "5 year terms".
+   - `check_generated.py` runs `build_db.py --check` beside readers of the same database, and
+     on 2 November that raced: `database is locked`, and a `lunenburg.db-journal` that
+     `build_source_index.py` then failed on as an uncatalogued file.
+
+**Failing in `check_generated.py` on 2 November and NOT from this work** (left for their own
+processes): `write_recording_minutes`, `build_suggested_reports`, `build_vote_lists` /
+`verify_vote_lists`, `build_notices`, `build_one_big_report` (`variance` claimed by no page),
+`verify_balance_sheet` (12 failures), and `sync_d1 --check` (API error 7500).
 
 **Open questions for TJ, not decided**
 

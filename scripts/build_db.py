@@ -1365,6 +1365,19 @@ REFERENCE = [
     'receivables-reconciliation', 'tax-collection-unreconciled',
     'capital-plans-refused', 'valuation-refused',
 
+    # TEN MORE READ FROM THE REPORTS, which sat outside the database because their names do not
+    # start with `report-` and the guard below only globbed that prefix (found by
+    # build_annual_report_coverage.py, 2 November 2026). Each is figures off a printed page:
+    # the Treasurer's cash listing, the debt service schedules per issue, the town salary
+    # schedule by grade and step, the trust fund summary matrix and its per-account detail,
+    # the contractors printed in the school rosters, the CPC's capital options, Monty Tech's
+    # expense history (THE REGIONAL VOCATIONAL DISTRICT, not Lunenburg's), the per-page
+    # readings with their reconciliation, and transfers in and out of stabilization funds
+    # quoted from town meeting votes.
+    'treasurers-cash', 'debt-repayment-detail', 'salary-schedule', 'trust-fund-matrix',
+    'trust-fund-balances', 'staff-roster-contractors', 'capital-program-options',
+    'monty-tech-expenses', 'pages-read', 'stabilization-flows',
+
 ]
 
 # EVERY `report-*.csv` IS LOADED OR SAYS WHY NOT. The annual-report datasets were loaded from
@@ -1382,10 +1395,17 @@ REPORT_NOT_LOADED = {
 
 
 def check_report_datasets():
-    """Refuse to build if a `report-*.csv` is neither loaded nor excluded with a reason."""
+    """Refuse to build if a report dataset (a `report-*.csv`, or any CSV the coverage register
+    attributes to a report edition as data) is neither loaded nor excluded with a reason."""
     import glob as _g
     on_disk = sorted(os.path.basename(p)[:-4]
                      for p in _g.glob(os.path.join(DATA, 'report-*.csv')))
+    # Not only the `report-` prefix: ten datasets escaped by their names. So also every CSV the
+    # coverage register attributes to a report edition and classes as data -- ONE definition,
+    # shared with notes/reference/EXTRACTION-GAPS.md, so the guard and the page cannot disagree.
+    import build_annual_report_coverage as _cov
+    fed = sorted(n for n, d in _cov.scan_datasets(_cov.editions()).items() if d['role'] == 'data')
+    on_disk = sorted(set(on_disk) | set(fed))
     loaded = set(REFERENCE) | {n for n, _ in UNLOADED}
     stray = [n for n in on_disk if n not in loaded and n not in REPORT_NOT_LOADED]
     both = sorted(set(REPORT_NOT_LOADED) & loaded)
@@ -3408,7 +3428,7 @@ def main():
           % (load_dese_datasets(db), len(DESE_DATASETS)))
     print('  census figures   %5d  (ACS 5-year, every estimate with its margin)'
           % load_census(db))
-    print('  reference rows   %5d  (every one of %d report-*.csv loaded or excluded with a reason)'
+    print('  reference rows   %5d  (every one of %d report dataset loaded or excluded with a reason)'
           % (load_reference(db), n_report))
     print('  provenance rows  %5d' % load_provenance(db))
     print('  role vocabulary  %5d' % load_role_classification(db))

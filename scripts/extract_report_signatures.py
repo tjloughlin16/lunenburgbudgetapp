@@ -59,8 +59,12 @@ PERSON = re.compile(
 # A WARRANT ARTICLE IS NOT A SIGNATURE. Town-meeting articles carry `(Submitted by the
 # Town Manager)`, and counting those put the denominator at 730 when the real number of
 # report signatures is far smaller.
+# The sponsor line itself is the plainest mark: `(Submitted by` opens with a PARENTHESIS, and
+# no department report is signed in brackets. Without it, the 2 October re-OCR let nine
+# sponsor lines through as signatures -- `Use Categories Parking Calculation` as a person.
 WARRANT = re.compile(r'recommends? approval|VOTED|PASS(?:ED)? OVER|Article \d|'
-                     r'town meeting|Selectmen and Finance', re.I)
+                     r'town meeting|Selectmen and Finance|\(\s*submitted\b|'
+                     r'take any other action relative', re.I)
 NOISE = re.compile(r'https?://|@|\bpage\b|^\W*$|^\d', re.I)
 # Words that make a line a TITLE rather than a name.
 TITLEISH = re.compile(r'chair|director|superintendent|chief|manager|clerk|treasurer|'

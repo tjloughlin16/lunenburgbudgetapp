@@ -432,10 +432,18 @@ def read_page(fy, doc, page, refused):
 
 
 def already_read(fy, page):
+    """True only if the generic extract holds this page CHECKED.
+
+    The 1959-2010 integration (30 October 2026) gave report-appropriations.csv 39 rows for
+    FY2011 page 60, every one `check failed`, and this then refused the page -- discarding a
+    reading that closes on the page's own subtotals in favour of one that does not. Rows that
+    failed their own check do not supersede a reading that proved.
+    """
     if not os.path.exists(MAIN):
         return False
     with open(MAIN, encoding='utf-8') as fh:
-        return any(r['fy'] == fy and r['page'] == str(page) for r in csv.DictReader(fh))
+        return any(r['fy'] == fy and r['page'] == str(page) and r['status'] == 'checked'
+                   for r in csv.DictReader(fh))
 
 
 def write(path, fields, rows, check):
