@@ -74,14 +74,15 @@ AMBER = '#e08214'
 MAX_ABSENT = 2
 
 # WHAT A PERSON HAS TOLD US ABOUT WHO IS WHO, where the print cannot say. Keyed by name_key; each
-# entry is what was said, by whom and when, and the page prints it AS what we were told -- no
+# entry is what was said, by whom (`by`, as the page attributes it) and when, and the page prints it
+# AS a report -- no
 # document held establishes it (rule 3). The run rule decides the ranking either way; this only
 # replaces "cannot say" with the answer and its source.
 CONFIRMED_DISTINCT = {
     # TJ, 2 November 2026: "there are 2 genevieve nass's! One is the mom, the other the daughter.
     # both worked for lunenburg." The run rule had already split them on the 1982-1998 absence.
     'genevievenass': dict(who='a mother and her daughter, both of whom worked for Lunenburg',
-                          told='2 November 2026'),
+                          told='2 November 2026', by='a community member'),
 }
 TITLES = {'mrs', 'mr', 'miss', 'ms', 'dr', 'jr', 'sr', 'ii', 'iii', 'rev', 'sister', 'ed'}
 
@@ -1134,7 +1135,7 @@ def conclusions_for(d, x):
             id='one-name-two-careers',
             claim='%s: a school cook from %d to %d, then a name under Phys. Ed. from %d'
                   % (sh['name'], sh['a']['first'], sh['a']['last'], sh['b']['first']),
-            so_what=('Absent from %s rosters in between; two people, a mother and daughter, we were told.'
+            so_what=('Absent from %s rosters in between; a mother and daughter, a community member reported.'
                      if sh['key'] in CONFIRMED_DISTINCT else
                      'Absent from %s rosters in between; whether it is one person, no report says.')
                     % C.num(gap),
@@ -1148,8 +1149,9 @@ def conclusions_for(d, x):
                    '%s years. A run here breaks on a long absence for exactly this reason.'
                    % C.num(sh['naive_span']),
             basis='`staff-roster-entries.csv`, the entries quoted in the roster section.',
-            not_shown=('No document held says they are two people; this project was told so on %s.'
-                       % CONFIRMED_DISTINCT[sh['key']]['told'] if sh['key'] in CONFIRMED_DISTINCT else
+            not_shown=('No document held says they are two people; %s reported it on %s.'
+                       % (CONFIRMED_DISTINCT[sh['key']]['by'], CONFIRMED_DISTINCT[sh['key']]['told'])
+                       if sh['key'] in CONFIRMED_DISTINCT else
                        'Whether the two careers are one person. Same name is not same person.'),
         ))
     tie = d['tie']
@@ -1304,9 +1306,10 @@ def render(d, x):
              sh['b']['first'], link(sh['b']['first_entry']),
              sh['b']['first_entry']['role'] or sh['b']['first_entry']['group'],
              sh['b']['last'],
-             ('They are two people, %s: this project was told so on %s; no document held says it. '
+             ('They are two people, %s, as %s reported on %s; no document held says it. '
               'The break on a long absence keeps them apart.'
-              % (CONFIRMED_DISTINCT[sh['key']]['who'], CONFIRMED_DISTINCT[sh['key']]['told'])
+              % (CONFIRMED_DISTINCT[sh['key']]['who'], CONFIRMED_DISTINCT[sh['key']]['by'],
+                 CONFIRMED_DISTINCT[sh['key']]['told'])
               if sh['key'] in CONFIRMED_DISTINCT else
               'Whether that is one person this archive cannot say, which is why a run breaks on a '
               'long absence.')))
