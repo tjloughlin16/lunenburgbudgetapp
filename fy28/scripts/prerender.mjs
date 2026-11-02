@@ -245,7 +245,9 @@ async function readRoutes() {
   if (existsSync(topicsFile)) {
     const ix = JSON.parse(await readFile(topicsFile, 'utf8'))
     // Hubs too: only two of them are SLUG routes; the rest exist only as categories.
-    topicPages = [...new Set([...ix.categories.filter(c => c.ready).map(c => c.path),
+    // A hub folded into another (`merged_into`, scripts/topics.py) has no page of its own: its
+    // address opens the hub it was folded into, so it is not rendered twice.
+    topicPages = [...new Set([...ix.categories.filter(c => c.ready && !c.merged_into).map(c => c.path),
       ...Object.values(ix.topics).filter(t => t.ready).map(t => t.path)])]
       .filter(p => !routes.includes(p)).sort()
     console.log(`  ${topicPages.length} topic pages at /<category>/<topic>`)

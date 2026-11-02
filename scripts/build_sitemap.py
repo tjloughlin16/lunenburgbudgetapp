@@ -216,7 +216,7 @@ def topic_pages():
     if not os.path.exists(p):
         return []
     d = json.load(io.open(p, encoding='utf-8'))
-    hubs = [c['path'] for c in d.get('categories', []) if c.get('ready')]
+    hubs = [c['path'] for c in d.get('categories', []) if c.get('ready') and not c.get('merged_into')]
     return hubs + sorted(t['path'] for t in d.get('topics', {}).values() if t.get('ready'))
 
 
