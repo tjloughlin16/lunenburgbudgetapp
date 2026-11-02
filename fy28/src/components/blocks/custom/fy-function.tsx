@@ -74,7 +74,6 @@ export function FunctionPage({ item, parent }: { item: FunctionItem; parent: { h
   const [allPayees, setAllPayees] = useState(false)
   const memos = useMemo(() => item.memos.filter(m => m.fy === years[yi]), [item, years, yi])
   const payees = allPayees ? item.payees : item.payees.slice(0, PAYEES)
-  const kindLabel = Object.fromEntries(item.kinds.map(k => [k.id, k.label]))
   const COUNT_WORD: Record<string, string> = { payroll: 'pay runs', invoice: 'invoices', 'journal entry': 'entries',
     receipt: 'receipts', owed: 'purchase order lines' }
   return (
