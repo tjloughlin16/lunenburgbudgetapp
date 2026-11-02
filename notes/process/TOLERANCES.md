@@ -32,6 +32,7 @@ later witness (a ledger, a better scan) can re-open any one of them.
 | a debt schedule row's TOTAL against its year columns | yes, 1991-2010 | `debt_row_totals` in `edition.json` |
 | a list of voted lines against TOTAL BUDGET VOTED | yes, 1964 | `list_total_tolerance` in `edition.json` |
 | the combined balance sheet: column footing, assets = liabilities + equity, the reprinted total, the debt mirror | yes | `verify_balance_sheet.py` (`mark()`) |
+| the state's free cash certifications: itemised receivables against their subtotal, the calculation against the printed free cash, enterprise fund Part I and Part II (1 July 2014-2025) | yes; 7 rows use it | `extract_free_cash_certifications.py`; added 2 November 2026 under the approval of 29 October |
 | percent, rate, count, ratio or vote columns | **never**: $1 is meaningless there | `validate_totals.PERCENT_COL` |
 | election pages | **never** | `tol_off_pages` |
 | a cross-document check, where one schedule is checked against another | **never**: two documents are not rounding against each other | `verify_balance_sheet.py` check 3 |

@@ -142,6 +142,10 @@ def sources():
         'fcplan': ('budget-workbooks/finance-committee/fy26-budget/'
                    'free-cash-appropriations-updated-2.27.25.xlsx',
                    town + ' — Finance Committee free cash plan'),
+        'cert22': ('state-dls/free-cash-certification-lunenburg-fy2023-as-of-2022-07-01.pdf',
+                   'Massachusetts Division of Local Services, Free Cash Certification, as of 1 July 2022'),
+        'cert15': ('state-dls/free-cash-worksheet-lunenburg-2015-07-01.pdf',
+                   'Massachusetts Division of Local Services, free cash worksheet, 1 July 2015'),
     }
     out = {}
     for k, (key, pub) in spec.items():
@@ -151,6 +155,7 @@ def sources():
     ours = {
         'd-proof': ('free-cash-proof.csv', 'the DLS proof, line by line, nine towns'),
         'd-sheet': ('free-cash-history-fincom.csv', 'the Town’s free cash history table'),
+        'd-cert': ('free-cash-certifications.csv', 'the state’s certifications, 2014-2025, every line proved'),
         'd-cap': ('capital-funding-history.csv', 'the capital plan’s funding table'),
         'd-trust': ('trust-agency-balances.csv', 'the MUNIS trust and agency report'),
         'd-stab': ('stabilization-balances.csv', 'year-end balances, each proven'),
@@ -195,6 +200,27 @@ def fact_sheet():
                  % (fy, printed, 100 * cert / base))
         out[fy] = dict(certified=cert, base=base, pct=printed, date=r['date_certified'])
     return out
+
+
+WORDS = {0: 'none', 1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven',
+         8: 'eight', 9: 'nine', 10: 'ten', 11: 'eleven', 12: 'twelve'}
+
+
+def certifications():
+    """{year of the 1 July balance: free cash the state certified}, off each certification's own
+    result line (extract_free_cash_certifications.py proves every one closes on its page)."""
+    out = {}
+    for r in rows('free-cash-certifications.csv'):
+        if r['role'] == 'result':
+            out[int(r['as_of'][:4])] = float(r['amount'])
+    return out
+
+
+# THE STATE'S CERTIFICATION IS THE FIGURE, where it and the Town's fact sheet part (TJ, 2 November
+# 2026: "plot the certification. i dont know why the summary is different"). One year does: as of
+# 1 July 2022 the certification dated 10/25/2022 prints $2,838,550; the fact sheet and the state's
+# own proof comparison give $2,923,290. Nothing held says which is later; both are shown.
+CERT_DIFFERS = {2022}
 
 
 def deposits():
@@ -292,6 +318,14 @@ def build():
     for y in dls:
         if abs(sheet[y + 1]['certified'] - dls[y]['certified']) > 0.5:
             fail('the fact sheet’s FY%d does not equal the DLS %d certification' % (y + 1, y))
+    cert = certifications()
+    shared = [y for y in cert if y + 1 in sheet]
+    cdiff = {y for y in shared if abs(cert[y] - sheet[y + 1]['certified']) > 0.5}
+    if cdiff != CERT_DIFFERS:
+        fail('the certifications part from the fact sheet in %s, not %s' % (sorted(cdiff), sorted(CERT_DIFFERS)))
+    for y in (2023, 2024, 2025):
+        if abs(cert[y] - comp[y]['certified']) > 0.5:
+            fail('the %d certification does not equal the proof' % y)
     c25, c24, c23 = (comp[y]['certified'] for y in (2025, 2024, 2023))
     if not (c23 < c24 < c25 and c25 == max(s['certified'] for s in sheet.values())):
         fail('2025 is no longer the highest certification, or 2023-2025 no longer rise')
@@ -334,18 +368,24 @@ def build():
                                               C.pct(s['pct'], 2)])
                   for fy, s in sorted(sheet.items(), reverse=True)]
     # The signature of the balance topic AND of the Free cash hub: one chart, two pages.
+    cy = sorted(cert)                     # 1 July years; each is spent in the fiscal year after
+    dy = sorted(cdiff)[0]
     fc_chart = TP.series(
-        'Certified free cash by year', [C.fy(fy) for fy in sorted(sheet)],
-        [TP.track('The state’s proof', [dls[fy - 1]['certified'] if fy - 1 in dls else None
-                                        for fy in sorted(sheet)], 'published', 'bar'),
-         TP.track('The Town’s fact sheet only', [None if fy - 1 in dls else
-                                                 sheet[fy]['certified']
-                                                 for fy in sorted(sheet)], 'stated', 'bar')],
+        'Certified free cash by year', [C.fy(y + 1) for y in cy],
+        [TP.track('The state’s certification', [None if y in cdiff else cert[y] for y in cy],
+                  'published', 'bar'),
+         TP.track('Certification; the Town’s figure differs', [cert[y] if y in cdiff else None for y in cy],
+                  'published', 'bar')],
         '$', kind='bar', stacked=True,
         secondary=dict(name='Share of the prior year’s operating budget (Town)', unit='%', decimals=2,
-                       basis='stated', values=[sheet[fy]['pct'] for fy in sorted(sheet)]),
-        note='By the year the money can be spent in; where both publish a year, they agree. '
-             'The line, right axis: the Town’s share of the prior year’s operating budget.')
+                       basis='stated', values=[sheet[y + 1]['pct'] if y + 1 in sheet else None for y in cy]),
+        note='By the year it can be spent. %s: the certification prints %s; the Town gives %s. '
+             'Line, right axis: share of the prior year’s budget.'
+             % (C.fy(dy + 1), C.usd(cert[dy]), C.usd(sheet[dy + 1]['certified'])),
+        note_figures={'y': F(dy + 1), 'a': U(cert[dy]), 'b': U(sheet[dy + 1]['certified'])})
+    cert_rows = [dict(label=C.fy(y + 1), cells=[
+        C.usd(cert[y]), C.usd(sheet[y + 1]['certified']) if y + 1 in sheet else None,
+        C.pct(sheet[y + 1]['pct'], 2) if y + 1 in sheet else None]) for y in reversed(cy)]
     out['free-cash-balance'] = TP.page(
         'free-cash-balance',
         'The state certified %s of free cash as of 1 July 2025, the most in any year the '
@@ -368,13 +408,21 @@ def build():
          con('The state labels free cash by its 1 July balance; the Town by the year it can be '
              'spent, one later.', ['cert25', 'fs16'], allow=('1 July',),
              notes=[step('Checked, not assumed: each of the Town’s fiscal-year figures equals '
-                         'the state’s certification for the year before, in all %s years the '
-                         'two share.' % 'five', 'measured')])],
+                         'the state’s certification for the year before in all but %s of the %s '
+                         'years the two share.' % (WORDS[len(cdiff)], WORDS[len(shared)]),
+                         'measured')])],
         # The signature: the record and the dip before it. One bar a fiscal year (the Town's
         # label, the year the money can be spent); the state's proof where it reaches, the
         # Town's fact sheet for the years before it -- the two are equal where they overlap.
         chart=fc_chart,
         table=dict(caption='Certified free cash, two publishers', views=[
+            dict(key='cert', label='The state’s certification', total_col=0, kinds=['ledger', 'stated', 'stated'],
+                 columns=['Certified', 'The Town’s figure', 'Share of the operating budget'],
+                 rows=cert_rows,
+                 note='Each year’s Division of Local Services certification, by the fiscal year the money '
+                      'can be spent in, its arithmetic proved on its own page. The Town’s figure and share '
+                      'are its fact sheet’s. They agree in every year but one, and nothing held says '
+                      'which figure for that year is the later.'),
             dict(key='dls', label='The state’s proof', total_col=1, kinds=['ledger'] * 3 + ['stated'],
                  columns=['Identified', 'Certified', 'Spent in', 'Share of the operating budget'],
                  rows=dls_rows,
@@ -392,7 +440,8 @@ def build():
                         'With respect to the unspent money, the money is not lost. The money is '
                         'still there, it is free cash and it is going to roll over. It is going '
                         'to be appropriated in one fashion or another.', 'School Committee')],
-        sources=[src['dls'], src['sheet'], src['ar25'], src['d-proof'], src['d-sheet']],
+        sources=[src['dls'], src['sheet'], src['ar25'], src['cert22'], src['cert15'], src['d-proof'],
+                 src['d-sheet'], src['d-cert']],
         finding_figures={'a': U(c25)}, finding_allow=('1 July 2025',))
 
     # ------------------------------------------------ free cash: the guideline

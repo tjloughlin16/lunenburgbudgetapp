@@ -4,7 +4,7 @@
 
 ## What the town and the state published — and we hold
 
-- **16,789 documents** — PDFs, spreadsheets, Word files and slide decks — 47,877 files and 11.12 GB in all, each with its address, its publisher’s filename and a checksum.
+- **16,801 documents** — PDFs, spreadsheets, Word files and slide decks — 47,889 files and 11.12 GB in all, each with its address, its publisher’s filename and a checksum.
 - **16 kinds of source**: budget-workbooks, contracts, correspondence, district-budget, federal-bls, meetings, peer-districts, state-census, state-dese, state-dls, state-law, state-massgis, town-annual-reports, town-budget, town-ledgers, town-supplementary.
 - **12,273 meeting documents** from **51 town boards**: 4,772 sets of minutes and 7,501 agendas, 2009-01-05 to 2026-11-02 — **18 years**.
 - **27,799 annual town report appropriation lines**, FY1959–FY2025, read page by page.
@@ -16,10 +16,10 @@
 
 - **4,546 hours of meeting recordings transcribed** — 2,704 meetings, 189.4 days of audio end to end, 2012-05-02 to 2026-10-28. Machine captions, ours, a finding aid: they locate a moment; they do not settle what was said.
 - **1799 meetings with our own minutes** written from those recordings — **5794 substantive votes** and **840 transfers** logged, each linked to the second of the video.
-- **A database of 384,725 rows in 190 tables**, rebuilt from the documents on every run and queryable by anyone at `/api/query`.
+- **A database of 384,738 rows in 190 tables**, rebuilt from the documents on every run and queryable by anyone at `/api/query`.
 - **7 analyses** and **268 published conclusions**, every figure recomputed by a script before it ships.
 - **193 cuts announced in writing** traced across budget cycles; **71 rates** in the projection, each backtested against the district’s later budgets.
-- **646 registered gaps** — questions the published record cannot answer, each with the one document that would close it.
+- **647 registered gaps** — questions the published record cannot answer, each with the one document that would close it.
 - **879 pages** on the site.
 
 ## Where it came from

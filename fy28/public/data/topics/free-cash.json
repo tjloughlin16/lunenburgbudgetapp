@@ -29,9 +29,25 @@
   "from_zero": true,
   "kind": "bar",
   "note": {
-   "figures": {},
+   "figures": {
+    "a": {
+     "text": "$2,838,550",
+     "unit": "",
+     "value": 2838550.0
+    },
+    "b": {
+     "text": "$2,923,290",
+     "unit": "",
+     "value": 2923290.0
+    },
+    "y": {
+     "text": "FY2023",
+     "unit": "fiscal year",
+     "value": 2023
+    }
+   },
    "literals": [],
-   "text": "By the year the money can be spent in; where both publish a year, they agree. The line, right axis: the Town’s share of the prior year’s operating budget."
+   "text": "By the year it can be spent. FY2023: the certification prints $2,838,550; the Town gives $2,923,290. Line, right axis: share of the prior year’s budget."
   },
   "reference": null,
   "secondary": {
@@ -39,6 +55,7 @@
    "decimals": 2,
    "name": "Share of the prior year’s operating budget (Town)",
    "texts": [
+    null,
     "0.81%",
     "2.54%",
     "2.23%",
@@ -53,6 +70,7 @@
    ],
    "unit": "%",
    "values": [
+    null,
     0.81,
     2.54,
     2.23,
@@ -70,60 +88,64 @@
    {
     "basis": "published",
     "mark": "bar",
-    "name": "The state’s proof",
+    "name": "The state’s certification",
     "texts": [
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     "$2,666,962",
-     "$2,923,290",
-     "$1,870,612",
-     "$2,270,060",
-     "$3,354,370"
-    ],
-    "values": [
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     2666962.0,
-     2923290.0,
-     1870612.0,
-     2270060.0,
-     3354370.0
-    ]
-   },
-   {
-    "basis": "stated",
-    "mark": "bar",
-    "name": "The Town’s fact sheet only",
-    "texts": [
+     "$484,117",
      "$263,188",
      "$888,944",
      "$818,886",
      "$1,512,483",
      "$1,107,694",
      "$1,804,185",
+     "$2,666,962",
      null,
-     null,
-     null,
-     null,
-     null
+     "$1,870,612",
+     "$2,270,060",
+     "$3,354,370"
     ],
     "values": [
+     484117.0,
      263188.0,
      888944.0,
      818886.0,
      1512483.0,
      1107694.0,
      1804185.0,
+     2666962.0,
+     null,
+     1870612.0,
+     2270060.0,
+     3354370.0
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Certification; the Town’s figure differs",
+    "texts": [
      null,
      null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "$2,838,550",
+     null,
+     null,
+     null
+    ],
+    "values": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     2838550.0,
      null,
      null,
      null
@@ -135,6 +157,7 @@
   "type": "series",
   "unit": "$",
   "x": [
+   "FY2015",
    "FY2016",
    "FY2017",
    "FY2018",
