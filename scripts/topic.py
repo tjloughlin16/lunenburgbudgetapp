@@ -409,6 +409,22 @@ def _tables_bad(tables, id, uniform=()):
                 if len(r['cells']) != len(v['columns']):
                     bad.append('%s: table %r row %r: %d cells for %d columns'
                                % (id, t['caption'], r['label'], len(r['cells']), len(v['columns'])))
+                # `links`: per cell, None or the cell's text as segments, some carrying an href to
+                # the page the words name ("Title I $92,110.00 · ..." -> /school-funds/title-i). The
+                # segments must spell the cell exactly, so a link can never change what is printed.
+                lk = r.get('links')
+                if lk is not None:
+                    if len(lk) != len(r['cells']):
+                        bad.append('%s: table %r row %r: links must be one per cell' % (id, v['key'], r['label']))
+                    else:
+                        for cell, segs in zip(r['cells'], lk):
+                            if segs is None:
+                                continue
+                            if ''.join(x['t'] for x in segs) != cell or any(
+                                    set(x) - {'t', 'href'} or not str(x.get('href', '/')).startswith('/')
+                                    for x in segs):
+                                bad.append('%s: table %r row %r: linked segments do not spell the cell %r'
+                                           % (id, v['key'], r['label'], cell))
                 m = r.get('marks')
                 if m is not None and (len(m) != len(r['cells']) or any(x not in (1, -1, None) for x in m)):
                     bad.append('%s: table %r row %r: marks must be 1, -1 or None, one per cell -- '
@@ -683,7 +699,7 @@ def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_f
 
 def ranking(title, rows, unit, highlight=(), basis='published', stack=None, note=None,
             note_figures=None, note_allow=(), decimals=None, marks=None, value_label=None,
-            mark_label=None, gap_label=None, under_label=None):
+            mark_label=None, gap_label=None, under_label=None, hrefs=None):
     """Horizontal bars, largest first. rows: [(label, value)], or with `stack` (a list of
     names) [(label, [value per name])]. `highlight`: a label or labels to mark.
     marks: a BULLET CHART -- {row label: benchmark}, drawn as a tick across each row's bar, so
@@ -703,6 +719,14 @@ def ranking(title, rows, unit, highlight=(), basis='published', stack=None, note
             raise ConclusionError('chart %r: marks must name every row, and only rows' % title)
         for r in rs:
             r['mark'] = marks[r['label']]
+    # `hrefs`: {row label: the page that row is about}. Written only when set, so no other
+    # ranking's payload changes; every key must name a row (TJ, 2 November 2026: function codes).
+    if hrefs is not None:
+        if set(hrefs) - {r['label'] for r in rs} or any(not h.startswith('/') for h in hrefs.values()):
+            raise ConclusionError('chart %r: hrefs must name rows, and be site addresses' % title)
+        for r in rs:
+            if r['label'] in hrefs:
+                r['href'] = hrefs[r['label']]
     rs.sort(key=lambda r: (total(r.get('values', r.get('value'))) is None,
                            -(total(r.get('values', r.get('value'))) or 0)))
     return _checked(dict(type='ranking', title=' '.join(title.split()), unit=unit, basis=basis,

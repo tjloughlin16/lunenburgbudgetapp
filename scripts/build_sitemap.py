@@ -195,7 +195,16 @@ def fy_item_pages():
     d = json.load(io.open(p, encoding='utf-8'))
     return sorted(['/school-lines/' + x['slug'] for x in d.get('lines', [])]
                   + ['/school-funds/' + x['slug'] for x in d.get('funds', [])]
-                  + ['/school-groups/' + x['slug'] for x in d.get('groups', [])])
+                  + ['/school-groups/' + x['slug'] for x in d.get('groups', [])]
+                  + function_pages())
+
+
+def function_pages():
+    """One page per function code (scripts/build_function_pages.py), 2 November 2026."""
+    p = os.path.join(PUB, 'data', 'fy-breakdown', 'functions.json')
+    if not os.path.exists(p):
+        return []
+    return ['/school-functions/' + x['code'] for x in json.load(io.open(p, encoding='utf-8'))['functions']]
 
 
 def topic_pages():

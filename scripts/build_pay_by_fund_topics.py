@@ -172,6 +172,32 @@ def sources():
 
 LINE_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'fy-breakdown', 'line', '%s.json')
 LINE_INDEX = os.path.join(ROOT, 'fy28', 'public', 'data', 'fy-breakdown', 'index.json')
+FUNCTIONS_INDEX = os.path.join(ROOT, 'fy28', 'public', 'data', 'fy-breakdown', 'functions.json')
+
+
+def fund_pages():
+    """Programme name (journal.grant_program, the site's one name for a fund) -> its fund page."""
+    return {f['name']: '/school-funds/' + f['slug']
+            for f in json.load(open(LINE_INDEX, encoding='utf-8'))['funds']}
+
+
+def function_page(code):
+    """A function code's own page (build_function_pages.py), refusing a code it has not built."""
+    have = {f['code'] for f in json.load(open(FUNCTIONS_INDEX, encoding='utf-8'))['functions']}
+    if code not in have:
+        fail('function code %s has no page; run build_function_pages.py' % code)
+    return '/school-functions/' + code
+
+
+def linked_programmes(parts, pages, tail=''):
+    """[(programme, amount text)] as one cell's segments: each programme's name linked to its
+    fund page, the amounts and separators plain. Refuses a programme with no page."""
+    segs = []
+    for i, (p, amt) in enumerate(parts):
+        if p not in pages:
+            fail('programme %r has no fund page' % p)
+        segs += ([dict(t=' · ')] if i else []) + [dict(t=p, href=pages[p]), dict(t=' ' + amt)]
+    return segs + ([dict(t=tail)] if tail else [])
 
 
 def role_table(A):
@@ -192,6 +218,7 @@ def role_table(A):
     from build_fy_breakdown import line_name, money
     m = FB.model()
     slug = {x['account']: x['slug'] for x in json.load(open(LINE_INDEX, encoding='utf-8'))['lines']}
+    pages = fund_pages()
     by_journal = defaultdict(list)
     for x in J.lines():
         if x['fund'] != '0100' and J.is_expense(A[x['account']]):
@@ -254,13 +281,15 @@ def role_table(A):
             # splits it across them in proportion (fy_breakdown.share); the books give the entry's
             # totals, not which programme took which line.
             shared = any(fm['amount'] < 0 and len(gainers(fm)) > 1 for fm in r['fund_moves'])
-            who = ' · '.join('%s %s' % (p, money(v)) for p, v in
-                             sorted(prog.items(), key=lambda kv: (-kv[1], kv[0])))
+            ranked = [(p, money(v)) for p, v in sorted(prog.items(), key=lambda kv: (-kv[1], kv[0]))]
+            who = ' · '.join('%s %s' % pv for pv in ranked)
+            tail = ' (split by us in proportion)' if shared else ''
             out.append((gf, line_name(r).split(' · ')[0], dict(
                 label=line_name(r).split(' · ')[0],
                 href='/school-lines/%s?fy=%s' % (slug[acct], C.fy(y)),
+                links=[None, None, None, linked_programmes(ranked, pages, tail), None],
                 cells=[money(total), money(school), money(gf),
-                       who + (' (split by us in proportion)' if shared else ''),
+                       who + tail,
                        # a school figure below zero (more pay moved off the line than it paid)
                        # makes a share meaningless: printed as a dash, not as a share over 100%
                        C.pct(100 * gf / total) if school >= 0 and total > 0 else None])))
@@ -348,6 +377,8 @@ def build():
     OUT_G = [g for g in OUTS]
     bl = defaultdict(float)             # (fy, group, code)
     ba = defaultdict(float)             # (fy, code, row label) -> one fund program's account
+    prog_of = {}                        # row label -> its programme, for the link to its page
+    fpages = fund_pages()
     for (y, k), v in m['acct'].items():
         a = A[k]
         g = J.fund_group(a)
@@ -358,6 +389,7 @@ def build():
             fail('function code %s has no name; budget-lines-all-funds names every code' % c)
         bl[(y, g, c)] += v
         ba[(y, c, '%s — %s' % (program(a), a['account_description'].title()))] += v
+        prog_of['%s — %s' % (program(a), a['account_description'].title())] = program(a)
     line_y = lambda y, c, gs=OUT_G: sum(bl[(y, g, c)] for g in gs)
     if any(abs(sum(line_y(y, c) for c in {k[2] for k in bl}) - out_y[y]) > 0.01 for y in Y):
         fail('salaries by budget line do not foot to salaries outside the general fund')
@@ -370,7 +402,7 @@ def build():
     usd_or_blank = lambda v: C.usd(round(v)) if abs(v) >= 0.5 else ''
 
     def line_view(key, label, gs):
-        rows = [dict(label=lbl(c), cells=[LINE_CLASS[cls[c]]]
+        rows = [dict(label=lbl(c), href=function_page(c), cells=[LINE_CLASS[cls[c]]]
                      + [usd_or_blank(line_y(y, c, gs)) for y in Y]
                      + [C.usd(round(sum(line_y(y, c, gs) for y in Y)))])
                 for c in codes if any(abs(line_y(y, c, gs)) >= 0.5 for y in Y)]
@@ -386,7 +418,8 @@ def build():
     for c in codes:
         labels = sorted({k[2] for k in ba if k[1] == c},
                         key=lambda l: (-ba[(F1, c, l)], -sum(ba[(y, c, l)] for y in Y), l))
-        rows = [dict(label=l, cells=[usd_or_blank(ba[(y, c, l)]) for y in Y]
+        rows = [dict(label=l, **({'href': fpages[prog_of[l]]} if prog_of[l] in fpages else {}),
+                     cells=[usd_or_blank(ba[(y, c, l)]) for y in Y]
                      + [C.usd(round(sum(ba[(y, c, l)] for y in Y)))])
                 for l in labels if any(abs(ba[(y, c, l)]) >= 0.5 for y in Y)]
         if len(rows) > 30:
@@ -402,6 +435,7 @@ def build():
         TP.ranking('Grant and fee salaries by budget line',
                    [(lbl(c), [round(sum(bl[(y, g, c)] for y in Y)) for g in OUT_G]) for c in codes],
                    '$', highlight=[lbl(c) for c in line_codes], stack=OUT_G,
+                   hrefs={lbl(c): function_page(c) for c in codes},
                    note='Four years, %s to %s, by the function code each salary account carries. '
                         'Highlighted: the voted budget lines.' % (C.fy(F0), C.fy(F1)),
                    note_figures={'y': F(F0), 'z': F(F1)}),

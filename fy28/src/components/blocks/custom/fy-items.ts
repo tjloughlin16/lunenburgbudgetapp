@@ -17,6 +17,8 @@ export type ItemIndex = {
 export const LINE_BASE = '/school-lines/'
 export const FUND_BASE = '/school-funds/'
 export const GROUP_BASE = '/school-groups/'
+/** a function code's own page, /school-functions/<code> (scripts/build_function_pages.py) */
+export const FUNCTION_BASE = '/school-functions/'
 
 let INDEX: Promise<ItemIndex> | null = null
 export const loadIndex = () => {
@@ -45,10 +47,12 @@ export function itemHrefs(ix: ItemIndex | null) {
   }
 }
 
-/** /school-lines/<slug>, /school-funds/<slug> or /school-groups/<slug> (lines read together), or null. */
-export function itemFromPath(pathname: string): { kind: 'line' | 'fund' | 'group'; slug: string } | null {
-  const m = /^\/school-(lines|funds|groups)\/([a-z0-9-]+)\/?$/.exec(pathname.toLowerCase())
-  return m ? { kind: m[1] === 'lines' ? 'line' : m[1] === 'funds' ? 'fund' : 'group', slug: m[2] } : null
+/** /school-lines/<slug>, /school-funds/<slug>, /school-groups/<slug> (lines read together) or
+ *  /school-functions/<code>, or null. */
+export function itemFromPath(pathname: string): { kind: 'line' | 'fund' | 'group' | 'function'; slug: string } | null {
+  const m = /^\/school-(lines|funds|groups|functions)\/([a-z0-9-]+)\/?$/.exec(pathname.toLowerCase())
+  const kind = ({ lines: 'line', funds: 'fund', groups: 'group', functions: 'function' } as const)
+  return m ? { kind: kind[m[1] as keyof typeof kind], slug: m[2] } : null
 }
 
 /** A link to the page, carrying the year being read. */

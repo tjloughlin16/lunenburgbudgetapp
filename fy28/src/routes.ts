@@ -1019,7 +1019,7 @@ function resolvePath(pathname: string): Tab | null {
   // ONE PAGE PER SCHOOL LINE AND PER FUND, /school-lines/<slug> and /school-funds/<slug>
   // (pages/FyItem.tsx). They ride the topic tab, as /people/<slug> rides the org charts', so they
   // are no SLUG of their own: unlisted like the FY breakdown page they belong to.
-  if (/^school-(lines|funds|groups)\/[a-z0-9-]+$/.test(seg)) return 'topic'
+  if (/^school-(lines|funds|groups|functions)\/[a-z0-9-]+$/.test(seg)) return 'topic'
   // A TOPIC PAGE AT AN ADDRESS OUTSIDE ITS SHELF (TOPIC_PATHS below).
   if (TOPIC_PATHS[seg]) return 'topic'
   if (TOPIC_ALIASES[seg]) return 'topic'

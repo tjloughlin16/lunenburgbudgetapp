@@ -5,6 +5,7 @@ import { FundBody, type Fund, type FundRow, type FundText } from '../components/
 import { EgoWeb, type Ego } from '../components/blocks/custom/fy-ego-web'
 import { MoveGroups, type MoveGroup } from '../components/blocks/custom/fy-fund-moves'
 import { Chip } from '../components/blocks/custom/fy-shared'
+import { FunctionPage, type FunctionItem } from '../components/blocks/custom/fy-function'
 import { useFyYear } from '../components/blocks/custom/fy-year'
 import { GROUP_BASE, itemFromPath, loadIndex, type ItemIndex } from '../components/blocks/custom/fy-items'
 import type { WebKind } from '../components/blocks/custom/fy-web-parts'
@@ -223,7 +224,7 @@ function GroupPage({ item, ix }: { item: GroupItem; ix: ItemIndex }) {
 export function FyItem() {
   const at = itemFromPath(window.location.pathname)
   const [ix, setIx] = useState<ItemIndex | null>(null)
-  const [item, setItem] = useState<LineItem | FundItem | GroupItem | null>(null)
+  const [item, setItem] = useState<LineItem | FundItem | GroupItem | FunctionItem | null>(null)
   const [err, setErr] = useState(false)
   useEffect(() => {
     if (!at) return
@@ -240,6 +241,9 @@ export function FyItem() {
       </ReportShell>)
   }
   if (!ix || !item) return <ReportShell title="" loading />
+  if (at.kind === 'function') {
+    return <FunctionPage item={item as FunctionItem} parent={{ href: '/school-all-funds/salaries-from-grants-and-fees', label: 'Salaries from grants and fees' }} />
+  }
   return at.kind === 'line' ? <LinePage item={item as LineItem} ix={ix} />
     : at.kind === 'group' ? <GroupPage item={item as GroupItem} ix={ix} /> : <FundPage item={item as FundItem} ix={ix} />
 }

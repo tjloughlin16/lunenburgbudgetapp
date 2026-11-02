@@ -1121,7 +1121,9 @@ export type FigureTableView = {
   /** `marks`: per cell, 1 or -1 where the generator found a change of at least its threshold
    *  against the cell it compares with (scripts/topic.py, change_marks); drawn as an arrow.
    *  `code`: the publisher's own code for the row, set in small type under its plain name. */
-  rows: { label: string; code?: string; href?: string; cells: (string | null)[]; marks?: (1 | -1 | null)[] }[]
+  rows: { label: string; code?: string; href?: string; cells: (string | null)[]; marks?: (1 | -1 | null)[]
+    /** per cell, the cell's own text as segments, some linked (scripts/topic.py checks they spell it) */
+    links?: ({ t: string; href?: string }[] | null)[] }[]
 }
 /** `open`: the view drawn first, by index (default the first). Year tabs set it to the newest
  *  year (TJ, 1 November 2026), so a table does not open on its oldest year.
@@ -1227,7 +1229,9 @@ export function FigureTable({ t }: { t: FigureTableData }) {
                           <span className="sr-only">{r.marks[i] === 1 ? 'rose, ' : 'fell, '}</span>
                         </span>
                       ) : null}
-                      {c ?? '—'}</td>
+                      {r.links?.[i] ? r.links[i]!.map((s, n) => s.href
+                        ? <a key={n} href={s.href} className="underline" style={{ color: 'var(--series-cost)' }}>{s.t}</a>
+                        : <span key={n}>{s.t}</span>) : c ?? '—'}</td>
                   ))}
                 </tr>
               )

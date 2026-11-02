@@ -151,6 +151,8 @@ CHECKS = [
     # The surplus in four parts (fy_breakdown.py): the page, and every line's four parts
     # recomputed off the raw CSVs and tied to the period-13 report, owed footing.
     ('build_fy_breakdown.py', ['--check']),
+    # one page per function code; reads the fy-breakdown index, and build_pay_by_fund_topics links to it
+    ('build_function_pages.py', ['--check']),
     ('verify_fy_breakdown.py', []),
     ('build_circuit_breaker_surplus.py', ['--check']),
     ('verify_circuit_breaker_surplus.py', []),

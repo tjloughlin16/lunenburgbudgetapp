@@ -57,7 +57,9 @@ export type RankingChart = {
   type: 'ranking'; title: string; unit: string; basis: Basis; stack: string[] | null
   rows: { label: string; value?: number | null; values?: (number | null)[]; texts: (string | null)[]; total: string | null
     /** Bullet rows only: the benchmark, its text, and value less benchmark (scripts/topic.py). */
-    mark?: number; mark_text?: string; gap_text?: string; over?: boolean }[]
+    mark?: number; mark_text?: string; gap_text?: string; over?: boolean
+    /** the page this row is about (scripts/topic.py ranking hrefs) */
+    href?: string }[]
   highlight: string[]; note: Unit | null
   value_label?: string; mark_label?: string; gap_label?: string; under_label?: string
 }
@@ -608,7 +610,9 @@ function Ranking({ c }: { c: RankingChart }) {
             <li key={r.label} title={c.stack ? c.stack.map((s, i) => `${s}: ${shown(r.texts[i])}`).join(' · ') : undefined}>
               <div className="flex items-baseline justify-between gap-3 text-[13px] leading-tight">
                 <span className="min-w-0 break-words" style={{ color: hl ? 'var(--text-primary)' : 'var(--text-secondary)',
-                  fontWeight: hl ? 600 : 400 }}>{r.label}</span>
+                  fontWeight: hl ? 600 : 400 }}>{r.href
+                    ? <a href={r.href} className="underline" style={{ color: 'var(--link, var(--thread-2))' }}>{r.label}</a>
+                    : r.label}</span>
                 <span className="tnum shrink-0" style={{ color: none ? 'var(--text-muted)' : 'var(--text-primary)',
                   fontWeight: hl ? 600 : 500 }}>{shown(r.total)}</span>
               </div>
