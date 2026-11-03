@@ -1,6 +1,6 @@
 # The annual town reports
 
-68 documents, 2,332 pages of financial tables, 107,676 rows read out of them.
+68 documents, 2,332 pages of financial tables, 107,875 rows read out of them.
 
 ## The short version
 
@@ -216,10 +216,11 @@ A **dedicated** extractor knows what its table means and can check it against a 
 | `report-proposed-salary-schedule.csv` | 302 | 1966–1973 | generic | 0 | 0 | 302 |
 | `report-revenue-sharing.csv` | 291 | 1973–1986 | generic | 86 | 6 | 199 |
 | `report-fee-schedule.csv` | 218 | 1964–2004 | generic | 8 | 0 | 210 |
+| `report-new-growth-history.csv` | 202 | 1986–2010 | dedicated | 162 | 28 | 12 |
 | `report-transitional-receipts.csv` | 197 | 1974–1974 | generic | 196 | 0 | 1 |
 | `report-treasurers-cash-calendar-year.csv` | 191 | 1978–1986 | generic | 89 | 0 | 102 |
-| `report-signatures.csv` | 182 | 2013–2025 | generic |  — | — | —  |
 | `report-property-tax-exemptions.csv` | 179 | 1974–1991 | generic | 0 | 0 | 179 |
+| `report-signatures.csv` | 179 | 2012–2025 | generic |  — | — | —  |
 | `report-warrant-article-amounts.csv` | 178 | 1972–2006 | generic | 148 | 0 | 30 |
 | `report-auditors-cash-schedule.csv` | 168 | 1983–1988 | generic | 127 | 0 | 41 |
 | `report-tax-bill-breakdown.csv` | 135 | 1995–1996 | generic | 135 | 0 | 0 |
