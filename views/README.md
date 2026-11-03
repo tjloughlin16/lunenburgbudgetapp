@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**709 of 5668 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**709 of 5684 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **4959 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **4975 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -240,6 +240,7 @@ Listed so this view cannot look more complete than it is.
 - `data/PROVENANCE-report-tables.md` — What the twelve generic extracts are, and what may not be done with them
 - `data/PROVENANCE-special-revenue-funds.md` — Where the special revenue funds came from
 - `data/PROVENANCE-special-revenue-read.md` — Why the schedule is read rather than OCR’d
+- `data/PROVENANCE-ssa-cola.md` — Where the COLA table came from, and what a year means in it
 - `data/PROVENANCE-staff-rosters.md` — Where the staff rosters came from, and what a name is not
 - `data/PROVENANCE-town-rosters.md` — Where the town officials lists came from, and what they do not show
 - `data/PROVENANCE-youtube-classification.md` — What the video classification is, and what it is not
@@ -359,6 +360,7 @@ Listed so this view cannot look more complete than it is.
 - `data/fincom-ledgers.csv` — The MUNIS ledgers in the Finance Committee’s files, one table
 - `data/fincom-presentation-survey.csv` — Every Finance Committee presentation, surveyed for tables
 - `data/fincom-presentation-tables.csv` — Tables read from Finance Committee presentations
+- `data/free-cash-certifications.csv` — Lunenburg free cash certifications, every printed line, 2014-2025
 - `data/free-cash-history-fincom.csv` — Free cash history, as the FY2027 fact sheet prints it
 - `data/free-cash-proof.csv` — Free cash, nine towns, five years, line by line
 - `data/fund-1301-cash-journal.csv` — The athletics revolving fund’s cashbook, three years
@@ -459,5 +461,3 @@ Listed so this view cannot look more complete than it is.
 - `data/report-expenditure-shares.csv` — Annual-report extract: expenditure shares
 - `data/report-fee-schedule.csv` — Annual-report extract: fee schedule
 - `data/report-filing.csv` — Which bodies file an annual report, and which say they did not
-- `data/report-financial-performance.csv` — Annual-report extract: financial performance
-- `data/report-fund-balance-sheets.csv` — Annual-report extract: fund balance sheets

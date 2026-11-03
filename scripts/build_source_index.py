@@ -4500,6 +4500,15 @@ GROUPS = [
          'Extracted from the DLS Gateway export in state-dls/. Per town per year: parcels, '
          'average value, average bill, the bill as a share of value and of income, rank. '
          'Rebuild with scripts/fetch_dls_tax_bills.py.'),
+        ('data/ssa-cola.csv',
+         'Social Security cost-of-living adjustments, 1975–2026', 3,
+         'The percentage the Social Security Administration prints for each year '
+         '(ssa.gov/oact/cola/colaseries.html), transcribed from a copy of that page pasted on '
+         '2 November 2026; SSA refused our automated fetch. A year is when the COLA was set, '
+         'paid the following January. See PROVENANCE-ssa-cola.md.'),
+        ('data/PROVENANCE-ssa-cola.md',
+         'Where the COLA table came from, and what a year means in it', 3,
+         'Written by us. The address, how it reached us, and the one footnote not held.'),
         ('data/dls-assessed-values.csv',
          'Assessed value by class, eleven towns, FY2002–FY2026', 3,
          'Extracted from the DLS Gateway export in state-dls/, footed to its own totals. '
