@@ -40,6 +40,7 @@ RELATED = [
     # The commercial development solution, and the two pages that work it out at length (TJ,
     # 2 November 2026: the buildings report was unlisted and the topic page did not link it).
     [('commercial-development', 'how much new building would have to pay for the gap'),
+     ('growth-and-tax-rate', 'whether building lowers the tax rate, year by year'),
      ('/commercial-development', 'Commercial development report', 'the full report, the growth drawn as buildings'),
      ('/try-growth', 'Growth dials', 'set the building pace yourself and watch the gap')],
     # The Town general fund and the school money it books (TJ, 31 October 2026).

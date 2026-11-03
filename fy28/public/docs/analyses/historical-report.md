@@ -161,7 +161,7 @@ The charter was Question 2 on the ballot headed “ANNUAL TOWN ELECTION - SATURD
 
 ## Homes and the tax bill
 
-The state’s average single-family home value and average tax bill, FY1991 to FY2026, in FY2026 dollars. Over that span the average home rose 40% after inflation and the average bill 85%. The bill as a share of the home’s value is the tax rate written as a percent. From FY2002 to FY2003, the biggest jump in value, the average value rose 26.1% while the rate fell from $15.60 to $13.12, so the average bill rose 6.1%.
+The state’s average single-family home value and average tax bill, FY1991 to FY2026, in FY2026 dollars. Over that span the average home rose 40% after inflation and the average bill 85%: the FY1991 bill, $1,637, grown only with inflation would be $4,030 in FY2026; the actual bill was $7,444. The bill as a share of the home’s value is the tax rate written as a percent. From FY2002 to FY2003, the biggest jump in value, the average value rose 26.1% while the rate fell from $15.60 to $13.12, so the average bill rose 6.1%.
 
 | Fiscal year | Average value | in FY2026 dollars | Average bill | in FY2026 dollars | Bill as share of value | Rate per $1,000 |
 |---|---:|---:|---:|---:|---:|---:|

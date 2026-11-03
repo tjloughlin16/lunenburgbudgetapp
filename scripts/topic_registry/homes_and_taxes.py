@@ -21,8 +21,8 @@ CATEGORY = dict(
         ('Homes and the bill', ['owners-and-renters', 'average-tax-bill', 'tax-bill-neighbours',
                                 'home-value-and-bill', 'regional-school-share',
                                 'years-in-the-home', 'bill-by-deed-year', 'senior-tax-work-off']),
-        ('Growth', ['homes-and-enrolment', 'new-growth', 'business-building-pace',
-                    'commercial-share']),
+        ('Growth', ['growth-and-tax-rate', 'homes-and-enrolment', 'new-growth',
+                    'business-building-pace', 'commercial-share']),
         ('Related pages', ['enrolment-by-year', 'per-pupil-spending']),
     ],
     elsewhere=[('/try-growth', 'Growth dials: what building would have to do'),
@@ -30,7 +30,10 @@ CATEGORY = dict(
 GENERATOR = 'build_homes_and_taxes_topics.py'
 # The senior work-off program is read from its own cited data file, not the census and DLS
 # sources the shelf's first generator reads.
-TOPIC_GENERATORS = {'senior-tax-work-off': 'build_workoff_topics.py'}
+# Growth and the tax rate reads three state files and the CPI the historical report adjusts by
+# (TJ, 2 November 2026).
+TOPIC_GENERATORS = {'senior-tax-work-off': 'build_workoff_topics.py',
+                    'growth-and-tax-rate': 'build_growth_rate_topic.py'}
 TOPICS = {
     'town-population': 'Population and households',
     'residents-by-age': 'Residents by age',
@@ -49,4 +52,5 @@ TOPICS = {
     'business-building-pace': 'Business building pace',
     'commercial-share': 'Commercial share',
     'senior-tax-work-off': 'Senior tax work-off',
+    'growth-and-tax-rate': 'Growth and the tax rate',
 }

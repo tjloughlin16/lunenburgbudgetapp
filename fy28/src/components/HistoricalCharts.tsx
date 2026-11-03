@@ -104,26 +104,32 @@ export function HistoricalRosters({ data }: ChartProps) {
   )
 }
 
-export type HomeRow = { fy: number; value: number; bill: number; value_real: number; bill_real: number
+export type HomeRow = { fy: number; value: number; bill: number; value_cpi: number; bill_cpi: number
+  value_real: number; bill_real: number
   share: number; rate: number; rate_printed: boolean; parcels: number }
 export type Homes = { base: string; first: string; rows: HomeRow[]; value_growth: number; bill_growth: number
-  jump: { fy0: string; fy1: string; value: number; bill: number; rate0: number; rate1: number } }
+  jump: { fy0: string; fy1: string; value: number; bill: number; rate0: number; rate1: number }
+  kept_pace: { bill0: number; bill: number; actual: number } }
 
 const usd = (v: number) => `$${Math.round(v).toLocaleString('en-US')}`
 const k = (v: number) => (v >= 1000 ? `$${Math.round(v / 1000)}k` : `$${v}`)
 
-/** HOMES AND THE TAX BILL, in today's dollars (TJ, 2 November 2026). TWO PANELS on one year
- *  axis, not one chart: a home is worth about seventy times its bill, so on a shared dollar
- *  axis the bill is a flat line on the floor. The value on top; the bill below, with the bill
- *  as a share of the value on that panel's right axis -- which is the tax rate as a percent. */
+/** HOMES AND THE TAX BILL (TJ, 2 November 2026). TWO PANELS on one year axis, not one chart: a
+ *  home is worth about seventy times its bill, so on a shared dollar axis the bill is a flat line
+ *  on the floor. Each panel draws the ACTUAL figure, in each year's own dollars, beside the first
+ *  year's figure grown only with inflation -- the gap is the growth beyond inflation, and nobody
+ *  has to convert (a resident had inflated an already-adjusted figure a second time). The bill's
+ *  panel carries the bill as a share of the value on its right axis: the tax rate as a percent. */
 export function HistoricalHomes({ h }: { h: Homes }) {
   const rows = h.rows.map(r => ({ ...r, x: r.fy }))
   const xa = <XAxis dataKey="x" type="number" domain={['dataMin', 'dataMax']} tickCount={8}
     allowDecimals={false} tick={tick} tickFormatter={(v: number) => `FY${String(v).slice(2)}`} />
   return (
     <div className="min-w-0">
-      <p className="text-[12.5px] font-semibold mt-1" style={{ color: 'var(--text-secondary)' }}>
-        Average single-family home, assessed value, {h.base} dollars</p>
+      <div className="flex flex-wrap gap-x-4 gap-y-1 text-[12.5px] font-semibold mt-1" style={{ color: 'var(--text-secondary)' }}>
+        <span><span aria-hidden style={{ color: BLUE }}>━</span> Average single-family home, assessed value, actual</span>
+        <span><span aria-hidden>┅</span> The {h.first} value, grown only with inflation</span>
+      </div>
       <div style={{ width: '100%', height: 200 }}>
         <ResponsiveContainer>
           <LineChart data={rows} margin={{ top: 8, right: 52, left: 0, bottom: 0 }} syncId="homes">
@@ -131,15 +137,17 @@ export function HistoricalHomes({ h }: { h: Homes }) {
             {xa}
             <YAxis tickFormatter={(v: number) => k(N(v))} width={52} tick={tick} domain={[0, 'auto']} />
             <Tooltip contentStyle={box} labelFormatter={(l) => `FY${l}`}
-              formatter={(v, _n, p: { payload?: HomeRow }) =>
-                [`${usd(N(v))} (${usd(p.payload?.value ?? 0)} at the time)`, `average value, ${h.base} dollars`]} />
-            <Line dataKey="value_real" stroke={BLUE} strokeWidth={2} dot={false} isAnimationActive={false} />
+              formatter={(v, n) => [usd(N(v)), n === 'value' ? 'average value, actual' : `${h.first} value grown with inflation`]} />
+            <Line dataKey="value" name="value" stroke={BLUE} strokeWidth={2} dot={false} isAnimationActive={false} />
+            <Line dataKey="value_cpi" name="value_cpi" stroke="var(--text-muted)" strokeWidth={1.5} strokeDasharray="5 4"
+              dot={false} isAnimationActive={false} />
           </LineChart>
         </ResponsiveContainer>
       </div>
       <div className="flex flex-wrap gap-x-4 gap-y-1 text-[12.5px] font-semibold mt-3" style={{ color: 'var(--text-secondary)' }}>
-        <span><span aria-hidden style={{ color: AMBER }}>━</span> Average tax bill, {h.base} dollars (left)</span>
-        <span><span aria-hidden>┅</span> Bill as a share of the value, which is the tax rate (right)</span>
+        <span><span aria-hidden style={{ color: AMBER }}>━</span> Average tax bill, actual (left)</span>
+        <span><span aria-hidden style={{ color: 'var(--text-muted)' }}>┅</span> The {h.first} bill, grown only with inflation (left)</span>
+        <span><span aria-hidden>·····</span> Bill as a share of the value, which is the tax rate (right)</span>
       </div>
       <div style={{ width: '100%', height: 220 }}>
         <ResponsiveContainer>
@@ -152,10 +160,12 @@ export function HistoricalHomes({ h }: { h: Homes }) {
             <Tooltip contentStyle={box} labelFormatter={(l) => `FY${l}`}
               formatter={(v, n, p: { payload?: HomeRow }) => n === 'share'
                 ? [`${N(v).toFixed(2)}% ($${p.payload?.rate.toFixed(2)} per $1,000)`, 'bill as share of value']
-                : [`${usd(N(v))} (${usd(p.payload?.bill ?? 0)} at the time)`, `average bill, ${h.base} dollars`]} />
-            <Line yAxisId="d" dataKey="bill_real" stroke={AMBER} strokeWidth={2} dot={false} isAnimationActive={false} />
-            <Line yAxisId="p" dataKey="share" name="share" stroke="var(--text-primary)" strokeWidth={1.5}
+                : [usd(N(v)), n === 'bill' ? 'average bill, actual' : `${h.first} bill grown with inflation`]} />
+            <Line yAxisId="d" dataKey="bill" name="bill" stroke={AMBER} strokeWidth={2} dot={false} isAnimationActive={false} />
+            <Line yAxisId="d" dataKey="bill_cpi" name="bill_cpi" stroke="var(--text-muted)" strokeWidth={1.5}
               strokeDasharray="5 4" dot={false} isAnimationActive={false} />
+            <Line yAxisId="p" dataKey="share" name="share" stroke="var(--text-primary)" strokeWidth={1.5}
+              strokeDasharray="1 3" dot={false} isAnimationActive={false} />
           </ComposedChart>
         </ResponsiveContainer>
       </div>

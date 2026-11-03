@@ -71,6 +71,7 @@
      "title": "Commercial development",
      "topics": [
       "commercial-development",
+      "growth-and-tax-rate",
       "new-growth",
       "business-building-pace",
       "commercial-share"
@@ -1138,6 +1139,7 @@
      "section": null,
      "title": "Growth",
      "topics": [
+      "growth-and-tax-rate",
       "homes-and-enrolment",
       "new-growth",
       "business-building-pace",
@@ -2267,6 +2269,12 @@
    "ready": true,
    "related": [
     {
+     "id": "growth-and-tax-rate",
+     "path": "/homes-and-taxes/growth-and-tax-rate",
+     "title": "Growth and the tax rate",
+     "why": "whether building lowers the tax rate, year by year"
+    },
+    {
      "id": "/commercial-development",
      "path": "/commercial-development",
      "title": "Commercial development report",
@@ -3202,6 +3210,40 @@
     "parks"
    ],
    "title": "Grounds maintenance bid"
+  },
+  "growth-and-tax-rate": {
+   "finding": "The tax rate followed what existing homes were worth (-0.87), not how much was built (-0.11).",
+   "generator": "scripts/build_growth_rate_topic.py",
+   "home": "homes-and-taxes",
+   "id": "growth-and-tax-rate",
+   "minutes": 1,
+   "path": "/homes-and-taxes/growth-and-tax-rate",
+   "ready": true,
+   "related": [
+    {
+     "id": "commercial-development",
+     "path": "/crisis/commercial-development",
+     "title": "Commercial development",
+     "why": "how much new building would have to pay for the gap"
+    },
+    {
+     "id": "/commercial-development",
+     "path": "/commercial-development",
+     "title": "Commercial development report",
+     "why": "the full report, the growth drawn as buildings"
+    },
+    {
+     "id": "/try-growth",
+     "path": "/try-growth",
+     "title": "Growth dials",
+     "why": "set the building pace yourself and watch the gap"
+    }
+   ],
+   "shelves": [
+    "homes-and-taxes",
+    "crisis"
+   ],
+   "title": "Growth and the tax rate"
   },
   "growth-by-spending-type": {
    "finding": "Each against its own FY2009 cost: insurance and retirement grew 83%, paras 89%, teachers 39%, all 54%.",

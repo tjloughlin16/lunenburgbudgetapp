@@ -183,6 +183,8 @@ CHECKS = [
     ('build_preschool.py', ['--check']),
     ('build_monty_tech_history.py', ['--check']),
     ('build_monty_tech_topics.py', ['--check']),
+    # Growth and the tax rate: three state files and the CPI (topic_registry/homes_and_taxes.py)
+    ('build_growth_rate_topic.py', ['--check']),
     ('build_reports_index.py', ['--check']),
     # How long every page is, measured from the build. It changes whenever a page does,
     # which is the point: a page that grew past the table's top row grew on the record.

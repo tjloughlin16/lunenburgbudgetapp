@@ -809,9 +809,14 @@ function HomesSection({ h }: { h: Homes }) {
     <Section id="homes-and-the-bill" eyebrow={`${h.first} to ${h.base}, after inflation`}
       title={<>Homes rose {h.value_growth}%. The tax bill rose {h.bill_growth}%</>}>
       <p className="text-[15px] leading-relaxed mt-2 max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
-        The state’s average single-family home and its tax bill, in {h.base} dollars. From {h.jump.fy0} to {h.jump.fy1},
+        The state’s average single-family home and its tax bill, each beside what its {h.first} figure
+        would be had it grown only with inflation. From {h.jump.fy0} to {h.jump.fy1},
         the biggest jump in value, the average value rose {h.jump.value}% while the rate fell
         from {rate(h.jump.rate0)} to {rate(h.jump.rate1)}, so the bill rose {h.jump.bill}%.
+      </p>
+      <p className="text-[15px] leading-relaxed mt-2 max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
+        The {h.first} bill, {money(h.kept_pace.bill0)}, grown only with inflation would
+        be {money(h.kept_pace.bill)} in {h.base}. The actual bill was {money(h.kept_pace.actual)}.
       </p>
       <HistoricalHomes h={h} />
       <Ours kind="What this is">

@@ -20,7 +20,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [About this project](/about) | page | — / 6.6 min | *(none declared)* |
 | [The annual town reports](/analysis/annual-reports) | page | 1.9 / 18.2 min | 1. All 2,332 pages holding a financial table have been read.<br>2. 2,158 of 2,332 pages tie to a total the page itself prints.<br>3. Special Revenue is the least checked: 0 of its 147 pages have no check at all. |
 | [Connecting the school budget to the Town&#x27;s books](/analysis/connecting-the-budget) | page | 0.7 / 10.7 min | 1. Following a dollar from the school budget to the Town&#x27;s books works at two levels and stops at the third. |
-| [Lunenburg Historical Report](/analysis/historical-report) | page | — / 26.1 min | *(none declared)* |
+| [Lunenburg Historical Report](/analysis/historical-report) | page | — / 28.4 min | *(none declared)* |
 | [A hundred questions this archive can answer](/analysis/questions) | page | — / 31.2 min | *(none declared)* |
 | [Show your work](/analysis/show-your-work) | page | — / 70.9 min | *(none declared)* |
 | [Towns like us: what they pay, what they spend](/analysis/towns-like-us) | page | 5.0 / 66.2 min | 1. 78th of the 351 Massachusetts towns on the bill as a share of what the home is worth, where 1st asks the most — Lunenburg is middling on the tax bill and in the top quarter of the state on tax EFFORT.<br>2. 29% of the difference in spending per pupil is accounted for by how much taxable property stands behind each child — the strongest of twelve things tested — Taxable property per child predicts school spending. Aid and poverty do not.<br>3. Regional districts do not spend less on administration: $700 a pupil against $693. |

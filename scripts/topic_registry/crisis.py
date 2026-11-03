@@ -47,7 +47,7 @@ CATEGORY = dict(
         ('Why it comes back', ['gap-by-cost-line', 'cost-and-revenue-growth',
                                'long-run-balance-rate']),
         ('What has happened', ['fy2027-cut-size', 'announced-cuts']),
-        ('Commercial development', ['commercial-development', 'new-growth',
+        ('Commercial development', ['commercial-development', 'growth-and-tax-rate', 'new-growth',
                                     'business-building-pace', 'commercial-share']),
         ('An override', ['override-history', 'fy2027-override', 'override-duration',
                          'override-scope']),

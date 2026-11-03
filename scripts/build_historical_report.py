@@ -914,6 +914,10 @@ def homes():
     if years != list(range(years[0], years[-1] + 1)):
         raise SystemExit('homes: a year is missing from %s-%s' % (years[0], years[-1]))
     base = years[-1]
+    # WHAT THE FIRST YEAR WOULD BE, GROWN ONLY WITH INFLATION, in each year's own dollars (TJ,
+    # 2 November 2026: a resident inflated the FY1991 bill already shown in today's dollars a
+    # second time; show the ACTUAL beside inflation so nobody has to convert).
+    v1, b1, k1 = float(rows[years[0]]['avg_sf_value']), float(rows[years[0]]['avg_sf_bill']), ix[years[0]]
     out = []
     for y in years:
         r = rows[y]
@@ -927,7 +931,8 @@ def homes():
         if abs(float(r['bill_pct_of_value']) - b / v * 100) > 0.0051:
             raise SystemExit('homes: FY%d bill / value disagrees with DLS bill_pct_of_value %s'
                              % (y, r['bill_pct_of_value']))
-        out.append(dict(fy=y, value=round(v), bill=round(b), value_real=round(v * k),
+        out.append(dict(fy=y, value=round(v), bill=round(b), value_cpi=round(v1 * ix[y] / k1),
+                        bill_cpi=round(b1 * ix[y] / k1), value_real=round(v * k),
                         bill_real=round(b * k), share=round(b / v * 100, 3),
                         rate=rates.get(y, round(implied, 2)), rate_printed=y in rates,
                         parcels=int(r['sf_parcels'])))
@@ -960,6 +965,7 @@ def homes():
     i23 = max(out[1:], key=lambda r: r['value'] / out[out.index(r) - 1]['value'])
     i22 = out[out.index(i23) - 1]
     return dict(base='FY%d' % base, first='FY%d' % a['fy'], rows=out, sources=srcs,
+                kept_pace=dict(bill0=a['bill'], bill=z['bill_cpi'], actual=z['bill']),
                 value_growth=round((z['value_real'] / a['value_real'] - 1) * 100),
                 bill_growth=round((z['bill_real'] / a['bill_real'] - 1) * 100),
                 jump=dict(fy0='FY%d' % i22['fy'], fy1='FY%d' % i23['fy'], value=round((i23['value'] / i22['value'] - 1) * 100, 1),
@@ -1513,10 +1519,13 @@ def render(d, x):
     a('## Homes and the tax bill\n\n')
     a('The state’s average single-family home value and average tax bill, %s to %s, in %s '
       'dollars. Over that span the average home rose %s%% after inflation and the average bill '
-      '%s%%. The bill as a share of the home’s value is the tax rate written as a percent. '
+      '%s%%: the %s bill, $%s, grown only with inflation would be $%s in %s; the actual bill was '
+      '$%s. The bill as a share of the home’s value is the tax rate written as a percent. '
       'From %s to %s, the biggest jump in value, the average value rose %s%% while the rate fell '
       'from %s to %s, so the average bill rose %s%%.\n\n'
-      % (h['first'], h['base'], h['base'], h['value_growth'], h['bill_growth'], h['jump']['fy0'],
+      % (h['first'], h['base'], h['base'], h['value_growth'], h['bill_growth'], h['first'],
+         C.num(h['kept_pace']['bill0']), C.num(h['kept_pace']['bill']), h['base'],
+         C.num(h['kept_pace']['actual']), h['jump']['fy0'],
          h['jump']['fy1'], h['jump']['value'],
          rate(h['jump']['rate0']), rate(h['jump']['rate1']), h['jump']['bill']))
     a('| Fiscal year | Average value | in %s dollars | Average bill | in %s dollars | Bill as share of value | Rate per $1,000 |\n'
