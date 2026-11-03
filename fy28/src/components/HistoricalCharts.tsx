@@ -1,3 +1,4 @@
+import { useState, type ReactNode } from 'react'
 import {
   Bar, BarChart, CartesianGrid, LabelList, Line, LineChart, ReferenceLine,
   ResponsiveContainer, Tooltip, XAxis, YAxis,
@@ -109,19 +110,34 @@ export type HomeRow = { fy: number; value: number; bill: number; value_cpi: numb
   share: number; rate: number; rate_printed: boolean; parcels: number }
 export type Homes = { base: string; first: string; rows: HomeRow[]; value_growth: number; bill_growth: number
   jump: { fy0: string; fy1: string; value: number; bill: number; rate0: number; rate1: number }
-  kept_pace: { bill0: number; bill: number; actual: number } }
+  kept_pace: { bill0: number; bill: number; actual: number; cola: number } }
 
 const usd = (v: number) => `$${Math.round(v).toLocaleString('en-US')}`
 const k = (v: number) => (v >= 1000 ? `$${Math.round(v / 1000)}k` : `$${v}`)
 
 /** HOMES AND THE TAX BILL against inflation (TJ, 2 November 2026). Each panel asks one question --
- *  did this outpace inflation? -- so each draws exactly two lines: the ACTUAL figure in each year's
- *  own dollars, and the first year's figure grown ONLY with inflation. The lines are named where
- *  they end, with their values, and the shared start says what it is; there is no legend to look
- *  up. A third line on a second axis was tried and removed: TJ, reading it, "super not clear".
- *  Two panels, because a home is worth about seventy times its bill. */
+ *  did this outpace inflation? -- so each draws exactly two lines, named where they end, with their
+ *  values; there is no legend to look up. A third line on a second axis was tried and removed: TJ,
+ *  reading it, "super not clear".
+ *
+ *  A TOGGLE between two honest views of the same figures (TJ: "sure add the toggle"):
+ *    ACTUAL DOLLARS (the default) -- each year as it was paid, beside the first year's figure grown
+ *      only with inflation. Nobody has to convert, and the right edge reads as two numbers.
+ *    TODAY'S DOLLARS -- every year in the last year's money, so any two years compare directly and
+ *      real dips show (a home fell 29% in real terms FY2007-FY2015). Here "only kept up with
+ *      inflation" is a FLAT line at the first year's value, which is what keeping pace looks like.
+ *  The same component draws the historical report and /homes-and-taxes/growth-and-tax-rate (a custom
+ *  block there), so the two pages cannot drift. Two panels, because a home is worth about seventy
+ *  times its bill. */
 export function HistoricalHomes({ h }: { h: Homes }) {
-  const rows = h.rows.map(r => ({ ...r, x: r.fy }))
+  const [mode, setMode] = useState<'actual' | 'today'>('actual')
+  const today = mode === 'today'
+  const f0 = h.rows[0]
+  const rows = h.rows.map(r => ({
+    x: r.fy,
+    bill: today ? r.bill_real : r.bill, bill_cpi: today ? f0.bill_real : r.bill_cpi,
+    value: today ? r.value_real : r.value, value_cpi: today ? f0.value_real : r.value_cpi,
+  }))
   const last = rows.length - 1
   const a = rows[0], z = rows[last]
   const label = (p: { x?: number | string; y?: number | string; index?: number }, k: number, text: string,
@@ -133,21 +149,27 @@ export function HistoricalHomes({ h }: { h: Homes }) {
           fontSize={12} fontWeight={600} fill="var(--text-primary)" stroke="var(--surface-1)" strokeWidth={3}
           paintOrder="stroke">{text}</text>
       </g>) : null
-  const panel = (title: string, actual: 'value' | 'bill', cpi: 'value_cpi' | 'bill_cpi', colour: string, what: string) => (
+  const startText = (v: number, what: string) => today
+    ? `${usd(v)}, the ${h.first} ${what} in ${h.base} dollars`
+    : `${usd(v)}, the ${h.first} ${what}: both lines start here`
+  const panel = (title: string, actual: 'value' | 'bill', cpi: 'value_cpi' | 'bill_cpi', colour: string, what: string,
+    under?: ReactNode) => (
     <>
-      <p className="text-[13px] font-semibold mt-3" style={{ color: 'var(--text-secondary)' }}>{title}</p>
+      <p className="text-[13px] font-semibold mt-3" style={{ color: 'var(--text-secondary)' }}>
+        {title}{today ? `, in ${h.base} dollars` : ''}</p>
       <div style={{ width: '100%', height: 230 }}>
         <ResponsiveContainer>
-          <LineChart data={rows} margin={{ top: 24, right: 12, left: 0, bottom: 4 }} syncId="homes">
+          <LineChart data={rows} margin={{ top: 24, right: 12, left: 0, bottom: 4 }}>
             <CartesianGrid stroke="var(--grid)" vertical={false} />
             <XAxis dataKey="x" type="number" domain={['dataMin', 'dataMax']} tickCount={8} allowDecimals={false}
               tick={tick} tickFormatter={(v: number) => `FY${String(v).slice(2)}`} />
             <YAxis tickFormatter={(v: number) => k(N(v))} width={52} tick={tick} domain={[0, 'auto']} />
             <Tooltip contentStyle={box} labelFormatter={(l) => `FY${l}`}
-              formatter={(v, n) => [usd(N(v)), n === actual ? `${what}, actual` : 'if it had only kept up with inflation']} />
+              formatter={(v, n) => [usd(N(v)), n === actual
+                ? `${what}, ${today ? `${h.base} dollars` : 'actual'}` : 'if it had only kept up with inflation']} />
             <Line dataKey={actual} name={actual} stroke={colour} strokeWidth={2.25} dot={false} isAnimationActive={false}>
               <LabelList dataKey={actual} content={(p: { x?: number | string; y?: number | string; index?: number }) =>
-                label(p, 0, `${usd(a[actual])}, the ${h.first} ${what}: both lines start here`, colour, true, true)
+                label(p, 0, startText(a[actual], what), colour, true, true)
                 ?? label(p, last, `${usd(z[actual])}, actual ${what}`, colour, false)} />
             </Line>
             <Line dataKey={cpi} name={cpi} stroke="var(--text-muted)" strokeWidth={1.75} strokeDasharray="5 4"
@@ -158,11 +180,23 @@ export function HistoricalHomes({ h }: { h: Homes }) {
           </LineChart>
         </ResponsiveContainer>
       </div>
+      {under}
     </>
   )
+  const btn = (m: 'actual' | 'today', text: string) => (
+    <button type="button" onClick={() => setMode(m)} aria-pressed={mode === m}
+      className="px-3 py-1 text-[13px] font-semibold rounded-md cursor-pointer"
+      style={mode === m ? { background: 'var(--series-cost)', color: '#fff' }
+        : { color: 'var(--text-secondary)', border: '1px solid var(--grid)' }}>{text}</button>)
   return (
     <div className="min-w-0">
-      {panel('Average tax bill', 'bill', 'bill_cpi', AMBER, 'bill')}
+      <div className="flex flex-wrap items-center gap-2 mt-3" role="group" aria-label="Dollars shown as">
+        {btn('actual', 'Actual dollars')}{btn('today', `Today’s dollars (${h.base})`)}
+      </div>
+      {panel('Average tax bill', 'bill', 'bill_cpi', AMBER, 'bill',
+        <p className="text-[12.5px] mt-1" style={{ color: 'var(--text-muted)' }}>
+          Grown instead by Social Security’s cost-of-living adjustments, the {h.first} bill would
+          be {usd(h.kept_pace.cola)} in {h.base}. Inflation here is the Boston-area consumer price index.</p>)}
       {panel('Average single-family home, assessed value', 'value', 'value_cpi', BLUE, 'value')}
     </div>
   )

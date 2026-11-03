@@ -253,29 +253,24 @@ def build():
 
     # ------------------------------------------------------------ the homes and the bill, from the history page
     hx = [C.fy(r['fy']) for r in h['rows']]
-    # ACTUAL BESIDE INFLATION (TJ, 2 November 2026): each figure in its own year's dollars, beside
-    # the first year's figure grown only with inflation, so the gap is the growth beyond it.
-    homes_chart = TP.series(
-        'Average home value against inflation', hx,
-        [TP.track('Average single-family home, actual', [r['value'] for r in h['rows']], 'published', labels={
-            0: ('the %s value: both lines start here' % h['first'], (h['first'],)), len(h['rows']) - 1: 'actual value'}),
-         TP.track('The %s value, grown only with inflation' % h['first'], [r['value_cpi'] for r in h['rows']],
-                  'estimate', labels={len(h['rows']) - 1: 'inflation only'})],
-        '$', kind='line',
-        note='Assessed values, not sale prices. Bill and home on one axis would flatten the bill; it '
-             'is on its own chart.')
-    homes_block = TB.chart(homes_chart, place='body', so=(
-        'After inflation the average home is worth %s%% more than in %s. That rise, spread over a '
-        'capped levy, is what pulled the rate down.' % (h['value_growth'], h['first']),
-        {'v': P(h['value_growth'], 0)}, (h['first'],)))
-    bill_chart = TP.series(
-        'Average tax bill against inflation', hx,
-        [TP.track('Average single-family bill, actual', [r['bill'] for r in h['rows']], 'published', labels={
-            0: ('the %s bill: both lines start here' % h['first'], (h['first'],)), len(h['rows']) - 1: 'actual bill'}),
-         TP.track('The %s bill, grown only with inflation' % h['first'], [r['bill_cpi'] for r in h['rows']],
-                  'estimate', labels={len(h['rows']) - 1: 'inflation only'})],
-        '$', kind='line',
-        note='Inflation by the Boston-area consumer price index, averaged July to June.')
+    # THE HISTORICAL REPORT'S OWN CHART, as a custom block: two panels, actual against the first year
+    # grown only with inflation, with a toggle to today's dollars and the COLA figure under the bill
+    # (TJ, 2 November 2026). One component on both pages, from one set of figures (homes()).
+    hdata = dict(first=h['first'], base=h['base'], kept_pace=h['kept_pace'],
+                 value_growth=h['value_growth'], bill_growth=h['bill_growth'], jump=h['jump'],
+                 rows=[{k: r[k] for k in ('fy', 'value', 'bill', 'value_cpi', 'bill_cpi', 'value_real',
+                                          'bill_real', 'share', 'rate', 'rate_printed', 'parcels')}
+                       for r in h['rows']])
+    homes_block = TB.custom(
+        'homes-against-inflation', 'Home value and tax bill against inflation', hdata, place='body',
+        allow=(h['first'], h['base'], h['jump']['fy0'], h['jump']['fy1']),
+        alt='Two panels: the average single-family tax bill and home value, %s to %s, each beside its '
+            '%s figure grown only with inflation.' % (h['first'], h['base'], h['first']),
+        so=('The %s bill, %s, grown only with inflation would be %s today; the actual bill is %s.'
+            % (h['first'], C.usd(h['kept_pace']['bill0']), C.usd(h['kept_pace']['bill']),
+               C.usd(h['kept_pace']['actual'])),
+            {'a': U(h['kept_pace']['bill0']), 'k': U(h['kept_pace']['bill']), 'n': U(h['kept_pace']['actual'])},
+            (h['first'],)))
 
     # ------------------------------------------------------------ how it works (statute, a definition first)
     how = TB.explain('Why the rate moves the way it does', [
@@ -355,11 +350,11 @@ def build():
         'The tax rate followed what existing homes were worth (%.2f), not how much was built (%.2f).'
         % (r_exist, r_dev),
         facts, conclusions, chart=sig, table=table, sources=sources,
-        also=[dev_chart, bill_chart],
+        also=[dev_chart],
         finding_figures={'a': R(r_exist), 'b': R(r_dev)},
         blocks=[how, homes_block, gaps],
         flow=['finding', cite(('chart', 0), 'ng', 'av', 'tr', *tk), cite(('block', 0), 'tr'), cite('ladder', 'ng', 'av', 'tr', *tk, *hk),
-              cite(('chart', 1), 'ng', *tk, *hk), cite(('block', 1), *hk), cite(('chart', 2), *hk), cite(('block', 2), 'ov'), 'related',
+              cite(('chart', 1), 'ng', *tk, *hk), cite(('block', 1), *hk), cite(('block', 2), 'ov'), 'related',
               cite(('table', 0), 'ng', 'av', 'tr', 'ov', *tk), 'sources'])
 
 

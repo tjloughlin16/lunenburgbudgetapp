@@ -961,11 +961,32 @@ def homes():
                         'U.S. Bureau of Labor Statistics',
                         'CPI-U, all items, not seasonally adjusted. Averaged July to June.'))
     a, z = out[0], out[-1]
+    # THE SAME BILL BY SOCIAL SECURITY'S COLAs (TJ, 2 November 2026: a resident used COLA). SSA's
+    # year is when a COLA was set, paid the next January, so a bill in FY(a) reaches FY(z) through
+    # the COLAs SSA labels a .. z-1 (sources/data/ssa-cola.csv, PROVENANCE-ssa-cola.md).
+    import hashlib
+    cola_path = os.path.join(ROOT, 'sources', 'data', 'ssa-cola.csv')
+    cola = {int(r['year']): float(r['cola_percent'])
+            for r in csv.DictReader(open(cola_path, encoding='utf-8'))}
+    need = range(a['fy'], z['fy'])
+    if any(y not in cola for y in need):
+        raise SystemExit('homes: ssa-cola.csv lacks a year in %d-%d' % (need[0], need[-1]))
+    k_cola = 1.0
+    for y in need:
+        k_cola *= 1 + cola[y] / 100
+    srcs.append(dict(label='Social Security cost-of-living adjustments, 1975-2026',
+                     path='sources/data/ssa-cola.csv', docs_url='/docs/data/ssa-cola.csv',
+                     filename='ssa-cola.csv',
+                     sha256=hashlib.sha256(open(cola_path, 'rb').read()).hexdigest(),
+                     url='https://www.ssa.gov/oact/cola/colaseries.html',
+                     publisher='Social Security Administration',
+                     note='Transcribed from SSA’s table, copied 2 November 2026; see PROVENANCE-ssa-cola.md.'))
     # THE YEAR THE VALUE JUMPED MOST: found, not named, so the sentence follows the data.
     i23 = max(out[1:], key=lambda r: r['value'] / out[out.index(r) - 1]['value'])
     i22 = out[out.index(i23) - 1]
     return dict(base='FY%d' % base, first='FY%d' % a['fy'], rows=out, sources=srcs,
-                kept_pace=dict(bill0=a['bill'], bill=z['bill_cpi'], actual=z['bill']),
+                kept_pace=dict(bill0=a['bill'], bill=z['bill_cpi'], actual=z['bill'],
+                               cola=round(a['bill'] * k_cola)),
                 value_growth=round((z['value_real'] / a['value_real'] - 1) * 100),
                 bill_growth=round((z['bill_real'] / a['bill_real'] - 1) * 100),
                 jump=dict(fy0='FY%d' % i22['fy'], fy1='FY%d' % i23['fy'], value=round((i23['value'] / i22['value'] - 1) * 100, 1),
@@ -1534,6 +1555,8 @@ def render(d, x):
         a('| FY%d | $%s | $%s | $%s | $%s | %.2f%% | %s%s |\n'
           % (r['fy'], C.num(r['value']), C.num(r['value_real']), C.num(r['bill']),
              C.num(r['bill_real']), r['share'], rate(r['rate']), '' if r['rate_printed'] else '*'))
+    a('\nGrown instead by Social Security’s cost-of-living adjustments, the %s bill would be $%s '
+      'in %s.\n' % (h['first'], C.num(h['kept_pace']['cola']), h['base']))
     a('\n\\* Bill divided by value; the state’s rate file starts in FY2003, and from then on the '
       'two agree to the cent. Values are ASSESSED values, not sale prices. Source: Division of '
       'Local Services; inflation by the Boston-area CPI-U, averaged July to June.\n\n')

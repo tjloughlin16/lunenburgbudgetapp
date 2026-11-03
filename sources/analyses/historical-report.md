@@ -202,6 +202,8 @@ The state’s average single-family home value and average tax bill, FY1991 to F
 | FY2025 | $504,937 | $518,259 | $7,251 | $7,442 | 1.44% | $14.36 |
 | FY2026 | $517,296 | $517,296 | $7,444 | $7,444 | 1.44% | $14.39 |
 
+Grown instead by Social Security’s cost-of-living adjustments, the FY1991 bill would be $3,997 in FY2026.
+
 \* Bill divided by value; the state’s rate file starts in FY2003, and from then on the two agree to the cent. Values are ASSESSED values, not sale prices. Source: Division of Local Services; inflation by the Boston-area CPI-U, averaged July to June.
 
 ## Did you know
