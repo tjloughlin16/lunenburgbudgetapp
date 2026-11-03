@@ -62,6 +62,10 @@ CHECKS = [
     # sources/data/takedowns.csv, or if any tree holds a taken-down document in sources/.
     ('takedown.py', ['--check']),
     ('build_readme.py', ['--check']),
+    # SEARCH'S CURATED LAYER: every hub, topic, report, profile, board, budget line, fund and
+    # contract by name, which /api/search matches ahead of the full text. Fails when a page,
+    # a person or an alias was added and the list was not rebuilt. Offline, under a second.
+    ('build_search_entities.py', ['--check']),
     # /ask and the inventory on every page. Fails when a report went up, a board gained
     # minutes or a count moved and the manifest was not rebuilt -- it drifted 9 days unseen.
     ('build_agent_manifest.py', ['--check']),

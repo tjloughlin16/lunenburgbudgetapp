@@ -141,9 +141,13 @@ type Hit = {
 }
 type Corpus = 'report' | 'fund' | 'post' | 'page' | 'job' | 'person' | 'recorded' | 'annual' | 'source' | 'minutes' | 'transcript'
 type Count = { hits: number; capped: boolean; holds: number }
+/** A curated page named for the query (functions/api/_entities.js): a hub, topic page,
+ *  report, profile, board, department, budget line, fund, contract or annual report. */
+type Best = { kind: string; title: string; url: string; sub: string; score: number; via: 'name' | 'keyword' }
 type Payload = {
   q: string
   expression: string
+  best?: Best[]
   index: { built: string | null; holds: Record<Corpus, number> }
   counts: Partial<Record<Corpus, Count>>
   sort?: Sort
@@ -814,6 +818,8 @@ export default function Search() {
               matters -- a null result must be readable as "not in what could be
               searched" -- so the corpora with nothing are summed into one line under the
               results rather than each getting a heading over an empty space. */}
+          {!busy && !type && (data.best?.length ?? 0) > 0 && <BestMatches best={data.best!} asked={asked} />}
+
           {!busy && topic.length > 0 && (
             <section className="mt-6 sm:mt-8" aria-label="Pages about this">
               <div className="flex flex-wrap items-baseline gap-x-3">
@@ -835,10 +841,17 @@ export default function Search() {
               Because the sort ran inside each kind: 7 October was only in the CAPTIONS, the
               last section on the page, under an older set of the town's minutes. A meeting
               is one thing however it was recorded, so it is one card, in one order. */}
-          {type !== 'recordings' && MEETING_KINDS.some(c => shown.includes(c)) && <Meetings data={data} kinds={MEETING_KINDS.filter(c => shown.includes(c))} sort={sort} />}
-
-          {shown.filter(c => !(type !== 'recordings' && MEETING_KINDS.includes(c)))
-            .filter(c => (data.results[c] || []).some(h => h.via !== 'topic')).map(c => {
+          {/* THE MEETINGS CARD TAKES THE PLACE OF `minutes` IN ORDER -- after reports, funds,
+              jobs, people and documents. It used to be drawn above every section, so a search
+              for a name opened on six meetings that mentioned it and put the person's own
+              page under them. TJ, 3 November 2026: "a search for a name ... should
+              automatically bring up the staffing profile." */}
+          {shown.filter(c => !(type !== 'recordings' && MEETING_KINDS.includes(c) && c !== 'minutes'))
+            .filter(c => (type !== 'recordings' && c === 'minutes') || (data.results[c] || []).some(h => h.via !== 'topic')).map(c => {
+            if (type !== 'recordings' && c === 'minutes') {
+              const kinds = MEETING_KINDS.filter(k => shown.includes(k))
+              return kinds.length ? <Meetings key="meetings" data={data} kinds={kinds} sort={sort} /> : null
+            }
             const hits = (data.results[c] || []).filter(h => h.via !== 'topic')
             const count = data.counts[c]
             if (!count) return null
@@ -925,6 +938,54 @@ export default function Search() {
         </div>
       )}
     </ReportShell>
+  )
+}
+
+const BEST_LABEL: Record<string, string> = {
+  hub: 'Hub', topic: 'Topic page', report: 'Report', page: 'Page on this site', person: 'Person',
+  board: 'Board', department: 'Town department', line: 'School budget line', fund: 'School fund',
+  function: 'School function', contract: 'Contract', annual: 'Annual report', post: 'Post',
+}
+
+/** THE PAGES BUILT FOR THIS, ABOVE EVERYTHING FOUND IN THE TEXT.
+ *
+ *  TJ, 3 November 2026: *"we have pre-packaged highly valuable pages crafted and built for
+ *  important concepts. we should try to funnel people into the curated pages vs the raw pages
+ *  (minutes) when we detect its likely."* The API matches the query against the NAME of every
+ *  curated page -- hub, topic, report, profile, board, department, budget line, fund,
+ *  contract, annual report -- and returns the close ones as `best` (functions/api/_entities.js).
+ *  A full-text rank cannot do this: a profile says a name once, a year of minutes says it
+ *  forty times. A match made on a keyword of ours rather than the page's own name says so. */
+function BestMatches({ best, asked }: { best: Best[]; asked: string }) {
+  const people = best.some(b => b.kind === 'person')
+  return (
+    <section className="mt-5 sm:mt-6" aria-label="Best match">
+      <h2 className="text-lg font-semibold">{best.length === 1 ? 'Best match' : 'Best matches'}</h2>
+      <ol className="mt-2 space-y-2">
+        {best.map(b => {
+          const doc = b.url.startsWith('/docs/')
+          return (
+            <li key={b.url} className="card p-3" style={{ borderLeft: '4px solid var(--series-cost)' }}>
+              <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                <span className="text-[10px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded shrink-0"
+                  style={{ border: '1px solid var(--grid)', color: 'var(--text-muted)' }}>{BEST_LABEL[b.kind] || 'Page'}</span>
+                <a className="font-semibold underline" href={b.url} target={doc ? '_blank' : undefined}
+                  rel="noreferrer" style={{ color: 'var(--series-cost)' }}>{b.title}</a>
+              </div>
+              {(b.sub || b.via === 'keyword') && (
+                <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>
+                  {b.sub}{b.sub && b.via === 'keyword' ? ' · ' : ''}
+                  {b.via === 'keyword' && <>matched on a keyword we gave this page, not its title</>}
+                </p>
+              )}
+            </li>
+          )
+        })}
+      </ol>
+      <p className="text-xs mt-1.5" style={{ color: 'var(--text-muted)' }}>
+        Pages built for <em>{asked}</em>, matched by name.{people && ' A name is matched as the org charts print it; the same name is not proven to be one person.'} Everything the words appear in follows.
+      </p>
+    </section>
   )
 }
 

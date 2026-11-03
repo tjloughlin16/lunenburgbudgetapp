@@ -66,6 +66,8 @@
  * command-line tool has them.
  */
 
+import { loadEntities, matchEntities } from './_entities.js'
+
 const SITE = 'https://lunenburgbudgetproject.org'
 const CORPORA = ['report', 'fund', 'post', 'page', 'job', 'person', 'recorded', 'annual', 'source', 'minutes', 'transcript']
 /** `annual` IS NOT IN THE INDEX EITHER. It is the `source` rows filed under the annual town
@@ -332,9 +334,16 @@ export async function onRequest(context) {
       + 'be one person).',
   }
 
+  // THE CURATED LAYER, FIRST AND FREE. Every page this project built for a concept, every
+  // profile, board, budget line, fund and contract, matched by NAME (_entities.js). TJ, 3
+  // November 2026: "we should try to funnel people into the curated pages vs the raw pages
+  // (minutes) when we detect its likely." In memory, off a static file: no rows read. A
+  // board or date narrowing is about meetings and documents, so it leaves `best` alone.
+  const best = matchEntities(await loadEntities(env, request), q)
+
   if (!expr) {
     logSearch(context, { q, board, since, sort, hits: 0, error: 'no searchable words' })
-    return json({ resource: 'search', q, expression: '', index, results: {}, counts: {} })
+    return json({ resource: 'search', q, expression: '', index, best, results: {}, counts: {} })
   }
 
   const cache = caches.default
@@ -501,6 +510,9 @@ export async function onRequest(context) {
     candidates: CANDIDATES,
     ranking: `${sort === 'newest' ? 'newest first in ' + DATED.join(', ') + ' (the exact words, then the words together, breaking ties) and ' : ''}${near ? 'the exact words first, then the words together (in a family or same-meaning form), then the words anywhere, then bm25' : 'bm25'}${sort === 'newest' ? ' in the rest' : ''}, within the first ${CANDIDATES} matching rows of each corpus; a count of ${CANDIDATES}+ means the cap was hit and the order is local to those rows`,
     index,
+    // The curated pages named for the query, best first -- see _entities.js. Each says
+    // whether it matched on its own name or on a keyword of ours (`via`).
+    best,
     counts,
     results,
     rowsRead,

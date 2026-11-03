@@ -4545,6 +4545,11 @@ GROUPS = [
         ('data/search-vocabulary.csv',
          'The site’s own vocabulary, for the search box’s suggestions', 2,
          'Written by us. Terms and the pages they belong to.'),
+        ('data/search-entity-aliases.csv',
+         'Extra words a curated page answers to in search’s Best matches', 2,
+         'Written by us. A short list, one row per search that failed to find a page built for '
+         'it, each with the search and the date. Read by build_search_entities.py; a result '
+         'matched on one of these words is labelled as matched on our keyword.'),
         ('data/board-pages.csv',
          'Every board’s own page on the town’s site, extracted', 3,
          'What the town (or, for the School Committee, the district) says each board is: '
