@@ -10,6 +10,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | page | kind | short / full | the points a reader should take away |
 |---|---|---:|---|
 | [The Lunenburg Budget Project — FY28 and beyond](/) | page | — / 7.1 min | *(none declared)* |
+| [The structural gap](/crisis) | page | — / 11.8 min | *(none declared)* |
 | [Solutions](/solutions) | page | 1.0 / 13.5 min | 1. The fees and trims are worth doing and do not solve it.<br>2. Cutting every extracurricular does not buy a year: $376,207, 40% of it.<br>3. Business growth is real and slow.<br>4. Free cash covers a year, not a problem.<br>5. Only two things on the table change a rate: the health plan, and the pace of commercial building.<br>6. After that there are two choices, and only two: an override, or classroom positions. |
 | [Straight answers](/straight-answers) | page | 1.2 / 38.2 min | 1. $933k — The schools need $932,664 more next year than the town can give them. That is the whole problem, in one number.<br>2. 2.68% — The things schools buy get 5.18% more expensive each year. State law lets the town collect about 2.5% more each year. Nobody overspent — the two numbers are simply different.<br>3. $573k — That difference opens a brand new hole every year, of roughly $572,745 to $788,595, whether or not you closed the last one.<br>4. 1 yr — So no single cut fixes this. Every answer in the table below — sports, fees, administrators, pay, insurance — buys one year at most, and then the question comes back larger. |
 | [Bend the curve](/bend-the-curve) | page | 4.4 / 38.3 min | 1. Next year the schools get $856k more. Here is who spends it.<br>2. Costs grow 5.18%. Revenue grows 3.22%. |
@@ -25,140 +26,2946 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Towns like us: what they pay, what they spend](/analysis/towns-like-us) | page | 5.0 / 66.2 min | 1. 78th of the 351 Massachusetts towns on the bill as a share of what the home is worth, where 1st asks the most — Lunenburg is middling on the tax bill and in the top quarter of the state on tax EFFORT.<br>2. 29% of the difference in spending per pupil is accounted for by how much taxable property stands behind each child — the strongest of twelve things tested — Taxable property per child predicts school spending. Aid and poverty do not.<br>3. Regional districts do not spend less on administration: $700 a pupil against $693. |
 | [What you can ask this archive](/analysis/what-you-can-ask) | page | — / 14.5 min | *(none declared)* |
 | [Athletics costs](/athletics) | page | — / 9.3 min | *(none declared)* |
+| [Athletic director](/athletics/athletic-director) | page | — / 11.1 min | *(none declared)* |
+| [Athletic fee](/athletics/athletic-fee) | page | — / 7.3 min | *(none declared)* |
+| [Cost per sport](/athletics/cost-per-sport) | page | — / 8.7 min | *(none declared)* |
+| [Fee fund history](/athletics/fee-fund-history) | page | — / 12.6 min | *(none declared)* |
+| [FY2026 athletics underspend](/athletics/fy2026-athletics-underspend) | page | — / 7.3 min | *(none declared)* |
+| [Participation](/athletics/participation) | page | — / 6.7 min | *(none declared)* |
+| [Spending by category](/athletics/spending-by-category) | page | — / 7.0 min | *(none declared)* |
+| [Total athletics cost](/athletics/total-athletics-cost) | page | — / 7.0 min | *(none declared)* |
+| [Town budget and fee fund](/athletics/town-budget-and-fee-fund) | page | — / 7.5 min | *(none declared)* |
+| [Turf field capital plans](/athletics/turf-field-capital-plans) | page | — / 8.3 min | *(none declared)* |
+| [Boards and committees](/board-records) | page | — / 7.6 min | *(none declared)* |
+| [Member tenure](/board-records/board-member-tenure) | page | — / 7.0 min | *(none declared)* |
+| [Minutes by year](/board-records/board-minutes-by-year) | page | — / 7.1 min | *(none declared)* |
+| [Minutes posted](/board-records/board-minutes-posted) | page | — / 7.7 min | *(none declared)* |
+| [Open seats](/board-records/board-open-seats) | page | — / 6.9 min | *(none declared)* |
+| [Meeting recordings](/board-records/board-recordings) | page | — / 7.9 min | *(none declared)* |
+| [Seats filled](/board-records/board-seats-filled) | page | — / 7.2 min | *(none declared)* |
+| [Board sizes](/board-records/board-sizes) | page | — / 6.9 min | *(none declared)* |
+| [Seats changing hands](/board-records/board-turnover) | page | — / 7.5 min | *(none declared)* |
 | [The School Committee’s finances — every fund and line it owns](/boards/school-committee/finance) | page | 2.1 / 25.6 min | 1. The schools hold $1,592,572 in 61 funds outside the appropriation, as of end of March.<br>2. The 9 school revolving funds took in $1,031,126 and spent $1,119,195 in nine months of FY2026.<br>3. 13 of the 46 school grant funds were overdrawn at 31 March 2026, by $378,942 together. |
+| [Harvard and Bromfield](/bromfield) | page | — / 7.2 min | *(none declared)* |
+| [Harvard per-pupil breakdown](/bromfield/harvard-line-by-line) | page | — / 8.0 min | *(none declared)* |
+| [Harvard per pupil](/bromfield/harvard-per-pupil) | page | — / 8.0 min | *(none declared)* |
+| [Harvard rate scenario](/bromfield/lunenburg-at-harvard-rate) | page | — / 7.5 min | *(none declared)* |
+| [Classroom positions](/budget-options/classroom-positions) | page | — / 6.5 min | *(none declared)* |
+| [Extracurricular cuts](/budget-options/extracurricular-cuts) | page | — / 6.8 min | *(none declared)* |
+| [Family fees](/budget-options/family-fees) | page | — / 6.8 min | *(none declared)* |
+| [FY2027 cut size](/budget-options/fy2027-cut-size) | page | — / 6.6 min | *(none declared)* |
+| [The FY2027 override](/budget-options/fy2027-override) | page | — / 6.9 min | *(none declared)* |
+| [Override duration](/budget-options/override-duration) | page | — / 7.3 min | *(none declared)* |
+| [Override history](/budget-options/override-history) | page | — / 7.0 min | *(none declared)* |
+| [Townwide or school-only](/budget-options/override-scope) | page | — / 6.7 min | *(none declared)* |
+| [Reduced and waived fees](/budget-options/reduced-and-waived-fees) | page | — / 6.8 min | *(none declared)* |
+| [Salary line and staffing](/budget-options/salary-line-and-staffing) | page | — / 7.5 min | *(none declared)* |
+| [School user fees](/budget-options/school-user-fees) | page | — / 7.0 min | *(none declared)* |
+| [Teacher contract](/budget-options/teacher-contract) | page | — / 7.2 min | *(none declared)* |
+| [Unpriced school charges](/budget-options/unpriced-school-charges) | page | — / 7.2 min | *(none declared)* |
+| [Building upkeep](/buildings-and-grounds) | page | — / 6.9 min | *(none declared)* |
+| [Contracted building services](/buildings-and-grounds/contracted-building-services) | page | — / 8.2 min | *(none declared)* |
+| [Upkeep budget and spending](/buildings-and-grounds/upkeep-budget-vs-spending) | page | — / 7.3 min | *(none declared)* |
+| [Upkeep leftover by account](/buildings-and-grounds/upkeep-ledger) | page | — / 18.2 min | *(none declared)* |
+| [Usual purchases skipped](/buildings-and-grounds/upkeep-skipped) | page | — / 7.9 min | *(none declared)* |
+| [What upkeep buys](/buildings-and-grounds/upkeep-spending) | page | — / 8.5 min | *(none declared)* |
+| [Upkeep surplus, every dollar](/buildings-and-grounds/upkeep-surplus-every-dollar) | page | — / 8.2 min | *(none declared)* |
+| [All cuts combined](/crisis/all-cuts-combined) | page | — / 6.5 min | *(none declared)* |
+| [Chapter 70 needed](/crisis/chapter-70-needed) | page | — / 6.9 min | *(none declared)* |
+| [Commercial development](/crisis/commercial-development) | page | — / 7.2 min | *(none declared)* |
+| [Cost and revenue growth](/crisis/cost-and-revenue-growth) | page | — / 7.0 min | *(none declared)* |
+| [FY2028 revenue increase](/crisis/fy2028-revenue-increase) | page | — / 6.7 min | *(none declared)* |
+| [Gap by cost line](/crisis/gap-by-cost-line) | page | — / 7.2 min | *(none declared)* |
+| [Level service cost](/crisis/level-service-cost) | page | — / 6.9 min | *(none declared)* |
+| [Long-run balance rate](/crisis/long-run-balance-rate) | page | — / 6.8 min | *(none declared)* |
+| [Projected school gap](/crisis/projected-gap) | page | — / 6.8 min | *(none declared)* |
+| [Town departments](/department-budgets) | page | — / 8.8 min | *(none declared)* |
+| [Growth above the cap](/department-budgets/town-budget-growth) | page | — / 7.3 min | *(none declared)* |
+| [Budget by department](/department-budgets/town-budget-shares) | page | — / 7.0 min | *(none declared)* |
+| [Debt service](/department-budgets/town-debt-service) | page | — / 6.7 min | *(none declared)* |
+| [Employee benefits](/department-budgets/town-employee-benefits) | page | — / 6.9 min | *(none declared)* |
+| [Facilities and grounds](/department-budgets/town-facilities-grounds) | page | — / 6.7 min | *(none declared)* |
+| [Town general fund](/department-budgets/town-general-fund) | page | — / 8.7 min | *(none declared)* |
+| [General government](/department-budgets/town-general-government) | page | — / 7.2 min | *(none declared)* |
+| [Budgets without headcounts](/department-budgets/town-headcount-coverage) | page | — / 6.8 min | *(none declared)* |
+| [Library budget](/department-budgets/town-library) | page | — / 6.5 min | *(none declared)* |
+| [Police, fire and inspectors](/department-budgets/town-public-safety) | page | — / 6.7 min | *(none declared)* |
+| [Public works](/department-budgets/town-public-works) | page | — / 6.9 min | *(none declared)* |
+| [Schools in the omnibus](/department-budgets/town-schools-line) | page | — / 6.7 min | *(none declared)* |
+| [Smaller departments](/department-budgets/town-smaller-departments) | page | — / 6.8 min | *(none declared)* |
+| [Trash and recycling](/department-budgets/town-solid-waste) | page | — / 6.4 min | *(none declared)* |
+| [Town staff counts](/department-budgets/town-staff-counts) | page | — / 7.2 min | *(none declared)* |
+| [Voted budget total](/department-budgets/town-voted-total) | page | — / 7.7 min | *(none declared)* |
+| [Students and schools](/enrolment) | page | — / 9.0 min | *(none declared)* |
+| [Children schooled elsewhere](/enrolment/children-schooled-elsewhere) | page | — / 7.3 min | *(none declared)* |
+| [Departure scenario](/enrolment/departure-scenario) | page | — / 6.7 min | *(none declared)* |
+| [Enrolment by grade band](/enrolment/enrolment-by-grade-band) | page | — / 6.9 min | *(none declared)* |
+| [Enrolment by year](/enrolment/enrolment-by-year) | page | — / 7.5 min | *(none declared)* |
+| [Grade 8 loss trend](/enrolment/grade-8-loss-trend) | page | — / 7.0 min | *(none declared)* |
+| [Grade-to-grade loss](/enrolment/grade-to-grade-loss) | page | — / 7.3 min | *(none declared)* |
+| [High-needs students](/enrolment/high-needs-students) | page | — / 7.6 min | *(none declared)* |
+| [High school enrolment](/enrolment/high-school-enrolment) | page | — / 7.6 min | *(none declared)* |
+| [High school spending](/enrolment/high-school-spending) | page | — / 7.1 min | *(none declared)* |
+| [Leaving and arriving](/enrolment/leaving-and-arriving) | page | — / 6.5 min | *(none declared)* |
+| [Nearby district enrolment](/enrolment/nearby-district-enrolment) | page | — / 6.2 min | *(none declared)* |
+| [School choice flows](/enrolment/school-choice-flows) | page | — / 7.2 min | *(none declared)* |
+| [Free cash](/free-cash) | page | — / 7.6 min | *(none declared)* |
 | [Free cash calculator](/free-cash-calculator) | page | 2.0 / 27.7 min | 1. 47% — Free cash is not money the town saved. It is mostly money the town budgeted and did not spend.<br>2. 45 of 45 — Local receipts have beaten the estimate every single year — and so have all 9 towns.<br>3. 2.49× — The record year was an event, not a stance. Underspending in 2025 was 2.49 times Lunenburg’s own recent average.<br>4. $361,912 — The state’s proof adds up exactly — to a figure that is not the one it certifies.<br>5. These agree with what this project has already published, and that is worth saying. |
+| [Free cash and capital](/free-cash/free-cash-and-capital) | page | — / 7.0 min | *(none declared)* |
+| [Free cash balance](/free-cash/free-cash-balance) | page | — / 8.3 min | *(none declared)* |
+| [Free cash guideline](/free-cash/free-cash-guideline) | page | — / 7.5 min | *(none declared)* |
+| [Free cash for schools](/free-cash/free-cash-redirect) | page | — / 7.0 min | *(none declared)* |
+| [Free cash sources](/free-cash/free-cash-sources) | page | — / 7.3 min | *(none declared)* |
+| [FY2026 year end](/fy2026-closeout) | page | — / 11.5 min | *(none declared)* |
+| [Budget burndown](/fy2026-closeout/budget-burndown) | page | — / 8.4 min | *(none declared)* |
+| [Circuit breaker and surplus](/fy2026-closeout/fy2026-circuit-breaker) | page | — / 10.4 min | *(none declared)* |
+| [Paraprofessional overrun](/fy2026-closeout/fy2026-paraprofessional-overrun) | page | — / 7.6 min | *(none declared)* |
+| [Psychologist line](/fy2026-closeout/fy2026-psychologist-line) | page | — / 7.1 min | *(none declared)* |
+| [School retiree insurance](/fy2026-closeout/fy2026-school-retiree-insurance) | page | — / 7.2 min | *(none declared)* |
+| [Year-end transfers](/fy2026-closeout/fy2026-school-transfers) | page | — / 7.8 min | *(none declared)* |
+| [Snow and Reserve Fund](/fy2026-closeout/fy2026-snow-and-reserve-fund) | page | — / 7.1 min | *(none declared)* |
+| [Surplus by category](/fy2026-closeout/fy2026-surplus-by-category) | page | — / 9.0 min | *(none declared)* |
+| [Town unspent balance](/fy2026-closeout/fy2026-town-unspent) | page | — / 7.4 min | *(none declared)* |
+| [Tuition at year end](/fy2026-closeout/fy2026-tuition-lines) | page | — / 7.3 min | *(none declared)* |
+| [Year-end tuition payment](/fy2026-closeout/fy2026-tuition-paid-early) | page | — / 13.4 min | *(none declared)* |
+| [Surplus by year](/fy2026-closeout/surplus-bridge) | page | — / 9.4 min | *(none declared)* |
+| [Repeat underspending](/fy2026-closeout/surplus-repeat-lines) | page | — / 9.1 min | *(none declared)* |
+| [Surplus suggestions](/fy2026-closeout/surplus-suggestions) | page | — / 10.9 min | *(none declared)* |
 | [Health insurance costs](/health-insurance) | page | — / 8.3 min | *(none declared)* |
+| [District health line](/health-insurance/district-health-line) | page | — / 6.7 min | *(none declared)* |
+| [Growth over time](/health-insurance/health-growth-over-time) | page | — / 6.9 min | *(none declared)* |
+| [Insurance department](/health-insurance/health-insurance-department) | page | — / 7.5 min | *(none declared)* |
+| [Options under the law](/health-insurance/health-insurance-options) | page | — / 7.5 min | *(none declared)* |
+| [Plans and premiums](/health-insurance/health-plans-and-premiums) | page | — / 6.8 min | *(none declared)* |
+| [State-reported spending](/health-insurance/health-state-reported) | page | — / 7.5 min | *(none declared)* |
+| [Towns compared](/health-insurance/health-towns-compared) | page | — / 6.9 min | *(none declared)* |
+| [PEC agreement](/health-insurance/pec-agreement) | page | — / 6.8 min | *(none declared)* |
+| [Retiree health accounts](/health-insurance/retiree-health-accounts) | page | — / 7.0 min | *(none declared)* |
+| [School health insurance](/health-insurance/school-health-insurance) | page | — / 6.7 min | *(none declared)* |
 | [Homes, taxes, growth](/homes-and-taxes) | page | — / 9.6 min | *(none declared)* |
+| [Average tax bill](/homes-and-taxes/average-tax-bill) | page | — / 7.2 min | *(none declared)* |
+| [Bill by deed year](/homes-and-taxes/bill-by-deed-year) | page | — / 6.8 min | *(none declared)* |
+| [Business building pace](/homes-and-taxes/business-building-pace) | page | — / 6.4 min | *(none declared)* |
+| [Commercial share](/homes-and-taxes/commercial-share) | page | — / 6.8 min | *(none declared)* |
+| [Growth and the tax rate](/homes-and-taxes/growth-and-tax-rate) | page | — / 12.3 min | *(none declared)* |
+| [Home value and bill](/homes-and-taxes/home-value-and-bill) | page | — / 7.3 min | *(none declared)* |
+| [Homes and enrolment](/homes-and-taxes/homes-and-enrolment) | page | — / 7.5 min | *(none declared)* |
+| [Household income](/homes-and-taxes/household-income) | page | — / 6.6 min | *(none declared)* |
+| [Households with children](/homes-and-taxes/households-with-children) | page | — / 6.4 min | *(none declared)* |
+| [Income by age](/homes-and-taxes/income-by-age) | page | — / 6.5 min | *(none declared)* |
+| [New growth](/homes-and-taxes/new-growth) | page | — / 7.2 min | *(none declared)* |
+| [Owners and renters](/homes-and-taxes/owners-and-renters) | page | — / 6.3 min | *(none declared)* |
+| [Regional school share](/homes-and-taxes/regional-school-share) | page | — / 7.9 min | *(none declared)* |
+| [Residents by age](/homes-and-taxes/residents-by-age) | page | — / 6.9 min | *(none declared)* |
+| [Senior tax work-off](/homes-and-taxes/senior-tax-work-off) | page | — / 14.4 min | *(none declared)* |
+| [Bill against neighbours](/homes-and-taxes/tax-bill-neighbours) | page | — / 6.8 min | *(none declared)* |
+| [Population and households](/homes-and-taxes/town-population) | page | — / 7.4 min | *(none declared)* |
+| [Years in the home](/homes-and-taxes/years-in-the-home) | page | — / 6.8 min | *(none declared)* |
 | [If students leave — what school choice would cost](/if-students-leave) | page | 4.0 / 48.0 min | 1. If 78 high school students transferred out, $401,700 would leave the town in year one.<br>2. Lunenburg’s state aid changes by $150 if one pupil leaves.<br>3. 58 Lunenburg residents left under school choice in the latest year counted. |
 | [The money outside the budget](/money-outside-the-budget) | page | 2.3 / 27.5 min | 1. The town’s funds outside the budget took in more than they spent in 12 of 13 years, and what they hold multiplied 3.6×.<br>2. 34% of what those funds hold is pandemic-era money, and this series ends before we can see whether it has gone.<br>3. Most of the money held outside the budget is not school money — a large part is water, sewer and trash.<br>4. FY23 was the first year since FY17 that the school funds spent more than they took in. |
+| [Monty Tech finances](/monty-tech) | page | — / 9.3 min | *(none declared)* |
+| [Monty Tech rate scenario](/monty-tech/lunenburg-at-monty-tech-rate) | page | — / 7.6 min | *(none declared)* |
+| [Monty Tech assessment](/monty-tech/monty-tech-assessment) | page | — / 7.4 min | *(none declared)* |
+| [Monty Tech enrolment](/monty-tech/monty-tech-enrolment) | page | — / 7.4 min | *(none declared)* |
+| [Monty Tech funding](/monty-tech/monty-tech-funding) | page | — / 8.1 min | *(none declared)* |
+| [Monty Tech history](/monty-tech/monty-tech-history) | page | — / 10.3 min | *(none declared)* |
+| [Monty Tech per-pupil breakdown](/monty-tech/monty-tech-line-by-line) | page | — / 8.0 min | *(none declared)* |
+| [Monty Tech per pupil](/monty-tech/monty-tech-per-pupil) | page | — / 7.9 min | *(none declared)* |
+| [Funding sources compared](/monty-tech/monty-tech-revenue) | page | — / 10.0 min | *(none declared)* |
 | [Not found — The Lunenburg Budget Project](/not-found) | page | — / 0.5 min | *(none declared)* |
+| [Parks department](/parks) | page | — / 8.2 min | *(none declared)* |
+| [Artificial turf fund](/parks/artificial-turf-fund) | page | — / 6.2 min | *(none declared)* |
+| [Grounds maintenance bid](/parks/grounds-maintenance-bid) | page | — / 6.7 min | *(none declared)* |
+| [Smaller parks funds](/parks/other-parks-funds) | page | — / 6.5 min | *(none declared)* |
+| [Park revolving fund](/parks/park-revolving-fund) | page | — / 7.0 min | *(none declared)* |
+| [Parks budget](/parks/parks-budget) | page | — / 7.7 min | *(none declared)* |
+| [Parks spending](/parks/parks-spending) | page | — / 7.5 min | *(none declared)* |
+| [Registration sales](/parks/registration-sales) | page | — / 7.9 min | *(none declared)* |
+| [School facilities fund](/parks/school-facilities-fund) | page | — / 7.1 min | *(none declared)* |
+| [School field upkeep](/parks/school-field-upkeep) | page | — / 6.3 min | *(none declared)* |
+| [Youth league payments](/parks/youth-league-payments) | page | — / 6.5 min | *(none declared)* |
+| [The whole school budget](/school-all-funds) | page | — / 9.6 min | *(none declared)* |
+| [After-school activities fund](/school-all-funds/activities-fund) | page | — / 9.3 min | *(none declared)* |
+| [School lines against budget](/school-all-funds/budget-against-actual) | page | — / 17.6 min | *(none declared)* |
+| [Budget lines, all funds](/school-all-funds/budget-lines-all-funds) | page | — / 8.0 min | *(none declared)* |
+| [Carried-over orders](/school-all-funds/carried-over-orders) | page | — / 10.5 min | *(none declared)* |
+| [FY breakdown](/school-all-funds/fy-breakdown) | page | — / 49.5 min | *(none declared)* |
+| [Grant allocations compared](/school-all-funds/grant-allocations-compared) | page | — / 9.4 min | *(none declared)* |
+| [Grant spending by line](/school-all-funds/grant-coding) | page | — / 7.4 min | *(none declared)* |
+| [Grants other districts get](/school-all-funds/grants-others-receive) | page | — / 25.5 min | *(none declared)* |
+| [Paid outside the general fund](/school-all-funds/outside-the-general-fund) | page | — / 7.9 min | *(none declared)* |
+| [Pay moved between funds](/school-all-funds/pay-moved-between-funds) | page | — / 8.1 min | *(none declared)* |
+| [Positions and their funds](/school-all-funds/positions-and-their-funds) | page | — / 7.6 min | *(none declared)* |
+| [Preschool](/school-all-funds/preschool) | page | — / 9.8 min | *(none declared)* |
+| [Salaries from grants and fees](/school-all-funds/salaries-from-grants-and-fees) | page | — / 11.3 min | *(none declared)* |
+| [School grants and aid](/school-all-funds/school-money-in) | page | — / 12.7 min | *(none declared)* |
+| [School receipts to the Town](/school-all-funds/school-receipts-to-town) | page | — / 9.7 min | *(none declared)* |
+| [Unspent money by fund](/school-all-funds/unspent-by-fund) | page | — / 7.8 min | *(none declared)* |
+| [Programs and cuts](/school-programs) | page | — / 8.6 min | *(none declared)* |
+| [Announced cuts](/school-programs/announced-cuts) | page | — / 7.9 min | *(none declared)* |
+| [AP participation](/school-programs/ap-participation) | page | — / 7.5 min | *(none declared)* |
+| [AP scores](/school-programs/ap-scores) | page | — / 7.0 min | *(none declared)* |
+| [AP subjects](/school-programs/ap-subjects) | page | — / 6.9 min | *(none declared)* |
+| [Computer science](/school-programs/computer-science-courses) | page | — / 7.3 min | *(none declared)* |
+| [Cuts against state counts](/school-programs/cuts-against-state-counts) | page | — / 7.0 min | *(none declared)* |
+| [Grant endings](/school-programs/grant-endings) | page | — / 7.6 min | *(none declared)* |
+| [High school sections](/school-programs/high-school-sections) | page | — / 7.7 min | *(none declared)* |
+| [History courses](/school-programs/history-courses) | page | — / 6.8 min | *(none declared)* |
+| [Lines cut to zero](/school-programs/lines-cut-to-zero) | page | — / 7.6 min | *(none declared)* |
+| [Outside money share](/school-programs/outside-money-share) | page | — / 7.1 min | *(none declared)* |
+| [Override cut lists](/school-programs/override-cut-lists) | page | — / 7.4 min | *(none declared)* |
+| [World languages](/school-programs/world-languages) | page | — / 7.5 min | *(none declared)* |
+| [Spending compared](/school-spending) | page | — / 9.7 min | *(none declared)* |
+| [School spending history](/school-spending-history) | page | — / 9.7 min | *(none declared)* |
+| [FY2011 teacher reading](/school-spending-history/fy2011-teacher-reading) | page | — / 7.4 min | *(none declared)* |
+| [Growth by spending type](/school-spending-history/growth-by-spending-type) | page | — / 8.0 min | *(none declared)* |
+| [Growth side by side](/school-spending-history/growth-side-by-side) | page | — / 8.2 min | *(none declared)* |
+| [Inflation and school costs](/school-spending-history/inflation-and-school-costs) | page | — / 12.9 min | *(none declared)* |
+| [Long-run school spending](/school-spending-history/long-run-school-spending) | page | — / 8.5 min | *(none declared)* |
+| [Pay or headcount](/school-spending-history/pay-or-headcount) | page | — / 8.9 min | *(none declared)* |
+| [Spending by type over time](/school-spending-history/spending-by-type-over-time) | page | — / 11.6 min | *(none declared)* |
+| [Spending per child enrolled](/school-spending-history/spending-per-child-enrolled) | page | — / 8.6 min | *(none declared)* |
+| [Teacher pay compared](/school-spending-history/teacher-pay-compared) | page | — / 8.9 min | *(none declared)* |
+| [Teachers and other staff](/school-spending-history/teachers-and-other-staff) | page | — / 7.6 min | *(none declared)* |
+| [Teachers on the scale](/school-spending-history/teachers-on-the-scale) | page | — / 10.1 min | *(none declared)* |
+| [Average teacher salary](/school-spending/average-teacher-salary) | page | — / 6.6 min | *(none declared)* |
+| [Comparison districts](/school-spending/comparison-districts) | page | — / 6.7 min | *(none declared)* |
+| [Reaching the state median](/school-spending/cost-of-the-median) | page | — / 6.6 min | *(none declared)* |
+| [Destination districts](/school-spending/destination-district-spending) | page | — / 7.2 min | *(none declared)* |
+| [Gap by function](/school-spending/gap-by-function) | page | — / 7.7 min | *(none declared)* |
+| [Grants and revolving funds](/school-spending/grants-in-school-spending) | page | — / 6.8 min | *(none declared)* |
+| [Lunenburg per-pupil breakdown](/school-spending/per-pupil-line-by-line) | page | — / 8.1 min | *(none declared)* |
+| [Spending per pupil](/school-spending/per-pupil-spending) | page | — / 7.8 min | *(none declared)* |
+| [Regional districts](/school-spending/regional-district-spending) | page | — / 7.0 min | *(none declared)* |
+| [Revolving fund history](/school-spending/revolving-fund-history) | page | — / 7.0 min | *(none declared)* |
+| [School Committee funds](/school-spending/school-committee-funds) | page | — / 6.7 min | *(none declared)* |
+| [School grant balances](/school-spending/school-grant-balances) | page | — / 6.9 min | *(none declared)* |
+| [School revolving funds](/school-spending/school-revolving-funds) | page | — / 6.7 min | *(none declared)* |
+| [Spending and pupils](/school-spending/spending-and-pupils) | page | — / 6.7 min | *(none declared)* |
+| [Spending by function](/school-spending/spending-by-function) | page | — / 8.1 min | *(none declared)* |
+| [What per pupil counts](/school-spending/what-per-pupil-counts) | page | — / 7.3 min | *(none declared)* |
 | [School staff](/school-staffing) | page | — / 8.8 min | *(none declared)* |
+| [District staff directory](/school-staffing/district-staff-directory) | page | — / 6.9 min | *(none declared)* |
+| [People and posts](/school-staffing/headcount-and-fte) | page | — / 6.6 min | *(none declared)* |
+| [Paraprofessional counts compared](/school-staffing/paraprofessional-counts) | page | — / 7.4 min | *(none declared)* |
+| [Paraprofessionals over time](/school-staffing/paraprofessional-fte) | page | — / 7.7 min | *(none declared)* |
+| [Printed school rosters](/school-staffing/printed-school-rosters) | page | — / 7.2 min | *(none declared)* |
+| [Support staff](/school-staffing/school-support-staff) | page | — / 7.9 min | *(none declared)* |
+| [Staff by programme](/school-staffing/staff-by-programme) | page | — / 7.0 min | *(none declared)* |
+| [Staff retention](/school-staffing/staff-retention) | page | — / 6.6 min | *(none declared)* |
+| [Teachers over time](/school-staffing/teacher-fte-over-time) | page | — / 8.0 min | *(none declared)* |
+| [Teachers by school](/school-staffing/teachers-by-school) | page | — / 7.6 min | *(none declared)* |
+| [Teachers by subject](/school-staffing/teachers-by-subject) | page | — / 8.0 min | *(none declared)* |
+| [Teachers per pupil](/school-staffing/teachers-per-pupil) | page | — / 7.6 min | *(none declared)* |
 | [Special education costs](/special-education) | page | — / 9.6 min | *(none declared)* |
+| [Special education reserve fund](/special-education-reserve) | page | — / 12.6 min | *(none declared)* |
+| [Move-ins](/special-education-reserve/arrivals-and-the-budget) | page | — / 11.4 min | *(none declared)* |
+| [Tuition after repayment](/special-education-reserve/how-tuition-is-paid) | page | — / 8.0 min | *(none declared)* |
+| [Reserve options](/special-education-reserve/reserve-options) | page | — / 11.8 min | *(none declared)* |
+| [Reserve or budget](/special-education-reserve/reserve-or-budget) | page | — / 8.6 min | *(none declared)* |
+| [Grants for surprises](/special-education-reserve/special-education-grants) | page | — / 8.4 min | *(none declared)* |
+| [Surprise costs](/special-education-reserve/surprise-costs) | page | — / 16.7 min | *(none declared)* |
+| [Circuit breaker](/special-education/circuit-breaker) | page | — / 12.3 min | *(none declared)* |
+| [Circuit breaker account](/special-education/circuit-breaker-account) | page | — / 8.9 min | *(none declared)* |
+| [Class size limits](/special-education/class-size-limits) | page | — / 7.7 min | *(none declared)* |
+| [Cost per placement](/special-education/cost-per-placement) | page | — / 6.7 min | *(none declared)* |
+| [Hiring versus placing](/special-education/hiring-versus-placing) | page | — / 6.7 min | *(none declared)* |
+| [In-district special education](/special-education/in-district-special-education) | page | — / 7.7 min | *(none declared)* |
+| [Out-of-district placements](/special-education/out-of-district-placements) | page | — / 7.9 min | *(none declared)* |
+| [Out-of-district tuition](/special-education/out-of-district-tuition) | page | — / 7.6 min | *(none declared)* |
+| [Special education overruns](/special-education/special-education-overruns) | page | — / 13.9 min | *(none declared)* |
+| [Special education, all funds](/special-education/sped-all-funds) | page | — / 7.8 min | *(none declared)* |
+| [Special education burndown](/special-education/sped-burndown) | page | — / 8.3 min | *(none declared)* |
+| [Special education definition](/special-education/sped-definition) | page | — / 10.0 min | *(none declared)* |
+| [Special education grants](/special-education/sped-grants) | page | — / 12.2 min | *(none declared)* |
+| [Special education providers](/special-education/sped-providers) | page | — / 8.3 min | *(none declared)* |
+| [Students with an IEP](/special-education/students-with-an-iep) | page | — / 7.0 min | *(none declared)* |
+| [Tuition budget](/special-education/tuition-budget) | page | — / 7.1 min | *(none declared)* |
 | [Chapter 70 aid](/state-aid) | page | — / 8.7 min | *(none declared)* |
+| [Aid per pupil](/state-aid/aid-per-pupil) | page | — / 6.6 min | *(none declared)* |
+| [Chapter 70 by year](/state-aid/chapter-70-by-year) | page | — / 7.4 min | *(none declared)* |
+| [Share of the school budget](/state-aid/chapter-70-school-budget-share) | page | — / 6.5 min | *(none declared)* |
+| [Cherry sheet assessments](/state-aid/cherry-sheet-assessments) | page | — / 7.1 min | *(none declared)* |
+| [Cherry sheet variance](/state-aid/cherry-sheet-variance) | page | — / 6.7 min | *(none declared)* |
+| [Foundation budget](/state-aid/foundation-budget) | page | — / 6.5 min | *(none declared)* |
+| [Minimum aid](/state-aid/minimum-aid) | page | — / 6.9 min | *(none declared)* |
+| [Net school spending](/state-aid/net-school-spending) | page | — / 7.8 min | *(none declared)* |
+| [Spending against the median](/state-aid/net-school-spending-rank) | page | — / 6.9 min | *(none declared)* |
+| [Required local contribution](/state-aid/required-local-contribution) | page | — / 6.6 min | *(none declared)* |
+| [State aid growth](/state-aid/state-aid-growth) | page | — / 7.0 min | *(none declared)* |
+| [Total state aid](/state-aid/total-state-aid) | page | — / 7.6 min | *(none declared)* |
+| [Stabilization funds](/town-reserves) | page | — / 7.1 min | *(none declared)* |
+| [General stabilization fund](/town-reserves/general-stabilization-fund) | page | — / 7.5 min | *(none declared)* |
+| [Reserves against the gap](/town-reserves/reserves-and-the-gap) | page | — / 6.8 min | *(none declared)* |
+| [Stabilization fund balances](/town-reserves/stabilization-balances) | page | — / 6.9 min | *(none declared)* |
+| [Stabilization deposits](/town-reserves/stabilization-deposits) | page | — / 7.4 min | *(none declared)* |
+| [Stabilization withdrawals](/town-reserves/stabilization-withdrawals) | page | — / 7.1 min | *(none declared)* |
+| [Who may spend it](/town-reserves/who-may-spend-it) | page | — / 6.7 min | *(none declared)* |
 | [School bus costs](/transportation) | page | — / 10.7 min | *(none declared)* |
+| [Athletic bus funding](/transportation/athletic-bus-funding) | page | — / 6.7 min | *(none declared)* |
+| [Away trips by sport](/transportation/away-trips-by-sport) | page | — / 6.8 min | *(none declared)* |
+| [Bus cost by sport](/transportation/bus-cost-by-sport) | page | — / 7.0 min | *(none declared)* |
+| [Bus fee](/transportation/bus-fee) | page | — / 6.5 min | *(none declared)* |
+| [Dee Bus contract](/transportation/dee-bus-contract) | page | — / 6.9 min | *(none declared)* |
+| [FY2027 athletic bus cut](/transportation/fy2027-athletic-bus-cut) | page | — / 7.1 min | *(none declared)* |
+| [FY2027 bus budget](/transportation/fy2027-bus-budget) | page | — / 6.7 min | *(none declared)* |
+| [Special education transportation](/transportation/special-education-transportation) | page | — / 7.0 min | *(none declared)* |
+| [State reimbursement](/transportation/state-reimbursement) | page | — / 6.4 min | *(none declared)* |
 | [Budget Crisis](/walkthrough) | page | 2.9 / 35.8 min | 1. Projections show a $933k deficit next year, and one in every year after it.<br>2. The budget in force already cut 9.2 FTE, and the projection reopens anyway.<br>3. Costs grow 5.18% a year and revenue 3.02%: a rate problem, not a bad year.<br>4. Salaries and health insurance are 65% of the budget — the only two lines that can change the direction, and neither is a School Committee vote.<br>5. About $795k a year of free cash could go to the schools, and it is one-time money. |
 | [What a family actually pays](/what-families-pay) | page | 4.0 / 37.1 min | 1. Two high schoolers, one sport each, the bus and a club: $1,110 a year.<br>2. Three children playing one sport each pay $812.50 a year at the full rate.<br>3. A second child adds $460 to a family’s school bill. |
 | [Why the gap returns each year](/why-it-repeats) | page | — / 14.0 min | *(none declared)* |
 | [Every account, once](/accounts) | reference | — / 23.5 min | *(none declared)* |
 | [Every address on this site, as links](/agents) | reference | — / 25.9 min | *(none declared)* |
-| [For AI assistants](/ask) | reference | — / 11.9 min | *(none declared)* |
+| [For AI assistants](/ask) | reference | — / 12.0 min | *(none declared)* |
 | [Ask us a question](/ask-a-question) | reference | — / 6.5 min | *(none declared)* |
 | [The blog](/blog) | reference | — / 6.8 min | *(none declared)* |
 | [The boards — each one, in one place](/boards) | reference | — / 11.5 min | *(none declared)* |
 | [Agricultural Commission](/boards/agricultural-commission) | reference | — / 7.6 min | *(none declared)* |
 | [Agricultural Commission — about](/boards/agricultural-commission/about) | reference | — / 7.3 min | *(none declared)* |
 | [Agricultural Commission — meetings](/boards/agricultural-commission/meetings) | reference | — / 7.4 min | *(none declared)* |
+| [Agricultural Commission — missing records](/boards/agricultural-commission/records) | reference | — / 10.0 min | *(none declared)* |
 | [Agricultural Commission — budget schedule](/boards/agricultural-commission/schedule) | reference | — / 6.3 min | *(none declared)* |
 | [Agricultural Commission — where the time goes](/boards/agricultural-commission/time) | reference | — / 5.9 min | *(none declared)* |
 | [Agricultural Commission — votes](/boards/agricultural-commission/votes) | reference | — / 31.8 min | *(none declared)* |
 | [Architectural Preservation District Commission](/boards/architectural-preservation-district-commission) | reference | — / 8.0 min | *(none declared)* |
 | [Architectural Preservation District Commission — about](/boards/architectural-preservation-district-commission/about) | reference | — / 7.5 min | *(none declared)* |
+| [Architectural Preservation District Commission — finances](/boards/architectural-preservation-district-commission/finance) | reference | — / 14.5 min | *(none declared)* |
 | [Architectural Preservation District Commission — meetings](/boards/architectural-preservation-district-commission/meetings) | reference | — / 11.2 min | *(none declared)* |
+| [Architectural Preservation District Commission — missing records](/boards/architectural-preservation-district-commission/records) | reference | — / 9.2 min | *(none declared)* |
 | [Architectural Preservation District Commission — budget schedule](/boards/architectural-preservation-district-commission/schedule) | reference | — / 6.1 min | *(none declared)* |
 | [Architectural Preservation District Commission — where the time goes](/boards/architectural-preservation-district-commission/time) | reference | — / 5.9 min | *(none declared)* |
 | [Architectural Preservation District Commission — votes](/boards/architectural-preservation-district-commission/votes) | reference | — / 38.5 min | *(none declared)* |
 | [Athletic Advisory Council](/boards/athletic-advisory-council) | reference | — / 6.6 min | *(none declared)* |
 | [Athletic Advisory Council — meetings](/boards/athletic-advisory-council/meetings) | reference | — / 6.2 min | *(none declared)* |
+| [Athletic Advisory Council — missing records](/boards/athletic-advisory-council/records) | reference | — / 7.3 min | *(none declared)* |
 | [Athletic Advisory Council — where the time goes](/boards/athletic-advisory-council/time) | reference | — / 5.8 min | *(none declared)* |
 | [Athletic Advisory Council — votes](/boards/athletic-advisory-council/votes) | reference | — / 7.1 min | *(none declared)* |
 | [BOA Neighborhood ans Site Index Subcommittee](/boards/boa-neighborhood-ans-site-index-subcommittee) | reference | — / 6.1 min | *(none declared)* |
 | [BOA Neighborhood ans Site Index Subcommittee — meetings](/boards/boa-neighborhood-ans-site-index-subcommittee/meetings) | reference | — / 5.9 min | *(none declared)* |
+| [BOA Neighborhood ans Site Index Subcommittee — missing records](/boards/boa-neighborhood-ans-site-index-subcommittee/records) | reference | — / 7.1 min | *(none declared)* |
 | [Board of Assessors](/boards/board-of-assessors) | reference | — / 7.9 min | *(none declared)* |
 | [Board of Assessors — about](/boards/board-of-assessors/about) | reference | — / 8.7 min | *(none declared)* |
+| [Board of Assessors — finances](/boards/board-of-assessors/finance) | reference | — / 15.2 min | *(none declared)* |
 | [Board of Assessors — meetings](/boards/board-of-assessors/meetings) | reference | — / 11.1 min | *(none declared)* |
+| [Board of Assessors — missing records](/boards/board-of-assessors/records) | reference | — / 9.9 min | *(none declared)* |
 | [Board of Assessors — budget schedule](/boards/board-of-assessors/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Board of Assessors — where the time goes](/boards/board-of-assessors/time) | reference | — / 6.0 min | *(none declared)* |
+| [Board of Assessors: transfers](/boards/board-of-assessors/transfers) | reference | — / 6.7 min | *(none declared)* |
 | [Board of Assessors — votes](/boards/board-of-assessors/votes) | reference | — / 59.3 min | *(none declared)* |
 | [Board of Health](/boards/board-of-health) | reference | — / 7.8 min | *(none declared)* |
 | [Board of Health — about](/boards/board-of-health/about) | reference | — / 7.0 min | *(none declared)* |
+| [Board of Health — finances](/boards/board-of-health/finance) | reference | — / 16.1 min | *(none declared)* |
 | [Board of Health — meetings](/boards/board-of-health/meetings) | reference | — / 7.2 min | *(none declared)* |
+| [Board of Health — missing records](/boards/board-of-health/records) | reference | — / 13.1 min | *(none declared)* |
 | [Board of Health — budget schedule](/boards/board-of-health/schedule) | reference | — / 6.1 min | *(none declared)* |
 | [Board of Health — where the time goes](/boards/board-of-health/time) | reference | — / 5.9 min | *(none declared)* |
 | [Board of Health — votes](/boards/board-of-health/votes) | reference | — / 47.8 min | *(none declared)* |
 | [Board of Registrars](/boards/board-of-registrars) | reference | — / 6.2 min | *(none declared)* |
 | [Board of Registrars — about](/boards/board-of-registrars/about) | reference | — / 5.8 min | *(none declared)* |
 | [Board of Registrars — meetings](/boards/board-of-registrars/meetings) | reference | — / 7.3 min | *(none declared)* |
+| [Board of Registrars — missing records](/boards/board-of-registrars/records) | reference | — / 8.7 min | *(none declared)* |
 | [Budget Task Force](/boards/budget-task-force) | reference | — / 7.1 min | *(none declared)* |
 | [Budget Task Force — about](/boards/budget-task-force/about) | reference | — / 8.2 min | *(none declared)* |
 | [Budget Task Force — meetings](/boards/budget-task-force/meetings) | reference | — / 7.4 min | *(none declared)* |
+| [Budget Task Force — missing records](/boards/budget-task-force/records) | reference | — / 7.6 min | *(none declared)* |
 | [Budget Task Force — where the time goes](/boards/budget-task-force/time) | reference | — / 5.9 min | *(none declared)* |
 | [Budget Task Force — votes](/boards/budget-task-force/votes) | reference | — / 8.4 min | *(none declared)* |
 | [Building Reuse Committee](/boards/building-reuse-committee) | reference | — / 7.2 min | *(none declared)* |
 | [Building Reuse Committee — meetings](/boards/building-reuse-committee/meetings) | reference | — / 7.3 min | *(none declared)* |
+| [Building Reuse Committee — missing records](/boards/building-reuse-committee/records) | reference | — / 7.8 min | *(none declared)* |
 | [Building Reuse Committee — budget schedule](/boards/building-reuse-committee/schedule) | reference | — / 5.9 min | *(none declared)* |
 | [Building Reuse Committee — votes](/boards/building-reuse-committee/votes) | reference | — / 10.1 min | *(none declared)* |
 | [By-Law Committee](/boards/by-law-committee) | reference | — / 7.5 min | *(none declared)* |
 | [By-Law Committee — about](/boards/by-law-committee/about) | reference | — / 5.9 min | *(none declared)* |
 | [By-Law Committee — meetings](/boards/by-law-committee/meetings) | reference | — / 7.1 min | *(none declared)* |
+| [By-Law Committee — missing records](/boards/by-law-committee/records) | reference | — / 7.8 min | *(none declared)* |
 | [By-Law Committee — budget schedule](/boards/by-law-committee/schedule) | reference | — / 6.0 min | *(none declared)* |
 | [By-Law Committee — votes](/boards/by-law-committee/votes) | reference | — / 11.5 min | *(none declared)* |
 | [Cable Advisory Committee](/boards/cable-advisory-committee) | reference | — / 8.2 min | *(none declared)* |
 | [Cable Advisory Committee — about](/boards/cable-advisory-committee/about) | reference | — / 6.7 min | *(none declared)* |
 | [Cable Advisory Committee — meetings](/boards/cable-advisory-committee/meetings) | reference | — / 7.0 min | *(none declared)* |
+| [Cable Advisory Committee — missing records](/boards/cable-advisory-committee/records) | reference | — / 7.7 min | *(none declared)* |
 | [Cable Advisory Committee — budget schedule](/boards/cable-advisory-committee/schedule) | reference | — / 5.9 min | *(none declared)* |
 | [Cable Advisory Committee — where the time goes](/boards/cable-advisory-committee/time) | reference | — / 5.9 min | *(none declared)* |
 | [Cable Advisory Committee — votes](/boards/cable-advisory-committee/votes) | reference | — / 10.4 min | *(none declared)* |
 | [Capital Planning Committee](/boards/capital-planning-committee) | reference | — / 7.5 min | *(none declared)* |
 | [Capital Planning Committee — about](/boards/capital-planning-committee/about) | reference | — / 7.5 min | *(none declared)* |
+| [Capital Planning Committee — finances](/boards/capital-planning-committee/finance) | reference | — / 15.6 min | *(none declared)* |
+| [Capital Planning Committee — meetings](/boards/capital-planning-committee/meetings) | reference | — / 10.5 min | *(none declared)* |
+| [Capital Planning Committee — missing records](/boards/capital-planning-committee/records) | reference | — / 11.7 min | *(none declared)* |
+| [Capital Planning Committee — budget schedule](/boards/capital-planning-committee/schedule) | reference | — / 6.0 min | *(none declared)* |
+| [Capital Planning Committee — where the time goes](/boards/capital-planning-committee/time) | reference | — / 5.9 min | *(none declared)* |
+| [Capital Planning Committee — votes](/boards/capital-planning-committee/votes) | reference | — / 24.6 min | *(none declared)* |
 | [Cemetery Commission](/boards/cemetery-commission) | reference | — / 7.9 min | *(none declared)* |
+| [Cemetery Commission — about](/boards/cemetery-commission/about) | reference | — / 6.5 min | *(none declared)* |
+| [Cemetery Commission — finances](/boards/cemetery-commission/finance) | reference | — / 16.2 min | *(none declared)* |
+| [Cemetery Commission — meetings](/boards/cemetery-commission/meetings) | reference | — / 10.4 min | *(none declared)* |
+| [Cemetery Commission — missing records](/boards/cemetery-commission/records) | reference | — / 11.5 min | *(none declared)* |
+| [Cemetery Commission — budget schedule](/boards/cemetery-commission/schedule) | reference | — / 6.2 min | *(none declared)* |
+| [Cemetery Commission — where the time goes](/boards/cemetery-commission/time) | reference | — / 5.9 min | *(none declared)* |
+| [Cemetery Commission: transfers](/boards/cemetery-commission/transfers) | reference | — / 7.8 min | *(none declared)* |
+| [Cemetery Commission — votes](/boards/cemetery-commission/votes) | reference | — / 44.3 min | *(none declared)* |
 | [Charter Review Committee](/boards/charter-review-committee) | reference | — / 7.5 min | *(none declared)* |
+| [Charter Review Committee — about](/boards/charter-review-committee/about) | reference | — / 6.3 min | *(none declared)* |
+| [Charter Review Committee — meetings](/boards/charter-review-committee/meetings) | reference | — / 6.8 min | *(none declared)* |
+| [Charter Review Committee — missing records](/boards/charter-review-committee/records) | reference | — / 7.6 min | *(none declared)* |
+| [Charter Review Committee — budget schedule](/boards/charter-review-committee/schedule) | reference | — / 6.0 min | *(none declared)* |
+| [Charter Review Committee — votes](/boards/charter-review-committee/votes) | reference | — / 15.2 min | *(none declared)* |
 | [Conservation Commission](/boards/conservation-commission) | reference | — / 8.5 min | *(none declared)* |
 | [Conservation Commission Public Hearing](/boards/conservation-commission-public-hearing) | reference | — / 6.2 min | *(none declared)* |
+| [Conservation Commission Public Hearing — meetings](/boards/conservation-commission-public-hearing/meetings) | reference | — / 6.1 min | *(none declared)* |
+| [Conservation Commission — about](/boards/conservation-commission/about) | reference | — / 6.6 min | *(none declared)* |
+| [Conservation Commission — finances](/boards/conservation-commission/finance) | reference | — / 15.6 min | *(none declared)* |
+| [Conservation Commission — meetings](/boards/conservation-commission/meetings) | reference | — / 10.9 min | *(none declared)* |
+| [Conservation Commission — missing records](/boards/conservation-commission/records) | reference | — / 13.0 min | *(none declared)* |
+| [Conservation Commission — budget schedule](/boards/conservation-commission/schedule) | reference | — / 6.2 min | *(none declared)* |
+| [Conservation Commission — where the time goes](/boards/conservation-commission/time) | reference | — / 5.9 min | *(none declared)* |
+| [Conservation Commission: transfers](/boards/conservation-commission/transfers) | reference | — / 7.1 min | *(none declared)* |
+| [Conservation Commission — votes](/boards/conservation-commission/votes) | reference | — / 186.7 min | *(none declared)* |
 | [Council on Aging](/boards/council-on-aging) | reference | — / 8.6 min | *(none declared)* |
+| [Council on Aging — about](/boards/council-on-aging/about) | reference | — / 6.5 min | *(none declared)* |
+| [Council on Aging — finances](/boards/council-on-aging/finance) | reference | — / 15.3 min | *(none declared)* |
+| [Council on Aging — meetings](/boards/council-on-aging/meetings) | reference | — / 10.8 min | *(none declared)* |
+| [Council on Aging — missing records](/boards/council-on-aging/records) | reference | — / 9.4 min | *(none declared)* |
+| [Council on Aging — budget schedule](/boards/council-on-aging/schedule) | reference | — / 6.3 min | *(none declared)* |
+| [Council on Aging — where the time goes](/boards/council-on-aging/time) | reference | — / 5.9 min | *(none declared)* |
+| [Council on Aging — votes](/boards/council-on-aging/votes) | reference | — / 38.1 min | *(none declared)* |
 | [Cultural Council](/boards/cultural-council) | reference | — / 6.9 min | *(none declared)* |
+| [Cultural Council — about](/boards/cultural-council/about) | reference | — / 6.9 min | *(none declared)* |
+| [Cultural Council — finances](/boards/cultural-council/finance) | reference | — / 14.8 min | *(none declared)* |
+| [Cultural Council — meetings](/boards/cultural-council/meetings) | reference | — / 7.3 min | *(none declared)* |
+| [Cultural Council — missing records](/boards/cultural-council/records) | reference | — / 9.0 min | *(none declared)* |
+| [Cultural Council — votes](/boards/cultural-council/votes) | reference | — / 26.1 min | *(none declared)* |
 | [Devens Regional Oversight Committee](/boards/devens-regional-oversight-committee) | reference | — / 7.0 min | *(none declared)* |
+| [Devens Regional Oversight Committee — meetings](/boards/devens-regional-oversight-committee/meetings) | reference | — / 6.5 min | *(none declared)* |
+| [Devens Regional Oversight Committee — missing records](/boards/devens-regional-oversight-committee/records) | reference | — / 7.6 min | *(none declared)* |
+| [Devens Regional Oversight Committee — budget schedule](/boards/devens-regional-oversight-committee/schedule) | reference | — / 5.9 min | *(none declared)* |
+| [Devens Regional Oversight Committee — votes](/boards/devens-regional-oversight-committee/votes) | reference | — / 8.5 min | *(none declared)* |
 | [Economic Development Committee](/boards/economic-development-committee) | reference | — / 7.6 min | *(none declared)* |
+| [Economic Development Committee — about](/boards/economic-development-committee/about) | reference | — / 8.3 min | *(none declared)* |
+| [Economic Development Committee — meetings](/boards/economic-development-committee/meetings) | reference | — / 9.0 min | *(none declared)* |
+| [Economic Development Committee — missing records](/boards/economic-development-committee/records) | reference | — / 8.5 min | *(none declared)* |
+| [Economic Development Committee — where the time goes](/boards/economic-development-committee/time) | reference | — / 5.9 min | *(none declared)* |
+| [Economic Development Committee — votes](/boards/economic-development-committee/votes) | reference | — / 9.2 min | *(none declared)* |
 | [Federal Energy Regulatory Commission](/boards/ferc) | reference | — / 6.0 min | *(none declared)* |
+| [Federal Energy Regulatory Commission — meetings](/boards/ferc/meetings) | reference | — / 5.9 min | *(none declared)* |
 | [Finance Committee](/boards/finance-committee) | reference | — / 8.6 min | *(none declared)* |
 | [Finance Committee Appointing Committee](/boards/finance-committee-appointing-committee) | reference | — / 7.7 min | *(none declared)* |
+| [Finance Committee Appointing Committee — meetings](/boards/finance-committee-appointing-committee/meetings) | reference | — / 7.1 min | *(none declared)* |
+| [Finance Committee Appointing Committee — missing records](/boards/finance-committee-appointing-committee/records) | reference | — / 8.3 min | *(none declared)* |
+| [Finance Committee Appointing Committee — where the time goes](/boards/finance-committee-appointing-committee/time) | reference | — / 5.7 min | *(none declared)* |
+| [Finance Committee Appointing Committee — votes](/boards/finance-committee-appointing-committee/votes) | reference | — / 12.8 min | *(none declared)* |
 | [Finance Committee Public Hearing](/boards/finance-committee-public-hearing) | reference | — / 7.2 min | *(none declared)* |
+| [Finance Committee Public Hearing — meetings](/boards/finance-committee-public-hearing/meetings) | reference | — / 6.1 min | *(none declared)* |
+| [Finance Committee Public Hearing — budget schedule](/boards/finance-committee-public-hearing/schedule) | reference | — / 6.1 min | *(none declared)* |
+| [Finance Committee Public Hearing — votes](/boards/finance-committee-public-hearing/votes) | reference | — / 11.1 min | *(none declared)* |
+| [Finance Committee — about](/boards/finance-committee/about) | reference | — / 7.2 min | *(none declared)* |
+| [Finance Committee — finances](/boards/finance-committee/finance) | reference | — / 14.5 min | *(none declared)* |
+| [Finance Committee — meetings](/boards/finance-committee/meetings) | reference | — / 10.7 min | *(none declared)* |
+| [Finance Committee — missing records](/boards/finance-committee/records) | reference | — / 13.6 min | *(none declared)* |
+| [Finance Committee — budget schedule](/boards/finance-committee/schedule) | reference | — / 7.5 min | *(none declared)* |
+| [Finance Committee — where the time goes](/boards/finance-committee/time) | reference | — / 5.9 min | *(none declared)* |
+| [Finance Committee: transfers](/boards/finance-committee/transfers) | reference | — / 8.0 min | *(none declared)* |
+| [Finance Committee — votes](/boards/finance-committee/votes) | reference | — / 110.6 min | *(none declared)* |
 | [Green Communities Committee](/boards/green-communities-committee) | reference | — / 7.8 min | *(none declared)* |
+| [Green Communities Committee — about](/boards/green-communities-committee/about) | reference | — / 8.5 min | *(none declared)* |
+| [Green Communities Committee — meetings](/boards/green-communities-committee/meetings) | reference | — / 7.3 min | *(none declared)* |
+| [Green Communities Committee — missing records](/boards/green-communities-committee/records) | reference | — / 9.0 min | *(none declared)* |
+| [Green Communities Committee — budget schedule](/boards/green-communities-committee/schedule) | reference | — / 6.0 min | *(none declared)* |
+| [Green Communities Committee — votes](/boards/green-communities-committee/votes) | reference | — / 15.9 min | *(none declared)* |
 | [Green Community Task Force](/boards/green-community-task-force) | reference | — / 7.4 min | *(none declared)* |
+| [Green Community Task Force — about](/boards/green-community-task-force/about) | reference | — / 5.7 min | *(none declared)* |
+| [Green Community Task Force — meetings](/boards/green-community-task-force/meetings) | reference | — / 9.1 min | *(none declared)* |
+| [Green Community Task Force — where the time goes](/boards/green-community-task-force/time) | reference | — / 5.9 min | *(none declared)* |
+| [Green Community Task Force — votes](/boards/green-community-task-force/votes) | reference | — / 9.1 min | *(none declared)* |
 | [Historical Commission](/boards/historical-commission) | reference | — / 7.5 min | *(none declared)* |
+| [Historical Commission — about](/boards/historical-commission/about) | reference | — / 6.8 min | *(none declared)* |
+| [Historical Commission — finances](/boards/historical-commission/finance) | reference | — / 15.3 min | *(none declared)* |
+| [Historical Commission — meetings](/boards/historical-commission/meetings) | reference | — / 7.5 min | *(none declared)* |
+| [Historical Commission — missing records](/boards/historical-commission/records) | reference | — / 12.5 min | *(none declared)* |
+| [Historical Commission — budget schedule](/boards/historical-commission/schedule) | reference | — / 6.0 min | *(none declared)* |
+| [Historical Commission — where the time goes](/boards/historical-commission/time) | reference | — / 5.9 min | *(none declared)* |
+| [Historical Commission — votes](/boards/historical-commission/votes) | reference | — / 27.9 min | *(none declared)* |
 | [Land Acquisition Committee](/boards/land-acquisition-committee) | reference | — / 6.3 min | *(none declared)* |
+| [Land Acquisition Committee — meetings](/boards/land-acquisition-committee/meetings) | reference | — / 6.3 min | *(none declared)* |
+| [Land Acquisition Committee — missing records](/boards/land-acquisition-committee/records) | reference | — / 7.4 min | *(none declared)* |
+| [Land Acquisition Committee — votes](/boards/land-acquisition-committee/votes) | reference | — / 7.5 min | *(none declared)* |
 | [Library Board of Trustees](/boards/library-board-of-trustees) | reference | — / 9.0 min | *(none declared)* |
+| [Library Board of Trustees — about](/boards/library-board-of-trustees/about) | reference | — / 8.0 min | *(none declared)* |
+| [Library Board of Trustees — finances](/boards/library-board-of-trustees/finance) | reference | — / 15.6 min | *(none declared)* |
+| [Library Board of Trustees — meetings](/boards/library-board-of-trustees/meetings) | reference | — / 8.4 min | *(none declared)* |
+| [Library Board of Trustees — missing records](/boards/library-board-of-trustees/records) | reference | — / 10.4 min | *(none declared)* |
+| [Library Board of Trustees — budget schedule](/boards/library-board-of-trustees/schedule) | reference | — / 6.4 min | *(none declared)* |
+| [Library Board of Trustees — where the time goes](/boards/library-board-of-trustees/time) | reference | — / 5.9 min | *(none declared)* |
+| [Library Board of Trustees: transfers](/boards/library-board-of-trustees/transfers) | reference | — / 7.0 min | *(none declared)* |
+| [Library Board of Trustees — votes](/boards/library-board-of-trustees/votes) | reference | — / 35.4 min | *(none declared)* |
 | [Lunenburg 300th Anniversary Committee](/boards/lunenburg-300th-anniversary-committee) | reference | — / 7.9 min | *(none declared)* |
+| [Lunenburg 300th Anniversary Committee — about](/boards/lunenburg-300th-anniversary-committee/about) | reference | — / 7.4 min | *(none declared)* |
+| [Lunenburg 300th Anniversary Committee — meetings](/boards/lunenburg-300th-anniversary-committee/meetings) | reference | — / 7.3 min | *(none declared)* |
+| [Lunenburg 300th Anniversary Committee — missing records](/boards/lunenburg-300th-anniversary-committee/records) | reference | — / 7.2 min | *(none declared)* |
+| [Lunenburg 300th Anniversary Committee — budget schedule](/boards/lunenburg-300th-anniversary-committee/schedule) | reference | — / 5.9 min | *(none declared)* |
+| [Lunenburg 300th Anniversary Committee — votes](/boards/lunenburg-300th-anniversary-committee/votes) | reference | — / 8.5 min | *(none declared)* |
 | [Lunenburg Hazard Mitigation Plan Team Committee](/boards/lunenburg-hazard-mitigation-plan-team-committee) | reference | — / 6.1 min | *(none declared)* |
+| [Lunenburg Hazard Mitigation Plan Team Committee — meetings](/boards/lunenburg-hazard-mitigation-plan-team-committee/meetings) | reference | — / 6.0 min | *(none declared)* |
+| [Lunenburg Hazard Mitigation Plan Team Committee — missing records](/boards/lunenburg-hazard-mitigation-plan-team-committee/records) | reference | — / 7.2 min | *(none declared)* |
 | [Lunenburg Housing Authority](/boards/lunenburg-housing-authority) | reference | — / 7.2 min | *(none declared)* |
+| [Lunenburg Housing Authority — about](/boards/lunenburg-housing-authority/about) | reference | — / 6.1 min | *(none declared)* |
+| [Lunenburg Housing Authority — meetings](/boards/lunenburg-housing-authority/meetings) | reference | — / 7.4 min | *(none declared)* |
+| [Lunenburg Housing Authority — missing records](/boards/lunenburg-housing-authority/records) | reference | — / 8.5 min | *(none declared)* |
+| [Lunenburg Housing Authority — budget schedule](/boards/lunenburg-housing-authority/schedule) | reference | — / 5.9 min | *(none declared)* |
+| [Lunenburg Housing Authority — votes](/boards/lunenburg-housing-authority/votes) | reference | — / 41.8 min | *(none declared)* |
 | [Lunenburg Municipal Building Design Committee](/boards/lunenburg-municipal-building-design-committee) | reference | — / 8.1 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee — about](/boards/lunenburg-municipal-building-design-committee/about) | reference | — / 6.8 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee — meetings](/boards/lunenburg-municipal-building-design-committee/meetings) | reference | — / 10.4 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee — missing records](/boards/lunenburg-municipal-building-design-committee/records) | reference | — / 9.2 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee — budget schedule](/boards/lunenburg-municipal-building-design-committee/schedule) | reference | — / 6.4 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee — where the time goes](/boards/lunenburg-municipal-building-design-committee/time) | reference | — / 6.0 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee — votes](/boards/lunenburg-municipal-building-design-committee/votes) | reference | — / 17.1 min | *(none declared)* |
 | [Lunenburg Water District](/boards/lunenburg-water-district) | reference | — / 7.5 min | *(none declared)* |
+| [Lunenburg Water District — meetings](/boards/lunenburg-water-district/meetings) | reference | — / 10.5 min | *(none declared)* |
+| [Lunenburg Water District — where the time goes](/boards/lunenburg-water-district/time) | reference | — / 5.9 min | *(none declared)* |
+| [Lunenburg Water District: transfers](/boards/lunenburg-water-district/transfers) | reference | — / 7.0 min | *(none declared)* |
+| [Lunenburg Water District — votes](/boards/lunenburg-water-district/votes) | reference | — / 38.0 min | *(none declared)* |
 | [Massachusetts Department of Public Utilities](/boards/ma-dpu) | reference | — / 6.3 min | *(none declared)* |
+| [Massachusetts Department of Public Utilities — meetings](/boards/ma-dpu/meetings) | reference | — / 6.0 min | *(none declared)* |
+| [Massachusetts Department of Public Utilities — where the time goes](/boards/ma-dpu/time) | reference | — / 5.8 min | *(none declared)* |
+| [Massachusetts Department of Public Utilities — votes](/boards/ma-dpu/votes) | reference | — / 7.1 min | *(none declared)* |
 | [Massachusetts Energy Facilities Siting Board](/boards/ma-efsb) | reference | — / 6.0 min | *(none declared)* |
+| [Massachusetts Energy Facilities Siting Board — meetings](/boards/ma-efsb/meetings) | reference | — / 5.9 min | *(none declared)* |
 | [Master Plan Steering Committee](/boards/master-plan-steering-committee) | reference | — / 7.7 min | *(none declared)* |
+| [Master Plan Steering Committee — about](/boards/master-plan-steering-committee/about) | reference | — / 9.3 min | *(none declared)* |
+| [Master Plan Steering Committee — meetings](/boards/master-plan-steering-committee/meetings) | reference | — / 9.3 min | *(none declared)* |
+| [Master Plan Steering Committee — missing records](/boards/master-plan-steering-committee/records) | reference | — / 7.8 min | *(none declared)* |
+| [Master Plan Steering Committee — budget schedule](/boards/master-plan-steering-committee/schedule) | reference | — / 6.0 min | *(none declared)* |
+| [Master Plan Steering Committee — where the time goes](/boards/master-plan-steering-committee/time) | reference | — / 5.9 min | *(none declared)* |
+| [Master Plan Steering Committee — votes](/boards/master-plan-steering-committee/votes) | reference | — / 12.0 min | *(none declared)* |
 | [Nashoba Valley Reginal Dispatch Committee](/boards/nashoba-valley-reginal-dispatch-committee) | reference | — / 7.4 min | *(none declared)* |
+| [Nashoba Valley Reginal Dispatch Committee — meetings](/boards/nashoba-valley-reginal-dispatch-committee/meetings) | reference | — / 6.7 min | *(none declared)* |
+| [Nashoba Valley Reginal Dispatch Committee — missing records](/boards/nashoba-valley-reginal-dispatch-committee/records) | reference | — / 7.9 min | *(none declared)* |
+| [Nashoba Valley Reginal Dispatch Committee — budget schedule](/boards/nashoba-valley-reginal-dispatch-committee/schedule) | reference | — / 5.9 min | *(none declared)* |
+| [Nashoba Valley Reginal Dispatch Committee: transfers](/boards/nashoba-valley-reginal-dispatch-committee/transfers) | reference | — / 6.9 min | *(none declared)* |
+| [Nashoba Valley Reginal Dispatch Committee — votes](/boards/nashoba-valley-reginal-dispatch-committee/votes) | reference | — / 9.3 min | *(none declared)* |
 | [North Central Climate Change Coalition](/boards/north-central-climate-change-coalition) | reference | — / 6.1 min | *(none declared)* |
+| [North Central Climate Change Coalition — meetings](/boards/north-central-climate-change-coalition/meetings) | reference | — / 6.1 min | *(none declared)* |
+| [North Central Climate Change Coalition — missing records](/boards/north-central-climate-change-coalition/records) | reference | — / 7.3 min | *(none declared)* |
 | [Open Space Committee](/boards/open-space-committee) | reference | — / 7.6 min | *(none declared)* |
+| [Open Space Committee — about](/boards/open-space-committee/about) | reference | — / 6.7 min | *(none declared)* |
+| [Open Space Committee — meetings](/boards/open-space-committee/meetings) | reference | — / 10.0 min | *(none declared)* |
+| [Open Space Committee — missing records](/boards/open-space-committee/records) | reference | — / 10.2 min | *(none declared)* |
+| [Open Space Committee — budget schedule](/boards/open-space-committee/schedule) | reference | — / 6.0 min | *(none declared)* |
+| [Open Space Committee — where the time goes](/boards/open-space-committee/time) | reference | — / 5.9 min | *(none declared)* |
+| [Open Space Committee — votes](/boards/open-space-committee/votes) | reference | — / 28.5 min | *(none declared)* |
 | [Parks Commission](/boards/parks-commission) | reference | — / 8.2 min | *(none declared)* |
+| [Parks Commission — about](/boards/parks-commission/about) | reference | — / 6.5 min | *(none declared)* |
+| [Parks Commission — finances](/boards/parks-commission/finance) | reference | — / 16.2 min | *(none declared)* |
+| [Parks Commission — meetings](/boards/parks-commission/meetings) | reference | — / 11.1 min | *(none declared)* |
+| [Parks Commission — missing records](/boards/parks-commission/records) | reference | — / 10.0 min | *(none declared)* |
+| [Parks Commission — budget schedule](/boards/parks-commission/schedule) | reference | — / 6.3 min | *(none declared)* |
+| [Parks Commission — where the time goes](/boards/parks-commission/time) | reference | — / 5.9 min | *(none declared)* |
+| [Parks Commission: transfers](/boards/parks-commission/transfers) | reference | — / 6.6 min | *(none declared)* |
+| [Parks Commission — votes](/boards/parks-commission/votes) | reference | — / 54.8 min | *(none declared)* |
 | [Personnel Committee](/boards/personnel-committee) | reference | — / 7.6 min | *(none declared)* |
+| [Personnel Committee — about](/boards/personnel-committee/about) | reference | — / 6.5 min | *(none declared)* |
+| [Personnel Committee — meetings](/boards/personnel-committee/meetings) | reference | — / 10.1 min | *(none declared)* |
+| [Personnel Committee — missing records](/boards/personnel-committee/records) | reference | — / 9.7 min | *(none declared)* |
+| [Personnel Committee — budget schedule](/boards/personnel-committee/schedule) | reference | — / 6.2 min | *(none declared)* |
+| [Personnel Committee — where the time goes](/boards/personnel-committee/time) | reference | — / 5.9 min | *(none declared)* |
+| [Personnel Committee — votes](/boards/personnel-committee/votes) | reference | — / 53.2 min | *(none declared)* |
 | [Planning Board](/boards/planning-board) | reference | — / 8.0 min | *(none declared)* |
 | [Planning Board Public Hearing](/boards/planning-board-public-hearing) | reference | — / 7.5 min | *(none declared)* |
+| [Planning Board Public Hearing — meetings](/boards/planning-board-public-hearing/meetings) | reference | — / 7.2 min | *(none declared)* |
+| [Planning Board Public Hearing — missing records](/boards/planning-board-public-hearing/records) | reference | — / 6.9 min | *(none declared)* |
+| [Planning Board Public Hearing — budget schedule](/boards/planning-board-public-hearing/schedule) | reference | — / 6.0 min | *(none declared)* |
+| [Planning Board Public Hearing — votes](/boards/planning-board-public-hearing/votes) | reference | — / 9.8 min | *(none declared)* |
+| [Planning Board — about](/boards/planning-board/about) | reference | — / 8.4 min | *(none declared)* |
+| [Planning Board — finances](/boards/planning-board/finance) | reference | — / 15.7 min | *(none declared)* |
+| [Planning Board — meetings](/boards/planning-board/meetings) | reference | — / 10.7 min | *(none declared)* |
+| [Planning Board — missing records](/boards/planning-board/records) | reference | — / 13.4 min | *(none declared)* |
+| [Planning Board — budget schedule](/boards/planning-board/schedule) | reference | — / 6.3 min | *(none declared)* |
+| [Planning Board — where the time goes](/boards/planning-board/time) | reference | — / 5.9 min | *(none declared)* |
+| [Planning Board — votes](/boards/planning-board/votes) | reference | — / 120.6 min | *(none declared)* |
 | [Public Access Cable Committee (PACC)](/boards/public-access-cable-committee-pacc) | reference | — / 8.3 min | *(none declared)* |
+| [Public Access Cable Committee (PACC) — about](/boards/public-access-cable-committee-pacc/about) | reference | — / 5.9 min | *(none declared)* |
+| [Public Access Cable Committee (PACC) — meetings](/boards/public-access-cable-committee-pacc/meetings) | reference | — / 10.8 min | *(none declared)* |
+| [Public Access Cable Committee (PACC) — missing records](/boards/public-access-cable-committee-pacc/records) | reference | — / 11.2 min | *(none declared)* |
+| [Public Access Cable Committee (PACC) — budget schedule](/boards/public-access-cable-committee-pacc/schedule) | reference | — / 6.2 min | *(none declared)* |
+| [Public Access Cable Committee (PACC) — where the time goes](/boards/public-access-cable-committee-pacc/time) | reference | — / 5.9 min | *(none declared)* |
+| [Public Access Cable Committee (PACC): transfers](/boards/public-access-cable-committee-pacc/transfers) | reference | — / 6.9 min | *(none declared)* |
+| [Public Access Cable Committee (PACC) — votes](/boards/public-access-cable-committee-pacc/votes) | reference | — / 41.6 min | *(none declared)* |
 | [School Advisory Councils &amp; Committees](/boards/school-advisory-councils-committees) | reference | — / 6.8 min | *(none declared)* |
+| [School Advisory Councils &amp; Committees — meetings](/boards/school-advisory-councils-committees/meetings) | reference | — / 7.4 min | *(none declared)* |
+| [School Advisory Councils &amp; Committees — missing records](/boards/school-advisory-councils-committees/records) | reference | — / 14.9 min | *(none declared)* |
+| [School Advisory Councils &amp; Committees — budget schedule](/boards/school-advisory-councils-committees/schedule) | reference | — / 6.1 min | *(none declared)* |
+| [School Advisory Councils &amp; Committees — votes](/boards/school-advisory-councils-committees/votes) | reference | — / 14.7 min | *(none declared)* |
 | [School Building Committee](/boards/school-building-committee) | reference | — / 6.0 min | *(none declared)* |
 | [School Building Committee Meeting](/boards/school-building-committee-meeting) | reference | — / 7.4 min | *(none declared)* |
+| [School Building Committee Meeting — meetings](/boards/school-building-committee-meeting/meetings) | reference | — / 7.5 min | *(none declared)* |
+| [School Building Committee Meeting — missing records](/boards/school-building-committee-meeting/records) | reference | — / 9.7 min | *(none declared)* |
+| [School Building Committee Meeting — budget schedule](/boards/school-building-committee-meeting/schedule) | reference | — / 5.9 min | *(none declared)* |
+| [School Building Committee Meeting — votes](/boards/school-building-committee-meeting/votes) | reference | — / 35.5 min | *(none declared)* |
+| [School Building Committee — meetings](/boards/school-building-committee/meetings) | reference | — / 6.6 min | *(none declared)* |
 | [School Committee](/boards/school-committee) | reference | — / 9.4 min | *(none declared)* |
+| [School Committee — about](/boards/school-committee/about) | reference | — / 11.2 min | *(none declared)* |
+| [School Committee — meetings](/boards/school-committee/meetings) | reference | — / 10.9 min | *(none declared)* |
+| [School Committee — missing records](/boards/school-committee/records) | reference | — / 17.6 min | *(none declared)* |
+| [School Committee — budget schedule](/boards/school-committee/schedule) | reference | — / 6.8 min | *(none declared)* |
+| [School Committee — where the time goes](/boards/school-committee/time) | reference | — / 5.9 min | *(none declared)* |
+| [School Committee: line item transfers](/boards/school-committee/transfers) | reference | — / 7.7 min | *(none declared)* |
+| [School Committee — votes](/boards/school-committee/votes) | reference | — / 101.1 min | *(none declared)* |
 | [Select Board](/boards/select-board) | reference | — / 9.5 min | *(none declared)* |
 | [Select Board Public Hearing](/boards/select-board-public-hearing) | reference | — / 6.2 min | *(none declared)* |
+| [Select Board Public Hearing — meetings](/boards/select-board-public-hearing/meetings) | reference | — / 6.5 min | *(none declared)* |
+| [Select Board — about](/boards/select-board/about) | reference | — / 6.1 min | *(none declared)* |
+| [Select Board — finances](/boards/select-board/finance) | reference | — / 18.1 min | *(none declared)* |
+| [Select Board — meetings](/boards/select-board/meetings) | reference | — / 10.5 min | *(none declared)* |
+| [Select Board — missing records](/boards/select-board/records) | reference | — / 16.6 min | *(none declared)* |
+| [Select Board — budget schedule](/boards/select-board/schedule) | reference | — / 7.8 min | *(none declared)* |
+| [Select Board — where the time goes](/boards/select-board/time) | reference | — / 5.9 min | *(none declared)* |
+| [Select Board: transfers](/boards/select-board/transfers) | reference | — / 10.9 min | *(none declared)* |
+| [Select Board — votes](/boards/select-board/votes) | reference | — / 124.9 min | *(none declared)* |
 | [Senior Citizens Tax Work Off Committee](/boards/senior-citizens-tax-work-off-committee) | reference | — / 7.1 min | *(none declared)* |
+| [Senior Citizens Tax Work Off Committee — meetings](/boards/senior-citizens-tax-work-off-committee/meetings) | reference | — / 7.2 min | *(none declared)* |
+| [Senior Citizens Tax Work Off Committee — missing records](/boards/senior-citizens-tax-work-off-committee/records) | reference | — / 7.7 min | *(none declared)* |
+| [Senior Citizens Tax Work Off Committee — budget schedule](/boards/senior-citizens-tax-work-off-committee/schedule) | reference | — / 5.9 min | *(none declared)* |
+| [Senior Citizens Tax Work Off Committee — votes](/boards/senior-citizens-tax-work-off-committee/votes) | reference | — / 10.5 min | *(none declared)* |
 | [Sewer Commission](/boards/sewer-commission) | reference | — / 9.1 min | *(none declared)* |
+| [Sewer Commission — about](/boards/sewer-commission/about) | reference | — / 8.0 min | *(none declared)* |
+| [Sewer Commission — finances](/boards/sewer-commission/finance) | reference | — / 15.7 min | *(none declared)* |
+| [Sewer Commission — meetings](/boards/sewer-commission/meetings) | reference | — / 11.6 min | *(none declared)* |
+| [Sewer Commission — missing records](/boards/sewer-commission/records) | reference | — / 15.8 min | *(none declared)* |
+| [Sewer Commission — budget schedule](/boards/sewer-commission/schedule) | reference | — / 6.4 min | *(none declared)* |
+| [Sewer Commission — where the time goes](/boards/sewer-commission/time) | reference | — / 5.9 min | *(none declared)* |
+| [Sewer Commission: transfers](/boards/sewer-commission/transfers) | reference | — / 7.3 min | *(none declared)* |
+| [Sewer Commission — votes](/boards/sewer-commission/votes) | reference | — / 48.9 min | *(none declared)* |
 | [Stormwater Task Force](/boards/stormwater-task-force) | reference | — / 7.6 min | *(none declared)* |
+| [Stormwater Task Force — about](/boards/stormwater-task-force/about) | reference | — / 6.9 min | *(none declared)* |
+| [Stormwater Task Force — meetings](/boards/stormwater-task-force/meetings) | reference | — / 10.2 min | *(none declared)* |
+| [Stormwater Task Force — missing records](/boards/stormwater-task-force/records) | reference | — / 9.7 min | *(none declared)* |
+| [Stormwater Task Force — budget schedule](/boards/stormwater-task-force/schedule) | reference | — / 6.0 min | *(none declared)* |
+| [Stormwater Task Force — where the time goes](/boards/stormwater-task-force/time) | reference | — / 5.9 min | *(none declared)* |
+| [Stormwater Task Force — votes](/boards/stormwater-task-force/votes) | reference | — / 19.9 min | *(none declared)* |
 | [TCP Building Design Committee](/boards/tcp-building-design-committee) | reference | — / 7.4 min | *(none declared)* |
+| [TCP Building Design Committee — meetings](/boards/tcp-building-design-committee/meetings) | reference | — / 8.4 min | *(none declared)* |
+| [TCP Building Design Committee — where the time goes](/boards/tcp-building-design-committee/time) | reference | — / 5.9 min | *(none declared)* |
+| [TCP Building Design Committee — votes](/boards/tcp-building-design-committee/votes) | reference | — / 9.4 min | *(none declared)* |
 | [Town Manager Screening Committee](/boards/town-manager-screening-committee) | reference | — / 7.4 min | *(none declared)* |
+| [Town Manager Screening Committee — about](/boards/town-manager-screening-committee/about) | reference | — / 7.3 min | *(none declared)* |
+| [Town Manager Screening Committee — meetings](/boards/town-manager-screening-committee/meetings) | reference | — / 7.2 min | *(none declared)* |
+| [Town Manager Screening Committee — missing records](/boards/town-manager-screening-committee/records) | reference | — / 7.5 min | *(none declared)* |
+| [Town Manager Screening Committee — where the time goes](/boards/town-manager-screening-committee/time) | reference | — / 5.9 min | *(none declared)* |
+| [Town Manager Screening Committee — votes](/boards/town-manager-screening-committee/votes) | reference | — / 9.3 min | *(none declared)* |
 | [Town Meeting](/boards/town-meeting) | reference | — / 7.7 min | *(none declared)* |
+| [Town Meeting — finances](/boards/town-meeting/finance) | reference | — / 14.7 min | *(none declared)* |
+| [Town Meeting — meetings](/boards/town-meeting/meetings) | reference | — / 7.8 min | *(none declared)* |
+| [Town Meeting — where the time goes](/boards/town-meeting/time) | reference | — / 5.9 min | *(none declared)* |
+| [Town Meeting: transfers](/boards/town-meeting/transfers) | reference | — / 7.6 min | *(none declared)* |
+| [Town Meeting — votes](/boards/town-meeting/votes) | reference | — / 73.1 min | *(none declared)* |
 | [Tri-Board](/boards/tri-board) | reference | — / 6.0 min | *(none declared)* |
+| [Tri-Board — about](/boards/tri-board/about) | reference | — / 5.7 min | *(none declared)* |
+| [Tri-Board — meetings](/boards/tri-board/meetings) | reference | — / 6.2 min | *(none declared)* |
 | [Trust Fund Commission](/boards/trust-fund-commission) | reference | — / 8.1 min | *(none declared)* |
+| [Trust Fund Commission — about](/boards/trust-fund-commission/about) | reference | — / 6.4 min | *(none declared)* |
+| [Trust Fund Commission — finances](/boards/trust-fund-commission/finance) | reference | — / 15.4 min | *(none declared)* |
+| [Trust Fund Commission — meetings](/boards/trust-fund-commission/meetings) | reference | — / 9.6 min | *(none declared)* |
+| [Trust Fund Commission — missing records](/boards/trust-fund-commission/records) | reference | — / 7.7 min | *(none declared)* |
+| [Trust Fund Commission — budget schedule](/boards/trust-fund-commission/schedule) | reference | — / 6.1 min | *(none declared)* |
+| [Trust Fund Commission — where the time goes](/boards/trust-fund-commission/time) | reference | — / 5.9 min | *(none declared)* |
+| [Trust Fund Commission — votes](/boards/trust-fund-commission/votes) | reference | — / 27.2 min | *(none declared)* |
 | [Zoning Board of Appeals](/boards/zoning-board-of-appeals) | reference | — / 7.8 min | *(none declared)* |
+| [Zoning Board of Appeals — about](/boards/zoning-board-of-appeals/about) | reference | — / 7.0 min | *(none declared)* |
+| [Zoning Board of Appeals — finances](/boards/zoning-board-of-appeals/finance) | reference | — / 14.7 min | *(none declared)* |
+| [Zoning Board of Appeals — meetings](/boards/zoning-board-of-appeals/meetings) | reference | — / 10.8 min | *(none declared)* |
+| [Zoning Board of Appeals — missing records](/boards/zoning-board-of-appeals/records) | reference | — / 14.7 min | *(none declared)* |
+| [Zoning Board of Appeals — where the time goes](/boards/zoning-board-of-appeals/time) | reference | — / 5.9 min | *(none declared)* |
+| [Zoning Board of Appeals — votes](/boards/zoning-board-of-appeals/votes) | reference | — / 31.3 min | *(none declared)* |
 | [The budget feed — FY28](/budget-feed) | reference | — / 22.1 min | *(none declared)* |
 | [Build your own budget](/build-your-own-budget) | tool | — / 16.4 min | *(none declared)* |
 | [The database](/database) | reference | — / 7.8 min | *(none declared)* |
 | [The departments](/departments) | reference | — / 7.7 min | *(none declared)* |
+| [Town Accountant](/departments/accounting) | reference | — / 14.3 min | *(none declared)* |
+| [Animal Control](/departments/animal-control) | reference | — / 14.5 min | *(none declared)* |
+| [Building Inspection](/departments/building-inspection) | reference | — / 15.4 min | *(none declared)* |
+| [The Commonwealth (cherry sheet assessments)](/departments/commonwealth) | reference | — / 14.2 min | *(none declared)* |
+| [Radio Watch (dispatch)](/departments/dispatch) | reference | — / 14.2 min | *(none declared)* |
+| [Department of Public Works](/departments/dpw) | reference | — / 16.7 min | *(none declared)* |
+| [Emergency Management](/departments/emergency-management) | reference | — / 14.7 min | *(none declared)* |
+| [Facilities and Grounds](/departments/facilities) | reference | — / 15.2 min | *(none declared)* |
+| [Fire Department](/departments/fire) | reference | — / 15.8 min | *(none declared)* |
+| [Information Technology](/departments/information-technology) | reference | — / 14.8 min | *(none declared)* |
+| [Land Use](/departments/land-use) | reference | — / 14.2 min | *(none declared)* |
+| [Montachusett Regional Planning Commission](/departments/montachusett-regional-planning) | reference | — / 14.3 min | *(none declared)* |
+| [Montachusett Regional Vocational Technical School District](/departments/monty-tech) | reference | — / 14.2 min | *(none declared)* |
+| [Police Department](/departments/police) | reference | — / 16.9 min | *(none declared)* |
+| [Town Clerk](/departments/town-clerk) | reference | — / 15.6 min | *(none declared)* |
+| [Town Manager](/departments/town-manager) | reference | — / 16.0 min | *(none declared)* |
+| [Treasurer/Collector](/departments/treasurer-collector) | reference | — / 20.0 min | *(none declared)* |
+| [Veterans&#x27; Services](/departments/veterans-services) | reference | — / 14.3 min | *(none declared)* |
+| [Worcester Regional Retirement System](/departments/worcester-regional-retirement) | reference | — / 14.2 min | *(none declared)* |
 | [Find the money](/find-the-money) | tool | — / 11.9 min | *(none declared)* |
 | [Go deeper](/go-deeper) | reference | — / 8.4 min | *(none declared)* |
 | [Grants open to Lunenburg — DESE programs a school district can apply for](/grants-open-to-lunenburg) | reference | — / 17.7 min | *(none declared)* |
 | [Job postings — the town and the schools](/jobs) | reference | — / 13.5 min | *(none declared)* |
 | [Meeting minutes, written from the recordings](/meeting-minutes) | reference | — / 495.8 min | *(none declared)* |
+| [Agricultural Commission, February 18, 2021](/meeting-minutes/agricultural-commission/2021-02-18-U7h53_4FLaU) | reference | — / 12.7 min | *(none declared)* |
+| [Agricultural Commission, March 18, 2021](/meeting-minutes/agricultural-commission/2021-03-18-YT93Y-l4Kg4) | reference | — / 11.9 min | *(none declared)* |
+| [Agricultural Commission, April 15, 2021](/meeting-minutes/agricultural-commission/2021-04-15-Bs_tC6Pp6bY) | reference | — / 12.2 min | *(none declared)* |
+| [Agricultural Commission, May 20, 2021](/meeting-minutes/agricultural-commission/2021-05-20-i0jbpOOlHOc) | reference | — / 10.7 min | *(none declared)* |
+| [Agricultural Commission, February 17, 2022](/meeting-minutes/agricultural-commission/2022-02-17-0ZIyMdjowFU) | reference | — / 12.7 min | *(none declared)* |
+| [Architectural Preservation District Commission, February 24, 2021](/meeting-minutes/architectural-preservation-district-commission/2021-02-24-WBe5J6-CktQ) | reference | — / 11.6 min | *(none declared)* |
+| [Architectural Preservation District Commission, March 24, 2021](/meeting-minutes/architectural-preservation-district-commission/2021-03-24-NwICUH1STEc) | reference | — / 13.3 min | *(none declared)* |
+| [Architectural Preservation District Commission, April 28, 2021](/meeting-minutes/architectural-preservation-district-commission/2021-04-28-glwajvk5gqE) | reference | — / 12.5 min | *(none declared)* |
+| [Architectural Preservation District Commission, May 26, 2021](/meeting-minutes/architectural-preservation-district-commission/2021-05-26-Ld_D_xgTGbQ) | reference | — / 11.9 min | *(none declared)* |
+| [Architectural Preservation District Commission, March 10, 2022](/meeting-minutes/architectural-preservation-district-commission/2022-03-10-AGHQVROpYA4) | reference | — / 10.9 min | *(none declared)* |
+| [Architectural Preservation District Commission, January 5, 2023](/meeting-minutes/architectural-preservation-district-commission/2023-01-05-dGRjCkC0XiE) | reference | — / 14.3 min | *(none declared)* |
+| [Architectural Preservation District Commission, February 21, 2023](/meeting-minutes/architectural-preservation-district-commission/2023-02-21-O_n6KcPXFZ0) | reference | — / 10.6 min | *(none declared)* |
+| [Architectural Preservation District Commission, March 7, 2023](/meeting-minutes/architectural-preservation-district-commission/2023-03-07-oNLLrOpMLc8) | reference | — / 12.2 min | *(none declared)* |
+| [Architectural Preservation District Commission, April 11, 2023](/meeting-minutes/architectural-preservation-district-commission/2023-04-11-MP_8R4Icbzg) | reference | — / 12.6 min | *(none declared)* |
+| [Architectural Preservation District Commission, August 8, 2023](/meeting-minutes/architectural-preservation-district-commission/2023-08-08-eAM2aeD34xk) | reference | — / 10.7 min | *(none declared)* |
+| [Architectural Preservation District Commission, September 12, 2023](/meeting-minutes/architectural-preservation-district-commission/2023-09-12-FQgz9UZN-nk) | reference | — / 10.2 min | *(none declared)* |
+| [Architectural Preservation District Commission, October 10, 2023](/meeting-minutes/architectural-preservation-district-commission/2023-10-10-AIrlOEyzbGU) | reference | — / 12.4 min | *(none declared)* |
+| [Architectural Preservation District Commission, October 10, 2023](/meeting-minutes/architectural-preservation-district-commission/2023-10-10-L8DFw1sS-Ig) | reference | — / 12.7 min | *(none declared)* |
+| [Architectural Preservation District Commission, November 8, 2023](/meeting-minutes/architectural-preservation-district-commission/2023-11-08-a0DUTNWaA0c) | reference | — / 9.9 min | *(none declared)* |
+| [Architectural Preservation District Commission, December 12, 2023](/meeting-minutes/architectural-preservation-district-commission/2023-12-12-Uz22wXLbgCc) | reference | — / 12.3 min | *(none declared)* |
+| [Architectural Preservation District Commission, January 16, 2024](/meeting-minutes/architectural-preservation-district-commission/2024-01-16-BNcE1ZiMQQA) | reference | — / 11.6 min | *(none declared)* |
+| [Architectural Preservation District Commission, February 13, 2024](/meeting-minutes/architectural-preservation-district-commission/2024-02-13-AH01cpMKN8g) | reference | — / 11.4 min | *(none declared)* |
+| [Architectural Preservation District Commission, March 12, 2024](/meeting-minutes/architectural-preservation-district-commission/2024-03-12-5gS4n3c5Yc0) | reference | — / 12.6 min | *(none declared)* |
+| [Architectural Preservation District Commission, April 9, 2024](/meeting-minutes/architectural-preservation-district-commission/2024-04-09-gAy4JC0EK40) | reference | — / 11.1 min | *(none declared)* |
+| [Architectural Preservation District Commission, May 9, 2024](/meeting-minutes/architectural-preservation-district-commission/2024-05-09-OG1NMUPfpYc) | reference | — / 12.4 min | *(none declared)* |
+| [Architectural Preservation District Commission, June 13, 2024](/meeting-minutes/architectural-preservation-district-commission/2024-06-13-vKVBuowKUeE) | reference | — / 13.3 min | *(none declared)* |
+| [Architectural Preservation District Commission, July 11, 2024](/meeting-minutes/architectural-preservation-district-commission/2024-07-11-oSUYIkdylyw) | reference | — / 12.9 min | *(none declared)* |
+| [Architectural Preservation District Commission, August 8, 2024](/meeting-minutes/architectural-preservation-district-commission/2024-08-08-h1cYJrs4jEE) | reference | — / 12.6 min | *(none declared)* |
+| [Architectural Preservation District Commission, September 12, 2024](/meeting-minutes/architectural-preservation-district-commission/2024-09-12-lCXUDW94iis) | reference | — / 14.2 min | *(none declared)* |
+| [Architectural Preservation District Commission, October 17, 2024](/meeting-minutes/architectural-preservation-district-commission/2024-10-17-l6YAu3GSAdI) | reference | — / 12.8 min | *(none declared)* |
+| [Architectural Preservation District Commission, November 14, 2024](/meeting-minutes/architectural-preservation-district-commission/2024-11-14-RC08lPgkDYI) | reference | — / 11.7 min | *(none declared)* |
+| [Architectural Preservation District Commission, December 12, 2024](/meeting-minutes/architectural-preservation-district-commission/2024-12-12-oP3V90Ss2-A) | reference | — / 12.5 min | *(none declared)* |
+| [Architectural Preservation District Commission, January 16, 2025](/meeting-minutes/architectural-preservation-district-commission/2025-01-16-bpDu97Bl-go) | reference | — / 13.0 min | *(none declared)* |
+| [Architectural Preservation District Commission, February 13, 2025](/meeting-minutes/architectural-preservation-district-commission/2025-02-13-HjMsP3RKSlE) | reference | — / 11.0 min | *(none declared)* |
+| [Architectural Preservation District Commission, March 13, 2025](/meeting-minutes/architectural-preservation-district-commission/2025-03-13-DHXRd8YYG1g) | reference | — / 11.2 min | *(none declared)* |
+| [Architectural Preservation District Commission, April 10, 2025](/meeting-minutes/architectural-preservation-district-commission/2025-04-10-4H5O7apSh2k) | reference | — / 12.3 min | *(none declared)* |
+| [Architectural Preservation District Commission, May 8, 2025](/meeting-minutes/architectural-preservation-district-commission/2025-05-08-MKuXFUEI1jg) | reference | — / 14.3 min | *(none declared)* |
+| [Architectural Preservation District Commission, June 12, 2025](/meeting-minutes/architectural-preservation-district-commission/2025-06-12-Hfdv8PMP6uo) | reference | — / 16.4 min | *(none declared)* |
+| [Architectural Preservation District Commission, July 10, 2025](/meeting-minutes/architectural-preservation-district-commission/2025-07-10-VMYW-aigpFQ) | reference | — / 12.0 min | *(none declared)* |
+| [Architectural Preservation District Commission, August 14, 2025](/meeting-minutes/architectural-preservation-district-commission/2025-08-14-zdrHs85N-oY) | reference | — / 13.5 min | *(none declared)* |
+| [Architectural Preservation District Commission, September 11, 2025](/meeting-minutes/architectural-preservation-district-commission/2025-09-11-MZfbeKuElyc) | reference | — / 11.9 min | *(none declared)* |
+| [Architectural Preservation District Commission, October 20, 2025](/meeting-minutes/architectural-preservation-district-commission/2025-10-20-r1ecCkhjdp4) | reference | — / 12.9 min | *(none declared)* |
+| [Architectural Preservation District Commission, November 13, 2025](/meeting-minutes/architectural-preservation-district-commission/2025-11-13-PsX5NWO7nAg) | reference | — / 10.8 min | *(none declared)* |
+| [Architectural Preservation District Commission, December 11, 2025](/meeting-minutes/architectural-preservation-district-commission/2025-12-11-72k-4HnrjVc) | reference | — / 12.6 min | *(none declared)* |
+| [Architectural Preservation District Commission, January 8, 2026](/meeting-minutes/architectural-preservation-district-commission/2026-01-08-uRcGiQxJW70) | reference | — / 11.8 min | *(none declared)* |
+| [Architectural Preservation District Commission, February 12, 2026](/meeting-minutes/architectural-preservation-district-commission/2026-02-12-PNasqLeEmzA) | reference | — / 11.0 min | *(none declared)* |
+| [Architectural Preservation District Commission, March 12, 2026](/meeting-minutes/architectural-preservation-district-commission/2026-03-12-QzbeZsuL9KI) | reference | — / 11.8 min | *(none declared)* |
+| [Architectural Preservation District Commission, June 11, 2026](/meeting-minutes/architectural-preservation-district-commission/2026-06-11-saZ3-xhIGw4) | reference | — / 10.8 min | *(none declared)* |
+| [Architectural Preservation District Commission, October 6, 2026](/meeting-minutes/architectural-preservation-district-commission/2026-10-06-E2OZuLqP4zE) | reference | — / 12.0 min | *(none declared)* |
+| [Athletic Advisory Council, January 27, 2025](/meeting-minutes/athletic-advisory-council/2025-01-27-_tYwHQu995w) | reference | — / 12.9 min | *(none declared)* |
+| [Athletic Advisory Council, February 4, 2025](/meeting-minutes/athletic-advisory-council/2025-02-04-YwNTz8iSK1k) | reference | — / 11.5 min | *(none declared)* |
+| [Board of Assessors, January 31, 2023](/meeting-minutes/board-of-assessors/2023-01-31-fECORowQCt8) | reference | — / 15.3 min | *(none declared)* |
+| [Board of Assessors, February 22, 2023](/meeting-minutes/board-of-assessors/2023-02-22-I9BAESf41iI) | reference | — / 12.7 min | *(none declared)* |
+| [Board of Assessors, March 28, 2023](/meeting-minutes/board-of-assessors/2023-03-28-erYAto7Ja2w) | reference | — / 12.4 min | *(none declared)* |
+| [Board of Assessors, April 25, 2023](/meeting-minutes/board-of-assessors/2023-04-25-DmA1kLQW8XY) | reference | — / 13.4 min | *(none declared)* |
+| [Board of Assessors, May 4, 2023](/meeting-minutes/board-of-assessors/2023-05-04-I5B7niZeyz8) | reference | — / 13.1 min | *(none declared)* |
+| [Board of Assessors, May 16, 2023](/meeting-minutes/board-of-assessors/2023-05-16-R4E1CUtCdFY) | reference | — / 12.2 min | *(none declared)* |
+| [Board of Assessors, May 23, 2023](/meeting-minutes/board-of-assessors/2023-05-23-ULYgwQMUStQ) | reference | — / 12.5 min | *(none declared)* |
+| [Board of Assessors, May 25, 2023](/meeting-minutes/board-of-assessors/2023-05-25-1SYa-b9N84M) | reference | — / 10.4 min | *(none declared)* |
+| [Board of Assessors, May 30, 2023](/meeting-minutes/board-of-assessors/2023-05-30-xSAkILpRK8I) | reference | — / 10.8 min | *(none declared)* |
+| [Board of Assessors, June 6, 2023](/meeting-minutes/board-of-assessors/2023-06-06-46IZjkr9SkE) | reference | — / 12.1 min | *(none declared)* |
+| [Board of Assessors, June 8, 2023](/meeting-minutes/board-of-assessors/2023-06-08-VuU4v7mmtAw) | reference | — / 11.7 min | *(none declared)* |
+| [Board of Assessors, June 13, 2023](/meeting-minutes/board-of-assessors/2023-06-13-juRNkjncI24) | reference | — / 10.9 min | *(none declared)* |
+| [Board of Assessors, June 15, 2023](/meeting-minutes/board-of-assessors/2023-06-15-8-vCsAh24qo) | reference | — / 10.0 min | *(none declared)* |
+| [Board of Assessors, June 29, 2023](/meeting-minutes/board-of-assessors/2023-06-29-1kPWP6EM9Ik) | reference | — / 13.5 min | *(none declared)* |
+| [Board of Assessors, July 18, 2023](/meeting-minutes/board-of-assessors/2023-07-18-hbIbzEfZhW8) | reference | — / 12.8 min | *(none declared)* |
+| [Board of Assessors, August 1, 2023](/meeting-minutes/board-of-assessors/2023-08-01-aqW8ZenG3kM) | reference | — / 12.5 min | *(none declared)* |
+| [Board of Assessors, September 27, 2023](/meeting-minutes/board-of-assessors/2023-09-27-pq7iKP5I5nI) | reference | — / 12.1 min | *(none declared)* |
+| [Board of Assessors, October 11, 2023](/meeting-minutes/board-of-assessors/2023-10-11-kj3izde5bzQ) | reference | — / 14.6 min | *(none declared)* |
+| [Board of Assessors, October 11, 2023](/meeting-minutes/board-of-assessors/2023-10-11-n4XnyI4QMYM) | reference | — / 12.5 min | *(none declared)* |
+| [Board of Assessors, November 6, 2023](/meeting-minutes/board-of-assessors/2023-11-06-eUAZeg9n32E) | reference | — / 14.8 min | *(none declared)* |
+| [Board of Assessors, November 20, 2023](/meeting-minutes/board-of-assessors/2023-11-20-HrJoYomRJZg) | reference | — / 12.2 min | *(none declared)* |
+| [Board of Assessors, December 4, 2023](/meeting-minutes/board-of-assessors/2023-12-04-1MrrXt6YZp0) | reference | — / 14.6 min | *(none declared)* |
+| [Board of Assessors, December 18, 2023](/meeting-minutes/board-of-assessors/2023-12-18-3Fe7kLrTC8g) | reference | — / 14.7 min | *(none declared)* |
+| [Board of Assessors, January 8, 2024](/meeting-minutes/board-of-assessors/2024-01-08-SkMZgfJfSkQ) | reference | — / 13.4 min | *(none declared)* |
+| [Board of Assessors, January 22, 2024](/meeting-minutes/board-of-assessors/2024-01-22-FyIqwfppmjU) | reference | — / 12.3 min | *(none declared)* |
+| [Board of Assessors, January 29, 2024](/meeting-minutes/board-of-assessors/2024-01-29-Mko9HXm2Yfk) | reference | — / 13.3 min | *(none declared)* |
+| [Board of Assessors, February 5, 2024](/meeting-minutes/board-of-assessors/2024-02-05-lXg1u7q2JKw) | reference | — / 14.5 min | *(none declared)* |
+| [Board of Assessors, February 12, 2024](/meeting-minutes/board-of-assessors/2024-02-12-5r6owrqeV1M) | reference | — / 13.2 min | *(none declared)* |
+| [Board of Assessors, February 26, 2024](/meeting-minutes/board-of-assessors/2024-02-26-i_FU7L1A8M0) | reference | — / 13.9 min | *(none declared)* |
+| [Board of Assessors, March 4, 2024](/meeting-minutes/board-of-assessors/2024-03-04-AxJY1PPWVrI) | reference | — / 17.5 min | *(none declared)* |
+| [Board of Assessors, March 18, 2024](/meeting-minutes/board-of-assessors/2024-03-18-yVm4NYMmp7o) | reference | — / 13.9 min | *(none declared)* |
+| [Board of Assessors, April 1, 2024](/meeting-minutes/board-of-assessors/2024-04-01-rX_FD6xaaNM) | reference | — / 14.1 min | *(none declared)* |
+| [Board of Assessors, April 22, 2024](/meeting-minutes/board-of-assessors/2024-04-22-1QTLqK9aG1U) | reference | — / 14.5 min | *(none declared)* |
+| [Board of Assessors, May 6, 2024](/meeting-minutes/board-of-assessors/2024-05-06-vyEG_0R3EKA) | reference | — / 15.4 min | *(none declared)* |
+| [Board of Assessors, May 20, 2024](/meeting-minutes/board-of-assessors/2024-05-20-9lAulJ7JHH4) | reference | — / 12.5 min | *(none declared)* |
+| [Board of Assessors, June 3, 2024](/meeting-minutes/board-of-assessors/2024-06-03-fbkwRTEKpcc) | reference | — / 12.2 min | *(none declared)* |
+| [Board of Assessors, June 10, 2024](/meeting-minutes/board-of-assessors/2024-06-10-Xt5AE5OkCM0) | reference | — / 12.3 min | *(none declared)* |
+| [Board of Assessors, July 29, 2024](/meeting-minutes/board-of-assessors/2024-07-29-5rEAj6RYh0I) | reference | — / 14.9 min | *(none declared)* |
+| [Board of Assessors, August 19, 2024](/meeting-minutes/board-of-assessors/2024-08-19-KawFgJw93MU) | reference | — / 15.1 min | *(none declared)* |
+| [Board of Assessors, September 4, 2024](/meeting-minutes/board-of-assessors/2024-09-04-uSa2d14BtmI) | reference | — / 15.4 min | *(none declared)* |
+| [Board of Assessors, September 18, 2024](/meeting-minutes/board-of-assessors/2024-09-18-9qdv6bxoDSE) | reference | — / 13.6 min | *(none declared)* |
+| [Board of Assessors, October 2, 2024](/meeting-minutes/board-of-assessors/2024-10-02-W66AwWy7byA) | reference | — / 15.0 min | *(none declared)* |
+| [Board of Assessors, October 16, 2024](/meeting-minutes/board-of-assessors/2024-10-16-CGoucqYKjKs) | reference | — / 14.9 min | *(none declared)* |
+| [Board of Assessors, November 6, 2024](/meeting-minutes/board-of-assessors/2024-11-06-anpNaB1l9ho) | reference | — / 14.6 min | *(none declared)* |
+| [Board of Assessors, November 20, 2024](/meeting-minutes/board-of-assessors/2024-11-20-n0Gzlu98MDc) | reference | — / 12.8 min | *(none declared)* |
+| [Board of Assessors, December 18, 2024](/meeting-minutes/board-of-assessors/2024-12-18--1JrcQrwP30) | reference | — / 14.4 min | *(none declared)* |
+| [Board of Assessors, January 8, 2025](/meeting-minutes/board-of-assessors/2025-01-08-g3aW1Z9lWyE) | reference | — / 12.4 min | *(none declared)* |
+| [Board of Assessors, January 22, 2025](/meeting-minutes/board-of-assessors/2025-01-22-4k9TZLHj-jQ) | reference | — / 16.7 min | *(none declared)* |
+| [Board of Assessors, February 5, 2025](/meeting-minutes/board-of-assessors/2025-02-05-gaTzA3QhcDk) | reference | — / 14.1 min | *(none declared)* |
+| [Board of Assessors, February 19, 2025](/meeting-minutes/board-of-assessors/2025-02-19-PrnmkZSEmT8) | reference | — / 15.2 min | *(none declared)* |
+| [Board of Assessors, March 12, 2025](/meeting-minutes/board-of-assessors/2025-03-12-1FjxmTSA6Zw) | reference | — / 14.9 min | *(none declared)* |
+| [Board of Assessors, March 19, 2025](/meeting-minutes/board-of-assessors/2025-03-19-ET4aDT5SnGI) | reference | — / 13.3 min | *(none declared)* |
+| [Board of Assessors, April 2, 2025](/meeting-minutes/board-of-assessors/2025-04-02-bmxkPrAufrA) | reference | — / 16.5 min | *(none declared)* |
+| [Board of Assessors, April 16, 2025](/meeting-minutes/board-of-assessors/2025-04-16-qWh6_jTJFdU) | reference | — / 17.7 min | *(none declared)* |
+| [Board of Assessors, May 5, 2025](/meeting-minutes/board-of-assessors/2025-05-05-RkfDA8G2Txc) | reference | — / 15.5 min | *(none declared)* |
+| [Board of Assessors, May 19, 2025](/meeting-minutes/board-of-assessors/2025-05-19-J6QIjbksMto) | reference | — / 14.2 min | *(none declared)* |
+| [Board of Assessors, June 11, 2025](/meeting-minutes/board-of-assessors/2025-06-11-Dhm8sCLAIME) | reference | — / 17.4 min | *(none declared)* |
+| [Board of Assessors, July 16, 2025](/meeting-minutes/board-of-assessors/2025-07-16-yppeIFyF9Bg) | reference | — / 15.3 min | *(none declared)* |
+| [Board of Assessors, July 29, 2025](/meeting-minutes/board-of-assessors/2025-07-29-TCViVohezyE) | reference | — / 14.3 min | *(none declared)* |
+| [Board of Assessors, August 13, 2025](/meeting-minutes/board-of-assessors/2025-08-13-eYsBXw3PibY) | reference | — / 16.9 min | *(none declared)* |
+| [Board of Assessors, September 3, 2025](/meeting-minutes/board-of-assessors/2025-09-03-yL8be5Jtwis) | reference | — / 15.1 min | *(none declared)* |
+| [Board of Assessors, October 1, 2025](/meeting-minutes/board-of-assessors/2025-10-01-pRTAXw3D3aA) | reference | — / 18.0 min | *(none declared)* |
+| [Board of Assessors, October 16, 2025](/meeting-minutes/board-of-assessors/2025-10-16-25liygw5YfU) | reference | — / 17.7 min | *(none declared)* |
+| [Board of Assessors, October 22, 2025](/meeting-minutes/board-of-assessors/2025-10-22-TzSzASofExE) | reference | — / 13.6 min | *(none declared)* |
+| [Board of Assessors, November 3, 2025](/meeting-minutes/board-of-assessors/2025-11-03-CMJWo-zrtDs) | reference | — / 16.0 min | *(none declared)* |
+| [Board of Assessors, November 19, 2025](/meeting-minutes/board-of-assessors/2025-11-19-_lS9CtRzLQU) | reference | — / 17.5 min | *(none declared)* |
+| [Board of Assessors, December 3, 2025](/meeting-minutes/board-of-assessors/2025-12-03-sPkm3bAUFaA) | reference | — / 16.7 min | *(none declared)* |
+| [Board of Assessors, January 7, 2026](/meeting-minutes/board-of-assessors/2026-01-07-yp9TGZV38FU) | reference | — / 17.0 min | *(none declared)* |
+| [Board of Assessors, February 4, 2026](/meeting-minutes/board-of-assessors/2026-02-04-4EInyj0tTjk) | reference | — / 19.4 min | *(none declared)* |
+| [Board of Assessors, February 25, 2026](/meeting-minutes/board-of-assessors/2026-02-25-E0Bl5XMeKDg) | reference | — / 15.6 min | *(none declared)* |
+| [Board of Assessors, April 8, 2026](/meeting-minutes/board-of-assessors/2026-04-08-qhcoE_wDqt8) | reference | — / 18.5 min | *(none declared)* |
+| [Board of Assessors, April 22, 2026](/meeting-minutes/board-of-assessors/2026-04-22-hWLWclCjbx8) | reference | — / 14.7 min | *(none declared)* |
+| [Board of Assessors, May 13, 2026](/meeting-minutes/board-of-assessors/2026-05-13-fRwzTHYCHgU) | reference | — / 14.9 min | *(none declared)* |
+| [Board of Assessors, June 3, 2026](/meeting-minutes/board-of-assessors/2026-06-03-pwu5tQeggPU) | reference | — / 16.0 min | *(none declared)* |
+| [Board of Assessors, July 1, 2026](/meeting-minutes/board-of-assessors/2026-07-01-ZHueTsTeRmU) | reference | — / 17.6 min | *(none declared)* |
+| [Board of Assessors, August 5, 2026](/meeting-minutes/board-of-assessors/2026-08-05-N_IaHAJniy0) | reference | — / 16.1 min | *(none declared)* |
+| [Board of Assessors, September 9, 2026](/meeting-minutes/board-of-assessors/2026-09-09-Qimi3yNAudg) | reference | — / 16.7 min | *(none declared)* |
+| [Board of Assessors, September 23, 2026](/meeting-minutes/board-of-assessors/2026-09-23-8JmJ1wh7HCY) | reference | — / 16.3 min | *(none declared)* |
+| [Board of Assessors, September 30, 2026](/meeting-minutes/board-of-assessors/2026-09-30-PGOQeBuvgog) | reference | — / 10.2 min | *(none declared)* |
+| [Board of Assessors, October 28, 2026](/meeting-minutes/board-of-assessors/2026-10-28-nUUi0uOamJM) | reference | — / 10.9 min | *(none declared)* |
+| [Board of Health, March 1, 2021](/meeting-minutes/board-of-health/2021-03-01-35Ynk6EkD3A) | reference | — / 11.7 min | *(none declared)* |
+| [Board of Health, March 15, 2021](/meeting-minutes/board-of-health/2021-03-15-X2msyanuRDM) | reference | — / 11.1 min | *(none declared)* |
+| [Board of Health, April 5, 2021](/meeting-minutes/board-of-health/2021-04-05-eaB2X8oVH3s) | reference | — / 11.8 min | *(none declared)* |
+| [Board of Health, May 3, 2021](/meeting-minutes/board-of-health/2021-05-03-O75g0MJUfBc) | reference | — / 10.6 min | *(none declared)* |
+| [Board of Health, May 17, 2021](/meeting-minutes/board-of-health/2021-05-17-PwSN-BT8oes) | reference | — / 11.9 min | *(none declared)* |
+| [Board of Health, June 7, 2021](/meeting-minutes/board-of-health/2021-06-07-q3_bXjpa-zk) | reference | — / 9.6 min | *(none declared)* |
+| [Budget Task Force, July 11, 2024](/meeting-minutes/budget-task-force/2024-07-11-tXLj2kT5hUY) | reference | — / 11.1 min | *(none declared)* |
+| [Budget Task Force, July 22, 2024](/meeting-minutes/budget-task-force/2024-07-22-xtjiu8IxLTs) | reference | — / 11.6 min | *(none declared)* |
+| [Budget Task Force, August 5, 2024](/meeting-minutes/budget-task-force/2024-08-05-wW9c6kwCGN0) | reference | — / 12.7 min | *(none declared)* |
+| [Budget Task Force, August 19, 2024](/meeting-minutes/budget-task-force/2024-08-19-l_64JaMrAzA) | reference | — / 12.8 min | *(none declared)* |
+| [Budget Task Force, September 16, 2024](/meeting-minutes/budget-task-force/2024-09-16-k63Lr_-ks44) | reference | — / 10.7 min | *(none declared)* |
+| [Budget Task Force, September 23, 2024](/meeting-minutes/budget-task-force/2024-09-23-fWA-johHvh4) | reference | — / 11.9 min | *(none declared)* |
+| [Budget Task Force, September 30, 2024](/meeting-minutes/budget-task-force/2024-09-30-bwuOU08cAUQ) | reference | — / 12.9 min | *(none declared)* |
+| [Budget Task Force, October 7, 2024](/meeting-minutes/budget-task-force/2024-10-07-PLe0yjAGS8k) | reference | — / 11.4 min | *(none declared)* |
+| [Budget Task Force, October 21, 2024](/meeting-minutes/budget-task-force/2024-10-21-f4MWvGsVzl8) | reference | — / 11.1 min | *(none declared)* |
+| [Budget Task Force, November 4, 2024](/meeting-minutes/budget-task-force/2024-11-04-cN3ztvUukuA) | reference | — / 11.6 min | *(none declared)* |
+| [Budget Task Force, November 18, 2024](/meeting-minutes/budget-task-force/2024-11-18-nZGAcnVcH4w) | reference | — / 11.1 min | *(none declared)* |
+| [Budget Task Force, December 16, 2024](/meeting-minutes/budget-task-force/2024-12-16-undX21PLoLU) | reference | — / 11.4 min | *(none declared)* |
+| [Cable Advisory Committee, July 23, 2026](/meeting-minutes/cable-advisory-committee/2026-07-23-cUYXjTh0Jq8) | reference | — / 11.0 min | *(none declared)* |
+| [Cable Advisory Committee, August 13, 2026](/meeting-minutes/cable-advisory-committee/2026-08-13-gIzjXrZwjYA) | reference | — / 14.2 min | *(none declared)* |
+| [Capital Planning Committee, March 4, 2021](/meeting-minutes/capital-planning-committee/2021-03-04-MAUZM8kelQ4) | reference | — / 11.7 min | *(none declared)* |
+| [Capital Planning Committee, March 30, 2021](/meeting-minutes/capital-planning-committee/2021-03-30-bXMUbb0sCaE) | reference | — / 10.7 min | *(none declared)* |
+| [Capital Planning Committee, April 6, 2021](/meeting-minutes/capital-planning-committee/2021-04-06-nMpJYx3cvFY) | reference | — / 9.5 min | *(none declared)* |
+| [Capital Planning Committee, August 3, 2022](/meeting-minutes/capital-planning-committee/2022-08-03-kqlUU5_F7gE) | reference | — / 9.9 min | *(none declared)* |
+| [Capital Planning Committee, September 26, 2022](/meeting-minutes/capital-planning-committee/2022-09-26-Xpn6k-yos4Y) | reference | — / 9.6 min | *(none declared)* |
+| [Capital Planning Committee, October 17, 2022](/meeting-minutes/capital-planning-committee/2022-10-17-VkE_rx6437k) | reference | — / 11.6 min | *(none declared)* |
+| [Capital Planning Committee, October 26, 2022](/meeting-minutes/capital-planning-committee/2022-10-26-TZd98jtXAxA) | reference | — / 11.6 min | *(none declared)* |
+| [Capital Planning Committee, November 7, 2022](/meeting-minutes/capital-planning-committee/2022-11-07-UuCZTTYVUwI) | reference | — / 11.0 min | *(none declared)* |
+| [Capital Planning Committee, November 9, 2022](/meeting-minutes/capital-planning-committee/2022-11-09-3quxwv-W0xs) | reference | — / 11.1 min | *(none declared)* |
+| [Capital Planning Committee, November 21, 2022](/meeting-minutes/capital-planning-committee/2022-11-21-dZtV-sOgDZM) | reference | — / 11.4 min | *(none declared)* |
+| [Capital Planning Committee, November 30, 2022](/meeting-minutes/capital-planning-committee/2022-11-30-9sOU_AO8kjc) | reference | — / 11.4 min | *(none declared)* |
+| [Capital Planning Committee, December 5, 2022](/meeting-minutes/capital-planning-committee/2022-12-05-3DtWeBgX5tE) | reference | — / 11.5 min | *(none declared)* |
+| [Capital Planning Committee, December 14, 2022](/meeting-minutes/capital-planning-committee/2022-12-14-oPxHQO0ZFtM) | reference | — / 10.8 min | *(none declared)* |
+| [Capital Planning Committee, December 28, 2022](/meeting-minutes/capital-planning-committee/2022-12-28-txSHgkxAlcE) | reference | — / 10.5 min | *(none declared)* |
+| [Capital Planning Committee, February 13, 2023](/meeting-minutes/capital-planning-committee/2023-02-13-ZTyQdj9njms) | reference | — / 10.9 min | *(none declared)* |
+| [Capital Planning Committee, August 30, 2023](/meeting-minutes/capital-planning-committee/2023-08-30-dP88NWAPvUk) | reference | — / 10.2 min | *(none declared)* |
+| [Capital Planning Committee, October 23, 2023](/meeting-minutes/capital-planning-committee/2023-10-23-Su6zPCZR6Po) | reference | — / 10.8 min | *(none declared)* |
+| [Capital Planning Committee, October 23, 2023](/meeting-minutes/capital-planning-committee/2023-10-23-YHs6AN0UFF0) | reference | — / 10.6 min | *(none declared)* |
+| [Capital Planning Committee, November 6, 2023](/meeting-minutes/capital-planning-committee/2023-11-06-n2EtPKzMG8s) | reference | — / 11.8 min | *(none declared)* |
+| [Capital Planning Committee, November 8, 2023](/meeting-minutes/capital-planning-committee/2023-11-08-EsDUqAMpQf0) | reference | — / 12.5 min | *(none declared)* |
+| [Capital Planning Committee, November 20, 2023](/meeting-minutes/capital-planning-committee/2023-11-20-KvTS7dbZvv8) | reference | — / 13.6 min | *(none declared)* |
+| [Capital Planning Committee, November 29, 2023](/meeting-minutes/capital-planning-committee/2023-11-29-WHnbuavDXWM) | reference | — / 14.2 min | *(none declared)* |
+| [Capital Planning Committee, December 4, 2023](/meeting-minutes/capital-planning-committee/2023-12-04-gmR4dClldSY) | reference | — / 13.8 min | *(none declared)* |
+| [Capital Planning Committee, December 18, 2023](/meeting-minutes/capital-planning-committee/2023-12-18-LCCHucGU6kQ) | reference | — / 10.8 min | *(none declared)* |
+| [Capital Planning Committee, December 21, 2023](/meeting-minutes/capital-planning-committee/2023-12-21-J8_ZjFTmOyY) | reference | — / 10.7 min | *(none declared)* |
+| [Capital Planning Committee, July 10, 2024](/meeting-minutes/capital-planning-committee/2024-07-10-XsuvvhUpGco) | reference | — / 13.0 min | *(none declared)* |
+| [Capital Planning Committee, July 31, 2024](/meeting-minutes/capital-planning-committee/2024-07-31-zLy4klE6WJw) | reference | — / 10.5 min | *(none declared)* |
+| [Capital Planning Committee, October 9, 2024](/meeting-minutes/capital-planning-committee/2024-10-09-D4gzqLF4riE) | reference | — / 13.2 min | *(none declared)* |
+| [Capital Planning Committee, October 21, 2024](/meeting-minutes/capital-planning-committee/2024-10-21-N2YAK12wDKI) | reference | — / 13.7 min | *(none declared)* |
+| [Capital Planning Committee, October 23, 2024](/meeting-minutes/capital-planning-committee/2024-10-23-d3ak0Vyy6Bk) | reference | — / 13.7 min | *(none declared)* |
+| [Capital Planning Committee, November 4, 2024](/meeting-minutes/capital-planning-committee/2024-11-04-OnCYxrN5S9s) | reference | — / 15.2 min | *(none declared)* |
+| [Capital Planning Committee, December 2, 2024](/meeting-minutes/capital-planning-committee/2024-12-02-5BA1lZxu8h4) | reference | — / 12.5 min | *(none declared)* |
+| [Capital Planning Committee, December 16, 2024](/meeting-minutes/capital-planning-committee/2024-12-16-8HWxmugciqA) | reference | — / 10.8 min | *(none declared)* |
+| [Capital Planning Committee, January 29, 2025](/meeting-minutes/capital-planning-committee/2025-01-29-bs6TkJ3fIk8) | reference | — / 11.4 min | *(none declared)* |
+| [Capital Planning Committee, March 20, 2025](/meeting-minutes/capital-planning-committee/2025-03-20-eF9-3YXUDdc) | reference | — / 11.2 min | *(none declared)* |
+| [Capital Planning Committee, September 3, 2025](/meeting-minutes/capital-planning-committee/2025-09-03-XpToORr4Sfw) | reference | — / 13.0 min | *(none declared)* |
+| [Capital Planning Committee, October 29, 2025](/meeting-minutes/capital-planning-committee/2025-10-29-JHo44iDQ_qM) | reference | — / 15.1 min | *(none declared)* |
+| [Capital Planning Committee, November 5, 2025](/meeting-minutes/capital-planning-committee/2025-11-05-bwcX6Tc12o4) | reference | — / 13.9 min | *(none declared)* |
+| [Capital Planning Committee, November 19, 2025](/meeting-minutes/capital-planning-committee/2025-11-19-ZCi29nOpCc0) | reference | — / 14.6 min | *(none declared)* |
+| [Capital Planning Committee, December 3, 2025](/meeting-minutes/capital-planning-committee/2025-12-03-aU56CXl_vr4) | reference | — / 14.7 min | *(none declared)* |
+| [Capital Planning Committee, December 10, 2025](/meeting-minutes/capital-planning-committee/2025-12-10-cVyrl-cQXJ0) | reference | — / 12.3 min | *(none declared)* |
+| [Capital Planning Committee, December 17, 2025](/meeting-minutes/capital-planning-committee/2025-12-17-eyxbgWMx6To) | reference | — / 12.3 min | *(none declared)* |
+| [Capital Planning Committee, April 30, 2026](/meeting-minutes/capital-planning-committee/2026-04-30-90PSXCml4tU) | reference | — / 12.2 min | *(none declared)* |
+| [Cemetery Commission, April 22, 2021](/meeting-minutes/cemetery-commission/2021-04-22-M9pPlX-4-Gc) | reference | — / 12.7 min | *(none declared)* |
+| [Cemetery Commission, December 7, 2021](/meeting-minutes/cemetery-commission/2021-12-07-rw53abiHXK4) | reference | — / 14.9 min | *(none declared)* |
+| [Cemetery Commission, January 5, 2022](/meeting-minutes/cemetery-commission/2022-01-05-rEmQ61YX3SA) | reference | — / 13.5 min | *(none declared)* |
+| [Cemetery Commission, March 1, 2022](/meeting-minutes/cemetery-commission/2022-03-01-ZJdAefyD-m4) | reference | — / 11.2 min | *(none declared)* |
+| [Cemetery Commission, September 26, 2023](/meeting-minutes/cemetery-commission/2023-09-26-uiAplcW5f8U) | reference | — / 12.7 min | *(none declared)* |
+| [Cemetery Commission, February 5, 2024](/meeting-minutes/cemetery-commission/2024-02-05-olmcCrWVl8Y) | reference | — / 14.6 min | *(none declared)* |
+| [Cemetery Commission, February 22, 2024](/meeting-minutes/cemetery-commission/2024-02-22-sNt4OHjEPug) | reference | — / 12.6 min | *(none declared)* |
+| [Cemetery Commission, March 14, 2024](/meeting-minutes/cemetery-commission/2024-03-14-0YPuiSWG9YY) | reference | — / 13.3 min | *(none declared)* |
+| [Cemetery Commission, April 25, 2024](/meeting-minutes/cemetery-commission/2024-04-25-nA2-m_4cHJ8) | reference | — / 13.9 min | *(none declared)* |
+| [Cemetery Commission, May 16, 2024](/meeting-minutes/cemetery-commission/2024-05-16-trOShxlHHO0) | reference | — / 14.4 min | *(none declared)* |
+| [Cemetery Commission, June 20, 2024](/meeting-minutes/cemetery-commission/2024-06-20-9wMexmNYmPE) | reference | — / 14.0 min | *(none declared)* |
+| [Cemetery Commission, July 25, 2024](/meeting-minutes/cemetery-commission/2024-07-25-J272NovY6VY) | reference | — / 14.4 min | *(none declared)* |
+| [Cemetery Commission, November 21, 2024](/meeting-minutes/cemetery-commission/2024-11-21-pm84ca10Xd4) | reference | — / 11.6 min | *(none declared)* |
+| [Cemetery Commission, January 9, 2025](/meeting-minutes/cemetery-commission/2025-01-09-Yz85-S-4fbc) | reference | — / 12.3 min | *(none declared)* |
+| [Cemetery Commission, February 27, 2025](/meeting-minutes/cemetery-commission/2025-02-27-Coh-Xjmt3gQ) | reference | — / 13.1 min | *(none declared)* |
+| [Cemetery Commission, March 27, 2025](/meeting-minutes/cemetery-commission/2025-03-27-I2dt6xgNAeg) | reference | — / 15.2 min | *(none declared)* |
+| [Cemetery Commission, April 24, 2025](/meeting-minutes/cemetery-commission/2025-04-24-9uQ1g08yqqE) | reference | — / 15.1 min | *(none declared)* |
+| [Cemetery Commission, May 22, 2025](/meeting-minutes/cemetery-commission/2025-05-22-tTxlYzAQHd8) | reference | — / 12.0 min | *(none declared)* |
+| [Cemetery Commission, June 26, 2025](/meeting-minutes/cemetery-commission/2025-06-26-efZ8nCPt8XE) | reference | — / 15.0 min | *(none declared)* |
+| [Cemetery Commission, July 3, 2025](/meeting-minutes/cemetery-commission/2025-07-03-RFD-kt446Ig) | reference | — / 12.5 min | *(none declared)* |
+| [Cemetery Commission, July 30, 2025](/meeting-minutes/cemetery-commission/2025-07-30-1JV7OD_51JA) | reference | — / 18.6 min | *(none declared)* |
+| [Cemetery Commission, September 25, 2025](/meeting-minutes/cemetery-commission/2025-09-25-VXWowtt8CtI) | reference | — / 15.2 min | *(none declared)* |
+| [Cemetery Commission, October 30, 2025](/meeting-minutes/cemetery-commission/2025-10-30-C1P3G4GgZso) | reference | — / 17.7 min | *(none declared)* |
+| [Cemetery Commission, November 19, 2025](/meeting-minutes/cemetery-commission/2025-11-19-gnQgapMVe8o) | reference | — / 16.8 min | *(none declared)* |
+| [Cemetery Commission, December 11, 2025](/meeting-minutes/cemetery-commission/2025-12-11-OgM4jkrlJiE) | reference | — / 15.6 min | *(none declared)* |
+| [Cemetery Commission, February 26, 2026](/meeting-minutes/cemetery-commission/2026-02-26-pd81B-p34KE) | reference | — / 15.4 min | *(none declared)* |
+| [Cemetery Commission, March 26, 2026](/meeting-minutes/cemetery-commission/2026-03-26-0wWgYdt2FI8) | reference | — / 16.8 min | *(none declared)* |
+| [Cemetery Commission, April 23, 2026](/meeting-minutes/cemetery-commission/2026-04-23-e0-d3oo_cAI) | reference | — / 15.9 min | *(none declared)* |
+| [Cemetery Commission, June 25, 2026](/meeting-minutes/cemetery-commission/2026-06-25-jUunqV11dU4) | reference | — / 19.4 min | *(none declared)* |
+| [Cemetery Commission, July 30, 2026](/meeting-minutes/cemetery-commission/2026-07-30-gc8unwrEL3k) | reference | — / 15.4 min | *(none declared)* |
+| [Cemetery Commission, August 19, 2026](/meeting-minutes/cemetery-commission/2026-08-19-9B8uWI7kA7w) | reference | — / 11.6 min | *(none declared)* |
+| [Cemetery Commission, September 24, 2026](/meeting-minutes/cemetery-commission/2026-09-24-I-vEsgVC3hk) | reference | — / 10.9 min | *(none declared)* |
+| [Cemetery Commission, October 28, 2026](/meeting-minutes/cemetery-commission/2026-10-28-W2EEW40mBz8) | reference | — / 9.8 min | *(none declared)* |
+| [Conservation Commission, February 17, 2021](/meeting-minutes/conservation-commission/2021-02-17-HNEMV5LbRk0) | reference | — / 13.4 min | *(none declared)* |
+| [Conservation Commission, March 17, 2021](/meeting-minutes/conservation-commission/2021-03-17-QNjdayDLXW8) | reference | — / 16.1 min | *(none declared)* |
+| [Conservation Commission, April 8, 2021](/meeting-minutes/conservation-commission/2021-04-08-CG8guNfRAKQ) | reference | — / 11.6 min | *(none declared)* |
+| [Conservation Commission, April 21, 2021](/meeting-minutes/conservation-commission/2021-04-21-yANzQRvDjx4) | reference | — / 18.3 min | *(none declared)* |
+| [Conservation Commission, May 5, 2021](/meeting-minutes/conservation-commission/2021-05-05-VITUKfmTmcg) | reference | — / 12.0 min | *(none declared)* |
+| [Conservation Commission, May 19, 2021](/meeting-minutes/conservation-commission/2021-05-19-RtTlzOooVvc) | reference | — / 15.9 min | *(none declared)* |
+| [Conservation Commission, June 2, 2021](/meeting-minutes/conservation-commission/2021-06-02-N16wpi3ZvvY) | reference | — / 13.3 min | *(none declared)* |
+| [Conservation Commission, June 16, 2021](/meeting-minutes/conservation-commission/2021-06-16-3eCUbCKoMOs) | reference | — / 11.0 min | *(none declared)* |
+| [Conservation Commission, July 7, 2021](/meeting-minutes/conservation-commission/2021-07-07-Ai6dlIk4ITs) | reference | — / 15.6 min | *(none declared)* |
+| [Conservation Commission, July 21, 2021](/meeting-minutes/conservation-commission/2021-07-21-UDJLU3TaTiE) | reference | — / 12.9 min | *(none declared)* |
+| [Conservation Commission, August 4, 2021](/meeting-minutes/conservation-commission/2021-08-04-vJ7-PEOkUdE) | reference | — / 15.5 min | *(none declared)* |
+| [Conservation Commission, August 18, 2021](/meeting-minutes/conservation-commission/2021-08-18-T3kBrI9807I) | reference | — / 16.2 min | *(none declared)* |
+| [Conservation Commission, September 1, 2021](/meeting-minutes/conservation-commission/2021-09-01-lNXaejMp3Zo) | reference | — / 13.9 min | *(none declared)* |
+| [Conservation Commission, September 15, 2021](/meeting-minutes/conservation-commission/2021-09-15-HJFRUK7y39g) | reference | — / 12.6 min | *(none declared)* |
+| [Conservation Commission, November 17, 2021](/meeting-minutes/conservation-commission/2021-11-17-XyKK0zCce9M) | reference | — / 19.6 min | *(none declared)* |
+| [Conservation Commission, December 1, 2021](/meeting-minutes/conservation-commission/2021-12-01-EyMHKYC9iTw) | reference | — / 16.9 min | *(none declared)* |
+| [Conservation Commission, January 5, 2022](/meeting-minutes/conservation-commission/2022-01-05-E6qOq8hLTS8) | reference | — / 16.2 min | *(none declared)* |
+| [Conservation Commission, January 10, 2022](/meeting-minutes/conservation-commission/2022-01-10-oWoLkKBtq_A) | reference | — / 12.0 min | *(none declared)* |
+| [Conservation Commission, February 2, 2022](/meeting-minutes/conservation-commission/2022-02-02-czNYvnzpoq4) | reference | — / 15.5 min | *(none declared)* |
+| [Conservation Commission, February 16, 2022](/meeting-minutes/conservation-commission/2022-02-16-67jL5rqsPCI) | reference | — / 12.9 min | *(none declared)* |
+| [Conservation Commission, March 16, 2022](/meeting-minutes/conservation-commission/2022-03-16-zgizsw2t1-8) | reference | — / 14.0 min | *(none declared)* |
+| [Conservation Commission, April 6, 2022](/meeting-minutes/conservation-commission/2022-04-06-PGh-1ekVUMY) | reference | — / 13.4 min | *(none declared)* |
+| [Conservation Commission, April 20, 2022](/meeting-minutes/conservation-commission/2022-04-20-Mb-qbmfiUWE) | reference | — / 14.0 min | *(none declared)* |
+| [Conservation Commission, May 4, 2022](/meeting-minutes/conservation-commission/2022-05-04-QSyr4zSO3lY) | reference | — / 16.4 min | *(none declared)* |
+| [Conservation Commission, May 18, 2022](/meeting-minutes/conservation-commission/2022-05-18-_0CuNRW7GZo) | reference | — / 15.1 min | *(none declared)* |
+| [Conservation Commission, June 1, 2022](/meeting-minutes/conservation-commission/2022-06-01-PjdzirAzZZc) | reference | — / 15.7 min | *(none declared)* |
+| [Conservation Commission, June 15, 2022](/meeting-minutes/conservation-commission/2022-06-15-kM_9MgVs7kc) | reference | — / 13.7 min | *(none declared)* |
+| [Conservation Commission, July 6, 2022](/meeting-minutes/conservation-commission/2022-07-06-UVlzAieBRoA) | reference | — / 21.0 min | *(none declared)* |
+| [Conservation Commission, July 20, 2022](/meeting-minutes/conservation-commission/2022-07-20-dBD0xPH3auk) | reference | — / 16.0 min | *(none declared)* |
+| [Conservation Commission, August 3, 2022](/meeting-minutes/conservation-commission/2022-08-03-HpWvs74KR5E) | reference | — / 13.7 min | *(none declared)* |
+| [Conservation Commission, August 17, 2022](/meeting-minutes/conservation-commission/2022-08-17-qk1namMo_HQ) | reference | — / 13.9 min | *(none declared)* |
+| [Conservation Commission, September 7, 2022](/meeting-minutes/conservation-commission/2022-09-07-BmWgbdYkixc) | reference | — / 17.2 min | *(none declared)* |
+| [Conservation Commission, September 21, 2022](/meeting-minutes/conservation-commission/2022-09-21-hkBwi5o0Vac) | reference | — / 15.3 min | *(none declared)* |
+| [Conservation Commission, October 5, 2022](/meeting-minutes/conservation-commission/2022-10-05-0GtNcHOIARA) | reference | — / 17.7 min | *(none declared)* |
+| [Conservation Commission, October 19, 2022](/meeting-minutes/conservation-commission/2022-10-19-yR7ZLiDTlVw) | reference | — / 15.8 min | *(none declared)* |
+| [Conservation Commission, November 2, 2022](/meeting-minutes/conservation-commission/2022-11-02-9usOUIT4Bho) | reference | — / 14.9 min | *(none declared)* |
+| [Conservation Commission, November 16, 2022](/meeting-minutes/conservation-commission/2022-11-16-lKD5-EcsZHM) | reference | — / 15.8 min | *(none declared)* |
+| [Conservation Commission, December 7, 2022](/meeting-minutes/conservation-commission/2022-12-07-UqKzsxWCnOo) | reference | — / 14.9 min | *(none declared)* |
+| [Conservation Commission, December 21, 2022](/meeting-minutes/conservation-commission/2022-12-21-6crpFMpEp0c) | reference | — / 13.4 min | *(none declared)* |
+| [Conservation Commission, January 4, 2023](/meeting-minutes/conservation-commission/2023-01-04-132F-jXSJhM) | reference | — / 14.6 min | *(none declared)* |
+| [Conservation Commission, January 18, 2023](/meeting-minutes/conservation-commission/2023-01-18-r-K4E2_YKAE) | reference | — / 11.9 min | *(none declared)* |
+| [Conservation Commission, February 1, 2023](/meeting-minutes/conservation-commission/2023-02-01-VFKxqaRoM6Y) | reference | — / 11.9 min | *(none declared)* |
+| [Conservation Commission, February 15, 2023](/meeting-minutes/conservation-commission/2023-02-15-kYdemkJaOQY) | reference | — / 13.8 min | *(none declared)* |
+| [Conservation Commission, March 1, 2023](/meeting-minutes/conservation-commission/2023-03-01-vSRs83Qa3ss) | reference | — / 13.7 min | *(none declared)* |
+| [Conservation Commission, March 15, 2023](/meeting-minutes/conservation-commission/2023-03-15-yiKFzdBlbAA) | reference | — / 12.1 min | *(none declared)* |
+| [Conservation Commission, April 5, 2023](/meeting-minutes/conservation-commission/2023-04-05-wdq6dONU2mY) | reference | — / 12.6 min | *(none declared)* |
+| [Conservation Commission, April 19, 2023](/meeting-minutes/conservation-commission/2023-04-19-GSQPREtpuoo) | reference | — / 14.1 min | *(none declared)* |
+| [Conservation Commission, May 3, 2023](/meeting-minutes/conservation-commission/2023-05-03-FiiaRGuRlC8) | reference | — / 13.6 min | *(none declared)* |
+| [Conservation Commission, May 17, 2023](/meeting-minutes/conservation-commission/2023-05-17-CaSU3VkGfCI) | reference | — / 12.6 min | *(none declared)* |
+| [Conservation Commission, June 7, 2023](/meeting-minutes/conservation-commission/2023-06-07-poKKF_ot4rA) | reference | — / 17.1 min | *(none declared)* |
+| [Conservation Commission, June 21, 2023](/meeting-minutes/conservation-commission/2023-06-21-hYOFzs_0Y3M) | reference | — / 13.8 min | *(none declared)* |
+| [Conservation Commission, July 5, 2023](/meeting-minutes/conservation-commission/2023-07-05-UATf1fJiGmk) | reference | — / 14.5 min | *(none declared)* |
+| [Conservation Commission, August 2, 2023](/meeting-minutes/conservation-commission/2023-08-02-6mtGRS7x41w) | reference | — / 16.0 min | *(none declared)* |
+| [Conservation Commission, August 16, 2023](/meeting-minutes/conservation-commission/2023-08-16-5AMISKRF1as) | reference | — / 14.0 min | *(none declared)* |
+| [Conservation Commission, September 6, 2023](/meeting-minutes/conservation-commission/2023-09-06-aJVr3uZVNJg) | reference | — / 12.8 min | *(none declared)* |
+| [Conservation Commission, September 20, 2023](/meeting-minutes/conservation-commission/2023-09-20-ZcEb-p0IYUI) | reference | — / 14.3 min | *(none declared)* |
+| [Conservation Commission, October 4, 2023](/meeting-minutes/conservation-commission/2023-10-04-9TwGmvxTjJs) | reference | — / 13.0 min | *(none declared)* |
+| [Conservation Commission, October 18, 2023](/meeting-minutes/conservation-commission/2023-10-18-6Rhi6QpOivw) | reference | — / 14.4 min | *(none declared)* |
+| [Conservation Commission, October 18, 2023](/meeting-minutes/conservation-commission/2023-10-18-_mnf0gP44Nc) | reference | — / 14.2 min | *(none declared)* |
+| [Conservation Commission, November 1, 2023](/meeting-minutes/conservation-commission/2023-11-01-P4aiNXY8tnQ) | reference | — / 13.7 min | *(none declared)* |
+| [Conservation Commission, November 15, 2023](/meeting-minutes/conservation-commission/2023-11-15-dQS7CvGp94o) | reference | — / 17.1 min | *(none declared)* |
+| [Conservation Commission, December 6, 2023](/meeting-minutes/conservation-commission/2023-12-06-TmXXZg7JmPk) | reference | — / 14.6 min | *(none declared)* |
+| [Conservation Commission, December 20, 2023](/meeting-minutes/conservation-commission/2023-12-20-7Nbo5eIUIBg) | reference | — / 14.7 min | *(none declared)* |
+| [Conservation Commission, December 20, 2023](/meeting-minutes/conservation-commission/2023-12-20-huOauh69M9o) | reference | — / 15.5 min | *(none declared)* |
+| [Conservation Commission, January 3, 2024](/meeting-minutes/conservation-commission/2024-01-03-uXLT1YabV-o) | reference | — / 12.9 min | *(none declared)* |
+| [Conservation Commission, January 17, 2024](/meeting-minutes/conservation-commission/2024-01-17-noZM4bHA3ok) | reference | — / 14.3 min | *(none declared)* |
+| [Conservation Commission, February 7, 2024](/meeting-minutes/conservation-commission/2024-02-07-x9TagGoqiVs) | reference | — / 17.3 min | *(none declared)* |
+| [Conservation Commission, February 21, 2024](/meeting-minutes/conservation-commission/2024-02-21-eOuIqEoq9-A) | reference | — / 14.9 min | *(none declared)* |
+| [Conservation Commission, March 6, 2024](/meeting-minutes/conservation-commission/2024-03-06-YHcTadiWd5s) | reference | — / 14.0 min | *(none declared)* |
+| [Conservation Commission, April 3, 2024](/meeting-minutes/conservation-commission/2024-04-03-0LH19oUbp50) | reference | — / 16.4 min | *(none declared)* |
+| [Conservation Commission, April 3, 2024](/meeting-minutes/conservation-commission/2024-04-03-cz6onv_nIJU) | reference | — / 12.4 min | *(none declared)* |
+| [Conservation Commission, April 17, 2024](/meeting-minutes/conservation-commission/2024-04-17-Sfxtoj9vUuA) | reference | — / 14.1 min | *(none declared)* |
+| [Conservation Commission, May 1, 2024](/meeting-minutes/conservation-commission/2024-05-01-FAc9kLhIeEk) | reference | — / 15.6 min | *(none declared)* |
+| [Conservation Commission, May 15, 2024](/meeting-minutes/conservation-commission/2024-05-15-vtRLgSbKg9M) | reference | — / 13.7 min | *(none declared)* |
+| [Conservation Commission, June 5, 2024](/meeting-minutes/conservation-commission/2024-06-05-2chgblFFlEk) | reference | — / 16.0 min | *(none declared)* |
+| [Conservation Commission, July 10, 2024](/meeting-minutes/conservation-commission/2024-07-10-kzhYLA_JwDw) | reference | — / 15.2 min | *(none declared)* |
+| [Conservation Commission, July 17, 2024](/meeting-minutes/conservation-commission/2024-07-17-xFliMii1NhE) | reference | — / 15.7 min | *(none declared)* |
+| [Conservation Commission, August 7, 2024](/meeting-minutes/conservation-commission/2024-08-07-1wCUXj19Wt4) | reference | — / 15.7 min | *(none declared)* |
+| [Conservation Commission, August 21, 2024](/meeting-minutes/conservation-commission/2024-08-21-CJEQ188X8uk) | reference | — / 13.4 min | *(none declared)* |
+| [Conservation Commission, September 4, 2024](/meeting-minutes/conservation-commission/2024-09-04-rjPfHPmzPII) | reference | — / 15.5 min | *(none declared)* |
+| [Conservation Commission, September 18, 2024](/meeting-minutes/conservation-commission/2024-09-18-tL34lNUIWMM) | reference | — / 13.2 min | *(none declared)* |
+| [Conservation Commission, October 2, 2024](/meeting-minutes/conservation-commission/2024-10-02-JZqBFxZMMDE) | reference | — / 11.0 min | *(none declared)* |
+| [Conservation Commission, October 16, 2024](/meeting-minutes/conservation-commission/2024-10-16-TqwwQRIxrtg) | reference | — / 15.6 min | *(none declared)* |
+| [Conservation Commission, November 6, 2024](/meeting-minutes/conservation-commission/2024-11-06-hH-dAWkRKAU) | reference | — / 16.2 min | *(none declared)* |
+| [Conservation Commission, December 4, 2024](/meeting-minutes/conservation-commission/2024-12-04-JsViyrN-gg4) | reference | — / 15.6 min | *(none declared)* |
+| [Conservation Commission, December 18, 2024](/meeting-minutes/conservation-commission/2024-12-18-5QMBgTUGEGk) | reference | — / 15.3 min | *(none declared)* |
+| [Conservation Commission, January 8, 2025](/meeting-minutes/conservation-commission/2025-01-08-d7h-ZV497xA) | reference | — / 18.2 min | *(none declared)* |
+| [Conservation Commission, January 22, 2025](/meeting-minutes/conservation-commission/2025-01-22-cMbk3X2WWn4) | reference | — / 15.7 min | *(none declared)* |
+| [Conservation Commission, January 29, 2025](/meeting-minutes/conservation-commission/2025-01-29-pNRrIqk_hxE) | reference | — / 11.6 min | *(none declared)* |
+| [Conservation Commission, February 5, 2025](/meeting-minutes/conservation-commission/2025-02-05-sAX6qeo_BTM) | reference | — / 10.6 min | *(none declared)* |
+| [Conservation Commission, February 19, 2025](/meeting-minutes/conservation-commission/2025-02-19-o_tR8VveP00) | reference | — / 15.0 min | *(none declared)* |
+| [Conservation Commission, March 6, 2025](/meeting-minutes/conservation-commission/2025-03-06-ABtKi_hjS0I) | reference | — / 11.2 min | *(none declared)* |
+| [Conservation Commission, March 19, 2025](/meeting-minutes/conservation-commission/2025-03-19-jnum9ymr6c0) | reference | — / 14.2 min | *(none declared)* |
+| [Conservation Commission, April 2, 2025](/meeting-minutes/conservation-commission/2025-04-02-fYmCbmK81i0) | reference | — / 15.7 min | *(none declared)* |
+| [Conservation Commission, April 16, 2025](/meeting-minutes/conservation-commission/2025-04-16-1Y3M0XO4jVk) | reference | — / 17.5 min | *(none declared)* |
+| [Conservation Commission, May 7, 2025](/meeting-minutes/conservation-commission/2025-05-07-FxrJwyarBj4) | reference | — / 18.9 min | *(none declared)* |
+| [Conservation Commission, May 21, 2025](/meeting-minutes/conservation-commission/2025-05-21-XoSynYiQdA4) | reference | — / 15.6 min | *(none declared)* |
+| [Conservation Commission, June 4, 2025](/meeting-minutes/conservation-commission/2025-06-04-qtPUVc73dOA) | reference | — / 16.2 min | *(none declared)* |
+| [Conservation Commission, June 18, 2025](/meeting-minutes/conservation-commission/2025-06-18-n4UFOBBGKAE) | reference | — / 15.7 min | *(none declared)* |
+| [Conservation Commission, July 2, 2025](/meeting-minutes/conservation-commission/2025-07-02-mjeRldrNQ_o) | reference | — / 18.0 min | *(none declared)* |
+| [Conservation Commission, July 16, 2025](/meeting-minutes/conservation-commission/2025-07-16-KJ2OpXjkas4) | reference | — / 17.5 min | *(none declared)* |
+| [Conservation Commission, August 6, 2025](/meeting-minutes/conservation-commission/2025-08-06-7VJdtRhRm_I) | reference | — / 16.7 min | *(none declared)* |
+| [Conservation Commission, August 20, 2025](/meeting-minutes/conservation-commission/2025-08-20-jsY1pCwV0BM) | reference | — / 15.8 min | *(none declared)* |
+| [Conservation Commission, September 3, 2025](/meeting-minutes/conservation-commission/2025-09-03-U_JwFy-OSJE) | reference | — / 15.7 min | *(none declared)* |
+| [Conservation Commission, September 17, 2025](/meeting-minutes/conservation-commission/2025-09-17-TsMhItPmnFA) | reference | — / 15.7 min | *(none declared)* |
+| [Conservation Commission, October 1, 2025](/meeting-minutes/conservation-commission/2025-10-01-nht3nghb4DI) | reference | — / 15.7 min | *(none declared)* |
+| [Conservation Commission, October 15, 2025](/meeting-minutes/conservation-commission/2025-10-15-yDzKXkjJjnw) | reference | — / 13.7 min | *(none declared)* |
+| [Conservation Commission, November 5, 2025](/meeting-minutes/conservation-commission/2025-11-05-ZSv6lnXAJ0s) | reference | — / 17.9 min | *(none declared)* |
+| [Conservation Commission, November 19, 2025](/meeting-minutes/conservation-commission/2025-11-19-d5iondNGPqI) | reference | — / 13.2 min | *(none declared)* |
+| [Conservation Commission, December 3, 2025](/meeting-minutes/conservation-commission/2025-12-03-4I5MjCAGeS8) | reference | — / 18.3 min | *(none declared)* |
+| [Conservation Commission, December 17, 2025](/meeting-minutes/conservation-commission/2025-12-17-tYszo6SL09E) | reference | — / 14.8 min | *(none declared)* |
+| [Conservation Commission, January 7, 2026](/meeting-minutes/conservation-commission/2026-01-07-_2ZLYaepMA8) | reference | — / 17.5 min | *(none declared)* |
+| [Conservation Commission, January 28, 2026](/meeting-minutes/conservation-commission/2026-01-28-CUTFWd-h8d8) | reference | — / 17.9 min | *(none declared)* |
+| [Conservation Commission, February 4, 2026](/meeting-minutes/conservation-commission/2026-02-04-kNyg6uCibs0) | reference | — / 15.4 min | *(none declared)* |
+| [Conservation Commission, February 18, 2026](/meeting-minutes/conservation-commission/2026-02-18-rWS_CLPpjmQ) | reference | — / 17.2 min | *(none declared)* |
+| [Conservation Commission, March 4, 2026](/meeting-minutes/conservation-commission/2026-03-04-uHp7Jb4xQ1E) | reference | — / 17.6 min | *(none declared)* |
+| [Conservation Commission, March 18, 2026](/meeting-minutes/conservation-commission/2026-03-18-qRjZFlAZx6M) | reference | — / 15.6 min | *(none declared)* |
+| [Conservation Commission, April 1, 2026](/meeting-minutes/conservation-commission/2026-04-01-6e1qqy-V_rk) | reference | — / 16.9 min | *(none declared)* |
+| [Conservation Commission, April 15, 2026](/meeting-minutes/conservation-commission/2026-04-15-u8GqHtL09c8) | reference | — / 17.0 min | *(none declared)* |
+| [Conservation Commission, May 6, 2026](/meeting-minutes/conservation-commission/2026-05-06-KB-QiAFS55Q) | reference | — / 18.6 min | *(none declared)* |
+| [Conservation Commission, May 20, 2026](/meeting-minutes/conservation-commission/2026-05-20-C4Td8XQ2b-Y) | reference | — / 16.8 min | *(none declared)* |
+| [Conservation Commission, May 21, 2026](/meeting-minutes/conservation-commission/2026-05-21-ZTudRDDxJ1Y) | reference | — / 9.4 min | *(none declared)* |
+| [Conservation Commission, June 3, 2026](/meeting-minutes/conservation-commission/2026-06-03-KER5caW3LK0) | reference | — / 16.1 min | *(none declared)* |
+| [Conservation Commission, June 17, 2026](/meeting-minutes/conservation-commission/2026-06-17-rDm3pV3tJNs) | reference | — / 20.5 min | *(none declared)* |
+| [Conservation Commission, July 1, 2026](/meeting-minutes/conservation-commission/2026-07-01-un0bhVKAzGs) | reference | — / 18.0 min | *(none declared)* |
+| [Conservation Commission, August 5, 2026](/meeting-minutes/conservation-commission/2026-08-05-GZqWkWkz8IY) | reference | — / 16.8 min | *(none declared)* |
+| [Conservation Commission, August 19, 2026](/meeting-minutes/conservation-commission/2026-08-19-cNWQtYXh2fQ) | reference | — / 16.1 min | *(none declared)* |
+| [Conservation Commission, September 2, 2026](/meeting-minutes/conservation-commission/2026-09-02-9E1d1VRhxCs) | reference | — / 15.1 min | *(none declared)* |
+| [Conservation Commission, September 16, 2026](/meeting-minutes/conservation-commission/2026-09-16-KXzIph3Demg) | reference | — / 17.7 min | *(none declared)* |
+| [Conservation Commission, October 7, 2026](/meeting-minutes/conservation-commission/2026-10-07-fuvplLsgLNE) | reference | — / 18.1 min | *(none declared)* |
+| [Conservation Commission, October 21, 2026](/meeting-minutes/conservation-commission/2026-10-21-hB7nDLUXqXk) | reference | — / 14.1 min | *(none declared)* |
+| [Council on Aging, September 10, 2024](/meeting-minutes/council-on-aging/2024-09-10-O5apGU3rlO8) | reference | — / 17.5 min | *(none declared)* |
+| [Council on Aging, November 12, 2024](/meeting-minutes/council-on-aging/2024-11-12-MQvdf8JrUaw) | reference | — / 13.9 min | *(none declared)* |
+| [Council on Aging, December 10, 2024](/meeting-minutes/council-on-aging/2024-12-10-09uW_d_1ytY) | reference | — / 13.8 min | *(none declared)* |
+| [Council on Aging, January 14, 2025](/meeting-minutes/council-on-aging/2025-01-14-raPBe7t6BNc) | reference | — / 14.0 min | *(none declared)* |
+| [Council on Aging, February 11, 2025](/meeting-minutes/council-on-aging/2025-02-11-SswPYP5ka84) | reference | — / 12.8 min | *(none declared)* |
+| [Council on Aging, March 11, 2025](/meeting-minutes/council-on-aging/2025-03-11-UGHhgLKnRQQ) | reference | — / 12.4 min | *(none declared)* |
+| [Council on Aging, April 8, 2025](/meeting-minutes/council-on-aging/2025-04-08-RfsZWaMiMFc) | reference | — / 14.2 min | *(none declared)* |
+| [Council on Aging, May 13, 2025](/meeting-minutes/council-on-aging/2025-05-13-aoT70pHykbc) | reference | — / 17.0 min | *(none declared)* |
+| [Council on Aging, June 10, 2025](/meeting-minutes/council-on-aging/2025-06-10-vrn4Y9WZqFY) | reference | — / 15.9 min | *(none declared)* |
+| [Council on Aging, July 8, 2025](/meeting-minutes/council-on-aging/2025-07-08-CVDLaeZb4u0) | reference | — / 15.3 min | *(none declared)* |
+| [Council on Aging, August 12, 2025](/meeting-minutes/council-on-aging/2025-08-12-J4NAbAONyUo) | reference | — / 14.8 min | *(none declared)* |
+| [Council on Aging, September 9, 2025](/meeting-minutes/council-on-aging/2025-09-09-ppoKCJKKywE) | reference | — / 16.1 min | *(none declared)* |
+| [Council on Aging, October 14, 2025](/meeting-minutes/council-on-aging/2025-10-14-bp9W0BRL7Q0) | reference | — / 16.6 min | *(none declared)* |
+| [Council on Aging, November 18, 2025](/meeting-minutes/council-on-aging/2025-11-18-BFFsMyBVRWc) | reference | — / 18.2 min | *(none declared)* |
+| [Council on Aging, December 9, 2025](/meeting-minutes/council-on-aging/2025-12-09-pCETjJH_U8Y) | reference | — / 14.8 min | *(none declared)* |
+| [Council on Aging, January 13, 2026](/meeting-minutes/council-on-aging/2026-01-13-juESqeSw0c0) | reference | — / 15.6 min | *(none declared)* |
+| [Council on Aging, February 10, 2026](/meeting-minutes/council-on-aging/2026-02-10-2brDgGdfJD8) | reference | — / 16.5 min | *(none declared)* |
+| [Council on Aging, March 10, 2026](/meeting-minutes/council-on-aging/2026-03-10-drYl3vy4k8c) | reference | — / 15.9 min | *(none declared)* |
+| [Council on Aging, April 14, 2026](/meeting-minutes/council-on-aging/2026-04-14-cjRQCwRWJdU) | reference | — / 18.1 min | *(none declared)* |
+| [Council on Aging, May 12, 2026](/meeting-minutes/council-on-aging/2026-05-12-2sGk_OTwL_c) | reference | — / 15.2 min | *(none declared)* |
+| [Council on Aging, June 9, 2026](/meeting-minutes/council-on-aging/2026-06-09-Mpy-SIWetZk) | reference | — / 16.3 min | *(none declared)* |
+| [Council on Aging, July 14, 2026](/meeting-minutes/council-on-aging/2026-07-14-R5R3xadnDc4) | reference | — / 16.0 min | *(none declared)* |
+| [Council on Aging, August 11, 2026](/meeting-minutes/council-on-aging/2026-08-11-a8-FjUsW9iw) | reference | — / 13.3 min | *(none declared)* |
+| [Council on Aging, September 8, 2026](/meeting-minutes/council-on-aging/2026-09-08-z6Wp_dJsdtA) | reference | — / 13.8 min | *(none declared)* |
+| [Council on Aging, October 13, 2026](/meeting-minutes/council-on-aging/2026-10-13-mNXN17bBNE0) | reference | — / 13.0 min | *(none declared)* |
+| [Economic Development Committee, July 27, 2023](/meeting-minutes/economic-development-committee/2023-07-27-qG8Mv02IVrE) | reference | — / 11.3 min | *(none declared)* |
+| [Economic Development Committee, August 24, 2023](/meeting-minutes/economic-development-committee/2023-08-24-0XEPykVQQ70) | reference | — / 11.3 min | *(none declared)* |
+| [Economic Development Committee, January 25, 2024](/meeting-minutes/economic-development-committee/2024-01-25-7rregbbaVBQ) | reference | — / 9.9 min | *(none declared)* |
+| [Economic Development Committee, April 25, 2024](/meeting-minutes/economic-development-committee/2024-04-25-ahd8iCDNKzo) | reference | — / 11.4 min | *(none declared)* |
+| [Economic Development Committee, June 27, 2024](/meeting-minutes/economic-development-committee/2024-06-27-ant2Dcu8ey8) | reference | — / 12.1 min | *(none declared)* |
+| [Economic Development Committee, July 25, 2024](/meeting-minutes/economic-development-committee/2024-07-25-ENM4Z2DMni0) | reference | — / 14.0 min | *(none declared)* |
+| [Economic Development Committee, January 23, 2025](/meeting-minutes/economic-development-committee/2025-01-23-63fnQKXmvfU) | reference | — / 10.8 min | *(none declared)* |
+| [Economic Development Committee, March 27, 2025](/meeting-minutes/economic-development-committee/2025-03-27-WdsSVR5sGdQ) | reference | — / 9.8 min | *(none declared)* |
+| [Economic Development Committee, August 18, 2025](/meeting-minutes/economic-development-committee/2025-08-18-wxhtJTIUl80) | reference | — / 13.3 min | *(none declared)* |
+| [Economic Development Committee, October 14, 2025](/meeting-minutes/economic-development-committee/2025-10-14-SmlTZn1A5M4) | reference | — / 11.1 min | *(none declared)* |
+| [Economic Development Committee, December 9, 2025](/meeting-minutes/economic-development-committee/2025-12-09-ItVUjvPTrvw) | reference | — / 14.2 min | *(none declared)* |
+| [Economic Development Committee, January 13, 2026](/meeting-minutes/economic-development-committee/2026-01-13-wV6KQlQKvjY) | reference | — / 10.8 min | *(none declared)* |
+| [Economic Development Committee, February 10, 2026](/meeting-minutes/economic-development-committee/2026-02-10-QewkKbHGmSU) | reference | — / 13.6 min | *(none declared)* |
+| [Economic Development Committee, April 14, 2026](/meeting-minutes/economic-development-committee/2026-04-14-iyPSp6D0fck) | reference | — / 14.8 min | *(none declared)* |
+| [Economic Development Committee, May 12, 2026](/meeting-minutes/economic-development-committee/2026-05-12-dKFTvMbCVeI) | reference | — / 10.5 min | *(none declared)* |
+| [Finance Committee Appointing Committee, February 18, 2025](/meeting-minutes/finance-committee-appointing-committee/2025-02-18-PbkkhwgRyUQ) | reference | — / 9.5 min | *(none declared)* |
+| [Finance Committee Appointing Committee, February 18, 2025](/meeting-minutes/finance-committee-appointing-committee/2025-02-18-aRgNS23pU6U) | reference | — / 9.5 min | *(none declared)* |
+| [Finance Committee Appointing Committee, July 6, 2026](/meeting-minutes/finance-committee-appointing-committee/2026-07-06-CqrerhpDpWk) | reference | — / 10.4 min | *(none declared)* |
+| [Finance Committee, February 18, 2021](/meeting-minutes/finance-committee/2021-02-18-KWaxWmbaZJY) | reference | — / 14.3 min | *(none declared)* |
+| [Finance Committee, February 25, 2021](/meeting-minutes/finance-committee/2021-02-25-MD-v74NN8GA) | reference | — / 17.1 min | *(none declared)* |
+| [Finance Committee, March 4, 2021](/meeting-minutes/finance-committee/2021-03-04-_bPz3laZjho) | reference | — / 14.0 min | *(none declared)* |
+| [Finance Committee, March 11, 2021](/meeting-minutes/finance-committee/2021-03-11-ECPjzDPjb4U) | reference | — / 12.3 min | *(none declared)* |
+| [Finance Committee, March 18, 2021](/meeting-minutes/finance-committee/2021-03-18-jQAj16kJQlc) | reference | — / 15.0 min | *(none declared)* |
+| [Finance Committee, March 25, 2021](/meeting-minutes/finance-committee/2021-03-25-7gYgK9UngKw) | reference | — / 15.8 min | *(none declared)* |
+| [Finance Committee, April 8, 2021](/meeting-minutes/finance-committee/2021-04-08-bH8I43bC39A) | reference | — / 11.1 min | *(none declared)* |
+| [Finance Committee, April 22, 2021](/meeting-minutes/finance-committee/2021-04-22-texxekoncIg) | reference | — / 13.3 min | *(none declared)* |
+| [Finance Committee, April 29, 2021](/meeting-minutes/finance-committee/2021-04-29-uZCJDM7s_7E) | reference | — / 15.9 min | *(none declared)* |
+| [Finance Committee, May 13, 2021](/meeting-minutes/finance-committee/2021-05-13-05MqeNVvmeE) | reference | — / 10.9 min | *(none declared)* |
+| [Finance Committee, June 17, 2021](/meeting-minutes/finance-committee/2021-06-17-Shvh1cVcpNk) | reference | — / 12.3 min | *(none declared)* |
+| [Finance Committee, July 8, 2021](/meeting-minutes/finance-committee/2021-07-08-eK06js9owF0) | reference | — / 11.8 min | *(none declared)* |
+| [Finance Committee, July 22, 2021](/meeting-minutes/finance-committee/2021-07-22-Ptge-y5lLTc) | reference | — / 12.8 min | *(none declared)* |
+| [Finance Committee, August 12, 2021](/meeting-minutes/finance-committee/2021-08-12-ZBYyoyyTYEE) | reference | — / 15.9 min | *(none declared)* |
+| [Finance Committee, August 26, 2021](/meeting-minutes/finance-committee/2021-08-26-tPdpklZ0snY) | reference | — / 13.5 min | *(none declared)* |
+| [Finance Committee, September 9, 2021](/meeting-minutes/finance-committee/2021-09-09-KnaBTOgjiLc) | reference | — / 13.1 min | *(none declared)* |
+| [Finance Committee, September 23, 2021](/meeting-minutes/finance-committee/2021-09-23-gslPh-rXx9M) | reference | — / 13.4 min | *(none declared)* |
+| [Finance Committee, October 7, 2021](/meeting-minutes/finance-committee/2021-10-07-cmyWUZzeBS0) | reference | — / 12.2 min | *(none declared)* |
+| [Finance Committee, October 14, 2021](/meeting-minutes/finance-committee/2021-10-14-ueog2Zsqgtw) | reference | — / 17.5 min | *(none declared)* |
+| [Finance Committee, October 28, 2021](/meeting-minutes/finance-committee/2021-10-28-Gp102JkcQdU) | reference | — / 14.4 min | *(none declared)* |
+| [Finance Committee, November 4, 2021](/meeting-minutes/finance-committee/2021-11-04-kUqJBVgp2mk) | reference | — / 15.0 min | *(none declared)* |
+| [Finance Committee, December 9, 2021](/meeting-minutes/finance-committee/2021-12-09-QMBbwgHWYMA) | reference | — / 13.4 min | *(none declared)* |
+| [Finance Committee, January 13, 2022](/meeting-minutes/finance-committee/2022-01-13-TMmBa6ueRGI) | reference | — / 13.1 min | *(none declared)* |
+| [Finance Committee, January 27, 2022](/meeting-minutes/finance-committee/2022-01-27-6E3z38z9SBI) | reference | — / 13.9 min | *(none declared)* |
+| [Finance Committee, February 17, 2022](/meeting-minutes/finance-committee/2022-02-17-Qx7EgjovsNE) | reference | — / 14.8 min | *(none declared)* |
+| [Finance Committee, February 24, 2022](/meeting-minutes/finance-committee/2022-02-24-HvDze8cpyuc) | reference | — / 14.1 min | *(none declared)* |
+| [Finance Committee, March 3, 2022](/meeting-minutes/finance-committee/2022-03-03-WiHv0M7McRQ) | reference | — / 14.3 min | *(none declared)* |
+| [Finance Committee, March 10, 2022](/meeting-minutes/finance-committee/2022-03-10-vSc5ybV_uRQ) | reference | — / 12.7 min | *(none declared)* |
+| [Finance Committee, March 17, 2022](/meeting-minutes/finance-committee/2022-03-17-7yNtfe8w2ks) | reference | — / 15.8 min | *(none declared)* |
+| [Finance Committee, March 23, 2022](/meeting-minutes/finance-committee/2022-03-23-2FyhUzpRxwU) | reference | — / 13.4 min | *(none declared)* |
+| [Finance Committee, March 24, 2022](/meeting-minutes/finance-committee/2022-03-24-6FyKc47eHz4) | reference | — / 16.3 min | *(none declared)* |
+| [Finance Committee, March 31, 2022](/meeting-minutes/finance-committee/2022-03-31-VeWlx3soIIM) | reference | — / 19.9 min | *(none declared)* |
+| [Finance Committee, April 14, 2022](/meeting-minutes/finance-committee/2022-04-14-ktOKlrZIyCE) | reference | — / 14.8 min | *(none declared)* |
+| [Finance Committee, April 28, 2022](/meeting-minutes/finance-committee/2022-04-28-w5L-N6S0nEk) | reference | — / 14.5 min | *(none declared)* |
+| [Finance Committee, May 19, 2022](/meeting-minutes/finance-committee/2022-05-19-2hNfk08wBbg) | reference | — / 14.7 min | *(none declared)* |
+| [Finance Committee, June 9, 2022](/meeting-minutes/finance-committee/2022-06-09-SNOaPOveH8Q) | reference | — / 11.7 min | *(none declared)* |
+| [Finance Committee, July 21, 2022](/meeting-minutes/finance-committee/2022-07-21-8jvBlfar6ZI) | reference | — / 16.8 min | *(none declared)* |
+| [Finance Committee, July 28, 2022](/meeting-minutes/finance-committee/2022-07-28-y0HomxCWWZY) | reference | — / 13.3 min | *(none declared)* |
+| [Finance Committee, August 18, 2022](/meeting-minutes/finance-committee/2022-08-18-znFqu0KxKF4) | reference | — / 12.2 min | *(none declared)* |
+| [Finance Committee, August 25, 2022](/meeting-minutes/finance-committee/2022-08-25-RO3mZ0V8uk8) | reference | — / 15.3 min | *(none declared)* |
+| [Finance Committee, September 15, 2022](/meeting-minutes/finance-committee/2022-09-15-DUq6UA_WMt8) | reference | — / 13.0 min | *(none declared)* |
+| [Finance Committee, September 29, 2022](/meeting-minutes/finance-committee/2022-09-29-7BREOgf6gBI) | reference | — / 14.0 min | *(none declared)* |
+| [Finance Committee, October 13, 2022](/meeting-minutes/finance-committee/2022-10-13-HC6Fplo95Q0) | reference | — / 16.4 min | *(none declared)* |
+| [Finance Committee, November 10, 2022](/meeting-minutes/finance-committee/2022-11-10-qwq3dSK768w) | reference | — / 14.3 min | *(none declared)* |
+| [Finance Committee, January 12, 2023](/meeting-minutes/finance-committee/2023-01-12-Mz3Ww2E893I) | reference | — / 11.4 min | *(none declared)* |
+| [Finance Committee, January 26, 2023](/meeting-minutes/finance-committee/2023-01-26-f3mPfSY148c) | reference | — / 11.6 min | *(none declared)* |
+| [Finance Committee, February 9, 2023](/meeting-minutes/finance-committee/2023-02-09-olcG99iRSew) | reference | — / 14.5 min | *(none declared)* |
+| [Finance Committee, February 16, 2023](/meeting-minutes/finance-committee/2023-02-16-G_gNfRE8my4) | reference | — / 12.7 min | *(none declared)* |
+| [Finance Committee, February 23, 2023](/meeting-minutes/finance-committee/2023-02-23-mA3U0wo2SPw) | reference | — / 13.2 min | *(none declared)* |
+| [Finance Committee, March 2, 2023](/meeting-minutes/finance-committee/2023-03-02-52iZmZ8WSsk) | reference | — / 14.5 min | *(none declared)* |
+| [Finance Committee, March 9, 2023](/meeting-minutes/finance-committee/2023-03-09-JfIbPstvpPU) | reference | — / 11.2 min | *(none declared)* |
+| [Finance Committee, March 22, 2023](/meeting-minutes/finance-committee/2023-03-22-jEXTOz3-UvY) | reference | — / 15.5 min | *(none declared)* |
+| [Finance Committee, March 23, 2023](/meeting-minutes/finance-committee/2023-03-23-t9Tp3u7OWqk) | reference | — / 14.7 min | *(none declared)* |
+| [Finance Committee, March 30, 2023](/meeting-minutes/finance-committee/2023-03-30-Ow-nI3eipPU) | reference | — / 16.9 min | *(none declared)* |
+| [Finance Committee, April 6, 2023](/meeting-minutes/finance-committee/2023-04-06-ckCnO-5t0t8) | reference | — / 15.0 min | *(none declared)* |
+| [Finance Committee, April 20, 2023](/meeting-minutes/finance-committee/2023-04-20-q91xlcBZgQ0) | reference | — / 12.8 min | *(none declared)* |
+| [Finance Committee, June 8, 2023](/meeting-minutes/finance-committee/2023-06-08-L7DbTVp8e08) | reference | — / 12.5 min | *(none declared)* |
+| [Finance Committee, June 22, 2023](/meeting-minutes/finance-committee/2023-06-22-N85HSL6BnAk) | reference | — / 11.6 min | *(none declared)* |
+| [Finance Committee, July 27, 2023](/meeting-minutes/finance-committee/2023-07-27-rm53fDdeWug) | reference | — / 12.7 min | *(none declared)* |
+| [Finance Committee, September 14, 2023](/meeting-minutes/finance-committee/2023-09-14-N8r_pTD_MR4) | reference | — / 12.7 min | *(none declared)* |
+| [Finance Committee, October 5, 2023](/meeting-minutes/finance-committee/2023-10-05-Tf9FcEWLjMc) | reference | — / 10.7 min | *(none declared)* |
+| [Finance Committee, October 12, 2023](/meeting-minutes/finance-committee/2023-10-12-xCdmsXLVWsA) | reference | — / 8.6 min | *(none declared)* |
+| [Finance Committee, November 13, 2023](/meeting-minutes/finance-committee/2023-11-13-5uVeRoP69ms) | reference | — / 12.8 min | *(none declared)* |
+| [Finance Committee, November 30, 2023](/meeting-minutes/finance-committee/2023-11-30-S1kXfBAh81g) | reference | — / 11.7 min | *(none declared)* |
+| [Finance Committee, December 7, 2023](/meeting-minutes/finance-committee/2023-12-07-MvJBksNpQqg) | reference | — / 14.7 min | *(none declared)* |
+| [Finance Committee, January 11, 2024](/meeting-minutes/finance-committee/2024-01-11-fEuICymreGY) | reference | — / 11.4 min | *(none declared)* |
+| [Finance Committee, January 18, 2024](/meeting-minutes/finance-committee/2024-01-18-yE-UAKGHwS0) | reference | — / 15.0 min | *(none declared)* |
+| [Finance Committee, January 25, 2024](/meeting-minutes/finance-committee/2024-01-25-m4hWTyvKCs4) | reference | — / 11.9 min | *(none declared)* |
+| [Finance Committee, February 8, 2024](/meeting-minutes/finance-committee/2024-02-08-zR_JoRQlnxY) | reference | — / 13.7 min | *(none declared)* |
+| [Finance Committee, February 21, 2024](/meeting-minutes/finance-committee/2024-02-21-91s4aFl4MSo) | reference | — / 15.2 min | *(none declared)* |
+| [Finance Committee, February 22, 2024](/meeting-minutes/finance-committee/2024-02-22-8k8wImvZjEs) | reference | — / 12.0 min | *(none declared)* |
+| [Finance Committee, February 29, 2024](/meeting-minutes/finance-committee/2024-02-29-3g3xrtDvKHI) | reference | — / 14.4 min | *(none declared)* |
+| [Finance Committee, March 7, 2024](/meeting-minutes/finance-committee/2024-03-07-U0WTv-h8CI4) | reference | — / 17.2 min | *(none declared)* |
+| [Finance Committee, March 14, 2024](/meeting-minutes/finance-committee/2024-03-14-holFjmBBsmM) | reference | — / 14.6 min | *(none declared)* |
+| [Finance Committee, March 20, 2024](/meeting-minutes/finance-committee/2024-03-20-ADYe_LL5Y2I) | reference | — / 16.6 min | *(none declared)* |
+| [Finance Committee, March 21, 2024](/meeting-minutes/finance-committee/2024-03-21-5auQ8RlmtsE) | reference | — / 14.0 min | *(none declared)* |
+| [Finance Committee, March 28, 2024](/meeting-minutes/finance-committee/2024-03-28-sR9lACvvjJo) | reference | — / 15.3 min | *(none declared)* |
+| [Finance Committee, April 4, 2024](/meeting-minutes/finance-committee/2024-04-04-_PCUMXOxLLw) | reference | — / 14.5 min | *(none declared)* |
+| [Finance Committee, April 11, 2024](/meeting-minutes/finance-committee/2024-04-11-rYpKNfbACBU) | reference | — / 15.7 min | *(none declared)* |
+| [Finance Committee, April 25, 2024](/meeting-minutes/finance-committee/2024-04-25-1B3ja9iw4rs) | reference | — / 13.7 min | *(none declared)* |
+| [Finance Committee, May 23, 2024](/meeting-minutes/finance-committee/2024-05-23-yGE1_U8665E) | reference | — / 14.2 min | *(none declared)* |
+| [Finance Committee, June 13, 2024](/meeting-minutes/finance-committee/2024-06-13-bRBKCpRoj9Y) | reference | — / 13.3 min | *(none declared)* |
+| [Finance Committee, June 27, 2024](/meeting-minutes/finance-committee/2024-06-27-NcSeV3TpZxw) | reference | — / 13.2 min | *(none declared)* |
+| [Finance Committee, July 11, 2024](/meeting-minutes/finance-committee/2024-07-11-C9H6v6mU4RU) | reference | — / 14.3 min | *(none declared)* |
+| [Finance Committee, July 25, 2024](/meeting-minutes/finance-committee/2024-07-25-RnTrjkRl38g) | reference | — / 14.7 min | *(none declared)* |
+| [Finance Committee, August 8, 2024](/meeting-minutes/finance-committee/2024-08-08-NVJX1vLTenM) | reference | — / 14.4 min | *(none declared)* |
+| [Finance Committee, August 22, 2024](/meeting-minutes/finance-committee/2024-08-22-NxWpn3eRjaA) | reference | — / 13.5 min | *(none declared)* |
+| [Finance Committee, September 12, 2024](/meeting-minutes/finance-committee/2024-09-12-QiKHzyzEJAQ) | reference | — / 15.4 min | *(none declared)* |
+| [Finance Committee, September 26, 2024](/meeting-minutes/finance-committee/2024-09-26-GUHNS4ZUcHQ) | reference | — / 13.2 min | *(none declared)* |
+| [Finance Committee, October 10, 2024](/meeting-minutes/finance-committee/2024-10-10-XPr4AzVCVIc) | reference | — / 13.5 min | *(none declared)* |
+| [Finance Committee, October 24, 2024](/meeting-minutes/finance-committee/2024-10-24-ZjVvlA066HQ) | reference | — / 16.3 min | *(none declared)* |
+| [Finance Committee, December 19, 2024](/meeting-minutes/finance-committee/2024-12-19-v2oEg3veYK8) | reference | — / 14.2 min | *(none declared)* |
+| [Finance Committee, January 9, 2025](/meeting-minutes/finance-committee/2025-01-09-d-FWc0LFXoo) | reference | — / 13.8 min | *(none declared)* |
+| [Finance Committee, February 13, 2025](/meeting-minutes/finance-committee/2025-02-13-cY5HD8_Yd30) | reference | — / 14.2 min | *(none declared)* |
+| [Finance Committee, February 20, 2025](/meeting-minutes/finance-committee/2025-02-20--TBkA0IB-6M) | reference | — / 14.4 min | *(none declared)* |
+| [Finance Committee, February 25, 2025](/meeting-minutes/finance-committee/2025-02-25-Lb2TDvCDqVE) | reference | — / 15.9 min | *(none declared)* |
+| [Finance Committee, February 27, 2025](/meeting-minutes/finance-committee/2025-02-27-ELz_GSm4PVE) | reference | — / 13.1 min | *(none declared)* |
+| [Finance Committee, March 6, 2025](/meeting-minutes/finance-committee/2025-03-06-qne6hXWBxSw) | reference | — / 14.8 min | *(none declared)* |
+| [Finance Committee, March 13, 2025](/meeting-minutes/finance-committee/2025-03-13-9wQPY1_hgvA) | reference | — / 16.1 min | *(none declared)* |
+| [Finance Committee, March 20, 2025](/meeting-minutes/finance-committee/2025-03-20-PV-DE3N8_PU) | reference | — / 16.5 min | *(none declared)* |
+| [Finance Committee, March 27, 2025](/meeting-minutes/finance-committee/2025-03-27-8akyCtwNkRo) | reference | — / 22.7 min | *(none declared)* |
+| [Finance Committee, March 27, 2025](/meeting-minutes/finance-committee/2025-03-27-MnpK2weIOA4) | reference | — / 22.2 min | *(none declared)* |
+| [Finance Committee, April 3, 2025](/meeting-minutes/finance-committee/2025-04-03-W6RsSTMjlNg) | reference | — / 23.5 min | *(none declared)* |
+| [Finance Committee, April 24, 2025](/meeting-minutes/finance-committee/2025-04-24-YhDc0ZFilHw) | reference | — / 17.4 min | *(none declared)* |
+| [Finance Committee, May 8, 2025](/meeting-minutes/finance-committee/2025-05-08-Tarq_Av7WLA) | reference | — / 15.8 min | *(none declared)* |
+| [Finance Committee, June 12, 2025](/meeting-minutes/finance-committee/2025-06-12-iRhUTui_HRY) | reference | — / 15.6 min | *(none declared)* |
+| [Finance Committee, July 10, 2025](/meeting-minutes/finance-committee/2025-07-10-3AaufOKblk0) | reference | — / 13.3 min | *(none declared)* |
+| [Finance Committee, July 24, 2025](/meeting-minutes/finance-committee/2025-07-24-4d4oge9ViLg) | reference | — / 13.4 min | *(none declared)* |
+| [Finance Committee, August 14, 2025](/meeting-minutes/finance-committee/2025-08-14-_ZqmXdoz_v0) | reference | — / 16.4 min | *(none declared)* |
+| [Finance Committee, September 25, 2025](/meeting-minutes/finance-committee/2025-09-25-4t1rFrF7I5A) | reference | — / 13.0 min | *(none declared)* |
+| [Finance Committee, October 9, 2025](/meeting-minutes/finance-committee/2025-10-09-ij1bfNLrBiI) | reference | — / 13.1 min | *(none declared)* |
+| [Finance Committee, October 23, 2025](/meeting-minutes/finance-committee/2025-10-23-ji1JxJt4efU) | reference | — / 17.0 min | *(none declared)* |
+| [Finance Committee, November 13, 2025](/meeting-minutes/finance-committee/2025-11-13-qj8kSA4GSb0) | reference | — / 18.3 min | *(none declared)* |
+| [Finance Committee, January 8, 2026](/meeting-minutes/finance-committee/2026-01-08-GykEFtJVvsM) | reference | — / 17.2 min | *(none declared)* |
+| [Finance Committee, February 5, 2026](/meeting-minutes/finance-committee/2026-02-05-6csHPPkKg7c) | reference | — / 18.4 min | *(none declared)* |
+| [Finance Committee, February 12, 2026](/meeting-minutes/finance-committee/2026-02-12-iGeYk_rpnO4) | reference | — / 14.9 min | *(none declared)* |
+| [Finance Committee, February 19, 2026](/meeting-minutes/finance-committee/2026-02-19-zdeK5iigzNY) | reference | — / 30.5 min | *(none declared)* |
+| [Finance Committee, February 26, 2026](/meeting-minutes/finance-committee/2026-02-26-A4dDCncf5cQ) | reference | — / 24.8 min | *(none declared)* |
+| [Finance Committee, March 5, 2026](/meeting-minutes/finance-committee/2026-03-05-nOjhdlIY9m4) | reference | — / 17.0 min | *(none declared)* |
+| [Finance Committee, March 12, 2026](/meeting-minutes/finance-committee/2026-03-12-bwTkjEJBMFc) | reference | — / 25.9 min | *(none declared)* |
+| [Finance Committee, March 19, 2026](/meeting-minutes/finance-committee/2026-03-19-ZOabmf1VKjg) | reference | — / 12.7 min | *(none declared)* |
+| [Finance Committee, March 26, 2026](/meeting-minutes/finance-committee/2026-03-26-tZv6KVIYb9w) | reference | — / 22.9 min | *(none declared)* |
+| [Finance Committee, April 2, 2026](/meeting-minutes/finance-committee/2026-04-02-erUXTd1phSg) | reference | — / 22.4 min | *(none declared)* |
+| [Finance Committee, April 6, 2026](/meeting-minutes/finance-committee/2026-04-06-nyauVYl3zd0) | reference | — / 16.6 min | *(none declared)* |
+| [Finance Committee, May 28, 2026](/meeting-minutes/finance-committee/2026-05-28-BUB31HGDim4) | reference | — / 16.1 min | *(none declared)* |
+| [Finance Committee, June 11, 2026](/meeting-minutes/finance-committee/2026-06-11-UQXjJNVXTC8) | reference | — / 13.6 min | *(none declared)* |
+| [Finance Committee, July 23, 2026](/meeting-minutes/finance-committee/2026-07-23-KZQrOju5CWo) | reference | — / 19.2 min | *(none declared)* |
+| [Finance Committee, August 13, 2026](/meeting-minutes/finance-committee/2026-08-13-v4qvpgKlYRg) | reference | — / 18.9 min | *(none declared)* |
+| [Finance Committee, August 27, 2026](/meeting-minutes/finance-committee/2026-08-27-LGdwK249dSA) | reference | — / 19.0 min | *(none declared)* |
+| [Finance Committee, September 24, 2026](/meeting-minutes/finance-committee/2026-09-24-euQG57Zrac0) | reference | — / 12.2 min | *(none declared)* |
+| [Finance Committee, October 8, 2026](/meeting-minutes/finance-committee/2026-10-08-1Md_UYOImC0) | reference | — / 13.1 min | *(none declared)* |
+| [Finance Committee, October 22, 2026](/meeting-minutes/finance-committee/2026-10-22-wQWhIwYOc9o) | reference | — / 10.6 min | *(none declared)* |
+| [Green Community Task Force, May 19, 2021](/meeting-minutes/green-community-task-force/2021-05-19-kw63sgCK9iE) | reference | — / 11.5 min | *(none declared)* |
+| [Green Community Task Force, August 24, 2021](/meeting-minutes/green-community-task-force/2021-08-24-dI8A3M0D3hg) | reference | — / 10.6 min | *(none declared)* |
+| [Green Community Task Force, December 15, 2021](/meeting-minutes/green-community-task-force/2021-12-15-Qbyu6nmtbxQ) | reference | — / 11.1 min | *(none declared)* |
+| [Green Community Task Force, February 16, 2022](/meeting-minutes/green-community-task-force/2022-02-16-_5jIJqQ2zpQ) | reference | — / 11.4 min | *(none declared)* |
+| [Green Community Task Force, August 11, 2022](/meeting-minutes/green-community-task-force/2022-08-11-aKYNHFp3o6k) | reference | — / 11.4 min | *(none declared)* |
+| [Green Community Task Force, September 26, 2022](/meeting-minutes/green-community-task-force/2022-09-26-LhdqyE4ayWY) | reference | — / 11.6 min | *(none declared)* |
+| [Green Community Task Force, October 19, 2022](/meeting-minutes/green-community-task-force/2022-10-19-F9L6IJojLfg) | reference | — / 11.4 min | *(none declared)* |
+| [Green Community Task Force, December 8, 2022](/meeting-minutes/green-community-task-force/2022-12-08-u_-HtB82u7A) | reference | — / 10.4 min | *(none declared)* |
+| [Green Community Task Force, October 17, 2023](/meeting-minutes/green-community-task-force/2023-10-17-o8j-LOuk52I) | reference | — / 11.5 min | *(none declared)* |
+| [Green Community Task Force, January 29, 2024](/meeting-minutes/green-community-task-force/2024-01-29-kxzQI7ktRpU) | reference | — / 11.3 min | *(none declared)* |
+| [Green Community Task Force, March 6, 2024](/meeting-minutes/green-community-task-force/2024-03-06-E_5szEIz33k) | reference | — / 11.6 min | *(none declared)* |
+| [Green Community Task Force, May 6, 2024](/meeting-minutes/green-community-task-force/2024-05-06-aXzBiF_sShI) | reference | — / 12.0 min | *(none declared)* |
+| [Green Community Task Force, June 3, 2024](/meeting-minutes/green-community-task-force/2024-06-03-usOT9rVMmUU) | reference | — / 10.7 min | *(none declared)* |
+| [Green Community Task Force, July 15, 2024](/meeting-minutes/green-community-task-force/2024-07-15-mSx3zqgGurk) | reference | — / 10.5 min | *(none declared)* |
+| [Green Community Task Force, August 19, 2024](/meeting-minutes/green-community-task-force/2024-08-19-bQ4tpLW0DqM) | reference | — / 11.2 min | *(none declared)* |
+| [Green Community Task Force, September 12, 2024](/meeting-minutes/green-community-task-force/2024-09-12-wpcB837-iWA) | reference | — / 11.2 min | *(none declared)* |
+| [Green Community Task Force, December 9, 2024](/meeting-minutes/green-community-task-force/2024-12-09-6WNmVd-HwNo) | reference | — / 10.3 min | *(none declared)* |
+| [Green Community Task Force, February 3, 2025](/meeting-minutes/green-community-task-force/2025-02-03-CZ7vIkXn2W4) | reference | — / 12.3 min | *(none declared)* |
+| [Green Community Task Force, March 3, 2025](/meeting-minutes/green-community-task-force/2025-03-03-7nNjvq-DMsM) | reference | — / 10.2 min | *(none declared)* |
+| [Green Community Task Force, April 7, 2025](/meeting-minutes/green-community-task-force/2025-04-07-Zz2pe8AFKlo) | reference | — / 10.7 min | *(none declared)* |
+| [Green Community Task Force, June 2, 2025](/meeting-minutes/green-community-task-force/2025-06-02-xBKv2sIPPaQ) | reference | — / 13.3 min | *(none declared)* |
+| [Green Community Task Force, July 7, 2025](/meeting-minutes/green-community-task-force/2025-07-07-bm9c-IVrpOQ) | reference | — / 14.3 min | *(none declared)* |
+| [Green Community Task Force, September 8, 2025](/meeting-minutes/green-community-task-force/2025-09-08-d65uWizxA7g) | reference | — / 10.9 min | *(none declared)* |
+| [Green Community Task Force, December 15, 2025](/meeting-minutes/green-community-task-force/2025-12-15-bhjksjeL-rw) | reference | — / 12.1 min | *(none declared)* |
+| [Green Community Task Force, April 27, 2026](/meeting-minutes/green-community-task-force/2026-04-27-rjCqM1XMcwk) | reference | — / 12.6 min | *(none declared)* |
+| [Historical Commission, February 25, 2021](/meeting-minutes/historical-commission/2021-02-25-wFZ9zvR9wFM) | reference | — / 11.5 min | *(none declared)* |
+| [Historical Commission, March 25, 2021](/meeting-minutes/historical-commission/2021-03-25-uAiwNTjx1kQ) | reference | — / 11.3 min | *(none declared)* |
+| [Library Board of Trustees, February 18, 2021](/meeting-minutes/library-board-of-trustees/2021-02-18-0s0IbE-6U20) | reference | — / 12.3 min | *(none declared)* |
+| [Library Board of Trustees, March 25, 2021](/meeting-minutes/library-board-of-trustees/2021-03-25-hxysCwtUdS0) | reference | — / 12.9 min | *(none declared)* |
+| [Library Board of Trustees, April 15, 2021](/meeting-minutes/library-board-of-trustees/2021-04-15-we1s4NXZINc) | reference | — / 13.2 min | *(none declared)* |
+| [Library Board of Trustees, May 20, 2021](/meeting-minutes/library-board-of-trustees/2021-05-20-ujuODq4l2e0) | reference | — / 14.6 min | *(none declared)* |
+| [Library Board of Trustees, January 20, 2022](/meeting-minutes/library-board-of-trustees/2022-01-20-cxskhTs5eic) | reference | — / 14.1 min | *(none declared)* |
+| [Library Board of Trustees, February 17, 2022](/meeting-minutes/library-board-of-trustees/2022-02-17-0_biOaw0f7w) | reference | — / 13.3 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, January 26, 2022](/meeting-minutes/lunenburg-municipal-building-design-committee/2022-01-26-wNuVQPj-iuI) | reference | — / 13.7 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, March 7, 2022](/meeting-minutes/lunenburg-municipal-building-design-committee/2022-03-07-ywetIzfPXQ4) | reference | — / 11.8 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, March 21, 2022](/meeting-minutes/lunenburg-municipal-building-design-committee/2022-03-21-MR7pjhFZmbw) | reference | — / 11.8 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, April 4, 2022](/meeting-minutes/lunenburg-municipal-building-design-committee/2022-04-04-7o01qBS-cis) | reference | — / 12.7 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, May 16, 2022](/meeting-minutes/lunenburg-municipal-building-design-committee/2022-05-16-ciRDpmwJKpU) | reference | — / 15.2 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, June 6, 2022](/meeting-minutes/lunenburg-municipal-building-design-committee/2022-06-06-Z4c3T2pzwzM) | reference | — / 13.9 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, June 6, 2022](/meeting-minutes/lunenburg-municipal-building-design-committee/2022-06-06-vLrbSvRfXMQ) | reference | — / 14.2 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, August 29, 2022](/meeting-minutes/lunenburg-municipal-building-design-committee/2022-08-29-l_IJGYtOaV0) | reference | — / 15.0 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, October 3, 2022](/meeting-minutes/lunenburg-municipal-building-design-committee/2022-10-03-n3tLDaLAU8I) | reference | — / 10.9 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, December 19, 2022](/meeting-minutes/lunenburg-municipal-building-design-committee/2022-12-19-EBJrxpV6LmI) | reference | — / 10.6 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, January 12, 2023](/meeting-minutes/lunenburg-municipal-building-design-committee/2023-01-12-DuC3g7IMNAg) | reference | — / 9.6 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, February 6, 2023](/meeting-minutes/lunenburg-municipal-building-design-committee/2023-02-06-K-XlEX5ATGQ) | reference | — / 9.2 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, March 20, 2023](/meeting-minutes/lunenburg-municipal-building-design-committee/2023-03-20-p64tH0npzsQ) | reference | — / 11.3 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, May 1, 2023](/meeting-minutes/lunenburg-municipal-building-design-committee/2023-05-01-hKXCSmhKtfI) | reference | — / 11.6 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, August 21, 2023](/meeting-minutes/lunenburg-municipal-building-design-committee/2023-08-21-HHkYTI0GhAQ) | reference | — / 11.1 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, September 18, 2023](/meeting-minutes/lunenburg-municipal-building-design-committee/2023-09-18-sUuUXpARock) | reference | — / 11.2 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, October 16, 2023](/meeting-minutes/lunenburg-municipal-building-design-committee/2023-10-16-Tz9YPiH8CdM) | reference | — / 14.2 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, November 8, 2023](/meeting-minutes/lunenburg-municipal-building-design-committee/2023-11-08-iUnDS2ZpY_0) | reference | — / 14.4 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, September 9, 2024](/meeting-minutes/lunenburg-municipal-building-design-committee/2024-09-09-JY488mnrzrs) | reference | — / 14.7 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, September 23, 2024](/meeting-minutes/lunenburg-municipal-building-design-committee/2024-09-23-JkerRkxZWQQ) | reference | — / 14.2 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, October 21, 2024](/meeting-minutes/lunenburg-municipal-building-design-committee/2024-10-21-uqB160ybTYw) | reference | — / 14.0 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, November 14, 2024](/meeting-minutes/lunenburg-municipal-building-design-committee/2024-11-14-j1okknAkAnc) | reference | — / 13.0 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, November 20, 2024](/meeting-minutes/lunenburg-municipal-building-design-committee/2024-11-20-Yjf05zfqoII) | reference | — / 11.8 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, November 25, 2024](/meeting-minutes/lunenburg-municipal-building-design-committee/2024-11-25-Vud2hHNVOKE) | reference | — / 11.6 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, December 16, 2024](/meeting-minutes/lunenburg-municipal-building-design-committee/2024-12-16-cXzfYKL4d7k) | reference | — / 14.0 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, January 6, 2025](/meeting-minutes/lunenburg-municipal-building-design-committee/2025-01-06-En_1hJdUdvQ) | reference | — / 13.8 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, January 22, 2025](/meeting-minutes/lunenburg-municipal-building-design-committee/2025-01-22-CXE_d1u9w3o) | reference | — / 13.4 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, February 3, 2025](/meeting-minutes/lunenburg-municipal-building-design-committee/2025-02-03-Puf7maijmm0) | reference | — / 16.1 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, February 19, 2025](/meeting-minutes/lunenburg-municipal-building-design-committee/2025-02-19-8NYmyLPpCBk) | reference | — / 13.9 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, March 3, 2025](/meeting-minutes/lunenburg-municipal-building-design-committee/2025-03-03-iyc1fFHgLyM) | reference | — / 12.9 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, April 7, 2025](/meeting-minutes/lunenburg-municipal-building-design-committee/2025-04-07-qoldMIdffes) | reference | — / 15.8 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, April 30, 2025](/meeting-minutes/lunenburg-municipal-building-design-committee/2025-04-30-9uCZ9UgPfv8) | reference | — / 13.2 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, June 5, 2025](/meeting-minutes/lunenburg-municipal-building-design-committee/2025-06-05-VySnGF_Vggo) | reference | — / 12.4 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, July 10, 2025](/meeting-minutes/lunenburg-municipal-building-design-committee/2025-07-10-EXmKZd2YoYA) | reference | — / 11.9 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, August 28, 2025](/meeting-minutes/lunenburg-municipal-building-design-committee/2025-08-28-KovVxQrr5ao) | reference | — / 11.7 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, September 15, 2025](/meeting-minutes/lunenburg-municipal-building-design-committee/2025-09-15--aQaSmZD8mQ) | reference | — / 16.1 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, September 29, 2025](/meeting-minutes/lunenburg-municipal-building-design-committee/2025-09-29-wgCT3S4TZpo) | reference | — / 14.3 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, October 20, 2025](/meeting-minutes/lunenburg-municipal-building-design-committee/2025-10-20-Ws9zywTJqIs) | reference | — / 15.8 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, November 3, 2025](/meeting-minutes/lunenburg-municipal-building-design-committee/2025-11-03-g9ESodvPtPE) | reference | — / 12.0 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, November 17, 2025](/meeting-minutes/lunenburg-municipal-building-design-committee/2025-11-17-Z2UNTw5CQXA) | reference | — / 13.9 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, December 1, 2025](/meeting-minutes/lunenburg-municipal-building-design-committee/2025-12-01-R7y4RZq5eH0) | reference | — / 11.5 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, February 2, 2026](/meeting-minutes/lunenburg-municipal-building-design-committee/2026-02-02-FUbm5gPK3fo) | reference | — / 15.6 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, March 9, 2026](/meeting-minutes/lunenburg-municipal-building-design-committee/2026-03-09-DNm34tmxesA) | reference | — / 13.4 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, April 27, 2026](/meeting-minutes/lunenburg-municipal-building-design-committee/2026-04-27--HoRiRY7JzE) | reference | — / 15.5 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, June 1, 2026](/meeting-minutes/lunenburg-municipal-building-design-committee/2026-06-01-S7I_Ju-yKlg) | reference | — / 12.3 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, June 15, 2026](/meeting-minutes/lunenburg-municipal-building-design-committee/2026-06-15-5gIok_72gyE) | reference | — / 15.4 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, June 29, 2026](/meeting-minutes/lunenburg-municipal-building-design-committee/2026-06-29-A3O6NwydHCs) | reference | — / 14.8 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, August 3, 2026](/meeting-minutes/lunenburg-municipal-building-design-committee/2026-08-03-YJ8CLX_0gLA) | reference | — / 13.4 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, August 17, 2026](/meeting-minutes/lunenburg-municipal-building-design-committee/2026-08-17-149hE7ox_cY) | reference | — / 14.3 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, August 31, 2026](/meeting-minutes/lunenburg-municipal-building-design-committee/2026-08-31-kY5j-uu0MRo) | reference | — / 15.6 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, September 21, 2026](/meeting-minutes/lunenburg-municipal-building-design-committee/2026-09-21-MdHSKqTjxjk) | reference | — / 13.1 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee, October 5, 2026](/meeting-minutes/lunenburg-municipal-building-design-committee/2026-10-05-5UjLq555UeQ) | reference | — / 11.5 min | *(none declared)* |
+| [Lunenburg Water District, March 10, 2021](/meeting-minutes/lunenburg-water-district/2021-03-10-3nUdXD4mxpI) | reference | — / 9.9 min | *(none declared)* |
+| [Lunenburg Water District, March 24, 2021](/meeting-minutes/lunenburg-water-district/2021-03-24-gsuy2DTKYHo) | reference | — / 9.7 min | *(none declared)* |
+| [Lunenburg Water District, March 27, 2021](/meeting-minutes/lunenburg-water-district/2021-03-27-ZDX6XQvdNAg) | reference | — / 10.9 min | *(none declared)* |
+| [Lunenburg Water District, April 14, 2021](/meeting-minutes/lunenburg-water-district/2021-04-14-0FSpVhpM7J0) | reference | — / 10.9 min | *(none declared)* |
+| [Lunenburg Water District, April 28, 2021](/meeting-minutes/lunenburg-water-district/2021-04-28-SnY_JZuUfNc) | reference | — / 10.5 min | *(none declared)* |
+| [Lunenburg Water District, May 12, 2021](/meeting-minutes/lunenburg-water-district/2021-05-12-FVKo7gFjOBo) | reference | — / 10.4 min | *(none declared)* |
+| [Lunenburg Water District, May 12, 2021](/meeting-minutes/lunenburg-water-district/2021-05-12-qropiCiLQ4w) | reference | — / 9.7 min | *(none declared)* |
+| [Lunenburg Water District, May 26, 2021](/meeting-minutes/lunenburg-water-district/2021-05-26-P-9UuHUergI) | reference | — / 10.5 min | *(none declared)* |
+| [Lunenburg Water District, July 14, 2021](/meeting-minutes/lunenburg-water-district/2021-07-14-MsVpVaPr_zg) | reference | — / 11.3 min | *(none declared)* |
+| [Lunenburg Water District, July 14, 2021](/meeting-minutes/lunenburg-water-district/2021-07-14-VCJlA5dEpnE) | reference | — / 11.1 min | *(none declared)* |
+| [Lunenburg Water District, July 21, 2021](/meeting-minutes/lunenburg-water-district/2021-07-21-91EEb--f1lw) | reference | — / 10.6 min | *(none declared)* |
+| [Lunenburg Water District, August 11, 2021](/meeting-minutes/lunenburg-water-district/2021-08-11-o1ymfeGn6Rk) | reference | — / 10.3 min | *(none declared)* |
+| [Lunenburg Water District, September 8, 2021](/meeting-minutes/lunenburg-water-district/2021-09-08-M0iE9Zp_ywY) | reference | — / 11.3 min | *(none declared)* |
+| [Lunenburg Water District, September 22, 2021](/meeting-minutes/lunenburg-water-district/2021-09-22-zSCSeU_S5Ts) | reference | — / 9.9 min | *(none declared)* |
+| [Lunenburg Water District, October 13, 2021](/meeting-minutes/lunenburg-water-district/2021-10-13-bQrWKJZz-3Q) | reference | — / 9.8 min | *(none declared)* |
+| [Lunenburg Water District, November 17, 2021](/meeting-minutes/lunenburg-water-district/2021-11-17-rqbc2raGGN4) | reference | — / 11.0 min | *(none declared)* |
+| [Lunenburg Water District, December 15, 2021](/meeting-minutes/lunenburg-water-district/2021-12-15-Nvfi3KsZHyw) | reference | — / 12.1 min | *(none declared)* |
+| [Lunenburg Water District, February 9, 2022](/meeting-minutes/lunenburg-water-district/2022-02-09-5SrmYGYbR2A) | reference | — / 12.9 min | *(none declared)* |
+| [Lunenburg Water District, February 16, 2022](/meeting-minutes/lunenburg-water-district/2022-02-16-ON2hd0OVkWk) | reference | — / 10.7 min | *(none declared)* |
+| [Lunenburg Water District, March 9, 2022](/meeting-minutes/lunenburg-water-district/2022-03-09-N4qfgH7w1lQ) | reference | — / 11.2 min | *(none declared)* |
+| [Lunenburg Water District, March 23, 2022](/meeting-minutes/lunenburg-water-district/2022-03-23-JdupLkJ3Bx8) | reference | — / 11.2 min | *(none declared)* |
+| [Lunenburg Water District, March 26, 2022](/meeting-minutes/lunenburg-water-district/2022-03-26-w3B0zRuW1z8) | reference | — / 12.5 min | *(none declared)* |
+| [Lunenburg Water District, April 27, 2022](/meeting-minutes/lunenburg-water-district/2022-04-27-3FL9I7S8_JY) | reference | — / 10.7 min | *(none declared)* |
+| [Lunenburg Water District, May 11, 2022](/meeting-minutes/lunenburg-water-district/2022-05-11-Mxje4WIegM4) | reference | — / 10.2 min | *(none declared)* |
+| [Lunenburg Water District, May 25, 2022](/meeting-minutes/lunenburg-water-district/2022-05-25-Y9p4NXz-pgE) | reference | — / 10.4 min | *(none declared)* |
+| [Lunenburg Water District, June 8, 2022](/meeting-minutes/lunenburg-water-district/2022-06-08-FjiP12DCuho) | reference | — / 11.3 min | *(none declared)* |
+| [Lunenburg Water District, June 22, 2022](/meeting-minutes/lunenburg-water-district/2022-06-22-RxTUGRW3mhk) | reference | — / 10.4 min | *(none declared)* |
+| [Lunenburg Water District, July 27, 2022](/meeting-minutes/lunenburg-water-district/2022-07-27-elLD8YdBVT8) | reference | — / 11.3 min | *(none declared)* |
+| [Lunenburg Water District, August 10, 2022](/meeting-minutes/lunenburg-water-district/2022-08-10-yYpsBgUHl-w) | reference | — / 10.0 min | *(none declared)* |
+| [Lunenburg Water District, August 23, 2022](/meeting-minutes/lunenburg-water-district/2022-08-23-ADmIAgTjV5w) | reference | — / 10.6 min | *(none declared)* |
+| [Lunenburg Water District, September 14, 2022](/meeting-minutes/lunenburg-water-district/2022-09-14-kWeUVXqj8u0) | reference | — / 11.2 min | *(none declared)* |
+| [Lunenburg Water District, September 28, 2022](/meeting-minutes/lunenburg-water-district/2022-09-28-q6hUvKBRkok) | reference | — / 12.7 min | *(none declared)* |
+| [Lunenburg Water District, October 12, 2022](/meeting-minutes/lunenburg-water-district/2022-10-12-fGKNArAJBT8) | reference | — / 10.5 min | *(none declared)* |
+| [Lunenburg Water District, October 19, 2022](/meeting-minutes/lunenburg-water-district/2022-10-19-Aw1AjcfAedo) | reference | — / 13.3 min | *(none declared)* |
+| [Lunenburg Water District, October 26, 2022](/meeting-minutes/lunenburg-water-district/2022-10-26-ET48d5viAUA) | reference | — / 12.6 min | *(none declared)* |
+| [Lunenburg Water District, November 9, 2022](/meeting-minutes/lunenburg-water-district/2022-11-09-KiKQe-wQMV0) | reference | — / 11.9 min | *(none declared)* |
+| [Lunenburg Water District, November 16, 2022](/meeting-minutes/lunenburg-water-district/2022-11-16-l4Oq2a8vXWg) | reference | — / 10.0 min | *(none declared)* |
+| [Lunenburg Water District, November 30, 2022](/meeting-minutes/lunenburg-water-district/2022-11-30-3qa8goWDWbE) | reference | — / 10.6 min | *(none declared)* |
+| [Lunenburg Water District, December 14, 2022](/meeting-minutes/lunenburg-water-district/2022-12-14-SlprUipk_K8) | reference | — / 11.4 min | *(none declared)* |
+| [Lunenburg Water District, January 4, 2023](/meeting-minutes/lunenburg-water-district/2023-01-04-iKm4ng-zJVY) | reference | — / 10.3 min | *(none declared)* |
+| [Lunenburg Water District, January 11, 2023](/meeting-minutes/lunenburg-water-district/2023-01-11-HN9EbW0Onl4) | reference | — / 12.1 min | *(none declared)* |
+| [Lunenburg Water District, January 25, 2023](/meeting-minutes/lunenburg-water-district/2023-01-25-1x9uu7lGIts) | reference | — / 12.1 min | *(none declared)* |
+| [Lunenburg Water District, February 8, 2023](/meeting-minutes/lunenburg-water-district/2023-02-08-ztIh7mCcWBQ) | reference | — / 11.1 min | *(none declared)* |
+| [Lunenburg Water District, March 1, 2023](/meeting-minutes/lunenburg-water-district/2023-03-01-dlDnoeS5HTA) | reference | — / 12.6 min | *(none declared)* |
+| [Lunenburg Water District, March 8, 2023](/meeting-minutes/lunenburg-water-district/2023-03-08-3GKzyw9i_jM) | reference | — / 12.1 min | *(none declared)* |
+| [Lunenburg Water District, March 22, 2023](/meeting-minutes/lunenburg-water-district/2023-03-22-fatemCMlWBo) | reference | — / 9.7 min | *(none declared)* |
+| [Lunenburg Water District, April 12, 2023](/meeting-minutes/lunenburg-water-district/2023-04-12-TSG84J7ocIs) | reference | — / 10.5 min | *(none declared)* |
+| [Lunenburg Water District, April 26, 2023](/meeting-minutes/lunenburg-water-district/2023-04-26-UiA2j1FcK8s) | reference | — / 10.9 min | *(none declared)* |
+| [Lunenburg Water District, May 24, 2023](/meeting-minutes/lunenburg-water-district/2023-05-24-W-lv7JMD3Lc) | reference | — / 10.8 min | *(none declared)* |
+| [Lunenburg Water District, June 14, 2023](/meeting-minutes/lunenburg-water-district/2023-06-14-0Ra8xpMzfCA) | reference | — / 9.5 min | *(none declared)* |
+| [Lunenburg Water District, June 28, 2023](/meeting-minutes/lunenburg-water-district/2023-06-28-P06A2usx3aY) | reference | — / 10.1 min | *(none declared)* |
+| [Lunenburg Water District, July 12, 2023](/meeting-minutes/lunenburg-water-district/2023-07-12-2jmzVOKS6oY) | reference | — / 9.4 min | *(none declared)* |
+| [Lunenburg Water District, July 26, 2023](/meeting-minutes/lunenburg-water-district/2023-07-26-lOlM8cPsBs0) | reference | — / 10.8 min | *(none declared)* |
+| [Lunenburg Water District, August 9, 2023](/meeting-minutes/lunenburg-water-district/2023-08-09-lEXTABtn9_Y) | reference | — / 11.3 min | *(none declared)* |
+| [Lunenburg Water District, August 23, 2023](/meeting-minutes/lunenburg-water-district/2023-08-23-EKZ7SbZYGMY) | reference | — / 10.8 min | *(none declared)* |
+| [Lunenburg Water District, September 13, 2023](/meeting-minutes/lunenburg-water-district/2023-09-13-tfTLFP1jMY0) | reference | — / 11.1 min | *(none declared)* |
+| [Lunenburg Water District, September 27, 2023](/meeting-minutes/lunenburg-water-district/2023-09-27-zHASYu_czN4) | reference | — / 10.3 min | *(none declared)* |
+| [Lunenburg Water District, October 25, 2023](/meeting-minutes/lunenburg-water-district/2023-10-25-sV7VnhFumSA) | reference | — / 11.7 min | *(none declared)* |
+| [Lunenburg Water District, November 8, 2023](/meeting-minutes/lunenburg-water-district/2023-11-08-rNniT8xIXkc) | reference | — / 10.5 min | *(none declared)* |
+| [Lunenburg Water District, November 29, 2023](/meeting-minutes/lunenburg-water-district/2023-11-29-kr9jOParkNg) | reference | — / 11.5 min | *(none declared)* |
+| [Lunenburg Water District, January 10, 2024](/meeting-minutes/lunenburg-water-district/2024-01-10-3bK40pg8v9U) | reference | — / 10.9 min | *(none declared)* |
+| [Lunenburg Water District, January 10, 2024](/meeting-minutes/lunenburg-water-district/2024-01-10-MLM2pdkC9mU) | reference | — / 13.6 min | *(none declared)* |
+| [Lunenburg Water District, January 24, 2024](/meeting-minutes/lunenburg-water-district/2024-01-24-VGLkfs_4mWY) | reference | — / 11.9 min | *(none declared)* |
+| [Lunenburg Water District, February 4, 2024](/meeting-minutes/lunenburg-water-district/2024-02-04-1i9UkNZlZy4) | reference | — / 10.8 min | *(none declared)* |
+| [Lunenburg Water District, February 28, 2024](/meeting-minutes/lunenburg-water-district/2024-02-28-FlFVKAPCFxw) | reference | — / 10.5 min | *(none declared)* |
+| [Lunenburg Water District, March 13, 2024](/meeting-minutes/lunenburg-water-district/2024-03-13-oNBD7N5K32U) | reference | — / 10.5 min | *(none declared)* |
+| [Lunenburg Water District, March 18, 2024](/meeting-minutes/lunenburg-water-district/2024-03-18-J77AWts1LIE) | reference | — / 10.2 min | *(none declared)* |
+| [Lunenburg Water District, March 18, 2024](/meeting-minutes/lunenburg-water-district/2024-03-18-TYlfUkYB6EM) | reference | — / 10.4 min | *(none declared)* |
+| [Lunenburg Water District, March 27, 2024](/meeting-minutes/lunenburg-water-district/2024-03-27-UMZ11C3Jn8k) | reference | — / 12.1 min | *(none declared)* |
+| [Lunenburg Water District, March 30, 2024](/meeting-minutes/lunenburg-water-district/2024-03-30-ZO6a0VTi0gM) | reference | — / 10.7 min | *(none declared)* |
+| [Lunenburg Water District, April 10, 2024](/meeting-minutes/lunenburg-water-district/2024-04-10-vzRb9foxeuQ) | reference | — / 11.4 min | *(none declared)* |
+| [Lunenburg Water District, May 8, 2024](/meeting-minutes/lunenburg-water-district/2024-05-08-kHFn7wVujZs) | reference | — / 9.9 min | *(none declared)* |
+| [Lunenburg Water District, May 16, 2024](/meeting-minutes/lunenburg-water-district/2024-05-16-_OjFupFJZZQ) | reference | — / 9.9 min | *(none declared)* |
+| [Lunenburg Water District, May 22, 2024](/meeting-minutes/lunenburg-water-district/2024-05-22-AwcC2ny4D5U) | reference | — / 9.8 min | *(none declared)* |
+| [Lunenburg Water District, June 12, 2024](/meeting-minutes/lunenburg-water-district/2024-06-12-G9lDlqVbghA) | reference | — / 10.9 min | *(none declared)* |
+| [Lunenburg Water District, June 26, 2024](/meeting-minutes/lunenburg-water-district/2024-06-26-6T9AW_n9oqA) | reference | — / 11.5 min | *(none declared)* |
+| [Lunenburg Water District, July 10, 2024](/meeting-minutes/lunenburg-water-district/2024-07-10-exKS--Ch4ao) | reference | — / 11.9 min | *(none declared)* |
+| [Lunenburg Water District, July 24, 2024](/meeting-minutes/lunenburg-water-district/2024-07-24-tP9MFTbiG1Q) | reference | — / 11.2 min | *(none declared)* |
+| [Lunenburg Water District, August 14, 2024](/meeting-minutes/lunenburg-water-district/2024-08-14-ohy-y8iAn7g) | reference | — / 11.7 min | *(none declared)* |
+| [Lunenburg Water District, August 28, 2024](/meeting-minutes/lunenburg-water-district/2024-08-28-FKX66Qf5_xA) | reference | — / 10.5 min | *(none declared)* |
+| [Lunenburg Water District, August 28, 2024](/meeting-minutes/lunenburg-water-district/2024-08-28-oDHHNu9Odzc) | reference | — / 10.0 min | *(none declared)* |
+| [Lunenburg Water District, September 11, 2024](/meeting-minutes/lunenburg-water-district/2024-09-11-95L99sVr0MU) | reference | — / 11.4 min | *(none declared)* |
+| [Lunenburg Water District, September 25, 2024](/meeting-minutes/lunenburg-water-district/2024-09-25-NYTOkSZV88w) | reference | — / 10.5 min | *(none declared)* |
+| [Lunenburg Water District, October 23, 2024](/meeting-minutes/lunenburg-water-district/2024-10-23-FKOTnqnU8qY) | reference | — / 10.5 min | *(none declared)* |
+| [Lunenburg Water District, November 13, 2024](/meeting-minutes/lunenburg-water-district/2024-11-13-Kp6RANXCU5E) | reference | — / 11.4 min | *(none declared)* |
+| [Lunenburg Water District, December 4, 2024](/meeting-minutes/lunenburg-water-district/2024-12-04-ASAvgsJHsQA) | reference | — / 10.6 min | *(none declared)* |
+| [Lunenburg Water District, December 18, 2024](/meeting-minutes/lunenburg-water-district/2024-12-18-4imjbXm0mt4) | reference | — / 11.0 min | *(none declared)* |
+| [Lunenburg Water District, January 8, 2025](/meeting-minutes/lunenburg-water-district/2025-01-08-bPVcWDKnDF0) | reference | — / 11.2 min | *(none declared)* |
+| [Lunenburg Water District, January 22, 2025](/meeting-minutes/lunenburg-water-district/2025-01-22-CAdC_nNKxiQ) | reference | — / 12.3 min | *(none declared)* |
+| [Lunenburg Water District, February 12, 2025](/meeting-minutes/lunenburg-water-district/2025-02-12-pIX-RHaS1BU) | reference | — / 10.3 min | *(none declared)* |
+| [Lunenburg Water District, February 26, 2025](/meeting-minutes/lunenburg-water-district/2025-02-26-YN6eJW0QDi4) | reference | — / 11.3 min | *(none declared)* |
+| [Lunenburg Water District, March 12, 2025](/meeting-minutes/lunenburg-water-district/2025-03-12-xDeOoUvg_-I) | reference | — / 10.5 min | *(none declared)* |
+| [Lunenburg Water District, March 26, 2025](/meeting-minutes/lunenburg-water-district/2025-03-26-CRGZWKbMeZs) | reference | — / 10.2 min | *(none declared)* |
+| [Lunenburg Water District, March 29, 2025](/meeting-minutes/lunenburg-water-district/2025-03-29-cmfwASZHfPY) | reference | — / 11.1 min | *(none declared)* |
+| [Lunenburg Water District, April 9, 2025](/meeting-minutes/lunenburg-water-district/2025-04-09-_sTldowbxC0) | reference | — / 12.6 min | *(none declared)* |
+| [Lunenburg Water District, May 14, 2025](/meeting-minutes/lunenburg-water-district/2025-05-14-u2c8rPuVWT8) | reference | — / 14.0 min | *(none declared)* |
+| [Lunenburg Water District, May 28, 2025](/meeting-minutes/lunenburg-water-district/2025-05-28-gtkfbmuZkwk) | reference | — / 14.3 min | *(none declared)* |
+| [Lunenburg Water District, June 11, 2025](/meeting-minutes/lunenburg-water-district/2025-06-11-W9FBuXJeA1U) | reference | — / 11.5 min | *(none declared)* |
+| [Lunenburg Water District, June 25, 2025](/meeting-minutes/lunenburg-water-district/2025-06-25-SxErtb8vxGo) | reference | — / 12.2 min | *(none declared)* |
+| [Lunenburg Water District, July 9, 2025](/meeting-minutes/lunenburg-water-district/2025-07-09-aaPIg-Ezxp0) | reference | — / 12.8 min | *(none declared)* |
+| [Lunenburg Water District, July 23, 2025](/meeting-minutes/lunenburg-water-district/2025-07-23-_wtmbArT6Ig) | reference | — / 11.8 min | *(none declared)* |
+| [Lunenburg Water District, August 27, 2025](/meeting-minutes/lunenburg-water-district/2025-08-27-U5uZMGQHpNw) | reference | — / 12.8 min | *(none declared)* |
+| [Lunenburg Water District, September 10, 2025](/meeting-minutes/lunenburg-water-district/2025-09-10-tQkjCnddhTA) | reference | — / 11.5 min | *(none declared)* |
+| [Lunenburg Water District, September 24, 2025](/meeting-minutes/lunenburg-water-district/2025-09-24-tsy_zcnmhTo) | reference | — / 12.6 min | *(none declared)* |
+| [Lunenburg Water District, October 8, 2025](/meeting-minutes/lunenburg-water-district/2025-10-08-oYTpVdA8WsY) | reference | — / 12.0 min | *(none declared)* |
+| [Lunenburg Water District, October 22, 2025](/meeting-minutes/lunenburg-water-district/2025-10-22-fRGMie5Ky4Q) | reference | — / 11.6 min | *(none declared)* |
+| [Lunenburg Water District, December 3, 2025](/meeting-minutes/lunenburg-water-district/2025-12-03-ORInrk0Iv4Q) | reference | — / 12.7 min | *(none declared)* |
+| [Lunenburg Water District, December 17, 2025](/meeting-minutes/lunenburg-water-district/2025-12-17-gjBv5kW1lkI) | reference | — / 14.1 min | *(none declared)* |
+| [Lunenburg Water District, January 14, 2026](/meeting-minutes/lunenburg-water-district/2026-01-14-OCicNIEjS9w) | reference | — / 13.3 min | *(none declared)* |
+| [Lunenburg Water District, January 28, 2026](/meeting-minutes/lunenburg-water-district/2026-01-28-Zoh6ar2gA6Y) | reference | — / 13.1 min | *(none declared)* |
+| [Lunenburg Water District, February 11, 2026](/meeting-minutes/lunenburg-water-district/2026-02-11-A57Rt-gUlPI) | reference | — / 14.4 min | *(none declared)* |
+| [Lunenburg Water District, February 25, 2026](/meeting-minutes/lunenburg-water-district/2026-02-25-CY8qGNhM1y8) | reference | — / 11.4 min | *(none declared)* |
+| [Lunenburg Water District, February 25, 2026](/meeting-minutes/lunenburg-water-district/2026-02-25-aDYrS5gQaPQ) | reference | — / 11.4 min | *(none declared)* |
+| [Lunenburg Water District, March 11, 2026](/meeting-minutes/lunenburg-water-district/2026-03-11-L6BHM4GABqE) | reference | — / 13.0 min | *(none declared)* |
+| [Lunenburg Water District, March 25, 2026](/meeting-minutes/lunenburg-water-district/2026-03-25-BoAeWbis_dM) | reference | — / 13.4 min | *(none declared)* |
+| [Lunenburg Water District, March 28, 2026](/meeting-minutes/lunenburg-water-district/2026-03-28-mLQwvNBhEdU) | reference | — / 16.1 min | *(none declared)* |
+| [Lunenburg Water District, April 8, 2026](/meeting-minutes/lunenburg-water-district/2026-04-08-oAX_AeG8ang) | reference | — / 14.0 min | *(none declared)* |
+| [Lunenburg Water District, April 22, 2026](/meeting-minutes/lunenburg-water-district/2026-04-22-Fmn9j9fXsso) | reference | — / 13.6 min | *(none declared)* |
+| [Lunenburg Water District, May 6, 2026](/meeting-minutes/lunenburg-water-district/2026-05-06--lVXiy8aW5M) | reference | — / 13.7 min | *(none declared)* |
+| [Lunenburg Water District, May 13, 2026](/meeting-minutes/lunenburg-water-district/2026-05-13-Qdc4naoZ_CY) | reference | — / 12.9 min | *(none declared)* |
+| [Lunenburg Water District, May 26, 2026](/meeting-minutes/lunenburg-water-district/2026-05-26-TRvFWe6rfdg) | reference | — / 11.1 min | *(none declared)* |
+| [Lunenburg Water District, May 27, 2026](/meeting-minutes/lunenburg-water-district/2026-05-27-KWEPsAqCXR4) | reference | — / 11.8 min | *(none declared)* |
+| [Lunenburg Water District, June 3, 2026](/meeting-minutes/lunenburg-water-district/2026-06-03-jFhkCL7o0oE) | reference | — / 13.2 min | *(none declared)* |
+| [Lunenburg Water District, June 10, 2026](/meeting-minutes/lunenburg-water-district/2026-06-10-4xhT6FUJXCE) | reference | — / 13.5 min | *(none declared)* |
+| [Lunenburg Water District, June 24, 2026](/meeting-minutes/lunenburg-water-district/2026-06-24-Os3tXraX6hA) | reference | — / 13.7 min | *(none declared)* |
+| [Lunenburg Water District, July 15, 2026](/meeting-minutes/lunenburg-water-district/2026-07-15-uLFRcL_1gRs) | reference | — / 11.7 min | *(none declared)* |
+| [Lunenburg Water District, July 22, 2026](/meeting-minutes/lunenburg-water-district/2026-07-22-wKriZio5rGo) | reference | — / 11.4 min | *(none declared)* |
+| [Lunenburg Water District, August 12, 2026](/meeting-minutes/lunenburg-water-district/2026-08-12-ezUwmNgj3w8) | reference | — / 13.3 min | *(none declared)* |
+| [Lunenburg Water District, August 26, 2026](/meeting-minutes/lunenburg-water-district/2026-08-26-gzjEdL1J5N0) | reference | — / 11.8 min | *(none declared)* |
+| [Lunenburg Water District, September 8, 2026](/meeting-minutes/lunenburg-water-district/2026-09-08-wkIczMuIDqA) | reference | — / 12.9 min | *(none declared)* |
+| [Lunenburg Water District, September 23, 2026](/meeting-minutes/lunenburg-water-district/2026-09-23-zKMLA7kBTnI) | reference | — / 11.5 min | *(none declared)* |
+| [Lunenburg Water District, October 21, 2026](/meeting-minutes/lunenburg-water-district/2026-10-21-DeWX3_WYFJg) | reference | — / 10.5 min | *(none declared)* |
+| [Massachusetts Department of Public Utilities, November 9, 2023](/meeting-minutes/ma-dpu/2023-11-09-AITEd2GfCEU) | reference | — / 12.3 min | *(none declared)* |
+| [Master Plan Steering Committee, September 18, 2023](/meeting-minutes/master-plan-steering-committee/2023-09-18-5KGCgKLeqg4) | reference | — / 12.0 min | *(none declared)* |
+| [Master Plan Steering Committee, October 5, 2023](/meeting-minutes/master-plan-steering-committee/2023-10-05-9wJS-i-Sa_A) | reference | — / 11.4 min | *(none declared)* |
+| [Master Plan Steering Committee, October 19, 2023](/meeting-minutes/master-plan-steering-committee/2023-10-19-YH-svlup7cc) | reference | — / 12.4 min | *(none declared)* |
+| [Master Plan Steering Committee, November 2, 2023](/meeting-minutes/master-plan-steering-committee/2023-11-02-C5d_f5KxKpc) | reference | — / 9.6 min | *(none declared)* |
+| [Master Plan Steering Committee, December 14, 2023](/meeting-minutes/master-plan-steering-committee/2023-12-14-JA5kV9DHBbI) | reference | — / 12.8 min | *(none declared)* |
+| [Master Plan Steering Committee, January 4, 2024](/meeting-minutes/master-plan-steering-committee/2024-01-04-FeJUJ3HjA2s) | reference | — / 11.4 min | *(none declared)* |
+| [Master Plan Steering Committee, February 1, 2024](/meeting-minutes/master-plan-steering-committee/2024-02-01-JcuqGfPHcmo) | reference | — / 10.1 min | *(none declared)* |
+| [Master Plan Steering Committee, February 1, 2024](/meeting-minutes/master-plan-steering-committee/2024-02-01-gspzaAJWHi0) | reference | — / 10.7 min | *(none declared)* |
+| [Master Plan Steering Committee, March 7, 2024](/meeting-minutes/master-plan-steering-committee/2024-03-07-Htw5CataAv8) | reference | — / 12.8 min | *(none declared)* |
+| [Master Plan Steering Committee, April 5, 2024](/meeting-minutes/master-plan-steering-committee/2024-04-05-eXm-rGTENhM) | reference | — / 15.6 min | *(none declared)* |
+| [Master Plan Steering Committee, May 15, 2024](/meeting-minutes/master-plan-steering-committee/2024-05-15-ECZH1UBmjng) | reference | — / 13.5 min | *(none declared)* |
+| [Master Plan Steering Committee, March 3, 2025](/meeting-minutes/master-plan-steering-committee/2025-03-03-CuSY8mT4NGg) | reference | — / 11.3 min | *(none declared)* |
+| [Master Plan Steering Committee, April 9, 2025](/meeting-minutes/master-plan-steering-committee/2025-04-09-5D1VPfwWy6w) | reference | — / 13.0 min | *(none declared)* |
+| [Master Plan Steering Committee, April 23, 2025](/meeting-minutes/master-plan-steering-committee/2025-04-23-SF1GorpjMtc) | reference | — / 13.0 min | *(none declared)* |
+| [Master Plan Steering Committee, June 25, 2025](/meeting-minutes/master-plan-steering-committee/2025-06-25-fKkBha53B0c) | reference | — / 17.0 min | *(none declared)* |
+| [Master Plan Steering Committee, July 9, 2025](/meeting-minutes/master-plan-steering-committee/2025-07-09-z6coQYhVzbw) | reference | — / 13.0 min | *(none declared)* |
+| [Master Plan Steering Committee, July 23, 2025](/meeting-minutes/master-plan-steering-committee/2025-07-23-JUZY_wgXLX8) | reference | — / 17.9 min | *(none declared)* |
+| [Master Plan Steering Committee, August 13, 2025](/meeting-minutes/master-plan-steering-committee/2025-08-13-4MFVCkEmrso) | reference | — / 14.0 min | *(none declared)* |
+| [Master Plan Steering Committee, August 27, 2025](/meeting-minutes/master-plan-steering-committee/2025-08-27-cn-57IXww7g) | reference | — / 14.0 min | *(none declared)* |
+| [Master Plan Steering Committee, September 24, 2025](/meeting-minutes/master-plan-steering-committee/2025-09-24-5ikJO7zsjR0) | reference | — / 13.1 min | *(none declared)* |
+| [Master Plan Steering Committee, September 24, 2025](/meeting-minutes/master-plan-steering-committee/2025-09-24-pKVcHwJVQYc) | reference | — / 11.8 min | *(none declared)* |
+| [Master Plan Steering Committee, October 15, 2025](/meeting-minutes/master-plan-steering-committee/2025-10-15-Lmdbk6wNKQc) | reference | — / 11.9 min | *(none declared)* |
+| [Master Plan Steering Committee, October 22, 2025](/meeting-minutes/master-plan-steering-committee/2025-10-22-oVWly4MA-TI) | reference | — / 11.9 min | *(none declared)* |
+| [Master Plan Steering Committee, November 12, 2025](/meeting-minutes/master-plan-steering-committee/2025-11-12-g4rpFi5wcMA) | reference | — / 13.8 min | *(none declared)* |
+| [Master Plan Steering Committee, December 4, 2025](/meeting-minutes/master-plan-steering-committee/2025-12-04-sAkIiP5VByQ) | reference | — / 12.0 min | *(none declared)* |
+| [Master Plan Steering Committee, December 10, 2025](/meeting-minutes/master-plan-steering-committee/2025-12-10-QuF-yGvtXGs) | reference | — / 13.9 min | *(none declared)* |
+| [Master Plan Steering Committee, February 25, 2026](/meeting-minutes/master-plan-steering-committee/2026-02-25--Oy2emFIKUg) | reference | — / 10.0 min | *(none declared)* |
+| [Open Space Committee, February 16, 2021](/meeting-minutes/open-space-committee/2021-02-16-yVjCtTZs1e4) | reference | — / 12.8 min | *(none declared)* |
+| [Open Space Committee, March 16, 2021](/meeting-minutes/open-space-committee/2021-03-16-PeAdznzwsYw) | reference | — / 12.7 min | *(none declared)* |
+| [Open Space Committee, May 18, 2021](/meeting-minutes/open-space-committee/2021-05-18-aZpmdyOT8vM) | reference | — / 12.8 min | *(none declared)* |
+| [Open Space Committee, November 9, 2021](/meeting-minutes/open-space-committee/2021-11-09-IcCg2LnmjHg) | reference | — / 11.1 min | *(none declared)* |
+| [Open Space Committee, December 14, 2021](/meeting-minutes/open-space-committee/2021-12-14-kMu40u2W-No) | reference | — / 10.6 min | *(none declared)* |
+| [Open Space Committee, February 9, 2022](/meeting-minutes/open-space-committee/2022-02-09-CEEpaYYKukk) | reference | — / 11.3 min | *(none declared)* |
+| [Open Space Committee, June 9, 2022](/meeting-minutes/open-space-committee/2022-06-09-eCdOvz8oG3s) | reference | — / 9.9 min | *(none declared)* |
+| [Open Space Committee, August 11, 2022](/meeting-minutes/open-space-committee/2022-08-11-r8HOC_2vt4U) | reference | — / 12.0 min | *(none declared)* |
+| [Open Space Committee, September 8, 2022](/meeting-minutes/open-space-committee/2022-09-08-DzftGiZXpxA) | reference | — / 11.9 min | *(none declared)* |
+| [Open Space Committee, January 11, 2023](/meeting-minutes/open-space-committee/2023-01-11-QiK81uHGclc) | reference | — / 14.2 min | *(none declared)* |
+| [Open Space Committee, February 8, 2023](/meeting-minutes/open-space-committee/2023-02-08-2JFZvl376X0) | reference | — / 13.7 min | *(none declared)* |
+| [Open Space Committee, February 8, 2023](/meeting-minutes/open-space-committee/2023-02-08-UXs7fpTAxRI) | reference | — / 12.3 min | *(none declared)* |
+| [Open Space Committee, April 12, 2023](/meeting-minutes/open-space-committee/2023-04-12-_Mr_e_ROT9s) | reference | — / 11.4 min | *(none declared)* |
+| [Open Space Committee, May 10, 2023](/meeting-minutes/open-space-committee/2023-05-10-vTcZ0YDmbk8) | reference | — / 11.1 min | *(none declared)* |
+| [Open Space Committee, June 14, 2023](/meeting-minutes/open-space-committee/2023-06-14-xT9JKcJslb8) | reference | — / 10.5 min | *(none declared)* |
+| [Open Space Committee, July 12, 2023](/meeting-minutes/open-space-committee/2023-07-12-bVJ0h5-DwVE) | reference | — / 10.0 min | *(none declared)* |
+| [Open Space Committee, October 25, 2023](/meeting-minutes/open-space-committee/2023-10-25-no63d6OVYJs) | reference | — / 12.0 min | *(none declared)* |
+| [Open Space Committee, January 10, 2024](/meeting-minutes/open-space-committee/2024-01-10-_pWuPSP8deA) | reference | — / 12.9 min | *(none declared)* |
+| [Open Space Committee, February 28, 2024](/meeting-minutes/open-space-committee/2024-02-28-kCvpQ5HR9eo) | reference | — / 13.9 min | *(none declared)* |
+| [Open Space Committee, March 13, 2024](/meeting-minutes/open-space-committee/2024-03-13-rEznz0ju54s) | reference | — / 12.5 min | *(none declared)* |
+| [Open Space Committee, July 10, 2024](/meeting-minutes/open-space-committee/2024-07-10-egyT-FdePIU) | reference | — / 10.3 min | *(none declared)* |
+| [Open Space Committee, July 30, 2024](/meeting-minutes/open-space-committee/2024-07-30-msr_H0y0vX4) | reference | — / 10.3 min | *(none declared)* |
+| [Open Space Committee, September 11, 2024](/meeting-minutes/open-space-committee/2024-09-11-q-UIAuyjj38) | reference | — / 9.7 min | *(none declared)* |
+| [Open Space Committee, January 8, 2025](/meeting-minutes/open-space-committee/2025-01-08-7sP8gyjHevY) | reference | — / 11.2 min | *(none declared)* |
+| [Open Space Committee, February 12, 2025](/meeting-minutes/open-space-committee/2025-02-12-QygcnfAUbHU) | reference | — / 13.3 min | *(none declared)* |
+| [Open Space Committee, May 14, 2025](/meeting-minutes/open-space-committee/2025-05-14-VJ0rLCk9r1o) | reference | — / 13.1 min | *(none declared)* |
+| [Open Space Committee, August 13, 2025](/meeting-minutes/open-space-committee/2025-08-13-GsmMO0CSIsY) | reference | — / 12.8 min | *(none declared)* |
+| [Open Space Committee, September 3, 2025](/meeting-minutes/open-space-committee/2025-09-03-TiZDcdd4iZ0) | reference | — / 11.7 min | *(none declared)* |
+| [Open Space Committee, October 8, 2025](/meeting-minutes/open-space-committee/2025-10-08-vrnH1vUnYMg) | reference | — / 11.8 min | *(none declared)* |
+| [Open Space Committee, November 19, 2025](/meeting-minutes/open-space-committee/2025-11-19-jngnUhj_mKY) | reference | — / 13.9 min | *(none declared)* |
+| [Open Space Committee, December 10, 2025](/meeting-minutes/open-space-committee/2025-12-10-VPd2H3VVb1c) | reference | — / 10.4 min | *(none declared)* |
+| [Open Space Committee, February 11, 2026](/meeting-minutes/open-space-committee/2026-02-11-Y8V0lXUXnPY) | reference | — / 11.8 min | *(none declared)* |
+| [Open Space Committee, March 11, 2026](/meeting-minutes/open-space-committee/2026-03-11-AibsbE20srM) | reference | — / 11.1 min | *(none declared)* |
+| [Open Space Committee, May 13, 2026](/meeting-minutes/open-space-committee/2026-05-13-LNEq_Bcx4ac) | reference | — / 11.8 min | *(none declared)* |
+| [Open Space Committee, September 9, 2026](/meeting-minutes/open-space-committee/2026-09-09-qp-NjUCVwuc) | reference | — / 10.7 min | *(none declared)* |
+| [Parks Commission, February 12, 2021](/meeting-minutes/parks-commission/2021-02-12-Ywo3mHKLfC8) | reference | — / 16.1 min | *(none declared)* |
+| [Parks Commission, March 1, 2021](/meeting-minutes/parks-commission/2021-03-01-wKH0w4CaWuw) | reference | — / 14.8 min | *(none declared)* |
+| [Parks Commission, March 29, 2021](/meeting-minutes/parks-commission/2021-03-29-vyEv5z9G5AA) | reference | — / 12.9 min | *(none declared)* |
+| [Parks Commission, April 28, 2021](/meeting-minutes/parks-commission/2021-04-28-tw7cD5etR6I) | reference | — / 12.1 min | *(none declared)* |
+| [Parks Commission, May 26, 2021](/meeting-minutes/parks-commission/2021-05-26-KUOio9SjhOk) | reference | — / 14.9 min | *(none declared)* |
+| [Parks Commission, June 30, 2021](/meeting-minutes/parks-commission/2021-06-30-oNUuzKWpLQA) | reference | — / 14.5 min | *(none declared)* |
+| [Parks Commission, July 14, 2021](/meeting-minutes/parks-commission/2021-07-14-n5n5igiw7eU) | reference | — / 13.2 min | *(none declared)* |
+| [Parks Commission, July 28, 2021](/meeting-minutes/parks-commission/2021-07-28-GsEbv00QEXQ) | reference | — / 13.7 min | *(none declared)* |
+| [Parks Commission, August 25, 2021](/meeting-minutes/parks-commission/2021-08-25-Lc_hiBxmo9g) | reference | — / 13.7 min | *(none declared)* |
+| [Parks Commission, September 27, 2021](/meeting-minutes/parks-commission/2021-09-27-23LAN8xu2dE) | reference | — / 15.0 min | *(none declared)* |
+| [Parks Commission, October 27, 2021](/meeting-minutes/parks-commission/2021-10-27-2qUzQ4ANez4) | reference | — / 15.8 min | *(none declared)* |
+| [Parks Commission, November 17, 2021](/meeting-minutes/parks-commission/2021-11-17-4jRo1Kg-DrM) | reference | — / 13.9 min | *(none declared)* |
+| [Parks Commission, November 22, 2021](/meeting-minutes/parks-commission/2021-11-22-KTc7uLCgIqo) | reference | — / 12.4 min | *(none declared)* |
+| [Parks Commission, December 2, 2021](/meeting-minutes/parks-commission/2021-12-02-ONVMRqgtQ3k) | reference | — / 14.4 min | *(none declared)* |
+| [Parks Commission, December 20, 2021](/meeting-minutes/parks-commission/2021-12-20-zNuZVpWHVHY) | reference | — / 14.1 min | *(none declared)* |
+| [Parks Commission, January 6, 2022](/meeting-minutes/parks-commission/2022-01-06-5OUB2tO6t3s) | reference | — / 16.9 min | *(none declared)* |
+| [Parks Commission, January 20, 2022](/meeting-minutes/parks-commission/2022-01-20-5HN73IzepSM) | reference | — / 15.1 min | *(none declared)* |
+| [Parks Commission, February 17, 2022](/meeting-minutes/parks-commission/2022-02-17-VUvz44cf7dc) | reference | — / 12.4 min | *(none declared)* |
+| [Parks Commission, March 16, 2022](/meeting-minutes/parks-commission/2022-03-16-WFIIZg7wcuA) | reference | — / 16.1 min | *(none declared)* |
+| [Parks Commission, March 29, 2022](/meeting-minutes/parks-commission/2022-03-29-ZGdERr4eeJM) | reference | — / 13.5 min | *(none declared)* |
+| [Parks Commission, April 13, 2022](/meeting-minutes/parks-commission/2022-04-13-SmetItX0hXc) | reference | — / 15.1 min | *(none declared)* |
+| [Parks Commission, April 13, 2022](/meeting-minutes/parks-commission/2022-04-13-lrau7nJ6xPU) | reference | — / 14.8 min | *(none declared)* |
+| [Parks Commission, May 18, 2022](/meeting-minutes/parks-commission/2022-05-18-8xO9QFWU2XI) | reference | — / 14.7 min | *(none declared)* |
+| [Parks Commission, June 15, 2022](/meeting-minutes/parks-commission/2022-06-15-J8GPkhT4lyM) | reference | — / 17.3 min | *(none declared)* |
+| [Parks Commission, July 20, 2022](/meeting-minutes/parks-commission/2022-07-20-hExz18m3i6A) | reference | — / 17.9 min | *(none declared)* |
+| [Parks Commission, August 17, 2022](/meeting-minutes/parks-commission/2022-08-17-dtqOCqsSVtE) | reference | — / 14.6 min | *(none declared)* |
+| [Parks Commission, September 14, 2022](/meeting-minutes/parks-commission/2022-09-14-5NtT9u43KVU) | reference | — / 13.0 min | *(none declared)* |
+| [Parks Commission, September 28, 2022](/meeting-minutes/parks-commission/2022-09-28-xvd0TLk0dT0) | reference | — / 12.3 min | *(none declared)* |
+| [Parks Commission, October 26, 2022](/meeting-minutes/parks-commission/2022-10-26-Z2bD3vffwBQ) | reference | — / 12.5 min | *(none declared)* |
+| [Parks Commission, November 16, 2022](/meeting-minutes/parks-commission/2022-11-16-O1ZiYA4DN7c) | reference | — / 12.8 min | *(none declared)* |
+| [Parks Commission, December 14, 2022](/meeting-minutes/parks-commission/2022-12-14-mk6g4PT8X14) | reference | — / 15.2 min | *(none declared)* |
+| [Parks Commission, February 15, 2023](/meeting-minutes/parks-commission/2023-02-15-9XWHsno9FSM) | reference | — / 13.7 min | *(none declared)* |
+| [Parks Commission, March 22, 2023](/meeting-minutes/parks-commission/2023-03-22-KWE3eUgQJyI) | reference | — / 13.5 min | *(none declared)* |
+| [Parks Commission, April 19, 2023](/meeting-minutes/parks-commission/2023-04-19-xon-NKhHvR0) | reference | — / 15.7 min | *(none declared)* |
+| [Parks Commission, May 24, 2023](/meeting-minutes/parks-commission/2023-05-24-ul7FHpl4UNQ) | reference | — / 16.1 min | *(none declared)* |
+| [Parks Commission, May 31, 2023](/meeting-minutes/parks-commission/2023-05-31-AyjizJjwlLo) | reference | — / 11.7 min | *(none declared)* |
+| [Parks Commission, June 28, 2023](/meeting-minutes/parks-commission/2023-06-28-xItLPcgE8Co) | reference | — / 14.6 min | *(none declared)* |
+| [Parks Commission, July 12, 2023](/meeting-minutes/parks-commission/2023-07-12-lRu-YPIy9sw) | reference | — / 15.2 min | *(none declared)* |
+| [Parks Commission, August 16, 2023](/meeting-minutes/parks-commission/2023-08-16-KCkYHX-FH-w) | reference | — / 15.3 min | *(none declared)* |
+| [Parks Commission, September 20, 2023](/meeting-minutes/parks-commission/2023-09-20-JSMjh47R52I) | reference | — / 14.5 min | *(none declared)* |
+| [Parks Commission, October 18, 2023](/meeting-minutes/parks-commission/2023-10-18-j_e4j4cx96Y) | reference | — / 10.9 min | *(none declared)* |
+| [Parks Commission, December 6, 2023](/meeting-minutes/parks-commission/2023-12-06-tycESYMw2Gk) | reference | — / 13.7 min | *(none declared)* |
+| [Parks Commission, January 17, 2024](/meeting-minutes/parks-commission/2024-01-17-SQp-o0gWxbU) | reference | — / 14.2 min | *(none declared)* |
+| [Parks Commission, February 29, 2024](/meeting-minutes/parks-commission/2024-02-29-iYh3xB9jtts) | reference | — / 16.7 min | *(none declared)* |
+| [Parks Commission, March 20, 2024](/meeting-minutes/parks-commission/2024-03-20-djsvmiCll7g) | reference | — / 13.1 min | *(none declared)* |
+| [Parks Commission, March 27, 2024](/meeting-minutes/parks-commission/2024-03-27-3eOik-5hkmA) | reference | — / 13.0 min | *(none declared)* |
+| [Parks Commission, April 24, 2024](/meeting-minutes/parks-commission/2024-04-24-QFXOYqQgz70) | reference | — / 14.3 min | *(none declared)* |
+| [Parks Commission, May 15, 2024](/meeting-minutes/parks-commission/2024-05-15-FVvWpsTlMcM) | reference | — / 14.6 min | *(none declared)* |
+| [Parks Commission, June 25, 2024](/meeting-minutes/parks-commission/2024-06-25-An5ad_AbjaA) | reference | — / 14.0 min | *(none declared)* |
+| [Parks Commission, July 31, 2024](/meeting-minutes/parks-commission/2024-07-31-e_RYyxJdkIM) | reference | — / 14.3 min | *(none declared)* |
+| [Parks Commission, August 14, 2024](/meeting-minutes/parks-commission/2024-08-14-cs-405mk2bU) | reference | — / 14.4 min | *(none declared)* |
+| [Parks Commission, August 21, 2024](/meeting-minutes/parks-commission/2024-08-21-3D6BvQeqTWc) | reference | — / 13.1 min | *(none declared)* |
+| [Parks Commission, September 18, 2024](/meeting-minutes/parks-commission/2024-09-18-Gsvig_sJHLw) | reference | — / 14.5 min | *(none declared)* |
+| [Parks Commission, October 10, 2024](/meeting-minutes/parks-commission/2024-10-10-WLC_SdFeTv0) | reference | — / 13.1 min | *(none declared)* |
+| [Parks Commission, October 23, 2024](/meeting-minutes/parks-commission/2024-10-23-xixCOgSllfA) | reference | — / 17.7 min | *(none declared)* |
+| [Parks Commission, November 6, 2024](/meeting-minutes/parks-commission/2024-11-06-fDKzZIaYh7I) | reference | — / 17.3 min | *(none declared)* |
+| [Parks Commission, December 18, 2024](/meeting-minutes/parks-commission/2024-12-18-0kTuXRFLfaQ) | reference | — / 15.0 min | *(none declared)* |
+| [Parks Commission, January 15, 2025](/meeting-minutes/parks-commission/2025-01-15-SpJt3DbJlVY) | reference | — / 12.9 min | *(none declared)* |
+| [Parks Commission, February 19, 2025](/meeting-minutes/parks-commission/2025-02-19-_w4nhTP9CKs) | reference | — / 14.6 min | *(none declared)* |
+| [Parks Commission, March 26, 2025](/meeting-minutes/parks-commission/2025-03-26-PNQGq2Xj7DY) | reference | — / 14.0 min | *(none declared)* |
+| [Parks Commission, June 4, 2025](/meeting-minutes/parks-commission/2025-06-04-cqx_kxzHC3c) | reference | — / 18.8 min | *(none declared)* |
+| [Parks Commission, July 30, 2025](/meeting-minutes/parks-commission/2025-07-30-dCIY3fUcxeg) | reference | — / 17.9 min | *(none declared)* |
+| [Parks Commission, September 24, 2025](/meeting-minutes/parks-commission/2025-09-24-F9NMA6GA0-g) | reference | — / 13.1 min | *(none declared)* |
+| [Parks Commission, October 22, 2025](/meeting-minutes/parks-commission/2025-10-22-IRQSd87FGrE) | reference | — / 11.1 min | *(none declared)* |
+| [Parks Commission, December 17, 2025](/meeting-minutes/parks-commission/2025-12-17-VaoW_BLj1Nc) | reference | — / 12.0 min | *(none declared)* |
+| [Parks Commission, January 28, 2026](/meeting-minutes/parks-commission/2026-01-28-5Te_8qlxzrA) | reference | — / 13.6 min | *(none declared)* |
+| [Parks Commission, February 3, 2026](/meeting-minutes/parks-commission/2026-02-03-jLSVwv2caHM) | reference | — / 13.9 min | *(none declared)* |
+| [Parks Commission, March 4, 2026](/meeting-minutes/parks-commission/2026-03-04-44DUODpJsBw) | reference | — / 16.3 min | *(none declared)* |
+| [Parks Commission, March 25, 2026](/meeting-minutes/parks-commission/2026-03-25-7Vr3PHnsnIY) | reference | — / 13.7 min | *(none declared)* |
+| [Parks Commission, April 22, 2026](/meeting-minutes/parks-commission/2026-04-22-szimFHvo_cU) | reference | — / 12.4 min | *(none declared)* |
+| [Parks Commission, May 27, 2026](/meeting-minutes/parks-commission/2026-05-27-ohMm6glUw-Y) | reference | — / 15.0 min | *(none declared)* |
+| [Parks Commission, June 24, 2026](/meeting-minutes/parks-commission/2026-06-24-sYBbdYKeNe4) | reference | — / 13.4 min | *(none declared)* |
+| [Parks Commission, July 22, 2026](/meeting-minutes/parks-commission/2026-07-22-QhMt1oE8eZo) | reference | — / 15.9 min | *(none declared)* |
+| [Parks Commission, August 26, 2026](/meeting-minutes/parks-commission/2026-08-26-myQGZh_udNc) | reference | — / 12.6 min | *(none declared)* |
+| [Parks Commission, September 30, 2026](/meeting-minutes/parks-commission/2026-09-30-j4r_5tj48fg) | reference | — / 10.8 min | *(none declared)* |
+| [Parks Commission, October 21, 2026](/meeting-minutes/parks-commission/2026-10-21-8SoFrgR-9EY) | reference | — / 12.8 min | *(none declared)* |
+| [Personnel Committee, February 24, 2021](/meeting-minutes/personnel-committee/2021-02-24-9TE9ypWIRA4) | reference | — / 15.2 min | *(none declared)* |
+| [Personnel Committee, March 8, 2021](/meeting-minutes/personnel-committee/2021-03-08-ul3VxUQbeu4) | reference | — / 13.1 min | *(none declared)* |
+| [Personnel Committee, March 23, 2021](/meeting-minutes/personnel-committee/2021-03-23-wBH6iwFJFEo) | reference | — / 11.5 min | *(none declared)* |
+| [Personnel Committee, June 3, 2021](/meeting-minutes/personnel-committee/2021-06-03-vqg-yKNJaFM) | reference | — / 11.2 min | *(none declared)* |
+| [Personnel Committee, July 22, 2021](/meeting-minutes/personnel-committee/2021-07-22-5jKVTmG37o4) | reference | — / 10.7 min | *(none declared)* |
+| [Personnel Committee, December 13, 2021](/meeting-minutes/personnel-committee/2021-12-13-GyLMqh66q2I) | reference | — / 10.5 min | *(none declared)* |
+| [Personnel Committee, January 24, 2022](/meeting-minutes/personnel-committee/2022-01-24-XfzXTyId75E) | reference | — / 15.0 min | *(none declared)* |
+| [Personnel Committee, January 31, 2022](/meeting-minutes/personnel-committee/2022-01-31-M8uJx5-NHa4) | reference | — / 11.5 min | *(none declared)* |
+| [Personnel Committee, February 16, 2022](/meeting-minutes/personnel-committee/2022-02-16-vk4CyiIrk54) | reference | — / 12.8 min | *(none declared)* |
+| [Personnel Committee, March 2, 2022](/meeting-minutes/personnel-committee/2022-03-02-Bh6BTflXGmI) | reference | — / 15.2 min | *(none declared)* |
+| [Personnel Committee, March 9, 2022](/meeting-minutes/personnel-committee/2022-03-09-4czOfI0p_Cg) | reference | — / 15.1 min | *(none declared)* |
+| [Personnel Committee, March 21, 2022](/meeting-minutes/personnel-committee/2022-03-21-H-91wPi4gmo) | reference | — / 14.5 min | *(none declared)* |
+| [Personnel Committee, March 28, 2022](/meeting-minutes/personnel-committee/2022-03-28-BClknEtNlSc) | reference | — / 12.4 min | *(none declared)* |
+| [Personnel Committee, April 6, 2022](/meeting-minutes/personnel-committee/2022-04-06-FIs3SPru3oM) | reference | — / 10.2 min | *(none declared)* |
+| [Personnel Committee, May 2, 2022](/meeting-minutes/personnel-committee/2022-05-02-W4wAjV3w60A) | reference | — / 11.8 min | *(none declared)* |
+| [Personnel Committee, June 15, 2022](/meeting-minutes/personnel-committee/2022-06-15-H1h1Hn0aE60) | reference | — / 10.5 min | *(none declared)* |
+| [Personnel Committee, July 11, 2022](/meeting-minutes/personnel-committee/2022-07-11-wBPnv1yEC5c) | reference | — / 11.8 min | *(none declared)* |
+| [Personnel Committee, July 25, 2022](/meeting-minutes/personnel-committee/2022-07-25-l3MysYKZJs4) | reference | — / 10.3 min | *(none declared)* |
+| [Personnel Committee, August 15, 2022](/meeting-minutes/personnel-committee/2022-08-15-ilS2kZXx6oo) | reference | — / 12.3 min | *(none declared)* |
+| [Personnel Committee, September 1, 2022](/meeting-minutes/personnel-committee/2022-09-01-Jnk9VPGV0A4) | reference | — / 10.3 min | *(none declared)* |
+| [Personnel Committee, September 12, 2022](/meeting-minutes/personnel-committee/2022-09-12-Z7PY-s9xo64) | reference | — / 12.4 min | *(none declared)* |
+| [Personnel Committee, September 26, 2022](/meeting-minutes/personnel-committee/2022-09-26-J3anHJHoC9o) | reference | — / 11.5 min | *(none declared)* |
+| [Personnel Committee, November 7, 2022](/meeting-minutes/personnel-committee/2022-11-07-Px60qLbWQks) | reference | — / 11.2 min | *(none declared)* |
+| [Personnel Committee, December 5, 2022](/meeting-minutes/personnel-committee/2022-12-05-aa3vuY2HSK0) | reference | — / 10.9 min | *(none declared)* |
+| [Personnel Committee, January 9, 2023](/meeting-minutes/personnel-committee/2023-01-09-l94AUerRzV4) | reference | — / 11.5 min | *(none declared)* |
+| [Personnel Committee, February 6, 2023](/meeting-minutes/personnel-committee/2023-02-06-UZzkAaY8LyA) | reference | — / 11.5 min | *(none declared)* |
+| [Personnel Committee, February 27, 2023](/meeting-minutes/personnel-committee/2023-02-27-dF3gNYraxO4) | reference | — / 12.6 min | *(none declared)* |
+| [Personnel Committee, March 6, 2023](/meeting-minutes/personnel-committee/2023-03-06-9VB9yoo9KT0) | reference | — / 14.4 min | *(none declared)* |
+| [Personnel Committee, March 14, 2023](/meeting-minutes/personnel-committee/2023-03-14-xkzTl4oB6oY) | reference | — / 12.3 min | *(none declared)* |
+| [Personnel Committee, March 27, 2023](/meeting-minutes/personnel-committee/2023-03-27-U1lwdVQYGu0) | reference | — / 11.5 min | *(none declared)* |
+| [Personnel Committee, May 1, 2023](/meeting-minutes/personnel-committee/2023-05-01-_qkI3iv0Ijc) | reference | — / 11.4 min | *(none declared)* |
+| [Personnel Committee, July 5, 2023](/meeting-minutes/personnel-committee/2023-07-05-O8BgTx6LfWg) | reference | — / 10.3 min | *(none declared)* |
+| [Personnel Committee, July 19, 2023](/meeting-minutes/personnel-committee/2023-07-19-IRDZe8Eq8g4) | reference | — / 11.9 min | *(none declared)* |
+| [Personnel Committee, August 23, 2023](/meeting-minutes/personnel-committee/2023-08-23-m1KBjtJrEZ0) | reference | — / 12.5 min | *(none declared)* |
+| [Personnel Committee, September 6, 2023](/meeting-minutes/personnel-committee/2023-09-06-OqjhveRDU3c) | reference | — / 11.5 min | *(none declared)* |
+| [Personnel Committee, September 26, 2023](/meeting-minutes/personnel-committee/2023-09-26-ES77suiKh3c) | reference | — / 12.9 min | *(none declared)* |
+| [Personnel Committee, October 4, 2023](/meeting-minutes/personnel-committee/2023-10-04-18yl7DklyJw) | reference | — / 9.9 min | *(none declared)* |
+| [Personnel Committee, October 17, 2023](/meeting-minutes/personnel-committee/2023-10-17-SkZEupv0WE0) | reference | — / 12.6 min | *(none declared)* |
+| [Personnel Committee, October 24, 2023](/meeting-minutes/personnel-committee/2023-10-24-7ThCK891tlg) | reference | — / 13.8 min | *(none declared)* |
+| [Personnel Committee, November 13, 2023](/meeting-minutes/personnel-committee/2023-11-13-R8HGoqhZ2Gk) | reference | — / 12.5 min | *(none declared)* |
+| [Personnel Committee, November 13, 2023](/meeting-minutes/personnel-committee/2023-11-13-iWUlBLWR0Q4) | reference | — / 10.6 min | *(none declared)* |
+| [Personnel Committee, January 31, 2024](/meeting-minutes/personnel-committee/2024-01-31-xun4y1wGRAI) | reference | — / 11.5 min | *(none declared)* |
+| [Personnel Committee, February 12, 2024](/meeting-minutes/personnel-committee/2024-02-12-Xlg8_rMC3QM) | reference | — / 13.3 min | *(none declared)* |
+| [Personnel Committee, February 26, 2024](/meeting-minutes/personnel-committee/2024-02-26-LwJ-2IZfYGE) | reference | — / 14.5 min | *(none declared)* |
+| [Personnel Committee, March 11, 2024](/meeting-minutes/personnel-committee/2024-03-11-cCyIxI75GDU) | reference | — / 13.5 min | *(none declared)* |
+| [Personnel Committee, March 13, 2024](/meeting-minutes/personnel-committee/2024-03-13-hgtPGLGAiCY) | reference | — / 13.7 min | *(none declared)* |
+| [Personnel Committee, March 28, 2024](/meeting-minutes/personnel-committee/2024-03-28-RhOu9USDLak) | reference | — / 9.6 min | *(none declared)* |
+| [Personnel Committee, May 29, 2024](/meeting-minutes/personnel-committee/2024-05-29-fNxB41qcJ64) | reference | — / 11.2 min | *(none declared)* |
+| [Personnel Committee, July 6, 2026](/meeting-minutes/personnel-committee/2026-07-06-KVzRSrdc5pc) | reference | — / 14.8 min | *(none declared)* |
+| [Personnel Committee, August 3, 2026](/meeting-minutes/personnel-committee/2026-08-03-QDMwtSUlVDY) | reference | — / 12.9 min | *(none declared)* |
+| [Personnel Committee, August 31, 2026](/meeting-minutes/personnel-committee/2026-08-31-DcEdUB3CsCU) | reference | — / 12.8 min | *(none declared)* |
+| [Personnel Committee, September 3, 2026](/meeting-minutes/personnel-committee/2026-09-03-x4HDKD0Ol7c) | reference | — / 10.0 min | *(none declared)* |
+| [Personnel Committee, September 21, 2026](/meeting-minutes/personnel-committee/2026-09-21-aJWq6GB5GYc) | reference | — / 10.5 min | *(none declared)* |
+| [Personnel Committee, October 19, 2026](/meeting-minutes/personnel-committee/2026-10-19-EXW6yhlcWlY) | reference | — / 9.9 min | *(none declared)* |
+| [Planning Board, February 22, 2021](/meeting-minutes/planning-board/2021-02-22-I5VCCkSerA0) | reference | — / 13.3 min | *(none declared)* |
+| [Planning Board, March 8, 2021](/meeting-minutes/planning-board/2021-03-08-iP-6tVuH2Ik) | reference | — / 12.9 min | *(none declared)* |
+| [Planning Board, March 22, 2021](/meeting-minutes/planning-board/2021-03-22-AcLd1HxBA6k) | reference | — / 16.4 min | *(none declared)* |
+| [Planning Board, April 12, 2021](/meeting-minutes/planning-board/2021-04-12-_NmgeJJjUEM) | reference | — / 14.7 min | *(none declared)* |
+| [Planning Board, April 26, 2021](/meeting-minutes/planning-board/2021-04-26-2PogH34h-jI) | reference | — / 14.4 min | *(none declared)* |
+| [Planning Board, May 10, 2021](/meeting-minutes/planning-board/2021-05-10-jc139QFTsxE) | reference | — / 13.9 min | *(none declared)* |
+| [Planning Board, May 24, 2021](/meeting-minutes/planning-board/2021-05-24-E9wfB6C9GT4) | reference | — / 15.5 min | *(none declared)* |
+| [Planning Board, June 14, 2021](/meeting-minutes/planning-board/2021-06-14-AaY0CHW-KBQ) | reference | — / 13.7 min | *(none declared)* |
+| [Planning Board, June 28, 2021](/meeting-minutes/planning-board/2021-06-28-aZ1K5gJydx0) | reference | — / 16.0 min | *(none declared)* |
+| [Planning Board, July 12, 2021](/meeting-minutes/planning-board/2021-07-12-C26B4VgDYt0) | reference | — / 12.7 min | *(none declared)* |
+| [Planning Board, July 26, 2021](/meeting-minutes/planning-board/2021-07-26-jl3SOthWJHg) | reference | — / 12.4 min | *(none declared)* |
+| [Planning Board, August 23, 2021](/meeting-minutes/planning-board/2021-08-23-HqsOjFoYrzI) | reference | — / 15.4 min | *(none declared)* |
+| [Planning Board, September 13, 2021](/meeting-minutes/planning-board/2021-09-13-uiARKx_LS6A) | reference | — / 16.2 min | *(none declared)* |
+| [Planning Board, September 27, 2021](/meeting-minutes/planning-board/2021-09-27-enfAb9cPlto) | reference | — / 12.0 min | *(none declared)* |
+| [Planning Board, September 27, 2021](/meeting-minutes/planning-board/2021-09-27-o5Gm3hnO8hs) | reference | — / 14.9 min | *(none declared)* |
+| [Planning Board, October 25, 2021](/meeting-minutes/planning-board/2021-10-25-ZiWANYcljyc) | reference | — / 15.8 min | *(none declared)* |
+| [Planning Board, November 15, 2021](/meeting-minutes/planning-board/2021-11-15-ZhNiIKISzpE) | reference | — / 16.1 min | *(none declared)* |
+| [Planning Board, November 29, 2021](/meeting-minutes/planning-board/2021-11-29-yOKUwCR3TPU) | reference | — / 14.3 min | *(none declared)* |
+| [Planning Board, December 13, 2021](/meeting-minutes/planning-board/2021-12-13-CRP66bAcDpY) | reference | — / 13.8 min | *(none declared)* |
+| [Planning Board, January 10, 2022](/meeting-minutes/planning-board/2022-01-10-T25y_9dbQYE) | reference | — / 14.9 min | *(none declared)* |
+| [Planning Board, January 24, 2022](/meeting-minutes/planning-board/2022-01-24-wVZYM_kFz3c) | reference | — / 12.5 min | *(none declared)* |
+| [Planning Board, March 14, 2022](/meeting-minutes/planning-board/2022-03-14-KFLo8tSOR3E) | reference | — / 14.8 min | *(none declared)* |
+| [Planning Board, March 28, 2022](/meeting-minutes/planning-board/2022-03-28-nCCTFcd2SII) | reference | — / 14.5 min | *(none declared)* |
+| [Planning Board, April 25, 2022](/meeting-minutes/planning-board/2022-04-25-3azKYGda9HQ) | reference | — / 15.6 min | *(none declared)* |
+| [Planning Board, May 9, 2022](/meeting-minutes/planning-board/2022-05-09-pHUlS0-Kwpc) | reference | — / 11.7 min | *(none declared)* |
+| [Planning Board, May 23, 2022](/meeting-minutes/planning-board/2022-05-23-gZobnVe6GJE) | reference | — / 13.9 min | *(none declared)* |
+| [Planning Board, June 13, 2022](/meeting-minutes/planning-board/2022-06-13-8RyS2owcwGQ) | reference | — / 15.9 min | *(none declared)* |
+| [Planning Board, June 27, 2022](/meeting-minutes/planning-board/2022-06-27-pD4E1nV03Og) | reference | — / 14.5 min | *(none declared)* |
+| [Planning Board, July 25, 2022](/meeting-minutes/planning-board/2022-07-25-cNs5WLzN_G0) | reference | — / 14.3 min | *(none declared)* |
+| [Planning Board, August 22, 2022](/meeting-minutes/planning-board/2022-08-22-Q4PyGKeoxL8) | reference | — / 15.2 min | *(none declared)* |
+| [Planning Board, September 12, 2022](/meeting-minutes/planning-board/2022-09-12-_DM1xnctyIM) | reference | — / 15.7 min | *(none declared)* |
+| [Planning Board, September 26, 2022](/meeting-minutes/planning-board/2022-09-26-CBkAnpqOHJA) | reference | — / 14.7 min | *(none declared)* |
+| [Planning Board, October 24, 2022](/meeting-minutes/planning-board/2022-10-24-DWL2hDv1F9o) | reference | — / 14.9 min | *(none declared)* |
+| [Planning Board, November 14, 2022](/meeting-minutes/planning-board/2022-11-14-vTO5XVILsfM) | reference | — / 12.5 min | *(none declared)* |
+| [Planning Board, November 28, 2022](/meeting-minutes/planning-board/2022-11-28-CEyfRCLUmqw) | reference | — / 13.2 min | *(none declared)* |
+| [Planning Board, December 12, 2022](/meeting-minutes/planning-board/2022-12-12-W-O4Wv1bsxA) | reference | — / 12.0 min | *(none declared)* |
+| [Planning Board, January 9, 2023](/meeting-minutes/planning-board/2023-01-09-j0k_Ycm3c9w) | reference | — / 14.2 min | *(none declared)* |
+| [Planning Board, February 13, 2023](/meeting-minutes/planning-board/2023-02-13-G1RxfM_M688) | reference | — / 12.6 min | *(none declared)* |
+| [Planning Board, February 27, 2023](/meeting-minutes/planning-board/2023-02-27-2kHmFvQXwmU) | reference | — / 13.5 min | *(none declared)* |
+| [Planning Board, March 13, 2023](/meeting-minutes/planning-board/2023-03-13-nhJHNcS22qo) | reference | — / 12.8 min | *(none declared)* |
+| [Planning Board, March 27, 2023](/meeting-minutes/planning-board/2023-03-27-mCPrpmGZoDw) | reference | — / 13.3 min | *(none declared)* |
+| [Planning Board, April 10, 2023](/meeting-minutes/planning-board/2023-04-10-XUTK3hMFpe4) | reference | — / 12.5 min | *(none declared)* |
+| [Planning Board, April 24, 2023](/meeting-minutes/planning-board/2023-04-24-xwh6-yxKEwE) | reference | — / 11.4 min | *(none declared)* |
+| [Planning Board, May 8, 2023](/meeting-minutes/planning-board/2023-05-08-RVBk90EkSWI) | reference | — / 12.1 min | *(none declared)* |
+| [Planning Board, May 22, 2023](/meeting-minutes/planning-board/2023-05-22-LFMLSy12R6o) | reference | — / 11.4 min | *(none declared)* |
+| [Planning Board, June 12, 2023](/meeting-minutes/planning-board/2023-06-12--WVTxPskYYw) | reference | — / 13.4 min | *(none declared)* |
+| [Planning Board, June 15, 2023](/meeting-minutes/planning-board/2023-06-15-Dq90tAZHZt4) | reference | — / 10.5 min | *(none declared)* |
+| [Planning Board, June 26, 2023](/meeting-minutes/planning-board/2023-06-26-9Mcpkm-YPG8) | reference | — / 13.3 min | *(none declared)* |
+| [Planning Board, July 10, 2023](/meeting-minutes/planning-board/2023-07-10-rJ6-gChA-kY) | reference | — / 12.8 min | *(none declared)* |
+| [Planning Board, July 24, 2023](/meeting-minutes/planning-board/2023-07-24-y4QR6lSh6p4) | reference | — / 12.9 min | *(none declared)* |
+| [Planning Board, August 14, 2023](/meeting-minutes/planning-board/2023-08-14-7Jdorucbnnc) | reference | — / 12.3 min | *(none declared)* |
+| [Planning Board, August 28, 2023](/meeting-minutes/planning-board/2023-08-28-42bMGRvUT4Q) | reference | — / 12.9 min | *(none declared)* |
+| [Planning Board, September 11, 2023](/meeting-minutes/planning-board/2023-09-11-pGKD4lPXjto) | reference | — / 13.0 min | *(none declared)* |
+| [Planning Board, October 2, 2023](/meeting-minutes/planning-board/2023-10-02-FQxSltjdEKM) | reference | — / 13.3 min | *(none declared)* |
+| [Planning Board, October 23, 2023](/meeting-minutes/planning-board/2023-10-23-E470s7YnyyA) | reference | — / 16.0 min | *(none declared)* |
+| [Planning Board, October 30, 2023](/meeting-minutes/planning-board/2023-10-30-ENTQsryqo4E) | reference | — / 13.2 min | *(none declared)* |
+| [Planning Board, November 13, 2023](/meeting-minutes/planning-board/2023-11-13-Ppe0GU6FE3c) | reference | — / 10.9 min | *(none declared)* |
+| [Planning Board, November 27, 2023](/meeting-minutes/planning-board/2023-11-27-rL9aJFE5OGQ) | reference | — / 11.2 min | *(none declared)* |
+| [Planning Board, January 8, 2024](/meeting-minutes/planning-board/2024-01-08-0Nk0D4kh22U) | reference | — / 10.6 min | *(none declared)* |
+| [Planning Board, January 22, 2024](/meeting-minutes/planning-board/2024-01-22-2jkShFov8a0) | reference | — / 11.6 min | *(none declared)* |
+| [Planning Board, February 12, 2024](/meeting-minutes/planning-board/2024-02-12-4cwC19sgSIo) | reference | — / 10.7 min | *(none declared)* |
+| [Planning Board, February 26, 2024](/meeting-minutes/planning-board/2024-02-26-ZhOp4r6EeOI) | reference | — / 13.8 min | *(none declared)* |
+| [Planning Board, March 25, 2024](/meeting-minutes/planning-board/2024-03-25-_LKmx6PKAJ4) | reference | — / 11.5 min | *(none declared)* |
+| [Planning Board, April 8, 2024](/meeting-minutes/planning-board/2024-04-08-9vGRGqbGkX8) | reference | — / 8.5 min | *(none declared)* |
+| [Planning Board, April 22, 2024](/meeting-minutes/planning-board/2024-04-22-1ose_b4ac2Y) | reference | — / 17.0 min | *(none declared)* |
+| [Planning Board, May 13, 2024](/meeting-minutes/planning-board/2024-05-13-Qyw2YjpfC-E) | reference | — / 13.0 min | *(none declared)* |
+| [Planning Board, June 10, 2024](/meeting-minutes/planning-board/2024-06-10-4cIueaaiQp0) | reference | — / 12.8 min | *(none declared)* |
+| [Planning Board, June 24, 2024](/meeting-minutes/planning-board/2024-06-24-YnVjUza2w6s) | reference | — / 13.2 min | *(none declared)* |
+| [Planning Board, July 8, 2024](/meeting-minutes/planning-board/2024-07-08-5ONV-Xbgmfg) | reference | — / 16.4 min | *(none declared)* |
+| [Planning Board, July 22, 2024](/meeting-minutes/planning-board/2024-07-22-1Rx5x_-HbtA) | reference | — / 15.1 min | *(none declared)* |
+| [Planning Board, August 12, 2024](/meeting-minutes/planning-board/2024-08-12-uUd8ne70POA) | reference | — / 13.1 min | *(none declared)* |
+| [Planning Board, August 26, 2024](/meeting-minutes/planning-board/2024-08-26-7CtboEsw7Jk) | reference | — / 15.5 min | *(none declared)* |
+| [Planning Board, September 9, 2024](/meeting-minutes/planning-board/2024-09-09-6UmfnngCZP8) | reference | — / 14.3 min | *(none declared)* |
+| [Planning Board, September 23, 2024](/meeting-minutes/planning-board/2024-09-23-fOYAUJGG-Rg) | reference | — / 14.8 min | *(none declared)* |
+| [Planning Board, October 28, 2024](/meeting-minutes/planning-board/2024-10-28-rspKwGUKQbo) | reference | — / 16.3 min | *(none declared)* |
+| [Planning Board, November 25, 2024](/meeting-minutes/planning-board/2024-11-25-cJhTxcvTs4c) | reference | — / 14.1 min | *(none declared)* |
+| [Planning Board, December 9, 2024](/meeting-minutes/planning-board/2024-12-09-s_29eXMabkY) | reference | — / 13.9 min | *(none declared)* |
+| [Planning Board, January 13, 2025](/meeting-minutes/planning-board/2025-01-13-bPkrIrL39fk) | reference | — / 15.3 min | *(none declared)* |
+| [Planning Board, January 27, 2025](/meeting-minutes/planning-board/2025-01-27-2s0Q-65L24k) | reference | — / 15.2 min | *(none declared)* |
+| [Planning Board, February 10, 2025](/meeting-minutes/planning-board/2025-02-10-LrdUqJ4sCWE) | reference | — / 14.2 min | *(none declared)* |
+| [Planning Board, February 24, 2025](/meeting-minutes/planning-board/2025-02-24-FuuVXm_zei0) | reference | — / 17.8 min | *(none declared)* |
+| [Planning Board, March 10, 2025](/meeting-minutes/planning-board/2025-03-10-Bo5dZ9kC1IY) | reference | — / 14.8 min | *(none declared)* |
+| [Planning Board, March 24, 2025](/meeting-minutes/planning-board/2025-03-24-Cra5AAFpWp0) | reference | — / 16.8 min | *(none declared)* |
+| [Planning Board, April 14, 2025](/meeting-minutes/planning-board/2025-04-14-8hSANOjIKj4) | reference | — / 13.1 min | *(none declared)* |
+| [Planning Board, April 28, 2025](/meeting-minutes/planning-board/2025-04-28-FVb29-qTr4o) | reference | — / 14.8 min | *(none declared)* |
+| [Planning Board, May 12, 2025](/meeting-minutes/planning-board/2025-05-12-IAL3PkRKdbo) | reference | — / 15.7 min | *(none declared)* |
+| [Planning Board, June 9, 2025](/meeting-minutes/planning-board/2025-06-09-6nRH1-LVvLo) | reference | — / 18.8 min | *(none declared)* |
+| [Planning Board, June 16, 2025](/meeting-minutes/planning-board/2025-06-16-zYk81_dlazA) | reference | — / 14.4 min | *(none declared)* |
+| [Planning Board, June 23, 2025](/meeting-minutes/planning-board/2025-06-23-IMJVWBUuYtA) | reference | — / 16.5 min | *(none declared)* |
+| [Planning Board, July 14, 2025](/meeting-minutes/planning-board/2025-07-14-X1RXrG0dpls) | reference | — / 12.5 min | *(none declared)* |
+| [Planning Board, July 28, 2025](/meeting-minutes/planning-board/2025-07-28-pg8Q_MW3GaM) | reference | — / 15.5 min | *(none declared)* |
+| [Planning Board, August 20, 2025](/meeting-minutes/planning-board/2025-08-20-LsGmMsNrlQM) | reference | — / 9.5 min | *(none declared)* |
+| [Planning Board, August 25, 2025](/meeting-minutes/planning-board/2025-08-25-ut6aID46z-A) | reference | — / 17.6 min | *(none declared)* |
+| [Planning Board, September 8, 2025](/meeting-minutes/planning-board/2025-09-08-CWQw1uUHNTs) | reference | — / 14.1 min | *(none declared)* |
+| [Planning Board, September 22, 2025](/meeting-minutes/planning-board/2025-09-22-yX-Mp9GAGh0) | reference | — / 15.1 min | *(none declared)* |
+| [Planning Board, October 27, 2025](/meeting-minutes/planning-board/2025-10-27-Yr_JfHYXDQY) | reference | — / 15.6 min | *(none declared)* |
+| [Planning Board, November 10, 2025](/meeting-minutes/planning-board/2025-11-10-TNDWEBs04b8) | reference | — / 15.0 min | *(none declared)* |
+| [Planning Board, November 24, 2025](/meeting-minutes/planning-board/2025-11-24-MINgUFAwA7Y) | reference | — / 14.8 min | *(none declared)* |
+| [Planning Board, December 15, 2025](/meeting-minutes/planning-board/2025-12-15-UStto3DZ0Qc) | reference | — / 15.9 min | *(none declared)* |
+| [Planning Board, January 12, 2026](/meeting-minutes/planning-board/2026-01-12-_7BHr5LRYBM) | reference | — / 15.6 min | *(none declared)* |
+| [Planning Board, February 9, 2026](/meeting-minutes/planning-board/2026-02-09-KKIGyjDI6jw) | reference | — / 16.9 min | *(none declared)* |
+| [Planning Board, March 16, 2026](/meeting-minutes/planning-board/2026-03-16-bbyuOZrwZiU) | reference | — / 17.1 min | *(none declared)* |
+| [Planning Board, March 23, 2026](/meeting-minutes/planning-board/2026-03-23-5_eJFBNX9JY) | reference | — / 13.9 min | *(none declared)* |
+| [Planning Board, April 13, 2026](/meeting-minutes/planning-board/2026-04-13-_Hswnum9XPs) | reference | — / 15.5 min | *(none declared)* |
+| [Planning Board, April 27, 2026](/meeting-minutes/planning-board/2026-04-27-5TtFDiodgeQ) | reference | — / 15.6 min | *(none declared)* |
+| [Planning Board, May 11, 2026](/meeting-minutes/planning-board/2026-05-11-6xwAhcr2hOU) | reference | — / 14.8 min | *(none declared)* |
+| [Planning Board, June 8, 2026](/meeting-minutes/planning-board/2026-06-08-0drqJ-uZ_HM) | reference | — / 16.5 min | *(none declared)* |
+| [Planning Board, June 22, 2026](/meeting-minutes/planning-board/2026-06-22-ZpNGqXJUFec) | reference | — / 15.7 min | *(none declared)* |
+| [Planning Board, July 13, 2026](/meeting-minutes/planning-board/2026-07-13-vl9pZDQHImo) | reference | — / 19.4 min | *(none declared)* |
+| [Planning Board, July 20, 2026](/meeting-minutes/planning-board/2026-07-20-FvJj-S-iEug) | reference | — / 15.4 min | *(none declared)* |
+| [Planning Board, July 27, 2026](/meeting-minutes/planning-board/2026-07-27-2GIMJnxvJyg) | reference | — / 13.4 min | *(none declared)* |
+| [Planning Board, August 10, 2026](/meeting-minutes/planning-board/2026-08-10-KZf5AVu8sjQ) | reference | — / 13.5 min | *(none declared)* |
+| [Planning Board, August 24, 2026](/meeting-minutes/planning-board/2026-08-24-vZDJ6B71qqI) | reference | — / 15.9 min | *(none declared)* |
+| [Planning Board, September 28, 2026](/meeting-minutes/planning-board/2026-09-28-JGeGZxGcC7I) | reference | — / 12.1 min | *(none declared)* |
+| [Planning Board, October 19, 2026](/meeting-minutes/planning-board/2026-10-19-zR2QmmC_450) | reference | — / 10.6 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), March 1, 2021](/meeting-minutes/public-access-cable-committee-pacc/2021-03-01-rt3bTjKEmD8) | reference | — / 11.2 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), April 5, 2021](/meeting-minutes/public-access-cable-committee-pacc/2021-04-05-XLIaMgTMmpM) | reference | — / 12.4 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), May 3, 2021](/meeting-minutes/public-access-cable-committee-pacc/2021-05-03-VCf34KAB55E) | reference | — / 13.1 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), July 15, 2021](/meeting-minutes/public-access-cable-committee-pacc/2021-07-15-hRCmtFn3EsI) | reference | — / 11.9 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), August 2, 2021](/meeting-minutes/public-access-cable-committee-pacc/2021-08-02-GMPCRaSz98I) | reference | — / 10.1 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), September 13, 2021](/meeting-minutes/public-access-cable-committee-pacc/2021-09-13-G7LRNRLnW2k) | reference | — / 12.3 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), November 1, 2021](/meeting-minutes/public-access-cable-committee-pacc/2021-11-01-kHYxErx4lno) | reference | — / 11.2 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), December 6, 2021](/meeting-minutes/public-access-cable-committee-pacc/2021-12-06-HR6H77R3kOY) | reference | — / 14.3 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), January 3, 2022](/meeting-minutes/public-access-cable-committee-pacc/2022-01-03-I5bW-vzgI6M) | reference | — / 11.3 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), February 14, 2022](/meeting-minutes/public-access-cable-committee-pacc/2022-02-14-27tSuFTiUkQ) | reference | — / 11.6 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), March 8, 2022](/meeting-minutes/public-access-cable-committee-pacc/2022-03-08-O7qp4ANpxVE) | reference | — / 15.0 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), April 4, 2022](/meeting-minutes/public-access-cable-committee-pacc/2022-04-04-rM_QS1F8dR4) | reference | — / 15.5 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), May 2, 2022](/meeting-minutes/public-access-cable-committee-pacc/2022-05-02-rT32f2GVVJw) | reference | — / 14.0 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), June 6, 2022](/meeting-minutes/public-access-cable-committee-pacc/2022-06-06-KNmiBci1PBY) | reference | — / 13.5 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), August 8, 2022](/meeting-minutes/public-access-cable-committee-pacc/2022-08-08-xPIO5vsG8XA) | reference | — / 14.0 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), October 3, 2022](/meeting-minutes/public-access-cable-committee-pacc/2022-10-03-t2pI_l3ItgY) | reference | — / 10.8 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), November 7, 2022](/meeting-minutes/public-access-cable-committee-pacc/2022-11-07-_1CKFSAEUGo) | reference | — / 12.2 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), December 5, 2022](/meeting-minutes/public-access-cable-committee-pacc/2022-12-05-vPmumvBaqtE) | reference | — / 11.2 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), January 9, 2023](/meeting-minutes/public-access-cable-committee-pacc/2023-01-09-WgKvxmCbqpM) | reference | — / 11.0 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), February 6, 2023](/meeting-minutes/public-access-cable-committee-pacc/2023-02-06-vxIXejMvzK4) | reference | — / 13.8 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), March 13, 2023](/meeting-minutes/public-access-cable-committee-pacc/2023-03-13-o9Ub4aZWufg) | reference | — / 13.1 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), April 10, 2023](/meeting-minutes/public-access-cable-committee-pacc/2023-04-10--h748h8jZMw) | reference | — / 12.1 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), May 8, 2023](/meeting-minutes/public-access-cable-committee-pacc/2023-05-08-YXVOq-ZDqgE) | reference | — / 12.8 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), June 12, 2023](/meeting-minutes/public-access-cable-committee-pacc/2023-06-12-Qh89koIUh44) | reference | — / 14.4 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), July 10, 2023](/meeting-minutes/public-access-cable-committee-pacc/2023-07-10-J0fl3-d6tKg) | reference | — / 13.7 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), August 14, 2023](/meeting-minutes/public-access-cable-committee-pacc/2023-08-14-bwYVy_6NHT0) | reference | — / 12.4 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), October 2, 2023](/meeting-minutes/public-access-cable-committee-pacc/2023-10-02-8lKZC1kAWOE) | reference | — / 12.3 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), November 6, 2023](/meeting-minutes/public-access-cable-committee-pacc/2023-11-06-cPHmT5J83Zg) | reference | — / 11.0 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), December 4, 2023](/meeting-minutes/public-access-cable-committee-pacc/2023-12-04-iXIMjvQp1gw) | reference | — / 11.6 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), January 8, 2024](/meeting-minutes/public-access-cable-committee-pacc/2024-01-08-9piu84WwTFw) | reference | — / 13.3 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), February 5, 2024](/meeting-minutes/public-access-cable-committee-pacc/2024-02-05-r6sN2RrKAGw) | reference | — / 10.4 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), March 11, 2024](/meeting-minutes/public-access-cable-committee-pacc/2024-03-11-tnGa6QMY3Qg) | reference | — / 13.2 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), April 1, 2024](/meeting-minutes/public-access-cable-committee-pacc/2024-04-01-zJbiUsvGoNM) | reference | — / 14.8 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), May 6, 2024](/meeting-minutes/public-access-cable-committee-pacc/2024-05-06-GAIximluwSE) | reference | — / 13.6 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), June 3, 2024](/meeting-minutes/public-access-cable-committee-pacc/2024-06-03-TKqbmVdi2bM) | reference | — / 10.1 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), July 1, 2024](/meeting-minutes/public-access-cable-committee-pacc/2024-07-01-kGwWOgXgxt8) | reference | — / 13.0 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), August 5, 2024](/meeting-minutes/public-access-cable-committee-pacc/2024-08-05-rsrFmsWdv78) | reference | — / 13.0 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), September 9, 2024](/meeting-minutes/public-access-cable-committee-pacc/2024-09-09-DX5UWU3jWfU) | reference | — / 12.6 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), November 4, 2024](/meeting-minutes/public-access-cable-committee-pacc/2024-11-04-78cCykPXgdA) | reference | — / 9.3 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), December 2, 2024](/meeting-minutes/public-access-cable-committee-pacc/2024-12-02-ebuYLjObSeM) | reference | — / 12.7 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), December 9, 2024](/meeting-minutes/public-access-cable-committee-pacc/2024-12-09-Qa_oSs8XtTQ) | reference | — / 13.0 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), January 6, 2025](/meeting-minutes/public-access-cable-committee-pacc/2025-01-06-2X9V-HLqdRI) | reference | — / 11.7 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), January 20, 2025](/meeting-minutes/public-access-cable-committee-pacc/2025-01-20-0kjKKqL9vtw) | reference | — / 13.7 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), February 3, 2025](/meeting-minutes/public-access-cable-committee-pacc/2025-02-03-V-PnOYCxCvg) | reference | — / 14.5 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), March 3, 2025](/meeting-minutes/public-access-cable-committee-pacc/2025-03-03-FVy_VaZB-EM) | reference | — / 11.7 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), April 7, 2025](/meeting-minutes/public-access-cable-committee-pacc/2025-04-07-NkaP9z8r1WQ) | reference | — / 13.3 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), May 5, 2025](/meeting-minutes/public-access-cable-committee-pacc/2025-05-05-O-0UxP3MMM0) | reference | — / 13.4 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), June 2, 2025](/meeting-minutes/public-access-cable-committee-pacc/2025-06-02-wuPFnBcuxyY) | reference | — / 12.9 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), July 7, 2025](/meeting-minutes/public-access-cable-committee-pacc/2025-07-07-DI-C13WWOMY) | reference | — / 13.3 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), August 4, 2025](/meeting-minutes/public-access-cable-committee-pacc/2025-08-04-0yrIPhWTyYI) | reference | — / 13.4 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), September 9, 2025](/meeting-minutes/public-access-cable-committee-pacc/2025-09-09-ns8QmpWDojs) | reference | — / 15.3 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), September 22, 2025](/meeting-minutes/public-access-cable-committee-pacc/2025-09-22-3uSaNV06sxk) | reference | — / 12.8 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), October 6, 2025](/meeting-minutes/public-access-cable-committee-pacc/2025-10-06-r34bkIVlcjc) | reference | — / 13.6 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), November 3, 2025](/meeting-minutes/public-access-cable-committee-pacc/2025-11-03-d6ubF0wyHm4) | reference | — / 15.7 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), January 5, 2026](/meeting-minutes/public-access-cable-committee-pacc/2026-01-05-kMTv-3hIH9s) | reference | — / 12.2 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), March 2, 2026](/meeting-minutes/public-access-cable-committee-pacc/2026-03-02-wwcwd2JgeEo) | reference | — / 14.5 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), April 6, 2026](/meeting-minutes/public-access-cable-committee-pacc/2026-04-06-8usm4uHzje8) | reference | — / 17.7 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), May 4, 2026](/meeting-minutes/public-access-cable-committee-pacc/2026-05-04-hOtGSCdR_Rs) | reference | — / 13.3 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), June 1, 2026](/meeting-minutes/public-access-cable-committee-pacc/2026-06-01-wbVcmEKBCvs) | reference | — / 15.1 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), September 8, 2026](/meeting-minutes/public-access-cable-committee-pacc/2026-09-08-f1AbB5ZEQ5Q) | reference | — / 13.7 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), September 16, 2026](/meeting-minutes/public-access-cable-committee-pacc/2026-09-16-OiwZv1YBXj0) | reference | — / 12.5 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), October 19, 2026](/meeting-minutes/public-access-cable-committee-pacc/2026-10-19-j9toEn9gN2o) | reference | — / 11.0 min | *(none declared)* |
+| [School Committee, February 24, 2021](/meeting-minutes/school-committee/2021-02-24-0OcYycWL1FA) | reference | — / 11.4 min | *(none declared)* |
+| [School Committee, March 3, 2021](/meeting-minutes/school-committee/2021-03-03-gIBMm0OUNUw) | reference | — / 11.6 min | *(none declared)* |
+| [School Committee, March 17, 2021](/meeting-minutes/school-committee/2021-03-17-8wx3dXV5Eyo) | reference | — / 13.7 min | *(none declared)* |
+| [School Committee, April 7, 2021](/meeting-minutes/school-committee/2021-04-07-yD_xTVE98Wc) | reference | — / 14.7 min | *(none declared)* |
+| [School Committee, May 5, 2021](/meeting-minutes/school-committee/2021-05-05-J1d9t1wu64w) | reference | — / 10.7 min | *(none declared)* |
+| [School Committee, May 19, 2021](/meeting-minutes/school-committee/2021-05-19-xau0w_u2BQc) | reference | — / 11.4 min | *(none declared)* |
+| [School Committee, June 3, 2021](/meeting-minutes/school-committee/2021-06-03-B33EhfGynCY) | reference | — / 12.7 min | *(none declared)* |
+| [School Committee, June 16, 2021](/meeting-minutes/school-committee/2021-06-16-T1fKs8Ke4-4) | reference | — / 12.5 min | *(none declared)* |
+| [School Committee, June 21, 2021](/meeting-minutes/school-committee/2021-06-21-J59e49c7rlY) | reference | — / 11.5 min | *(none declared)* |
+| [School Committee, August 18, 2021](/meeting-minutes/school-committee/2021-08-18-UjXpR17ajN4) | reference | — / 11.3 min | *(none declared)* |
+| [School Committee, September 1, 2021](/meeting-minutes/school-committee/2021-09-01-yIroL4PtIuw) | reference | — / 11.6 min | *(none declared)* |
+| [School Committee, September 15, 2021](/meeting-minutes/school-committee/2021-09-15-Qnl8kcVm8GM) | reference | — / 12.3 min | *(none declared)* |
+| [School Committee, September 25, 2021](/meeting-minutes/school-committee/2021-09-25-EdRVG7k40jk) | reference | — / 8.4 min | *(none declared)* |
+| [School Committee, October 6, 2021](/meeting-minutes/school-committee/2021-10-06-bCA3e54lHd8) | reference | — / 13.3 min | *(none declared)* |
+| [School Committee, November 3, 2021](/meeting-minutes/school-committee/2021-11-03-4H57y3BPVh0) | reference | — / 11.8 min | *(none declared)* |
+| [School Committee, November 17, 2021](/meeting-minutes/school-committee/2021-11-17-qhe5sfqOvNs) | reference | — / 11.2 min | *(none declared)* |
+| [School Committee, December 1, 2021](/meeting-minutes/school-committee/2021-12-01-RCVMIJdFrgo) | reference | — / 12.5 min | *(none declared)* |
+| [School Committee, December 15, 2021](/meeting-minutes/school-committee/2021-12-15-eqa1BOTaPbc) | reference | — / 13.1 min | *(none declared)* |
+| [School Committee, January 5, 2022](/meeting-minutes/school-committee/2022-01-05-3j04Yt4gFgo) | reference | — / 11.5 min | *(none declared)* |
+| [School Committee, January 20, 2022](/meeting-minutes/school-committee/2022-01-20-_ersnzLBS4o) | reference | — / 12.3 min | *(none declared)* |
+| [School Committee, January 20, 2022](/meeting-minutes/school-committee/2022-01-20-fQOVfGwQN1I) | reference | — / 9.1 min | *(none declared)* |
+| [School Committee, February 2, 2022](/meeting-minutes/school-committee/2022-02-02-T-YO1WYWs9s) | reference | — / 12.4 min | *(none declared)* |
+| [School Committee, March 2, 2022](/meeting-minutes/school-committee/2022-03-02-BjD6Y80WYIs) | reference | — / 12.0 min | *(none declared)* |
+| [School Committee, March 16, 2022](/meeting-minutes/school-committee/2022-03-16-VCSxA58DVOM) | reference | — / 9.0 min | *(none declared)* |
+| [School Committee, April 6, 2022](/meeting-minutes/school-committee/2022-04-06-Cil7OLmU15Q) | reference | — / 12.4 min | *(none declared)* |
+| [School Committee, April 6, 2022](/meeting-minutes/school-committee/2022-04-06-GSrFObt3D74) | reference | — / 11.7 min | *(none declared)* |
+| [School Committee, April 27, 2022](/meeting-minutes/school-committee/2022-04-27-r-k_N7tKs8k) | reference | — / 13.5 min | *(none declared)* |
+| [School Committee, May 4, 2022](/meeting-minutes/school-committee/2022-05-04-sYQsHMlTeuo) | reference | — / 11.4 min | *(none declared)* |
+| [School Committee, May 18, 2022](/meeting-minutes/school-committee/2022-05-18--VbrPGc3YaM) | reference | — / 12.1 min | *(none declared)* |
+| [School Committee, June 1, 2022](/meeting-minutes/school-committee/2022-06-01-rL5n74ZBZuM) | reference | — / 12.2 min | *(none declared)* |
+| [School Committee, June 15, 2022](/meeting-minutes/school-committee/2022-06-15-7Fq9AiTGe6s) | reference | — / 12.9 min | *(none declared)* |
+| [School Committee, July 5, 2022](/meeting-minutes/school-committee/2022-07-05-BA4qe0x3ZIE) | reference | — / 10.4 min | *(none declared)* |
+| [School Committee, August 24, 2022](/meeting-minutes/school-committee/2022-08-24-TSiumO-f0Qo) | reference | — / 12.1 min | *(none declared)* |
+| [School Committee, August 31, 2022](/meeting-minutes/school-committee/2022-08-31-RWhw7yqXjjk) | reference | — / 12.4 min | *(none declared)* |
+| [School Committee, September 7, 2022](/meeting-minutes/school-committee/2022-09-07-knLST-n-ts4) | reference | — / 11.7 min | *(none declared)* |
+| [School Committee, September 21, 2022](/meeting-minutes/school-committee/2022-09-21-Jb8PQYctADU) | reference | — / 11.9 min | *(none declared)* |
+| [School Committee, October 5, 2022](/meeting-minutes/school-committee/2022-10-05-3m1Xvj_XYOo) | reference | — / 12.5 min | *(none declared)* |
+| [School Committee, October 19, 2022](/meeting-minutes/school-committee/2022-10-19-nmSMK8Yhy08) | reference | — / 12.5 min | *(none declared)* |
+| [School Committee, November 2, 2022](/meeting-minutes/school-committee/2022-11-02-AR9Iv5AnQhs) | reference | — / 11.5 min | *(none declared)* |
+| [School Committee, November 16, 2022](/meeting-minutes/school-committee/2022-11-16-GokzpCzPLuw) | reference | — / 12.1 min | *(none declared)* |
+| [School Committee, December 7, 2022](/meeting-minutes/school-committee/2022-12-07-cM8o1TaOIUY) | reference | — / 11.8 min | *(none declared)* |
+| [School Committee, January 4, 2023](/meeting-minutes/school-committee/2023-01-04-JnHgjxK6_Dc) | reference | — / 11.0 min | *(none declared)* |
+| [School Committee, January 18, 2023](/meeting-minutes/school-committee/2023-01-18-pSVPNkYi8vA) | reference | — / 11.4 min | *(none declared)* |
+| [School Committee, February 1, 2023](/meeting-minutes/school-committee/2023-02-01-XbNndKEfgho) | reference | — / 13.0 min | *(none declared)* |
+| [School Committee, February 15, 2023](/meeting-minutes/school-committee/2023-02-15-eTn3p7zsfMc) | reference | — / 12.2 min | *(none declared)* |
+| [School Committee, March 1, 2023](/meeting-minutes/school-committee/2023-03-01-JbyRVqHMaYE) | reference | — / 12.0 min | *(none declared)* |
+| [School Committee, March 8, 2023](/meeting-minutes/school-committee/2023-03-08-JxR0dNfTQEs) | reference | — / 9.6 min | *(none declared)* |
+| [School Committee, March 13, 2023](/meeting-minutes/school-committee/2023-03-13-Ehb4ap4uipw) | reference | — / 8.8 min | *(none declared)* |
+| [School Committee, March 15, 2023](/meeting-minutes/school-committee/2023-03-15-K55i2fjnBCQ) | reference | — / 14.4 min | *(none declared)* |
+| [School Committee, March 22, 2023](/meeting-minutes/school-committee/2023-03-22-vvJmOs8jbOc) | reference | — / 11.0 min | *(none declared)* |
+| [School Committee, April 5, 2023](/meeting-minutes/school-committee/2023-04-05-X7tlaGNIUhY) | reference | — / 11.5 min | *(none declared)* |
+| [School Committee, April 12, 2023](/meeting-minutes/school-committee/2023-04-12-7gATFCCm-4o) | reference | — / 11.0 min | *(none declared)* |
+| [School Committee, May 3, 2023](/meeting-minutes/school-committee/2023-05-03-Frj-YrqQNf0) | reference | — / 12.0 min | *(none declared)* |
+| [School Committee, May 24, 2023](/meeting-minutes/school-committee/2023-05-24-AcWtH11Zx-M) | reference | — / 12.6 min | *(none declared)* |
+| [School Committee, June 7, 2023](/meeting-minutes/school-committee/2023-06-07-7XWiFPmG5SQ) | reference | — / 10.4 min | *(none declared)* |
+| [School Committee, June 7, 2023](/meeting-minutes/school-committee/2023-06-07-eu4KJFro7vk) | reference | — / 9.7 min | *(none declared)* |
+| [School Committee, June 21, 2023](/meeting-minutes/school-committee/2023-06-21-_JdXG_pQPJo) | reference | — / 10.4 min | *(none declared)* |
+| [School Committee, June 29, 2023](/meeting-minutes/school-committee/2023-06-29-SFn8b8ShPXw) | reference | — / 10.4 min | *(none declared)* |
+| [School Committee, August 28, 2023](/meeting-minutes/school-committee/2023-08-28-uvV851hVgMw) | reference | — / 11.0 min | *(none declared)* |
+| [School Committee, September 6, 2023](/meeting-minutes/school-committee/2023-09-06-mBfewgP6U2k) | reference | — / 13.3 min | *(none declared)* |
+| [School Committee, September 20, 2023](/meeting-minutes/school-committee/2023-09-20-pxAlbuPeROQ) | reference | — / 13.5 min | *(none declared)* |
+| [School Committee, October 4, 2023](/meeting-minutes/school-committee/2023-10-04-RSuhiVz9L-A) | reference | — / 14.9 min | *(none declared)* |
+| [School Committee, October 18, 2023](/meeting-minutes/school-committee/2023-10-18-TwOGk7B0s8M) | reference | — / 14.2 min | *(none declared)* |
+| [School Committee, November 1, 2023](/meeting-minutes/school-committee/2023-11-01-Ap8zhk492jM) | reference | — / 14.2 min | *(none declared)* |
+| [School Committee, November 8, 2023](/meeting-minutes/school-committee/2023-11-08-RM2UnEaPcKQ) | reference | — / 10.4 min | *(none declared)* |
+| [School Committee, November 15, 2023](/meeting-minutes/school-committee/2023-11-15-ANqyvmbNiW0) | reference | — / 14.4 min | *(none declared)* |
+| [School Committee, December 6, 2023](/meeting-minutes/school-committee/2023-12-06-hgjw8ZYOfOI) | reference | — / 14.1 min | *(none declared)* |
+| [School Committee, December 20, 2023](/meeting-minutes/school-committee/2023-12-20-q7bMLPsMfjQ) | reference | — / 12.2 min | *(none declared)* |
+| [School Committee, January 3, 2024](/meeting-minutes/school-committee/2024-01-03-tScaHNgYV_A) | reference | — / 13.7 min | *(none declared)* |
+| [School Committee, January 17, 2024](/meeting-minutes/school-committee/2024-01-17-4mzD0d0VtIo) | reference | — / 12.9 min | *(none declared)* |
+| [School Committee, January 24, 2024](/meeting-minutes/school-committee/2024-01-24-M1ou8I8zI7o) | reference | — / 14.7 min | *(none declared)* |
+| [School Committee, February 7, 2024](/meeting-minutes/school-committee/2024-02-07-HOOeGOFs6cQ) | reference | — / 18.0 min | *(none declared)* |
+| [School Committee, February 28, 2024](/meeting-minutes/school-committee/2024-02-28-pn_OXfPbl9w) | reference | — / 13.8 min | *(none declared)* |
+| [School Committee, March 6, 2024](/meeting-minutes/school-committee/2024-03-06-heS2Z7Sxa_I) | reference | — / 16.2 min | *(none declared)* |
+| [School Committee, March 11, 2024](/meeting-minutes/school-committee/2024-03-11-4eJ11_7Oaaw) | reference | — / 10.9 min | *(none declared)* |
+| [School Committee, March 20, 2024](/meeting-minutes/school-committee/2024-03-20-9gMaxzZxV2w) | reference | — / 12.6 min | *(none declared)* |
+| [School Committee, March 27, 2024](/meeting-minutes/school-committee/2024-03-27-ngIQ-Un4pTI) | reference | — / 13.1 min | *(none declared)* |
+| [School Committee, April 3, 2024](/meeting-minutes/school-committee/2024-04-03-BoMEMfRTJkk) | reference | — / 16.9 min | *(none declared)* |
+| [School Committee, April 10, 2024](/meeting-minutes/school-committee/2024-04-10-5Jzd5Rb6Lrw) | reference | — / 16.3 min | *(none declared)* |
+| [School Committee, May 1, 2024](/meeting-minutes/school-committee/2024-05-01-BZaMa3F272M) | reference | — / 18.5 min | *(none declared)* |
+| [School Committee, May 14, 2024](/meeting-minutes/school-committee/2024-05-14-FY251RQj7XM) | reference | — / 11.4 min | *(none declared)* |
+| [School Committee, May 22, 2024](/meeting-minutes/school-committee/2024-05-22-4n_lCBt5j_o) | reference | — / 15.5 min | *(none declared)* |
+| [School Committee, June 5, 2024](/meeting-minutes/school-committee/2024-06-05-wHfHHwQMHoI) | reference | — / 18.8 min | *(none declared)* |
+| [School Committee, June 12, 2024](/meeting-minutes/school-committee/2024-06-12-VyeLYKbCGYg) | reference | — / 15.3 min | *(none declared)* |
+| [School Committee, June 26, 2024](/meeting-minutes/school-committee/2024-06-26-ADNePNHauu8) | reference | — / 15.0 min | *(none declared)* |
+| [School Committee, July 25, 2024](/meeting-minutes/school-committee/2024-07-25-Pb36QXiRzhE) | reference | — / 13.5 min | *(none declared)* |
+| [School Committee, August 7, 2024](/meeting-minutes/school-committee/2024-08-07-e52PjwJitt0) | reference | — / 17.3 min | *(none declared)* |
+| [School Committee, September 4, 2024](/meeting-minutes/school-committee/2024-09-04-0qgDLg6ni4k) | reference | — / 18.2 min | *(none declared)* |
+| [School Committee, September 4, 2024](/meeting-minutes/school-committee/2024-09-04-qlBSMCGeZF0) | reference | — / 18.3 min | *(none declared)* |
+| [School Committee, September 18, 2024](/meeting-minutes/school-committee/2024-09-18-417lCBT65DQ) | reference | — / 14.8 min | *(none declared)* |
+| [School Committee, October 2, 2024](/meeting-minutes/school-committee/2024-10-02-v1voFue_YAA) | reference | — / 18.2 min | *(none declared)* |
+| [School Committee, October 16, 2024](/meeting-minutes/school-committee/2024-10-16-cFbtEkWsYzY) | reference | — / 17.4 min | *(none declared)* |
+| [School Committee, November 6, 2024](/meeting-minutes/school-committee/2024-11-06-tlRO7Qf_T20) | reference | — / 17.9 min | *(none declared)* |
+| [School Committee, November 20, 2024](/meeting-minutes/school-committee/2024-11-20-IV7A6zf6Rk0) | reference | — / 15.1 min | *(none declared)* |
+| [School Committee, December 18, 2024](/meeting-minutes/school-committee/2024-12-18-SfulwvFLx9w) | reference | — / 17.9 min | *(none declared)* |
+| [School Committee, January 8, 2025](/meeting-minutes/school-committee/2025-01-08-KKKsaovcTqQ) | reference | — / 19.5 min | *(none declared)* |
+| [School Committee, January 17, 2025](/meeting-minutes/school-committee/2025-01-17-WFr0WQH7Sss) | reference | — / 12.6 min | *(none declared)* |
+| [School Committee, January 22, 2025](/meeting-minutes/school-committee/2025-01-22-TCtuISoe8iU) | reference | — / 18.0 min | *(none declared)* |
+| [School Committee, January 29, 2025](/meeting-minutes/school-committee/2025-01-29-60BRcqDu_PQ) | reference | — / 12.8 min | *(none declared)* |
+| [School Committee, February 1, 2025](/meeting-minutes/school-committee/2025-02-01-szC4y9EzbGk) | reference | — / 10.4 min | *(none declared)* |
+| [School Committee, February 5, 2025](/meeting-minutes/school-committee/2025-02-05-ad6QtSaJqVU) | reference | — / 19.5 min | *(none declared)* |
+| [School Committee, February 26, 2025](/meeting-minutes/school-committee/2025-02-26-YiQ68uncnz8) | reference | — / 19.0 min | *(none declared)* |
+| [School Committee, March 5, 2025](/meeting-minutes/school-committee/2025-03-05-SzmFOHNxXAc) | reference | — / 20.2 min | *(none declared)* |
+| [School Committee, March 12, 2025](/meeting-minutes/school-committee/2025-03-12-b7caO9Kd7VA) | reference | — / 19.4 min | *(none declared)* |
+| [School Committee, March 19, 2025](/meeting-minutes/school-committee/2025-03-19-iRZbgdj0_rc) | reference | — / 16.8 min | *(none declared)* |
+| [School Committee, April 2, 2025](/meeting-minutes/school-committee/2025-04-02-GGygM64BwqE) | reference | — / 16.7 min | *(none declared)* |
+| [School Committee, April 7, 2025](/meeting-minutes/school-committee/2025-04-07-doVw4obpwpI) | reference | — / 15.0 min | *(none declared)* |
+| [School Committee, April 16, 2025](/meeting-minutes/school-committee/2025-04-16-1ZVK0_sfUqw) | reference | — / 22.5 min | *(none declared)* |
+| [School Committee, April 30, 2025](/meeting-minutes/school-committee/2025-04-30-7lr4O0moM0o) | reference | — / 12.7 min | *(none declared)* |
+| [School Committee, May 1, 2025](/meeting-minutes/school-committee/2025-05-01-rIJRGcl0CME) | reference | — / 11.2 min | *(none declared)* |
+| [School Committee, May 5, 2025](/meeting-minutes/school-committee/2025-05-05--hd-MdOucO0) | reference | — / 13.2 min | *(none declared)* |
+| [School Committee, May 6, 2025](/meeting-minutes/school-committee/2025-05-06-ywVPVPUvACA) | reference | — / 12.9 min | *(none declared)* |
+| [School Committee, May 7, 2025](/meeting-minutes/school-committee/2025-05-07-GRGJdd9o4xQ) | reference | — / 18.8 min | *(none declared)* |
+| [School Committee, May 15, 2025](/meeting-minutes/school-committee/2025-05-15-KmRUlqJdUcs) | reference | — / 13.4 min | *(none declared)* |
+| [School Committee, May 20, 2025](/meeting-minutes/school-committee/2025-05-20-M-BfcrTMqbU) | reference | — / 9.6 min | *(none declared)* |
+| [School Committee, May 21, 2025](/meeting-minutes/school-committee/2025-05-21-TTLkkbHgrRk) | reference | — / 18.9 min | *(none declared)* |
+| [School Committee, June 4, 2025](/meeting-minutes/school-committee/2025-06-04-T4UnAG5nr70) | reference | — / 17.6 min | *(none declared)* |
+| [School Committee, June 18, 2025](/meeting-minutes/school-committee/2025-06-18-AIhtA5pkPI0) | reference | — / 16.2 min | *(none declared)* |
+| [School Committee, July 8, 2025](/meeting-minutes/school-committee/2025-07-08-2lcyhhYiCTk) | reference | — / 13.0 min | *(none declared)* |
+| [School Committee, August 6, 2025](/meeting-minutes/school-committee/2025-08-06-z6TcYF3_ICY) | reference | — / 12.2 min | *(none declared)* |
+| [School Committee, August 26, 2025](/meeting-minutes/school-committee/2025-08-26-fhwV4LdIfcw) | reference | — / 24.1 min | *(none declared)* |
+| [School Committee, September 3, 2025](/meeting-minutes/school-committee/2025-09-03-SI-irBe6ABs) | reference | — / 20.7 min | *(none declared)* |
+| [School Committee, September 17, 2025](/meeting-minutes/school-committee/2025-09-17-1fjsnvjMFEo) | reference | — / 20.3 min | *(none declared)* |
+| [School Committee, September 30, 2025](/meeting-minutes/school-committee/2025-09-30-XNXWeO5_wLI) | reference | — / 16.7 min | *(none declared)* |
+| [School Committee, October 1, 2025](/meeting-minutes/school-committee/2025-10-01-9PPe7uMWAq4) | reference | — / 20.9 min | *(none declared)* |
+| [School Committee, October 15, 2025](/meeting-minutes/school-committee/2025-10-15-4sOnEhLYjmo) | reference | — / 16.7 min | *(none declared)* |
+| [School Committee, November 5, 2025](/meeting-minutes/school-committee/2025-11-05-gvMBXdLD8D4) | reference | — / 19.4 min | *(none declared)* |
+| [School Committee, November 19, 2025](/meeting-minutes/school-committee/2025-11-19-6PZ-J-oIAkQ) | reference | — / 15.1 min | *(none declared)* |
+| [School Committee, November 24, 2025](/meeting-minutes/school-committee/2025-11-24--J6CegBuG44) | reference | — / 18.8 min | *(none declared)* |
+| [School Committee, December 3, 2025](/meeting-minutes/school-committee/2025-12-03-LAK2GHxq2is) | reference | — / 18.2 min | *(none declared)* |
+| [School Committee, December 17, 2025](/meeting-minutes/school-committee/2025-12-17-HqOLbOduM1I) | reference | — / 19.3 min | *(none declared)* |
+| [School Committee, January 7, 2026](/meeting-minutes/school-committee/2026-01-07-pjSX2hx8kwI) | reference | — / 16.4 min | *(none declared)* |
+| [School Committee, January 12, 2026](/meeting-minutes/school-committee/2026-01-12-D34uSOZ8GkY) | reference | — / 18.1 min | *(none declared)* |
+| [School Committee, January 21, 2026](/meeting-minutes/school-committee/2026-01-21-NIZgbfhPwD8) | reference | — / 16.9 min | *(none declared)* |
+| [School Committee, January 27, 2026](/meeting-minutes/school-committee/2026-01-27-1xPyYMnz50E) | reference | — / 16.5 min | *(none declared)* |
+| [School Committee, February 4, 2026](/meeting-minutes/school-committee/2026-02-04-HsjpFotE9hc) | reference | — / 18.1 min | *(none declared)* |
+| [School Committee, February 4, 2026](/meeting-minutes/school-committee/2026-02-04-akQoA2PejrQ) | reference | — / 16.4 min | *(none declared)* |
+| [School Committee, February 25, 2026](/meeting-minutes/school-committee/2026-02-25-cVYmZPJvgBg) | reference | — / 21.4 min | *(none declared)* |
+| [School Committee, March 4, 2026](/meeting-minutes/school-committee/2026-03-04-nfSdiKc6yvo) | reference | — / 18.5 min | *(none declared)* |
+| [School Committee, March 10, 2026](/meeting-minutes/school-committee/2026-03-10-J2xuwwj9eJo) | reference | — / 17.7 min | *(none declared)* |
+| [School Committee, March 18, 2026](/meeting-minutes/school-committee/2026-03-18-d8UUVRoCwoY) | reference | — / 20.4 min | *(none declared)* |
+| [School Committee, March 23, 2026](/meeting-minutes/school-committee/2026-03-23-rfgkwHS9-54) | reference | — / 17.8 min | *(none declared)* |
+| [School Committee, March 24, 2026](/meeting-minutes/school-committee/2026-03-24-lq1UgU1vxNg) | reference | — / 14.7 min | *(none declared)* |
+| [School Committee, April 1, 2026](/meeting-minutes/school-committee/2026-04-01-4ef6KsOweWs) | reference | — / 18.5 min | *(none declared)* |
+| [School Committee, April 15, 2026](/meeting-minutes/school-committee/2026-04-15-3qvTFo6yU_s) | reference | — / 18.2 min | *(none declared)* |
+| [School Committee, May 6, 2026](/meeting-minutes/school-committee/2026-05-06-x3f-Q2Db_14) | reference | — / 18.1 min | *(none declared)* |
+| [School Committee, May 20, 2026](/meeting-minutes/school-committee/2026-05-20-WMLR7WqrZPw) | reference | — / 16.6 min | *(none declared)* |
+| [School Committee, June 3, 2026](/meeting-minutes/school-committee/2026-06-03-Iu4Ha9TpRKs) | reference | — / 17.9 min | *(none declared)* |
+| [School Committee, June 24, 2026](/meeting-minutes/school-committee/2026-06-24-ZS-tW_drdqE) | reference | — / 19.9 min | *(none declared)* |
+| [School Committee, July 15, 2026](/meeting-minutes/school-committee/2026-07-15-Dvp2YlTJOXo) | reference | — / 13.2 min | *(none declared)* |
+| [School Committee, July 29, 2026](/meeting-minutes/school-committee/2026-07-29-wR4gBkOqIaE) | reference | — / 21.6 min | *(none declared)* |
+| [School Committee, August 26, 2026](/meeting-minutes/school-committee/2026-08-26-J_kvfs3s0UE) | reference | — / 17.2 min | *(none declared)* |
+| [School Committee, September 9, 2026](/meeting-minutes/school-committee/2026-09-09-tKWYbMFWJtI) | reference | — / 16.3 min | *(none declared)* |
+| [School Committee, September 16, 2026](/meeting-minutes/school-committee/2026-09-16-XY8Ru12S9Xg) | reference | — / 13.2 min | *(none declared)* |
+| [School Committee, October 1, 2026](/meeting-minutes/school-committee/2026-10-01-kWX2YIfTOMg) | reference | — / 10.0 min | *(none declared)* |
+| [School Committee, October 7, 2026](/meeting-minutes/school-committee/2026-10-07-_XGfbHmZPJg) | reference | — / 12.6 min | *(none declared)* |
+| [School Committee, October 7, 2026](/meeting-minutes/school-committee/2026-10-07-kPZcnFd5COw) | reference | — / 12.1 min | *(none declared)* |
+| [School Committee, October 21, 2026](/meeting-minutes/school-committee/2026-10-21-2-Ax9zkA1NA) | reference | — / 12.5 min | *(none declared)* |
+| [Select Board, February 16, 2021](/meeting-minutes/select-board/2021-02-16-eGeR1UPrRwM) | reference | — / 13.2 min | *(none declared)* |
+| [Select Board, March 2, 2021](/meeting-minutes/select-board/2021-03-02-f7g0rqQKJwA) | reference | — / 17.1 min | *(none declared)* |
+| [Select Board, March 16, 2021](/meeting-minutes/select-board/2021-03-16-ik0fTEVC4xg) | reference | — / 19.3 min | *(none declared)* |
+| [Select Board, March 30, 2021](/meeting-minutes/select-board/2021-03-30-tLFMP8RQtLg) | reference | — / 17.3 min | *(none declared)* |
+| [Select Board, April 1, 2021](/meeting-minutes/select-board/2021-04-01-rXSTNCSBynM) | reference | — / 9.3 min | *(none declared)* |
+| [Select Board, April 6, 2021](/meeting-minutes/select-board/2021-04-06-5-qwXbzFwvw) | reference | — / 16.3 min | *(none declared)* |
+| [Select Board, April 13, 2021](/meeting-minutes/select-board/2021-04-13-ndD7gM_pgWA) | reference | — / 14.4 min | *(none declared)* |
+| [Select Board, April 27, 2021](/meeting-minutes/select-board/2021-04-27-5mann2BRZGs) | reference | — / 16.7 min | *(none declared)* |
+| [Select Board, May 4, 2021](/meeting-minutes/select-board/2021-05-04-pv7i2AjCQpY) | reference | — / 14.1 min | *(none declared)* |
+| [Select Board, May 11, 2021](/meeting-minutes/select-board/2021-05-11-290veN3iYsM) | reference | — / 12.3 min | *(none declared)* |
+| [Select Board, May 18, 2021](/meeting-minutes/select-board/2021-05-18-KbuXbvoiGyw) | reference | — / 16.0 min | *(none declared)* |
+| [Select Board, June 1, 2021](/meeting-minutes/select-board/2021-06-01-Hb1E1VCgbEk) | reference | — / 15.3 min | *(none declared)* |
+| [Select Board, June 8, 2021](/meeting-minutes/select-board/2021-06-08-dWqpWSkTvq4) | reference | — / 14.7 min | *(none declared)* |
+| [Select Board, June 15, 2021](/meeting-minutes/select-board/2021-06-15-yOGqTfgw3TY) | reference | — / 15.6 min | *(none declared)* |
+| [Select Board, June 22, 2021](/meeting-minutes/select-board/2021-06-22-9-rbJ7rQdlA) | reference | — / 13.4 min | *(none declared)* |
+| [Select Board, July 6, 2021](/meeting-minutes/select-board/2021-07-06-ZSpzs6LggRM) | reference | — / 14.5 min | *(none declared)* |
+| [Select Board, July 13, 2021](/meeting-minutes/select-board/2021-07-13-WWNHQlqq5Og) | reference | — / 16.1 min | *(none declared)* |
+| [Select Board, July 27, 2021](/meeting-minutes/select-board/2021-07-27-ixqRzaiLCt4) | reference | — / 14.3 min | *(none declared)* |
+| [Select Board, August 10, 2021](/meeting-minutes/select-board/2021-08-10-FrY7REt8ZTc) | reference | — / 12.9 min | *(none declared)* |
+| [Select Board, August 17, 2021](/meeting-minutes/select-board/2021-08-17-3GiJWpjJaR0) | reference | — / 14.6 min | *(none declared)* |
+| [Select Board, August 24, 2021](/meeting-minutes/select-board/2021-08-24-1TdZen534xs) | reference | — / 16.8 min | *(none declared)* |
+| [Select Board, September 7, 2021](/meeting-minutes/select-board/2021-09-07-2PYQdw_bg-E) | reference | — / 15.1 min | *(none declared)* |
+| [Select Board, September 14, 2021](/meeting-minutes/select-board/2021-09-14-r1xcigjMEnI) | reference | — / 15.5 min | *(none declared)* |
+| [Select Board, September 21, 2021](/meeting-minutes/select-board/2021-09-21-e2WD_vvIVV0) | reference | — / 14.3 min | *(none declared)* |
+| [Select Board, October 5, 2021](/meeting-minutes/select-board/2021-10-05-uuKWaPF8_d0) | reference | — / 18.5 min | *(none declared)* |
+| [Select Board, October 12, 2021](/meeting-minutes/select-board/2021-10-12-0O1c9uX7Epo) | reference | — / 15.5 min | *(none declared)* |
+| [Select Board, October 19, 2021](/meeting-minutes/select-board/2021-10-19-hShyI8G4GIQ) | reference | — / 15.9 min | *(none declared)* |
+| [Select Board, November 2, 2021](/meeting-minutes/select-board/2021-11-02-eNevKX20RR4) | reference | — / 15.9 min | *(none declared)* |
+| [Select Board, November 9, 2021](/meeting-minutes/select-board/2021-11-09-g5mtW4gOPWk) | reference | — / 13.8 min | *(none declared)* |
+| [Select Board, November 23, 2021](/meeting-minutes/select-board/2021-11-23-WyWosO--6sA) | reference | — / 11.9 min | *(none declared)* |
+| [Select Board, December 7, 2021](/meeting-minutes/select-board/2021-12-07-rh1qb-al1AM) | reference | — / 12.2 min | *(none declared)* |
+| [Select Board, December 14, 2021](/meeting-minutes/select-board/2021-12-14-7E-DC-sj4xU) | reference | — / 16.1 min | *(none declared)* |
+| [Select Board, December 21, 2021](/meeting-minutes/select-board/2021-12-21--s6WVqfr7nM) | reference | — / 15.8 min | *(none declared)* |
+| [Select Board, January 4, 2022](/meeting-minutes/select-board/2022-01-04-ElGt20ZVtPY) | reference | — / 15.8 min | *(none declared)* |
+| [Select Board, January 18, 2022](/meeting-minutes/select-board/2022-01-18-yt8TdXnoMpQ) | reference | — / 14.3 min | *(none declared)* |
+| [Select Board, February 1, 2022](/meeting-minutes/select-board/2022-02-01-EXgiMwtYD7U) | reference | — / 18.3 min | *(none declared)* |
+| [Select Board, February 8, 2022](/meeting-minutes/select-board/2022-02-08-UVgPlymArew) | reference | — / 13.1 min | *(none declared)* |
+| [Select Board, February 15, 2022](/meeting-minutes/select-board/2022-02-15-K9CSb6MXr-U) | reference | — / 16.1 min | *(none declared)* |
+| [Select Board, March 8, 2022](/meeting-minutes/select-board/2022-03-08-3RaFgHRtjB8) | reference | — / 16.7 min | *(none declared)* |
+| [Select Board, March 15, 2022](/meeting-minutes/select-board/2022-03-15-dbFmU1Zo_VI) | reference | — / 14.6 min | *(none declared)* |
+| [Select Board, March 22, 2022](/meeting-minutes/select-board/2022-03-22-FhF4gvCZ9nk) | reference | — / 13.0 min | *(none declared)* |
+| [Select Board, March 26, 2022](/meeting-minutes/select-board/2022-03-26-py6CCjhPEU4) | reference | — / 10.6 min | *(none declared)* |
+| [Select Board, April 5, 2022](/meeting-minutes/select-board/2022-04-05-a81z_doLl2Y) | reference | — / 17.3 min | *(none declared)* |
+| [Select Board, April 12, 2022](/meeting-minutes/select-board/2022-04-12-f3lPiGMlbhw) | reference | — / 16.2 min | *(none declared)* |
+| [Select Board, April 26, 2022](/meeting-minutes/select-board/2022-04-26-0RfvHJGH1a4) | reference | — / 15.2 min | *(none declared)* |
+| [Select Board, May 3, 2022](/meeting-minutes/select-board/2022-05-03-eoYk1hP9OCo) | reference | — / 17.2 min | *(none declared)* |
+| [Select Board, May 10, 2022](/meeting-minutes/select-board/2022-05-10-OaJdkeAU2qY) | reference | — / 14.9 min | *(none declared)* |
+| [Select Board, May 17, 2022](/meeting-minutes/select-board/2022-05-17-FWOyhXL_bHQ) | reference | — / 14.3 min | *(none declared)* |
+| [Select Board, May 24, 2022](/meeting-minutes/select-board/2022-05-24-o0jNZCKnvts) | reference | — / 12.9 min | *(none declared)* |
+| [Select Board, June 7, 2022](/meeting-minutes/select-board/2022-06-07-bgzCkAqqUSU) | reference | — / 14.4 min | *(none declared)* |
+| [Select Board, June 14, 2022](/meeting-minutes/select-board/2022-06-14-HEdJRRP7qCE) | reference | — / 15.6 min | *(none declared)* |
+| [Select Board, June 21, 2022](/meeting-minutes/select-board/2022-06-21-CVkZMcWM58k) | reference | — / 14.9 min | *(none declared)* |
+| [Select Board, July 12, 2022](/meeting-minutes/select-board/2022-07-12-Z60P9NlZ4lA) | reference | — / 17.0 min | *(none declared)* |
+| [Select Board, July 19, 2022](/meeting-minutes/select-board/2022-07-19-VthUISAvgac) | reference | — / 14.1 min | *(none declared)* |
+| [Select Board, August 2, 2022](/meeting-minutes/select-board/2022-08-02-aMDn4kaPlCc) | reference | — / 17.8 min | *(none declared)* |
+| [Select Board, August 9, 2022](/meeting-minutes/select-board/2022-08-09-rqeXtJsOz3I) | reference | — / 15.2 min | *(none declared)* |
+| [Select Board, August 16, 2022](/meeting-minutes/select-board/2022-08-16-2Ms-h081Kig) | reference | — / 17.3 min | *(none declared)* |
+| [Select Board, August 23, 2022](/meeting-minutes/select-board/2022-08-23-3DFVcqKozSg) | reference | — / 14.4 min | *(none declared)* |
+| [Select Board, September 6, 2022](/meeting-minutes/select-board/2022-09-06-vD14gmkTnlM) | reference | — / 14.6 min | *(none declared)* |
+| [Select Board, September 13, 2022](/meeting-minutes/select-board/2022-09-13-IwQt_f2obyU) | reference | — / 17.5 min | *(none declared)* |
+| [Select Board, September 20, 2022](/meeting-minutes/select-board/2022-09-20-tQdRbe4YLUc) | reference | — / 14.5 min | *(none declared)* |
+| [Select Board, October 4, 2022](/meeting-minutes/select-board/2022-10-04-X05Axtv751M) | reference | — / 15.3 min | *(none declared)* |
+| [Select Board, October 11, 2022](/meeting-minutes/select-board/2022-10-11-Af3VExFvzLg) | reference | — / 15.9 min | *(none declared)* |
+| [Select Board, October 18, 2022](/meeting-minutes/select-board/2022-10-18-GMA3puYMcow) | reference | — / 11.3 min | *(none declared)* |
+| [Select Board, November 1, 2022](/meeting-minutes/select-board/2022-11-01-xMowisHxS0o) | reference | — / 13.9 min | *(none declared)* |
+| [Select Board, November 8, 2022](/meeting-minutes/select-board/2022-11-08-bXcj4Dqe2lU) | reference | — / 14.7 min | *(none declared)* |
+| [Select Board, December 6, 2022](/meeting-minutes/select-board/2022-12-06-4AlNkC8iV_A) | reference | — / 13.6 min | *(none declared)* |
+| [Select Board, December 13, 2022](/meeting-minutes/select-board/2022-12-13-7WsTn3VNxN0) | reference | — / 14.5 min | *(none declared)* |
+| [Select Board, December 20, 2022](/meeting-minutes/select-board/2022-12-20-SZ7HtPfqChk) | reference | — / 14.0 min | *(none declared)* |
+| [Select Board, January 3, 2023](/meeting-minutes/select-board/2023-01-03-CYJr7pP6mpY) | reference | — / 13.2 min | *(none declared)* |
+| [Select Board, January 10, 2023](/meeting-minutes/select-board/2023-01-10-IihrcRkqYEo) | reference | — / 16.0 min | *(none declared)* |
+| [Select Board, January 17, 2023](/meeting-minutes/select-board/2023-01-17-EnQfoSyPDM4) | reference | — / 15.1 min | *(none declared)* |
+| [Select Board, January 17, 2023](/meeting-minutes/select-board/2023-01-17-lh4gniGlkl4) | reference | — / 13.7 min | *(none declared)* |
+| [Select Board, January 17, 2023](/meeting-minutes/select-board/2023-01-17-tPOow64a14o) | reference | — / 11.9 min | *(none declared)* |
+| [Select Board, January 24, 2023](/meeting-minutes/select-board/2023-01-24-kp0VKMqhrNk) | reference | — / 11.3 min | *(none declared)* |
+| [Select Board, January 31, 2023](/meeting-minutes/select-board/2023-01-31-CQsVUSFmSzw) | reference | — / 13.9 min | *(none declared)* |
+| [Select Board, February 7, 2023](/meeting-minutes/select-board/2023-02-07-zBOI0G0HSKQ) | reference | — / 14.1 min | *(none declared)* |
+| [Select Board, February 21, 2023](/meeting-minutes/select-board/2023-02-21-95QstTFldcE) | reference | — / 14.3 min | *(none declared)* |
+| [Select Board, February 28, 2023](/meeting-minutes/select-board/2023-02-28-sU5s0uIrK_E) | reference | — / 15.7 min | *(none declared)* |
+| [Select Board, March 7, 2023](/meeting-minutes/select-board/2023-03-07-neyT3m-Bi24) | reference | — / 16.5 min | *(none declared)* |
+| [Select Board, March 21, 2023](/meeting-minutes/select-board/2023-03-21-wau0eTh9dNQ) | reference | — / 14.3 min | *(none declared)* |
+| [Select Board, March 28, 2023](/meeting-minutes/select-board/2023-03-28-c31_XZD-Lxo) | reference | — / 15.4 min | *(none declared)* |
+| [Select Board, April 4, 2023](/meeting-minutes/select-board/2023-04-04-Ld6HAwskTvs) | reference | — / 14.9 min | *(none declared)* |
+| [Select Board, April 11, 2023](/meeting-minutes/select-board/2023-04-11-O64P5Pgpqkk) | reference | — / 14.5 min | *(none declared)* |
+| [Select Board, April 25, 2023](/meeting-minutes/select-board/2023-04-25-gYKQbfcvyFQ) | reference | — / 14.8 min | *(none declared)* |
+| [Select Board, May 2, 2023](/meeting-minutes/select-board/2023-05-02-cHopUkSixqk) | reference | — / 15.1 min | *(none declared)* |
+| [Select Board, May 9, 2023](/meeting-minutes/select-board/2023-05-09-1ZallDTx8pw) | reference | — / 15.0 min | *(none declared)* |
+| [Select Board, May 16, 2023](/meeting-minutes/select-board/2023-05-16-JgKmTZ1skxM) | reference | — / 15.6 min | *(none declared)* |
+| [Select Board, May 23, 2023](/meeting-minutes/select-board/2023-05-23-SlXt4u6Gi4o) | reference | — / 14.5 min | *(none declared)* |
+| [Select Board, June 6, 2023](/meeting-minutes/select-board/2023-06-06-GNJ_OFhKISs) | reference | — / 15.2 min | *(none declared)* |
+| [Select Board, June 13, 2023](/meeting-minutes/select-board/2023-06-13-etaQvDEIcJk) | reference | — / 15.0 min | *(none declared)* |
+| [Select Board, June 20, 2023](/meeting-minutes/select-board/2023-06-20-pqOenqRbVqI) | reference | — / 11.8 min | *(none declared)* |
+| [Select Board, July 11, 2023](/meeting-minutes/select-board/2023-07-11-u059EVnf7AA) | reference | — / 15.1 min | *(none declared)* |
+| [Select Board, July 18, 2023](/meeting-minutes/select-board/2023-07-18--hPdZR7d9L8) | reference | — / 13.5 min | *(none declared)* |
+| [Select Board, August 1, 2023](/meeting-minutes/select-board/2023-08-01-qPxVBuo3FcA) | reference | — / 13.6 min | *(none declared)* |
+| [Select Board, August 8, 2023](/meeting-minutes/select-board/2023-08-08-RwebqGJe-0E) | reference | — / 11.4 min | *(none declared)* |
+| [Select Board, August 15, 2023](/meeting-minutes/select-board/2023-08-15-aea1hlFZGoY) | reference | — / 13.1 min | *(none declared)* |
+| [Select Board, August 22, 2023](/meeting-minutes/select-board/2023-08-22-31ie_uTbOYw) | reference | — / 14.8 min | *(none declared)* |
+| [Select Board, August 30, 2023](/meeting-minutes/select-board/2023-08-30-4Iol6l2XnUs) | reference | — / 10.5 min | *(none declared)* |
+| [Select Board, September 5, 2023](/meeting-minutes/select-board/2023-09-05-74qRBCW2Qqc) | reference | — / 15.0 min | *(none declared)* |
+| [Select Board, September 12, 2023](/meeting-minutes/select-board/2023-09-12-73pQUL3kFZo) | reference | — / 13.7 min | *(none declared)* |
+| [Select Board, September 14, 2023](/meeting-minutes/select-board/2023-09-14-dKXagYIu9yM) | reference | — / 12.8 min | *(none declared)* |
+| [Select Board, September 19, 2023](/meeting-minutes/select-board/2023-09-19-U1bmk22oNds) | reference | — / 13.9 min | *(none declared)* |
+| [Select Board, October 3, 2023](/meeting-minutes/select-board/2023-10-03-VsbrIn15BRM) | reference | — / 14.9 min | *(none declared)* |
+| [Select Board, October 10, 2023](/meeting-minutes/select-board/2023-10-10-Cjwna2g08_k) | reference | — / 15.4 min | *(none declared)* |
+| [Select Board, October 17, 2023](/meeting-minutes/select-board/2023-10-17-hMNni0VXUfg) | reference | — / 13.3 min | *(none declared)* |
+| [Select Board, October 24, 2023](/meeting-minutes/select-board/2023-10-24-rRLGSXO9F_4) | reference | — / 13.8 min | *(none declared)* |
+| [Select Board, November 7, 2023](/meeting-minutes/select-board/2023-11-07-tu8MZVv5gvo) | reference | — / 16.0 min | *(none declared)* |
+| [Select Board, November 28, 2023](/meeting-minutes/select-board/2023-11-28-juGhSZJG8P8) | reference | — / 14.5 min | *(none declared)* |
+| [Select Board, December 5, 2023](/meeting-minutes/select-board/2023-12-05-a8BzgkQFxXI) | reference | — / 12.4 min | *(none declared)* |
+| [Select Board, December 12, 2023](/meeting-minutes/select-board/2023-12-12-z-0FAWISPrE) | reference | — / 15.0 min | *(none declared)* |
+| [Select Board, December 19, 2023](/meeting-minutes/select-board/2023-12-19-rJ32rSdKVT4) | reference | — / 13.7 min | *(none declared)* |
+| [Select Board, January 9, 2024](/meeting-minutes/select-board/2024-01-09-AxepNNtMdH4) | reference | — / 12.6 min | *(none declared)* |
+| [Select Board, January 16, 2024](/meeting-minutes/select-board/2024-01-16-vSCm-DhM_fc) | reference | — / 15.6 min | *(none declared)* |
+| [Select Board, January 23, 2024](/meeting-minutes/select-board/2024-01-23-rK9J3lTlZyE) | reference | — / 12.4 min | *(none declared)* |
+| [Select Board, January 30, 2024](/meeting-minutes/select-board/2024-01-30-OFl9mY69yl8) | reference | — / 14.4 min | *(none declared)* |
+| [Select Board, February 13, 2024](/meeting-minutes/select-board/2024-02-13-savIPkdZcnQ) | reference | — / 15.8 min | *(none declared)* |
+| [Select Board, February 20, 2024](/meeting-minutes/select-board/2024-02-20-WfxtBghfQ6k) | reference | — / 16.4 min | *(none declared)* |
+| [Select Board, March 5, 2024](/meeting-minutes/select-board/2024-03-05-Vdj6C4kyYJw) | reference | — / 15.8 min | *(none declared)* |
+| [Select Board, March 12, 2024](/meeting-minutes/select-board/2024-03-12-heIX4acnxRQ) | reference | — / 13.5 min | *(none declared)* |
+| [Select Board, March 19, 2024](/meeting-minutes/select-board/2024-03-19-N7IoCxrNyCo) | reference | — / 18.6 min | *(none declared)* |
+| [Select Board, March 26, 2024](/meeting-minutes/select-board/2024-03-26-SxNLdwFAFsc) | reference | — / 17.4 min | *(none declared)* |
+| [Select Board, April 2, 2024](/meeting-minutes/select-board/2024-04-02-mYRG0Z1-GIc) | reference | — / 15.9 min | *(none declared)* |
+| [Select Board, April 9, 2024](/meeting-minutes/select-board/2024-04-09-gcuQKSW2XI4) | reference | — / 13.5 min | *(none declared)* |
+| [Select Board, April 23, 2024](/meeting-minutes/select-board/2024-04-23-dzPxqufDNtc) | reference | — / 14.4 min | *(none declared)* |
+| [Select Board, April 30, 2024](/meeting-minutes/select-board/2024-04-30-yJPvSLgD0Jc) | reference | — / 13.5 min | *(none declared)* |
+| [Select Board, May 8, 2024](/meeting-minutes/select-board/2024-05-08-dO7n5fBtuww) | reference | — / 15.1 min | *(none declared)* |
+| [Select Board, May 14, 2024](/meeting-minutes/select-board/2024-05-14-PqWfYHfBfHM) | reference | — / 13.5 min | *(none declared)* |
+| [Select Board, May 21, 2024](/meeting-minutes/select-board/2024-05-21-ddbUPQzXt_w) | reference | — / 13.1 min | *(none declared)* |
+| [Select Board, June 4, 2024](/meeting-minutes/select-board/2024-06-04-hEPTyqswe4c) | reference | — / 13.8 min | *(none declared)* |
+| [Select Board, June 11, 2024](/meeting-minutes/select-board/2024-06-11-f8-YB67yLhE) | reference | — / 16.6 min | *(none declared)* |
+| [Select Board, June 18, 2024](/meeting-minutes/select-board/2024-06-18-bGyAQNXqiRQ) | reference | — / 15.6 min | *(none declared)* |
+| [Select Board, July 9, 2024](/meeting-minutes/select-board/2024-07-09-_ibvI8f79QE) | reference | — / 15.6 min | *(none declared)* |
+| [Select Board, July 16, 2024](/meeting-minutes/select-board/2024-07-16-7EEY2Mndjc8) | reference | — / 16.2 min | *(none declared)* |
+| [Select Board, July 17, 2024](/meeting-minutes/select-board/2024-07-17-Lnsx-Q4U58M) | reference | — / 10.5 min | *(none declared)* |
+| [Select Board, July 23, 2024](/meeting-minutes/select-board/2024-07-23-jATzS-kn0UA) | reference | — / 14.8 min | *(none declared)* |
+| [Select Board, August 6, 2024](/meeting-minutes/select-board/2024-08-06-rc_fGzmDyd0) | reference | — / 13.2 min | *(none declared)* |
+| [Select Board, August 13, 2024](/meeting-minutes/select-board/2024-08-13-pvaQaklHi78) | reference | — / 14.5 min | *(none declared)* |
+| [Select Board, August 20, 2024](/meeting-minutes/select-board/2024-08-20-MMciKy1DZ5A) | reference | — / 13.1 min | *(none declared)* |
+| [Select Board, September 3, 2024](/meeting-minutes/select-board/2024-09-03-SUym2D7xXYM) | reference | — / 11.3 min | *(none declared)* |
+| [Select Board, September 10, 2024](/meeting-minutes/select-board/2024-09-10-DMgRQqhERMk) | reference | — / 14.3 min | *(none declared)* |
+| [Select Board, September 17, 2024](/meeting-minutes/select-board/2024-09-17-et8rDbzGU0A) | reference | — / 12.9 min | *(none declared)* |
+| [Select Board, September 24, 2024](/meeting-minutes/select-board/2024-09-24-8BFXqn77q4M) | reference | — / 9.9 min | *(none declared)* |
+| [Select Board, October 1, 2024](/meeting-minutes/select-board/2024-10-01-IeSitB3QJOA) | reference | — / 12.3 min | *(none declared)* |
+| [Select Board, October 8, 2024](/meeting-minutes/select-board/2024-10-08-r6nH--z2Yqc) | reference | — / 13.2 min | *(none declared)* |
+| [Select Board, October 15, 2024](/meeting-minutes/select-board/2024-10-15-gwPCzDxpcaI) | reference | — / 12.2 min | *(none declared)* |
+| [Select Board, October 22, 2024](/meeting-minutes/select-board/2024-10-22-BApnHswB2Z8) | reference | — / 14.5 min | *(none declared)* |
+| [Select Board, November 5, 2024](/meeting-minutes/select-board/2024-11-05-u9ZkLe7Hv7c) | reference | — / 12.6 min | *(none declared)* |
+| [Select Board, November 13, 2024](/meeting-minutes/select-board/2024-11-13-3jKJuWsiLQA) | reference | — / 13.8 min | *(none declared)* |
+| [Select Board, November 19, 2024](/meeting-minutes/select-board/2024-11-19-mHjLAn7GbdQ) | reference | — / 17.1 min | *(none declared)* |
+| [Select Board, December 10, 2024](/meeting-minutes/select-board/2024-12-10-ENBmClqrHsI) | reference | — / 13.3 min | *(none declared)* |
+| [Select Board, December 17, 2024](/meeting-minutes/select-board/2024-12-17-jrG1b_tADyo) | reference | — / 13.2 min | *(none declared)* |
+| [Select Board, January 7, 2025](/meeting-minutes/select-board/2025-01-07-OSDrxiSHgYw) | reference | — / 15.6 min | *(none declared)* |
+| [Select Board, January 14, 2025](/meeting-minutes/select-board/2025-01-14-rEifex02efg) | reference | — / 11.5 min | *(none declared)* |
+| [Select Board, January 15, 2025](/meeting-minutes/select-board/2025-01-15-Sp4UokWUu7k) | reference | — / 11.9 min | *(none declared)* |
+| [Select Board, January 21, 2025](/meeting-minutes/select-board/2025-01-21-W8EuCS_I4qo) | reference | — / 13.2 min | *(none declared)* |
+| [Select Board, January 28, 2025](/meeting-minutes/select-board/2025-01-28-jdgUJbMl95o) | reference | — / 12.5 min | *(none declared)* |
+| [Select Board, February 4, 2025](/meeting-minutes/select-board/2025-02-04-bT_7rISGSng) | reference | — / 15.6 min | *(none declared)* |
+| [Select Board, February 11, 2025](/meeting-minutes/select-board/2025-02-11-lUVF69No-Xk) | reference | — / 14.6 min | *(none declared)* |
+| [Select Board, February 18, 2025](/meeting-minutes/select-board/2025-02-18-cGnul2Pa98Q) | reference | — / 12.4 min | *(none declared)* |
+| [Select Board, March 4, 2025](/meeting-minutes/select-board/2025-03-04-rS9ucfkGKqw) | reference | — / 14.8 min | *(none declared)* |
+| [Select Board, March 11, 2025](/meeting-minutes/select-board/2025-03-11-1aAp8uwWCRc) | reference | — / 19.6 min | *(none declared)* |
+| [Select Board, March 18, 2025](/meeting-minutes/select-board/2025-03-18-GDJ_3KO5gZc) | reference | — / 12.3 min | *(none declared)* |
+| [Select Board, March 19, 2025](/meeting-minutes/select-board/2025-03-19-bOw2N2ujOX8) | reference | — / 13.6 min | *(none declared)* |
+| [Select Board, April 1, 2025](/meeting-minutes/select-board/2025-04-01-9_Rk909bZxk) | reference | — / 20.8 min | *(none declared)* |
+| [Select Board, April 8, 2025](/meeting-minutes/select-board/2025-04-08-rYku45YUqjY) | reference | — / 18.6 min | *(none declared)* |
+| [Select Board, April 15, 2025](/meeting-minutes/select-board/2025-04-15-VdyksuhJQaA) | reference | — / 18.5 min | *(none declared)* |
+| [Select Board, April 22, 2025](/meeting-minutes/select-board/2025-04-22-P2oaRZxpxMU) | reference | — / 15.2 min | *(none declared)* |
+| [Select Board, May 6, 2025](/meeting-minutes/select-board/2025-05-06-_Sn5J1a6bZo) | reference | — / 18.1 min | *(none declared)* |
+| [Select Board, May 13, 2025](/meeting-minutes/select-board/2025-05-13-1XNIOs3PXVo) | reference | — / 16.5 min | *(none declared)* |
+| [Select Board, May 20, 2025](/meeting-minutes/select-board/2025-05-20-wpttRNE3njQ) | reference | — / 16.1 min | *(none declared)* |
+| [Select Board, June 3, 2025](/meeting-minutes/select-board/2025-06-03-esXb-953bjA) | reference | — / 18.4 min | *(none declared)* |
+| [Select Board, June 9, 2025](/meeting-minutes/select-board/2025-06-09-I_8yK_VGcGo) | reference | — / 19.2 min | *(none declared)* |
+| [Select Board, June 17, 2025](/meeting-minutes/select-board/2025-06-17-K646g1jJwvM) | reference | — / 17.5 min | *(none declared)* |
+| [Select Board, June 24, 2025](/meeting-minutes/select-board/2025-06-24-gDQ9AowUxXU) | reference | — / 8.5 min | *(none declared)* |
+| [Select Board, July 1, 2025](/meeting-minutes/select-board/2025-07-01-CfI2gTkmtbs) | reference | — / 19.7 min | *(none declared)* |
+| [Select Board, July 15, 2025](/meeting-minutes/select-board/2025-07-15-OlIKWtH_XGI) | reference | — / 18.0 min | *(none declared)* |
+| [Select Board, August 5, 2025](/meeting-minutes/select-board/2025-08-05-JnkfuUp62rs) | reference | — / 10.2 min | *(none declared)* |
+| [Select Board, August 19, 2025](/meeting-minutes/select-board/2025-08-19-OMMrt98hBss) | reference | — / 17.7 min | *(none declared)* |
+| [Select Board, September 2, 2025](/meeting-minutes/select-board/2025-09-02-9f_4zI0b8Ek) | reference | — / 15.1 min | *(none declared)* |
+| [Select Board, September 9, 2025](/meeting-minutes/select-board/2025-09-09-9XhNW920cTw) | reference | — / 12.6 min | *(none declared)* |
+| [Select Board, September 15, 2025](/meeting-minutes/select-board/2025-09-15-nl_C9W6N6mQ) | reference | — / 9.8 min | *(none declared)* |
+| [Select Board, September 23, 2025](/meeting-minutes/select-board/2025-09-23-ESaeqndWHmo) | reference | — / 15.5 min | *(none declared)* |
+| [Select Board, October 7, 2025](/meeting-minutes/select-board/2025-10-07-h2XwBjhMCiI) | reference | — / 19.4 min | *(none declared)* |
+| [Select Board, October 14, 2025](/meeting-minutes/select-board/2025-10-14-DkFQW0c9ou4) | reference | — / 16.2 min | *(none declared)* |
+| [Select Board, October 21, 2025](/meeting-minutes/select-board/2025-10-21-5o7AkUKzXo8) | reference | — / 16.6 min | *(none declared)* |
+| [Select Board, October 24, 2025](/meeting-minutes/select-board/2025-10-24-OaDD8h7xzAQ) | reference | — / 14.5 min | *(none declared)* |
+| [Select Board, November 4, 2025](/meeting-minutes/select-board/2025-11-04-25T0TEWN9jw) | reference | — / 16.8 min | *(none declared)* |
+| [Select Board, November 17, 2025](/meeting-minutes/select-board/2025-11-17-Nj-LozM-f1A) | reference | — / 13.9 min | *(none declared)* |
+| [Select Board, November 25, 2025](/meeting-minutes/select-board/2025-11-25-WRTRvPgKRfs) | reference | — / 13.0 min | *(none declared)* |
+| [Select Board, December 2, 2025](/meeting-minutes/select-board/2025-12-02-nyRODr1VSBI) | reference | — / 15.8 min | *(none declared)* |
+| [Select Board, December 9, 2025](/meeting-minutes/select-board/2025-12-09-Z87KMc--ZoY) | reference | — / 15.2 min | *(none declared)* |
+| [Select Board, December 16, 2025](/meeting-minutes/select-board/2025-12-16-VN__R5GGS8M) | reference | — / 18.0 min | *(none declared)* |
+| [Select Board, December 30, 2025](/meeting-minutes/select-board/2025-12-30-2jGwJ4yXAsc) | reference | — / 8.5 min | *(none declared)* |
+| [Select Board, January 6, 2026](/meeting-minutes/select-board/2026-01-06-2JrrFy4AqdI) | reference | — / 13.9 min | *(none declared)* |
+| [Select Board, January 13, 2026](/meeting-minutes/select-board/2026-01-13-dJJBSRi5z5U) | reference | — / 14.2 min | *(none declared)* |
+| [Select Board, February 3, 2026](/meeting-minutes/select-board/2026-02-03-Y7AKUqslZ4c) | reference | — / 16.3 min | *(none declared)* |
+| [Select Board, February 10, 2026](/meeting-minutes/select-board/2026-02-10-g_Fw3bGKhWU) | reference | — / 17.8 min | *(none declared)* |
+| [Select Board, February 17, 2026](/meeting-minutes/select-board/2026-02-17-VfWvWHwTzog) | reference | — / 17.8 min | *(none declared)* |
+| [Select Board, February 24, 2026](/meeting-minutes/select-board/2026-02-24-JVB4H7xpVUw) | reference | — / 14.9 min | *(none declared)* |
+| [Select Board, March 3, 2026](/meeting-minutes/select-board/2026-03-03-6jXf3lDC_-U) | reference | — / 16.0 min | *(none declared)* |
+| [Select Board, March 10, 2026](/meeting-minutes/select-board/2026-03-10-7TS97IU0kuA) | reference | — / 14.6 min | *(none declared)* |
+| [Select Board, March 16, 2026](/meeting-minutes/select-board/2026-03-16-QkqNg9jDIEM) | reference | — / 27.1 min | *(none declared)* |
+| [Select Board, March 17, 2026](/meeting-minutes/select-board/2026-03-17-S3K-268mDJs) | reference | — / 19.0 min | *(none declared)* |
+| [Select Board, March 31, 2026](/meeting-minutes/select-board/2026-03-31-ACXm07GcviI) | reference | — / 18.7 min | *(none declared)* |
+| [Select Board, April 7, 2026](/meeting-minutes/select-board/2026-04-07-rPW2ew89EDs) | reference | — / 18.6 min | *(none declared)* |
+| [Select Board, April 14, 2026](/meeting-minutes/select-board/2026-04-14-sF7yvu2C25w) | reference | — / 18.4 min | *(none declared)* |
+| [Select Board, April 21, 2026](/meeting-minutes/select-board/2026-04-21-_JDMK4iDFTc) | reference | — / 17.4 min | *(none declared)* |
+| [Select Board, April 30, 2026](/meeting-minutes/select-board/2026-04-30-Qxau0aMYpVk) | reference | — / 9.5 min | *(none declared)* |
+| [Select Board, May 5, 2026](/meeting-minutes/select-board/2026-05-05-KkmAQOb3gUQ) | reference | — / 13.4 min | *(none declared)* |
+| [Select Board, May 12, 2026](/meeting-minutes/select-board/2026-05-12-Zm5Mx4qR6ic) | reference | — / 14.4 min | *(none declared)* |
+| [Select Board, May 19, 2026](/meeting-minutes/select-board/2026-05-19-JnVWS4tJouo) | reference | — / 17.5 min | *(none declared)* |
+| [Select Board, June 2, 2026](/meeting-minutes/select-board/2026-06-02-zkmjpWzNB8M) | reference | — / 15.6 min | *(none declared)* |
+| [Select Board, June 15, 2026](/meeting-minutes/select-board/2026-06-15-7k6khgLOCY8) | reference | — / 13.6 min | *(none declared)* |
+| [Select Board, June 16, 2026](/meeting-minutes/select-board/2026-06-16-dJfFYbktFzs) | reference | — / 16.9 min | *(none declared)* |
+| [Select Board, June 30, 2026](/meeting-minutes/select-board/2026-06-30-O1ypL39O-TM) | reference | — / 10.3 min | *(none declared)* |
+| [Select Board, July 7, 2026](/meeting-minutes/select-board/2026-07-07-eqCVy5g-wWE) | reference | — / 16.5 min | *(none declared)* |
+| [Select Board, July 14, 2026](/meeting-minutes/select-board/2026-07-14-tlJWseLMwCE) | reference | — / 14.3 min | *(none declared)* |
+| [Select Board, July 21, 2026](/meeting-minutes/select-board/2026-07-21-COzfPKYMWPA) | reference | — / 14.3 min | *(none declared)* |
+| [Select Board, July 27, 2026](/meeting-minutes/select-board/2026-07-27-5v_3VPZyn6U) | reference | — / 12.6 min | *(none declared)* |
+| [Select Board, July 28, 2026](/meeting-minutes/select-board/2026-07-28-1fNLbfV7UT4) | reference | — / 15.2 min | *(none declared)* |
+| [Select Board, August 4, 2026](/meeting-minutes/select-board/2026-08-04-yz0b6T1GdWA) | reference | — / 13.9 min | *(none declared)* |
+| [Select Board, August 10, 2026](/meeting-minutes/select-board/2026-08-10-UTAi2_3RDYU) | reference | — / 12.9 min | *(none declared)* |
+| [Select Board, August 11, 2026](/meeting-minutes/select-board/2026-08-11-7CbIQ2xhEw4) | reference | — / 12.1 min | *(none declared)* |
+| [Select Board, August 18, 2026](/meeting-minutes/select-board/2026-08-18-YnQcT2BMWS4) | reference | — / 15.9 min | *(none declared)* |
+| [Select Board, August 18, 2026](/meeting-minutes/select-board/2026-08-18-revUfCcR4IU) | reference | — / 13.2 min | *(none declared)* |
+| [Select Board, September 1, 2026](/meeting-minutes/select-board/2026-09-01-kG4KE9VgCdY) | reference | — / 18.2 min | *(none declared)* |
+| [Select Board, September 15, 2026](/meeting-minutes/select-board/2026-09-15-kig-BTakGjQ) | reference | — / 19.7 min | *(none declared)* |
+| [Select Board, September 29, 2026](/meeting-minutes/select-board/2026-09-29-Pn0PV7qGjp4) | reference | — / 12.7 min | *(none declared)* |
+| [Select Board, October 6, 2026](/meeting-minutes/select-board/2026-10-06-PaRmbzsOMks) | reference | — / 15.1 min | *(none declared)* |
+| [Select Board, October 20, 2026](/meeting-minutes/select-board/2026-10-20-z9j248Lu80E) | reference | — / 13.7 min | *(none declared)* |
+| [Select Board, October 27, 2026](/meeting-minutes/select-board/2026-10-27-EEjHeG_q7gY) | reference | — / 13.0 min | *(none declared)* |
+| [Sewer Commission, February 23, 2021](/meeting-minutes/sewer-commission/2021-02-23-uHf_xnY5xP4) | reference | — / 14.7 min | *(none declared)* |
+| [Sewer Commission, March 9, 2021](/meeting-minutes/sewer-commission/2021-03-09-OYpZts1FJ1c) | reference | — / 14.0 min | *(none declared)* |
+| [Sewer Commission, March 30, 2021](/meeting-minutes/sewer-commission/2021-03-30-TwO7DRRvduc) | reference | — / 15.8 min | *(none declared)* |
+| [Sewer Commission, April 13, 2021](/meeting-minutes/sewer-commission/2021-04-13-TvBbMEMktBE) | reference | — / 15.6 min | *(none declared)* |
+| [Sewer Commission, May 11, 2021](/meeting-minutes/sewer-commission/2021-05-11-PP5Cy9ESx48) | reference | — / 12.9 min | *(none declared)* |
+| [Sewer Commission, May 26, 2021](/meeting-minutes/sewer-commission/2021-05-26-Yp7icrEgRRU) | reference | — / 12.6 min | *(none declared)* |
+| [Sewer Commission, June 8, 2021](/meeting-minutes/sewer-commission/2021-06-08-_om8MeGWsXM) | reference | — / 10.6 min | *(none declared)* |
+| [Sewer Commission, June 29, 2021](/meeting-minutes/sewer-commission/2021-06-29-9e_8_pG7SSM) | reference | — / 12.1 min | *(none declared)* |
+| [Sewer Commission, July 13, 2021](/meeting-minutes/sewer-commission/2021-07-13-MNp52uaSBQw) | reference | — / 13.0 min | *(none declared)* |
+| [Sewer Commission, July 27, 2021](/meeting-minutes/sewer-commission/2021-07-27-cXXD9-Bd64k) | reference | — / 13.5 min | *(none declared)* |
+| [Sewer Commission, August 10, 2021](/meeting-minutes/sewer-commission/2021-08-10-bwgVV8HCFG8) | reference | — / 14.1 min | *(none declared)* |
+| [Sewer Commission, September 14, 2021](/meeting-minutes/sewer-commission/2021-09-14-WslFiukVmvE) | reference | — / 15.7 min | *(none declared)* |
+| [Sewer Commission, September 28, 2021](/meeting-minutes/sewer-commission/2021-09-28-qhNJ8lpWDyE) | reference | — / 13.4 min | *(none declared)* |
+| [Sewer Commission, October 12, 2021](/meeting-minutes/sewer-commission/2021-10-12-wkd8HZfb05w) | reference | — / 13.8 min | *(none declared)* |
+| [Sewer Commission, November 9, 2021](/meeting-minutes/sewer-commission/2021-11-09-O4JGZ0unWB0) | reference | — / 13.5 min | *(none declared)* |
+| [Sewer Commission, December 21, 2021](/meeting-minutes/sewer-commission/2021-12-21-Bg_pRDPvGWw) | reference | — / 13.6 min | *(none declared)* |
+| [Sewer Commission, January 11, 2022](/meeting-minutes/sewer-commission/2022-01-11-RT2tGlMypqs) | reference | — / 13.3 min | *(none declared)* |
+| [Sewer Commission, January 25, 2022](/meeting-minutes/sewer-commission/2022-01-25-QXISS3Ubp_w) | reference | — / 14.7 min | *(none declared)* |
+| [Sewer Commission, February 8, 2022](/meeting-minutes/sewer-commission/2022-02-08-fv4HZskE-rA) | reference | — / 14.9 min | *(none declared)* |
+| [Sewer Commission, February 15, 2022](/meeting-minutes/sewer-commission/2022-02-15-vvn2RkHbxGA) | reference | — / 14.8 min | *(none declared)* |
+| [Sewer Commission, February 22, 2022](/meeting-minutes/sewer-commission/2022-02-22-Db0OVht7JAM) | reference | — / 14.5 min | *(none declared)* |
+| [Sewer Commission, March 8, 2022](/meeting-minutes/sewer-commission/2022-03-08-rTlfAaDXO1c) | reference | — / 16.8 min | *(none declared)* |
+| [Sewer Commission, March 29, 2022](/meeting-minutes/sewer-commission/2022-03-29-hw3codG503I) | reference | — / 14.2 min | *(none declared)* |
+| [Sewer Commission, April 12, 2022](/meeting-minutes/sewer-commission/2022-04-12-kn93vcgIT4Y) | reference | — / 14.8 min | *(none declared)* |
+| [Sewer Commission, May 3, 2022](/meeting-minutes/sewer-commission/2022-05-03-9wrQb_iVcxE) | reference | — / 12.2 min | *(none declared)* |
+| [Sewer Commission, May 10, 2022](/meeting-minutes/sewer-commission/2022-05-10-01ZNANnu1-w) | reference | — / 15.4 min | *(none declared)* |
+| [Sewer Commission, May 31, 2022](/meeting-minutes/sewer-commission/2022-05-31-bfvCp3QR1uY) | reference | — / 15.9 min | *(none declared)* |
+| [Sewer Commission, June 14, 2022](/meeting-minutes/sewer-commission/2022-06-14-9tV-KPKs4iw) | reference | — / 13.7 min | *(none declared)* |
+| [Sewer Commission, July 12, 2022](/meeting-minutes/sewer-commission/2022-07-12-TaGkaOzGtQo) | reference | — / 13.7 min | *(none declared)* |
+| [Sewer Commission, August 9, 2022](/meeting-minutes/sewer-commission/2022-08-09-OOwqvKHeoyc) | reference | — / 14.5 min | *(none declared)* |
+| [Sewer Commission, August 30, 2022](/meeting-minutes/sewer-commission/2022-08-30-H6Zpc9q4esw) | reference | — / 15.2 min | *(none declared)* |
+| [Sewer Commission, September 13, 2022](/meeting-minutes/sewer-commission/2022-09-13-QsTON_jZmYE) | reference | — / 11.8 min | *(none declared)* |
+| [Sewer Commission, September 13, 2022](/meeting-minutes/sewer-commission/2022-09-13-UvXxwSg3Wjs) | reference | — / 16.7 min | *(none declared)* |
+| [Sewer Commission, September 27, 2022](/meeting-minutes/sewer-commission/2022-09-27-kdcEqVLjFCk) | reference | — / 14.3 min | *(none declared)* |
+| [Sewer Commission, October 11, 2022](/meeting-minutes/sewer-commission/2022-10-11-LpOVPzsNwdc) | reference | — / 14.8 min | *(none declared)* |
+| [Sewer Commission, October 25, 2022](/meeting-minutes/sewer-commission/2022-10-25-xMFMC22jZD0) | reference | — / 13.6 min | *(none declared)* |
+| [Sewer Commission, November 8, 2022](/meeting-minutes/sewer-commission/2022-11-08-fMSFNV0Bs0k) | reference | — / 13.4 min | *(none declared)* |
+| [Sewer Commission, November 29, 2022](/meeting-minutes/sewer-commission/2022-11-29-ymumPEdVnbs) | reference | — / 14.2 min | *(none declared)* |
+| [Sewer Commission, December 13, 2022](/meeting-minutes/sewer-commission/2022-12-13-6jNx35-m9-Q) | reference | — / 11.1 min | *(none declared)* |
+| [Sewer Commission, January 10, 2023](/meeting-minutes/sewer-commission/2023-01-10-SNpvMt0qzPM) | reference | — / 13.5 min | *(none declared)* |
+| [Sewer Commission, January 31, 2023](/meeting-minutes/sewer-commission/2023-01-31-LzO94o33VvM) | reference | — / 11.2 min | *(none declared)* |
+| [Sewer Commission, February 7, 2023](/meeting-minutes/sewer-commission/2023-02-07-ub8VPJS7cvU) | reference | — / 14.7 min | *(none declared)* |
+| [Sewer Commission, February 14, 2023](/meeting-minutes/sewer-commission/2023-02-14-GthNkBgGA50) | reference | — / 13.1 min | *(none declared)* |
+| [Sewer Commission, February 28, 2023](/meeting-minutes/sewer-commission/2023-02-28-68BlVQXiLJI) | reference | — / 13.7 min | *(none declared)* |
+| [Sewer Commission, March 21, 2023](/meeting-minutes/sewer-commission/2023-03-21-qRnMD9LpNhU) | reference | — / 15.5 min | *(none declared)* |
+| [Sewer Commission, April 11, 2023](/meeting-minutes/sewer-commission/2023-04-11-6nlT1TwdXvY) | reference | — / 15.4 min | *(none declared)* |
+| [Sewer Commission, April 11, 2023](/meeting-minutes/sewer-commission/2023-04-11-bMDWOby3QYI) | reference | — / 15.1 min | *(none declared)* |
+| [Sewer Commission, April 11, 2023](/meeting-minutes/sewer-commission/2023-04-11-nysWeg9SaPo) | reference | — / 15.0 min | *(none declared)* |
+| [Sewer Commission, April 25, 2023](/meeting-minutes/sewer-commission/2023-04-25-CKV0XDVf_2U) | reference | — / 14.4 min | *(none declared)* |
+| [Sewer Commission, May 9, 2023](/meeting-minutes/sewer-commission/2023-05-09-rsrMK9kTsnI) | reference | — / 13.8 min | *(none declared)* |
+| [Sewer Commission, May 30, 2023](/meeting-minutes/sewer-commission/2023-05-30-fBQ-VIovsXE) | reference | — / 14.4 min | *(none declared)* |
+| [Sewer Commission, June 13, 2023](/meeting-minutes/sewer-commission/2023-06-13-9UL3xdjYFGk) | reference | — / 11.5 min | *(none declared)* |
+| [Sewer Commission, June 27, 2023](/meeting-minutes/sewer-commission/2023-06-27-TbLdFYlFDtQ) | reference | — / 12.7 min | *(none declared)* |
+| [Sewer Commission, July 11, 2023](/meeting-minutes/sewer-commission/2023-07-11-DpwS4V18xTQ) | reference | — / 14.1 min | *(none declared)* |
+| [Sewer Commission, August 29, 2023](/meeting-minutes/sewer-commission/2023-08-29-E5ydLKP97q8) | reference | — / 15.2 min | *(none declared)* |
+| [Sewer Commission, September 12, 2023](/meeting-minutes/sewer-commission/2023-09-12-8SaTfs25A6E) | reference | — / 12.9 min | *(none declared)* |
+| [Sewer Commission, September 26, 2023](/meeting-minutes/sewer-commission/2023-09-26-DeaQbT8Wjfg) | reference | — / 13.1 min | *(none declared)* |
+| [Sewer Commission, October 10, 2023](/meeting-minutes/sewer-commission/2023-10-10-GZgNBXUhq5s) | reference | — / 15.1 min | *(none declared)* |
+| [Sewer Commission, October 27, 2023](/meeting-minutes/sewer-commission/2023-10-27--nL-vM2zLMQ) | reference | — / 10.5 min | *(none declared)* |
+| [Sewer Commission, November 13, 2023](/meeting-minutes/sewer-commission/2023-11-13-Spq-RHj3B2w) | reference | — / 13.4 min | *(none declared)* |
+| [Sewer Commission, December 12, 2023](/meeting-minutes/sewer-commission/2023-12-12-gze15lsB0fA) | reference | — / 13.4 min | *(none declared)* |
+| [Sewer Commission, January 9, 2024](/meeting-minutes/sewer-commission/2024-01-09-nJVmw1MObWI) | reference | — / 15.7 min | *(none declared)* |
+| [Sewer Commission, January 30, 2024](/meeting-minutes/sewer-commission/2024-01-30-eJgZfyiYdKE) | reference | — / 15.8 min | *(none declared)* |
+| [Sewer Commission, February 27, 2024](/meeting-minutes/sewer-commission/2024-02-27-Occd_-FbOUc) | reference | — / 13.4 min | *(none declared)* |
+| [Sewer Commission, March 12, 2024](/meeting-minutes/sewer-commission/2024-03-12-0EAiIjTDV5I) | reference | — / 14.1 min | *(none declared)* |
+| [Sewer Commission, April 9, 2024](/meeting-minutes/sewer-commission/2024-04-09-bV0-g6td6Hg) | reference | — / 13.3 min | *(none declared)* |
+| [Sewer Commission, April 30, 2024](/meeting-minutes/sewer-commission/2024-04-30-OkKAA9ng5B8) | reference | — / 14.2 min | *(none declared)* |
+| [Sewer Commission, June 25, 2024](/meeting-minutes/sewer-commission/2024-06-25-TcUAQbA_Jvg) | reference | — / 14.3 min | *(none declared)* |
+| [Sewer Commission, July 30, 2024](/meeting-minutes/sewer-commission/2024-07-30-zaKZlXSQDAg) | reference | — / 14.4 min | *(none declared)* |
+| [Sewer Commission, August 14, 2024](/meeting-minutes/sewer-commission/2024-08-14-G0-3pHLDhxQ) | reference | — / 12.7 min | *(none declared)* |
+| [Sewer Commission, August 21, 2024](/meeting-minutes/sewer-commission/2024-08-21-oik5FsUDfxg) | reference | — / 12.0 min | *(none declared)* |
+| [Sewer Commission, August 27, 2024](/meeting-minutes/sewer-commission/2024-08-27-L0rqWqZ4FnI) | reference | — / 13.9 min | *(none declared)* |
+| [Sewer Commission, September 24, 2024](/meeting-minutes/sewer-commission/2024-09-24-04ftw6CGOT0) | reference | — / 15.3 min | *(none declared)* |
+| [Sewer Commission, October 8, 2024](/meeting-minutes/sewer-commission/2024-10-08-DziiGnVFKu4) | reference | — / 11.7 min | *(none declared)* |
+| [Sewer Commission, October 22, 2024](/meeting-minutes/sewer-commission/2024-10-22--VhvyNOGuKU) | reference | — / 11.9 min | *(none declared)* |
+| [Sewer Commission, November 5, 2024](/meeting-minutes/sewer-commission/2024-11-05-uAMUswsOYL4) | reference | — / 12.8 min | *(none declared)* |
+| [Sewer Commission, November 19, 2024](/meeting-minutes/sewer-commission/2024-11-19-tQ2lJTPHuk8) | reference | — / 12.3 min | *(none declared)* |
+| [Sewer Commission, December 10, 2024](/meeting-minutes/sewer-commission/2024-12-10-7DZf9jK55PY) | reference | — / 13.1 min | *(none declared)* |
+| [Sewer Commission, January 21, 2025](/meeting-minutes/sewer-commission/2025-01-21-sKmeLFmRgyA) | reference | — / 13.6 min | *(none declared)* |
+| [Sewer Commission, January 28, 2025](/meeting-minutes/sewer-commission/2025-01-28-mQV5oHVxkfI) | reference | — / 12.0 min | *(none declared)* |
+| [Sewer Commission, February 11, 2025](/meeting-minutes/sewer-commission/2025-02-11-A8WxFwxPcqc) | reference | — / 11.9 min | *(none declared)* |
+| [Sewer Commission, February 25, 2025](/meeting-minutes/sewer-commission/2025-02-25-MxKuBUGm8X4) | reference | — / 12.8 min | *(none declared)* |
+| [Sewer Commission, March 11, 2025](/meeting-minutes/sewer-commission/2025-03-11-rJL8hrNVMWI) | reference | — / 13.3 min | *(none declared)* |
+| [Sewer Commission, March 25, 2025](/meeting-minutes/sewer-commission/2025-03-25-obxYYxhujJM) | reference | — / 13.1 min | *(none declared)* |
+| [Sewer Commission, April 15, 2025](/meeting-minutes/sewer-commission/2025-04-15-Aha56FXbwHc) | reference | — / 14.6 min | *(none declared)* |
+| [Sewer Commission, April 29, 2025](/meeting-minutes/sewer-commission/2025-04-29-o4dTzF9aVgY) | reference | — / 13.5 min | *(none declared)* |
+| [Sewer Commission, May 13, 2025](/meeting-minutes/sewer-commission/2025-05-13-r-kUuTGPt3o) | reference | — / 12.7 min | *(none declared)* |
+| [Sewer Commission, May 27, 2025](/meeting-minutes/sewer-commission/2025-05-27-yA9Nou_cIV4) | reference | — / 15.3 min | *(none declared)* |
+| [Sewer Commission, June 10, 2025](/meeting-minutes/sewer-commission/2025-06-10-FvgT0dj2O_M) | reference | — / 12.7 min | *(none declared)* |
+| [Sewer Commission, June 24, 2025](/meeting-minutes/sewer-commission/2025-06-24-0N1FFP0x48w) | reference | — / 14.4 min | *(none declared)* |
+| [Sewer Commission, July 8, 2025](/meeting-minutes/sewer-commission/2025-07-08-UU6V5uOZPuU) | reference | — / 15.2 min | *(none declared)* |
+| [Sewer Commission, July 29, 2025](/meeting-minutes/sewer-commission/2025-07-29-p0UnKwx-u0Q) | reference | — / 13.3 min | *(none declared)* |
+| [Sewer Commission, August 12, 2025](/meeting-minutes/sewer-commission/2025-08-12-NYBrya7e-YA) | reference | — / 13.8 min | *(none declared)* |
+| [Sewer Commission, August 26, 2025](/meeting-minutes/sewer-commission/2025-08-26-Fup8cteS8gc) | reference | — / 12.9 min | *(none declared)* |
+| [Sewer Commission, September 9, 2025](/meeting-minutes/sewer-commission/2025-09-09-82AzYTx0tuc) | reference | — / 12.7 min | *(none declared)* |
+| [Sewer Commission, September 30, 2025](/meeting-minutes/sewer-commission/2025-09-30-si5U6MiSnts) | reference | — / 12.2 min | *(none declared)* |
+| [Sewer Commission, October 14, 2025](/meeting-minutes/sewer-commission/2025-10-14-o28iO7hwN1I) | reference | — / 15.4 min | *(none declared)* |
+| [Sewer Commission, October 28, 2025](/meeting-minutes/sewer-commission/2025-10-28-G7fiTibB8B8) | reference | — / 13.5 min | *(none declared)* |
+| [Sewer Commission, November 25, 2025](/meeting-minutes/sewer-commission/2025-11-25-IHuJoN0gDeI) | reference | — / 15.6 min | *(none declared)* |
+| [Sewer Commission, December 9, 2025](/meeting-minutes/sewer-commission/2025-12-09-gXlwSLKGakw) | reference | — / 13.0 min | *(none declared)* |
+| [Sewer Commission, February 12, 2026](/meeting-minutes/sewer-commission/2026-02-12-4h8Kix9T4V4) | reference | — / 14.6 min | *(none declared)* |
+| [Sewer Commission, February 24, 2026](/meeting-minutes/sewer-commission/2026-02-24-pwsuBm1qjGY) | reference | — / 14.6 min | *(none declared)* |
+| [Sewer Commission, March 10, 2026](/meeting-minutes/sewer-commission/2026-03-10-Uth37yyihBA) | reference | — / 15.1 min | *(none declared)* |
+| [Sewer Commission, March 31, 2026](/meeting-minutes/sewer-commission/2026-03-31-3v5DIekiG2A) | reference | — / 14.4 min | *(none declared)* |
+| [Sewer Commission, April 14, 2026](/meeting-minutes/sewer-commission/2026-04-14-Vz1CQZ97SQo) | reference | — / 11.4 min | *(none declared)* |
+| [Sewer Commission, April 28, 2026](/meeting-minutes/sewer-commission/2026-04-28-0hk_UcqgRoQ) | reference | — / 13.7 min | *(none declared)* |
+| [Sewer Commission, May 12, 2026](/meeting-minutes/sewer-commission/2026-05-12-Vah7RuSz4_8) | reference | — / 12.7 min | *(none declared)* |
+| [Sewer Commission, May 26, 2026](/meeting-minutes/sewer-commission/2026-05-26-GLNiLTdN20M) | reference | — / 14.8 min | *(none declared)* |
+| [Sewer Commission, June 9, 2026](/meeting-minutes/sewer-commission/2026-06-09-tunb0BN9ZZI) | reference | — / 14.5 min | *(none declared)* |
+| [Sewer Commission, June 30, 2026](/meeting-minutes/sewer-commission/2026-06-30-TRmRLJKYE-U) | reference | — / 14.3 min | *(none declared)* |
+| [Sewer Commission, July 14, 2026](/meeting-minutes/sewer-commission/2026-07-14-AKgxsYGcX0s) | reference | — / 14.9 min | *(none declared)* |
+| [Sewer Commission, July 28, 2026](/meeting-minutes/sewer-commission/2026-07-28-88WCAj-HMbk) | reference | — / 14.9 min | *(none declared)* |
+| [Sewer Commission, August 11, 2026](/meeting-minutes/sewer-commission/2026-08-11-ESm5-N4Curs) | reference | — / 14.8 min | *(none declared)* |
+| [Sewer Commission, August 25, 2026](/meeting-minutes/sewer-commission/2026-08-25-Ki8TszCpmCY) | reference | — / 12.7 min | *(none declared)* |
+| [Sewer Commission, September 8, 2026](/meeting-minutes/sewer-commission/2026-09-08-VMfaXMyKBII) | reference | — / 12.8 min | *(none declared)* |
+| [Sewer Commission, September 29, 2026](/meeting-minutes/sewer-commission/2026-09-29-nEOkAfYljPY) | reference | — / 12.5 min | *(none declared)* |
+| [Sewer Commission, October 13, 2026](/meeting-minutes/sewer-commission/2026-10-13-jguSFLHz5-8) | reference | — / 11.4 min | *(none declared)* |
+| [Sewer Commission, October 27, 2026](/meeting-minutes/sewer-commission/2026-10-27-krvx-IuSkdE) | reference | — / 11.2 min | *(none declared)* |
+| [Stormwater Task Force, March 23, 2021](/meeting-minutes/stormwater-task-force/2021-03-23-Jxfyx82u3ks) | reference | — / 14.8 min | *(none declared)* |
+| [Stormwater Task Force, January 20, 2022](/meeting-minutes/stormwater-task-force/2022-01-20-aGZ72XhfcOc) | reference | — / 14.1 min | *(none declared)* |
+| [Stormwater Task Force, January 20, 2022](/meeting-minutes/stormwater-task-force/2022-01-20-vOe_gqFEgwk) | reference | — / 16.1 min | *(none declared)* |
+| [Stormwater Task Force, April 21, 2022](/meeting-minutes/stormwater-task-force/2022-04-21-Es2rM5gdFOM) | reference | — / 15.9 min | *(none declared)* |
+| [Stormwater Task Force, November 17, 2022](/meeting-minutes/stormwater-task-force/2022-11-17-Gccxlvb1OyI) | reference | — / 9.9 min | *(none declared)* |
+| [Stormwater Task Force, February 16, 2023](/meeting-minutes/stormwater-task-force/2023-02-16-dcBYjdoK070) | reference | — / 9.9 min | *(none declared)* |
+| [Stormwater Task Force, April 20, 2023](/meeting-minutes/stormwater-task-force/2023-04-20-j-T-E0SmeE4) | reference | — / 13.3 min | *(none declared)* |
+| [Stormwater Task Force, July 20, 2023](/meeting-minutes/stormwater-task-force/2023-07-20-uK5vgH9SYgo) | reference | — / 10.6 min | *(none declared)* |
+| [Stormwater Task Force, December 28, 2023](/meeting-minutes/stormwater-task-force/2023-12-28-c086dB0oGQk) | reference | — / 11.8 min | *(none declared)* |
+| [Stormwater Task Force, January 18, 2024](/meeting-minutes/stormwater-task-force/2024-01-18-B4EpifU3vac) | reference | — / 12.8 min | *(none declared)* |
+| [Stormwater Task Force, February 22, 2024](/meeting-minutes/stormwater-task-force/2024-02-22-R_C7Zn4RY6Y) | reference | — / 11.8 min | *(none declared)* |
+| [Stormwater Task Force, March 27, 2024](/meeting-minutes/stormwater-task-force/2024-03-27-Jdq7vk5yLKc) | reference | — / 13.9 min | *(none declared)* |
+| [Stormwater Task Force, April 18, 2024](/meeting-minutes/stormwater-task-force/2024-04-18-PkxDgf8YlsM) | reference | — / 14.1 min | *(none declared)* |
+| [Stormwater Task Force, May 16, 2024](/meeting-minutes/stormwater-task-force/2024-05-16-6NpiFgpgYRA) | reference | — / 10.7 min | *(none declared)* |
+| [Stormwater Task Force, June 20, 2024](/meeting-minutes/stormwater-task-force/2024-06-20-YDIiIZY6i5g) | reference | — / 11.2 min | *(none declared)* |
+| [Stormwater Task Force, September 19, 2024](/meeting-minutes/stormwater-task-force/2024-09-19-XhLypIo0zrY) | reference | — / 10.7 min | *(none declared)* |
+| [Stormwater Task Force, November 21, 2024](/meeting-minutes/stormwater-task-force/2024-11-21-JBheIqxWY5s) | reference | — / 10.0 min | *(none declared)* |
+| [Stormwater Task Force, January 23, 2025](/meeting-minutes/stormwater-task-force/2025-01-23-TZcRDxzdrIQ) | reference | — / 11.7 min | *(none declared)* |
+| [Stormwater Task Force, February 20, 2025](/meeting-minutes/stormwater-task-force/2025-02-20-4dZnxSWZ8oE) | reference | — / 11.8 min | *(none declared)* |
+| [Stormwater Task Force, March 20, 2025](/meeting-minutes/stormwater-task-force/2025-03-20-nzw-M8gcxCY) | reference | — / 11.8 min | *(none declared)* |
+| [Stormwater Task Force, April 24, 2025](/meeting-minutes/stormwater-task-force/2025-04-24-Eg8SZL_KgUA) | reference | — / 12.1 min | *(none declared)* |
+| [Stormwater Task Force, May 29, 2025](/meeting-minutes/stormwater-task-force/2025-05-29-g_QmuyZKcyA) | reference | — / 13.8 min | *(none declared)* |
+| [Stormwater Task Force, June 26, 2025](/meeting-minutes/stormwater-task-force/2025-06-26-nUlUQofQQyo) | reference | — / 14.3 min | *(none declared)* |
+| [Stormwater Task Force, July 24, 2025](/meeting-minutes/stormwater-task-force/2025-07-24-yQohkYdlmac) | reference | — / 12.7 min | *(none declared)* |
+| [Stormwater Task Force, August 7, 2025](/meeting-minutes/stormwater-task-force/2025-08-07-OsN2-Vcbtrs) | reference | — / 13.9 min | *(none declared)* |
+| [Stormwater Task Force, September 25, 2025](/meeting-minutes/stormwater-task-force/2025-09-25-Q-XzsLPvKeI) | reference | — / 12.6 min | *(none declared)* |
+| [Stormwater Task Force, October 23, 2025](/meeting-minutes/stormwater-task-force/2025-10-23-U8eB4FOQsQI) | reference | — / 12.3 min | *(none declared)* |
+| [Stormwater Task Force, December 4, 2025](/meeting-minutes/stormwater-task-force/2025-12-04-gAqRPg81taA) | reference | — / 11.8 min | *(none declared)* |
+| [Stormwater Task Force, January 8, 2026](/meeting-minutes/stormwater-task-force/2026-01-08-YfDULwK9uiE) | reference | — / 13.7 min | *(none declared)* |
+| [Stormwater Task Force, January 29, 2026](/meeting-minutes/stormwater-task-force/2026-01-29-YILiAdLFKlM) | reference | — / 16.2 min | *(none declared)* |
+| [Stormwater Task Force, February 19, 2026](/meeting-minutes/stormwater-task-force/2026-02-19-AJ_D9dIdV_0) | reference | — / 17.1 min | *(none declared)* |
+| [Stormwater Task Force, March 3, 2026](/meeting-minutes/stormwater-task-force/2026-03-03-U6Pk4Wael60) | reference | — / 15.9 min | *(none declared)* |
+| [Stormwater Task Force, March 5, 2026](/meeting-minutes/stormwater-task-force/2026-03-05-x9-Dms-XqYU) | reference | — / 12.8 min | *(none declared)* |
+| [Stormwater Task Force, March 25, 2026](/meeting-minutes/stormwater-task-force/2026-03-25-j2TFZHcskZ0) | reference | — / 13.1 min | *(none declared)* |
+| [Stormwater Task Force, April 16, 2026](/meeting-minutes/stormwater-task-force/2026-04-16-HCOfv6vm1J0) | reference | — / 12.0 min | *(none declared)* |
+| [Stormwater Task Force, May 18, 2026](/meeting-minutes/stormwater-task-force/2026-05-18-jcCCuDRpo-Y) | reference | — / 13.9 min | *(none declared)* |
+| [Stormwater Task Force, June 24, 2026](/meeting-minutes/stormwater-task-force/2026-06-24-46iJXIejnrw) | reference | — / 14.2 min | *(none declared)* |
+| [Stormwater Task Force, August 12, 2026](/meeting-minutes/stormwater-task-force/2026-08-12-C7njxgJv88A) | reference | — / 12.4 min | *(none declared)* |
+| [Stormwater Task Force, August 31, 2026](/meeting-minutes/stormwater-task-force/2026-08-31-N5dSxGy3zZs) | reference | — / 13.0 min | *(none declared)* |
+| [Stormwater Task Force, September 8, 2026](/meeting-minutes/stormwater-task-force/2026-09-08-BgwomyYoCJk) | reference | — / 9.0 min | *(none declared)* |
+| [Stormwater Task Force, September 8, 2026](/meeting-minutes/stormwater-task-force/2026-09-08-rGZsddKMXyM) | reference | — / 10.9 min | *(none declared)* |
+| [Stormwater Task Force, September 14, 2026](/meeting-minutes/stormwater-task-force/2026-09-14-fHuUxPFr0rg) | reference | — / 10.8 min | *(none declared)* |
+| [Stormwater Task Force, September 21, 2026](/meeting-minutes/stormwater-task-force/2026-09-21-uXzVaiUhtzw) | reference | — / 12.5 min | *(none declared)* |
+| [Stormwater Task Force, October 15, 2026](/meeting-minutes/stormwater-task-force/2026-10-15-6WmGpAdBTZQ) | reference | — / 14.0 min | *(none declared)* |
+| [TCP Building Design Committee, February 17, 2021](/meeting-minutes/tcp-building-design-committee/2021-02-17-ps2fu-GRfIg) | reference | — / 12.1 min | *(none declared)* |
+| [TCP Building Design Committee, March 3, 2021](/meeting-minutes/tcp-building-design-committee/2021-03-03-0GK8Ylurhcw) | reference | — / 10.9 min | *(none declared)* |
+| [TCP Building Design Committee, March 17, 2021](/meeting-minutes/tcp-building-design-committee/2021-03-17-j7DSdOb1Lew) | reference | — / 10.7 min | *(none declared)* |
+| [TCP Building Design Committee, April 7, 2021](/meeting-minutes/tcp-building-design-committee/2021-04-07-aEt0JnSaVGs) | reference | — / 10.6 min | *(none declared)* |
+| [TCP Building Design Committee, April 21, 2021](/meeting-minutes/tcp-building-design-committee/2021-04-21-CUkYBRie8Og) | reference | — / 11.1 min | *(none declared)* |
+| [TCP Building Design Committee, May 26, 2021](/meeting-minutes/tcp-building-design-committee/2021-05-26-U-fEZVOsZN0) | reference | — / 10.1 min | *(none declared)* |
+| [TCP Building Design Committee, August 25, 2021](/meeting-minutes/tcp-building-design-committee/2021-08-25-r2lNTkCo33w) | reference | — / 9.8 min | *(none declared)* |
+| [TCP Building Design Committee, September 8, 2021](/meeting-minutes/tcp-building-design-committee/2021-09-08-RTn7O7DrG8E) | reference | — / 10.2 min | *(none declared)* |
+| [TCP Building Design Committee, September 22, 2021](/meeting-minutes/tcp-building-design-committee/2021-09-22-wKhy5PIxBJM) | reference | — / 11.2 min | *(none declared)* |
+| [TCP Building Design Committee, October 6, 2021](/meeting-minutes/tcp-building-design-committee/2021-10-06-muorV2PV6RA) | reference | — / 10.7 min | *(none declared)* |
+| [TCP Building Design Committee, October 20, 2021](/meeting-minutes/tcp-building-design-committee/2021-10-20-XKdzno_0IiQ) | reference | — / 9.9 min | *(none declared)* |
+| [TCP Building Design Committee, October 27, 2021](/meeting-minutes/tcp-building-design-committee/2021-10-27-i8JO7I5i7v0) | reference | — / 11.0 min | *(none declared)* |
+| [TCP Building Design Committee, November 10, 2021](/meeting-minutes/tcp-building-design-committee/2021-11-10-l0pPhBrJ69Q) | reference | — / 11.5 min | *(none declared)* |
+| [Town Manager Screening Committee, July 10, 2024](/meeting-minutes/town-manager-screening-committee/2024-07-10-SRmiYunIu5g) | reference | — / 13.0 min | *(none declared)* |
+| [Town Manager Screening Committee, July 17, 2024](/meeting-minutes/town-manager-screening-committee/2024-07-17--7ZtazAGkKk) | reference | — / 12.5 min | *(none declared)* |
+| [Town Manager Screening Committee, July 31, 2024](/meeting-minutes/town-manager-screening-committee/2024-07-31-iCjSdVhLOVg) | reference | — / 10.8 min | *(none declared)* |
+| [Town Manager Screening Committee, August 19, 2024](/meeting-minutes/town-manager-screening-committee/2024-08-19-UdIXf-s6Iac) | reference | — / 11.1 min | *(none declared)* |
+| [Town Manager Screening Committee, September 11, 2024](/meeting-minutes/town-manager-screening-committee/2024-09-11-XkSHiKyyU2o) | reference | — / 12.6 min | *(none declared)* |
+| [Town Manager Screening Committee, October 7, 2024](/meeting-minutes/town-manager-screening-committee/2024-10-07-G1tvIj3Mm38) | reference | — / 12.1 min | *(none declared)* |
+| [Town Meeting, November 16, 2021](/meeting-minutes/town-meeting/2021-11-16-BcuNCgHJ8Qo) | reference | — / 14.7 min | *(none declared)* |
+| [Town Meeting, May 7, 2022](/meeting-minutes/town-meeting/2022-05-07-smx_Uh68j6I) | reference | — / 23.9 min | *(none declared)* |
+| [Town Meeting, November 15, 2022](/meeting-minutes/town-meeting/2022-11-15-2Mm0Wn4G_kA) | reference | — / 17.1 min | *(none declared)* |
+| [Town Meeting, May 6, 2023](/meeting-minutes/town-meeting/2023-05-06-MDSx17v0-dU) | reference | — / 18.3 min | *(none declared)* |
+| [Town Meeting, November 14, 2023](/meeting-minutes/town-meeting/2023-11-14-b6BJO3nP1Ig) | reference | — / 21.9 min | *(none declared)* |
+| [Town Meeting, May 4, 2024](/meeting-minutes/town-meeting/2024-05-04-1E6ws5rr8E4) | reference | — / 25.0 min | *(none declared)* |
+| [Town Meeting, November 12, 2024](/meeting-minutes/town-meeting/2024-11-12-WdWx2IE3FeQ) | reference | — / 18.5 min | *(none declared)* |
+| [Town Meeting, May 3, 2025](/meeting-minutes/town-meeting/2025-05-03-gOYiR_qV8yk) | reference | — / 24.8 min | *(none declared)* |
+| [Town Meeting, November 18, 2025](/meeting-minutes/town-meeting/2025-11-18-yQkLNWEM-iQ) | reference | — / 24.1 min | *(none declared)* |
+| [Town Meeting, May 2, 2026](/meeting-minutes/town-meeting/2026-05-02-F0viGd2yFSU) | reference | — / 26.7 min | *(none declared)* |
+| [Town Meeting, May 2, 2026](/meeting-minutes/town-meeting/2026-05-02-XPu6b2OxSAE) | reference | — / 26.5 min | *(none declared)* |
+| [Town Meeting, September 3, 2026](/meeting-minutes/town-meeting/2026-09-03-UgUpJJb4cPw) | reference | — / 16.7 min | *(none declared)* |
+| [Trust Fund Commission, June 26, 2025](/meeting-minutes/trust-fund-commission/2025-06-26-fy4cXopF-hI) | reference | — / 12.6 min | *(none declared)* |
+| [Trust Fund Commission, July 10, 2025](/meeting-minutes/trust-fund-commission/2025-07-10-fFIapkm3IOA) | reference | — / 13.7 min | *(none declared)* |
+| [Trust Fund Commission, July 24, 2025](/meeting-minutes/trust-fund-commission/2025-07-24-OEGILw_2a-0) | reference | — / 15.4 min | *(none declared)* |
+| [Trust Fund Commission, August 14, 2025](/meeting-minutes/trust-fund-commission/2025-08-14-be9O40jhkCo) | reference | — / 15.8 min | *(none declared)* |
+| [Trust Fund Commission, August 28, 2025](/meeting-minutes/trust-fund-commission/2025-08-28-YERyoEGdfBs) | reference | — / 14.0 min | *(none declared)* |
+| [Trust Fund Commission, September 11, 2025](/meeting-minutes/trust-fund-commission/2025-09-11-NcH3hkVJym8) | reference | — / 16.4 min | *(none declared)* |
+| [Trust Fund Commission, October 9, 2025](/meeting-minutes/trust-fund-commission/2025-10-09-78zFGmHjrqw) | reference | — / 13.7 min | *(none declared)* |
+| [Trust Fund Commission, October 23, 2025](/meeting-minutes/trust-fund-commission/2025-10-23-pYUyQsENwHY) | reference | — / 11.4 min | *(none declared)* |
+| [Trust Fund Commission, November 13, 2025](/meeting-minutes/trust-fund-commission/2025-11-13-IipV57zB-CA) | reference | — / 14.5 min | *(none declared)* |
+| [Trust Fund Commission, November 25, 2025](/meeting-minutes/trust-fund-commission/2025-11-25-zLefKx0ccKE) | reference | — / 13.0 min | *(none declared)* |
+| [Trust Fund Commission, December 18, 2025](/meeting-minutes/trust-fund-commission/2025-12-18-6UdQLUbaWHs) | reference | — / 13.3 min | *(none declared)* |
+| [Trust Fund Commission, January 29, 2026](/meeting-minutes/trust-fund-commission/2026-01-29-NuHwTcarSGA) | reference | — / 14.7 min | *(none declared)* |
+| [Trust Fund Commission, February 12, 2026](/meeting-minutes/trust-fund-commission/2026-02-12-oBW_GZJln3g) | reference | — / 12.1 min | *(none declared)* |
+| [Trust Fund Commission, March 12, 2026](/meeting-minutes/trust-fund-commission/2026-03-12-K5SV7asqOUY) | reference | — / 15.0 min | *(none declared)* |
+| [Trust Fund Commission, March 26, 2026](/meeting-minutes/trust-fund-commission/2026-03-26-IyTc8GPySz0) | reference | — / 14.9 min | *(none declared)* |
+| [Trust Fund Commission, April 9, 2026](/meeting-minutes/trust-fund-commission/2026-04-09-nm0KqHcL6wk) | reference | — / 14.1 min | *(none declared)* |
+| [Trust Fund Commission, April 23, 2026](/meeting-minutes/trust-fund-commission/2026-04-23-rj663wEGQt4) | reference | — / 13.3 min | *(none declared)* |
+| [Trust Fund Commission, May 7, 2026](/meeting-minutes/trust-fund-commission/2026-05-07-FKFXZxfz6V0) | reference | — / 14.8 min | *(none declared)* |
+| [Trust Fund Commission, July 24, 2026](/meeting-minutes/trust-fund-commission/2026-07-24-UvO292Q4t1E) | reference | — / 15.2 min | *(none declared)* |
+| [Trust Fund Commission, August 27, 2026](/meeting-minutes/trust-fund-commission/2026-08-27-lO_rw3eY5D8) | reference | — / 15.7 min | *(none declared)* |
+| [Trust Fund Commission, September 10, 2026](/meeting-minutes/trust-fund-commission/2026-09-10-7wCeOTdyvdc) | reference | — / 12.7 min | *(none declared)* |
+| [Trust Fund Commission, September 24, 2026](/meeting-minutes/trust-fund-commission/2026-09-24-kNEMWtxiZOM) | reference | — / 12.9 min | *(none declared)* |
+| [Trust Fund Commission, October 15, 2026](/meeting-minutes/trust-fund-commission/2026-10-15-EXq5fjrHOhU) | reference | — / 11.3 min | *(none declared)* |
+| [Trust Fund Commission, October 21, 2026](/meeting-minutes/trust-fund-commission/2026-10-21-YXZu1VzWZTc) | reference | — / 12.3 min | *(none declared)* |
+| [Zoning Board of Appeals, February 24, 2021](/meeting-minutes/zoning-board-of-appeals/2021-02-24-TggNH8X-A9A) | reference | — / 11.5 min | *(none declared)* |
+| [Zoning Board of Appeals, April 14, 2021](/meeting-minutes/zoning-board-of-appeals/2021-04-14-FuccNZr2EKc) | reference | — / 11.2 min | *(none declared)* |
+| [Zoning Board of Appeals, May 26, 2021](/meeting-minutes/zoning-board-of-appeals/2021-05-26-qlZmweZHHTQ) | reference | — / 9.3 min | *(none declared)* |
+| [Zoning Board of Appeals, June 9, 2021](/meeting-minutes/zoning-board-of-appeals/2021-06-09-18Cy3lYZxTk) | reference | — / 10.4 min | *(none declared)* |
+| [Zoning Board of Appeals, July 14, 2021](/meeting-minutes/zoning-board-of-appeals/2021-07-14-HdUOamWtx8w) | reference | — / 9.0 min | *(none declared)* |
+| [Zoning Board of Appeals, January 12, 2022](/meeting-minutes/zoning-board-of-appeals/2022-01-12-O6GzcV5THgA) | reference | — / 10.3 min | *(none declared)* |
+| [Zoning Board of Appeals, February 9, 2022](/meeting-minutes/zoning-board-of-appeals/2022-02-09-2PyEvKcWyzE) | reference | — / 9.4 min | *(none declared)* |
+| [Zoning Board of Appeals, February 23, 2022](/meeting-minutes/zoning-board-of-appeals/2022-02-23-y6GCLM_sBOA) | reference | — / 10.6 min | *(none declared)* |
+| [Zoning Board of Appeals, March 9, 2022](/meeting-minutes/zoning-board-of-appeals/2022-03-09-LDdKw605sM0) | reference | — / 9.2 min | *(none declared)* |
+| [Zoning Board of Appeals, March 23, 2022](/meeting-minutes/zoning-board-of-appeals/2022-03-23-DsjaboW33P4) | reference | — / 9.8 min | *(none declared)* |
+| [Zoning Board of Appeals, April 27, 2022](/meeting-minutes/zoning-board-of-appeals/2022-04-27-Cr0iQTqsuz4) | reference | — / 10.0 min | *(none declared)* |
+| [Zoning Board of Appeals, May 11, 2022](/meeting-minutes/zoning-board-of-appeals/2022-05-11-4SBz4UyI_Ds) | reference | — / 9.8 min | *(none declared)* |
+| [Zoning Board of Appeals, July 27, 2022](/meeting-minutes/zoning-board-of-appeals/2022-07-27-mLOcbxF9SYM) | reference | — / 10.1 min | *(none declared)* |
+| [Zoning Board of Appeals, September 14, 2022](/meeting-minutes/zoning-board-of-appeals/2022-09-14-ZZ_MjjWjMEI) | reference | — / 12.6 min | *(none declared)* |
+| [Zoning Board of Appeals, September 28, 2022](/meeting-minutes/zoning-board-of-appeals/2022-09-28-GW4XkPKCZW8) | reference | — / 10.9 min | *(none declared)* |
+| [Zoning Board of Appeals, October 12, 2022](/meeting-minutes/zoning-board-of-appeals/2022-10-12-yv-WlFafkic) | reference | — / 13.7 min | *(none declared)* |
+| [Zoning Board of Appeals, October 26, 2022](/meeting-minutes/zoning-board-of-appeals/2022-10-26-j2Hg-G2h-G0) | reference | — / 11.6 min | *(none declared)* |
+| [Zoning Board of Appeals, November 9, 2022](/meeting-minutes/zoning-board-of-appeals/2022-11-09-Ed23QMrO2uk) | reference | — / 11.4 min | *(none declared)* |
+| [Zoning Board of Appeals, December 14, 2022](/meeting-minutes/zoning-board-of-appeals/2022-12-14-6n850WRH4m8) | reference | — / 10.2 min | *(none declared)* |
+| [Zoning Board of Appeals, January 11, 2023](/meeting-minutes/zoning-board-of-appeals/2023-01-11-KL1jXmZgHbs) | reference | — / 11.7 min | *(none declared)* |
+| [Zoning Board of Appeals, January 25, 2023](/meeting-minutes/zoning-board-of-appeals/2023-01-25-6C0allU7Wlw) | reference | — / 11.3 min | *(none declared)* |
+| [Zoning Board of Appeals, February 8, 2023](/meeting-minutes/zoning-board-of-appeals/2023-02-08-0tObOP9QnZg) | reference | — / 10.3 min | *(none declared)* |
+| [Zoning Board of Appeals, February 22, 2023](/meeting-minutes/zoning-board-of-appeals/2023-02-22-1CpChUJ_jAY) | reference | — / 8.7 min | *(none declared)* |
+| [Zoning Board of Appeals, May 24, 2023](/meeting-minutes/zoning-board-of-appeals/2023-05-24-t13x5lWgMl0) | reference | — / 10.0 min | *(none declared)* |
+| [Zoning Board of Appeals, June 14, 2023](/meeting-minutes/zoning-board-of-appeals/2023-06-14-U5e9naHfmyM) | reference | — / 10.2 min | *(none declared)* |
+| [Zoning Board of Appeals, June 28, 2023](/meeting-minutes/zoning-board-of-appeals/2023-06-28-8woW4wx2mYY) | reference | — / 9.2 min | *(none declared)* |
+| [Zoning Board of Appeals, July 12, 2023](/meeting-minutes/zoning-board-of-appeals/2023-07-12-NCBV_dIV2O4) | reference | — / 8.9 min | *(none declared)* |
+| [Zoning Board of Appeals, July 26, 2023](/meeting-minutes/zoning-board-of-appeals/2023-07-26-lZFr0fz3gVw) | reference | — / 9.5 min | *(none declared)* |
+| [Zoning Board of Appeals, August 23, 2023](/meeting-minutes/zoning-board-of-appeals/2023-08-23-Wc348zQY9iA) | reference | — / 9.3 min | *(none declared)* |
+| [Zoning Board of Appeals, September 13, 2023](/meeting-minutes/zoning-board-of-appeals/2023-09-13-2_glBVrHHD0) | reference | — / 10.2 min | *(none declared)* |
+| [Zoning Board of Appeals, September 27, 2023](/meeting-minutes/zoning-board-of-appeals/2023-09-27-n6NplexKA8Y) | reference | — / 9.5 min | *(none declared)* |
+| [Zoning Board of Appeals, October 25, 2023](/meeting-minutes/zoning-board-of-appeals/2023-10-25-hIpas1URTqU) | reference | — / 9.1 min | *(none declared)* |
+| [Zoning Board of Appeals, November 8, 2023](/meeting-minutes/zoning-board-of-appeals/2023-11-08-0eYabEl5714) | reference | — / 9.5 min | *(none declared)* |
+| [Zoning Board of Appeals, December 13, 2023](/meeting-minutes/zoning-board-of-appeals/2023-12-13-Dkz6DOpdZAQ) | reference | — / 10.0 min | *(none declared)* |
+| [Zoning Board of Appeals, December 27, 2023](/meeting-minutes/zoning-board-of-appeals/2023-12-27-5u6__u1qA6M) | reference | — / 9.7 min | *(none declared)* |
+| [Zoning Board of Appeals, January 10, 2024](/meeting-minutes/zoning-board-of-appeals/2024-01-10-zhmyNDYVXAA) | reference | — / 9.7 min | *(none declared)* |
+| [Zoning Board of Appeals, January 24, 2024](/meeting-minutes/zoning-board-of-appeals/2024-01-24-PiASVAdA5Pc) | reference | — / 9.7 min | *(none declared)* |
+| [Zoning Board of Appeals, February 14, 2024](/meeting-minutes/zoning-board-of-appeals/2024-02-14-fRFu_ac_Pa8) | reference | — / 10.4 min | *(none declared)* |
+| [Zoning Board of Appeals, February 28, 2024](/meeting-minutes/zoning-board-of-appeals/2024-02-28-egSIaknI6XQ) | reference | — / 10.5 min | *(none declared)* |
+| [Zoning Board of Appeals, April 10, 2024](/meeting-minutes/zoning-board-of-appeals/2024-04-10-ChcTZJ9qJC8) | reference | — / 9.1 min | *(none declared)* |
+| [Zoning Board of Appeals, May 22, 2024](/meeting-minutes/zoning-board-of-appeals/2024-05-22-Tq_w3Z0cPxc) | reference | — / 9.5 min | *(none declared)* |
+| [Zoning Board of Appeals, July 24, 2024](/meeting-minutes/zoning-board-of-appeals/2024-07-24-xxfym741obU) | reference | — / 10.8 min | *(none declared)* |
+| [Zoning Board of Appeals, August 28, 2024](/meeting-minutes/zoning-board-of-appeals/2024-08-28-fgYCjvNQdMU) | reference | — / 11.7 min | *(none declared)* |
+| [Zoning Board of Appeals, September 11, 2024](/meeting-minutes/zoning-board-of-appeals/2024-09-11-c7G5rcN2H1g) | reference | — / 11.0 min | *(none declared)* |
+| [Zoning Board of Appeals, September 25, 2024](/meeting-minutes/zoning-board-of-appeals/2024-09-25-meNlX7q0P5Y) | reference | — / 9.6 min | *(none declared)* |
+| [Zoning Board of Appeals, October 9, 2024](/meeting-minutes/zoning-board-of-appeals/2024-10-09-MYGhYTyg15M) | reference | — / 9.0 min | *(none declared)* |
+| [Zoning Board of Appeals, October 23, 2024](/meeting-minutes/zoning-board-of-appeals/2024-10-23-nXEpRE4_5G0) | reference | — / 9.9 min | *(none declared)* |
+| [Zoning Board of Appeals, November 13, 2024](/meeting-minutes/zoning-board-of-appeals/2024-11-13-IfkO1p0lNDs) | reference | — / 9.5 min | *(none declared)* |
+| [Zoning Board of Appeals, December 11, 2024](/meeting-minutes/zoning-board-of-appeals/2024-12-11-m4wK1DkaCDA) | reference | — / 9.5 min | *(none declared)* |
+| [Zoning Board of Appeals, January 22, 2025](/meeting-minutes/zoning-board-of-appeals/2025-01-22-7fSKkb0g6iY) | reference | — / 9.9 min | *(none declared)* |
+| [Zoning Board of Appeals, February 12, 2025](/meeting-minutes/zoning-board-of-appeals/2025-02-12-j5OW8JzdWIk) | reference | — / 9.4 min | *(none declared)* |
+| [Zoning Board of Appeals, February 26, 2025](/meeting-minutes/zoning-board-of-appeals/2025-02-26-NG51pKIBsQQ) | reference | — / 9.5 min | *(none declared)* |
+| [Zoning Board of Appeals, April 23, 2025](/meeting-minutes/zoning-board-of-appeals/2025-04-23-oCbWhA_I5g0) | reference | — / 9.6 min | *(none declared)* |
+| [Zoning Board of Appeals, May 28, 2025](/meeting-minutes/zoning-board-of-appeals/2025-05-28-MmSfutwmqL0) | reference | — / 11.1 min | *(none declared)* |
+| [Zoning Board of Appeals, June 25, 2025](/meeting-minutes/zoning-board-of-appeals/2025-06-25-diJWbQG58bk) | reference | — / 10.0 min | *(none declared)* |
+| [Zoning Board of Appeals, July 23, 2025](/meeting-minutes/zoning-board-of-appeals/2025-07-23-yBPiQ6mn24o) | reference | — / 11.4 min | *(none declared)* |
+| [Zoning Board of Appeals, August 27, 2025](/meeting-minutes/zoning-board-of-appeals/2025-08-27-CLeb-gUrH1Q) | reference | — / 10.7 min | *(none declared)* |
+| [Zoning Board of Appeals, September 24, 2025](/meeting-minutes/zoning-board-of-appeals/2025-09-24-OaIlqbph2ok) | reference | — / 10.0 min | *(none declared)* |
+| [Zoning Board of Appeals, October 22, 2025](/meeting-minutes/zoning-board-of-appeals/2025-10-22-c8kXUyZDZc8) | reference | — / 10.9 min | *(none declared)* |
+| [Zoning Board of Appeals, November 12, 2025](/meeting-minutes/zoning-board-of-appeals/2025-11-12-rFmSl_tAYM0) | reference | — / 11.1 min | *(none declared)* |
+| [Zoning Board of Appeals, January 14, 2026](/meeting-minutes/zoning-board-of-appeals/2026-01-14-j0qmvNklmHU) | reference | — / 10.4 min | *(none declared)* |
+| [Zoning Board of Appeals, January 28, 2026](/meeting-minutes/zoning-board-of-appeals/2026-01-28-qKqeCvx1xwM) | reference | — / 11.3 min | *(none declared)* |
+| [Zoning Board of Appeals, March 11, 2026](/meeting-minutes/zoning-board-of-appeals/2026-03-11-KDFCZ2cRJaA) | reference | — / 10.5 min | *(none declared)* |
+| [Zoning Board of Appeals, May 13, 2026](/meeting-minutes/zoning-board-of-appeals/2026-05-13-hEVmercA6hg) | reference | — / 10.1 min | *(none declared)* |
+| [Zoning Board of Appeals, May 27, 2026](/meeting-minutes/zoning-board-of-appeals/2026-05-27-CvntEwH-650) | reference | — / 9.5 min | *(none declared)* |
+| [Zoning Board of Appeals, June 10, 2026](/meeting-minutes/zoning-board-of-appeals/2026-06-10-4GrzmgQrIew) | reference | — / 11.3 min | *(none declared)* |
+| [Zoning Board of Appeals, June 24, 2026](/meeting-minutes/zoning-board-of-appeals/2026-06-24-SkWt4MhuLnA) | reference | — / 10.3 min | *(none declared)* |
+| [Zoning Board of Appeals, July 8, 2026](/meeting-minutes/zoning-board-of-appeals/2026-07-08-WVuUsWyBmqA) | reference | — / 10.4 min | *(none declared)* |
+| [Zoning Board of Appeals, August 12, 2026](/meeting-minutes/zoning-board-of-appeals/2026-08-12-uNUrTAXxIF8) | reference | — / 8.9 min | *(none declared)* |
+| [Zoning Board of Appeals, August 26, 2026](/meeting-minutes/zoning-board-of-appeals/2026-08-26-62qwUKHEBro) | reference | — / 10.1 min | *(none declared)* |
+| [Zoning Board of Appeals, October 14, 2026](/meeting-minutes/zoning-board-of-appeals/2026-10-14-aW3D8mIw_yw) | reference | — / 10.9 min | *(none declared)* |
+| [Zoning Board of Appeals, October 28, 2026](/meeting-minutes/zoning-board-of-appeals/2026-10-28-vBdjYw_h64M) | reference | — / 9.4 min | *(none declared)* |
 | [New reports](/new-reports) | reference | — / 36.5 min | *(none declared)* |
 | [Town-wide org charts](/org-charts) | reference | — / 18.3 min | *(none declared)* |
+| [Adam Burney](/people/adam-burney) | reference | — / 10.6 min | *(none declared)* |
+| [Alfred Gravelle](/people/alfred-gravelle) | reference | — / 9.1 min | *(none declared)* |
+| [Allan Wilson](/people/allan-wilson) | reference | — / 7.0 min | *(none declared)* |
+| [Amanda Moore](/people/amanda-moore) | reference | — / 10.1 min | *(none declared)* |
+| [Amanda Reid](/people/amanda-reid) | reference | — / 10.8 min | *(none declared)* |
+| [Amory Phelps](/people/amory-phelps) | reference | — / 7.4 min | *(none declared)* |
+| [Ana Lockwood](/people/ana-lockwood) | reference | — / 11.0 min | *(none declared)* |
+| [Andrea Burnap](/people/andrea-burnap) | reference | — / 8.4 min | *(none declared)* |
+| [Andrea Schnepf](/people/andrea-schnepf) | reference | — / 7.3 min | *(none declared)* |
+| [Anita Scheipers](/people/anita-scheipers) | reference | — / 8.3 min | *(none declared)* |
+| [Anthony Nicastro](/people/anthony-nicastro) | reference | — / 9.3 min | *(none declared)* |
+| [Anthony Sculimbrene](/people/anthony-sculimbrene) | reference | — / 9.9 min | *(none declared)* |
+| [Anthony Senesi](/people/anthony-senesi) | reference | — / 7.3 min | *(none declared)* |
+| [Arthur Katis](/people/arthur-katis) | reference | — / 9.4 min | *(none declared)* |
+| [Arthur Snow](/people/arthur-snow) | reference | — / 8.8 min | *(none declared)* |
+| [Ashley York-Aronovich](/people/ashley-york-aronovich) | reference | — / 7.5 min | *(none declared)* |
+| [Ashly Faherty](/people/ashly-faherty) | reference | — / 7.2 min | *(none declared)* |
+| [atthew Allison](/people/atthew-allison) | reference | — / 6.8 min | *(none declared)* |
+| [Barbar ingras Miner at aise](/people/barbar-ingras-miner-at-aise) | reference | — / 6.9 min | *(none declared)* |
+| [Barbara Brown](/people/barbara-brown) | reference | — / 8.4 min | *(none declared)* |
+| [Barbara Reynolds](/people/barbara-reynolds) | reference | — / 8.3 min | *(none declared)* |
+| [Bill Lakso](/people/bill-lakso) | reference | — / 7.3 min | *(none declared)* |
+| [Bob Pease](/people/bob-pease) | reference | — / 11.2 min | *(none declared)* |
+| [Brandie O&#x27;Toole](/people/brandie-o-toole) | reference | — / 7.0 min | *(none declared)* |
+| [Brandon Kibbe](/people/brandon-kibbe) | reference | — / 8.2 min | *(none declared)* |
+| [Brandon Kibbe-Open Space](/people/brandon-kibbe-open-space) | reference | — / 7.3 min | *(none declared)* |
+| [Brent Benson](/people/brent-benson) | reference | — / 7.4 min | *(none declared)* |
+| [Brett Kamsden](/people/brett-kamsden) | reference | — / 6.8 min | *(none declared)* |
+| [Brett Ramsden](/people/brett-ramsden) | reference | — / 10.1 min | *(none declared)* |
+| [Brian Corcoran](/people/brian-corcoran) | reference | — / 9.5 min | *(none declared)* |
+| [Brian Fernandes](/people/brian-fernandes) | reference | — / 7.0 min | *(none declared)* |
+| [Brian Frank](/people/brian-frank) | reference | — / 7.5 min | *(none declared)* |
+| [Brian Gingras](/people/brian-gingras) | reference | — / 8.1 min | *(none declared)* |
+| [Brian Guenard](/people/brian-guenard) | reference | — / 8.8 min | *(none declared)* |
+| [Brian Laffond](/people/brian-laffond) | reference | — / 10.2 min | *(none declared)* |
+| [Brian Lafond](/people/brian-lafond) | reference | — / 6.8 min | *(none declared)* |
+| [Brian Lehtinen](/people/brian-lehtinen) | reference | — / 11.6 min | *(none declared)* |
+| [Brian Marple](/people/brian-marple) | reference | — / 9.7 min | *(none declared)* |
+| [Brian Vienneau](/people/brian-vienneau) | reference | — / 7.5 min | *(none declared)* |
+| [C. William Lakso](/people/c-william-lakso) | reference | — / 7.8 min | *(none declared)* |
+| [Caesar Nuzzolo](/people/caesar-nuzzolo) | reference | — / 11.7 min | *(none declared)* |
+| [Caesar Nuzzolo-select Boara Kepresentative](/people/caesar-nuzzolo-select-boara-kepresentative) | reference | — / 6.8 min | *(none declared)* |
+| [Cara Olejarz](/people/cara-olejarz) | reference | — / 7.2 min | *(none declared)* |
+| [Carl Luck](/people/carl-luck) | reference | — / 11.3 min | *(none declared)* |
+| [Carol Archambault](/people/carol-archambault) | reference | — / 10.0 min | *(none declared)* |
+| [Carol Archambeault](/people/carol-archambeault) | reference | — / 6.9 min | *(none declared)* |
+| [Carol Hatch](/people/carol-hatch) | reference | — / 7.0 min | *(none declared)* |
+| [Caroline Fortin](/people/caroline-fortin) | reference | — / 10.1 min | *(none declared)* |
+| [Caroline Griffis](/people/caroline-griffis) | reference | — / 7.4 min | *(none declared)* |
+| [Carolyn Rossi](/people/carolyn-rossi) | reference | — / 7.0 min | *(none declared)* |
+| [Casey Burlingame](/people/casey-burlingame) | reference | — / 7.8 min | *(none declared)* |
+| [Catherine J. Clark](/people/catherine-j-clark) | reference | — / 9.2 min | *(none declared)* |
+| [Cathy Beale](/people/cathy-beale) | reference | — / 9.1 min | *(none declared)* |
+| [Cathy Clark](/people/cathy-clark) | reference | — / 8.1 min | *(none declared)* |
+| [Cathy Hennessey](/people/cathy-hennessey) | reference | — / 6.9 min | *(none declared)* |
+| [Cathy Hennessy](/people/cathy-hennessy) | reference | — / 7.5 min | *(none declared)* |
+| [Catie Childs](/people/catie-childs) | reference | — / 10.2 min | *(none declared)* |
+| [Cheryl Moisan](/people/cheryl-moisan) | reference | — / 8.7 min | *(none declared)* |
+| [Cheryl Valera](/people/cheryl-valera) | reference | — / 8.0 min | *(none declared)* |
+| [Chris Holden](/people/chris-holden) | reference | — / 7.5 min | *(none declared)* |
+| [Chris Menard](/people/chris-menard) | reference | — / 8.9 min | *(none declared)* |
+| [Chris Ruth](/people/chris-ruth) | reference | — / 7.7 min | *(none declared)* |
+| [Chris St. Germain](/people/chris-st-germain) | reference | — / 10.5 min | *(none declared)* |
+| [Chris Sullivan](/people/chris-sullivan) | reference | — / 7.5 min | *(none declared)* |
+| [Christine Cosgrove Higdon](/people/christine-cosgrove-higdon) | reference | — / 7.7 min | *(none declared)* |
+| [Christopher Letarte](/people/christopher-letarte) | reference | — / 7.0 min | *(none declared)* |
+| [Christopher Menard](/people/christopher-menard) | reference | — / 9.8 min | *(none declared)* |
+| [Christopher Sullivan](/people/christopher-sullivan) | reference | — / 10.1 min | *(none declared)* |
+| [Chriztine Foltz](/people/chriztine-foltz) | reference | — / 7.3 min | *(none declared)* |
+| [Chuck Venezia](/people/chuck-venezia) | reference | — / 7.5 min | *(none declared)* |
+| [Cindy Testa](/people/cindy-testa) | reference | — / 7.4 min | *(none declared)* |
+| [Citizens&#x27; Representative](/people/citizens-representative) | reference | — / 7.1 min | *(none declared)* |
+| [Colleen Shapiro](/people/colleen-shapiro) | reference | — / 10.6 min | *(none declared)* |
+| [Corrine C. Scouten](/people/corrine-c-scouten) | reference | — / 7.0 min | *(none declared)* |
+| [Cullen Dwyer](/people/cullen-dwyer) | reference | — / 9.9 min | *(none declared)* |
+| [Dale Proulx](/people/dale-proulx) | reference | — / 7.5 min | *(none declared)* |
+| [Damon J. McQuaid](/people/damon-j-mcquaid) | reference | — / 9.5 min | *(none declared)* |
+| [Damon McQuaid](/people/damon-mcquaid) | reference | — / 11.5 min | *(none declared)* |
+| [Dan Proctor](/people/dan-proctor) | reference | — / 9.3 min | *(none declared)* |
+| [Daniel Burns](/people/daniel-burns) | reference | — / 8.8 min | *(none declared)* |
+| [Daniel Seminatore](/people/daniel-seminatore) | reference | — / 6.9 min | *(none declared)* |
+| [Dave Blatt](/people/dave-blatt) | reference | — / 7.6 min | *(none declared)* |
+| [Dave Gallagher](/people/dave-gallagher) | reference | — / 6.9 min | *(none declared)* |
+| [Dave MacDonald](/people/dave-macdonald) | reference | — / 10.3 min | *(none declared)* |
+| [Dave Passes](/people/dave-passes) | reference | — / 6.9 min | *(none declared)* |
+| [Dave Passions](/people/dave-passions) | reference | — / 7.0 min | *(none declared)* |
+| [Dave Passios](/people/dave-passios) | reference | — / 9.0 min | *(none declared)* |
+| [David Blatt](/people/david-blatt) | reference | — / 11.6 min | *(none declared)* |
+| [David Dorren](/people/david-dorren) | reference | — / 9.9 min | *(none declared)* |
+| [David M. Passios](/people/david-m-passios) | reference | — / 10.1 min | *(none declared)* |
+| [David MacDonald](/people/david-macdonald) | reference | — / 10.9 min | *(none declared)* |
+| [David Niose](/people/david-niose) | reference | — / 7.5 min | *(none declared)* |
+| [David Passios](/people/david-passios) | reference | — / 11.3 min | *(none declared)* |
+| [David Prokowiew](/people/david-prokowiew) | reference | — / 10.1 min | *(none declared)* |
+| [David Reif](/people/david-reif) | reference | — / 6.9 min | *(none declared)* |
+| [David V. MacDonald](/people/david-v-macdonald) | reference | — / 7.2 min | *(none declared)* |
+| [Dawn-Marie Ayles](/people/dawn-marie-ayles) | reference | — / 7.3 min | *(none declared)* |
+| [Deb Lincoln](/people/deb-lincoln) | reference | — / 7.7 min | *(none declared)* |
+| [Debbie Lincoln](/people/debbie-lincoln) | reference | — / 9.2 min | *(none declared)* |
+| [Deborah A. H. Christen](/people/deborah-a-h-christen) | reference | — / 10.1 min | *(none declared)* |
+| [Deborah Christen](/people/deborah-christen) | reference | — / 8.4 min | *(none declared)* |
+| [Deborah Lincoln](/people/deborah-lincoln) | reference | — / 9.1 min | *(none declared)* |
+| [Debra Goodsell](/people/debra-goodsell) | reference | — / 7.6 min | *(none declared)* |
+| [Dennis Mannone](/people/dennis-mannone) | reference | — / 10.0 min | *(none declared)* |
+| [Diane Beaudoin](/people/diane-beaudoin) | reference | — / 7.6 min | *(none declared)* |
+| [Diane Nowd](/people/diane-nowd) | reference | — / 9.2 min | *(none declared)* |
+| [Donald Bowen](/people/donald-bowen) | reference | — / 7.7 min | *(none declared)* |
+| [Donald F. Bowen](/people/donald-f-bowen) | reference | — / 8.3 min | *(none declared)* |
+| [Donald Gurney](/people/donald-gurney) | reference | — / 7.7 min | *(none declared)* |
+| [Donna Fortune](/people/donna-fortune) | reference | — / 10.0 min | *(none declared)* |
+| [Donna Landry](/people/donna-landry) | reference | — / 9.4 min | *(none declared)* |
+| [Donna Saiia](/people/donna-saiia) | reference | — / 8.8 min | *(none declared)* |
+| [Donna Saila](/people/donna-saila) | reference | — / 7.2 min | *(none declared)* |
+| [Douglas MacMillan](/people/douglas-macmillan) | reference | — / 7.9 min | *(none declared)* |
+| [Dr. Robin Chandler](/people/dr-robin-chandler) | reference | — / 7.2 min | *(none declared)* |
+| [Ean Laundree](/people/ean-laundree) | reference | — / 7.1 min | *(none declared)* |
+| [Elaina Corcoran](/people/elaina-corcoran) | reference | — / 7.0 min | *(none declared)* |
+| [Elena Christopher](/people/elena-christopher) | reference | — / 7.6 min | *(none declared)* |
+| [Elise Wiley](/people/elise-wiley) | reference | — / 8.3 min | *(none declared)* |
+| [Elizabeth (Betty) DiGiacomo](/people/elizabeth-betty-digiacomo) | reference | — / 9.4 min | *(none declared)* |
+| [Elizabeth Murphy](/people/elizabeth-murphy) | reference | — / 8.1 min | *(none declared)* |
+| [Elizabeth Simeone](/people/elizabeth-simeone) | reference | — / 7.3 min | *(none declared)* |
+| [Emily Young](/people/emily-young) | reference | — / 9.3 min | *(none declared)* |
+| [Eric Hinds](/people/eric-hinds) | reference | — / 7.4 min | *(none declared)* |
+| [Erik Arnold](/people/erik-arnold) | reference | — / 10.9 min | *(none declared)* |
+| [Erik Torgersen](/people/erik-torgersen) | reference | — / 10.3 min | *(none declared)* |
+| [Erin Mahoney](/people/erin-mahoney) | reference | — / 6.9 min | *(none declared)* |
+| [eter Beardmore](/people/eter-beardmore) | reference | — / 6.9 min | *(none declared)* |
+| [Ethan Gengler](/people/ethan-gengler) | reference | — / 7.3 min | *(none declared)* |
+| [Evan Watters](/people/evan-watters) | reference | — / 10.9 min | *(none declared)* |
+| [Faith Beall](/people/faith-beall) | reference | — / 8.6 min | *(none declared)* |
+| [G. Stephen Schaff](/people/g-stephen-schaff) | reference | — / 8.7 min | *(none declared)* |
+| [Gare Thompson](/people/gare-thompson) | reference | — / 7.6 min | *(none declared)* |
+| [Garrett Stillman](/people/garrett-stillman) | reference | — / 6.9 min | *(none declared)* |
+| [George Emond](/people/george-emond) | reference | — / 7.9 min | *(none declared)* |
+| [George Emond Ji:](/people/george-emond-ji) | reference | — / 7.0 min | *(none declared)* |
+| [George Emond Jr](/people/george-emond-jr) | reference | — / 10.4 min | *(none declared)* |
+| [George Martin](/people/george-martin) | reference | — / 9.2 min | *(none declared)* |
+| [Glenn McLeod](/people/glenn-mcleod) | reference | — / 10.7 min | *(none declared)* |
+| [Governor Appointee](/people/governor-appointee) | reference | — / 6.8 min | *(none declared)* |
+| [Greg Bittner](/people/greg-bittner) | reference | — / 8.3 min | *(none declared)* |
+| [Greg Burns](/people/greg-burns) | reference | — / 9.2 min | *(none declared)* |
+| [Greg Roy](/people/greg-roy) | reference | — / 9.3 min | *(none declared)* |
+| [Gregory Berthiaume](/people/gregory-berthiaume) | reference | — / 7.4 min | *(none declared)* |
+| [Gregory Bittner](/people/gregory-bittner) | reference | — / 10.1 min | *(none declared)* |
+| [Gregory P. Bittner](/people/gregory-p-bittner) | reference | — / 9.4 min | *(none declared)* |
+| [Gregory Roy](/people/gregory-roy) | reference | — / 7.5 min | *(none declared)* |
+| [Hannah Anderson](/people/hannah-anderson) | reference | — / 8.6 min | *(none declared)* |
+| [Hans Wentrup](/people/hans-wentrup) | reference | — / 7.9 min | *(none declared)* |
+| [Harry Kubetz](/people/harry-kubetz) | reference | — / 7.8 min | *(none declared)* |
+| [Harry Kubitz](/people/harry-kubitz) | reference | — / 7.0 min | *(none declared)* |
+| [Heather Gleason](/people/heather-gleason) | reference | — / 6.9 min | *(none declared)* |
+| [Heather Lemieux](/people/heather-lemieux) | reference | — / 9.1 min | *(none declared)* |
+| [Heather Sroka](/people/heather-sroka) | reference | — / 11.8 min | *(none declared)* |
+| [Helen Balcom](/people/helen-balcom) | reference | — / 8.2 min | *(none declared)* |
+| [Herlin Jaime](/people/herlin-jaime) | reference | — / 7.2 min | *(none declared)* |
+| [hn Rabbitt](/people/hn-rabbitt) | reference | — / 6.7 min | *(none declared)* |
+| [Holly Carr](/people/holly-carr) | reference | — / 7.1 min | *(none declared)* |
+| [Ishley York-Aronovich](/people/ishley-york-aronovich) | reference | — / 6.9 min | *(none declared)* |
+| [Jack Rabbit](/people/jack-rabbit) | reference | — / 7.6 min | *(none declared)* |
+| [Jack Rabbitt](/people/jack-rabbitt) | reference | — / 7.5 min | *(none declared)* |
+| [Jack Rodriquenz](/people/jack-rodriquenz) | reference | — / 8.2 min | *(none declared)* |
+| [Jaclynn Nicoll](/people/jaclynn-nicoll) | reference | — / 7.2 min | *(none declared)* |
+| [Jacqueline Chabot](/people/jacqueline-chabot) | reference | — / 7.3 min | *(none declared)* |
+| [Jacqueline Dwyer](/people/jacqueline-dwyer) | reference | — / 8.1 min | *(none declared)* |
+| [Jacquelyn Dwyer](/people/jacquelyn-dwyer) | reference | — / 10.0 min | *(none declared)* |
+| [James Besarkarski](/people/james-besarkarski) | reference | — / 9.5 min | *(none declared)* |
+| [James Breault](/people/james-breault) | reference | — / 7.6 min | *(none declared)* |
+| [James E. Toale](/people/james-e-toale) | reference | — / 9.4 min | *(none declared)* |
+| [James J. Auge](/people/james-j-auge) | reference | — / 8.1 min | *(none declared)* |
+| [James LaVeck II](/people/james-laveck-ii) | reference | — / 7.0 min | *(none declared)* |
+| [James Marino](/people/james-marino) | reference | — / 11.2 min | *(none declared)* |
+| [James McGuigan](/people/james-mcguigan) | reference | — / 7.9 min | *(none declared)* |
+| [James Toale](/people/james-toale) | reference | — / 7.9 min | *(none declared)* |
+| [James Versoi](/people/james-versoi) | reference | — / 7.0 min | *(none declared)* |
+| [Jamie Merrill Blood](/people/jamie-merrill-blood) | reference | — / 7.1 min | *(none declared)* |
+| [Jamie Toale](/people/jamie-toale) | reference | — / 9.2 min | *(none declared)* |
+| [Janalee Germaine Balish](/people/janalee-germaine-balish) | reference | — / 6.9 min | *(none declared)* |
+| [Jane Paszko](/people/jane-paszko) | reference | — / 7.0 min | *(none declared)* |
+| [Jane Rabbitt](/people/jane-rabbitt) | reference | — / 8.8 min | *(none declared)* |
+| [Janet Robbins](/people/janet-robbins) | reference | — / 7.0 min | *(none declared)* |
+| [Jay Simeone](/people/jay-simeone) | reference | — / 9.8 min | *(none declared)* |
+| [Jean Hobbs](/people/jean-hobbs) | reference | — / 7.1 min | *(none declared)* |
+| [Jean Larkin](/people/jean-larkin) | reference | — / 8.4 min | *(none declared)* |
+| [Jean Russell](/people/jean-russell) | reference | — / 9.5 min | *(none declared)* |
+| [Jeanne Dupre](/people/jeanne-dupre) | reference | — / 8.5 min | *(none declared)* |
+| [Jeanne Russell](/people/jeanne-russell) | reference | — / 8.2 min | *(none declared)* |
+| [Jeffrey Bajko](/people/jeffrey-bajko) | reference | — / 8.0 min | *(none declared)* |
+| [Jeffrey L. Mendoza](/people/jeffrey-l-mendoza) | reference | — / 7.0 min | *(none declared)* |
+| [Jeffrey Mendoza](/people/jeffrey-mendoza) | reference | — / 7.2 min | *(none declared)* |
+| [Jeffrey Viviano](/people/jeffrey-viviano) | reference | — / 10.3 min | *(none declared)* |
+| [Jennifer Duffy](/people/jennifer-duffy) | reference | — / 8.0 min | *(none declared)* |
+| [Jennifer Sanderson](/people/jennifer-sanderson) | reference | — / 9.1 min | *(none declared)* |
+| [Jenny Pewtherer](/people/jenny-pewtherer) | reference | — / 10.1 min | *(none declared)* |
+| [Jetfrey Viviano](/people/jetfrey-viviano) | reference | — / 7.0 min | *(none declared)* |
+| [Jim Auge](/people/jim-auge) | reference | — / 7.5 min | *(none declared)* |
+| [Jim LaVeck](/people/jim-laveck) | reference | — / 9.8 min | *(none declared)* |
+| [Jo Toale](/people/jo-toale) | reference | — / 7.5 min | *(none declared)* |
+| [Joan Pease](/people/joan-pease) | reference | — / 10.2 min | *(none declared)* |
+| [Joanna Bilotta-Simeone](/people/joanna-bilotta-simeone) | reference | — / 7.8 min | *(none declared)* |
+| [Joanna L. Bilotta-Simeone](/people/joanna-l-bilotta-simeone) | reference | — / 9.7 min | *(none declared)* |
+| [Joe Anderson](/people/joe-anderson) | reference | — / 9.6 min | *(none declared)* |
+| [Joeci Gilchrest](/people/joeci-gilchrest) | reference | — / 8.4 min | *(none declared)* |
+| [John Beale](/people/john-beale) | reference | — / 7.5 min | *(none declared)* |
+| [John Bowen](/people/john-bowen) | reference | — / 10.3 min | *(none declared)* |
+| [John Henshaw](/people/john-henshaw) | reference | — / 10.0 min | *(none declared)* |
+| [John Keynolds](/people/john-keynolds) | reference | — / 6.8 min | *(none declared)* |
+| [John Londa](/people/john-londa) | reference | — / 7.9 min | *(none declared)* |
+| [John Lynch](/people/john-lynch) | reference | — / 7.8 min | *(none declared)* |
+| [John Palumbo](/people/john-palumbo) | reference | — / 8.6 min | *(none declared)* |
+| [John Pesent](/people/john-pesent) | reference | — / 7.0 min | *(none declared)* |
+| [John Pesenti](/people/john-pesenti) | reference | — / 8.2 min | *(none declared)* |
+| [John Rabbitt](/people/john-rabbitt) | reference | — / 11.3 min | *(none declared)* |
+| [John Reynolds](/people/john-reynolds) | reference | — / 10.3 min | *(none declared)* |
+| [John T. Rabbitt](/people/john-t-rabbitt) | reference | — / 9.5 min | *(none declared)* |
+| [Jon D. Hogue](/people/jon-d-hogue) | reference | — / 9.5 min | *(none declared)* |
+| [Jon Hogue](/people/jon-hogue) | reference | — / 7.5 min | *(none declared)* |
+| [Jorge Marzuca](/people/jorge-marzuca) | reference | — / 8.6 min | *(none declared)* |
+| [Joseph (AI) Dettenrieder](/people/joseph-ai-dettenrieder) | reference | — / 7.3 min | *(none declared)* |
+| [Joseph &quot;Al&quot; Dettenrieder](/people/joseph-al-dettenrieder) | reference | — / 7.3 min | *(none declared)* |
+| [Joseph Anderson](/people/joseph-anderson) | reference | — / 7.5 min | *(none declared)* |
+| [Joseph Hurley](/people/joseph-hurley) | reference | — / 7.3 min | *(none declared)* |
+| [Judit Ernst](/people/judit-ernst) | reference | — / 7.6 min | *(none declared)* |
+| [Judith Tarbell](/people/judith-tarbell) | reference | — / 8.5 min | *(none declared)* |
+| [Judy Dragoslis](/people/judy-dragoslis) | reference | — / 7.5 min | *(none declared)* |
+| [Julie Belliveau](/people/julie-belliveau) | reference | — / 8.3 min | *(none declared)* |
+| [Karen Kemp](/people/karen-kemp) | reference | — / 9.1 min | *(none declared)* |
+| [Karen Ullo](/people/karen-ullo) | reference | — / 7.1 min | *(none declared)* |
+| [Karin Menard](/people/karin-menard) | reference | — / 11.6 min | *(none declared)* |
+| [Katey Adams](/people/katey-adams) | reference | — / 10.5 min | *(none declared)* |
+| [Kathleen M. Comeau Kathleen M. Comeau](/people/kathleen-m-comeau-kathleen-m-comeau) | reference | — / 7.0 min | *(none declared)* |
+| [Kathleen McCarron](/people/kathleen-mccarron) | reference | — / 7.1 min | *(none declared)* |
+| [Kathryn Herrick](/people/kathryn-herrick) | reference | — / 7.8 min | *(none declared)* |
+| [Kathy Dugan](/people/kathy-dugan) | reference | — / 8.5 min | *(none declared)* |
+| [Kathy Herrick](/people/kathy-herrick) | reference | — / 8.0 min | *(none declared)* |
+| [Kathyrn Adams](/people/kathyrn-adams) | reference | — / 7.5 min | *(none declared)* |
+| [Kathyrn M. Herrick](/people/kathyrn-m-herrick) | reference | — / 7.7 min | *(none declared)* |
+| [Kayla Reffitt](/people/kayla-reffitt) | reference | — / 6.9 min | *(none declared)* |
+| [Ken Jones](/people/ken-jones) | reference | — / 8.8 min | *(none declared)* |
+| [Kenee Emkey](/people/kenee-emkey) | reference | — / 6.8 min | *(none declared)* |
+| [Kenneth Chenis](/people/kenneth-chenis) | reference | — / 9.9 min | *(none declared)* |
+| [Kenneth Jones](/people/kenneth-jones) | reference | — / 11.5 min | *(none declared)* |
+| [Kerry A. Lafleur](/people/kerry-a-lafleur) | reference | — / 7.6 min | *(none declared)* |
+| [Kerry Ann Kimball](/people/kerry-ann-kimball) | reference | — / 7.2 min | *(none declared)* |
+| [Kevin Boussom](/people/kevin-boussom) | reference | — / 7.4 min | *(none declared)* |
+| [Kevin Fish](/people/kevin-fish) | reference | — / 9.8 min | *(none declared)* |
+| [Kevin McNally](/people/kevin-mcnally) | reference | — / 8.4 min | *(none declared)* |
+| [Kiirja Paananen](/people/kiirja-paananen) | reference | — / 7.6 min | *(none declared)* |
+| [Kim Duffy](/people/kim-duffy) | reference | — / 7.9 min | *(none declared)* |
+| [Kimberly Moore](/people/kimberly-moore) | reference | — / 7.3 min | *(none declared)* |
+| [Kira MčClellan](/people/kira-m-clellan) | reference | — / 6.8 min | *(none declared)* |
+| [Kirsten Snape](/people/kirsten-snape) | reference | — / 8.2 min | *(none declared)* |
+| [Krista Deveau](/people/krista-deveau) | reference | — / 7.2 min | *(none declared)* |
+| [Kristina Masaitis](/people/kristina-masaitis) | reference | — / 8.3 min | *(none declared)* |
+| [La Veck](/people/la-veck) | reference | — / 7.4 min | *(none declared)* |
+| [Lance D. May](/people/lance-d-may) | reference | — / 9.6 min | *(none declared)* |
+| [Lars H. Widstrand](/people/lars-h-widstrand) | reference | — / 7.1 min | *(none declared)* |
+| [Latey Adams](/people/latey-adams) | reference | — / 6.8 min | *(none declared)* |
+| [Laura Boussom](/people/laura-boussom) | reference | — / 7.9 min | *(none declared)* |
+| [Laura Brozozski](/people/laura-brozozski) | reference | — / 7.1 min | *(none declared)* |
+| [Laura Brzozoski](/people/laura-brzozoski) | reference | — / 8.1 min | *(none declared)* |
+| [Laura Brzozski](/people/laura-brzozski) | reference | — / 7.7 min | *(none declared)* |
+| [Laura F. Kelly](/people/laura-f-kelly) | reference | — / 7.0 min | *(none declared)* |
+| [Laura Forde Kelly](/people/laura-forde-kelly) | reference | — / 7.1 min | *(none declared)* |
+| [Leigh Bain](/people/leigh-bain) | reference | — / 7.6 min | *(none declared)* |
+| [lichard McGrath](/people/lichard-mcgrath) | reference | — / 6.9 min | *(none declared)* |
+| [Linda M. McDonald](/people/linda-m-mcdonald) | reference | — / 10.0 min | *(none declared)* |
+| [Linda Vickery](/people/linda-vickery) | reference | — / 7.7 min | *(none declared)* |
+| [Lisa Normandin](/people/lisa-normandin) | reference | — / 11.4 min | *(none declared)* |
+| [Lisa Normandin R](/people/lisa-normandin-r) | reference | — / 6.9 min | *(none declared)* |
+| [Lois Leis](/people/lois-leis) | reference | — / 6.7 min | *(none declared)* |
+| [LoriAnn Tessier](/people/loriann-tessier) | reference | — / 6.8 min | *(none declared)* |
+| [Lorraine Mendoza](/people/lorraine-mendoza) | reference | — / 10.3 min | *(none declared)* |
+| [Lorraine Rudd](/people/lorraine-rudd) | reference | — / 10.0 min | *(none declared)* |
+| [Lou Franco](/people/lou-franco) | reference | — / 9.5 min | *(none declared)* |
+| [Louis Franco](/people/louis-franco) | reference | — / 8.5 min | *(none declared)* |
+| [Louis J. Franco](/people/louis-j-franco) | reference | — / 11.3 min | *(none declared)* |
+| [Loxi Jo Calmes](/people/loxi-jo-calmes) | reference | — / 8.3 min | *(none declared)* |
+| [Lynne Man](/people/lynne-man) | reference | — / 7.7 min | *(none declared)* |
+| [Maia Wentrup](/people/maia-wentrup) | reference | — / 8.0 min | *(none declared)* |
+| [Mandy Gilman](/people/mandy-gilman) | reference | — / 9.4 min | *(none declared)* |
+| [Marc Luescher](/people/marc-luescher) | reference | — / 8.2 min | *(none declared)* |
+| [Marianne Mascari](/people/marianne-mascari) | reference | — / 7.9 min | *(none declared)* |
+| [Marissa Thompson](/people/marissa-thompson) | reference | — / 8.2 min | *(none declared)* |
+| [Mark Erickson](/people/mark-erickson) | reference | — / 10.6 min | *(none declared)* |
+| [Mark Muzzi](/people/mark-muzzi) | reference | — / 6.9 min | *(none declared)* |
+| [Mark Riccardi](/people/mark-riccardi) | reference | — / 7.0 min | *(none declared)* |
+| [Mary Ellen Letarte](/people/mary-ellen-letarte) | reference | — / 7.1 min | *(none declared)* |
+| [Mary Lynn Conrad](/people/mary-lynn-conrad) | reference | — / 7.5 min | *(none declared)* |
+| [Mary Wilson](/people/mary-wilson) | reference | — / 10.7 min | *(none declared)* |
+| [Maryrae Holman](/people/maryrae-holman) | reference | — / 10.1 min | *(none declared)* |
+| [Mason Bowser](/people/mason-bowser) | reference | — / 7.3 min | *(none declared)* |
+| [Mather Benner](/people/mather-benner) | reference | — / 6.7 min | *(none declared)* |
+| [Matt Allison](/people/matt-allison) | reference | — / 10.4 min | *(none declared)* |
+| [Matt Brenner](/people/matt-brenner) | reference | — / 10.1 min | *(none declared)* |
+| [Matt Proctor](/people/matt-proctor) | reference | — / 9.8 min | *(none declared)* |
+| [Matt Proctor II](/people/matt-proctor-ii) | reference | — / 6.9 min | *(none declared)* |
+| [Matt Snyder](/people/matt-snyder) | reference | — / 8.6 min | *(none declared)* |
+| [Matthew Allison](/people/matthew-allison) | reference | — / 12.6 min | *(none declared)* |
+| [Matthew Brenner](/people/matthew-brenner) | reference | — / 10.8 min | *(none declared)* |
+| [Matthew Kehrer](/people/matthew-kehrer) | reference | — / 7.6 min | *(none declared)* |
+| [Matthew Procter](/people/matthew-procter) | reference | — / 6.8 min | *(none declared)* |
+| [Matthew Snyder](/people/matthew-snyder) | reference | — / 7.0 min | *(none declared)* |
+| [Maureen Dupuis](/people/maureen-dupuis) | reference | — / 8.6 min | *(none declared)* |
+| [Megan Lordan](/people/megan-lordan) | reference | — / 7.3 min | *(none declared)* |
+| [Meredith Weiss](/people/meredith-weiss) | reference | — / 8.8 min | *(none declared)* |
+| [Michael Clark](/people/michael-clark) | reference | — / 8.0 min | *(none declared)* |
+| [Michael Conway](/people/michael-conway) | reference | — / 7.5 min | *(none declared)* |
+| [Michael D. Gale](/people/michael-d-gale) | reference | — / 7.0 min | *(none declared)* |
+| [Michael Deveikis](/people/michael-deveikis) | reference | — / 6.9 min | *(none declared)* |
+| [Michael Fiorentino Jr](/people/michael-fiorentino-jr) | reference | — / 8.0 min | *(none declared)* |
+| [Michael Kidney](/people/michael-kidney) | reference | — / 7.6 min | *(none declared)* |
+| [Michael Mackin](/people/michael-mackin) | reference | — / 8.5 min | *(none declared)* |
+| [Michael Ray](/people/michael-ray) | reference | — / 7.5 min | *(none declared)* |
+| [Michael-Ray Jeffreys](/people/michael-ray-jeffreys) | reference | — / 12.9 min | *(none declared)* |
+| [Michael Toohill](/people/michael-toohill) | reference | — / 8.2 min | *(none declared)* |
+| [Michele Beauvais](/people/michele-beauvais) | reference | — / 7.6 min | *(none declared)* |
+| [Michelle Smith](/people/michelle-smith) | reference | — / 7.1 min | *(none declared)* |
+| [Michelle Walton](/people/michelle-walton) | reference | — / 8.2 min | *(none declared)* |
+| [Mike Barney](/people/mike-barney) | reference | — / 7.5 min | *(none declared)* |
+| [Mike Larouche](/people/mike-larouche) | reference | — / 9.9 min | *(none declared)* |
+| [Mike Mackin](/people/mike-mackin) | reference | — / 10.4 min | *(none declared)* |
+| [Mike Nault](/people/mike-nault) | reference | — / 10.4 min | *(none declared)* |
+| [Mike Rupp](/people/mike-rupp) | reference | — / 8.0 min | *(none declared)* |
+| [Mike Toohill](/people/mike-toohill) | reference | — / 7.8 min | *(none declared)* |
+| [Minna Scholten](/people/minna-scholten) | reference | — / 7.6 min | *(none declared)* |
+| [MONTACHUSETT METROPOLITAN PLANNING ORGANIZATION-Subregion](/people/montachusett-metropolitan-planning-organization-subregion) | reference | — / 7.0 min | *(none declared)* |
+| [Myleen Mallari](/people/myleen-mallari) | reference | — / 8.5 min | *(none declared)* |
+| [Nancy Forest](/people/nancy-forest) | reference | — / 9.0 min | *(none declared)* |
+| [Nancy Foss Yasko](/people/nancy-foss-yasko) | reference | — / 9.8 min | *(none declared)* |
+| [Nancy Gray](/people/nancy-gray) | reference | — / 8.3 min | *(none declared)* |
+| [Nancy Heald](/people/nancy-heald) | reference | — / 7.1 min | *(none declared)* |
+| [Nancy Peterson](/people/nancy-peterson) | reference | — / 7.0 min | *(none declared)* |
+| [Nathan J. Lockwood](/people/nathan-j-lockwood) | reference | — / 9.9 min | *(none declared)* |
+| [Nathan Lockwood](/people/nathan-lockwood) | reference | — / 10.2 min | *(none declared)* |
+| [Neal Sullivan](/people/neal-sullivan) | reference | — / 7.8 min | *(none declared)* |
+| [Nicholas Coronella](/people/nicholas-coronella) | reference | — / 7.1 min | *(none declared)* |
+| [Nicholas Pirro](/people/nicholas-pirro) | reference | — / 9.7 min | *(none declared)* |
+| [Nicole Waters](/people/nicole-waters) | reference | — / 8.2 min | *(none declared)* |
+| [ohn Londa](/people/ohn-londa) | reference | — / 7.0 min | *(none declared)* |
+| [ois Lewis](/people/ois-lewis) | reference | — / 6.9 min | *(none declared)* |
+| [Paige Gengler](/people/paige-gengler) | reference | — / 7.3 min | *(none declared)* |
+| [Patricia Adams](/people/patricia-adams) | reference | — / 10.5 min | *(none declared)* |
+| [Patrick Callahan](/people/patrick-callahan) | reference | — / 7.9 min | *(none declared)* |
+| [Patrick Hakey](/people/patrick-hakey) | reference | — / 8.7 min | *(none declared)* |
+| [Paul Bertram](/people/paul-bertram) | reference | — / 7.0 min | *(none declared)* |
+| [Paul Doherty](/people/paul-doherty) | reference | — / 8.7 min | *(none declared)* |
+| [Paul J. Doherty](/people/paul-j-doherty) | reference | — / 10.0 min | *(none declared)* |
+| [Paul J. Fortin](/people/paul-j-fortin) | reference | — / 10.2 min | *(none declared)* |
+| [Paul Sarapsas](/people/paul-sarapsas) | reference | — / 7.1 min | *(none declared)* |
+| [Paula Bertra](/people/paula-bertra) | reference | — / 6.9 min | *(none declared)* |
+| [Paula Bertram](/people/paula-bertram) | reference | — / 12.0 min | *(none declared)* |
+| [Paula J. Bertram](/people/paula-j-bertram) | reference | — / 10.1 min | *(none declared)* |
+| [Perry R. Jewell](/people/perry-r-jewell) | reference | — / 10.4 min | *(none declared)* |
+| [Pete Lincoln](/people/pete-lincoln) | reference | — / 9.4 min | *(none declared)* |
+| [Pete McCarron](/people/pete-mccarron) | reference | — / 7.3 min | *(none declared)* |
+| [Pete McCauliff](/people/pete-mccauliff) | reference | — / 9.6 min | *(none declared)* |
+| [Peter Beardmore](/people/peter-beardmore) | reference | — / 10.8 min | *(none declared)* |
+| [Peter Lincoln](/people/peter-lincoln) | reference | — / 9.2 min | *(none declared)* |
+| [Peter Schmidt](/people/peter-schmidt) | reference | — / 6.9 min | *(none declared)* |
+| [Peter Stella](/people/peter-stella) | reference | — / 7.5 min | *(none declared)* |
+| [Phyllis Luck](/people/phyllis-luck) | reference | — / 9.4 min | *(none declared)* |
+| [Phyllis M. Luck](/people/phyllis-m-luck) | reference | — / 10.0 min | *(none declared)* |
+| [Planning Director](/people/planning-director) | reference | — / 7.3 min | *(none declared)* |
+| [Raymond Beal](/people/raymond-beal) | reference | — / 8.4 min | *(none declared)* |
+| [Raymond E. Beal](/people/raymond-e-beal) | reference | — / 7.7 min | *(none declared)* |
+| [Rebecca Lantry](/people/rebecca-lantry) | reference | — / 8.5 min | *(none declared)* |
+| [Rena Swezey](/people/rena-swezey) | reference | — / 8.5 min | *(none declared)* |
+| [Renee Emkey](/people/renee-emkey) | reference | — / 10.8 min | *(none declared)* |
+| [Renee Trakimas](/people/renee-trakimas) | reference | — / 7.1 min | *(none declared)* |
+| [Rhonda Lisio](/people/rhonda-lisio) | reference | — / 8.7 min | *(none declared)* |
+| [Richard Bursch](/people/richard-bursch) | reference | — / 11.5 min | *(none declared)* |
+| [Richard H. Letarte](/people/richard-h-letarte) | reference | — / 9.4 min | *(none declared)* |
+| [Richard Howard](/people/richard-howard) | reference | — / 10.5 min | *(none declared)* |
+| [Richard L McGrath](/people/richard-l-mcgrath) | reference | — / 6.9 min | *(none declared)* |
+| [Richard Letarte](/people/richard-letarte) | reference | — / 8.4 min | *(none declared)* |
+| [Richard McGrath](/people/richard-mcgrath) | reference | — / 11.3 min | *(none declared)* |
+| [Richard N. Mailloux](/people/richard-n-mailloux) | reference | — / 7.4 min | *(none declared)* |
+| [Richard St. Cyr](/people/richard-st-cyr) | reference | — / 7.2 min | *(none declared)* |
+| [Richard Tremblay](/people/richard-tremblay) | reference | — / 10.2 min | *(none declared)* |
+| [Rob Oliva](/people/rob-oliva) | reference | — / 7.7 min | *(none declared)* |
+| [Robert Bowen](/people/robert-bowen) | reference | — / 8.0 min | *(none declared)* |
+| [Robert Cadle](/people/robert-cadle) | reference | — / 7.2 min | *(none declared)* |
+| [Robert Conroy](/people/robert-conroy) | reference | — / 7.3 min | *(none declared)* |
+| [Robert Ebersole](/people/robert-ebersole) | reference | — / 7.5 min | *(none declared)* |
+| [Robert Hamel](/people/robert-hamel) | reference | — / 7.1 min | *(none declared)* |
+| [Robert Herrick](/people/robert-herrick) | reference | — / 7.5 min | *(none declared)* |
+| [Robert J. Ebersole](/people/robert-j-ebersole) | reference | — / 10.0 min | *(none declared)* |
+| [Robert Robuccio](/people/robert-robuccio) | reference | — / 7.4 min | *(none declared)* |
+| [Robin Nano](/people/robin-nano) | reference | — / 7.3 min | *(none declared)* |
+| [Robin Venezia](/people/robin-venezia) | reference | — / 7.5 min | *(none declared)* |
+| [Ronald Albert](/people/ronald-albert) | reference | — / 7.8 min | *(none declared)* |
+| [Ruth Anderson](/people/ruth-anderson) | reference | — / 7.9 min | *(none declared)* |
+| [Ryan Stober](/people/ryan-stober) | reference | — / 9.9 min | *(none declared)* |
+| [Sarah Camme](/people/sarah-camme) | reference | — / 6.9 min | *(none declared)* |
+| [Sarah Cammer](/people/sarah-cammer) | reference | — / 10.8 min | *(none declared)* |
+| [Sarah Coon](/people/sarah-coon) | reference | — / 7.1 min | *(none declared)* |
+| [Sarah Grant](/people/sarah-grant) | reference | — / 9.8 min | *(none declared)* |
+| [Scott Chase](/people/scott-chase) | reference | — / 8.9 min | *(none declared)* |
+| [Scott Dall](/people/scott-dall) | reference | — / 9.4 min | *(none declared)* |
+| [Seamus Kelly](/people/seamus-kelly) | reference | — / 7.1 min | *(none declared)* |
+| [Sheila Craigen](/people/sheila-craigen) | reference | — / 7.7 min | *(none declared)* |
+| [Sheila Lumi](/people/sheila-lumi) | reference | — / 7.6 min | *(none declared)* |
+| [Shirley McBride](/people/shirley-mcbride) | reference | — / 7.7 min | *(none declared)* |
+| [Sophie Shapiro](/people/sophie-shapiro) | reference | — / 7.5 min | *(none declared)* |
+| [Stanley Barney](/people/stanley-barney) | reference | — / 7.1 min | *(none declared)* |
+| [State Appointee](/people/state-appointee) | reference | — / 6.9 min | *(none declared)* |
+| [Stephanie Karlson](/people/stephanie-karlson) | reference | — / 7.1 min | *(none declared)* |
+| [Stephanie Scofield](/people/stephanie-scofield) | reference | — / 7.1 min | *(none declared)* |
+| [Stephanie Trudel](/people/stephanie-trudel) | reference | — / 7.5 min | *(none declared)* |
+| [Stephen Walker](/people/stephen-walker) | reference | — / 7.2 min | *(none declared)* |
+| [Stephen Wallace](/people/stephen-wallace) | reference | — / 7.3 min | *(none declared)* |
+| [Steve Archambault](/people/steve-archambault) | reference | — / 8.3 min | *(none declared)* |
+| [Steve Dubois](/people/steve-dubois) | reference | — / 7.6 min | *(none declared)* |
+| [Steve Walker](/people/steve-walker) | reference | — / 9.6 min | *(none declared)* |
+| [Steven Archambault](/people/steven-archambault) | reference | — / 8.9 min | *(none declared)* |
+| [Steven Walker](/people/steven-walker) | reference | — / 7.4 min | *(none declared)* |
+| [Susan Andrews](/people/susan-andrews) | reference | — / 10.2 min | *(none declared)* |
+| [Susan Bunish](/people/susan-bunish) | reference | — / 7.4 min | *(none declared)* |
+| [Susan Doherty](/people/susan-doherty) | reference | — / 8.7 min | *(none declared)* |
+| [Susan Murchie](/people/susan-murchie) | reference | — / 7.5 min | *(none declared)* |
+| [Susan O&#x27;Sullivan](/people/susan-o-sullivan) | reference | — / 9.4 min | *(none declared)* |
+| [Susan Visser](/people/susan-visser) | reference | — / 7.6 min | *(none declared)* |
+| [Susanna Jewell](/people/susanna-jewell) | reference | — / 9.4 min | *(none declared)* |
+| [Tanner Cole](/people/tanner-cole) | reference | — / 11.1 min | *(none declared)* |
+| [Tanya Dall](/people/tanya-dall) | reference | — / 9.6 min | *(none declared)* |
+| [Teddy Doucet](/people/teddy-doucet) | reference | — / 6.9 min | *(none declared)* |
+| [Terese Burchfield](/people/terese-burchfield) | reference | — / 8.5 min | *(none declared)* |
+| [Terri Burchfield](/people/terri-burchfield) | reference | — / 9.6 min | *(none declared)* |
+| [Thia St. Martin](/people/thia-st-martin) | reference | — / 7.2 min | *(none declared)* |
+| [Thomas A. Alonzo](/people/thomas-a-alonzo) | reference | — / 10.0 min | *(none declared)* |
+| [Thomas Alonzo](/people/thomas-alonzo) | reference | — / 10.6 min | *(none declared)* |
+| [Thomas Balish](/people/thomas-balish) | reference | — / 8.9 min | *(none declared)* |
+| [Thomas Gray](/people/thomas-gray) | reference | — / 9.8 min | *(none declared)* |
+| [Tiffany Warren](/people/tiffany-warren) | reference | — / 7.1 min | *(none declared)* |
+| [Tim Lawless](/people/tim-lawless) | reference | — / 8.1 min | *(none declared)* |
+| [Tim Murphy](/people/tim-murphy) | reference | — / 7.4 min | *(none declared)* |
+| [Timothy Foster](/people/timothy-foster) | reference | — / 6.9 min | *(none declared)* |
+| [Timothy Russell Willsmer](/people/timothy-russell-willsmer) | reference | — / 9.4 min | *(none declared)* |
+| [Timothy W. Murphy](/people/timothy-w-murphy) | reference | — / 7.4 min | *(none declared)* |
+| [Timothy Willsmer](/people/timothy-willsmer) | reference | — / 7.5 min | *(none declared)* |
+| [Todd Dwyer](/people/todd-dwyer) | reference | — / 11.0 min | *(none declared)* |
+| [Todd Holman](/people/todd-holman) | reference | — / 7.2 min | *(none declared)* |
+| [Tom Alonzo](/people/tom-alonzo) | reference | — / 10.4 min | *(none declared)* |
+| [Tom Bertram](/people/tom-bertram) | reference | — / 10.4 min | *(none declared)* |
+| [Tom Gray](/people/tom-gray) | reference | — / 8.5 min | *(none declared)* |
+| [Tont Reynolds](/people/tont-reynolds) | reference | — / 6.8 min | *(none declared)* |
+| [Troy Daniels](/people/troy-daniels) | reference | — / 10.1 min | *(none declared)* |
+| [Two Alternate Vacancies](/people/two-alternate-vacancies) | reference | — / 6.8 min | *(none declared)* |
+| [Tyler Hathaway](/people/tyler-hathaway) | reference | — / 7.1 min | *(none declared)* |
+| [Victoria Leger](/people/victoria-leger) | reference | — / 8.0 min | *(none declared)* |
+| [Walter Mayhew Jr](/people/walter-mayhew-jr) | reference | — / 9.7 min | *(none declared)* |
+| [Wayne Caron](/people/wayne-caron) | reference | — / 7.4 min | *(none declared)* |
+| [Wayne Comeau](/people/wayne-comeau) | reference | — / 6.9 min | *(none declared)* |
+| [Wendy Bertrand](/people/wendy-bertrand) | reference | — / 10.8 min | *(none declared)* |
+| [William Lakso](/people/william-lakso) | reference | — / 7.9 min | *(none declared)* |
+| [William Lloyd](/people/william-lloyd) | reference | — / 10.4 min | *(none declared)* |
+| [William Tyler](/people/william-tyler) | reference | — / 10.7 min | *(none declared)* |
+| [Zachary Cutting](/people/zachary-cutting) | reference | — / 7.6 min | *(none declared)* |
 | [Priorities](/priorities) | tool | — / 13.3 min | *(none declared)* |
 | [Rates, fees and contracts — the register](/rate-register) | reference | — / 12.9 min | *(none declared)* |
 | [Analysis: Town and Schools](/reports) | reference | — / 51.4 min | *(none declared)* |
