@@ -10,7 +10,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | page | kind | short / full | the points a reader should take away |
 |---|---|---:|---|
 | [The Lunenburg Budget Project — FY28 and beyond](/) | page | — / 7.1 min | *(none declared)* |
-| [The structural gap](/crisis) | page | — / 10.6 min | *(none declared)* |
+| [The structural gap](/crisis) | page | — / 11.7 min | *(none declared)* |
 | [Solutions](/solutions) | page | 1.0 / 13.5 min | 1. The fees and trims are worth doing and do not solve it.<br>2. Cutting every extracurricular does not buy a year: $376,207, 40% of it.<br>3. Business growth is real and slow.<br>4. Free cash covers a year, not a problem.<br>5. Only two things on the table change a rate: the health plan, and the pace of commercial building.<br>6. After that there are two choices, and only two: an override, or classroom positions. |
 | [Straight answers](/straight-answers) | page | 1.2 / 38.2 min | 1. $933k — The schools need $932,664 more next year than the town can give them. That is the whole problem, in one number.<br>2. 2.68% — The things schools buy get 5.18% more expensive each year. State law lets the town collect about 2.5% more each year. Nobody overspent — the two numbers are simply different.<br>3. $573k — That difference opens a brand new hole every year, of roughly $572,745 to $788,595, whether or not you closed the last one.<br>4. 1 yr — So no single cut fixes this. Every answer in the table below — sports, fees, administrators, pay, insurance — buys one year at most, and then the question comes back larger. |
 | [Bend the curve](/bend-the-curve) | page | 4.4 / 38.3 min | 1. Next year the schools get $856k more. Here is who spends it.<br>2. Costs grow 5.18%. Revenue grows 3.22%. |
@@ -50,10 +50,9 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Harvard per-pupil breakdown](/bromfield/harvard-line-by-line) | page | — / 8.0 min | *(none declared)* |
 | [Harvard per pupil](/bromfield/harvard-per-pupil) | page | — / 8.0 min | *(none declared)* |
 | [Harvard rate scenario](/bromfield/lunenburg-at-harvard-rate) | page | — / 7.5 min | *(none declared)* |
-| [Closing the gap](/budget-options) | page | — / 9.6 min | *(none declared)* |
 | [Classroom positions](/budget-options/classroom-positions) | page | — / 6.5 min | *(none declared)* |
-| [Extracurricular cuts](/budget-options/extracurricular-cuts) | page | — / 6.9 min | *(none declared)* |
-| [Family fees](/budget-options/family-fees) | page | — / 6.9 min | *(none declared)* |
+| [Extracurricular cuts](/budget-options/extracurricular-cuts) | page | — / 6.8 min | *(none declared)* |
+| [Family fees](/budget-options/family-fees) | page | — / 6.8 min | *(none declared)* |
 | [FY2027 cut size](/budget-options/fy2027-cut-size) | page | — / 6.6 min | *(none declared)* |
 | [The FY2027 override](/budget-options/fy2027-override) | page | — / 6.9 min | *(none declared)* |
 | [Override duration](/budget-options/override-duration) | page | — / 7.3 min | *(none declared)* |
@@ -73,8 +72,8 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Upkeep surplus, every dollar](/buildings-and-grounds/upkeep-surplus-every-dollar) | page | — / 8.2 min | *(none declared)* |
 | [All cuts combined](/crisis/all-cuts-combined) | page | — / 6.5 min | *(none declared)* |
 | [Chapter 70 needed](/crisis/chapter-70-needed) | page | — / 6.9 min | *(none declared)* |
+| [Commercial development](/crisis/commercial-development) | page | — / 7.1 min | *(none declared)* |
 | [Cost and revenue growth](/crisis/cost-and-revenue-growth) | page | — / 7.0 min | *(none declared)* |
-| [Development needed](/crisis/development-needed) | page | — / 7.0 min | *(none declared)* |
 | [FY2028 revenue increase](/crisis/fy2028-revenue-increase) | page | — / 6.7 min | *(none declared)* |
 | [Gap by cost line](/crisis/gap-by-cost-line) | page | — / 7.2 min | *(none declared)* |
 | [Level service cost](/crisis/level-service-cost) | page | — / 6.9 min | *(none declared)* |
@@ -2968,7 +2967,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Zachary Cutting](/people/zachary-cutting) | reference | — / 7.6 min | *(none declared)* |
 | [Priorities](/priorities) | tool | — / 13.3 min | *(none declared)* |
 | [Rates, fees and contracts — the register](/rate-register) | reference | — / 12.9 min | *(none declared)* |
-| [Analysis: Town and Schools](/reports) | reference | — / 52.3 min | *(none declared)* |
+| [Analysis: Town and Schools](/reports) | reference | — / 51.1 min | *(none declared)* |
 | [Search — everything this project holds](/search) | reference | — / 6.7 min | *(none declared)* |
 | [Sources](/sources) | reference | — / 19.7 min | *(none declared)* |
 | [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 21.8 min | *(none declared)* |
