@@ -3369,6 +3369,14 @@ GROUPS = [
              'arithmetic check is available \u2014 these pages print no total.'),
             ('data/report-valuation.csv', 'Valuation and tax rate history', 1,
              '316 rows. No printed totals, so no arithmetic check.'),
+            ('data/report-new-growth-history.csv',
+             'New growth, valuation and tax rate before FY2011', 1,
+             'One row per printing of a fiscal year in the annual town reports, with its '
+             'edition, line numbers and the raw printed text. Each row is proved by the '
+             'identity the table states: added valuation x prior rate / 1000 = new growth '
+             'revenue, valuation x rate / 1000 = levy. Editions that disagree are kept side '
+             'by side, and every row is compared with the state’s DLS files. Built by '
+             'scripts/extract_new_growth_history.py.'),
             ('data/report-officials.csv', 'Who held which town office', 1,
              '237 rows. A list of names and terms; no total to check it against.'),
             ('data/report-enrollment-mcas.csv', 'Enrollment and MCAS results', 1,

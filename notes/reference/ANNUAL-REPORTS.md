@@ -31,6 +31,7 @@ prints no total. **Nothing here may be aggregated without splitting on `status` 
 | `staff-roster-entries.csv` | 12,278 | 1959–2025 | every line of every page accounted for | yes | — | yes |
 | `staff-roster-counts.csv` | 2,290 | 1959–2025 | derived from the above | yes | — | yes |
 | `staff-position-map.csv` | 3,208 | — | a hypothesis about which titles are the same job | yes | — | yes |
+| `report-new-growth-history.csv` | 202 | 1986–2010 | 162 checked / 28 failed / 12 no check | yes | shared | yes |
 
 ### Built by the generic extractor (`scripts/extract_tables.py`)
 

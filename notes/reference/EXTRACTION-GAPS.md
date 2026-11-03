@@ -17,7 +17,7 @@
 
 - **360 of 3,696 tables in the 1959-2010 editions are not in any dataset.** Each was looked at by eye and its reason is in that edition's `map.csv` `note`, beginning `NOT LANDED`.
 - **None of the 866 tables catalogued in FY2011-FY2025 has been sorted** into a repeat of a table already read, prose, or a real gap. 288 of them sit on a page no dataset has a row from, and those are the first place to look.
-- **All 92 datasets holding report rows are in the database.**
+- **All 93 datasets holding report rows are in the database.**
 - **Lists are not counted yet.** Most years print officers and staff as running text, not tables, and every survey so far looked for tables. `lists_found` and `lists_in_dataset` are empty in the edition CSV until the list survey (step 3) runs.
 
 The proxy row is page grain, not table grain: a catalogued table counts if ANY dataset holds a row from ANY of its pages, so it is an upper bound on what has been read, never a count of tables read.
@@ -65,6 +65,7 @@ The proxy row is page grain, not table grain: a catalogued table counts if ANY d
 | `report-revenue-sharing` | yes | 291 | 14 / 0 | 86 | 6 | 199 |
 | `capital-plans` | yes | 265 | 5 / 9 | 265 | 0 | 0 |
 | `report-fee-schedule` | yes | 218 | 16 / 0 | 8 | 0 | 210 |
+| `report-new-growth-history` | yes | 202 | 22 / 0 | 162 | 28 | 12 |
 | `report-transitional-receipts` | yes | 197 | 1 / 0 | 196 | 0 | 1 |
 | `report-treasurers-cash-calendar-year` | yes | 191 | 9 / 0 | 89 | 0 | 102 |
 | `report-property-tax-exemptions` | yes | 179 | 18 / 0 | 0 | 0 | 179 |
@@ -120,7 +121,7 @@ The proxy row is page grain, not table grain: a catalogued table counts if ANY d
 | `report-office-budget-cuts` | yes | 4 | 1 / 0 | 4 | 0 | 0 |
 | `report-energy-use` | yes | 3 | 1 / 0 | 0 | 0 | 3 |
 | `report-per-capita-comparison` | yes | 3 | 1 / 0 | 0 | 0 | 3 |
-| **total** | | **130,164** | | **49,846** | **11,212** | **28,398** |
+| **total** | | **130,366** | | **50,008** | **11,240** | **28,410** |
 
 ## Registers and files about the reading
 
@@ -179,32 +180,32 @@ Not data the reports print, and listed so that nothing disappears. A register re
 | 1982 | 168 | 46 (44 / 2) | 81 | 75 | 6 | 75 | 22 |  |
 | 1983 | 132 | 44 (39 / 5) | 83 | 79 | 4 | 79 | 24 |  |
 | 1984 | 146 | 39 (38 / 1) | 79 | 72 | 7 | 72 | 23 |  |
-| 1985 | 172 | 38 (36 / 2) | 71 | 64 | 7 | 64 | 22 |  |
+| 1985 | 172 | 38 (36 / 2) | 71 | 64 | 7 | 64 | 23 |  |
 | 1986 | 122 | 39 (31 / 8) | 80 | 75 | 5 | 75 | 23 |  |
 | 1987 | 76 | 22 (12 / 10) | 40 | 36 | 4 | 36 | 17 |  |
 | 1988 | 84 | 18 (12 / 6) | 37 | 32 | 5 | 32 | 17 |  |
 | 1989 | 84 | 22 (16 / 6) | 37 | 32 | 5 | 32 | 14 |  |
-| 1990 | 76 | 19 (17 / 2) | 31 | 26 | 5 | 26 | 13 |  |
-| 1991 | 68 | 21 (17 / 4) | 35 | 32 | 3 | 32 | 17 |  |
-| 1992 | 64 | 20 (19 / 1) | 37 | 34 | 3 | 34 | 15 |  |
-| 1993 | 60 | 18 (15 / 3) | 28 | 25 | 3 | 25 | 13 |  |
-| 1994 | 70 | 16 (14 / 2) | 23 | 18 | 5 | 18 | 11 |  |
-| 1995 | 90 | 29 (28 / 1) | 43 | 41 | 2 | 41 | 17 |  |
-| 1996 | 104 | 33 (33 / 0) | 45 | 43 | 2 | 43 | 17 |  |
-| 1997 | 100 | 31 (27 / 4) | 43 | 40 | 3 | 40 | 16 |  |
-| 1998 | 98 | 33 (31 / 2) | 48 | 43 | 5 | 43 | 15 |  |
-| 1999 | 110 | 33 (31 / 2) | 43 | 41 | 2 | 41 | 16 |  |
-| 2000 | 136 | 37 (33 / 4) | 48 | 46 | 2 | 46 | 16 |  |
-| 2001 | 94 | 24 (22 / 2) | 99 | 87 | 12 | 87 | 20 |  |
-| 2002 | 110 | 35 (33 / 2) | 121 | 105 | 16 | 105 | 20 |  |
-| 2003 | 104 | 36 (30 / 6) | 104 | 92 | 12 | 92 | 21 |  |
-| 2004 | 112 | 38 (29 / 9) | 106 | 96 | 10 | 96 | 23 |  |
-| 2005 | 104 | 32 (25 / 7) | 97 | 82 | 15 | 82 | 20 |  |
-| 2006 | 124 | 39 (32 / 7) | 115 | 105 | 10 | 105 | 22 |  |
-| 2007 | 124 | 38 (29 / 9) | 107 | 94 | 13 | 94 | 21 |  |
-| 2008 | 112 | 33 (33 / 0) | 88 | 80 | 8 | 80 | 20 |  |
-| 2009 | 92 | 29 (25 / 4) | 73 | 61 | 12 | 61 | 19 |  |
-| 2010 | 100 | 30 (19 / 11) | 102 | 81 | 21 | 81 | 23 |  |
+| 1990 | 76 | 19 (17 / 2) | 31 | 26 | 5 | 26 | 14 |  |
+| 1991 | 68 | 21 (17 / 4) | 35 | 32 | 3 | 32 | 18 |  |
+| 1992 | 64 | 20 (19 / 1) | 37 | 34 | 3 | 34 | 16 |  |
+| 1993 | 60 | 18 (15 / 3) | 28 | 25 | 3 | 25 | 14 |  |
+| 1994 | 70 | 16 (14 / 2) | 23 | 18 | 5 | 18 | 12 |  |
+| 1995 | 90 | 29 (28 / 1) | 43 | 41 | 2 | 41 | 18 |  |
+| 1996 | 104 | 33 (33 / 0) | 45 | 43 | 2 | 43 | 18 |  |
+| 1997 | 100 | 31 (27 / 4) | 43 | 40 | 3 | 40 | 17 |  |
+| 1998 | 98 | 33 (31 / 2) | 48 | 43 | 5 | 43 | 16 |  |
+| 1999 | 110 | 33 (31 / 2) | 43 | 41 | 2 | 41 | 17 |  |
+| 2000 | 136 | 37 (33 / 4) | 48 | 46 | 2 | 46 | 17 |  |
+| 2001 | 94 | 24 (22 / 2) | 99 | 87 | 12 | 87 | 21 |  |
+| 2002 | 110 | 35 (33 / 2) | 121 | 105 | 16 | 105 | 21 |  |
+| 2003 | 104 | 36 (30 / 6) | 104 | 92 | 12 | 92 | 22 |  |
+| 2004 | 112 | 38 (29 / 9) | 106 | 96 | 10 | 96 | 24 |  |
+| 2005 | 104 | 32 (25 / 7) | 97 | 82 | 15 | 82 | 21 |  |
+| 2006 | 124 | 39 (32 / 7) | 115 | 105 | 10 | 105 | 23 |  |
+| 2007 | 124 | 38 (29 / 9) | 107 | 94 | 13 | 94 | 22 |  |
+| 2008 | 112 | 33 (33 / 0) | 88 | 80 | 8 | 80 | 21 |  |
+| 2009 | 92 | 29 (25 / 4) | 73 | 61 | 12 | 61 | 20 |  |
+| 2010 | 100 | 30 (19 / 11) | 102 | 81 | 21 | 81 | 24 |  |
 | FY2011 | 101 | 29 (29 / 0) | 55 catalogued | - | - | - | 28 |  |
 | FY2012 | 116 | 28 (28 / 0) | 64 catalogued | - | - | - | 25 |  |
 | FY2013 | 97 | 31 (31 / 0) | 58 catalogued | - | - | - | 26 |  |

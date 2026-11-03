@@ -25,7 +25,7 @@ WHAT IS OURS, AND SAID SO ON THE PAGE:
     statute, and the page cites it as such.
   * inflation adjustment, by the Boston-area CPI-U averaged July to June.
 
-NOT SEPARATED: overrides (one passed in the window, FY2025, marked in the table from the state's
+NOT SEPARATED: overrides (each one passed in the window is marked in the table from the state's
 own vote file) and debt exclusions, which that file does not carry.
 
 Sources, all the state's: sources/data/dls-new-growth.csv, dls-assessed-values.csv,
@@ -74,17 +74,61 @@ def one_source(rows, name):
     return 'state-dls/' + s.pop()
 
 
+# THE YEARS BEFORE THE STATE'S FILES, from the town's own annual reports (TJ, 2 November 2026:
+# "can we only go back to '04 for that new page?"). sources/data/report-new-growth-history.csv,
+# written by scripts/extract_new_growth_history.py: every value re-derived from the text, each
+# row proved by its own arithmetic, every repeated printing agreeing. The state's files take over
+# where they begin (new growth FY2003, values FY2002, rates FY2003) and agree with the town's
+# figures in every overlapping year the extractor compared, except new growth in FY2004, FY2005
+# and FY2009 -- after the switch, so never read here.
+STATE_FROM = 2003
+HIST = os.path.join(D, 'report-new-growth-history.csv')
+
+
+def town_history():
+    """{field: {fy: value}} from the town's reports, each fiscal year's value the same in every
+    printing that carries it, or the build refuses. Valuation and rate only from rows that close."""
+    out = {'total_valuation': {}, 'tax_rate': {}, 'ng_added_valuation': {}}
+    files = {}
+    for r in csv.DictReader(open(HIST, encoding='utf-8')):
+        y = int(r['fy'])
+        for k in out:
+            if not r[k]:
+                continue
+            if k != 'ng_added_valuation' and r['status'] != 'checked':
+                continue
+            # A new growth row whose own revenue identity failed is used only for its VALUATION,
+            # and only because another printing prints the same figure (the extractor's rule).
+            v = float(r[k])
+            if out[k].setdefault(y, v) != v:
+                fail('%s FY%d: two printings disagree (%s, %s)' % (k, y, out[k][y], v))
+            if y < STATE_FROM:
+                files.setdefault(r['edition_file'], set()).add(y)
+    return out, files
+
+
 def years_data():
     ng, av, tr = town('dls-new-growth.csv'), town('dls-assessed-values.csv'), town('dls-tax-rates.csv')
+    th, tfiles = town_history()
+
+    def total(y):
+        return float(av[y]['total']) if y in av and av[y]['total'] else th['total_valuation'].get(y)
+
+    def rt(y):
+        return float(tr[y]['residential']) if y in tr and tr[y]['residential'] else th['tax_rate'].get(y)
+
+    def new(y):
+        return (float(ng[y]['total_value']) if y in ng and ng[y]['total_value'] else None) if y >= STATE_FROM \
+            else th['ng_added_valuation'].get(y)
+    for y in (2002,):   # the join: the town's figure and the state's must agree where both exist
+        if y in av and th['total_valuation'].get(y) not in (None, float(av[y]['total'])):
+            fail('FY%d total valuation: town %s, state %s' % (y, th['total_valuation'][y], av[y]['total']))
     rows = []
-    for y in sorted(ng):
-        if y - 1 not in av or y not in av or y not in tr or y - 1 not in tr:
+    for y in range(min(th['ng_added_valuation']), max(ng) + 1):
+        v, v0, n, r, r0 = total(y), total(y - 1), new(y), rt(y), rt(y - 1)
+        if None in (v, v0, n, r, r0):
             continue
-        if not (tr[y]['residential'] and tr[y - 1]['residential']):
-            continue
-        v, v0, n = float(av[y]['total']), float(av[y - 1]['total']), float(ng[y]['total_value'])
-        r, r0 = float(tr[y]['residential']), float(tr[y - 1]['residential'])
-        rows.append(dict(fy=y, total=v, prior=v0, new=n, new_levy=float(ng[y]['total_levy']),
+        rows.append(dict(fy=y, total=v, prior=v0, new=n, src='state' if y >= STATE_FROM else 'town',
                          existing=round(((v - n) / v0 - 1) * 100, 2), dev=round(n / v0 * 100, 2),
                          rate=r, rate0=r0, rate_chg=round((r / r0 - 1) * 100, 2)))
     ys = [r['fy'] for r in rows]
@@ -92,7 +136,7 @@ def years_data():
         fail('the years with all three files are not consecutive: %s' % ys)
     keys = dict(ng=one_source(ng, 'new growth'), av=one_source(av, 'assessed values'),
                 tr=one_source(tr, 'tax rates'))
-    return rows, keys
+    return rows, keys, tfiles
 
 
 def overrides():
@@ -104,7 +148,7 @@ def overrides():
 
 
 def build():
-    rows, keys = years_data()
+    rows, keys, tfiles = years_data()
     h = homes()
     won = overrides()
     xs = [C.fy(r['fy']) for r in rows]
@@ -114,13 +158,16 @@ def build():
     if not (r_exist < -0.6 and abs(r_dev) < 0.3):
         fail('the finding no longer holds: existing %.2f, development %.2f' % (r_exist, r_dev))
     jump = max(rows, key=lambda r: r['existing'])
+    med_dev = round(statistics.median(r['dev'] for r in rows), 2)   # a typical year's development
     drop = min(rows, key=lambda r: r['existing'])
     big_dev = max(rows, key=lambda r: r['dev'])
     in_window = {y: v for y, v in won.items() if a['fy'] <= y <= z['fy']}
-    if sorted(in_window) != [2025]:
-        fail('the overrides won in the window are no longer FY2025 alone: %s' % sorted(in_window))
-    ov = in_window[2025][0]
-    ov_row = next(r for r in rows if r['fy'] == 2025)
+    if not in_window:
+        fail('no override won in the window; the page names them')
+    ov_years = sorted(in_window)
+    ov_last = ov_years[-1]
+    ov = in_window[ov_last][0]
+    by_fy = {r['fy']: r for r in rows}
     first_h, last_h = h['rows'][0], h['rows'][-1]
 
     P = lambda v, d=1: figure(v, '%s%%' % format(v, '.%df' % d), 'percent')
@@ -144,8 +191,8 @@ def build():
         f('v-real', P(h['value_growth'], 0), 'average home value after inflation, %s–%s' % (h['first'], h['base']),
           'estimate', allow=(h['first'], h['base'])),
         f('b-real', P(h['bill_growth'], 0), 'average tax bill after inflation, same years', 'estimate'),
-        f('ov', U(float(ov['amount'])), 'override won for %s, the only one in these years' % C.fy(2025),
-          'published', {'y': FY(2025)}),
+        f('ov', U(float(ov['amount'])), 'override won for %s, the latest' % C.fy(ov_last),
+          'published', {'y': FY(ov_last)}),
         f('gap-de', None, 'debt exclusions, which also raise the rate', 'gap',
           closes='the Division of Local Services’ debt exclusion votes for Lunenburg, or the tax '
                  'recapitulation sheets, which list each excluded debt by year'),
@@ -163,7 +210,10 @@ def build():
                '%.2f%%' % jump['dev']),
             ['jump-e', 'jump-r', 'jump-d'],
             {'y': FY(jump['fy']), 'e': P(jump['existing']), 'r': P(abs(jump['rate_chg'])), 'd': P(jump['dev'], 2)},
-            so='The biggest drop in the rate came in a year of little building. It was the market.'),
+            so='Development that year was %s of the base, against %s in a typical year; the fall in '
+               'the rate tracks the %s rise in existing values.'
+               % ('%.2f%%' % jump['dev'], '%.2f%%' % med_dev, '%.1f%%' % jump['existing']),
+            so_figures={'d': P(jump['dev'], 2), 'm': P(med_dev, 2), 'e': P(jump['existing'])}),
         con('New growth pays at last year’s rate and adds to the limit beyond %s.' % '2.5%',
             ['cap'], {'c': figure(2.5, '2.5%')},
             so='What development buys is revenue for the town without raising existing bills. That is '
@@ -184,8 +234,8 @@ def build():
          TP.track('New development, share of the base', [r['dev'] for r in rows], 'published'),
          TP.track('Residential tax rate, change', [r['rate_chg'] for r in rows], 'published')],
         '%', kind='line', decimals=1,
-        note='Division of Local Services: values, new growth and rates. The rate mirrors the first line, '
-             'not the second.')
+        note='Town annual reports to %s, then the Division of Local Services. The rate mirrors the first '
+             'line, not the second.' % C.fy(STATE_FROM - 1), note_allow=(C.fy(STATE_FROM - 1),))
 
     # ------------------------------------------------------------ development in dollars, with the rate
     # The rate is a rate per $1,000, not a percent; the secondary axis must be a different unit, so
@@ -198,7 +248,7 @@ def build():
         '$', kind='bar',
         secondary=dict(name='Tax rate, as a percent of value', values=[share[r['fy']] for r in rows],
                        unit='%', basis='published', decimals=2),
-        note='Division of Local Services: new growth by year, and the residential rate as a percent '
+        note='Town reports, then the state: new growth by year, and the rate as a percent '
              '(a $14.39 rate is 1.44%).', note_allow=('$14.39', '1.44%'))
 
     # ------------------------------------------------------------ the homes and the bill, from the history page
@@ -240,9 +290,8 @@ def build():
     gaps = TB.explain('What this page does not separate', [
         'Debt exclusions, which raise the levy outside the limit. The state’s vote file used here '
         'carries overrides only.',
-        ('One override passed in these years, for %s; that year the rate rose %s while existing '
-         'values rose %s.' % (C.fy(2025), '%.1f%%' % ov_row['rate_chg'], '%.1f%%' % ov_row['existing']),
-         {'r': P(ov_row['rate_chg']), 'e': P(ov_row['existing'])}, ('FY2025',)),
+        ('Overrides passed for %s. Each raises the levy, and so the rate, in its year; the table '
+         'marks them.' % ', '.join(C.fy(y) for y in ov_years), None, tuple(C.fy(y) for y in ov_years)),
         'Our existing-value line also absorbs revaluation, abatements and class shifts, which the '
         'state’s files do not separate from market change.',
     ], place='end', tone='plain')
@@ -254,14 +303,22 @@ def build():
         trows.append(dict(label=C.fy(r['fy']), cells=[
             '%.1f%%' % r['existing'], '%.2f%%' % r['dev'], C.usd(r['new']), rate(r['rate']),
             '%.1f%%' % r['rate_chg'], ('override, ' + C.usd(float(ovs[0]['amount']))) if ovs else '']))
-    table = dict(caption='Values, development and the rate, by year', views=[dict(
-        key='all', label='%s to %s' % (C.fy(a['fy']), C.fy(z['fy'])), total_col=None,
-        kinds=['estimate', 'ledger', 'ledger', 'ledger', 'ledger', 'stated'],
-        columns=['Existing property, value change (ours)', 'Development, share of base', 'New growth value',
-                 'Residential rate', 'Rate change', 'Override won'],
-        rows=trows,
-        note='Existing change is ours: total value less new growth, against last year’s total. Every '
-             'other column is the state’s.')])
+    # Two periods, the town's reports and the state's files, because a table past thirty rows is
+    # refused -- and the split falls where the source changes, so each tab has one source.
+    def view(key, rs, src_note):
+        return dict(
+            key=key, label='%s to %s' % (rs[-1]['label'], rs[0]['label']), total_col=None,
+            kinds=['estimate', 'ledger', 'ledger', 'ledger', 'ledger', 'stated'],
+            columns=['Existing property, value change (ours)', 'Development, share of base', 'New growth value',
+                     'Residential rate', 'Rate change', 'Override won'],
+            rows=rs, note='Existing change is ours: total value less new growth, against last year’s total. '
+                          + src_note[0], note_allow=src_note[1])
+    cut = C.fy(STATE_FROM)
+    later = [r for r in trows if r['label'] >= cut]
+    earlier = [r for r in trows if r['label'] < cut]
+    table = dict(caption='Values, development and the rate, by year', views=[
+        view('state', later, ('Every other column is the state’s.', ())),
+        view('town', earlier, ('Every other column is as the town’s annual reports print it.', ()))])
 
     # ------------------------------------------------------------ sources
     man = {r['key']: r for r in csv.DictReader(open(MANIFEST, encoding='utf-8'))}
@@ -277,6 +334,20 @@ def build():
              href='/docs/data/dls-override-votes.csv'),
     ] + [dict(key='h%d' % i, label=s['publisher'] + ' — ' + s['label'], href=s['docs_url'])
          for i, s in enumerate(h['sources'])]
+    # The annual reports the earlier years are read from, and our extract of them.
+    tk = []
+    for i, fn in enumerate(sorted(tfiles)):
+        key = 'town-annual-reports/docs/' + fn[:-4] + '.pdf'
+        if key not in man:
+            fail('%s is not in archive-manifest.csv' % key)
+        yrs = sorted(tfiles[fn])
+        sources.append(dict(key='t%d' % i, label='Town of Lunenburg — %s annual town report, Assessors '
+                            '(FY%d–FY%d)' % (fn.split('-')[1], yrs[0], yrs[-1]), href='/docs/' + key))
+        tk.append('t%d' % i)
+    sources.append(dict(key='tx', label='Lunenburg Budget Project — report-new-growth-history.csv '
+                        '(every figure, its edition, line and check)',
+                        href='/docs/data/report-new-growth-history.csv'))
+    tk.append('tx')
     hk = ['h%d' % i for i in range(len(h['sources']))]
     cite = TP.cite
     return TP.page(
@@ -287,9 +358,9 @@ def build():
         also=[dev_chart, bill_chart],
         finding_figures={'a': R(r_exist), 'b': R(r_dev)},
         blocks=[how, homes_block, gaps],
-        flow=['finding', cite(('chart', 0), 'ng', 'av', 'tr'), cite(('block', 0), 'tr'), cite('ladder', 'ng', 'av', 'tr', *hk),
-              cite(('chart', 1), 'ng', *hk), cite(('block', 1), *hk), cite(('chart', 2), *hk), cite(('block', 2), 'ov'), 'related',
-              cite(('table', 0), 'ng', 'av', 'tr', 'ov'), 'sources'])
+        flow=['finding', cite(('chart', 0), 'ng', 'av', 'tr', *tk), cite(('block', 0), 'tr'), cite('ladder', 'ng', 'av', 'tr', *tk, *hk),
+              cite(('chart', 1), 'ng', *tk, *hk), cite(('block', 1), *hk), cite(('chart', 2), *hk), cite(('block', 2), 'ov'), 'related',
+              cite(('table', 0), 'ng', 'av', 'tr', 'ov', *tk), 'sources'])
 
 
 def output():

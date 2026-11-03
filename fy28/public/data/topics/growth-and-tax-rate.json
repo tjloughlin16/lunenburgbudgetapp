@@ -10,7 +10,7 @@
      "$14.39",
      "1.44%"
     ],
-    "text": "Division of Local Services: new growth by year, and the residential rate as a percent (a $14.39 rate is 1.44%)."
+    "text": "Town reports, then the state: new growth by year, and the rate as a percent (a $14.39 rate is 1.44%)."
    },
    "reference": null,
    "secondary": {
@@ -18,6 +18,16 @@
     "decimals": 2,
     "name": "Tax rate, as a percent of value",
     "texts": [
+     "1.52%",
+     "1.60%",
+     "1.66%",
+     "1.85%",
+     "1.82%",
+     "1.78%",
+     "1.66%",
+     "1.59%",
+     "1.56%",
+     "1.31%",
      "1.42%",
      "1.33%",
      "1.24%",
@@ -44,6 +54,16 @@
     ],
     "unit": "%",
     "values": [
+     1.519,
+     1.603,
+     1.66,
+     1.846,
+     1.816,
+     1.78,
+     1.662,
+     1.595,
+     1.56,
+     1.312,
      1.42,
      1.334,
      1.241,
@@ -75,6 +95,16 @@
      "mark": "bar",
      "name": "New value certified as new growth",
      "texts": [
+      "$7,656,550",
+      "$13,105,604",
+      "$20,569,309",
+      "$9,758,366",
+      "$9,983,300",
+      "$12,012,200",
+      "$16,130,842",
+      "$19,842,600",
+      "$19,769,200",
+      "$20,190,107",
       "$26,050,700",
       "$31,881,000",
       "$24,399,133",
@@ -100,6 +130,16 @@
       "$36,117,700"
      ],
      "values": [
+      7656550.0,
+      13105604.0,
+      20569309.0,
+      9758366.0,
+      9983300.0,
+      12012200.0,
+      16130842.0,
+      19842600.0,
+      19769200.0,
+      20190107.0,
       26050700.0,
       31881000.0,
       24399133.0,
@@ -131,6 +171,16 @@
    "type": "series",
    "unit": "$",
    "x": [
+    "FY1994",
+    "FY1995",
+    "FY1996",
+    "FY1997",
+    "FY1998",
+    "FY1999",
+    "FY2000",
+    "FY2001",
+    "FY2002",
+    "FY2003",
     "FY2004",
     "FY2005",
     "FY2006",
@@ -726,22 +776,13 @@
      "text": "Debt exclusions, which raise the levy outside the limit. The state’s vote file used here carries overrides only."
     },
     {
-     "figures": {
-      "e": {
-       "text": "3.6%",
-       "unit": "percent",
-       "value": 3.59
-      },
-      "r": {
-       "text": "1.8%",
-       "unit": "percent",
-       "value": 1.84
-      }
-     },
+     "figures": {},
      "literals": [
+      "FY1994",
+      "FY1997",
       "FY2025"
      ],
-     "text": "One override passed in these years, for FY2025; that year the rate rose 1.8% while existing values rose 3.6%."
+     "text": "Overrides passed for FY1994, FY1997, FY2025. Each raises the levy, and so the rate, in its year; the table marks them."
     },
     {
      "figures": {},
@@ -761,8 +802,10 @@
   "kind": "line",
   "note": {
    "figures": {},
-   "literals": [],
-   "text": "Division of Local Services: values, new growth and rates. The rate mirrors the first line, not the second."
+   "literals": [
+    "FY2002"
+   ],
+   "text": "Town annual reports to FY2002, then the Division of Local Services. The rate mirrors the first line, not the second."
   },
   "reference": null,
   "series": [
@@ -771,6 +814,16 @@
     "mark": "line",
     "name": "Existing property, change in value (ours)",
     "texts": [
+     "-1.4%",
+     "-3.4%",
+     "-1.2%",
+     "0.8%",
+     "1.5%",
+     "2.7%",
+     "10.9%",
+     "7.5%",
+     "6.6%",
+     "22.3%",
      "4.9%",
      "7.6%",
      "12.9%",
@@ -796,6 +849,16 @@
      "1.7%"
     ],
     "values": [
+     -1.41,
+     -3.36,
+     -1.16,
+     0.85,
+     1.46,
+     2.7,
+     10.95,
+     7.49,
+     6.63,
+     22.3,
      4.92,
      7.61,
      12.87,
@@ -826,6 +889,16 @@
     "mark": "line",
     "name": "New development, share of the base",
     "texts": [
+     "1.6%",
+     "2.8%",
+     "4.4%",
+     "2.0%",
+     "2.0%",
+     "2.4%",
+     "3.0%",
+     "3.2%",
+     "2.9%",
+     "2.7%",
      "2.8%",
      "3.2%",
      "2.2%",
@@ -851,6 +924,16 @@
      "1.5%"
     ],
     "values": [
+     1.65,
+     2.81,
+     4.44,
+     2.04,
+     2.03,
+     2.36,
+     3.02,
+     3.25,
+     2.93,
+     2.73,
      2.82,
      3.2,
      2.21,
@@ -881,6 +964,16 @@
     "mark": "line",
     "name": "Residential tax rate, change",
     "texts": [
+     "5.3%",
+     "5.5%",
+     "3.6%",
+     "11.2%",
+     "-1.6%",
+     "-2.0%",
+     "-6.6%",
+     "-4.0%",
+     "-2.2%",
+     "-15.9%",
      "8.2%",
      "-6.1%",
      "-7.0%",
@@ -906,6 +999,16 @@
      "0.2%"
     ],
     "values": [
+     5.27,
+     5.53,
+     3.56,
+     11.2,
+     -1.63,
+     -1.98,
+     -6.63,
+     -4.03,
+     -2.19,
+     -15.9,
      8.23,
      -6.06,
      -6.97,
@@ -937,6 +1040,16 @@
   "type": "series",
   "unit": "%",
   "x": [
+   "FY1994",
+   "FY1995",
+   "FY1996",
+   "FY1997",
+   "FY1998",
+   "FY1999",
+   "FY2000",
+   "FY2001",
+   "FY2002",
+   "FY2003",
    "FY2004",
    "FY2005",
    "FY2006",
@@ -967,14 +1080,14 @@
   {
    "figures": {
     "a": {
-     "text": "-0.87",
+     "text": "-0.88",
      "unit": "correlation",
-     "value": -0.8721406254424349
+     "value": -0.8830386704556711
     },
     "b": {
-     "text": "-0.11",
+     "text": "-0.16",
      "unit": "correlation",
-     "value": -0.10927206699725123
+     "value": -0.16204163699739996
     }
    },
    "literals": [],
@@ -987,29 +1100,29 @@
     "literals": [],
     "text": "Building more does not lower the rate on its own. When existing homes gain value, the rate falls; when they lose it, the rate climbs."
    },
-   "text": "The rate tracked existing home values (-0.87), not development (-0.11)."
+   "text": "The rate tracked existing home values (-0.88), not development (-0.16)."
   },
   {
    "figures": {
     "d": {
-     "text": "0.78%",
+     "text": "2.73%",
      "unit": "percent",
-     "value": 0.78
+     "value": 2.73
     },
     "e": {
-     "text": "20.4%",
+     "text": "22.3%",
      "unit": "percent",
-     "value": 20.38
+     "value": 22.3
     },
     "r": {
-     "text": "14.9%",
+     "text": "15.9%",
      "unit": "percent",
-     "value": 14.95
+     "value": 15.9
     },
     "y": {
-     "text": "FY2023",
+     "text": "FY2003",
      "unit": "fiscal year",
-     "value": 2023
+     "value": 2003
     }
    },
    "literals": [],
@@ -1019,11 +1132,27 @@
     "jump-d"
    ],
    "so": {
-    "figures": {},
+    "figures": {
+     "d": {
+      "text": "2.73%",
+      "unit": "percent",
+      "value": 2.73
+     },
+     "e": {
+      "text": "22.3%",
+      "unit": "percent",
+      "value": 22.3
+     },
+     "m": {
+      "text": "1.87%",
+      "unit": "percent",
+      "value": 1.87
+     }
+    },
     "literals": [],
-    "text": "The biggest drop in the rate came in a year of little building. It was the market."
+    "text": "Development that year was 2.73% of the base, against 1.87% in a typical year; the fall in the rate tracks the 22.3% rise in existing values."
    },
-   "text": "In FY2023 existing values rose 20.4% and the rate fell 14.9%; development added 0.78%."
+   "text": "In FY2003 existing values rose 22.3% and the rate fell 15.9%; development added 2.73%."
   },
   {
    "figures": {
@@ -1090,15 +1219,15 @@
    "label": {
     "figures": {},
     "literals": [
-     "FY2004",
+     "FY1994",
      "FY2026"
     ],
-    "text": "rate against existing values, FY2004–FY2026 (ours)"
+    "text": "rate against existing values, FY1994–FY2026 (ours)"
    },
    "value": {
-    "text": "-0.87",
+    "text": "-0.88",
     "unit": "correlation",
-    "value": -0.8721406254424349
+    "value": -0.8830386704556711
    }
   },
   {
@@ -1110,9 +1239,9 @@
     "text": "rate against development, same years (ours)"
    },
    "value": {
-    "text": "-0.11",
+    "text": "-0.16",
     "unit": "correlation",
-    "value": -0.10927206699725123
+    "value": -0.16204163699739996
    }
   },
   {
@@ -1135,18 +1264,18 @@
    "label": {
     "figures": {
      "y": {
-      "text": "FY2023",
+      "text": "FY2003",
       "unit": "fiscal year",
-      "value": 2023
+      "value": 2003
      }
     },
     "literals": [],
-    "text": "existing values, FY2023, the biggest rise"
+    "text": "existing values, FY2003, the biggest rise"
    },
    "value": {
-    "text": "20.4%",
+    "text": "22.3%",
     "unit": "percent",
-    "value": 20.38
+    "value": 22.3
    }
   },
   {
@@ -1158,9 +1287,9 @@
     "text": "the rate the same year"
    },
    "value": {
-    "text": "-14.9%",
+    "text": "-15.9%",
     "unit": "percent",
-    "value": -14.95
+    "value": -15.9
    }
   },
   {
@@ -1172,9 +1301,9 @@
     "text": "added by development that year"
    },
    "value": {
-    "text": "0.78%",
+    "text": "2.73%",
     "unit": "percent",
-    "value": 0.78
+    "value": 2.73
    }
   },
   {
@@ -1220,7 +1349,7 @@
      }
     },
     "literals": [],
-    "text": "override won for FY2025, the only one in these years"
+    "text": "override won for FY2025, the latest"
    },
    "value": {
     "text": "$948,136",
@@ -1243,18 +1372,18 @@
  "finding": {
   "figures": {
    "a": {
-    "text": "-0.87",
+    "text": "-0.88",
     "unit": "correlation",
-    "value": -0.8721406254424349
+    "value": -0.8830386704556711
    },
    "b": {
-    "text": "-0.11",
+    "text": "-0.16",
     "unit": "correlation",
-    "value": -0.10927206699725123
+    "value": -0.16204163699739996
    }
   },
   "literals": [],
-  "text": "The tax rate followed what existing homes were worth (-0.87), not how much was built (-0.11)."
+  "text": "The tax rate followed what existing homes were worth (-0.88), not how much was built (-0.16)."
  },
  "flow": [
   {
@@ -1264,7 +1393,24 @@
    "cites": [
     0,
     1,
-    2
+    2,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
    ],
    "i": 0,
    "part": "chart"
@@ -1286,7 +1432,24 @@
     6,
     7,
     8,
-    9
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
    ],
    "part": "ladder"
   },
@@ -1298,7 +1461,24 @@
     6,
     7,
     8,
-    9
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
    ],
    "i": 1,
    "part": "chart"
@@ -1342,7 +1522,24 @@
     0,
     1,
     2,
-    3
+    3,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
    ],
    "i": 0,
    "part": "table"
@@ -1413,6 +1610,91 @@
    "href": "/docs/federal-bls/cpi-u-CUURS11ASA0-2020-2026.json",
    "key": "h5",
    "label": "U.S. Bureau of Labor Statistics — Consumer Price Index, Boston-Cambridge-Newton, 2020-2026"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4513-2005-annual-town-report.pdf",
+   "key": "t0",
+   "label": "Town of Lunenburg — 2005 annual town report, Assessors (FY2000–FY2002)"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4514-2006-annual-town-report.pdf",
+   "key": "t1",
+   "label": "Town of Lunenburg — 2006 annual town report, Assessors (FY2000–FY2002)"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4515-2007-annual-town-report.pdf",
+   "key": "t2",
+   "label": "Town of Lunenburg — 2007 annual town report, Assessors (FY2000–FY2002)"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4516-2008-annual-town-report.pdf",
+   "key": "t3",
+   "label": "Town of Lunenburg — 2008 annual town report, Assessors (FY2001–FY2002)"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4517-2009-annual-town-report.pdf",
+   "key": "t4",
+   "label": "Town of Lunenburg — 2009 annual town report, Assessors (FY2002–FY2002)"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4518-2010-annual-town-report.pdf",
+   "key": "t5",
+   "label": "Town of Lunenburg — 2010 annual town report, Assessors (FY2002–FY2002)"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4521-1995-annual-town-report.pdf",
+   "key": "t6",
+   "label": "Town of Lunenburg — 1995 annual town report, Assessors (FY1990–FY1995)"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4522-1996-annual-town-report.pdf",
+   "key": "t7",
+   "label": "Town of Lunenburg — 1996 annual town report, Assessors (FY1990–FY1996)"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4523-1997-annual-town-report.pdf",
+   "key": "t8",
+   "label": "Town of Lunenburg — 1997 annual town report, Assessors (FY1991–FY1997)"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4524-1998-annual-town-report.pdf",
+   "key": "t9",
+   "label": "Town of Lunenburg — 1998 annual town report, Assessors (FY1994–FY1998)"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4525-1999-annual-town-report.pdf",
+   "key": "t10",
+   "label": "Town of Lunenburg — 1999 annual town report, Assessors (FY1995–FY1999)"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4526-2000-annual-town-report.pdf",
+   "key": "t11",
+   "label": "Town of Lunenburg — 2000 annual town report, Assessors (FY1995–FY2000)"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4527-2001-annual-town-report.pdf",
+   "key": "t12",
+   "label": "Town of Lunenburg — 2001 annual town report, Assessors (FY1995–FY2001)"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4528-2002-annual-town-report.pdf",
+   "key": "t13",
+   "label": "Town of Lunenburg — 2002 annual town report, Assessors (FY1995–FY2002)"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4529-2003-annual-town-report.pdf",
+   "key": "t14",
+   "label": "Town of Lunenburg — 2003 annual town report, Assessors (FY1995–FY2002)"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4530-2004-annual-town-report.pdf",
+   "key": "t15",
+   "label": "Town of Lunenburg — 2004 annual town report, Assessors (FY1996–FY2002)"
+  },
+  {
+   "href": "/docs/data/report-new-growth-history.csv",
+   "key": "tx",
+   "label": "Lunenburg Budget Project — report-new-growth-history.csv (every figure, its edition, line and check)"
   }
  ],
  "table": {
@@ -1427,7 +1709,7 @@
      "Rate change",
      "Override won"
     ],
-    "key": "all",
+    "key": "state",
     "kinds": [
      "estimate",
      "ledger",
@@ -1436,8 +1718,9 @@
      "ledger",
      "stated"
     ],
-    "label": "FY2004 to FY2026",
+    "label": "FY2003 to FY2026",
     "note": "Existing change is ours: total value less new growth, against last year’s total. Every other column is the state’s.",
+    "note_allow": [],
     "rows": [
      {
       "cells": [
@@ -1691,6 +1974,141 @@
        ""
       ],
       "label": "FY2004"
+     },
+     {
+      "cells": [
+       "22.3%",
+       "2.73%",
+       "$20,190,107",
+       "$13.12",
+       "-15.9%",
+       ""
+      ],
+      "label": "FY2003"
+     }
+    ],
+    "total_col": null
+   },
+   {
+    "columns": [
+     "Existing property, value change (ours)",
+     "Development, share of base",
+     "New growth value",
+     "Residential rate",
+     "Rate change",
+     "Override won"
+    ],
+    "key": "town",
+    "kinds": [
+     "estimate",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "stated"
+    ],
+    "label": "FY1994 to FY2002",
+    "note": "Existing change is ours: total value less new growth, against last year’s total. Every other column is as the town’s annual reports print it.",
+    "note_allow": [],
+    "rows": [
+     {
+      "cells": [
+       "6.6%",
+       "2.93%",
+       "$19,769,200",
+       "$15.60",
+       "-2.2%",
+       ""
+      ],
+      "label": "FY2002"
+     },
+     {
+      "cells": [
+       "7.5%",
+       "3.25%",
+       "$19,842,600",
+       "$15.95",
+       "-4.0%",
+       ""
+      ],
+      "label": "FY2001"
+     },
+     {
+      "cells": [
+       "10.9%",
+       "3.02%",
+       "$16,130,842",
+       "$16.62",
+       "-6.6%",
+       ""
+      ],
+      "label": "FY2000"
+     },
+     {
+      "cells": [
+       "2.7%",
+       "2.36%",
+       "$12,012,200",
+       "$17.80",
+       "-2.0%",
+       ""
+      ],
+      "label": "FY1999"
+     },
+     {
+      "cells": [
+       "1.5%",
+       "2.03%",
+       "$9,983,300",
+       "$18.16",
+       "-1.6%",
+       ""
+      ],
+      "label": "FY1998"
+     },
+     {
+      "cells": [
+       "0.8%",
+       "2.04%",
+       "$9,758,366",
+       "$18.46",
+       "11.2%",
+       "override, $654,408"
+      ],
+      "label": "FY1997"
+     },
+     {
+      "cells": [
+       "-1.2%",
+       "4.44%",
+       "$20,569,309",
+       "$16.60",
+       "3.6%",
+       ""
+      ],
+      "label": "FY1996"
+     },
+     {
+      "cells": [
+       "-3.4%",
+       "2.81%",
+       "$13,105,604",
+       "$16.03",
+       "5.5%",
+       ""
+      ],
+      "label": "FY1995"
+     },
+     {
+      "cells": [
+       "-1.4%",
+       "1.65%",
+       "$7,656,550",
+       "$15.19",
+       "5.3%",
+       "override, $100,331"
+      ],
+      "label": "FY1994"
      }
     ],
     "total_col": null

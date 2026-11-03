@@ -1355,6 +1355,11 @@ REFERENCE = [
     'outstanding-debt', 'debt-repayment', 'receivables', 'tax-collection',
     'valuation-by-class', 'capital-plans', 'peg-access-fund',
     'stabilization-balances',
+    # New growth, total valuation and the tax rate before FY2011, one row per PRINTING (a
+    # year reprinted in five editions is five rows), each proved by its table's own identity
+    # and compared with the other editions and the state's DLS files.
+    # scripts/extract_new_growth_history.py. Filter on `status` and pick an `edition`.
+    'report-new-growth-history',
 
     # And the REFUSAL registers beside them, because a year that is not published is a
     # fact somebody needs to be able to look up. Each says which years refused and WHY,

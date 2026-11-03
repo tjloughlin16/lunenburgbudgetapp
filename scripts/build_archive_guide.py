@@ -48,6 +48,8 @@ HAND = [
     ('staff-roster-counts', 'Roster headcount by school and year', 'derived from the above'),
     ('staff-position-map', 'Roster position titles, grouped',
      'a hypothesis about which titles are the same job'),
+    ('report-new-growth-history', 'New growth, total valuation and tax rate, before FY2011',
+     'added valuation x prior rate = revenue; valuation x rate = levy; editions and DLS compared'),
 ]
 ABOUT = [
     ('annual-report-catalogue', 'Every table in every report, with its PRINTED heading'),
@@ -332,7 +334,7 @@ def build_guide():
             '|---|---:|---|---|---|---|---|']
     for p in sorted(glob.glob(os.path.join(DATA, 'report-*.csv'))):
         name = os.path.basename(p)[:-4]
-        if name == 'report-anomalies':
+        if name == 'report-anomalies' or name in {h[0] for h in HAND}:
             continue
         r = line(name, '')
         if r:

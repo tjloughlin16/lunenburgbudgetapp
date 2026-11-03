@@ -144,9 +144,10 @@ def datasets():
 
     for name, what, proof in getattr(G, 'HAND', []):
         add(name, what, proof, 'dedicated')
+    hand = {h[0] for h in getattr(G, 'HAND', [])}
     for p in sorted(glob.glob(os.path.join(DATA, 'report-*.csv'))):
         name = os.path.basename(p)[:-4]
-        if name == 'report-anomalies':
+        if name == 'report-anomalies' or name in hand:
             continue
         add(name, '', '', 'generic')
     out.sort(key=lambda d: -d['rows'])

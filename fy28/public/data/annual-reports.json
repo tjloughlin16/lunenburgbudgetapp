@@ -229,19 +229,19 @@
   {
    "basis": "the dataset inventory in `scripts/build_archive_guide.py`, read here rather than restated, so the two cannot disagree.",
    "bearing": "sizes",
-   "claim": "64 of the 71 datasets are read by a generic extractor that cannot name its columns.",
-   "detail": "The generic extractor records a column as `v1`, `v2`, `v3` -- an ORDINAL, the first column of THAT page that held figures. The ruler is rebuilt per page, so the same name means different columns on different pages. The other 7 have a dedicated extractor that names its columns.",
+   "claim": "64 of the 72 datasets are read by a generic extractor that cannot name its columns.",
+   "detail": "The generic extractor records a column as `v1`, `v2`, `v3` -- an ORDINAL, the first column of THAT page that held figures. The ruler is rebuilt per page, so the same name means different columns on different pages. The other 8 have a dedicated extractor that names its columns.",
    "figure": "gen",
    "figures": {
     "all": {
-     "text": "71",
+     "text": "72",
      "unit": "datasets from these reports",
-     "value": 71
+     "value": 72
     },
     "ded": {
-     "text": "7",
+     "text": "8",
      "unit": "datasets with a dedicated extractor",
-     "value": 7
+     "value": 8
     },
     "gen": {
      "text": "64",
@@ -515,6 +515,15 @@
    "years": "1964–2004"
   },
   {
+   "built_by": "dedicated",
+   "checked": 162,
+   "failed": 28,
+   "name": "report-new-growth-history",
+   "nocheck": 12,
+   "rows": 202,
+   "years": "1986–2010"
+  },
+  {
    "built_by": "generic",
    "checked": 196,
    "failed": 0,
@@ -536,19 +545,19 @@
    "built_by": "generic",
    "checked": 0,
    "failed": 0,
-   "name": "report-signatures",
-   "nocheck": 0,
-   "rows": 182,
-   "years": "2013–2025"
+   "name": "report-property-tax-exemptions",
+   "nocheck": 179,
+   "rows": 179,
+   "years": "1974–1991"
   },
   {
    "built_by": "generic",
    "checked": 0,
    "failed": 0,
-   "name": "report-property-tax-exemptions",
-   "nocheck": 179,
+   "name": "report-signatures",
+   "nocheck": 0,
    "rows": 179,
-   "years": "1974–1991"
+   "years": "2012–2025"
   },
   {
    "built_by": "generic",
@@ -1485,7 +1494,7 @@
   },
   {
    "label": "rows read out of them",
-   "value": "107,676"
+   "value": "107,875"
   }
  ],
  "title": "The annual town reports"
