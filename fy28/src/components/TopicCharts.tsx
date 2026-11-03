@@ -42,7 +42,10 @@ export type SeriesChart = {
     /** Small multiples only: first value to last, written by the generator. */
     change?: string
     /** Overlay only: every value less the first, and its text, written by the generator. */
-    rebased?: (number | null)[]; rebased_texts?: (string | null)[] }[]
+    rebased?: (number | null)[]; rebased_texts?: (string | null)[]
+    /** DIRECT LABELS on a few points: the point's value and what it is, beside it (scripts/topic.py
+     *  track `labels`). Null where a point carries none. */
+    labels?: (string | null)[] }[]
   note: Unit | null
   reference?: { value: number; label: string; text: string } | null
   from_zero?: boolean
@@ -505,7 +508,24 @@ function Series({ c }: { c: SeriesChart }) {
                       ? <circle key={k} cx={p.cx} cy={p.cy} r={3.5} fill={colourOf(s, i)} />
                       : <g key={k} />
                   }}
-                  connectNulls={false} isAnimationActive={false} type="linear" />
+                  connectNulls={false} isAnimationActive={false} type="linear">
+                  {s.labels ? (
+                    <LabelList dataKey={`s${i}`} content={(p: { x?: number | string; y?: number | string; index?: number }) => {
+                      const k = p.index ?? -1, t = s.labels?.[k]
+                      if (!t || p.x == null || p.y == null) return null
+                      // Anchored inward, so a label at either end stays inside the plot; one near the
+                      // start sits BELOW its point, where the lines have not yet risen to cross it.
+                      const end = k > c.x.length / 2
+                      return (
+                        <g key={k}>
+                          <circle cx={Number(p.x)} cy={Number(p.y)} r={3.5} fill={colourOf(s, i)} />
+                          <text x={Number(p.x) + (end ? -6 : 6)} y={Number(p.y) + (end ? -9 : 18)} textAnchor={end ? 'end' : 'start'}
+                            fontSize={11.5} fontWeight={600} fill="var(--text-primary)"
+                            stroke="var(--surface-1)" strokeWidth={3} paintOrder="stroke">{t}</text>
+                        </g>)
+                    }} />
+                  ) : null}
+                </Line>
               )
             })}
             {c.secondary ? (

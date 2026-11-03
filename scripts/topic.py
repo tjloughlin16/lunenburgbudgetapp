@@ -631,13 +631,20 @@ def default_flow(chart, also, blocks, present):
     return f
 
 
-def track(name, values, basis='published', mark=None, colour=None):
+def track(name, values, basis='published', mark=None, colour=None, labels=None):
     """One named line or set of bars in series(). `values` are numbers or None (a gap).
     `colour`: the track's place in the palette when it must match another chart that draws
-    the same thing in a different order -- written only when set."""
+    the same thing in a different order -- written only when set.
+    `labels`: DIRECT LABELS on a few points, {index: words} or {index: (words, allow)}. Drawn
+      beside the point as the point's own value, then the words -- "$4,030, the FY1991 bill in
+      today's dollars" -- so a reader looking for a figure finds it where the eye already is
+      (TJ, 2 November 2026: readers "will look for the 4k"). The value is fmt() of the point, so
+      the label foots to the line; a digit in the words must be declared in `allow`."""
     t = dict(name=' '.join(str(name).split()), values=list(values), basis=basis, mark=mark)
     if colour is not None:
         t['colour'] = int(colour)
+    if labels:
+        t['_labels'] = dict(labels)
     return t
 
 
@@ -699,6 +706,20 @@ def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_f
     if reference is not None:
         rv, rl = reference
         ref = dict(value=rv, label=' '.join(str(rl).split()), text=fmt(unit, rv, decimals))
+    for t in tracks:
+        lab = t.pop('_labels', None)
+        if not lab:
+            continue
+        out = [None] * len(t['values'])
+        for i, w in lab.items():
+            words, allow = (w if isinstance(w, tuple) else (w, ()))
+            if not (0 <= i < len(out)) or t['values'][i] is None:
+                raise ConclusionError('chart %r: a label on point %s, which has no value' % (title, i))
+            stray = [d for d in re.findall(r'\d[\d,.]*', words) if not any(d in a for a in allow)]
+            if stray:
+                raise ConclusionError('chart %r: label digits %s are not declared' % (title, stray))
+            out[i] = '%s, %s' % (fmt(unit, t['values'][i], decimals), ' '.join(words.split()))
+        t['labels'] = out
     # `multiples` is written only when set, so no existing chart's payload changes.
     return _checked(dict(type='series', title=' '.join(title.split()), unit=unit, kind=kind,
                          stacked=bool(stacked), x=list(x),

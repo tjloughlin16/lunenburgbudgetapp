@@ -257,9 +257,10 @@ def build():
     # the first year's figure grown only with inflation, so the gap is the growth beyond it.
     homes_chart = TP.series(
         'Average home value against inflation', hx,
-        [TP.track('Average single-family home, actual', [r['value'] for r in h['rows']], 'published'),
+        [TP.track('Average single-family home, actual', [r['value'] for r in h['rows']], 'published', labels={
+            0: ('the %s value: both lines start here' % h['first'], (h['first'],)), len(h['rows']) - 1: 'actual value'}),
          TP.track('The %s value, grown only with inflation' % h['first'], [r['value_cpi'] for r in h['rows']],
-                  'estimate')],
+                  'estimate', labels={len(h['rows']) - 1: 'inflation only'})],
         '$', kind='line',
         note='Assessed values, not sale prices. Bill and home on one axis would flatten the bill; it '
              'is on its own chart.')
@@ -269,13 +270,12 @@ def build():
         {'v': P(h['value_growth'], 0)}, (h['first'],)))
     bill_chart = TP.series(
         'Average tax bill against inflation', hx,
-        [TP.track('Average single-family bill, actual', [r['bill'] for r in h['rows']], 'published'),
+        [TP.track('Average single-family bill, actual', [r['bill'] for r in h['rows']], 'published', labels={
+            0: ('the %s bill: both lines start here' % h['first'], (h['first'],)), len(h['rows']) - 1: 'actual bill'}),
          TP.track('The %s bill, grown only with inflation' % h['first'], [r['bill_cpi'] for r in h['rows']],
-                  'estimate')],
+                  'estimate', labels={len(h['rows']) - 1: 'inflation only'})],
         '$', kind='line',
-        secondary=dict(name='Bill as a share of the home’s value', values=[r['share'] for r in h['rows']],
-                       unit='%', basis='published', decimals=2),
-        note='The share is the tax rate written as a percent. Boston-area CPI-U, July to June.')
+        note='Inflation by the Boston-area consumer price index, averaged July to June.')
 
     # ------------------------------------------------------------ how it works (statute, a definition first)
     how = TB.explain('Why the rate moves the way it does', [

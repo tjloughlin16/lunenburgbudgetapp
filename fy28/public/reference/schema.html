@@ -245,11 +245,11 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
 </header>
 
 <div class="metrics">
-  <div class="metric"><div class="v">206</div><div class="l">tables</div></div>
+  <div class="metric"><div class="v">207</div><div class="l">tables</div></div>
   <div class="metric"><div class="v">16</div><div class="l">views</div></div>
-  <div class="metric"><div class="v">406,491</div><div class="l">rows</div></div>
-  <div class="metric"><div class="v">3351</div><div class="l">columns</div></div>
-  <div class="metric"><div class="v">78%</div><div class="l">columns described</div></div>
+  <div class="metric"><div class="v">406,695</div><div class="l">rows</div></div>
+  <div class="metric"><div class="v">3369</div><div class="l">columns</div></div>
+  <div class="metric"><div class="v">77%</div><div class="l">columns described</div></div>
 </div>
 
 
@@ -2081,7 +2081,7 @@ to $325</td><td>quoted in source</td></tr>
 <p class="cap sm">No rows. That is the honest state of this table, not a load that failed — see its entry in <code>SCHEMA.md</code>.</p>
 </details>
 </details>
-<details class="scope"><summary class="scopehead"><b>Town money and town subjects</b><span>81 tables &middot; 120,663 rows</span></summary>
+<details class="scope"><summary class="scopehead"><b>Town money and town subjects</b><span>82 tables &middot; 120,865 rows</span></summary>
 <p class="cap">The other 67 departments, the receipts that fund them, and what the annual reports print about the town.</p>
 <p class="tierhead"><b>Tier 1 · totals</b><span>what was appropriated and what is left, by department</span></p>
 <details class="t"><summary><span class="srow"><code>annual_report_receipts</code> <span class="tag scope stown">town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">extract</span> <span class="n">7,856 rows</span> <span class="yr">1959 … 2022 (63 years)</span><button class="open" data-t="annual_report_receipts">Query table</button></span><span class="gr">one row per revenue line per year</span></summary>
@@ -3347,6 +3347,36 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>library_service_values</td><td class="num">2004</td><td>2004</td><td>25</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Movies 22031 borrowed $3.87 sample video re…</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>library-service-values</td><td>t1r4</td><td>Estimated total Value</td><td>85260</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>v1=Estimated total Value (printed header, p…</td><td>checked</td><td>Estimated total Value closes at p25r11 `TOT…</td></tr>
 <tr><td>library_service_values</td><td class="num">2004</td><td>2004</td><td>25</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Audio books 8892 borrowed $9.95 rental cost…</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>library-service-values</td><td>t1r5</td><td>Estimated total Value</td><td>88475</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>v1=Estimated total Value (printed header, p…</td><td>checked</td><td>Estimated total Value closes at p25r11 `TOT…</td></tr>
 <tr><td>library_service_values</td><td class="num">2004</td><td>2004</td><td>25</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>Internet/ Wordprocessing est. 38 hours p/we…</td><td><span class="nul">empty</span></td><td>row</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>library-service-values</td><td>t1r7</td><td>Estimated total Value</td><td>23712</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>v1=Estimated total Value (printed header, p…</td><td>checked</td><td>Estimated total Value closes at p25r11 `TOT…</td></tr>
+</table></div>
+</details>
+<details class="t"><summary><span class="srow"><code>report_new_growth_history</code> <span class="tag scope stown">town</span> <span class="tag">fact</span> <span class="n">202 rows</span> <span class="yr">1986 … 2010 (22 years)</span><button class="open" data-t="report_new_growth_history" data-q="SELECT fy, edition, ng_added_valuation, ng_rate, ng_revenue, status FROM report_new_growth_history WHERE printed_table = &#x27;new_growth&#x27; ORDER BY fy, edition LIMIT 200">Query table</button></span><span class="gr">one row per fiscal year, per printed table, per edition</span></summary>
+<p class="ans">New growth (added valuation, the prior-year rate, the revenue it added, new structures where printed), total assessed valuation and the tax rate, before FY2011, read from the annual town reports with edition and line number.</p>
+<p class="warn">ONE ROW PER PRINTING: a year reprinted in several editions appears several times, so pick one <code>edition</code> or group by <code>fy</code> before summing. Split on <code>status</code>: <code>check failed</code> rows are the town&#x27;s own arithmetic not closing (the FY2008-FY2009 editions print the current year&#x27;s rate in the prior-rate column; FY2009 prints an added valuation the state does not). Disagreements between editions and with the DLS files are in <code>cross_edition</code> and <code>cross_state</code>.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>fy</code></td><td class="ty">INTEGER</td><td>Fiscal year, ending 30 June. FY2026 runs 1 July 2025 to 30 June 2026. <span class="unit">year</span><br><span class="ccaut">INTEGER everywhere except grant_award/grants_history (a multi-year ESSER award) and rate_register (one rate with no year).</span></td></tr>
+<tr><td><code>printed_table</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td><td>Which annual town report the row was read from, as that report names itself.<br><span class="ccaut">FY2016 has TWO editions — the report and an addendum. Summing on fy rather than edition counts that year twice.</span></td></tr>
+<tr><td><code>edition_file</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>lines</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>raw</code></td><td class="ty">TEXT</td><td>The value exactly as printed, before parsing.<br><span class="ccaut">Rule 13: what the source says, beside what we made of it.</span></td></tr>
+<tr><td><code>new_structures</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>ng_added_valuation</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>ng_rate</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>ng_revenue</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>total_valuation</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>tax_rate</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>accounts</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>tax_levy</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>status</code></td><td class="ty">TEXT</td><td>Whether this row&#x27;s table was CHECKED against a total the report itself prints.<br><span class="ccaut"><code>checked</code>, <code>check failed</code>, <code>no check</code>. NOTHING may be aggregated without splitting on this — check failed is not slightly-worse data, it is data whose columns do not sum to the printed total.</span></td></tr>
+<tr><td><code>reconciliation</code></td><td class="ty">TEXT</td><td>The per-column result of that check: what we summed against what the report printed.</td></tr>
+<tr><td><code>cross_edition</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>cross_state</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>fy</th><th>printed_table</th><th>edition</th><th>edition_file</th><th>lines</th><th>raw</th><th>new_structures</th><th>ng_added_valuation</th><th>ng_rate</th><th>ng_revenue</th><th>total_valuation</th><th>tax_rate</th><th>accounts</th><th>tax_levy</th><th>status</th><th>reconciliation</th><th>cross_edition</th><th>cross_state</th></tr>
+<tr><td class="num">1990</td><td>levy_history</td><td>1995</td><td>4521-1995-annual-town-report.txt</td><td>2819-2822</td><td>1990 | 10.27 | 583,057,707 | 5,988,002.65</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>583057707</td><td>10.27</td><td><span class="nul">empty</span></td><td>5988002.65</td><td>checked</td><td>valuation x rate / 1000: 5988002.65089 roun…</td><td>total_valuation: agrees with 1 other printi…</td><td>DLS avg single-family 152350 x 10.27 / 1000…</td></tr>
+<tr><td class="num">2002</td><td>valuation_history</td><td>2006</td><td>4514-2006-annual-town-report.txt</td><td>3151-3156</td><td>2002 | 15.60 | 739,669,900 | 4,545 | 11,538…</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>739669900</td><td>15.60</td><td>4545</td><td>11538850.44</td><td>checked</td><td>valuation x rate / 1000: 11538850.44 equals…</td><td>total_valuation: agrees with 5 other printi…</td><td>DLS assessed total 739669900: agrees; DLS a…</td></tr>
+<tr><td class="num">2005</td><td>valuation_history</td><td>2010</td><td>4518-2010-annual-town-report.txt</td><td>1102-1107</td><td>2005 | 13.34 | 1,104,022,400 | 4,708 | 14,7…</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1104022400</td><td>13.34</td><td>4708</td><td>14727658.82</td><td>checked</td><td>valuation x rate / 1000: 14727658.816 round…</td><td>total_valuation: agrees with 5 other printi…</td><td>DLS assessed total 1104022400: agrees; DLS …</td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>report_office_budget_cuts</code> <span class="tag scope stown">town</span> <span class="tag">extract</span> <span class="n">4 rows</span> <span class="yr">1983–1983</span><button class="open" data-t="report_office_budget_cuts" data-q="SELECT label, v1, v2, v3 FROM report_office_budget_cuts">Query table</button></span><span class="gr">one row per office</span></summary>
@@ -5762,10 +5792,10 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 </details>
-<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>12 tables &middot; 14,421 rows</span></summary>
+<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>12 tables &middot; 14,423 rows</span></summary>
 <p class="cap">Which document a figure came from, what has been read, and what these tables mean.</p>
 <p class="tierhead"><b>Tier 2 · categories</b><span>whether a category — guidance, special education, transport — is over</span></p>
-<details class="t"><summary><span class="srow"><code>build_inputs</code> <span class="tag scope sarchive">archive</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">provenance</span> <span class="n">193 rows</span><button class="open" data-t="build_inputs" data-q="SELECT count(*) AS files FROM build_inputs">Query table</button></span><span class="gr">one row per CSV file this database was built from</span></summary>
+<details class="t"><summary><span class="srow"><code>build_inputs</code> <span class="tag scope sarchive">archive</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">provenance</span> <span class="n">194 rows</span><button class="open" data-t="build_inputs" data-q="SELECT count(*) AS files FROM build_inputs">Query table</button></span><span class="gr">one row per CSV file this database was built from</span></summary>
 <p class="ans">Which files, by sha256, produced the figures in this database — so a reader can tell whether it still matches them. The database is a derived read model rebuilt from the CSVs; this is the only thing that records WHEN and FROM WHAT, which is what makes staleness detectable.</p>
 <p class="warn">A hash here is of the bytes at build time. It says nothing about whether those bytes were correct, only whether they have since changed. Ask scripts/db_freshness.py rather than reading this by hand.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -5775,8 +5805,8 @@ to $325</td><td>quoted in source</td></tr>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>path</th><th>sha256</th></tr>
 <tr><td>sources/data/report-capital-project-costs.c…</td><td>ad1c7d9340bfdb69b76d2a6f542776039d026495799…</td></tr>
-<tr><td>sources/data/report-revenue-cash-invested.c…</td><td>b6f8a70be85c0b74af369effb9aec0acbcc79853e48…</td></tr>
-<tr><td>sources/data/report-school-lunch.csv</td><td>b49894606358b8d882d5aeb945251f7c25435e89620…</td></tr>
+<tr><td>sources/data/report-proposed-salary-schedul…</td><td>9b3fc346dc8785202089cd8469937d4a36e718bf371…</td></tr>
+<tr><td>sources/data/report-school-census-minors.csv</td><td>4428b74929a7169253dc2f5c6ef18a0347a9de60b9f…</td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>build_meta</code> <span class="tag scope sarchive">archive</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">provenance</span> <span class="n">2 rows</span><button class="open" data-t="build_meta" data-q="SELECT key, value FROM build_meta ORDER BY key">Query table</button></span><span class="gr">one row per fact about this build (key, value)</span></summary>
@@ -5788,8 +5818,8 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 <p class="cap sm">First 2 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>key</th><th>value</th></tr>
-<tr><td>built_at</td><td>2026-11-03T02:28:23Z</td></tr>
-<tr><td>inputs</td><td>193</td></tr>
+<tr><td>built_at</td><td>2026-11-03T02:44:08Z</td></tr>
+<tr><td>inputs</td><td>194</td></tr>
 </table></div>
 </details>
 <p class="tierhead"><b>Not about money</b><span>Counts, names, dates and documents — everything this archive holds that is not a dollar figure</span></p>
@@ -5974,7 +6004,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">2020</td><td>FY2020</td><td>4127-fy-2020-annual-town-report.pdf</td><td>40-41</td><td>Trust funds fiscal year 2020 summary</td><td>unreadable / OCR damage</td><td>table note</td><td>Here the table is transposed into column ru…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>table_semantics</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">206 rows</span><button class="open" data-t="table_semantics">Query table</button></span><span class="gr">one row per table in this database</span></summary>
+<details class="t"><summary><span class="srow"><code>table_semantics</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">207 rows</span><button class="open" data-t="table_semantics">Query table</button></span><span class="gr">one row per table in this database</span></summary>
 <p class="ans">This page&#x27;s own source. One row per table: its role, whose money it is, how finely it resolves money, its grain, what it holds, and what goes wrong if it is used carelessly.</p>
 <p class="warn">Self-describing, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>

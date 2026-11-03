@@ -1,5 +1,5 @@
 import {
-  Bar, BarChart, CartesianGrid, ComposedChart, Line, LineChart, ReferenceLine,
+  Bar, BarChart, CartesianGrid, LabelList, Line, LineChart, ReferenceLine,
   ResponsiveContainer, Tooltip, XAxis, YAxis,
 } from 'recharts'
 import type { ChartProps } from './analysisCharts'
@@ -114,61 +114,56 @@ export type Homes = { base: string; first: string; rows: HomeRow[]; value_growth
 const usd = (v: number) => `$${Math.round(v).toLocaleString('en-US')}`
 const k = (v: number) => (v >= 1000 ? `$${Math.round(v / 1000)}k` : `$${v}`)
 
-/** HOMES AND THE TAX BILL (TJ, 2 November 2026). TWO PANELS on one year axis, not one chart: a
- *  home is worth about seventy times its bill, so on a shared dollar axis the bill is a flat line
- *  on the floor. Each panel draws the ACTUAL figure, in each year's own dollars, beside the first
- *  year's figure grown only with inflation -- the gap is the growth beyond inflation, and nobody
- *  has to convert (a resident had inflated an already-adjusted figure a second time). The bill's
- *  panel carries the bill as a share of the value on its right axis: the tax rate as a percent. */
+/** HOMES AND THE TAX BILL against inflation (TJ, 2 November 2026). Each panel asks one question --
+ *  did this outpace inflation? -- so each draws exactly two lines: the ACTUAL figure in each year's
+ *  own dollars, and the first year's figure grown ONLY with inflation. The lines are named where
+ *  they end, with their values, and the shared start says what it is; there is no legend to look
+ *  up. A third line on a second axis was tried and removed: TJ, reading it, "super not clear".
+ *  Two panels, because a home is worth about seventy times its bill. */
 export function HistoricalHomes({ h }: { h: Homes }) {
   const rows = h.rows.map(r => ({ ...r, x: r.fy }))
-  const xa = <XAxis dataKey="x" type="number" domain={['dataMin', 'dataMax']} tickCount={8}
-    allowDecimals={false} tick={tick} tickFormatter={(v: number) => `FY${String(v).slice(2)}`} />
-  return (
-    <div className="min-w-0">
-      <div className="flex flex-wrap gap-x-4 gap-y-1 text-[12.5px] font-semibold mt-1" style={{ color: 'var(--text-secondary)' }}>
-        <span><span aria-hidden style={{ color: BLUE }}>━</span> Average single-family home, assessed value, actual</span>
-        <span><span aria-hidden>┅</span> The {h.first} value, grown only with inflation</span>
-      </div>
-      <div style={{ width: '100%', height: 200 }}>
+  const last = rows.length - 1
+  const a = rows[0], z = rows[last]
+  const label = (p: { x?: number | string; y?: number | string; index?: number }, k: number, text: string,
+    colour: string, below: boolean, start = false) =>
+    p.index === k && p.x != null && p.y != null ? (
+      <g key={`${k}${text}`}>
+        <circle cx={Number(p.x)} cy={Number(p.y)} r={3.5} fill={colour} />
+        <text x={Number(p.x) + (start ? 6 : -6)} y={Number(p.y) + (below ? 17 : -9)} textAnchor={start ? 'start' : 'end'}
+          fontSize={12} fontWeight={600} fill="var(--text-primary)" stroke="var(--surface-1)" strokeWidth={3}
+          paintOrder="stroke">{text}</text>
+      </g>) : null
+  const panel = (title: string, actual: 'value' | 'bill', cpi: 'value_cpi' | 'bill_cpi', colour: string, what: string) => (
+    <>
+      <p className="text-[13px] font-semibold mt-3" style={{ color: 'var(--text-secondary)' }}>{title}</p>
+      <div style={{ width: '100%', height: 230 }}>
         <ResponsiveContainer>
-          <LineChart data={rows} margin={{ top: 8, right: 52, left: 0, bottom: 0 }} syncId="homes">
+          <LineChart data={rows} margin={{ top: 24, right: 12, left: 0, bottom: 4 }} syncId="homes">
             <CartesianGrid stroke="var(--grid)" vertical={false} />
-            {xa}
+            <XAxis dataKey="x" type="number" domain={['dataMin', 'dataMax']} tickCount={8} allowDecimals={false}
+              tick={tick} tickFormatter={(v: number) => `FY${String(v).slice(2)}`} />
             <YAxis tickFormatter={(v: number) => k(N(v))} width={52} tick={tick} domain={[0, 'auto']} />
             <Tooltip contentStyle={box} labelFormatter={(l) => `FY${l}`}
-              formatter={(v, n) => [usd(N(v)), n === 'value' ? 'average value, actual' : `${h.first} value grown with inflation`]} />
-            <Line dataKey="value" name="value" stroke={BLUE} strokeWidth={2} dot={false} isAnimationActive={false} />
-            <Line dataKey="value_cpi" name="value_cpi" stroke="var(--text-muted)" strokeWidth={1.5} strokeDasharray="5 4"
-              dot={false} isAnimationActive={false} />
+              formatter={(v, n) => [usd(N(v)), n === actual ? `${what}, actual` : 'if it had only kept up with inflation']} />
+            <Line dataKey={actual} name={actual} stroke={colour} strokeWidth={2.25} dot={false} isAnimationActive={false}>
+              <LabelList dataKey={actual} content={(p: { x?: number | string; y?: number | string; index?: number }) =>
+                label(p, 0, `${usd(a[actual])}, the ${h.first} ${what}: both lines start here`, colour, true, true)
+                ?? label(p, last, `${usd(z[actual])}, actual ${what}`, colour, false)} />
+            </Line>
+            <Line dataKey={cpi} name={cpi} stroke="var(--text-muted)" strokeWidth={1.75} strokeDasharray="5 4"
+              dot={false} isAnimationActive={false}>
+              <LabelList dataKey={cpi} content={(p: { x?: number | string; y?: number | string; index?: number }) =>
+                label(p, last, `${usd(z[cpi])}, inflation only`, 'var(--text-muted)', true)} />
+            </Line>
           </LineChart>
         </ResponsiveContainer>
       </div>
-      <div className="flex flex-wrap gap-x-4 gap-y-1 text-[12.5px] font-semibold mt-3" style={{ color: 'var(--text-secondary)' }}>
-        <span><span aria-hidden style={{ color: AMBER }}>━</span> Average tax bill, actual (left)</span>
-        <span><span aria-hidden style={{ color: 'var(--text-muted)' }}>┅</span> The {h.first} bill, grown only with inflation (left)</span>
-        <span><span aria-hidden>·····</span> Bill as a share of the value, which is the tax rate (right)</span>
-      </div>
-      <div style={{ width: '100%', height: 220 }}>
-        <ResponsiveContainer>
-          <ComposedChart data={rows} margin={{ top: 8, right: 0, left: 0, bottom: 4 }} syncId="homes">
-            <CartesianGrid stroke="var(--grid)" vertical={false} />
-            {xa}
-            <YAxis yAxisId="d" tickFormatter={(v: number) => k(N(v))} width={52} tick={tick} domain={[0, 'auto']} />
-            <YAxis yAxisId="p" orientation="right" width={52} tick={tick} domain={[0, 'auto']}
-              tickFormatter={(v: number) => `${N(v).toFixed(1)}%`} />
-            <Tooltip contentStyle={box} labelFormatter={(l) => `FY${l}`}
-              formatter={(v, n, p: { payload?: HomeRow }) => n === 'share'
-                ? [`${N(v).toFixed(2)}% ($${p.payload?.rate.toFixed(2)} per $1,000)`, 'bill as share of value']
-                : [usd(N(v)), n === 'bill' ? 'average bill, actual' : `${h.first} bill grown with inflation`]} />
-            <Line yAxisId="d" dataKey="bill" name="bill" stroke={AMBER} strokeWidth={2} dot={false} isAnimationActive={false} />
-            <Line yAxisId="d" dataKey="bill_cpi" name="bill_cpi" stroke="var(--text-muted)" strokeWidth={1.5}
-              strokeDasharray="5 4" dot={false} isAnimationActive={false} />
-            <Line yAxisId="p" dataKey="share" name="share" stroke="var(--text-primary)" strokeWidth={1.5}
-              strokeDasharray="1 3" dot={false} isAnimationActive={false} />
-          </ComposedChart>
-        </ResponsiveContainer>
-      </div>
+    </>
+  )
+  return (
+    <div className="min-w-0">
+      {panel('Average tax bill', 'bill', 'bill_cpi', AMBER, 'bill')}
+      {panel('Average single-family home, assessed value', 'value', 'value_cpi', BLUE, 'value')}
     </div>
   )
 }
