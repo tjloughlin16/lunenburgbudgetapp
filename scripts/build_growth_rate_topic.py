@@ -371,12 +371,12 @@ def build():
     # said it raises no existing bill. Both are right about different quantities, so the page says
     # which is which before either appears.
     two = TB.explain('Two different bills', [
-        'The average bill is every single-family home’s tax added up, divided by the number of homes. '
-        'One home’s bill is that home’s value times the rate.',
+        '**The average bill** is every single-family home’s tax added up, divided by the number of homes. '
+        '**One home’s bill** is that home’s value times the rate.',
         'They move differently. A new or enlarged home pays its own tax, and no other home’s bill rises. '
         'But it usually pays more than the average, so the average goes up.',
-        'The chart below explains the average bill. The table further down explains what changes one '
-        'home’s bill.',
+        'The chart below explains **the average bill**. The table further down explains what changes '
+        '**one home’s bill**.',
     ], place='lead', tone='define')
 
     # ------------------------------------------------------------ how it works (statute, a definition first)

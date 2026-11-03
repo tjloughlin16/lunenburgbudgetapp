@@ -86,7 +86,7 @@ CONFIRMED_DISTINCT = {
     # TJ, 2 November 2026: "there are 2 genevieve nass's! One is the mom, the other the daughter.
     # both worked for lunenburg." The run rule had already split them on the 1982-1998 absence.
     'genevievenass': dict(who='a mother and her daughter, both of whom worked for Lunenburg',
-                          told='2 November 2026', by='a community member'),
+                          told='2 November 2026', by='the community'),
 }
 TITLES = {'mrs', 'mr', 'miss', 'ms', 'dr', 'jr', 'sr', 'ii', 'iii', 'rev', 'sister', 'ed'}
 
@@ -1303,7 +1303,7 @@ def conclusions_for(d, x):
             id='one-name-two-careers',
             claim='%s: a school cook from %d to %d, then a name under Phys. Ed. from %d'
                   % (sh['name'], sh['a']['first'], sh['a']['last'], sh['b']['first']),
-            so_what=('Absent from %s rosters in between; a mother and daughter, a community member reported.'
+            so_what=('Absent from %s rosters in between; a mother and daughter, the community worked out.'
                      if sh['key'] in CONFIRMED_DISTINCT else
                      'Absent from %s rosters in between; whether it is one person, no report says.')
                     % C.num(gap),
@@ -1797,7 +1797,8 @@ def payload(d, x):
         town_entries=d['town']['entries'], town_distinct=d['town']['distinct'],
         town_held=[d['town']['held'][0], d['town']['held'][-1], len(d['town']['held'])],
         school_entries=rs['entries'], school_held=len(rs['held']),
-        roster_runs=[bare(r) for r in roster_runs(d)], roster_shared=rs['shared'],
+        roster_runs=[bare(r) for r in roster_runs(d)], roster_shared=(dict(rs['shared'], confirmed=CONFIRMED_DISTINCT.get(rs['shared']['key']))
+                       if rs['shared'] else None),
         first_aide=rs['para'],
         roster_rule='A run breaks when a name is missing from more than %d consecutive '
                     'rosters held.' % MAX_ABSENT,

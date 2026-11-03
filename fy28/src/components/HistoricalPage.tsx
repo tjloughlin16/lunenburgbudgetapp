@@ -66,7 +66,8 @@ export type HistoricalPayload = {
   town_held: [number, number, number]
   school_entries: number
   school_held: number
-  roster_shared: { name: string; naive_span: number; a: Half; b: Half } | null
+  roster_shared: { name: string; naive_span: number; a: Half; b: Half;
+    confirmed?: { who: string; told: string; by: string } | null } | null
   roster_rule: string
   first_aide: { first: Entry; last_fy: number; last_count: number }
   town_manager: (Quote & { what: string })[]
@@ -728,22 +729,26 @@ function Mystery({ s, gap }: { s: NonNullable<HistoricalPayload['roster_shared']
     </div>
   )
   return (
-    <Section id="mystery" eyebrow="A roster mystery" title={<>One name, two careers: {s.name}</>}>
+    <Section id="mystery" eyebrow={s.name} title={s.confirmed ? <>A Roster Mystery: SOLVED</> : <>One name, two careers: {s.name}</>}>
       <div className="grid sm:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] gap-3 items-center mt-5 min-w-0">
         {half(s.a, 'var(--brand)')}
         <div className="text-center py-1">
-          <div className="text-[40px] font-black leading-none" style={{ color: 'var(--series-revenue)' }}>?</div>
+          <div className="text-[40px] font-black leading-none" style={{ color: 'var(--series-revenue)' }}>{s.confirmed ? '2' : '?'}</div>
+          {s.confirmed ? <div className="text-[12px] font-semibold">people</div> : null}
           <div className="text-[12px]" style={{ color: 'var(--text-muted)' }}>absent from {gap} rosters</div>
         </div>
         {half(s.b, 'var(--subj-3)')}
       </div>
       <p className="text-[15px] leading-relaxed mt-4 max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
         Matched on the name alone, this would top the leaderboard at {s.naive_span} years.
-        Whether the cafeteria’s cook and the name under Phys.&nbsp;Ed. are one person, no
-        report says.
+        {s.confirmed
+          ? <> It does not, because they are two people: {s.confirmed.who}. The community
+            worked that out; no report says it.</>
+          : <> Whether the cafeteria’s cook and the name under Phys.&nbsp;Ed. are one person, no
+            report says.</>}
       </p>
       <Ours kind="Why it is split">
-        Same name is not same person. That is why a run on this page breaks on a long absence.
+        Same name is not same person. That is why a run on this page breaks on a long absence{s.confirmed ? ', and here it split them correctly before anybody told us' : ''}.
       </Ours>
     </Section>
   )
