@@ -993,8 +993,10 @@ GROUPS = [
         'blurb': 'The school department’s accounts-payable batches behind the warrant on the '
                  'School Committee’s 15 July 2026 agenda, sent to this project by the '
                  'Superintendent’s office on 3 November 2026 in answer to a records request, '
-                 'redacted by the district. Six of the nine are here; three are held because '
-                 'their redaction left the covered words in the text layer.',
+                 'redacted by the district. Four are the district’s files as delivered; five are '
+                 'our redacted copies, rebuilt as images: three because the district’s redaction '
+                 'left the covered words in the text layer, two because a family receiving '
+                 'school services could still be identified.',
         'items': [
             ('correspondence/2026-11-03-school-warrant-batch-5765-2026-06-18.pdf',
              'Warrant batch 5765, 18 June 2026', 2,
@@ -1004,10 +1006,7 @@ GROUPS = [
              'Warrant batch 5780, 23 June 2026', 2,
              'Coversheet with the batch’s grand total, the MUNIS invoice entry proof list, and '
              'the bills behind each voucher. Redacted by the district.'),
-            ('correspondence/2026-11-03-school-warrant-batch-5806-2026-06-30.pdf',
-             'Warrant batch 5806, 30 June 2026', 2,
-             'Coversheet with the batch’s grand total, the MUNIS invoice entry proof list, and '
-             'the bills behind each voucher. Redacted by the district.'),
+
             ('correspondence/2026-11-03-school-warrant-batch-5808-2026-06-30.pdf',
              'Warrant batch 5808, 30 June 2026', 2,
              'Coversheet with the batch’s grand total, the MUNIS invoice entry proof list, and '
@@ -1016,14 +1015,36 @@ GROUPS = [
              'Warrant batch 5809, 30 June 2026', 2,
              'Coversheet with the batch’s grand total, the MUNIS invoice entry proof list, and '
              'the bills behind each voucher. Redacted by the district.'),
-            ('correspondence/2026-11-03-school-warrant-batch-5810-2026-06-30.pdf',
-             'Warrant batch 5810, 30 June 2026', 2,
+
+            ('correspondence/2026-11-03-school-warrant-batch-5806-2026-06-30.redacted-d86535f9.pdf',
+             'Warrant batch 5806, 30 June 2026 (our redacted copy)', 2,
              'Coversheet with the batch’s grand total, the MUNIS invoice entry proof list, and '
-             'the bills behind each voucher. Redacted by the district.'),
+             'the bills behind each voucher. Redacted by the district, then by us: rebuilt as '
+             'images, with our notice page first.'),
+            ('correspondence/2026-11-03-school-warrant-batch-5810-2026-06-30.redacted.pdf',
+             'Warrant batch 5810, 30 June 2026 (our redacted copy)', 2,
+             'Coversheet with the batch’s grand total, the MUNIS invoice entry proof list, and '
+             'the bills behind each voucher. Redacted by the district, then by us: rebuilt as '
+             'images, with our notice page first.'),
+            ('correspondence/2026-11-03-school-warrant-batch-5811-2026-06-30.redacted.pdf',
+             'Warrant batch 5811, 30 June 2026 (our redacted copy)', 2,
+             'Coversheet with the batch’s grand total, the MUNIS invoice entry proof list, and '
+             'the bills behind each voucher. Redacted by the district, then by us: rebuilt as '
+             'images, with our notice page first.'),
+            ('correspondence/2026-11-03-school-warrant-batch-5818-2026-06-30.redacted.pdf',
+             'Warrant batch 5818, 30 June 2026 (our redacted copy)', 2,
+             'Coversheet with the batch’s grand total, the MUNIS invoice entry proof list, and '
+             'the bills behind each voucher. Redacted by the district, then by us: rebuilt as '
+             'images, with our notice page first.'),
+            ('correspondence/2026-11-03-school-warrant-batch-5823-2026-06-30.redacted.pdf',
+             'Warrant batch 5823, 30 June 2026 (our redacted copy)', 2,
+             'Coversheet with the batch’s grand total, the MUNIS invoice entry proof list, and '
+             'the bills behind each voucher. Redacted by the district, then by us: rebuilt as '
+             'images, with our notice page first.'),
             ('correspondence/2026-11-03-school-warrants-2026-06-18-to-30.md',
              'How these reached us', 3,
              'The email, the publisher’s filenames and sha256s, and the check of whether the '
-             'district’s redaction redacts, including why three batches are held.'),
+             'district’s redaction redacts, and why five batches are our redacted copies.'),
         ],
     },
     {

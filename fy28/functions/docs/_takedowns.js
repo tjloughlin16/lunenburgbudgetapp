@@ -2,6 +2,24 @@
 // Every bucket key here answers 410 Gone at /docs/<path>, with its reason.
 // `python3 scripts/takedown.py --check` fails if this no longer matches the register.
 export const TAKEN_DOWN = {
+  "correspondence/2026-11-03-school-warrant-batch-5806-2026-06-30.pdf": {
+    "decided_on": "2026-11-03",
+    "reason": "This warrant batch, as the district redacted it, still lets a reader identify a family receiving school services: payee numbers beside redacted parent names, a family's initials tied to a special-education placement, and a pupil named on a supporting page. Our redacted copy replaces it.",
+    "replacement": "/docs/correspondence/2026-11-03-school-warrant-batch-5806-2026-06-30.redacted.pdf",
+    "state": "stopped serving"
+  },
+  "correspondence/2026-11-03-school-warrant-batch-5806-2026-06-30.redacted.pdf": {
+    "decided_on": "2026-11-03",
+    "reason": "Our first redacted copy of this warrant batch missed payee numbers printed with leading zeros on two ledger pages. A corrected copy replaces it.",
+    "replacement": "/docs/correspondence/2026-11-03-school-warrant-batch-5806-2026-06-30.redacted-d86535f9.pdf",
+    "state": "stopped serving"
+  },
+  "correspondence/2026-11-03-school-warrant-batch-5810-2026-06-30.pdf": {
+    "decided_on": "2026-11-03",
+    "reason": "This warrant batch, as the district redacted it, still lets a reader identify a family receiving school services: payee numbers beside redacted parent names. Our redacted copy replaces it.",
+    "replacement": "/docs/correspondence/2026-11-03-school-warrant-batch-5810-2026-06-30.redacted.pdf",
+    "state": "stopped serving"
+  },
   "town-ledgers/account-details/account-details-fy2024-fund1301.xlsx": {
     "decided_on": "2026-10-19",
     "reason": "This raw MUNIS export names a private family on a returned (NSF) athletics-fee check. Its figures are published, with the family removed, in our redacted reading.",
