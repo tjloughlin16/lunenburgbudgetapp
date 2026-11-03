@@ -46,7 +46,7 @@ export type SeriesChart = {
     /** DIRECT LABELS on a few points: the point's value and what it is, beside it (scripts/topic.py
      *  track `labels`). Null where a point carries none. */
     labels?: (string | null)[] }[]
-  note: Unit | null
+  note: Unit | null; use?: Unit | null
   reference?: { value: number; label: string; text: string } | null
   from_zero?: boolean
   /** Small multiples: one panel per track, all on one scale from zero (scripts/topic.py). */
@@ -66,12 +66,12 @@ export type RankingChart = {
     mark?: number; mark_text?: string; gap_text?: string; over?: boolean
     /** the page this row is about (scripts/topic.py ranking hrefs) */
     href?: string }[]
-  highlight: string[]; note: Unit | null
+  highlight: string[]; note: Unit | null; use?: Unit | null
   value_label?: string; mark_label?: string; gap_label?: string; under_label?: string
 }
 export type PartsChart = {
   type: 'parts'; title: string; unit: string; basis: Basis
-  parts: { label: string; value: number; text: string; share: string }[]; total: string; note: Unit | null
+  parts: { label: string; value: number; text: string; share: string }[]; total: string; note: Unit | null; use?: Unit | null
   /** The one part the page is about: in colour, every other part neutral (scripts/topic.py). */
   highlight?: string
 }
@@ -79,7 +79,7 @@ export type BridgeChart = {
   type: 'bridge'; title: string; unit: string; basis: Basis
   start: { label: string; value: number; text: string }
   steps: { label: string; value: number; text: string; after?: string }[]
-  end: { label: string; value: number; text: string }; note: Unit | null
+  end: { label: string; value: number; text: string }; note: Unit | null; use?: Unit | null
 }
 export type ImageChart = { type: 'image'; src: string; alt: string; caption: Unit }
 /** A PRESENCE MATRIX (scripts/topic.py presence): rows of things, columns of holders, a dot
@@ -92,7 +92,7 @@ export type PresenceChart = {
   spans: { label: string; n: number }[] | null
   groups: { label: string; rows: { label: string; cells: (string | null)[]; count: number
     count_text: string; lacks: boolean }[] }[]
-  note: Unit | null
+  note: Unit | null; use?: Unit | null
 }
 export type InlineChart = SeriesChart | RankingChart | PartsChart | BridgeChart | ImageChart | PresenceChart
 
@@ -142,8 +142,8 @@ function tick(unit: string, v: number): string {
 const unitWord = (u: string) =>
   u === '$' ? 'dollars' : u === '%' ? 'percent' : u === 'count' ? 'a count' : u
 
-function Frame({ title, basis, note, label, children }: {
-  title: string; basis?: Basis; note: Unit | null; label: string; children: React.ReactNode
+function Frame({ title, basis, note, use, label, children }: {
+  title: string; basis?: Basis; note: Unit | null; use?: Unit | null; label: string; children: React.ReactNode
 }) {
   const tag = basis ? BASIS_TAG[basis] : null
   return (
@@ -153,6 +153,8 @@ function Frame({ title, basis, note, label, children }: {
         {tag ? <span className="text-[10px] font-semibold uppercase tracking-widest"
           style={{ color: 'var(--text-muted)' }}>{tag}</span> : null}
       </figcaption>
+      {use ? <p className="text-[13.5px] leading-snug -mt-1 mb-3" style={{ color: 'var(--text-secondary)' }}>
+        <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>How to use it: </span>{use.text}</p> : null}
       {children}
       {note ? <p className="text-[12.5px] leading-snug mt-3" style={{ color: 'var(--text-muted)' }}>
         {note.text}</p> : null}
@@ -244,7 +246,7 @@ function Multiples({ c }: { c: SeriesChart }) {
   const top = ([2, 4, 6, 8, 10, 12, 15, 20, 30, 40, 60, 80, 100].find(m => m * mag >= max) ?? 100) * mag
   const common = c.series.every(s => s.basis === c.series[0].basis) ? c.series[0].basis : undefined
   return (
-    <Frame title={c.title} basis={common} note={c.note} label={seriesLabel(c)}>
+    <Frame title={c.title} basis={common} note={c.note} use={c.use} label={seriesLabel(c)}>
       <div className={`grid grid-cols-1 sm:grid-cols-2 ${c.series.length > 6 ? 'md:grid-cols-3' : ''} gap-x-5 gap-y-4`}>
         {c.series.map((s, i) => {
           const pts = s.texts.map((t, k) => [c.x[k], t] as const).filter(([, t]) => t != null)
@@ -344,7 +346,7 @@ function Overlay({ c }: { c: SeriesChart }) {
   // The picked-out line is drawn LAST, so it sits on top of the faded ones.
   const order = c.series.map((_, i) => i).sort((a, b) => (a === focus ? 1 : 0) - (b === focus ? 1 : 0))
   return (
-    <Frame title={c.title} basis={common} note={c.note} label={seriesLabel(c)}>
+    <Frame title={c.title} basis={common} note={c.note} use={c.use} label={seriesLabel(c)}>
       {canRebase ? (
         <div className="inline-flex rounded-lg p-0.5 mb-3" role="group" aria-label="What the lines show"
           style={{ background: 'var(--surface-3)' }}>
@@ -452,7 +454,7 @@ function Series({ c }: { c: SeriesChart }) {
   // One kind across every track is said once, beside the title, not on every key.
   const common = c.series.every(s => s.basis === c.series[0].basis) ? c.series[0].basis : undefined
   return (
-    <Frame title={c.title} basis={common} note={c.note} label={seriesLabel(c)}>
+    <Frame title={c.title} basis={common} note={c.note} use={c.use} label={seriesLabel(c)}>
       {c.series.length > 1 ? (
         <div className="flex flex-wrap gap-x-4 gap-y-1 mb-2">
           {c.series.map((s, i) => <Key key={s.name} colour={colourOf(s, i)} name={s.name} basis={s.basis}
@@ -584,7 +586,7 @@ function Bullet({ c }: { c: RankingChart }) {
   const label = `${c.title}. Ranked, in ${unitWord(c.unit)}. `
     + c.rows.map(r => `${r.label}: ${c.value_label} ${shown(r.total)}, ${c.mark_label} ${shown(r.mark_text)}, ${gap(r)}`).join('; ') + '.'
   return (
-    <Frame title={c.title} basis={c.basis} note={c.note} label={label}>
+    <Frame title={c.title} basis={c.basis} note={c.note} use={c.use} label={label}>
       <div className="flex flex-wrap gap-x-4 gap-y-1 mb-3 text-[12px]" style={{ color: 'var(--text-secondary)' }}>
         <span className="inline-flex items-center gap-1.5">
           <span className="inline-block w-4 h-2.5 rounded-[2px]" style={{ background: COLOURS[0] }} />{c.value_label}, past the tick</span>
@@ -639,7 +641,7 @@ function Ranking({ c }: { c: RankingChart }) {
   const label = `${c.title}. Ranked, in ${unitWord(c.unit)}. `
     + c.rows.map(r => `${r.label}${c.highlight.includes(r.label) ? ' (highlighted)' : ''}: ${shown(r.total)}`).join('; ') + '.'
   return (
-    <Frame title={c.title} basis={c.basis} note={c.note} label={label}>
+    <Frame title={c.title} basis={c.basis} note={c.note} use={c.use} label={label}>
       {c.stack ? (
         <div className="flex flex-wrap gap-x-4 gap-y-1 mb-3">
           {c.stack.map((s, i) => <Key key={s} colour={COLOURS[i]} name={s} basis={c.basis} mark="bar" />)}
@@ -712,7 +714,7 @@ function Parts({ c }: { c: PartsChart }) {
   const label = `${c.title}. One whole of ${c.total}, in parts: `
     + c.parts.map(p => `${p.label}, ${p.text} (${p.share})`).join('; ') + '.'
   return (
-    <Frame title={c.title} basis={c.basis} note={c.note} label={label}>
+    <Frame title={c.title} basis={c.basis} note={c.note} use={c.use} label={label}>
       <div className="h-7 rounded-[3px] flex overflow-hidden gap-[2px]" aria-hidden>
         {c.parts.map((p, i) => (
           <span key={p.label} title={`${p.label}: ${p.text} (${p.share})`}
@@ -758,7 +760,7 @@ function Bridge({ c }: { c: BridgeChart }) {
     + c.steps.map(s => `${s.label}, ${s.text}${s.after ? `, leaving ${s.after}` : ''}`).join('; ')
     + `; to ${c.end.label}, ${c.end.text}.`
   return (
-    <Frame title={c.title} basis={c.basis} note={c.note} label={label}>
+    <Frame title={c.title} basis={c.basis} note={c.note} use={c.use} label={label}>
       {/* HOW TO READ IT, once, above the bars: the position is the running total. */}
       <p className="text-[12.5px] leading-snug mb-3" style={{ color: 'var(--text-muted)' }} aria-hidden>
         Read down. The dark bars are totals. Each coloured bar is one step, drawn from where the
@@ -827,7 +829,7 @@ function Presence({ c }: { c: PresenceChart }) {
      column (TJ, 23 October 2026: "why does monty tech have its own color"). */
   const dot = (i: number) => (i === k ? COLOURS[US_COLOUR] : COLOURS[0])
   return (
-    <Frame title={c.title} basis={c.basis} note={c.note} label={label}>
+    <Frame title={c.title} basis={c.basis} note={c.note} use={c.use} label={label}>
       <div className="flex flex-wrap gap-x-4 gap-y-1 mb-3 text-[12px]" style={{ color: 'var(--text-secondary)' }} aria-hidden>
         <span className="inline-flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: COLOURS[US_COLOUR] }} />{c.columns[k]} has it</span>
         <span className="inline-flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: COLOURS[0] }} />another district has it</span>

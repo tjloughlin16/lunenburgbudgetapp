@@ -1,6 +1,6 @@
 {
   "posted": null,
-  "about": "Follow-up to the historical report post, answering the questions it raised: how is the tax bill set, and what raised it? The surprise: Prop 2 1/2 caps the town's total, not the bill, and everything voters approved -- overrides and debt exclusions -- is about a tenth of the average bill's rise since FY1991. Sends readers to /homes-and-taxes/growth-and-tax-rate, rebuilt as the destination.",
+  "about": "Follow-up to the historical report post. The average single-family bill is taken over a changing set of homes, so it overstates what happened to a home that stayed the same: about 3.2 times since FY1991 against 4.5 for the average. Corrected 3 Nov 2026 from a draft that split the average's rise (and an interim 2.9 figure). Sends readers to /homes-and-taxes/growth-and-tax-rate.",
   "data": {
     "g": "topics/growth-and-tax-rate.json",
     "hr": "historical-report.json#homes"
@@ -16,46 +16,47 @@
   "image": {
     "layout": "split",
     "size": "square",
-    "headline": "Overrides and exclusions: {g.facts[id=s-votes].value.text} of the rise in the tax bill",
-    "emphasis": "{g.facts[id=s-votes].value.text}",
+    "headline": "One unchanged home: {g.facts[id=same1].value.text}. The average: {g.facts[id=bill1].value.text}.",
+    "emphasis": "{g.facts[id=same1].value.text}",
     "headline_size": 50,
-    "sub": "Lunenburg’s average single-family bill, {hr.first} to {hr.base}, split by cause with the state’s levy files. An average: newer and enlarged homes raise it too.",
+    "sub": "Lunenburg single-family tax bills, {hr.first} to {hr.base}. The average counts newer, bigger homes; one home that stayed the same does not.",
     "tiles": [
       {
-        "eyebrow": "GROWN 2.5% A YEAR",
-        "value": "{g.facts[id=p25].value.text}",
-        "label": "the {hr.first} bill at Prop 2½’s rate",
-        "text": "What the limit alone would have done."
+        "eyebrow": "ONE HOME, UNCHANGED",
+        "value": "{g.facts[id=same1].value.text}",
+        "label": "its {hr.base} bill, our estimate",
+        "text": "From {g.facts[id=bill0].value.text} in {hr.first}."
       },
       {
-        "eyebrow": "THE ACTUAL BILL",
+        "eyebrow": "THE AVERAGE BILL",
         "value": "{g.facts[id=bill1].value.text}",
         "label": "average single-family, {hr.base}",
-        "text": "Up {hr.bill_cagr}% a year."
+        "text": "Newer, bigger homes add about {g.facts[id=comp].value.text}."
       }
     ],
     "path": "/homes-and-taxes/growth-and-tax-rate",
     "as_of": "Division of Local Services, our arithmetic",
-    "conclusion": "The 2.5% a year was {g.facts[id=s-cap].value.text} of the rise. Everything voters approved: {g.facts[id=s-votes].value.text}.",
+    "conclusion": "For that home, the 2.5% a year was {g.facts[id=s-cap].value.text} of the rise. Everything voters approved: {g.facts[id=s-votes].value.text}.",
     "conclusion_em": "{g.facts[id=s-votes].value.text}",
     "conclusion_size": 40
   },
   "text": [
-    "Prop 2½ is usually described as a 2.5% cap on property taxes. It caps the town's total, not anyone's bill. Lunenburg's average single-family tax bill went from {g.facts[id=bill0].value.text} in {hr.first} to {g.facts[id=bill1].value.text} in {hr.base}, about {hr.bill_cagr}% a year. Grown 2.5% a year, it would be {g.facts[id=p25].value.text}.",
+    "Last time we showed Lunenburg's average single-family tax bill: {g.facts[id=bill0].value.text} in {hr.first}, {g.facts[id=bill1].value.text} in {hr.base}. That average overstates what happened to a home that has been here the whole time.",
     "",
-    "So where did the rest come from? We split the rise using the state's own levy files:",
-    "• The 2.5% a year, compounding: {g.facts[id=s-cap].value.text} of the rise. It needs no vote.",
-    "• New growth: {g.facts[id=s-growth].value.text}. New homes and additions don't raise anyone else's bill, but they raise the average: our reading is that newer and bigger homes join it.",
+    "The average is taken over every single-family home in town today, including newer and bigger ones that weren't here in {hr.first}. A new home pays its own tax and nobody else's bill goes up because of it. But it usually pays more than the average, so it pulls the average up.",
+    "",
+    "So we followed one home instead: one that didn't change, with its value moving like the town's. Its bill went from {g.facts[id=bill0].value.text} to about {g.facts[id=same1].value.text}. Newer, bigger homes account for about {g.facts[id=comp].value.text} of the average.",
+    "",
+    "Where did that home's rise come from? Our arithmetic on the state's levy files:",
+    "• Prop 2½'s 2.5% a year: {g.facts[id=s-cap].value.text}. It needs no vote. On its own it would have taken the bill to {g.facts[id=p25].value.text}.",
     "• Overrides and debt exclusions, everything voters approved: {g.facts[id=s-votes].value.text}.",
-    "• Homes carrying more of the total as businesses became a smaller share ({g.facts[id=rs0].value.text} of the levy, now {g.facts[id=rs].value.text}): {g.facts[id=s-homes].value.text}.",
+    "• The rest: home values gaining on businesses and other property, so homes carry more of the total, plus whatever our method misses.",
     "",
-    "So if Lunenburg's taxes feel high, overrides and exclusions are about a tenth of the story.",
-    "",
-    "The page also shows what does and doesn't change a bill: why a new business doesn't lower anyone's taxes, why a business closing raises them, and why the average bill rose {hr.dip.bill}% from {hr.dip.fy0} to {hr.dip.fy1} while home values fell {hr.dip.value}%.",
+    "Prop 2½ caps the town's total, not anyone's bill. The page shows both lines, how to read each, and what does and doesn't change a bill: why a new business doesn't lower anyone's taxes, and why a business closing raises them.",
     "👉 lburg.org/homes-and-taxes/growth-and-tax-rate",
     "",
-    "These are averages from the state's Division of Local Services, and the split is our arithmetic on them. One home's bill moves with its own value; the average also moves when new and enlarged homes join it.",
+    "The unchanged home is our estimate, built from town-wide values. A home that gained on its neighbors pays more than it; one that lagged pays less.",
     "",
-    "What did you think Prop 2½ capped? Tell us in the comments."
+    "When did you move in, and does the line match your bill? Tell us in the comments."
   ]
 }

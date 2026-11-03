@@ -39,6 +39,7 @@ Sources, all the state's: sources/data/dls-new-growth.csv, dls-assessed-values.c
 dls-tax-rates.csv, dls-avg-tax-bill.csv, dls-override-votes.csv; and the BLS CPI responses.
 """
 import argparse
+import collections
 import csv
 import json
 import os
@@ -229,6 +230,58 @@ def burden(h):
                 de1=g(z, 'debt_exclusion'), levy1=g(z, 'tax_levy'), lv=lv, ov=ov)
 
 
+def same_home(h):
+    """ONE HOME THAT STAYED THE SAME: a same-home index (TJ, 3 November 2026: "we might need
+    different growth charts for a single home vs the average home"). The average single-family
+    bill is taken over a changing set of homes, so newer and bigger homes joining it raise it with
+    no existing bill rising. This follows one home instead: each year its value moves as the
+    town's EXISTING property did (this year's value less what new growth added, over last year's),
+    and the year's printed rate applies. bill_y = bill_(y-1) x existing value change x rate change.
+
+    FY2003 on, the state splits new growth by class, so the change is residential property's own.
+    Before that it is all existing property, which cannot see homes taking more of the levy in
+    those years (the residential share rose), so the early line is, if anything, low. FY1992 and
+    FY1993 print no new-growth value; it is the levy's new growth over the prior year's rate, which
+    is how new growth is defined (taxed at the prior rate).
+
+    It replaced, the same day, a shortcut that removed one factor from burden(): $4,678 against
+    this chain's figure. The shortcut counted all new growth, businesses' included, as the
+    average's composition. OUR ESTIMATE, labelled so on the page; what would test it is one
+    parcel's assessment history (money-gaps.csv)."""
+    ng, av, tr = town('dls-new-growth.csv'), town('dls-assessed-values.csv'), town('dls-tax-rates.csv')
+    th, _ = town_history()
+    lv = {int(r['fy']): r for r in csv.DictReader(open(LEVY, encoding='utf-8'))}
+    num = lambda d, y, k: float(d[y][k]) if y in d and d[y].get(k) else None
+    total = lambda y: num(av, y, 'total') or th['total_valuation'].get(y)
+    rt = lambda y: num(tr, y, 'residential') or th['tax_rate'].get(y)
+    H = {r['fy']: r for r in h['rows']}
+    a, z = h['rows'][0]['fy'], h['rows'][-1]['fy']
+    bill, out, kinds = H[a]['bill'], {a: H[a]['bill']}, collections.Counter()
+    for y in range(a + 1, z + 1):
+        r, r0 = rt(y), rt(y - 1)
+        rv, rv0, rn = num(av, y, 'residential'), num(av, y - 1, 'residential'), num(ng, y, 'res_value')
+        if None not in (rv, rv0, rn):
+            g, k = (rv - rn) / rv0, 'residential'
+        else:
+            n = num(ng, y, 'total_value') if y >= STATE_FROM else th['ng_added_valuation'].get(y)
+            if n is None and lv.get(y, {}).get('new_growth'):
+                n, k = float(lv[y]['new_growth']) / r0 * 1000, 'levy'
+            else:
+                k = 'all'
+            if None in (n, total(y), total(y - 1), r, r0):
+                fail('FY%d: no existing-value change for the same-home line' % y)
+            g = (total(y) - n) / total(y - 1)
+        if not 0.6 < g < 1.4:
+            fail('FY%d: existing value moved %.2f; check the inputs' % (y, g))
+        kinds[k] += 1
+        bill *= g * r / r0
+        out[y] = bill
+    return dict(bills=out, last=out[z], kinds=dict(kinds),
+                res_from=min(y for y in range(a + 1, z + 1)
+                             if None not in (num(av, y, 'residential'), num(av, y - 1, 'residential'),
+                                             num(ng, y, 'res_value'))))
+
+
 def build():
     rows, keys, tfiles = years_data()
     h = homes()
@@ -260,10 +313,36 @@ def build():
     RT = lambda v: figure(v, rate(v), 'dollars per $1,000')
 
     b = burden(h)
-    sh, dl, fc = b['share'], b['dollars'], b['factor']
+    fc = b['factor']
     F0, F1 = C.fy(b['first']), C.fy(b['last'])
+    sm = same_home(h)
+    same = int(round(sm['last'], -1))          # an estimate: to the ten dollars, never the dollar
+    comp = b['bill1'] - same              # newer, bigger homes joining the average (the bridge foots on it)
+    comp_r = round(comp, -1)              # and in prose, an estimate to the ten dollars
+    # THE UNCHANGED HOME'S RISE, BY CAUSE, TAKEN IN ORDER: the 2.5% a year on the first bill (so the
+    # step lands exactly on the chart's 2.5% line), then overrides and exclusions on that grown
+    # total -- an override's later 2.5% is the override's, as the checks table says -- then what the
+    # chain shows beyond them: homes gaining on other property, and anything the method misses.
+    # The order is ours and the page says so (TJ, 3 November 2026: the log shares left the bridge
+    # disagreeing with the chart above it).
+    import math
+    order = [('cap', fc['cap']), ('overrides', fc['overrides']), ('exclusions', fc['exclusions'])]
+    shift = sm['last'] / b['bill0'] / math.prod(v for _k, v in order)
+    if not 0.95 < shift < 1.35:
+        fail('the unchanged home rose %.3f beyond the levy causes; check same_home()' % shift)
+    run, dl = b['bill0'], {}
+    for k, v in order:
+        dl[k] = round(run * v) - round(run)
+        run *= v
+    if abs(round(b['bill0'] * fc['cap']) - h['kept_pace']['p25']) > 1:
+        fail('the 2.5% step does not land on the 2.5% line')
+    dl['shift'] = same - b['bill0'] - sum(dl.values())
+    sh = {k: v / (same - b['bill0']) * 100 for k, v in dl.items()}
     PC = lambda k: P(round(sh[k]), 0)
     votes = round(sh['overrides'] + sh['exclusions'])
+    x_same = round(same / b['bill0'], 1)
+    x_avg = round(b['bill1'] / b['bill0'], 1)
+    X = lambda v: figure(v, '%.1f' % v, 'times')
 
     # ------------------------------------------------------------ facts
     f = LD.fact
@@ -271,16 +350,17 @@ def build():
         f('bill0', U(b['bill0']), 'average single-family bill, %s' % F0, 'published', allow=(F0,)),
         f('bill1', U(b['bill1']), 'average single-family bill, %s' % F1, 'published', allow=(F1,)),
         f('p25', U(h['kept_pace']['p25']), 'the %s bill grown 2.5%% a year' % F0, 'estimate', allow=(F0, '2.5%')),
-        f('s-cap', PC('cap'), 'of the rise: the 2.5% a year (ours)', 'estimate', allow=('2.5%',)),
-        f('s-growth', PC('growth'), 'of the rise: new growth beyond the count of homes (ours)', 'estimate'),
-        f('s-votes', P(votes, 0), 'of the rise: overrides and debt exclusions (ours)', 'estimate'),
-        f('s-homes', PC('homes'), 'of the rise: the levy shifting onto homes (ours)', 'estimate'),
+        f('same1', U(same), 'one home unchanged since %s, its %s bill (ours)' % (F0, F1), 'estimate',
+          allow=(F0, F1)),
+        f('comp', U(comp_r), 'newer, bigger homes joining the average, %s (ours)' % F1, 'estimate', allow=(F1,)),
+        f('s-cap', PC('cap'), 'of the unchanged home’s rise: the 2.5% a year (ours)', 'estimate',
+          allow=('2.5%',)),
+        f('s-votes', P(votes, 0), 'of the unchanged home’s rise: votes to raise it (ours)',
+          'estimate'),
         f('rs', P(round(b['rs1'], 1)), 'homes’ share of the levy, %s' % F1, 'published', allow=(F1,)),
         f('rs0', P(round(b['rs0'], 1)), 'homes’ share of the levy, %s' % F0, 'published', allow=(F0,)),
         f('parcels', P(round((b['parcels'] - 1) * 100), 0), 'more single-family homes, %s–%s' % (F0, F1),
           'published', allow=(F0, F1)),
-        f('r-exist', R(r_exist), 'rate against existing values, %s–%s (ours)'
-          % (C.fy(a['fy']), C.fy(z['fy'])), 'estimate', allow=(C.fy(a['fy']), C.fy(z['fy']))),
         f('gap-ng', None, 'new growth split into new homes, additions and businesses', 'gap',
           closes='the assessors’ new growth detail by permit type, which the state’s files do not carry'),
     ]
@@ -288,61 +368,65 @@ def build():
     # ------------------------------------------------------------ conclusions
     con = TP.conclusion
     conclusions = [
-        con('Overrides and debt exclusions were %s%% of the average bill’s rise since %s.' % (votes, F0),
-            ['s-votes'], {'v': P(votes, 0)}, allow=(F0,),
-            so='Most of what raised the bill needed no vote. Three overrides passed in those years.'),
-        con('The 2.5%% a year, compounding, was %s%%: %s grown 2.5%% a year is %s.'
-            % (round(sh['cap']), C.usd(b['bill0']), C.usd(h['kept_pace']['p25'])),
-            ['s-cap', 'bill0', 'p25'], {'s': PC('cap'), 'a': U(b['bill0']), 'p': U(h['kept_pace']['p25'])},
-            allow=('2.5%',),
-            so='The limit lets the total grow every year without asking anyone.'),
-        con('New growth outran the count of homes, %s%% of the rise; homes grew %s%%.'
-            % (round(sh['growth']), round((b['parcels'] - 1) * 100)),
-            ['s-growth', 'parcels'], {'s': PC('growth'), 'p': P(round((b['parcels'] - 1) * 100), 0)},
-            so='No existing bill rises from it. The average does, because new and enlarged homes join it '
+        con('A home unchanged since %s pays about %s, %s times its bill then.' % (F0, C.usd(same), x_same),
+            ['same1', 'bill0'], {'s': U(same), 'x': X(x_same)}, allow=(F0,),
+            so='The average bill is %s times; a long-time owner’s bill rose less than the average '
+               'suggests.' % x_avg, so_figures={'a': X(x_avg)}),
+        con('Newer, bigger homes joining the average added about %s to it.' % C.usd(comp_r),
+            ['comp', 'bill1'], {'c': U(comp_r)},
+            so='No existing bill rose from them; they pay their own tax, at more than the average '
                '(our reading).'),
-        con('Homes carry %s%% of the levy, against %s%% in %s: %s%% of the rise.'
-            % ('%.1f' % b['rs1'], '%.1f' % b['rs0'], F0, round(sh['homes'])),
-            ['rs', 'rs0', 's-homes'], {'a': P(round(b['rs1'], 1)), 'b': P(round(b['rs0'], 1)), 's': PC('homes')},
-            allow=(F0,),
-            so='When businesses are a smaller part of the town, homes pay more of the same total.'),
+        con('The 2.5%% a year was %s%% of the unchanged home’s rise.' % round(sh['cap']),
+            ['s-cap', 'p25'], {'s': PC('cap')}, allow=('2.5%',),
+            so='The limit lets the total grow every year without asking anyone.'),
+        con('Overrides and debt exclusions were %s%% of it.' % votes,
+            ['s-votes'], {'v': P(votes, 0)},
+            so='Most of what raised the bill needed no vote. Three overrides passed in those years.'),
     ]
 
-    # ------------------------------------------------------------ the signature: what raised the bill
-    bridge = TP.bridge(
-        'The average bill’s rise, by cause', ('%s bill' % F0, b['bill0']),
+    # ------------------------------------------------------------ the signature: one home against the average
+    H_ = {r['fy']: r for r in h['rows']}
+    hx_ = [C.fy(y) for y in sorted(H_)]
+    two_bills = TP.use(TP.series(
+        'One home’s bill against the average', hx_,
+        [TP.track('The average bill', [H_[y]['bill'] for y in sorted(H_)], 'published'),
+         TP.track('One home that stayed the same (ours)', [round(sm['bills'][y]) for y in sorted(H_)],
+                  'estimate'),
+         TP.track('The %s bill grown 2.5%% a year' % F0, [H_[y]['bill_p25'] for y in sorted(H_)],
+                  'estimate')],
+        '$', kind='line',
+        note=('The middle line is ours: each year, the value of property already standing, times '
+              'the rate. Residential only from %s.' % C.fy(sm['res_from'])),
+        note_allow=(C.fy(sm['res_from']),)),
+        'Follow the middle line from the year you moved in: that is roughly what happened to a home '
+        'that did not change. The top line is the average, which new and bigger homes pull up.')
+
+    # ------------------------------------------------------------ what raised it: the home, then the average
+    bridge = TP.use(TP.bridge(
+        'The bill’s rise, by cause', ('%s bill' % F0, b['bill0']),
         [('The 2.5% a year', dl['cap']),
-         ('Newer, bigger homes in the average', dl['growth']),
          ('Overrides', dl['overrides']),
-         ('Debt exclusions', dl['exclusions']),
-         ('Levy shifting onto homes', dl['homes']),
-         ('Other', dl['rest'])],
-        ('%s bill' % F1, b['bill1']), '$', basis='estimate',
-        note='Ours, from the state’s levy files: each cause’s share of the rise, not taken in sequence.')
+         ('Debt exclusions and unused room', dl['exclusions']),
+         ('Homes gaining on other property, and the rest', dl['shift']),
+         ('Newer, bigger homes join the average', comp)],
+        ('%s average bill' % F1, b['bill1']), '$', basis='estimate',
+        note='Ours, from the state’s levy files, taken in this order: the 2.5% first, then what voters '
+             'added on top of it.', note_allow=('2.5%',)),
+        'Read down. The first four steps take one unchanged home from %s to %s. The last step is '
+        'only the average: newer, bigger homes joining it.' % (C.usd(b['bill0']), C.usd(same)),
+        {'a': U(b['bill0']), 's': U(same)})
 
     # ------------------------------------------------------------ the signature: three lines, one unit
-    sig = TP.series(
+    sig = TP.use(TP.series(
         'Home values, development and the rate', xs,
         [TP.track('Existing property, change in value (ours)', [r['existing'] for r in rows], 'estimate'),
          TP.track('New development, share of the base', [r['dev'] for r in rows], 'published'),
          TP.track('Residential tax rate, change', [r['rate_chg'] for r in rows], 'published')],
         '%', kind='line', decimals=1,
         note='Town annual reports to %s, then the Division of Local Services. The rate mirrors the first '
-             'line, not the second.' % C.fy(STATE_FROM - 1), note_allow=(C.fy(STATE_FROM - 1),))
-
-    # ------------------------------------------------------------ development in dollars, with the rate
-    # The rate is a rate per $1,000, not a percent; the secondary axis must be a different unit, so
-    # it is drawn as the bill-to-value share instead, which IS the rate as a percent (see
-    # build_historical_report.homes, asserted equal to the state's rate every year it prints one).
-    share = {r['fy']: r['share'] for r in h['rows']}
-    dev_chart = TP.series(
-        'New growth and the tax rate', xs,
-        [TP.track('New value certified as new growth', [r['new'] for r in rows], 'published', 'bar')],
-        '$', kind='bar',
-        secondary=dict(name='Tax rate, as a percent of value', values=[share[r['fy']] for r in rows],
-                       unit='%', basis='published', decimals=2),
-        note='Town reports, then the state: new growth by year, and the rate as a percent '
-             '(a $14.39 rate is 1.44%).', note_allow=('$14.39', '1.44%'))
+             'line, not the second.' % C.fy(STATE_FROM - 1), note_allow=(C.fy(STATE_FROM - 1),)),
+        'Pick a year where existing values jumped or fell: the rate moved the other way by about as '
+        'much. Then look at development: the rate barely notices it.')
 
     # ------------------------------------------------------------ the homes and the bill, from the history page
     hx = [C.fy(r['fy']) for r in h['rows']]
@@ -375,8 +459,8 @@ def build():
         '**One home’s bill** is that home’s value times the rate.',
         'They move differently. A new or enlarged home pays its own tax, and no other home’s bill rises. '
         'But it usually pays more than the average, so the average goes up.',
-        'The chart below explains **the average bill**. The table further down explains what changes '
-        '**one home’s bill**.',
+        'The first chart draws both. The breakdown under it follows **one home’s bill**, then adds '
+        'what newer homes do to **the average bill**.',
     ], place='lead', tone='define')
 
     # ------------------------------------------------------------ how it works (statute, a definition first)
@@ -414,8 +498,8 @@ def build():
     gaps = TB.explain('What this page does not separate', [
         'New growth by kind: new homes, additions and renovations, and businesses. The state’s files '
         'print one figure.',
-        'One home’s bill. The average bill moves when new and enlarged homes join the average, and a '
-        'home whose value rose faster than the town’s pays a larger share.',
+        'A real home. The unchanged home is ours, built from town-wide values; no parcel’s own '
+        'assessment history has been checked against it. A home that gained on others pays more.',
         'Our existing-value line also absorbs revaluation, abatements and class shifts, which the '
         'state’s files do not separate from market change.',
     ], place='end', tone='plain')
@@ -500,15 +584,16 @@ def build():
     cite = TP.cite
     return TP.page(
         TID,
-        'Overrides and debt exclusions were %s%% of the average bill’s rise since %s; the 2.5%% a year '
-        'was %s%%.' % (votes, F0, round(sh['cap'])),
-        facts, conclusions, chart=bridge, tables=[table, levy_table], sources=sources,
-        also=[sig, dev_chart],
-        finding_figures={'v': P(votes, 0), 'c': PC('cap')}, finding_allow=(F0, '2.5%'),
+        'A home unchanged since %s pays %s times its bill then; the average bill is %s times.'
+        % (F0, x_same, x_avg),
+        facts, conclusions, chart=two_bills, tables=[table, levy_table], sources=sources,
+        also=[bridge, sig],
+        finding_figures={'s': X(x_same), 'a': X(x_avg)}, finding_allow=(F0,),
         blocks=[how, changes, homes_block, gaps, two],
-        flow=['finding', cite(('block', 4), 'lv'), cite(('chart', 0), 'lv', 'ov', *hk), cite(('block', 0), 'lv'),
+        flow=['finding', cite(('block', 4), 'lv'), cite(('chart', 0), 'lv', 'av', 'ng', 'tr', *hk, *tk),
+              cite(('chart', 1), 'lv', 'ov', 'av', 'ng', *hk), cite(('block', 0), 'lv'),
               cite('ladder', 'lv', 'ov', *hk), cite(('block', 1), 'lv'), cite(('block', 2), *hk, 'ov', 'lv'),
-              cite(('chart', 1), 'ng', 'av', 'tr', *tk), cite(('chart', 2), 'ng', *tk, *hk),
+              cite(('chart', 2), 'ng', 'av', 'tr', *tk),
               cite(('block', 3), 'ng'), 'related',
               cite(('table', 1), 'lv', 'ov'), cite(('table', 0), 'ng', 'av', 'tr', 'ov', *tk), 'sources'])
 

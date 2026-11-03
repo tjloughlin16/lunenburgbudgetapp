@@ -612,6 +612,22 @@ def _label_bad(s, where, what):
     return []
 
 
+CHART_USE_MAX = 200
+
+
+def use(chart, text, figures=None, allow=()):
+    """HOW TO USE A CHART: one line above it naming the question it answers and how to read the
+    answer off it (TJ, 3 November 2026: "lets make it clear how to use each of these graphs").
+    Validated like a note -- every digit a registered figure or allowed -- and drawn by the shared
+    Frame for every chart type, so any page may give any chart one."""
+    u = _unit(text, figures, allow, CHART_USE_MAX, 'chart use')
+    bad = check_unit(u, 'chart use')
+    if bad:
+        raise ConclusionError('chart use did not pass:\n  %s' % '\n  '.join(bad))
+    chart['use'] = u
+    return chart
+
+
 def _note(note, figures, allow, cap, name):
     return _unit(note, figures, allow, cap, name) if note else None
 
