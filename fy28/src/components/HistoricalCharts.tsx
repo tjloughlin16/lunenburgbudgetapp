@@ -190,7 +190,7 @@ export function HistoricalHomes({ h }: { h: Homes }) {
                 strokeLinecap="round" dot={false} isAnimationActive={false}>
                 {/* Two labels a few dollars apart at one point: this one sits a line lower. */}
                 <LabelList dataKey="bill_p25" content={(p: { x?: number | string; y?: number | string; index?: number }) =>
-                  label(p, last, `${usd(z.bill_p25)}, up 2.5% a year`, P25, true, false, 33)} />
+                  label(p, last, `${usd(z.bill_p25 ?? 0)}, up 2.5% a year`, P25, true, false, 33)} />
               </Line>)}
             {actual === 'bill' && (h.exclusions ?? []).map(e => (
               <ReferenceLine key={`x${e.fy}`} x={Number(e.fy.slice(2))} stroke={AMBER} strokeDasharray="2 3" strokeOpacity={0.7}
