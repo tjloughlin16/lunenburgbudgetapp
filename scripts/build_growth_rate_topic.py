@@ -312,7 +312,7 @@ def build():
     bridge = TP.bridge(
         'The average bill’s rise, by cause', ('%s bill' % F0, b['bill0']),
         [('The 2.5% a year', dl['cap']),
-         ('New growth beyond more homes', dl['growth']),
+         ('Newer, bigger homes in the average', dl['growth']),
          ('Overrides', dl['overrides']),
          ('Debt exclusions', dl['exclusions']),
          ('Levy shifting onto homes', dl['homes']),
@@ -366,6 +366,19 @@ def build():
             {'a': U(h['kept_pace']['bill0']), 'k': U(h['kept_pace']['bill']), 'n': U(h['kept_pace']['actual'])},
             (h['first'],)))
 
+    # ------------------------------------------------------------ two bills: the average is not one home's
+    # TJ, 3 November 2026: the bridge counted new growth as a cause of the rise while the checks table
+    # said it raises no existing bill. Both are right about different quantities, so the page says
+    # which is which before either appears.
+    two = TB.explain('Two different bills', [
+        'The average bill is every single-family home’s tax added up, divided by the number of homes. '
+        'One home’s bill is that home’s value times the rate.',
+        'They move differently. A new or enlarged home pays its own tax, and no other home’s bill rises. '
+        'But it usually pays more than the average, so the average goes up.',
+        'The chart below explains the average bill. The table further down explains what changes one '
+        'home’s bill.',
+    ], place='lead', tone='define')
+
     # ------------------------------------------------------------ how it works (statute, a definition first)
     how = TB.explain('How the bill is set', [
         ('The town decides the total it raises in property tax, up to a limit that grows 2.5% a year '
@@ -387,7 +400,8 @@ def build():
            {0, 1}),
         cr('Unused levy room', 'A town that levied below its limit can use the room without a vote.', {0}),
         cr('New growth', 'New homes and businesses are taxed at last year’s rate; they add to the total '
-                         'without raising anyone else’s bill.', set(), contrast=True),
+                         'without raising anyone else’s bill. They do raise the average bill.',
+           set(), contrast=True),
         cr('A business closing', 'The limit does not fall when property leaves or loses value, so '
                                  'everyone else pays its share.', {0}),
         cr('Your home gaining on others', 'Your share of the total rises with your home’s share of '
@@ -491,8 +505,8 @@ def build():
         facts, conclusions, chart=bridge, tables=[table, levy_table], sources=sources,
         also=[sig, dev_chart],
         finding_figures={'v': P(votes, 0), 'c': PC('cap')}, finding_allow=(F0, '2.5%'),
-        blocks=[how, changes, homes_block, gaps],
-        flow=['finding', cite(('chart', 0), 'lv', 'ov', *hk), cite(('block', 0), 'lv'),
+        blocks=[how, changes, homes_block, gaps, two],
+        flow=['finding', cite(('block', 4), 'lv'), cite(('chart', 0), 'lv', 'ov', *hk), cite(('block', 0), 'lv'),
               cite('ladder', 'lv', 'ov', *hk), cite(('block', 1), 'lv'), cite(('block', 2), *hk, 'ov', 'lv'),
               cite(('chart', 1), 'ng', 'av', 'tr', *tk), cite(('chart', 2), 'ng', *tk, *hk),
               cite(('block', 3), 'ng'), 'related',
