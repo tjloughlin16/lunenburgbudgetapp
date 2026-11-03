@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import { useId, useState, type ReactNode } from 'react'
 import {
   Bar, BarChart, CartesianGrid, LabelList, Line, LineChart, ReferenceLine,
   ResponsiveContainer, Tooltip, XAxis, YAxis,
@@ -110,7 +110,8 @@ export type HomeRow = { fy: number; value: number; bill: number; value_cpi: numb
   share: number; rate: number; rate_printed: boolean; parcels: number }
 export type Homes = { base: string; first: string; rows: HomeRow[]; value_growth: number; bill_growth: number
   jump: { fy0: string; fy1: string; value: number; bill: number; rate0: number; rate1: number }
-  kept_pace: { bill0: number; bill: number; actual: number; cola: number } }
+  kept_pace: { bill0: number; bill: number; actual: number; cola: number }
+  dip?: { fy0: string; fy1: string; value: number; bill: number; rate0: number; rate1: number } }
 
 const usd = (v: number) => `$${Math.round(v).toLocaleString('en-US')}`
 const k = (v: number) => (v >= 1000 ? `$${Math.round(v / 1000)}k` : `$${v}`)
@@ -131,6 +132,10 @@ const k = (v: number) => (v >= 1000 ? `$${Math.round(v / 1000)}k` : `$${v}`)
  *  times its bill. */
 export function HistoricalHomes({ h }: { h: Homes }) {
   const [mode, setMode] = useState<'actual' | 'today'>('actual')
+  // THE LABEL HALO IS A FILTER, NOT A STROKE. A stroke halo (paint-order: stroke) turns into a
+  // black blob when the browser highlights the word for find-in-page or a selection, because
+  // the highlight repaints the stroke too (TJ's screenshot, 3 November 2026).
+  const halo = `halo${useId().replace(/:/g, '')}`
   const today = mode === 'today'
   const f0 = h.rows[0]
   const rows = h.rows.map(r => ({
@@ -146,8 +151,7 @@ export function HistoricalHomes({ h }: { h: Homes }) {
       <g key={`${k}${text}`}>
         <circle cx={Number(p.x)} cy={Number(p.y)} r={3.5} fill={colour} />
         <text x={Number(p.x) + (start ? 6 : -6)} y={Number(p.y) + (below ? 17 : -9)} textAnchor={start ? 'start' : 'end'}
-          fontSize={12} fontWeight={600} fill="var(--text-primary)" stroke="var(--surface-1)" strokeWidth={3}
-          paintOrder="stroke">{text}</text>
+          fontSize={12} fontWeight={600} fill="var(--text-primary)" filter={`url(#${halo})`}>{text}</text>
       </g>) : null
   const startText = (v: number, what: string) => today
     ? `${usd(v)}, the ${h.first} ${what} in ${h.base} dollars`
@@ -190,6 +194,14 @@ export function HistoricalHomes({ h }: { h: Homes }) {
         : { color: 'var(--text-secondary)', border: '1px solid var(--grid)' }}>{text}</button>)
   return (
     <div className="min-w-0">
+      <svg width={0} height={0} aria-hidden="true" style={{ position: 'absolute' }}>
+        <filter id={halo} x="-5%" y="-40%" width="110%" height="180%">
+          <feMorphology in="SourceAlpha" operator="dilate" radius={2} result="d" />
+          <feFlood style={{ floodColor: 'var(--surface-1)' }} result="f" />
+          <feComposite in="f" in2="d" operator="in" result="h" />
+          <feMerge><feMergeNode in="h" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+      </svg>
       <div className="flex flex-wrap items-center gap-2 mt-3" role="group" aria-label="Dollars shown as">
         {btn('actual', 'Actual dollars')}{btn('today', `Today’s dollars (${h.base})`)}
       </div>
@@ -197,7 +209,12 @@ export function HistoricalHomes({ h }: { h: Homes }) {
         <p className="text-[12.5px] mt-1" style={{ color: 'var(--text-muted)' }}>
           Grown instead by Social Security’s cost-of-living adjustments, the {h.first} bill would
           be {usd(h.kept_pace.cola)} in {h.base}. Inflation here is the Boston-area consumer price index.</p>)}
-      {panel('Average single-family home, assessed value', 'value', 'value_cpi', BLUE, 'value')}
+      {panel('Average single-family home, assessed value', 'value', 'value_cpi', BLUE, 'value',
+        h.dip && <p className="text-[12.5px] mt-1" style={{ color: 'var(--text-muted)' }}>
+          Why the bill never dips: from {h.dip.fy0} to {h.dip.fy1} the average value fell {h.dip.value}% and
+          the bill rose {h.dip.bill}% anyway, because the rate went from ${h.dip.rate0.toFixed(2)} to
+          ${h.dip.rate1.toFixed(2)} per $1,000. The town sets the total it collects; the rate is that
+          total divided by the town’s value.</p>)}
     </div>
   )
 }

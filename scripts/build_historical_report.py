@@ -984,7 +984,26 @@ def homes():
     # THE YEAR THE VALUE JUMPED MOST: found, not named, so the sentence follows the data.
     i23 = max(out[1:], key=lambda r: r['value'] / out[out.index(r) - 1]['value'])
     i22 = out[out.index(i23) - 1]
-    return dict(base='FY%d' % base, first='FY%d' % a['fy'], rows=out, sources=srcs,
+    # THE LONGEST FALL IN VALUE, peak to trough in actual dollars: found, not named. It is the
+    # stretch where the bill visibly does NOT follow the home (TJ, 3 November 2026: "the assessed
+    # value has dips that dont show up in the avg tax bill"), because the levy is set and the rate
+    # is levy / value. Biggest percentage fall over any run of consecutive declines.
+    runs, i = [], 1
+    while i < len(out):
+        if out[i]['value'] < out[i - 1]['value']:
+            j = i
+            while j + 1 < len(out) and out[j + 1]['value'] < out[j]['value']:
+                j += 1
+            runs.append((out[i - 1], out[j]))
+            i = j + 1
+        else:
+            i += 1
+    p0, p1 = max(runs, key=lambda r: 1 - r[1]['value'] / r[0]['value'])
+    dip = dict(fy0='FY%d' % p0['fy'], fy1='FY%d' % p1['fy'],
+               value=round((1 - p1['value'] / p0['value']) * 100),
+               bill=round((p1['bill'] / p0['bill'] - 1) * 100),
+               rate0=p0['rate'], rate1=p1['rate'])
+    return dict(base='FY%d' % base, first='FY%d' % a['fy'], rows=out, sources=srcs, dip=dip,
                 kept_pace=dict(bill0=a['bill'], bill=z['bill_cpi'], actual=z['bill'],
                                cola=round(a['bill'] * k_cola)),
                 value_growth=round((z['value_real'] / a['value_real'] - 1) * 100),
@@ -1557,6 +1576,11 @@ def render(d, x):
              C.num(r['bill_real']), r['share'], rate(r['rate']), '' if r['rate_printed'] else '*'))
     a('\nGrown instead by Social Security’s cost-of-living adjustments, the %s bill would be $%s '
       'in %s.\n' % (h['first'], C.num(h['kept_pace']['cola']), h['base']))
+    dp = h['dip']
+    a('\nFrom %s to %s the average value fell %s%% and the average bill rose %s%% anyway: the rate '
+      'went from %s to %s. The town sets the total it collects; the rate is that total divided by '
+      'the town’s value, so a falling value raises the rate rather than lowering the bill.\n'
+      % (dp['fy0'], dp['fy1'], dp['value'], dp['bill'], rate(dp['rate0']), rate(dp['rate1'])))
     a('\n\\* Bill divided by value; the state’s rate file starts in FY2003, and from then on the '
       'two agree to the cent. Values are ASSESSED values, not sale prices. Source: Division of '
       'Local Services; inflation by the Boston-area CPI-U, averaged July to June.\n\n')
