@@ -452,6 +452,9 @@ PROSE = re.compile(r'\b(the|of the|is|are|was|were|and the|in the|by the|from|wh
                    r'approximately|located|bordered|made by|consists)\b', re.I)
 
 
+ROLE_TAIL = re.compile(r'^(.+?)\s*[-–]\s*(\S+(?:\s+\S+){0,3}\s+[RK]epresentative)$', re.I)
+
+
 def looks_like_person(t):
     t = (t or '').strip()
     if len(t) < 3 or len(t) > 70:
@@ -685,6 +688,19 @@ def read_year(fy, path):
             elif APPOINTED_NOTE.search(t):
                 i = APPOINTED_NOTE.search(t).start()
                 name, note = t[:i].strip(' -–'), t[i:].strip(' -–')
+            # A NAME AND ITS ROLE ON ONE LINE, joined by a hyphen: FY2024 p13 prints
+            # `Caesar Nuzzolo-Select Board Representative`, the line above it `Vacant-Select
+            # Board Representative`, and Vision read the first as `Nuzzolo-select Boara
+            # Kepresentative` -- which became a person of that name (TJ, 3 November 2026). The
+            # role goes to the note; the two misread letters are corrected there and only there,
+            # and the note says so. A hyphenated surname has no `representative` after it.
+            rt = ROLE_TAIL.match(name)
+            if rt:
+                role = rt.group(2)
+                fixed = re.sub(r'\b[Kk]epresentative\b', 'Representative', re.sub(r'\bBoara\b', 'Board', role))
+                name = rt.group(1)
+                note = (note + '; ' if note else '') + (fixed[:1].upper() + fixed[1:]) + (
+                    ' (as printed, OCR misreading corrected)' if fixed != role else '')
             if not looks_like_person(name):
                 continue
             seen += 1

@@ -82,7 +82,7 @@ The voted TOTAL is held for FY2012–FY2026. FY2026 is a total and nothing else:
 
 ## Posts and boards
 
-`town-personnel.csv`, FY2016–FY2025, 2,159 rows across 132 distinct posts. Checks: 492 checked, 299 check failed, 1368 no check — and nothing may be counted without splitting on that column.
+`town-personnel.csv`, FY2016–FY2025, 2,161 rows across 132 distinct posts. Checks: 492 checked, 301 check failed, 1368 no check — and nothing may be counted without splitting on that column.
 
 | board, committee or post | years listed | how it is filled | states its size |
 |---|---|---|---|
