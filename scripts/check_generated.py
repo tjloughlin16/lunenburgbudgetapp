@@ -186,6 +186,8 @@ CHECKS = [
     # Growth and the tax rate: three state files and the CPI (topic_registry/homes_and_taxes.py)
     # The town's new growth, valuation and rate history, FY1990-FY2010, from the annual reports
     ('extract_new_growth_history.py', ['--check']),
+    # Lunenburg's levy by Proposition 2 1/2, FY1986-FY2026, from the DLS files (fetch_dls_levy_limits.py)
+    ('extract_levy_limits.py', ['--check']),
     ('build_growth_rate_topic.py', ['--check']),
     ('build_reports_index.py', ['--check']),
     # How long every page is, measured from the build. It changes whenever a page does,
