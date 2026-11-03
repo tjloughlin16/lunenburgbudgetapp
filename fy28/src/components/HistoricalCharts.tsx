@@ -13,6 +13,7 @@ const N = (v: unknown) => (Array.isArray(v) ? Number(v[0]) : Number(v))
 
 const BLUE = '#184f95'
 const AMBER = '#e08214'
+const P25 = '#7b3294'   // the bill grown at the levy limit's 2.5%, and the overrides that break it
 const box = {
   background: 'var(--surface-1)', border: '1px solid var(--grid)',
   borderRadius: 8, fontSize: 12.5, color: 'var(--text-primary)',
@@ -106,11 +107,12 @@ export function HistoricalRosters({ data }: ChartProps) {
 }
 
 export type HomeRow = { fy: number; value: number; bill: number; value_cpi: number; bill_cpi: number
-  value_real: number; bill_real: number
+  value_real: number; bill_real: number; bill_p25?: number; bill_p25_real?: number
   share: number; rate: number; rate_printed: boolean; parcels: number }
 export type Homes = { base: string; first: string; rows: HomeRow[]; value_growth: number; bill_growth: number
   jump: { fy0: string; fy1: string; value: number; bill: number; rate0: number; rate1: number }
-  kept_pace: { bill0: number; bill: number; actual: number; cola: number }
+  kept_pace: { bill0: number; bill: number; actual: number; cola: number; p25?: number }
+  bill_cagr?: number; overrides?: { fy: string; amount: number }[]
   dip?: { fy0: string; fy1: string; value: number; bill: number; rate0: number; rate1: number } }
 
 const usd = (v: number) => `$${Math.round(v).toLocaleString('en-US')}`
@@ -141,16 +143,17 @@ export function HistoricalHomes({ h }: { h: Homes }) {
   const rows = h.rows.map(r => ({
     x: r.fy,
     bill: today ? r.bill_real : r.bill, bill_cpi: today ? f0.bill_real : r.bill_cpi,
+    bill_p25: today ? r.bill_p25_real : r.bill_p25,
     value: today ? r.value_real : r.value, value_cpi: today ? f0.value_real : r.value_cpi,
   }))
   const last = rows.length - 1
   const a = rows[0], z = rows[last]
   const label = (p: { x?: number | string; y?: number | string; index?: number }, k: number, text: string,
-    colour: string, below: boolean, start = false) =>
+    colour: string, below: boolean, start = false, dy?: number) =>
     p.index === k && p.x != null && p.y != null ? (
       <g key={`${k}${text}`}>
         <circle cx={Number(p.x)} cy={Number(p.y)} r={3.5} fill={colour} />
-        <text x={Number(p.x) + (start ? 6 : -6)} y={Number(p.y) + (below ? 17 : -9)} textAnchor={start ? 'start' : 'end'}
+        <text x={Number(p.x) + (start ? 6 : -6)} y={Number(p.y) + (dy ?? (below ? 17 : -9))} textAnchor={start ? 'start' : 'end'}
           fontSize={12} fontWeight={600} fill="var(--text-primary)" filter={`url(#${halo})`}>{text}</text>
       </g>) : null
   const startText = (v: number, what: string) => today
@@ -170,7 +173,8 @@ export function HistoricalHomes({ h }: { h: Homes }) {
             <YAxis tickFormatter={(v: number) => k(N(v))} width={52} tick={tick} domain={[0, 'auto']} />
             <Tooltip contentStyle={box} labelFormatter={(l) => `FY${l}`}
               formatter={(v, n) => [usd(N(v)), n === actual
-                ? `${what}, ${today ? `${h.base} dollars` : 'actual'}` : 'if it had only kept up with inflation']} />
+                ? `${what}, ${today ? `${h.base} dollars` : 'actual'}`
+                : n === 'bill_p25' ? 'if it had grown 2.5% a year' : 'if it had only kept up with inflation']} />
             <Line dataKey={actual} name={actual} stroke={colour} strokeWidth={2.25} dot={false} isAnimationActive={false}>
               <LabelList dataKey={actual} content={(p: { x?: number | string; y?: number | string; index?: number }) =>
                 label(p, 0, startText(a[actual], what), colour, true, true)
@@ -181,6 +185,18 @@ export function HistoricalHomes({ h }: { h: Homes }) {
               <LabelList dataKey={cpi} content={(p: { x?: number | string; y?: number | string; index?: number }) =>
                 label(p, last, `${usd(z[cpi])}, inflation only`, 'var(--text-muted)', true)} />
             </Line>
+            {actual === 'bill' && z.bill_p25 != null && (
+              <Line dataKey="bill_p25" name="bill_p25" stroke={P25} strokeWidth={1.75} strokeDasharray="1.5 3"
+                strokeLinecap="round" dot={false} isAnimationActive={false}>
+                {/* Two labels a few dollars apart at one point: this one sits a line lower. */}
+                <LabelList dataKey="bill_p25" content={(p: { x?: number | string; y?: number | string; index?: number }) =>
+                  label(p, last, `${usd(z.bill_p25)}, up 2.5% a year`, P25, true, false, 33)} />
+              </Line>)}
+            {actual === 'bill' && (h.overrides ?? []).map(o => (
+              <ReferenceLine key={o.fy} x={Number(o.fy.slice(2))} stroke={P25} strokeDasharray="2 3" strokeOpacity={0.6}
+                label={{ value: 'override', fontSize: 11, fill: 'var(--text-muted)',
+                  // the end label owns the top right corner; a late marker labels at the foot instead
+                  position: Number(o.fy.slice(2)) > z.x - 5 ? 'insideBottomRight' : 'insideTopLeft' }} />))}
           </LineChart>
         </ResponsiveContainer>
       </div>
@@ -208,7 +224,11 @@ export function HistoricalHomes({ h }: { h: Homes }) {
       {panel('Average tax bill', 'bill', 'bill_cpi', AMBER, 'bill',
         <p className="text-[12.5px] mt-1" style={{ color: 'var(--text-muted)' }}>
           Grown instead by Social Security’s cost-of-living adjustments, the {h.first} bill would
-          be {usd(h.kept_pace.cola)} in {h.base}. Inflation here is the Boston-area consumer price index.</p>)}
+          be {usd(h.kept_pace.cola)} in {h.base}. Inflation here is the Boston-area consumer price index.
+          {h.kept_pace.p25 != null && h.bill_cagr != null && <> Grown 2.5% a year, the levy limit’s own
+          increase, it would be {usd(h.kept_pace.p25)}; the actual bill grew {h.bill_cagr}% a year. The 2.5%
+          caps the town’s total levy, not your bill: overrides (the dotted lines), debt exclusions and
+          shifts between homes and businesses come on top.</>}</p>)}
       {panel('Average single-family home, assessed value', 'value', 'value_cpi', BLUE, 'value',
         h.dip && <p className="text-[12.5px] mt-1" style={{ color: 'var(--text-muted)' }}>
           Why the bill never dips: from {h.dip.fy0} to {h.dip.fy1} the average value fell {h.dip.value}% and

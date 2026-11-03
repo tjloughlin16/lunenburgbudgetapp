@@ -2617,6 +2617,7 @@
  "grain": "MIXED, AND EACH FIGURE SAYS WHICH. A tax rate is dollars per $1,000 of assessed value, as printed; a population is residents in the year the figure counts; a run is years between the first and last edition a NAME is printed in a list -- the town’s directory and department rosters, or the school rosters -- not a person proven or a post held. Dollars are nominal.",
  "homes": {
   "base": "FY2026",
+  "bill_cagr": 4.4,
   "bill_growth": 85,
   "dip": {
    "bill": 17,
@@ -2639,12 +2640,29 @@
    "actual": 7444,
    "bill": 4030,
    "bill0": 1637,
-   "cola": 3997
+   "cola": 3997,
+   "p25": 3885
   },
+  "overrides": [
+   {
+    "amount": 100331,
+    "fy": "FY1994"
+   },
+   {
+    "amount": 654408,
+    "fy": "FY1997"
+   },
+   {
+    "amount": 948136,
+    "fy": "FY2025"
+   }
+  ],
   "rows": [
    {
     "bill": 1637,
     "bill_cpi": 1637,
+    "bill_p25": 1637,
+    "bill_p25_real": 4030,
     "bill_real": 4030,
     "fy": 1991,
     "parcels": 2791,
@@ -2658,6 +2676,8 @@
    {
     "bill": 1683,
     "bill_cpi": 1687,
+    "bill_p25": 1678,
+    "bill_p25_real": 4010,
     "bill_real": 4022,
     "fy": 1992,
     "parcels": 2812,
@@ -2671,6 +2691,8 @@
    {
     "bill": 1771,
     "bill_cpi": 1738,
+    "bill_p25": 1720,
+    "bill_p25_real": 3988,
     "bill_real": 4106,
     "fy": 1993,
     "parcels": 2840,
@@ -2684,6 +2706,8 @@
    {
     "bill": 1864,
     "bill_cpi": 1766,
+    "bill_p25": 1763,
+    "bill_p25_real": 4023,
     "bill_real": 4254,
     "fy": 1994,
     "parcels": 2872,
@@ -2697,6 +2721,8 @@
    {
     "bill": 1956,
     "bill_cpi": 1803,
+    "bill_p25": 1807,
+    "bill_p25_real": 4039,
     "bill_real": 4372,
     "fy": 1995,
     "parcels": 2914,
@@ -2710,6 +2736,8 @@
    {
     "bill": 2044,
     "bill_cpi": 1847,
+    "bill_p25": 1852,
+    "bill_p25_real": 4041,
     "bill_real": 4460,
     "fy": 1996,
     "parcels": 2946,
@@ -2723,6 +2751,8 @@
    {
     "bill": 2328,
     "bill_cpi": 1906,
+    "bill_p25": 1898,
+    "bill_p25_real": 4014,
     "bill_real": 4922,
     "fy": 1997,
     "parcels": 2989,
@@ -2736,6 +2766,8 @@
    {
     "bill": 2357,
     "bill_cpi": 1951,
+    "bill_p25": 1946,
+    "bill_p25_real": 4019,
     "bill_real": 4869,
     "fy": 1998,
     "parcels": 3036,
@@ -2749,6 +2781,8 @@
    {
     "bill": 2411,
     "bill_cpi": 1992,
+    "bill_p25": 1995,
+    "bill_p25_real": 4035,
     "bill_real": 4877,
     "fy": 1999,
     "parcels": 3072,
@@ -2762,6 +2796,8 @@
    {
     "bill": 2528,
     "bill_cpi": 2063,
+    "bill_p25": 2044,
+    "bill_p25_real": 3994,
     "bill_real": 4939,
     "fy": 2000,
     "parcels": 3103,
@@ -2775,6 +2811,8 @@
    {
     "bill": 2651,
     "bill_cpi": 2158,
+    "bill_p25": 2095,
+    "bill_p25_real": 3913,
     "bill_real": 4950,
     "fy": 2001,
     "parcels": 3174,
@@ -2788,6 +2826,8 @@
    {
     "bill": 2814,
     "bill_cpi": 2224,
+    "bill_p25": 2148,
+    "bill_p25_real": 3893,
     "bill_real": 5100,
     "fy": 2002,
     "parcels": 3201,
@@ -2801,6 +2841,8 @@
    {
     "bill": 2985,
     "bill_cpi": 2301,
+    "bill_p25": 2202,
+    "bill_p25_real": 3856,
     "bill_real": 5229,
     "fy": 2003,
     "parcels": 3249,
@@ -2814,6 +2856,8 @@
    {
     "bill": 3445,
     "bill_cpi": 2381,
+    "bill_p25": 2257,
+    "bill_p25_real": 3819,
     "bill_real": 5830,
     "fy": 2004,
     "parcels": 3283,
@@ -2827,6 +2871,8 @@
    {
     "bill": 3538,
     "bill_cpi": 2436,
+    "bill_p25": 2313,
+    "bill_p25_real": 3827,
     "bill_real": 5854,
     "fy": 2005,
     "parcels": 3325,
@@ -2840,6 +2886,8 @@
    {
     "bill": 3767,
     "bill_cpi": 2532,
+    "bill_p25": 2371,
+    "bill_p25_real": 3774,
     "bill_real": 5996,
     "fy": 2006,
     "parcels": 3362,
@@ -2853,6 +2901,8 @@
    {
     "bill": 3690,
     "bill_cpi": 2588,
+    "bill_p25": 2430,
+    "bill_p25_real": 3785,
     "bill_real": 5747,
     "fy": 2007,
     "parcels": 3389,
@@ -2866,6 +2916,8 @@
    {
     "bill": 3774,
     "bill_cpi": 2657,
+    "bill_p25": 2491,
+    "bill_p25_real": 3778,
     "bill_real": 5724,
     "fy": 2008,
     "parcels": 3389,
@@ -2879,6 +2931,8 @@
    {
     "bill": 3895,
     "bill_cpi": 2698,
+    "bill_p25": 2553,
+    "bill_p25_real": 3815,
     "bill_real": 5819,
     "fy": 2009,
     "parcels": 3413,
@@ -2892,6 +2946,8 @@
    {
     "bill": 3991,
     "bill_cpi": 2722,
+    "bill_p25": 2617,
+    "bill_p25_real": 3875,
     "bill_real": 5910,
     "fy": 2010,
     "parcels": 3418,
@@ -2905,6 +2961,8 @@
    {
     "bill": 4064,
     "bill_cpi": 2757,
+    "bill_p25": 2682,
+    "bill_p25_real": 3922,
     "bill_real": 5941,
     "fy": 2011,
     "parcels": 3419,
@@ -2918,6 +2976,8 @@
    {
     "bill": 4174,
     "bill_cpi": 2827,
+    "bill_p25": 2749,
+    "bill_p25_real": 3920,
     "bill_real": 5952,
     "fy": 2012,
     "parcels": 3426,
@@ -2931,6 +2991,8 @@
    {
     "bill": 4287,
     "bill_cpi": 2869,
+    "bill_p25": 2818,
+    "bill_p25_real": 3959,
     "bill_real": 6022,
     "fy": 2013,
     "parcels": 3433,
@@ -2944,6 +3006,8 @@
    {
     "bill": 4414,
     "bill_cpi": 2911,
+    "bill_p25": 2889,
+    "bill_p25_real": 3999,
     "bill_real": 6110,
     "fy": 2014,
     "parcels": 3443,
@@ -2957,6 +3021,8 @@
    {
     "bill": 4513,
     "bill_cpi": 2945,
+    "bill_p25": 2961,
+    "bill_p25_real": 4053,
     "bill_real": 6177,
     "fy": 2015,
     "parcels": 3451,
@@ -2970,6 +3036,8 @@
    {
     "bill": 5039,
     "bill_cpi": 2969,
+    "bill_p25": 3035,
+    "bill_p25_real": 4120,
     "bill_real": 6840,
     "fy": 2016,
     "parcels": 3472,
@@ -2983,6 +3051,8 @@
    {
     "bill": 5338,
     "bill_cpi": 3032,
+    "bill_p25": 3111,
+    "bill_p25_real": 4135,
     "bill_real": 7096,
     "fy": 2017,
     "parcels": 3486,
@@ -2996,6 +3066,8 @@
    {
     "bill": 5575,
     "bill_cpi": 3119,
+    "bill_p25": 3189,
+    "bill_p25_real": 4120,
     "bill_real": 7204,
     "fy": 2018,
     "parcels": 3514,
@@ -3009,6 +3081,8 @@
    {
     "bill": 5770,
     "bill_cpi": 3206,
+    "bill_p25": 3268,
+    "bill_p25_real": 4109,
     "bill_real": 7254,
     "fy": 2019,
     "parcels": 3530,
@@ -3022,6 +3096,8 @@
    {
     "bill": 6024,
     "bill_cpi": 3258,
+    "bill_p25": 3350,
+    "bill_p25_real": 4144,
     "bill_real": 7451,
     "fy": 2020,
     "parcels": 3543,
@@ -3035,6 +3111,8 @@
    {
     "bill": 6233,
     "bill_cpi": 3295,
+    "bill_p25": 3434,
+    "bill_p25_real": 4200,
     "bill_real": 7623,
     "fy": 2021,
     "parcels": 3558,
@@ -3048,6 +3126,8 @@
    {
     "bill": 6436,
     "bill_cpi": 3486,
+    "bill_p25": 3520,
+    "bill_p25_real": 4069,
     "bill_real": 7441,
     "fy": 2022,
     "parcels": 3583,
@@ -3061,6 +3141,8 @@
    {
     "bill": 6874,
     "bill_cpi": 3699,
+    "bill_p25": 3608,
+    "bill_p25_real": 3931,
     "bill_real": 7489,
     "fy": 2023,
     "parcels": 3593,
@@ -3074,6 +3156,8 @@
    {
     "bill": 6788,
     "bill_cpi": 3805,
+    "bill_p25": 3698,
+    "bill_p25_real": 3917,
     "bill_real": 7191,
     "fy": 2024,
     "parcels": 3625,
@@ -3087,6 +3171,8 @@
    {
     "bill": 7251,
     "bill_cpi": 3927,
+    "bill_p25": 3790,
+    "bill_p25_real": 3890,
     "bill_real": 7442,
     "fy": 2025,
     "parcels": 3635,
@@ -3100,6 +3186,8 @@
    {
     "bill": 7444,
     "bill_cpi": 4030,
+    "bill_p25": 3885,
+    "bill_p25_real": 3885,
     "bill_real": 7444,
     "fy": 2026,
     "parcels": 3645,

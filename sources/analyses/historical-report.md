@@ -204,6 +204,8 @@ The state’s average single-family home value and average tax bill, FY1991 to F
 
 Grown instead by Social Security’s cost-of-living adjustments, the FY1991 bill would be $3,997 in FY2026.
 
+The FY1991 bill grown 2.5% a year, the levy limit’s own increase, would be $3,885 in FY2026. The actual bill grew 4.4% a year. The difference is everything else: overrides (voters passed them for FY1994, FY1997, FY2025), debt exclusions, and shifts in how the levy is split between homes and other property. The 2.5% caps the town’s total levy, not any one bill.
+
 From FY2008 to FY2014 the average value fell 20% and the average bill rose 17% anyway: the rate went from $12.23 to $17.99. The town sets the total it collects; the rate is that total divided by the town’s value, so a falling value raises the rate rather than lowering the bill.
 
 \* Bill divided by value; the state’s rate file starts in FY2003, and from then on the two agree to the cent. Values are ASSESSED values, not sale prices. Source: Division of Local Services; inflation by the Boston-area CPI-U, averaged July to June.

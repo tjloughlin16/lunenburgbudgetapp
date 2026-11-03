@@ -257,13 +257,14 @@ def build():
     # grown only with inflation, with a toggle to today's dollars and the COLA figure under the bill
     # (TJ, 2 November 2026). One component on both pages, from one set of figures (homes()).
     hdata = dict(first=h['first'], base=h['base'], kept_pace=h['kept_pace'],
-                 value_growth=h['value_growth'], bill_growth=h['bill_growth'], jump=h['jump'], dip=h['dip'],
+                 value_growth=h['value_growth'], bill_growth=h['bill_growth'], jump=h['jump'], dip=h['dip'], bill_cagr=h['bill_cagr'], overrides=h['overrides'],
                  rows=[{k: r[k] for k in ('fy', 'value', 'bill', 'value_cpi', 'bill_cpi', 'value_real',
-                                          'bill_real', 'share', 'rate', 'rate_printed', 'parcels')}
+                                          'bill_real', 'bill_p25', 'bill_p25_real', 'share', 'rate', 'rate_printed', 'parcels')}
                        for r in h['rows']])
     homes_block = TB.custom(
         'homes-against-inflation', 'Home value and tax bill against inflation', hdata, place='body',
-        allow=(h['first'], h['base'], h['jump']['fy0'], h['jump']['fy1'], h['dip']['fy0'], h['dip']['fy1']),
+        allow=(h['first'], h['base'], h['jump']['fy0'], h['jump']['fy1'], h['dip']['fy0'], h['dip']['fy1'])
+        + tuple(o['fy'] for o in h['overrides']),
         alt='Two panels: the average single-family tax bill and home value, %s to %s, each beside its '
             '%s figure grown only with inflation.' % (h['first'], h['base'], h['first']),
         so=('The %s bill, %s, grown only with inflation would be %s today; the actual bill is %s.'

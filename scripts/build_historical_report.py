@@ -887,6 +887,9 @@ RATES_CSV = os.path.join(ROOT, 'sources', 'data', 'dls-tax-rates.csv')
 MANIFEST = os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv')
 
 
+LIMIT = 1.025   # Proposition 2 1/2: the levy limit grows 2.5% a year before new growth and votes
+
+
 def homes():
     """FY1991-FY2026: DLS's average single-family assessed value and average tax bill for
     Lunenburg, nominal and in the last year's dollars, the bill as a share of the value, and
@@ -934,6 +937,8 @@ def homes():
         out.append(dict(fy=y, value=round(v), bill=round(b), value_cpi=round(v1 * ix[y] / k1),
                         bill_cpi=round(b1 * ix[y] / k1), value_real=round(v * k),
                         bill_real=round(b * k), share=round(b / v * 100, 3),
+                        bill_p25=round(b1 * LIMIT ** (y - years[0])),
+                        bill_p25_real=round(b1 * LIMIT ** (y - years[0]) * k),
                         rate=rates.get(y, round(implied, 2)), rate_printed=y in rates,
                         parcels=int(r['sf_parcels'])))
     man = {r['key']: r for r in csv.DictReader(open(MANIFEST, encoding='utf-8'))}
@@ -961,6 +966,14 @@ def homes():
                         'U.S. Bureau of Labor Statistics',
                         'CPI-U, all items, not seasonally adjusted. Averaged July to June.'))
     a, z = out[0], out[-1]
+    # THE OVERRIDES VOTERS PASSED, which raise the levy limit permanently (the state's vote file;
+    # exclusions are not in it). Drawn on the bill panel so a step can be checked against a vote.
+    won = {}
+    for r in csv.DictReader(open(os.path.join(ROOT, 'sources', 'data', 'dls-override-votes.csv'),
+                                 encoding='utf-8')):
+        if r['municipality'] == 'Lunenburg' and r['result'] == 'WIN' and a['fy'] <= int(r['fy']) <= z['fy']:
+            won[int(r['fy'])] = won.get(int(r['fy']), 0) + int(r['amount'])
+    won = sorted(won.items())
     # THE SAME BILL BY SOCIAL SECURITY'S COLAs (TJ, 2 November 2026: a resident used COLA). SSA's
     # year is when a COLA was set, paid the next January, so a bill in FY(a) reaches FY(z) through
     # the COLAs SSA labels a .. z-1 (sources/data/ssa-cola.csv, PROVENANCE-ssa-cola.md).
@@ -1005,7 +1018,10 @@ def homes():
                rate0=p0['rate'], rate1=p1['rate'])
     return dict(base='FY%d' % base, first='FY%d' % a['fy'], rows=out, sources=srcs, dip=dip,
                 kept_pace=dict(bill0=a['bill'], bill=z['bill_cpi'], actual=z['bill'],
-                               cola=round(a['bill'] * k_cola)),
+                               cola=round(a['bill'] * k_cola), p25=z['bill_p25']),
+                # The bill's compound annual growth, against the 2.5% the levy limit allows.
+                bill_cagr=round(((z['bill'] / a['bill']) ** (1 / (z['fy'] - a['fy'])) - 1) * 100, 1),
+                overrides=[dict(fy='FY%d' % y, amount=amt) for y, amt in won],
                 value_growth=round((z['value_real'] / a['value_real'] - 1) * 100),
                 bill_growth=round((z['bill_real'] / a['bill_real'] - 1) * 100),
                 jump=dict(fy0='FY%d' % i22['fy'], fy1='FY%d' % i23['fy'], value=round((i23['value'] / i22['value'] - 1) * 100, 1),
@@ -1576,6 +1592,12 @@ def render(d, x):
              C.num(r['bill_real']), r['share'], rate(r['rate']), '' if r['rate_printed'] else '*'))
     a('\nGrown instead by Social Security’s cost-of-living adjustments, the %s bill would be $%s '
       'in %s.\n' % (h['first'], C.num(h['kept_pace']['cola']), h['base']))
+    a('\nThe %s bill grown 2.5%% a year, the levy limit’s own increase, would be $%s in %s. The '
+      'actual bill grew %s%% a year. The difference is everything else: overrides (voters passed '
+      'them for %s), debt exclusions, and shifts in how the levy is split between homes and other '
+      'property. The 2.5%% caps the town’s total levy, not any one bill.\n'
+      % (h['first'], C.num(h['kept_pace']['p25']), h['base'], h['bill_cagr'],
+         ', '.join(o['fy'] for o in h['overrides'])))
     dp = h['dip']
     a('\nFrom %s to %s the average value fell %s%% and the average bill rose %s%% anyway: the rate '
       'went from %s to %s. The town sets the total it collects; the rate is that total divided by '
