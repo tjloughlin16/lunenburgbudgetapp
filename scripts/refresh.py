@@ -1597,6 +1597,15 @@ def run(a, notes, ctx):
         with open(WHATS_NEW, 'w', encoding='utf-8') as fh:
             json.dump(payload, fh, indent=1, ensure_ascii=False)
             fh.write('\n')
+        # THE FINAL COUNTS, AFTER THE ROW ABOVE. Three generators date or count what this run
+        # has only just finished: build_notices.py takes its `as_of` from the newest row in
+        # refresh-runs.csv -- the row written two lines up -- and the README and the app
+        # metrics count an archive the steps above were still changing. Built at their places
+        # earlier, each was a day or a count behind by the time scoped_gate checked it, which
+        # refused the deploy on 31 October and 2 November 2026 (build_notices.py both days).
+        # Rebuilt here they are final, they are committed below, and they reproduce.
+        for g in ('build_notices.py', 'build_readme.py', 'build_app_metrics.py'):
+            py(g)
 
     # COMMIT WHAT THIS RUN WROTE, AND ONLY THAT, BEFORE ANYTHING JUDGES A DEPLOY. The old
     # order deployed the uncommitted working tree and committed afterwards in the shell
