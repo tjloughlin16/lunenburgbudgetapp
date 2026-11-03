@@ -52,5 +52,5 @@ TOPICS = {
     'business-building-pace': 'Business building pace',
     'commercial-share': 'Commercial share',
     'senior-tax-work-off': 'Senior tax work-off',
-    'growth-and-tax-rate': 'Growth and the tax rate',
+    'growth-and-tax-rate': 'The tax bill, explained',
 }

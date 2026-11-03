@@ -112,7 +112,7 @@ export type HomeRow = { fy: number; value: number; bill: number; value_cpi: numb
 export type Homes = { base: string; first: string; rows: HomeRow[]; value_growth: number; bill_growth: number
   jump: { fy0: string; fy1: string; value: number; bill: number; rate0: number; rate1: number }
   kept_pace: { bill0: number; bill: number; actual: number; cola: number; p25?: number }
-  bill_cagr?: number; overrides?: { fy: string; amount: number }[]
+  bill_cagr?: number; overrides?: { fy: string; amount: number }[]; exclusions?: { fy: string; added: number }[]
   dip?: { fy0: string; fy1: string; value: number; bill: number; rate0: number; rate1: number } }
 
 const usd = (v: number) => `$${Math.round(v).toLocaleString('en-US')}`
@@ -192,6 +192,10 @@ export function HistoricalHomes({ h }: { h: Homes }) {
                 <LabelList dataKey="bill_p25" content={(p: { x?: number | string; y?: number | string; index?: number }) =>
                   label(p, last, `${usd(z.bill_p25)}, up 2.5% a year`, P25, true, false, 33)} />
               </Line>)}
+            {actual === 'bill' && (h.exclusions ?? []).map(e => (
+              <ReferenceLine key={`x${e.fy}`} x={Number(e.fy.slice(2))} stroke={AMBER} strokeDasharray="2 3" strokeOpacity={0.7}
+                label={{ value: 'debt exclusion', fontSize: 11, fill: 'var(--text-muted)',
+                  position: Number(e.fy.slice(2)) > z.x - 5 ? 'insideBottomRight' : 'insideTopLeft' }} />))}
             {actual === 'bill' && (h.overrides ?? []).map(o => (
               <ReferenceLine key={o.fy} x={Number(o.fy.slice(2))} stroke={P25} strokeDasharray="2 3" strokeOpacity={0.6}
                 label={{ value: 'override', fontSize: 11, fill: 'var(--text-muted)',
@@ -227,7 +231,7 @@ export function HistoricalHomes({ h }: { h: Homes }) {
           be {usd(h.kept_pace.cola)} in {h.base}. Inflation here is the Boston-area consumer price index.
           {h.kept_pace.p25 != null && h.bill_cagr != null && <> Grown 2.5% a year, the levy limit’s own
           increase, it would be {usd(h.kept_pace.p25)}; the actual bill grew {h.bill_cagr}% a year. The 2.5%
-          caps the town’s total levy, not your bill: overrides (the dotted lines), debt exclusions and
+          caps the town’s total levy, not your bill: overrides, debt exclusions (the dotted lines mark the largest) and
           shifts between homes and businesses come on top.</>}</p>)}
       {panel('Average single-family home, assessed value', 'value', 'value_cpi', BLUE, 'value',
         h.dip && <p className="text-[12.5px] mt-1" style={{ color: 'var(--text-muted)' }}>

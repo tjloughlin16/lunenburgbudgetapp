@@ -1,0 +1,61 @@
+{
+  "posted": null,
+  "about": "Follow-up to the historical report post, answering the questions it raised: how is the tax bill set, and what raised it? The surprise: Prop 2 1/2 caps the town's total, not the bill, and everything voters approved -- overrides and debt exclusions -- is about a tenth of the average bill's rise since FY1991. Sends readers to /homes-and-taxes/growth-and-tax-rate, rebuilt as the destination.",
+  "data": {
+    "g": "topics/growth-and-tax-rate.json",
+    "hr": "historical-report.json#homes"
+  },
+  "literal": [
+    "2.5%",
+    "2½"
+  ],
+  "flare": {
+    "accent": "harbor",
+    "motif": "blocks"
+  },
+  "image": {
+    "layout": "split",
+    "size": "square",
+    "headline": "Overrides and exclusions: {g.facts[id=s-votes].value.text} of the rise in the tax bill",
+    "emphasis": "{g.facts[id=s-votes].value.text}",
+    "headline_size": 50,
+    "sub": "Lunenburg’s average single-family bill, {hr.first} to {hr.base}, split by cause with the state’s levy files. An average: newer and enlarged homes raise it too.",
+    "tiles": [
+      {
+        "eyebrow": "GROWN 2.5% A YEAR",
+        "value": "{g.facts[id=p25].value.text}",
+        "label": "the {hr.first} bill at Prop 2½’s rate",
+        "text": "What the limit alone would have done."
+      },
+      {
+        "eyebrow": "THE ACTUAL BILL",
+        "value": "{g.facts[id=bill1].value.text}",
+        "label": "average single-family, {hr.base}",
+        "text": "Up {hr.bill_cagr}% a year."
+      }
+    ],
+    "path": "/homes-and-taxes/growth-and-tax-rate",
+    "as_of": "Division of Local Services, our arithmetic",
+    "conclusion": "The 2.5% a year was {g.facts[id=s-cap].value.text} of the rise. Everything voters approved: {g.facts[id=s-votes].value.text}.",
+    "conclusion_em": "{g.facts[id=s-votes].value.text}",
+    "conclusion_size": 40
+  },
+  "text": [
+    "Prop 2½ is usually described as a 2.5% cap on property taxes. It caps the town's total, not anyone's bill. Lunenburg's average single-family tax bill went from {g.facts[id=bill0].value.text} in {hr.first} to {g.facts[id=bill1].value.text} in {hr.base}, about {hr.bill_cagr}% a year. Grown 2.5% a year, it would be {g.facts[id=p25].value.text}.",
+    "",
+    "So where did the rest come from? We split the rise using the state's own levy files:",
+    "• The 2.5% a year, compounding: {g.facts[id=s-cap].value.text} of the rise. It needs no vote.",
+    "• New growth: {g.facts[id=s-growth].value.text}. New homes and additions don't raise anyone else's bill, but they raise the average: our reading is that newer and bigger homes join it.",
+    "• Overrides and debt exclusions, everything voters approved: {g.facts[id=s-votes].value.text}.",
+    "• Homes carrying more of the total as businesses became a smaller share ({g.facts[id=rs0].value.text} of the levy, now {g.facts[id=rs].value.text}): {g.facts[id=s-homes].value.text}.",
+    "",
+    "So if Lunenburg's taxes feel high, overrides and exclusions are about a tenth of the story.",
+    "",
+    "The page also shows what does and doesn't change a bill: why a new business doesn't lower anyone's taxes, why a business closing raises them, and why the average bill rose {hr.dip.bill}% from {hr.dip.fy0} to {hr.dip.fy1} while home values fell {hr.dip.value}%.",
+    "👉 lburg.org/homes-and-taxes/growth-and-tax-rate",
+    "",
+    "These are averages from the state's Division of Local Services, and the split is our arithmetic on them. One home's bill moves with its own value; the average also moves when new and enlarged homes join it.",
+    "",
+    "What did you think Prop 2½ capped? Tell us in the comments."
+  ]
+}

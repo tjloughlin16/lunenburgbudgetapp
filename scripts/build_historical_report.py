@@ -887,6 +887,7 @@ RATES_CSV = os.path.join(ROOT, 'sources', 'data', 'dls-tax-rates.csv')
 MANIFEST = os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv')
 
 
+LEVY_CSV = os.path.join(ROOT, 'sources', 'data', 'dls-levy-limits.csv')
 LIMIT = 1.025   # Proposition 2 1/2: the levy limit grows 2.5% a year before new growth and votes
 
 
@@ -974,6 +975,17 @@ def homes():
         if r['municipality'] == 'Lunenburg' and r['result'] == 'WIN' and a['fy'] <= int(r['fy']) <= z['fy']:
             won[int(r['fy'])] = won.get(int(r['fy']), 0) + int(r['amount'])
     won = sorted(won.items())
+    # THE DEBT EXCLUSIONS THAT STEPPED THE LEVY UP: a year the dollars excluded rose by at least
+    # 3% of the prior year’s levy -- the steps a reader sees on the chart; smaller ones would bury
+    # the overrides in markers (the state’s levy files, sources/data/dls-levy-limits.csv). A
+    # year the file leaves blank (it refused to tie) is skipped, never read as zero.
+    lv = {int(r['fy']): r for r in csv.DictReader(open(LEVY_CSV, encoding='utf-8'))}
+    steps = []
+    for y in range(a['fy'] + 1, z['fy'] + 1):
+        d1, d0, l0 = (lv.get(y, {}).get('debt_exclusion'), lv.get(y - 1, {}).get('debt_exclusion'),
+                      lv.get(y - 1, {}).get('tax_levy'))
+        if d1 and d0 and l0 and float(d1) - float(d0) >= 0.03 * float(l0):
+            steps.append(dict(fy='FY%d' % y, added=round(float(d1) - float(d0))))
     # THE SAME BILL BY SOCIAL SECURITY'S COLAs (TJ, 2 November 2026: a resident used COLA). SSA's
     # year is when a COLA was set, paid the next January, so a bill in FY(a) reaches FY(z) through
     # the COLAs SSA labels a .. z-1 (sources/data/ssa-cola.csv, PROVENANCE-ssa-cola.md).
@@ -1022,6 +1034,7 @@ def homes():
                 # The bill's compound annual growth, against the 2.5% the levy limit allows.
                 bill_cagr=round(((z['bill'] / a['bill']) ** (1 / (z['fy'] - a['fy'])) - 1) * 100, 1),
                 overrides=[dict(fy='FY%d' % y, amount=amt) for y, amt in won],
+                exclusions=steps,
                 value_growth=round((z['value_real'] / a['value_real'] - 1) * 100),
                 bill_growth=round((z['bill_real'] / a['bill_real'] - 1) * 100),
                 jump=dict(fy0='FY%d' % i22['fy'], fy1='FY%d' % i23['fy'], value=round((i23['value'] / i22['value'] - 1) * 100, 1),
