@@ -1,5 +1,5 @@
 import {
-  Bar, BarChart, CartesianGrid, Line, LineChart, ReferenceLine,
+  Bar, BarChart, CartesianGrid, ComposedChart, Line, LineChart, ReferenceLine,
   ResponsiveContainer, Tooltip, XAxis, YAxis,
 } from 'recharts'
 import type { ChartProps } from './analysisCharts'
@@ -100,6 +100,65 @@ export function HistoricalRosters({ data }: ChartProps) {
           <Bar dataKey="names" fill={BLUE} isAnimationActive={false} />
         </BarChart>
       </ResponsiveContainer>
+    </div>
+  )
+}
+
+export type HomeRow = { fy: number; value: number; bill: number; value_real: number; bill_real: number
+  share: number; rate: number; rate_printed: boolean; parcels: number }
+export type Homes = { base: string; first: string; rows: HomeRow[]; value_growth: number; bill_growth: number
+  jump: { fy0: string; fy1: string; value: number; bill: number; rate0: number; rate1: number } }
+
+const usd = (v: number) => `$${Math.round(v).toLocaleString('en-US')}`
+const k = (v: number) => (v >= 1000 ? `$${Math.round(v / 1000)}k` : `$${v}`)
+
+/** HOMES AND THE TAX BILL, in today's dollars (TJ, 2 November 2026). TWO PANELS on one year
+ *  axis, not one chart: a home is worth about seventy times its bill, so on a shared dollar
+ *  axis the bill is a flat line on the floor. The value on top; the bill below, with the bill
+ *  as a share of the value on that panel's right axis -- which is the tax rate as a percent. */
+export function HistoricalHomes({ h }: { h: Homes }) {
+  const rows = h.rows.map(r => ({ ...r, x: r.fy }))
+  const xa = <XAxis dataKey="x" type="number" domain={['dataMin', 'dataMax']} tickCount={8}
+    allowDecimals={false} tick={tick} tickFormatter={(v: number) => `FY${String(v).slice(2)}`} />
+  return (
+    <div className="min-w-0">
+      <p className="text-[12.5px] font-semibold mt-1" style={{ color: 'var(--text-secondary)' }}>
+        Average single-family home, assessed value, {h.base} dollars</p>
+      <div style={{ width: '100%', height: 200 }}>
+        <ResponsiveContainer>
+          <LineChart data={rows} margin={{ top: 8, right: 52, left: 0, bottom: 0 }} syncId="homes">
+            <CartesianGrid stroke="var(--grid)" vertical={false} />
+            {xa}
+            <YAxis tickFormatter={(v: number) => k(N(v))} width={52} tick={tick} domain={[0, 'auto']} />
+            <Tooltip contentStyle={box} labelFormatter={(l) => `FY${l}`}
+              formatter={(v, _n, p: { payload?: HomeRow }) =>
+                [`${usd(N(v))} (${usd(p.payload?.value ?? 0)} at the time)`, `average value, ${h.base} dollars`]} />
+            <Line dataKey="value_real" stroke={BLUE} strokeWidth={2} dot={false} isAnimationActive={false} />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+      <div className="flex flex-wrap gap-x-4 gap-y-1 text-[12.5px] font-semibold mt-3" style={{ color: 'var(--text-secondary)' }}>
+        <span><span aria-hidden style={{ color: AMBER }}>━</span> Average tax bill, {h.base} dollars (left)</span>
+        <span><span aria-hidden>┅</span> Bill as a share of the value, which is the tax rate (right)</span>
+      </div>
+      <div style={{ width: '100%', height: 220 }}>
+        <ResponsiveContainer>
+          <ComposedChart data={rows} margin={{ top: 8, right: 0, left: 0, bottom: 4 }} syncId="homes">
+            <CartesianGrid stroke="var(--grid)" vertical={false} />
+            {xa}
+            <YAxis yAxisId="d" tickFormatter={(v: number) => k(N(v))} width={52} tick={tick} domain={[0, 'auto']} />
+            <YAxis yAxisId="p" orientation="right" width={52} tick={tick} domain={[0, 'auto']}
+              tickFormatter={(v: number) => `${N(v).toFixed(1)}%`} />
+            <Tooltip contentStyle={box} labelFormatter={(l) => `FY${l}`}
+              formatter={(v, n, p: { payload?: HomeRow }) => n === 'share'
+                ? [`${N(v).toFixed(2)}% ($${p.payload?.rate.toFixed(2)} per $1,000)`, 'bill as share of value']
+                : [`${usd(N(v))} (${usd(p.payload?.bill ?? 0)} at the time)`, `average bill, ${h.base} dollars`]} />
+            <Line yAxisId="d" dataKey="bill_real" stroke={AMBER} strokeWidth={2} dot={false} isAnimationActive={false} />
+            <Line yAxisId="p" dataKey="share" name="share" stroke="var(--text-primary)" strokeWidth={1.5}
+              strokeDasharray="5 4" dot={false} isAnimationActive={false} />
+          </ComposedChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   )
 }

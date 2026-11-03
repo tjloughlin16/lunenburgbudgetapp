@@ -4,7 +4,7 @@ import {
   ResponsiveContainer, Tooltip, XAxis, YAxis,
 } from 'recharts'
 import { abs } from '../lib/abs'
-import { HistoricalPopulation, HistoricalRosters } from './HistoricalCharts'
+import { HistoricalHomes, HistoricalPopulation, HistoricalRosters, type Homes } from './HistoricalCharts'
 
 /* THE LUNENBURG HISTORICAL REPORT, AS A PAGE A RESIDENT WOULD SCROLL FOR FUN.
  *
@@ -48,6 +48,8 @@ type Half = { first: number; last: number; seen: number; first_entry: Entry; las
 
 export type HistoricalPayload = {
   conclusions: Concl[]
+  /** The state's average single-family value and bill, in today's dollars (build_historical_report.homes). */
+  homes: Homes
   tax_rate: Rate[]
   tax_unread: number[]
   revaluations: Quote[]
@@ -359,6 +361,11 @@ export function HistoricalPage({ data: d, docUrl }: { data: HistoricalPayload; d
       </Section>
 
       {/* THE TIE OF 1959. */}
+      {/* HOMES AND THE TAX BILL, right after the rate: the rate chart ends "a lower rate is not
+          a lower tax bill", and this is the bill. TJ, 2 November 2026, for a resident who asked to
+          compare the tax rate with house prices, inflation adjusted. */}
+      <HomesSection h={d.homes} />
+
       <Section id="the-tie" eyebrow={`${dy.tie.march.edition}`}
         title="The year the Selectman race tied">
         <div className="grid sm:grid-cols-2 gap-4 mt-5 min-w-0">
@@ -791,5 +798,57 @@ function Fact({ big, unit, c, children }: { big: string; unit: string; c: Cite; 
       <p className="text-[13.5px] leading-snug mt-2 flex-1 break-words" style={{ color: 'var(--text-secondary)' }}>{children}</p>
       <p className="text-[11.5px] mt-2"><Src c={c} /></p>
     </div>
+  )
+}
+
+/** Homes and the tax bill: the chart, three figures, the table. Every value from the payload. */
+function HomesSection({ h }: { h: Homes }) {
+  const a = h.rows[0], z = h.rows[h.rows.length - 1]
+  const money = (v: number) => `$${v.toLocaleString('en-US')}`
+  return (
+    <Section id="homes-and-the-bill" eyebrow={`${h.first} to ${h.base}, after inflation`}
+      title={<>Homes rose {h.value_growth}%. The tax bill rose {h.bill_growth}%</>}>
+      <p className="text-[15px] leading-relaxed mt-2 max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
+        The state’s average single-family home and its tax bill, in {h.base} dollars. From {h.jump.fy0} to {h.jump.fy1},
+        the biggest jump in value, the average value rose {h.jump.value}% while the rate fell
+        from {rate(h.jump.rate0)} to {rate(h.jump.rate1)}, so the bill rose {h.jump.bill}%.
+      </p>
+      <HistoricalHomes h={h} />
+      <Ours kind="What this is">
+        An ASSESSED value, averaged over {z.parcels.toLocaleString('en-US')} single-family homes
+        in {h.base}, set as of the January before the year: not a sale price and not a median,
+        which the state does not publish. The bill as a share of the value is the tax rate
+        written as a percent; the two agree to the cent in every year the state prints a rate.
+        Why the bill outgrew the value is not shown here.
+      </Ours>
+      <details className="mt-4">
+        <summary className="cursor-pointer text-[14px] font-semibold" style={{ color: 'var(--series-cost)' }}>
+          Every year, {a.fy} to {z.fy}</summary>
+        <div className="overflow-x-auto mt-2 rounded-md border" style={{ borderColor: 'var(--grid)' }}>
+          <table className="w-full text-[13px] tnum border-collapse min-w-[560px]">
+            <thead><tr style={{ background: 'var(--surface-1)', color: 'var(--text-secondary)' }}>
+              {['Year', 'Average value', `in ${h.base} $`, 'Average bill', `in ${h.base} $`, 'Rate per $1,000'].map((t, i) => (
+                <th key={t + i} className={`${i ? 'text-right' : 'text-left'} font-semibold px-2.5 py-2`}
+                  style={{ borderBottom: '2px solid var(--axis)' }}>{t}</th>))}
+            </tr></thead>
+            <tbody>
+              {h.rows.map((r, j) => (
+                <tr key={r.fy} style={{ background: j % 2 ? 'var(--surface-1)' : 'var(--surface-2)' }}>
+                  <td className="px-2.5 py-1.5">FY{r.fy}</td>
+                  <td className="px-2.5 py-1.5 text-right">{money(r.value)}</td>
+                  <td className="px-2.5 py-1.5 text-right">{money(r.value_real)}</td>
+                  <td className="px-2.5 py-1.5 text-right">{money(r.bill)}</td>
+                  <td className="px-2.5 py-1.5 text-right">{money(r.bill_real)}</td>
+                  <td className="px-2.5 py-1.5 text-right">{rate(r.rate)}{r.rate_printed ? '' : '*'}</td>
+                </tr>))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-[12px] mt-2" style={{ color: 'var(--text-muted)' }}>
+          * Bill divided by value: the state’s rate file starts in FY2003. Source: Division of Local
+          Services, average single-family tax bill and tax rates by class; inflation by the
+          Boston-area consumer price index, averaged July to June. All listed under Sources below.</p>
+      </details>
+    </Section>
   )
 }

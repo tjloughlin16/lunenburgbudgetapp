@@ -159,6 +159,51 @@ The charter was Question 2 on the ballot headed “ANNUAL TOWN ELECTION - SATURD
 
 **The levy**: $251,843 raised by taxation in 1950 at a rate of $52.00 ([1968 report, p. 11](/docs/town-annual-reports/docs/4511-1968-annual-town-report.pdf#page=11)), and $17,427,297 levied in FY2010 at $14.20 ([2010 report, p. 13](/docs/town-annual-reports/docs/4518-2010-annual-town-report.pdf#page=13)). Nominal dollars, and two different assessment bases.
 
+## Homes and the tax bill
+
+The state’s average single-family home value and average tax bill, FY1991 to FY2026, in FY2026 dollars. Over that span the average home rose 40% after inflation and the average bill 85%. The bill as a share of the home’s value is the tax rate written as a percent. From FY2002 to FY2003, the biggest jump in value, the average value rose 26.1% while the rate fell from $15.60 to $13.12, so the average bill rose 6.1%.
+
+| Fiscal year | Average value | in FY2026 dollars | Average bill | in FY2026 dollars | Bill as share of value | Rate per $1,000 |
+|---|---:|---:|---:|---:|---:|---:|
+| FY1991 | $149,913 | $369,098 | $1,637 | $4,030 | 1.09% | $10.92* |
+| FY1992 | $127,690 | $305,127 | $1,683 | $4,022 | 1.32% | $13.18* |
+| FY1993 | $122,727 | $284,566 | $1,771 | $4,106 | 1.44% | $14.43* |
+| FY1994 | $122,737 | $280,078 | $1,864 | $4,254 | 1.52% | $15.19* |
+| FY1995 | $122,003 | $272,719 | $1,956 | $4,372 | 1.60% | $16.03* |
+| FY1996 | $123,153 | $268,690 | $2,044 | $4,460 | 1.66% | $16.60* |
+| FY1997 | $126,113 | $266,625 | $2,328 | $4,922 | 1.85% | $18.46* |
+| FY1998 | $129,776 | $268,060 | $2,357 | $4,869 | 1.82% | $18.16* |
+| FY1999 | $135,443 | $273,978 | $2,411 | $4,877 | 1.78% | $17.80* |
+| FY2000 | $152,103 | $297,155 | $2,528 | $4,939 | 1.66% | $16.62* |
+| FY2001 | $166,196 | $310,353 | $2,651 | $4,950 | 1.59% | $15.95* |
+| FY2002 | $180,403 | $326,950 | $2,814 | $5,100 | 1.56% | $15.60* |
+| FY2003 | $227,537 | $398,559 | $2,985 | $5,229 | 1.31% | $13.12 |
+| FY2004 | $242,615 | $410,600 | $3,445 | $5,830 | 1.42% | $14.20 |
+| FY2005 | $265,212 | $438,810 | $3,538 | $5,854 | 1.33% | $13.34 |
+| FY2006 | $303,544 | $483,179 | $3,767 | $5,996 | 1.24% | $12.41 |
+| FY2007 | $304,179 | $473,714 | $3,690 | $5,747 | 1.21% | $12.13 |
+| FY2008 | $308,614 | $468,112 | $3,774 | $5,724 | 1.22% | $12.23 |
+| FY2009 | $298,662 | $446,220 | $3,895 | $5,819 | 1.30% | $13.04 |
+| FY2010 | $281,062 | $416,211 | $3,991 | $5,910 | 1.42% | $14.20 |
+| FY2011 | $251,469 | $367,637 | $4,064 | $5,941 | 1.62% | $16.16 |
+| FY2012 | $248,038 | $353,679 | $4,174 | $5,952 | 1.68% | $16.83 |
+| FY2013 | $247,776 | $348,033 | $4,287 | $6,022 | 1.73% | $17.30 |
+| FY2014 | $245,371 | $339,671 | $4,414 | $6,110 | 1.80% | $17.99 |
+| FY2015 | $246,347 | $337,177 | $4,513 | $6,177 | 1.83% | $18.32 |
+| FY2016 | $256,969 | $348,805 | $5,039 | $6,840 | 1.96% | $19.61 |
+| FY2017 | $267,155 | $355,152 | $5,338 | $7,096 | 2.00% | $19.98 |
+| FY2018 | $282,996 | $365,677 | $5,575 | $7,204 | 1.97% | $19.70 |
+| FY2019 | $308,864 | $388,319 | $5,770 | $7,254 | 1.87% | $18.68 |
+| FY2020 | $332,447 | $411,226 | $6,024 | $7,451 | 1.81% | $18.12 |
+| FY2021 | $351,358 | $429,740 | $6,233 | $7,623 | 1.77% | $17.74 |
+| FY2022 | $374,392 | $432,846 | $6,436 | $7,441 | 1.72% | $17.19 |
+| FY2023 | $470,165 | $512,255 | $6,874 | $7,489 | 1.46% | $14.62 |
+| FY2024 | $481,417 | $509,984 | $6,788 | $7,191 | 1.41% | $14.10 |
+| FY2025 | $504,937 | $518,259 | $7,251 | $7,442 | 1.44% | $14.36 |
+| FY2026 | $517,296 | $517,296 | $7,444 | $7,444 | 1.44% | $14.39 |
+
+\* Bill divided by value; the state’s rate file starts in FY2003, and from then on the two agree to the cent. Values are ASSESSED values, not sale prices. Source: Division of Local Services; inflation by the Boston-area CPI-U, averaged July to June.
+
 ## Did you know
 
 **The tie of 1959.** The race for Selectman at the March election was printed as 853 to 853, “Original Count Before Recount” ([1959 report, p. 58](/docs/town-annual-reports/docs/4550-1959-annual-town-report.pdf#page=58)). A special election on May 16 settled it: Howard A. Hamel 1,238, Eino O. Toko 1,216, blanks 3 ([1959 report, p. 63](/docs/town-annual-reports/docs/4550-1959-annual-town-report.pdf#page=63)). The Selectmen: “Due to the unprecedented tie vote for the office of Selectman, the recount, and then a special election to fill the vacancy, your Board was without its full membership until the middle of May.” ([1959 report, p. 6](/docs/town-annual-reports/docs/4550-1959-annual-town-report.pdf#page=6)) And: “Even mother nature conspired against us, bringing one of the rainiest years on record.”
@@ -188,7 +233,8 @@ The charter was Question 2 on the ballot headed “ANNUAL TOWN ELECTION - SATURD
 
 - Whether a name on two rosters is one person. The rosters print names, not employee numbers.
 - Hire and retirement dates. A run is first and last appearance in the reports we hold.
-- Any comparison in real dollars. The price index held here starts in 1990.
+- Any comparison in real dollars before FY1991. The price index held here starts in 1990.
+- What homes SOLD for, or the median home. The state publishes the average ASSESSED value of single-family homes only.
 - What a household paid in tax in any year before the reports printed an average bill.
 - Staffing levels. A roster line is a name, with no hours and no funding source.
 - Years of town employment. Most lines in the officers’ directory are elected or appointed seats on boards and committees, many unpaid; the directory does not say which posts were paid, and a department roster prints names, not hours.

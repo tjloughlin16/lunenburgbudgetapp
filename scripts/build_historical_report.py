@@ -32,9 +32,13 @@ THREE KINDS OF CLAIM ON THIS PAGE, AND THEY ARE KEPT APART (rule 7):
     revalued that year; the coincidence is shown, the report is quoted, and nothing here
     goes further than the report does.
 
-DOLLARS ARE NOMINAL THROUGHOUT. The only price index this archive holds
-(`sources/federal-bls/`, CPI-U Northeast) starts in 1990, so nothing from 1950 can be
-adjusted with a cited index, and nothing is.
+DOLLARS ARE NOMINAL, EXCEPT IN ONE SECTION. The price index this archive holds
+(`sources/federal-bls/`, CPI-U Boston-Cambridge-Newton, `CUURS11ASA0`) starts in 1990, so
+nothing from 1950 can be adjusted with a cited index, and nothing is. The exception is HOMES
+AND THE TAX BILL (TJ, 2 November 2026: a resident asked to compare the tax rate with house
+prices, inflation adjusted): the state's average single-family value and bill, FY1991 to
+FY2026, in FY2026 dollars by the fiscal-year average of that index. FY1991 is the first fiscal
+year the index covers whole (July 1990 to June 1991).
 """
 import argparse
 import collections
@@ -874,6 +878,95 @@ def lunch_prices(eds):
 # Everything, once.
 # --------------------------------------------------------------------------------------
 
+# --------------------------------------------------------------------------------------
+# Homes and the tax bill: the state's average single-family value and bill, in today's dollars.
+# --------------------------------------------------------------------------------------
+
+AVG_BILL_CSV = os.path.join(ROOT, 'sources', 'data', 'dls-avg-tax-bill.csv')
+RATES_CSV = os.path.join(ROOT, 'sources', 'data', 'dls-tax-rates.csv')
+MANIFEST = os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv')
+
+
+def homes():
+    """FY1991-FY2026: DLS's average single-family assessed value and average tax bill for
+    Lunenburg, nominal and in the last year's dollars, the bill as a share of the value, and
+    the residential rate.
+
+    THE SHARE IS THE RATE. A single-family bill is value times the residential rate, so bill
+    divided by value IS the rate per dollar: asserted below against DLS's own rate file for
+    every year it covers (FY2003 on), to the cent per $1,000. Before FY2003 the table's rate is
+    that identity, and says so. DLS's own `bill_pct_of_value` column is checked too.
+
+    WHAT A VALUE IS. An ASSESSED value, set as of 1 January before the fiscal year, averaged
+    over single-family parcels. Not a sale price, and not a median: DLS publishes neither."""
+    from build_spending_staff_students_topics import cpi
+    ix = cpi()
+    rows = {int(r['fy']): r for r in csv.DictReader(open(AVG_BILL_CSV, encoding='utf-8'))
+            if r['municipality'] == 'Lunenburg'}
+    rates = {int(r['fy']): float(r['residential'])
+             for r in csv.DictReader(open(RATES_CSV, encoding='utf-8'))
+             if r['municipality'] == 'Lunenburg' and r['residential']}
+    years = [y for y in sorted(rows) if y in ix and rows[y]['avg_sf_value'] and float(rows[y]['avg_sf_bill'] or 0)]
+    if not years or years[0] != min(ix) or years[-1] != max(ix):
+        raise SystemExit('homes: the bill file and the price index no longer cover the same '
+                         'years (%s-%s against %s-%s). Refusing.'
+                         % (years[:1], years[-1:], min(ix), max(ix)))
+    if years != list(range(years[0], years[-1] + 1)):
+        raise SystemExit('homes: a year is missing from %s-%s' % (years[0], years[-1]))
+    base = years[-1]
+    out = []
+    for y in years:
+        r = rows[y]
+        v, b = float(r['avg_sf_value']), float(r['avg_sf_bill'])
+        k = ix[base] / ix[y]
+        implied = b / v * 1000
+        if y in rates and abs(rates[y] - implied) > 0.005:
+            raise SystemExit('homes: FY%d bill / value is %.3f per $1,000; the state prints a '
+                             'residential rate of %s. The share is no longer the rate.'
+                             % (y, implied, rates[y]))
+        if abs(float(r['bill_pct_of_value']) - b / v * 100) > 0.0051:
+            raise SystemExit('homes: FY%d bill / value disagrees with DLS bill_pct_of_value %s'
+                             % (y, r['bill_pct_of_value']))
+        out.append(dict(fy=y, value=round(v), bill=round(b), value_real=round(v * k),
+                        bill_real=round(b * k), share=round(b / v * 100, 3),
+                        rate=rates.get(y, round(implied, 2)), rate_printed=y in rates,
+                        parcels=int(r['sf_parcels'])))
+    man = {r['key']: r for r in csv.DictReader(open(MANIFEST, encoding='utf-8'))}
+
+    def doc(key, label, publisher, note):
+        if key not in man:
+            raise SystemExit('homes: %s is not in archive-manifest.csv' % key)
+        return dict(label=label, path='sources/' + key, docs_url='/docs/' + key,
+                    filename=key.split('/')[-1], sha256=man[key]['sha256'],
+                    url=man[key]['upstream'], publisher=publisher, note=note)
+    bill_src = {r['source_file'] for y, r in rows.items() if y in years}
+    rate_src = {r['source_file'] for r in csv.DictReader(open(RATES_CSV, encoding='utf-8'))
+                if r['municipality'] == 'Lunenburg'}
+    if len(bill_src) != 1 or len(rate_src) != 1:
+        raise SystemExit('homes: expected one source file each, got %s and %s' % (bill_src, rate_src))
+    srcs = [doc('state-dls/' + bill_src.pop(), 'Average single family tax bill, all years',
+                'Massachusetts Division of Local Services',
+                'The average single-family assessed value, parcel count and average bill.'),
+            doc('state-dls/' + rate_src.pop(), 'Tax rates by class, all years',
+                'Massachusetts Division of Local Services',
+                'The residential rate per $1,000, FY2003 on.')]
+    for k in sorted(k for k in man if k.startswith('federal-bls/cpi-u-CUURS11ASA0-')):
+        srcs.append(doc(k, 'Consumer Price Index, Boston-Cambridge-Newton, %s'
+                        % k.rsplit('-', 2)[1] + '-' + k.rsplit('-', 1)[1][:4],
+                        'U.S. Bureau of Labor Statistics',
+                        'CPI-U, all items, not seasonally adjusted. Averaged July to June.'))
+    a, z = out[0], out[-1]
+    # THE YEAR THE VALUE JUMPED MOST: found, not named, so the sentence follows the data.
+    i23 = max(out[1:], key=lambda r: r['value'] / out[out.index(r) - 1]['value'])
+    i22 = out[out.index(i23) - 1]
+    return dict(base='FY%d' % base, first='FY%d' % a['fy'], rows=out, sources=srcs,
+                value_growth=round((z['value_real'] / a['value_real'] - 1) * 100),
+                bill_growth=round((z['bill_real'] / a['bill_real'] - 1) * 100),
+                jump=dict(fy0='FY%d' % i22['fy'], fy1='FY%d' % i23['fy'], value=round((i23['value'] / i22['value'] - 1) * 100, 1),
+                          bill=round((i23['bill'] / i22['bill'] - 1) * 100, 1),
+                          rate0=i22['rate'], rate1=i23['rate']))
+
+
 def gather():
     eds = editions()
     tax, unread = tax_rates(eds)
@@ -885,7 +978,7 @@ def gather():
     d['board'] = board(d)
     d.update(then_and_now(eds))
     d.update(tie=tie_1959(eds), clerk=clerk_decade(eds), office=office_1959(eds),
-             prices=lunch_prices(eds))
+             prices=lunch_prices(eds), homes=homes())
     return d
 
 
@@ -1416,6 +1509,25 @@ def render(d, x):
       % (usd(lv['v0']), lv['y0'], rate(lv['rate0']), link(lv['c0']), usd(lv['v1']),
          lv['y1'], rate(lv['rate1']), link(lv['c1'])))
 
+    h = d['homes']
+    a('## Homes and the tax bill\n\n')
+    a('The state’s average single-family home value and average tax bill, %s to %s, in %s '
+      'dollars. Over that span the average home rose %s%% after inflation and the average bill '
+      '%s%%. The bill as a share of the home’s value is the tax rate written as a percent. '
+      'From %s to %s, the biggest jump in value, the average value rose %s%% while the rate fell '
+      'from %s to %s, so the average bill rose %s%%.\n\n'
+      % (h['first'], h['base'], h['base'], h['value_growth'], h['bill_growth'], h['jump']['fy0'],
+         h['jump']['fy1'], h['jump']['value'],
+         rate(h['jump']['rate0']), rate(h['jump']['rate1']), h['jump']['bill']))
+    a('| Fiscal year | Average value | in %s dollars | Average bill | in %s dollars | Bill as share of value | Rate per $1,000 |\n'
+      '|---|---:|---:|---:|---:|---:|---:|\n' % (h['base'], h['base']))
+    for r in h['rows']:
+        a('| FY%d | $%s | $%s | $%s | $%s | %.2f%% | %s%s |\n'
+          % (r['fy'], C.num(r['value']), C.num(r['value_real']), C.num(r['bill']),
+             C.num(r['bill_real']), r['share'], rate(r['rate']), '' if r['rate_printed'] else '*'))
+    a('\n\\* Bill divided by value; the state’s rate file starts in FY2003, and from then on the '
+      'two agree to the cent. Values are ASSESSED values, not sale prices. Source: Division of '
+      'Local Services; inflation by the Boston-area CPI-U, averaged July to June.\n\n')
     a('## Did you know\n\n')
     tie = d['tie']
     a('**The tie of 1959.** The race for Selectman at the March election was printed as %s to '
@@ -1473,7 +1585,9 @@ def not_established():
         'Whether a name on two rosters is one person. The rosters print names, not '
         'employee numbers.',
         'Hire and retirement dates. A run is first and last appearance in the reports we hold.',
-        'Any comparison in real dollars. The price index held here starts in 1990.',
+        'Any comparison in real dollars before FY1991. The price index held here starts in 1990.',
+        'What homes SOLD for, or the median home. The state publishes the average ASSESSED value '
+        'of single-family homes only.',
         'What a household paid in tax in any year before the reports printed an average bill.',
         'Staffing levels. A roster line is a name, with no hours and no funding source.',
         'Years of town employment. Most lines in the officers’ directory are elected or '
@@ -1608,7 +1722,8 @@ def payload(d, x):
             government=x['open_from'],
             area=x['area1'],
         ),
-        sources=sources(d),
+        homes=d['homes'],
+        sources=sources(d) + d['homes']['sources'],
         not_established=not_established(),
         conclusions=conclusions_for(d, x),
     )
