@@ -1,7 +1,7 @@
 ---
 status: open
 updated: 2026-11-04
-next: (1) TJ decides how /athletic-director draws the wage line now gross-wages reaches 2018-2025 (its guards stop the build). (2) re-pair FY2011's contents page as FY2012's was (board chairs and report filing misattribute through it). (3) settle the 7 split families in annual-report-catalogue-sort.csv (sort_catalogue.py --consistency)
+next: (1) re-pair FY2011's contents page as FY2012's was (board chairs and report filing misattribute through it). (2) settle the 7 split families in annual-report-catalogue-sort.csv (sort_catalogue.py --consistency). (3) salary-schedule.csv has two writers -- decide which owns the 2010 rows before running extract_salary_schedule.py.
 ---
 
 # Plan: everything the annual reports print, in the database
@@ -101,12 +101,20 @@ up at **Next** 2.
   FY2013's Sewer Commissioners under the Fire Department. A former chair (`dedicated to former
   Chairman`) and the title `Planning Director` no longer count as chairs.
 - **Report filing** lost twelve "bodies" that were obituary text.
-- **Found, not fixed:** `/athletic-director`'s guards stop on the new wage years (a design call,
-  TJ's); `salary-schedule.csv` has two writers, `extract_salary_schedule.py` and
+- **Then, same day: both pages, deployed.** `/athletic-director` draws the director's pay as
+  ONE line for the role (TJ: *"this is a role, not a human"*), changeovers as vertical lines,
+  FY2014-FY2017 labelled paid-with-$0-on-the-line, the years with no wage list yet hatched, and
+  it opens on that mismatch. `/department-budgets/town-payroll` is new
+  (`build_town_payroll.py`). The two chart features are shared: `series(events=..., pending=...)`.
+  The full read also closed FY2016 (its ADDENDUM holds the whole list, set sideways) and FY2012
+  (a strip of another sheet on p115), and corrected the department cutoff to FY2017 in
+  `money-gaps.csv`. `gross_wages` and `town_meeting_votes` are in D1.
+- **Found, not fixed:** `salary-schedule.csv` has two writers, `extract_salary_schedule.py` and
   `read_report_tables.py`'s 2010 rows, so the first is permanently stale and must not be run
   until that is settled; FY2011's contents page is garbled the way FY2012's was;
   `report-gross-wages` (the generic extract) still holds partial FY2011-FY2025 rows that
-  `gross-wages` now supersedes.
+  `gross-wages` now supersedes; FY2023's and FY2017's p197 print reprinted records the
+  extractor keeps once, which is a reading of ours worth a look by eye.
 
 **Next, in order**
 
