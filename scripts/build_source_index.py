@@ -3166,6 +3166,25 @@ GROUPS = [
              'foots the subtotals, and four identities the page states about itself close '
              'on all 33 columns. Its `ending cash value` is a second printing of the '
              'balances in data/trust-fund-balances.csv. See scripts/extract_trust_matrix.py.'),
+            ('data/scholarship-funds.csv',
+             'Every school scholarship and prize fund, every year, read and proven', 3,
+             'One row per fund per year, FY2011-FY2025, off each annual report\u2019s trust fund '
+             'summary: the printed columns, and `paid_out`, the money that left the fund net of '
+             'what came in. A row is written only when the table\u2019s own identity closes on it, '
+             'or last year\u2019s proven ending cash plus this year\u2019s activity does; every '
+             'fund\u2019s ending cash ties to its next beginning balance. Read by two OCR '
+             'instruments, the second only where the first lost figures. THAT `paid_out` WAS '
+             'AWARDS IS OUR READING: the table says money left the fund, not why. An earnings-to-'
+             'principal move is recorded in `reclassified`, never as a payout. See '
+             'scripts/extract_scholarship_funds.py.'),
+            ('data/scholarship-purposes.csv',
+             'What each scholarship is for, quoted from the record that says so', 3,
+             'One row per fund whose purpose a record states, the words quoted exactly, with '
+             'the document, the page and the text the quote is re-found in on every build. A '
+             'purpose heard only in a meeting recording is marked `transcript`: machine '
+             'captions, a finding aid rather than a record. A fund with no row has no purpose '
+             'in the annual reports, School Committee or Select Board minutes, or School '
+             'Committee recordings searched on 4 November 2026.'),
             ('data/monty-tech-expenses.csv',
              'Monty Tech\u2019s spending by category, three years, off a chart', 3,
              'The other school district Lunenburg pays into, broken down: eight spending '

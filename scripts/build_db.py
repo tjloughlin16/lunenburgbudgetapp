@@ -1389,6 +1389,11 @@ REFERENCE = [
     # and the Town Meeting articles with how each was voted.
     'gross-wages', 'town-meeting-votes',
 
+    # The school scholarship and prize funds, every year FY2011-FY2025, each row proven on the
+    # trust fund summary's own identity (extract_scholarship_funds.py), and what each fund is for,
+    # quoted from the record that states it (4 November 2026).
+    'scholarship-funds', 'scholarship-purposes',
+
 ]
 
 # EVERY `report-*.csv` IS LOADED OR SAYS WHY NOT. The annual-report datasets were loaded from
