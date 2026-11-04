@@ -6,25 +6,25 @@ export const TAKEN_DOWN = {
     "decided_on": "2026-11-03",
     "reason": "This warrant batch, as the district redacted it, still lets a reader identify a family receiving school services: payee numbers beside redacted parent names, a family's initials tied to a special-education placement, and a pupil named on a supporting page. Our redacted copy replaces it.",
     "replacement": "/docs/correspondence/2026-11-03-school-warrant-batch-5806-2026-06-30.redacted.pdf",
-    "state": "stopped serving"
+    "state": "deleted"
   },
   "correspondence/2026-11-03-school-warrant-batch-5806-2026-06-30.redacted.pdf": {
     "decided_on": "2026-11-03",
     "reason": "Our first redacted copy of this warrant batch missed payee numbers printed with leading zeros on two ledger pages. A corrected copy replaces it.",
     "replacement": "/docs/correspondence/2026-11-03-school-warrant-batch-5806-2026-06-30.redacted-d86535f9.pdf",
-    "state": "stopped serving"
+    "state": "deleted"
   },
   "correspondence/2026-11-03-school-warrant-batch-5808-2026-06-30.pdf": {
     "decided_on": "2026-11-03",
     "reason": "This warrant batch, as the district redacted it, names a parent on a special-education transport mileage log and prints the family payee's numbers. Families receiving school services are masked; our redacted copy replaces it.",
     "replacement": "/docs/correspondence/2026-11-03-school-warrant-batch-5808-2026-06-30.redacted.pdf",
-    "state": "stopped serving"
+    "state": "deleted"
   },
   "correspondence/2026-11-03-school-warrant-batch-5810-2026-06-30.pdf": {
     "decided_on": "2026-11-03",
     "reason": "This warrant batch, as the district redacted it, still lets a reader identify a family receiving school services: payee numbers beside redacted parent names. Our redacted copy replaces it.",
     "replacement": "/docs/correspondence/2026-11-03-school-warrant-batch-5810-2026-06-30.redacted.pdf",
-    "state": "stopped serving"
+    "state": "deleted"
   },
   "town-ledgers/account-details/account-details-fy2024-fund1301.xlsx": {
     "decided_on": "2026-10-19",
