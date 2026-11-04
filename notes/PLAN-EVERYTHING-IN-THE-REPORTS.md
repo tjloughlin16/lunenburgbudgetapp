@@ -1,7 +1,7 @@
 ---
 status: open
 updated: 2026-11-04
-next: the two junk report-signatures rows (FY2012 pp 9, 18)
+next: step 4, sort the FY2011-FY2025 catalogue entries (quoted 4 Nov: 15 runs, ~1-2% of a week)
 ---
 
 # Plan: everything the annual reports print, in the database
@@ -89,8 +89,13 @@ up at **Next** 2.
 1. ~~**Push D1 and deploy**~~ **DONE by 4 November 2026.** Production deployment `42400853`
    from `ab9e423e6` (3 Nov, late); `sync_d1.py --check` on 4 Nov: D1 matches the local
    database. Re-check with those two commands, not this line.
-2. **Two junk rows in `report-signatures`:** FY2012 pages 9 and 18 (In Memoriam) give an
-   obituary sentence as the `department`.
+2. ~~**Two junk rows in `report-signatures`**~~ **DONE 4 November 2026, and it was not two
+   rows.** FY2012's contents page shares its lines with an In Memoriam column, and the scan is
+   turned so each page number sits half a row from its name: the index carried obituary text in
+   its names AND paired every number with the wrong department (9 of 32 agreed with Textract).
+   `extract_report_index.py` now pairs such a page by geometry, skew measured from its own
+   `DEPARTMENTS ... PAGES` header: 33 of 33 agree with Textract, every other year is unchanged,
+   and the three names whose numbers we did not read are kept as `page number not read`.
 3. **Step 4: sort the 866 FY2011-FY2025 catalogue entries.** Start with the 287 on pages no
    dataset reads.
 4. **Step 3: the list survey** (licences, dogs, births, committees). The officials and staff

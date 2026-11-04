@@ -145,6 +145,94 @@ def contents_pages(lines):
             and sum(1 for v in vals[p] if v <= npages) / len(vals[p]) >= 0.8]
 
 
+BOX_REF = re.compile(r'^(?:Pages?\s*)?(\d{1,3})(?:\s*[-–—]\s*(\d{1,3}))?$', re.I)
+# How close a page number must sit to ONE name, relative to the next-nearest, before the
+# text layout's pairing is believed. FY2012 measured 0.70 (25 of 33 numbers halfway between
+# two names); every other year 0.04-0.35.
+AMBIGUOUS = 0.5
+
+
+def _tsv(fy):
+    """The recognition boxes this book's text was laid out from (its header names them)."""
+    with open(os.path.join(PAGES, 'FY%s.ocr.txt' % fy), encoding='utf-8') as fh:
+        head = fh.read(600)
+    m = re.search(r'# source (\S+\.tsv)', head)
+    path = m and os.path.join(ROOT, 'sources', 'town-budget', 'ocr', m.group(1))
+    return path if path and os.path.exists(path) else None
+
+
+def _box_entries(fy, page, tsv):
+    """A contents page whose numbers sit BETWEEN names, paired by measured geometry.
+
+    FY2012 WAS OFF BY ONE ROW FOR EVERY ENTRY, 4 November 2026. The scan is turned, so each
+    page number sits about half a row from its own name -- as close to the name below it as
+    to its own -- and laying the page out as text lines attached every number to the wrong
+    one. Two signatures showed it: `Respectfully submitted, Kerry A. Speidel` (Town Manager)
+    on pdf page 9 was filed under Technology Department, and a commission meeting at the
+    Ritter Building on page 18 under Health. Textract's reading order agrees with neither the
+    old index nor a guess, but with the pairing below.
+
+    THE SKEW IS MEASURED, NEVER TUNED (rule 13b). The header `DEPARTMENTS ... PAGES` is one
+    printed line, so the height difference between those two words IS the rotation between
+    the name column and the number column. No header on the page, no pairing: the page is
+    refused rather than aligned. Names are taken from the name column alone, so the
+    In Memoriam text set beside the FY2012 contents no longer becomes part of them.
+
+    Returns None when the page is not ambiguous (the text layout is then believed), else a
+    list of (name, from, to, as_printed).
+    """
+    import page_table as PT
+    ws = PT.boxes(tsv, page)
+    refs = [w for w in ws if BOX_REF.match(w['text'].strip(' .'))]
+    if len(refs) < 12:
+        return None
+    rx = sorted(w['x'] for w in refs)[len(refs) // 2]
+    refs = [w for w in refs if abs(w['x'] - rx) < 0.08]
+    others = [w for w in ws if w not in refs and re.search(r'[A-Za-z]{3}', w['text'])]
+
+    def near_next(r, pool):
+        ds = sorted(abs(n['y'] - r['y']) for n in pool)
+        return ds[0] / ds[1] if len(ds) > 1 and ds[1] else 0
+    left = [w for w in others if w['x'] + w['w'] < rx]
+    ratios = sorted(near_next(r, left) for r in refs)
+    if ratios[len(ratios) // 2] <= AMBIGUOUS:
+        return None
+    pages_h = [w for w in ws if w['text'].strip().upper() in ('PAGES', 'PAGE')
+               and abs(w['x'] - rx) < 0.08]
+    if not pages_h:
+        raise SystemExit('REFUSED FY%s page %d: page numbers are ambiguous and no PAGES header '
+                         'to measure the skew from' % (fy, page))
+    ph = pages_h[0]
+    # The name-column header: the nearest heading-shaped box left of PAGES on its row.
+    heads = sorted((w for w in others if w['x'] < ph['x'] - 0.1 and abs(w['y'] - ph['y']) < 0.02
+                    and w['text'].strip().isupper()), key=lambda w: abs(w['y'] - ph['y']))
+    if not heads:
+        raise SystemExit('REFUSED FY%s page %d: no column header beside PAGES' % (fy, page))
+    dh = heads[0]
+    slope = (ph['y'] - dh['y']) / (ph['x'] - dh['x'])
+    col = [w for w in others if abs(w['x'] - dh['x']) < 0.02 and w is not dh]
+    out = []
+    for r in sorted(refs, key=lambda w: -w['y']):
+        target = r['y'] - slope * (r['x'] - dh['x'])
+        ds = sorted(col, key=lambda n: abs(n['y'] - target))
+        if len(ds) < 2 or abs(ds[0]['y'] - target) >= AMBIGUOUS * abs(ds[1]['y'] - target):
+            raise SystemExit('REFUSED FY%s page %d: %r still ambiguous after measured skew %.4f'
+                             % (fy, page, r['text'], slope))
+        m = BOX_REF.match(r['text'].strip(' .'))
+        a, b = int(m.group(1)), int(m.group(2) or m.group(1))
+        name = ds[0]['text'].strip(' .')
+        out.append((name, min(a, b), max(a, b), '%s %s' % (name, r['text'].strip())))
+    # A NAME WHOSE NUMBER WE DID NOT READ IS STILL LISTED. On FY2012 recognition read the
+    # name but not the page number for three entries (Textract reads all three); dropping them
+    # would turn a gap in OUR reading into a claim that the town listed no such report.
+    taken = {n for n, *_ in out}
+    for n in sorted(col, key=lambda w: -w['y']):
+        name = n['text'].strip(' .')
+        if name not in taken:
+            out.append((name, None, None, name))
+    return out
+
+
 def entries(fy):
     lines = book(fy)
     off = offset(lines)
@@ -152,8 +240,24 @@ def entries(fy):
     if not pgs:
         return []
     out, section, carry = [], '', ''
+    tsv = _tsv(fy)
+    geom = {}
+    for p in sorted(pgs):
+        got = _box_entries(fy, p, tsv) if tsv else None
+        if got is not None:
+            geom[p] = got
+    for p in sorted(geom):
+        for name, a, b, printed in geom[p]:
+            if a is None:
+                out.append(dict(fy=fy, section=section, department=name, printed_from='',
+                                printed_to='', pdf_from='', pdf_to='',
+                                state='page number not read', as_printed=printed[:160]))
+                continue
+            out.append(dict(fy=fy, section=section, department=name,
+                            printed_from=a, printed_to=b, pdf_from=a + off, pdf_to=b + off,
+                            state='report', as_printed=printed[:160]))
     for p, t in lines:
-        if p not in pgs or not t:
+        if p not in pgs or p in geom or not t:
             continue
         if GROUP.match(t) and not RANGE.search(t):
             section = t.title()

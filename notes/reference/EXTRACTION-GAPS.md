@@ -54,7 +54,7 @@ The proxy row is page grain, not table grain: a catalogued table counts if ANY d
 | `salary-schedule` | yes | 779 | 1 / 3 | - | - | - |
 | `balance-sheet-printed-totals` | yes | 758 | 24 / 12 | - | - | - |
 | `report-enrollment-mcas` | yes | 747 | 12 / 15 | 36 | 4 | 707 |
-| `report-index` | yes | 698 | 0 / 15 | - | - | - |
+| `report-index` | yes | 702 | 0 / 15 | - | - | - |
 | `report-school-lunch` | yes | 668 | 21 / 0 | 370 | 41 | 257 |
 | `report-school-budget-summary` | yes | 660 | 27 / 0 | 450 | 0 | 210 |
 | `report-treasurers-cash-reconciliation` | yes | 545 | 47 / 0 | 519 | 15 | 11 |
@@ -121,7 +121,7 @@ The proxy row is page grain, not table grain: a catalogued table counts if ANY d
 | `report-office-budget-cuts` | yes | 4 | 1 / 0 | 4 | 0 | 0 |
 | `report-energy-use` | yes | 3 | 1 / 0 | 0 | 0 | 3 |
 | `report-per-capita-comparison` | yes | 3 | 1 / 0 | 0 | 0 | 3 |
-| **total** | | **130,366** | | **50,008** | **11,240** | **28,410** |
+| **total** | | **130,370** | | **50,008** | **11,240** | **28,410** |
 
 ## Registers and files about the reading
 

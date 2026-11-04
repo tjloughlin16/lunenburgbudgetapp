@@ -206,6 +206,10 @@ def build():
                 state = 'town says no report submitted'
             elif st == 'report':
                 state = reason.get((d, fy), 'report filed, nothing read from it')
+            elif st == 'page number not read':
+                # Listed in the contents, but OUR reading did not get its page number
+                # (FY2012, three entries): which pages are its report is not known to us.
+                state = 'listed, page number not read'
             else:
                 state = 'not in that year’s contents'
             rows.append(dict(department=d, fy=fy, people='' if n is None else n,
@@ -220,6 +224,7 @@ def render(fys, depts, rows):
             'mentions staff, states no number': 'talks',
             'no mention of staff on its own pages': 'quiet',
             'report filed, nothing read from it': '?',
+            'listed, page number not read': 'p?',
             'pages not in our text of the book': '??',
             'not in that year’s contents': '-'}
     t = ['# Every department the town lists, and what we have for each\n\n']
@@ -230,6 +235,7 @@ def render(fys, depts, rows):
              '- **talks** — its report mentions staff and states no number\n'
              '- **quiet** — its report never mentions staff\n'
              '- **NONE** — the town says the department filed no report that year\n'
+             '- **p?** — the contents lists it, but we did not read its page number\n'
              '- **-** — not in that year’s contents at all\n\n')
     t.append('| department | ' + ' | '.join(f[-2:] for f in fys) + ' |\n')
     t.append('|---|' + '---|' * len(fys) + '\n')
