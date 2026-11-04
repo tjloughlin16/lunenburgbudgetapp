@@ -1,7 +1,7 @@
 ---
 status: open
 updated: 2026-11-04
-next: (0) deploy /school-all-funds/school-scholarships (built and committed 4 Nov, not live). (1) re-pair FY2011's contents page as FY2012's was (board chairs and report filing misattribute through it). (2) settle the 7 split families in annual-report-catalogue-sort.csv (sort_catalogue.py --consistency). (3) salary-schedule.csv has two writers -- decide which owns the 2010 rows before running extract_salary_schedule.py.
+next: (0) scholarships: notes/HANDOFF-SCHOLARSHIPS.md -- extract each fund's yearly payout, then deploy the page (built, held). (1) re-pair FY2011's contents page as FY2012's was (board chairs and report filing misattribute through it). (2) settle the 7 split families in annual-report-catalogue-sort.csv (sort_catalogue.py --consistency). (3) salary-schedule.csv has two writers -- decide which owns the 2010 rows before running extract_salary_schedule.py.
 ---
 
 # Plan: everything the annual reports print, in the database
