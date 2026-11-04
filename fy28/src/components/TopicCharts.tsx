@@ -48,6 +48,9 @@ export type SeriesChart = {
     labels?: (string | null)[] }[]
   note: Unit | null; use?: Unit | null
   reference?: { value: number; label: string; text: string } | null
+  /** VERTICAL LINES AT MOMENTS: a change that happened at a time, such as who took over a job
+   *  (scripts/topic.py series `events`). */
+  events?: { x: string; label: string }[]
   from_zero?: boolean
   /** Small multiples: one panel per track, all on one scale from zero (scripts/topic.py). */
   multiples?: boolean
@@ -484,6 +487,10 @@ function Series({ c }: { c: SeriesChart }) {
                 label={{ value: `${c.reference.label}, ${c.reference.text}`, position: 'insideBottomRight',
                   fill: 'var(--text-muted)', fontSize: 11 }} />
             ) : null}
+            {(c.events ?? []).map(e => (
+              <ReferenceLine key={`ev-${e.x}`} x={e.x} stroke="var(--text-muted)" strokeDasharray="3 3"
+                label={{ value: e.label, position: 'insideTopLeft', fill: 'var(--text-muted)', fontSize: 11 }} />
+            ))}
             <Tooltip content={<SeriesTip c={c} />} cursor={{ fill: 'var(--surface-3)', opacity: 0.5 }} />
             {c.series.map((s, i) => {
               const est = s.basis === 'estimate'

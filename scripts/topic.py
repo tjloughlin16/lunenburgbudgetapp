@@ -666,7 +666,7 @@ def track(name, values, basis='published', mark=None, colour=None, labels=None):
 
 def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_figures=None,
            note_allow=(), decimals=None, reference=None, from_zero=True, multiples=False,
-           overlay=False, totals=False, secondary=None):
+           overlay=False, totals=False, secondary=None, events=None):
     """Named tracks over the same x -- years (C.fy(y)) or categories, as strings.
     reference: (value, label) -- one horizontal line a reader measures the tracks against,
       e.g. (100, 'The state minimum'). Its value is shown by fmt(), like every other.
@@ -692,7 +692,12 @@ def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_f
       ratio of (TJ, 2 November 2026: free cash as a share of the operating budget, "to provide
       context to the growing numbers"). dict(name, values, unit, basis='published', decimals=None).
       Its axis is on the right and labelled with its unit, so the two scales are never confused;
-      texts come from fmt() like every other value. Written only when set."""
+      texts come from fmt() like every other value. Written only when set.
+    events: VERTICAL LINES AT MOMENTS -- [(x, words)] or [(x, words, allow)], each x one of
+      the chart's own x values. For a change that happened at a time rather than a value: who
+      took over a job, when a rule changed (TJ, 4 November 2026, on the athletic director's pay:
+      "vertical lines on the chart that show the transitions would be better"). Words are short
+      and a digit in them must be declared in `allow`. Written only when set."""
     if totals and not (stacked and kind == 'bar'):
         raise ConclusionError('chart %r: totals label a stacked bar chart' % title)
     if multiples and overlay:
@@ -718,6 +723,19 @@ def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_f
         sec = dict(name=' '.join(secondary['name'].split()), unit=secondary['unit'],
                    basis=secondary.get('basis', 'published'), values=list(secondary['values']),
                    decimals=sd, texts=[fmt(secondary['unit'], v, sd) for v in secondary['values']])
+    evs = None
+    if events:
+        evs = []
+        for e in events:
+            ex, words, allow = (tuple(e) + ((),))[:3]
+            if ex not in x:
+                raise ConclusionError('chart %r: an event at %r, which is not on the x axis' % (title, ex))
+            stray = [d for d in re.findall(r'\d[\d,.]*', words) if not any(d in a for a in allow)]
+            if stray:
+                raise ConclusionError('chart %r: event digits %s are not declared' % (title, stray))
+            if len(words) > 24:
+                raise ConclusionError('chart %r: event label %r is over 24 characters' % (title, words))
+            evs.append(dict(x=ex, label=' '.join(words.split())))
     ref = None
     if reference is not None:
         rv, rl = reference
@@ -745,6 +763,7 @@ def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_f
                          **({'multiples': True} if multiples else {}),
                          **({'overlay': True} if overlay else {}),
                          **({'secondary': sec} if sec else {}),
+                         **({'events': evs} if evs else {}),
                          **({'totals': [fmt(unit, sum(t['values'][i] or 0 for t in tracks),
                                             decimals) for i in range(len(x))]}
                             if totals else {})))

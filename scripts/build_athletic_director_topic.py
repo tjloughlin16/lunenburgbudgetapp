@@ -515,11 +515,11 @@ def build():
     cy = list(range(2014, 2027))
     xs = list(range(min(role), 2028))
     surname = lambda n: n.split()[-1]
-    labels = {}
-    for y, ws in sorted(handovers.items()):
-        ws = sorted(ws, key=lambda w: min(held[w]))
-        labels[xs.index(y)] = ('for %s, then %s' % (surname(ws[0]), surname(ws[-1])), ())
-    labels[0] = ('%s is director' % surname(in_role[xs[0]][0]), ())
+    # THE CHANGEOVERS ARE MOMENTS, drawn as vertical lines (TJ, 4 November 2026). A changeover
+    # year's point adds the two people paid that year, one after the other.
+    events = [(C.fy(y), '%s takes over' % surname(sorted(ws, key=lambda w: min(held[w]))[-1]))
+              for y, ws in sorted(handovers.items())]
+    labels = {0: ('%s is director' % surname(in_role[xs[0]][0]), ())}
     mc_lo = min(mc[y][0] for y in range(2014, 2018))
     mc_hi = max(mc[y][0] for y in range(2014, 2018))
     line = TP.series('The athletic director’s pay, by year', [C.fy(y) for y in xs], [
@@ -531,7 +531,7 @@ def build():
                  'published'),
         TP.track('Paid to the athletic director (calendar, ours)',
                  [float(role[y]) if y in role else None for y in xs], 'estimate', labels=labels)],
-        '$', kind='line',
+        '$', kind='line', events=events,
         note='Actuals: budget books to FY2022, the journal after. Pay: wage lists, calendar years, every '
              'fund; a changeover year adds both directors. 2025 includes other pay.',
         note_allow=D('FY2022 FY2023 2025'))
