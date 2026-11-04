@@ -196,7 +196,9 @@ LIST_PAGES = {
     '2013': ('4119-fy-2013-annual-town-report.pdf', range(93, 98)),
     '2014': ('4120-fy-2014-annual-town-report.pdf', range(168, 175)),
     '2015': ('4121-fy-2015-annual-town-report.pdf', range(206, 212)),
-    '2016': ('4123-fy-2016-annual-town-report.pdf', range(198, 203)),
+    # FY2016's report prints the list from BENOIT on (pp198-202); its ADDENDUM prints the whole
+    # of it, from ADAMOWICZ, as `CALENDAR 2016 WAGES` on pp13-17, set sideways.
+    '2016': ('4122-fy-2016-annual-town-report-addendum.pdf', range(13, 18)),
     '2017': ('4124-fy-2017-annual-town-report.pdf', range(192, 199)),
     '2018': ('4125-fy-2018-annual-town-report.pdf', range(248, 255)),
     '2019': ('4126-fy-2019-annual-town-report.pdf', range(197, 204)),
@@ -247,14 +249,27 @@ def _textract_words(sha, n):
     for h in hits:
         if h.endswith('-reread.json'):
             continue
+        words = [b for b in json.load(open(h, encoding='utf-8'))['Blocks']
+                 if b['BlockType'] == 'WORD']
+        # A PAGE SET SIDEWAYS. FY2016's addendum prints its wage list turned a quarter turn, so
+        # its words run DOWN the page. Textract's RotationAngle reads 0 there; the direction is
+        # in each word's polygon, whose first edge runs along the text. Where most words run
+        # down, the page is turned back: across = how far down, up = how far right.
+        def run(b):
+            q = b['Geometry']['Polygon']
+            return q[1]['X'] - q[0]['X'], q[1]['Y'] - q[0]['Y']
+        down = sum(1 for b in words if abs(run(b)[1]) > abs(run(b)[0]) and run(b)[1] > 0)
+        turned = down > len(words) / 2
         out = []
-        for b in json.load(open(h, encoding='utf-8'))['Blocks']:
-            if b['BlockType'] != 'WORD':
-                continue
+        for b in words:
             g = b['Geometry']['BoundingBox']
-            out.append(dict(x=g['Left'], y=1 - (g['Top'] + g['Height'] / 2),
-                            w=g['Width'], confidence=round(b['Confidence'], 1),
-                            text=b['Text']))
+            if turned:
+                out.append(dict(x=g['Top'], y=g['Left'] + g['Width'] / 2, w=g['Height'],
+                                confidence=round(b['Confidence'], 1), text=b['Text']))
+            else:
+                out.append(dict(x=g['Left'], y=1 - (g['Top'] + g['Height'] / 2),
+                                w=g['Width'], confidence=round(b['Confidence'], 1),
+                                text=b['Text']))
         return out
     return None
 
@@ -408,6 +423,29 @@ def _layout(boxes, cols):
                     sc[2] = k
                     continue
         sc[2] = nxt
+    # A STRIP OF ANOTHER SHEET. FY2012 p115 is photographed over the edge of an earlier page, so
+    # its left margin prints the cut ends of D surnames -- `DIA`, `DIC`, `FINC` -- one per row,
+    # and every one joined the real name beside it (`DIA RASH KAREN`). The list prints the same
+    # number of name columns in every record; a record holding one more than the others, at the
+    # page's very edge, is holding something that is not the list. Marked `edge` and ignored.
+    big0 = max((o[3] for o in out), default=0)
+    def populated(k):
+        return [o for o in out if o[1] == 'name' and o[2] == k and o[3] >= max(3, big0 / 3.0)]
+    owners = sorted({o[2] for o in out if o[2] is not None})
+    widths = [len(populated(k)) for k in owners]
+    if len(owners) > 1 and widths:
+        need = min(widths)
+        for k in owners:
+            have = sorted(populated(k), key=lambda o: o[0])
+            extra = have[:max(0, len(have) - need)]
+            # ...and only if what is left still holds a surname AND a given name. FY2011's
+            # right-hand record merges the two into one cluster, which made its left-hand
+            # neighbour look one column wider and lost every surname on p98.
+            if len(have) - len(extra) < 2:
+                continue
+            for o in extra:
+                if o[0] < 0.08:
+                    o[1] = 'edge'
     return out
 
 
@@ -418,6 +456,8 @@ def _place(b, layout, cols):
         k = min(range(len(cols)), key=lambda k: abs(cols[k] - e))
         return ('money', k, False) if abs(cols[k] - e) < 0.08 else ('money', None, False)
     sc = min(layout, key=lambda sc: abs(sc[0] - b['x']))
+    if sc[1] == 'edge':
+        return 'edge', None, False
     return sc[1], sc[2], sc is _surname_col(layout, sc[2], cols)
 
 

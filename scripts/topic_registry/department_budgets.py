@@ -22,14 +22,15 @@ CATEGORY = dict(
         ('The other departments', ['town-general-government', 'town-public-works',
                                    'town-facilities-grounds', 'town-solid-waste',
                                    'town-library', 'town-smaller-departments']),
-        ('People', ['town-staff-counts', 'town-headcount-coverage']),
+        ('People', ['town-payroll', 'town-staff-counts', 'town-headcount-coverage']),
         ('Related pages', ['fy2026-town-unspent', 'fy2026-snow-and-reserve-fund',
                            # monty-tech-assessment left 26 October 2026: Monty Tech pages are
                            # listed only on the Monty Tech shelf (TJ).
                            'fy2026-school-retiree-insurance']),
     ])
 GENERATOR = 'build_department_budgets_topics.py'
-TOPIC_GENERATORS = {'town-general-fund': 'build_town_general_fund.py'}
+TOPIC_GENERATORS = {'town-general-fund': 'build_town_general_fund.py',
+                    'town-payroll': 'build_town_payroll.py'}
 TOPICS = {
     'town-general-fund': 'Town general fund',
     'town-budget-shares': 'Budget by department',
@@ -45,6 +46,7 @@ TOPICS = {
     'town-solid-waste': 'Trash and recycling',
     'town-library': 'Library budget',
     'town-smaller-departments': 'Smaller departments',
+    'town-payroll': 'Town and school payroll',
     'town-staff-counts': 'Town staff counts',
     'town-headcount-coverage': 'Budgets without headcounts',
 }

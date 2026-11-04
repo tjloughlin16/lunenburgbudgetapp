@@ -102,7 +102,7 @@ Three different answers, and only one of them is a department being quiet.
 | Facilities & Grounds | $1,022,711 | a department with a budget and no paper trail | Created by a RECORDED VOTE — Article 7 of the 2022 Annual Town Meeting, the `Administrative Organization Plan` of 5 April 2022, Yes-136 No-28 — which moved town facilities out from under the DPW Director, where the Town Manager had delegated them, and gave them a Facilities Director of their own. Since then it has filed NO annual report: it is on no contents page in FY2023, FY2024 or FY2025. There is no `Facilities Director` post in the appointed-officials listing in any year, and the person doing the job appears in that listing once, as a committee member under a different title. Before FY2023 its people are inside the DPW’s establishment, which still reads `one Executive Assistant (shared with Facilities)`. |
 | Solid Waste & Recycling | $469,775 | bought as a service | Collection is contracted out. The town ran ten years with Casella and moved to E.L. Harvey on 1 July 2021. The group is one line, `Recycling Program`. |
 
-The gross-wages list named a department beside each employee through FY2016 and stopped, so there has been no town-wide headcount by department since.
+The gross-wages list named a department beside each employee through FY2017 and stopped, so there has been no town-wide headcount by department since.
 
 ## How long people stay, and how many leave
 
@@ -131,7 +131,7 @@ A roster is also a point in time and undated within its year, so N appearances i
 ## What this cannot show
 
 - What anybody is paid. No salary is read here, and none is inferred from a post’s name.
-- How many people the town employs. Nine departments state a figure, in eight different forms, and no year has all of them — the wage list that would give one town-wide headcount stopped naming departments after FY2016.
+- How many people the town employs. Nine departments state a figure, in eight different forms, and no year has all of them — the wage list that would give one town-wide headcount stopped naming departments after FY2017.
 - FTE. A career post and an on-call post are not the same job and cannot be netted against each other.
 - Whether a post was CUT. A roster is people IN post and a cut removes a POST, and those come apart both ways: someone retires and the post sits vacant but funded, so the count falls and nothing was cut; or a post is eliminated and its holder moves to another vacancy, so the count holds and something was. The town’s own words for it are in the Assessing office’s FY2024 report — “we are fully staffed for the first time in over a year” — a year of posts that existed and were empty. A rise or a fall here is a change in PEOPLE PRESENT, never a decision about establishment.
 - When in the year anybody was counted. A roster is a point in time and is undated within its year, so a September departure and a June one are the same figure.

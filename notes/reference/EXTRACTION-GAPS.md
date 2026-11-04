@@ -55,7 +55,7 @@ One row per edition. Each entry's verdict, dataset and one-line reason is in `so
 | `town-roster-entries` | yes | 16,609 | 52 / 15 | - | - | - |
 | `staff-roster-entries` | yes | 12,278 | 48 / 15 | - | - | - |
 | `report-gross-wages` | yes | 11,512 | 15 / 13 | 7,965 | 0 | 3,547 |
-| `gross-wages` | yes | 8,795 | 0 / 15 | 8,104 | 691 | 0 |
+| `gross-wages` | yes | 8,880 | 0 / 15 | 8,313 | 567 | 0 |
 | `annual-report-receipts` | yes | 7,856 | 51 / 12 | 6,848 | 653 | 355 |
 | `report-trust-funds` | yes | 5,508 | 50 / 13 | 3,434 | 546 | 1,528 |
 | `report-statement-of-payments` | yes | 4,670 | 28 / 0 | 4,095 | 0 | 575 |
@@ -147,7 +147,7 @@ One row per edition. Each entry's verdict, dataset and one-line reason is in `so
 | `report-office-budget-cuts` | yes | 4 | 1 / 0 | 4 | 0 | 0 |
 | `report-energy-use` | yes | 3 | 1 / 0 | 0 | 0 | 3 |
 | `report-per-capita-comparison` | yes | 3 | 1 / 0 | 0 | 0 | 3 |
-| **total** | | **139,967** | | **58,112** | **11,931** | **28,410** |
+| **total** | | **140,052** | | **58,321** | **11,807** | **28,410** |
 
 ## Registers and files about the reading
 
@@ -156,9 +156,9 @@ Not data the reports print, and listed so that nothing disappears. A register re
 | file | kind | rows from reports | in db |
 |---|---|---:|---|
 | `receivables-refused` | register | 32 | no |
-| `gross-wages-refused` | register | 14 | no |
 | `tax-collection-unreconciled` | register | 13 | yes |
 | `receivables-reconciliation` | register | 12 | yes |
+| `gross-wages-refused` | register | 9 | no |
 | `debt-repayment-detail-refused` | register | 6 | no |
 | `balance-sheet-refused` | register | 4 | no |
 | `report-appropriations-supplement-refused` | register | 3 | no |

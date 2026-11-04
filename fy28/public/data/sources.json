@@ -3845,6 +3845,18 @@
      "textUrl": "/docs/data/dese-entitlement-allocations.csv"
     },
     {
+     "path": "data/gross-wages.csv",
+     "title": "The town’s wage list, name by name, FY2011–FY2025",
+     "stars": 2,
+     "what": "Every name and amount the annual report’s gross wages list prints, every year, by scripts/extract_gross_wages.py: the PDF’s own text layer where the page is digital, Amazon Textract where it is a scan. Each row’s `status` says whether every money figure on its page was captured, and `reconciliation` names the instrument. A wage list prints no total, so this proves coverage and the pairing, not the digits. Gross pay is not salary or FTE. NOTHING ON THE SITE USES IT YET: until 4 November 2026 it read only some years (TJ: *“if we dont have the data, we shouldn’t show partial data”*), and whether it now should is a decision, not a consequence. The pages it was read from are in data/wage-pages/.",
+     "kind": "Data",
+     "bytes": 2473392,
+     "url": "/docs/data/gross-wages.csv",
+     "count": 8880,
+     "unit": "rows",
+     "textUrl": "/docs/data/gross-wages.csv"
+    },
+    {
      "path": "data/org-chart.csv",
      "title": "Who held which role, in every department, board and school",
      "stars": 2,
@@ -3855,18 +3867,6 @@
      "count": 15575,
      "unit": "rows",
      "textUrl": "/docs/data/org-chart.csv"
-    },
-    {
-     "path": "data/gross-wages.csv",
-     "title": "The town’s wage list, name by name, FY2011–FY2025",
-     "stars": 2,
-     "what": "Every name and amount the annual report’s gross wages list prints, every year, by scripts/extract_gross_wages.py: the PDF’s own text layer where the page is digital, Amazon Textract where it is a scan. Each row’s `status` says whether every money figure on its page was captured, and `reconciliation` names the instrument. A wage list prints no total, so this proves coverage and the pairing, not the digits. Gross pay is not salary or FTE. NOTHING ON THE SITE USES IT YET: until 4 November 2026 it read only some years (TJ: *“if we dont have the data, we shouldn’t show partial data”*), and whether it now should is a decision, not a consequence. The pages it was read from are in data/wage-pages/.",
-     "kind": "Data",
-     "bytes": 2437335,
-     "url": "/docs/data/gross-wages.csv",
-     "count": 8795,
-     "unit": "rows",
-     "textUrl": "/docs/data/gross-wages.csv"
     },
     {
      "path": "data/school-staff-directory.csv",
@@ -5251,18 +5251,6 @@
      "textUrl": "/docs/analyses/charts/town-personnel-fire.svg"
     },
     {
-     "path": "data/gross-wages-refused.csv",
-     "title": "Wage-list rows that would not read, and records the town printed twice",
-     "stars": 1,
-     "what": "Written by us. One row per page and reason: an amount with no name beside it, a surname read out of alphabetical order, or a record the page prints again with the same amount (FY2016, FY2017 and FY2023 reprint parts of the list), which is kept once. Nothing here was guessed at — an amount beside the wrong name is worse than an amount nobody has.",
-     "kind": "Data",
-     "bytes": 3360,
-     "url": "/docs/data/gross-wages-refused.csv",
-     "count": 14,
-     "unit": "rows",
-     "textUrl": "/docs/data/gross-wages-refused.csv"
-    },
-    {
      "path": "analyses/charts/towns-like-us-drivers.svg",
      "title": "What actually moves a tax bill",
      "stars": 1,
@@ -5373,6 +5361,18 @@
      "bytes": 2247,
      "url": "/docs/analyses/charts/stabilization-growth.svg",
      "textUrl": "/docs/analyses/charts/stabilization-growth.svg"
+    },
+    {
+     "path": "data/gross-wages-refused.csv",
+     "title": "Wage-list rows that would not read, and records the town printed twice",
+     "stars": 1,
+     "what": "Written by us. One row per page and reason: an amount with no name beside it, a surname read out of alphabetical order, or a record the page prints again with the same amount (FY2016, FY2017 and FY2023 reprint parts of the list), which is kept once. Nothing here was guessed at — an amount beside the wrong name is worse than an amount nobody has.",
+     "kind": "Data",
+     "bytes": 2171,
+     "url": "/docs/data/gross-wages-refused.csv",
+     "count": 9,
+     "unit": "rows",
+     "textUrl": "/docs/data/gross-wages-refused.csv"
     },
     {
      "path": "analyses/charts/fy26-town-budget.svg",
@@ -5537,7 +5537,7 @@
      "stars": 3,
      "what": "Every page across fifteen annual town reports that carries a table of figures, each with the SUBJECT read off its own headings and whether any dataset cites it. It maps the other direction from the rest of the backlog: from the pages to what is on them, rather than from datasets that already exist — so a table nobody has written an extractor for appears in the queue instead of being invisible. `state` is the work queue — `read`, `unread`, or `reversed` for a page whose OCR came out upside down, which is a re-OCR job rather than a reading job. `subject` is a GUESS from the headings and is there to group the queue, never to say what a figure means. See scripts/map_annual_report_pages.py.",
      "kind": "Data",
-     "bytes": 850958,
+     "bytes": 850795,
      "url": "/docs/data/annual-report-pages.csv",
      "count": 2332,
      "unit": "rows",
@@ -6161,7 +6161,7 @@
      "stars": 2,
      "what": "One row per dataset holding rows read from an annual report: rows, editions, the checked / check failed / no check split by era, and whether the database has the table. Generated by build_annual_report_coverage.py.",
      "kind": "Data",
-     "bytes": 10796,
+     "bytes": 10794,
      "url": "/docs/data/annual-report-coverage-datasets.csv",
      "count": 117,
      "unit": "rows",
@@ -7164,7 +7164,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 117280768,
+     "bytes": 117321728,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -63497,7 +63497,7 @@
  "totals": {
   "documents": 5718,
   "groups": 32,
-  "bytes": 7342610550,
+  "bytes": 7342686213,
   "loadBearing": 218
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 24 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

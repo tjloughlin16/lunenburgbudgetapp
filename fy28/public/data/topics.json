@@ -1069,6 +1069,7 @@
      "section": null,
      "title": "People",
      "topics": [
+      "town-payroll",
       "town-staff-counts",
       "town-headcount-coverage"
      ]
@@ -1720,7 +1721,7 @@
    "generator": "scripts/build_athletic_director_topic.py",
    "home": "athletics",
    "id": "athletic-director",
-   "minutes": 2,
+   "minutes": 3,
    "path": "/athletics/athletic-director",
    "ready": true,
    "related": [],
@@ -1831,7 +1832,7 @@
    "title": "Minutes by year"
   },
   "board-minutes-posted": {
-   "finding": "On the town’s Agenda Center, 1,307 of 1,935 board meetings from FY2023 to FY2026 have minutes listed, 68%.",
+   "finding": "On the town’s Agenda Center, 1,312 of 1,936 board meetings from FY2023 to FY2026 have minutes listed, 68%.",
    "generator": "scripts/build_board_records_topics.py",
    "home": "board-records",
    "id": "board-minutes-posted",
@@ -1859,7 +1860,7 @@
    "title": "Open seats"
   },
   "board-recordings": {
-   "finding": "1,173 of 1,935 meetings, FY2023 to FY2026, have a town video matched; 10 of 30 ranked boards have none.",
+   "finding": "1,173 of 1,936 meetings, FY2023 to FY2026, have a town video matched; 10 of 30 ranked boards have none.",
    "generator": "scripts/build_board_records_topics.py",
    "home": "board-records",
    "id": "board-recordings",
@@ -3212,7 +3213,7 @@
    "title": "Grounds maintenance bid"
   },
   "growth-and-tax-rate": {
-   "finding": "Overrides and debt exclusions were 9% of the average bill’s rise since FY1991; the 2.5% a year was 57%.",
+   "finding": "A home unchanged since FY1991 pays 3.2 times its bill then; the average bill is 4.5 times.",
    "generator": "scripts/build_growth_rate_topic.py",
    "home": "homes-and-taxes",
    "id": "growth-and-tax-rate",
@@ -5641,6 +5642,20 @@
     "department-budgets"
    ],
    "title": "Library budget"
+  },
+  "town-payroll": {
+   "finding": "The Town paid $25,805,916 in 2025, 58% more than in 2011. The levy limit’s pace would be 41%.",
+   "generator": "scripts/build_town_payroll.py",
+   "home": "department-budgets",
+   "id": "town-payroll",
+   "minutes": 1,
+   "path": "/department-budgets/town-payroll",
+   "ready": true,
+   "related": [],
+   "shelves": [
+    "department-budgets"
+   ],
+   "title": "Town and school payroll"
   },
   "town-population": {
    "finding": "About 11,804 residents in 4,529 households, on a sample; both grew by more than the survey’s margin.",

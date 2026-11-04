@@ -31,7 +31,7 @@ tell you and ascending order of how many departments they cover:
 
 Nothing published covers the rest -- a DPW labourer, a library assistant, a town hall
 clerk appear in none of the three. The gross-wages list tagged each name with a department
-through FY2016 and stopped.
+through FY2017 and stopped.
 """
 import argparse
 import collections
@@ -197,7 +197,7 @@ def _not_established(d=None):
         'name.',
         'How many people the town employs. %s departments state a figure, in %s different '
         'forms, and no year has all of them — the wage list that would give one town-wide '
-        'headcount stopped naming departments after FY2016.'
+        'headcount stopped naming departments after FY2017.'
         % (word(len(emp)).capitalize(), word(len(forms))),
         'FTE. A career post and an on-call post are not the same job and cannot be netted '
         'against each other.',
@@ -559,7 +559,7 @@ def render(d):
                  % (g, ('$%s' % format(int(round(amt)), ',')) if amt else '—',
                     kind, why))
     t.append('\nThe gross-wages list named a department beside each employee through '
-             'FY2016 and stopped, so there has been no town-wide headcount by department '
+             'FY2017 and stopped, so there has been no town-wide headcount by department '
              'since.\n')
 
     ten = _tenure()
