@@ -163,7 +163,7 @@ def page():
         con('The number of people paid rose from %d to %d; the middle person’s pay, from %s to %s.'
             % (n[first], n[last], C.usd(med[first]), C.usd(med[last])), ['n', 'med'],
             {'a': N(n[first], 'people'), 'b': N(n[last], 'people'), 'c': U(med[first]), 'd': U(med[last])},
-            so='Most of the growth is in pay per person, not people; a name is not a post or an FTE.'),
+            so='Most of the growth is in pay per person, not people; a name is not a job or an FTE.'),
         con('Schools were %s to %s of payroll in every year a department is printed, %d to %d.'
             % (C.pct(lo_s * 100, 0), C.pct(hi_s * 100, 0), dept_years[0], dept_years[-1]), ['dept'],
             {'l': P(lo_s), 'h': P(hi_s), 'a': yr(dept_years[0]), 'b': yr(dept_years[-1])},

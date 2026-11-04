@@ -378,11 +378,11 @@ def build():
     px['rate'] = f('rate', U2(fp['rate26']), 'the hour rate every such FY2026 line fits', 'estimate', {'y': F(2026)})
     px['hsp'] = f('hsp', U2(fp['hsp']), 'fee-fund pay moved to the principal line, FY2025', 'published',
                   {'y': F(2025)})
-    px['fy18'] = f('fy18', U(gf[2018][0]), 'director line, FY2018, actual: a half post', 'published', {'y': F(2018)})
+    px['fy18'] = f('fy18', U(gf[2018][0]), 'director line, FY2018, actual: a half-time job', 'published', {'y': F(2018)})
     px['mc17'] = f('mc17', U(mc17), 'what the director earned, calendar 2017', 'published', allow=('2017',))
     px['which'] = f('which', None, 'which line paid the director, FY2011 to FY2017', 'gap',
                     closes=WHICH_CLOSES, allow=D('FY2011 FY2017', WHICH_CLOSES))
-    px['memo'] = f('memo', None, 'which post the $13,691.53 paid', 'gap', closes=MEMO_CLOSES,
+    px['memo'] = f('memo', None, 'which job the $13,691.53 paid', 'gap', closes=MEMO_CLOSES,
                    allow=D('$13,691.53', MEMO_CLOSES))
     px['fy27'] = f('fy27', None, 'the FY2027 line as voted', 'gap', closes=FY27_CLOSES, allow=D('FY2027', FY27_CLOSES))
 
@@ -474,12 +474,12 @@ def build():
             fee_states.append(None)
     sec_fee = ['secfee' if (2015 <= y <= 2019 or 2023 <= y <= 2026) else None for y in YEARS]
     tl = TB.timeline(
-        'Who held the post, and which line paid it', per,
+        'Who was director, and which line paid it', per,
         [('Athletic director', who),
          ('How the director was paid', [
              TB.track('Town budget director line', line_states,
-                      note=('FY14–FY17 print no director line; FY18 a half post; full-time from FY19; FY26 voted '
-                            'net of a fee offset; FY27 a half post.', None, D('FY14 FY17 FY18 FY19 FY26 FY27')),
+                      note=('FY14–FY17 print no director line; FY18 half-time; full-time from FY19; FY26 voted '
+                            'net of a fee offset; FY27 half-time.', None, D('FY14 FY17 FY18 FY19 FY26 FY27')),
                       basis=('budget', 'District budget books; the school journal')),
              TB.track('Director pay in the fee fund', fee_states,
                       note=('Looked for, none found: no director on the fee side in FY14–FY17 actuals, FY18–FY19 '
@@ -495,7 +495,7 @@ def build():
         # touches a post, a dashed empty box for looked-for-and-absent.
         [('held', 'Named in that year’s record', 'neutral'),
          ('full', 'Director line: full-time', 'muted'),
-         ('half', 'Director line: a half post', 'muted', 'half'),
+         ('half', 'Director line: half-time', 'muted', 'half'),
          ('net', 'Director line: voted net of a fee offset', 'good', 'half'),
          ('absent', 'Looked for: none found', 'muted', 'empty'),
          ('totals', 'Fee fund totals only: not itemised', 'muted', 'outline'),
@@ -518,8 +518,8 @@ def build():
     labels = {}
     for y, ws in sorted(handovers.items()):
         ws = sorted(ws, key=lambda w: min(held[w]))
-        labels[xs.index(y)] = ('%s to %s' % (surname(ws[0]), surname(ws[-1])), ())
-    labels[0] = ('%s in the post' % surname(in_role[xs[0]][0]), ())
+        labels[xs.index(y)] = ('%s takes over (both paid)' % surname(ws[-1]), ())
+    labels[0] = ('%s is director' % surname(in_role[xs[0]][0]), ())
     mc_lo = min(mc[y][0] for y in range(2014, 2018))
     mc_hi = max(mc[y][0] for y in range(2014, 2018))
     line = TP.series('The athletic director’s pay, by year', [C.fy(y) for y in xs], [
@@ -529,11 +529,11 @@ def build():
                  'published'),
         TP.track('Last draft, a proposal', [float(B['fy27_last']) if y == 2027 else None for y in xs],
                  'published'),
-        TP.track('Paid to whoever held the post (calendar, ours)',
+        TP.track('Paid to the athletic director (calendar, ours)',
                  [float(role[y]) if y in role else None for y in xs], 'estimate', labels=labels)],
         '$', kind='line',
         note='Actuals: budget books to FY2022, the journal after. Pay: wage lists, calendar years, every '
-             'fund, everyone in the post added; 2025 includes other pay.',
+             'fund; a changeover year adds both directors. 2025 includes other pay.',
         note_allow=D('FY2022 FY2023 2025'))
     line_block = TB.chart(line, place='lead', so=(
         '%s to %s the general fund director line shows $0 actual, while the Town printed the director’s '
@@ -575,13 +575,13 @@ def build():
         for y in sorted(ys):
             amt, page, raw = ys[y]
             wr.append(dict(label='%s · calendar %d%s' % (who_, y, '' if (who_, y) not in left_out
-                                                          else ', before the post'),
+                                                          else ', before becoming director'),
                            cells=[usd2(amt), 'p%s' % page, raw[:60]]))
     t_wages = dict(caption='What each director earned, as the Town printed it', views=[dict(
         key='wages', label='Calendar years', kinds=['ledger', 'stated', 'stated'],
         columns=['Gross wages', 'Page', 'As printed'], rows=wr,
-        note='Gross wages in each annual town report: calendar years, every fund and every post a person '
-             'held. Rows marked before the post are not on the line.')])
+        note='Gross wages in each annual town report: calendar years, every fund and every job a person '
+             'held. Rows marked before becoming director are not on the line.')])
 
     sources = [
         dict(label='Lunenburg Public Schools — Proposed FY19 MSHS Athletic Budget (both sides, FY14–FY19)',
@@ -611,9 +611,9 @@ def build():
     page['not_established'] = [
         'Which line paid the director from FY2011 to FY2017, when no budget prints a director line.',
         'Who was paid the fee fund’s regular hourly pay. The journal names no one on a pay run.',
-        'Which post the $13,691.53 moved to the principal line in FY2025 paid.',
+        'Which job the $13,691.53 moved to the principal line in FY2025 paid.',
         'How the FY2027 half-time director is paid. The last draft held proposed $20,000.',
-        'How much of a handover year’s pay was for the director’s post, and how much for other work or a payout.',
+        'How much of a handover year’s pay was for the director job, and how much for other work or a payout.',
     ]
     if [TID] != MINE:
         fail('the registry gives this script %s; it builds %s' % (MINE, [TID]))
