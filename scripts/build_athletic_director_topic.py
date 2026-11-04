@@ -392,7 +392,7 @@ def build():
             ['gf26', 'fy18', 'which'], allow=('FY19',),
             so='Where fees and the director meet in the record, it is a budget offset for FY2026, not a payment.',
             so_figures={'y': F(2026)},
-            notes=[step('The journal, %s to %s, holds no fee-fund line that names the director, and his '
+            notes=[step('The journal, %s to %s, holds no fee-fund line that names the director, and the director’s '
                         'own line is the general fund’s.' % (C.fy(J.YEARS[0]), C.fy(J.YEARS[-1])), 'measured',
                         {'a': F(J.YEARS[0]), 'b': F(J.YEARS[-1])}),
                    step('%s to %s the fund is totals only. Bunnell’s calendar 2020 pay, %s, sits between the '
@@ -607,13 +607,25 @@ def build():
         dict(label='Lunenburg Finance Committee — video, 20 March 2025, at the offset', href=hrefs[1]),
     ]
 
+    # THE OPENING LINE IS THE PAGE'S MISMATCH (TJ, 4 November 2026: "we need a stronger opening
+    # line. its very much too specific as a conclusion"). Paid every year the wage list holds;
+    # the director line shows $0 in some of them. Where the money came from is not claimed.
+    paid_years = sorted(role)
+    if paid_years != list(range(paid_years[0], paid_years[-1] + 1)):
+        fail('a year with no director pay: %s -- the opening line says every year' % paid_years)
+    zero = [y for y in paid_years if y in gf and gf[y][0] == 0]
+    words = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six'}
+    if len(zero) not in words:
+        fail('%d years at $0 -- reword the opening line' % len(zero))
     page = TP.page(
         TID,
-        'No record held pays the director from the fee fund. The FY2026 vote set his line %s below level service.'
-        % C.usd(B['lvl26'] - B['voted26']),
+        'An athletic director was paid every year from %d to %d; in %s, the director line shows $0.'
+        % (paid_years[0], paid_years[-1], words[len(zero)]),
         list(px.values()), concl, chart=chart, tables=[t_line, t_wages], sources=sources,
         blocks=[line_block, tl],
-        finding_figures={'a': U(B['lvl26'] - B['voted26']), 'y': F(2026)})
+        finding_figures={'a': figure(paid_years[0], str(paid_years[0]), 'year'),
+                         'b': figure(paid_years[-1], str(paid_years[-1]), 'year')},
+        finding_allow=('0',))
     page['not_established'] = [
         'Which line paid the director from FY2011 to FY2017, when no budget prints a director line.',
         'Who was paid the fee fund’s regular hourly pay. The journal names no one on a pay run.',
