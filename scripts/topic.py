@@ -666,7 +666,7 @@ def track(name, values, basis='published', mark=None, colour=None, labels=None):
 
 def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_figures=None,
            note_allow=(), decimals=None, reference=None, from_zero=True, multiples=False,
-           overlay=False, totals=False, secondary=None, events=None):
+           overlay=False, totals=False, secondary=None, events=None, pending=None):
     """Named tracks over the same x -- years (C.fy(y)) or categories, as strings.
     reference: (value, label) -- one horizontal line a reader measures the tracks against,
       e.g. (100, 'The state minimum'). Its value is shown by fmt(), like every other.
@@ -697,7 +697,12 @@ def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_f
       the chart's own x values. For a change that happened at a time rather than a value: who
       took over a job, when a rule changed (TJ, 4 November 2026, on the athletic director's pay:
       "vertical lines on the chart that show the transitions would be better"). Words are short
-      and a digit in them must be declared in `allow`. Written only when set."""
+      and a digit in them must be declared in `allow`. Written only when set.
+    pending: A HATCHED SPAN FROM ONE x TO THE END -- (x, words) -- for years whose record is
+      not published yet, so a reader sees an absence the publisher's calendar makes, not a gap
+      in our reading (TJ, 4 November 2026, on the athletic director's FY2026 and after: "it
+      looks like we're missing info (we are) but not because of our project having a mistake").
+      Written only when set."""
     if totals and not (stacked and kind == 'bar'):
         raise ConclusionError('chart %r: totals label a stacked bar chart' % title)
     if multiples and overlay:
@@ -736,6 +741,14 @@ def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_f
             if len(words) > 24:
                 raise ConclusionError('chart %r: event label %r is over 24 characters' % (title, words))
             evs.append(dict(x=ex, label=' '.join(words.split())))
+    pend = None
+    if pending:
+        px, pw = pending
+        if px not in x:
+            raise ConclusionError('chart %r: pending starts at %r, which is not on the x axis' % (title, px))
+        if re.search(r'\d', pw) or len(pw) > 32:
+            raise ConclusionError('chart %r: pending label %r must be short words, no digits' % (title, pw))
+        pend = dict(x=px, label=' '.join(pw.split()))
     ref = None
     if reference is not None:
         rv, rl = reference
@@ -764,6 +777,7 @@ def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_f
                          **({'overlay': True} if overlay else {}),
                          **({'secondary': sec} if sec else {}),
                          **({'events': evs} if evs else {}),
+                         **({'pending': pend} if pend else {}),
                          **({'totals': [fmt(unit, sum(t['values'][i] or 0 for t in tracks),
                                             decimals) for i in range(len(x))]}
                             if totals else {})))

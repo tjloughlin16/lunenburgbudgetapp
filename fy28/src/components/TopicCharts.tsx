@@ -23,7 +23,7 @@
  *  they reflow to any width and need no hover; the series chart is recharts in a
  *  ResponsiveContainer. Nothing here sets a width wider than its column. */
 import {
-  Bar, CartesianGrid, ComposedChart, LabelList, Line, ReferenceLine, ResponsiveContainer, Tooltip,
+  Bar, CartesianGrid, ComposedChart, LabelList, Line, ReferenceArea, ReferenceLine, ResponsiveContainer, Tooltip,
   XAxis, YAxis,
 } from 'recharts'
 import { useRef, useState } from 'react'
@@ -51,6 +51,9 @@ export type SeriesChart = {
   /** VERTICAL LINES AT MOMENTS: a change that happened at a time, such as who took over a job
    *  (scripts/topic.py series `events`). */
   events?: { x: string; label: string }[]
+  /** A HATCHED SPAN from one x to the end: years whose record is not published yet
+   *  (scripts/topic.py series `pending`). */
+  pending?: { x: string; label: string }
   from_zero?: boolean
   /** Small multiples: one panel per track, all on one scale from zero (scripts/topic.py). */
   multiples?: boolean
@@ -486,6 +489,19 @@ function Series({ c }: { c: SeriesChart }) {
               <ReferenceLine y={c.reference.value} stroke="var(--text-muted)" strokeDasharray="2 3"
                 label={{ value: `${c.reference.label}, ${c.reference.text}`, position: 'insideBottomRight',
                   fill: 'var(--text-muted)', fontSize: 11 }} />
+            ) : null}
+            {c.pending ? (
+              <defs>
+                <pattern id="pending-hatch" width="6" height="6" patternUnits="userSpaceOnUse"
+                  patternTransform="rotate(45)">
+                  <line x1="0" y1="0" x2="0" y2="6" stroke="var(--text-muted)" strokeWidth="1.5" strokeOpacity="0.55" />
+                </pattern>
+              </defs>
+            ) : null}
+            {c.pending ? (
+              <ReferenceArea x1={c.pending.x} x2={c.x[c.x.length - 1]} fill="url(#pending-hatch)" fillOpacity={1}
+                ifOverflow="extendDomain"
+                label={{ value: c.pending.label, position: 'center', angle: -90, fill: 'var(--text-muted)', fontSize: 11 }} />
             ) : null}
             {(c.events ?? []).map(e => (
               <ReferenceLine key={`ev-${e.x}`} x={e.x} stroke="var(--text-muted)" strokeDasharray="3 3"

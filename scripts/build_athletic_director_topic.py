@@ -537,6 +537,7 @@ def build():
         TP.track('Director’s total pay, every account, Jan–Dec',
                  [float(role[y]) if y in role else None for y in xs], 'estimate', labels=labels)],
         '$', kind='line', events=events,
+        pending=(C.fy(max(role) + 1), 'Wage list not yet published'),
         note='Total pay includes the budget line; it is not on top of it. A changeover year adds both '
              'directors; 2025 includes other pay.',
         note_allow=D('FY2022 FY2023 2025'))
