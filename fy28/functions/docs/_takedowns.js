@@ -14,6 +14,12 @@ export const TAKEN_DOWN = {
     "replacement": "/docs/correspondence/2026-11-03-school-warrant-batch-5806-2026-06-30.redacted-d86535f9.pdf",
     "state": "stopped serving"
   },
+  "correspondence/2026-11-03-school-warrant-batch-5808-2026-06-30.pdf": {
+    "decided_on": "2026-11-03",
+    "reason": "This warrant batch, as the district redacted it, names a parent on a special-education transport mileage log and prints the family payee's numbers. Families receiving school services are masked; our redacted copy replaces it.",
+    "replacement": "/docs/correspondence/2026-11-03-school-warrant-batch-5808-2026-06-30.redacted.pdf",
+    "state": "stopped serving"
+  },
   "correspondence/2026-11-03-school-warrant-batch-5810-2026-06-30.pdf": {
     "decided_on": "2026-11-03",
     "reason": "This warrant batch, as the district redacted it, still lets a reader identify a family receiving school services: payee numbers beside redacted parent names. Our redacted copy replaces it.",
