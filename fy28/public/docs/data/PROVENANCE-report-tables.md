@@ -6,7 +6,7 @@
 dataset, where it lives, what state it is in, and what is still uncaptured.
 `notes/reference/BACKUP.md` says how many copies of each thing exist.
 
-13,405 rows across 12 tables, read out of sixteen annual town
+76,656 rows across 60 tables, read out of sixteen annual town
 reports by one extractor. The address of every row — the document, the
 publisher's own filename and our copy's sha256 — is in
 `notes/generated/DATASET-PROVENANCE.md` and `sources/data/dataset-provenance.csv`.
@@ -16,9 +16,9 @@ This document is the other half of rule 12: what the figures are.
 
 | status | rows | what it means |
 |---|---:|---|
-| `checked` | 409 | a check existed and it passed |
-| `check failed` | 7,262 | a check existed and it did not pass |
-| `no check` | 5,734 | the table prints no total; verify by reading the page |
+| `checked` | 39,565 | a check existed and it passed |
+| `check failed` | 9,182 | a check existed and it did not pass |
+| `no check` | 27,909 | the table prints no total; verify by reading the page |
 
 A table that prints no total is **not** less authoritative. These reports are the
 official record — Town Manager and Finance Committee approved, carrying tables
@@ -64,18 +64,66 @@ a sum of different things.
 
 | dataset | rows | checked | check failed | no check | what it is |
 |---|---:|---:|---:|---:|---|
-| `report-appropriations` | 4,665 | 0 | 4,530 | 135 | the Town Accountant's schedule of the year that closed, and the town meeting's omnibus budget for the year ahead — two different tables, told apart by `table_family` |
-| `report-capital-projects` | 616 | 0 | 529 | 87 | capital project authorisations and what was spent against them |
-| `report-debt` | 354 | 74 | 98 | 182 | debt outstanding, issued and retired |
-| `report-dept-activity` | 515 | 0 | 0 | 515 | counts a department reports of what it did that year |
-| `report-elections` | 2,012 | 323 | 1,688 | 1 | the vote, by candidate or question, by precinct |
-| `report-enrollment-mcas` | 337 | 0 | 0 | 337 | enrollment by school and MCAS results |
-| `report-gross-wages` | 3,545 | 0 | 0 | 3,545 | the gross wage paid to every town employee |
-| `report-monty-tech` | 70 | 0 | 0 | 70 | the Montachusett Regional Vocational Technical assessment and enrollment |
-| `report-officials` | 237 | 0 | 0 | 237 | who held which town office, and until when |
-| `report-trust-funds` | 642 | 12 | 417 | 213 | the trust and stabilisation funds, balance and activity by fund |
-| `report-valuation` | 316 | 0 | 0 | 316 | the assessors' valuation and tax rate history |
-| `report-vital-records` | 96 | 0 | 0 | 96 | births, marriages and deaths recorded by the Town Clerk |
+| `report-agency-funds` | 26 | 0 | 0 | 26 | — |
+| `report-appropriations` | 27,799 | 12,782 | 5,845 | 9,172 | the Town Accountant's schedule of the year that closed, and the town meeting's omnibus budget for the year ahead — two different tables, told apart by `table_family` |
+| `report-auditors-cash-schedule` | 168 | 127 | 0 | 41 | — |
+| `report-capital-project-costs` | 13 | 2 | 0 | 11 | — |
+| `report-capital-projects` | 1,317 | 741 | 547 | 29 | capital project authorisations and what was spent against them |
+| `report-cash-management` | 17 | 15 | 0 | 2 | — |
+| `report-classification-plan` | 54 | 0 | 0 | 54 | — |
+| `report-committee-income-expenses` | 22 | 22 | 0 | 0 | — |
+| `report-debt` | 3,533 | 2,876 | 315 | 342 | debt outstanding, issued and retired |
+| `report-dept-activity` | 2,264 | 15 | 0 | 2,249 | counts a department reports of what it did that year |
+| `report-elections` | 3,863 | 1,664 | 1,725 | 474 | the vote, by candidate or question, by precinct |
+| `report-energy-use` | 3 | 0 | 0 | 3 | — |
+| `report-enrollment-mcas` | 747 | 36 | 4 | 707 | enrollment by school and MCAS results |
+| `report-expenditure-history` | 10 | 8 | 0 | 2 | — |
+| `report-expenditure-shares` | 104 | 0 | 0 | 104 | — |
+| `report-fee-schedule` | 218 | 8 | 0 | 210 | — |
+| `report-financial-performance` | 19 | 11 | 3 | 5 | — |
+| `report-fund-balance-sheets` | 3,720 | 2,275 | 0 | 1,445 | — |
+| `report-gross-wages` | 11,512 | 7,965 | 0 | 3,547 | the gross wage paid to every town employee |
+| `report-highway-accounts` | 18 | 18 | 0 | 0 | — |
+| `report-library-service-values` | 10 | 10 | 0 | 0 | — |
+| `report-monty-tech` | 79 | 2 | 0 | 77 | the Montachusett Regional Vocational Technical assessment and enrollment |
+| `report-new-growth-history` | 202 | 162 | 28 | 12 | — |
+| `report-office-budget-cuts` | 4 | 4 | 0 | 0 | — |
+| `report-officials` | 1,838 | 0 | 0 | 1,838 | who held which town office, and until when |
+| `report-per-capita-comparison` | 3 | 0 | 0 | 3 | — |
+| `report-property-tax-exemptions` | 179 | 0 | 0 | 179 | — |
+| `report-proposed-salary-schedule` | 302 | 0 | 0 | 302 | — |
+| `report-revenue-cash-invested` | 21 | 11 | 0 | 10 | — |
+| `report-revenue-sharing` | 291 | 86 | 6 | 199 | — |
+| `report-school-budget-summary` | 660 | 450 | 0 | 210 | — |
+| `report-school-building-approved-costs` | 6 | 6 | 0 | 0 | — |
+| `report-school-census-minors` | 10 | 10 | 0 | 0 | — |
+| `report-school-lunch` | 668 | 370 | 41 | 257 | — |
+| `report-school-special-accounts` | 913 | 400 | 0 | 513 | — |
+| `report-school-spending-shares` | 13 | 4 | 0 | 9 | — |
+| `report-school-staff-changes` | 7 | 5 | 0 | 2 | — |
+| `report-school-staff-fte` | 450 | 186 | 0 | 264 | — |
+| `report-school-state-aid` | 378 | 283 | 0 | 95 | — |
+| `report-special-education` | 46 | 0 | 0 | 46 | — |
+| `report-statement-of-payments` | 4,670 | 4,095 | 0 | 575 | — |
+| `report-surplus-free-cash` | 58 | 28 | 0 | 30 | — |
+| `report-tax-bill-breakdown` | 135 | 135 | 0 | 0 | — |
+| `report-tax-collection-by-levy-year` | 39 | 32 | 0 | 7 | — |
+| `report-town-facts` | 27 | 0 | 0 | 27 | — |
+| `report-transitional-receipts` | 197 | 196 | 0 | 1 | — |
+| `report-treasurers-cash-calendar-year` | 191 | 89 | 0 | 102 | — |
+| `report-treasurers-cash-reconciliation` | 545 | 519 | 15 | 11 | — |
+| `report-treasurers-outlook` | 14 | 6 | 0 | 8 | — |
+| `report-treasurers-then-and-now` | 16 | 0 | 0 | 16 | — |
+| `report-trust-funds` | 5,508 | 3,434 | 546 | 1,528 | the trust and stabilisation funds, balance and activity by fund |
+| `report-valuation` | 1,029 | 265 | 100 | 664 | the assessors' valuation and tax rate history |
+| `report-vehicle-inventory` | 32 | 0 | 0 | 32 | — |
+| `report-vendor-payments` | 98 | 0 | 0 | 98 | — |
+| `report-veterans-services` | 13 | 8 | 0 | 5 | — |
+| `report-vital-records` | 2,311 | 0 | 0 | 2,311 | births, marriages and deaths recorded by the Town Clerk |
+| `report-voted-pay-rates` | 12 | 0 | 0 | 12 | — |
+| `report-warrant-article-amounts` | 178 | 148 | 0 | 30 | — |
+| `report-weights-measures` | 23 | 7 | 7 | 9 | — |
+| `report-welfare-aid` | 53 | 49 | 0 | 4 | — |
 
 ## Two families the extractor no longer writes
 

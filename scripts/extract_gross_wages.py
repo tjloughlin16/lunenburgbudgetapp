@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """The town's own wage list: every name it prints and what it paid them.
 
-    python3 scripts/extract_gross_wages.py [--check]
+    python3 scripts/extract_gross_wages.py [--check]     # build from sources/data/wage-pages/
+    python3 scripts/extract_gross_wages.py --dump        # re-dump the pages first (needs build/)
 
 Writes `sources/data/gross-wages.csv` -- fy, name, amount, and the department where the
 town prints one.
@@ -23,99 +24,35 @@ person in that year; it does not say whether that is a part-time post, a mid-yea
 a retirement in September. Rule 11's warning runs the other way here too: this is what the
 town PAID, which is not what a post COSTS once benefits are counted.
 
-THE DEPARTMENT IS THE PROBLEM. The early lists tag each name with one -- `HOWARD, ERIN
-FIRE` in FY2011, a `SCHOOL` heading in FY2016 -- and the later ones do not: FY2018 onward
-print a name and an amount and nothing else. So a town-wide total is available for every
-year the list reads, and a per-department total is only available where the town printed
-the department, or where a name can be matched to a roster we hold.
+THE DEPARTMENT IS PRINTED UNTIL FY2017 AND NOT AFTER. FY2011-FY2017 print one beside each
+name -- before the amount in some years, after it in others -- and FY2018 onward print a
+name and an amount and nothing else. So a town-wide total is available for every year, and
+a per-department total only where the town printed the department, or where a name can be
+matched to a roster we hold.
+
+HOW EACH PAGE IS READ is the section headed ONE INSTRUMENT PER KIND OF PAGE below: the text
+layer where the PDF is digital, Textract where the page is a scan, every page graded on
+whether each money figure it prints was captured.
 """
 import argparse
 import collections
 import csv
 import glob
+import json
 import os
 import re
 import statistics
 import sys
-
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PAGES = os.path.join(ROOT, 'sources', 'town-budget', 'pages')
 OUT = os.path.join(ROOT, 'sources', 'data', 'gross-wages.csv')
 FIELDS = ['fy', 'page', 'name', 'amount', 'department', 'as_printed', 'status',
           'reconciliation']
-
 # THE DOLLAR SIGN IS NOT ALWAYS THERE. FY2025 prints `$64,696.14` and FY2018 prints
 # `13,757.44` bare, so a pattern anchored on `$` read FY2018's wage page as empty. The
 # page is found from the contents rather than from the money, so dropping the anchor is
 # safe here in a way it would not be if this were hunting for the page.
 MONEY = re.compile(r'\$?\s?([\d,]+\.\d\d)')
-HEAD = re.compile(r'gross wages|employee compensation|employee gross', re.I)
-# The department, where the town tags it: appended to the name in the early lists.
-DEPT_TAG = re.compile(r'\b(FIRE|POLICE|SCHOOL|DPW|LIBRARY|HIGHWAY|CEMETERY|WATER|SEWER'
-                      r'|TOWN HALL|COA|SENIOR|BUILDING|PARK|RECREATION)\b$')
 NOISE = re.compile(r'^(?:TOTAL|GRAND|PAGE|\d+)$', re.I)
-
-
-def pages(fy):
-    by, page = collections.defaultdict(list), None
-    path = os.path.join(PAGES, 'FY%s.ocr.txt' % fy)
-    if not os.path.exists(path):
-        return {}
-    for line in open(path, encoding='utf-8', errors='replace'):
-        m = re.match(r'^===PAGE (\d+)===', line)
-        if m:
-            page = int(m.group(1))
-            continue
-        if page:
-            by[page].append(re.sub(r'\s+', ' ', re.sub(r'^\s*\d+\|', '', line)).strip())
-    return by
-
-
-INDEX = os.path.join(ROOT, 'sources', 'data', 'report-index.csv')
-
-
-def _index_pages(fy):
-    """Where the town's contents page says the wage list is."""
-    if not os.path.exists(INDEX):
-        return []
-    out = []
-    for r in csv.DictReader(open(INDEX, encoding='utf-8')):
-        if r['fy'] == fy and r['state'] == 'report' and HEAD.search(r['department']) \
-                and r['pdf_from']:
-            out += list(range(int(r['pdf_from']), int(r['pdf_to']) + 1))
-    return sorted(set(out))
-
-
-def wage_pages(by, fy):
-    """Pages of the wage list, from the town's own contents page, then run on.
-
-    THE FIRST VERSION GUESSED AND WAS COMPREHENSIVELY WRONG. It looked for pages dense in
-    money, which is a description of every budget table in the book: FY2011 came back with
-    39 `names` totalling $25.7 MILLION, because it was reading the appropriations summary.
-    A wage figure is a person's pay and a budget figure is a department's, and nothing in
-    the shape of the page tells them apart.
-
-    The contents page says where the list is, and `extract_report_index.py` already reads
-    it. The range it gives is often one page when the list runs six, so it is extended
-    while the pages stay dense in SMALL money -- the test that does separate the two.
-    """
-    seed = _index_pages(fy)
-    if not seed:
-        seed = [p for p in sorted(by)
-                if any(HEAD.search(t) for t in by[p][:8]) and _wagey(by[p])]
-    if not seed:
-        return []
-    out, p = sorted(seed), max(seed) + 1
-    while p in by and _wagey(by[p]):
-        out.append(p)
-        p += 1
-    p = min(seed) - 1
-    while p in by and _wagey(by[p]):
-        out.insert(0, p)
-        p -= 1
-    return sorted(set(out))
-
-
 def _wagey(lines):
     """Is this page a list of PEOPLE and pay, rather than a table of appropriations?
 
@@ -128,134 +65,9 @@ def _wagey(lines):
         return False
     small = sum(1 for a in amts if a < 250000)
     return small / len(amts) > 0.95
-
-
-def parse_line(t):
-    """(name, amount) pairs on one printed line, which carries TWO columns.
-
-    SPLIT ON THE MONEY, NOT ON THE NAME. The list prints `ABRAHAM DAVID $64,696.14 LEGER
-    VICTORIA $2,056.23` -- two people on one line -- and a pattern that tries to describe
-    what a NAME looks like loses every compound surname on the page. The amounts are
-    unambiguous, so each name is simply whatever text sits between the previous amount and
-    the next one.
-    """
-    out, last = [], 0
-    for m in MONEY.finditer(t):
-        name = t[last:m.start()].strip(' .,-')
-        last = m.end()
-        name = re.sub(r'\s+', ' ', name).strip()
-        if not name or NOISE.match(name) or len(name) < 4:
-            continue
-        dept = ''
-        d = DEPT_TAG.search(name)
-        if d:
-            dept = d.group(1).title()
-            name = name[:d.start()].strip(' ,')
-        # A SURNAME ON ITS OWN IS STILL A PAYMENT. The list is set in two columns and the
-        # right-hand column loses its given names in the line-level OCR -- `CAVACO QUINN
-        # $68,275.47 NORMANDIN $58,020.26` -- so requiring two words threw away 47 lines
-        # of one FY2025 page and about $5M of the town's payroll. The money is certain
-        # even where the name is half read, and a town TOTAL needs only the money. A
-        # partial name simply will not match a roster, which is the honest outcome.
-        out.append((name, float(m.group(1).replace(',', '')), dept))
-    return out
-
-
-def read_year(fy, refused=None, doc=''):
-    """Rows of the wage list for one year, and a REFUSAL for every page that yielded none.
-
-    A PAGE THAT YIELDS NOTHING USED TO YIELD SILENCE. `wage_pages()` correctly returns all
-    seven of FY2019's payroll pages, 197 to 203. Four of them -- 198, 201, 202, 203 --
-    produce no rows and produced no record of it either, so the archive held pages 197, 199
-    and 200 of a seven-page list and nothing anywhere said the other four had been looked at.
-    They were indistinguishable from pages nobody had opened, and two of them were reported
-    to TJ as pages the town does not print a header on.
-
-    The same defect as the receivables refusals, one step worse: those at least printed a
-    line to a terminal. A page the extractor reached and could not read is a finding about
-    OUR reader, and rule 13c says exactly that -- a pattern that does not match is not an
-    absence.
-    """
-    by = pages(fy)
-    rows = []
-    owned = set(SPLIT_NAME.get(fy, ('', []))[1])
-    for p in wage_pages(by, fy):
-        if p in owned:
-            # Read from the Vision boxes instead -- the line cache merges this page's two
-            # columns into one box and loses the right-hand person on every row.
-            continue
-        before = len(rows)
-        for t in by[p]:
-            for name, amt, dept in parse_line(t):
-                rows.append(dict(fy=fy, page=p, name=name, amount='%.2f' % amt,
-                                 department=dept, as_printed=t[:160]))
-        if refused is not None and len(rows) == before:
-            refused.append({'report_fy': fy, 'document': doc, 'page': p,
-                            'subject': 'payroll',
-                            'reason': 'the page is in the wage list and no line on it '
-                                      'paired a name with an amount',
-                            'evidence': '%d cached line(s) on the page; parse_line() '
-                                        'returned nothing for any of them' % len(by[p])})
-    return rows
-
-
-# ======================================================================================
-# THE PAGES THE PAGE CACHE LOSES -- read from the Vision boxes instead
-# ======================================================================================
-#
-# `sources/town-budget/pages/FY<year>.ocr.txt` is a fixed-width rendering of the Vision
-# boxes, and everything above reads it. On two wage pages that rendering is empty of
-# money where the boxes are full of it:
-#
-#     FY2011 page  98 -- 138 money boxes in the OCR, 0 in the page cache
-#     FY2012 page 114 -- 133 money boxes in the OCR, 0 in the page cache
-#
-# The cache's FY2011 page 98 is not blank, which is worse than blank: it is that page
-# rendered UPSIDE DOWN, so line 1 reads `L9'SLÉE$` and `T00 HOS`, which is `$338.27` and
-# `SCHOOL` turned over. Nothing downstream could tell that from a page of bad OCR.
-#
-# RULE 13c: A MATCHER THAT FINDS NOTHING IS A STATEMENT ABOUT OUR INSTRUMENT. Two of
-# them here -- the cache for both pages, and Vision itself for half of one -- and neither
-# is a statement about the town, which printed both pages in full.
-#
-# What the boxes actually hold, which is the reason only one of the two pages publishes:
-#
-#   FY2011 page 98 is set in FOUR columns -- name, department, amount, then the same
-#   again. Vision reads the RIGHT half completely (74 names against 75 amounts) and gives
-#   up on the LEFT name column two thirds of the way down the page: 19 names against 63
-#   amounts. So the right half pairs and most of the left half is amounts with nobody to
-#   attach them to.
-#
-#   FY2012 page 114 has no names on it AT ALL. 338 boxes, of which 133 are money and the
-#   rest are department words -- `SCHOOL`, `FIRE`, `SEWER`, `POLICE`. Both name columns
-#   are unread. A department and an amount is not a wage row: it cannot be attributed to
-#   anybody, it cannot be matched to a roster, and summing it would double-count against
-#   the pages either side. That page is REFUSED.
-#
-# A WAGE PAGE PRINTS NO TOTAL -- not on any of the eight pages of the two lists, checked
-# box by box -- so there is no identity to foot a row against, which is why every row in
-# `report-gross-wages.csv` already carries `no check`. What stands in for it here is the
-# PAIRING: a row is written only where one name and one amount sit in the same printed
-# row on the same side of the page. An amount with two candidate names, or none, is
-# counted and refused rather than attached to the nearest one.
-
 OCR = os.path.join(ROOT, 'sources', 'town-budget', 'ocr')
 OUT_REFUSED = os.path.join(ROOT, 'sources', 'data', 'gross-wages-refused.csv')
 REFUSED_FIELDS = ['report_fy', 'document', 'page', 'subject', 'reason', 'evidence']
-
-# fy -> document, pages. Kept explicit, and checked at run time against the cache: if a
-# page here ever starts rendering, the script says so rather than reading it twice.
-OCR_ONLY = {
-    '2011': ('4117-fy-2011-annual-town-report.pdf', [98]),
-    '2012': ('4118-fy-2012-annual-town-report.pdf', [114]),
-}
-
-OCR_MONEY = re.compile(r'^\$?\s?([\d,]+\.\d\d)$')
-OCR_NAME = re.compile(r"^[A-Z][A-Za-z'\- ]{1,30},\s*[A-Z][A-Za-z'\- ]{1,30}$")
-OCR_DEPT = re.compile(r'^(FIRE|POLICE|SCHOOL|DPW|LIBRARY|HIGHWAY|CEMETERY|WATER|SEWER'
-                      r'|COA|SENIOR|BUILDING|PARK|RECREATION|TOWN HALL)$', re.I)
-
-
 def ocr_boxes(doc, page):
     """One page of Vision boxes. Split on tabs -- csv may not be used on these files."""
     path = os.path.join(OCR, doc[:-4] + '.tsv')
@@ -277,154 +89,7 @@ def ocr_boxes(doc, page):
                 out.append({'x': x, 'y': y, 'w': float(f[3] or 0),
                             't': '\t'.join(f[6:]).strip()})
     return out
-
-
-def _bands(boxes):
-    """Printed rows, banded at HALF the page's own median row pitch -- rule 13b."""
-    ys = sorted({round(b['y'], 4) for b in boxes}, reverse=True)
-    gaps = sorted(a - b for a, b in zip(ys, ys[1:]) if 0.002 < a - b < 0.05)
-    band = (gaps[len(gaps) // 2] / 2.0) if gaps else 0.005
-    rows = []
-    for b in sorted(boxes, key=lambda b: (-b['y'], b['x'])):
-        if rows and abs(b['y'] - rows[-1][0]['y']) < band:
-            rows[-1].append(b)
-        else:
-            rows.append([b])
-    for r in rows:
-        r.sort(key=lambda b: b['x'])
-    return rows
-
-
-def read_ocr_page(fy, doc, page, cache, refused):
-    """Name-and-amount pairs off the boxes, and a refusal for everything that will not
-    pair. The page is split at the middle because it is printed in two halves; a name in
-    one half is never attached to an amount in the other.
-    """
-    boxes = ocr_boxes(doc, page)
-    if not boxes:
-        refused.append({'report_fy': fy, 'document': doc, 'page': page,
-                        'subject': 'payroll',
-                        'reason': 'the page has no Vision reading in the archive',
-                        'evidence': '0 boxes'})
-        return []
-    cached_money = sum(len(MONEY.findall(t)) for t in cache.get(page, []))
-    money = [b for b in boxes if OCR_MONEY.match(b['t'])]
-    # THE PAGE RENDERING IS NOT THE SAME FACT AS THE PAGE BEING READ, and conflating them
-    # cost FY2011 all 80 of its wage rows on 28 September 2026. The page cache was rebuilt
-    # that day against OCR four weeks newer, so p98 started rendering -- 138 money figures
-    # -- and this guard refused it for "being read twice". It was not: `wage_pages()` never
-    # finds that page, because its heading OCRs as `N H H WAGES` and the pattern wants
-    # `gross wages`. So the line path reads nothing there and this was the only reader.
-    #
-    # Ask the question that matters instead: does the LINE PATH actually claim this page?
-    if cached_money > 5 and page in wage_pages(cache, fy):
-        refused.append({'report_fy': fy, 'document': doc, 'page': page,
-                        'subject': 'payroll',
-                        'reason': 'this page now renders in the page cache and is being '
-                                  'read twice; take it out of OCR_ONLY',
-                        'evidence': '%d money figures in the cache, %d in the boxes'
-                                    % (cached_money, len(money))})
-        return []
-    rows, unpaired = [], 0
-    for band in _bands(boxes):
-        for lo, hi in ((0.0, 0.5), (0.5, 1.0)):
-            half = [b for b in band if lo <= b['x'] < hi]
-            names = [b for b in half if OCR_NAME.match(b['t'])]
-            amts = [b for b in half if OCR_MONEY.match(b['t'])]
-            depts = [b for b in half if OCR_DEPT.match(b['t'])]
-            if len(names) == 1 and len(amts) == 1:
-                rows.append(dict(fy=fy, page=page, name=names[0]['t'].strip(),
-                                 amount='%.2f' % float(
-                                     OCR_MONEY.match(amts[0]['t']).group(1).replace(',', '')),
-                                 department=depts[0]['t'].title() if len(depts) == 1 else '',
-                                 as_printed=' '.join(b['t'] for b in half)[:160]))
-            elif names or amts:
-                unpaired += 1
-    if not rows:
-        refused.append({'report_fy': fy, 'document': doc, 'page': page,
-                        'subject': 'payroll',
-                        'reason': 'no name on the page could be paired with an amount',
-                        'evidence': '%d boxes, %d of them money, %d of them a personal '
-                                    'name; the department words that remain (%s) cannot '
-                                    'be attributed to anybody'
-                                    % (len(boxes), len(money),
-                                       sum(1 for b in boxes if OCR_NAME.match(b['t'])),
-                                       ', '.join(sorted({b['t'].upper() for b in boxes
-                                                         if OCR_DEPT.match(b['t'])})[:6]))})
-    elif unpaired:
-        refused.append({'report_fy': fy, 'document': doc, 'page': page,
-                        'subject': 'payroll',
-                        'reason': 'a half-row held a name without an amount, or an amount '
-                                  'without a name, and was not guessed at',
-                        'evidence': '%d half-rows paired, %d refused; Vision reads %d '
-                                    'names against %d money figures on the page'
-                                    % (len(rows), unpaired,
-                                       sum(1 for b in boxes if OCR_NAME.match(b['t'])),
-                                       len(money))})
-    return rows
-
-
-# ======================================================================================
-# THE PAGES WHOSE NAMES ARE PRINTED AS TWO WORDS -- read by measured geometry
-# ======================================================================================
-#
-# `read_ocr_page` above pairs a name with an amount and expects the name in ONE box:
-# `OCR_NAME` wants `SURNAME, GIVEN` with the comma printed. FY2019 does not print the
-# comma. Its list sets six columns -- surname, given name, amount, and the same again --
-# so Vision returns `RHODES` `GARRY` `12,661.62` as three boxes, and no pattern over a
-# single box can see a person in that.
-#
-# TJ, 28 September 2026, reading the document himself: *"i see the gross wage table
-# starting on pdf page 197 and ending on page 203, and i dont see any loss of info."*
-#
-# HE WAS RIGHT AND FOUR RECORDED REASONS WERE WRONG. What the archive said about these
-# pages, against what the pages hold:
-#
-#   "mid-table continuation, no header printed"   every one of the seven prints
-#                                                 `CALENDAR YEAR 2019 WAGES`
-#   "the two-column layout loses a third to a     both columns carry them; the boxes were
-#    half of the given names"                     missing from OUR CACHE, not the page
-#   "a stray ZRATE in the surname x-position"     ZRATE is the last surname in the list
-#   p203 defective                                the list runs out of names, so the
-#                                                 right-hand column is empty. Correct
-#
-# The cache was the whole of it. It held 871 boxes for the seven pages where a re-read
-# gives 1,753, and on pages 201 and 202 it held the surname column and NOTHING ELSE --
-# zero money boxes against 94 printed. Somebody measured that and wrote it down as a fact
-# about how the town sets the page. Rule 13c: a matcher that finds nothing is a statement
-# about our instrument, and this one had been restated twice in `money-gaps.csv`.
-#
-# It is not a resolution problem. Page 202 re-read at scale 2.0, 3.0 and 4.0 gives 94
-# money boxes every time, against 0 cached.
-#
-# WHAT PROVES A ROW HERE. A wage page prints no total -- checked box by box on all seven;
-# the list ends `ZRATE SEAN 142,893.22` and then the page number -- so there is no
-# arithmetic to foot against and every row stays `no check`. Two things stand in for it,
-# and neither is a reconciliation:
-#
-#   THE PAIRING. A row is written only where one amount and at least two name words sit in
-#   one printed row on one side of the page. Anything else is refused and counted.
-#
-#   THE ALPHABET. The list is ordered, and that is an identity the table states about
-#   itself -- ABARE on 197 through ZRATE on 203. A row banded onto its neighbour, or a
-#   figure taken from the wrong half of the page, breaks the order. So the order is
-#   asserted per column and a page that breaks it is refused rather than published. It
-#   proves the ASSIGNMENT. It says nothing about whether a digit was read correctly.
-
-# The reports that are BORN DIGITAL, with the pages their wage list is printed on. A
-# year listed here is read from the text layer and never recognised.
-TEXT_LAYER = {
-    '2025': ('4130-fy-2025-annual-town-report.pdf', list(range(177, 183))),
-}
-
-SPLIT_NAME = {
-    '2019': ('4126-fy-2019-annual-town-report.pdf', list(range(197, 204))),
-}
-HEADER_BAND = 0.86        # the running head sits above this; the list is below it
 MIN_PAIRS = 8             # below this a measurement is REFUSED, never defaulted to zero
-WORD = re.compile(r"^[A-Z][A-Za-z'\-\.]*$")
-
-
 def measured_skew(boxes):
     """(slope, n_pairs) -- rule 13b #1, with the pair count returned deliberately.
 
@@ -452,231 +117,6 @@ def measured_skew(boxes):
     if len(slopes) < MIN_PAIRS:
         return None, len(slopes)
     return statistics.median(slopes), len(slopes)
-
-
-def row_pitch(boxes, slope):
-    """The page's own row pitch, measured on the LEFTMOST column -- rule 13b #2.
-
-    Not a constant, and not measured over every box on the page: the surname column prints
-    exactly one box per row, so its gaps ARE the pitch. Measured over all boxes it
-    collapses, because two boxes of one printed row differ by a fraction of a line and drag
-    the median under a real gap -- which banded FY2019 p199 into 70 rows for 47 printed.
-    """
-    for b in boxes:
-        b['Y'] = b['y'] - slope * b['x']
-    x0 = min(b['x'] for b in boxes)
-    col = sorted((b['Y'] for b in boxes if b['x'] < x0 + 0.04), reverse=True)
-    gaps = sorted(a - b for a, b in zip(col, col[1:]) if 0.004 < a - b < 0.06)
-    if len(gaps) < MIN_PAIRS:
-        return None
-    return statistics.median(gaps)
-
-
-def unread_block(boxes, pitch):
-    """A run of printed rows Vision did not read AT ALL, measured rather than inferred.
-
-    FY2019 p200 reads 25 surnames where its neighbours read 47, and the missing ones are
-    not scattered: a single gap of 0.353 sits between `LANDI` and `LEVASSEUR`, about 22
-    rows of one column that produced no box of any kind. A page short because the list
-    ended and a page short because the scan lost a band are different facts about the
-    archive, and only the gap tells them apart. Returned as evidence, never repaired.
-    """
-    x0 = min(b['x'] for b in boxes)
-    col = sorted(((b['Y'], b['t']) for b in boxes if b['x'] < x0 + 0.04), reverse=True)
-    worst = None
-    for (ya, ta), (yb, tb) in zip(col, col[1:]):
-        if ya - yb > pitch * 3 and (worst is None or ya - yb > worst[0]):
-            worst = (ya - yb, ta, tb)
-    if not worst:
-        return ''
-    return '; %d printed row(s) between %s and %s produced no box at all (a gap of %.4f ' \
-           'against a measured pitch of %.5f)' % (
-               round(worst[0] / pitch) - 1, worst[1], worst[2], worst[0], pitch)
-
-
-def _side_of(row, side):
-    return row.get('_side') == side
-
-
-def read_words_page(fy, doc, page, refused):
-    """Rows off the word boxes, for a list that prints the name as two words.
-
-    Measure the rotation, band at half the page's own pitch, split at the gutter, pair --
-    and refuse, with a count, everything that will not pair.
-    """
-    def bail(reason, evidence):
-        refused.append({'report_fy': fy, 'document': doc, 'page': page,
-                        'subject': 'payroll', 'reason': reason, 'evidence': evidence})
-        return []
-
-    boxes = [b for b in ocr_boxes(doc, page) if b['y'] < HEADER_BAND]
-    if not boxes:
-        return bail('the page has no Vision reading in the archive', '0 boxes')
-    slope, pairs = measured_skew(boxes)
-    if slope is None:
-        return bail('the page rotation could not be measured, so its rows cannot be banded',
-                    '%d box(es); only %d usable neighbour pair(s), %d needed'
-                    % (len(boxes), pairs, MIN_PAIRS))
-    pitch = row_pitch(boxes, slope)
-    if pitch is None:
-        return bail('the page row pitch could not be measured, so its rows cannot be banded',
-                    '%d box(es); fewer than %d gaps in the label column'
-                    % (len(boxes), MIN_PAIRS))
-    printed = []
-    for b in sorted(boxes, key=lambda b: (-b['Y'], b['x'])):
-        if printed and abs(b['Y'] - printed[-1][0]['Y']) < pitch / 2.0:
-            printed[-1].append(b)
-        else:
-            printed.append([b])
-    rows, unpaired, sides = [], 0, {0: [], 1: []}
-    for r in printed:
-        for side, (lo, hi) in enumerate(((0.0, 0.5), (0.5, 1.0))):
-            half = sorted([b for b in r if lo <= b['x'] < hi], key=lambda b: b['x'])
-            if not half:
-                continue
-            words = [b for b in half if not OCR_MONEY.match(b['t'])]
-            amts = [b for b in half if OCR_MONEY.match(b['t'])]
-            if len(words) >= 2 and len(amts) == 1 and all(WORD.match(w['t']) for w in words):
-                row = dict(fy=fy, page=page,
-                           name=' '.join(w['t'] for w in words),
-                           amount='%.2f' % float(
-                               OCR_MONEY.match(amts[0]['t']).group(1).replace(',', '')),
-                           department='',
-                           as_printed=' '.join(b['t'] for b in half)[:160])
-                row['_side'] = side
-                rows.append(row)
-                sides[side].append(words[0]['t'])
-            else:
-                unpaired += 1
-    money = sum(1 for b in boxes if OCR_MONEY.match(b['t']))
-    if not rows:
-        return bail('no name on the page could be paired with an amount',
-                    '%d box(es) in %d printed row(s), %d of them money'
-                    % (len(boxes), len(printed), money))
-    # THE ALPHABET, ASSERTED PER COLUMN -- and the response GRADED, because one inversion
-    # and fifty are different findings.
-    #
-    # An out-of-order surname means the row was misassigned OR the surname was misread,
-    # and the order alone cannot tell which. The COUNT can. A banding failure or a figure
-    # taken from the wrong half puts a page comprehensively out of order; a scanner
-    # dropping a character puts one name out of place and leaves the other thirty-three
-    # exactly where the town printed them.
-    #
-    # The first draft of this check refused the whole page on any inversion and threw away
-    # all 34 rows of FY2019 p203 for `ZAMORA -> IZIVOJINOVIC` -- which is `ZIVOJINOVIC`
-    # with a leading `I` hallucinated by the scanner, on the last page of the alphabet.
-    # That is the shape this project keeps having to correct: a check that cannot tell our
-    # instrument from the document reported one as the other.
-    #
-    # So: past the threshold the PAGE is refused, because the assignment is not trustworthy.
-    # Under it the offending ROWS are dropped and counted, because the page is fine and one
-    # name is not.
-    for side, names in sides.items():
-        bad = [(a, b) for a, b in zip(names, names[1:]) if a > b]
-        if not bad:
-            continue
-        where = 'left' if side == 0 else 'right'
-        if len(bad) > max(2, len(names) // 20):
-            return bail('the surnames read off this column are not in the order the list '
-                        'prints them, so rows have been misassigned',
-                        '%d inversion(s) in %d name(s) on the %s column, first at '
-                        '%s -> %s' % (len(bad), len(names), where, bad[0][0], bad[0][1]))
-        drop = {b for _, b in bad}
-        rows = [r for r in rows
-                if not (r['name'].split()[0] in drop and _side_of(r, side))]
-        refused.append({
-            'report_fy': fy, 'document': doc, 'page': page, 'subject': 'payroll',
-            'reason': 'a surname was read out of the order the list prints it, so that '
-                      'row was dropped rather than published under a name we may have '
-                      'misread',
-            'evidence': '%d inversion(s) in %d name(s) on the %s column: %s'
-                        % (len(bad), len(names), where,
-                           ', '.join('%s -> %s' % p for p in bad))})
-    if unpaired:
-        refused.append({
-            'report_fy': fy, 'document': doc, 'page': page, 'subject': 'payroll',
-            'reason': 'a printed row held a name without an amount, or an amount without '
-                      'a name, and was not guessed at',
-            'evidence': '%d row(s) paired, %d refused; Vision reads %d box(es) in %d '
-                        'printed row(s), %d of them money%s'
-                        % (len(rows), unpaired, len(boxes), len(printed), money,
-                           unread_block(boxes, pitch))})
-    for r in rows:
-        r.pop('_side', None)
-    return rows
-
-
-
-
-# ======================================================================================
-# HALF THESE REPORTS ARE NOT SCANS, AND WE WERE RECOGNISING THEM ANYWAY
-# ======================================================================================
-#
-# TJ, 28 September 2026, on FY2025's wage pages reading 532 names where the page prints
-# 612: *"i want to know how we read pages 177, 178 and 179, but didnt read 180, 181, and
-# 182"* -- the six pages being identical in form.
-#
-# They are identical. The difference was never the pages. FY2025's report is BORN DIGITAL:
-# every one of those pages carries an exact text layer, 301 to 315 words with exact
-# coordinates, and we were rendering each to an image and running character recognition
-# over it. Vision happened to read three of the six well and dropped most of page 181's
-# right-hand NAME column -- not because the print is faint, but because recognition is a
-# guess and the characters were sitting in the file all along.
-#
-# Eight of the sixteen annual reports are digital: FY2014, FY2015, FY2016, FY2017, FY2018,
-# FY2020, FY2024, FY2025. The other eight are scans and still need Vision.
-#
-# The cost of not asking: 80 people and $3,728,578 missing from FY2025 alone, and days
-# spent hunting figures that were never lost.
-#
-# So the text layer is tried FIRST and OCR is the fallback. That is not a tuning change --
-# it is a different instrument, and on a digital page it is the right one: there is
-# nothing to misread.
-
-
-def text_layer_pages(doc, pages):
-    """Wage rows straight off a digital PDF. {} when the page has no text layer."""
-    try:
-        import pdfplumber
-    except ImportError:
-        return {}
-    path = os.path.join(ROOT, 'sources', 'town-annual-reports', 'docs', doc)
-    if not os.path.exists(path):
-        return {}
-    out = {}
-    with pdfplumber.open(path) as pdf:
-        for n in pages:
-            if n < 1 or n > len(pdf.pages):
-                continue
-            words = pdf.pages[n - 1].extract_words()
-            if len(words) < 40:          # a scan: nothing to read here
-                continue
-            lines = {}
-            for w in words:
-                lines.setdefault(round(w['top']), []).append(w)
-            rows = []
-            for top in sorted(lines):
-                ws = sorted(lines[top], key=lambda w: w['x0'])
-                # The list prints TWO records per line, side by side. Split at the gutter
-                # rather than pairing by order: a line with one record on it would
-                # otherwise take the next line's figure.
-                for lo, hi in ((0, 300), (300, 10000)):
-                    cell = [w for w in ws if lo <= w['x0'] < hi]
-                    money = [w for w in cell if w['text'].startswith('$')]
-                    names = [w for w in cell if not w['text'].startswith('$')]
-                    if len(money) == 1 and names:
-                        rows.append({
-                            'name': ' '.join(w['text'] for w in names),
-                            'amount': float(money[0]['text'].replace('$', '').replace(',', '')),
-                            'as_printed': ' '.join(w['text'] for w in cell)[:160],
-                            'printed_money': sum(1 for w in words
-                                                 if w['text'].startswith('$')),
-                        })
-            if rows:
-                out[n] = rows
-    return out
-
-
 def grade(rows):
     """What a WAGE LIST can be checked against, which is not a total.
 
@@ -719,39 +159,471 @@ def grade(rows):
             r['status'], r['reconciliation'] = verdict, why
 
 
+# ======================================================================================
+# ONE INSTRUMENT PER KIND OF PAGE -- 4 November 2026
+# ======================================================================================
+#
+# Until today this file had four readers -- a line cache, Vision boxes in two layouts, and
+# the text layer for FY2025 alone -- chosen per year by whichever had been made to work.
+# The result was a dataset nobody could compare across years: FY2025 612 names, `checked`;
+# FY2012 and FY2013 none at all; FY2023 one name; FY2022 and FY2024 thirty-nine each. And
+# FY2019 fell from 516 to 461 the day its Vision OCR was redone, because the new reading
+# dropped the given-name column off the lower half of two pages.
+#
+# TJ, the same day: *"whatever is most accurate do that, but make sure you use aws
+# textract.... we might need to reprocess the newer reports so they are consistent?"*
+#
+# So every year is now read the same way, by the instrument that fits the PAGE:
+#
+#   text layer   the PDF is digital: exact words, exact positions, nothing to misread
+#   textract     the page is a scan and Textract has read it (Vision 87.5% against
+#                Textract 99.7% on the FY2011 pilot pages, 27 October 2026)
+#   vision       a scan Textract has not read -- the fallback, and named as one
+#
+# Every page's words are DUMPED into `sources/data/wage-pages/FY<year>-p<NNN>.tsv` with the
+# instrument that read them (`--dump`, which needs `build/textract/cache`). The build reads
+# only those files, so `--check` reproduces on a clone that holds no Textract cache.
+#
+# THE PAGES ARE WRITTEN DOWN, and the edges are checked. The contents page names the list
+# `Payroll Report` in FY2011-FY2013 and something else after, and in FY2011 the entry is
+# misread (`Payroll Report 97-99 10 PM Personnel Committee`, pdf 26-27). So the pages are
+# recorded here per year, as found by measuring every page near the index entry, and
+# `--dump` refuses if the page before the first or after the last is itself a wage page:
+# that would mean the list runs on and this table is wrong.
+LIST_PAGES = {
+    '2011': ('4117-fy-2011-annual-town-report.pdf', range(98, 102)),
+    '2012': ('4118-fy-2012-annual-town-report.pdf', range(112, 116)),
+    '2013': ('4119-fy-2013-annual-town-report.pdf', range(93, 98)),
+    '2014': ('4120-fy-2014-annual-town-report.pdf', range(168, 175)),
+    '2015': ('4121-fy-2015-annual-town-report.pdf', range(206, 212)),
+    '2016': ('4123-fy-2016-annual-town-report.pdf', range(198, 203)),
+    '2017': ('4124-fy-2017-annual-town-report.pdf', range(192, 199)),
+    '2018': ('4125-fy-2018-annual-town-report.pdf', range(248, 255)),
+    '2019': ('4126-fy-2019-annual-town-report.pdf', range(197, 204)),
+    '2020': ('4127-fy-2020-annual-town-report.pdf', range(208, 215)),
+    '2021': ('4128-fy-2021-annual-town-report.pdf', range(162, 169)),
+    '2022': ('4129-fy-2022-annual-town-report.pdf', range(186, 193)),
+    '2023': ('4131-fy-2023-annual-town-report.pdf', range(190, 198)),
+    '2024': ('4132-fy-2024-annual-town-report.pdf', range(186, 194)),
+    '2025': ('4130-fy-2025-annual-town-report.pdf', range(177, 183)),
+}
+WAGE_PAGES = os.path.join(ROOT, 'sources', 'data', 'wage-pages')
+DOCS = os.path.join(ROOT, 'sources', 'town-annual-reports', 'docs')
+TEXTRACT_CACHE = os.path.join(ROOT, 'build', 'textract', 'cache')
+MANIFEST = os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv')
+WORD_FIELDS = ['x', 'y', 'w', 'confidence', 'text']
+LIST_MONEY = re.compile(r'^\$?([\d,]{1,9}\.\d\d)$')
+NAME_WORD = re.compile(r"^[A-Za-z][A-Za-z'\-\.]*,?$")
+MIN_LIST_MONEY = 15        # a page holding fewer money figures than this is not a wage page
+
+
+def _sha_of(doc):
+    for r in csv.DictReader(open(MANIFEST, encoding='utf-8')):
+        if r['key'].endswith('/' + doc) and 'searchable' not in r['key']:
+            return r['sha256']
+    return None
+
+
+def _text_layer_words(pdf, n):
+    """Words off a digital page, normalised to the page: x from the left, y UP from the
+    bottom (the Vision convention the banding functions were written for)."""
+    if n < 1 or n > len(pdf.pages):
+        return None
+    pg = pdf.pages[n - 1]
+    ws = pg.extract_words()
+    if len(ws) < 40 or not any(LIST_MONEY.match(w['text']) for w in ws):
+        return None
+    W, H = float(pg.width), float(pg.height)
+    return [dict(x=w['x0'] / W, y=1 - (w['top'] + w['bottom']) / 2 / H,
+                 w=(w['x1'] - w['x0']) / W, confidence=100.0, text=w['text']) for w in ws]
+
+
+def _textract_words(sha, n):
+    if not sha:
+        return None
+    hits = sorted(glob.glob(os.path.join(TEXTRACT_CACHE, sha, 'p%03d-*.json' % n)))
+    # `tables` carries the words too and is the richer read; prefer it, then `text`.
+    hits.sort(key=lambda p: (not p.endswith('-tables.json'), p))
+    for h in hits:
+        if h.endswith('-reread.json'):
+            continue
+        out = []
+        for b in json.load(open(h, encoding='utf-8'))['Blocks']:
+            if b['BlockType'] != 'WORD':
+                continue
+            g = b['Geometry']['BoundingBox']
+            out.append(dict(x=g['Left'], y=1 - (g['Top'] + g['Height'] / 2),
+                            w=g['Width'], confidence=round(b['Confidence'], 1),
+                            text=b['Text']))
+        return out
+    return None
+
+
+def _vision_words(doc, n):
+    out = [dict(x=b['x'], y=b['y'], w=b['w'], confidence='', text=t)
+           for b in ocr_boxes(doc, n) for t in [b['t']]]
+    return out or None
+
+
+def _money_count(words):
+    return sum(1 for w in words if LIST_MONEY.match(w['text']))
+
+
+def dump():
+    """Write every wage page's words, from the best instrument that has read it."""
+    import pdfplumber
+    os.makedirs(WAGE_PAGES, exist_ok=True)
+    index = []
+    for fy, (doc, rng) in sorted(LIST_PAGES.items()):
+        sha = _sha_of(doc)
+        with pdfplumber.open(os.path.join(DOCS, doc)) as pdf:
+            def best(n):
+                for how, get in (('text layer', lambda: _text_layer_words(pdf, n)),
+                                 ('textract', lambda: _textract_words(sha, n)),
+                                 ('vision', lambda: _vision_words(doc, n))):
+                    ws = get()
+                    if ws:
+                        return how, ws
+                return None, None
+            # THE EDGES: the list must not run past the pages written down.
+            for edge in (rng.start - 1, rng.stop):
+                how, ws = best(edge)
+                if ws and _money_count(ws) >= MIN_LIST_MONEY and _wagey(
+                        [w['text'] for w in ws]):
+                    raise SystemExit('FY%s p%d holds %d wage-like figures (%s): the list '
+                                     'runs past LIST_PAGES. Look at the page and fix the '
+                                     'range.' % (fy, edge, _money_count(ws), how))
+            for n in rng:
+                how, ws = best(n)
+                if not ws:
+                    raise SystemExit('FY%s p%d: no instrument has read this page' % (fy, n))
+                name = 'FY%s-p%03d.tsv' % (fy, n)
+                with open(os.path.join(WAGE_PAGES, name), 'w', encoding='utf-8',
+                          newline='') as fh:
+                    w = csv.writer(fh, delimiter='\t', lineterminator='\n')
+                    w.writerow(WORD_FIELDS)
+                    for b in sorted(ws, key=lambda b: (-round(b['y'], 4), b['x'])):
+                        w.writerow(['%.4f' % b['x'], '%.4f' % b['y'], '%.4f' % b['w'],
+                                    b['confidence'], b['text'].replace('\t', ' ')])
+                index.append(dict(fy=fy, page=n, document=doc, instrument=how,
+                                  words=len(ws), money=_money_count(ws)))
+    with open(os.path.join(WAGE_PAGES, 'PAGES.csv'), 'w', encoding='utf-8',
+              newline='') as fh:
+        w = csv.DictWriter(fh, fieldnames=['fy', 'page', 'document', 'instrument',
+                                           'words', 'money'])
+        w.writeheader()
+        w.writerows(index)
+    print('%d wage pages dumped: %s' % (len(index), dict(collections.Counter(
+        r['instrument'] for r in index))))
+
+
+def _load_page(fy, n):
+    path = os.path.join(WAGE_PAGES, 'FY%s-p%03d.tsv' % (fy, n))
+    out = []
+    with open(path, encoding='utf-8') as fh:
+        for i, line in enumerate(fh):
+            f = line.rstrip('\n').split('\t')
+            if i == 0 or len(f) < 5:
+                continue
+            out.append({'x': float(f[0]), 'y': float(f[1]), 'w': float(f[2]),
+                        't': '\t'.join(f[4:]).strip()})
+    return out
+
+
+def _money_columns(boxes):
+    """Right edges of the page's money columns, MEASURED: amounts are right-aligned, so
+    their right edges cluster, one cluster per printed column. Two columns on most pages,
+    three on FY2016's, one on the last page of a list that ran short."""
+    edges = sorted(b['x'] + b['w'] for b in boxes if LIST_MONEY.match(b['t']))
+    cols, cur = [], []
+    for e in edges:
+        if cur and e - cur[-1] > 0.08:
+            cols.append(max(cur))
+            cur = []
+        cur.append(e)
+    if cur:
+        cols.append(max(cur))
+    return cols
+
+
+# THE DEPARTMENT IS A COLUMN, AND IT IS FOUND BY MEASURING, NOT BY VOCABULARY. FY2014 prints
+# `CARDONE JOSEPH 4,206.26 FIRE`, FY2015 `CARRIER JANICE CONSERVATION 42,494.54`, FY2019 on
+# no department at all. A list of department words missed CONSERVATION, TREASURER and `BD`
+# on the first run. What does separate the column is that its values REPEAT -- SCHOOL,
+# SCHOOL, FIRE, SCHOOL -- where surnames and given names are mostly distinct. So each
+# sub-column (a cluster of word left edges) is classed by how many distinct values it holds.
+SUBCOL_GAP = 0.025
+DEPT_DISTINCT = 0.35       # a column with fewer distinct values than this share is a department
+DEPT_MIN = 6               # ...and only if it has at least this many entries to judge by
+
+
+def _layout(boxes, cols):
+    """[[left, kind, owner, words]] for the page's word sub-columns. `owner` is the money
+    column (record) a sub-column belongs to."""
+    words = sorted((b for b in boxes if not LIST_MONEY.match(b['t'])), key=lambda b: b['x'])
+    if not words:
+        return None
+    clusters, cur = [], [words[0]]
+    for b in words[1:]:
+        if b['x'] - cur[-1]['x'] > SUBCOL_GAP:
+            clusters.append(cur)
+            cur = []
+        cur.append(b)
+    clusters.append(cur)
+    money_left = []
+    for right in cols:
+        xs = [b['x'] for b in boxes if LIST_MONEY.match(b['t'])
+              and abs(b['x'] + b['w'] - right) < 0.08]
+        money_left.append(min(xs))
+    out = []
+    for c in clusters:
+        left = statistics.median(b['x'] for b in c)
+        vals = [b['t'].upper() for b in c]
+        alpha = sum(1 for v in vals if re.match(r'^[A-Z&/\.]+$', v))
+        dept = len(vals) >= DEPT_MIN and len(set(vals)) / len(vals) < DEPT_DISTINCT \
+            and alpha >= 0.8 * len(vals)
+        out.append([left, 'dept' if dept else 'name', None, len(c)])
+    # A TWO-WORD DEPARTMENT. FY2014's `ANIMAL CTRL` puts `CTRL` in a sparse cluster of its
+    # own just right of the department column, which read as a name of the NEXT record. A
+    # sparse cluster that close to a department column's right is that department's.
+    big = max((o[3] for o in out), default=0)
+    for i in range(1, len(out)):
+        if out[i][1] == 'name' and out[i - 1][1] == 'dept' and out[i][3] < big / 3.0 \
+                and out[i][0] - out[i - 1][0] < 0.08:
+            out[i][1] = 'dept'
+    # A sub-column belongs to the first money column to its right -- unless it is a
+    # department printed AFTER an amount (FY2014: `CARDONE JOSEPH 4,206.26 FIRE`). The test
+    # is what sits IMMEDIATELY to its left: an amount, with no name sub-column between, means
+    # it closes that amount's record. Testing what lies to its RIGHT instead handed FY2011's
+    # right-hand department to the left-hand record, because a stray name cluster sat
+    # between it and the next amount.
+    for sc in out:
+        right_money = [k for k, ml in enumerate(money_left) if ml > sc[0]]
+        nxt = right_money[0] if right_money else None
+        if sc[1] == 'dept':
+            left_money = [k for k, r in enumerate(cols) if r <= sc[0] + 0.01]
+            if left_money:
+                k = left_money[-1]
+                if not any(o[1] == 'name' and cols[k] < o[0] < sc[0] for o in out):
+                    sc[2] = k
+                    continue
+        sc[2] = nxt
+    return out
+
+
+def _place(b, layout, cols):
+    """(kind, owner) for one word: money goes to its column, a word to its sub-column."""
+    if LIST_MONEY.match(b['t']):
+        e = b['x'] + b['w']
+        k = min(range(len(cols)), key=lambda k: abs(cols[k] - e))
+        return ('money', k, False) if abs(cols[k] - e) < 0.08 else ('money', None, False)
+    sc = min(layout, key=lambda sc: abs(sc[0] - b['x']))
+    return sc[1], sc[2], sc is _surname_col(layout, sc[2], cols)
+
+
+def _surname_col(layout, k, cols):
+    """The record's SURNAME sub-column: its leftmost name sub-column that is POPULATED.
+    Not merely its leftmost -- FY2019 p197's right half has a stray cluster at 0.444, where
+    the left-hand amounts sit, and taking that refused every right-hand record."""
+    if k is None:
+        return None
+    cand = [o for o in layout if o[1] == 'name' and o[2] == k]
+    big = max((o[3] for o in cand), default=0)
+    cand = [o for o in cand if o[3] >= max(3, big / 3.0)]
+    return min(cand, key=lambda o: o[0]) if cand else None
+
+
+
+def money_pitch(boxes, slope, cols):
+    """The page's row pitch, measured on its MONEY columns -- rule 13b #2.
+
+    A wage list prints exactly one amount per record per row, so the gaps between amounts
+    in one column ARE the pitch. `row_pitch` measures the leftmost column instead, which on
+    a short last page is the running head: FY2018 p254 has 22 records and its leftmost box
+    is `Town`, so it found fewer than eight gaps and refused the page.
+    """
+    for b in boxes:
+        b['Y'] = b['y'] - slope * b['x']
+    gaps = []
+    for right in cols:
+        ys = sorted((b['Y'] for b in boxes if LIST_MONEY.match(b['t'])
+                     and abs(b['x'] + b['w'] - right) < 0.08), reverse=True)
+        gaps += [a - b for a, b in zip(ys, ys[1:]) if 0.004 < a - b < 0.06]
+    if len(gaps) < MIN_PAIRS:
+        return None
+    return statistics.median(gaps)
+
+
+def read_list_page(fy, doc, page, instrument, refused):
+    """Rows off one page of words, whatever read them.
+
+    Measure the rotation and the row pitch (rule 13b), band, give every word to the money
+    column it sits left of, and pair. A record is ONE amount and at least one name word in
+    one printed row of one column; anything else holding money is refused and counted.
+    """
+    def bail(reason, evidence):
+        refused.append({'report_fy': fy, 'document': doc, 'page': page,
+                        'subject': 'payroll', 'reason': reason,
+                        'evidence': evidence + ' (read by %s)' % instrument})
+        return []
+
+    boxes = [b for b in _load_page(fy, page) if b['t'] != '$']
+    cols = _money_columns(boxes)
+    printed = sum(1 for b in boxes if LIST_MONEY.match(b['t']))
+    if not cols:
+        return bail('no money figure on the page', '%d word(s)' % len(boxes))
+    slope, pairs = measured_skew(boxes)
+    if slope is None:
+        return bail('the page rotation could not be measured, so its rows cannot be banded',
+                    '%d word(s); only %d usable neighbour pair(s), %d needed'
+                    % (len(boxes), pairs, MIN_PAIRS))
+    pitch = money_pitch(boxes, slope, cols)
+    if pitch is None:
+        return bail('the page row pitch could not be measured, so its rows cannot be banded',
+                    '%d word(s); fewer than %d gaps in any money column'
+                    % (len(boxes), MIN_PAIRS))
+    bands = []
+    for b in sorted(boxes, key=lambda b: (-b['Y'], b['x'])):
+        if bands and abs(b['Y'] - bands[-1][0]['Y']) < pitch / 2.0:
+            bands[-1].append(b)
+        else:
+            bands.append([b])
+
+    layout = _layout(boxes, cols)
+    if layout is None:
+        return bail('the page sub-columns could not be measured',
+                    '%d word(s), %d money column(s)' % (len(boxes), len(cols)))
+
+    rows, unpaired, order = [], 0, collections.defaultdict(list)
+    for band in bands:
+        rec = collections.defaultdict(lambda: {'name': [], 'dept': [], 'money': []})
+        for b in sorted(band, key=lambda b: b['x']):
+            kind, owner, first = _place(b, layout, cols)
+            if owner is None:
+                continue
+            rec[owner][kind].append(b)
+            rec[owner]['surname'] = rec[owner].get('surname') or first
+        for k, cell in sorted(rec.items()):
+            if not cell['money']:
+                continue                 # a heading, a column label, a wrapped word
+            words = [t.rstrip(',') for b in cell['name'] for t in b['t'].split()]
+            # A department misread as digits (FY2011 p99 `161` for SCHOOL) is not guessed.
+            dept = ' '.join(b['t'] for b in cell['dept']
+                            if re.match(r'^[A-Za-z&/\.]+$', b['t'])).title()
+            shown_ = sorted(cell['name'] + cell['dept'] + cell['money'], key=lambda b: b['x'])
+            # A GIVEN NAME ALONE IS NOT A NAME. Where Textract missed the surname (FY2017
+            # p197: `JOHN  DPW  59,017.55`) the record would be published as `JOHN`. The
+            # record must hold a word in its SURNAME sub-column; a surname alone is still a
+            # payment, as it always was here.
+            if len(cell['money']) != 1 or not words or not cell.get('surname') \
+                    or not all(NAME_WORD.match(w) for w in words) or NOISE.match(words[0]):
+                unpaired += 1
+                continue
+            rows.append(dict(fy=fy, page=page, name=' '.join(words),
+                             amount='%.2f' % float(LIST_MONEY.match(
+                                 cell['money'][0]['t']).group(1).replace(',', '')),
+                             department=dept,
+                             as_printed=' '.join(b['t'] for b in shown_)[:160],
+                             _printed_money=printed, _instrument=instrument, _col=k))
+            order[k].append(re.sub(r'[^A-Z]', '', words[0].upper()))
+    # THE ALPHABET, PER COLUMN, graded as before: a few inversions are a misread surname
+    # and those rows are dropped; many mean the banding is wrong and the page is refused.
+    for k, names in order.items():
+        bad = [(a, b) for a, b in zip(names, names[1:]) if a > b]
+        if not bad:
+            continue
+        if len(bad) > max(2, len(names) // 20):
+            return bail('the surnames read off this column are not in the order the list '
+                        'prints them, so rows have been misassigned',
+                        '%d inversion(s) in %d name(s) in column %d, first at %s -> %s'
+                        % (len(bad), len(names), k + 1, bad[0][0], bad[0][1]))
+        drop = {b for _, b in bad}
+        rows = [r for r in rows if not (r['_col'] == k and r['name'].split()[0].upper()
+                                        in drop)]
+        refused.append({'report_fy': fy, 'document': doc, 'page': page, 'subject': 'payroll',
+                        'reason': 'a surname was read out of the order the list prints '
+                                  'it, so that row was dropped rather than published under '
+                                  'a name we may have misread',
+                        'evidence': '%d inversion(s) in %d name(s) in column %d: %s (read '
+                                    'by %s)' % (len(bad), len(names), k + 1, ', '.join(
+                                        '%s -> %s' % p for p in bad), instrument)})
+    if unpaired:
+        refused.append({'report_fy': fy, 'document': doc, 'page': page, 'subject': 'payroll',
+                        'reason': 'a printed row held an amount without a name, or more '
+                                  'than one amount, and was not guessed at',
+                        'evidence': '%d row(s) paired, %d refused; %d money figure(s) on '
+                                    'the page in %d column(s) (read by %s)'
+                                    % (len(rows), unpaired, printed, len(cols), instrument)})
+    for r in rows:
+        r.pop('_col', None)
+    return rows
+
+
+# THE CHECK WITH POWER TO FAIL. Seven years of these lists were also read BY EYE, row by row,
+# into `pages-read.csv` (column `gross_wages`; surname in `fund_number`, given name in
+# `fund_name`). That reading is independent of every instrument here, so the amounts this
+# file captures are compared with it, year by year, and nothing is written if any year
+# agrees on fewer than AGREE_MIN of them. On 4 November 2026: 4,240 of 4,246.
+PAGES_READ = os.path.join(ROOT, 'sources', 'data', 'pages-read.csv')
+AGREE_MIN = 0.99
+
+
+def against_page_reads(rows):
+    hand = collections.defaultdict(collections.Counter)
+    for r in csv.DictReader(open(PAGES_READ, encoding='utf-8')):
+        if r['column'] == 'gross_wages':
+            hand[r['fy']]['%.2f' % float(r['value'])] += 1
+    out = {}
+    for fy, want in hand.items():
+        got = collections.Counter(r['amount'] for r in rows if r['fy'] == fy)
+        agree = sum((want & got).values())
+        out[fy] = (sum(want.values()), agree)
+        if agree < AGREE_MIN * sum(want.values()):
+            raise SystemExit('FY%s: %d of %d amounts agree with the by-eye read in '
+                             'pages-read.csv, under %.0f%%. Nothing written.'
+                             % (fy, agree, sum(want.values()), AGREE_MIN * 100))
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
+    ap.add_argument('--dump', action='store_true',
+                    help='re-dump every wage page from the instruments (needs the '
+                         'Textract cache in build/), then build')
     a = ap.parse_args()
+    if a.dump:
+        dump()
     rows, refused = [], []
-    for f in sorted(glob.glob(os.path.join(PAGES, 'FY*.ocr.txt'))):
-        m = re.search(r'FY(\d{4})\.ocr', f)
-        if m:
-            rows += read_year(m.group(1), refused, os.path.basename(f))
-    for fy in sorted(OCR_ONLY):
-        doc, want = OCR_ONLY[fy]
-        cache = pages(fy)
-        for page in want:
-            rows += read_ocr_page(fy, doc, page, cache, refused)
-    for fy in sorted(SPLIT_NAME):
-        doc, want = SPLIT_NAME[fy]
-        for page in want:
-            rows += read_words_page(fy, doc, page, refused)
-    # THE TEXT LAYER WINS WHERE THERE IS ONE, and it REPLACES whatever OCR produced for
-    # that page rather than adding to it -- two readings of one page are not more data.
-    for fy in sorted(TEXT_LAYER):
-        doc, want = TEXT_LAYER[fy]
-        got = text_layer_pages(doc, want)
-        if not got:
-            continue
-        rows = [r for r in rows if not (r['fy'] == fy and int(r['page']) in got)]
-        for page, found in sorted(got.items()):
-            for r in found:
-                rows.append(dict(fy=fy, page=page, name=r['name'],
-                                 amount='%.2f' % r['amount'], department='',
-                                 as_printed=r['as_printed'],
-                                 _printed_money=r['printed_money']))
+    for p in csv.DictReader(open(os.path.join(WAGE_PAGES, 'PAGES.csv'), encoding='utf-8')):
+        rows += read_list_page(p['fy'], p['document'], int(p['page']), p['instrument'],
+                               refused)
     grade(rows)
+    for r in rows:
+        r['reconciliation'] += '. Read by %s' % r.pop('_instrument')
+    # THE TOWN PRINTS SOME RECORDS TWICE, and a total would pay those people twice. FY2016
+    # p202 reprints 32 of p201's names; FY2023 p197 reprints the right-hand column of p196;
+    # FY2017 p197 is two photographed sheets that overlap, so its right-hand column runs
+    # SMITH to SULLIVAN and starts again at SMITH. The same name with the same amount to
+    # the cent, in one year's list, is one record printed again. It counted above, because
+    # it WAS read off the page; it is dropped here, and registered with where it repeats.
+    seen, kept, repeats = {}, [], collections.defaultdict(list)
+    for r in sorted(rows, key=lambda r: (r['fy'], int(r['page']))):
+        k = (r['fy'], r['name'], r['amount'])
+        if k in seen:
+            repeats[(r['fy'], int(r['page']), seen[k])].append(r['name'])
+            continue
+        seen[k] = int(r['page'])
+        kept.append(r)
+    rows = kept
+    for (fy, page, first), names in sorted(repeats.items()):
+        refused.append({'report_fy': fy, 'document': LIST_PAGES[fy][0], 'page': page,
+                        'subject': 'payroll',
+                        'reason': 'the page prints a record already printed earlier in the '
+                                  'list, with the same amount; kept once',
+                        'evidence': '%d record(s) repeat page %d, first %s'
+                                    % (len(names), first, ', '.join(sorted(names)[:3]))})
+    agreement = against_page_reads(rows)
     rows.sort(key=lambda r: (r['fy'], int(r['page']), r['name']))
     refused.sort(key=lambda r: (r['report_fy'], int(r['page']), r['reason']))
     if a.check:
@@ -777,6 +649,8 @@ def main():
         w = csv.DictWriter(fh, fieldnames=REFUSED_FIELDS)
         w.writeheader()
         w.writerows(refused)
+    for fy, (hand, agree) in sorted(agreement.items()):
+        print('  FY%s against the by-eye read: %d of %d amounts agree' % (fy, agree, hand))
     for r in refused:
         print('  REFUSED FY%s page %s: %s -- %s'
               % (r['report_fy'], r['page'], r['reason'], r['evidence']))

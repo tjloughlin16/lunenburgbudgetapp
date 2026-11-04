@@ -81,8 +81,8 @@ YEAR_COLUMN = {
     # extract_receivables.py: `fy` is the year in the report's filename (`fy-(\d{4})-`, its
     # reports()), so the report's year, not the levy year, which has its own column.
     'receivables': 'fy',
-    # extract_gross_wages.py: `fy` names the report's OCR file (`FY<fy>.ocr.txt`, its pages()),
-    # so the report's year -- the wages themselves are for the calendar year it prints.
+    # extract_gross_wages.py: `fy` is the report's year (its LIST_PAGES) -- the wages
+    # themselves are for the calendar year the list prints.
     'gross-wages': 'fy',
 }
 

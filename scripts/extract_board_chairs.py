@@ -55,7 +55,7 @@ LEADING = re.compile(r'\b%s\s+(%s)' % (TITLE, NAME))
 # Board`, `Chairperson and the Town`, `Vice Chairman Report`.
 NOT_NAME = re.compile(r'\b(board|committee|commission|report|town|department|the|of|and|'
                       r'school|select|finance|meeting|member|members|said|will|has|'
-                      r'commissioners|trustees|officials|association|authority|club|building|memorial|hall|center|centre|room|library)\b',
+                      r'commissioners|trustees|officials|association|authority|club|building|memorial|hall|center|centre|room|library|director)\b',
                       re.I)
 # The sentence the listing's own footnote prints; not a person.
 FOOTNOTE = re.compile(r'denotes\s+chair', re.I)
@@ -76,8 +76,45 @@ def _pages(fy):
     return X.page_text(fy)
 
 
+# A SHARED PAGE IS SPLIT AT ITS PRINTED HEADINGS, NEVER HANDED TO ONE CLAIMANT.
+#
+# The first version gave every page to whichever index entry claimed it first. On a
+# sequential contents page that is nearly harmless. On FY2011's and FY2012's ALPHABETICAL
+# one it is not: FY2012 pdf page 14 is claimed by `Health`, `Planning Board` and `Nashoba
+# Associated Boards of Health`, and every chair on it -- the Planning Board's Bakaysa and
+# Bilotta-Simeone among them -- was filed under Health, because H sorts first. Page 29 put
+# the Zoning Board's Bowen and Beal under the Sewer Commissioners the same way.
+#
+# So where more than one entry claims a page, the page's own headings decide: a short
+# upper-case line naming a claimant opens that claimant's text. Lines above the first
+# heading belong to the one claimant CONTINUING from an earlier page -- or, where none
+# continues, to the one claimant whose heading the page never prints. A line no rule can
+# place is skipped and counted in UNPLACED, never guessed.
+STOP = {'of', 'the', 'and', 'board', 'boards', 'department', 'commission',
+        'commissioners', 'committee', 'office', 'town', '&', '/'}
+UNPLACED = collections.Counter()
+
+
+def _stem(w):
+    return re.sub(r'(ers|ions|ion|s)$', '', w.lower())
+
+
+def _heading_for(line, claimants):
+    """The claimant this line is the printed heading of, or None."""
+    t = line.strip()
+    if not t or len(t) > 70 or t != t.upper() or not re.search(r'[A-Z]{3}', t):
+        return None
+    have = {_stem(w) for w in re.findall(r"[A-Za-z&/]+", t)}
+    best, score = None, 0
+    for c in claimants:
+        need = {_stem(w) for w in re.findall(r"[A-Za-z&/]+", c) if w.lower() not in STOP}
+        if need and need <= have and len(need) > score:
+            best, score = c, len(need)
+    return best
+
+
 def read_year(fy, rows_idx, pages):
-    owner = {}
+    claims = collections.defaultdict(list)     # page -> [(department, pdf_from)]
     for r in rows_idx:
         if r['fy'] != fy or r['state'] != 'report' or not r['pdf_from']:
             continue
@@ -86,15 +123,40 @@ def read_year(fy, rows_idx, pages):
         if int(r['pdf_to']) - int(r['pdf_from']) > MAX_SPAN:
             continue
         for p in range(int(r['pdf_from']), int(r['pdf_to']) + 1):
-            owner.setdefault(p, r['department'])
+            if r['department'] not in [d for d, _ in claims[p]]:
+                claims[p].append((r['department'], int(r['pdf_from'])))
     out = []
     for p in sorted(pages):
-        dept = owner.get(p)
-        if not dept:
+        cl = claims.get(p)
+        if not cl:
             continue
+        names = [d for d, _ in cl]
+        if len(cl) == 1:
+            dept = names[0]
+        else:
+            going = [d for d, f in cl if f < p]
+            if len(going) == 1:
+                dept = going[0]
+            else:
+                # Nobody continues from an earlier page (FY2025 p47: the index starts
+                # Conservation and the Council on Aging both there). Then the text above
+                # the first heading is the claimant whose heading this page never prints
+                # -- if exactly one is in that position. Otherwise nobody.
+                headed = {_heading_for(ln, names) for ln in pages.get(p, [])}
+                silent = [d for d in names if d not in headed]
+                dept = silent[0] if not going and len(silent) == 1 else None
         for ln in pages.get(p, []):
+            if len(cl) > 1:
+                h = _heading_for(ln, names)
+                if h:
+                    dept = h
+                    continue
             t = re.sub(r'\s+', ' ', ln).strip()
             if not t or FOOTNOTE.search(t):
+                continue
+            if dept is None:
+                if TRAILING.search(t) or LEADING.search(t):
+                    UNPLACED[fy] += 1
                 continue
             # ONE LINE, ONE READING. A board often prints its whole slate on one line:
             # `Brian Laffond, Chair Sarah Cammer, Vice-Chair John Rabbitt, Clerk`. The
@@ -114,6 +176,10 @@ def read_year(fy, rows_idx, pages):
                     # `Christine C.` is a name the scanner cut in half.
                     if NOT_NAME.search(who) or re.search(TITLE, who, re.I) \
                             or re.search(r'\b[A-Z]\.?$', who):
+                        continue
+                    # `dedicated to former Chairman Lance D. May` (FY2021 p53) is not the
+                    # year's chair, and it displaced the real one on the org chart.
+                    if re.search(r'\b(former|late|past|retired|then)\s*$', t[:m.start()], re.I):
                         continue
                     out.append(dict(fy=fy, department=dept, person=who,
                                     title=title.title(), page=p, as_printed=t[:120]))
@@ -156,7 +222,9 @@ def main():
     print('%d chair mentions across %d years and %d bodies'
           % (len(rows), len(per), len({r['department'] for r in rows})))
     for fy in sorted(per):
-        print('  FY%s  %3d' % (fy, per[fy]))
+        print('  FY%s  %3d%s' % (fy, per[fy], '   (%d line(s) naming a chair on a shared '
+              'page with no heading to place them: skipped)' % UNPLACED[fy]
+              if UNPLACED[fy] else ''))
     return 0
 
 

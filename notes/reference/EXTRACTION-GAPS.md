@@ -17,7 +17,7 @@
 
 - **360 of 3,696 tables in the 1959-2010 editions are not in any dataset.** Each was looked at by eye and its reason is in that edition's `map.csv` `note`, beginning `NOT LANDED`.
 - **268 of the 866 tables catalogued in FY2011-FY2025 sit on a page no dataset has a row from.** Step 4 (`scripts/sort_catalogue.py`) sorted them from the catalogue's descriptions, not from the pages: 166 gap, 5 repeat, 78 prose, 1 unsure, 18 deferred-to-list-survey. A `gap` is a judgement that nothing we hold looks like the table, not proof that the figures are absent. The other 598, on pages some dataset reads, are not sorted table by table.
-- **2 of 96 datasets holding report rows are not in the database:** `gross-wages` (3,715 rows), `town-meeting-votes` (483 rows).
+- **All 96 datasets holding report rows are in the database.**
 - **Lists are not counted yet.** Most years print officers and staff as running text, not tables, and every survey so far looked for tables. `lists_found` and `lists_in_dataset` are empty in the edition CSV until the list survey (step 3) runs.
 
 The proxy row is page grain, not table grain: a catalogued table counts if ANY dataset holds a row from ANY of its pages, so it is an upper bound on what has been read, never a count of tables read.
@@ -55,13 +55,13 @@ One row per edition. Each entry's verdict, dataset and one-line reason is in `so
 | `town-roster-entries` | yes | 16,609 | 52 / 15 | - | - | - |
 | `staff-roster-entries` | yes | 12,278 | 48 / 15 | - | - | - |
 | `report-gross-wages` | yes | 11,512 | 15 / 13 | 7,965 | 0 | 3,547 |
+| `gross-wages` | yes | 8,795 | 0 / 15 | 8,104 | 691 | 0 |
 | `annual-report-receipts` | yes | 7,856 | 51 / 12 | 6,848 | 653 | 355 |
 | `report-trust-funds` | yes | 5,508 | 50 / 13 | 3,434 | 546 | 1,528 |
 | `report-statement-of-payments` | yes | 4,670 | 28 / 0 | 4,095 | 0 | 575 |
 | `special-revenue-funds` | yes | 4,532 | 19 / 15 | 3,018 | 1,368 | 146 |
 | `report-elections` | yes | 3,863 | 27 / 15 | 1,664 | 1,725 | 474 |
 | `report-fund-balance-sheets` | yes | 3,720 | 28 / 0 | 2,275 | 0 | 1,445 |
-| `gross-wages` | no **NOT IN DB** | 3,715 | 0 / 13 | 612 | 0 | 3,103 |
 | `report-debt` | yes | 3,533 | 50 / 8 | 2,876 | 315 | 342 |
 | `report-vital-records` | yes | 2,311 | 16 / 14 | 0 | 0 | 2,311 |
 | `report-dept-activity` | yes | 2,264 | 34 / 15 | 15 | 0 | 2,249 |
@@ -82,7 +82,7 @@ One row per edition. Each entry's verdict, dataset and one-line reason is in `so
 | `report-school-lunch` | yes | 668 | 21 / 0 | 370 | 41 | 257 |
 | `report-school-budget-summary` | yes | 660 | 27 / 0 | 450 | 0 | 210 |
 | `report-treasurers-cash-reconciliation` | yes | 545 | 47 / 0 | 519 | 15 | 11 |
-| `town-meeting-votes` | no **NOT IN DB** | 483 | 0 / 15 | - | - | - |
+| `town-meeting-votes` | yes | 483 | 0 / 15 | - | - | - |
 | `trust-fund-matrix` | yes | 462 | 0 / 1 | - | - | - |
 | `report-school-staff-fte` | yes | 450 | 28 / 0 | 186 | 0 | 264 |
 | `report-school-state-aid` | yes | 378 | 27 / 0 | 283 | 0 | 95 |
@@ -147,7 +147,7 @@ One row per edition. Each entry's verdict, dataset and one-line reason is in `so
 | `report-office-budget-cuts` | yes | 4 | 1 / 0 | 4 | 0 | 0 |
 | `report-energy-use` | yes | 3 | 1 / 0 | 0 | 0 | 3 |
 | `report-per-capita-comparison` | yes | 3 | 1 / 0 | 0 | 0 | 3 |
-| **total** | | **134,887** | | **50,620** | **11,240** | **31,513** |
+| **total** | | **139,967** | | **58,112** | **11,931** | **28,410** |
 
 ## Registers and files about the reading
 
@@ -156,9 +156,9 @@ Not data the reports print, and listed so that nothing disappears. A register re
 | file | kind | rows from reports | in db |
 |---|---|---:|---|
 | `receivables-refused` | register | 32 | no |
+| `gross-wages-refused` | register | 14 | no |
 | `tax-collection-unreconciled` | register | 13 | yes |
 | `receivables-reconciliation` | register | 12 | yes |
-| `gross-wages-refused` | register | 10 | no |
 | `debt-repayment-detail-refused` | register | 6 | no |
 | `balance-sheet-refused` | register | 4 | no |
 | `report-appropriations-supplement-refused` | register | 3 | no |
@@ -233,21 +233,21 @@ Not data the reports print, and listed so that nothing disappears. A register re
 | 2008 | 112 | 33 (33 / 0) | 88 | 80 | 8 | 80 | 21 |  |
 | 2009 | 92 | 29 (25 / 4) | 73 | 61 | 12 | 61 | 20 |  |
 | 2010 | 100 | 30 (19 / 11) | 102 | 81 | 21 | 81 | 24 |  |
-| FY2011 | 101 | 29 (29 / 0) | 55 catalogued | - | - | - | 30 | `gross-wages`, `town-meeting-votes` |
-| FY2012 | 116 | 28 (28 / 0) | 64 catalogued | - | - | - | 26 | `town-meeting-votes` |
-| FY2013 | 97 | 31 (31 / 0) | 58 catalogued | - | - | - | 27 | `town-meeting-votes` |
-| FY2014 | 175 | 28 (28 / 0) | 64 catalogued | - | - | - | 30 | `gross-wages`, `town-meeting-votes` |
-| FY2015 | 215 | 33 (33 / 0) | 60 catalogued | - | - | - | 36 | `gross-wages`, `town-meeting-votes` |
-| FY2016 | 221 | 47 (45 / 2) | 71 catalogued | - | - | - | 36 | `gross-wages`, `town-meeting-votes` |
-| FY2017 | 201 | 32 (32 / 0) | 64 catalogued | - | - | - | 37 | `gross-wages`, `town-meeting-votes` |
-| FY2018 | 257 | 42 (42 / 0) | 62 catalogued | - | - | - | 35 | `gross-wages`, `town-meeting-votes` |
-| FY2019 | 206 | 39 (39 / 0) | 55 catalogued | - | - | - | 34 | `gross-wages`, `town-meeting-votes` |
-| FY2020 | 216 | 41 (41 / 0) | 46 catalogued | - | - | - | 34 | `gross-wages`, `town-meeting-votes` |
-| FY2021 | 170 | 37 (37 / 0) | 56 catalogued | - | - | - | 34 | `gross-wages`, `town-meeting-votes` |
-| FY2022 | 194 | 41 (41 / 0) | 56 catalogued | - | - | - | 35 | `gross-wages`, `town-meeting-votes` |
-| FY2023 | 200 | 35 (34 / 1) | 42 catalogued | - | - | - | 29 | `gross-wages`, `town-meeting-votes` |
-| FY2024 | 195 | 28 (28 / 0) | 44 catalogued | - | - | - | 31 | `gross-wages`, `town-meeting-votes` |
-| FY2025 | 187 | 23 (23 / 0) | 69 catalogued | - | - | - | 32 | `gross-wages`, `town-meeting-votes` |
+| FY2011 | 101 | 29 (29 / 0) | 55 catalogued | - | - | - | 30 |  |
+| FY2012 | 116 | 28 (28 / 0) | 64 catalogued | - | - | - | 27 |  |
+| FY2013 | 97 | 31 (31 / 0) | 58 catalogued | - | - | - | 28 |  |
+| FY2014 | 175 | 28 (28 / 0) | 64 catalogued | - | - | - | 30 |  |
+| FY2015 | 215 | 33 (33 / 0) | 60 catalogued | - | - | - | 36 |  |
+| FY2016 | 221 | 47 (45 / 2) | 71 catalogued | - | - | - | 36 |  |
+| FY2017 | 201 | 32 (32 / 0) | 64 catalogued | - | - | - | 37 |  |
+| FY2018 | 257 | 42 (42 / 0) | 62 catalogued | - | - | - | 35 |  |
+| FY2019 | 206 | 39 (39 / 0) | 55 catalogued | - | - | - | 34 |  |
+| FY2020 | 216 | 41 (41 / 0) | 46 catalogued | - | - | - | 34 |  |
+| FY2021 | 170 | 37 (37 / 0) | 56 catalogued | - | - | - | 34 |  |
+| FY2022 | 194 | 41 (41 / 0) | 56 catalogued | - | - | - | 35 |  |
+| FY2023 | 200 | 35 (34 / 1) | 42 catalogued | - | - | - | 29 |  |
+| FY2024 | 195 | 28 (28 / 0) | 44 catalogued | - | - | - | 31 |  |
+| FY2025 | 187 | 23 (23 / 0) | 69 catalogued | - | - | - | 32 |  |
 
 ## Why 1959-2010 tables were not landed, by what the map calls them
 

@@ -1,7 +1,7 @@
 ---
 status: open
 updated: 2026-11-04
-next: (1) regenerate extract_board_chairs, extract_gross_wages, build_report_filing -- stale before 4 Nov, never re-run after FY2012's index was re-paired (e846687c4); read what FY2012 rows move. (2) settle the 7 split families in annual-report-catalogue-sort.csv (sort_catalogue.py --consistency)
+next: (1) TJ decides how /athletic-director draws the wage line now gross-wages reaches 2018-2025 (its guards stop the build). (2) re-pair FY2011's contents page as FY2012's was (board chairs and report filing misattribute through it). (3) settle the 7 split families in annual-report-catalogue-sort.csv (sort_catalogue.py --consistency)
 ---
 
 # Plan: everything the annual reports print, in the database
@@ -83,6 +83,30 @@ up at **Next** 2.
   removed eight warrant sponsor lines that were being read as signatures.
 - **Every database object has a `table-semantics.csv` row: 206 of 206**, including
   `town_roster_entries`, which had none.
+
+**4 November 2026, afternoon: the three generators downstream of FY2012's index, and what they found**
+
+- **Gross wages: every year, one instrument per kind of page.** The FY2019 regenerate showed a
+  regress (the 2 October Vision re-OCR dropped given names), and TJ: *"whatever is most accurate
+  do that, but make sure you use aws textract.... we might need to reprocess the newer reports so
+  they are consistent?"* Textract had already read every scanned wage page (no new spend), so
+  `extract_gross_wages.py` now reads the text layer where the PDF is digital and Textract where
+  it is a scan, from word dumps in `sources/data/wage-pages/` (`--dump` needs `build/`). Columns,
+  departments and row pitch are measured per page. Read the counts from its output, not here; it
+  also compares every year with the by-eye reads in `pages-read.csv` and refuses under 99%.
+  The town prints some records twice (FY2016, FY2017, FY2023); kept once and registered.
+  `gross-wages` and `town-meeting-votes` are now in the database (the guard caught both).
+- **Board chairs: a shared page is split at its printed headings.** It had given every page to
+  the alphabetically first index entry, so FY2012's Planning Board chairs were under Health and
+  FY2013's Sewer Commissioners under the Fire Department. A former chair (`dedicated to former
+  Chairman`) and the title `Planning Director` no longer count as chairs.
+- **Report filing** lost twelve "bodies" that were obituary text.
+- **Found, not fixed:** `/athletic-director`'s guards stop on the new wage years (a design call,
+  TJ's); `salary-schedule.csv` has two writers, `extract_salary_schedule.py` and
+  `read_report_tables.py`'s 2010 rows, so the first is permanently stale and must not be run
+  until that is settled; FY2011's contents page is garbled the way FY2012's was;
+  `report-gross-wages` (the generic extract) still holds partial FY2011-FY2025 rows that
+  `gross-wages` now supersedes.
 
 **Next, in order**
 

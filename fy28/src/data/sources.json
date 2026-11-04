@@ -3850,11 +3850,23 @@
      "stars": 2,
      "what": "One row per person per role per year, assembled from four readings of the annual reports: the officials listing for boards and appointed posts, the Police and Fire rosters, the four schools’ rosters, and the departments that name their staff in prose. `status` keeps PEOPLE and POSTS apart — `filled` is a named person, `vacant` is a seat the town prints as empty, and `post` is an establishment position a department states without ever saying who fills it, which is how the DPW and the Assessing office publish. Building it was a test of the data model rather than a presentation of it, and it found seven classes of defect nothing that COUNTS things had: a listing footnote read as a post, sub-headings promoted to bodies, and one post under four spellings. Rendered at /org-charts.",
      "kind": "Data",
-     "bytes": 2447791,
+     "bytes": 2449329,
      "url": "/docs/data/org-chart.csv",
-     "count": 15558,
+     "count": 15575,
      "unit": "rows",
      "textUrl": "/docs/data/org-chart.csv"
+    },
+    {
+     "path": "data/gross-wages.csv",
+     "title": "The town’s wage list, name by name, FY2011–FY2025",
+     "stars": 2,
+     "what": "Every name and amount the annual report’s gross wages list prints, every year, by scripts/extract_gross_wages.py: the PDF’s own text layer where the page is digital, Amazon Textract where it is a scan. Each row’s `status` says whether every money figure on its page was captured, and `reconciliation` names the instrument. A wage list prints no total, so this proves coverage and the pairing, not the digits. Gross pay is not salary or FTE. NOTHING ON THE SITE USES IT YET: until 4 November 2026 it read only some years (TJ: *“if we dont have the data, we shouldn’t show partial data”*), and whether it now should is a decision, not a consequence. The pages it was read from are in data/wage-pages/.",
+     "kind": "Data",
+     "bytes": 2437335,
+     "url": "/docs/data/gross-wages.csv",
+     "count": 8795,
+     "unit": "rows",
+     "textUrl": "/docs/data/gross-wages.csv"
     },
     {
      "path": "data/school-staff-directory.csv",
@@ -3867,18 +3879,6 @@
      "count": 2122,
      "unit": "rows",
      "textUrl": "/docs/data/school-staff-directory.csv"
-    },
-    {
-     "path": "data/gross-wages.csv",
-     "title": "The town’s wage list, name by name — AN INCOMPLETE READ",
-     "stars": 2,
-     "what": "Every name and amount the annual report’s `Town & School Employee Gross Wages` list prints, for the years it reads. NOTHING ON THE SITE USES IT AND nothing should until it reads in full: four years come back near-complete (FY2017, FY2020, FY2021, FY2025) and six read badly or not at all, and the list is set in two columns whose second column loses its given names, so a third to a half of the entries cannot be matched to a person. A department total built on it would rank the scan rather than the payroll. TJ: *“if we dont have the data, we shouldn’t show partial data. that may be misleading”* — so it is held here as working material, and the two things it would answer are registered in money-gaps.csv instead.",
-     "kind": "Data",
-     "bytes": 776606,
-     "url": "/docs/data/gross-wages.csv",
-     "count": 3715,
-     "unit": "rows",
-     "textUrl": "/docs/data/gross-wages.csv"
     },
     {
      "path": "data/warrant-articles.csv",
@@ -4049,18 +4049,6 @@
      "textUrl": "/docs/analyses/transportation.md"
     },
     {
-     "path": "data/report-index.csv",
-     "title": "Every department the town lists, and where its report is",
-     "stars": 2,
-     "what": "The CONTENTS PAGE of each annual report, read as data: one row per department per year, with the pages its report occupies — or the town’s own words, `No Report Submitted`, where there is none. This is the town’s department list rather than ours, which is why Facilities is on it; every list in this project before it was typed from memory. The page numbers are PRINTED page numbers and the offset to the PDF differs per year, so it is measured from the numbers each book prints at its own feet.",
-     "kind": "Data",
-     "bytes": 75593,
-     "url": "/docs/data/report-index.csv",
-     "count": 698,
-     "unit": "rows",
-     "textUrl": "/docs/data/report-index.csv"
-    },
-    {
      "path": "data/capital-plans.csv",
      "title": "What the Capital Planning Committee asked for, ranked, FY2015-FY2023",
      "stars": 2,
@@ -4071,6 +4059,18 @@
      "count": 265,
      "unit": "rows",
      "textUrl": "/docs/data/capital-plans.csv"
+    },
+    {
+     "path": "data/report-index.csv",
+     "title": "Every department the town lists, and where its report is",
+     "stars": 2,
+     "what": "The CONTENTS PAGE of each annual report, read as data: one row per department per year, with the pages its report occupies — or the town’s own words, `No Report Submitted`, where there is none. This is the town’s department list rather than ours, which is why Facilities is on it; every list in this project before it was typed from memory. The page numbers are PRINTED page numbers and the offset to the PDF differs per year, so it is measured from the numbers each book prints at its own feet.",
+     "kind": "Data",
+     "bytes": 72346,
+     "url": "/docs/data/report-index.csv",
+     "count": 702,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-index.csv"
     },
     {
      "path": "data/staffing-by-section.csv",
@@ -4198,7 +4198,7 @@
      "stars": 2,
      "what": "The audit of the two readers above, one row per department per year. Every cell that is not a number is a to-do or an explanation, never a finding about the town. Rendered as a grid in notes/generated/STAFFING-COVERAGE.md.",
      "kind": "Data",
-     "bytes": 35948,
+     "bytes": 35949,
      "url": "/docs/data/staffing-coverage.csv",
      "count": 600,
      "unit": "rows",
@@ -4318,9 +4318,9 @@
      "stars": 2,
      "what": "The officials listing marks its chairs with asterisks under a footnote reading `** denotes chairperson`, and stops printing it after FY2016 — which left 274 bodies in the org chart with members and nobody at the top. The chairs did not stop being published; they moved into the reports: `Richard Letarte, Chairman`, `Chairperson Deb Lincoln`. 200 mentions across fourteen years and 46 bodies, attributed by the town’s own contents page. A CHAIR NAMED IN A REPORT IS A CHAIR THE REPORT NAMES: it is not a term of office and it is undated within the year, so a body that changed chair mid-year keeps two rows rather than being resolved. 53 bodies — the School Committee, the Library Trustees, the Board of Health — name no chair anywhere, which is registered as a gap rather than filled in.",
      "kind": "Data",
-     "bytes": 22600,
+     "bytes": 24595,
      "url": "/docs/data/board-chairs.csv",
-     "count": 200,
+     "count": 220,
      "unit": "rows",
      "textUrl": "/docs/data/board-chairs.csv"
     },
@@ -4378,7 +4378,7 @@
      "stars": 2,
      "what": "The block that ends a department’s report: `Respectfully submitted, Sheila M. Harrity, Ed.D., Superintendent`. 184 of them across fourteen years, each a person, a title and a page. It is the ONLY place the town names the person in charge of a body that publishes no roster — the Library, the Town Clerk, Conservation, the Sewer Commission — and it exists because a claim that the district published no Superintendent after FY2012 was challenged and turned out to be about our extractor rather than about the town. INCOMPLETE: 104 rows carry the department, from the contents page; 80 do not, and those are attributable rather than absent (see A11 in notes/QUEUE.md). A TRAP: `Thomas R. Browne, Superintendent-Director` signs the Montachusett Regional report inside Lunenburg’s book and is a different district’s superintendent.",
      "kind": "Data",
-     "bytes": 17499,
+     "bytes": 17305,
      "url": "/docs/data/report-signatures.csv",
      "count": 179,
      "unit": "rows",
@@ -4421,18 +4421,6 @@
      "textUrl": "/docs/data/pipeline-state.csv"
     },
     {
-     "path": "data/report-filing.csv",
-     "title": "Which bodies file an annual report, and which say they did not",
-     "stars": 2,
-     "what": "One row per body: the years it filed, and the years the contents page printed `No Report Submitted` beside its name in the town’s own words. 612 filings and 40 of those refusals across fourteen books. THE THIRD STATE IS THE ONE THAT MATTERS: a body that is not on the contents page at all has refused nothing, and four real departments are on none in any year, so reading their silence as a refusal would be a statement about them rather than about the document.",
-     "kind": "Data",
-     "bytes": 14608,
-     "url": "/docs/data/report-filing.csv",
-     "count": 119,
-     "unit": "rows",
-     "textUrl": "/docs/data/report-filing.csv"
-    },
-    {
      "path": "data/report-appropriations-supplement.csv",
      "title": "Appropriation lines from the pages the main extract could not take whole",
      "stars": 2,
@@ -4467,6 +4455,18 @@
      "count": 25,
      "unit": "rows",
      "textUrl": "/docs/data/school-job-postings.csv"
+    },
+    {
+     "path": "data/report-filing.csv",
+     "title": "Which bodies file an annual report, and which say they did not",
+     "stars": 2,
+     "what": "One row per body: the years it filed, and the years the contents page printed `No Report Submitted` beside its name in the town’s own words. 612 filings and 40 of those refusals across fourteen books. THE THIRD STATE IS THE ONE THAT MATTERS: a body that is not on the contents page at all has refused nothing, and four real departments are on none in any year, so reading their silence as a refusal would be a statement about them rather than about the document.",
+     "kind": "Data",
+     "bytes": 11579,
+     "url": "/docs/data/report-filing.csv",
+     "count": 109,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-filing.csv"
     },
     {
      "path": "data/town-meetings.csv",
@@ -5019,18 +5019,6 @@
      "textUrl": "/docs/analyses/charts/historical-rosters.svg"
     },
     {
-     "path": "data/gross-wages-refused.csv",
-     "title": "Payroll pages that would not read, and why each refused",
-     "stars": 1,
-     "what": "Written by us. Two pages, both a PAIRING failure rather than a faint scan: FY2011 p98 pairs 80 half-rows and refuses 71, reading 93 names against 138 money figures; FY2012 p114 reads 131 money figures and not one personal name, so the department words left on it cannot be attributed to anybody. Neither was guessed at — an amount beside the wrong name is worse than an amount nobody has.",
-     "kind": "Data",
-     "bytes": 6035,
-     "url": "/docs/data/gross-wages-refused.csv",
-     "count": 28,
-     "unit": "rows",
-     "textUrl": "/docs/data/gross-wages-refused.csv"
-    },
-    {
      "path": "analyses/charts/town-budgets-all.svg",
      "title": "All twelve departments on one axis",
      "stars": 1,
@@ -5261,6 +5249,18 @@
      "bytes": 3495,
      "url": "/docs/analyses/charts/town-personnel-fire.svg",
      "textUrl": "/docs/analyses/charts/town-personnel-fire.svg"
+    },
+    {
+     "path": "data/gross-wages-refused.csv",
+     "title": "Wage-list rows that would not read, and records the town printed twice",
+     "stars": 1,
+     "what": "Written by us. One row per page and reason: an amount with no name beside it, a surname read out of alphabetical order, or a record the page prints again with the same amount (FY2016, FY2017 and FY2023 reprint parts of the list), which is kept once. Nothing here was guessed at — an amount beside the wrong name is worse than an amount nobody has.",
+     "kind": "Data",
+     "bytes": 3360,
+     "url": "/docs/data/gross-wages-refused.csv",
+     "count": 14,
+     "unit": "rows",
+     "textUrl": "/docs/data/gross-wages-refused.csv"
     },
     {
      "path": "analyses/charts/towns-like-us-drivers.svg",
@@ -5537,7 +5537,7 @@
      "stars": 3,
      "what": "Every page across fifteen annual town reports that carries a table of figures, each with the SUBJECT read off its own headings and whether any dataset cites it. It maps the other direction from the rest of the backlog: from the pages to what is on them, rather than from datasets that already exist — so a table nobody has written an extractor for appears in the queue instead of being invisible. `state` is the work queue — `read`, `unread`, or `reversed` for a page whose OCR came out upside down, which is a re-OCR job rather than a reading job. `subject` is a GUESS from the headings and is there to group the queue, never to say what a figure means. See scripts/map_annual_report_pages.py.",
      "kind": "Data",
-     "bytes": 850016,
+     "bytes": 850958,
      "url": "/docs/data/annual-report-pages.csv",
      "count": 2332,
      "unit": "rows",
@@ -5724,6 +5724,18 @@
      "textUrl": "/docs/data/capital-program-options.csv"
     },
     {
+     "path": "data/PROVENANCE-report-tables.md",
+     "title": "What the twelve generic extracts are, and what may not be done with them",
+     "stars": 3,
+     "what": "Written by us, generated from the data so its figures cannot drift. Why v1 is an ordinal and not a column, what each of the three status words means, what every other column carries, and the four things these tables do not tell you. Read this before quoting any figure out of the tables above.",
+     "kind": "Notes",
+     "bytes": 8886,
+     "url": "/docs/data/PROVENANCE-report-tables.md",
+     "count": 155,
+     "unit": "lines",
+     "textUrl": "/docs/data/PROVENANCE-report-tables.md"
+    },
+    {
      "path": "data/trust-fund-balances.csv",
      "title": "Every trust fund and its balance, from the annual report’s own listing",
      "stars": 3,
@@ -5782,18 +5794,6 @@
      "count": 12,
      "unit": "rows",
      "textUrl": "/docs/data/stabilization-flows.csv"
-    },
-    {
-     "path": "data/PROVENANCE-report-tables.md",
-     "title": "What the twelve generic extracts are, and what may not be done with them",
-     "stars": 3,
-     "what": "Written by us, generated from the data so its figures cannot drift. Why v1 is an ordinal and not a column, what each of the three status words means, what every other column carries, and the four things these tables do not tell you. Read this before quoting any figure out of the tables above.",
-     "kind": "Notes",
-     "bytes": 6029,
-     "url": "/docs/data/PROVENANCE-report-tables.md",
-     "count": 107,
-     "unit": "lines",
-     "textUrl": "/docs/data/PROVENANCE-report-tables.md"
     },
     {
      "path": "data/PROVENANCE-placement-counts.md",
@@ -6005,9 +6005,9 @@
      "stars": 2,
      "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
      "kind": "Data",
-     "bytes": 131221,
+     "bytes": 132452,
      "url": "/docs/data/table-semantics.csv",
-     "count": 207,
+     "count": 209,
      "unit": "rows",
      "textUrl": "/docs/data/table-semantics.csv"
     },
@@ -6048,12 +6048,24 @@
      "textUrl": "/docs/data/staff-roster-counts.csv"
     },
     {
+     "path": "data/annual-report-catalogue-sort.csv",
+     "title": "Which catalogued tables we hold nothing of, and whether each is worth taking",
+     "stars": 2,
+     "what": "Written by us. For every FY2011-FY2025 catalogue entry on a page no dataset reads, one verdict: a real gap, prose, a repeat of a table we hold, or deferred to the list survey. Judged by a model from the catalogue’s description of the table (scripts/sort_catalogue.py), not from the page: a gap is a judgement that we hold none of it, not proof that the town printed it.",
+     "kind": "Data",
+     "bytes": 56131,
+     "url": "/docs/data/annual-report-catalogue-sort.csv",
+     "count": 268,
+     "unit": "rows",
+     "textUrl": "/docs/data/annual-report-catalogue-sort.csv"
+    },
+    {
      "path": "data/annual-report-coverage.csv",
      "title": "How much of each annual report is data, edition by edition",
      "stars": 2,
      "what": "One row per report, 1959 to FY2025: its pages, the tables found in it, how many are in a dataset and whether that dataset is in the database, and the datasets it feeds. Generated by build_annual_report_coverage.py; its readable form is notes/reference/EXTRACTION-GAPS.md.",
      "kind": "Data",
-     "bytes": 37687,
+     "bytes": 38277,
      "url": "/docs/data/annual-report-coverage.csv",
      "count": 67,
      "unit": "rows",
@@ -6149,9 +6161,9 @@
      "stars": 2,
      "what": "One row per dataset holding rows read from an annual report: rows, editions, the checked / check failed / no check split by era, and whether the database has the table. Generated by build_annual_report_coverage.py.",
      "kind": "Data",
-     "bytes": 10480,
+     "bytes": 10796,
      "url": "/docs/data/annual-report-coverage-datasets.csv",
-     "count": 113,
+     "count": 117,
      "unit": "rows",
      "textUrl": "/docs/data/annual-report-coverage-datasets.csv"
     },
@@ -7152,7 +7164,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 114499584,
+     "bytes": 117280768,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -7354,9 +7366,9 @@
      "stars": 3,
      "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
      "kind": "Data",
-     "bytes": 850584,
+     "bytes": 854489,
      "url": "/docs/data/agentic-spend.csv",
-     "count": 12254,
+     "count": 12313,
      "unit": "rows",
      "textUrl": "/docs/data/agentic-spend.csv"
     },
@@ -8172,9 +8184,9 @@
      "stars": 2,
      "what": "One row per PDF in the archive: what pdf_kind found (digital, scan, mixed), which pages carry no readable text, how many of those Amazon Textract has read, and whether our searchable copy is built. A searchable copy is the publisher’s file with every page image unchanged and invisible Textract words under the picture pages, served at /docs/searchable/<path>; the original stays at its own address. Ours, not the publisher’s. Rebuild with scripts/searchable_pdfs.py.",
      "kind": "Data",
-     "bytes": 2606645,
+     "bytes": 2606833,
      "url": "/docs/data/searchable-pdfs.csv",
-     "count": 16287,
+     "count": 16288,
      "unit": "rows",
      "textUrl": "/docs/data/searchable-pdfs.csv"
     },
@@ -8328,9 +8340,9 @@
      "stars": 2,
      "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
      "kind": "Data",
-     "bytes": 162149,
+     "bytes": 167486,
      "url": "/docs/data/refresh-runs.csv",
-     "count": 42,
+     "count": 43,
      "unit": "rows",
      "textUrl": "/docs/data/refresh-runs.csv"
     },
@@ -63483,9 +63495,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 5717,
+  "documents": 5718,
   "groups": 32,
-  "bytes": 7338102751,
+  "bytes": 7342610550,
   "loadBearing": 218
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 24 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

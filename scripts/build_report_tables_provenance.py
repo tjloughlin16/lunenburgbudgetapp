@@ -49,7 +49,13 @@ def main():
         name = os.path.basename(path)[len('report-'):-len('.csv')]
         if name == 'anomalies':
             continue
-        rows_by[name] = list(csv.DictReader(open(path)))
+        rows = list(csv.DictReader(open(path)))
+        # Only the GENERIC extracts carry `status`. report-index, report-signatures and
+        # report-filing are dedicated readings that happen to share the prefix; counting
+        # them here crashed this page (KeyError) once they existed.
+        if rows and 'status' not in rows[0]:
+            continue
+        rows_by[name] = rows
 
     total = sum(len(v) for v in rows_by.values())
     checked = sum(1 for v in rows_by.values() for r in v if r['status'] == 'checked')

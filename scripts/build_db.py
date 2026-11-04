@@ -1383,6 +1383,12 @@ REFERENCE = [
     'trust-fund-balances', 'staff-roster-contractors', 'capital-program-options',
     'monty-tech-expenses', 'pages-read', 'stabilization-flows',
 
+    # TWO MORE the scanner learned to see on 4 November 2026 (0cf4081d2): the wage list, name
+    # by name, which until that day read only some years and so was held back (TJ: "if we dont
+    # have the data, we shouldn't show partial data") and now reads every year FY2011-FY2025;
+    # and the Town Meeting articles with how each was voted.
+    'gross-wages', 'town-meeting-votes',
+
 ]
 
 # EVERY `report-*.csv` IS LOADED OR SAYS WHY NOT. The annual-report datasets were loaded from
