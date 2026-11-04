@@ -19,6 +19,7 @@ load limit; `CLAUDE.md` keeps a pointer here and the handful every session needs
     python3 scripts/check_sitemap.py --submit    # ...and tell the IndexNow engines it changed
     python3 scripts/check_indexing.py       # ...and ask Google and Bing whether they DID index it
     python3 scripts/audit_provenance.py     # no projection reads actuals; model.json is fresh
+    python3 scripts/check_handoffs.py       # the live handoffs, oldest first; --check fails on a bad block, a stale open one, a dangling path
     python3 scripts/backtest_rates.py       # assumptions against the district's own later budgets
     python3 scripts/build_source_index.py   # every source catalogued, every catalogued file present
     python3 scripts/check_source_links.py   # does the publisher's own copy still open

@@ -61,6 +61,10 @@ CHECKS = [
     # instant. Fails if fy28/functions/docs/_takedowns.js no longer matches
     # sources/data/takedowns.csv, or if any tree holds a taken-down document in sources/.
     ('takedown.py', ['--check']),
+    # HANDOFFS STAY HONEST: every notes/HANDOFF-*.md carries a valid status block, nothing
+    # `open` goes untouched past STALE_DAYS, and no tracked file points at a handoff path that
+    # retirement moved. Offline, under a second. CLAUDE.md, "Picking up mid-stream".
+    ('check_handoffs.py', ['--check']),
     ('build_readme.py', ['--check']),
     # SEARCH'S CURATED LAYER: every hub, topic, report, profile, board, budget line, fund and
     # contract by name, which /api/search matches ahead of the full text. Fails when a page,

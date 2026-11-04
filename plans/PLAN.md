@@ -2,7 +2,7 @@
 
 **What this is.** The arc the work is on, what is done, what is next, and what each thing is
 blocked by. `CLAUDE.md` is the rules; `notes/handoffs-done/HANDOFF.md` is the standing state;
-`notes/HANDOFF-2026-09-03.md` is what happened on one day. This is the shape of the whole
+`notes/history/HANDOFF-2026-09-03.md` is what happened on one day. This is the shape of the whole
 thing, and it is updated as work lands.
 
 **Nothing in this file is a source.** It is a claim about the repo. Check anything
