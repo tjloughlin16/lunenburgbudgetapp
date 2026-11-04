@@ -523,17 +523,17 @@ def build():
     mc_lo = min(mc[y][0] for y in range(2014, 2018))
     mc_hi = max(mc[y][0] for y in range(2014, 2018))
     line = TP.series('The athletic director’s pay, by year', [C.fy(y) for y in xs], [
-        TP.track('Director budget line, July–June (spent)', [float(gf[y][0]) if y in gf else None for y in xs],
+        TP.track('Budget line for the director, July–June', [float(gf[y][0]) if y in gf else None for y in xs],
                  'published'),
         TP.track('Level service, before the fee offset', [float(B['lvl26']) if y == 2026 else None for y in xs],
                  'published'),
         TP.track('Last draft, a proposal', [float(B['fy27_last']) if y == 2027 else None for y in xs],
                  'published'),
-        TP.track('Paid to the director, Jan–Dec (our total)',
+        TP.track('Director’s total pay, every account, Jan–Dec',
                  [float(role[y]) if y in role else None for y in xs], 'estimate', labels=labels)],
         '$', kind='line', events=events,
-        note='Actuals: budget books to FY2022, the journal after. Pay: wage lists, calendar years, every '
-             'fund; a changeover year adds both directors. 2025 includes other pay.',
+        note='Total pay includes the budget line; it is not on top of it. A changeover year adds both '
+             'directors; 2025 includes other pay.',
         note_allow=D('FY2022 FY2023 2025'))
     line_block = TB.chart(line, place='lead', so=(
         '%s to %s the general fund director line shows $0 actual, while the Town printed the director’s '
