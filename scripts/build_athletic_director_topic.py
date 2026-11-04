@@ -329,10 +329,32 @@ def build():
     F = lambda v: figure(v, C.fy(v), 'fiscal year')
     f, con = LD.fact, TP.conclusion
 
+    # THE ROLE, NOT THE PERSON (TJ, 4 November 2026: "one combined line, show everything. this
+    # is a role, not a human. the humans in the role are timeline events"). A person's pay counts
+    # toward the post in the calendar years from the one before their first rostered fiscal year
+    # to the one after their last: a roster names one director a year, a handover happens inside
+    # one. That window is OURS, and it is what leaves out Yanina Burns's 2022-2024 pay, from
+    # before she held the post.
+    role, in_role, left_out = defaultdict(Decimal), defaultdict(list), []
+    for who_, ys in wages.items():
+        lo_, hi_ = min(held[who_]) - 1, max(held[who_]) + 1
+        for y, (amt, _, _) in ys.items():
+            if lo_ <= y <= hi_:
+                role[y] += amt
+                in_role[y].append(who_)
+            else:
+                left_out.append((who_, y))
+    if sorted({w for w, _ in left_out}) != ['Yanina Burns']:
+        fail('pay outside a director’s years is no longer Burns’s alone: %s' % sorted(left_out))
+    handovers = {y: ws for y, ws in in_role.items() if len(ws) > 1}
+
     # CALENDAR EARNINGS BESIDE THE TWO FISCAL YEARS EACH STRADDLES (our arithmetic). Asserted
-    # for every Bunnell year held: earnings fall between the two general fund actuals.
+    # for every year Bunnell held the post ALONE: earnings fall between the two general fund
+    # actuals. A handover year pays two people for parts of one year, so it cannot.
     bun = wages['James Bunnell']
     for cy, (amt, _, _) in bun.items():
+        if cy in handovers:
+            continue
         lo, hi = sorted([gf[cy][0], gf[cy + 1][0]])
         if not lo <= amt <= hi:
             fail('calendar %d: Bunnell earned %s, outside the line’s %s and %s' % (cy, amt, lo, hi))
@@ -488,23 +510,18 @@ def build():
     # 2026: "a line chart showing the salary for the AD over time"). One track per basis, never
     # mixed (rule 1): the general fund ACTUAL; the FY2026 LEVEL-SERVICE budget beside it, which
     # marks the fee offset; the FY2027 PROPOSAL; and the WAGES the Town printed, which are
-    # calendar years and every fund. Calendar 2025 is left out of the wage line: two directors
-    # were paid that year, one of them also an assistant principal.
+    # calendar years and every fund, drawn for the ROLE: everyone in the post that year, added,
+    # with each handover named on its point.
     cy = list(range(2014, 2027))
-    xs = list(range(2014, 2028))
-    wage_line = {}
-    for who_ in ('Peter McCauliff', 'James Bunnell'):
-        for y, (amt, _, _) in wages[who_].items():
-            if y in wage_line:
-                fail('calendar %d: two directors on the wage line' % y)
-            wage_line[y] = amt
-    if any(y >= 2022 for y in wage_line):
-        fail('the wage line now reaches calendar %d: decide how to draw it' % max(wage_line))
-    lone = [y for y in sorted(wages['Kevin Bigelow']) + sorted(wages['Yanina Burns'])]
-    if sorted(set(lone)) != [2025]:
-        fail('wages for Bigelow and Burns are no longer calendar 2025 only: %s' % lone)
-    mc_lo = min(mc[y][0] for y in mc if y <= 2017)
-    mc_hi = max(mc[y][0] for y in mc if y <= 2017)
+    xs = list(range(min(role), 2028))
+    surname = lambda n: n.split()[-1]
+    labels = {}
+    for y, ws in sorted(handovers.items()):
+        ws = sorted(ws, key=lambda w: min(held[w]))
+        labels[xs.index(y)] = ('%s to %s' % (surname(ws[0]), surname(ws[-1])), ())
+    labels[0] = ('%s in the post' % surname(in_role[xs[0]][0]), ())
+    mc_lo = min(mc[y][0] for y in range(2014, 2018))
+    mc_hi = max(mc[y][0] for y in range(2014, 2018))
     line = TP.series('The athletic director’s pay, by year', [C.fy(y) for y in xs], [
         TP.track('Paid, general fund line (actual)', [float(gf[y][0]) if y in gf else None for y in xs],
                  'published'),
@@ -512,10 +529,11 @@ def build():
                  'published'),
         TP.track('Last draft, a proposal', [float(B['fy27_last']) if y == 2027 else None for y in xs],
                  'published'),
-        TP.track('Wages the Town printed (calendar year)', [float(wage_line[y]) if y in wage_line else None
-                                                            for y in xs], 'published')], '$', kind='line',
-        note='Actuals: later budget books to FY2022, the journal from FY2023. Wages: annual reports, calendar '
-             'years, every fund, at the year of that number; 2025 left out.',
+        TP.track('Paid to whoever held the post (calendar, ours)',
+                 [float(role[y]) if y in role else None for y in xs], 'estimate', labels=labels)],
+        '$', kind='line',
+        note='Actuals: budget books to FY2022, the journal after. Pay: wage lists, calendar years, every '
+             'fund, everyone in the post added; 2025 includes other pay.',
         note_allow=D('FY2022 FY2023 2025'))
     line_block = TB.chart(line, place='lead', so=(
         '%s to %s the general fund director line shows $0 actual, while the Town printed the director’s '
@@ -556,13 +574,14 @@ def build():
     for who_, ys in wages.items():
         for y in sorted(ys):
             amt, page, raw = ys[y]
-            wr.append(dict(label='%s · calendar %d' % (who_, y),
+            wr.append(dict(label='%s · calendar %d%s' % (who_, y, '' if (who_, y) not in left_out
+                                                          else ', before the post'),
                            cells=[usd2(amt), 'p%s' % page, raw[:60]]))
     t_wages = dict(caption='What each director earned, as the Town printed it', views=[dict(
         key='wages', label='Calendar years', kinds=['ledger', 'stated', 'stated'],
         columns=['Gross wages', 'Page', 'As printed'], rows=wr,
         note='Gross wages in each annual town report: calendar years, every fund and every post a person '
-             'held. Years whose wage pages are not yet legible in our text are absent.')])
+             'held. Rows marked before the post are not on the line.')])
 
     sources = [
         dict(label='Lunenburg Public Schools — Proposed FY19 MSHS Athletic Budget (both sides, FY14–FY19)',
@@ -594,7 +613,7 @@ def build():
         'Who was paid the fee fund’s regular hourly pay. The journal names no one on a pay run.',
         'Which post the $13,691.53 moved to the principal line in FY2025 paid.',
         'How the FY2027 half-time director is paid. The last draft held proposed $20,000.',
-        'What each director earned in calendar 2016, 2018 and 2022 to 2024: those wage pages are not legible in our text.',
+        'How much of a handover year’s pay was for the director’s post, and how much for other work or a payout.',
     ]
     if [TID] != MINE:
         fail('the registry gives this script %s; it builds %s' % (MINE, [TID]))

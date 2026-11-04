@@ -16,9 +16,9 @@
       "value": 2017
      },
      "c": {
-      "text": "$96,998",
+      "text": "$95,163",
       "unit": "",
-      "value": 96998.3
+      "value": 95162.79
      },
      "d": {
       "text": "$112,209",
@@ -31,7 +31,7 @@
      "2014",
      "2017"
     ],
-    "text": "FY2014 to FY2017 the general fund director line shows $0 actual, while the Town printed the director’s calendar 2014 to 2017 wages at $96,998 to $112,209: which account paid is not held."
+    "text": "FY2014 to FY2017 the general fund director line shows $0 actual, while the Town printed the director’s calendar 2014 to 2017 wages at $95,163 to $112,209: which account paid is not held."
    },
    "spec": {
     "decimals": null,
@@ -44,7 +44,7 @@
       "2023",
       "2025"
      ],
-     "text": "Actuals: later budget books to FY2022, the journal from FY2023. Wages: annual reports, calendar years, every fund, at the year of that number; 2025 left out."
+     "text": "Actuals: budget books to FY2022, the journal after. Pay: wage lists, calendar years, every fund, everyone in the post added; 2025 includes other pay."
     },
     "reference": null,
     "series": [
@@ -53,6 +53,9 @@
       "mark": "line",
       "name": "Paid, general fund line (actual)",
       "texts": [
+       null,
+       null,
+       null,
        "$0",
        "$0",
        "$0",
@@ -69,6 +72,9 @@
        null
       ],
       "values": [
+       null,
+       null,
+       null,
        0.0,
        0.0,
        0.0,
@@ -102,10 +108,16 @@
        null,
        null,
        null,
+       null,
+       null,
+       null,
        "$94,813",
        null
       ],
       "values": [
+       null,
+       null,
+       null,
        null,
        null,
        null,
@@ -140,9 +152,15 @@
        null,
        null,
        null,
+       null,
+       null,
+       null,
        "$20,000"
       ],
       "values": [
+       null,
+       null,
+       null,
        null,
        null,
        null,
@@ -160,38 +178,63 @@
       ]
      },
      {
-      "basis": "published",
+      "basis": "estimate",
+      "labels": [
+       "$82,994, McCauliff in the post",
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       "$96,548, McCauliff to Bunnell",
+       null,
+       null,
+       null,
+       "$98,618, Bunnell to Bigelow",
+       null,
+       null,
+       "$144,736, Bigelow to Burns",
+       null,
+       null
+      ],
       "mark": "line",
-      "name": "Wages the Town printed (calendar year)",
+      "name": "Paid to whoever held the post (calendar, ours)",
       "texts": [
+       "$82,994",
+       "$86,212",
+       "$91,096",
        "$98,669",
        "$96,998",
-       null,
+       "$95,163",
        "$112,209",
-       null,
+       "$96,548",
        "$87,556",
        "$90,364",
        "$92,373",
-       null,
-       null,
-       null,
-       null,
+       "$98,618",
+       "$88,883",
+       "$91,135",
+       "$144,736",
        null,
        null
       ],
       "values": [
+       82993.87,
+       86212.48,
+       91096.4,
        98669.28,
        96998.3,
-       null,
+       95162.79,
        112208.61,
-       null,
+       96547.99,
        87556.42,
        90364.24,
        92372.84,
-       null,
-       null,
-       null,
-       null,
+       98618.4,
+       88882.57,
+       91135.38,
+       144735.52,
        null,
        null
       ]
@@ -202,6 +245,9 @@
     "type": "series",
     "unit": "$",
     "x": [
+     "FY2011",
+     "FY2012",
+     "FY2013",
      "FY2014",
      "FY2015",
      "FY2016",
@@ -1290,7 +1336,7 @@
   "Who was paid the fee fund’s regular hourly pay. The journal names no one on a pay run.",
   "Which post the $13,691.53 moved to the principal line in FY2025 paid.",
   "How the FY2027 half-time director is paid. The last draft held proposed $20,000.",
-  "What each director earned in calendar 2016, 2018 and 2022 to 2024: those wage pages are not legible in our text."
+  "How much of a handover year’s pay was for the director’s post, and how much for other work or a payout."
  ],
  "path": "/athletics/athletic-director",
  "said": [],
@@ -1507,8 +1553,32 @@
       "stated"
      ],
      "label": "Calendar years",
-     "note": "Gross wages in each annual town report: calendar years, every fund and every post a person held. Years whose wage pages are not yet legible in our text are absent.",
+     "note": "Gross wages in each annual town report: calendar years, every fund and every post a person held. Rows marked before the post are not on the line.",
      "rows": [
+      {
+       "cells": [
+        "$82,993.87",
+        "p100",
+        "MCCAULIFF, PETER SCHOOL $82,993.87"
+       ],
+       "label": "Peter McCauliff · calendar 2011"
+      },
+      {
+       "cells": [
+        "$86,212.48",
+        "p114",
+        "MCCAULIFF PETER SCHOOL 86,212.48"
+       ],
+       "label": "Peter McCauliff · calendar 2012"
+      },
+      {
+       "cells": [
+        "$91,096.40",
+        "p95",
+        "MCCAULIFF PETER SCHOOL 91,096.40"
+       ],
+       "label": "Peter McCauliff · calendar 2013"
+      },
       {
        "cells": [
         "$98,669.28",
@@ -1521,17 +1591,41 @@
        "cells": [
         "$96,998.30",
         "p209",
-        "14,419.50 MCCAULIFF 96,998.30"
+        "MCCAULIFF PETER SCHOOL 96,998.30"
        ],
        "label": "Peter McCauliff · calendar 2015"
       },
       {
        "cells": [
+        "$95,162.79",
+        "p199",
+        "MCCAULIFF PETER SCHOOL 95,162.79"
+       ],
+       "label": "Peter McCauliff · calendar 2016"
+      },
+      {
+       "cells": [
         "$112,208.61",
         "p195",
-        "LONDA JOANNE 55,683.08 SCHOOL MCCAULIFF PETER 112,208.61 SCH"
+        "MCCAULIFF PETER 112,208.61 SCHOOL"
        ],
        "label": "Peter McCauliff · calendar 2017"
+      },
+      {
+       "cells": [
+        "$60,186.46",
+        "p251",
+        "MCCAULIFF PETER 60,186.46"
+       ],
+       "label": "Peter McCauliff · calendar 2018"
+      },
+      {
+       "cells": [
+        "$36,361.53",
+        "p248",
+        "BUNNELL JAMES 36,361.53"
+       ],
+       "label": "James Bunnell · calendar 2018"
       },
       {
        "cells": [
@@ -1545,7 +1639,7 @@
        "cells": [
         "$90,364.24",
         "p208",
-        "BARRY MICHAEL 24,053.56 BUNNELL JAMES 90,364.24"
+        "BUNNELL JAMES 90,364.24"
        ],
        "label": "James Bunnell · calendar 2020"
       },
@@ -1553,9 +1647,41 @@
        "cells": [
         "$92,372.84",
         "p162",
-        "BASILE-OSGOOD ASHLEY 713.92 BUNNELL JAMES 92,372.84"
+        "BUNNELL JAMES 92,372.84"
        ],
        "label": "James Bunnell · calendar 2021"
+      },
+      {
+       "cells": [
+        "$58,158.60",
+        "p186",
+        "BUNNELL JAMES 58,158.60"
+       ],
+       "label": "James Bunnell · calendar 2022"
+      },
+      {
+       "cells": [
+        "$40,459.80",
+        "p186",
+        "BIGELOW KEVIN 40,459.80"
+       ],
+       "label": "Kevin Bigelow · calendar 2022"
+      },
+      {
+       "cells": [
+        "$88,882.57",
+        "p190",
+        "BIGELOW KEVIN 88,882.57"
+       ],
+       "label": "Kevin Bigelow · calendar 2023"
+      },
+      {
+       "cells": [
+        "$91,135.38",
+        "p186",
+        "BIGELOW KEVIN 91,135.38"
+       ],
+       "label": "Kevin Bigelow · calendar 2024"
       },
       {
        "cells": [
@@ -1564,6 +1690,30 @@
         "BIGELOW KEVIN $51,743.31"
        ],
        "label": "Kevin Bigelow · calendar 2025"
+      },
+      {
+       "cells": [
+        "$17,800.51",
+        "p186",
+        "BURNS YANINA 17,800.51"
+       ],
+       "label": "Yanina Burns · calendar 2022, before the post"
+      },
+      {
+       "cells": [
+        "$68,157.72",
+        "p190",
+        "BURNS YANINA 68,157.72"
+       ],
+       "label": "Yanina Burns · calendar 2023, before the post"
+      },
+      {
+       "cells": [
+        "$102,521.55",
+        "p186",
+        "BURNS YANINA 102,521.55"
+       ],
+       "label": "Yanina Burns · calendar 2024, before the post"
       },
       {
        "cells": [
