@@ -70,25 +70,10 @@ TOWN_ROSTERS = os.path.join(DATA, 'town-roster-entries.csv')
 BLUE = '#184f95'
 AMBER = '#e08214'
 
-# A NAME IS ONE PERSON'S RUN ONLY WHILE IT KEEPS APPEARING. A run breaks when the name is
-# absent from MORE THAN this many consecutive roster editions we hold. Ours, chosen: it
-# lets a teacher survive a roster that printed only part of a school (1993 and 1995 print
-# a fraction of the usual names) and splits a name that vanishes for a decade -- which is
-# the Nass case, eighteen years apart and two different jobs. It is printed on the page.
-MAX_ABSENT = 2
-
-# WHAT A PERSON HAS TOLD US ABOUT WHO IS WHO, where the print cannot say. Keyed by name_key; each
-# entry is what was said, by whom (`by`, as the page attributes it) and when, and the page prints it
-# AS a report -- no
-# document held establishes it (rule 3). The run rule decides the ranking either way; this only
-# replaces "cannot say" with the answer and its source.
-CONFIRMED_DISTINCT = {
-    # TJ, 2 November 2026: "there are 2 genevieve nass's! One is the mom, the other the daughter.
-    # both worked for lunenburg." The run rule had already split them on the 1982-1998 absence.
-    'genevievenass': dict(who='a mother and her daughter, both of whom worked for Lunenburg',
-                          told='2 November 2026', by='the community'),
-}
-TITLES = {'mrs', 'mr', 'miss', 'ms', 'dr', 'jr', 'sr', 'ii', 'iii', 'rev', 'sister', 'ed'}
+# WHO IS WHO -- the run rule, MAX_ABSENT, CONFIRMED_DISTINCT and name_key -- lives in
+# person_identity.py, the one copy build_people.py reads too (3 November 2026).
+from person_identity import (MAX_ABSENT, CONFIRMED_DISTINCT, name_key,  # noqa: E402,F401
+                             forms_disagree, name_runs)
 
 usd = C.usd
 num = C.num
@@ -380,76 +365,6 @@ def charter_vote(eds):
 # --------------------------------------------------------------------------------------
 # 3. The school staff rosters: longest runs, the shared name, the first aide.
 # --------------------------------------------------------------------------------------
-
-def name_key(n):
-    t = [re.sub(r'[^a-z]', '', x) for x in re.split(r'[\s,.]+', n.lower())]
-    return ''.join(x for x in t if len(x) > 1 and x not in TITLES)
-
-
-def _initials(n):
-    t = [x for x in re.split(r'[\s,]+', n) if x]
-    return {x[0].lower() for x in t[1:-1] if re.fullmatch(r'[A-Za-z]\.?', x)}
-
-
-def _generations(n):
-    return {x for x in re.split(r'[\s,.]+', n.lower()) if x in ('jr', 'sr')}
-
-
-def forms_disagree(forms):
-    """WHETHER THE PRINT ITSELF TELLS TWO NAMES APART that `name_key` joined. `name_key`
-    drops middle initials and Jr./Sr., which is right for a name printed with and without
-    its initial and wrong for a father and son: the town lists print `Charles Deming, Sr.`
-    and `Charles Deming, Jr.` in the same years. A run is flagged when its printed forms
-    carry BOTH Jr. and Sr., or two different middle initials each printed at least twice
-    (once is an OCR slip: `Samuel 1. Costa`). A flagged run is not ranked; it is listed
-    beside the ranking with the forms that split it. Ours, chosen."""
-    ini = collections.Counter(i for f in forms for i in _initials(f))
-    gens = set().union(*(_generations(f) for f in forms)) if forms else set()
-    two_inits = sorted(i for i, k in ini.items() if k >= 2)
-    if {'jr', 'sr'} <= gens:
-        return 'printed as both Jr. and Sr.'
-    if len(two_inits) >= 2:
-        return 'printed with %s middle initials' % ' and '.join(i.upper() + '.' for i in two_inits)
-    return ''
-
-
-def name_runs(rows, year_of):
-    """THE RUN RULE, ONE COPY. Every ranking on this page, school and town, and
-    `build_town_rosters.py --runs`, goes through here, so they cannot drift apart.
-
-    A name's run is its first to last year on the lists `rows` hold, broken when the name is
-    absent from MORE THAN `MAX_ABSENT` consecutive years held. Returns (runs, by, held):
-    runs sorted longest first, each with the rows inside it and `disagree` (see
-    `forms_disagree`)."""
-    held = sorted({year_of(r) for r in rows})
-    by = collections.defaultdict(list)
-    for r in rows:
-        by[name_key(r['name'])].append(r)
-    runs = []
-    for k, rs in by.items():
-        ys = sorted({year_of(r) for r in rs})
-        cur = [ys[0]]
-        chunks = []
-        for y in ys[1:]:
-            if len([h for h in held if cur[-1] < h < y]) > MAX_ABSENT:
-                chunks.append(cur)
-                cur = [y]
-            else:
-                cur.append(y)
-        chunks.append(cur)
-        for ch in chunks:
-            inside = [h for h in held if ch[0] <= h <= ch[-1]]
-            ents = sorted((r for r in rs if ch[0] <= year_of(r) <= ch[-1]),
-                          key=lambda r: (year_of(r), int(r['page'] or 0), int(r.get('line') or 0)))
-            forms = [e['name'] for e in ents]
-            runs.append(dict(key=k, first=ch[0], last=ch[-1], span=ch[-1] - ch[0],
-                             seen=len(ch), held=len(inside), split=len(chunks) > 1,
-                             rows=ents, first_entry=ents[0], last_entry=ents[-1],
-                             name=max(forms, key=lambda n: (forms.count(n), len(n))),
-                             disagree=forms_disagree(forms)))
-    runs.sort(key=lambda r: (-r['span'], -r['seen'], r['key']))
-    return runs, by, held
-
 
 def printed_positions(ents, n=3, field='position', year='year'):
     """The positions a run's entries were printed under, most-printed first, as printed --
@@ -1464,7 +1379,7 @@ def render(d, x):
         a('\n**One name, two careers.** Matched on name alone, %s would be the longest school run at '
           '%s years. The rosters print the name from %d (%s, “%s”) to %d (%s, “%s”); it '
           'is then absent from %s rosters in a row, and returns in %d (%s) under “%s”, '
-          'last printed in %d. %s\n\n'
+          'last printed in %d%s. %s\n\n'
           % (sh['name'], C.num(sh['naive_span']),
              sh['a']['first'], link(sh['a']['first_entry']),
              sh['a']['first_entry']['role'] or sh['a']['first_entry']['group'],
@@ -1474,6 +1389,9 @@ def render(d, x):
              sh['b']['first'], link(sh['b']['first_entry']),
              sh['b']['first_entry']['role'] or sh['b']['first_entry']['group'],
              sh['b']['last'],
+             # The short form, joined by person_identity.SAME_KEY, said where it is printed.
+             (', as “%s”' % sh['b']['last_entry']['name']
+              if sh['b']['last_entry']['name'] != sh['name'] else ''),
              ('They are two people, %s, as %s reported on %s; no document held says it. '
               'The break on a long absence keeps them apart.'
               % (CONFIRMED_DISTINCT[sh['key']]['who'], CONFIRMED_DISTINCT[sh['key']]['by'],

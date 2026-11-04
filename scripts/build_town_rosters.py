@@ -286,11 +286,12 @@ def provenance(rows, ledger, why_n, relocated, cost, plan):
 
 def runs(rows, top=10):
     """The longest runs, by the SAME code path the historical report ranks with:
-    `build_historical_report.name_runs`, so this list and the page cannot drift apart. A
+    `person_identity.name_runs`, so this list and the page cannot drift apart. A
     run whose printed forms tell the joined names apart (Jr. and Sr., two middle initials)
     is not ranked there and is marked here."""
     sys.path.insert(0, os.path.join(ROOT, 'scripts'))
-    from build_historical_report import name_runs, printed_positions
+    from person_identity import name_runs
+    from build_historical_report import printed_positions
     out = []
     for r in name_runs(rows, lambda r: int(r['year']))[0][:top]:
         pos, _n = printed_positions(r['rows'], n=4)

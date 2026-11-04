@@ -56,6 +56,10 @@ import re
 import sqlite3
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from person_identity import (CONFIRMED_DISTINCT, forms_disagree, has_honorific,  # noqa: E402
+                             initials, name_key, split_runs)
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'sources', 'data')
 PUB = os.path.join(ROOT, 'fy28', 'public', 'data')
@@ -65,6 +69,16 @@ OUT_DIR = os.path.join(PUB, 'people')
 FTS = os.path.join(DATA, 'minutes-fts.db')
 
 PUBLIC_OFFICE = ('board', 'officer')
+
+# Old addresses of pages that a reading fix removed, and the name each now belongs to. They
+# were live on the site, so they keep answering. 3 November 2026: extract_personnel.py split
+# a role printed after a name, and the Monty Tech signature line `Chile My Manity` (its role
+# prints `Sheila M. Harrity, Ed.D., Superintendent-Director`) was re-read.
+RETIRED = {
+    'caesar-nuzzolo-select-boara-kepresentative': 'Caesar Nuzzolo',
+    'michael-ray-jeffreys-s': 'Michael-Ray Jeffreys',
+    'chile-my-manity': 'Sheila M. Harrity',
+}
 RECENT_VOTES = 25
 RECENT_MENTIONS = 15
 
@@ -158,30 +172,150 @@ def _best_spelling(counts):
 _IDENTITY = None
 
 
+def _fullness(form, n):
+    """How much of a name a printed form carries, for choosing the one a merged page is
+    titled with: the most letters of the name itself, then middle initials, then a bracketed
+    maiden name, then no honorific (`Genevieve T. Nass` over `Mrs. Genevieve T. Nass`), then
+    the most printed. `Barbara S. (Faulkner) Curtis` is the fullest of her four forms."""
+    return (len(name_key(form, join=False)), len(initials(form)), len(re.findall(r'\(\w', form)),
+            not has_honorific(form), n)
+
+
 def _identity():
-    """{letters: (slug, title)} over every name the org charts print."""
+    """WHO EACH PRINTING IS, year by year. Returns a dict:
+
+      forms    {letters: {fy: slug}}  every printed form, by its letters, in every year printed
+      default  {letters: slug}        the slug a form means when no year is given: its latest
+      titles   {slug: title}
+      people   {slug: {'forms': {letters,...}, 'years': {fy,...}, 'joined': bool,
+                       'split': bool, 'confirmed': dict or None}}
+      kept_apart [(reason, [titles])]  key groups the print itself tells apart
+
+    TWO STEPS. First, printings that differ only by case, spacing and punctuation are one
+    form (`A dam Burney`, `ADAM BURNEY`): grouped on the letters alone, as before. Second,
+    forms that share a `name_key` (person_identity.py: titles, middle initials and a
+    bracketed maiden name dropped) are one person WHERE THEIR YEARS FALL IN ONE RUN -- the
+    run rule, the same copy the historical report ranks with. A form is never split from
+    itself by the run rule, except under CONFIRMED_DISTINCT, where somebody has told us the
+    same printed name is two people: there every break in the run is a new person. Where the
+    print tells the joined forms apart (Jr. and Sr., two middle initials), nothing joins."""
     global _IDENTITY
-    if _IDENTITY is None:
-        spell = collections.defaultdict(collections.Counter)
-        for r in json.load(open(ORG, encoding='utf-8'))['rows']:
-            c = clean_name(r.get('person') or '') if r.get('status') == 'filled' else ''
-            if c:
-                spell[_letters(c)][c] += 1
-        _IDENTITY = {}
-        for k, counts in spell.items():
-            title = _best_spelling(counts)
-            _IDENTITY[k] = (slug_for(title), title)
+    if _IDENTITY is not None:
+        return _IDENTITY
+    org = json.load(open(ORG, encoding='utf-8'))
+    unit_years = {u['unit']: {int(y) for y in u['years']} for u in org['units']}
+    spell = collections.defaultdict(collections.Counter)    # letters -> {clean form: n}
+    years = collections.defaultdict(set)                    # letters -> {fy}
+    units = collections.defaultdict(set)
+    for r in org['rows']:
+        c = clean_name(r.get('person') or '') if r.get('status') == 'filled' else ''
+        if c:
+            L = _letters(c)
+            spell[L][c] += 1
+            years[L].add(int(r['fy']))
+            units[L].add(r['unit'])
+
+    # Forms sharing a key, joined into key groups (union-find over the letters).
+    parent = {L: L for L in spell}
+
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+    by_key = collections.defaultdict(list)
+    for L, counts in spell.items():
+        for c in counts:
+            by_key[name_key(c)].append(L)
+    for Ls in by_key.values():
+        for L in Ls[1:]:
+            parent[find(L)] = find(Ls[0])
+    groups = collections.defaultdict(list)
+    for L in spell:
+        groups[find(L)].append(L)
+
+    people, kept_apart = [], []   # each person: {letters: {fy}}
+    for Ls in groups.values():
+        keys = {name_key(c) for L in Ls for c in spell[L]}
+        confirmed = next((CONFIRMED_DISTINCT[k] for k in sorted(keys) if k in CONFIRMED_DISTINCT), None)
+        held = set().union(*(unit_years[u] for L in Ls for u in units[L]))
+        runs = split_runs(set().union(*(years[L] for L in Ls)), held)
+        if confirmed:
+            for run in runs:
+                people.append(({L: years[L] & set(run) for L in Ls if years[L] & set(run)},
+                               dict(confirmed=confirmed, split=len(runs) > 1)))
+            continue
+        # Join forms that share a run; a form printed in two runs bridges them.
+        sub = {L: L for L in Ls}
+
+        def sfind(x):
+            while sub[x] != x:
+                x = sub[x]
+            return x
+        for run in runs:
+            inside = [L for L in sorted(Ls) if years[L] & set(run)]
+            for L in inside[1:]:
+                sub[sfind(L)] = sfind(inside[0])
+        parts = collections.defaultdict(list)
+        for L in Ls:
+            parts[sfind(L)].append(L)
+        for part in parts.values():
+            if len(part) > 1:
+                why = forms_disagree([c for L in part for c, n in spell[L].items() for _ in range(n)])
+                if why:
+                    kept_apart.append((why, sorted(_best_spelling(spell[L]) for L in part)))
+                    for L in part:
+                        people.append(({L: years[L]}, dict(confirmed=None, split=False)))
+                    continue
+            people.append(({L: years[L] for L in part},
+                           dict(confirmed=None, split=len(parts) > 1)))
+
+    forms = collections.defaultdict(dict)
+    titles, meta = {}, {}
+    # The latest run keeps the plain address; an earlier run whose title is the same printed
+    # form is told apart by the year it was first printed (`genevieve-nass-1961`).
+    people.sort(key=lambda p: -max(max(ys) for ys in p[0].values()))
+    for fys, m in people:
+        best = max(fys, key=lambda L: _fullness(_best_spelling(spell[L]),
+                                                sum(spell[L].values())))
+        title = _best_spelling(spell[best])
+        slug = slug_for(title)
+        if slug in titles:
+            slug = '%s-%d' % (slug, min(min(ys) for ys in fys.values()))
+        titles[slug] = title
+        meta[slug] = dict(forms=set(fys), years=set().union(*fys.values()),
+                          joined=len(fys) > 1, **m)
+        for L, ys in fys.items():
+            for y in ys:
+                forms[L][y] = slug
+    default = {L: by_year[max(by_year)] for L, by_year in forms.items()}
+    _IDENTITY = dict(forms=forms, default=default, titles=titles, people=meta,
+                     kept_apart=sorted(kept_apart))
     return _IDENTITY
 
 
-def person_slug(name):
-    """THE identity of a printed name: its page's slug, or '' if it names no person.
-    build_search_index.py imports this, so a result and the page it opens agree."""
+def person_slug(name, fy=None):
+    """THE identity of a printed name: its page's slug, or '' if it names no person. With
+    `fy`, the person printed under that name that year -- the same printed name can be two
+    people (CONFIRMED_DISTINCT). build_search_index.py imports this, so a result and the
+    page it opens agree."""
     c = clean_name(name)
     if not c:
         return ''
-    hit = _identity().get(_letters(c))
-    return hit[0] if hit else slug_for(c)
+    ident = _identity()
+    L = _letters(c)
+    if L not in ident['forms']:
+        return slug_for(c)
+    if fy is not None and int(fy) in ident['forms'][L]:
+        return ident['forms'][L][int(fy)]
+    return ident['default'][L]
+
+
+def titles():
+    """{slug: the name the page is titled with}."""
+    return _identity()['titles']
+
+
 TITLES = {'mr', 'mrs', 'ms', 'miss', 'dr', 'chair', 'chairman', 'chairwoman', 'chairperson',
           'vice', 'member', 'members', 'clerk', 'selectman', 'selectwoman', 'commissioner',
           'trustee', 'secretary', 'treasurer', 'atty', 'attorney', 'rep', 'councilor'}
@@ -201,7 +335,7 @@ def load_people(org):
         name = ' '.join((r.get('person') or '').split())
         if r.get('status') != 'filled' or not name:
             continue
-        s = person_slug(name)
+        s = person_slug(name, r['fy'])
         if not s:
             continue
         people[s]['names'][name] += 1
@@ -218,7 +352,7 @@ def seats_by_slug():
     out = collections.defaultdict(list)
     for r in read_csv('town-personnel.csv'):
         if (r.get('person') or '').strip():
-            out[person_slug(r['person'])].append({
+            out[person_slug(r['person'], r['fy'])].append({
                 'fy': r['fy'], 'post': r['post'], 'kind': r['kind'], 'section': r['section'],
                 'term_expires': r['term_expires'], 'note': r.get('note') or '', 'page': r['page']})
     return out
@@ -228,7 +362,7 @@ def chairs_by_slug():
     out = collections.defaultdict(list)
     for r in read_csv('board-chairs.csv'):
         if (r.get('person') or '').strip():
-            out[person_slug(r['person'])].append({'fy': r['fy'], 'body': r['department'],
+            out[person_slug(r['person'], r['fy'])].append({'fy': r['fy'], 'body': r['department'],
                                                'title': r['title'], 'page': r['page']})
     return out
 
@@ -239,7 +373,7 @@ def contact_by_slug():
     out = {}
     for r in read_csv('school-staff-directory.csv'):
         if r.get('email') and r.get('person'):
-            out.setdefault(person_slug(r['person']), {
+            out.setdefault(person_slug(r['person'], 2027), {
                 'email': r['email'], 'title': r['title'], 'school': r['school'],
                 'fetched': r['fetched'], 'publisher': 'Lunenburg Public Schools staff directory',
                 'source_url': r['source']})
@@ -352,9 +486,9 @@ def mentions(people):
     db = sqlite3.connect('file:%s?mode=ro' % FTS, uri=True)
     total = db.execute("SELECT COUNT(*) FROM doc WHERE corpus='document'").fetchone()[0]
     out = {}
-    titles = {slug: title for slug, title in _identity().values()}
+    names_of = titles()
     for s, p in people.items():
-        name = titles.get(s) or p['names'].most_common(1)[0][0]
+        name = names_of.get(s) or p['names'].most_common(1)[0][0]
         toks = [t for t in re.split(r'[^A-Za-z0-9]+', name) if t]
         if len(toks) < 2:
             continue
@@ -419,7 +553,8 @@ def build():
                 by_key[('*', t[-1], t[0])].add(s)
 
     index, pages = [], {}
-    titles = {slug: title for slug, title in _identity().values()}
+    ident = _identity()
+    titles = ident['titles']
     for s, p in sorted(people.items()):
         name = titles.get(s) or p['names'].most_common(1)[0][0]
         rows = sorted(p['rows'], key=lambda r: (r['fy'], r['unit']))
@@ -464,7 +599,7 @@ def build():
                  if (latest.get('subunit') or '') == (r.get('subunit') or '')]
         if len(scope) > 30:
             shown = [r for r in scope if r['tier'] in ('0', '1', '2')
-                     or person_slug(r['person'] or '') == s]
+                     or person_slug(r['person'] or '', r['fy']) == s]
         else:
             shown = scope
         sit = {
@@ -472,8 +607,8 @@ def build():
             'total': len(scope),
             'rows': [{'person': ' '.join((r['person'] or '').split()), 'role': r['role'],
                       'tier': r['tier'], 'status': r['status'],
-                      'slug': person_slug(r['person']) if r['person'] and r['status'] == 'filled' else '',
-                      'me': person_slug(r['person'] or '') == s}
+                      'slug': person_slug(r['person'], r['fy']) if r['person'] and r['status'] == 'filled' else '',
+                      'me': person_slug(r['person'] or '', r['fy']) == s}
                      for r in sorted(shown, key=lambda r: (r['tier'], r['role'] or '', r['person'] or ''))],
             'others_by_tier': dict(collections.Counter(r['tier'] for r in scope if r not in shown)),
             'chart_url': '/org-charts?unit=%s&fy=%s&person=%s' % (_q(latest['unit']), latest['fy'], _q(latest['person'])),
@@ -507,6 +642,11 @@ def build():
             if len(t) >= 2:
                 aliases |= by_key[(r['unit'], t[-1], t[0][0])] | by_key[('*', t[-1], t[0])]
         aliases.discard(s)
+        # Two people somebody has told us apart are not "possibly the same" (CONFIRMED_DISTINCT).
+        me = ident['people'].get(s, {})
+        distinct = sorted(a for a in aliases
+                          if me.get('confirmed') and ident['people'].get(a, {}).get('confirmed') is me['confirmed'])
+        aliases -= set(distinct)
 
         indexed = any(k in PUBLIC_OFFICE for k in kinds)
         page = {
@@ -531,6 +671,12 @@ def build():
             'sits': sit,
             'possibly_same': sorted(aliases),
         }
+        if me.get('joined'):
+            page['joined'] = True
+        if distinct:
+            # Printed under the same name, and NOT the same person: what was said, by whom, when.
+            page['distinct_from'] = {'people': distinct, 'who': me['confirmed']['who'],
+                                     'by': me['confirmed']['by'], 'told': me['confirmed']['told']}
         pages[s] = page
         index.append({'slug': s, 'name': name, 'indexed': indexed, 'kinds': kinds,
                       'role': latest['role'], 'unit': latest['unit'], 'fy': latest['fy']})
@@ -553,21 +699,57 @@ def build():
                         other.setdefault(fy, names[a])
             sv['printed_as_other'] = dict(sorted(other.items()))
         page['possibly_same'] = [{'slug': a, 'name': names[a]} for a in page['possibly_same']]
+        if 'distinct_from' in page:
+            page['distinct_from']['people'] = [{'slug': a, 'name': names[a]}
+                                               for a in page['distinct_from']['people']]
 
     # EVERY ADDRESS THE CHART LINKS, answered. A printed form that is not its page's own
-    # slug (`a-dam-burney`, `stevenson-warren`) is an alias of the page; one that names no
-    # person (`primary-office`) says so rather than 404.
-    aliases = {}
+    # slug (`a-dam-burney`, `stevenson-warren`, and since 3 November 2026 every form joined
+    # into a fuller one: `mrs-barbara-s-curtis`) is an alias of the page; one that names no
+    # person (`primary-office`) says so rather than 404. The cleaned form's address is
+    # answered too, because that is what a page was titled with before a join retired it.
+    #
+    # ONE PRINTED NAME CAN BE TWO PEOPLE (CONFIRMED_DISTINCT). Its address then answers with
+    # the latest person and `fy_alias`, the years that name meant somebody else; the chart
+    # links `/people/<slug>?fy=<year>`, and the page follows `fy_alias` for that year.
+    by_year = collections.defaultdict(dict)   # address -> {fy: slug or ''}
+    first_seen = {}
     for r in org['rows']:
         raw = ' '.join((r.get('person') or '').split())
-        if r.get('status') != 'filled' or not raw or not slug_for(raw) or slug_for(raw) in pages:
+        if r.get('status') != 'filled' or not raw:
             continue
-        to = person_slug(raw)
-        aliases[slug_for(raw)] = ({'generated_by': 'scripts/build_people.py', 'printed': raw,
-                                   'alias_of': to, 'name': names[to]} if to in names else
-                                  {'generated_by': 'scripts/build_people.py', 'printed': raw,
-                                   'not_a_person': True,
-                                   'chart_url': '/org-charts?unit=%s&fy=%s' % (_q(r['unit']), r['fy'])})
+        for form in (raw, clean_name(raw)):
+            a = slug_for(form) if form else ''
+            if a:
+                by_year[a][r['fy']] = person_slug(raw, r['fy'])
+                first_seen.setdefault(a, (raw, r))
+    aliases = {}
+    # ADDRESSES A FIX RETIRED, which no printed form produces any more but which were live
+    # pages: each still answers, as an alias of the page the name now belongs to.
+    for a, printed in RETIRED.items():
+        to = person_slug(printed)
+        if a not in pages and a not in by_year and to in names:
+            aliases[a] = {'generated_by': 'scripts/build_people.py', 'printed': printed,
+                          'alias_of': to, 'name': names[to], 'retired': True}
+    for a, ys in sorted(by_year.items()):
+        real = {fy: t for fy, t in ys.items() if t in names}
+        if a in pages:
+            other = {fy: t for fy, t in sorted(real.items()) if t != a}
+            if other:
+                pages[a]['fy_alias'] = other
+            continue
+        raw, r = first_seen[a]
+        if not real:
+            aliases[a] = {'generated_by': 'scripts/build_people.py', 'printed': raw,
+                          'not_a_person': True,
+                          'chart_url': '/org-charts?unit=%s&fy=%s' % (_q(r['unit']), r['fy'])}
+            continue
+        to = real[max(real)]
+        aliases[a] = {'generated_by': 'scripts/build_people.py', 'printed': raw,
+                      'alias_of': to, 'name': names[to]}
+        other = {fy: t for fy, t in sorted(real.items()) if t != to}
+        if other:
+            aliases[a]['fy_alias'] = other
 
     idx = {'generated_by': 'scripts/build_people.py',
            'about': 'One page per name the org charts hold. `indexed` is false for employees: '
@@ -576,6 +758,9 @@ def build():
                       'votes_named': vstats['named'], 'votes_attributed': vstats['attributed'],
                       'documents_searched': corpus,
                       'aliases': sum(1 for a in aliases.values() if 'alias_of' in a),
+                      'joined': sum(1 for x in index if ident['people'][x['slug']]['joined']),
+                      'split_by_run': sum(1 for x in index if ident['people'][x['slug']]['split']),
+                      'kept_apart': len(ident['kept_apart']),
                       'not_a_person': sum(1 for a in aliases.values() if 'not_a_person' in a)},
            'people': index}
     return idx, pages, aliases, vstats

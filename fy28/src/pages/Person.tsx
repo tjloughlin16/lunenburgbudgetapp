@@ -31,7 +31,9 @@ type Vote = {
   as_printed: string; motion: string; outcome: string; procedural: boolean; url: string | null
 }
 /** A printed form that is not a page's own address. */
-type Alias = { printed: string; alias_of?: string; name?: string; not_a_person?: boolean; chart_url?: string }
+type Alias = { printed: string; alias_of?: string; name?: string; not_a_person?: boolean; chart_url?: string
+  /** The years this printed name meant somebody else: one name, two people. */
+  fy_alias?: Record<string, string> }
 type SitRow = { person: string; role: string; tier: string; status: string; slug: string; me: boolean }
 type Page = {
   slug: string; name: string; spellings: string[]; indexed: boolean; kinds: string[]
@@ -51,6 +53,11 @@ type Page = {
   sits: { unit: string; subunit: string; fy: string; total: number; rows: SitRow[]
     others_by_tier: Record<string, number>; chart_url: string }
   possibly_same: { slug: string; name: string }[]
+  /** Forms joined into this page by the shared run rule (scripts/person_identity.py). */
+  joined?: boolean
+  /** Printed under the same name and NOT the same person, as somebody told us. */
+  distinct_from?: { people: { slug: string; name: string }[]; who: string; by: string; told: string }
+  fy_alias?: Record<string, string>
 }
 
 /** /people/<slug>, or null. */
@@ -136,6 +143,14 @@ export function Person() {
     fetch(`/data/people/${slug}.json`)
       .then(r => { if (!r.ok) throw new Error(`no page for /people/${slug}`); return r.json() })
       .then((j: Page & Alias) => {
+        // ONE PRINTED NAME, TWO PEOPLE: the chart links `?fy=`, and that year's person wins.
+        const fy = new URLSearchParams(window.location.search).get('fy')
+        const other = fy ? j.fy_alias?.[fy] : undefined
+        if (other) {
+          window.history.replaceState(null, '', `/people/${other}`)
+          setSlug(other)
+          return
+        }
         // Another printing of somebody's name: go to their page, and say so there.
         if (j.alias_of) {
           window.history.replaceState(null, '', `/people/${j.alias_of}`)
@@ -198,8 +213,14 @@ export function Person() {
               {p.possibly_same.map((a, i) => <span key={a.slug}>{i ? ', ' : ''}<a className="underline" style={link} href={`/people/${a.slug}`}>{a.name}</a></span>)}
               <span style={muted}> &mdash; a name printed two ways. Nothing here proves it is one person or two.</span></p>
           )}
+          {p.distinct_from && (
+            <p className="mt-1">Not the same person as{' '}
+              {p.distinct_from.people.map((a, i) => <span key={a.slug}>{i ? ', ' : ''}<a className="underline" style={link} href={`/people/${a.slug}`}>{a.name}</a></span>)}
+              <span style={muted}> &mdash; {p.distinct_from.who}, as {p.distinct_from.by} told us on {p.distinct_from.told}. No document held says so.</span></p>
+          )}
           {p.spellings.length > 0 && (
-            <p className="mt-1" style={muted}>Printed as {p.spellings.join(' · ')}.</p>
+            <p className="mt-1" style={muted}>Printed as {p.spellings.join(' · ')}.{p.joined
+              ? ' Matched as one name with titles, middle initials and a bracketed maiden name set aside, within one unbroken run of rosters; our rule, not the town’s.' : ''}</p>
           )}
         </div>
       }>

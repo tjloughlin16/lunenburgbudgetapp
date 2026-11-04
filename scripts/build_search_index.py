@@ -698,13 +698,13 @@ def _fy_span(fys):
 
 
 def person_rows(entry):
-    from build_people import person_slug, clean_name, _identity
-    titles = {slug: title for slug, title in _identity().values()}
+    from build_people import person_slug, clean_name, titles as person_titles
+    titles = person_titles()
     rows = json.load(open(entry['file'], encoding='utf-8'))['rows']
     people = {}
     for r in rows:
         name = ' '.join((r.get('person') or '').split())
-        key = person_slug(name) if r.get('status') == 'filled' and name else ''
+        key = person_slug(name, r['fy']) if r.get('status') == 'filled' and name else ''
         if not key:
             continue
         # THE PERSON PAGE'S IDENTITY, so a result and the page it opens agree on who a
@@ -753,7 +753,8 @@ CORPORA = ('post', 'page', 'job', 'person', 'recorded', 'source', 'minutes', 'tr
 # fingerprint, so the index re-reads the file and sync_search_d1.py re-sends it -- both
 # decide on that field alone, and a reader change with unchanged bytes reached neither.
 # person 2: keyed on the person page's slug and linking it (26 October 2026).
-READER_VERSION = {'person': '3'}
+# person 4: printed forms joined by the shared run rule, person_identity.py (3 November 2026).
+READER_VERSION = {'person': '4'}
 
 READERS = {
     'job': job_rows,

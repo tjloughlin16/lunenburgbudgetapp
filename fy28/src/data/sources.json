@@ -2837,9 +2837,9 @@
      "stars": 2,
      "what": "The bucket forbids deletion for ten years and cannot be listed, so a document that leaves the manifest — usually a rename — leaves an object behind that nothing can find or remove. This register names each one, matched by sha256 rather than by name, and says `superseded_by` where the same bytes are held under another key. That is the only remedy there is.",
      "kind": "Data",
-     "bytes": 8429,
+     "bytes": 9774,
      "url": "/docs/data/archive-orphans.csv",
-     "count": 18,
+     "count": 22,
      "unit": "rows",
      "textUrl": "/docs/data/archive-orphans.csv"
     },
@@ -3023,7 +3023,7 @@
      "stars": 1,
      "what": "Written by us. One row per document we stopped serving after it was public: the key, its sha256, the reason, who decided and when, and its state -- `stopped serving` (the address answers 410 Gone with the reason), then `deleted` once the object is removed from the bucket and confirmed gone by listing. Kept by scripts/takedown.py.",
      "kind": "Data",
-     "bytes": 4582,
+     "bytes": 4590,
      "url": "/docs/data/takedowns.csv",
      "count": 7,
      "unit": "rows",
@@ -3430,7 +3430,7 @@
      "stars": 3,
      "what": "Every annual town report held, 1959 to FY2025, read for what it says across all of them: the tax rate on each fact page and the revaluations beside its falls, the population by census, the longest runs of a name on the town’s officers and staff lists and on the school rosters, and the road from a 1966 study to a town manager. Generated, with edition and page for every figure, by scripts/build_historical_report.py.",
      "kind": "Notes",
-     "bytes": 51772,
+     "bytes": 51791,
      "url": "/docs/analyses/historical-report.md",
      "count": 320,
      "unit": "lines",
@@ -3850,9 +3850,9 @@
      "stars": 2,
      "what": "One row per person per role per year, assembled from four readings of the annual reports: the officials listing for boards and appointed posts, the Police and Fire rosters, the four schools’ rosters, and the departments that name their staff in prose. `status` keeps PEOPLE and POSTS apart — `filled` is a named person, `vacant` is a seat the town prints as empty, and `post` is an establishment position a department states without ever saying who fills it, which is how the DPW and the Assessing office publish. Building it was a test of the data model rather than a presentation of it, and it found seven classes of defect nothing that COUNTS things had: a listing footnote read as a post, sub-headings promoted to bodies, and one post under four spellings. Rendered at /org-charts.",
      "kind": "Data",
-     "bytes": 962248,
+     "bytes": 2447791,
      "url": "/docs/data/org-chart.csv",
-     "count": 7185,
+     "count": 15558,
      "unit": "rows",
      "textUrl": "/docs/data/org-chart.csv"
     },
@@ -3941,14 +3941,26 @@
      "textUrl": "/docs/data/tax-collection.csv"
     },
     {
+     "path": "data/tenure.csv",
+     "title": "How long each person stayed, by body and year",
+     "stars": 2,
+     "what": "One row per person per body. Named only for boards and appointed officers; for school and department EMPLOYEES the name and role are blank, because a career history per employee is ours to withhold. Each row: the first and last year the name appears, how many years the BODY published in between, the years inside that span it published nothing, and whether they are CENSORED at either edge of the archive. Half of them are: somebody in a body’s first published year began before FY2011 and nothing here can say when, and somebody in its last is still there as far as this can see — so their tenure is a LOWER BOUND, not a length. Identity is surname plus first initial within one body, which merges `Josh`/`Joshua Tocci` and `Steve`/`Stephen McKenna`; the 79 pairs that choice joins are printed on every run and are nicknames rather than collisions.",
+     "kind": "Data",
+     "bytes": 221485,
+     "url": "/docs/data/tenure.csv",
+     "count": 3583,
+     "unit": "rows",
+     "textUrl": "/docs/data/tenure.csv"
+    },
+    {
      "path": "data/town-personnel.csv",
      "title": "Every town post and who held it, FY2022 to FY2025",
      "stars": 2,
      "what": "Read out of the ELECTED OFFICIALS and APPOINTED OFFICIALS listing in each annual report: every board and appointed post, its holders and their term-expiry years. Split the town’s own way — elected board seat, appointed board seat, appointed officer — from the section header and from whether the post states a membership. `size_check` splits the rows three ways against the size each heading states, and nothing may be counted without splitting on it.",
      "kind": "Data",
-     "bytes": 206852,
+     "bytes": 207107,
      "url": "/docs/data/town-personnel.csv",
-     "count": 2159,
+     "count": 2161,
      "unit": "rows",
      "textUrl": "/docs/data/town-personnel.csv"
     },
@@ -3999,18 +4011,6 @@
      "count": 1032,
      "unit": "rows",
      "textUrl": "/docs/data/debt-repayment-detail.csv"
-    },
-    {
-     "path": "data/tenure.csv",
-     "title": "How long each person stayed, by body and year",
-     "stars": 2,
-     "what": "One row per person per body. Named only for boards and appointed officers; for school and department EMPLOYEES the name and role are blank, because a career history per employee is ours to withhold. Each row: the first and last year the name appears, how many years the BODY published in between, the years inside that span it published nothing, and whether they are CENSORED at either edge of the archive. Half of them are: somebody in a body’s first published year began before FY2011 and nothing here can say when, and somebody in its last is still there as far as this can see — so their tenure is a LOWER BOUND, not a length. Identity is surname plus first initial within one body, which merges `Josh`/`Joshua Tocci` and `Steve`/`Stephen McKenna`; the 79 pairs that choice joins are printed on every run and are nicknames rather than collisions.",
-     "kind": "Data",
-     "bytes": 124214,
-     "url": "/docs/data/tenure.csv",
-     "count": 1975,
-     "unit": "rows",
-     "textUrl": "/docs/data/tenure.csv"
     },
     {
      "path": "data/dese-grant-opportunities.csv",
@@ -4229,6 +4229,18 @@
      "textUrl": "/docs/data/teacher-pay-distribution.csv"
     },
     {
+     "path": "data/turnover.csv",
+     "title": "How many names stop appearing, by body and year",
+     "stars": 2,
+     "what": "One row per body per published year: the people in it, how many of them are absent from the NEXT year the body published, and the rate. MEASURED ACROSS PUBLISHED YEARS, never calendar years, because half the bodies skip a year inside their own span and a naive count reads a missed report as the whole staff leaving and returning. A NAME LEAVING A ROSTER IS A NAME LEAVING A ROSTER: not a resignation, a retirement or a cut post, and not a separation rate.",
+     "kind": "Data",
+     "bytes": 26694,
+     "url": "/docs/data/turnover.csv",
+     "count": 507,
+     "unit": "rows",
+     "textUrl": "/docs/data/turnover.csv"
+    },
+    {
      "path": "analyses/fy26-closeout-town.md",
      "title": "FY26 on the town side, as the books stood in June",
      "stars": 2,
@@ -4299,18 +4311,6 @@
      "count": 199,
      "unit": "lines",
      "textUrl": "/docs/analyses/spending-what-comes-in.md"
-    },
-    {
-     "path": "data/turnover.csv",
-     "title": "How many names stop appearing, by body and year",
-     "stars": 2,
-     "what": "One row per body per published year: the people in it, how many of them are absent from the NEXT year the body published, and the rate. MEASURED ACROSS PUBLISHED YEARS, never calendar years, because half the bodies skip a year inside their own span and a naive count reads a missed report as the whole staff leaving and returning. A NAME LEAVING A ROSTER IS A NAME LEAVING A ROSTER: not a resignation, a retirement or a cut post, and not a separation rate.",
-     "kind": "Data",
-     "bytes": 23839,
-     "url": "/docs/data/turnover.csv",
-     "count": 456,
-     "unit": "rows",
-     "textUrl": "/docs/data/turnover.csv"
     },
     {
      "path": "data/board-chairs.csv",
@@ -7354,9 +7354,9 @@
      "stars": 3,
      "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
      "kind": "Data",
-     "bytes": 828131,
+     "bytes": 830969,
      "url": "/docs/data/agentic-spend.csv",
-     "count": 11940,
+     "count": 11981,
      "unit": "rows",
      "textUrl": "/docs/data/agentic-spend.csv"
     },
@@ -63475,7 +63475,7 @@
  "totals": {
   "documents": 5716,
   "groups": 32,
-  "bytes": 7336070435,
+  "bytes": 7337660569,
   "loadBearing": 218
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 24 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

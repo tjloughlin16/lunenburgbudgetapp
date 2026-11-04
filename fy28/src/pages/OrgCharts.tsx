@@ -71,7 +71,7 @@ function Name({ r }: { r: Row }) {
         ? <span style={{ color: 'var(--text-muted)', fontStyle: 'italic' }}
             title="On the district’s master staff list, but not on this school’s own staff sheet. The school’s own list is taken as the authority.">{r.person}</span>
         : r.person && r.status === 'filled'
-          ? <a href={`/people/${personSlug(r.person)}`} className="hover:underline" style={marked
+          ? <a href={`/people/${personSlug(r.person)}?fy=${r.fy}`} className="hover:underline" style={marked
               ? { fontWeight: 700, background: 'var(--surface-2, rgba(0,0,0,.06))', padding: '1px 5px', borderRadius: 4, color: 'inherit' }
               : { color: 'inherit' }}>{r.person}</a>
           : r.person || (r.status === 'vacant' ? 'vacant' : '\u2014 unnamed post \u2014')}
