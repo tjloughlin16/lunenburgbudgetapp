@@ -1,7 +1,7 @@
 ---
 status: open
 updated: 2026-11-04
-next: step 4, sort the FY2011-FY2025 catalogue entries (quoted 4 Nov: 15 runs, ~1-2% of a week)
+next: the 166 gaps in annual-report-catalogue-sort.csv -- settle the 7 split families, then pick what to extract; or step 3, the list survey
 ---
 
 # Plan: everything the annual reports print, in the database
@@ -96,8 +96,14 @@ up at **Next** 2.
    `extract_report_index.py` now pairs such a page by geometry, skew measured from its own
    `DEPARTMENTS ... PAGES` header: 33 of 33 agree with Textract, every other year is unchanged,
    and the three names whose numbers we did not read are kept as `page number not read`.
-3. **Step 4: sort the 866 FY2011-FY2025 catalogue entries.** Start with the 287 on pages no
-   dataset reads.
+3. ~~**Step 4: sort the catalogue entries on pages no dataset reads**~~ **FIRST PASS DONE 4
+   November 2026** (`scripts/sort_catalogue.py`, 18 Sonnet runs, $1.83). Read the counts from
+   `sources/data/annual-report-catalogue-sort.csv`, not from here. The scanner was blind to
+   three datasets (`town-meeting-votes`, `receivables`, `gross-wages`) and now sees them;
+   a vote counts only for an article-vote table. OPEN: seven table families get different
+   verdicts in different years (`sort_catalogue.py --consistency` lists them), and every
+   verdict was judged from the catalogue's description, not the page. The 578 entries on
+   pages a dataset DOES read are not sorted: a read page can hold an unread table.
 4. **Step 3: the list survey** (licences, dogs, births, committees). The officials and staff
    lists are already done. This is ingest work, so isolated agents; quote it first.
 5. **Two Monty Tech pages to read by eye** (`/monty-tech/monty-tech-history`, 2 November 2026):

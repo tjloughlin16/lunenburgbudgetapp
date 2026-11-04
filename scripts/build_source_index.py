@@ -3519,6 +3519,13 @@ GROUPS = [
              'headings differ between years and that is precisely what defeats a search. '
              'The cross-year grouping is a hypothesis about which tables are the same '
              'table, not a fact.'),
+            ('data/annual-report-catalogue-sort.csv',
+             'Which catalogued tables we hold nothing of, and whether each is worth taking', 2,
+             'Written by us. For every FY2011-FY2025 catalogue entry on a page no dataset '
+             'reads, one verdict: a real gap, prose, a repeat of a table we hold, or deferred '
+             'to the list survey. Judged by a model from the catalogue\u2019s description of the '
+             'table (scripts/sort_catalogue.py), not from the page: a gap is a judgement that '
+             'we hold none of it, not proof that the town printed it.'),
             ('data/annual-report-contents.csv',
              'What each report contains, section by section', 1,
              '199 rows. The shape of the document rather than the town\u2019s figures.'),

@@ -8,19 +8,42 @@
 |---|---:|---:|
 | pages | 6,246 | 2,751 |
 | tables found | 3,696 | 866 catalogued |
-| tables with a decision | 3,696 | **not sorted yet** (step 4) |
+| tables with a decision | 3,696 | 249 of the 268 on no read page (step 4) |
 | tables in a dataset | 3,336 | not known at table grain |
 | tables whose dataset is in the database | 3,336 | not known at table grain |
-| **tables looked at and NOT in a dataset** | **360** | **866** catalogued, unsorted |
-| catalogued tables on a page some dataset reads (page-level proxy) | | 578 of 866 |
+| **tables looked at and NOT in a dataset** | **360** | **166** judged `gap` from the description (step 4) |
+| catalogued tables on a page some dataset reads (page-level proxy) | | 598 of 866 |
 | named lists found (officers, staff, licences ...) | not surveyed yet (step 3) | not surveyed yet (step 3) |
 
 - **360 of 3,696 tables in the 1959-2010 editions are not in any dataset.** Each was looked at by eye and its reason is in that edition's `map.csv` `note`, beginning `NOT LANDED`.
-- **None of the 866 tables catalogued in FY2011-FY2025 has been sorted** into a repeat of a table already read, prose, or a real gap. 288 of them sit on a page no dataset has a row from, and those are the first place to look.
-- **All 93 datasets holding report rows are in the database.**
+- **268 of the 866 tables catalogued in FY2011-FY2025 sit on a page no dataset has a row from.** Step 4 (`scripts/sort_catalogue.py`) sorted them from the catalogue's descriptions, not from the pages: 166 gap, 5 repeat, 78 prose, 1 unsure, 18 deferred-to-list-survey. A `gap` is a judgement that nothing we hold looks like the table, not proof that the figures are absent. The other 598, on pages some dataset reads, are not sorted table by table.
+- **2 of 96 datasets holding report rows are not in the database:** `gross-wages` (3,715 rows), `town-meeting-votes` (483 rows).
 - **Lists are not counted yet.** Most years print officers and staff as running text, not tables, and every survey so far looked for tables. `lists_found` and `lists_in_dataset` are empty in the edition CSV until the list survey (step 3) runs.
 
 The proxy row is page grain, not table grain: a catalogued table counts if ANY dataset holds a row from ANY of its pages, so it is an upper bound on what has been read, never a count of tables read.
+
+## The FY catalogue entries on no read page, sorted (step 4)
+
+One row per edition. Each entry's verdict, dataset and one-line reason is in `sources/data/annual-report-catalogue-sort.csv`, written by `scripts/sort_catalogue.py`: one `claude -p` call per edition, judging from the catalogue's description against our dataset names and pages, never from the page. Lists of people are `deferred-to-list-survey` by a fixed rule, for step 3. `gap` means nothing we hold looks like it; where a dataset is the same family for other years, the CSV names it.
+
+| edition | on no read page | gap | repeat | prose | unsure | deferred-to-list-survey | not sorted |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| FY2011 | 19 | 12 | 0 | 5 | 0 | 2 | 0 |
+| FY2012 | 17 | 11 | 0 | 5 | 0 | 1 | 0 |
+| FY2013 | 23 | 10 | 0 | 12 | 0 | 1 | 0 |
+| FY2014 | 20 | 11 | 0 | 7 | 0 | 2 | 0 |
+| FY2015 | 15 | 9 | 0 | 5 | 0 | 1 | 0 |
+| FY2016 | 18 | 12 | 1 | 4 | 0 | 1 | 0 |
+| FY2017 | 20 | 13 | 0 | 6 | 0 | 1 | 0 |
+| FY2018 | 22 | 13 | 1 | 6 | 0 | 2 | 0 |
+| FY2019 | 19 | 14 | 0 | 3 | 1 | 1 | 0 |
+| FY2020 | 12 | 7 | 0 | 4 | 0 | 1 | 0 |
+| FY2021 | 18 | 10 | 1 | 6 | 0 | 1 | 0 |
+| FY2022 | 17 | 10 | 0 | 6 | 0 | 1 | 0 |
+| FY2023 | 10 | 6 | 0 | 3 | 0 | 1 | 0 |
+| FY2024 | 12 | 9 | 1 | 2 | 0 | 0 | 0 |
+| FY2025 | 26 | 19 | 1 | 4 | 0 | 2 | 0 |
+| **all** | **268** | **166** | **5** | **78** | **1** | **18** | **0** |
 
 ## Every dataset the reports feed, and whether its figures are checked
 
@@ -38,6 +61,7 @@ The proxy row is page grain, not table grain: a catalogued table counts if ANY d
 | `special-revenue-funds` | yes | 4,532 | 19 / 15 | 3,018 | 1,368 | 146 |
 | `report-elections` | yes | 3,863 | 27 / 15 | 1,664 | 1,725 | 474 |
 | `report-fund-balance-sheets` | yes | 3,720 | 28 / 0 | 2,275 | 0 | 1,445 |
+| `gross-wages` | no **NOT IN DB** | 3,715 | 0 / 13 | 612 | 0 | 3,103 |
 | `report-debt` | yes | 3,533 | 50 / 8 | 2,876 | 315 | 342 |
 | `report-vital-records` | yes | 2,311 | 16 / 14 | 0 | 0 | 2,311 |
 | `report-dept-activity` | yes | 2,264 | 34 / 15 | 15 | 0 | 2,249 |
@@ -58,9 +82,11 @@ The proxy row is page grain, not table grain: a catalogued table counts if ANY d
 | `report-school-lunch` | yes | 668 | 21 / 0 | 370 | 41 | 257 |
 | `report-school-budget-summary` | yes | 660 | 27 / 0 | 450 | 0 | 210 |
 | `report-treasurers-cash-reconciliation` | yes | 545 | 47 / 0 | 519 | 15 | 11 |
+| `town-meeting-votes` | no **NOT IN DB** | 483 | 0 / 15 | - | - | - |
 | `trust-fund-matrix` | yes | 462 | 0 / 1 | - | - | - |
 | `report-school-staff-fte` | yes | 450 | 28 / 0 | 186 | 0 | 264 |
 | `report-school-state-aid` | yes | 378 | 27 / 0 | 283 | 0 | 95 |
+| `receivables` | yes | 319 | 0 / 8 | - | - | - |
 | `report-proposed-salary-schedule` | yes | 302 | 7 / 0 | 0 | 0 | 302 |
 | `report-revenue-sharing` | yes | 291 | 14 / 0 | 86 | 6 | 199 |
 | `capital-plans` | yes | 265 | 5 / 9 | 265 | 0 | 0 |
@@ -121,7 +147,7 @@ The proxy row is page grain, not table grain: a catalogued table counts if ANY d
 | `report-office-budget-cuts` | yes | 4 | 1 / 0 | 4 | 0 | 0 |
 | `report-energy-use` | yes | 3 | 1 / 0 | 0 | 0 | 3 |
 | `report-per-capita-comparison` | yes | 3 | 1 / 0 | 0 | 0 | 3 |
-| **total** | | **130,370** | | **50,008** | **11,240** | **28,410** |
+| **total** | | **134,887** | | **50,620** | **11,240** | **31,513** |
 
 ## Registers and files about the reading
 
@@ -145,6 +171,7 @@ Not data the reports print, and listed so that nothing disappears. A register re
 | `dataset-provenance` | about the reading | 711 | no |
 | `extraction-plan` | about the reading | 555 | yes |
 | `report-anomalies` | about the reading | 521 | yes |
+| `annual-report-catalogue-sort` | about the reading | 268 | no |
 | `page-blocked` | about the reading | 174 | no |
 | `stabilization-pages` | about the reading | 65 | no |
 | `document-defects` | about the reading | 10 | no |
@@ -206,21 +233,21 @@ Not data the reports print, and listed so that nothing disappears. A register re
 | 2008 | 112 | 33 (33 / 0) | 88 | 80 | 8 | 80 | 21 |  |
 | 2009 | 92 | 29 (25 / 4) | 73 | 61 | 12 | 61 | 20 |  |
 | 2010 | 100 | 30 (19 / 11) | 102 | 81 | 21 | 81 | 24 |  |
-| FY2011 | 101 | 29 (29 / 0) | 55 catalogued | - | - | - | 28 |  |
-| FY2012 | 116 | 28 (28 / 0) | 64 catalogued | - | - | - | 25 |  |
-| FY2013 | 97 | 31 (31 / 0) | 58 catalogued | - | - | - | 26 |  |
-| FY2014 | 175 | 28 (28 / 0) | 64 catalogued | - | - | - | 28 |  |
-| FY2015 | 215 | 33 (33 / 0) | 60 catalogued | - | - | - | 34 |  |
-| FY2016 | 221 | 47 (45 / 2) | 71 catalogued | - | - | - | 33 |  |
-| FY2017 | 201 | 32 (32 / 0) | 64 catalogued | - | - | - | 34 |  |
-| FY2018 | 257 | 42 (42 / 0) | 62 catalogued | - | - | - | 32 |  |
-| FY2019 | 206 | 39 (39 / 0) | 55 catalogued | - | - | - | 32 |  |
-| FY2020 | 216 | 41 (41 / 0) | 46 catalogued | - | - | - | 31 |  |
-| FY2021 | 170 | 37 (37 / 0) | 56 catalogued | - | - | - | 31 |  |
-| FY2022 | 194 | 41 (41 / 0) | 56 catalogued | - | - | - | 32 |  |
-| FY2023 | 200 | 35 (34 / 1) | 42 catalogued | - | - | - | 26 |  |
-| FY2024 | 195 | 28 (28 / 0) | 44 catalogued | - | - | - | 28 |  |
-| FY2025 | 187 | 23 (23 / 0) | 69 catalogued | - | - | - | 30 |  |
+| FY2011 | 101 | 29 (29 / 0) | 55 catalogued | - | - | - | 30 | `gross-wages`, `town-meeting-votes` |
+| FY2012 | 116 | 28 (28 / 0) | 64 catalogued | - | - | - | 26 | `town-meeting-votes` |
+| FY2013 | 97 | 31 (31 / 0) | 58 catalogued | - | - | - | 27 | `town-meeting-votes` |
+| FY2014 | 175 | 28 (28 / 0) | 64 catalogued | - | - | - | 30 | `gross-wages`, `town-meeting-votes` |
+| FY2015 | 215 | 33 (33 / 0) | 60 catalogued | - | - | - | 36 | `gross-wages`, `town-meeting-votes` |
+| FY2016 | 221 | 47 (45 / 2) | 71 catalogued | - | - | - | 36 | `gross-wages`, `town-meeting-votes` |
+| FY2017 | 201 | 32 (32 / 0) | 64 catalogued | - | - | - | 37 | `gross-wages`, `town-meeting-votes` |
+| FY2018 | 257 | 42 (42 / 0) | 62 catalogued | - | - | - | 35 | `gross-wages`, `town-meeting-votes` |
+| FY2019 | 206 | 39 (39 / 0) | 55 catalogued | - | - | - | 34 | `gross-wages`, `town-meeting-votes` |
+| FY2020 | 216 | 41 (41 / 0) | 46 catalogued | - | - | - | 34 | `gross-wages`, `town-meeting-votes` |
+| FY2021 | 170 | 37 (37 / 0) | 56 catalogued | - | - | - | 34 | `gross-wages`, `town-meeting-votes` |
+| FY2022 | 194 | 41 (41 / 0) | 56 catalogued | - | - | - | 35 | `gross-wages`, `town-meeting-votes` |
+| FY2023 | 200 | 35 (34 / 1) | 42 catalogued | - | - | - | 29 | `gross-wages`, `town-meeting-votes` |
+| FY2024 | 195 | 28 (28 / 0) | 44 catalogued | - | - | - | 31 | `gross-wages`, `town-meeting-votes` |
+| FY2025 | 187 | 23 (23 / 0) | 69 catalogued | - | - | - | 32 | `gross-wages`, `town-meeting-votes` |
 
 ## Why 1959-2010 tables were not landed, by what the map calls them
 
@@ -262,5 +289,5 @@ The `name` the map gives each NOT LANDED table, grouped; the reason for each tab
 - **FY2011-FY2025:** `annual-report-catalogue.csv` is the end-to-end survey. It records what exists, and nothing maps its entries to datasets yet.
 - **A dataset is fed by the reports** when at least one of its rows names an edition, by its `edition` column or a document column naming an annual town report. `report-filing` is DERIVED from the contents pages and names no edition, so it is not counted here; it is in the database.
 - **In the database** means `sources/data/lunenburg.db` has a table of that name. `build_db.py` refuses to build if a `report-*.csv` is neither loaded nor excluded with a reason.
-- **A matcher that finds nothing is a statement about the matcher** (rule 13c). A table counted as not landed was looked at and declined by eye, with the reason written down; a catalogued FY table counted as unsorted has simply not been looked at yet, and is not evidence that it is unread.
+- **A matcher that finds nothing is a statement about the matcher** (rule 13c). A table counted as not landed was looked at and declined by eye, with the reason written down; a catalogued FY table counted as not sorted has simply not been looked at yet, and is not evidence that it is unread.
 

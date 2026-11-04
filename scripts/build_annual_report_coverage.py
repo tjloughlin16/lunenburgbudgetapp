@@ -30,9 +30,12 @@ WHAT IS COUNTED, AND WHERE EACH NUMBER COMES FROM -- nothing on the page is type
                    with the reason in `note`. The script REFUSES if the two disagree on which
                    tables exist, because then "every table has a decision" would be false.
   FY2011-FY2025    sources/data/annual-report-catalogue.csv, the end-to-end survey. It has no
-                   table-to-dataset mapping (step 4 of the plan builds one), so the page says
-                   so rather than inventing one. What it does give, LABELLED AS A PAGE-LEVEL
+                   table-to-dataset mapping. What it does give, LABELLED AS A PAGE-LEVEL
                    PROXY: how many catalogued tables sit on a page some dataset has rows from.
+                   The entries on NO such page are sorted by step 4 (scripts/sort_catalogue.py)
+                   into sources/data/annual-report-catalogue-sort.csv -- repeat / prose / gap /
+                   unsure / deferred-to-list-survey -- and `tables_decided` counts the first
+                   three, joined on (edition, name, pages) while the entry is still unread.
   datasets         every top-level sources/data/*.csv, each row attributed to an edition by its
                    `edition` column, else by a document column naming an annual town report,
                    else by the year column named in YEAR_COLUMN. A dataset is "fed by the
@@ -62,10 +65,12 @@ DB = os.path.join(DATA, 'lunenburg.db')
 OUT_MD = os.path.join(ROOT, 'notes', 'reference', 'EXTRACTION-GAPS.md')
 OUT_EDITIONS = os.path.join(DATA, 'annual-report-coverage.csv')
 OUT_DATASETS = os.path.join(DATA, 'annual-report-coverage-datasets.csv')
+SORT = os.path.join(DATA, 'annual-report-catalogue-sort.csv')   # step 4: scripts/sort_catalogue.py
+DECIDED = ('repeat', 'prose', 'gap')    # `unsure` and `deferred-to-list-survey` are not decisions
 SELF = {os.path.basename(OUT_EDITIONS)[:-4], os.path.basename(OUT_DATASETS)[:-4]}
 
 # Columns that can name the document a row was read from.
-DOC_COLUMNS = ('document', 'source', 'pdf', 'doc', 'file', 'report')
+DOC_COLUMNS = ('document', 'source', 'source_doc', 'pdf', 'doc', 'file', 'report')
 
 # Datasets with no edition and no document column whose rows are still one report each,
 # and the column that says which. `fy` here is the REPORT's year -- verified for each
@@ -73,6 +78,12 @@ DOC_COLUMNS = ('document', 'source', 'pdf', 'doc', 'file', 'report')
 YEAR_COLUMN = {
     'report-index': 'fy',        # extract_report_index.py: one contents page per FY report
     'report-signatures': 'fy',   # extract_report_signatures.py: signatures in that report
+    # extract_receivables.py: `fy` is the year in the report's filename (`fy-(\d{4})-`, its
+    # reports()), so the report's year, not the levy year, which has its own column.
+    'receivables': 'fy',
+    # extract_gross_wages.py: `fy` names the report's OCR file (`FY<fy>.ocr.txt`, its pages()),
+    # so the report's year -- the wages themselves are for the calendar year it prints.
+    'gross-wages': 'fy',
 }
 
 # Files that mention the annual reports but are ABOUT THE DOCUMENTS OR OUR READING, not data
@@ -81,6 +92,7 @@ YEAR_COLUMN = {
 ABOUT_THE_READING = {
     'annual-report-catalogue': 'the survey of what tables exist; this page counts it',
     'annual-report-pages': 'the financial page map; this page counts it',
+    'annual-report-catalogue-sort': 'the verdict on each unread catalogue entry (step 4); this page counts it',
     'annual-report-survey': 'per-page character and money counts from the FY survey',
     'extraction-plan': 'what was planned to be read, and its state',
     'dataset-provenance': 'which dataset holds rows from which edition (generated)',
@@ -159,6 +171,43 @@ def edition_of(row, name, known):
     if col and (row.get(col) or '').strip():
         return 'FY%s' % row[col].strip()
     return ''
+
+
+# A DATASET THAT HOLDS ONLY ONE KIND OF TABLE ON A SHARED PAGE. `town-meeting-votes` holds the
+# VOTE on each article -- its subject and result -- never the table the article adopts. Counting
+# its pages as read made eight tables look held on 4 November 2026 (step 4): the paid vacation
+# schedule (FY2018 p222-223) "read" because Article 7's vote is printed on that page, and likewise
+# the retirements list, the revolving-fund limits, the kennel fines and the capital plan items. So
+# its pages count only for a catalogue entry that IS a vote table: the name says article votes,
+# or the cluster carries both `article` and `votes`.
+NARROW_READERS = {
+    'town-meeting-votes': lambda r: bool(
+        re.search(r'article(-by-article)? votes|minutes with article votes', r.get('name') or '', re.I)
+        or {'article', 'votes'} <= set((r.get('cluster') or '').split())),
+}
+
+
+def read_page_maps(datasets):
+    """(general, narrow): edition -> pages every DATA dataset reads, and, per NARROW_READERS
+    dataset, edition -> pages it reads. One function, so this page and step 4 agree."""
+    general = collections.defaultdict(set)
+    narrow = {n: collections.defaultdict(set) for n in NARROW_READERS}
+    for n, d in datasets.items():
+        if d['role'] != 'data':
+            continue
+        target = narrow[n] if n in NARROW_READERS else general
+        for ed, ps in d['pages'].items():
+            target[ed] |= ps
+    return general, narrow
+
+
+def on_read_page(r, ed, maps):
+    """Is this catalogue entry on a page some dataset reads -- the page-level proxy."""
+    general, narrow = maps
+    ps = {int(p) for p in re.findall(r'\d+', r.get('pages') or '')}
+    if ps & general.get(ed, set()):
+        return True
+    return any(ps & narrow[n].get(ed, set()) for n, ok in NARROW_READERS.items() if ok(r))
 
 
 def role_of(name):
@@ -274,10 +323,15 @@ def compute():
             catalogue[ed].append(r)
 
     data_names = sorted(n for n, d in datasets.items() if d['role'] == 'data')
-    read_pages = collections.defaultdict(set)      # edition -> pages any DATA dataset reads
-    for n in data_names:
-        for ed, ps in datasets[n]['pages'].items():
-            read_pages[ed] |= ps
+    maps = read_page_maps(datasets)                 # pages DATA datasets read, see NARROW_READERS
+
+    # step 4's verdicts, joined to the catalogue on (edition, name, pages). Only an entry that
+    # is STILL on no read page counts: a page some dataset now reads has moved past the sort.
+    verdicts = {}
+    if os.path.exists(SORT):
+        for r in read_csv(SORT):
+            verdicts[(base_edition(r['edition']), r['name'], r['pages'])] = r['verdict']
+    sort_counts = collections.defaultdict(collections.Counter)  # edition -> verdict -> n
 
     # calendar map: tables per dataset
     map_count = collections.Counter()
@@ -312,11 +366,14 @@ def compute():
             cat = catalogue.get(ed, [])
             on = 0
             for r in cat:
-                ps = {int(p) for p in re.findall(r'\d+', r.get('pages') or '')}
-                if ps & read_pages.get(ed, set()):
+                if on_read_page(r, ed, maps):
                     on += 1
+                else:
+                    v = verdicts.get((ed, r['name'], r['pages']))
+                    sort_counts[ed][v or 'not sorted'] += 1
             row['tables_found'] = len(cat)
-            row['tables_decided'] = ''          # step 4 sorts these; nothing has yet
+            # step 4 sorts only the entries on no read page; the rest stay at the page proxy
+            row['tables_decided'] = sum(sort_counts[ed][v] for v in DECIDED)
             row['tables_in_dataset'] = ''
             row['tables_not_landed'] = ''
             row['tables_in_db'] = ''
@@ -356,7 +413,7 @@ def compute():
     if missing:
         raise SystemExit('map.csv lands tables in dataset(s) with no report rows on disk: %s'
                          % ', '.join(missing))
-    return known, ed_rows, ds_rows, cal
+    return known, ed_rows, ds_rows, cal, sort_counts
 
 
 # --------------------------------------------------------------------------- writing
@@ -373,7 +430,7 @@ def n(x):
     return '{:,}'.format(x)
 
 
-def render(known, ed_rows, ds_rows, cal):
+def render(known, ed_rows, ds_rows, cal, sort_counts):
     cal_eds = [r for r in ed_rows if r['era'] == 'calendar']
     fy_eds = [r for r in ed_rows if r['era'] == 'fiscal']
     s = lambda rows, k: sum(int(r[k] or 0) for r in rows)
@@ -411,11 +468,16 @@ def render(known, ed_rows, ds_rows, cal):
     w('|---|---:|---:|')
     w('| pages | %s | %s |' % (n(s(cal_eds, 'pages')), n(s(fy_eds, 'pages'))))
     w('| tables found | %s | %s catalogued |' % (n(found_c), n(found_f)))
-    w('| tables with a decision | %s | **not sorted yet** (step 4) |' % n(s(cal_eds, 'tables_decided')))
+    sc = collections.Counter()
+    for c in sort_counts.values():
+        sc.update(c)
+    off_f = sum(sc.values())
+    w('| tables with a decision | %s | %s of the %s on no read page (step 4) |'
+      % (n(s(cal_eds, 'tables_decided')), n(s(fy_eds, 'tables_decided')), n(off_f)))
     w('| tables in a dataset | %s | not known at table grain |' % n(landed_c))
     w('| tables whose dataset is in the database | %s | not known at table grain |' % n(indb_c))
-    w('| **tables looked at and NOT in a dataset** | **%s** | **%s** catalogued, unsorted |'
-      % (n(notl_c), n(found_f)))
+    w('| **tables looked at and NOT in a dataset** | **%s** | **%s** judged `gap` from the '
+      'description (step 4) |' % (n(notl_c), n(sc['gap'])))
     w('| catalogued tables on a page some dataset reads (page-level proxy) | | %s of %s |'
       % (n(onread_f), n(found_f)))
     w('| named lists found (officers, staff, licences ...) | not surveyed yet (step 3) '
@@ -424,9 +486,15 @@ def render(known, ed_rows, ds_rows, cal):
     w('- **%s of %s tables in the %s-%s editions are not in any dataset.** Each was looked at by '
       'eye and its reason is in that edition\'s `map.csv` `note`, beginning `NOT LANDED`.'
       % (n(notl_c), n(found_c), cy0, cy1))
-    w('- **None of the %s tables catalogued in %s-%s has been sorted** into a repeat of a table '
-      'already read, prose, or a real gap. %s of them sit on a page no dataset has a row from, '
-      'and those are the first place to look.' % (n(found_f), fy0, fy1, n(found_f - onread_f)))
+    w('- **%s of the %s tables catalogued in %s-%s sit on a page no dataset has a row from.** '
+      'Step 4 (`scripts/sort_catalogue.py`) sorted them from the catalogue\'s descriptions, not '
+      'from the pages: %s. A `gap` is a judgement that nothing we hold looks like the table, not '
+      'proof that the figures are absent. The other %s, on pages some dataset reads, are not '
+      'sorted table by table.'
+      % (n(off_f), n(found_f), fy0, fy1,
+         ', '.join('%s %s' % (n(sc[v]), v) for v in
+                   ('gap', 'repeat', 'prose', 'unsure', 'deferred-to-list-survey', 'not sorted')
+                   if sc[v]) or 'none yet', n(onread_f)))
     if data_out:
         w('- **%d of %d datasets holding report rows are not in the database:** %s.' % (
             len(data_out), len(data),
@@ -441,6 +509,25 @@ def render(known, ed_rows, ds_rows, cal):
     w('The proxy row is page grain, not table grain: a catalogued table counts if ANY dataset '
       'holds a row from ANY of its pages, so it is an upper bound on what has been read, '
       'never a count of tables read.')
+    w('')
+
+    w('## The FY catalogue entries on no read page, sorted (step 4)')
+    w('')
+    w('One row per edition. Each entry\'s verdict, dataset and one-line reason is in '
+      '`sources/data/annual-report-catalogue-sort.csv`, written by `scripts/sort_catalogue.py`: '
+      'one `claude -p` call per edition, judging from the catalogue\'s description against '
+      'our dataset names and pages, never from the page. Lists of people are '
+      '`deferred-to-list-survey` by a fixed rule, for step 3. `gap` means nothing we hold looks '
+      'like it; where a dataset is the same family for other years, the CSV names it.')
+    w('')
+    cols = ('gap', 'repeat', 'prose', 'unsure', 'deferred-to-list-survey', 'not sorted')
+    w('| edition | on no read page | %s |' % ' | '.join(cols))
+    w('|---|---:|%s' % ('---:|' * len(cols)))
+    for r in fy_eds:
+        c = sort_counts.get(r['edition'], collections.Counter())
+        w('| %s | %s | %s |' % (r['edition'], n(sum(c.values())),
+                                ' | '.join(n(c[v]) for v in cols)))
+    w('| **all** | **%s** | %s |' % (n(off_f), ' | '.join('**%s**' % n(sc[v]) for v in cols)))
     w('')
 
     w('## Every dataset the reports feed, and whether its figures are checked')
@@ -539,7 +626,7 @@ def render(known, ed_rows, ds_rows, cal):
       'with a reason.')
     w('- **A matcher that finds nothing is a statement about the matcher** (rule 13c). A '
       'table counted as not landed was looked at and declined by eye, with the reason '
-      'written down; a catalogued FY table counted as unsorted has simply not been looked at '
+      'written down; a catalogued FY table counted as not sorted has simply not been looked at '
       'yet, and is not evidence that it is unread.')
     w('')
     return '\n'.join(L) + '\n'
@@ -549,8 +636,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
     args = ap.parse_args()
-    known, ed_rows, ds_rows, cal = compute()
-    outs = {OUT_MD: render(known, ed_rows, ds_rows, cal),
+    known, ed_rows, ds_rows, cal, sort_counts = compute()
+    outs = {OUT_MD: render(known, ed_rows, ds_rows, cal, sort_counts),
             OUT_EDITIONS: to_csv(ed_rows),
             OUT_DATASETS: to_csv(ds_rows)}
     stale = []
