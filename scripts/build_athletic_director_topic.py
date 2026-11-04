@@ -520,6 +520,11 @@ def build():
     events = [(C.fy(y), '%s takes over' % surname(sorted(ws, key=lambda w: min(held[w]))[-1]))
               for y, ws in sorted(handovers.items())]
     labels = {0: ('%s is director' % surname(in_role[xs[0]][0]), ())}
+    # THE MISMATCH, ON THE CHART (TJ, 4 November 2026: "there is a mismatch of how these
+    # directors got paid and we cant answer 'from where'"). FY2014-FY2017: paid, and the
+    # director line shows nothing. Labelled once, mid-span, on both lines.
+    gap = xs.index(2015)
+    labels[gap] = ('paid; director line shows $0', ('0',))
     mc_lo = min(mc[y][0] for y in range(2014, 2018))
     mc_hi = max(mc[y][0] for y in range(2014, 2018))
     line = TP.series('The athletic director’s pay, by year', [C.fy(y) for y in xs], [
@@ -536,8 +541,8 @@ def build():
              'directors; 2025 includes other pay.',
         note_allow=D('FY2022 FY2023 2025'))
     line_block = TB.chart(line, place='lead', so=(
-        '%s to %s the general fund director line shows $0 actual, while the Town printed the director’s '
-        'calendar 2014 to 2017 wages at %s to %s: which account paid is not held.'
+        '%s to %s the director was paid %s to %s a year and the director line shows $0. No record we '
+        'hold says which account paid him.'
         % (C.fy(2014), C.fy(2017), C.usd(mc_lo), C.usd(mc_hi)),
         {'a': F(2014), 'b': F(2017), 'c': U(mc_lo), 'd': U(mc_hi)}, ('0', '2014', '2017')))
 
