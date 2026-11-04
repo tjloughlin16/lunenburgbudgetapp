@@ -518,7 +518,7 @@ def build():
     labels = {}
     for y, ws in sorted(handovers.items()):
         ws = sorted(ws, key=lambda w: min(held[w]))
-        labels[xs.index(y)] = ('%s takes over (both paid)' % surname(ws[-1]), ())
+        labels[xs.index(y)] = ('for %s, then %s' % (surname(ws[0]), surname(ws[-1])), ())
     labels[0] = ('%s is director' % surname(in_role[xs[0]][0]), ())
     mc_lo = min(mc[y][0] for y in range(2014, 2018))
     mc_hi = max(mc[y][0] for y in range(2014, 2018))
