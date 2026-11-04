@@ -106,13 +106,13 @@ The gross-wages list named a department beside each employee through FY2016 and 
 
 ## How long people stay, and how many leave
 
-A person’s tenure here is the number of years their name appears under a department **in the years that department published anything** — not calendar years, because 32 of 64 bodies skip at least one year inside their own span and a naive count reads a missed report as the whole staff leaving and coming back.
+A person’s tenure here is the number of years their name appears under a department **in the years that department published anything** — not calendar years, because 32 of 66 bodies skip at least one year inside their own span and a naive count reads a missed report as the whole staff leaving and coming back.
 
 | department | people | years published | median | median, uncensored | longest, in years | still there | names not reappearing |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Lunenburg Public Schools | 1030 | 16 | 2.0 | 1.0 | 16 | 280 | 32% a year |
+| Lunenburg Public Schools | 2632 | 64 | 2.0 | 2.0 | 64 | 285 | 31% a year |
 | Fire Department | 121 | 16 | 4 | 2.0 | 16 | 44 | 25% a year |
-| Police Department | 91 | 15 | 2 | 1 | 15 | 28 | 29% a year |
+| Police Department | 92 | 15 | 2.0 | 1.0 | 15 | 28 | 29% a year |
 | Council on Aging (staff) | 26 | 13 | 4.0 | 2 | 13 | 11 | 13% a year |
 | Department of Public Works | 22 | 11 | 1.0 | 2 | 10 | 13 | 24% a year |
 | Building Department | 20 | 11 | 3.0 | 3.0 | 10 | 7 | 19% a year |
@@ -122,7 +122,7 @@ A person’s tenure here is the number of years their name appears under a depar
 | Town Clerk | 6 | 11 | 2.0 | 2.0 | 11 | 2 | 16% a year |
 | Facilities, Grounds & Recreation | 5 | 3 | 1 | — | 2 | 4 | 50% a year |
 
-**Half of these people are CENSORED and their tenure is a lower bound, not a length.** 625 of 1354 are present in their department’s first published year — so they started before the archive begins and nothing here can say when — or in its last, so they are still there as far as anything here can see. That is why two medians are given: the first counts everybody, the second only the people whose arrival AND departure both fall inside the record, which is the only one that means what it says.
+**Half of these people are CENSORED and their tenure is a lower bound, not a length.** 555 of 2957 are present in their department’s first published year — so they started before the archive begins and nothing here can say when — or in its last, so they are still there as far as anything here can see. That is why two medians are given: the first counts everybody, the second only the people whose arrival AND departure both fall inside the record, which is the only one that means what it says.
 
 **A name leaving a roster is a name leaving a roster.** It is not a resignation, a retirement or a cut post. Somebody may have moved between departments, been left off a page, or held a post the town stopped printing. The last column is the rate at which names stop appearing, and it is not a separation rate.
 

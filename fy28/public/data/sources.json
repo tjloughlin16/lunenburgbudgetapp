@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-03",
+ "generated": "2026-11-04",
  "origins": [
   {
    "id": "school",
@@ -64,7 +64,7 @@
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 4929 of these 4945 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 4930 of these 4946 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -2757,9 +2757,9 @@
      "stars": 2,
      "what": "Written by ingest.land_version(). Each row is a WORKING COPY -- the latest version, under the name the scripts read -- whose every version is held under a dated folder beside it. A working copy is ours; the dated versions are the publisher’s and are what the bucket keeps. Added 9 October 2026, after three changed versions sat on one disk while the backup check, comparing names, called them backed up.",
      "kind": "Data",
-     "bytes": 25733,
+     "bytes": 26175,
      "url": "/docs/data/working-copies.csv",
-     "count": 129,
+     "count": 131,
      "unit": "rows",
      "textUrl": "/docs/data/working-copies.csv"
     },
@@ -3574,7 +3574,7 @@
      "stars": 3,
      "what": "The ELECTED OFFICIALS and APPOINTED OFFICIALS listing read as data, FY2022 to FY2025. Two thirds of the posts the town lists are unpaid seats on boards. It is NOT a headcount of town employees — a DPW labourer or a town hall clerk holds no appointed post — and it says so, because the wage list that would give a headcount stopped naming departments after FY2016.",
      "kind": "Notes",
-     "bytes": 13359,
+     "bytes": 13363,
      "url": "/docs/analyses/town-personnel.md",
      "count": 144,
      "unit": "lines",
@@ -3898,9 +3898,9 @@
      "stars": 2,
      "what": "One row per raising: the date, board and fiscal year, the question as it was asked THEN, the words as the captions heard them, and the moment in the video. Kept apart so a suggestion first raised years ago still carries its own context.",
      "kind": "Data",
-     "bytes": 381594,
+     "bytes": 562939,
      "url": "/docs/data/suggested-reports-meetings.csv",
-     "count": 830,
+     "count": 1237,
      "unit": "rows",
      "textUrl": "/docs/data/suggested-reports-meetings.csv"
     },
@@ -3910,11 +3910,23 @@
      "stars": 2,
      "what": "Written by us, by `build_board_transfers.py`, from the transfers and votes `extract_official_votes.py` reads out of each set of the town’s minutes, each with a verbatim quote. One row per transfer AS THE MINUTES PRINT IT. `counted`/`why_not` keep what is not a voted transfer (tabled, a licence, a town meeting article the board only recommended). `has_form`, `has_minutes`, `has_recording` say which records speak for it; `gold` is the district’s signed transfer form, held only for the schools. `crosses` says whether the money changed school or DESE program, read from the school ledger. Rows from a RECORDING are captions and never counted.",
      "kind": "Data",
-     "bytes": 336537,
+     "bytes": 369960,
      "url": "/docs/data/board-transfers.csv",
-     "count": 551,
+     "count": 616,
      "unit": "rows",
      "textUrl": "/docs/data/board-transfers.csv"
+    },
+    {
+     "path": "data/suggested-reports.csv",
+     "title": "Reports a meeting’s discussion showed a need for",
+     "stars": 2,
+     "what": "One row per suggestion, merged across meetings: the subject, whether a page already answers it, how many meetings raised it, first and last date, fiscal years, and the meetings by date. Read by a model from our minutes of each recording -- a place to start, not a finding.",
+     "kind": "Data",
+     "bytes": 277092,
+     "url": "/docs/data/suggested-reports.csv",
+     "count": 326,
+     "unit": "rows",
+     "textUrl": "/docs/data/suggested-reports.csv"
     },
     {
      "path": "data/dese-competitive-awards.csv",
@@ -3963,18 +3975,6 @@
      "count": 2161,
      "unit": "rows",
      "textUrl": "/docs/data/town-personnel.csv"
-    },
-    {
-     "path": "data/suggested-reports.csv",
-     "title": "Reports a meeting’s discussion showed a need for",
-     "stars": 2,
-     "what": "One row per suggestion, merged across meetings: the subject, whether a page already answers it, how many meetings raised it, first and last date, fiscal years, and the meetings by date. Read by a model from our minutes of each recording -- a place to start, not a finding.",
-     "kind": "Data",
-     "bytes": 203551,
-     "url": "/docs/data/suggested-reports.csv",
-     "count": 261,
-     "unit": "rows",
-     "textUrl": "/docs/data/suggested-reports.csv"
     },
     {
      "path": "data/town-meeting-votes.csv",
@@ -4462,7 +4462,7 @@
      "stars": 2,
      "what": "Written by us, from the snapshots of Lunenburg Public Schools’ own SchoolSpring account (employer 11047) that `fetch_school_job_postings.py` takes daily, one row per posting keyed on SchoolSpring’s job id. Post, display and closing dates are the publisher’s. `first_seen`, `last_seen` and `removed_seen` ARE OURS: they are the days we looked, bounded by the fetch cadence, never the day a post went up or came down. A REMOVAL IS NOT A HIRE — a posting leaves when it is filled, closes, is withdrawn or is reposted, and nothing here says which. Pay is printed only where the district shows it.",
      "kind": "Data",
-     "bytes": 12720,
+     "bytes": 12733,
      "url": "/docs/data/school-job-postings.csv",
      "count": 25,
      "unit": "rows",
@@ -4486,9 +4486,9 @@
      "stars": 2,
      "what": "Written by us, from the same snapshots as the row above: `posted` (first listed), `edited` (one row per field that differs between two looks, with the before and after -- descriptions compared as text, whitespace ignored), `relisted` and `removed`. `date` IS THE LOOK THAT SAW IT and `prev_look` the one before; the district made the change somewhere between the two, and the data cannot narrow it further. Pay is compared as SchoolSpring displays it, so a change to a figure the district hides is not an event here.",
      "kind": "Data",
-     "bytes": 10543,
+     "bytes": 10745,
      "url": "/docs/data/school-job-posting-changes.csv",
-     "count": 86,
+     "count": 87,
      "unit": "rows",
      "textUrl": "/docs/data/school-job-posting-changes.csv"
     },
@@ -4784,7 +4784,7 @@
      "stars": 1,
      "what": "OURS, written by a language model (claude -p) in scripts/write_article_summaries.py from the warrant’s own words, heard-figures.csv and our notes of the board discussion, and nothing else. A summary carrying a figure that neither the warrant nor a checked figure carries is refused. Each says what it was written from. The warrant is the record.",
      "kind": "JSON",
-     "bytes": 16561,
+     "bytes": 16442,
      "url": "/docs/data/article-summaries.json",
      "textUrl": "/docs/data/article-summaries.json"
     },
@@ -5585,7 +5585,7 @@
      "stars": 3,
      "what": "225 rows: dataset, edition, pages, the report’s own filename, both of the town’s addresses for it, and the sha256 of our copy. Rule 12 wants the address at the same time as the figure; this is that join, and notes/generated/DATASET-PROVENANCE.md is its readable form.",
      "kind": "Data",
-     "bytes": 189601,
+     "bytes": 189587,
      "url": "/docs/data/dataset-provenance.csv",
      "count": 711,
      "unit": "rows",
@@ -6749,7 +6749,7 @@
      "stars": 1,
      "what": "One row per video of a board and date that has more than one. `relation` says whether two postings are the same recording, an excerpt of it, or a separate recording, measured by shared six-word runs of their captions in BOTH directions; `newest` is the one the site links. Both are treated as valid and their minutes are merged. Written by reconcile_meeting_videos.py.",
      "kind": "Data",
-     "bytes": 20033,
+     "bytes": 20048,
      "url": "/docs/data/meeting-videos.csv",
      "count": 121,
      "unit": "rows",
@@ -7174,9 +7174,9 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 3876502,
+     "bytes": 3946146,
      "url": "/docs/data/meeting-register.csv",
-     "count": 7113,
+     "count": 7114,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-register.csv"
     },
@@ -7354,9 +7354,9 @@
      "stars": 3,
      "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
      "kind": "Data",
-     "bytes": 830969,
+     "bytes": 850584,
      "url": "/docs/data/agentic-spend.csv",
-     "count": 11981,
+     "count": 12254,
      "unit": "rows",
      "textUrl": "/docs/data/agentic-spend.csv"
     },
@@ -7654,9 +7654,9 @@
      "stars": 3,
      "what": "What the town (or, for the School Committee, the district) says each board is: the overview as printed, the charter or bylaw it cites, when it meets, its members and terms, and a Facebook link where the board’s page carries one. One row per board; the mirrored pages are under town-supplementary/docs/. Rebuild with scripts/fetch_board_pages.py.",
      "kind": "Data",
-     "bytes": 82074,
+     "bytes": 78218,
      "url": "/docs/data/board-pages.csv",
-     "count": 519,
+     "count": 513,
      "unit": "rows",
      "textUrl": "/docs/data/board-pages.csv"
     },
@@ -8184,9 +8184,9 @@
      "stars": 2,
      "what": "12,039 rows: the /CreationDate and /ModDate the town’s own PDFs and Word files carry, with the hours between a document being made and its meeting, and the days between a meeting and its minutes being made. A creation date is a LOWER BOUND on posting — a file cannot be published before it exists — and never the posting date, which the AgendaCenter does not publish. Written by scripts/extract_document_timestamps.py; read into the meeting record.",
      "kind": "Data",
-     "bytes": 2598096,
+     "bytes": 2598317,
      "url": "/docs/data/meeting-document-timestamps.csv",
-     "count": 12236,
+     "count": 12237,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-document-timestamps.csv"
     },
@@ -8196,9 +8196,9 @@
      "stars": 2,
      "what": "Written by us, and it is an OBSERVATION LOG rather than a measurement — what this project’s crawler could see on the town’s AgendaCenter on a given day. One row per document, keyed on the town’s own file id. `first_seen` is the day OUR crawler first saw it and NOT the day the town posted it: the AgendaCenter publishes no posting timestamp, so any gap between a meeting and its minutes appearing is an upper bound bounded by how often we look. The 12,065 rows adopted when the watch was seeded carry an EMPTY first_seen, because we do not know — an empty cell rather than a guess — and the `basis` column says which rows those are. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1792783,
+     "bytes": 1792933,
      "url": "/docs/data/meeting-watch-state.csv",
-     "count": 12280,
+     "count": 12281,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-state.csv"
     },
@@ -8292,9 +8292,9 @@
      "stars": 2,
      "what": "The question underneath the one above. A link can still open and serve a different document — a Drive file can be replaced in place without its URL changing, and nothing in a link check would notice. So every address is fetched and the result compared to our copy by sha256. It also separates the ways bytes can differ without the document differing: a Google Doc is re-zipped on every export, and a PDF can be re-saved with a heading’s line-break in a new place. Only one of those is a change. Rebuild with scripts/verify_source_copies.py.",
      "kind": "Data",
-     "bytes": 360959,
+     "bytes": 391175,
      "url": "/docs/data/copy-status.csv",
-     "count": 1083,
+     "count": 1163,
      "unit": "rows",
      "textUrl": "/docs/data/copy-status.csv"
     },
@@ -8304,9 +8304,9 @@
      "stars": 2,
      "what": "For every archived document that records where its publisher put it, whether that address still opens. On 29 August 2026 it mostly did not: 57 of 184 returned a Google sign-in wall, every one of them a Drive or Docs link, while the town’s own web server answered 81 of 81. The district was asked to reopen them and did — on 31 August the same 187 came back 186 open. Both readings are the archive’s reason for existing, measured. Rebuild with scripts/check_source_links.py.",
      "kind": "Data",
-     "bytes": 280383,
+     "bytes": 315548,
      "url": "/docs/data/link-status.csv",
-     "count": 1536,
+     "count": 1736,
      "unit": "rows",
      "textUrl": "/docs/data/link-status.csv"
     },
@@ -8472,9 +8472,9 @@
      "stars": 2,
      "what": "Written by us. One row per document the watch saw APPEAR — an agenda posted for a coming meeting, or minutes arriving for a meeting that had none. Everything present when the watch was seeded is deliberately absent: it was already known and was never new. This is the file that makes the feed deterministic, and scripts/check_meeting_watch_idempotent.py proves the point by running the detector twice and requiring the second run to announce nothing. `days_after_meeting_upper_bound` is named that way because it is one. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 34772,
+     "bytes": 34931,
      "url": "/docs/data/meeting-watch-events.csv",
-     "count": 215,
+     "count": 216,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-events.csv"
     },
@@ -8720,6 +8720,18 @@
      "textUrl": "/docs/data/health-insurance-law.csv"
     },
     {
+     "path": "data/source-checks.csv",
+     "title": "Every time the refresh looked at a slow source",
+     "stars": 2,
+     "what": "Appended by the daily refresh, one row per look: the source, the day, and whether the look succeeded. A source is due again when its cadence has passed since its last successful look, so a failed one is retried the next morning. Written by scripts/refresh.py through scripts/source_cadence.py.",
+     "kind": "Data",
+     "bytes": 3967,
+     "url": "/docs/data/source-checks.csv",
+     "count": 122,
+     "unit": "rows",
+     "textUrl": "/docs/data/source-checks.csv"
+    },
+    {
      "path": "data/free-cash-fy26.csv",
      "title": "Free cash appropriations for FY2026, two versions",
      "stars": 2,
@@ -8742,18 +8754,6 @@
      "count": 20,
      "unit": "rows",
      "textUrl": "/docs/data/trust-ledger-entries.csv"
-    },
-    {
-     "path": "data/source-checks.csv",
-     "title": "Every time the refresh looked at a slow source",
-     "stars": 2,
-     "what": "Appended by the daily refresh, one row per look: the source, the day, and whether the look succeeded. A source is due again when its cadence has passed since its last successful look, so a failed one is retried the next morning. Written by scripts/refresh.py through scripts/source_cadence.py.",
-     "kind": "Data",
-     "bytes": 3517,
-     "url": "/docs/data/source-checks.csv",
-     "count": 106,
-     "unit": "rows",
-     "textUrl": "/docs/data/source-checks.csv"
     },
     {
      "path": "data/search-vocabulary.csv",
@@ -8882,9 +8882,9 @@
      "stars": 2,
      "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1637,
+     "bytes": 1668,
      "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 50,
+     "count": 51,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
@@ -9411,7 +9411,7 @@
    "id": "district-page",
    "origin": "school",
    "title": "The district budget page, mirrored in full",
-   "blurb": "Every document linked from the district’s budget information page — 919 of them, back to FY18. Each row links to our copy and to the district’s original. Text has been extracted from all but one, including eleven scans that had no text layer until we read them.",
+   "blurb": "Every document linked from the district’s budget information page — 920 of them, back to FY18. Each row links to our copy and to the district’s original. Text has been extracted from all but one, including eleven scans that had no text layer until we read them.",
    "items": [
     {
      "path": "district-budget/docs/additional-town-revenue-spending-plan.pdf",
@@ -14697,6 +14697,16 @@
      "kind": "JSON",
      "bytes": 3649,
      "url": "/docs/district-budget/docs/personnel/job-postings/2026-11-03/listing.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/GetPagedJobsWithSearch?domainName=www.schoolspring.com&keyword=&location=&category=&gradelevel=&jobtype=&organization=e-11047&swLat=&swLon=&neLat=&neLon=&page=1&size=100&sortDateAscending=false"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-11-04/listing.json",
+     "title": "Job postings: the open postings SchoolSpring lists for Lunenburg Public Schools, fetched 2026-11-04",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 3463,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-11-04/listing.json",
      "upstream": "https://api.schoolspring.com/api/Jobs/GetPagedJobsWithSearch?domainName=www.schoolspring.com&keyword=&location=&category=&gradelevel=&jobtype=&organization=e-11047&swLat=&swLon=&neLat=&neLon=&page=1&size=100&sortDateAscending=false"
     },
     {
@@ -24401,6 +24411,16 @@
      "upstream": "https://www.lunenburgma.gov/203/Architectural-Preservation-District-Comm"
     },
     {
+     "path": "town-supplementary/docs/board-772-board-of-assessors.html",
+     "title": "Assessor's Department (board page)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 111158,
+     "url": "/docs/town-supplementary/docs/board-772-board-of-assessors.html",
+     "upstream": "https://www.lunenburgma.gov/772/Assessors-Department"
+    },
+    {
      "path": "town-supplementary/docs/staff-directory/2026-09-22/did-9.html",
      "title": "Assessor's Department (staff directory, fetched 2026-09-22)",
      "stars": 1,
@@ -24429,16 +24449,6 @@
      "bytes": 97745,
      "url": "/docs/town-supplementary/docs/staff-directory/2026-10-23/did-9.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=9"
-    },
-    {
-     "path": "town-supplementary/docs/board-772-board-of-assessors.html",
-     "title": "Assessors Department (board page)",
-     "stars": 1,
-     "what": "Mirrored from the publisher. Not used in any figure on this site.",
-     "kind": "HTML",
-     "bytes": 117042,
-     "url": "/docs/town-supplementary/docs/board-772-board-of-assessors.html",
-     "upstream": "https://www.lunenburgma.gov/772/Assessors-Department"
     },
     {
      "path": "town-supplementary/docs/344-bencor-financial-wellness-pdf.pdf",
@@ -24589,7 +24599,7 @@
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
-     "bytes": 102253,
+     "bytes": 102668,
      "url": "/docs/town-supplementary/docs/board-212-capital-planning-committee.html",
      "upstream": "https://www.lunenburgma.gov/212/Capital-Planning-Committee"
     },
@@ -24780,7 +24790,7 @@
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
-     "bytes": 184950,
+     "bytes": 186032,
      "url": "/docs/town-supplementary/docs/board-250-economic-development-committee.html",
      "upstream": "https://www.lunenburgma.gov/250/Economic-Development-Committee"
     },
@@ -25324,7 +25334,7 @@
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
-     "bytes": 118195,
+     "bytes": 118626,
      "url": "/docs/town-supplementary/docs/board-285-planning-board.html",
      "upstream": "https://www.lunenburgma.gov/285/Planning-Board"
     },
@@ -25792,7 +25802,7 @@
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
-     "bytes": 118730,
+     "bytes": 120758,
      "url": "/docs/town-supplementary/docs/board-322-zoning-board-of-appeals.html",
      "upstream": "https://www.lunenburgma.gov/322/Zoning-Board-of-Appeals"
     },
@@ -63289,7 +63299,7 @@
    },
    {
     "name": "Council On Aging",
-    "documents": 409
+    "documents": 410
    },
    {
     "name": "Public Access Cable Committee (PACC)",
@@ -63461,21 +63471,21 @@
    }
   ],
   "boardCount": 51,
-  "listed": 12286,
-  "fetched": 12236,
-  "agendas": 7507,
+  "listed": 12287,
+  "fetched": 12237,
+  "agendas": 7508,
   "minutes": 4779,
   "from": "2009-01-05",
   "to": "2026-11-23",
-  "textFiles": 12238,
+  "textFiles": 12239,
   "note": "Every agenda and set of minutes the town publishes, across all boards. The extracted text is what the analysis reads and is what this site serves. The scanned originals — about 426MB — are archived too, and can be downloaded one at a time at /docs/minutes/<board>/<file>.pdf. They were never in the repository, so until September 2026 they existed on exactly one disk; they now have an off-site copy, which for an archive of public records that keeps losing its own links is the point.",
   "rebuild": "python3 scripts/fetch_agendas.py --from 2025 && python3 scripts/extract_minutes.py"
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 5716,
+  "documents": 5717,
   "groups": 32,
-  "bytes": 7337660569,
+  "bytes": 7338102751,
   "loadBearing": 218
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 24 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

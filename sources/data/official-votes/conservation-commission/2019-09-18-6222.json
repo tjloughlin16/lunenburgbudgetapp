@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2019-09-18",
  "docid": "6222",
@@ -12,168 +12,635 @@
  },
  "votes": [
   {
-   "motion": "Enter executive session under MGL ch 39 Section 23 B",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Move into executive session under MGL ch 39 Section 23B, with MM invited as staff.",
+   "moved_by": "TD",
+   "seconded_by": "CC",
+   "outcome": "passed",
    "procedural": true,
    "quote": "td moved to go into executive session for the reasons listed in the body of the agenda. cc seconded and the commission approved unanimously by roll call vote."
   },
   {
-   "motion": "Continue hearing for John Harrison, 915 Northfield Road, until 10/2/19 meeting",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Todd Dwyer",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "the hearing was continued until the next meeting by a motion of jr and a second by td with a unanimous vote until the 10/2/19 meeting at 7 pm in the ritter building at mass ave."
+   "motion": "Continue the Harrison NOI hearing (915 Northfield Road) to the 10/2/19 meeting.",
+   "moved_by": "JR",
+   "seconded_by": "TD",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the hearing was continued until the next meeting by a motion of jr and a second by td with a unanimous vote until the 10/2/19"
   },
   {
-   "motion": "Continue hearing for DPW replacement of culverts at Sunset Lane and Northfield Road until 10/2/19 meeting",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Todd Dwyer",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "the hearing was continued until the next meeting by a motion of cc and a second by td with a unanimous vote until the 10/2/19 meeting at 7 pm in the ritter building at mass ave."
+   "motion": "Continue the DPW culvert replacement NOI hearing (Sunset Lane and Northfield Road) to 10/2/19.",
+   "moved_by": "CC",
+   "seconded_by": "TD",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the hearing was continued until the next meeting by a motion of cc and a second by td with a unanimous vote until the 10/2/19"
   },
   {
-   "motion": "Continue hearing for Roberts G. Evans retaining wall at 4 Sunset Lane until 10/2/19 meeting",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Todd Dwyer",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "the hearing was continued until the next meeting by a motion of jr and a second by td with a unanimous vote until the 10/2/19 meeting at 7 pm in the ritter building at mass ave."
+   "motion": "Continue the Roberts G. Evans NOI hearing (retaining wall, 4 Sunset Lane) to 10/2/19.",
+   "moved_by": "JR",
+   "seconded_by": "TD",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the hearing was continued until the next meeting by a motion of jr and a second by td with a unanimous vote until the 10/2/19"
   },
   {
-   "motion": "Approve Order of Conditions for Powell Stone and Gravel, 131-133 Leominster-Shirley Road, subject to agreed changes on plan",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Approve the Order of Conditions for Powell Stone and Gravel (131-133 Leominster-Shirley Road), subject to the change agreed on the plan.",
+   "moved_by": "TD",
+   "seconded_by": "CC",
+   "outcome": "passed",
    "procedural": false,
    "quote": "td made a motion to approved tan order of conditions subject to the change agreed on the plan. cc seconded and the commission unanimously approved."
   },
   {
-   "motion": "Continue hearing for Greco Alonso riverfront and buffer zone remediation at 260 Fallualah Road and 100 Summer Street until 10/2/19 meeting",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Todd Dwyer",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "the hearing was continued until the next meeting by a motion of cc and a second by td with a unanimous vote until the 10/2/19 meeting at 7 pm in the ritter building at mass ave."
+   "motion": "Continue the Greco Alonso NOI hearing (260 Fallualah Road and 100 Summer Street) to 10/2/19.",
+   "moved_by": "CC",
+   "seconded_by": "TD",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the hearing was continued until the next meeting by a motion of cc and a second by td with a unanimous vote until the"
   },
   {
-   "motion": "Continue hearing for Shawn Farrow boat ramp repair, beach sand, retaining wall and patio at 31 Round Road until 10/2/19 meeting",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Todd Dwyer",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "the hearing was continued until the next meeting by a motion of cc and a second by td with a unanimous vote until the 10/2/19 meeting at 7 pm in the ritter building at mass ave."
+   "motion": "Continue the Shawn Farrow request for determination (31 Round Road) to 10/2/19.",
+   "moved_by": "CC",
+   "seconded_by": "TD",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "no public comment. the hearing was continued until the next meeting by a motion of cc and a second by td with a unanimous vote"
   },
   {
-   "motion": "Issue negative determination of applicability with erosion protection for Paula Halbedel driveway repair at 127 Pleasant Street",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed unanimously",
+   "motion": "Issue a negative determination for 127 Pleasant Street (Paula Halbedel) with erosion protection as agreed by TD.",
+   "moved_by": "",
+   "seconded_by": "JR",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion for a negative with erosion protection as agreed by td. jr seconded and the commission unanimously approved."
   },
   {
-   "motion": "Lift previous enforcement order for Paula Halbedel at 127 Pleasant Street",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Todd Dwyer",
-   "outcome": "passed unanimously",
+   "motion": "Lift the previous enforcement order at 127 Pleasant Street.",
+   "moved_by": "CC",
+   "seconded_by": "TD",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "the previous enforcement order was lifted by a motion of cc and a second by td with a unanimous vote to approve."
+   "quote": "the previous enforcement order was lifted by a motion of cc and a second by td with a unanimous vote to approve"
   },
   {
-   "motion": "Continue hearing for Susanne Delisle tree removal and swimming pool at 235 Island Road until 10/2/19 meeting",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Todd Dwyer",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "the hearing was continued until the next meeting by a motion of kj and a second by td with a unanimous vote until the 10/2/19 meeting at 7 pm in the ritter building at mass ave."
+   "motion": "Continue the Susanne Delisle request for determination (235 Island Road) to 10/2/19.",
+   "moved_by": "KJ",
+   "seconded_by": "TD",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the hearing was continued until the next meeting by a motion of kj and a second by td with a unanimous vote until the 10/2/19"
   },
   {
-   "motion": "Schedule workshop meeting at Ritter building on 9/25 at 7 PM with hearing reconvening at 10/2/19 for Lake Shirley management program",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "after further discussion td motioned for a workshop meeting at the ritter building on 9/25 at 7 pm with the hearing reconveni ng at 10/2/19 at 7 pm also at the ritter building. jr seconded and the commission unanimously",
-   "quote_taken_from_text": true
+   "motion": "Hold a workshop meeting at the Ritter Building on 9/25 at 7 PM on the Lake Shirley management NOI, with the hearing reconvened 10/2/19 at 7 PM.",
+   "moved_by": "TD",
+   "seconded_by": "JR",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "td motioned for a workshop meeting at the ritter building on 9/25 at 7 pm"
   },
   {
-   "motion": "Approve field change for Joel Swenson dock, 17 Ruth Street, NOI Case 2019-14",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Approve Joel Swenson's (17 Ruth Street, NON-ENF CASE 2019-14) dock plan as a field change.",
+   "moved_by": "TD",
+   "seconded_by": "CC",
+   "outcome": "passed",
    "procedural": false,
    "quote": "td motioned to approve a s a field change. cc seconded and the commission approved unanimously."
   },
   {
-   "motion": "Remove enforcement case 2019-7 for Shady Point beach erosion",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Remove the Shady Point beach erosion enforcement order (ENF CASE 2019-7).",
+   "moved_by": "KJ",
+   "seconded_by": "CC",
+   "outcome": "passed",
    "procedural": false,
    "quote": "removed by a motion of kj and a second by cc with a unanimous vote to approve"
   },
   {
-   "motion": "Support the APR for 411 & 490 Chase Road and 780 Northfield Road",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Catie Childs",
+   "motion": "Support the APR for 411 and 490 Chase Road and 780 Northfield Road.",
+   "moved_by": "KJ",
+   "seconded_by": "CC",
    "outcome": "passed",
    "procedural": false,
    "quote": "the commission voted to support the apr by a motion by kj and a second by cc."
   },
   {
-   "motion": "Release lot at 250 Howard Street from Chapter 61 consideration",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Kenneth Jones",
+   "motion": "Release the lot at 250 Howard Street from Chapter 61 consideration.",
+   "moved_by": "TD",
+   "seconded_by": "KJ",
    "outcome": "passed",
    "procedural": false,
    "quote": "after consideration the commission voted to release the lot form consideration by a motion of td and a second by kj."
   },
   {
-   "motion": "Approve certificate of compliance 208-671 for 16 Sandy Cove Road",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Catie Childs",
-   "outcome": "approved",
+   "motion": "Approve the certificate of compliance for 208-671 16 Sandy Cove Road.",
+   "moved_by": "KJ",
+   "seconded_by": "CC",
+   "outcome": "passed",
    "procedural": false,
    "quote": "the certificate was approved by a motion of kj and a second by cc."
   },
   {
-   "motion": "Deny extension permit 208-1097 for 101 Pleasant Street",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Catie Childs",
-   "outcome": "denied",
+   "motion": "Deny the request for 208-1097 at 101 Pleasant Street.",
+   "moved_by": "KJ",
+   "seconded_by": "CC",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "denied by a motion of kj and a second by cc."
+   "quote": "208-1097- 101 pleasant street- denied by a motion of kj and a second by cc."
   },
   {
-   "motion": "Approve minutes from 9/4 meeting",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Catie Childs",
-   "outcome": "approved",
+   "motion": "Approve the minutes of the 9/4 meeting.",
+   "moved_by": "TD",
+   "seconded_by": "CC",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "review minutes from 9/4 were approved by a motion of td and a second by cc."
+   "quote": "minutes of previous meetings - review minutes from 9/4 were approved by a motion of td and a second by cc."
   },
   {
-   "motion": "Approve annual ride through permission for Sunset Stables at Robbs Hill",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "approved",
+   "motion": "Approve the annual ride-through permission for Sunset Stables on Robbs Hill.",
+   "moved_by": "CC",
+   "seconded_by": "JR",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "approved by motion of cc and a second by jr."
+   "quote": "sunset stables requested annual ride through permission for robbs hill. approved by motion of cc and a second by jr."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Catie Childs",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "KJ",
+   "seconded_by": "CC",
    "outcome": "passed",
    "procedural": true,
    "quote": "the meeting adjourned by a motion of kj and a second by cc at 10 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1142855
+ "note": "Scanned text not involved; minutes are typed text with typos, and several votes are recorded without a vote count (only \"unanimous\" or \"approved\"), so outcomes are recorded as \"passed\". Halbedel motion has no printed mover. Attendance line says KJ came in at 8:10 PM, yet KJ is recorded moving the Delisle continuance and other items; the order of business is not clear enough to resolve this. Pease, Luck and Vivano appear only in the header list with no attendance status. Halbedel is spelled three ways in the minutes (Halbedel, Helbedel, Helbadel); the printed header uses Halbedel, the body Helbedel. Shawn Farrow, Susanne Delisle, Roberts G. Evans and John Harrison are named as filers but are not recorded as speaking. No dollar figures appear in the minutes. The executive session topic lines are partly garbled in the text (e.g., \"101 Pleasant\", \"61 a release\"), so their meaning is uncertain.",
+ "cost_usd": 0.014978520000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "present",
+   "quote": "in attendance: rb, td, jr, cc- kj came in at 8:10 pm"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "in attendance: rb, td, jr, cc- kj came in at 8:10 pm"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "member",
+   "status": "not stated",
+   "quote": "bob pease lunenburg, ma 01462"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "member",
+   "status": "present",
+   "quote": "in attendance: rb, td, jr, cc- kj came in at 8:10 pm"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "member",
+   "status": "not stated",
+   "quote": "catie childs carl luck"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "member",
+   "status": "present",
+   "quote": "in attendance: rb, td, jr, cc- kj came in at 8:10 pm"
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "member",
+   "status": "present",
+   "quote": "in attendance: rb, td, jr, cc- kj came in at 8:10 pm"
+  },
+  {
+   "name": "Jeffrey Vivano",
+   "role": "associate member",
+   "status": "not stated",
+   "quote": "jeffrey vivano, associate member"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "the motion also included inviting mm as staff."
+  },
+  {
+   "name": "Patrick McCarty",
+   "role": "representing",
+   "status": "present",
+   "quote": "patrick narrated the history of the supplemental information."
+  },
+  {
+   "name": "Shawn Farrow",
+   "role": "applicant, represented himself",
+   "status": "present",
+   "quote": "shawn farrow represented himself."
+  },
+  {
+   "name": "Paula Helbedel",
+   "role": "applicant, 127 Pleasant",
+   "status": "present",
+   "quote": "paula helbedel- 127 pleasant spoke to the commission about the work she is doing in the rear"
+  },
+  {
+   "name": "Joel Swenson",
+   "role": "applicant, 17 Ruth Street",
+   "status": "present",
+   "quote": "mr. swenson appeared before the commission."
+  },
+  {
+   "name": "Wendy Gendron",
+   "role": "LSIC",
+   "status": "present",
+   "quote": "lsic wendy gendron- introduced herself to the commission"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission requested that a line of hay bales or straw wattles be placed along the property line at 127 Pleasant Street.",
+   "quote": "hay bales or straw wattles along property line."
+  },
+  {
+   "decision": "RB requested that certain preexisting items be memorialized; Mr. Farrow to document historical walls and trees, mark the 100 foot buffer zone, note on plans the 2 yards of sand, and sign and date the revisions.",
+   "quote": "requesting mr. farrow document the historical walls and trees and mark the 100 foot buffer"
+  },
+  {
+   "decision": "The Commission reviewed the revised regulation on vegetation removal and made a one-sentence adjustment excluding existing lawn and landscape from the definition, ahead of the second hearing on 10/16/19.",
+   "quote": "made a one sentence adjustment allowing for exclusion of exiting lawn and landscape from the definition"
+  },
+  {
+   "decision": "The commission had BP work with Heather Lemieux on new warrant article wording to renew the 842R Chase Road approval at town meeting; not yet submitted as of the meeting.",
+   "quote": "the commission had bp work with heather lemieux for a new wording to renew the approval by the town at town meeting"
+  },
+  {
+   "decision": "Joel Swenson's dock location could be hand drawn and signed off at the meeting, as a field change, given the valid current order.",
+   "quote": "his plan could be hand drawn fo the doc location and signed off"
+  },
+  {
+   "decision": "Extension Permit 208-1064 (LSIC/Town of Lunenburg, Lake Shirley) recorded as withdrawn.",
+   "quote": "extension permit - 208-1064 lsic/town of lunenburg lake shirley withdrawn"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Patrick McCarty",
+   "stated_role": "representing",
+   "topic": "Powell Stone and Gravel NOI, 131-133 Leominster-Shirley Road",
+   "quote": "patrick narrated the history of the supplemental information."
+  },
+  {
+   "speaker": "Paula Helbedel",
+   "stated_role": "127 Pleasant",
+   "topic": "Driveway and wall repair, 127 Pleasant Street",
+   "quote": "paula helbedel- 127 pleasant spoke to the commission about the work she is doing in the rear"
+  },
+  {
+   "speaker": "Wendy Gendron",
+   "stated_role": "LSIC",
+   "topic": "Lake Shirley management NOI",
+   "quote": "lsic wendy gendron- introduced herself to the commission"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and executive session",
+   "resolution": "executive session entered; reconvened 7:05 PM",
+   "quote": "rb called meeting to order at 6:45 pm. td moved to go into executive session for the reasons listed in the body of the agenda.",
+   "tags": [
+    "executive session",
+    "call to order"
+   ]
+  },
+  {
+   "topic": "NOI, 915 Northfield Road (John Harrison)",
+   "resolution": "continued to 10/2/19",
+   "quote": "john harrison has filed a notice of intent for the construction of a single",
+   "tags": [
+    "notice of intent",
+    "wetlands",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "NOI, DPW culvert replacement, Sunset Lane and Northfield Road",
+   "resolution": "continued to 10/2/19",
+   "quote": "dpw has filed a notice of intent for the replacement of culverts at sunset lane and northfield road.",
+   "tags": [
+    "notice of intent",
+    "culvert",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "NOI, retaining wall in flood plain, 4 Sunset Lane (Roberts G. Evans)",
+   "resolution": "continued to 10/2/19",
+   "quote": "roberts g. evans has filed a notice of intent for installation of a retaining wall within flood plain 4 sunset",
+   "tags": [
+    "notice of intent",
+    "flood plain",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "NOI, grading and culvert, 131-133 Leominster-Shirley Road (Powell Stone and Gravel)",
+   "resolution": "Order of Conditions approved, subject to change on plan",
+   "quote": "td made a motion to approved tan order of conditions subject to the change agreed on the plan.",
+   "tags": [
+    "notice of intent",
+    "order of conditions",
+    "culvert"
+   ]
+  },
+  {
+   "topic": "NOI, riverfront and buffer zone remediation, 260 Fallualah Road and 100 Summer Street (Greco Alonso)",
+   "resolution": "continued to 10/2/19",
+   "quote": "greco alonso has filed a notice of intent for the remediation of riverfront and buffer zone",
+   "tags": [
+    "notice of intent",
+    "riverfront",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Request for determination, 31 Round Road (Shawn Farrow)",
+   "resolution": "continued to 10/2/19",
+   "quote": "shawn farrow has filed a request for a",
+   "tags": [
+    "request for determination",
+    "boat ramp",
+    "lake buffer"
+   ]
+  },
+  {
+   "topic": "Request for determination, 127 Pleasant Street (Paula Halbedel)",
+   "resolution": "negative determination with erosion protection; prior enforcement order lifted",
+   "quote": "motion for a negative with erosion protection as agreed by td.",
+   "tags": [
+    "request for determination",
+    "driveway",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Request for determination, 235 Island Road (Susanne Delisle)",
+   "resolution": "continued to 10/2/19",
+   "quote": "determination at 235 island road for removal of six trees",
+   "tags": [
+    "request for determination",
+    "tree removal",
+    "swimming pool"
+   ]
+  },
+  {
+   "topic": "NOI, Lake Shirley lake management program (Town and LSIC)",
+   "resolution": "workshop set for 9/25; hearing continued to 10/2/19",
+   "quote": "td motioned for a workshop meeting at the ritter building on 9/25 at 7 pm",
+   "tags": [
+    "Lake Shirley",
+    "notice of intent",
+    "lake management"
+   ]
+  },
+  {
+   "topic": "Enforcement: Joel Swenson, 17 Ruth Street (NON-ENF CASE 2019-14)",
+   "resolution": "approved as field change",
+   "quote": "td motioned to approve a s a field change.",
+   "tags": [
+    "enforcement",
+    "dock",
+    "field change"
+   ]
+  },
+  {
+   "topic": "Enforcement: Emerald Place Beach and Shady Point beach erosion",
+   "resolution": "Emerald Place no update; Shady Point order removed",
+   "quote": "removed by a motion of kj and a second by cc with a unanimous vote to approve",
+   "tags": [
+    "enforcement",
+    "beach erosion"
+   ]
+  },
+  {
+   "topic": "New business: chairman public apology",
+   "resolution": "read to public; no action",
+   "quote": "the chairman read to the public a written apology for previous matters",
+   "tags": [
+    "apology"
+   ]
+  },
+  {
+   "topic": "APR consideration, 411 and 490 Chase Road and 780 Northfield Road",
+   "resolution": "commission voted to support",
+   "quote": "the commission voted to support the apr by a motion by kj and a second by cc.",
+   "tags": [
+    "APR",
+    "land conservation"
+   ]
+  },
+  {
+   "topic": "Chapter 61 release request, 250 Howard Street",
+   "resolution": "released from consideration",
+   "quote": "chapter 61 release request 250 howard street",
+   "tags": [
+    "chapter 61",
+    "release"
+   ]
+  },
+  {
+   "topic": "842R Chase Road warrant article",
+   "resolution": "BP to work on wording; not yet submitted",
+   "quote": "the commission had bp work with heather lemieux for a new wording to renew the approval by the town at town meeting",
+   "tags": [
+    "warrant article",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Revised regulation review, vegetation removal",
+   "resolution": "one-sentence adjustment made; second hearing 10/16/19",
+   "quote": "revised regulation review in adavance of second hearing scheduled for 10/16/19",
+   "tags": [
+    "regulation",
+    "vegetation removal"
+   ]
+  },
+  {
+   "topic": "Old business: Small Town Forest, 123 Hollis Road, Saliba land acquisition",
+   "resolution": "no action recorded; NEFCO has not responded",
+   "quote": "no response with alternative dates.",
+   "tags": [
+    "small town forest",
+    "land acquisition",
+    "forest stewardship"
+   ]
+  },
+  {
+   "topic": "Certificate of compliance, 208-671 16 Sandy Cove Road",
+   "resolution": "approved",
+   "quote": "the certificate was approved by a motion of kj and a second by cc.",
+   "tags": [
+    "certificate of compliance"
+   ]
+  },
+  {
+   "topic": "Extension permit 208-1064, LSIC/Town of Lunenburg, Lake Shirley",
+   "resolution": "withdrawn",
+   "quote": "extension permit - 208-1064 lsic/town of lunenburg lake shirley withdrawn",
+   "tags": [
+    "extension permit",
+    "Lake Shirley"
+   ]
+  },
+  {
+   "topic": "Order 208-1097, 101 Pleasant Street",
+   "resolution": "denied",
+   "quote": "208-1097- 101 pleasant street- denied by a motion of kj and a second by cc.",
+   "tags": [
+    "order",
+    "denial"
+   ]
+  },
+  {
+   "topic": "Approval of 9/4 minutes",
+   "resolution": "approved",
+   "quote": "minutes of previous meetings - review minutes from 9/4 were approved by a motion of td and a second by cc.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee and agent reports: Sunset Stables ride-through; Hickory Hills",
+   "resolution": "Sunset Stables permission approved; Hickory Hills update noted",
+   "quote": "sunset stables requested annual ride through permission for robbs hill. approved by motion of cc and a second by jr.",
+   "tags": [
+    "trail use",
+    "Hickory Hills",
+    "reports"
+   ]
+  },
+  {
+   "topic": "Adjournment and next meeting",
+   "resolution": "adjourned at 10 PM; next meeting 10/2/19",
+   "quote": "the meeting adjourned by a motion of kj and a second by cc at 10 pm.",
+   "tags": [
+    "adjournment",
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent, 915 Northfield Road (John Harrison), single family dwelling and grading",
+   "where": "text",
+   "quote": "john harrison has filed a notice of intent for the construction of a single"
+  },
+  {
+   "name": "Notice of Intent, DPW replacement of culverts at Sunset Lane and Northfield Road",
+   "where": "text",
+   "quote": "dpw has filed a notice of intent for the replacement of culverts at sunset lane and northfield road."
+  },
+  {
+   "name": "Notice of Intent, retaining wall within flood plain, 4 Sunset Lane (Roberts G. Evans)",
+   "where": "text",
+   "quote": "roberts g. evans has filed a notice of intent for installation of a retaining wall within flood plain 4 sunset"
+  },
+  {
+   "name": "Notice of Intent, grading and culvert, 131-133 Leominster-Shirley Road (Powell Stone and Gravel)",
+   "where": "text",
+   "quote": "powell stone and gravel has filed a notice of intent for the grading and the installation of a culvert"
+  },
+  {
+   "name": "Supplemental information and revised river front calculations (Powell Stone and Gravel)",
+   "where": "text",
+   "quote": "he reviewed the revised river front calculations"
+  },
+  {
+   "name": "Order of Conditions, 131-133 Leominster-Shirley Road, subject to change on plan",
+   "where": "text",
+   "quote": "td made a motion to approved tan order of conditions subject to the change agreed on the plan."
+  },
+  {
+   "name": "Notice of Intent, riverfront and buffer zone remediation, 260 Fallualah Road and 100 Summer Street (Greco Alonso)",
+   "where": "text",
+   "quote": "greco alonso has filed a notice of intent for the remediation of riverfront and buffer zone"
+  },
+  {
+   "name": "Request for determination, 31 Round Road (Shawn Farrow), boat ramp, sand, retaining wall, patio",
+   "where": "text",
+   "quote": "determination at 31 round road for the repair of a boat ramp"
+  },
+  {
+   "name": "Request for determination, 127 Pleasant Street (Paula Halbedel), driveway repair",
+   "where": "text",
+   "quote": "determination at 127 pleasant street for the repair of a driveway within the buffer zone."
+  },
+  {
+   "name": "Enforcement order, 127 Pleasant Street (previous order lifted)",
+   "where": "text",
+   "quote": "the previous enforcement order was lifted by a motion of cc"
+  },
+  {
+   "name": "Request for determination, 235 Island Road (Susanne Delisle), tree removal, impervious surface, pool",
+   "where": "text",
+   "quote": "determination at 235 island road for removal of six trees"
+  },
+  {
+   "name": "Notice of Intent, lake management program for Lake Shirley (Town of Lunenburg and Lake Shirley Improvement Corp)",
+   "where": "text",
+   "quote": "approval of a lake management program for lake shirley."
+  },
+  {
+   "name": "LSIC annual report (Lake Shirley)",
+   "where": "text",
+   "quote": "she acknowledged that the annual report can be refined to further elaborate on the species change"
+  },
+  {
+   "name": "Dock plan, 17 Ruth Street (Joel Swenson), NON-ENF CASE 2019-14, approved as field change",
+   "where": "text",
+   "quote": "his plan could be hand drawn fo the doc location and signed off"
+  },
+  {
+   "name": "Warrant article, 842R Chase Road (renewal of approval by town at town meeting)",
+   "where": "text",
+   "quote": "the commission had bp work with heather lemieux for a new wording to renew the approval by the town at town meeting"
+  },
+  {
+   "name": "Chapter 61 Release Request, 250 Howard Street",
+   "where": "text",
+   "quote": "chapter 61 release request 250 howard street"
+  },
+  {
+   "name": "Minutes of 9/4 meeting",
+   "where": "text",
+   "quote": "minutes of previous meetings - review minutes from 9/4 were approved by a motion of td and a second by cc."
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "notice of intent",
+  "request for determination",
+  "enforcement",
+  "Lake Shirley",
+  "executive session",
+  "hearings continued",
+  "APR",
+  "chapter 61",
+  "warrant article",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

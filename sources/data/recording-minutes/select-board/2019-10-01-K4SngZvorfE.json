@@ -1,0 +1,276 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting Part1",
+ "meeting_date": "2019-10-01",
+ "video_id": "K4SngZvorfE",
+ "video_url": "https://www.youtube.com/watch?v=K4SngZvorfE",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2019-10-01-K4SngZvorfE.json",
+  "sha256": "1663231eaa419f51168198f4d2a9a8a5c70de7d7a1042e5f805400ff5b9e5402",
+  "caption_lines": 24,
+  "segments": 166
+ },
+ "recording": {
+  "duration_s": 499,
+  "duration": "0:08",
+  "spoken_chars": 6022,
+  "words_approx": 1003
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10012019-5174",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-10-01-agenda-5174.txt",
+   "path": "sources/meetings/select-board/2019-10-01-agenda-5174.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10012019-5174",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-10-01-minutes-5174.txt",
+   "path": "sources/meetings/select-board/2019-10-01-minutes-5174.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-04T12:27:15Z",
+  "cost_usd": 0.11175090000000001
+ },
+ "minutes": {
+  "headline": "Select Board heard public comment and a kindness rocks pitch; no votes appear in the captions.",
+  "summary": "The captured portion covers the opening, board announcements about email scams and a broken outgoing email, and public comment. A resident opposed one candidate for the building committee, and another announced an opiate awareness forum. A high school service club began a kindness rocks presentation, where the captions end.",
+  "attendees": [],
+  "public_comment": [
+   {
+    "t": 123,
+    "speaker_as_heard": "rondalee CEO 181 reservoir Road",
+    "stated_role": "resident",
+    "topic": "Opposed one of four candidates for three building committee seats, citing his past service as chair of the school building committee and its use of contingency funds."
+   },
+   {
+    "t": 270,
+    "speaker_as_heard": "Ingrid Helmer 141 Canterbury Drive",
+    "topic": "Announced the Lunenburg ROAR forum on youth and pain management on October 17th at the middle high school auditorium."
+   }
+  ],
+  "tags": [
+   "high-school",
+   "public-comment"
+  ],
+  "votes": [],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 40,
+    "topic": "Opening and public comment rules",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 40,
+    "t_end": 123,
+    "topic": "Board member announcements: email scams and outgoing email outage",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 123,
+    "t_end": 270,
+    "topic": "Public comment: opposition to a building committee candidate",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 270,
+    "t_end": 422,
+    "topic": "Public comment: ROAR opiate awareness forum",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 422,
+    "t_end": 500,
+    "topic": "Kindness rocks presentation by LHS community service club",
+    "resolution": "informational; captions end",
+    "tags": [
+     "high-school"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Roll call and attendance are not in the captions.",
+   "The outcome of the building committee appointments is not in the captions.",
+   "The kindness rocks presentation is cut off."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 144,
+    "about": "A resident spoke against a candidate for the building committee over his past conduct as school building committee chair.",
+    "sides": "a resident against a building committee candidate",
+    "words_as_heard": "he was unwilling and unable to apply objective standards in his decision-making process",
+    "kind": "public criticism"
+   }
+  ],
+  "concerns_and_conditions": [],
+  "documents_mentioned": [
+   {
+    "t": 144,
+    "name_as_heard": "email sent to the candidate, February 29th 2016",
+    "kind": "letter or email",
+    "words_as_heard": "this is an email I sent to him"
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The captured portion of the Select Board meeting records no votes, decisions or budget items.",
+    "t": 0
+   },
+   {
+    "line": "Board members warned of email scams and said outgoing town email was broken.",
+    "t": 40
+   },
+   {
+    "line": "A resident opposed one of four candidates for three building committee seats, citing past use of contingency funds on the school building committee.",
+    "t": 123
+   },
+   {
+    "line": "Another resident announced the Lunenburg ROAR forum on youth and pain management for October 17 at the middle high school auditorium.",
+    "t": 270
+   },
+   {
+    "line": "A high school community service club began a kindness rocks presentation, where the captions end.",
+    "t": 422
+   }
+  ],
+  "why_it_matters": [
+   "Nothing in this portion changes a tax bill or a service, but the building committee seats are an election residents will be asked to vote on, and the comment shows how past project spending is being weighed.",
+   "The board's note that outgoing email was down may affect residents waiting on replies from town offices."
+  ],
+  "watch_next": [],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-04T12:27:19Z",
+   "cost_usd": 0.0233491
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10012019-5174",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-10-01-minutes-5174.txt",
+   "path": "sources/meetings/select-board/2019-10-01-minutes-5174.pdf"
+  },
+  "official_sha256": "7de76dcefda17a5dc5afbb5b991555f8d2339c8deed844159327045d4ec6f4d0",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "Our minutes are essentially empty (no votes, figures, decisions or attendees), so nothing in them agrees with or contradicts the official minutes. The official minutes record several appointment and license votes, grant and purchase figures, and an attendee list that our record lacks, so the recording should be checked for these.",
+  "counts": {
+   "agree": 0,
+   "caption_error": 0,
+   "discrepancy": 0,
+   "only_in_ours": 0,
+   "only_in_official": 11
+  },
+  "findings": [
+   {
+    "kind": "only_in_official",
+    "about": "Planning Board vacancy appointment of Marisa Thompson",
+    "ours": "",
+    "official": "motion: m. allison 2n: g. bittner to appoint marisa thompson to the planning board vacancy",
+    "note": "Official minutes record a passed appointment vote; our minutes record no votes at all, so check the recording for this vote."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Housing Authority appointment of Ron Dionne",
+    "ours": "",
+    "official": "she motioned to appoint him to the housing authority. ms. adams seconded it.",
+    "note": "Official records a passed vote in the joint meeting; ours has no vote."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Special one day beer and wine license, Dragonfly Garden Café",
+    "ours": "",
+    "official": "to approve the special one day beer and wine license for october 17\" from 5-8 p.m.",
+    "note": "Official records an approval vote; ours has none."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Ratification of Helen Godin as COA Senior Van Driver",
+    "ours": "",
+    "official": "to ratify town manager appointment of helen godin as coa senior van driver",
+    "note": "Official records a motion with no stated outcome; ours has none."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Ratification of Kayla McNamara Wright appointment",
+    "ours": "",
+    "official": "to ratify the town manager appointment of kayla mcnamara wright",
+    "note": "Official records a passed ratification; ours has none."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Ratification of Julie Belliveau as Assistant Town Manager/HR Director",
+    "ours": "",
+    "official": "to ratify the appointment of julie belliveau as assistant town manager/ar director",
+    "note": "Official records a passed ratification; ours has none."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Northfield Road purchase price and PARC/LAND grants",
+    "ours": "",
+    "official": "the total purchase price is $782,000 and after reimbursement from the grants is received in the amount of $500,000, the price is $282,000.",
+    "note": "Official has these figures ($782,000, $500,000, $282,000; $100,000 PARC and $400,000 LAND); ours lists no figures."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Tier 3 Complete Streets grant request",
+    "ours": "",
+    "official": "grant request is for $258,460 for",
+    "note": "Figure appears only in official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Warrants signed",
+    "ours": "",
+    "official": "the board signed a payroll warrant in the amount of $807,094.20, a payroll deductions warrant",
+    "note": "Official gives warrant amounts; ours has none."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "North Cemetery Niche Wall ramp grant request",
+    "ours": "",
+    "official": "the other grant application was for a project grant request in the amount of $17,000 to install a ramp",
+    "note": "Only in official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees",
+    "ours": "",
+    "official": "members present: damon mcquaid, clerk; katey adams, michael- ray jeffreys",
+    "note": "Our attendee list is empty; official lists Board members present (McQuaid, Adams, Jeffreys), Alonzo and Luck absent, and staff."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T12:29:14Z",
+   "cost_usd": 0.0465451
+  }
+ }
+}

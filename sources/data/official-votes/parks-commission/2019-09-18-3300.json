@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2019-09-18",
  "docid": "3300",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of July and August 2019",
+   "motion": "Approve the minutes of July and August 2019.",
    "moved_by": "John Palumbo",
    "seconded_by": "Susanna Jewell",
    "outcome": "passed 3-0",
@@ -20,7 +20,7 @@
    "quote": "john motioned and susanna seconded to approve the minutes of july and august 2019. approved 3-0."
   },
   {
-   "motion": "Recommend Kayla Wright as the first choice for Recreation Director",
+   "motion": "Recommend Kayla Wright as the first choice for Recreation Director.",
    "moved_by": "Karin Menard",
    "seconded_by": "Susanna Jewell",
    "outcome": "passed 3-0",
@@ -28,7 +28,7 @@
    "quote": "karin motioned and susanna seconded to recommend kayla wright as the first choice. supported 3-0"
   },
   {
-   "motion": "Recommend Hollie Lucht as the second choice for Recreation Director",
+   "motion": "Recommend Hollie Lucht as the second choice for Recreation Director.",
    "moved_by": "Karin Menard",
    "seconded_by": "John Palumbo",
    "outcome": "passed 3-0",
@@ -36,7 +36,7 @@
    "quote": "karin motioned and john seconded to recommend hollie lucht as the second choice. supported 3-0"
   },
   {
-   "motion": "Recommend Chris Letarte as the third choice for Recreation Director",
+   "motion": "Recommend Chris Letarte as the third choice for Recreation Director.",
    "moved_by": "Karin Menard",
    "seconded_by": "Susanna Jewell",
    "outcome": "passed 3-0",
@@ -45,6 +45,175 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0639974
+ "note": "Text extraction of a 3-page typed minutes document; readable, no scan issues. Agenda numbering skips item 6. No vote is recorded for adjournment (the minutes say only 'Meeting adjourned at 7:58pm.'), so none is listed. Roles for Ryan Stober, Dave Passios and John Palumbo are not printed. Ryan Stober and Dave Passios are not listed in the attendance line.",
+ "cost_usd": 0.00476442,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendance: karin menard, john palumbo, susanna jewell, town manager heather lemieux and dpw director jack rodriquenz."
+  },
+  {
+   "name": "John Palumbo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attendance: karin menard, john palumbo, susanna jewell, town manager heather lemieux and dpw director jack rodriquenz."
+  },
+  {
+   "name": "Susanna Jewell",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "attendance: karin menard, john palumbo, susanna jewell, town manager heather lemieux and dpw director jack rodriquenz."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager heather lemieux and dpw director jack rodriquenz."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "town manager heather lemieux and dpw director jack rodriquenz."
+  },
+  {
+   "name": "Hollie Lucht",
+   "role": "Recreation Director candidate (interviewed)",
+   "status": "present",
+   "quote": "hollie lucht - hollie discussed her background and her current job positions."
+  },
+  {
+   "name": "Kayla Wright",
+   "role": "Recreation Director candidate (interviewed)",
+   "status": "present",
+   "quote": "kayla wright - kayla wright said she hails from fitchburg and is looking to make a move"
+  },
+  {
+   "name": "Chris Letarte",
+   "role": "Recreation Director candidate (interviewed)",
+   "status": "present",
+   "quote": "chris letarte - chris spoke briefly about his involvement with the organizations in town"
+  },
+  {
+   "name": "Ryan Stober",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "ryan stober asked if she was planning on staying with the 2 towns she was already employed by."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "dave passios asked if passive recreation was on his radar as being a need in town and chris said it was."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "DPW Director Jack Rodriquenz's plan is to proceed with the surfacing project based on the original Capital request, not the alternate options that would exceed the capital plan.",
+   "quote": "jack said his plan would be to move ahead with the project based on the original capital request."
+  },
+  {
+   "decision": "The next meeting is set for October 16, 2019.",
+   "quote": "next meeting date: october 16, 2019"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Surfacing project alternate options",
+   "what_was_recorded": "The surfacing company said alternate options would cost more than what the capital plan allowed; the DPW Director plans to proceed on the original Capital request.",
+   "figures_as_printed": [],
+   "quote": "they said that it would be more than what was allowed in the capital plan."
+  },
+  {
+   "topic": "Recreation Director candidate position funding",
+   "what_was_recorded": "Kayla Wright said her current position is funded by a combination of Town money and programming revenue.",
+   "figures_as_printed": [],
+   "quote": "it is a combination of the town allocating money as well as being funded through programming."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "not stated",
+   "topic": "Wallis Park basketball courts",
+   "quote": "dave passios said he was in favor of leaving wallis park as two basketball courts and felt that removing them may limit the ability to do an in town adult basketball league."
+  },
+  {
+   "speaker": "Ryan Stober",
+   "stated_role": "not stated",
+   "topic": "Adult kick ball program",
+   "quote": "ryan stober said he was excited about the potential for the recreation director to bring forward an adult kick ball program."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approval (July and August 2019)",
+   "resolution": "approved 3-0",
+   "quote": "john motioned and susanna seconded to approve the minutes of july and august 2019. approved 3-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Manager and DPW Director updates",
+   "resolution": "no action; DPW to proceed on original capital request",
+   "quote": "jack updated the commission that the town had an agreement with a production company for the use of fitzgerald field.",
+   "tags": [
+    "fitzgerald field",
+    "surfacing",
+    "capital plan",
+    "dementia friendly"
+   ]
+  },
+  {
+   "topic": "Recreation Director interviews and ranking",
+   "resolution": "recommended ranking: Wright, Lucht, Letarte",
+   "quote": "recreation director interviews:",
+   "tags": [
+    "hiring",
+    "recreation director"
+   ]
+  },
+  {
+   "topic": "Other business and public and board comment",
+   "resolution": "no action; comments heard",
+   "quote": "other business matters that may legally come before the board not known at the time of posting.",
+   "tags": [
+    "wallis park",
+    "basketball",
+    "kick ball"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for October 16, 2019",
+   "quote": "next meeting date: october 16, 2019",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "recreation director hiring",
+  "interviews",
+  "Fitzgerald Field",
+  "surfacing project",
+  "capital plan",
+  "dementia friendly",
+  "Wallis Park",
+  "basketball courts",
+  "kick ball",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

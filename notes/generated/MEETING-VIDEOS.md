@@ -80,12 +80,12 @@ Same recording: at least 50% of each transcript's six-word runs occur in the oth
 | 2021-07-14 | lunenburg-water-district | [Lunenburg Water District 071421](https://www.youtube.com/watch?v=VCJlA5dEpnE) | same recording | 1.00 | 0 | yes |
 | 2021-05-12 | lunenburg-water-district | [Lunenburg Water District 05.12.21](https://www.youtube.com/watch?v=FVKo7gFjOBo) | same recording | 1.00 | 0 | yes |
 | 2021-05-12 | lunenburg-water-district | [Water District 05.12.21](https://www.youtube.com/watch?v=qropiCiLQ4w) | same recording | 1.00 | 0 | yes |
-| 2019-12-09 | planning-board | [Planning Board 12.09.19 - Part 2](https://www.youtube.com/watch?v=OMTI8vIFBcY) | separate recording | 0.00 | 0 |  |
-| 2019-12-09 | planning-board | [Planning Board 12.09.19 -  Part 1](https://www.youtube.com/watch?v=OaxZ4YN0mRs) | separate recording | 0.00 | 0 |  |
-| 2019-11-05 | select-board | [Selectmen Meeting 11.05.19 Part1](https://www.youtube.com/watch?v=g4Lz-JNNQEo) | separate recording | 0.01 | 0 |  |
-| 2019-11-05 | select-board | [Selectmen Meeting 11.05.19 Part2](https://www.youtube.com/watch?v=I8euy2aNahc) | separate recording | 0.01 | 0 |  |
+| 2019-12-09 | planning-board | [Planning Board 12.09.19 - Part 2](https://www.youtube.com/watch?v=OMTI8vIFBcY) | separate recording | 0.00 | 0 | yes |
+| 2019-12-09 | planning-board | [Planning Board 12.09.19 -  Part 1](https://www.youtube.com/watch?v=OaxZ4YN0mRs) | separate recording | 0.00 | 0 | yes |
+| 2019-11-05 | select-board | [Selectmen Meeting 11.05.19 Part1](https://www.youtube.com/watch?v=g4Lz-JNNQEo) | separate recording | 0.01 | 0 | yes |
+| 2019-11-05 | select-board | [Selectmen Meeting 11.05.19 Part2](https://www.youtube.com/watch?v=I8euy2aNahc) | separate recording | 0.01 | 0 | yes |
 | 2019-10-16 | conservation-commission | [Conservation Commission 10.16.19 Part1](https://www.youtube.com/watch?v=w69UtlPpY5g) | separate recording | 0.00 | 0 |  |
-| 2019-10-16 | conservation-commission | [Conservation Commission 10.16.19 Part2](https://www.youtube.com/watch?v=ppmsmVtRMq0) | separate recording | 0.00 | 0 |  |
+| 2019-10-16 | conservation-commission | [Conservation Commission 10.16.19 Part2](https://www.youtube.com/watch?v=ppmsmVtRMq0) | separate recording | 0.00 | 0 | yes |
 | 2019-10-01 | select-board | [Selectmen Meeting 10.01.19 Part1](https://www.youtube.com/watch?v=K4SngZvorfE) | separate recording | 0.00 | 0 |  |
 | 2019-10-01 | select-board | [selectmen100119 Part2](https://www.youtube.com/watch?v=NQL1DbD8SGQ) | separate recording | 0.00 | 0 |  |
 | 2019-09-17 | select-board | [Selectmen Meeting 09.17.19 Part 1 A](https://www.youtube.com/watch?v=_wDt5gE_B4c) | separate recording | 0.00 | 0 |  |

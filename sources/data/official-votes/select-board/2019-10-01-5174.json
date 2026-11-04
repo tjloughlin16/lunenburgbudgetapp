@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-10-01",
  "docid": "5174",
@@ -12,49 +12,560 @@
  },
  "votes": [
   {
-   "motion": "Appoint Marisa Thompson to the Planning Board vacancy",
+   "motion": "Appoint Marisa Thompson to the Planning Board vacancy.",
    "moved_by": "M. Allison",
    "seconded_by": "G. Bittner",
-   "outcome": "passed 7-0",
-   "procedural": true,
-   "quote": "motion: m. allison 2n: g. bittner to appoint marisa thompson to the planning board vacancy mr. jeffreys-aye, ms. adams- aye, mr. mcquaid-aye, mr. allison- aye, mr. bittner- aye, ms. bertram-aye, mr. cole-aye"
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: m. allison 2n: g. bittner to appoint marisa thompson to the planning board vacancy"
   },
   {
-   "motion": "Appoint Ron Dionne to the Housing Authority",
+   "motion": "Appoint Ron Dionne, 131 White Street, to the Housing Authority vacancy in the joint meeting with the Lunenburg Housing Authority.",
    "moved_by": "Linda McDonald",
-   "seconded_by": "Ms. Adams",
-   "outcome": "passed 6-0",
-   "procedural": true,
-   "quote": "she motioned to appoint him to the housing authority. ms. adams seconded it. vote: ms. mcdonald- aye, ms. menard- aye- ms. christen- aye, mr. jeffreys -aye, ms. adams- aye, mr. mcquaid - ay",
-   "quote_taken_from_text": true
+   "seconded_by": "Katey Adams",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "she motioned to appoint him to the housing authority. ms. adams seconded it."
   },
   {
-   "motion": "Approve the special one day beer and wine license for October 17 from 5-8 p.m.",
+   "motion": "Approve the special one day beer and wine license for October 17 from 5-8 p.m. for Dragonfly Garden Café LLC at 3 Lancaster Ave.",
    "moved_by": "K. Adams",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: k. adams 2nd: m. jeffreys to approve the special one day beer and wine license for october 17\" from 5-8 p.m. discussion: mr. je",
-   "quote_taken_from_text": true
+   "quote": "to approve the special one day beer and wine license for october 17\" from 5-8 p.m."
   },
   {
-   "motion": "Ratify Town Manager appointment of Helen Godin as COA Senior Van Driver",
+   "motion": "Ratify the Town Manager's appointment of Helen Godin as COA Senior Van Driver.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "K. Adams",
    "outcome": "not stated",
-   "procedural": true,
-   "quote": "motion: m. jeffreys 2nd: k. adams to ratify town manager appointment of helen godin as coa senior van driver"
+   "procedural": false,
+   "quote": "to ratify town manager appointment of helen godin as coa senior van driver"
   },
   {
-   "motion": "Ratify appointment of Julie Belliveau as Assistant Town Manager/HR Director",
+   "motion": "Ratify the Town Manager's appointment of Kayla McNamara Wright.",
+   "moved_by": "K. Adams",
+   "seconded_by": "M. Jelfreys",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to ratify the town manager appointment of kayla mcnamara wright"
+  },
+  {
+   "motion": "Ratify the appointment of Julie Belliveau as Assistant Town Manager/HR Director.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "K. Adams",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: m. jeffreys 2\": k. adams to ratify the appointment of julie belliveau as assistant town manager/ar director vote: all in favor"
+   "procedural": false,
+   "quote": "to ratify the appointment of julie belliveau as assistant town manager/ar director"
   }
  ],
- "dropped_unquoted": 1,
- "note": "Text extracted via OCR (macOS Vision). Vote #4 (Godin) records a motion but no voting result appears in the minutes—the document transitions to the next motion at a page break. Minor OCR artifacts preserved verbatim: \"2n:\" (2nd), \"4:\" (2nd), curly quotes.",
- "cost_usd": 0.1314905
+ "dropped_unquoted": 0,
+ "note": "OCR of a scanned minutes text; the first line of page 2 is mid-discussion, so the opening of the Planning Board item and the speakers there are missing. The Planning Board roll call names (Allison, Bittner, Bertram, Cole) appear without roles. The Helen Godin motion has no recorded vote result; the 'All in Favor' line follows the next motion. Vote for the Kayla McNamara Wright motion's seconder is OCR-garbled as 'M. Jelfreys'. 'Mr. Lemieux' is printed for Ms. Lemieux. The Belliveau title is printed as 'AR director' and the attendee roles use the printed forms. Vote counts are not printed except as 'All in Favor' and aye lists, so outcomes are recorded as 'passed'. The text ends in public comment on page 7; no adjournment motion or closing is recorded. Page 8 carries only the minutes signature.",
+ "cost_usd": 0.014770720000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: damon mcquaid, clerk; katey adams, michael- ray jeffreys"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "",
+   "status": "present",
+   "quote": "members present: damon mcquaid, clerk; katey adams, michael- ray jeffreys"
+  },
+  {
+   "name": "Michael- Ray Jeffreys",
+   "role": "",
+   "status": "present",
+   "quote": "members present: damon mcquaid, clerk; katey adams, michael- ray jeffreys"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "absent",
+   "quote": "members not present: tom alonzo, chairman; phyllis luck, vice chairman,"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Vice Chairman",
+   "status": "absent",
+   "quote": "members not present: tom alonzo, chairman; phyllis luck, vice chairman,"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; jack rodriquenz, dp director; adam burney, land"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DP Director",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; jack rodriquenz, dp director; adam burney, land"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; jack rodriquenz, dp director; adam burney, land"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "181 Reservoir Road",
+   "status": "present",
+   "quote": "rhonda lisio, 181 reservoir road, noticed on the agenda that there are four candidates for three"
+  },
+  {
+   "name": "Ingrid Helmer",
+   "role": "141 Canterbury Drive",
+   "status": "present",
+   "quote": "ingrid helmer, 141 canterbury drive, informed the board of a youth pain management forum"
+  },
+  {
+   "name": "Holly Smith",
+   "role": "President of the LHS Community Service Club",
+   "status": "present",
+   "quote": "holly smith, president of the lhs community service club, and mrs. jennifer miller, advisor/teacher"
+  },
+  {
+   "name": "Jennifer Miller",
+   "role": "Advisor/Teacher to the club",
+   "status": "present",
+   "quote": "holly smith, president of the lhs community service club, and mrs. jennifer miller, advisor/teacher"
+  },
+  {
+   "name": "M. Allison",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: m. allison 2n: g. bittner to appoint marisa thompson to the planning board vacancy"
+  },
+  {
+   "name": "G. Bittner",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: m. allison 2n: g. bittner to appoint marisa thompson to the planning board vacancy"
+  },
+  {
+   "name": "Ms. Bertram",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. allison- aye, mr. bittner- aye, ms. bertram-aye, mr. cole-aye"
+  },
+  {
+   "name": "Mr. Cole",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. allison- aye, mr. bittner- aye, ms. bertram-aye, mr. cole-aye"
+  },
+  {
+   "name": "Marisa Thompson",
+   "role": "Planning Board vacancy appointee",
+   "status": "not stated",
+   "quote": "to appoint marisa thompson to the planning board vacancy"
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Vice Chair of the Housing Authority",
+   "status": "present",
+   "quote": "linda mcdonald, vice chair of the housing authority stated they had a quorum for their meeting and"
+  },
+  {
+   "name": "Ron Dionne",
+   "role": "Housing Authority appointee, 131 White Street",
+   "status": "present",
+   "quote": "ron dionne stated he lives in the pearl brook apartments and has started"
+  },
+  {
+   "name": "Ms. Menard",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: ms. mcdonald- aye, ms. menard- aye- ms. christen- aye, mr. jeffreys -aye, ms. adams-"
+  },
+  {
+   "name": "Ms. Christen",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: ms. mcdonald- aye, ms. menard- aye- ms. christen- aye, mr. jeffreys -aye, ms. adams-"
+  },
+  {
+   "name": "Joslin Schneider",
+   "role": "Owner, 3 Lancaster Avenue",
+   "status": "present",
+   "quote": "owner joslin schneider, 3 lancaster avenue, presented for the application."
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "TC Building Design Committee applicant",
+   "status": "present",
+   "quote": "present tonight were mike mackin, deb cristen and dave blatt."
+  },
+  {
+   "name": "Deb Christen",
+   "role": "TC Building Design Committee applicant, 100 Boucher Road",
+   "status": "present",
+   "quote": "deb christen, 100 boucher road, has lived in town all her life."
+  },
+  {
+   "name": "Dave Blatt",
+   "role": "TC Building Design Committee applicant",
+   "status": "present",
+   "quote": "present tonight were mike mackin, deb cristen and dave blatt."
+  },
+  {
+   "name": "Tim Murphy",
+   "role": "Town Moderater",
+   "status": "present",
+   "quote": "town moderater tim murphy was also present as he participates in the appointing to building project committees."
+  },
+  {
+   "name": "Helen Godin",
+   "role": "COA Senior Van Driver appointee",
+   "status": "not stated",
+   "quote": "the first is helen godin as the coa senior van driver."
+  },
+  {
+   "name": "Kayla McNamara Wright",
+   "role": "ratified Town Manager appointee",
+   "status": "not stated",
+   "quote": "to ratify the town manager appointment of kayla mcnamara wright"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Assistant Town Manager/HR Director appointee",
+   "status": "present",
+   "quote": "ms. belliveau thanked the board and stated she looked forward to working with everyone."
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "82 Highland Street",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, regarding the interviews for members for the tc building"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The second TC Building Design Committee citizen interview is set for October 8, when votes will be taken on the three positions.",
+   "quote": "ms. lemieux informed the board this was the first of two interviews for these positions, the other is on"
+  },
+  {
+   "decision": "The Board signed a payroll warrant, a payroll deductions warrant and an accounts payable warrant.",
+   "quote": "the board signed a payroll warrant in the amount of $807,094.20, a payroll deductions warrant"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Payroll and accounts payable warrants signed",
+   "what_was_recorded": "The Board signed a payroll warrant, a payroll deductions warrant and an accounts payable warrant.",
+   "figures_as_printed": [
+    "$807,094.20",
+    "$36,110.15",
+    "$285,134.24"
+   ],
+   "quote": "the board signed a payroll warrant in the amount of $807,094.20, a payroll deductions warrant"
+  },
+  {
+   "topic": "Tier 3 Complete Streets grant request",
+   "what_was_recorded": "The Town's total grant request to MassDOT's Tier 3 Complete Streets program is for three Main Street area portions.",
+   "figures_as_printed": [
+    "$258,460"
+   ],
+   "quote": "grant request is for $258,460 for"
+  },
+  {
+   "topic": "PARC and LAND grant awards",
+   "what_was_recorded": "The Town was announced as a recipient of a PARC grant and a LAND grant for the Northfield Road property.",
+   "figures_as_printed": [
+    "$100,000",
+    "$400,000"
+   ],
+   "quote": "a recipient of a $100,000 parc grant and a $400,000 land grant"
+  },
+  {
+   "topic": "Northfield Road land purchase price after grants",
+   "what_was_recorded": "The total purchase price for 318 acres at 961 and 964 Northfield Road is $782,000, which becomes $282,000 after grant reimbursement of $500,000; the purchase is a Special Town Meeting article.",
+   "figures_as_printed": [
+    "$782,000",
+    "$500,000",
+    "$282,000"
+   ],
+   "quote": "the total purchase price is $782,000 and after reimbursement from the grants is received in the amount of $500,000, the price is $282,000."
+  },
+  {
+   "topic": "North Cemetery Niche Wall ramp project grant request",
+   "what_was_recorded": "A $17,000 Project Grant was requested by the Cemetery Commission to build an ADA ramp and railings to the Niche Wall.",
+   "figures_as_printed": [
+    "$17,000"
+   ],
+   "quote": "the other grant application was for a project grant request in the amount of $17,000 to install a ramp"
+  },
+  {
+   "topic": "Grant competitiveness",
+   "what_was_recorded": "Last year's grant round was very competitive, with only 30 of 100 applications chosen and an average request near $30,000.",
+   "figures_as_printed": [
+    "$30,000"
+   ],
+   "quote": "only 30 were chosen with the average request being around $30,000."
+  },
+  {
+   "topic": "925 Mass Ave environmental assessment cost",
+   "what_was_recorded": "An updated cost estimate from an environmental consultant and possible funding sources are the next steps; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "i will get an updated cost estimate from an environmental consultant"
+  },
+  {
+   "topic": "TC Passios Building design RFP and funding",
+   "what_was_recorded": "A resident asked whether the TC Building Design Committee was a done deal given no funding; the Town Manager explained an RFP for a detailed design and cost estimate.",
+   "figures_as_printed": [],
+   "quote": "asked if this is a done deal as there is no funding, etc."
+  },
+  {
+   "topic": "Streetlight conversion to LED article",
+   "what_was_recorded": "A Town Manager article would fund converting street lights to LED, tied to the purchase of streetlights from Unitil and a possible Green Community grant; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "recently added articles concern the purchase of streetlights from unitil:"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Outgoing town emails not sent",
+   "speaker": "Ms. Adams",
+   "stated_role": "",
+   "quote": "ms. adams stated her town outgoing emails haven't been sent as of august 20th"
+  },
+  {
+   "topic": "Email scams and suspicious links",
+   "speaker": "Mr. Jeffreys",
+   "stated_role": "",
+   "quote": "mr. jeffreys reminded everyone that there are a lot of scams out there, many times coming through"
+  },
+  {
+   "topic": "TC Building Design Committee candidate opposition",
+   "speaker": "Rhonda Lisio",
+   "stated_role": "181 Reservoir Road",
+   "quote": "rhonda lisio, 181 reservoir road, noticed on the agenda that there are four candidates for three"
+  },
+  {
+   "topic": "Youth Pain Management forum",
+   "speaker": "Ingrid Helmer",
+   "stated_role": "141 Canterbury Drive",
+   "quote": "ingrid helmer, 141 canterbury drive, informed the board of a youth pain management forum"
+  },
+  {
+   "topic": "Whether TC Building Design Committee is a done deal; three-minute rule for Board members",
+   "speaker": "Dave Rodgers",
+   "stated_role": "82 Highland Street",
+   "quote": "dave rodgers, 82 highland street, regarding the interviews for members for the tc building"
+  },
+  {
+   "topic": "Public comment time limits for Board members",
+   "speaker": "Mr. Jeffreys",
+   "stated_role": "",
+   "quote": "mr. jeffreys noted during his tenure on the board that there has not been a limit to anyone"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "heard; no action",
+   "quote": "mr. jeffreys reminded everyone that there are a lot of scams out there, many times coming through",
+   "tags": [
+    "public comment",
+    "email scams",
+    "town emails",
+    "forum"
+   ]
+  },
+  {
+   "topic": "Kindness Rocks presentation (LHS Community Service Club)",
+   "resolution": "presented; Board supportive",
+   "quote": "holly smith, president of the lhs community service club, and mrs. jennifer miller, advisor/teacher",
+   "tags": [
+    "presentation",
+    "community",
+    "students"
+   ]
+  },
+  {
+   "topic": "Planning Board vacancy appointment (Marisa Thompson)",
+   "resolution": "appointed",
+   "quote": "motion: m. allison 2n: g. bittner to appoint marisa thompson to the planning board vacancy",
+   "tags": [
+    "appointments",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Joint appointment with Housing Authority (Ron Dionne)",
+   "resolution": "appointed",
+   "quote": "joint meeting with lunenburg housing authority to mutually appoint to housing vacancy due to",
+   "tags": [
+    "appointments",
+    "housing authority"
+   ]
+  },
+  {
+   "topic": "Special one day beer and wine license, 3 Lancaster Ave.",
+   "resolution": "approved",
+   "quote": "special one day beer & wine license: 3 lancaster ave. for october 17- dragonfly garden café",
+   "tags": [
+    "licenses",
+    "alcohol",
+    "beer and wine"
+   ]
+  },
+  {
+   "topic": "TC Building Design Committee citizen-at-large interviews",
+   "resolution": "interviews held; votes set for October 8",
+   "quote": "tc building design committee citizens at large interviews: (3 positions)",
+   "tags": [
+    "TC building",
+    "committee",
+    "interviews"
+   ]
+  },
+  {
+   "topic": "Ratification of Town Manager appointments",
+   "resolution": "ratified Belliveau and McNamara Wright; Godin motion no result recorded",
+   "quote": "ratification of town manager's appointments",
+   "tags": [
+    "appointments",
+    "town manager",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational; no action",
+   "quote": "talent bank forms can be obtained on the town website and forwarded to the board of selectmen's",
+   "tags": [
+    "vacancies",
+    "training",
+    "grants",
+    "Summer Street",
+    "recycling",
+    "trash bags",
+    "900 Mass Ave"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "warrants signed",
+   "quote": "1. minutes/warrants/ action items",
+   "tags": [
+    "warrants",
+    "payroll",
+    "accounts payable"
+   ]
+  },
+  {
+   "topic": "Old business: Special Town Meeting warrant articles",
+   "resolution": "discussed; no action",
+   "quote": "recently added articles concern the purchase of streetlights from unitil:",
+   "tags": [
+    "special town meeting",
+    "streetlights",
+    "Old Primary School",
+    "alcohol licenses"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "heard; time limits discussed",
+   "quote": "dave rodgers, 82 highland street, regarding the interviews for members for the tc building",
+   "tags": [
+    "public comment",
+    "TC building",
+    "time limits"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Administrative Search Warrant (925 Mass Ave, old gas station)",
+   "where": "text",
+   "quote": "town counsel drafted an administrative search warrant that utilizes the powers of the board of"
+  },
+  {
+   "name": "Tier 3 Complete Streets Grant application (MassDOT)",
+   "where": "text",
+   "quote": "necessary to submit to the massachusetts department of transportation tier 3 complete streets grant."
+  },
+  {
+   "name": "LAND and PARC grant applications",
+   "where": "text",
+   "quote": "the land acquisition committee submitted these grant applications with the approval of the board of selectmen in july"
+  },
+  {
+   "name": "Project Grant application for Niche Wall ramp, North Cemetery",
+   "where": "text",
+   "quote": "the other grant application was for a project grant request in the amount of $17,000 to install a ramp"
+  },
+  {
+   "name": "Walkability and Parking Study (public meeting photos)",
+   "where": "text",
+   "quote": "from our walkability and parking study public meeting on main street"
+  },
+  {
+   "name": "Special Town Meeting warrant (land purchase article)",
+   "where": "text",
+   "quote": "the purchase of the property is an article on the special town meeting warrant."
+  },
+  {
+   "name": "Streetlight LED conversion article (submitted by the Town Manager)",
+   "where": "text",
+   "quote": "recently added articles concern the purchase of streetlights from unitil:"
+  },
+  {
+   "name": "Non-binding Old Primary School demolition article (submitted by the Board of Selectmen)",
+   "where": "text",
+   "quote": "do you support the demolition of the old primary school located at 30 school street?"
+  },
+  {
+   "name": "Talent bank forms",
+   "where": "text",
+   "quote": "talent bank forms can be obtained on the town website and forwarded to the board of selectmen's"
+  },
+  {
+   "name": "Request for Proposals for TC Passios Building design and cost estimate",
+   "where": "text",
+   "quote": "it would be for putting out a request for proposals to hire an architectural engineering firm to"
+  },
+  {
+   "name": "Special One Day Beer & Wine License application, 3 Lancaster Ave.",
+   "where": "text",
+   "quote": "special one day beer & wine license: 3 lancaster ave. for october 17- dragonfly garden café"
+  },
+  {
+   "name": "Payroll, payroll deductions and accounts payable warrants",
+   "where": "text",
+   "quote": "the board signed a payroll warrant in the amount of $807,094.20, a payroll deductions warrant"
+  }
+ ],
+ "tags": [
+  "appointments",
+  "Planning Board",
+  "Housing Authority",
+  "town manager",
+  "ratification",
+  "alcohol license",
+  "TC Building Design Committee",
+  "warrants",
+  "Special Town Meeting",
+  "grants",
+  "land purchase",
+  "streetlights",
+  "Old Primary School",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

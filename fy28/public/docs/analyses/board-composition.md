@@ -16,8 +16,8 @@ COUNCIL ON AGING is the biggest body in the town at 11 seats. 26 posts have a si
 |---|---:|---:|---:|
 | FY2020 | 138 | 148 | 107% |
 | FY2021 | 115 | 118 | 103% |
-| FY2022 | 93 | 95 | 102% |
-| FY2023 | 98 | 103 | 105% |
+| FY2022 | 93 | 96 | 103% |
+| FY2023 | 98 | 104 | 106% |
 | FY2024 | 111 | 103 | 93% |
 | FY2025 | 116 | 101 | 87% |
 
@@ -25,11 +25,11 @@ A board’s charter fixes how many seats it has, so the seat COUNT is not a tren
 
 | | FY2017 | FY2018 | FY2019 | FY2020 | FY2021 | FY2022 | FY2023 | FY2024 | FY2025 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| stayed from the year before | 145 | 158 | 163 | 115 | 144 | 121 | 132 | 115 | 106 |
-| new that year | 57 | 48 | 51 | 87 | 58 | 67 | 52 | 56 | 67 |
-| gone from the year before | 75 | 44 | 43 | 99 | 58 | 81 | 56 | 69 | 65 |
+| stayed from the year before | 143 | 156 | 160 | 115 | 143 | 122 | 133 | 114 | 106 |
+| new that year | 53 | 43 | 49 | 85 | 57 | 67 | 50 | 55 | 65 |
+| gone from the year before | 73 | 40 | 39 | 94 | 57 | 78 | 56 | 69 | 63 |
 
-19 of the 703 people listed at any point across the ten years appear in all of them.
+19 of the 680 people listed at any point across the ten years appear in all of them.
 
 ## Which boards change most
 
@@ -39,7 +39,7 @@ Seats changing hands each year, over bodies of three seats or more. `years compa
 |---|---:|---:|---:|
 | GCTF ADVISORS | 3.5 | 3 | 71% |
 | MONTACHUSETT REGIONAL VOCATIONAL TECHNICAL SCHOOL REPRESENTATIVE | 8.0 | 3 | 67% |
-| STORM WATER TASK FORCE | 3.3 | 9 | 63% |
+| STORM WATER TASK FORCE | 3.6 | 9 | 62% |
 | AMERICANS WITH DISABILITIES COMMITTEE | 3.8 | 3 | 56% |
 | ECONOMIC DEVELOPMENT COMMITTEE | 4.0 | 4 | 56% |
 | GREEN COMMUNITIES COMMITTEE | 3.7 | 3 | 54% |
@@ -147,7 +147,7 @@ FY2025, filled seats only.
 | | FY2016 | FY2017 | FY2018 | FY2019 | FY2020 | FY2021 | FY2022 | FY2023 | FY2024 | FY2025 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | Elected seats — filled by the voters | 57 | 58 | 56 | 53 | 59 | 56 | 53 | 56 | 51 | 53 |
-| Appointed board seats — filled by the Select Board | 69 | 72 | 72 | 79 | 103 | 106 | 86 | 92 | 79 | 79 |
+| Appointed board seats — filled by the Select Board | 69 | 72 | 72 | 79 | 103 | 106 | 87 | 93 | 79 | 79 |
 
 ## What this cannot show
 
@@ -158,7 +158,7 @@ FY2025, filled seats only.
 
 ## How well we read it
 
-Most headings state their own membership, so the page checks itself: 492 rows sit under a board where the stated size and the printed names agree, 299 where they differ, and 1,368 under a post that states no size. A difference is a vacancy, a mid-year replacement printed beside the person it replaced, or our reading of a page set in two columns — a note about our extraction rather than about the town.
+Most headings state their own membership, so the page checks itself: 492 rows sit under a board where the stated size and the printed names agree, 301 where they differ, and 1,368 under a post that states no size. A difference is a vacancy, a mid-year replacement printed beside the person it replaced, or our reading of a page set in two columns — a note about our extraction rather than about the town.
 
 ## Where it comes from
 

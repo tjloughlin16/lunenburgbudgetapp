@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2019-09-26",
  "docid": "2150",
@@ -12,15 +12,204 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Approve an item (the motion text is missing from the OCR; appears to be approval of a prior record, with Michelle Walton seconding).",
+   "moved_by": "",
+   "seconded_by": "Michelle Walton",
+   "outcome": "approved unanimously",
+   "procedural": true,
+   "quote": "meeting (2na, michelle walton). approved unanimously."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "David Passios",
    "seconded_by": "Peter Beardmore",
-   "outcome": "passed unanimously",
+   "outcome": "unanimous approval",
    "procedural": true,
    "quote": "david passios motioned/ peter beardmore seconded; unanimous approval"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. One vote recorded: adjournment. An incomplete fragment on page 3 (\"meeting (2na, Michelle Walton). Approved unanimously.\") appears to describe discussion rather than a recorded motion vote, lacks sufficient context to identify the motion, and is not included.",
- "cost_usd": 0.08708450000000001
+ "note": "OCR scan with garbled and missing text. The page 1 to page 2 break drops text mid-sentence. Item 6 has no heading and no mover; its motion text is lost, so the vote is recorded as approval with Michelle Walton seconding (\"2na\" read as second). Spelling varies: \"Peter Beadmore\" in item 5, \"Dave Passios\" in attendance vs \"David Passios\" in the header and vote. The town manager is referenced but not named, so is not listed as an attendee. The board's motion record is mostly lost. The received-and-filed stamp reads FEB 13 2020.",
+ "cost_usd": 0.00387642,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "terri burchfield, dave passios, jay simeone, peter beardmore, michelle walton"
+  },
+  {
+   "name": "Michelle Walton",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "terri burchfield, dave passios, jay simeone, peter beardmore, michelle walton"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "terri burchfield, dave passios, jay simeone, peter beardmore, michelle walton"
+  },
+  {
+   "name": "David Passios",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, dave passios, jay simeone, peter beardmore, michelle walton"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, dave passios, jay simeone, peter beardmore, michelle walton"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "absent: john henshaw"
+  },
+  {
+   "name": "Rhonda Lissio",
+   "role": "Resident",
+   "status": "present",
+   "quote": "resident rhonda lissio spoke in support of the plan to incrementally increase the staffing levels in the police and fire departments"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Joint meeting of Finance Committee, Board of Selectmen and School Committee to be held as a strictly question-and-answer format directed to speakers through the chairs, with the committee chairs jointly running it.",
+   "quote": "the format is strictly question and answers directed to the speakers (through the chairs)."
+  },
+  {
+   "decision": "All involved committees for the joint meeting will be posted in accordance with the open meeting law.",
+   "quote": "all involved committees will be posted in accordance with the open meeting law."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Land acquisition grants (Northfield Road)",
+   "what_was_recorded": "Grants sought for land acquisition (conservation and parks) were approved in full, totaling approximately $500K for the Northfield Road land under consideration.",
+   "figures_as_printed": [
+    "$500K"
+   ],
+   "quote": "were approved in full totaling approximately $500k for the land on northfield road"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rhonda Lissio",
+   "stated_role": "Resident",
+   "topic": "Support for incremental police and fire staffing increases",
+   "quote": "resident rhonda lissio spoke in support of the plan to incrementally increase the staffing levels in the police and fire departments, particularly because the fire department now has 24 hour coverage."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "tags": [
+    "call to order"
+   ],
+   "quote": "terri burchfield, chair called the meeting to order at 7pm."
+  },
+  {
+   "topic": "Communication: land acquisition grants",
+   "resolution": "no action",
+   "tags": [
+    "grants",
+    "land acquisition"
+   ],
+   "quote": "were approved in full totaling approximately $500k for the land on northfield road that is under consideration for acquisition."
+  },
+  {
+   "topic": "Town Manager presentation on budget development process",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "budget",
+    "town manager",
+    "forecast",
+    "staffing"
+   ],
+   "quote": "the town manager delivered a powerpoint presentation outlining all the elements of the town budget"
+  },
+  {
+   "topic": "Joint meeting (Oct 29)",
+   "resolution": "format and posting agreed",
+   "tags": [
+    "joint meeting",
+    "open meeting law"
+   ],
+   "quote": "joint meeting will be on october 29th at lmhs auditorium involving"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "tags": [
+    "school committee",
+    "capital needs"
+   ],
+   "quote": "peter beadmore reported that the school committee met on september"
+  },
+  {
+   "topic": "Item 6 (heading missing from OCR)",
+   "resolution": "approved unanimously",
+   "tags": [
+    "approval"
+   ],
+   "quote": "meeting (2na, michelle walton). approved unanimously."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "one speaker, no action",
+   "tags": [
+    "public comment",
+    "police",
+    "fire",
+    "staffing"
+   ],
+   "quote": "resident rhonda lissio spoke in support of the plan to incrementally increase the staffing levels"
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled",
+   "tags": [
+    "warrant articles",
+    "public hearing"
+   ],
+   "quote": "october 10, 2019 (public hearing for warrant articles)"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned unanimously",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "david passios motioned/ peter beardmore seconded; unanimous approval"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town manager powerpoint presentation on the town budget",
+   "where": "text",
+   "quote": "the town manager delivered a powerpoint presentation outlining all the elements of the town budget"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "town budget",
+  "joint meeting",
+  "land acquisition grants",
+  "police and fire staffing",
+  "overtime",
+  "warrant articles",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

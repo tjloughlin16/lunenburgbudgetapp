@@ -1,0 +1,673 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "selectmen Part2",
+ "meeting_date": "2019-10-01",
+ "video_id": "NQL1DbD8SGQ",
+ "video_url": "https://www.youtube.com/watch?v=NQL1DbD8SGQ",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2019-10-01-NQL1DbD8SGQ.json",
+  "sha256": "89861b13ce63633e2422dce2cfe7293d989ced63d3907a9eeeeb58ba81234c53",
+  "caption_lines": 274,
+  "segments": 2077
+ },
+ "recording": {
+  "duration_s": 5860,
+  "duration": "1:37",
+  "spoken_chars": 75202,
+  "words_approx": 12533
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10012019-5174",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-10-01-agenda-5174.txt",
+   "path": "sources/meetings/select-board/2019-10-01-agenda-5174.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10012019-5174",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-10-01-minutes-5174.txt",
+   "path": "sources/meetings/select-board/2019-10-01-minutes-5174.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-04T12:26:47Z",
+  "cost_usd": 0.2038604
+ },
+ "minutes": {
+  "headline": "Select Board appointed members to Planning Board and Housing Authority and ratified three town hires; TC Passios committee interviews held.",
+  "summary": "The board held joint meetings to fill vacancies on the Planning Board and Housing Authority, granted a one-day beer and wine license, and interviewed four candidates for the TC Passios building design committee. It ratified a Council on Aging van driver, a recreation director and an assistant town manager/HR director. The town manager reported on grants, the 925 Mass Ave search warrant and the draft special town meeting warrant, including a non-binding question on demolishing the old primary school. A resident objected to the three-minute public comment rule.",
+  "attendees": [
+   {
+    "name_as_heard": "Matthew Allison",
+    "role": "chairman of the Planning Board"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Mr. Verney",
+    "role": "town official (addressed on warrant)"
+   },
+   {
+    "name_as_heard": "DPW director",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Kayla Wright",
+    "role": "presenter (recreation director appointee)"
+   },
+   {
+    "name_as_heard": "Julie Beliveau",
+    "role": "presenter (assistant town manager appointee)"
+   },
+   {
+    "name_as_heard": "Mr. Layton",
+    "role": "moderator"
+   },
+   {
+    "name_as_heard": "McDonald",
+    "role": "Housing Authority member"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 5337,
+    "speaker_as_heard": "Dave Rogers 82 Highland Street",
+    "stated_role": "resident",
+    "topic": "Asked whether the TC Passios building committee means the project is not a done deal and whether voters still decide; objected to the three-minute public comment rule applying only to the public and not to the board."
+   }
+  ],
+  "tags": [
+   "budget",
+   "facilities",
+   "grants",
+   "hiring",
+   "housing",
+   "legal",
+   "personnel",
+   "planning-and-zoning",
+   "public-comment",
+   "public-safety",
+   "recreation",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 551,
+    "motion": "Nominate Marissa Thompson to the Planning Board vacancy (joint meeting, roll call)",
+    "moved_by": "unknown",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 1144,
+    "motion": "Nominate Ron Dion to the Housing Authority vacancy (joint vote)",
+    "moved_by": "unknown",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 1408,
+    "motion": "Grant a special one-day beer and wine license for 3 Lancaster Ave on October 17th at the Dragonfly Garden Cafe",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 2715,
+    "motion": "Ratify appointment of Helen Godin as Council on Aging van driver",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 2955,
+    "motion": "Ratify appointment of Kayla Wright as recreation director",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 3314,
+    "motion": "Ratify appointment of Julie Beliveau as assistant town manager and HR director",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 5846,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 3574,
+    "topic": "Northfield Road land purchase",
+    "what_was_said": "Town received park and land grants toward the conservation purchase on the special town meeting warrant, reducing the net price.",
+    "figures_as_heard": [
+     "a hundred thousand",
+     "four hundred thousand",
+     "seven hundred and eighty two thousand",
+     "500 thousand",
+     "282,000"
+    ]
+   },
+   {
+    "t": 3595,
+    "topic": "Complete Streets Tier three grant",
+    "what_was_said": "The town submitted a grant request for Main Street area improvements.",
+    "figures_as_heard": [
+     "258 thousand four hundred sixty dollars"
+    ]
+   },
+   {
+    "t": 3655,
+    "topic": "Mass Office on Disability grants",
+    "what_was_said": "Two grants were submitted, one for ADA transition plan planning and one for a cemetery niche wall ramp.",
+    "figures_as_heard": [
+     "seven thousand",
+     "seventeen thousand"
+    ]
+   },
+   {
+    "t": 3446,
+    "topic": "Pay as you throw large bags",
+    "what_was_said": "Complaints that large bags rip led to testing a different bag size.",
+    "figures_as_heard": [
+     "33 by 35",
+     "34 by 34"
+    ]
+   },
+   {
+    "t": 4068,
+    "topic": "Warrants",
+    "what_was_said": "Accounts payable and payroll warrants were read.",
+    "figures_as_heard": [
+     "thirty six thousand one hundred ten dollars and fifteen cents",
+     "eight hundred seven thousand ninety four dollars and twenty cents",
+     "two hundred eighty five thousand one hundred thirty four dollars"
+    ]
+   },
+   {
+    "t": 4389,
+    "topic": "Street light LED conversion",
+    "what_was_said": "Unitil responded with costs to purchase the lights and to install LED fixtures; owning them would allow a Green Communities grant application.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 4845,
+    "topic": "Old primary school demolition",
+    "what_was_said": "A member said demolition would cost approximately a half a million dollars based on a prior study.",
+    "figures_as_heard": [
+     "a half a million dollars"
+    ]
+   },
+   {
+    "t": 5379,
+    "topic": "TC Passios design",
+    "what_was_said": "Town manager said an RFP for design and detailed cost estimate would come before asking voters to fund construction.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2609,
+    "decision": "Remaining TC Passios design committee interviews set for October 8, with the vote the following week."
+   },
+   {
+    "t": 5251,
+    "decision": "Board to decide liquor license article details at the October 8 review and sign the warrant on the 15th."
+   },
+   {
+    "t": 4631,
+    "decision": "Planning Board to be asked how it wants its earth removal article presented in the warrant."
+   },
+   {
+    "t": 5294,
+    "decision": "Meetings set: October 8 workshop and Unitil meeting, regular meeting on the 22nd, special town meeting November 12."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 228,
+    "topic": "Kindness rocks club presentation",
+    "resolution": "informational",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 228,
+    "t_end": 601,
+    "topic": "Joint interview and appointment, Planning Board vacancy",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 601,
+    "t_end": 1211,
+    "topic": "Joint interview and appointment, Housing Authority vacancy",
+    "resolution": "voted",
+    "tags": [
+     "housing",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1211,
+    "t_end": 1454,
+    "topic": "Special one-day beer and wine license",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 1454,
+    "t_end": 2675,
+    "topic": "TC Passios building design committee interviews",
+    "resolution": "informational",
+    "tags": [
+     "facilities",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 2675,
+    "t_end": 3360,
+    "topic": "Ratification of town manager appointments",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3360,
+    "t_end": 4029,
+    "topic": "Town manager report",
+    "resolution": "informational",
+    "tags": [
+     "grants",
+     "town-departments",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 4029,
+    "t_end": 4345,
+    "topic": "Warrants and board reports on Unitil tree program",
+    "resolution": "informational",
+    "tags": [
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 4345,
+    "t_end": 5315,
+    "topic": "Draft special town meeting warrant",
+    "resolution": "referred",
+    "tags": [
+     "town-meeting",
+     "warrant-article",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 5315,
+    "t_end": 5821,
+    "topic": "Public comment",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 5821,
+    "t_end": 5860,
+    "topic": "Closing comments and adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Vote counts for all appointments, the license and adjournment are not stated.",
+   "Roll call results for the Planning Board appointment are not captured.",
+   "Some speakers and a few words in the warrant discussion are garbled."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 4803,
+    "about": "Whether asking Town Meeting about demolishing the old primary school without cost information is fair.",
+    "sides": "One member against the wording as uninformed on cost; other members for it, saying cost data exists.",
+    "words_as_heard": "you're asking for input without giving the people the information of the cost associated either way",
+    "kind": "members disagree"
+   },
+   {
+    "t": 5505,
+    "about": "Resident objected to the three-minute public comment rule and said the board should be held to it.",
+    "sides": "A resident against the board and chair; members defended the rule.",
+    "words_as_heard": "anytime anybody tries to squeeze that to me the hair in the back of my neck goes up",
+    "kind": "public criticism"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 4803,
+    "kind": "condition",
+    "about": "A member's concern that the non-binding question lacks cost information.",
+    "who": "a member",
+    "words_as_heard": "you're asking for input without giving the people the information of the cost associated either way"
+   },
+   {
+    "t": 3736,
+    "kind": "liability or legal",
+    "about": "Administrative search warrant for access to the old gas station property for environmental assessment.",
+    "who": "the town manager",
+    "words_as_heard": "administrative search warrant that utilizes the powers the Board of Health that evaluate properties that may pose a public health risk"
+   },
+   {
+    "t": 5013,
+    "kind": "safety",
+    "about": "Prior study priced immediate safety needs of the old primary school.",
+    "who": "a member",
+    "words_as_heard": "the immediate needs the safety needs and that was all priced out"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 4389,
+    "name_as_heard": "Unitil response on LED streetlight costs",
+    "kind": "letter or email",
+    "words_as_heard": "yesterday we received the response from Unitel that we had requested back in June"
+   },
+   {
+    "t": 4368,
+    "name_as_heard": "draft special town meeting warrant",
+    "kind": "warrant article",
+    "words_as_heard": "we have a total of 18 articles"
+   },
+   {
+    "t": 4950,
+    "name_as_heard": "the vertex study",
+    "kind": "report",
+    "words_as_heard": "we also had the vertex study which identified all of the costs of repairing the building"
+   },
+   {
+    "t": 4845,
+    "name_as_heard": "the TAPA study",
+    "kind": "report",
+    "words_as_heard": "it's in the tap a there's been enough assigned to that"
+   },
+   {
+    "t": 1517,
+    "name_as_heard": "withdrawal letter",
+    "kind": "letter or email",
+    "words_as_heard": "there's a letter stating the reasons of his withdrawal"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "old-primary-school-demolition",
+    "title": "Old primary school demolition",
+    "question": "What would demolishing versus repairing the old primary school cost?",
+    "t": 4845,
+    "words_as_heard": "we do know the cost of demolition and there are factors where we could calculate the change",
+    "data_in_play": [
+     "a half a million dollars",
+     "vertex study",
+     "tap a study"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "tc-passios-costs",
+    "title": "TC Passios costs",
+    "question": "What has been spent and what would design and construction of the TC Passios building cost?",
+    "t": 5379,
+    "words_as_heard": "we need to do work with the design architect get a design get a real real price",
+    "data_in_play": [
+     "RFP",
+     "design estimate"
+    ],
+    "existing": "thread:tc-passios-site"
+   },
+   {
+    "slug": "street-light-led-conversion",
+    "title": "Street light LED conversion",
+    "question": "What would it cost to buy the street lights from Unitil and convert them to LED?",
+    "t": 4389,
+    "words_as_heard": "the cost to convert our streetlights to LED",
+    "data_in_play": [
+     "Green Communities competitive grant"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "watch_next": [
+   "October 8 workshop and Unitil meeting, where the board is to decide liquor license article details and hear the remaining TC Passios design committee interviews, with that vote the following week.",
+   "Warrant signing on October 15 and the special town meeting on November 12."
+  ],
+  "what_happened": [
+   {
+    "line": "The Select Board and Planning Board met jointly to nominate Marissa Thompson to a Planning Board vacancy; the minutes do not record an audible outcome.",
+    "t": 551
+   },
+   {
+    "line": "The Select Board and Housing Authority voted jointly on a nomination of Ron Dion to the Housing Authority vacancy; the minutes do not record an audible outcome.",
+    "t": 1144
+   },
+   {
+    "line": "The board ratified three town hires: a Council on Aging van driver, a recreation director, and an assistant town manager/HR director.",
+    "t": 3314
+   },
+   {
+    "line": "The board interviewed four candidates for the TC Passios building design committee and set the remaining interviews for October 8, with the vote the following week.",
+    "t": 2609
+   },
+   {
+    "line": "The board reviewed the draft special town meeting warrant, including a non-binding question on demolishing the old primary school, and will settle liquor license article details October 8.",
+    "t": 5251
+   }
+  ],
+  "why_it_matters": [
+   "The special town meeting warrant sets what voters will be asked to decide on November 12, including a land purchase, a liquor license article and a non-binding question on the old primary school.",
+   "The TC Passios design committee and the planned design RFP come before any request to voters to fund construction, so a cost estimate is expected before a funding vote.",
+   "Street light ownership and the old primary school demolition cost, as stated by a board member, bear on future town budgets, mostly taxes."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-04T12:26:57Z",
+   "cost_usd": 0.0295971
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10012019-5174",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-10-01-minutes-5174.txt",
+   "path": "sources/meetings/select-board/2019-10-01-minutes-5174.pdf"
+  },
+  "official_sha256": "7de76dcefda17a5dc5afbb5b991555f8d2339c8deed844159327045d4ec6f4d0",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the main appointments, the license, and the headline grant and land figures. Differences are mostly misheard names and garbled figures. The one real conflict is the Helen Godin vote, which the official minutes leave without an outcome. Our minutes also name the wrong board for the attendees: the official minutes show the Select Board members present, while ours list Planning Board people.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 3,
+   "discrepancy": 4,
+   "only_in_ours": 5,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Planning Board appointee name",
+    "ours": "Nominate Marissa Thompson to the Planning Board vacancy (joint meeting, roll call)",
+    "official": "motion: m. allison 2n: g. bittner to appoint marisa thompson to the planning board vacancy",
+    "official_reading": "Marisa Thompson",
+    "t": 551,
+    "note": "Same appointment; the captions misspelled the first name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Housing Authority appointee name",
+    "ours": "Nominate Ron Dion to the Housing Authority vacancy (joint vote)",
+    "official": "she motioned to appoint him to the housing authority. ms. adams seconded it.",
+    "official_reading": "Ron Dionne",
+    "t": 1144,
+    "note": "Same appointment; the surname was misheard."
+   },
+   {
+    "kind": "agree",
+    "about": "One-day beer and wine license, Dragonfly Garden Cafe, Oct 17",
+    "ours": "Grant a special one-day beer and wine license for 3 Lancaster Ave on October 17th at the Dragonfly Garden Cafe",
+    "official": "to approve the special one day beer and wine license for october 17\" from 5-8 p.m.",
+    "note": "Same license, date and address; the official minutes add the 5-8 p.m. hours and record it as passed.",
+    "t": 1408
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Ratify Helen Godin as COA van driver",
+    "ours": "Ratify appointment of Helen Godin as Council on Aging van driver — not audible",
+    "official": "to ratify town manager appointment of helen godin as coa senior van driver",
+    "note": "The official minutes give no outcome (\"not stated\") and ours could not hear it; check the recording or the clerk for the vote result.",
+    "t": 2715
+   },
+   {
+    "kind": "agree",
+    "about": "Ratify Kayla Wright appointment",
+    "ours": "Ratify appointment of Kayla Wright as recreation director — not audible",
+    "official": "to ratify the town manager appointment of kayla mcnamara wright",
+    "note": "Same ratification; the official minutes record it as passed, while ours could not hear the result.",
+    "t": 2955
+   },
+   {
+    "kind": "caption_error",
+    "about": "Assistant town manager name",
+    "ours": "Ratify appointment of Julie Beliveau as assistant town manager and HR director",
+    "official": "to ratify the appointment of julie belliveau as assistant town manager/ar director",
+    "official_reading": "Julie Belliveau",
+    "t": 3314,
+    "note": "Same ratification; the surname was spelled differently."
+   },
+   {
+    "kind": "agree",
+    "about": "Northfield Road purchase price and grant reimbursement",
+    "ours": "Northfield Road land purchase: a hundred thousand, four hundred thousand, seven hundred and eighty two thousand, 500 thousand, 282,000",
+    "official": "the total purchase price is $782,000 and after reimbursement from the grants is received in the amount of $500,000, the price is $282,000.",
+    "note": "The figures match: $100,000 PARC and $400,000 LAND grants, $782,000 price, $500,000 reimbursement, $282,000 net.",
+    "t": 3574
+   },
+   {
+    "kind": "agree",
+    "about": "Complete Streets Tier 3 grant",
+    "ours": "Complete Streets Tier three grant: 258 thousand four hundred sixty dollars",
+    "official": "grant request is for $258,460 for",
+    "note": "Same amount.",
+    "t": 3595
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Mass Office on Disability grant amounts",
+    "ours": "Mass Office on Disability grants: seven thousand, seventeen thousand",
+    "official": "the other grant application was for a project grant request in the amount of $17,000 to install a ramp",
+    "note": "Ours lists $7,000 and $17,000; the official minutes print only the $17,000 Niche Wall ramp grant, so check the $7,000 figure and the grant's name in the recording.",
+    "t": 3655
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Pay as you throw large bag prices",
+    "ours": "Pay as you throw large bags: 33 by 35, 34 by 34",
+    "official": "",
+    "note": "The official minutes have no pay-as-you-throw bag item; the captions are garbled, so verify against the video.",
+    "t": 3446
+   },
+   {
+    "kind": "agree",
+    "about": "Payroll and accounts payable warrants",
+    "ours": "Warrants: thirty six thousand one hundred ten dollars and fifteen cents, eight hundred seven thousand ninety four dollars and twenty cents, two hundred eighty five thousand one hundred thirty four dollars",
+    "official": "the board signed a payroll warrant in the amount of $807,094.20, a payroll deductions warrant",
+    "note": "The amounts match: $36,110.15, $807,094.20 and $285,134. The official minutes print the last as $285,134.24, and ours has no cents.",
+    "t": 4068
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Old primary school demolition estimate",
+    "ours": "Old primary school demolition: a half a million dollars",
+    "official": "",
+    "note": "The official minutes have no demolition figure.",
+    "t": 4845
+   },
+   {
+    "kind": "discrepancy",
+    "about": "TC Passios design committee interviews",
+    "ours": "Remaining TC Passios design committee interviews set for October 8, with the vote the following week.",
+    "official": "ms. lemieux informed the board this was the first of two interviews for these positions, the other is on",
+    "note": "The official minutes say votes will be taken on October 8; ours says the vote is the following week. Check the recording for the vote date.",
+    "t": 2609
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Liquor license article and warrant signing",
+    "ours": "Board to decide liquor license article details at the October 8 review and sign the warrant on the 15th.",
+    "official": "",
+    "note": "The official minutes do not record this decision.",
+    "t": 5251
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Planning Board earth removal article",
+    "ours": "Planning Board to be asked how it wants its earth removal article presented in the warrant.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 4631
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Upcoming meeting schedule",
+    "ours": "Meetings set: October 8 workshop and Unitil meeting, regular meeting on the 22nd, special town meeting November 12.",
+    "official": "",
+    "note": "The official minutes do not list these dates.",
+    "t": 5294
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who was present",
+    "ours": "Matthew Allison (chairman of the Planning Board)",
+    "official": "members present: damon mcquaid, clerk; katey adams, michael- ray jeffreys",
+    "note": "Ours attributes the meeting to Planning Board people. The official minutes list Select Board members McQuaid, Adams and Jeffreys present, with Alonzo and Luck absent; check the roster. M. Allison is in the official minutes as a Planning Board mover.",
+    "t": 551
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Streetlight LED conversion article and cost estimate for 925 Mass Ave",
+    "ours": "",
+    "official": "recently added articles concern the purchase of streetlights from unitil:",
+    "note": "The official minutes cover the streetlight purchase and LED article and the 925 Mass Ave estimate. Our minutes do not record these."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T12:29:05Z",
+   "cost_usd": 0.06310110000000001
+  }
+ }
+}

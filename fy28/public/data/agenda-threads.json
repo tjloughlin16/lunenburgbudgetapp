@@ -2,19 +2,19 @@
  "about": "Agenda items matched to threads by each thread’s own patterns. An agenda lists what MAY be discussed; a match says a thread’s words are on the agenda, never what will be decided.",
  "generated_by": "scripts/build_agenda_threads.py",
  "method": "deterministic: threads.csv `match` + `qualify` - `exclude` on each agenda line (by: words), or the meeting is of a board the thread names (by: board). No model.",
- "as_of": "2026-11-03",
+ "as_of": "2026-11-04",
  "window": {
-  "from": "2026-10-20",
-  "to": "2026-12-01"
+  "from": "2026-10-21",
+  "to": "2026-12-02"
  },
  "counts": {
-  "agendas": 39,
-  "agendas_upcoming": 10,
+  "agendas": 35,
+  "agendas_upcoming": 11,
   "agendas_unreadable": 4,
-  "items": 389,
-  "business_items": 226,
-  "matched_items": 17,
-  "upcoming_business_items": 58,
+  "items": 370,
+  "business_items": 217,
+  "matched_items": 12,
+  "upcoming_business_items": 76,
   "upcoming_matched_items": 2,
   "threads_on_an_upcoming_agenda": 2
  },
@@ -45,368 +45,6 @@
   }
  ],
  "meetings": [
-  {
-   "board": "Architectural Preservation District Commission",
-   "board_slug": "architectural-preservation-district-commission",
-   "date": "2026-10-20",
-   "file_id": "8079",
-   "body_as_printed": "",
-   "upcoming": false,
-   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10202026-8079",
-   "agenda_doc": "/docs/meetings/architectural-preservation-district-commission/2026-10-20-agenda-8079.pdf",
-   "items": [
-    {
-     "line": "CALL TO ORDER",
-     "parent": "",
-     "n": 1,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "PUBLIC COMMENT",
-     "parent": "",
-     "n": 2,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "CURRENT BUSINESS",
-     "parent": "",
-     "n": 3,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "Discussion regarding the Brooks House and the Report to the Select Board by Stephen Wallace, Planning Director",
-     "parent": "",
-     "n": 4,
-     "procedural": false,
-     "threads": [
-      {
-       "id": "brooks-house",
-       "label": "Brooks House: what becomes of it",
-       "by": "words"
-      }
-     ]
-    },
-    {
-     "line": "CLOSING COMMISSION COMMENT",
-     "parent": "",
-     "n": 5,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "PUBLIC COMMENT",
-     "parent": "",
-     "n": 6,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "ADJOURNMENT",
-     "parent": "",
-     "n": 7,
-     "procedural": true,
-     "threads": []
-    }
-   ],
-   "threads": [
-    "brooks-house"
-   ]
-  },
-  {
-   "board": "Council on Aging",
-   "board_slug": "council-on-aging",
-   "date": "2026-10-20",
-   "file_id": "8084",
-   "body_as_printed": "",
-   "upcoming": false,
-   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10202026-8084",
-   "agenda_doc": "/docs/meetings/council-on-aging/2026-10-20-agenda-8084.pdf",
-   "items": [
-    {
-     "line": "CALL MEETING TO ORDER",
-     "parent": "",
-     "n": 1,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "DISCUSS SCOPE AND PROCESS FOR REVISION OF THE “LUNENBURG COUNCIL ON AGING",
-     "parent": "",
-     "n": 2,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "ADJOURN",
-     "parent": "",
-     "n": 3,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "EMERGENCY MEETING: Tuesday, October 20, 2026 11:00 AM",
-     "parent": "",
-     "n": 4,
-     "procedural": false,
-     "threads": []
-    }
-   ],
-   "threads": []
-  },
-  {
-   "board": "Select Board",
-   "board_slug": "select-board",
-   "date": "2026-10-20",
-   "file_id": "8080",
-   "body_as_printed": "",
-   "upcoming": false,
-   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10202026-8080",
-   "agenda_doc": "/docs/meetings/select-board/2026-10-20-agenda-8080.pdf",
-   "items": [
-    {
-     "line": "CALL TO ORDER AND PLEDGE OF ALLEGIANCE",
-     "parent": "",
-     "n": 1,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "Eagle House Supporters will be holding a Toll Booth fundraiser on Saturday, October 24th from 9 am to 1 pm in Town Center",
-     "parent": "",
-     "n": 2,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Finance Committee Public Hearing for the November 17th Special Town Meeting will be held on Thursday, October 22nd at 7 pm",
-     "parent": "",
-     "n": 3,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "The next Select Board chat session will be on Tuesday, October 27th at 10 am at the Adult Activity Center with Chair Renee Emkey",
-     "parent": "",
-     "n": 4,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "All Liquor, On-premises Liquor License Application for Kiku, Inc. d/b/a Kiku Asian Cuisine Located at 50 Massachusetts Avenue",
-     "parent": "",
-     "n": 5,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Change of Manager Application for Existing Liquor License for Global Montello Group Corporation d/b/a Honey Farms #3829 Located at 134 Leominster-Shirley Road",
-     "parent": "",
-     "n": 6,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Presentation of Special Town Meeting Articles:",
-     "parent": "",
-     "n": 7,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Presentation of Brooks House Report by Stephen Wallace, Director of Planning and Economic Development",
-     "parent": "Presentation of Special Town Meeting Articles:",
-     "n": 8,
-     "procedural": false,
-     "threads": [
-      {
-       "id": "brooks-house",
-       "label": "Brooks House: what becomes of it",
-       "by": "words"
-      }
-     ]
-    },
-    {
-     "line": "Joint Meeting with Stormwater Task Force Regarding Special Town Meeting Article",
-     "parent": "Presentation of Special Town Meeting Articles:",
-     "n": 9,
-     "procedural": false,
-     "threads": [
-      {
-       "id": "stormwater-fee",
-       "label": "The stormwater fee",
-       "by": "words"
-      }
-     ]
-    },
-    {
-     "line": "School Department Representative(s) regarding article for Middle/High School Track and Field",
-     "parent": "Presentation of Special Town Meeting Articles:",
-     "n": 10,
-     "procedural": false,
-     "threads": [
-      {
-       "id": "turf-field-study",
-       "label": "The track and turf field",
-       "by": "words"
-      }
-     ]
-    },
-    {
-     "line": "Acknowledgement of the Resignation of Jessica “Jak” Miller, Assistant Town Manager",
-     "parent": "",
-     "n": 11,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Acknowledgement of the Resignation of Arthur Katis from the Sewer Commission",
-     "parent": "",
-     "n": 12,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Acknowledgement of the Resignation of Autumn Buck, Heavy Equipment Operator",
-     "parent": "",
-     "n": 13,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Approval of Election Warrant",
-     "parent": "",
-     "n": 14,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Status of Polling Location for November 3, 2026 Election",
-     "parent": "",
-     "n": 15,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Special Town Meeting, November 17, 2026",
-     "parent": "",
-     "n": 16,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Finalize Warrant",
-     "parent": "Special Town Meeting, November 17, 2026",
-     "n": 17,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Select Board Sponsored Warrant Article(s)",
-     "parent": "Special Town Meeting, November 17, 2026",
-     "n": 18,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Review and Approve of Special Town Meeting Postcard",
-     "parent": "Special Town Meeting, November 17, 2026",
-     "n": 19,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Update on Food Pantry Relocation and License Agreement",
-     "parent": "",
-     "n": 20,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "Discussion on Lunenburg Municipal Buildings",
-     "parent": "",
-     "n": 21,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "January 7, 2025; September 2, 2025; June 2, 2026; June 15, 2026; June 30, 2026; September 1, 2026; October 6, 2026",
-     "parent": "",
-     "n": 22,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "October 27th Select Board Meeting",
-     "parent": "",
-     "n": 23,
-     "procedural": true,
-     "threads": []
-    }
-   ],
-   "threads": [
-    "brooks-house",
-    "stormwater-fee",
-    "turf-field-study"
-   ]
-  },
-  {
-   "board": "Select Board Public Hearing",
-   "board_slug": "select-board-public-hearing",
-   "date": "2026-10-20",
-   "file_id": "8047",
-   "body_as_printed": "",
-   "upcoming": false,
-   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10202026-8047",
-   "agenda_doc": "/docs/meetings/select-board-public-hearing/2026-10-20-agenda-8047.pdf",
-   "items": [
-    {
-     "line": "TOWN OF LUNENBURG OFFICE OF THE SELECT BOARD Public Hearing Notice Pursuant to Chapter 138, Section 12 M.G.L. the Lunenburg Select Board will hold a Public Hearing on Tuesday, October 20, 2026 at 7:10 pm in the Bilotta Meeting Room at Town Hall, 17 Main Street, Lunenburg, MA on an All Liquor On-Premises Liquor License and Common Victualer License for Kiku Inc. d/b/a Kiku Asian Cuisine located at 50 Massachusetts Avenue.",
-     "parent": "",
-     "n": 1,
-     "procedural": false,
-     "threads": []
-    }
-   ],
-   "threads": []
-  },
-  {
-   "board": "Stormwater Task Force",
-   "board_slug": "stormwater-task-force",
-   "date": "2026-10-20",
-   "file_id": "8073",
-   "body_as_printed": "",
-   "upcoming": false,
-   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10202026-8073",
-   "agenda_doc": "/docs/meetings/stormwater-task-force/2026-10-20-agenda-8073.pdf",
-   "items": [
-    {
-     "line": "CALL TO ORDER",
-     "parent": "",
-     "n": 1,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "Joint meeting with Select Board",
-     "parent": "",
-     "n": 2,
-     "procedural": false,
-     "threads": [
-      {
-       "id": "stormwater-fee",
-       "label": "The stormwater fee",
-       "by": "board"
-      }
-     ]
-    }
-   ],
-   "threads": [
-    "stormwater-fee"
-   ]
-  },
   {
    "board": "Conservation Commission",
    "board_slug": "conservation-commission",
@@ -3241,6 +2879,145 @@
    "threads": []
   },
   {
+   "board": "Council on Aging",
+   "board_slug": "council-on-aging",
+   "date": "2026-11-10",
+   "file_id": "8117",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11102026-8117",
+   "agenda_doc": "/docs/meetings/council-on-aging/2026-11-10-agenda-8117.pdf",
+   "items": [
+    {
+     "line": "Update on COA Festival of Trees entry",
+     "parent": "",
+     "n": 1,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Holiday Party (?)",
+     "parent": "",
+     "n": 2,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Update of Tea Party Fundraiser",
+     "parent": "",
+     "n": 3,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Council Priorities and Space Needs for FY’28 Budget",
+     "parent": "",
+     "n": 4,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Architect Plan for proposed building expansion for grant (with shower)",
+     "parent": "",
+     "n": 5,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "300th Committee - McDonalds Proposal",
+     "parent": "",
+     "n": 6,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Housing update",
+     "parent": "",
+     "n": 7,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Town Report Entry",
+     "parent": "",
+     "n": 8,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Toll Results",
+     "parent": "",
+     "n": 9,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Building Usage Policy - Task Force",
+     "parent": "",
+     "n": 10,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Boston Post Cane Recipient",
+     "parent": "",
+     "n": 11,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Financial Report Final FY ’26 and current status",
+     "parent": "",
+     "n": 12,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Report from Policies and Procedures Task Force",
+     "parent": "",
+     "n": 13,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Parking Lot update",
+     "parent": "",
+     "n": 14,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Caregiver Connection Update and Next presentation",
+     "parent": "",
+     "n": 15,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "41A Update",
+     "parent": "",
+     "n": 16,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Hospital Update",
+     "parent": "",
+     "n": 17,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "UPCOMING SCHEDULE: NEXT MEETING: Tuesday, December 8, 2026 at 9:30 a.m.",
+     "parent": "",
+     "n": 18,
+     "procedural": false,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
    "board": "Planning Board",
    "board_slug": "planning-board",
    "date": "2026-11-10",
@@ -3421,119 +3198,7 @@
   }
  ],
  "by_thread": {
-  "brooks-house": [
-   {
-    "board": "Architectural Preservation District Commission",
-    "board_slug": "architectural-preservation-district-commission",
-    "date": "2026-10-20",
-    "body_as_printed": "",
-    "upcoming": false,
-    "line": "Discussion regarding the Brooks House and the Report to the Select Board by Stephen Wallace, Planning Director",
-    "parent": "",
-    "by": "words",
-    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10202026-8079",
-    "agenda_doc": "/docs/meetings/architectural-preservation-district-commission/2026-10-20-agenda-8079.pdf"
-   },
-   {
-    "board": "Select Board",
-    "board_slug": "select-board",
-    "date": "2026-10-20",
-    "body_as_printed": "",
-    "upcoming": false,
-    "line": "Presentation of Brooks House Report by Stephen Wallace, Director of Planning and Economic Development",
-    "parent": "Presentation of Special Town Meeting Articles:",
-    "by": "words",
-    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10202026-8080",
-    "agenda_doc": "/docs/meetings/select-board/2026-10-20-agenda-8080.pdf"
-   }
-  ],
-  "stormwater-fee": [
-   {
-    "board": "Select Board",
-    "board_slug": "select-board",
-    "date": "2026-10-20",
-    "body_as_printed": "",
-    "upcoming": false,
-    "line": "Joint Meeting with Stormwater Task Force Regarding Special Town Meeting Article",
-    "parent": "Presentation of Special Town Meeting Articles:",
-    "by": "words",
-    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10202026-8080",
-    "agenda_doc": "/docs/meetings/select-board/2026-10-20-agenda-8080.pdf"
-   },
-   {
-    "board": "Stormwater Task Force",
-    "board_slug": "stormwater-task-force",
-    "date": "2026-10-20",
-    "body_as_printed": "",
-    "upcoming": false,
-    "line": "Joint meeting with Select Board",
-    "parent": "",
-    "by": "board",
-    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10202026-8073",
-    "agenda_doc": "/docs/meetings/stormwater-task-force/2026-10-20-agenda-8073.pdf"
-   },
-   {
-    "board": "Finance Committee",
-    "board_slug": "finance-committee",
-    "date": "2026-10-22",
-    "body_as_printed": "",
-    "upcoming": false,
-    "line": "Stormwater Utility",
-    "parent": "New Business",
-    "by": "words",
-    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10222026-8087",
-    "agenda_doc": "/docs/meetings/finance-committee/2026-10-22-agenda-8087.pdf"
-   },
-   {
-    "board": "Stormwater Task Force",
-    "board_slug": "stormwater-task-force",
-    "date": "2026-10-22",
-    "body_as_printed": "",
-    "upcoming": false,
-    "line": "PRESENTATION TO FINANCE COMMITTEE",
-    "parent": "",
-    "by": "board",
-    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10222026-8088",
-    "agenda_doc": "/docs/meetings/stormwater-task-force/2026-10-22-agenda-8088.pdf"
-   },
-   {
-    "board": "Select Board",
-    "board_slug": "select-board",
-    "date": "2026-10-27",
-    "body_as_printed": "",
-    "upcoming": false,
-    "line": "The Stormwater Task Force will be having a Presentation and Community Meeting regarding Stormwater Financing Options on Monday, November 7th 7-8 pm in the Wallace Room at the Lunenburg Public Library",
-    "parent": "",
-    "by": "words",
-    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10272026-8097",
-    "agenda_doc": "/docs/meetings/select-board/2026-10-27-agenda-8097.pdf"
-   },
-   {
-    "board": "Stormwater Task Force",
-    "board_slug": "stormwater-task-force",
-    "date": "2026-11-04",
-    "body_as_printed": "",
-    "upcoming": true,
-    "line": "BOARD DISCUSSION Discussion/Approval of ERU spreadsheet",
-    "parent": "",
-    "by": "board",
-    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11042026-8111",
-    "agenda_doc": "/docs/meetings/stormwater-task-force/2026-11-04-agenda-8111.pdf"
-   }
-  ],
   "turf-field-study": [
-   {
-    "board": "Select Board",
-    "board_slug": "select-board",
-    "date": "2026-10-20",
-    "body_as_printed": "",
-    "upcoming": false,
-    "line": "School Department Representative(s) regarding article for Middle/High School Track and Field",
-    "parent": "Presentation of Special Town Meeting Articles:",
-    "by": "words",
-    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10202026-8080",
-    "agenda_doc": "/docs/meetings/select-board/2026-10-20-agenda-8080.pdf"
-   },
    {
     "board": "School Committee",
     "board_slug": "school-committee",
@@ -3583,6 +3248,56 @@
     "by": "board",
     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10212026-8083",
     "agenda_doc": "/docs/meetings/trust-fund-commission/2026-10-21-agenda-8083.pdf"
+   }
+  ],
+  "stormwater-fee": [
+   {
+    "board": "Finance Committee",
+    "board_slug": "finance-committee",
+    "date": "2026-10-22",
+    "body_as_printed": "",
+    "upcoming": false,
+    "line": "Stormwater Utility",
+    "parent": "New Business",
+    "by": "words",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10222026-8087",
+    "agenda_doc": "/docs/meetings/finance-committee/2026-10-22-agenda-8087.pdf"
+   },
+   {
+    "board": "Stormwater Task Force",
+    "board_slug": "stormwater-task-force",
+    "date": "2026-10-22",
+    "body_as_printed": "",
+    "upcoming": false,
+    "line": "PRESENTATION TO FINANCE COMMITTEE",
+    "parent": "",
+    "by": "board",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10222026-8088",
+    "agenda_doc": "/docs/meetings/stormwater-task-force/2026-10-22-agenda-8088.pdf"
+   },
+   {
+    "board": "Select Board",
+    "board_slug": "select-board",
+    "date": "2026-10-27",
+    "body_as_printed": "",
+    "upcoming": false,
+    "line": "The Stormwater Task Force will be having a Presentation and Community Meeting regarding Stormwater Financing Options on Monday, November 7th 7-8 pm in the Wallace Room at the Lunenburg Public Library",
+    "parent": "",
+    "by": "words",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10272026-8097",
+    "agenda_doc": "/docs/meetings/select-board/2026-10-27-agenda-8097.pdf"
+   },
+   {
+    "board": "Stormwater Task Force",
+    "board_slug": "stormwater-task-force",
+    "date": "2026-11-04",
+    "body_as_printed": "",
+    "upcoming": true,
+    "line": "BOARD DISCUSSION Discussion/Approval of ERU spreadsheet",
+    "parent": "",
+    "by": "board",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11042026-8111",
+    "agenda_doc": "/docs/meetings/stormwater-task-force/2026-11-04-agenda-8111.pdf"
    }
   ],
   "tc-passios-site": [

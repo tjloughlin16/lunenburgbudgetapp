@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**709 of 5687 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**709 of 5717 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **4978 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **5008 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -231,6 +231,16 @@ Listed so this view cannot look more complete than it is.
 - `correspondence/2026-10-26-oml-response-school-committee-counsel.pdf` — Response to the OML complaint
 - `correspondence/2026-10-27-2000-annual-town-report-select-board-chair.pdf` — Lunenburg Town Report 2000
 - `correspondence/2026-10-27-2000-annual-town-report.md` — How this reached us
+- `correspondence/2026-11-03-school-warrant-batch-5765-2026-06-18.pdf` — Warrant batch 5765, 18 June 2026
+- `correspondence/2026-11-03-school-warrant-batch-5780-2026-06-23.pdf` — Warrant batch 5780, 23 June 2026
+- `correspondence/2026-11-03-school-warrant-batch-5806-2026-06-30.redacted-d86535f9.pdf` — Warrant batch 5806, 30 June 2026 (our redacted copy)
+- `correspondence/2026-11-03-school-warrant-batch-5808-2026-06-30.redacted.pdf` — Warrant batch 5808, 30 June 2026 (our redacted copy)
+- `correspondence/2026-11-03-school-warrant-batch-5809-2026-06-30.pdf` — Warrant batch 5809, 30 June 2026
+- `correspondence/2026-11-03-school-warrant-batch-5810-2026-06-30.redacted.pdf` — Warrant batch 5810, 30 June 2026 (our redacted copy)
+- `correspondence/2026-11-03-school-warrant-batch-5811-2026-06-30.redacted.pdf` — Warrant batch 5811, 30 June 2026 (our redacted copy)
+- `correspondence/2026-11-03-school-warrant-batch-5818-2026-06-30.redacted.pdf` — Warrant batch 5818, 30 June 2026 (our redacted copy)
+- `correspondence/2026-11-03-school-warrant-batch-5823-2026-06-30.redacted.pdf` — Warrant batch 5823, 30 June 2026 (our redacted copy)
+- `correspondence/2026-11-03-school-warrants-2026-06-18-to-30.md` — How these reached us
 - `data/PROVENANCE-annual-report-receipts.md` — Where the receipts came from
 - `data/PROVENANCE-balance-sheet.md` — Why the balance sheet is read rather than OCR’d
 - `data/PROVENANCE-debt-tables.md` — Where both debt tables came from, and every page that refused
@@ -336,6 +346,7 @@ Listed so this view cannot look more complete than it is.
 - `data/dls-cherry-sheet.csv` — The cherry sheet: every line of state aid and every state assessment
 - `data/dls-health-insurance.csv` — What every Massachusetts municipality spends on health insurance, FY2002 onward
 - `data/dls-health-self-insured.csv` — Which municipalities pay health claims from a trust rather than buying premiums
+- `data/dls-levy-limits.csv` — Lunenburg’s tax levy, decomposed by Proposition 2½, FY1986–FY2026
 - `data/dls-new-growth.csv` — New growth, residential and total, eleven towns, FY2003–FY2026
 - `data/dls-override-votes.csv` — Override and underride votes, extracted
 - `data/dls-tax-rates.csv` — Tax rates by class, every municipality, FY2003–FY2026
@@ -450,14 +461,3 @@ Listed so this view cannot look more complete than it is.
 - `data/report-capital-project-costs.csv` — Annual-report extract: capital project costs
 - `data/report-capital-projects.csv` — Capital project authorisations
 - `data/report-cash-management.csv` — Annual-report extract: cash management
-- `data/report-classification-plan.csv` — Annual-report extract: classification plan
-- `data/report-committee-income-expenses.csv` — Annual-report extract: committee income expenses
-- `data/report-debt.csv` — Debt outstanding, issued and retired
-- `data/report-dept-activity.csv` — What each department reports doing
-- `data/report-elections.csv` — The vote, by candidate and precinct
-- `data/report-energy-use.csv` — Annual-report extract: energy use
-- `data/report-enrollment-mcas.csv` — Enrollment and MCAS results
-- `data/report-expenditure-history.csv` — Annual-report extract: expenditure history
-- `data/report-expenditure-shares.csv` — Annual-report extract: expenditure shares
-- `data/report-fee-schedule.csv` — Annual-report extract: fee schedule
-- `data/report-filing.csv` — Which bodies file an annual report, and which say they did not

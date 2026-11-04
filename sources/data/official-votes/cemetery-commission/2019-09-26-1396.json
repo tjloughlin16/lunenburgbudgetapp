@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2019-09-26",
  "docid": "1396",
@@ -12,30 +12,162 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes as written",
+   "motion": "Accept the minutes of the August 08, 2019 meeting as written.",
    "moved_by": "Chairman, Tyler",
    "seconded_by": "Vice-Chair Mendoza",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "upon a motion by chairman, tyler - to accept the minutes as written, seconded by vice-chair mendoza, minutes were approved unanimously."
   },
   {
-   "motion": "Add comments to Chapter 310 - Rules and Regulations and review the final draft at the next meeting",
-   "moved_by": "Chairman Tyler",
-   "outcome": "unanimously approved",
+   "motion": "Add the Chapter 310 review comments into the documentation and review the final draft at the next Commission meeting on October 10, 2019.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "chairman tyler suggested that we add the comments into the documentation, but to review the final draft at our next cemetery commission meeting on october 10, 2019. this was approved unanimously."
+   "quote": "to review the final draft at our next cemetery commission meeting on october 10, 2019. this was approved unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chairman, Tyler",
    "seconded_by": "Nancy Foss Yasko, Clerk",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "a motion was made to adjourn by chairman, tyler, seconded by nancy foss yasko, clerk. with no further discussion, meeting was adjourned at 8:30 pm."
+   "quote": "a motion was made to adjourn by chairman, tyler, seconded by nancy foss yasko, clerk."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1638655
+ "note": "Text is a clean extraction with no votes on the Monty Tech discussion or the complaint; the adjournment motion records no printed result, so its outcome is 'not stated'. No public comment section is printed. The minutes do not print a documents list.",
+ "cost_usd": 0.004468120000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "William Tyler",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "meeting was called to order at 6:30 pm by commissioner chairman, tyler, other members present"
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "were lorraine mendoza, vice-chair, and nancy foss yasko, clerk."
+  },
+  {
+   "name": "Nancy Foss Yasko",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "were lorraine mendoza, vice-chair, and nancy foss yasko, clerk."
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Cemetery Superintendent",
+   "status": "present",
+   "quote": "also present was todd holman, cemetery superintendent."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "Director of DPW",
+   "status": "not stated",
+   "quote": "chairman, tyler will be reaching out to jack rodriquenz, director of dpw"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Going forward, no calls or certified letters will be sent to people who violate the cemetery rules and regulations, since the rules are now posted at both cemeteries.",
+   "quote": "therefore, no calls or certified letters will be sent going forward."
+  },
+  {
+   "decision": "Chairman Tyler will reach out to Jack Rodriquenz, Director of DPW, about summer help for the Cemetery Superintendent and what is needed for the FY21 Budget.",
+   "quote": "chairman, tyler will be reaching out to jack rodriquenz, director of dpw"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Summer help for the Cemetery Superintendent and FY21 Budget",
+   "what_was_recorded": "The Chairman will ask the DPW Director about summer help for the Superintendent and what is needed for the FY21 Budget; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "regarding summer help for todd holman, cemetery superintendent and what is needed going forward for the fy21 budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of August 08, 2019",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes were read from august 08, 2019 meeting."
+  },
+  {
+   "topic": "New correspondence and complaint about grave decorations",
+   "resolution": "no further calls or certified letters; calls made by Chairman",
+   "tags": [
+    "correspondence",
+    "complaint",
+    "rules enforcement"
+   ],
+   "quote": "chairman, tyler started the meeting asking if there had been any new correspondence from anyone."
+  },
+  {
+   "topic": "Chapter 310 Rules and Regulations review",
+   "resolution": "deferred to October 10, 2019 meeting",
+   "tags": [
+    "rules and regulations",
+    "Chapter 310"
+   ],
+   "quote": "chairman, tyler asked that the cemetery commission review the chapter 310 - rules and regulations."
+  },
+  {
+   "topic": "Monty Tech student project (Phase 1 and next phases)",
+   "resolution": "no action; update only",
+   "tags": [
+    "Monty Tech",
+    "trusses",
+    "project update"
+   ],
+   "quote": "chairman, tyler stated that the students from monty tech - phase 1 was complete."
+  },
+  {
+   "topic": "Further discussions: summer help and FY21 Budget",
+   "resolution": "Chairman to contact DPW Director",
+   "tags": [
+    "staffing",
+    "FY21 budget"
+   ],
+   "quote": "further discussions - chairman, tyler will be reaching out to jack rodriquenz, director of dpw"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:30 PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "with no further business before the commission, a motion was made to adjourn by chairman, tyler"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Chapter 310 – Rules and Regulations",
+   "where": "text",
+   "quote": "asked that the cemetery commission review the chapter 310 - rules and regulations."
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "rules and regulations",
+  "Monty Tech project",
+  "complaint",
+  "FY21 budget",
+  "staffing",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

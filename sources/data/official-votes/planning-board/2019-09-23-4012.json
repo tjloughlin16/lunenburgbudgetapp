@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-09-23",
  "docid": "4012",
@@ -12,63 +12,426 @@
  },
  "votes": [
   {
-   "motion": "Approve normal pruning around conductors with 10 feet of side clearance, 15 feet of overhead clearance, and removal of trees #5, 7, 8, 9, 20, 21, 22, and 23 with one-to-one remediation of comparable species",
+   "motion": "Approve normal pruning around conductors, 10 feet of side clearance, 15 feet of overhead clearance, and removal of trees posing imminent threat (trees 5, 7, 8, 9, 20, 21, 22, 23) with one-to-one remediation, per the Tree Warden.",
    "moved_by": "G. Bittner",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
-   "quote": "g. bittner made motion to approve normal pruning around conductors, 10 feet of side clearance, 15 feet of overhead clearance, and removal of trees that pose imminent threat as listed in the proposed vegetation management work summary and meeting decision recording of trees # 5, 7, 8, 9, 20, 21, 22, and 23 with one to one remediation of a comparable species to be planted along the scenic road within the area of removal at the direction of the tree warden, t. cole seconded, all aye."
+   "quote": "g. bittner made motion to approve normal pruning around conductors, 10 feet of side clearance, 15 feet of overhead clearance"
   },
   {
-   "motion": "Approve request for De Minimis change for the sign at 400 Electric Avenue",
+   "motion": "Approve the request for a de minimis change for the sign at 400 Electric Avenue.",
    "moved_by": "G. Bittner",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
    "quote": "g. bittner made motion to approve request for de minimis change for the sign at 400 electric avenue, t. cole seconded, all aye."
   },
   {
-   "motion": "Approve minutes of 08.26.19",
+   "motion": "Approve the minutes of 08.26.19.",
    "moved_by": "T. Cole",
    "seconded_by": "G. Bittner",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": true,
-   "quote": "t. cole made motion to approve, g. bittner seconded, all aye."
+   "quote": "08.26.19- t. cole made motion to approve, g. bittner seconded, all aye."
   },
   {
-   "motion": "Approve minutes of 08.26.19 Stone Farm hearing",
+   "motion": "Approve the minutes of 08.26.19, Stone Farm.",
    "moved_by": "T. Cole",
    "seconded_by": "G. Bittner",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": true,
-   "quote": "t. cole made motion to approve, g. bittner seconded, all aye."
+   "quote": "08.26.19, stone farm- t. cole made motion to approve, g. bittner seconded, all aye."
   },
   {
-   "motion": "Board not to make any recommendation for 250 Howard Street",
+   "motion": "For the Board not to make any recommendation regarding 250 Howard Street (Right of First Refusal).",
    "moved_by": "G. Bittner",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
    "quote": "g. bittner made motion for the board not to make any recommendation for 250 howard street, t. cole seconded, all aye."
   },
   {
-   "motion": "Designate T. Cole as Building Committee Board Designee",
+   "motion": "Nominate T. Cole as the Board's designee to the Building Committee.",
    "moved_by": "G. Bittner",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
    "quote": "g. bittner nominated t. cole, t. cole seconded, all aye."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "G. Bittner",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": true,
    "quote": "g. bittner made motion to adjourn, t. cole seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Meeting minutes from 2019-09-23 Planning Board meeting. All seven votes recorded; all passed unanimously (all aye). Minutes are clear and legible text.",
- "cost_usd": 0.0927375
+ "note": "Text extraction is readable; no scan. Votes are recorded only as \"all aye\" with no numeric tally. The UNITIL public hearing is covered in separate minutes that were not provided. The Board consensus on tree work and the earth removal and economic development discussions are recorded as decisions, not votes.",
+ "cost_usd": 0.010433720000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, tanner cole, gregory bittner, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, tanner cole, gregory bittner, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "matthew allison, tanner cole, gregory bittner, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "matthew allison, tanner cole, gregory bittner, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: paula bertram"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "katey adams, as a select board member, asked who would be submitting the article."
+  },
+  {
+   "name": "Jon Higgins",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "applicant represented by jon higgins, south coast development, llc."
+  },
+  {
+   "name": "Chris Crowley",
+   "role": "representing the developer (Ernco Development)",
+   "status": "present",
+   "quote": "the developer was represented by chris crowley, ernco development."
+  },
+  {
+   "name": "Jeffrey Walsh",
+   "role": "Graves Engineering, Inc., the Board's reviewing engineer",
+   "status": "not stated",
+   "quote": "was reviewed by jeffrey walsh, graves engineering, inc.,"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board consensus on the Unitil tree work was for normal pruning and not ground-to-sky; trees 6, 12 and 24 were wanted for normal pruning, not removal.",
+   "quote": "board consensus was for normal pruning"
+  },
+  {
+   "decision": "The Board decided to hold a meeting on October 7.",
+   "quote": "the board decided to hold a meeting on october 7th."
+  },
+  {
+   "decision": "Board members agreed that earth removal permits be issued for three years, renewable for up to two years.",
+   "quote": "board members present were in agreement with permits being issued for three years"
+  },
+  {
+   "decision": "Discussion of earth removal yardage continued to the October 7 meeting.",
+   "quote": "discussion of yardage will continue at the october 7"
+  },
+  {
+   "decision": "Economic development committee composition to be revised so the Agricultural, Open Space and Conservation bodies can recommend appointments that need not be members of those bodies.",
+   "quote": "committee composition will be revised in order that the agricultural commission"
+  },
+  {
+   "decision": "Burney and Crowley to schedule a follow-up site walk with Walsh for October 3 on Butterfly Lane.",
+   "quote": "will schedule a follow -up site walk with j. walsh for october 3rd."
+  },
+  {
+   "decision": "Lunenburg Code Section 250-4.15 (Solar Energy Systems) tabled.",
+   "quote": "lunenburg code, section 250- 4.15., solar energy systems- tabled"
+  },
+  {
+   "decision": "Lunenburg Code Section 250-6.1 (Off Street Parking and Loading Areas) placed on hold.",
+   "quote": "off street parking & loading areas- on hold"
+  },
+  {
+   "decision": "Joint meeting of Planning Board and Select Board on October 1 to appoint to the Board vacancy.",
+   "quote": "to appoint to the board."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Land acquisition, Northfield Road warrant article",
+   "what_was_recorded": "A warrant article for November Special Town Meeting would seek authorization for the full project cost, contingent on State grant awards; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "seeking authorization for the full project cost"
+  },
+  {
+   "topic": "Butterfly Lane performance bond",
+   "what_was_recorded": "The Board discussed signing off and releasing the bond, either at a special meeting or by a final review letter; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "to sign off and release the bond"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Katey Adams",
+   "topic": "text received from a resident about power",
+   "quote": "katey adams noted a text she received from a resident earlier opining that k. adams was not concerned"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Architectural Preservation District Commission",
+   "resolution": "no action; members not available",
+   "quote": "commission members were not available for discussion.",
+   "tags": [
+    "ADC"
+   ]
+  },
+  {
+   "topic": "Public hearing: Unitil vegetation management",
+   "resolution": "approved normal pruning and removal of eight priority trees with one-to-one replacement; other trees kept for pruning",
+   "quote": "g. bittner made motion to approve normal pruning around conductors, 10 feet of side clearance, 15 feet of overhead clearance",
+   "tags": [
+    "Unitil",
+    "tree trimming",
+    "scenic road",
+    "utility vegetation"
+   ]
+  },
+  {
+   "topic": "400 Electric Avenue de minimis sign change",
+   "resolution": "approved",
+   "quote": "g. bittner made motion to approve request for de minimis change for the sign at 400 electric avenue",
+   "tags": [
+    "sign",
+    "de minimis"
+   ]
+  },
+  {
+   "topic": "Butterfly Lane subdivision closeout",
+   "resolution": "continued; follow-up site walk October 3",
+   "quote": "will schedule a follow -up site walk with j. walsh for october 3rd.",
+   "tags": [
+    "subdivision",
+    "road acceptance",
+    "bond"
+   ]
+  },
+  {
+   "topic": "Earth removal bylaw",
+   "resolution": "continued to October 7 meeting",
+   "quote": "discussion of yardage will continue at the october 7",
+   "tags": [
+    "earth removal",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Economic development committee charge",
+   "resolution": "draft viewed; composition to be revised",
+   "quote": "committee composition will be revised in order that the agricultural commission",
+   "tags": [
+    "economic development",
+    "committee charge"
+   ]
+  },
+  {
+   "topic": "Solar bylaw",
+   "resolution": "tabled",
+   "quote": "lunenburg code, section 250- 4.15., solar energy systems- tabled",
+   "tags": [
+    "solar",
+    "zoning bylaw"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 08.26.19 minutes and 08.26.19 Stone Farm minutes",
+   "quote": "08.26.19- t. cole made motion to approve, g. bittner seconded, all aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; Storm Water approved MS4 annual report, Land Acquisition report received",
+   "quote": "approved annual report for ms4.",
+   "tags": [
+    "committee reports",
+    "land acquisition",
+    "farmers market"
+   ]
+  },
+  {
+   "topic": "250 Howard Street right of first refusal",
+   "resolution": "no recommendation",
+   "quote": "g. bittner made motion for the board not to make any recommendation for 250 howard street",
+   "tags": [
+    "right of first refusal",
+    "Select Board"
+   ]
+  },
+  {
+   "topic": "Stone Farm update",
+   "resolution": "information only",
+   "quote": "the developer informed the planning office that he will have the remaining work completed by powell",
+   "tags": [
+    "Stone Farm"
+   ]
+  },
+  {
+   "topic": "MJTC board representative",
+   "resolution": "no action; representative to be selected",
+   "quote": "the board needs to select an mjtc representative",
+   "tags": [
+    "MJTC"
+   ]
+  },
+  {
+   "topic": "Building Committee board designee",
+   "resolution": "T. Cole nominated and approved",
+   "quote": "g. bittner nominated t. cole, t. cole seconded, all aye.",
+   "tags": [
+    "building committee"
+   ]
+  },
+  {
+   "topic": "Board vacancy",
+   "resolution": "joint meeting with Select Board set for October 1",
+   "quote": "to appoint to the board.",
+   "tags": [
+    "vacancy",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Building commissioner update",
+   "resolution": "information only",
+   "quote": "permanent full-time commissioner is now on staff.",
+   "tags": [
+    "building department"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "information only",
+   "quote": "october 7- regular meeting due to october 14th holiday.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "no action",
+   "quote": "mgl, ch. 41, section 81d, master plan-",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "katey adams noted a text she received from a resident earlier opining that k. adams was not concerned",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:30 PM",
+   "quote": "g. bittner made motion to adjourn, t. cole seconded, all aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 08/26/19",
+   "where": "list",
+   "quote": "documents used at meeting: minutes- 08/26/19"
+  },
+  {
+   "name": "08/26/19, Stone Farm Hearing",
+   "where": "list",
+   "quote": "08/26/19, stone farm hearing"
+  },
+  {
+   "name": "400 Electric Avenue, Request for De Minimis Change",
+   "where": "list",
+   "quote": "400 electric avenue, request for de minimis change"
+  },
+  {
+   "name": "Butterfly Lane As Built",
+   "where": "list",
+   "quote": "butterfly lane as built"
+  },
+  {
+   "name": "Land Acquisition Report",
+   "where": "list",
+   "quote": "land acquisition report"
+  },
+  {
+   "name": "250 Howard Street, Right of First Refusal",
+   "where": "list",
+   "quote": "250 howard street, right of first refusal"
+  },
+  {
+   "name": "DRAFT Earth Removal Bylaw",
+   "where": "list",
+   "quote": "draft earth removal bylaw"
+  },
+  {
+   "name": "DRAFT Charge for Economic Development Committee",
+   "where": "list",
+   "quote": "draft charge for economic development committee"
+  },
+  {
+   "name": "Proposed Vegetation Management Work Summary and Meeting Decision Recording",
+   "where": "text",
+   "quote": "proposed vegetation management work summary and meeting decision recording"
+  },
+  {
+   "name": "Warrant for November 12th Special Town Meeting",
+   "where": "text",
+   "quote": "has also been placed on the warrant for november 12 th special town meeting."
+  },
+  {
+   "name": "Annual report for MS4 (Storm Water Task Force)",
+   "where": "text",
+   "quote": "approved annual report for ms4."
+  }
+ ],
+ "tags": [
+  "tree trimming",
+  "Unitil",
+  "Butterfly Lane",
+  "subdivision closeout",
+  "earth removal bylaw",
+  "economic development committee",
+  "solar bylaw",
+  "Stone Farm",
+  "250 Howard Street",
+  "minutes approval",
+  "committee reports",
+  "board vacancy",
+  "meeting schedule",
+  "land acquisition"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }
