@@ -1,7 +1,7 @@
 ---
 status: open
 updated: 2026-11-04
-next: push D1 and deploy (TJ asks); then the two junk report-signatures rows
+next: the two junk report-signatures rows (FY2012 pp 9, 18)
 ---
 
 # Plan: everything the annual reports print, in the database
@@ -52,8 +52,8 @@ identified, but i want to cover anything that is in the reports."*
 ## Where it stands (handoff, 2 November 2026, afternoon)
 
 Next 1 and 2 of the morning handoff are done locally: the database guard widened, ten datasets
-loaded, both generators reproducing. **Not yet pushed to D1 or deployed** -- `sync_d1.py --check`
-will disagree by those ten tables until it is. Pick up at **Next**.
+loaded, both generators reproducing. **Pushed to D1 and deployed since** (Next 1, below). Pick
+up at **Next** 2.
 
 **Done**
 
@@ -86,7 +86,9 @@ will disagree by those ten tables until it is. Pick up at **Next**.
 
 **Next, in order**
 
-1. **Push D1 and deploy** -- only when TJ asks (rule 10).
+1. ~~**Push D1 and deploy**~~ **DONE by 4 November 2026.** Production deployment `42400853`
+   from `ab9e423e6` (3 Nov, late); `sync_d1.py --check` on 4 Nov: D1 matches the local
+   database. Re-check with those two commands, not this line.
 2. **Two junk rows in `report-signatures`:** FY2012 pages 9 and 18 (In Memoriam) give an
    obituary sentence as the `department`.
 3. **Step 4: sort the 866 FY2011-FY2025 catalogue entries.** Start with the 287 on pages no
