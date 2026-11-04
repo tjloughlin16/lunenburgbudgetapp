@@ -189,6 +189,7 @@ CHECKS = [
     ('build_town_general_fund.py', ['--check']),
     ('build_school_receipts_to_town.py', ['--check']),
     ('build_town_payroll.py', ['--check']),
+    ('build_school_scholarships.py', ['--check']),
     ('build_preschool.py', ['--check']),
     ('build_monty_tech_history.py', ['--check']),
     ('build_monty_tech_topics.py', ['--check']),

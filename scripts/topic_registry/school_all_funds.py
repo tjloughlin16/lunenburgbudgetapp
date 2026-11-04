@@ -29,6 +29,8 @@ CATEGORY = dict(
         ('How grants are booked', ['grant-coding']),
         ('Grants compared', ['grant-allocations-compared', 'grants-others-receive']),
         ('Special education', ['sped-all-funds']),
+        # TJ, 4 November 2026: the scholarship and prize funds, and what we do not hold about them
+        ('Gifts and scholarships', ['school-scholarships']),
         # TJ, 24 October 2026: "for all the grants.... have we broken down how that money is
         # spent? I want to have reports on that." Every post read alike; none singled out.
         ('Who grants and fees pay for', ['salaries-from-grants-and-fees', 'pay-moved-between-funds',
@@ -39,7 +41,8 @@ GENERATOR = 'build_school_all_funds.py'
 # from the journal, so its own generator.
 # Orders carried from one year into the next (TJ, 23 October 2026): the same journal, read for
 # one question the all-funds generator does not ask, so its own generator.
-TOPIC_GENERATORS = {'budget-against-actual': 'build_budget_against_actual.py',
+TOPIC_GENERATORS = {'school-scholarships': 'build_school_scholarships.py',
+                    'budget-against-actual': 'build_budget_against_actual.py',
                     'preschool': 'build_preschool.py',
                     # TJ, 31 October 2026: the school money the Town books, moved off the
                     # Town general fund page, which is now the whole fund
@@ -54,6 +57,7 @@ TOPIC_GENERATORS = {'budget-against-actual': 'build_budget_against_actual.py',
                     # TJ, 28 October 2026: "people always ask me 'what is the activities fee for'"
                     'activities-fund': 'build_activities_fund_topics.py'}
 TOPICS = {
+    'school-scholarships': 'School scholarships',
     'budget-against-actual': 'School lines against budget',
     'fy-breakdown': 'FY breakdown',
     'school-money-in': 'School grants and aid',

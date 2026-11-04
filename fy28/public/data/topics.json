@@ -218,6 +218,13 @@
     },
     {
      "section": null,
+     "title": "Gifts and scholarships",
+     "topics": [
+      "school-scholarships"
+     ]
+    },
+    {
+     "section": null,
      "title": "Who grants and fees pay for",
      "topics": [
       "salaries-from-grants-and-fees",
@@ -1717,7 +1724,7 @@
    "title": "Athletic bus funding"
   },
   "athletic-director": {
-   "finding": "No record held pays the director from the fee fund. The FY2026 vote set his line $20,407 below level service.",
+   "finding": "An athletic director was paid every year from 2011 to 2025; in four, the director line shows $0.",
    "generator": "scripts/build_athletic_director_topic.py",
    "home": "athletics",
    "id": "athletic-director",
@@ -4757,6 +4764,20 @@
     "school-spending"
    ],
    "title": "School revolving funds"
+  },
+  "school-scholarships": {
+   "finding": "The Town holds 14 scholarship and prize funds for its students; no record we hold says who receives them.",
+   "generator": "scripts/build_school_scholarships.py",
+   "home": "school-all-funds",
+   "id": "school-scholarships",
+   "minutes": 1,
+   "path": "/school-all-funds/school-scholarships",
+   "ready": true,
+   "related": [],
+   "shelves": [
+    "school-all-funds"
+   ],
+   "title": "School scholarships"
   },
   "school-support-staff": {
    "finding": "The town printed 7 counsellors, 3 psychologists and 2 social workers on its FY2025 school rosters.",
