@@ -1,9 +1,9 @@
 ---
-status: open
+status: done
 updated: 2026-11-04
-next: (5) DEPLOY -- only when TJ says so (rule 10); build the site once, check /school-all-funds/school-scholarships at phone width, then deploy and sync_d1.py (two new tables, and money_gaps lost a row). Steps 1-4 are DONE, nothing committed -- see "Where it stands".
+retired: 2026-11-04
+left_open: seven funds with no stated purpose (Cowdry, Busque, Crouse, Stanley, Czelusniak, Nelson, Sacksen) -- next places to look are the Town Meeting votes that accepted each gift and the trust documents under fy27-budget/trust-funds/background-information/; whether CHESTER MOSSMAN TEEN CENTER and LUNENBURG ATHLETIC BOOSTER (in FY2025's "scholarship funds" group) belong on FUNDS is TJ's call; Nelson and Crouse FY2014 and Curtis FY2020 prove no row; R.LAYOUTS[2017] is not applied by the shared reader (worked around in the extractor, not fixed).
 ---
-
 # School scholarships: every fund, what it is for, and what it pays out each year
 
 TJ, 4 November 2026, on the first version of `/school-all-funds/school-scholarships`: *"this page
@@ -13,7 +13,9 @@ charts with the info. im looking to see how much is given out each year by each 
 
 **The page is built and committed (621e72c27) and NOT deployed. Hold it until the payouts are in.**
 
-## Where it stands (4 November 2026, steps 1 and 2 done, not committed)
+## DEPLOYED 4 November 2026 (92c3e8f90; https://4bceb486.lunenburg-fy28.pages.dev). Production hashes match dist; D1 holds scholarship_funds (174) and scholarship_purposes (7).
+
+## Where it stands (4 November 2026, steps 1 and 2)
 
 `scripts/extract_scholarship_funds.py` writes `sources/data/scholarship-funds.csv`: **174 proven
 rows, every year FY2011-FY2025**, 7 to 12 of the 14 funds a year. Read by BOTH instruments --
@@ -48,7 +50,7 @@ prove. **FY2025's "scholarship funds" group also holds CHESTER MOSSMAN TEEN CENT
 ATHLETIC BOOSTER**, which are not on `FUNDS` -- whether they belong on a school scholarship page
 is TJ's call.
 
-## Steps 3 and 4 (4 November 2026, done, not committed)
+## Steps 3 and 4 (4 November 2026)
 
 **Purposes:** `sources/data/scholarship-purposes.csv`, seven rows, every quote re-found verbatim in its
 text on each build of the page (`purposes()`). Stated by a document: Vincent Joseph (SC minutes
