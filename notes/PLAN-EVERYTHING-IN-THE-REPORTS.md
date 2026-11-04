@@ -1,7 +1,7 @@
 ---
 status: open
 updated: 2026-11-04
-next: (1) re-pair FY2011's contents page as FY2012's was (board chairs and report filing misattribute through it). (2) settle the 7 split families in annual-report-catalogue-sort.csv (sort_catalogue.py --consistency). (3) salary-schedule.csv has two writers -- decide which owns the 2010 rows before running extract_salary_schedule.py.
+next: (0) deploy /school-all-funds/school-scholarships (built and committed 4 Nov, not live). (1) re-pair FY2011's contents page as FY2012's was (board chairs and report filing misattribute through it). (2) settle the 7 split families in annual-report-catalogue-sort.csv (sort_catalogue.py --consistency). (3) salary-schedule.csv has two writers -- decide which owns the 2010 rows before running extract_salary_schedule.py.
 ---
 
 # Plan: everything the annual reports print, in the database
@@ -109,6 +109,12 @@ up at **Next** 2.
   The full read also closed FY2016 (its ADDENDUM holds the whole list, set sideways) and FY2012
   (a strip of another sheet on p115), and corrected the department cutoff to FY2017 in
   `money-gaps.csv`. `gross_wages` and `town_meeting_votes` are in D1.
+- **Later the same day:** `/school-all-funds/school-scholarships` built (`build_school_scholarships.py`,
+  committed 621e72c27, **NOT deployed yet**): the fourteen funds, what each holds, and which record
+  covers each fund each year. Two gaps registered (awards by recipient; the funds' history, printed in
+  ten earlier reports and ours to read). Reading those ten trust fund summaries is ingest work, so
+  isolated agents, and it is quoted before it starts. The June 2026 warrant question has its own
+  handoff, `notes/HANDOFF-SCHOOL-WARRANTS-JUNE-2026.md`.
 - **Found, not fixed:** `salary-schedule.csv` has two writers, `extract_salary_schedule.py` and
   `read_report_tables.py`'s 2010 rows, so the first is permanently stale and must not be run
   until that is settled; FY2011's contents page is garbled the way FY2012's was;
