@@ -1,3 +1,9 @@
+---
+status: done
+retired: 2026-11-04
+left_open: ["OPEN: 21 pre-reorg addresses are answered from a stale edge cache"]  # sections not re-verified at retirement
+---
+
 # Handoff — archive reorganisation and storage
 
 **Scope.** One workstream: reorganising `sources/`, and moving the binaries out of git into
@@ -9,8 +15,8 @@ annual-report work and it supersedes several assumptions in this file and in
 hold hardcoded paths into `sources/` — and that is the thing that decides whether a folder
 can be moved at all.
 
-**Do not confuse this with the other handoffs.** `notes/HANDOFF.md` is the project's
-standing state; `notes/HANDOFF-ANNUAL-REPORTS.md` and `plans/ANNUAL-REPORTS.md` belong to
+**Do not confuse this with the other handoffs.** `notes/handoffs-done/HANDOFF.md` is the project's
+standing state; `notes/handoffs-done/HANDOFF-ANNUAL-REPORTS.md` and `plans/ANNUAL-REPORTS.md` belong to
 another agent's crawl work; `plans/PLAN.md` is the whole arc. This file covers only the
 archive layout and where the bytes live.
 

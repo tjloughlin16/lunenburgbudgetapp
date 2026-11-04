@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """THE USAGE GOVERNOR -- how many workers a backlog run may have, decided from the real
 usage bars. Pure: no model calls, no files written. The design is
-notes/HANDOFF-USAGE-GOVERNOR.md; process_meeting.py --until-usage is what drives it.
+notes/handoffs-done/HANDOFF-USAGE-GOVERNOR.md; process_meeting.py --until-usage is what drives it.
 
     python3 scripts/usage_governor.py            # the latest reading, and what it means
     python3 scripts/usage_governor.py --test     # the decision rules on synthetic series

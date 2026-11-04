@@ -1,3 +1,10 @@
+---
+status: superseded
+retired: 2026-11-04
+superseded_by: notes/MASTER-PLAN.md
+left_open: ["Still TJ's", "STILL OPEN: `dese_sped_movement` is unread"]  # sections not re-verified at retirement
+---
+
 # Where we left off — 9 September 2026
 
 Written at the end of a long session. Everything below is committed, pushed and

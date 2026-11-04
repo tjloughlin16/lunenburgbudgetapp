@@ -1,3 +1,10 @@
+---
+status: parked
+updated: 2026-11-04
+next: the five bus-sheet findings and the athletics-fincom year mislabel
+waiting_on: TJ's yes
+---
+
 # Handoff: athletics schedules, the bus model, and the site menu
 
 Written 12 October 2026, before a context reset. Everything below is a claim about the repo

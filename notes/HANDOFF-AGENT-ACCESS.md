@@ -1,3 +1,10 @@
+---
+status: parked
+updated: 2026-11-04
+next: see "What to do next, in order"
+waiting_on: dormant since 5 Sep; TJ to revive or retire
+---
+
 # Handoff — making this archive usable by an agent
 
 **Scope.** One workstream: an assistant asked a question about Lunenburg should be able to
@@ -14,7 +21,7 @@ ends are the evidence.
 load-bearing against the repository before acting on it — that instruction is not
 boilerplate here, it is the exact failure this workstream spent a day fixing.
 
-**Related:** `notes/HANDOFF-ARCHIVE-STORAGE.md` (where the bytes live), `CLAUDE.md`
+**Related:** `notes/handoffs-done/HANDOFF-ARCHIVE-STORAGE.md` (where the bytes live), `CLAUDE.md`
 sections *"Reachability"*, *"What /api/query can cost"*, and *"The shape almost every
 defect here has taken"*.
 

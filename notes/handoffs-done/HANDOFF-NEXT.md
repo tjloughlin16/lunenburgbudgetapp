@@ -1,7 +1,14 @@
+---
+status: superseded
+retired: 2026-11-04
+superseded_by: notes/MASTER-PLAN.md
+left_open: ["Open work, in rough priority order"]  # sections not re-verified at retirement
+---
+
 # Handoff: everything not yet done, as of Saturday 10 October 2026, 09:10
 
 One list for the next session. Read this first; the linked handoffs carry their own detail.
-Earlier versions are in git history (`git log -p notes/HANDOFF-NEXT.md`).
+Earlier versions are in git history (`git log -p notes/handoffs-done/HANDOFF-NEXT.md`).
 
 ## RIGHT NOW (Sat 10 Oct 09:10) -- everything from the 08:30 list is DONE
 
@@ -102,13 +109,13 @@ and 2026-10-07. The law: `scripts/oml_law.py`, `sources/state-law/`.
 **The usage governor**: `process_meeting.py --until-usage` (`--session-caps`, `--week-cap`,
 `--by`, `--max-jobs`, `--ramp`, `--oldest`), `scripts/usage_governor.py` (reads the
 server's own usage bars, polls every 150 s), output guard in `scripts/backlog_pace.py`.
-`notes/HANDOFF-USAGE-GOVERNOR.md`. Measured: a three-step meeting ~1% of a 5-hour window,
+`notes/handoffs-done/HANDOFF-USAGE-GOVERNOR.md`. Measured: a three-step meeting ~1% of a 5-hour window,
 ~0.1% of the week (`notes/findings/METERED-BATCH-COST.md` sections 6-7). Two things that
 cost hours: a new window opens only on FIRST USE after a reset, so do not wait for a
 reading to change before starting; and always arm a watcher on an overnight run.
 
 **Faster site build**: one Chrome over a DevTools pipe plus a reuse cache --
-`notes/HANDOFF-FASTER-SITE-BUILD.md`. Full build ~10-14 min, nothing changed: seconds.
+`notes/handoffs-done/HANDOFF-FASTER-SITE-BUILD.md`. Full build ~10-14 min, nothing changed: seconds.
 
 **Board records**: "not available" until the OML approval window closes (later of 30 days
 and the third subsequent meeting), MISSING only after; reasons in

@@ -617,7 +617,7 @@ def run_serial(plan, a, S, ceiling):
 
 
 def run_governed(plan, a, S, ceiling):
-    """THE GOVERNOR (notes/HANDOFF-USAGE-GOVERNOR.md): 1 to --max-jobs workers on ONE queue,
+    """THE GOVERNOR (notes/handoffs-done/HANDOFF-USAGE-GOVERNOR.md): 1 to --max-jobs workers on ONE queue,
     how many decided every TICK seconds by usage_governor.decide() from the live usage bars,
     and the output guard (backlog_pace.guard) checked before every new meeting. A meeting is
     handed out once, by this loop alone, so no two workers can ever pay for the same one.

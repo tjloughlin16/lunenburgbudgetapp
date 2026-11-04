@@ -8,7 +8,7 @@ in four measured parts. The model; `build_fy_breakdown.py` writes the page from 
     python3 scripts/fy_breakdown.py    # print the year totals and the two worked cases
 
 TJ, 26 October 2026: *"there HAS to be a way to see why they had leftover money."* The answer
-here is an IDENTITY, not an estimate (notes/HANDOFF-FY-BREAKDOWN.md). For every line of the
+here is an IDENTITY, not an estimate (notes/handoffs-done/HANDOFF-FY-BREAKDOWN.md). For every line of the
 school general fund (fund 0100, department 300, `journal.in_surplus_scope`):
 
     left on the line  =  voted - all-funds cost      (1) voted above what it cost, all funds
@@ -129,7 +129,7 @@ PAYMENT = ('API', 'APM', 'PRJ', 'PRH')
 
 # NEXT YEAR'S INVOICES PAID EARLY. FLLAC numbers its invoices by the school year they bill
 # (`25L2KEY..` FY2025, `26..`, `27..`), each prefix with its own quarterly rate -- our reading
-# of the numbering, corroborated in notes/HANDOFF-SURPLUS-PAGES.md. A scope invoice whose
+# of the numbering, corroborated in notes/handoffs-done/HANDOFF-SURPLUS-PAGES.md. A scope invoice whose
 # prefix names a LATER year than the one paying it is next year's tuition. No other payee's
 # invoice numbers carry a year, so no other prepayment can be read; the only one this finds is
 # FY2026's $189,276.75. Applied to the surplus scope only: the one later-prefixed invoice in

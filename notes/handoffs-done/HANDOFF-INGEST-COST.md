@@ -1,3 +1,9 @@
+---
+status: superseded
+retired: 2026-11-04
+superseded_by: CLAUDE.md
+---
+
 # Handoff: what ingest costs, and where it must run
 
 Written 27 September 2026, at the end of a session that cost about four times what the

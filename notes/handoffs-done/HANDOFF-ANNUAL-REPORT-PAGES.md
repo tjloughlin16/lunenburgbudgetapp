@@ -1,3 +1,8 @@
+---
+status: done
+retired: 2026-11-04
+---
+
 # The annual-report page stream: what to do next
 
 **28 September 2026, updated 29 September.** Everything on this stream is now READ A PAGE, one year at a time,

@@ -1,8 +1,15 @@
+---
+status: superseded
+retired: 2026-11-04
+superseded_by: notes/MASTER-PLAN.md
+left_open: ["Not done / open (TJ's calls)"]  # sections not re-verified at retirement
+---
+
 # Handoff: jobs, transfers, threads, search, org-chart sources
 
 Written Saturday night, 10 October 2026, by the session that did all of it, for TJ to pick up
 after a reset. The earlier workstream from the same session (the transportation brief, the
-FY26 surplus audit) is `notes/HANDOFF-CITIZEN-FIRST-REPORTS.md`; its open decisions still stand
+FY26 surplus audit) is `notes/handoffs-done/HANDOFF-CITIZEN-FIRST-REPORTS.md`; its open decisions still stand
 and are repeated at the bottom.
 
 **State:** everything is committed and pushed (`main` = `origin/main`). **Deployed and verified**

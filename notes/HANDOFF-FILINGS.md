@@ -1,3 +1,9 @@
+---
+status: open
+updated: 2026-11-04
+next: TJ: refile the OML complaint with the AG, or not -- window 4 Nov to 30 Dec 2026
+---
+
 # TWO FILINGS, READY TO SEND — queued 4 October 2026, TJ sends 5 October
 
 **Status: WRITTEN, NOT SENT.** Both drafts are finished. TJ fills the placeholders and

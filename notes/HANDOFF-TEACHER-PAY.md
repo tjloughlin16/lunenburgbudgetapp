@@ -1,3 +1,10 @@
+---
+status: parked
+updated: 2026-11-04
+next: TJ: gross-wages.csv names, DESE FY2025 relabel, the unsent records requests
+waiting_on: TJ
+---
+
 # Handoff: teacher pay, comparison districts, and the 19 October session
 
 Written 19 October 2026, when TJ paused the work. Read CLAUDE.md first; rules 2, 3, 7, 7c, 8, 12,

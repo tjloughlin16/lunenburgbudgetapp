@@ -1,7 +1,7 @@
 # Removing a document from the public archive
 
 **Built 19 October 2026.** The mechanism as it exists, not as it was designed; the design is
-`notes/HANDOFF-TAKEDOWN.md`. TJ, 6 October 2026:
+`notes/handoffs-done/HANDOFF-TAKEDOWN.md`. TJ, 6 October 2026:
 
 > *"we HAVE to have a way to delete things. it can't truly be permanent. thats silly."*
 

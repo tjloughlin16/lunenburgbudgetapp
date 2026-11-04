@@ -3,7 +3,7 @@
 Internal. Not published, not linked from the site. Written 30 October 2026 at the close of the
 work (commits 4b660cac7, 08ce38003). Every count below is a snapshot of that day; re-derive before
 quoting (commands at the end). The working history is
-`notes/HANDOFF-ANNUAL-REPORTS-1959-2010.md`.
+`notes/handoffs-done/HANDOFF-ANNUAL-REPORTS-1959-2010.md`.
 
 ## The short version
 

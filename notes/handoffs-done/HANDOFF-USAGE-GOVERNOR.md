@@ -1,3 +1,8 @@
+---
+status: done
+retired: 2026-11-04
+---
+
 # Design: a backlog run steered by the real usage bars
 
 Written 7 October 2026. Approved by TJ the same day; **build after 4:40 pm** so the build does

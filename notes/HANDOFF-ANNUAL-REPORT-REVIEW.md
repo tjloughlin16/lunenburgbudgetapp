@@ -1,3 +1,9 @@
+---
+status: reference
+updated: 2026-11-04
+next: read before running report_review.py on a newly Textracted report
+---
+
 # Handoff: the annual-report review (P6) on debt schedules
 
 **Read this before running `report_review.py` on a newly Textracted report.** Written 28 October

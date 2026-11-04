@@ -1,7 +1,7 @@
 # Running the refresh every day
 
 **It runs in this working tree, on whatever branch is checked out** (since 9 October 2026;
-see `notes/HANDOFF-REFRESH-ADDITIVE.md`). It is ADDITIVE: it resets, cleans and deletes
+see `notes/handoffs-done/HANDOFF-REFRESH-ADDITIVE.md`). It is ADDITIVE: it resets, cleans and deletes
 nothing, commits ONLY the files it wrote (`scripts/refresh_git.py`), puts back anything
 of somebody else's uncommitted work it overwrote -- reported as *not yet refreshable* --
 and reaches `main` by replaying its commit onto a moved `origin/main`, never by a side

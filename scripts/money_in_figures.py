@@ -21,7 +21,7 @@ Any figure that would need `report_appropriations` or `special_revenue_funds`. B
 **zero rows with `status = 'checked'`** — 4,530 and 2,058 rows respectively are
 `check failed` — and `CLAUDE.md` forbids aggregating those without splitting on status.
 The annual reports hold fifteen years of both and they are not usable yet;
-`notes/HANDOFF-ANNUAL-REPORTS.md` says what would make them so.
+`notes/handoffs-done/HANDOFF-ANNUAL-REPORTS.md` says what would make them so.
 
 `annual_report_receipts` IS usable, but only in part, and the part is not a row filter —
 it is five WHOLE years. FY2014, FY2015, FY2017, FY2018 and FY2022 have every row checked

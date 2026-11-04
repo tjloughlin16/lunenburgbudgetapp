@@ -1,3 +1,8 @@
+---
+status: done
+retired: 2026-11-04
+---
+
 # Handoff: the 52 older annual town reports (1959-2010), from the town's archive into the app
 
 Written 28 October 2026, to survive a context reset. **Read this first, then

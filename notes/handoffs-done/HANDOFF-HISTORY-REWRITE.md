@@ -1,3 +1,9 @@
+---
+status: done
+retired: 2026-11-04
+left_open: ["Also pending: lessons for `CLAUDE.md`"]  # sections not re-verified at retirement
+---
+
 # Handoff: unmasked journal names were in the PUBLIC GitHub history -- REWRITTEN 26 October 2026
 
 **STATUS, 26 October 2026: steps 1-4 DONE; step 5 (GitHub's purge) is TJ's to file.**

@@ -1,3 +1,8 @@
+---
+status: done
+retired: 2026-11-04
+---
+
 # Handoff: one fiscal year, broken down -- why a surplus happened
 
 ## NOW -- 31 October 2026. READ THIS FIRST
@@ -948,7 +953,7 @@ Run the model before quoting any of it (rule 2). TJ declined rebuilding the page
   TJ's comparison against what he thinks will reveal the most.
 
 Written 26 October 2026 (late), for a FRESH session. Load the `building-a-page` skill first,
-then read this file, then `notes/HANDOFF-SURPLUS-PAGES.md` (the surplus work this grows out of).
+then read this file, then `notes/handoffs-done/HANDOFF-SURPLUS-PAGES.md` (the surplus work this grows out of).
 
 ## What TJ asked, in his words
 

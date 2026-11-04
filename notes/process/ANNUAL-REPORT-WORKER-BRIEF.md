@@ -94,4 +94,4 @@ many have a printed identity that ties; anything in NEEDS.md; what this report p
 ```
 
 The integration agent's brief (one agent, after every worker): see
-`notes/HANDOFF-ANNUAL-REPORTS-1959-2010.md`, "Step 6".
+`notes/handoffs-done/HANDOFF-ANNUAL-REPORTS-1959-2010.md`, "Step 6".

@@ -1,3 +1,8 @@
+---
+status: done
+retired: 2026-11-04
+---
+
 # Handoff: the surplus pages, consolidated and made to mean something
 
 ## DONE, 26 October 2026 (second session). Read this block first
@@ -40,7 +45,7 @@ other shelves, other builders) have no meanings yet -- do them with Athletics / 
 fine); `threads.json` is dirty from the minutes backlog, so it was not regenerated.
 `fy28/public/data/reports.json` regenerates with the backlog's byte counts; not committed.
 
-**NEXT, and bigger: `notes/HANDOFF-FY-BREAKDOWN.md`** (TJ, 26 Oct 2026, late): one fiscal year
+**NEXT, and bigger: `notes/handoffs-done/HANDOFF-FY-BREAKDOWN.md`** (TJ, 26 Oct 2026, late): one fiscal year
 broken into four measured parts -- voted above cost, paid by other funds, transfers, paid for
 another year -- with a Sankey and a timeline of moves. It is the general answer to "why was
 there a surplus"; the Why it was left block is the hand-built first instance of it.
@@ -357,7 +362,7 @@ shelf. A timeline per source: when it arrives, and the rule on when it must be s
 
 ## Open, elsewhere (not this review's job; do not lose them)
 
-- **GitHub Support ticket 4909191** (purge the pre-rewrite commits): `notes/HANDOFF-HISTORY-REWRITE.md`.
+- **GitHub Support ticket 4909191** (purge the pre-rewrite commits): `notes/handoffs-done/HANDOFF-HISTORY-REWRITE.md`.
   Done when the old commit URL there stops answering 200.
 - **Work-off page** (`/homes-and-taxes/senior-tax-work-off`): TJ to decide the opening line,
   "16 completed 2010" vs "6 took part 2025" (close but different measures).

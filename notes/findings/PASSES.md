@@ -1,7 +1,7 @@
 # Analysis passes
 
 
-> **Working state:** `notes/HANDOFF.md` carries the current branch, the open
+> **Working state:** `notes/handoffs-done/HANDOFF.md` carries the current branch, the open
 > decisions and what is established versus assumed. `CLAUDE.md` carries the rules.
 
 Internal working log. **Not published** — `sources/` is served to the public through

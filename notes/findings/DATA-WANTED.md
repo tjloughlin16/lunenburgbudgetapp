@@ -1,7 +1,7 @@
 # Data wanted
 
 
-> **Working state:** `notes/HANDOFF.md` carries the current branch, the open
+> **Working state:** `notes/handoffs-done/HANDOFF.md` carries the current branch, the open
 > decisions and what is established versus assumed. `CLAUDE.md` carries the rules.
 
 Things I cannot get, ranked by how much they would change. Internal working list.

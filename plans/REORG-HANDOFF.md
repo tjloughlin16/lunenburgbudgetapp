@@ -63,7 +63,7 @@ generated. That was one of the two things `check_archive_layout.py` was failing 
 | `notes/reference/ANNUAL-REPORTS.md` | **the entry point.** Generated. Every dataset, where it lives, what state it is in, what is uncaptured |
 | `notes/reference/BACKUP.md` | Generated. Every path with size and **how many copies exist** |
 | `sources/town-budget/PIPELINE.md` | how a PDF becomes a database row |
-| `notes/HANDOFF-ANNUAL-REPORTS.md` | state and open risks of the extraction |
+| `notes/handoffs-done/HANDOFF-ANNUAL-REPORTS.md` | state and open risks of the extraction |
 | `notes/findings/TOWN-ARCHIVE.md` | how the reader was built and what broke it |
 | `notes/findings/ATHLETICS-LEDGER-FY2024-DRIFT.md` | an unrelated open decision — do not action, do not delete |
 | `plans/ANNUAL-REPORTS.md` | the plan for the extraction |
@@ -170,8 +170,8 @@ is not affected by a local move, so skip it unless you change a URL.
 - `notes/findings/ATHLETICS-LEDGER-FY2024-DRIFT.md` and the 5 failures in
   `verify_records_request_2026_06.py`. A published headline (44% → 35%) turns on which
   document is authoritative for FY2024 athletics actuals. Flagged at the top of
-  `notes/HANDOFF.md`. Leave it.
-- The extraction residuals in `notes/HANDOFF-ANNUAL-REPORTS.md`. Nothing there is a layout
+  `notes/handoffs-done/HANDOFF.md`. Leave it.
+- The extraction residuals in `notes/handoffs-done/HANDOFF-ANNUAL-REPORTS.md`. Nothing there is a layout
   problem.
 - `sources/data/verify/` is scratch and can be emptied, but it is not part of the reorg.
 

@@ -1,3 +1,10 @@
+---
+status: done
+retired: 2026-11-04
+superseded_by: notes/process/REMOVING-FROM-THE-ARCHIVE.md
+left_open: ["Also open from that day"]  # sections not re-verified at retirement
+---
+
 **BUILT 19 October 2026 and documented in `notes/process/REMOVING-FROM-THE-ARCHIVE.md`. Read that; this file is the design history.**
 
 # Handoff: a way to DELETE from the archive -- and the 16 documents that need it first

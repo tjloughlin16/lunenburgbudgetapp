@@ -17,7 +17,7 @@
 # a reason (15 September 2026: a refresh built a feature branch and Cloudflare put it on a
 # preview alias), and together they meant the refresh almost never finished: blocked 5, 6
 # and 7 October because that checkout sat on a 22 September commit, split across a side
-# branch on the 8th. notes/HANDOFF-REFRESH-ADDITIVE.md has the whole account.
+# branch on the 8th. notes/handoffs-done/HANDOFF-REFRESH-ADDITIVE.md has the whole account.
 #
 # WHAT REPLACED EACH PART, so none of the old protections was simply dropped:
 #   * a feature branch reaching production -> refresh.py deploys only when the branch is

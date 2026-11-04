@@ -12,7 +12,7 @@
 TJ, 6 October 2026: *"we HAVE to have a way to delete things. it can't truly be permanent.
 thats silly."* And the condition: *"we need a full backup made to make sure we don't lose
 data. You can make an OOPSY and BOOM, We're screwed."* The design is
-notes/HANDOFF-TAKEDOWN.md; how to use it is notes/process/REMOVING-FROM-THE-ARCHIVE.md.
+notes/handoffs-done/HANDOFF-TAKEDOWN.md; how to use it is notes/process/REMOVING-FROM-THE-ARCHIVE.md.
 
 THREE STEPS, AND THE FIRST TWO NEED NO BUCKET CHANGE.
 

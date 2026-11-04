@@ -126,7 +126,7 @@ in the note) · a digit in block prose needs `allow=` if it is not a registered 
 
 ## The review queue (TJ, 26 October 2026)
 
-1. **The surplus pages**, /fy2026-closeout: `notes/HANDOFF-SURPLUS-PAGES.md`.
+1. **The surplus pages**, /fy2026-closeout: `notes/handoffs-done/HANDOFF-SURPLUS-PAGES.md`.
 2. **Athletics**, /athletics.
 3. **The whole school budget**, /school-all-funds.
 

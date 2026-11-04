@@ -1,3 +1,9 @@
+---
+status: open
+updated: 2026-11-04
+next: build the journal pages; tie the Town's Excel export and redaction log when they arrive
+---
+
 # Handoff: the school MUNIS journal (Report 1)
 
 Written 19 October 2026, for an agent picking this up fresh. Read CLAUDE.md rules 1, 7, 11,

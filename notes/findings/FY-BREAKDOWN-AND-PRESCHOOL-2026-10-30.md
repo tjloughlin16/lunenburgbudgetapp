@@ -1,7 +1,7 @@
 # FY breakdown, preschool and free cash — working notes, 29–30 October 2026
 
 TJ's review copy of one long session: the analysis and the answers, in one place. Not served by the
-app. The work queue is `notes/HANDOFF-FY-BREAKDOWN.md`; this file is the why.
+app. The work queue is `notes/handoffs-done/HANDOFF-FY-BREAKDOWN.md`; this file is the why.
 
 ---
 

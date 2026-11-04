@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """THE THREE LINE FLAGS -- underfunded, overbudgeted, restarted high -- in ONE place, for the
-two pages that show them (TJ, 29 October 2026, notes/HANDOFF-FY-BREAKDOWN.md, "TJ DECIDED"
+two pages that show them (TJ, 29 October 2026, notes/handoffs-done/HANDOFF-FY-BREAKDOWN.md, "TJ DECIDED"
 item 4: "one question per page: the year's story there, the pattern across years here"):
 
   * build_fy_breakdown.py: the picked year's flagged lines (block `fy-flags`) and a flag filter

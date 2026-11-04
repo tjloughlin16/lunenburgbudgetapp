@@ -1,7 +1,7 @@
 # The archive move — what happens, in order, and where every file ends up
 
 **Status: DONE, 5 September 2026.** All nine steps. What actually happened, and the four
-things this plan got wrong, are in `notes/HANDOFF-ARCHIVE-STORAGE.md` — read that first if
+things this plan got wrong, are in `notes/handoffs-done/HANDOFF-ARCHIVE-STORAGE.md` — read that first if
 you are picking this up. The short version: the lock blocks overwriting (confirmed, not
 assumed), so every write is one-way; the binaries turned out to be in git *twice*; and
 `git rm --cached` stops the growth without shrinking the pack, because the blobs stay in
@@ -225,7 +225,7 @@ Git's copy is for building and reviewing. It is never what gets served.
                            removes a file from the index, not from the commits that
                            already hold it. The growth stops; the pack does not shrink
                            without a history rewrite. Recorded as a known, deferred
-                           problem in notes/HANDOFF-ARCHIVE-STORAGE.md
+                           problem in notes/handoffs-done/HANDOFF-ARCHIVE-STORAGE.md
 
 ### The eight files that make this urgent
 

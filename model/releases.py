@@ -615,7 +615,7 @@ RELEASES = [
     # The five builds carried the tags v7 to v11. Collapsing the notes without collapsing
     # the numbering would have left the panel reading v11 then v6, so the tags went with
     # them: v7 through v10 were deleted and this build is tagged v7. What each retired tag
-    # pointed at is recorded in notes/HANDOFF.md, because "tag what is live" is a rule here
+    # pointed at is recorded in notes/handoffs-done/HANDOFF.md, because "tag what is live" is a rule here
     # and a deleted tag is a deleted answer to "which build is that".
     dict(
         tag='v7',

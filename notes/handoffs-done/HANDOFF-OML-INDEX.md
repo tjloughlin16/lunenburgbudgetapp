@@ -1,3 +1,8 @@
+---
+status: done
+retired: 2026-11-04
+---
+
 # Design: the Open Meeting Law, predigested and indexed
 
 Written 8 October 2026. Approved in principle by TJ the same day. Build after the full

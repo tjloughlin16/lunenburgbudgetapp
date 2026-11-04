@@ -580,7 +580,7 @@ nobody checked.
 ## Push holds -- read before ANY `git push`
 
 **None at present.** (The hold of 19 October 2026, unmasked journal names in history, ended
-26 October 2026 with the rewrite: `notes/HANDOFF-HISTORY-REWRITE.md`.)
+26 October 2026 with the rewrite: `notes/handoffs-done/HANDOFF-HISTORY-REWRITE.md`.)
 
 A hold recorded only in one session's memory is invisible to every other session, which is how
 those names reached GitHub on 19 October. So a hold is written HERE, with its reason and what
@@ -1101,7 +1101,7 @@ show up on re-reading your own work.
 
 **AND 52 OLDER ONES, 1959-2010, ARRIVED 28 OCTOBER 2026 -- FINISHED 30 OCTOBER 2026: every
 financial page `proven` or `blocked` (`page-blocked.csv`). Start at
-`notes/HANDOFF-ANNUAL-REPORTS-1959-2010.md`.** Read by Textract, not Vision; extracted by
+`notes/handoffs-done/HANDOFF-ANNUAL-REPORTS-1959-2010.md`.** Read by Textract, not Vision; extracted by
 per-report workers into `sources/data/report-tables/<year>/` and merged. What follows about
 "finished" is about the FY2011-FY2025 set only.
 
@@ -1318,25 +1318,27 @@ the feed and its season files; nothing in them is a rule for the rest of the sit
 
 ## Picking up mid-stream
 
-`notes/HANDOFF-AGENT-ACCESS.md` covers one workstream on its own: making this archive
-usable by an assistant. What exists, what is not solved, what to do next, and the four
-separate agent failures in one day that prompted it — none of which was the agent's fault.
+**A handoff's state is in its first lines, not in its prose.** Every `notes/HANDOFF-*.md`
+opens with a status block -- `status: open | parked | reference`, `updated:`, `next:`, and for
+`parked` a `waiting_on:`. List what is live with:
 
+    grep -A3 '^status:' notes/HANDOFF-*.md notes/PLAN-*.md
 
+**A finished handoff leaves `notes/`.** It moves to `notes/handoffs-done/` with `status: done`
+or `superseded` (and `superseded_by:`), `retired:`, and `left_open:` naming any section whose
+open decisions were NOT re-verified when it was retired -- residue, not a to-do list. Move it
+with `git mv` and rewrite every `notes/HANDOFF-…` path that pointed at it, EXCEPT inside a
+document the archive manifest hashes (page reads, published analyses): a path there is
+history, and changing it breaks the sha256. The first pass, 4 November 2026, retired 23 of
+31: most of `notes/` was describing finished work as current.
 
-`notes/HANDOFF-WAYFINDING.md` is the running doc for the site's reading experience: real
-links, the ranked front page, per-page reading time, the **short version** every page
-declares (five-minute budget, ratcheted) and the **fold** behind it. `notes/process/READING-FLOW.md`
-is the design it follows -- three readers, their paths, what each page owes them.
+**When you finish the work a handoff describes, retire it in the same commit.** When you
+touch an open one, update its `updated:` and `next:`. The stale handoff is the failure:
+it reads exactly like a current one.
 
-`notes/HANDOFF-MONEY-IN.md` is the running doc for the current workstream: modelling every
-route money takes into the school budget, what has been established, and what is explicitly
-not. It is where to start if the work in progress is the money-flow page.
-
-`notes/HANDOFF.md` is written to survive a context reset: which branch is live, what is on
-the working branch and not yet deployed, the open decision, and — most importantly — the
-list of claims that are NOT established, so they do not get restated as fact by somebody
-arriving fresh.
+Two retired ones are still worth knowing: `notes/handoffs-done/HANDOFF.md` carries the list
+of claims that are NOT established, and `notes/handoffs-done/HANDOFF-WAYFINDING.md` the
+short-version and fold mechanics (`notes/process/READING-FLOW.md` is their design).
 
 ---
 

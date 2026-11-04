@@ -1,3 +1,10 @@
+---
+status: superseded
+retired: 2026-11-04
+superseded_by: notes/MASTER-PLAN.md
+left_open: ["An open decision found on 5 September 2026, not resolved here"]  # sections not re-verified at retirement
+---
+
 # Handoff
 
 Written to survive a context reset. Read `CLAUDE.md` first — fifteen rules, every one of
@@ -192,7 +199,7 @@ including all three destructive ones. Write the run to a file and read the whole
 
 ---
 
-## The current plan — `notes/HANDOFF-INGESTION-PLAN.md`, 25 September 2026
+## The current plan — `notes/handoffs-done/HANDOFF-INGESTION-PLAN.md`, 25 September 2026
 
 Where the work stands and what is next, written at TJ's request before a context reset.
 Read it before picking anything up. Three things in it are urgent enough to repeat here:
@@ -291,7 +298,7 @@ did.
 
 ## 16 September 2026 — wayfinding, the short version, the fold
 
-**`notes/HANDOFF-WAYFINDING.md` is the current workstream**, on branch
+**`notes/handoffs-done/HANDOFF-WAYFINDING.md` is the current workstream**, on branch
 `resident-wayfinding` (14 commits, not deployed). Real links everywhere, a ranked front
 page with `/solutions` beside the crisis, per-page titles, reading time on every page, a
 declared and budgeted **short version** per page, and **the fold** behind it. What is left
@@ -300,7 +307,7 @@ there. `notes/process/READING-FLOW.md` is the design it was built to.
 
 ## 11 September 2026 — the blog, the brand, and the reset order
 
-**`notes/HANDOFF-BLOG.md` is the current workstream** and supersedes the ordering below for
+**`notes/handoffs-done/HANDOFF-BLOG.md` is the current workstream** and supersedes the ordering below for
 everything in it. Short version: a blog tier now sits between the cards and the analyses,
 because a card is too short to convince anybody and an analysis page is too long to read
 from Facebook. 48 posts are written and NONE is published — `PUBLISHED = {}` in

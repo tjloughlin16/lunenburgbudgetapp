@@ -1,3 +1,9 @@
+---
+status: open
+updated: 2026-11-04
+next: push D1 and deploy (TJ asks); then the two junk report-signatures rows
+---
+
 # Plan: everything the annual reports print, in the database
 
 **Started 1 November 2026.** TJ: *"i want all the datasets found in the annual reports to get into

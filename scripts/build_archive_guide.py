@@ -302,7 +302,7 @@ def build_guide():
            '| where a row came from | `sources/data/dataset-provenance.csv`, `notes/generated/DATASET-PROVENANCE.md` |',
            '| what is on disk and how many copies | `notes/reference/BACKUP.md` |',
            '| how a PDF becomes a database row | `sources/town-budget/PIPELINE.md` |',
-           '| what is half-done and what is risky | `notes/HANDOFF-ANNUAL-REPORTS.md` |',
+           '| what is half-done and what is risky | `notes/handoffs-done/HANDOFF-ANNUAL-REPORTS.md` |',
            '| how the reader was built and what broke it | `notes/findings/TOWN-ARCHIVE.md` |',
            '| the database grain | `notes/reference/SCHEMA.md` |',
            '',

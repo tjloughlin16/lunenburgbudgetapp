@@ -1,3 +1,8 @@
+---
+status: done
+retired: 2026-11-04
+---
+
 # Handoff: a site build that only re-renders what changed
 
 Written 7 October 2026 for a fresh session. **BUILT the same day** -- see "Done" at the end.

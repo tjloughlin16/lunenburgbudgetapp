@@ -1,3 +1,9 @@
+---
+status: done
+retired: 2026-11-04
+left_open: ["Not done", "Not decided -- TJ's call"]  # sections not re-verified at retirement
+---
+
 # Design: a refresh that is only ever additive, and never blocks on the whole repo
 
 Written 8 October 2026 for TJ's approval. **Built 9 October 2026** on a worktree branch, not

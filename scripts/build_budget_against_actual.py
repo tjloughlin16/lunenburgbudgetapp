@@ -5,7 +5,7 @@ against what it spent, across every year the archive can compare, then one year 
     python3 scripts/build_budget_against_actual.py           # write the topic payload
     python3 scripts/build_budget_against_actual.py --check   # fail if it would change
 
-TJ, 29 October 2026 (notes/HANDOFF-FY-BREAKDOWN.md, item 3): *"map over time the same info
+TJ, 29 October 2026 (notes/handoffs-done/HANDOFF-FY-BREAKDOWN.md, item 3): *"map over time the same info
 thats in the fy breakdowns, but focus entirely on the school lines that are over or under
 budget ... flag this as 'underfunded' ... or the money moved elsewhere ('overbudgeted') ... if
 a budget starts significantly higher than the previous year spending, that should be

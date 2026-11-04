@@ -1,3 +1,10 @@
+---
+status: parked
+updated: 2026-11-04
+next: the one thing owed (see READ THIS FIRST)
+waiting_on: dormant since 7 Oct; TJ to revive or retire
+---
+
 # Working doc — modelling how money reaches the schools
 
 **Running notes for the money-in workstream.** Started 6 September 2026. Updated as we go;
@@ -295,7 +302,7 @@ Any series must show the eight as absent rather than omit them.
     report_appropriations    0 checked   (4,530 check failed, 135 no check)
 
 `CLAUDE.md` forbids aggregating without splitting on `status`.
-`notes/HANDOFF-ANNUAL-REPORTS.md` has the seven-step list that would make them usable.
+`notes/handoffs-done/HANDOFF-ANNUAL-REPORTS.md` has the seven-step list that would make them usable.
 
 **A phrase to keep honest:** a receipt whose *name* says school tells you what arrived **on
 account of** schools. It does not say the schools received or spent it. Chapter 70 is the
@@ -471,7 +478,7 @@ Each was invisible in a table and obvious in a diagram.
    artefacts generally. `revenue_history` shows the scale of the problem: 73 of 197
    printed names were split by spacing alone.
 8. **Extend the revenue series.** Eight of the thirteen annual-report years have no checked
-   rows. `notes/HANDOFF-ANNUAL-REPORTS.md` has the seven-step list that would fix them.
+   rows. `notes/handoffs-done/HANDOFF-ANNUAL-REPORTS.md` has the seven-step list that would fix them.
 9. **Decide about publishing.** None of these pages is on the website. That is a decision,
    not an oversight — see rule 9 in `CLAUDE.md`.
 

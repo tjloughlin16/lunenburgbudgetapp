@@ -1,3 +1,10 @@
+---
+status: parked
+updated: 2026-11-04
+next: post templates by shape; automated posts (designed, not built)
+waiting_on: TJ: "put this on the to-do, not to do now" (21 Oct)
+---
+
 # Social posts: where they stand, and what is next
 
 Started 21 October 2026. The generator is `scripts/build_social_post.py`; one folder per post

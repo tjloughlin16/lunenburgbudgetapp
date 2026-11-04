@@ -9,7 +9,7 @@ page on the FY2026 closeout shelf, from `fy_breakdown.py`.
 
 TJ, 26 October 2026: *"there HAS to be a way to see why they had leftover money."* The method,
 the match rules and what is ours are in `fy_breakdown.py`'s docstring and are not repeated
-here. notes/HANDOFF-FY-BREAKDOWN.md is the brief; this builds its first two parts (the data and
+here. notes/handoffs-done/HANDOFF-FY-BREAKDOWN.md is the brief; this builds its first two parts (the data and
 identity, and the alluvial that opens the page). The pool (hub and spoke) and the timeline of
 moves are still to build.
 
@@ -1379,7 +1379,7 @@ def page(m):
                           'one.', None, ())),
             # APPENDIX (TJ, 28 October 2026: "put this context on the breakout page as an appendix
             # info section ... about how its difficult to match grant money"). No figure: the
-            # audit it summarises is ours and not yet in the model (notes/HANDOFF-FY-BREAKDOWN.md)
+            # audit it summarises is ours and not yet in the model (notes/handoffs-done/HANDOFF-FY-BREAKDOWN.md)
             TB.explain('Why grant money is hard to match', [
                 '**Some money shown as on no school line pays for the same things a school line '
                 'does.** Grants and fee funds book their payroll to accounts named for a kind of work, '

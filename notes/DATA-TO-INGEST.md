@@ -140,7 +140,7 @@ all 3,877 documents: the seven hits for "603 CMR" are 35 (educator evaluation), 
 constrains special education staffing across the whole budget is referenced by no document
 this town publishes.**
 
-**What to do with it, from `notes/HANDOFF-TODO.md`:** 28.06(6) carries the class-size
+**What to do with it, from `notes/handoffs-done/HANDOFF-TODO.md`:** 28.06(6) carries the class-size
 rule — a maximum number of students per certified special education teacher, with a higher
 maximum permitted when an aide is present. **Read it; do not write the numbers from
 anybody's memory, including mine.** Then test Lunenburg's paraprofessional staffing

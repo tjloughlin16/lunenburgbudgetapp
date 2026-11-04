@@ -14,7 +14,7 @@ which is what makes a category here the category on the published surplus pages.
      the `YEC` lines the generator reads), so the owed footing is tied by another document;
   2. each year's four totals sum to that year's surplus on the same footing;
   3. every line's four parts equal the ones recomputed here, to the cent;
-  4. the two worked cases in notes/HANDOFF-FY-BREAKDOWN.md, exactly;
+  4. the two worked cases in notes/handoffs-done/HANDOFF-FY-BREAKDOWN.md, exactly;
   5. every figure the payload prints, if it has been written (`--no-payload` skips it);
   6. the line files: every line's school-budget rows sum to what the CSV says it spent, and
      the weekly chart's bars to those rows;

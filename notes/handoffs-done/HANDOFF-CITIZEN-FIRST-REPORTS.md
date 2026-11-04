@@ -1,12 +1,19 @@
+---
+status: superseded
+retired: 2026-11-04
+superseded_by: notes/handoffs-done/HANDOFF-2026-10-10-JOBS-TRANSFERS-THREADS.md
+left_open: ["Open decisions (TJ's)"]  # sections not re-verified at retirement
+---
+
 # Handoff: citizen-first reports (transportation prototype) and the FY26 surplus audit
 
 > **Superseded in part, 10 October 2026 (night).** The transportation brief was extended the
 > same day (commit 971c05b5, deployed) and much else shipped after this was written -- see
-> `notes/HANDOFF-2026-10-10-JOBS-TRANSFERS-THREADS.md`, which is the current state. The open
+> `notes/handoffs-done/HANDOFF-2026-10-10-JOBS-TRANSFERS-THREADS.md`, which is the current state. The open
 > decisions below still stand.
 
 As of Saturday 10 October 2026. Written by the session that did both. The pacing, search and
-D1 work is a different workstream: `notes/HANDOFF-NEXT.md`. Do not edit that file from here.
+D1 work is a different workstream: `notes/handoffs-done/HANDOFF-NEXT.md`. Do not edit that file from here.
 
 ## What this workstream is
 

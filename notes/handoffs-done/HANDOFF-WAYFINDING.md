@@ -1,3 +1,9 @@
+---
+status: done
+retired: 2026-11-04
+left_open: ["What is NOT done, in order"]  # sections not re-verified at retirement
+---
+
 # Handoff — wayfinding, the short version, and the fold
 
 Written 16 September 2026 to survive a context reset. **Nothing here is a source**: after
@@ -133,7 +139,7 @@ send nothing.
 2. **The editing pass** on the 13 with no short version (above). Then flip
    `--strict` on in `check_generated.py`.
 3. **The blog has zero published posts.** It is the site's built "faster read" format and
-   `HomeLatest` renders nothing until one is published. See `notes/HANDOFF-BLOG.md`.
+   `HomeLatest` renders nothing until one is published. See `notes/handoffs-done/HANDOFF-BLOG.md`.
 4. **Names on meeting pages**: only ~170 of ~1,028 attendees match, by design. Older
    meetings stay as heard because the roster is evidence only for the current term. If TJ
    wants more, the honest route is historical rosters from the annual reports, not a looser

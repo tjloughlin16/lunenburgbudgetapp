@@ -1,3 +1,10 @@
+---
+status: superseded
+retired: 2026-11-04
+superseded_by: notes/MASTER-PLAN.md
+left_open: ["THE BRAND — chosen, not deployed"]  # sections not re-verified at retirement
+---
+
 # Handoff: the blog, the brand, and what is waiting
 
 Written 11 September 2026, before a laptop restart. Read `CLAUDE.md` first.

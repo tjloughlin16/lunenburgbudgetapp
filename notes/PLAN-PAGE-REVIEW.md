@@ -112,7 +112,7 @@ recently built first, because that is where TJ's review is now and where the tem
 damage:
 
 1. School budget, all funds (17): the FY breakdown, school receipts, salaries from grants and fees, preschool
-2. FY2026 closeout (17), already half-reviewed in `notes/HANDOFF-SURPLUS-PAGES.md`
+2. FY2026 closeout (17), already half-reviewed in `notes/handoffs-done/HANDOFF-SURPLUS-PAGES.md`
 3. Department budgets (19), including the new Town general fund
 4. Special education (22) and the SERF reserve (9): the pages built outside the template, which
    read best. They are the worked examples for everything after

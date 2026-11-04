@@ -1,3 +1,10 @@
+---
+status: superseded
+retired: 2026-11-04
+superseded_by: notes/handoffs-done/HANDOFF-ANNUAL-REPORT-PAGES.md
+left_open: ["3. WHAT IS STILL OPEN"]  # sections not re-verified at retirement
+---
+
 # Handoff: making the ingestion numbers trustworthy
 
 27 September 2026. TJ: *"we need ingestion to be bullet proof. please. please. numbers need
@@ -5,11 +12,11 @@ to mean numbers."*
 
 This is what was done that day, what it fixed, and what is still open. The companion
 document is `notes/findings/COUNT-5-TO-15.md`, which is the worked case that prompted all
-of it. `notes/HANDOFF-INGEST-COST.md` covers what ingest COSTS and where it must run; this
+of it. `notes/handoffs-done/HANDOFF-INGEST-COST.md` covers what ingest COSTS and where it must run; this
 one is about whether its counts can be believed.
 
 **If you are here to DO the remaining work rather than to understand the counts, go to
-`notes/HANDOFF-ANNUAL-REPORT-PAGES.md`.** It is the queue, ranked, with the page numbers, the
+`notes/handoffs-done/HANDOFF-ANNUAL-REPORT-PAGES.md`.** It is the queue, ranked, with the page numbers, the
 diagnosis for each job and the one decision still outstanding. Everything left on that stream
 is code; `UNREAD` is 0.
 

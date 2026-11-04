@@ -1,3 +1,8 @@
+---
+status: done
+retired: 2026-11-04
+---
+
 # Handoff: fifteen years of annual town reports
 
 Written 5 September 2026, at the end of a long session. **Nothing is committed.**

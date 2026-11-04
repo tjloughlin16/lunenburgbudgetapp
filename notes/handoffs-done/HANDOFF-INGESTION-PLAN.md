@@ -1,3 +1,10 @@
+---
+status: superseded
+retired: 2026-11-04
+superseded_by: notes/handoffs-done/HANDOFF-ANNUAL-REPORT-PAGES.md
+left_open: ["4. Open decisions — TJ's, not ours"]  # sections not re-verified at retirement
+---
+
 # The plan — 25 September 2026, revised the same day
 
 Written to survive a context reset, at TJ's request, at the end of a long session, and

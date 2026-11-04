@@ -19,7 +19,7 @@ page, just count that page as not yet refreshable, but dont fail everything."* T
 refresh ran in a second checkout that it RESET each morning, refused to start unless that
 checkout was pristine, committed with `git add -A`, and on a moved main pushed to a side
 branch. It was blocked 5, 6 and 7 October by the first rule and split across a side branch
-on the 8th by the last. See notes/HANDOFF-REFRESH-ADDITIVE.md.
+on the 8th by the last. See notes/handoffs-done/HANDOFF-REFRESH-ADDITIVE.md.
 
 THREE RULES, AND THE CODE BELOW IS ONLY THEIR MECHANICS.
 

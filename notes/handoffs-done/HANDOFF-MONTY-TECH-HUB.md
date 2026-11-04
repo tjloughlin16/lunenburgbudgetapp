@@ -1,3 +1,8 @@
+---
+status: done
+retired: 2026-11-04
+---
+
 # Handoff: Monty Tech hub and per-pupil pages
 
 Written 15 October 2026, at the end of a long session, so the build can start fresh.
