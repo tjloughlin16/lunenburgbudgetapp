@@ -1,7 +1,7 @@
 ---
 status: open
 updated: 2026-11-04
-next: the 166 gaps in annual-report-catalogue-sort.csv -- settle the 7 split families, then pick what to extract; or step 3, the list survey
+next: (1) regenerate extract_board_chairs, extract_gross_wages, build_report_filing -- stale before 4 Nov, never re-run after FY2012's index was re-paired (e846687c4); read what FY2012 rows move. (2) settle the 7 split families in annual-report-catalogue-sort.csv (sort_catalogue.py --consistency)
 ---
 
 # Plan: everything the annual reports print, in the database
