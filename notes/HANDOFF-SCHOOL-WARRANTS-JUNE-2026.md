@@ -1,7 +1,7 @@
 ---
 status: open
 updated: 2026-11-04
-next: (1) check the seven unchecked cover-sheet totals against each batch's own proof list. (2) ask the district for the list of batches in the 18-30 June 2026 warrant, or the check register for those dates. Nothing published until both are done.
+next: ask the district for the list of batches in the 18-30 June 2026 warrant, or the check register for those dates. The gap is measured and registered (money-gaps.csv; records-requests.csv row 2026-10-26-sc-warrant-june-18-30).
 ---
 
 # School warrant batches, 18-30 June 2026: do they add up to the agenda's warrant?
@@ -16,9 +16,10 @@ the posted agenda. can you tell me how that was calculated."*
 `notes/reference/records-requests.csv` line 23: *"whether these nine batches are the whole warrant
 has not been reconciled to its $362,767.40"*. And the delivery's own note,
 `sources/correspondence/2026-11-03-school-warrants-2026-06-18-to-30.md`, says nothing is
-extracted yet. Any figure quoted for the gap came from a conversation, not a check.
+extracted yet. Any figure quoted for the gap came from a conversation, not a check -- until 4 November 2026, when it
+was measured and written into `money-gaps.csv` and the records-request row.
 
-**The sum, done on 4 November by a subagent. It is OCR, not checked arithmetic:**
+**The sum, 4 November 2026. Every batch total ties to the batch's own proof list:**
 
 - Agenda: `sources/meetings/text/school-committee/2026-07-15-agenda-7901.txt` lines 43-44,
   *"Review & Approve Line Item Transfers, Warrants & Donations 6/18 to 6/30 $362,767.40"*; the
@@ -28,11 +29,11 @@ extracted yet. Any figure quoted for the gap came from a conversation, not a che
   `build/textract/out/*warrant-batch*.lines.tsv`: 5765 15,918.53; 5780 8,836.74; 5806 34,955.33;
   5808 38,489.81; 5809 11,671.67; 5810 60,743.83; 5811 11,194.74; 5818 119,258.87; 5823 4,540.99.
   **Sum 305,610.51. Agenda minus batches: 57,156.89.**
+- **The totals are checked.** First read by a subagent (two of nine tied); then all nine cover-sheet
+  totals found again on each batch's own proof-list page (`REPORT POST TOTAL`), 4 November 2026.
 
 ## What it does not establish
 
-- **Seven of the nine totals are unchecked readings.** Only 5765 and 5818 were tied to their own
-  proof-list totals.
 - **Whether nine batches is the whole warrant.** A missing batch gives exactly this shape, and
   nothing we hold lists the warrant's batches.
 - **The $189,276.75 FLLAC payment** (check 218995, 30 June) is in none of the batches. FLLAC
