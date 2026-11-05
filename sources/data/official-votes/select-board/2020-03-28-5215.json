@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-03-28",
  "docid": "5215",
@@ -12,31 +12,168 @@
  },
  "votes": [
   {
-   "motion": "Postpone the May 16, 2020 town election and determine an alternative date at the regular Selectmen's Meeting on March 31, 2020",
-   "moved_by": "Phyllis Luck",
-   "seconded_by": "Damon McQuaid",
+   "motion": "Postpone the May 16, 2020 town election and determine an alternative date at the regular Selectmen's Meeting on Tuesday, March 31, 2020.",
+   "moved_by": "P. Luck",
+   "seconded_by": "D. McQuaid",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: p. luck 2nd: d. mcquaid to postpone the may 16, 2020 town election and determine an alternative date at the regular selectmen's meeting on tuesday, march 31, 2020 ms. luck-aye, mr. mcquaid-aye, ms. adams- aye, mr. jeffreys- aye, mr. alonzo aye"
+   "quote": "to postpone the may 16, 2020 town election and determine an alternative date at the regular selectmen's meeting on tuesday, march 31, 2020"
   },
   {
-   "motion": "Extend the deadline for nomination papers according to the new election date, with possible special legislation and the option for a court order if necessary",
-   "moved_by": "Katey Adams",
-   "seconded_by": "Phyllis Luck",
+   "motion": "Extend the deadline for nomination papers according to the date of the new election date, with possible special legislation and the option of a court order if necessary (Adams offered to drop the special legislation phrase before the vote).",
+   "moved_by": "K. Adams",
+   "seconded_by": "Ms. Luck",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "motion: k. adams 2nd: m. jeffreys to extend the deadline for nomination papers according to the date of the new election date with possible special legislation and the option to do a court order if necessary"
+   "quote": "to extend the deadline for nomination papers according to the date of the new election date with possible special legislation and the option to do a court order if necessary"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Phyllis Luck",
-   "seconded_by": "Katey Adams",
+   "motion": "Adjourn the meeting at 6:21 p.m.",
+   "moved_by": "P. Luck",
+   "seconded_by": "K. Adams",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: p. luck 2nd: k. adams to adjourn the meeting at 6:21 p.m. vote: ms. luck-aye, mir. mcquaid-aye, ms. adams-aye, mr. jeffreys-aye, , mr. alonzo- aye"
+   "quote": "motion: p. luck 2nd: k. adams to adjourn the meeting at 6:21 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan reads clearly. Note: On vote 2, Michael-Ray Jeffreys initially seconded but withdrew his second; Phyllis Luck subsequently seconded the motion that was voted on.",
- "cost_usd": 0.1780755
+ "note": "Text is OCR of a scan. Page 3 ends mid-sentence (\"write in ballots for\") and page 4 opens mid-sentence (\"analyzing this and have to acknowledge\"), so some discussion may be missing. The chair announced no public comment, yet Peter Beardmore was recognized and spoke. Jeffreys withdrew his second and Ms. Luck seconded; the motion was modified orally before the vote, and its final wording is not restated. Spelling of Jeffreys varies (Jetfreys in the roll). Adjournment vote tally is printed as 5-0 by listing.",
+ "cost_usd": 0.00677772,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; damon mcquaid, clerk; katey adams, michael-ray jetfreys"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; damon mcquaid, clerk; katey adams, michael-ray jetfreys"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; damon mcquaid, clerk; katey adams, michael-ray jetfreys"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "not stated",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; damon mcquaid, clerk; katey adams, michael-ray jetfreys"
+  },
+  {
+   "name": "Michael-Ray Jetfreys",
+   "role": "not stated",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; damon mcquaid, clerk; katey adams, michael-ray jetfreys"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam costa, town counsel"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam costa, town counsel"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others present: peter beardmore"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board would determine the actual new election date at its next meeting.",
+   "quote": "mr. alonzo stated they would determine the actual election date at their next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Court order filing costs",
+   "what_was_recorded": "Town Counsel estimated a court filing fee of around $275 and a $90 payment if preliminary relief issued, in answer to the chair's question on cost of seeking a court order.",
+   "figures_as_printed": [
+    "$275",
+    "$90"
+   ],
+   "quote": "attorney costa stated there would be the court filing fee, around $275 and a $90 payment presuming that preliminary relief issued."
+  },
+  {
+   "topic": "Counsel fee for court order",
+   "what_was_recorded": "Town Counsel said preparing and arguing the court order is covered under the Town's flat fee; no separate figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the actual preparation and my arguing it is covered under the town's flat fee."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "not stated",
+   "topic": "deadline for nomination papers",
+   "quote": "mr. alonzo recognized peter beardmore, 282 pleasant street. mr. beardmore stated we need to be cognizant of what's fair to potential candidates who have been following the rules."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and remote-meeting notice",
+   "resolution": "opened; no action",
+   "quote": "the meeting commenced at 5:31 p.m.",
+   "tags": [
+    "remote meeting",
+    "COVID-19",
+    "Open Meeting Law"
+   ]
+  },
+  {
+   "topic": "Postpone May 16, 2020 town election",
+   "resolution": "postponed; new date to be set at March 31, 2020 meeting",
+   "quote": "the first one is the town election which i believe everyone is in agreement to postpone to another date.",
+   "tags": [
+    "town election",
+    "postponement"
+   ]
+  },
+  {
+   "topic": "Court order to extend deadline for nomination papers",
+   "resolution": "motion passed 4-1 to extend deadline; court order option kept",
+   "quote": "discussion to authorize counsel to seek a court order to extend the deadline to submit nomination papers",
+   "tags": [
+    "nomination papers",
+    "court order",
+    "deadline",
+    "town counsel"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Governor's Order Suspending Certain Provisions of the Open Meeting Law, G. L. c. 30A, § 20",
+   "where": "text",
+   "quote": "in accordance with the governor's order suspending certain provisions of the open meeting law, g. l. c. 30a, § 20, all public meetings are being conducted remotely."
+  }
+ ],
+ "tags": [
+  "town election postponement",
+  "nomination papers deadline",
+  "court order",
+  "emergency meeting",
+  "COVID-19 remote meeting",
+  "town counsel advice",
+  "filing fees"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

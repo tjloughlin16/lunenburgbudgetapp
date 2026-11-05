@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-10-20",
  "docid": "5220",
@@ -12,57 +12,493 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager appointment of Tom Gammel to Police Chief",
-   "outcome": "passed 4-0-1",
-   "procedural": false,
+   "motion": "Ratify the Town Manager's appointment of Tom Gammel to Police Chief.",
    "moved_by": "K. Adams",
    "seconded_by": "M. Jeffreys",
-   "quote": "motion: k. adams 2n: m. jeffreys to ratify the town manager appointment of tom gammel to police chief."
+   "outcome": "passed 4-0-1",
+   "procedural": false,
+   "quote": "to ratify the town manager appointment of tom gammel to police chief. vote: mr. marino- abstain, mr. dwyer-aye, ms. adams-aye, mr. jeffreys-aye, mr. dwyer-aye, mr. alonzo-aye"
   },
   {
-   "motion": "Recommend Article 1 as presented",
-   "outcome": "passed 5-0",
-   "procedural": true,
+   "motion": "Recommend Article 1 (FY21 budget adjustments, 11/17/20 STM) as presented.",
    "moved_by": "J. Marino",
    "seconded_by": "M. Jeffreys",
-   "quote": "motion: j. marino 2nd:m. jeffreys to recommend article 1 as presented vote: mr. dwyer-aye, mr. marino-aye, ms. adams-aye, mr. jeffreys-aye, mr. alonzo- ay",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Recommend approval of Article 19",
-   "outcome": "passed 4-1",
-   "procedural": true,
-   "moved_by": "M. Jeffreys",
-   "seconded_by": "T. Dwyer",
-   "quote": "motion: m. jeffreys 2°: t. dwyer to recommend approval of article 19 vote: mr. dwyer-aye, mr. marino-aye, ms. adams- nay, mr. jeffreys- aye, mr. alonzo-aye"
-  },
-  {
-   "motion": "Adopt the approval signage policy for town property",
    "outcome": "passed 5-0",
    "procedural": false,
+   "quote": "to recommend article 1 as presented vote: mr. dwyer-aye, mr. marino-aye, ms. adams-aye, mr. jeffreys-aye"
+  },
+  {
+   "motion": "Recommend approval of Article 19 (LED streetlight conversion or acquisition).",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "T. Dwyer",
+   "outcome": "passed 4-1",
+   "procedural": false,
+   "quote": "to recommend approval of article 19 vote: mr. dwyer-aye, mr. marino-aye, ms. adams- nay, mr. jeffreys- aye, mr. alonzo-aye"
+  },
+  {
+   "motion": "Adopt the approval signage policy for town property.",
    "moved_by": "J.Marino",
    "seconded_by": "M. Jeffreys",
-   "quote": "motion: j.marino 2\"°: m. jeffreys to adopt the approval signage policy for town property vote: mr. dwyer-aye, mr. marino-aye, ms. adams-aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "to adopt the approval signage policy for town property vote: mr. dwyer-aye, mr. marino-aye, ms. adams-aye, mr. jeffreys-aye"
   },
   {
-   "motion": "Approve the minutes of September 15, 2020 as presented",
-   "outcome": "passed 5-0",
-   "procedural": true,
+   "motion": "Approve the minutes of September 15, 2020 as presented.",
    "moved_by": "J. Marino",
    "seconded_by": "K. Adams",
-   "quote": "motion: j. marino 2nd: k. adams to approve the mintes of september 15, 2020 as presented vote: mr. marino-aye, mr. dwyer-aye, ms. adams-aye, mr. jeffreys-aye, mr. alonzo- ay",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Enter into Executive Session to discuss strategy with respect to collective bargaining",
    "outcome": "passed 5-0",
    "procedural": true,
+   "quote": "to approve the mintes of september 15, 2020 as presented vote: mr. marino-aye, mr. dwyer-aye, ms. adams-aye, mr. jeffreys-aye"
+  },
+  {
+   "motion": "Enter into Executive Session under M.G.L. c. 30, Section 21, Paragraph 3 (collective bargaining, Municipal Employees and Fire Unions) and not return to open session.",
    "moved_by": "J. Marino",
    "seconded_by": "M. Jeffreys",
-   "quote": "motion: j. marino 2nd:m. jeffreys to enter into executive session for the above stated purpose vote: mr. jeffreys-aye, mr. marino-aye, ms. adams-aye, mr. dwyer-aye, mir. alonzo-aye"
+   "outcome": "passed 5-0",
+   "procedural": true,
+   "quote": "to enter into executive session for the above stated purpose vote: mr. jeffreys-aye, mr. marino-aye, ms. adams-aye, mr. dwyer-aye, mir. alonzo-aye"
   }
  ],
- "dropped_unquoted": 0,
- "note": "Text is OCR via macOS Vision. One OCR artifact in vote 1: vote list includes a duplicated \"Mr. Dwyer-aye\" entry (likely a transcription error); counted as 4-0-1 (4 yes, 1 abstain).",
- "cost_usd": 0.1670135
+ "dropped_unquoted": 1,
+ "note": "OCR text with gaps and errors. Page 6 begins mid-article (a Salary Administration Plan fragment), so the text of Articles 12/13 is missing. Page 7 has a fragment (\"she wanted it to have.\") under Action Items, which records no content. The Article 10 discussion has no recommendation or vote shown. Ms. Craigen's ratification has no vote recorded. The Gammel ratification tally lists Mr. Dwyer twice; I read it as 4 aye (Dwyer, Adams, Jeffreys, Alonzo) and 1 abstain (Marino). Article 2 and Article 4 show no Board vote. The Capital Planning Committee vote is a committee vote, not a Board vote. Adjournment shows no motion. Executive session minutes are separate and not in this text. The minutes are signed by Elaine Peterson, and her attendance is not stated.",
+ "cost_usd": 0.015360420000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; acting police chief tom gammel"
+  },
+  {
+   "name": "Tom Gammel",
+   "role": "Acting Police Chief",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; acting police chief tom gammel"
+  },
+  {
+   "name": "Susan Whalen",
+   "role": "377 Flat Hill Road",
+   "status": "present",
+   "quote": "susan whalen, 377 flat hill road, wanted to bring to the board's attention the storm water"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "56 Whiting Street",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, invited the select board to the finance committee meeting on"
+  },
+  {
+   "name": "Elaine Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "respectfully submitted, elaine peterson"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board will defer its recommendation on Article 4 (Stabilization Fund) until the final monetary amount is determined.",
+   "quote": "the board will defer a recommendation until the final monetary amount is determined"
+  },
+  {
+   "decision": "Recommendations on Articles 7 and 8 (firefighter and municipal employee collective bargaining agreements) were deferred because an Executive Session would be held after the meeting.",
+   "quote": "these two articles' recommendations were deferred due to an executive session being held"
+  },
+  {
+   "decision": "Recommendations on Articles 13 and 14 (250 Howard Street), Article 15 (Bright Farms TIF) and Article 20 (Stormwater Management; NPDES Phase II) were deferred.",
+   "quote": "recommendations for articles 13 and 14 regarding 250 howard street were deferred due to an"
+  },
+  {
+   "decision": "The Board decided to negotiate for an 8 year Bright Farms TIF agreement; the draft will be presented to Town counsel and Bright Farms for review.",
+   "quote": "after some discussion it was decided to negotiate for an 8 year tif agreement."
+  },
+  {
+   "decision": "Old Primary School: the Board decided to hold a site walk on October 31 at 9:30 a.m., meet with the other boards in December, and prepare conceptual drawings in January.",
+   "quote": "it was decided to go october 31s at 9:30 a.m., then meet with"
+  },
+  {
+   "decision": "Chair suggested the Town Manager coordinate a meeting to find a solution to the Flat Hill Road storm water flooding.",
+   "quote": "mr. alonzo suggested ms. lemieux coordinate a meeting to find a solution."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY21 budget adjustments (Article 1, 11/17/20 STM)",
+   "what_was_recorded": "Article 1 table of line-item FY21 budget adjustments from the 6/13/20 Town Meeting, with printed totals; Board recommended it as presented.",
+   "figures_as_printed": [
+    "(57,871.00)",
+    "11,745.00",
+    "30,161.00",
+    "38,928.00",
+    "3,816.00",
+    "1,198,583.00",
+    "1,198,583.02"
+   ],
+   "quote": "the top section addresses all the changes to the budget in article 1."
+  },
+  {
+   "topic": "FY21 Capital Plan amendment (Article 2)",
+   "what_was_recorded": "Article 2 would raise and appropriate $494,333 to amend the FY21 Capital Plan; deferred capital projects were listed with funding from raise and appropriate, free cash and unexpended capital.",
+   "figures_as_printed": [
+    "$494,333",
+    "$67,000",
+    "$58,833",
+    "$135,000",
+    "$22,000",
+    "$28,000",
+    "$126,000",
+    "$12,000",
+    "$25,500",
+    "$20,000",
+    "$487,507",
+    "$6,826"
+   ],
+   "quote": "to see if the town will vote to raise and appropriate all sums of money ($494,333)"
+  },
+  {
+   "topic": "Streetlight LED conversion (Article 19)",
+   "what_was_recorded": "Ms. Lemieux said the streetlight article ties to a purchase of streetlights at either Option 1 or Option 2 cost; the Board discussed conversion, maintenance and vendor oversight costs.",
+   "figures_as_printed": [
+    "$66,000",
+    "$$91,000"
+   ],
+   "quote": "in the amount of either $66,000 (option 1) or $$91,000 (option 2)"
+  },
+  {
+   "topic": "Sewer Reserve Capacity Stabilization deposit (Article 10)",
+   "what_was_recorded": "Article 10 asks to transfer from available funds a deposit into the Sewer Enterprise Reserve Capacity Stabilization Fund; no recommendation is recorded.",
+   "figures_as_printed": [
+    "$68,097.59"
+   ],
+   "quote": "this article is asking to deposit $68,097.59"
+  },
+  {
+   "topic": "Town warrants signed by the Chair",
+   "what_was_recorded": "Mr. Alonzo reported he had signed four warrants (accounts payable and payroll), with the amounts listed.",
+   "figures_as_printed": [
+    "$2,404,348.39",
+    "$578,938.48",
+    "$39,245.41",
+    "$830,109.36"
+   ],
+   "quote": "mr. alonzo reported he had signed the following warrants:"
+  },
+  {
+   "topic": "Surplus vehicles sold on Municibid",
+   "what_was_recorded": "DPW advertised surplus vehicles and equipment on Municibid; four vehicles and one piece of equipment sold, to be a general fund receipt counted as FY21 surplus revenue.",
+   "figures_as_printed": [
+    "$12,455"
+   ],
+   "quote": "four vehicles and one piece of equipment was sold for a total of $12,455"
+  },
+  {
+   "topic": "Election security grant to Town Clerk",
+   "what_was_recorded": "Town Clerk received a grant from the Center for Tech and Civic Life for planning and operating a safe and secure 2020 election.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "the town clerk applied for and received a grant for $5,000 from the center for tech and civic life"
+  },
+  {
+   "topic": "Sidewalk and pedestrian crossing project funding (Chapter 90 / grant)",
+   "what_was_recorded": "Project cost of $560,000 with engineer's fee of $45,000 (about 8%), a grant covering $258,460, $22,000 from the Town Hall ADA ramp capital project, and an estimated $324,540 from Chapter 90 funds.",
+   "figures_as_printed": [
+    "$560,000",
+    "$45,000",
+    "(approximately 8%)",
+    "$258,460",
+    "$22,000",
+    "$324,540"
+   ],
+   "quote": "the grant will cover $258,460 of the total cost, $22,000 of the cost will be covered by the capital project"
+  },
+  {
+   "topic": "MIIA Post 65 retiree Medicare program",
+   "what_was_recorded": "Town would pay Part A premium and Part A and B penalties for affected retirees; MIIA offers a 2% discount on FY22 active health renewal; actuary estimates a $5-6 Million OPEB liability reduction; about $20,000 per retiree and spouse in medical and prescription costs.",
+   "figures_as_printed": [
+    "$10 million",
+    "$2",
+    "$1",
+    "$20,000",
+    "2%",
+    "$5-6 Million"
+   ],
+   "quote": "our actuary estimated this will yield an approximate $5-6 million reduction in opeb liabilities."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Article 10: transfer from available funds into the Reserve Capacity Stabilization Fund (Sewer Enterprise).",
+   "outcome": "not stated; article discussed by the Town Manager, no recommendation or vote recorded",
+   "amount_as_printed": "$68,097.59",
+   "quote": "this article is asking to deposit $68,097.59"
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "storm water flooding on Flat Hill Road",
+   "speaker": "Susan Whalen",
+   "stated_role": "377 Flat Hill Road",
+   "quote": "susan whalen, 377 flat hill road, wanted to bring to the board's attention the storm water"
+  },
+  {
+   "topic": "Finance Committee invitation and Open Meeting Law complaint",
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "quote": "dave passios, 56 whiting street, invited the select board to the finance committee meeting on"
+  },
+  {
+   "topic": "reading of her Open Meeting Law complaint",
+   "speaker": "Ms. Adams",
+   "stated_role": "Clerk",
+   "quote": "ms. adams read her open meeting law complaint aloud."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and public comment (Flat Hill Road flooding)",
+   "resolution": "public comment heard; chair suggested a coordinating meeting",
+   "quote": "susan whalen, 377 flat hill road, wanted to bring to the board's attention the storm water",
+   "tags": [
+    "public comment",
+    "storm water",
+    "flooding"
+   ]
+  },
+  {
+   "topic": "Announcements (voter registration, early voting, fundraiser)",
+   "resolution": "no action",
+   "quote": "the last day to register to vote is saturday, october 24th.",
+   "tags": [
+    "elections",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Ratification of Administrative Assessing Assistant Sheila Craigen",
+   "resolution": "no vote recorded",
+   "quote": "ms. lemieux stated ms. craigen has worked for the town for a number of years as the",
+   "tags": [
+    "appointments",
+    "assessing"
+   ]
+  },
+  {
+   "topic": "Ratification of Police Chief Tom Gammel appointment",
+   "resolution": "ratified 4-0-1",
+   "quote": "to ratify the town manager appointment of tom gammel to police chief.",
+   "tags": [
+    "appointments",
+    "police"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant votes and recommendations on articles",
+   "resolution": "Articles 1 and 19 recommended; Articles 4, 7, 8, 10, 13, 14, 15, 20 deferred or no vote recorded; Article 2 no vote recorded",
+   "quote": "vote on special town meeting warrant and remainder of recommendations on articles",
+   "tags": [
+    "special town meeting",
+    "budget",
+    "capital plan",
+    "streetlights"
+   ]
+  },
+  {
+   "topic": "Bright Farms TIF agreement",
+   "resolution": "negotiate an 8-year agreement; no vote",
+   "quote": "after some discussion it was decided to negotiate for an 8 year tif agreement.",
+   "tags": [
+    "tif",
+    "bright farms",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Approval signage policy for town property",
+   "resolution": "adopted 5-0",
+   "quote": "to adopt the approval signage policy for town property",
+   "tags": [
+    "policy",
+    "signage"
+   ]
+  },
+  {
+   "topic": "Warrants signed by the Chair",
+   "resolution": "reported; no vote",
+   "quote": "mr. alonzo reported he had signed the following warrants:",
+   "tags": [
+    "warrants",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Approval of September 15, 2020 minutes",
+   "resolution": "approved 5-0",
+   "quote": "to approve the mintes of september 15, 2020 as presented",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports (Capital Planning, Planning Board)",
+   "resolution": "reported; no action",
+   "quote": "mr. alonzo reported the capital planning committee voted unanimously to recommend approval",
+   "tags": [
+    "committees",
+    "capital planning",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Town Manager report and COVID-19 update",
+   "resolution": "reported; no action",
+   "quote": "as of october 16th there are 84 confirmed positive",
+   "tags": [
+    "covid-19",
+    "town manager",
+    "vacancies",
+    "post 65",
+    "surplus",
+    "dpw director"
+   ]
+  },
+  {
+   "topic": "Workshop: Select Board goal on the Old Primary building",
+   "resolution": "site walk set for October 31; meetings with boards in December",
+   "quote": "it was decided to go october 31s at 9:30 a.m., then meet with",
+   "tags": [
+    "old primary school",
+    "select board goal",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting and event schedule",
+   "resolution": "no action",
+   "quote": "mr. alonzo stated their next board meetings are november 3rd and 10th",
+   "tags": [
+    "schedule",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Public comment (Finance Committee invitation, Open Meeting Law complaint)",
+   "resolution": "heard",
+   "quote": "dave passios, 56 whiting street, invited the select board to the finance committee meeting on",
+   "tags": [
+    "public comment",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Executive Session (collective bargaining)",
+   "resolution": "entered executive session; minutes separate",
+   "quote": "mr. alonzo stated they would be entering executive session pursuant to m.g.l. c. 30, section",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:57 p.m.; no motion recorded",
+   "quote": "the meeting adjourned at 9:57 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Manager memo recommending Interim Police Chief Thomas Gammel for permanent appointment",
+   "where": "text",
+   "quote": "ms. lemieux read aloud her memo regarding this appointment:"
+  },
+  {
+   "name": "Special Town Meeting Warrant (11/17/2020 STM), Articles 1 through 20",
+   "where": "text",
+   "quote": "vote on special town meeting warrant and remainder of recommendations on articles"
+  },
+  {
+   "name": "FY21 Budget Adjustments from 6/13/20 ATM to 11/17/20 STM (Article 1 table)",
+   "where": "text",
+   "quote": "the top section addresses all the changes to the budget in article 1."
+  },
+  {
+   "name": "FY21 CP Deferred Projects chart",
+   "where": "text",
+   "quote": "ms. lemieux presented a chart of the deferred capital plan items."
+  },
+  {
+   "name": "Bright Farms tracked written TIF agreement",
+   "where": "text",
+   "quote": "ms. lemieux reviewed the tracked written agreement with the board."
+  },
+  {
+   "name": "Approval signage policy for town property",
+   "where": "text",
+   "quote": "to adopt the approval signage policy for town property"
+  },
+  {
+   "name": "Board of Health weekly update",
+   "where": "text",
+   "quote": "the board of health issued their weekly update and as of october 16th there are 84 confirmed positive"
+  }
+ ],
+ "tags": [
+  "special town meeting",
+  "budget adjustments",
+  "capital plan",
+  "streetlights",
+  "police chief appointment",
+  "bright farms tif",
+  "old primary school",
+  "covid-19",
+  "open meeting law",
+  "public comment",
+  "executive session",
+  "warrants",
+  "minutes",
+  "signage policy",
+  "storm water"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. lemieux read aloud her memo regarding this appointment"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

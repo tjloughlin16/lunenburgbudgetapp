@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2020-09-01",
  "docid": "5658",
@@ -12,14 +12,163 @@
  },
  "votes": [
   {
-   "motion": "Accept Empey for O&M contract for 1 year to 6/30/21 or whatever is recommended by the procurement manager",
+   "motion": "Accept Empey for the O&M contract for 1 year to 6/30/21 or whatever is recommended by the procurement manager (amended motion).",
    "moved_by": "Carl L.",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "to accept empey for o&m contract for 1 year to 6/30/21 or whatever is recommended by the procurement manager. vote: mike-aye, carl-no, john-aye, brett-aye and dave-aye."
+   "quote": "amended motion: carl l. oecona. brell n. to accept empey for o&m contract for 1 year to 6/30/21 or whatever is recommended by the procurement manager."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes OCR'd from scan. One vote recorded. The seconder line is not clearly readable due to OCR artifacts ('oecona. brell n.'). The meeting ended without a vote to adjourn due to loss of quorum.",
- "cost_usd": 0.1105815
+ "note": "OCR text, not a clean transcription. The first line of page 1 is garbled and the agenda context before the reference-check discussion is missing. The seconder on the amended motion is garbled (\"oecona. brell n.\") and is not recorded. The minutes record no attendance roll, so attendance statuses are not stated. The chair is not identified, and \"Dave\" and \"Dave M.\" may or may not be the same person as printed. The clerk's name is garbled. Quorum was lost on Zoom and no adjournment vote was taken. The 4-1 result is read from the printed vote line.",
+ "cost_usd": 0.0047763200000000006,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave",
+   "status": "not stated",
+   "quote": "dave thanked heather, jack and barb for their work on the bidding process."
+  },
+  {
+   "name": "Dave M.",
+   "status": "not stated",
+   "quote": "dave m. replied it was a regular meeting"
+  },
+  {
+   "name": "Jack",
+   "status": "present",
+   "quote": "jack noted that they use lots of sub-contractors"
+  },
+  {
+   "name": "Heather",
+   "status": "not stated",
+   "quote": "dave thanked heather, jack and barb for their work on the bidding process."
+  },
+  {
+   "name": "Barb",
+   "status": "not stated",
+   "quote": "jack replied that he and barb spoke to al packard (empey)"
+  },
+  {
+   "name": "Mike",
+   "status": "not stated",
+   "quote": "mike noted that he understands why there was such a big difference in prices"
+  },
+  {
+   "name": "Carl",
+   "status": "not stated",
+   "quote": "carl asked if jack did a reference check on empey."
+  },
+  {
+   "name": "John",
+   "status": "not stated",
+   "quote": "john noted it was a bit of concern that watermark only has 2 months reference with dracut."
+  },
+  {
+   "name": "Brett",
+   "status": "not stated",
+   "quote": "brett noted that the monthly costs are close"
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "member of the public, 82 Highland St",
+   "status": "not stated",
+   "quote": "public comment- dave rogers (82 highland st) asked if this was a regular meeting or a hearing"
+  },
+  {
+   "name": "Al Packard",
+   "role": "Empey (referred to, not stated as attending)",
+   "status": "not stated",
+   "quote": "he and barb spoke to al packard (empey)"
+  },
+  {
+   "name": "Jane 2. faulay",
+   "role": "Minutes Clerk",
+   "status": "not stated",
+   "quote": "respectively submitted, jane 2. faulay minutes clerk"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Current hourly rate paid to Empey",
+   "what_was_recorded": "Carl asked whether the town is now paying Empey about $110 an hour; Jack thought so but would confirm with Barb.",
+   "figures_as_printed": [
+    "$110/hr."
+   ],
+   "quote": "carl asked if they are now paying empey about $110/hr. and jack replied he thinks so but would need to confirm with barb."
+  },
+  {
+   "topic": "Empey bid hourly rate",
+   "what_was_recorded": "The Empey bid hourly rate was $158 an hour, and Carl questioned what the true cost would be at year end.",
+   "figures_as_printed": [
+    "$158/hour"
+   ],
+   "quote": "on the bid, the hourly rate was $158/hour and carl questioned what the true cost would be at the end of the year."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rogers",
+   "stated_role": "82 Highland St",
+   "topic": "Comparing Small Water costs to Empey proposal",
+   "quote": "he suggested comparing the expenses from small water for the last 2 years to the cost of empey's proposal."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Reference checks and O&M contract bids (Empey vs Watermark)",
+   "resolution": "Amended motion to accept Empey for a 1-year O&M contract passed 4-1",
+   "quote": "jack recommended going with empey because we know their work.",
+   "tags": [
+    "bids",
+    "O&M contract",
+    "Empey",
+    "Watermark",
+    "references"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "No action; comment received, no hearing",
+   "quote": "public comment- dave rogers (82 highland st) asked if this was a regular meeting or a hearing",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "No vote; quorum lost on Zoom, meeting ended 6:12pm",
+   "quote": "since there was no longer a quorum, there was no vote to adjourn. the meeting ended at 6:12pm.",
+   "tags": [
+    "quorum",
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Empey's proposal",
+   "where": "text",
+   "quote": "comparing the expenses from small water for the last 2 years to the cost of empey's proposal"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "O&M contract",
+  "bids",
+  "Empey",
+  "Watermark",
+  "references",
+  "public comment",
+  "quorum lost",
+  "Zoom"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,313 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "conservation-commission",
+ "board": "Conservation Commission",
+ "video_title": "Conservation Commission",
+ "meeting_date": "2020-09-16",
+ "video_id": "wmudlCXtVEs",
+ "video_url": "https://www.youtube.com/watch?v=wmudlCXtVEs",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/conservation-commission/2020-09-16-wmudlCXtVEs.json",
+  "sha256": "c2b2948a5c2b8a2ebc044ebf73060811c12ec1a237619f610570a5c9159592bc",
+  "caption_lines": 37,
+  "segments": 331
+ },
+ "recording": {
+  "duration_s": 852,
+  "duration": "0:14",
+  "spoken_chars": 9117,
+  "words_approx": 1519
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09162020-6254",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2020-09-16-agenda-6254.txt",
+   "path": "sources/meetings/conservation-commission/2020-09-16-agenda-6254.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09162020-6254",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2020-09-16-minutes-6254.txt",
+   "path": "sources/meetings/conservation-commission/2020-09-16-minutes-6254.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-03T17:24:10Z",
+  "cost_usd": 0.123306
+ },
+ "minutes": {
+  "headline": "Conservation Commission meeting postponed a week for lack of a quorum and Zoom problems; no hearings held.",
+  "summary": "Technical trouble with the Zoom link and host account kept members from joining, and a quorum was never reached. The vice chairman said no hearings would open and the meeting would be reposted for the following Wednesday at seven. A resident read a statement criticising the commission's handling of her garage permit and the agent.",
+  "attendees": [
+   {
+    "name_as_heard": "Ken Jones",
+    "role": "vice chairman"
+   },
+   {
+    "name_as_heard": "Matt",
+    "role": "member or staff (host/administration, as heard)"
+   },
+   {
+    "name_as_heard": "Jack",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Scott Finnegan",
+    "role": "Lunenburg public access (cable) staff"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "staff; Zoom host account"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 387,
+    "topic": "A resident read a statement about a garage building permit submitted in October 2019, a later conservation violation letter, criticism of the conservation agent's treatment and of commissioners, and concern over overlap in membership with the select board.",
+    "speaker_as_heard": "ron d'alicio"
+   },
+   {
+    "t": 675,
+    "topic": "A member of the public asked why members went out to dinner minutes after the logon problems."
+   }
+  ],
+  "tags": [
+   "planning-and-zoning",
+   "public-comment",
+   "town-departments"
+  ],
+  "votes": [],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 301,
+    "decision": "Members agreed to try a special meeting the following week."
+   },
+   {
+    "t": 737,
+    "decision": "Meeting postponed; no hearings opened due to lack of quorum."
+   },
+   {
+    "t": 799,
+    "decision": "Meeting and hearings rescheduled for next Wednesday at seven o'clock via Zoom with the same agenda reposted."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 386,
+    "topic": "Technical difficulties, no quorum, decision to postpone",
+    "resolution": "postponed",
+    "tags": []
+   },
+   {
+    "t_start": 387,
+    "t_end": 632,
+    "topic": "Resident statement on garage permit and conservation review",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 633,
+    "t_end": 860,
+    "topic": "Vice chairman response, confirmation of postponement to next Wednesday",
+    "resolution": "postponed",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Long stretch around 122-241 has little caption text.",
+   "Speaker identities are mostly not marked."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 429,
+    "about": "A resident criticised the commission, its agent handling and the commissioners' motives over a permit delay.",
+    "sides": "a resident against the commission",
+    "words_as_heard": "we oppose the authoritarian agenda and tactics being used against the employee in the residence of this town",
+    "kind": "public criticism"
+   },
+   {
+    "t": 675,
+    "about": "A resident questioned why members went out to dinner after the logon trouble.",
+    "sides": "a resident against members",
+    "words_as_heard": "why is it that what 10 minutes after they can't log on they just decide to go out to dinner",
+    "kind": "public criticism"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 241,
+    "kind": "condition",
+    "about": "A member was unwilling to hold hearings because people who needed to attend might not be able to join.",
+    "who": "a member",
+    "words_as_heard": "i'm a little bit leery about holding a meeting that we had issues with that i'm concerned that you know everybody that needs to get on"
+   },
+   {
+    "t": 79,
+    "kind": "liability or legal",
+    "about": "Holding the meeting without being accessible was likened to locking the doors.",
+    "who": "a member",
+    "words_as_heard": "we can't hold it because that'd be the equivalent of locking the doors right can't do that"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 387,
+    "name_as_heard": "building permit for our garage",
+    "kind": "application or permit",
+    "words_as_heard": "we submitted the building permit for our garage in the first week of october 2019",
+    "shown": false
+   },
+   {
+    "t": 429,
+    "name_as_heard": "violation letter",
+    "kind": "letter or email",
+    "words_as_heard": "in may we received a violation letter",
+    "shown": false
+   },
+   {
+    "t": 821,
+    "name_as_heard": "the same agenda",
+    "kind": "agenda",
+    "words_as_heard": "the same agenda will be reposted",
+    "shown": false
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Conservation Commission meeting was postponed because a quorum was never reached, and no hearings were opened.",
+    "t": 737
+   },
+   {
+    "line": "Problems with the Zoom link and host account kept members from joining the meeting.",
+    "t": 0
+   },
+   {
+    "line": "The meeting and its hearings were rescheduled for the following Wednesday at seven o'clock on Zoom, with the same agenda reposted.",
+    "t": 799
+   },
+   {
+    "line": "A resident read a statement on her garage building permit and the commission's handling of it; no action was taken on it.",
+    "t": 387
+   }
+  ],
+  "why_it_matters": [
+   "Anyone with a project on this agenda, such as a wetlands filing, now waits a week for a hearing, and the delay can push back permit timelines.",
+   "The meeting failed on a technical point, not a vote, so nothing was decided and the same agenda returns for the rescheduled session."
+  ],
+  "watch_next": [
+   "The rescheduled Conservation Commission meeting and hearings, the following Wednesday at seven o'clock via Zoom, on the same reposted agenda."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-03T17:24:14Z",
+   "cost_usd": 0.0239431
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09162020-6254",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2020-09-16-minutes-6254.txt",
+   "path": "sources/meetings/conservation-commission/2020-09-16-minutes-6254.pdf"
+  },
+  "official_sha256": "c91411a63447a55f692c2b734242a483cf3a3da412e21b19935070f0aff169cf",
+  "against": "structured",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree that the 9/16/2020 meeting failed for lack of a quorum and was moved to Sept 23 at 7 PM with its agenda. They differ only in detail: ours records a special-meeting discussion and Zoom hosting, while the official minutes cite Zoom technical issues and list letterhead members.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 0,
+   "discrepancy": 0,
+   "only_in_ours": 2,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Meeting postponed for lack of quorum and rescheduled to Sept 23, 2020 at 7 PM",
+    "ours": "Meeting and hearings rescheduled for next Wednesday at seven o'clock via Zoom with the same agenda reposted.",
+    "official": "declared the meeting reschueduled to september 23, 2020 , 7pm at 7:25 pm due to the lack of a quorum and technical issues surrounding zoom.",
+    "note": "Both record rescheduling for a week later at 7 PM because of no quorum; Sept 23, 2020 is the Wednesday after Sept 16.",
+    "t": 799
+   },
+   {
+    "kind": "agree",
+    "about": "Agenda business carried to the rescheduled meeting",
+    "ours": "Meeting and hearings rescheduled for next Wednesday at seven o'clock via Zoom with the same agenda reposted.",
+    "official": "all business listed below was moved to the meeting of 9/23/2020",
+    "note": "Both say the agenda moved to the next meeting.",
+    "t": 799
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Members agreed to try a special meeting the following week",
+    "ours": "Members agreed to try a special meeting the following week.",
+    "official": "",
+    "note": "Official minutes do not mention the discussion of a special meeting.",
+    "t": 301
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Zoom technical issues as a reason for rescheduling",
+    "ours": "",
+    "official": "due to the lack of a quorum and technical issues surrounding zoom.",
+    "note": "Our minutes cite only lack of quorum; the Zoom issues are not recorded.",
+    "t": 737
+   },
+   {
+    "kind": "agree",
+    "about": "Kenneth Jones attended and presided",
+    "ours": "Ken Jones (vice chairman)",
+    "official": "acting hariman kenneth jones declared the meeting reschueduled to september 23, 2020 , 7pm at 7:25 pm",
+    "note": "Same person; official calls him acting chair, ours vice chairman.",
+    "t": 301
+   },
+   {
+    "kind": "agree",
+    "about": "Jack attendee",
+    "ours": "Jack (member)",
+    "official": "jack rabbitt matthew s. marro,",
+    "note": "Jack is likely Jack Rabbitt, listed in the letterhead; official does not state attendance.",
+    "t": 301
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Staff/host attendees (Scott Finnegan, Heather, Matt)",
+    "ours": "Scott Finnegan (Lunenburg public access (cable) staff); Heather (staff; Zoom host account); Matt (member or staff)",
+    "official": "",
+    "note": "Official minutes do not list these; Matt may be Matthew Marro from the letterhead.",
+    "t": 301
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Letterhead members not stated as present",
+    "ours": "",
+    "official": "bob pease, chair tel: (978) 582-4146",
+    "note": "Official lists Pease, Bursch, Childs, Luck, Dwyer from letterhead without attendance; ours has none of them, consistent with no quorum.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-03T17:24:59Z",
+   "cost_usd": 0.0337871
+  }
+ }
+}

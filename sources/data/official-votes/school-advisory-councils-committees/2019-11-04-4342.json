@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2019-11-04",
  "docid": "4342",
@@ -12,31 +12,291 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of June 4, 2019",
-   "outcome": "passed 6-0",
-   "procedural": true,
+   "motion": "Approve the minutes of June 4, 2019.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed 6-0",
+   "procedural": true,
    "quote": "review of minutes june 4, 2019, approved 6-0"
   },
   {
-   "motion": "Approve Boys Ice Hockey program add book fundraising request",
-   "outcome": "passed 6-0",
-   "procedural": false,
+   "motion": "Approve the minutes of September 6, 2019, with the adjustment removing Terry Montemuro and Dean DeFrancisco from the absent portion.",
    "moved_by": "",
    "seconded_by": "",
-   "quote": "boys ice hockey: program add book approved 6-0"
+   "outcome": "passed 6-0",
+   "procedural": true,
+   "quote": "with the adjustment of terry"
   },
   {
-   "motion": "Approve Boys and Girls Basketball Raffle Calendar fundraising request",
-   "outcome": "passed 6-0",
-   "procedural": false,
+   "motion": "Approve the Boys Ice Hockey fundraising request to sell a program add book.",
    "moved_by": "",
    "seconded_by": "",
-   "quote": "boys and girls basketball raffle calendar approved 6-0"
+   "outcome": "passed 6-0",
+   "procedural": false,
+   "quote": "program add book approved 6-0"
+  },
+  {
+   "motion": "Approve the Boys and Girls Basketball fundraising request for a raffle calendar.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed 6-0",
+   "procedural": false,
+   "quote": "girls basketball raffle calendar approved 6-0"
   }
  ],
- "dropped_unquoted": 1,
- "note": "No mover or seconder names printed for any votes. The vote for a new secretary is not included—the minutes record that \"none one nominated or volunteered was tabled\" rather than recording a motion voted on.",
- "cost_usd": 0.0976315
+ "dropped_unquoted": 0,
+ "note": "The board named in the request is 'School Advisory Councils Committees', but the minutes are those of the Lunenburg Schools Athletic Advisory Council (AAC). Brian Lehtinen and Kim Hedlund each appear in both the PRESENT/ABSENT lists or header; Kim Hedlund is listed as present and also absent, and Brian Lehtinen is listed as absent though the header gives him a role. The header names 'Jim Bunnell' while the roll lists 'James Bunnell'; treated as one person. Motions were recorded as results ('approved 6-0') without a named mover or seconder. The adjournment (7:07 pm) has no motion recorded, and the sept. minutes quote is a partial excerpt because of a zero-width character in the source. The cooperative-team rule was discussed but no decision was recorded, so it is not listed as a decision.",
+ "cost_usd": 0.005875119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kim Mannone",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: kim mannone, nicole bourdelais, tammy york, jo weigold, james bunnell, kim"
+  },
+  {
+   "name": "Nicole Bourdelais",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: kim mannone, nicole bourdelais, tammy york, jo weigold, james bunnell, kim"
+  },
+  {
+   "name": "Tammy York",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: kim mannone, nicole bourdelais, tammy york, jo weigold, james bunnell, kim"
+  },
+  {
+   "name": "Jo Weigold",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: kim mannone, nicole bourdelais, tammy york, jo weigold, james bunnell, kim"
+  },
+  {
+   "name": "James Bunnell",
+   "role": "Lunenburg Schools Athletic Director",
+   "status": "present",
+   "quote": "jim bunnell: lunenburg schools athletic director"
+  },
+  {
+   "name": "Kim Hedlund",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: kim mannone, nicole bourdelais, tammy york, jo weigold, james bunnell, kim"
+  },
+  {
+   "name": "Lou Bettencourt",
+   "role": "new member (Golf)",
+   "status": "present",
+   "quote": "lou bettencourt (golf) new member, only new member as of the"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Lunenburg School Committee, member, LHS AAC Chair",
+   "status": "absent",
+   "quote": "absent: amanda waltz, brian lehtinen, jean proctor, robin bursch, brenda pajari, mary jean"
+  },
+  {
+   "name": "Amanda Waltz",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: amanda waltz, brian lehtinen, jean proctor, robin bursch, brenda pajari, mary jean"
+  },
+  {
+   "name": "Jean Proctor",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: amanda waltz, brian lehtinen, jean proctor, robin bursch, brenda pajari, mary jean"
+  },
+  {
+   "name": "Robin Bursch",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: amanda waltz, brian lehtinen, jean proctor, robin bursch, brenda pajari, mary jean"
+  },
+  {
+   "name": "Brenda Pajari",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: amanda waltz, brian lehtinen, jean proctor, robin bursch, brenda pajari, mary jean"
+  },
+  {
+   "name": "Mary Jean Davis",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "davis, kim lombardo, rhonda jardini-yeates, kim hedlund, kim morse"
+  },
+  {
+   "name": "Kim Lombardo",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "davis, kim lombardo, rhonda jardini-yeates, kim hedlund, kim morse"
+  },
+  {
+   "name": "Rhonda Jardini-Yeates",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "davis, kim lombardo, rhonda jardini-yeates, kim hedlund, kim morse"
+  },
+  {
+   "name": "Kim Morse",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "davis, kim lombardo, rhonda jardini-yeates, kim hedlund, kim morse"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The vote for a new council secretary was tabled to the next meeting because no one was nominated or volunteered.",
+   "quote": "none one nominated or volunteered was tabled for next meeting"
+  },
+  {
+   "decision": "End-of-season surveys were tentatively placed on hold pending approval from the Lunenburg Teachers association.",
+   "quote": "they are tentatively placed on hold and waiting approval from the lunenburg teachers association."
+  },
+  {
+   "decision": "The winter sports student/parent/coaches meeting date was changed from Thursday December 5th to Wednesday, December 4th because of the downtown tree lighting.",
+   "quote": "this date has now changed due to the tree lighting downtown"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Late registration fee for winter athletics",
+   "what_was_recorded": "The Athletic Director said online winter registration stays open past November 16th, but a late fee is then added.",
+   "figures_as_printed": [
+    "25 dollar"
+   ],
+   "quote": "there is just an additional 25 dollar late fee assessed, and"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 6:31 pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "1. call to order: 6:31 pm"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "2. public comment: none"
+  },
+  {
+   "topic": "Minutes of June 4 and September 6, 2019",
+   "resolution": "approved, September minutes with an adjustment",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "review of minutes june 4, 2019, approved 6-0"
+  },
+  {
+   "topic": "Election of new secretary",
+   "resolution": "tabled to next meeting",
+   "tags": [
+    "officers",
+    "secretary"
+   ],
+   "quote": "none one nominated or volunteered was tabled for next meeting"
+  },
+  {
+   "topic": "Updated members",
+   "resolution": "noted new member Lou Bettencourt; discussed rules for cooperative teams",
+   "tags": [
+    "membership"
+   ],
+   "quote": "lou bettencourt (golf) new member, only new member as of the"
+  },
+  {
+   "topic": "Athletic Director update",
+   "resolution": "informational update on fall season, unified basketball, winter registration and winter sports meeting",
+   "tags": [
+    "athletics",
+    "fall season",
+    "winter registration"
+   ],
+   "quote": "athletic director update: summary of the fall season briefly, the new unified basketball"
+  },
+  {
+   "topic": "Priorities for 2019-20",
+   "resolution": "noted",
+   "tags": [
+    "priorities"
+   ],
+   "quote": "priorities for 2019-20: higher attendance and a filled council"
+  },
+  {
+   "topic": "Fundraising requests",
+   "resolution": "approved Boys Ice Hockey program ad book and Boys and Girls Basketball raffle calendar",
+   "tags": [
+    "fundraising"
+   ],
+   "quote": "girls basketball raffle calendar approved 6-0"
+  },
+  {
+   "topic": "Student participation on the council",
+   "resolution": "discussed; a student is considering joining",
+   "tags": [
+    "students",
+    "membership"
+   ],
+   "quote": "a student was asked and is thinking about participating"
+  },
+  {
+   "topic": "Future topics: end-of-season surveys",
+   "resolution": "placed on hold pending teachers association approval",
+   "tags": [
+    "surveys"
+   ],
+   "quote": "end of season surveys- was brought up and discussed."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "next meeting set for January 6, 2020 at 6:30 pm",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "next meeting is planned for january 6"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes of June 4, 2019",
+   "where": "text",
+   "quote": "review of minutes june 4, 2019, approved 6-0"
+  },
+  {
+   "name": "Minutes of September 6, 2019",
+   "where": "text",
+   "quote": "review of minutes september 6"
+  },
+  {
+   "name": "Fundraising request forms (Boys Ice Hockey program ad book; Boys and Girls Basketball raffle calendar)",
+   "where": "text",
+   "quote": "both request forms were completed and"
+  }
+ ],
+ "tags": [
+  "athletics",
+  "advisory council",
+  "fundraising",
+  "winter registration",
+  "membership",
+  "secretary vacancy",
+  "minutes",
+  "surveys"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,467 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "agricultural-commission",
+ "board": "Agricultural Commission",
+ "video_title": "Agricultural Commission",
+ "meeting_date": "2020-09-17",
+ "video_id": "gzUo7CnjfTk",
+ "video_url": "https://www.youtube.com/watch?v=gzUo7CnjfTk",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/agricultural-commission/2020-09-17-gzUo7CnjfTk.json",
+  "sha256": "9571373b3ecb61f353004861b0e7e9d6254c1385e5658cd8bc3a322b435ae20d",
+  "caption_lines": 216,
+  "segments": 1686
+ },
+ "recording": {
+  "duration_s": 4637,
+  "duration": "1:17",
+  "spoken_chars": 45626,
+  "words_approx": 7604
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09172020-490",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/agricultural-commission/2020-09-17-agenda-490.txt",
+   "path": "sources/meetings/agricultural-commission/2020-09-17-agenda-490.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09172020-490",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/agricultural-commission/2020-09-17-minutes-490.txt",
+   "path": "sources/meetings/agricultural-commission/2020-09-17-minutes-490.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-03T17:23:01Z",
+  "cost_usd": 0.150271
+ },
+ "minutes": {
+  "headline": "Agricultural Commission reorganized and approved a farm-complaint letter to town boards and officials.",
+  "summary": "The commission reorganized, electing a chair, vice chair and clerk. It approved sending a letter on farm complaints to the chairs and administrators of the select board, board of health and building department. Members also discussed the BrightFarms application, a flyer, farm inspections, a public market article, and farm-size bylaw changes.",
+  "attendees": [
+   {
+    "name_as_heard": "Matthew Allison",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Brian Stober",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jorge Marzuka",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mary Ray Holman",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Kira McClellan",
+    "role": "alternate member",
+    "remote": true
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 131,
+    "topic": "Public comment opened; no one spoke."
+   },
+   {
+    "t": 4487,
+    "topic": "Second public comment opened; no one spoke."
+   }
+  ],
+  "tags": [
+   "economic-development",
+   "planning-and-zoning",
+   "policy",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 302,
+    "motion": "Elect Matthew Allison chair",
+    "moved_by": "Brian Stober",
+    "outcome": "passed (roll call, four in favor, no opposition heard)",
+    "procedural": false
+   },
+   {
+    "t": 345,
+    "motion": "Elect Ryan as vice chair",
+    "outcome": "passed (roll call, no opposition heard)",
+    "procedural": false
+   },
+   {
+    "t": 366,
+    "motion": "Elect Jorge Marzuka as clerk",
+    "outcome": "passed (roll call, no opposition heard)",
+    "procedural": false
+   },
+   {
+    "t": 1512,
+    "motion": "Approve writing and sending the farm complaints letter with the discussed changes to the appropriate people",
+    "outcome": "passed (roll call, no opposition heard)",
+    "procedural": false
+   },
+   {
+    "t": 4576,
+    "motion": "Adjourn",
+    "outcome": "passed (roll call, no opposition heard)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1440,
+    "decision": "Letter to be addressed to the chairpersons and administrators of the select board, board of health and building commissioner, with a cc list and a new date."
+   },
+   {
+    "t": 2058,
+    "decision": "Members to each make a list of flyer ideas for next meeting; members to ask Westminster and Rutland contacts about their Facebook pages."
+   },
+   {
+    "t": 4509,
+    "decision": "Next meeting set for October 15th by Zoom."
+   },
+   {
+    "t": 3043,
+    "decision": "Lonnie's Orchard infrastructure request may be dropped from the agenda if space is needed."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 9,
+    "t_end": 131,
+    "topic": "Call to order, COVID remote meeting notice, roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 131,
+    "t_end": 411,
+    "topic": "Public comment and reorganization of officers",
+    "resolution": "voted",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 411,
+    "t_end": 495,
+    "topic": "Farmers market report",
+    "resolution": "informational",
+    "tags": [
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 495,
+    "t_end": 579,
+    "topic": "Economic development committee applicant",
+    "resolution": "no resolution",
+    "tags": [
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 579,
+    "t_end": 948,
+    "topic": "BrightFarms greenhouse application update",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 948,
+    "t_end": 1617,
+    "topic": "Letter to town officials on farm complaints",
+    "resolution": "voted",
+    "tags": [
+     "policy",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 1617,
+    "t_end": 2318,
+    "topic": "Flyer to promote the commission, Facebook page and open meeting law",
+    "resolution": "referred",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 2318,
+    "t_end": 2915,
+    "topic": "TCP design committee, community gardens, farm inspections, animal control role",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2915,
+    "t_end": 3279,
+    "topic": "Swag items and Lonnie's Orchard sewer request",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 3279,
+    "t_end": 3725,
+    "topic": "Public market article and farm size bylaw warrant articles",
+    "resolution": "informational",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 3725,
+    "t_end": 3936,
+    "topic": "Commission holding land and lack of staff",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 3936,
+    "t_end": 4467,
+    "topic": "Map and list of Lunenburg farms",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 4467,
+    "t_end": 4616,
+    "topic": "Public comment, next meeting, adjournment",
+    "resolution": "voted",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Minutes were not reviewed; not ready.",
+   "Seconds on some officer nominations are unclear in the captions.",
+   "Garbled stretch around 1223-1314 on bylaw section numbers."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 1828,
+    "kind": "liability or legal",
+    "about": "Whether a commission Facebook page could violate open meeting law.",
+    "who": "a member",
+    "words_as_heard": "as long as we don't break mass general law open meeting law um as long as we don't violate it which is more than a quorum of members talking about an agenda item"
+   },
+   {
+    "t": 738,
+    "kind": "liability or legal",
+    "about": "Planning board member feels conflicted about engaging with BrightFarms while planning board reviews its permits.",
+    "who": "the chair",
+    "words_as_heard": "because i'm a member of the group that is overseeing the site plan approval permit process and the stormwater permit process i don't think that i should"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "name_as_heard": "letter to town officials from adcom re farm complaints",
+    "kind": "letter or email",
+    "t": 948,
+    "words_as_heard": "review and approve the letter to town officials from adcom re farm complaints",
+    "shown": true
+   },
+   {
+    "name_as_heard": "minutes",
+    "kind": "prior minutes",
+    "t": 156,
+    "words_as_heard": "review and approved minutes which i have not finished yet",
+    "shown": false
+   },
+   {
+    "name_as_heard": "town bylaw on right to farm",
+    "kind": "draft policy or bylaw",
+    "t": 1199,
+    "words_as_heard": "the listing in the bylaw was at 143 classified",
+    "shown": false
+   },
+   {
+    "name_as_heard": "BrightFarms site plan application",
+    "kind": "application or permit",
+    "t": 579,
+    "words_as_heard": "they've since come to planning board with a site plan approval application",
+    "shown": false
+   },
+   {
+    "name_as_heard": "farm map and list",
+    "kind": "plan or drawing",
+    "t": 4254,
+    "words_as_heard": "there were two copies of the or maybe one copy of the map and one copy of the list",
+    "shown": true
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The commission voted to write and send a letter on farm complaints to the chairs and administrators of the select board, board of health and building department.",
+    "t": 1512
+   },
+   {
+    "line": "The letter is to carry a cc list and a new date, with the addressees set as the chairpersons and administrators of the three offices.",
+    "t": 1440
+   },
+   {
+    "line": "The commission reorganized by roll call, electing a chair, then a vice chair, then a clerk, with no opposition heard.",
+    "t": 302
+   },
+   {
+    "line": "Members will each list flyer ideas for the next meeting and ask Westminster and Rutland contacts about their Facebook pages.",
+    "t": 2058
+   },
+   {
+    "line": "The next meeting was set for October 15th by Zoom.",
+    "t": 4509
+   }
+  ],
+  "why_it_matters": [
+   "A farmer or neighbor with a complaint about a farm may soon find it routed through the select board, board of health and building department, so the letter shapes which office handles it.",
+   "Farm-size bylaw changes and a public market article were discussed, and warrant articles like these are put to voters at Town Meeting."
+  ],
+  "watch_next": [
+   "The October 15th Zoom meeting, where members bring flyer ideas and Facebook page findings.",
+   "Whether the farm-size bylaw and public market articles reach the Town Meeting warrant."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-03T17:23:07Z",
+   "cost_usd": 0.0263791
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09172020-490",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/agricultural-commission/2020-09-17-minutes-490.txt",
+   "path": "sources/meetings/agricultural-commission/2020-09-17-minutes-490.pdf"
+  },
+  "official_sha256": "a3805078245cd70f3166a449ebc59a7a456ef1171e0a5c651eb9462bfb819d07",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the four votes (chair, vice-chair, clerk, letter), the October 15 next meeting, and the five members present, apart from name spellings. Our minutes add letter details and action items the official minutes omit, and the official roster lists Greg Burns as clerk, which should be checked against the clerk election.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 1,
+   "discrepancy": 1,
+   "only_in_ours": 3,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Elect chair",
+    "ours": "Elect Matthew Allison chair — passed (roll call, four in favor, no opposition heard)",
+    "official": "r, stober nominated m. allison for chair, j. marzuca 2nd. roll call, all aye.",
+    "note": "Both record Allison elected chair by roll call.",
+    "t": 302
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vice chair election",
+    "ours": "Elect Ryan as vice chair — passed (roll call, no opposition heard)",
+    "official": "j. marzuca nominated r. stober for vice-chair, m. holman 2nd. roll call, all aye.",
+    "note": "Same outcome likely (Ryan Stober), but ours gives only a first name; official lists Ryan Stober as vice-chair; verify the full name in the recording.",
+    "t": 345
+   },
+   {
+    "kind": "caption_error",
+    "about": "Clerk election name",
+    "ours": "Elect Jorge Marzuka as clerk — passed (roll call, no opposition heard)",
+    "official": "r. stober nominated j. marzuca for clerk, m. holman 2nd. roll call, all aye.",
+    "note": "Same vote; surname spelling differs.",
+    "official_reading": "Jorge Marzuca",
+    "t": 366
+   },
+   {
+    "kind": "agree",
+    "about": "Farm complaints letter approval",
+    "ours": "Approve writing and sending the farm complaints letter with the discussed changes to the appropriate people — passed (roll call, no opposition heard)",
+    "official": "r. stober moved to approve the letter, j. marzuca 2nd. roll call, all aye.",
+    "note": "Both record approval of the letter by roll call; ours adds that changes were discussed.",
+    "t": 1512
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "ours": "Next meeting set for October 15th by Zoom.",
+    "official": "next meeting set for october 15, 2020.",
+    "note": "Same date; Zoom only in ours.",
+    "t": 4509
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Letter addressees and changes",
+    "ours": "Letter to be addressed to the chairpersons and administrators of the select board, board of health and building commissioner, with a cc list and a new date.",
+    "official": "",
+    "note": "Official minutes do not describe the letter's addressees or edits.",
+    "t": 1440
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Flyer ideas and Facebook contacts",
+    "ours": "Members to each make a list of flyer ideas for next meeting; members to ask Westminster and Rutland contacts about their Facebook pages.",
+    "official": "",
+    "note": "Action items not in official minutes.",
+    "t": 2058
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Lonnie's Orchard agenda item",
+    "ours": "Lonnie's Orchard infrastructure request may be dropped from the agenda if space is needed.",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 3043
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees present",
+    "ours": "Matthew Allison, Brian Stober, Jorge Marzuka, Mary Ray Holman, Kira McClellan",
+    "official": "present: m. allison, r. stober, j. marzuca, m. holman, k. mcclellan",
+    "note": "Same five present; our captions give Stober as Brian rather than Ryan and Marzuka/Mary Ray are misheard-style variants.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other listed roster names",
+    "ours": "",
+    "official": "ryan stober, vice-chair greg burns, clerk jorge marzuca, member",
+    "note": "Official roster lists Greg Burns as clerk and Stephanie Schofield as alternate, not stated as present; ours does not mention them. Greg Burns as clerk also conflicts with Marzuca elected clerk, so check."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-03T17:23:48Z",
+   "cost_usd": 0.0372291
+  }
+ }
+}

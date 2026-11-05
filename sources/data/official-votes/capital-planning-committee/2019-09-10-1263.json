@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2019-09-10",
  "docid": "1263",
@@ -10,21 +10,190 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09102019-1263",
   "doc_url": "/docs/meetings/capital-planning-committee/2019-09-10-minutes-1263.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "Page 2 of the text is empty. No motion or vote is recorded anywhere in the text: 'Previous meeting notes approved' and the officer lines ('moved by') carry no motion wording or tally, so votes is empty. Other textual issues: the meeting-date line prints 9/17/2018 (likely 2019); the organization line prints 'John LaVeck' while the header and attendance print 'Jim LaVeck'; Heather Lemieux's role is not printed; the minutes list no documents.",
+ "cost_usd": 0.00406842,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "to approve the previous meeting notes",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "previous meeting notes approved."
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, caroline griffis, jim laveck john henshaw"
   },
   {
-   "motion": "to adjourn the meeting",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "meeting adjourned at 5:58"
+   "name": "John Henshaw",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, caroline griffis, jim laveck john henshaw"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, caroline griffis, jim laveck john henshaw"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "Mbr",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, caroline griffis, jim laveck john henshaw"
+  },
+  {
+   "name": "Caroline Griffis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, caroline griffis, jim laveck john henshaw"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "also present: heather lemieux"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1215975
+ "decisions": [
+  {
+   "decision": "Engine 4 replacement delayed until January 2020.",
+   "quote": "engine 4 replacement delayed until january 2020"
+  },
+  {
+   "decision": "Departments will use the Collins rating system to prioritize Capital Requests.",
+   "quote": "collins rating system will be used by departments to prioritize capital requests"
+  },
+  {
+   "decision": "Committee officers recorded as Chair Damon McQuaid, Vice Chair John Henshaw, Clerk Caroline Griffis, with members Matthew Allison and Jim LaVeck (minutes print 'John LaVeck' in this line); no vote recorded.",
+   "quote": "damon mcquaid chair moved by mr. allison john henshaw vice chair moved by mr. mcquaid"
+  },
+  {
+   "decision": "Finalize the Collins rating system by 10/1/2019; department reviews to start 10/22/2019 or 10/29/2019.",
+   "quote": "finalize collins rating system 10/1/2019"
+  },
+  {
+   "decision": "John Henshaw and Heather Lemieux will review the Collins rating system for the 09/17/2019 Committee meeting.",
+   "quote": "john henshaw and heather lemieux will review collins rating system for the 09/17/2019 committee meeting."
+  },
+  {
+   "decision": "Committee meeting dates scheduled for 9/17/2018 at 5:00 and 10/1/2019 at 5:30 (year 2018 as printed; likely a typo for 2019).",
+   "quote": "committee meeting dates scheduled for 9/17/2018 at 5:00 and 10/1/2019 at 5:30."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Earmarks",
+   "what_was_recorded": "Updates on earmarks were discussed at the meeting, with no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "updates on earmarks discussed"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 5:00 by Mr. McQuaid",
+   "quote": "meeting called to order at 5:00 by mr. mcquaid",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Organization of the Committee",
+   "resolution": "officers listed; no vote recorded",
+   "quote": "damon mcquaid chair moved by mr. allison john henshaw vice chair moved by mr. mcquaid",
+   "tags": [
+    "organization",
+    "officers"
+   ]
+  },
+  {
+   "topic": "Review of capital planning documents and rating criteria",
+   "resolution": "Engine 4 replacement delayed; Collins rating system adopted for prioritizing requests; earmarks updates discussed",
+   "quote": "review of capital planning documents and discussion of rating criteria",
+   "tags": [
+    "capital planning",
+    "rating criteria",
+    "Collins rating system",
+    "Engine 4",
+    "earmarks"
+   ]
+  },
+  {
+   "topic": "Timeline for department reviews",
+   "resolution": "timeline set: finalize rating system 10/1/2019; reviews start 10/22 or 10/29/2019",
+   "quote": "timeline discussion for department reviews",
+   "tags": [
+    "department reviews",
+    "timeline"
+   ]
+  },
+  {
+   "topic": "Meeting notes procedure",
+   "resolution": "procedure reviewed; no action recorded",
+   "quote": "committee reviewed procedure for meeting notes and posting.",
+   "tags": [
+    "meeting notes",
+    "posting"
+   ]
+  },
+  {
+   "topic": "Previous meeting notes",
+   "resolution": "approved",
+   "quote": "previous meeting notes approved.",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Assignment for 09/17/2019 meeting",
+   "resolution": "Henshaw and Lemieux to review Collins rating system",
+   "quote": "john henshaw and heather lemieux will review collins rating system for the 09/17/2019 committee meeting.",
+   "tags": [
+    "assignment",
+    "Collins rating system"
+   ]
+  },
+  {
+   "topic": "Committee meeting dates",
+   "resolution": "scheduled 9/17 at 5:00 and 10/1 at 5:30",
+   "quote": "committee meeting dates scheduled for 9/17/2018 at 5:00 and 10/1/2019 at 5:30.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none; no comments from the public or the Committee",
+   "quote": "no comments from the public or the committee",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 5:58",
+   "quote": "meeting adjourned at 5:58",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "capital planning",
+  "Collins rating system",
+  "rating criteria",
+  "department reviews",
+  "Engine 4",
+  "earmarks",
+  "meeting schedule",
+  "committee organization"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

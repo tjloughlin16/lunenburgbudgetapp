@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-07-23",
  "docid": "5166",
@@ -12,40 +12,39 @@
  },
  "votes": [
   {
-   "motion": "Approve the pole petition as presented",
+   "motion": "To approve the pole petition as presented (Unitil, 994 Northfield Road).",
    "moved_by": "M. Jeffreys",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: m. jeffreys to approve the pole petition as presented 2nd: d. mcquaid vote: all in favor"
   },
   {
-   "motion": "Ratify the Town Manager's appointment of Principal Account Clerk",
+   "motion": "To ratify the Town Manager's appointment of Megan Lorden to Principal Account Clerk.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Adams",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: d. mcquaid 2nd: k. adams to ratify the town manager's appointment to principal account clerk vote: all in favor"
   },
   {
-   "motion": "Ratify the Town Manager's appointment of DPW Facilities Director",
+   "motion": "To ratify the Town Manager's appointment of Kit Walker to DPW Facilities Director.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: d. mcquaid 2n°: m. jeffreys to ratify the town manager's appointment to dpw facilities director vote: all in favor"
   },
   {
-   "motion": "Accept the resignation of Interim Building Commissioner Garry Rhodes and thank him",
+   "motion": "To accept the resignation of Interim Building Commissioner Garry Rhodes and thank him.",
    "moved_by": "K. Adams",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: k. adams 2'd: d. mcquaid to accept the resignation of interim buildin commissioner garry rhodes and thank him vote: all in favor ",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "motion: k. adams 2'd: d. mcquaid to accept the resignation of interim buildin commissioner garry rhodes and thank him vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting at 7:36 p.m.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Adams",
    "outcome": "passed",
@@ -54,6 +53,207 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text; minor typos in seconded lines (2n°, 2'd) preserved verbatim.",
- "cost_usd": 0.1070815
+ "note": "OCR text (macOS Vision) of a scanned document; some words are garbled (e.g., 'Jetfreys' vs 'Jeffreys', 'Buildin', '2n°', '2'd'), and the names are recorded as printed. Header reads 'Board of Selectmen' (the requested board is Select Board). Votes are recorded only as 'All in Favor' with no numeric count. Public comment was read at length; quotes are taken from the OCR text. A 'RECEIVED & FILED' stamp is dated SEP 0:4 2019 (OCR of a date stamp).",
+ "cost_usd": 0.00619492,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Phyllis Luck",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "board of selectmen present: phyllis luck, vice chair; damon mcquaid, clerk; katey adams,"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board of selectmen present: phyllis luck, vice chair; damon mcquaid, clerk; katey adams,"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "katey adams, member; michael- ray jetfreys, member"
+  },
+  {
+   "name": "Michael- Ray Jetfreys",
+   "role": "Member",
+   "status": "present",
+   "quote": "katey adams, member; michael- ray jetfreys, member"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "member not present: tom alonzo, chair"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager"
+  },
+  {
+   "name": "Jim Dee",
+   "role": "Unitil Representative",
+   "status": "present",
+   "quote": "unitil representative jim dee presented for the petition."
+  },
+  {
+   "name": "Steve Weaver",
+   "role": "",
+   "status": "present",
+   "quote": "steve weaver, 288 holman street, wanted to recognize building commissioner garry rhodes"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "LSIC membership dues",
+   "what_was_recorded": "Ms. Luck said she and her husband would rejoin the Lake Shirley Improvement Corporation and pay the annual dues asked of residents in their category.",
+   "figures_as_printed": [
+    "$450/per year"
+   ],
+   "quote": "pay the $450/per year that is asked of residents in our category."
+  },
+  {
+   "topic": "Special event permit fee",
+   "what_was_recorded": "Public commenter said there was discussion of waiving a special event permit fee and he opposed waiving it.",
+   "figures_as_printed": [],
+   "quote": "regarding the special event permit, there was discussion of waiving a fee and i don't think you should waive it"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "Vice Chair",
+   "topic": "Lake Shirley, LSIC and the Conservation Commission",
+   "quote": "along with my colleagues, i have read all of the emails sent to the board of selectmen (bos) over the last couple of weeks concerning lake shirley"
+  },
+  {
+   "speaker": "Steve Weaver",
+   "stated_role": "",
+   "topic": "Recognition of Building Commissioner, special event permit fee, camping, Ritter Building",
+   "quote": "steve weaver, 288 holman street, wanted to recognize building commissioner garry rhodes as he is resigning."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "heard, no action",
+   "quote": "ms. luck stated, \"along with my colleagues, i have read all of the emails sent to the board of",
+   "tags": [
+    "public comment",
+    "Lake Shirley",
+    "LSIC"
+   ]
+  },
+  {
+   "topic": "Pole petition public hearing, 994 Northfield Road, Unitil",
+   "resolution": "approved",
+   "quote": "pole petition public hearing for 994 northfield road,plan #966-l by unitil fitchburg gas",
+   "tags": [
+    "pole petition",
+    "Unitil",
+    "utilities",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Appointments and resignation",
+   "resolution": "two appointments ratified; resignation accepted",
+   "quote": "ratification of town manager appointment of principal account clerk- ms. lemieux stated the appointment of megan lorden",
+   "tags": [
+    "appointments",
+    "resignation",
+    "building commissioner",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no action",
+   "quote": "ms. lemieux reminded about the walkability meetings:",
+   "tags": [
+    "town manager",
+    "walkability",
+    "vacancies",
+    "police union"
+   ]
+  },
+  {
+   "topic": "Current business: minutes, warrants, action items; meeting schedule",
+   "resolution": "informational, no action",
+   "quote": "ms. luck reported the town manager and dew director met with cel, a contractor who",
+   "tags": [
+    "stormwater",
+    "MS4 permit",
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (closing) and adjournment",
+   "resolution": "no public comment; adjourned 7:36 p.m.",
+   "quote": "to adjourn the meeting at 7:36 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Pole petition, Plan #966-L (Unitil Fitchburg Gas and Electric Light Company), 994 Northfield Road",
+   "where": "text",
+   "quote": "ms. luck read aloud the pole petition:"
+  },
+  {
+   "name": "Map showing proposed driveway locations (Northfield Road)",
+   "where": "text",
+   "quote": "mr. jeffreys thanked him for providing proposed driveway locations on the map."
+  },
+  {
+   "name": "Emails sent to the Board of Selectmen concerning Lake Shirley",
+   "where": "text",
+   "quote": "i have read all of the emails sent to the board of"
+  },
+  {
+   "name": "Talent Bank form",
+   "where": "text",
+   "quote": "please download the talent bank form from the town website and forward to the board of"
+  },
+  {
+   "name": "MS4 permit annual report (state stormwater coalition information)",
+   "where": "text",
+   "quote": "cei will meet with the storm water task force on august 15"
+  }
+ ],
+ "tags": [
+  "pole petition",
+  "Unitil",
+  "appointments",
+  "resignation",
+  "building commissioner",
+  "public comment",
+  "Lake Shirley",
+  "LSIC",
+  "stormwater MS4",
+  "walkability",
+  "police union negotiations",
+  "town manager report",
+  "vacancies",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

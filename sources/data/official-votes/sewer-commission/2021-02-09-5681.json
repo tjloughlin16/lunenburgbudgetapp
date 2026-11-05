@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2021-02-09",
  "docid": "5681",
@@ -12,31 +12,332 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of 1/26/21 with the corrections suggested",
-   "outcome": "passed 4-0",
-   "procedural": true,
+   "motion": "To accept the minutes of 1/26/21 with the corrections suggested.",
    "moved_by": "John R",
    "seconded_by": "Brett R.",
-   "quote": "motion: john r second: brett r. to accept the minutes of 1/26/21 with the corrections suggested. roll call vote: mike-aye, john-aye, brett-aye and dave-aye."
-  },
-  {
-   "motion": "Put forward the FY22 budget to the Town Manager as discussed and agreed upon",
-   "outcome": "passed 4-0",
-   "procedural": false,
-   "moved_by": "John R.",
-   "seconded_by": "Brett R.",
-   "quote": "motion: john r. second: brett r. to put forward to the town manager the budget as discussed and agreed upon tonight. roll call vote: mike-aye, john-aye, brett-aye and dave-aye."
-  },
-  {
-   "motion": "Adjourn the meeting",
    "outcome": "passed 4-0",
    "procedural": true,
+   "quote": "motion: john r second: brett r. to accept the minutes of 1/26/21 with the corrections suggested."
+  },
+  {
+   "motion": "To put forward to the Town Manager the budget as discussed and agreed upon tonight.",
+   "moved_by": "John R.",
+   "seconded_by": "Brett R.",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "motion: john r. second: brett r. to put forward to the town manager the budget as discussed and agreed upon tonight."
+  },
+  {
+   "motion": "To adjourn at 5:51pm.",
    "moved_by": "Mike D.",
    "seconded_by": "Brett R.",
+   "outcome": "passed 4-0",
+   "procedural": true,
    "quote": "motion: mike d. to adjourn at 5:51pm second: brett r. roll call vote: mike-aye, john-aye, brett-aye and dave-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0894565
+ "note": "OCR text from a scanned page (macOS Vision); some words are garbled (e.g. 'l/l' for I/I, 'March 11t.', 'Save h landry' signature). Role of several attendees (Dave M., Barb, Rob) is not printed. Quotes were collapsed for line breaks. Each motion has a roll call of 4 ayes. Vote outcomes are passed 4-0 as printed by roll call; no nays recorded.",
+ "cost_usd": 0.00829042,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave M.",
+   "role": "not stated (presides; named in the minutes as Dave)",
+   "status": "present",
+   "quote": "roll call vote: mike-aye, john-aye, brett-aye and dave-aye."
+  },
+  {
+   "name": "John R.",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "roll call vote: mike-aye, john-aye, brett-aye and dave-aye."
+  },
+  {
+   "name": "Brett R.",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "roll call vote: mike-aye, john-aye, brett-aye and dave-aye."
+  },
+  {
+   "name": "Mike D.",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "roll call vote: mike-aye, john-aye, brett-aye and dave-aye."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "dave m. acknowledged that dave passios (finance committee) was in attendance."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barb reviewed the changes in the fy22 budget made since the last meeting"
+  },
+  {
+   "name": "Rob",
+   "role": "not stated (DPW/sewer operations; addressed as Rob, expert relied on by Commission)",
+   "status": "present",
+   "quote": "rob said he has gone through the maintenance plan, and in reviewing the i/l plan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Grease Trap permit fee revenue in the FY22 budget reduced to $0, since the Commission agreed the FY22 fee be waived.",
+   "quote": "the grease trap permit fee revenue was reduced to $0 since the commission agreed for fy22 that it be waived."
+  },
+  {
+   "decision": "Barb to provide the usual budget copy with descriptions for FinCom's review.",
+   "quote": "barb said that she will provide the usual budget copy with descriptions for fincom's review."
+  },
+  {
+   "decision": "Presentation to the Finance Committee to include a breakdown and quick explanation of the Other Departmental Expenses (suggested by Dave Passios).",
+   "quote": "dave passios suggested, when making the presentation, they give a breakdown and quick explanation of the other departmental expenses."
+  },
+  {
+   "decision": "Dave to keep the Commissioners updated on the Fitchburg Sewer Use Ordinance extension request; Town Counsel agreed to compose a letter asking for the extension.",
+   "quote": "dave asked barb to keep the commissioners updated"
+  },
+  {
+   "decision": "Maintenance Plan to be reviewed at the next meeting to give Rob direction; a mini workshop on the Maintenance Plan recommended for the 2/23 meeting.",
+   "quote": "dave recommended that we have a mini workshop on the maintenance plan at the 2/23 meeting"
+  },
+  {
+   "decision": "Rob to focus Maintenance Plan review on sections 2, 3, and 4.",
+   "quote": "rob replied to focus on sections 2,3, and 4."
+  },
+  {
+   "decision": "Commissioners suggested to go with Rob to see the pump stations.",
+   "quote": "dave suggested that the commissioners go with rob to see the pump stations."
+  },
+  {
+   "decision": "Barb to post the FY22 waiver of the grease trap renewal fee on the website and note it when sending FY22 permit renewal requests.",
+   "quote": "barb replied that she will put it on the website and will also note it when she sends out the request for permit renewals for fy22."
+  },
+  {
+   "decision": "Staff to work with Leominster to find out what the Commission will pay so the budget can be set accurately; Dave also wants to pursue fixing Whalom area I/I with a grant or cooperation with Leominster.",
+   "quote": "dave noted that they need to work with leominster to find out what the commission will be paying so that they can budget accurately."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grease Trap permit fee revenue",
+   "what_was_recorded": "Grease Trap permit fee revenue reduced to $0 because the Commission agreed the FY22 fee be waived.",
+   "figures_as_printed": [
+    "$0"
+   ],
+   "quote": "the grease trap permit fee revenue was reduced to $0 since the commission agreed for fy22 that it be waived."
+  },
+  {
+   "topic": "Engineering line",
+   "what_was_recorded": "Engineering was raised to $20K in the FY22 budget changes.",
+   "figures_as_printed": [
+    "$20K"
+   ],
+   "quote": "engineering was raised to $20k and leominster usage was bumped up to $500k."
+  },
+  {
+   "topic": "Leominster Usage",
+   "what_was_recorded": "Leominster Usage was bumped up to $500K in the FY22 budget changes.",
+   "figures_as_printed": [
+    "$500K"
+   ],
+   "quote": "engineering was raised to $20k and leominster usage was bumped up to $500k."
+  },
+  {
+   "topic": "Transfer from Retained Earnings",
+   "what_was_recorded": "Commission committed to fund the Maintenance Plan by taking $100K out of Retained Earnings, so the Retained Earnings transfer rose from $120K to $300K.",
+   "figures_as_printed": [
+    "$100K",
+    "$120K",
+    "$300K"
+   ],
+   "quote": "they will commit monies to fund the maintenance plan and will take $100k out of retained earnings."
+  },
+  {
+   "topic": "Capital Expenditures",
+   "what_was_recorded": "$100K in Capital Expenditures, one reason for which is to work on getting Leominster costs down.",
+   "figures_as_printed": [
+    "$100K"
+   ],
+   "quote": "one of the reasons for the $100k in capital expenditures is to work on getting the leominster costs down."
+  },
+  {
+   "topic": "Fitchburg invoice and Mead, Talerman invoice",
+   "what_was_recorded": "Two invoices were reviewed: Fitchburg for 11/26-12/25/20 and Mead, Talerman (mostly regarding 384 Mass. Ave.).",
+   "figures_as_printed": [
+    "$16,173.90",
+    "$1,486.15"
+   ],
+   "quote": "fitchburg invoice - $16,173.90 (for 11/26-12/25/20) and mead, talerman- $1,486.15"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from Retained Earnings in the FY22 budget, raised after the Commission committed to fund the Maintenance Plan.",
+   "amount_as_printed": "$120K to $300K",
+   "outcome": "Amount raised from $120K to $300K in the FY22 budget draft; budget then put forward to the Town Manager by vote.",
+   "quote": "the amount for the transfer from retained earnings went from $120k to $300k."
+  },
+  {
+   "description": "Capital Expenditure transfer; new account created under Other Departmental Expenses, to be used for Maintenance Plan projects through the Capital Plan transfer.",
+   "amount_as_printed": "$100K",
+   "outcome": "Not stated as a separate vote; included in the FY22 budget draft.",
+   "quote": "one of the reasons for the $100k in capital expenditures is to work on getting the leominster costs down."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "Finance Committee",
+   "topic": "access to town counsel for multiple boards",
+   "quote": "public comment- regarding the access to town counsel, dave passios commented that it is a very important tool"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "FY22 Budget",
+   "resolution": "reviewed changes; budget put forward to Town Manager by vote 4-0",
+   "quote": "barb reviewed the changes in the fy22 budget made since the last meeting",
+   "tags": [
+    "budget",
+    "FY22",
+    "retained earnings",
+    "capital"
+   ]
+  },
+  {
+   "topic": "Fitchburg Sewer Use Ordinance Updates",
+   "resolution": "extension requested; Fitchburg Commission approval needed",
+   "quote": "fitchburg sewer use ordinance updates- barb reported that john and brett reviewed the ordinance changes and",
+   "tags": [
+    "ordinance",
+    "Fitchburg",
+    "regulations",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Maintenance Plan discussion",
+   "resolution": "continued; mini workshop recommended for 2/23",
+   "quote": "maintenance plan discussion- dave recommended going through the maintenance plan at the next meeting in",
+   "tags": [
+    "maintenance plan",
+    "I/I",
+    "pumps",
+    "Meadowwoods"
+   ]
+  },
+  {
+   "topic": "Annual Report submission for FY20",
+   "resolution": "reviewed; Barb thanked Jane for the report",
+   "quote": "annual report submission for fy20- barb explained that this report goes into the town annual report",
+   "tags": [
+    "annual report",
+    "FY20"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of 1/26/21",
+   "resolution": "approved 4-0 with corrections",
+   "quote": "to accept the minutes of 1/26/21 with the corrections suggested.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager Report",
+   "resolution": "invoices reviewed; grease trap reports noted",
+   "quote": "grease trap 1st tuesday reports-all january logs are in except 3 and 2 will be bringing reports in on 2/10.",
+   "tags": [
+    "invoices",
+    "grease trap",
+    "DocuSign"
+   ]
+  },
+  {
+   "topic": "Member Agenda Inputs for Future Meetings",
+   "resolution": "384 Mass Ave work postponed to spring; no action",
+   "quote": "member agenda inputs for future meetings - dave asked if there was an update on 384 mass ave.",
+   "tags": [
+    "384 Mass Ave",
+    "snow"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "comment received on access to town counsel",
+   "quote": "public comment- regarding the access to town counsel, dave passios commented that it is a very important tool",
+   "tags": [
+    "town counsel",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Upcoming Sewer Commission activities",
+   "resolution": "noted next meeting",
+   "quote": "feb. 23, 2021 @ 5pm - regular meeting, remote participation",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 5:51pm, 4-0",
+   "quote": "dave asked for a motion to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY22 Draft Budget of 2/9/21",
+   "where": "list",
+   "quote": "handouts: fy22 draft budget of 2/9/21"
+  },
+  {
+   "name": "I/I plan put together by Woodard & Curran",
+   "where": "text",
+   "quote": "reviewing the i/l plan put together by woodard & curran, his"
+  },
+  {
+   "name": "Maintenance Plan",
+   "where": "text",
+   "quote": "dave recommended going through the maintenance plan at the next meeting in"
+  },
+  {
+   "name": "Carl's graph for retained earnings",
+   "where": "text",
+   "quote": "john noted that carl's graph for retained earnings is a useful tool and should be updated annually"
+  },
+  {
+   "name": "Annual Report for FY20",
+   "where": "text",
+   "quote": "annual report submission for fy20- barb explained that this report goes into the town annual report"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "FY22 budget",
+  "retained earnings",
+  "maintenance plan",
+  "I/I inflow infiltration",
+  "Leominster",
+  "Fitchburg",
+  "sewer use ordinance",
+  "annual report FY20",
+  "grease trap",
+  "capital expenditures",
+  "finance committee"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {}
 }

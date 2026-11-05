@@ -1,0 +1,417 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Emergency Selectmen Meeting",
+ "meeting_date": "2020-03-28",
+ "video_id": "7NNEK6ddxaQ",
+ "video_url": "https://www.youtube.com/watch?v=7NNEK6ddxaQ",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2020-03-28-7NNEK6ddxaQ.json",
+  "sha256": "86bb5b345cd93934320d4f841ad803bd249f324815601a690a33c766141238fb",
+  "caption_lines": 139,
+  "segments": 1072
+ },
+ "recording": {
+  "duration_s": 2967,
+  "duration": "0:49",
+  "spoken_chars": 38991,
+  "words_approx": 6498
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03282020-5215",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-03-28-agenda-5215.txt",
+   "path": "sources/meetings/select-board/2020-03-28-agenda-5215.pdf"
+  },
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03282020-5216",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-03-28-agenda-5216.txt",
+   "path": "sources/meetings/select-board/2020-03-28-agenda-5216.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03282020-5215",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-03-28-minutes-5215.txt",
+   "path": "sources/meetings/select-board/2020-03-28-minutes-5215.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-04T07:33:06Z",
+  "cost_usd": 0.1352404
+ },
+ "minutes": {
+  "headline": "Board postponed the May 16 town election and voted 4-1 to extend nomination-paper deadline, seeking a court order.",
+  "summary": "Emergency remote meeting during COVID-19. The board voted to postpone the annual town election from its scheduled May date, with the new date to be chosen Tuesday. It then debated whether to seek a court order or special legislation to extend the nomination paper deadline, heard a resident object on fairness grounds, and approved the extension and court order authorization.",
+  "attendees": [
+   {
+    "name_as_heard": "Tom Alonzo",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Luck",
+    "role": "vice chair"
+   },
+   {
+    "name_as_heard": "Damon McQuaid",
+    "role": "clerk"
+   },
+   {
+    "name_as_heard": "Katie Adams",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Michael Ray Jeffries",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Adam Koster",
+    "role": "town counsel"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 2205,
+    "speaker_as_heard": "Peter beer more, 282 Pleasant Street",
+    "stated_role": "resident",
+    "topic": "Opposed extending the nomination deadline beyond Monday as unfair to candidates who followed the rules; write-ins available for later candidates."
+   }
+  ],
+  "tags": [
+   "elections",
+   "legal",
+   "town-meeting"
+  ],
+  "votes": [
+   {
+    "t": 920,
+    "motion": "Postpone the annual town election from its scheduled May 16th date, new date to be set Tuesday",
+    "outcome": "passed 5-0 (roll call)",
+    "procedural": false
+   },
+   {
+    "t": 1769,
+    "motion": "Extend the nomination paper deadline according to the new election date and authorize town counsel to seek a court order",
+    "outcome": "passed 4-1",
+    "procedural": false
+   },
+   {
+    "t": 2892,
+    "motion": "Adjourn",
+    "outcome": "passed (roll call; count not fully audible)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1912,
+    "topic": "Court filing costs for nomination deadline order",
+    "what_was_said": "Town counsel described filing fee and a preliminary relief payment, with legal preparation covered within the town's existing arrangement. A member called it money well spent.",
+    "figures_as_heard": [
+     "two hundred and seventy five dollars",
+     "ninety dollar",
+     "four hundred dollars"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2892,
+    "decision": "The actual new election date will be chosen at the Tuesday March 31 meeting."
+   },
+   {
+    "t": 1831,
+    "decision": "Nomination papers submitted by Monday's deadline will be accepted by the town clerk."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 23,
+    "t_end": 279,
+    "topic": "Open meeting notice, remote access, roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 279,
+    "t_end": 965,
+    "topic": "Postponing the annual town election and explanation of nomination paper deadline",
+    "resolution": "voted",
+    "tags": [
+     "elections"
+    ]
+   },
+   {
+    "t_start": 965,
+    "t_end": 2892,
+    "topic": "Extending nomination paper deadline; court order vs special legislation; public comment",
+    "resolution": "voted",
+    "tags": [
+     "elections",
+     "legal",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 2892,
+    "t_end": 2965,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "The individual roll call votes on the nomination extension motion are mostly garbled; the 4-1 count is inferred from captions fragments ('41 that passes').",
+   "Adjournment roll call partly garbled."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 2205,
+    "about": "A resident objected to extending the nomination deadline as unfair to candidates who followed the rules; the chair disagreed.",
+    "sides": "a resident against extension; the chair and members for it",
+    "words_as_heard": "I don't think that democracy is underserved by doing that and I think that we should stick to it",
+    "kind": "public criticism"
+   },
+   {
+    "t": 1559,
+    "about": "A member urged asking the legislature first rather than going to court.",
+    "sides": "one member for legislature first; the chair and others for a court order",
+    "words_as_heard": "I think it's really important to go through be to use the people that we have in these positions are elected officials before we turn to courts",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 1010,
+    "kind": "safety",
+    "about": "People will not want to sign nomination papers given public health risks.",
+    "who": "the chair",
+    "words_as_heard": "no way anybody's gonna want to sign anything given the current conditions and risk public health and safety issues"
+   },
+   {
+    "t": 1365,
+    "kind": "liability or legal",
+    "about": "Court orders carry uncertainty; a judge may decline to sign.",
+    "who": "town counsel",
+    "words_as_heard": "there's no certainty with respect to seeking court orders to get a judge that isn't persuaded that what you want to do is appropriate"
+   },
+   {
+    "t": 2550,
+    "kind": "safety",
+    "about": "Someone collecting signatures could put themselves at harm.",
+    "who": "a member",
+    "words_as_heard": "they're going to put themselves at harm which is an understandable concern"
+   },
+   {
+    "t": 2060,
+    "kind": "condition",
+    "about": "A member wanted to see what legislators say before following a court order.",
+    "who": "a member",
+    "words_as_heard": "I would just you know like to see what our legislators have to say before we follow a court order"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 365,
+    "name_as_heard": "special legislation on election postponement",
+    "kind": "warrant article",
+    "words_as_heard": "special legislation that was adopted as governors that authorized"
+   },
+   {
+    "t": 1932,
+    "name_as_heard": "verified complaint",
+    "kind": "other",
+    "words_as_heard": "we file a verified complaint and we'd seek injunctive relief"
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted 5-0 on a roll call to postpone the annual town election from its scheduled May date, with the new date to be set Tuesday.",
+    "t": 920
+   },
+   {
+    "line": "The board voted 4-1 to extend the nomination paper deadline to fit the new election date and to authorize town counsel to seek a court order.",
+    "t": 1769
+   },
+   {
+    "line": "Nomination papers submitted by Monday's deadline will be accepted by the town clerk.",
+    "t": 1831
+   },
+   {
+    "line": "Town counsel described a court filing fee and a preliminary relief payment; legal preparation is covered under the town's existing arrangement.",
+    "t": 1912
+   },
+   {
+    "line": "A resident opposed extending the deadline past Monday as unfair to candidates who followed the rules, and noted that write-ins are available to later candidates.",
+    "t": 2205
+   }
+  ],
+  "why_it_matters": [
+   "The election date and the window for getting on the ballot decide who can run for town office, so the postponement and deadline extension shape the choices on residents' ballots.",
+   "The court filing costs are small and paid from the town budget, mostly taxes, but the extension depends on a court order, which the board has not yet received."
+  ],
+  "watch_next": [
+   "The Select Board's Tuesday, March 31 meeting, where the actual new election date is to be chosen.",
+   "The court's ruling on the order town counsel was authorized to seek for the nomination deadline extension."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-04T07:33:12Z",
+   "cost_usd": 0.025463100000000002
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03282020-5215",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-03-28-minutes-5215.txt",
+   "path": "sources/meetings/select-board/2020-03-28-minutes-5215.pdf"
+  },
+  "official_sha256": "90a7d91034d46ba9505e543f8c5fc1396b5280cd1819373a18ad41676b3ee294",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on both votes (5-0 postponement, 4-1 nomination deadline extension), the next-meeting decision, and the attendees, apart from caption name errors. They differ on the court order cost figures, which our captions garbled, and on the \"special legislation\" wording in the second motion, which our minutes omit.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 6,
+   "discrepancy": 1,
+   "only_in_ours": 1,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to postpone the May 16 town election",
+    "ours": "Postpone the annual town election from its scheduled May 16th date, new date to be set Tuesday — passed 5-0 (roll call)",
+    "official": "to postpone the may 16, 2020 town election and determine an alternative date at the regular selectmen's meeting on tuesday, march 31, 2020",
+    "note": "Same motion and same 5-0 outcome.",
+    "t": 920
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote to extend nomination paper deadline: wording of the motion",
+    "ours": "Extend the nomination paper deadline according to the new election date and authorize town counsel to seek a court order — passed 4-1",
+    "official": "to extend the deadline for nomination papers according to the date of the new election date with possible special legislation and the option to do a court order if necessary",
+    "note": "Both record 4-1, but the official motion includes possible special legislation and a court order only if necessary (Adams offered to drop the special legislation phrase); ours says counsel is authorized to seek a court order. Check the video for the exact motion as voted.",
+    "t": 1769
+   },
+   {
+    "kind": "caption_error",
+    "about": "Court filing costs",
+    "ours": "two hundred and seventy five dollars, ninety dollar, four hundred dollars",
+    "official": "attorney costa stated there would be the court filing fee, around $275 and a $90 payment presuming that preliminary relief issued.",
+    "official_reading": "$275 and $90",
+    "note": "Captions agree on $275 and $90, but ours adds a $400 figure not in the official minutes, which say the counsel fee is covered by the flat fee; check the video for the $400.",
+    "t": 1912
+   },
+   {
+    "kind": "agree",
+    "about": "Actual new election date to be set at next meeting",
+    "ours": "The actual new election date will be chosen at the Tuesday March 31 meeting.",
+    "official": "mr. alonzo stated they would determine the actual election date at their next meeting.",
+    "note": "Same decision.",
+    "t": 2892
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Nomination papers submitted by Monday's deadline accepted",
+    "ours": "Nomination papers submitted by Monday's deadline will be accepted by the town clerk.",
+    "official": "",
+    "note": "The official minutes do not record this decision about accepting papers by Monday's deadline.",
+    "t": 1831
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Counsel fee covered by flat fee",
+    "ours": "",
+    "official": "the actual preparation and my arguing it is covered under the town's flat fee.",
+    "note": "Our minutes do not record that counsel's work is covered by the flat fee.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment by Peter Beardmore",
+    "ours": "",
+    "official": "mr. alonzo recognized peter beardmore, 282 pleasant street. mr. beardmore stated we need to be cognizant of what's fair to potential candidates who have been following the rules.",
+    "note": "Our minutes have no public comment or Beardmore as attendee.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Phyllis Luck, vice chair",
+    "ours": "Luck (vice chair)",
+    "official": "phyllis luck, vice chairman",
+    "official_reading": "Phyllis Luck",
+    "note": "Same person, first name missing.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Michael-Ray Jetfreys",
+    "ours": "Michael Ray Jeffries (member)",
+    "official": "michael-ray jetfreys",
+    "official_reading": "Michael-Ray Jetfreys",
+    "note": "Misspelled surname.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Katey Adams",
+    "ours": "Katie Adams (member)",
+    "official": "katey adams",
+    "official_reading": "Katey Adams",
+    "note": "Spelling variant.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town counsel name",
+    "ours": "Adam Koster (town counsel)",
+    "official": "adam costa, town counsel",
+    "official_reading": "Adam Costa",
+    "note": "Misheard surname.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town manager name",
+    "ours": "Heather (town manager)",
+    "official": "heather lemieux, town manager",
+    "official_reading": "Heather Lemieux",
+    "note": "Surname missing in ours.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Tom Alonzo and Damon McQuaid present",
+    "ours": "Tom Alonzo (chair)",
+    "official": "members present: tom alonzo, chairman; phyllis luck, vice chairman; damon mcquaid, clerk; katey adams, michael-ray jetfreys",
+    "note": "Same names and roles.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T07:34:06Z",
+   "cost_usd": 0.041785100000000006
+  }
+ }
+}

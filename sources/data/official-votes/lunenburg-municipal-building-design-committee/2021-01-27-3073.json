@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2021-01-27",
  "docid": "3073",
@@ -12,23 +12,281 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes as presented for December 17th",
+   "motion": "Approve the minutes as presented for December 17th.",
    "moved_by": "Greg Roy",
    "seconded_by": "Dave Passios",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "greg roy motioned to approve the minutes as presented for december 17th, seconded by dave passios, brian lehtinen, aye, dave passios, aye, michael-ray jeffreys, aye, matt allison, aye, greg roy, aye."
+   "quote": "greg roy motioned to approve the minutes as presented for december 17th, seconded by dave passios, brian lehtinen, aye, dave passios, aye"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dave Passios",
    "seconded_by": "Brian Lehtinen",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "dave passios made a motion to adjourn, brian lehtinen seconded at 7:50pm. roll call vote: brian lehtinen, aye, dave passios, aye, michael-ray jeffreys, aye, matt allison, aye, greg roy, aye."
+   "quote": "dave passios made a motion to adjourn, brian lehtinen seconded at 7:50pm. roll call vote: brian lehtinen, aye, dave passios, aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08198250000000001
+ "note": "Text extraction of minutes with no scan issues. The minutes approval and adjournment votes list individual ayes in roll-call form; outcome recorded as 5-0 from those printed ayes. No vote is recorded on the cost estimate, the building name, or outreach. Members are named both by full and short forms (David/Dave Passios, Matthew/Matt Allison). Attendance statuses for architects, town employees and guests are inferred from their listing and participation, since the minutes do not state presence explicitly for them.",
+ "cost_usd": 0.00616832,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Greg Roy",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: greg roy, david passios, brian lehtinen, david blatt, michael-ray jeffreys, matthew allison"
+  },
+  {
+   "name": "David Passios",
+   "role": "Member (listed under Members Present; also called Dave Passios in the text)",
+   "status": "present",
+   "quote": "members present: greg roy, david passios, brian lehtinen, david blatt, michael-ray jeffreys, matthew allison"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: greg roy, david passios, brian lehtinen, david blatt, michael-ray jeffreys, matthew allison"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "public comment: david blatt has a zba meeting at 7pm."
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: greg roy, david passios, brian lehtinen, david blatt, michael-ray jeffreys, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member (listed under Members Present; also called Matt Allison in the text)",
+   "status": "present",
+   "quote": "members present: greg roy, david passios, brian lehtinen, david blatt, michael-ray jeffreys, matthew allison"
+  },
+  {
+   "name": "Ed DiSalvio",
+   "role": "Architect",
+   "status": "present",
+   "quote": "architects: ed disalvio, tom lam"
+  },
+  {
+   "name": "Tom Lam",
+   "role": "Architect",
+   "status": "present",
+   "quote": "architects: ed disalvio, tom lam"
+  },
+  {
+   "name": "Steve Walker",
+   "role": "Town Employee",
+   "status": "present",
+   "quote": "town employees: steve walker, heather lemieux, john londa"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Employee",
+   "status": "present",
+   "quote": "town employees: steve walker, heather lemieux, john londa"
+  },
+  {
+   "name": "John Londa",
+   "role": "Town Employee",
+   "status": "present",
+   "quote": "town employees: steve walker, heather lemieux, john londa"
+  },
+  {
+   "name": "Lunenburg Ledger",
+   "role": "Community Guest",
+   "status": "present",
+   "quote": "community guests: lunenburg ledger, peter beardmore"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Community Guest",
+   "status": "present",
+   "quote": "community guests: lunenburg ledger, peter beardmore"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee will focus on the building itself, leave office-space improvements for future town meetings, and buy new equipment and furnishings only to the extent absolutely required for functionality.",
+   "quote": "discussion took place that the committee will focus on the building itself and then leave for future town meetings the opportunity to make improvements in office spaces"
+  },
+  {
+   "decision": "The architects will deliver a revised cost estimate to the committee on February 12, and the committee could meet on February 17.",
+   "quote": "the architects plan to deliver a revised cost estimate to the committee on february 12th and the committee could meet on february 17th."
+  },
+  {
+   "decision": "Greg Roy will draft a communication to the select board about the Lions Club food pantry question and circulate it for the next agenda.",
+   "quote": "discussion took place to send a communication over to the select board. greg roy stated he would draft something and circulate it so that we have it for next agenda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Preliminary construction estimate",
+   "what_was_recorded": "The architects presented a preliminary estimate totaling about $21 million, which the committee agreed was far higher than expected.",
+   "figures_as_printed": [
+    "21 million",
+    "21 million dollars"
+   ],
+   "quote": "for this preliminary estimate, all these numbers together is 21 million."
+  },
+  {
+   "topic": "Cost per square foot",
+   "what_was_recorded": "The average cost under the preliminary estimate was stated as four hundred and nine dollars a square foot over about 51,400 square feet.",
+   "figures_as_printed": [
+    "four hundred and nine dollars a square foot",
+    "fifty one thousand four hundred square feet"
+   ],
+   "quote": "the average cost for this project with this preliminary estimate is four hundred and nine dollars a square foot based on fifty one thousand four hundred square feet of area."
+  },
+  {
+   "topic": "Building permit fee",
+   "what_was_recorded": "The estimate includes a building permit fee of about $125,000 payable by the contractor and submitters; waiving it by the town would save that amount.",
+   "figures_as_printed": [
+    "$125,000"
+   ],
+   "quote": "that's probably $125,000 dollars for a building permit fee for this size project"
+  },
+  {
+   "topic": "Escalation assumption",
+   "what_was_recorded": "The estimate assumes three to four percent escalation a year, with a 14-month projection and construction start anticipated May 2022.",
+   "figures_as_printed": [
+    "three to four percent"
+   ],
+   "quote": "we are assuming three to four percent of escalation a year."
+  },
+  {
+   "topic": "Outside funding for bronze plaque",
+   "what_was_recorded": "Outside funding for a bronze plaque was presented in connection with the building name; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "also presented was outside funding for a bronze plaque."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Thanks to committee; concerns about timing, tax burden and alternatives",
+   "speaker": "Peter Beardmore",
+   "quote": "peter beardmore wanted to thank the committee for incredibly diligent work, this has not been an easy process."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Updated plans, preliminary cost estimate and architect update",
+   "resolution": "discussed; revised estimate due February 12",
+   "tags": [
+    "cost estimate",
+    "site plan",
+    "architect",
+    "escalation"
+   ],
+   "quote": "committee review of updated plans, cost estimate and information/update from the architect: we have received a preliminary cost."
+  },
+  {
+   "topic": "Approve minutes of December 17",
+   "resolution": "approved 5-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "review and approve minutes: greg roy motioned to approve the minutes as presented for december 17th"
+  },
+  {
+   "topic": "Public outreach",
+   "resolution": "discussed; possible March public forum, no action",
+   "tags": [
+    "public outreach",
+    "forum"
+   ],
+   "quote": "public outreach: discussion took place about maybe a public forum in the march time frame."
+  },
+  {
+   "topic": "Correspondence from Lions Club re food pantry",
+   "resolution": "Greg Roy to draft communication to select board",
+   "tags": [
+    "correspondence",
+    "select board",
+    "food pantry"
+   ],
+   "quote": "greg roy received an email from the lions club and wondering if we would be reaching out to the lions club relative to the food pantry."
+  },
+  {
+   "topic": "Name of building",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "building name",
+    "Passios"
+   ],
+   "quote": "discussion took place that the building itself remaining as the tc passios building but the actual building itself being called something else"
+  },
+  {
+   "topic": "Future meeting schedule",
+   "resolution": "set February 17, March 3, March 17",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "future meeting schedule: february 17, march 3, march 17"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "received comment from Peter Beardmore",
+   "tags": [
+    "public comment",
+    "town meeting",
+    "tax burden"
+   ],
+   "quote": "peter beardmore wanted to thank the committee for incredibly diligent work, this has not been an easy process."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:50pm, 5-0",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "dave passios made a motion to adjourn, brian lehtinen seconded at 7:50pm. roll call vote: brian lehtinen, aye, dave passios, aye"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Updated plans (site plan updates on crosswalks and the gate)",
+   "where": "text",
+   "quote": "architects described the site plan updates on crosswalks and the gate."
+  },
+  {
+   "name": "Preliminary cost estimate",
+   "where": "text",
+   "quote": "the architects presented a preliminary estimate, subdividing the estimate into divisions based on"
+  },
+  {
+   "name": "Email from the Lions Club",
+   "where": "text",
+   "quote": "greg roy received an email from the lions club and wondering if we would be reaching out to the lions club relative to the food pantry."
+  },
+  {
+   "name": "List with costs associated with savings items",
+   "where": "text",
+   "quote": "discussion took place on the next steps: a list with some with some costs associated with savings items."
+  }
+ ],
+ "tags": [
+  "building design",
+  "cost estimate",
+  "preliminary estimate",
+  "town office space",
+  "building name",
+  "public outreach",
+  "town meeting",
+  "Passios building"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

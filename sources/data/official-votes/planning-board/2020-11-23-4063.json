@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2020-11-23",
  "docid": "4063",
@@ -12,24 +12,127 @@
  },
  "votes": [
   {
-   "motion": "To grant a waiver for the draw-down device in the infiltration basins",
+   "motion": "Waive the draw-down device requirement for the infiltration basins.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "t. cole made motion that a waiver be granted for the draw -down device in the infiltration basins, p. bertram seconded, roll call vote- t. cole, aye; p. bertram, aye; m. brenner, aye; m. allison, aye",
-   "quote_taken_from_text": true
+   "quote": "t. cole made motion that a waiver be granted for the draw -down device in the infiltration basins, p. bertram seconded"
   },
   {
-   "motion": "To continue the hearing to December 7th at 6:35 PM",
-   "moved_by": "Bertram",
+   "motion": "Continue the BrightFarms hearing to December 7, 2020 at 6:35 PM.",
+   "moved_by": "P. Bertram",
    "seconded_by": "M. Brenner",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "bertram made motion to continue hearing to december 7th, 6:35 pm, m. brenner seconded, roll call vote - t. cole, aye; p. bertram, aye; m. brenner, aye; m. allison, aye."
+   "quote": "bertram made motion to continue hearing to december 7th, 6:35 pm, m. brenner seconded"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1149785
+ "note": "Text extract has spacing artifacts (e.g., 'La nd', 'appl ications', 'draw -down') which were preserved in quotes. The minutes print no public comment section and no dollar figures. The hearing recessed at 7:32 PM, which is not a vote. Erik Torgersen was absent.",
+ "cost_usd": 0.00426592,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "paula bertram, present; matthew brenner, present"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew brenner, present"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, la nd use director:"
+  },
+  {
+   "name": "Sean O'Neill",
+   "role": "representing Bright Farms LLC (BF)",
+   "status": "present",
+   "quote": "representing bright farms llc (hereinafter bf) were sean o'neill and chi man"
+  },
+  {
+   "name": "Chi Man",
+   "role": "Hardy + Man Design Group, representing Bright Farms LLC (BF)",
+   "status": "present",
+   "quote": "chi man, hardy + man design group, noted he had spoken with gei in regards to the slope"
+  },
+  {
+   "name": "Jeffrey Walsh",
+   "role": "Reviewing engineer, Graves Engineering Inc. (GEI)",
+   "status": "absent",
+   "quote": "was unable to attend, but had noted his concern to a. burney"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board was responsive to scheduling an additional meeting on December 7 specifically to finish the BrightFarms hearing.",
+   "quote": "scheduling an additional meeting on december 7 th specifically to finish up the brightfarm",
+   "quote_taken_from_text": true
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "BrightFarms public hearing continuation, 361 Massachusetts Avenue (site plan and stormwater permit)",
+   "resolution": "continued to December 7, 2020 at 6:35 PM; draw-down device waiver granted 4-0",
+   "quote": "the hearing continuation, via zoom video conference, was to hear and review appl ications for site plan approval",
+   "tags": [
+    "site plan",
+    "stormwater",
+    "public hearing",
+    "greenhouse",
+    "waiver"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "GEI Review Letter dated November 13, 2020",
+   "where": "list",
+   "quote": "gei review letter dated november 13, 2020"
+  }
+ ],
+ "tags": [
+  "Planning Board",
+  "BrightFarms",
+  "site plan approval",
+  "stormwater permit",
+  "public hearing",
+  "continuance",
+  "infiltration basins",
+  "waiver"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "document used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

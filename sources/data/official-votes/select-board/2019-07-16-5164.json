@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-07-16",
  "docid": "5164",
@@ -12,23 +12,347 @@
  },
  "votes": [
   {
-   "motion": "To accept the position description as presented",
+   "motion": "To accept the position description as presented (Assistant Town Manager/HR Director).",
    "moved_by": "M. Jeffreys",
    "seconded_by": "D. MeQuaid",
    "outcome": "passed 3-1",
    "procedural": false,
    "quote": "motion: m. jeffreys 2'': d. mequaid to accept the position description as presented"
-  },
-  {
-   "motion": "To approve the minutes of May 7, 2019",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes of may 7, 2019 were approved"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR transcription shows \"2''\" (likely meant to be \"Seconded:\") and \"D. MeQuaid\" (likely meant to be \"D. McQuaid\" per the board roster). Quotes preserved as printed.",
- "cost_usd": 0.1241245
+ "note": "OCR text from macOS Vision of 8 pages with errors (e.g., 'MeQuaid', 'Kespectiully', 'Michael- Ray'). Page 2 opens mid-sentence in the meeting-announcement text, and page 6 contains garbled OCR lines and its beginning of the board public comment is missing. The Ashley Braun and Lake Shirley public comment is cut at the page 1 to 2 break. Only one motion with a recorded vote appears; no adjournment or procedural vote is recorded in this text. The minutes were approved without a recorded motion.",
+ "cost_usd": 0.00920722,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chair; damon mcquaid, clerk; katey adams,",
+   "role": "Chair"
+  },
+  {
+   "name": "Damon McQuaid",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chair; damon mcquaid, clerk; katey adams,",
+   "role": "Clerk"
+  },
+  {
+   "name": "Katey Adams",
+   "status": "present",
+   "quote": "katey adams, member; michael- ray jeffreys, member",
+   "role": "Member"
+  },
+  {
+   "name": "Michael- Ray Jeffreys",
+   "status": "present",
+   "quote": "katey adams, member; michael- ray jeffreys, member",
+   "role": "Member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "status": "absent",
+   "quote": "member not present: phyllis luck, vice chair",
+   "role": "Vice Chair"
+  },
+  {
+   "name": "Heather Lemieux",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; adam burney, land use director",
+   "role": "Town Manager"
+  },
+  {
+   "name": "Adam Burney",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; adam burney, land use director",
+   "role": "Land Use Director"
+  },
+  {
+   "name": "Cindy Lee Gee",
+   "status": "not stated",
+   "quote": "cindy lee gee, 140 flynn road, had sent an email to the board and thanked mr. jeffreys for his",
+   "role": "resident, 140 Flynn Road"
+  },
+  {
+   "name": "Maureen Spindt",
+   "status": "present",
+   "quote": "maureen spindt, 7 ruth street, stated lsic is a non-profit organization and they ask members to",
+   "role": "resident, 7 Ruth Street"
+  },
+  {
+   "name": "Marilyn Jewell",
+   "status": "present",
+   "quote": "ms. jewell clarified that people have been asking her what the difference was between both lakes",
+   "role": "resident, 20 Sunset Lane"
+  },
+  {
+   "name": "Steve Bean",
+   "status": "present",
+   "quote": "steve bean, 27 fire road 15, stated the conservation commission is adding to the order of conditions and citing safety as the reason.",
+   "role": "resident, 27 Fire Road 15"
+  },
+  {
+   "name": "Ashley Braun",
+   "status": "present",
+   "quote": "ashley braun, 607 reservoir road, thanked mr. jeffreys for answering her email and many others with your fair and well thought out response.",
+   "role": "resident, 607 Reservoir Road"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of May 7, 2019 were approved (no motion or vote recorded).",
+   "quote": "minutes of may 7, 2019 were approved."
+  },
+  {
+   "decision": "FY19 and FY20 accounts payable warrants were signed.",
+   "quote": "a fy19 accounts payable warrant in the amount of $688,136.10 and a fy20 accounts payable warrant in the amount of $771,274.85 were signed."
+  },
+  {
+   "decision": "Abutter notice distance changed from 300 feet to 200 feet.",
+   "quote": "300 feet was changed to 200 feet for abutters."
+  },
+  {
+   "decision": "Special event policy edits to be brought back for review in early August.",
+   "quote": "mr. alonzo suggested having these edits for review in early august."
+  },
+  {
+   "decision": "Town Manager to check with Executive Assistant Peterson on abutter notification process.",
+   "quote": "ms. lemieux stated she would check with executive assistant peterson on her process for abutter notification."
+  },
+  {
+   "decision": "Board agreed on the Town Manager evaluation form items from members' collated choices; Ms. Lemieux to amend the form and provide a final document; labor counsel to be consulted on the evaluation process.",
+   "quote": "after collating individual member's choices, it was decided to go with the following:"
+  },
+  {
+   "decision": "Ms. Lemieux to amend the Town Manager evaluation form and present a final version at a future meeting.",
+   "quote": "ms. lemieux will amend the form and provide to the board as a final document at a future meeting."
+  },
+  {
+   "decision": "Town to proceed with negotiating MS4 Year 2 engineering services with Comprehensive Environmental Inc.",
+   "quote": "ultimately, we agreed to proceed with negotiating with comprehensive environmental inc."
+  },
+  {
+   "decision": "Grade/step classification to be discussed and position advertised, assuming Personnel Committee approves the job description.",
+   "quote": "we will discuss the grade/step classification and it will advertised accordingly."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Assistant Town Manager/HR Director starting pay",
+   "what_was_recorded": "Starting rate of pay for the new position was stated.",
+   "figures_as_printed": [
+    "$38.84"
+   ],
+   "quote": "$38.84 would be the starting rate of pay."
+  },
+  {
+   "topic": "FY19 and FY20 accounts payable warrants",
+   "what_was_recorded": "Two accounts payable warrants were signed, in the amounts printed.",
+   "figures_as_printed": [
+    "$688,136.10",
+    "$771,274.85"
+   ],
+   "quote": "a fy19 accounts payable warrant in the amount of $688,136.10 and a fy20 accounts payable warrant in the amount of $771,274.85 were signed."
+  },
+  {
+   "topic": "Eagle House earmark (DHCD)",
+   "what_was_recorded": "Town to receive state DHCD funding from the state fiscal 2019 budget after documents were executed.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "this allows the town to receive the funding in the amount of $25,000 that was in the state fiscal 2019 budget under the dhcd."
+  },
+  {
+   "topic": "MS4 Year 2 engineering services",
+   "what_was_recorded": "Firms will provide estimates for additional items; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "there are additional items that they will be providing estimates for"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Cindy Lee Gee",
+   "stated_role": "140 Flynn Road",
+   "topic": "Thanked Jeffreys for reply to email",
+   "quote": "cindy lee gee, 140 flynn road, had sent an email to the board and thanked mr. jeffreys for his"
+  },
+  {
+   "speaker": "Maureen Spindt",
+   "stated_role": "7 Ruth Street",
+   "topic": "LSIC dues and weed/algae treatment",
+   "quote": "maureen spindt, 7 ruth street, stated lsic is a non-profit organization and they ask members to"
+  },
+  {
+   "speaker": "Marilyn Jewell",
+   "stated_role": "20 Sunset Lane",
+   "topic": "Comparison of Lake Shirley and Hickory Hills funding",
+   "quote": "ms. jewell clarified that people have been asking her what the difference was between both lakes"
+  },
+  {
+   "speaker": "Steve Bean",
+   "stated_role": "27 Fire Road 15",
+   "topic": "Conservation Order of Conditions, lake safety and Town liability",
+   "quote": "steve bean, 27 fire road 15, stated the conservation commission is adding to the order of conditions and citing safety as the reason."
+  },
+  {
+   "speaker": "Ashley Braun",
+   "stated_role": "607 Reservoir Road",
+   "topic": "Lake safety concern and thanks for responses",
+   "quote": "ashley braun, 607 reservoir road, thanked mr. jeffreys for answering her email and many others with your fair and well thought out response."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment on Lake Shirley (LSIC treatment, dues, conservation order)",
+   "resolution": "no action; LSIC meeting with counsel and Conservation Commission scheduled next day",
+   "quote": "mr. alonzo stated for those people and many in attendance who sent emails, we have received",
+   "tags": [
+    "Lake Shirley",
+    "LSIC",
+    "public comment",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Assistant Town Manager/HR Director position description and classification",
+   "resolution": "approved 3-1",
+   "quote": "review of assistant town manager/hr director position description and",
+   "tags": [
+    "personnel",
+    "job description",
+    "HR director",
+    "salary"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "minutes approved; warrants signed; Electric Ave/Mass Ave update received",
+   "quote": "minutes of may 7, 2019 were approved.",
+   "tags": [
+    "minutes",
+    "warrants",
+    "action file",
+    "traffic"
+   ]
+  },
+  {
+   "topic": "Policy workshop: Special Event Policy",
+   "resolution": "continued; edits to return early August",
+   "quote": "annual review of current board of selectmen policies, including continuation of discussion",
+   "tags": [
+    "special events",
+    "policy",
+    "public hearing",
+    "abutters"
+   ]
+  },
+  {
+   "topic": "Town Manager evaluation form",
+   "resolution": "continued; Town Manager to amend form",
+   "quote": "review of town manager evaluation form",
+   "tags": [
+    "town manager",
+    "evaluation",
+    "labor counsel"
+   ]
+  },
+  {
+   "topic": "Board response to residents' emails",
+   "resolution": "no action; discussion of email practice",
+   "quote": "mr. jeffreys noted the board members received many emails from residents over the weekend",
+   "tags": [
+    "open meeting law",
+    "emails",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational; no action",
+   "quote": "announcement on existing vacancies:",
+   "tags": [
+    "vacancies",
+    "Summer Street",
+    "Eagle House",
+    "recycling",
+    "MS4",
+    "ADA survey",
+    "meetings"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Assistant Town Manager/HR Director Position Description",
+   "where": "text",
+   "quote": "ms. lemieux presented the job description before attending the personnel committee meeting on"
+  },
+  {
+   "name": "Updated draft of the special event policy",
+   "where": "text",
+   "quote": "mr. burney presented an updated draft of the special event policy that addresses the previous"
+  },
+  {
+   "name": "Town Manager Evaluation Form",
+   "where": "text",
+   "quote": "review of town manager evaluation form"
+  },
+  {
+   "name": "Ms. Luck's written comments on the Town Manager Evaluation Form",
+   "where": "text",
+   "quote": "mr. alonzo handed out ms. luck's written comments on the form."
+  },
+  {
+   "name": "Talent Bank form",
+   "where": "text",
+   "quote": "download the talent bank form from the town website or request one from the bos office"
+  },
+  {
+   "name": "FY19 accounts payable warrant",
+   "where": "text",
+   "quote": "a fy19 accounts payable warrant in the amount of $688,136.10 and a fy20 accounts payable warrant in the amount of $771,274.85 were signed."
+  },
+  {
+   "name": "FY20 accounts payable warrant",
+   "where": "text",
+   "quote": "a fy19 accounts payable warrant in the amount of $688,136.10 and a fy20 accounts payable warrant in the amount of $771,274.85 were signed."
+  },
+  {
+   "name": "Order of Conditions (Conservation Commission)",
+   "where": "text",
+   "quote": "stated the conservation commission is adding to the order of conditions and citing safety as the reason."
+  },
+  {
+   "name": "ADA Public Rights of Way Public Outreach Survey",
+   "where": "text",
+   "quote": "as part of updating our public rights of way transition plan in accordance with ada,"
+  }
+ ],
+ "tags": [
+  "Lake Shirley",
+  "LSIC",
+  "conservation",
+  "public comment",
+  "personnel",
+  "job description",
+  "HR director",
+  "warrants",
+  "special events policy",
+  "town manager evaluation",
+  "town manager report",
+  "vacancies",
+  "Summer Street",
+  "Eagle House",
+  "recycling",
+  "MS4 stormwater",
+  "ADA survey",
+  "open meeting law"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

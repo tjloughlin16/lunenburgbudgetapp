@@ -1,0 +1,440 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2019-07-23",
+ "video_id": "04NYIjOmuUE",
+ "video_url": "https://www.youtube.com/watch?v=04NYIjOmuUE",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2019-07-23-04NYIjOmuUE.json",
+  "sha256": "2fd926194d875ba43c5ad9ad017e926a775ccf95e68f80dfcbec1bc79c262acc",
+  "caption_lines": 100,
+  "segments": 633
+ },
+ "recording": {
+  "duration_s": 2152,
+  "duration": "0:35",
+  "spoken_chars": 22573,
+  "words_approx": 3762
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_07232019-5166",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-07-23-agenda-5166.txt",
+   "path": "sources/meetings/select-board/2019-07-23-agenda-5166.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07232019-5166",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-07-23-minutes-5166.txt",
+   "path": "sources/meetings/select-board/2019-07-23-minutes-5166.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-05T04:29:23Z",
+  "cost_usd": 0.12242039999999998
+ },
+ "minutes": {
+  "headline": "Select Board approved a Unitil pole petition and ratified two appointments; interim building commissioner resigned.",
+  "summary": "The chair opened with a long personal statement about Lake Shirley and the lake improvement corporation, and a resident objected to waiving fees and allowing camping at special events. The board approved a Unitil pole location, ratified two town manager appointments, accepted the interim building commissioner's resignation, and heard the town manager's report. No budget decisions were made.",
+  "attendees": [
+   {
+    "name_as_heard": "Chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Town Manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Elaine Peterson",
+    "role": "executive assistant to the town manager"
+   },
+   {
+    "name_as_heard": "Jim D",
+    "role": "presenter (Unitil representative)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 537,
+    "speaker_as_heard": "Steve Weaver",
+    "stated_role": "resident, 288 Holman Street",
+    "topic": "Thanked the departing building commissioner; opposed fee waivers and camping at special events on town property; suggested using the Ritter building for town offices and keeping TC Passios for schools."
+   },
+   {
+    "t": 1710,
+    "speaker_as_heard": "Steve Weaver",
+    "stated_role": "resident, 288 Holmen Street",
+    "topic": "Suggested seasonal one-way traffic and parking on the road to the beach as a walkability fix."
+   }
+  ],
+  "tags": [
+   "contracts-and-unions",
+   "facilities",
+   "hiring",
+   "personnel",
+   "planning-and-zoning",
+   "public-comment",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 1156,
+    "motion": "Approve the Unitil petition for a new pole at 994 Northfield Road as presented",
+    "moved_by": "",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1248,
+    "motion": "Ratify the town manager's appointment of a principal account clerk",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 1292,
+    "motion": "Ratify the town manager's appointment for DPW facilities director",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 1486,
+    "motion": "Accept the resignation of interim building commissioner Gary Rhodes and thank him",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 2134,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1944,
+    "topic": "Water commissioners commitment",
+    "what_was_said": "Quarterly billing first commitment read into the record.",
+    "figures_as_heard": [
+     "seven thousand four hundred seventy seven dollars and seventy two cents"
+    ]
+   },
+   {
+    "t": 1964,
+    "topic": "Tax payable warrant",
+    "what_was_said": "Warrant amount read.",
+    "figures_as_heard": [
+     "three hundred five thousand three hundred thirty seven dollars and 82 cents"
+    ]
+   },
+   {
+    "t": 1986,
+    "topic": "Loan interest payment",
+    "what_was_said": "Interest payment on a loan read.",
+    "figures_as_heard": [
+     "110 thousand six hundred dollars"
+    ]
+   },
+   {
+    "t": 1986,
+    "topic": "Payroll warrants",
+    "what_was_said": "Payroll warrant amount read.",
+    "figures_as_heard": [
+     "six hundred four thousand four hundred seventy six dollars and sixty eight cents"
+    ]
+   },
+   {
+    "t": 2009,
+    "topic": "Deductions",
+    "what_was_said": "Deductions amount read.",
+    "figures_as_heard": [
+     "six hundred fifty five thousand six hundred ninety eight dollars and 32 cents"
+    ]
+   },
+   {
+    "t": 583,
+    "topic": "Special event fees",
+    "what_was_said": "A resident argued fees should not be waived even for prayer or Boy Scout events, so taxpayers do not pay for utilities and damage.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1582,
+    "decision": "Attorney to meet the board on August 20th in executive session on police union proposals."
+   },
+   {
+    "t": 1376,
+    "decision": "Town manager exploring four options to cover the building commissioner role: regionalizing, a temp firm, per diem from other towns, or a waiver for the local inspector."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 4,
+    "t_end": 513,
+    "topic": "Pledge and chair's statement on Lake Shirley",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 537,
+    "t_end": 944,
+    "topic": "Public comment: special events, camping, Ritter building",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 944,
+    "t_end": 1179,
+    "topic": "Unitil pole petition hearing, 994 Northfield Road",
+    "resolution": "voted",
+    "tags": [
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 1204,
+    "t_end": 1486,
+    "topic": "Appointments and building commissioner resignation",
+    "resolution": "voted",
+    "tags": [
+     "personnel",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 1486,
+    "t_end": 1917,
+    "topic": "Town manager report: walkability, police union, vacancies",
+    "resolution": "informational",
+    "tags": [
+     "contracts-and-unions",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1917,
+    "t_end": 2032,
+    "topic": "Minutes and warrants",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 2032,
+    "t_end": 2134,
+    "topic": "Committee reports, upcoming meetings, adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Vote counts on the appointments, resignation and adjournment were not stated.",
+   "Approval of the May 14th minutes was not captured."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 49,
+    "about": "The chair responded to criticism of her serving on the board without belonging to the lake improvement corporation, and criticised its leadership.",
+    "sides": "the chair against the lake improvement corporation leadership",
+    "words_as_heard": "we actually feel very sorry for those who choose hate over love",
+    "kind": "charged language"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 603,
+    "kind": "liability or legal",
+    "about": "Event liability and damage to town property, such as a candle igniting the gazebo.",
+    "who": "a resident",
+    "words_as_heard": "you never know what type of liabilities there might be they could be praying and a candle could catch the gazebo on fire"
+   },
+   {
+    "t": 776,
+    "kind": "safety",
+    "about": "Unpoliced overnight camping at a town event led to wandering and drinking near conservation land.",
+    "who": "a resident",
+    "words_as_heard": "you can't police people from 11 o'clock to 6 o'clock in the morning"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 944,
+    "name_as_heard": "plan number 966-L",
+    "kind": "plan or drawing",
+    "words_as_heard": "plan number 966 - L by unitil Fitchburg gas and electric",
+    "shown": true
+   },
+   {
+    "t": 1917,
+    "name_as_heard": "minutes of May 14th",
+    "kind": "prior minutes",
+    "words_as_heard": "we have very long minutes from the meeting of May 14th"
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board approved a Unitil petition for a new utility pole at 994 Northfield Road as presented.",
+    "t": 1156
+   },
+   {
+    "line": "The board ratified two town manager appointments, a principal account clerk and a DPW facilities director; the minutes record the votes as not audible.",
+    "t": 1292
+   },
+   {
+    "line": "The board accepted the interim building commissioner's resignation; the minutes record the vote as not audible.",
+    "t": 1486
+   },
+   {
+    "line": "The town manager is weighing four ways to cover the building commissioner role, including regionalizing, a temp firm, per diem help, or a waiver for the local inspector.",
+    "t": 1376
+   },
+   {
+    "line": "A resident objected in public comment to waiving fees and allowing camping at special events on town property.",
+    "t": 583
+   }
+  ],
+  "why_it_matters": [
+   "Until the building commissioner role is filled, permit and inspection work depends on whichever arrangement the town manager chooses, which could affect how fast residents get approvals and what the town budget, mostly taxes, pays for coverage.",
+   "Fee waivers for special events on town property would shift utility and cleanup costs to the town budget, mostly taxes, and the board may be asked to set that policy."
+  ],
+  "watch_next": [
+   "August 20th: the town's attorney is to meet the board in executive session on police union proposals.",
+   "Which option the town manager chooses to cover the building commissioner role."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-05T04:29:29Z",
+   "cost_usd": 0.023079099999999998
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07232019-5166",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-07-23-minutes-5166.txt",
+   "path": "sources/meetings/select-board/2019-07-23-minutes-5166.pdf"
+  },
+  "official_sha256": "45f9252b857eeba1501ed052f2f27270761d876fcdb2cc697ee7cf93c899f24e",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the pole petition and on who presented it. They differ most on the three other votes, which are inaudible in ours but recorded as unanimous in the official minutes. Ours also has the executive-session date, the building commissioner options and the warrant figures, none of which the official minutes mention.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 0,
+   "discrepancy": 4,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Unitil pole petition at 994 Northfield Road",
+    "ours": "Approve the Unitil petition for a new pole at 994 Northfield Road as presented — passed",
+    "official": "motion: m. jeffreys to approve the pole petition as presented 2nd: d. mcquaid vote: all in favor",
+    "note": "Both record the pole petition approved as presented.",
+    "t": 1156
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Ratify appointment of principal account clerk",
+    "ours": "Ratify the town manager's appointment of a principal account clerk — not audible",
+    "official": "motion: d. mcquaid 2nd: k. adams to ratify the town manager's appointment to principal account clerk vote: all in favor",
+    "note": "Ours could not hear the outcome; official says all in favor (passed). Check the recording for the vote.",
+    "t": 1248
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Ratify appointment of DPW facilities director",
+    "ours": "Ratify the town manager's appointment for DPW facilities director — not audible",
+    "official": "motion: d. mcquaid 2n°: m. jeffreys to ratify the town manager's appointment to dpw facilities director vote: all in favor",
+    "note": "Ours has no audible outcome; official says all in favor. Check the recording.",
+    "t": 1292
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Accept resignation of interim building commissioner",
+    "ours": "Accept the resignation of interim building commissioner Gary Rhodes and thank him — not audible",
+    "official": "motion: k. adams 2'd: d. mcquaid to accept the resignation of interim buildin commissioner garry rhodes and thank him vote: all in favor",
+    "note": "Ours has no audible outcome; official says all in favor. Name spelling Gary vs Garry also differs. Check the recording.",
+    "t": 1486
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attorney meeting August 20 in executive session on police union proposals",
+    "ours": "Attorney to meet the board on August 20th in executive session on police union proposals.",
+    "official": "",
+    "note": "The official minutes list no decisions and do not mention this.",
+    "t": 1582
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Four options to cover building commissioner role",
+    "ours": "Town manager exploring four options to cover the building commissioner role: regionalizing, a temp firm, per diem from other towns, or a waiver for the local inspector.",
+    "official": "",
+    "note": "The official minutes list no decisions and do not mention these options.",
+    "t": 1376
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrant and commitment figures (water commitment, tax payable, loan interest, payroll, deductions)",
+    "ours": "Water commissioners commitment: seven thousand four hundred seventy seven dollars and seventy two cents; Tax payable warrant: $305,337.82; Loan interest payment: 110 thousand six hundred dollars; Payroll warrants: $604,476.68; Deductions: $655,698.32",
+    "official": "",
+    "note": "None of these figures appear in the official minutes' budget items; check whether the official minutes omit the warrant signing.",
+    "t": 1944
+   },
+   {
+    "kind": "only_in_official",
+    "about": "LSIC membership dues $450/year",
+    "ours": "",
+    "official": "pay the $450/per year that is asked of residents in our category.",
+    "note": "Appears only in the official minutes' public comment.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Town Manager, Elaine Peterson, Unitil rep",
+    "ours": "Town Manager; Elaine Peterson (executive assistant to the town manager); Jim D (presenter (Unitil representative))",
+    "official": "unitil representative jim dee presented for the petition.",
+    "note": "Same people; Jim D is Jim Dee in the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Chair/presiding officer",
+    "ours": "Chair (chair)",
+    "official": "member not present: tom alonzo, chair",
+    "note": "Ours lists a Chair attending, but the official says Chair Tom Alonzo was absent and Vice Chair Phyllis Luck presided. Check who ran the meeting.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Board members present",
+    "ours": "",
+    "official": "board of selectmen present: phyllis luck, vice chair; damon mcquaid, clerk; katey adams,",
+    "note": "Our attendee list does not name the board members.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-05T04:30:15Z",
+   "cost_usd": 0.0380191
+  }
+ }
+}

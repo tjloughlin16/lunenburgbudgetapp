@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2019-07-09",
  "docid": "5622",
@@ -12,47 +12,376 @@
  },
  "votes": [
   {
-   "motion": "Grant a waiver to pump the interceptor once a year and send internal reports in June and December",
+   "motion": "Grant the waiver for pumping the interceptor once a year, with internal reports sent in June and December (modified motion).",
    "moved_by": "Ryan S.",
    "seconded_by": "Carl L.",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "motion was modified: to grant the waiver for pumping the interceptor once a year and send internal reports in june and december. second: carl l. vote: unanimous"
+   "quote": "to grant the waiver for pumping the interceptor once a year and send internal reports in june and december. second: carl l. vote: unanimous"
   },
   {
-   "motion": "Send a notice to the Board of Selectman concerning the vacancy on the Sewer Commission",
+   "motion": "Send a notice to the Board of Selectman concerning the vacancy on the Sewer Commission.",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: carl l. second: ryan s. to send a notice to the board of selectman concerning the vacancy on the sewer commission. vote: unanimous"
+   "outcome": "passed (unanimous)",
+   "procedural": false,
+   "quote": "to send a notice to the board of selectman concerning the vacancy on the sewer commission. vote: unanimous"
   },
   {
-   "motion": "Approve the sewer end-of-year commitment of $429.60",
+   "motion": "Approve the sewer end-of-year commitment of $429.60.",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: carl l. to approve the sewer end-of-year commitment of $429.60. second: ryan s. vote: unanimous"
+   "outcome": "passed (unanimous)",
+   "procedural": false,
+   "quote": "to approve the sewer end-of-year commitment of $429.60. second: ryan s. vote: unanimous"
   },
   {
-   "motion": "Accept minutes for 5/23/19",
+   "motion": "Accept the minutes for 5/23/19.",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "motion: carl l. to accept minutes for 5/23/19. second: ryan s. vote: unanimous"
+   "quote": "to accept minutes for 5/23/19. second: ryan s. vote: unanimous"
   },
   {
-   "motion": "Accept minutes for 6/11/19",
+   "motion": "Accept the minutes for 6/11/19.",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "motion: carl l. to accept minutes for 6/11/19. second: ryan s. vote: unanimous"
+   "quote": "to accept minutes for 6/11/19. second: ryan s. vote: unanimous"
+  },
+  {
+   "motion": "Not to pay any SWSS invoice involving a labor charge without Commission approval until the issue is resolved. Motion was not seconded and was withdrawn.",
+   "moved_by": "Carl L",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "not seconded. to not pay any swss invoice involving labor charge without commission approval until issue is resolved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; one motion (SWSS invoice labor charges) was moved but withdrawn before voting and is not included. All recorded votes are unanimous.",
- "cost_usd": 0.10479849999999999
+ "note": "OCR text (macOS Vision) of three pages. Attendance is not recorded as a roll call, so attendee statuses are \"not stated\" unless the minutes show the person speaking or acting. Several names (Scott, Debbie, Jack, Roger, Joan, Joseph Anderson) are mentioned but did not take part and are omitted from attendees. Some OCR errors appear (for example \"/l 3r Party Review RFP\"); the topic is read as the third-party review RFP. The first waiver motion was modified and the vote was taken on the modified motion. The motion on SWSS labor invoices was not seconded and withdrawn, so it has no recorded result. No adjournment or executive session is recorded.",
+ "cost_usd": 0.009709920000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ryan S.",
+   "status": "not stated",
+   "quote": "ryan confirmed that he can attend the 7/30 and 8/13 meetings."
+  },
+  {
+   "name": "Carl L.",
+   "status": "present",
+   "quote": "carl asked about the weekly excel files."
+  },
+  {
+   "name": "John",
+   "status": "present",
+   "quote": "john said that joan won't be able to attend meetings in july and august."
+  },
+  {
+   "name": "Barb",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "business manager report - barb reported she received the pump station electronic files"
+  },
+  {
+   "name": "Steve Harper",
+   "status": "present",
+   "quote": "barb asked steve if he had a copy of the schematic and he replied that they do not."
+  },
+  {
+   "name": "Sean Patricks",
+   "status": "not stated",
+   "quote": "steve harper, sean patricks - requested a waiver to pump the external tank once a year."
+  },
+  {
+   "name": "Lane he Care",
+   "role": "Minutes Clerk",
+   "status": "not stated",
+   "quote": "lane he care, minutes clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission agreed to have Scott of Woodward & Curran come to the next meeting to discuss the third-party review RFP bid.",
+   "quote": "commission discussed how to approach the discussion with woodward & curran and agreed to have scott come to the next meeting."
+  },
+  {
+   "decision": "Commission agreed to hold a working session with SWSS on the pump stations, and that SWSS needs to attend meetings to discuss pump station problems.",
+   "quote": "commission agreed to have a working session with swss to discuss the pump stations."
+  },
+  {
+   "decision": "Barb will contact Debbie at SWSS about not including irrigation meter readings in the calculations for the new contract.",
+   "quote": "barb will contact debbie (swss) about not including the meter readings in the calculations for the new contract."
+  },
+  {
+   "decision": "Barb will clarify with counsel the term of contract sections, including whether the contract is renewable as written.",
+   "quote": "barb will clarify with counsel the \"term of contract sections."
+  },
+  {
+   "decision": "Barb will talk to Ti-Sales first so a pamphlet can be prepared and sent to irrigation meter users in August.",
+   "quote": "she will talk to ti-sales first so we can put together a pamphlet and get the information out in august to irrigation meter users."
+  },
+  {
+   "decision": "John will talk to Jack about his discussion with Leominster, and the Commission will discuss the billing change issue at a future meeting.",
+   "quote": "john will to talk to jack about his discussion with leominster and the commission will discuss issue at a future meeting."
+  },
+  {
+   "decision": "Barb will send the annual permit renewal letters after she sends the billing demands; Carl and Ryan will audit a couple of establishments in July.",
+   "quote": "after the renewal letters go out, carl and ryan will audit a couple establishments in july."
+  },
+  {
+   "decision": "Commission signed the End-of-Year Commitment.",
+   "quote": "commission signed the end-of-year commitment."
+  },
+  {
+   "decision": "Barb will send the pump station reports to Wright-Pierce and discuss setting up pump station tours for July.",
+   "quote": "she will send the reports to wright-pierce and discuss setting up the pump station tours for july."
+  },
+  {
+   "decision": "Barb will re-send the Commissioners the link to the pump station weekly files on the shared drive.",
+   "quote": "barb replied that they were received and will be posted to the shared drive and will re-send the commissioners the link."
+  },
+  {
+   "decision": "Barb will send a memo to have the Commission vacancy posted.",
+   "quote": "barb will send a memo to have the vacancy posted."
+  },
+  {
+   "decision": "Barb will send commissioners copies of the paid SWSS invoices to review; the Commission agreed to review the invoices before discussing labor charges at the next meeting.",
+   "quote": "commission discussed the motion and agreed to look at the invoices before discussing the labor charges at the next meeting."
+  },
+  {
+   "decision": "John will discuss the SWSS labor charges with Jack.",
+   "quote": "john will discuss the labor charges with jack."
+  },
+  {
+   "decision": "Commission signed invoices for Fitchburg and Wright Pierce.",
+   "quote": "commission signed invoices for fitchburg for $13,589.84 and wright pierce for $1346.47."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Sewer end-of-year commitment",
+   "what_was_recorded": "The Commission approved a sewer end-of-year commitment and signed it.",
+   "figures_as_printed": [
+    "$429.60"
+   ],
+   "quote": "to approve the sewer end-of-year commitment of $429.60. second: ryan s. vote: unanimous"
+  },
+  {
+   "topic": "Invoices signed by Commission",
+   "what_was_recorded": "The Commission signed invoices from Fitchburg and Wright Pierce.",
+   "figures_as_printed": [
+    "$13,589.84",
+    "$1346.47"
+   ],
+   "quote": "commission signed invoices for fitchburg for $13,589.84 and wright pierce for $1346.47."
+  },
+  {
+   "topic": "SWSS FY20 contract 5% rate increase",
+   "what_was_recorded": "The Commission discussed SWSS contract calculations for a 5% rate increase, which include reading irrigation meters.",
+   "figures_as_printed": [],
+   "quote": "commission discussed small water systems' (swss) contract calculations for the 5% rate increase, which includes reading the irrigation meters."
+  },
+  {
+   "topic": "SWSS labor invoice",
+   "what_was_recorded": "Carl asked about an SWSS invoice for labor, and the Commission discussed whether it is covered by the maintenance contract.",
+   "figures_as_printed": [],
+   "quote": "carl inquired about the invoice from swss for labor."
+  },
+  {
+   "topic": "Irrigation meter program change budget",
+   "what_was_recorded": "The Commission did not budget in FY20 for the irrigation meter program change, and the next Leominster billing will be in August.",
+   "figures_as_printed": [],
+   "quote": "commission did not budget in fy20 for this change. the next leominster billing will be august."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Member availability and vacancy for Joan's seat",
+   "speaker": "John",
+   "quote": "john said that joan won't be able to attend meetings in july and august. she offered to resign or if more than 1 candidate has interest, to relinquish her seat."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: Joan's seat",
+   "resolution": "discussed; no action recorded",
+   "quote": "john said that joan won't be able to attend meetings in july and august. she offered to resign or if more than 1 candidate has interest, to relinquish her seat.",
+   "tags": [
+    "vacancy",
+    "board seats",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Waiver request to pump external interceptor once a year",
+   "resolution": "approved with modification (reports due June and December)",
+   "quote": "steve harper, sean patricks - requested a waiver to pump the external tank once a year.",
+   "tags": [
+    "waiver",
+    "grease trap",
+    "interceptor"
+   ]
+  },
+  {
+   "topic": "Board vacancy after Joseph Anderson resignation",
+   "resolution": "approved notice to Board of Selectman; vacancy to be posted",
+   "quote": "john announced that joseph anderson has resigned and there is now a vacancy on the board.",
+   "tags": [
+    "vacancy",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Third-party review RFP (Woodward and Curran bid)",
+   "resolution": "continued; Scott to attend next meeting",
+   "quote": "barb contacted scott at w&c and he is happy to come to the meeting to talk about the project.",
+   "tags": [
+    "RFP",
+    "consultant",
+    "Woodward and Curran"
+   ]
+  },
+  {
+   "topic": "O&M Pump Station FY20 Contract (SWSS)",
+   "resolution": "discussed; Barb to contact SWSS and counsel",
+   "quote": "o&m pump station fy20 contract discussion - commission discussed small water systems' (swss) contract",
+   "tags": [
+    "SWSS",
+    "contract",
+    "rate increase",
+    "pump stations"
+   ]
+  },
+  {
+   "topic": "Pump station reports review",
+   "resolution": "working session with SWSS agreed",
+   "quote": "pump station reports review- commission discussed the reports from the pump stations and noted that that there have been more call outs.",
+   "tags": [
+    "pump stations",
+    "SWSS",
+    "call outs"
+   ]
+  },
+  {
+   "topic": "Irrigation meter program change implementation",
+   "resolution": "discussed; Barb to talk to Ti-Sales; John to talk to Jack re Leominster",
+   "quote": "irrigation meter program change - implementation plans -barb said the water department wants users to be directed to either ti-sales or pipes plus.",
+   "tags": [
+    "irrigation meters",
+    "Leominster billing",
+    "Ti-Sales",
+    "Pipes Plus"
+   ]
+  },
+  {
+   "topic": "Grease trap and interceptor program",
+   "resolution": "discussed; renewal letters and audits assigned",
+   "quote": "grease trap/interceptor program - annual permit renewals - barb will be sending out the annual permit renewal letters",
+   "tags": [
+    "grease trap",
+    "permits",
+    "audits",
+    "restaurants"
+   ]
+  },
+  {
+   "topic": "Sewer end-of-year commitment",
+   "resolution": "approved; Commission signed",
+   "quote": "to approve the sewer end-of-year commitment of $429.60.",
+   "tags": [
+    "commitment",
+    "sewer billing"
+   ]
+  },
+  {
+   "topic": "Minutes approval for 5/23/19 and 6/11/19",
+   "resolution": "approved",
+   "quote": "to accept minutes for 5/23/19.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report",
+   "resolution": "received; SWSS labor-charge motion not seconded and withdrawn",
+   "quote": "business manager report - barb reported she received the pump station electronic files",
+   "tags": [
+    "invoices",
+    "SWSS",
+    "pump stations",
+    "website",
+    "grease traps"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "no action; Ryan confirmed availability",
+   "quote": "member agenda inputs for future meetings - ryan confirmed that he can attend the 7/30 and 8/13 meetings.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Updated Irrigation Policy",
+   "where": "list",
+   "quote": "handouts: updated irrigation policy fy19 ytd budget"
+  },
+  {
+   "name": "FY19 YTD Budget",
+   "where": "list",
+   "quote": "handouts: updated irrigation policy fy19 ytd budget"
+  },
+  {
+   "name": "Annual SRF project notice",
+   "where": "text",
+   "quote": "annual srf project notice was sent out and applications need to be submitted by august 23rd."
+  },
+  {
+   "name": "68 Elm St. subdivision plan",
+   "where": "text",
+   "quote": "68 elm st. subdivision- barb advised the commission as an fyi of a subdivision plan that is going before planning board."
+  },
+  {
+   "name": "Weekly excel files (pump station reports)",
+   "where": "text",
+   "quote": "carl asked about the weekly excel files."
+  },
+  {
+   "name": "Annual permit renewal letters",
+   "where": "text",
+   "quote": "barb will be sending out the annual permit renewal letters after she sends out the billing demands."
+  },
+  {
+   "name": "Paid SWSS invoices",
+   "where": "text",
+   "quote": "barb will send commissioners copies of the paid invoices to review."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "waiver",
+  "grease trap",
+  "interceptor",
+  "pump stations",
+  "SWSS contract",
+  "irrigation meters",
+  "Leominster billing",
+  "vacancy",
+  "invoices",
+  "minutes approval",
+  "budget FY20",
+  "Woodward and Curran RFP"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {}
 }

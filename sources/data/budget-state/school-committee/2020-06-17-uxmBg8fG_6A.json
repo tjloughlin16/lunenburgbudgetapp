@@ -1,0 +1,76 @@
+{
+ "board": "School Committee",
+ "board_slug": "school-committee",
+ "meeting_date": "2020-06-17",
+ "source": {
+  "sha256": "382bb647729b3e77d916278ff4361c16fd55edabd8ba13e0e014a9b4dfe89054",
+  "transcript": "sources/data/youtube-transcripts/school-committee/2020-06-17-uxmBg8fG_6A.json"
+ },
+ "state": {
+  "cuts": [
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2021,
+    "fte_as_heard": null,
+    "item": "school psychologist position",
+    "scope": "school",
+    "status": "announced",
+    "t": 4910,
+    "who": "the superintendent"
+   }
+  ],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "1.58",
+    "fiscal_year": 2021,
+    "kind": "budget_total",
+    "scope": "school",
+    "statement": "The FY21 school budget at a 1.58 increase was approved at town meeting.",
+    "status": "voted",
+    "t": 2069,
+    "who": "the business administrator"
+   },
+   {
+    "amount_as_heard": "a million dollars",
+    "fiscal_year": 2021,
+    "kind": "state_aid",
+    "scope": "town",
+    "statement": "Finance committee has set aside funds for a 10 percent state aid cut, and would need a larger surplus for a 20 percent cut.",
+    "status": "announced",
+    "t": 6499,
+    "who": "a member reporting for finance committee"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "state aid",
+    "condition": "if state aid cut is larger than anticipated",
+    "fiscal_year": 2021,
+    "prediction": "Layoffs and further school cuts if state aid is cut by 20 percent.",
+    "scope": "school",
+    "t": 6810,
+    "who": "a resident"
+   },
+   {
+    "about": "strategy plan initiatives",
+    "condition": null,
+    "fiscal_year": 2021,
+    "prediction": "Budget challenges will slow the strategy plan's progress.",
+    "scope": "school",
+    "t": 6227,
+    "who": "the superintendent"
+   }
+  ]
+ },
+ "video_id": "uxmBg8fG_6A",
+ "video_url": "https://www.youtube.com/watch?v=uxmBg8fG_6A",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-11-03T20:01:41Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

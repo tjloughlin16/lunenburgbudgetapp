@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-08-18",
  "docid": "5209",
@@ -12,32 +12,370 @@
  },
  "votes": [
   {
-   "motion": "Transfer all alcohol on-premise license, temporary outdoor premises extension through November 1, 2020, and common victualler license to Embers Lounge & Restaurant LLC d/b/a Embers Pizzeria",
+   "motion": "Approve the transfer of the all alcohol on-premise license, the temporary extension of the outdoor premises through November 1st, and the common victualler license for Embers Lounge & Restaurant LLC d/b/a Embers Pizzeria.",
    "moved_by": "J. Marino",
    "seconded_by": "T. Dwyer",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: j. marino 2nd: t. dwyer to approve the transfer of the all alcohol onpremise license, the temporary extension of the outdoor premises through november 1st and the common victualler license vote: ms. adams-aye, mr. marino-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. alonzo aye"
+   "quote": "motion: j. marino 2nd: t. dwyer to approve the transfer of the all alcohol onpremise license"
   },
   {
-   "motion": "Approve renewal of Earth Removal Permits for PJ Keating Company and Dan and Jean Proctor",
+   "motion": "Earth removal permit renewals (PJ Keating Company Permits #15, 16, 17, 27, 30, 57; Dan and Jean Proctor Permit #60); the motion text is not printed in the minutes.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed 4-1",
+   "outcome": "4-1 as printed; result not stated",
    "procedural": false,
-   "quote": "vote: mr. marino-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. alonzo-aye, ms. adams- nay"
+   "quote": "vote: mr. marino-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. alonzo-aye"
   },
   {
-   "motion": "Enter Executive Session to discuss litigation strategy and adjourn after exiting Executive Session",
+   "motion": "That the Select Board meet in the Eagle House community meeting room once it starts meeting again, to enhance accessibility.",
+   "moved_by": "K. Adams",
+   "seconded_by": "J. Marino",
+   "outcome": "failed 2-3",
+   "procedural": false,
+   "quote": "motion: k. adams 2\"°: j. marino once the select board starts meeting again that we meet in the eagle house community meeting room"
+  },
+  {
+   "motion": "Approve the September election primary warrant with the time amended to 7 a.m. to 8 p.m.",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "T. Dwyer",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "motion: m. jeffreys 2n°: t. dwyer to approve the september election primary with the time amended to 7 a.m. to 8 p.m."
+  },
+  {
+   "motion": "Enter into Executive Session under M.G.L. c. 30, Section 21, Paragraph 3 (litigation strategy), and adjourn after exiting Executive Session.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion to enter into executive session and to adjourn after exiting executive session: pursuant to m.g.l. c. 30, section 21, paragraph 3, to discuss strategy with respect to litigation, where an open meeting may have a detrimental effect on the government's litigating position and the chair so declares, namely aldrich, et al. v. board of selectmen of the town of lunenburg, et al., worcester superior court docket no. 1985cv00647, lunenburg bd. of health v. gonynor, et al., central housing court docket no. 04h85cv000229, massey v. ===",
-   "quote_taken_from_text": true
+   "quote": "motion to enter into executive session and to adjourn after exiting executive session:"
   }
  ],
- "dropped_unquoted": 2,
- "note": "OCR-extracted text (macOS Vision). Earth Removal Permits vote has no explicit motion statement—only vote count is shown. Executive Session vote shows only \"aye\" with no complete vote count recorded.",
- "cost_usd": 0.1616225
+ "dropped_unquoted": 0,
+ "note": "OCR text from scanned pages; some words garbled (for example \"2n°\", \"onpremise\"). The earth removal vote shows no printed motion and no moved/seconded, and the page break cuts it off, so its result is not stated. The executive session motion's roll call is truncated on page 9 and the mover is not printed. The meeting adjourned at 9:00 p.m. with no printed motion. The signature block names two different people (Claire M Peterson / Elaine M. Peterson). Member roles are not printed for Dwyer and Marino.",
+ "cost_usd": 0.010688220000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Select Board member (no title printed)",
+   "status": "present",
+   "quote": "adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Select Board member (no title printed)",
+   "status": "present",
+   "quote": "adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux, casey burlingame, building commissioner;"
+  },
+  {
+   "name": "Casey Burlingame",
+   "role": "Building Commissioner",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux, casey burlingame, building commissioner;"
+  },
+  {
+   "name": "James Xarras",
+   "role": "applicant",
+   "status": "present",
+   "quote": "james xarras, margot xarras, ken ricker, dan proctor, attorney rob bowen"
+  },
+  {
+   "name": "Margot Xarras",
+   "role": "applicant",
+   "status": "present",
+   "quote": "margot and james xarras, applicants, and ken ricker, current owner were present for the"
+  },
+  {
+   "name": "Ken Ricker",
+   "role": "current owner",
+   "status": "present",
+   "quote": "ken ricker, current owner were present for the hearing."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "applicant, Earth Removal Permit #60 (1325 Mass Ave)",
+   "status": "present",
+   "quote": "mr. proctor stated the seeding will be done before the end of september."
+  },
+  {
+   "name": "Rob Bowen",
+   "role": "Attorney, representing Mr. Proctor",
+   "status": "present",
+   "quote": "james xarras, margot xarras, ken ricker, dan proctor, attorney rob bowen"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representing the TCP Building Design Committee",
+   "status": "present",
+   "quote": "greg roy, 105 chestnut street, representing the tcp building design committee, announced"
+  },
+  {
+   "name": "Pam Anzaldi",
+   "role": "resident, 70 Townsend Harbor Road",
+   "status": "present",
+   "quote": "pam anzaldi, 70 townsend harbor road, questioned the height on the left side of the berm"
+  },
+  {
+   "name": "Clifford Smith",
+   "role": "Ms. Anzaldi's husband",
+   "status": "present",
+   "quote": "stated on a number of occasions it was agreed to bring the berm up to 6 feet."
+  },
+  {
+   "name": "Timothy Willsmer",
+   "role": "Fence Viewer appointment candidate, 762 Northfield Road",
+   "status": "absent",
+   "quote": "mr. willsmer was not present for the interview."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "not stated",
+   "quote": "land use director adam burney with their recommendations for the renewals of the permits."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Select Board liaison assignments: Mr. Marino for the Finance Committee, Mr. Jeffreys stays with COA and the Library, Mr. Dwyer for the Planning Board, Mr. Alonzo for the School Committee; to revisit if another board comes up.",
+   "quote": "mr. marino volunteered for the finance committee, mr. jeffreys wanted to remain with coa and the library. mr. dwyer will cover planning board."
+  },
+  {
+   "decision": "Fence Viewer appointment of Timothy Willsmer tabled at Town Manager's request until she consults town counsel on the responsibilities of the appointment.",
+   "quote": "ms. lemieux requested tabling until she consulted town counsel about the responsibilities of this appointment."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "State quarantine enforcement penalty (COVID-19 travel order)",
+   "what_was_recorded": "The Town Manager's COVID-19 update notes a fine for failing to comply with the state's travel quarantine or testing requirement.",
+   "figures_as_printed": [
+    "$500 fine per day"
+   ],
+   "quote": "failure to comply may result in a $500 fine per day."
+  },
+  {
+   "topic": "DPW staffing shortage and pay",
+   "what_was_recorded": "The DPW reports three Equipment Operator/Laborer vacancies unfilled, attributed partly to the low rate of pay.",
+   "figures_as_printed": [],
+   "quote": "primarily due to the lack of qualified candidates and the low rate of pay"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rob Bowen",
+   "stated_role": "1686 Massachusetts Ave.",
+   "topic": "Compliment to Town Manager Lemieux",
+   "quote": "wanted to compliment town manager lemieux when she attended a chamber of commerce session"
+  },
+  {
+   "speaker": "Greg Roy",
+   "stated_role": "representing the TCP Building Design Committee",
+   "topic": "TCP Building Design Committee meetings",
+   "quote": "announced they have some upcoming meetings on august 31, september 10 and 21 at 6:00 p.m. via zoom."
+  },
+  {
+   "speaker": "Pam Anzaldi",
+   "stated_role": "70 Townsend Harbor Road",
+   "topic": "Earth removal berm height at 1325 Mass Ave",
+   "quote": "questioned the height on the left side of the berm closest to her property is still at about 3½ feet."
+  },
+  {
+   "speaker": "Clifford Smith",
+   "stated_role": "Ms. Anzaldi's husband",
+   "topic": "Agreed berm height of 6 feet",
+   "quote": "stated on a number of occasions it was agreed to bring the berm up to 6 feet."
+  },
+  {
+   "speaker": "Ms. Adams",
+   "stated_role": "Clerk",
+   "topic": "Apology for demeanor at meeting",
+   "quote": "ms. adams apologized for her demeanor this evening because she sensed negativity from the board members."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: Embers Lounge license transfer, temporary premises extension, and common victualler license",
+   "resolution": "approved 5-0",
+   "quote": "the lunenburg licensing authority will hold a public hearing on tuesday, august 18, 2020 at 7:05",
+   "tags": [
+    "liquor license",
+    "public hearing",
+    "Embers Pizzeria"
+   ]
+  },
+  {
+   "topic": "Earth removal permit renewals (PJ Keating; Dan and Jean Proctor, 1325 Mass Ave)",
+   "resolution": "vote 4-1 recorded; result not stated",
+   "quote": "mr. alonzo referred the board to the memos from both mr. burlingame and land use director",
+   "tags": [
+    "earth removal",
+    "berm",
+    "Mass Ave"
+   ]
+  },
+  {
+   "topic": "Interviews/appointments: Fence Viewer, Timothy Willsmer",
+   "resolution": "tabled pending town counsel advice",
+   "quote": "ms. lemieux requested tabling until she consulted town counsel about the responsibilities of this appointment.",
+   "tags": [
+    "appointments",
+    "fence viewer"
+   ]
+  },
+  {
+   "topic": "ACO Quarterly Report (April - June 2020)",
+   "resolution": "received, no action",
+   "quote": "there were no questions regarding this report.",
+   "tags": [
+    "animal control",
+    "police"
+   ]
+  },
+  {
+   "topic": "Holding public meetings at other buildings",
+   "resolution": "motion to meet at Eagle House failed 2-3",
+   "quote": "once the select board starts meeting again that we meet in the eagle house community meeting room to enhance accessibility",
+   "tags": [
+    "accessibility",
+    "ADA",
+    "meeting location"
+   ]
+  },
+  {
+   "topic": "Election warrant for 2020 State Primary",
+   "resolution": "approved with election time amended to 7 a.m. to 8 p.m.",
+   "quote": "mr. alonzo stated the town clerk has submitted an election warrant for the september primary",
+   "tags": [
+    "elections",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Approval of minutes, warrants, action items",
+   "resolution": "none to act on",
+   "quote": "4. approval of minutes- there were none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Committee reports (Select Board liaison reports, TCP Building Design Committee)",
+   "resolution": "informational, no action",
+   "quote": "he reported the tcp building design committee (tcpbdc) met last night with the",
+   "tags": [
+    "TCP Building",
+    "committees",
+    "Council on Aging"
+   ]
+  },
+  {
+   "topic": "Reinstating Select Board liaisons",
+   "resolution": "liaisons assigned",
+   "quote": "mr. marino volunteered for the finance committee, mr. jeffreys wanted to remain with coa and the library.",
+   "tags": [
+    "liaisons",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Town Manager report and COVID-19 update (vacancies, Mulpus Brook rename request, fall elections, 671 West Street land request, special town meeting, DPW staffing, schools, state orders)",
+   "resolution": "informational, no action",
+   "quote": "town manager report and covid-19 update",
+   "tags": [
+    "town manager",
+    "COVID-19",
+    "vacancies",
+    "land sale",
+    "DPW",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Public comment and executive session",
+   "resolution": "entered executive session; meeting adjourned 9:00 p.m.",
+   "quote": "motion to enter into executive session and to adjourn after exiting executive session:",
+   "tags": [
+    "executive session",
+    "litigation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Application packet (Embers Lounge & Restaurant LLC license transfer)",
+   "where": "list",
+   "quote": "mr. alonzo directed the board to the documents in the application packet."
+  },
+  {
+   "name": "Memos from Mr. Burlingame and Land Use Director Adam Burney with recommendations on earth removal permit renewals",
+   "where": "list",
+   "quote": "mr. alonzo referred the board to the memos from both mr. burlingame and land use director"
+  },
+  {
+   "name": "Election warrant for the September 2020 State Primary (submitted by Town Clerk)",
+   "where": "text",
+   "quote": "mr. alonzo stated the town clerk has submitted an election warrant for the september primary"
+  },
+  {
+   "name": "ACO Quarterly Report (April - June 2020)",
+   "where": "text",
+   "quote": "aco quarterly report (april - june 2020)"
+  },
+  {
+   "name": "Voter Options Guide for the fall 2020 Elections",
+   "where": "text",
+   "quote": "the town clerk's office has posted a comprehensive voter options guide for the fall 2020"
+  },
+  {
+   "name": "TCP Building environmental report (276 pages)",
+   "where": "text",
+   "quote": "there is an environmental report that is 276 pages long"
+  }
+ ],
+ "tags": [
+  "liquor license",
+  "earth removal",
+  "public meeting location",
+  "elections",
+  "liaisons",
+  "COVID-19",
+  "TCP Building",
+  "town manager report",
+  "DPW staffing",
+  "executive session",
+  "2020"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. alonzo directed the board to the documents in the application packet."
+ },
+ "dropped_unquoted_by_field": {}
 }

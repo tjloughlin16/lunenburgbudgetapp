@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2019-10-24",
  "docid": "5785",
@@ -12,13 +12,189 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting at '/:10 pm' (time garbled in OCR).",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "to adjourn the meeting at /:10 pm respectfully submitted, phyllis luck, chair swtf vice chair, bos vote: all in ravor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Scanned text with minor OCR artifacts (/:10 for time, ravor for favor); vote is fully readable",
- "cost_usd": 0.09467149999999999
+ "note": "OCR text from a scan. Page 1 ends mid-sentence (\"lessons learned,\") and page 2 holds only the adjournment and signature block, so the minutes appear incomplete; any discussion or motions on the missing text cannot be recorded. The adjournment time is garbled (\"/:10 pm\") and the vote line reads \"All in ravor\" (OCR of \"favor\"); the mover and seconder are not printed. The text names \"Heather Lemieux\" as sender of the annual report and \"Town Manager Lemieux\" separately; I did not assume they are the same person. Signature block reads \"Vice Chair, BOS\" with no clear name link. No dollar figures appear.",
+ "cost_usd": 0.004365620000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Phyllis Luck",
+   "role": "Chair SWTF",
+   "status": "present",
+   "quote": "phyllis asked that it also be placed in a more prominent setting, such as the town's facebook page."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "land use director burney also reported that he'd updated the swtf survey"
+  },
+  {
+   "name": "Heather Lemieux",
+   "status": "not stated",
+   "quote": "heather lemieux had sent via email the annual report for the municipal separate storm sewer"
+  },
+  {
+   "name": "Lemieux",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "town manager lemieux forwarded earlier today, as requested, a link to copies of the public education"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Adam Burney will add the MS4 Annual Report to the SWTF website by the end of the month.",
+   "quote": "adam burney will add this document to the swtf website by the end of this month"
+  },
+  {
+   "decision": "SWTF members will review the Public Education and Outreach materials and discuss their usage at the next SWTF meeting.",
+   "quote": "swtf members will review these materials and will discuss usage of same at the next swtf meeting."
+  },
+  {
+   "decision": "Phyllis will ask Town Manager Lemieux to send a Town Wide email encouraging recipients to fill out the survey online or via hard copy.",
+   "quote": "phyllis will ask town manager lemieux to send out a town wide email to encourage recipients"
+  },
+  {
+   "decision": "The survey is to be available as a hand out at the November Town Meeting; Phyllis will work with Adam Burney to make this happen.",
+   "quote": "the swtf agreed that the survey should be available as a hand out at the november town meeting."
+  },
+  {
+   "decision": "It was determined that it is premature to make a presentation to the November Town Meeting on MS4 Permit compliance.",
+   "quote": "it was determined that it is premature to make a presentation to the november town meeting on ms4 permit compliance."
+  },
+  {
+   "decision": "Phyllis Luck will reach out to Town Personnel to try to set up a meeting with the Town Manager, Land Use Director, and DPW Director on Year Three projects and budget, targeting November 14 or November 21, 5:30 to 7.",
+   "quote": "phyllis luck will reach out to town personnel to try to make"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "MS4 Annual Report submitted",
+   "resolution": "noted; Burney to post to website",
+   "quote": "adam burney will add this document to the swtf website by the end of this month",
+   "tags": [
+    "MS4 permit",
+    "annual report",
+    "website"
+   ]
+  },
+  {
+   "topic": "Public Education and Outreach materials from CEI",
+   "resolution": "members to review; discuss at next meeting",
+   "quote": "swtf members will review these materials and will discuss usage of same at the next swtf meeting.",
+   "tags": [
+    "public education",
+    "outreach",
+    "CEI"
+   ]
+  },
+  {
+   "topic": "Fall MS4 message posting",
+   "resolution": "noted; Facebook placement requested",
+   "quote": "adam burney reported that the ms4 compliance fall message has been posted on the swtf website.",
+   "tags": [
+    "outreach",
+    "social media",
+    "cable access"
+   ]
+  },
+  {
+   "topic": "SWTF public survey",
+   "resolution": "Town-wide email requested; survey as Town Meeting hand out agreed",
+   "quote": "the swtf agreed that the survey should be available as a hand out at the november",
+   "tags": [
+    "survey",
+    "outreach",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Dry weather screening progress",
+   "resolution": "noted; Year Two goal difficult",
+   "quote": "adam burney reported that one day of dry weather screening has been accomplished.",
+   "tags": [
+    "dry weather screening",
+    "illicit discharge",
+    "progress"
+   ]
+  },
+  {
+   "topic": "Year Three projects and budget meeting with Town officials",
+   "resolution": "Luck to arrange meeting; dates targeted",
+   "quote": "november 14 and november 21 from",
+   "tags": [
+    "Year Three",
+    "budget",
+    "DPW",
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Presentation at November Town Meeting",
+   "resolution": "determined premature; no presentation",
+   "quote": "it was determined that it is premature to make a presentation to the november town meeting on ms4",
+   "tags": [
+    "Town Meeting",
+    "MS4 permit",
+    "stormwater utility"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "quote": "to adjourn the meeting at /:10 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Annual Report for the Municipal Separate Storm Sewer System (MS4) Permit, signed by Heather Lemieux, dated September 18, 2019",
+   "where": "list",
+   "quote": "annual report for the municipal separate storm sewer system (ms4) permit, signed by her, dated september 18, 2019"
+  },
+  {
+   "name": "Public Education and Outreach materials (forwarded by Comprehensive Environmental Inc. (CEI))",
+   "where": "list",
+   "quote": "a link to copies of the public education and outreach materials (attached)"
+  },
+  {
+   "name": "SWTF survey (updated with colored Town Logo stamp)",
+   "where": "text",
+   "quote": "updated the swtf survey to include a colored town logo stamp"
+  },
+  {
+   "name": "MS4 compliance fall message",
+   "where": "text",
+   "quote": "the ms4 compliance fall message has been posted on the swtf website"
+  }
+ ],
+ "tags": [
+  "MS4 permit",
+  "stormwater",
+  "public outreach",
+  "public survey",
+  "dry weather screening",
+  "Town Meeting",
+  "Year Three budget",
+  "annual report"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "heather lemieux had sent via email the annual report"
+ },
+ "dropped_unquoted_by_field": {}
 }

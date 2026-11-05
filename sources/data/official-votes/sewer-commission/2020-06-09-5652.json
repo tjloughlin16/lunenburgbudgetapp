@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2020-06-09",
  "docid": "5652",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Approve the document and authorize the Chairman to sign and have notarized the 1170 Mass Ave Betterment document on behalf of the Commission",
+   "motion": "Approve the 1170 Mass Ave Betterment document and authorize the Chairman to sign and have it notarized on behalf of the Commission.",
    "moved_by": "Carl L.",
    "seconded_by": "Brett R.",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: carl l. second: brett r. to approve the document and authorize the chairman to sign and have notarized the 1170 mass ave betterment document on behalf of the commission. vote: carl-aye, john-aye, mike n-aye, brett-aye and dave-aye."
+   "quote": "motion: carl l. second: brett r. to approve the document and authorize the chairman to sign and have notarized the 1170 mass ave betterment document on behalf of the commission."
   },
   {
-   "motion": "Approve the abatement on the 1170 Mass Ave property for $4,122.79",
+   "motion": "Approve the abatement on the 1170 Mass Ave property for $4,122.79.",
    "moved_by": "Dave M.",
    "seconded_by": "John R.",
    "outcome": "passed 4-0-1",
    "procedural": false,
-   "quote": "motion: dave m. second: john r. to approve the abatement on the 1170 mass ave property for $4,122.79. vote: john-aye, mike n-aye, brett-aye and dave-aye and carl abstained"
+   "quote": "motion: dave m. second: john r. to approve the abatement on the 1170 mass ave property for $4,122.79."
   },
   {
-   "motion": "Approve the Q4 Commitment for $206,382.29",
+   "motion": "Approve the Q4 Commitment for $206,382.29.",
    "moved_by": "John R.",
    "seconded_by": "Mike N.",
    "outcome": "passed 5-0",
@@ -36,7 +36,7 @@
    "quote": "motion: john r. second: mike n. to approve the q4 commitment for $206,382.29. vote: carl-aye, john-aye, mike-aye, brett-aye, dave-aye"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 6:51pm.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
    "outcome": "passed 4-0",
@@ -44,7 +44,415 @@
    "quote": "motion: john r. to adjourn: 6:51pm second: brett r. vote: john-aye, mike-aye, brett-aye, dave-aye"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1250735
+ "dropped_unquoted": 1,
+ "note": "Text is an OCR extraction with fragments: page 1 begins mid-sentence (the opening report on Irrigation Meter and Town Meeting is cut off) and page 2 begins mid-sentence. Attendance is not stated as a roll call; statuses are inferred from speaking and voting. Name ambiguity: the chair is printed only as \"Dave\" and as \"Dave M.\" in motions, while \"David Moering\" (W&C) is printed as \"Dave Moering\" in the text; I kept the names as printed. \"Mike N.\" is announced as Mike Nault. \"Mike D.\" appears once and is not otherwise identified. Abatement vote shows Carl abstaining (4-0-1). Public comment sections are labelled by the minutes but the speakers appear to be commissioners and staff; stated roles are not printed. No vote recorded on the write-in campaign or the RFP; the Visuals/Handouts list is the only documents list.",
+ "cost_usd": 0.010017120000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl L.",
+   "role": "Commissioner (as printed in motions and votes)",
+   "status": "present",
+   "quote": "motion: carl l. second: brett r. to approve the document and authorize the chairman to sign and have notarized"
+  },
+  {
+   "name": "John R.",
+   "role": "Commissioner (as printed in motions and votes)",
+   "status": "present",
+   "quote": "motion: john r. second: mike n. to approve the q4 commitment for $206,382.29."
+  },
+  {
+   "name": "Mike N.",
+   "role": "Commissioner; announced as Mike Nault, whose last meeting this was",
+   "status": "present",
+   "quote": "mike n. said he is always ready to come back if needed."
+  },
+  {
+   "name": "Brett R.",
+   "role": "Commissioner (as printed in motions and votes)",
+   "status": "present",
+   "quote": "brett noted that per an email from heather (town manager) voters need to write in name and address on the ballot."
+  },
+  {
+   "name": "Dave M.",
+   "role": "Chair (as printed in votes; the minutes say only 'Dave')",
+   "status": "present",
+   "quote": "vote: carl-aye, john-aye, mike n-aye, brett-aye and dave-aye."
+  },
+  {
+   "name": "Mike D.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mike d. agreed about the importance of the maintenance reports."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated (reports to the Commission on the RFP, budget and billing)",
+   "status": "present",
+   "quote": "barb reported that the document is final, and that a vote is needed to have either the full commission sign"
+  },
+  {
+   "name": "Jack",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jack added that it is important to review counsel's updated rfp so they can bring the new vendors on board."
+  },
+  {
+   "name": "Lauren Hertel",
+   "role": "representing Woodward & Curran (W&C)",
+   "status": "present",
+   "quote": "lauren hertel, kellie messer, scott medeiros, peter jandrisevits and david moering, woodward & curran"
+  },
+  {
+   "name": "Kellie Messer",
+   "role": "representing Woodward & Curran (W&C)",
+   "status": "present",
+   "quote": "kellie messer shared a power point presentation of the project and reviewed the project schedule."
+  },
+  {
+   "name": "Scott Medeiros",
+   "role": "representing Woodward & Curran (W&C); minutes also abbreviate as Scott M.",
+   "status": "present",
+   "quote": "lauren hertel, kellie messer, scott medeiros, peter jandrisevits and david moering, woodward & curran"
+  },
+  {
+   "name": "Peter Jandrisevits",
+   "role": "representing Woodward & Curran (W&C)",
+   "status": "present",
+   "quote": "peter jandrisevits suggested there may have been only 1 pump running and suggested the pumps need to be inspected."
+  },
+  {
+   "name": "David Moering",
+   "role": "representing Woodward & Curran (W&C); minutes also print as Dave Moering",
+   "status": "present",
+   "quote": "dave moering added that the charts were developed to look at trends and not to measure the i/l."
+  },
+  {
+   "name": "Jane t landry",
+   "role": "Minutes Clerk",
+   "status": "not stated",
+   "quote": "jane t landry minutes clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed to pass over the 4th sewer town meeting article regarding FY20, on Barb's suggestion.",
+   "quote": "suggested passing over the 4th sewer article regarding fy20 and the commission agreed."
+  },
+  {
+   "decision": "Jack and Barb are to review the updated RFP for Station Operations & Maintenance; Commissioners are to send any changes to Barb.",
+   "quote": "dave asked jack and barb to review it."
+  },
+  {
+   "decision": "Commissioners should send any RFP changes to Barb, and the RFP discussion will be on the next agenda for action.",
+   "quote": "commissioners should send any changes to barb."
+  },
+  {
+   "decision": "The Commission will submit suggestions of companies to contact so the RFP reaches the largest number of companies.",
+   "quote": "will submit suggestions of companies to contact."
+  },
+  {
+   "decision": "Dave and Mike N. will meet with Leominster after the Commission receives the final Woodward & Curran report, on the Leominster IMA billing changeover to flow meters.",
+   "quote": "dave and mike n. will be meeting with leominster after the commission receives the final report from woodward & curran."
+  },
+  {
+   "decision": "The write-in discussion will be added to the agenda for the next meeting.",
+   "quote": "commission will add the discussion to the agenda for next meeting."
+  },
+  {
+   "decision": "The next meeting is set for June 30 with election of officers; Jack is asked to help with it, and Barb is asked to have the agenda in order before her vacation.",
+   "quote": "the next meeting will be june 30t and will be election of officers."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Irrigation meter program fees",
+   "what_was_recorded": "Irrigation Meter program fees were due 6/4 and about 50% have been received; participants must pay the program fee to get a credit on their August invoice. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the irrigation meter program fees were due 6/4 and she has received about 50% of them."
+  },
+  {
+   "topic": "Late payment interest and penalties",
+   "what_was_recorded": "Payments due 6/29 or interest and penalties apply back to due dates; interest calculated back to 3/23 for Q3 and to 6/23 for Q4. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "carl asked to clarity that payments need to be made by 6/29 or there will be interest and penalties applied"
+  },
+  {
+   "topic": "1170 Mass Ave abatement",
+   "what_was_recorded": "The Commission approved an abatement on the 1170 Mass Ave property.",
+   "figures_as_printed": [
+    "$4,122.79"
+   ],
+   "quote": "to approve the abatement on the 1170 mass ave property for $4,122.79."
+  },
+  {
+   "topic": "FY20 buffer between revenue and expense",
+   "what_was_recorded": "Barb reported about a $100,000 buffer in the remaining FY20 budget, which uses committed revenue, while the Accountant's office goes by collections, so the buffer is less per the Munis billing system; enough to cover FY20 expenses.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "barb noted that the $100,000 buffer is using committed revenue, while the accountant's office goes"
+  },
+  {
+   "topic": "Legal fees transferred to the town",
+   "what_was_recorded": "Carl asked about the amount transferred for legal fees; Barb confirmed $5k was transferred to the town and will verify how much has been spent so far.",
+   "figures_as_printed": [
+    "$5k"
+   ],
+   "quote": "barb confirmed that the $5k was transferred to the town and will verify how much has been spent so tar."
+  },
+  {
+   "topic": "Investment income",
+   "what_was_recorded": "Investment income is higher than expected in FY20, but it is based on the stock market. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "investment income is higher than expected in fy20, but it is based on the stock market."
+  },
+  {
+   "topic": "Leominster connection fee expense",
+   "what_was_recorded": "Barb said there may be one more connection fee expense for Leominster. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "she added that she may have 1 more connection fee expense for leominster."
+  },
+  {
+   "topic": "Pump station maintenance cost (April, new vendor)",
+   "what_was_recorded": "Barb responded that the billed amount for pump station maintenance in April with the new vendor was around $6000.",
+   "figures_as_printed": [
+    "$6000"
+   ],
+   "quote": "stating that it was around $6000."
+  },
+  {
+   "topic": "Q4 Commitment",
+   "what_was_recorded": "Barb requested approval of the Q4 Commitment, which the Commission approved.",
+   "figures_as_printed": [
+    "$206,382.29"
+   ],
+   "quote": "barb requested that the commission approve the q4 commitment for $206,382.29."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Legal fees transferred to the town",
+   "amount_as_printed": "$5k",
+   "outcome": "transferred to the town, per Barb; spending to be verified",
+   "quote": "barb confirmed that the $5k was transferred to the town and will verify how much has been spent so tar."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Carl",
+   "stated_role": "",
+   "topic": "payment deadline and interest",
+   "quote": "carl asked to clarity that payments need to be made by 6/29 or there will be interest and penalties applied going back to due dates."
+  },
+  {
+   "speaker": "Barb",
+   "stated_role": "",
+   "topic": "interest calculation dates",
+   "quote": "barb replied that interest will be calculated back to 3/23 for q3 and to 6/23 for q4."
+  },
+  {
+   "speaker": "Brett",
+   "stated_role": "",
+   "topic": "write-in ballot requirements",
+   "quote": "brett noted that per an email from heather (town manager) voters need to write in name and address on the ballot."
+  },
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "thanks to donut day volunteers and first responders",
+   "quote": "dave also thanked everyone who turned out to support the salvation army on the donut days."
+  },
+  {
+   "speaker": "John",
+   "stated_role": "",
+   "topic": "pump station report review",
+   "quote": "john emphasized the importance of having someone review the reports from pump stations since they point out maintenance issues."
+  },
+  {
+   "speaker": "Mike N.",
+   "stated_role": "",
+   "topic": "availability to return",
+   "quote": "mike n. said he is always ready to come back if needed."
+  },
+  {
+   "speaker": "Mike D.",
+   "stated_role": "",
+   "topic": "maintenance reports",
+   "quote": "mike d. agreed about the importance of the maintenance reports."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements and opening report (Irrigation Meter policy, Town Meeting, Town Election)",
+   "resolution": "no action",
+   "quote": "dave announced that town meeting will be 6/13 at the high school starting at 9am.",
+   "tags": [
+    "announcements",
+    "town meeting",
+    "irrigation meter"
+   ]
+  },
+  {
+   "topic": "Public comment (first)",
+   "resolution": "no action",
+   "quote": "carl asked to clarity that payments need to be made by 6/29 or there will be interest and penalties applied",
+   "tags": [
+    "public comment",
+    "payments",
+    "interest"
+   ]
+  },
+  {
+   "topic": "Appointments: Woodward & Curran I/I third-party review interim presentation",
+   "resolution": "presented; discussed; final report expected about two months late; no action recorded",
+   "quote": "woodward & curran (w&c) - inflow/infiltration (//i) 3rd party review interim presentation",
+   "tags": [
+    "inflow infiltration",
+    "Woodward & Curran",
+    "pump stations",
+    "flow data"
+   ]
+  },
+  {
+   "topic": "RFP status: Station Operations & Maintenance",
+   "resolution": "discussed; to next agenda for action",
+   "quote": "rfp status - station operations & maintenance - barb had just received the rfp from town counsel and will send it to commissioners.",
+   "tags": [
+    "RFP",
+    "operations and maintenance",
+    "vendor"
+   ]
+  },
+  {
+   "topic": "1170 Mass Ave Betterment document and abatement",
+   "resolution": "approved",
+   "quote": "1170 mass ave betterment document & abatement - barb reported that the document is final",
+   "tags": [
+    "abatement",
+    "betterment",
+    "1170 Mass Ave"
+   ]
+  },
+  {
+   "topic": "Town Meeting sewer articles",
+   "resolution": "4th sewer article passed over",
+   "quote": "town meeting - sewer articles - barb reported that the commission has about $100,000 buffer",
+   "tags": [
+    "town meeting",
+    "sewer articles",
+    "FY20 budget"
+   ]
+  },
+  {
+   "topic": "YTD FY20 budget",
+   "resolution": "discussed; no action",
+   "quote": "ytd fy20 budget - barb noted that the $100,000 buffer is using committed revenue",
+   "tags": [
+    "FY20 budget",
+    "revenue",
+    "expenses",
+    "Munis"
+   ]
+  },
+  {
+   "topic": "Leominster IMA billing changeover to flow meters",
+   "resolution": "Dave and Mike N. to meet with Leominster after W&C final report",
+   "quote": "leominster ima billing changeover to flow meters - dave and mike n. will be meeting with leominster",
+   "tags": [
+    "Leominster",
+    "IMA",
+    "flow meters",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Q4 Commitment",
+   "resolution": "approved",
+   "quote": "q4 commitment - barb requested that the commission approve the q4 commitment for $206,382.29.",
+   "tags": [
+    "commitment",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Town Election and write-ins",
+   "resolution": "discussed; write-in discussion to next agenda; Mike N. last meeting",
+   "quote": "town election-dave referenced the email regarding write-ins sent out to the commission today",
+   "tags": [
+    "town election",
+    "write-in",
+    "resignation"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "no action; next meeting June 30 for election of officers",
+   "quote": "public comment-john emphasized the importance of having someone review the reports from pump stations",
+   "tags": [
+    "public comment",
+    "pump stations",
+    "next meeting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Woodard & Curran - Power Point presentation on Third Party I/I Review",
+   "where": "list",
+   "quote": "visuals/handouts: woodard & curran - power point presentation on third party i/i review"
+  },
+  {
+   "name": "1170 Mass Ave Memorandum of Agreement document",
+   "where": "list",
+   "quote": "1170 mass ave memorandum of agreement document fy20 ytd budget"
+  },
+  {
+   "name": "FY20 YTD Budget",
+   "where": "list",
+   "quote": "1170 mass ave memorandum of agreement document fy20 ytd budget"
+  },
+  {
+   "name": "Station Operations & Maintenance RFP (from Town Counsel)",
+   "where": "text",
+   "quote": "rfp status - station operations & maintenance - barb had just received the rfp from town counsel and will send it to commissioners."
+  },
+  {
+   "name": "Weston & Sampson 2011 metering report",
+   "where": "text",
+   "quote": "kellie noted that the weston & sampson 2011 metering report recommended looking at mass ave #1 for further evaluation."
+  },
+  {
+   "name": "NOAA rainfall data from 2017",
+   "where": "text",
+   "quote": "they pulled noaa rainfall data from 2017 and compared it to the weekly pump station totals."
+  },
+  {
+   "name": "Excel tool developed for the Commission",
+   "where": "text",
+   "quote": "the excel tool, developed for the commission, cannot be fully vetted without reliable data and will be modified"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "inflow and infiltration",
+  "Woodward & Curran",
+  "pump stations",
+  "RFP",
+  "town meeting",
+  "town election",
+  "abatement",
+  "Q4 commitment",
+  "Leominster IMA",
+  "FY20 budget",
+  "legal fees"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "visuals/handouts:"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

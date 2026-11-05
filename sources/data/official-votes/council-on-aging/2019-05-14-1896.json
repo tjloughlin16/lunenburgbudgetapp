@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2019-05-14",
  "docid": "1896",
@@ -12,31 +12,334 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the April 9, 2019 meeting",
+   "motion": "Approve the minutes of the April 9, 2019 meeting.",
    "moved_by": "Ms. Lincoln",
-   "seconded_by": "Ms. Dwyer",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "ms. lincoln motioned to approve the minutes from the april 9, 2019 meeting. ms. dwyer seconded. on vote, motion carried unanimously."
+   "quote": "ms. lincoln motioned to approve the minutes from the april 9, 2019 meeting. ms. dwyer seconded. on vote, motion carried unanimously.",
+   "seconded_by": "Ms. Dwyer"
   },
   {
-   "motion": "Nominate Ms. Lincoln for COA Chairperson and Ms. Rabbitt as COA Vice Chairperson",
+   "motion": "Nominate Ms. Lincoln for COA Chairperson and Ms. Rabbitt for COA Vice Chairperson, to be voted on at the next COA meeting.",
    "moved_by": "Ms. DiGiacomo",
-   "seconded_by": "Mr. McNally",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "ms. digiacomo nominated ms. lincoln for coa chairperson, and ms. rabbitt as coa vice chairperson to be voted on at the next meeting of the coa, mr. mcnally seconded. on vote, motion carried unanimously."
+   "quote": "mr. mcnally seconded. on vote, motion carried unanimously.",
+   "seconded_by": "Mr. McNally"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 10:23 a.m.",
    "moved_by": "Ms. DiGiacomo",
-   "seconded_by": "Ms. Dwyer",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "ms. digiacomo moved to adjourn the meeting at 10:23 a.m., ms. dwyer seconded. on vote, motion carried unanimously."
+   "quote": "ms. digiacomo moved to adjourn the meeting at 10:23 a.m., ms. dwyer seconded. on vote, motion carried unanimously.",
+   "seconded_by": "Ms. Dwyer"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clearly legible. Three votes recorded, all passed unanimously.",
- "cost_usd": 0.0836335
+ "note": "Text is a clean extraction, not a scan. Public comment heading appears with nothing printed under it, so no public comment is recorded. The minutes do not print a documents list or name any documents. Ambiguities: the chair is printed as \"Chairperson Pete Lincoln\" but several references read \"Ms. Lincoln\" (Deb Lincoln is also listed present) and \"Mr. Lincoln\", so I kept names as printed without assigning which Lincoln each reference means. The officer nomination is recorded as a motion carried unanimously, but the text says the nominations are to be voted on at the next meeting; I recorded it as printed. The July meeting was proposed and no vote is recorded. The MOC lunch schedule is recorded as a decision without a vote. The page 1 line \"Unanimously approved by COA at June 11, 2019 meeting\" refers to approval of these minutes.",
+ "cost_usd": 0.00813302,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson pete lincoln, director susan doherty, betty digiacomo, jane rabbitt, jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "present: chairperson pete lincoln, director susan doherty, betty digiacomo, jane rabbitt, jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson pete lincoln, director susan doherty, betty digiacomo, jane rabbitt, jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson pete lincoln, director susan doherty, betty digiacomo, jane rabbitt, jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell"
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson pete lincoln, director susan doherty, betty digiacomo, jane rabbitt, jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell"
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson pete lincoln, director susan doherty, betty digiacomo, jane rabbitt, jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell"
+  },
+  {
+   "name": "Kevin McNally",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson pete lincoln, director susan doherty, betty digiacomo, jane rabbitt, jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson pete lincoln, director susan doherty, betty digiacomo, jane rabbitt, jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: cheryl moisan, diane nowd, sarah grant, barbara brown"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: cheryl moisan, diane nowd, sarah grant, barbara brown"
+  },
+  {
+   "name": "Sarah Grant",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: cheryl moisan, diane nowd, sarah grant, barbara brown"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: cheryl moisan, diane nowd, sarah grant, barbara brown"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "guests: selectman jamie toale, eagle house supporters liaison marie burchfield, susan o'sullivan, john pesenti."
+  },
+  {
+   "name": "Marie Burchfield",
+   "role": "Eagle House Supporters Liaison",
+   "status": "present",
+   "quote": "guests: selectman jamie toale, eagle house supporters liaison marie burchfield, susan o'sullivan, john pesenti."
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "role": "",
+   "status": "present",
+   "quote": "guests: selectman jamie toale, eagle house supporters liaison marie burchfield, susan o'sullivan, john pesenti."
+  },
+  {
+   "name": "John Pesenti",
+   "role": "",
+   "status": "present",
+   "quote": "guests: selectman jamie toale, eagle house supporters liaison marie burchfield, susan o'sullivan, john pesenti."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The kitchen will keep making its own soup and sandwich lunches on Mondays at noon, and the MOC lunch stays on Wednesdays at 11:30 a.m.",
+   "quote": "the kitchen will continue making their own soup and sandwich lunches on mondays at noon, and the moc lunch will stay for wednesdays at 11:30 a.m."
+  },
+  {
+   "decision": "Mr. Lincoln volunteered to write a letter to the Personnel Committee supporting the step advance for the COA Director position.",
+   "quote": "mr. lincoln volunteered to write a letter to the personnel committee in support of the step advance for the coa director position."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Property Tax Work-Off wages and abatements",
+   "what_was_recorded": "The committee discussed when a wage and abatement increase should start, noting the Selectboard made funds available in FY 2020 while the program runs through calendar year end; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty reported the property tax work-off committee was discussing when the increase in wages and abatements for the program should begin"
+  },
+  {
+   "topic": "COA Director salary grade and step advance",
+   "what_was_recorded": "The Director reported she has reached the top of her grade and steps and is seeking a step advance to Step 14; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty informed the board that she has reached the top of the grade and steps for her position on the salary administration plan"
+  },
+  {
+   "topic": "Shuffleboard court completion",
+   "what_was_recorded": "Dave Dorren of the Eagle House Supporters knows someone who will finish the shuffleboard court for a stated price.",
+   "figures_as_printed": [
+    "$850.00"
+   ],
+   "quote": "ms. lincoln said that dave dorren of the eagle house supporters knows someone who will finish the shuffleboard court for $850.00"
+  },
+  {
+   "topic": "Grounds work funding request to Eagle House Supporters",
+   "what_was_recorded": "The Director asked the Eagle House Supporters for $2,500 to hire Atlas Landscaping for grounds work the DPW does not cover.",
+   "figures_as_printed": [
+    "$2,500"
+   ],
+   "quote": "ms. doherty reported she asked the eagle house supporters for $2,500 to hire atlas landscaping to take care of the parts of the grounds the dpw"
+  },
+  {
+   "topic": "PA system and DVD player purchases",
+   "what_was_recorded": "The Director purchased a new PA system and a blue-ray DVD player for the building; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty also purchased a new pa system that was used for ted reinstein's talk. a blue-ray dvd player was also purchased"
+  },
+  {
+   "topic": "Raffle proceeds for Red Sox game and Fenway Park tour",
+   "what_was_recorded": "Raffle ticket proceeds so far have exceeded the stated amount.",
+   "figures_as_printed": [
+    "$2,000"
+   ],
+   "quote": "ms. lincoln reported that so far, proceeds from the raffle tickets for the red sox game and fenway park tour have exceeded $2,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "tags": [
+    "announcements",
+    "signs",
+    "staff"
+   ],
+   "quote": "ms. lincoln thanked ms. tarbell for the signs directing people to the eagle house."
+  },
+  {
+   "topic": "Minutes approval, April 9, 2019",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "ms. lincoln motioned to approve the minutes from the april 9, 2019 meeting."
+  },
+  {
+   "topic": "Director's report: Property Tax Work-Off and MOC nutrition",
+   "resolution": "discussed, no action",
+   "tags": [
+    "property tax work-off",
+    "meals",
+    "MOC"
+   ],
+   "quote": "ms. doherty reported the soup and sandwich from montachusett opportunity council has been well received on wednesdays"
+  },
+  {
+   "topic": "Salary Administration Plan: COA Director grade and step",
+   "resolution": "discussed; Lincoln to write letter to Personnel Committee",
+   "tags": [
+    "personnel",
+    "salary",
+    "director"
+   ],
+   "quote": "mr. lincoln volunteered to write a letter to the personnel committee in support of the step advance for the coa director position."
+  },
+  {
+   "topic": "Adding July COA meeting and procedure for new board members",
+   "resolution": "discussed; July meeting proposed, no vote recorded",
+   "tags": [
+    "meetings",
+    "board vacancies",
+    "appointments"
+   ],
+   "quote": "mr. lincoln informed the board that the vacancies on the board will be advertised on june 1"
+  },
+  {
+   "topic": "FY20 COA officer nominations",
+   "resolution": "nominated; vote recorded as carried unanimously, with election to be voted at next meeting",
+   "tags": [
+    "officers",
+    "elections",
+    "chairperson",
+    "vice chairperson"
+   ],
+   "quote": "mr. mcnally seconded. on vote, motion carried unanimously."
+  },
+  {
+   "topic": "Shuffleboard court",
+   "resolution": "discussed, no action",
+   "tags": [
+    "shuffleboard",
+    "grounds",
+    "Eagle House"
+   ],
+   "quote": "ms. lincoln said that dave dorren of the eagle house supporters knows someone who will finish the shuffleboard court for $850.00"
+  },
+  {
+   "topic": "Building report",
+   "resolution": "reported, no action",
+   "tags": [
+    "building",
+    "grounds",
+    "purchases",
+    "painting",
+    "brick"
+   ],
+   "quote": "ms. doherty reported she asked the eagle house supporters for $2,500 to hire atlas landscaping"
+  },
+  {
+   "topic": "Upcoming events at the Eagle House",
+   "resolution": "reported, no action",
+   "tags": [
+    "events",
+    "Eagle House"
+   ],
+   "quote": "ms. doherty went over upcoming events at the eagle house."
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "reported, no action",
+   "tags": [
+    "fundraising",
+    "raffle",
+    "membership",
+    "memorials"
+   ],
+   "quote": "ms. lincoln reported that so far, proceeds from the raffle tickets for the red sox game and fenway park tour have exceeded $2,000."
+  },
+  {
+   "topic": "Notices and communications: June celebration",
+   "resolution": "suggestion made, no action recorded",
+   "tags": [
+    "June meeting",
+    "celebration"
+   ],
+   "quote": "ms. lincoln suggested celebrating another year of success at the june meeting by bringing in treats"
+  },
+  {
+   "topic": "Board comment: Facebook admin removal",
+   "resolution": "request made, no action recorded",
+   "tags": [
+    "Facebook",
+    "admin",
+    "board membership"
+   ],
+   "quote": "ms. dwyer requested to be removed as an admin from the eagle house facebook page, as she will no longer be a member of the board."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:23 a.m., passed unanimously",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "ms. digiacomo moved to adjourn the meeting at 10:23 a.m., ms. dwyer seconded. on vote, motion carried unanimously."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "council on aging",
+  "Eagle House",
+  "personnel and salary",
+  "officer nominations",
+  "building and grounds",
+  "fundraising",
+  "meals program",
+  "property tax work-off",
+  "board membership"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

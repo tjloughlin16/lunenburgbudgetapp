@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2019-07-30",
  "docid": "5623",
@@ -12,39 +12,395 @@
  },
  "votes": [
   {
-   "motion": "Issue a contract for the I/I 3rd party review proposal from Woodward and Curran",
+   "motion": "To issue a contract for the l/l 3rd party review proposal from Woodward and Curran.",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: carl l. second: ryan s. to issue a contract for the l/l 3rd party review proposal from woodward and curran. vote: unanimous"
   },
   {
-   "motion": "Submit the vacancy posting to the Board of Selectmen",
+   "motion": "To submit the Vacancy posting to the Board of Selectmen.",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed",
-   "procedural": true,
+   "outcome": "passed, unanimous",
+   "procedural": false,
    "quote": "motion: carl l. second: ryan s. to submit the vacancy posting to the board of selectmen vote: unanimous"
   },
   {
-   "motion": "Have Carl be the liaison to Leominster for IMA discussions",
+   "motion": "To have Carl be the liaison to Leominster for IMA discussions.",
    "moved_by": "Ryan S.",
    "seconded_by": "John R.",
-   "outcome": "passed",
-   "procedural": true,
+   "outcome": "passed, unanimous",
+   "procedural": false,
    "quote": "motion: ryan s. second: john r. to have carl be the liaison to leominster for ima discussions. vote: unanimous"
   },
   {
-   "motion": "Adjourn",
+   "motion": "To adjourn at 8:15pm.",
    "moved_by": "Ryan S.",
    "seconded_by": "Carl L.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion: ryan s. to adjourn: 8:15pm second: carl l. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision; four votes recorded, all passed unanimously.",
- "cost_usd": 0.0907235
+ "note": "OCR text from a scan. Page 1 and page 2 both begin mid-sentence, so the opening of the meeting (call to order, roll call, first announcements) is missing. No roll call is printed; attendance is inferred from who spoke or acted. Several words are garbled by OCR (\"l/l\", \"I/l\", \"invoce\", \"wilbe\", \"Cari\", \"Minytes Clerk\", \"pandey,\"), and the Leominster figure \"515/2000\" is unclear. The clerk's signature block is also garbled. Vote outcomes are printed as \"Unanimous\" and recorded as \"passed, unanimous\".",
+ "cost_usd": 0.00902532,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl L.",
+   "role": "Commissioner (role not printed)",
+   "status": "present",
+   "quote": "carl suggested that the commission check with wright pierce who did the cwmp and determined that the area was not an"
+  },
+  {
+   "name": "Ryan S.",
+   "role": "Commissioner (role not printed)",
+   "status": "present",
+   "quote": "second: ryan s. to issue a contract for the l/l 3rd party review proposal from woodward and curran."
+  },
+  {
+   "name": "John R.",
+   "role": "Commissioner (role not printed)",
+   "status": "present",
+   "quote": "second: john r. to have carl be the liaison to leominster for ima discussions."
+  },
+  {
+   "name": "Barb",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "business manager report - barb reported that wright pierce is scheduling the pump station tours with swss."
+  },
+  {
+   "name": "Jane L. Ranley",
+   "role": "Minytes Clerk (as printed)",
+   "status": "not stated",
+   "quote": "respectively submitted, jane jane l. ranley"
+  },
+  {
+   "name": "Bill Hannigan",
+   "role": "Hannigan Engineering (for the 189 Cross Rd. sewer extension request)",
+   "status": "present",
+   "quote": "bill hannigan, hannigan engineering on 189 cross rd. sewer extension request"
+  },
+  {
+   "name": "Bruce Millette",
+   "role": "homeowner",
+   "status": "present",
+   "quote": "bruce millette (homeowner) said all flat areas have been tested but one section of property"
+  },
+  {
+   "name": "Scott Medeiros",
+   "role": "Woodward & Curran",
+   "status": "present",
+   "quote": "woodward & curran - scott medeiros, and lauren hertel i/l 3rd party review"
+  },
+  {
+   "name": "Lauren Hertel",
+   "role": "Woodward & Curran",
+   "status": "present",
+   "quote": "woodward & curran - scott medeiros, and lauren hertel i/l 3rd party review"
+  },
+  {
+   "name": "Cathy Clark",
+   "role": "realtor (275 Cross Rd.)",
+   "status": "present",
+   "quote": "cathy clark, realtor (275 cross rd.), stated that the homeowners at 96 oak ave bought the house in 1998"
+  },
+  {
+   "name": "Mike",
+   "role": "homeowner (96 Oak Ave)",
+   "status": "not stated",
+   "quote": "mike (homeowner) will put a statement together."
+  },
+  {
+   "name": "Matt Allison",
+   "role": "Flat Hill",
+   "status": "present",
+   "quote": "matt allison, flat hill asked how they determine flow quantity to fitchburg & leominster."
+  },
+  {
+   "name": "Cari",
+   "role": "not printed (commission discussion)",
+   "status": "present",
+   "quote": "cari pointed out that the monthly reports show the reliability of the system is getting worse"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of 7/9/19 tabled to the next meeting.",
+   "quote": "minutes of 7/9/19 - will be tabled to the next meeting."
+  },
+  {
+   "decision": "Commission to hold a discussion with Heather (Town Manager) and Jack (DPW) on pump station numbers before the next meeting; Barb asked to set up that meeting next week if possible.",
+   "quote": "commissioners agreed the numbers are still not clear and would like to have a discussion with heather (town manager) & jack (dpw) before the next meeting."
+  },
+  {
+   "decision": "Barb to set up a meeting with Heather and Jack next week if possible.",
+   "quote": "commission discussed and asked barb to set up a meeting with heather & jack next week if possible."
+  },
+  {
+   "decision": "Woodward & Curran I/I review: next step is to schedule a kick-off meeting and initiate a contract; Barb to forward the RFP standard contract to Scott as the basis.",
+   "quote": "the next step will be to schedule a kick-off meeting and a contract will be initiated. barb will forward the standard contract that was included in the rfp to scott as the basis."
+  },
+  {
+   "decision": "96 Oak Ave betterment abatement: if owners provide information proving their point, Commission will discuss it with Town Counsel.",
+   "quote": "carl suggested that if the owners can provide information to prove their point, the commission will discuss it with town counsel."
+  },
+  {
+   "decision": "Homeowner (Mike) to put a statement together for the 96 Oak Ave abatement request.",
+   "quote": "mike (homeowner) will put a statement together."
+  },
+  {
+   "decision": "Commission will schedule FOG audits for after August 26th.",
+   "quote": "commission will schedule the fog audits for after august 26'h."
+  },
+  {
+   "decision": "Barb to do a separate mailing to Irrigation Meter users first, then an insert in the next billing.",
+   "quote": "she will do a separate mailing to irrigation meter users first and then put an insert in the next billing."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fitchburg monthly invoices",
+   "what_was_recorded": "Business Manager reported the Fitchburg monthly invoice amount.",
+   "figures_as_printed": [
+    "$11,809.33"
+   ],
+   "quote": "invoices- fitchburg monthly - $11,809.33"
+  },
+  {
+   "topic": "Leominster debt service invoice",
+   "what_was_recorded": "John said Leominster would be sending an invoice; the figure as printed is garbled in the OCR text and may not be a clean dollar amount.",
+   "figures_as_printed": [
+    "515/2000"
+   ],
+   "quote": "john asked the commission to select a liaison to leominster i a and wilbe sending an invoce for 515/2000."
+  },
+  {
+   "topic": "Pump station alarm invoicing",
+   "what_was_recorded": "Commissioner questioned why the pump station operator invoices for every alarm when those are not covered by the contract; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "he also questioned why they are invoicing for every alarm and why they are not covered by the contract."
+  },
+  {
+   "topic": "Highfields debt service schedule",
+   "what_was_recorded": "Brian (Mead, Talerman) to work with Fitchburg to clarify the Highfields debt service schedule; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "highfields - brian (mead, talerman) will be working with fitchburg to clarify the debt service schedule."
+  },
+  {
+   "topic": "Woodward & Curran I/I review project cost",
+   "what_was_recorded": "Commission asked for options to get the best value from the I/I review project cost; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "john said that the commission would like options to get the best value from the project cost."
+  },
+  {
+   "topic": "96 Oak Ave betterment assessment",
+   "what_was_recorded": "Betterments on 96 Oak Ave were assessed in 2008 as a 2-family; abatement must be requested within 6 months of assessment per Town Counsel. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "barb added that the betterments were assessed in 2008 and town counsel has said that state law dictates that the abatement needs to be requested within 6 months of assessment."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Matt Allison",
+   "stated_role": "Flat Hill",
+   "topic": "flow quantity to Fitchburg and Leominster; point of order on 7:30 appointment start",
+   "quote": "matt allison, flat hill asked how they determine flow quantity to fitchburg & leominster."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements (partial, page 1 start)",
+   "resolution": "no action",
+   "tags": [
+    "grease trap",
+    "irrigation meter",
+    "talent bank"
+   ],
+   "quote": "the annual grease trap permit applications have been sent out and are due by 8/15."
+  },
+  {
+   "topic": "Appointment: 189 Cross Rd. sewer extension request",
+   "resolution": "discussed; Commission asked for documentation that no septic option exists; no vote",
+   "tags": [
+    "sewer extension",
+    "septic",
+    "subdivision",
+    "Board of Health"
+   ],
+   "quote": "bill hannigan, hannigan engineering on 189 cross rd. sewer extension request"
+  },
+  {
+   "topic": "Appointment: Woodward & Curran I/I third-party review",
+   "resolution": "contract approved",
+   "tags": [
+    "inflow and infiltration",
+    "third-party review",
+    "contract"
+   ],
+   "quote": "woodward & curran - scott medeiros, and lauren hertel i/l 3rd party review"
+  },
+  {
+   "topic": "Appointment: 96 Oak Ave betterment abatement",
+   "resolution": "referred to Town Counsel after owner submits statement",
+   "tags": [
+    "betterments",
+    "abatement",
+    "assessment"
+   ],
+   "quote": "cathy clark, realtor (275 cross rd.), stated that the homeowners at 96 oak ave bought the house in 1998"
+  },
+  {
+   "topic": "Public comment (page 2 start)",
+   "resolution": "point of order noted",
+   "tags": [
+    "public comment",
+    "flow metering"
+   ],
+   "quote": "matt allison, flat hill asked how they determine flow quantity to fitchburg & leominster."
+  },
+  {
+   "topic": "Commission vacancies",
+   "resolution": "vacancy posting submitted to Board of Selectmen",
+   "tags": [
+    "vacancy",
+    "resignation"
+   ],
+   "quote": "commission vacancies - john's resignation effective 8/14."
+  },
+  {
+   "topic": "Pump station maintenance and SWSS contract",
+   "resolution": "discussed; meeting with Town Manager and DPW to be set",
+   "tags": [
+    "pump station",
+    "SWSS",
+    "alarms",
+    "reliability"
+   ],
+   "quote": "pump station maintenance & swss contract discussions"
+  },
+  {
+   "topic": "Leominster billing methodology and debt service payment",
+   "resolution": "Carl named liaison to Leominster",
+   "tags": [
+    "Leominster",
+    "IMA",
+    "debt service"
+   ],
+   "quote": "leominster billing methodology & debt service payment"
+  },
+  {
+   "topic": "New irrigation meter program implementation",
+   "resolution": "no action; mailing planned",
+   "tags": [
+    "irrigation meter",
+    "billing"
+   ],
+   "quote": "new irrigation meter program implementation - barb reported that ti-sales will be the contact for the meters"
+  },
+  {
+   "topic": "Grease trap and interceptor program",
+   "resolution": "no action; FOG audits to be scheduled",
+   "tags": [
+    "grease trap",
+    "FOG",
+    "permits"
+   ],
+   "quote": "grease trap/interceptor program - barb sent out the annual permit renewals and they are due 8/15."
+  },
+  {
+   "topic": "Minutes of 7/9/19",
+   "resolution": "tabled to next meeting",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes of 7/9/19 - will be tabled to the next meeting."
+  },
+  {
+   "topic": "Business manager report",
+   "resolution": "informational; no action",
+   "tags": [
+    "Wright Pierce",
+    "Highfields",
+    "invoices",
+    "Fitchburg"
+   ],
+   "quote": "business manager report - barb reported that wright pierce is scheduling the pump station tours with swss."
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "noted (Elizabeth Street)",
+   "tags": [
+    "agenda"
+   ],
+   "quote": "member agenda inputs for future meetings- elizabeth street"
+  },
+  {
+   "topic": "Public comment (agenda)",
+   "resolution": "none",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment- none"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:15pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion: ryan s. to adjourn: 8:15pm second: carl l. vote: unanimous"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Engineering maps showing previous perc testing (189 Cross Rd.)",
+   "where": "list",
+   "quote": "the commission reviewed engineering maps, showing previous perc testing."
+  },
+  {
+   "name": "Standard contract included in the RFP (Woodward & Curran I/I review)",
+   "where": "text",
+   "quote": "barb will forward the standard contract that was included in the rfp to scott as the basis."
+  },
+  {
+   "name": "Monthly reports (sewer system reliability)",
+   "where": "text",
+   "quote": "cari pointed out that the monthly reports show the reliability of the system is getting worse"
+  },
+  {
+   "name": "Schematic for 400 Electric Ave. convenience/donut shop",
+   "where": "text",
+   "quote": "she received the schematic for the 400 electric ave. convenience/donut shop."
+  },
+  {
+   "name": "1st Tuesday report",
+   "where": "text",
+   "quote": "1st tuesday report status - all have been received."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "inflow and infiltration",
+  "Leominster IMA",
+  "pump station",
+  "SWSS",
+  "irrigation meter",
+  "grease trap",
+  "betterment abatement",
+  "sewer extension",
+  "commission vacancy",
+  "invoices"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the commission reviewed engineering maps"
+ },
+ "dropped_unquoted_by_field": {}
 }

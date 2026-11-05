@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cultural-council",
  "meeting_date": "2019-11-19",
  "docid": "1956",
@@ -12,25 +12,140 @@
  },
  "votes": [
   {
-   "motion": "Form a 5-person Cultural Council Subcommittee for organizing the Lunenburg Arts Festival",
+   "motion": "Form a 5-person Cultural Council Subcommittee for the purpose of organizing the Lunenburg Arts Festival.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "motion to form a 5-person cultural council subcommittee for the purpose of organizing the lunenburg arts festival, motion passes unanimously 5-0."
   },
   {
-   "motion": "Appoint Stephanie Karlson, Laura Brzozoski, Laura Kelly, Minna Scholten, and Ashly Faherty to the Lunenburg Arts Festival Subcommittee",
+   "motion": "Appoint Stephanie Karlson, Laura Brzozoski, Laura Kelly, Minna Scholten, and Ashly Faherty to the Lunenburg Arts Festival Subcommittee.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "motion made that stephanie karlson, laura brzozoski, laura kelly, minna scholten, and ashly faherty be appointed to the lunenburg arts festival subcommittee, motion passes unanimously 5-0."
   },
   {
-   "motion": "Approve the FY 2020 grant cycle applications in the amounts read and discussed",
+   "motion": "Approve the FY 2020 grant cycle applications in the amounts read and discussed.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 6-0",
    "procedural": false,
    "quote": "motion to approve the fy 2020 grant cycle applications in the amounts read and discussed, motion passed unanimously 6-0"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08200149999999999
+ "note": "The minutes name no movers or seconders and record no motion to approve the minutes, enter executive session, or adjourn; the 8:57 PM adjournment is stated without a recorded vote. The 'Annual report explanation' and 'Public comment' headings have no content printed under them. The 6-0 grant vote follows Peter McCarron's arrival at 7:45 PM, though the minutes do not say which members voted. No documents list is printed.",
+ "cost_usd": 0.00329502,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Stephanie Karlson",
+   "role": "",
+   "status": "present",
+   "quote": "in attendance: stephanie karlson laura brzozoski laura kelly"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "",
+   "status": "present",
+   "quote": "in attendance: stephanie karlson laura brzozoski laura kelly"
+  },
+  {
+   "name": "Laura Kelly",
+   "role": "",
+   "status": "present",
+   "quote": "in attendance: stephanie karlson laura brzozoski laura kelly"
+  },
+  {
+   "name": "Minna Scholten",
+   "role": "",
+   "status": "present",
+   "quote": "laura kelly minna scholten ashly faherty peter mccarron in at 7:45 pm"
+  },
+  {
+   "name": "Ashly Faherty",
+   "role": "",
+   "status": "present",
+   "quote": "laura kelly minna scholten ashly faherty peter mccarron in at 7:45 pm"
+  },
+  {
+   "name": "Peter McCarron",
+   "role": "",
+   "status": "present",
+   "quote": "peter mccarron in at 7:45 pm"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "FY 2020 grant cycle applications",
+   "what_was_recorded": "The board approved the FY 2020 grant cycle applications in the amounts read and discussed; no dollar figures are printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "motion to approve the fy 2020 grant cycle applications in the amounts read and discussed, motion passed unanimously 6-0"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Annual report explanation",
+   "resolution": "no action recorded",
+   "quote": "annual report explanation",
+   "tags": [
+    "annual report"
+   ]
+  },
+  {
+   "topic": "Arts Festival Subcommittee Update",
+   "resolution": "subcommittee formed and five members appointed",
+   "quote": "we are seeking a minimum of two additional cultural council members.",
+   "tags": [
+    "arts festival",
+    "subcommittee",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Grant Discussion",
+   "resolution": "FY 2020 grant cycle applications approved",
+   "quote": "motion to approve the fy 2020 grant cycle applications in the amounts read and discussed,",
+   "tags": [
+    "grants",
+    "FY 2020"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action recorded",
+   "quote": "public comment adjourned 8:57 pm",
+   "tags": [
+    "public comment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY 2020 grant cycle applications",
+   "where": "text",
+   "quote": "motion to approve the fy 2020 grant cycle applications in the amounts read and discussed, motion passed unanimously 6-0"
+  }
+ ],
+ "tags": [
+  "cultural council",
+  "arts festival",
+  "subcommittee",
+  "appointments",
+  "grants",
+  "FY 2020",
+  "annual report"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

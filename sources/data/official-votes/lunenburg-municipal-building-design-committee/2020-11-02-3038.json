@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2020-11-02",
  "docid": "3038",
@@ -12,23 +12,353 @@
  },
  "votes": [
   {
-   "motion": "Accept and approve the schematic design and departmental adjacencies, meeting rooms, as presented",
+   "motion": "Accept and approve the schematic design and departmental adjacencies, meeting rooms, as presented.",
    "moved_by": "David Blatt",
    "seconded_by": "Dave Passios",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "david blatt made a motion to accept and approve the schematic design and departmental adjacencies, meeting rooms, as presented. seconded by dave passios. no discussion. michael-ray jeffreys aye, brian lehtinen aye, dave blatt aye, dave passios aye, and greg roy aye. motion passes."
+   "quote": "david blatt made a motion to accept and approve the schematic design and departmental adjacencies, meeting rooms, as presented."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 7:13pm.",
    "moved_by": "David Blatt",
    "seconded_by": "Dave Passios",
    "outcome": "passed",
    "procedural": true,
-   "quote": "david blatt made a motion to adjourn at 7:13pm, dave passios seconded. brian lehtinen aye, dave passios aye, david blatt aye, greg roy aye."
+   "quote": "david blatt made a motion to adjourn at 7:13pm, dave passios seconded."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1038485
+ "dropped_unquoted": 1,
+ "note": "Plain text extraction with no tables or attachments; votes are recorded with roll-call aye lists but no printed count, so outcomes are recorded as \"passed\". The minutes name \"Heather\" as a parent in public comment, distinct from Heather Lemieux (Town Employees), and this is not resolved in the text. Some decisions are offers or intentions and are recorded as decisions only where the minutes state an action.",
+ "cost_usd": 0.005882619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Greg Roy",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "members present: greg roy, david blatt, david passios, brian lehtinen, michael-ray jeffreys"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "members present: greg roy, david blatt, david passios, brian lehtinen, michael-ray jeffreys"
+  },
+  {
+   "name": "David Passios",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "members present: greg roy, david blatt, david passios, brian lehtinen, michael-ray jeffreys"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "members present: greg roy, david blatt, david passios, brian lehtinen, michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "members present: greg roy, david blatt, david passios, brian lehtinen, michael-ray jeffreys"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Committee member (planning board member)",
+   "status": "absent",
+   "quote": "members absent: matthew allison"
+  },
+  {
+   "name": "Ed DiSalvio",
+   "role": "Architects",
+   "status": "present",
+   "quote": "architects: ed disalvio, tom lam"
+  },
+  {
+   "name": "Tom Lam",
+   "role": "Architects",
+   "status": "present",
+   "quote": "architects: ed disalvio, tom lam"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Employees",
+   "status": "present",
+   "quote": "town employees: heather lemieux"
+  },
+  {
+   "name": "Michelle Belleza",
+   "role": "BGC",
+   "status": "present",
+   "quote": "community guests: michelle belleza bgc, brett debraga bgc, tom alonzo"
+  },
+  {
+   "name": "Brett DeBraga",
+   "role": "BGC",
+   "status": "present",
+   "quote": "community guests: michelle belleza bgc, brett debraga bgc, tom alonzo"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Community Guest",
+   "status": "present",
+   "quote": "community guests: michelle belleza bgc, brett debraga bgc, tom alonzo"
+  },
+  {
+   "name": "Corinne Scouten",
+   "role": "Public commenter",
+   "status": "present",
+   "quote": "corinne scouten stated the importance of the food pantry being located at the tcp building."
+  },
+  {
+   "name": "Heather",
+   "role": "A parent",
+   "status": "present",
+   "quote": "a parent, heather, stressed the importance of the 9th and 10th graders having a separate space"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee reorganization was tabled.",
+   "quote": "committee reorganization: we have a new member, planning board member, matthew allison. tabled reorganization."
+  },
+  {
+   "decision": "Tom Lam to get the presentation draft to the committee before the next week's meeting, and Greg Roy to prepare an outline for committee discussion at the next meeting.",
+   "quote": "greg roy stated he will have an outline that we can discuss as a committee at our next meeting."
+  },
+  {
+   "decision": "The town manager will let the town moderator know that architects may present the article, as she typically allows.",
+   "quote": "the town manager stated the town manager would typically allow that and that she would let him know that is the case."
+  },
+  {
+   "decision": "Greg Roy to look into having someone come to address the commercial kitchen question.",
+   "quote": "greg roy stated he can look into having someone come."
+  },
+  {
+   "decision": "A handout of the schematic design is to be given to the town clerk for distribution as people check in.",
+   "quote": "greg roy agreed there should be a handout and it needs to be given to the town clerk as people check in."
+  },
+  {
+   "decision": "Next meeting, Monday November 9, to focus on Town Meeting presentation preparation.",
+   "quote": "next meeting on monday the 9th we will focus on this."
+  },
+  {
+   "decision": "Schematic design to be put on the town website and shared on Facebook; Brian Lehtinen to share a list of community Facebook pages.",
+   "quote": "brian lehtinen stated he could share a list with the community."
+  },
+  {
+   "decision": "Parking to be fine-tuned during the design development stage.",
+   "quote": "ed said we will fine tune the parking and we will still be looking at it."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cost decisions in design development",
+   "what_was_recorded": "Greg Roy said more cost decisions will come into play in the design development stage.",
+   "figures_as_printed": [],
+   "quote": "greg roy stated there are more cost decisions that will come into play in the design development stage"
+  },
+  {
+   "topic": "Article funding for Town Meeting update",
+   "what_was_recorded": "Greg Roy said the update article does not ask voters to fund the project and funding discussions will be held another day.",
+   "figures_as_printed": [],
+   "quote": "greg roy stated that due to the nature of the update article we are not asking them to fund it"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Michelle Belleza",
+   "stated_role": "from the Boys and Girls Club",
+   "topic": "Boys and Girls Club in the TCP building",
+   "quote": "michelle belleza from the boys and girls club wanted to remind the committee that the tcp would be a great opportunity"
+  },
+  {
+   "speaker": "Brett DeBraga",
+   "stated_role": "",
+   "topic": "Expansion of the Boys and Girls Club",
+   "quote": "brett debraga echoed michelle's comments and the need for expansion and consolidation of the boys and girls club."
+  },
+  {
+   "speaker": "Corinne Scouten",
+   "stated_role": "",
+   "topic": "Food pantry location",
+   "quote": "corinne scouten stated the importance of the food pantry being located at the tcp building."
+  },
+  {
+   "speaker": "Heather",
+   "stated_role": "A parent",
+   "topic": "Separate space for 9th and 10th graders",
+   "quote": "a parent, heather, stressed the importance of the 9th and 10th graders having a separate space"
+  },
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "",
+   "topic": "Space for all groups and the Ritter building",
+   "quote": "tom alonzo stated he was concerned, that it is not this groups responsibility, and here we are that we do not have enough space"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Floor plan and space priorities",
+   "quote": "dave passios stated he does not disagree with the previous speakers."
+  },
+  {
+   "speaker": "David Blatt",
+   "stated_role": "",
+   "topic": "School space needs",
+   "quote": "david blatt stated the committee knows his opinion of the boys and girls club."
+  },
+  {
+   "speaker": "Brian Lehtinen",
+   "stated_role": "",
+   "topic": "Access to public spaces by outside organizations",
+   "quote": "brian lehtinen stated he agrees with what dave passios said"
+  },
+  {
+   "speaker": "Michael-Ray Jeffreys",
+   "stated_role": "",
+   "topic": "Committee outreach and space priorities",
+   "quote": "michael-ray jeffreys stated we as a committee reached out to the community organizations and the bgc was a part of the plan"
+  },
+  {
+   "speaker": "Greg Roy",
+   "stated_role": "",
+   "topic": "Message to the Boys and Girls Club",
+   "quote": "greg roy stated he echoes what the committee members said and he would add that we communicate to the"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Closing remarks on the committee's work",
+   "quote": "dave passios congratulated the committee for its work and pulling through"
+  },
+  {
+   "speaker": "Greg Roy",
+   "stated_role": "",
+   "topic": "Closing remarks on the committee's work",
+   "quote": "greg roy stated it has been a pleasure working with all the committee members current and past"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment on Boys and Girls Club space",
+   "resolution": "no action; comments heard",
+   "quote": "michelle belleza from the boys and girls club wanted to remind the committee that the tcp would be a great opportunity",
+   "tags": [
+    "public comment",
+    "Boys and Girls Club",
+    "space"
+   ]
+  },
+  {
+   "topic": "Committee Reorganization",
+   "resolution": "tabled",
+   "quote": "committee reorganization: we have a new member, planning board member, matthew allison. tabled reorganization.",
+   "tags": [
+    "committee",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Review and Approve Schematic Design",
+   "resolution": "approved",
+   "quote": "david blatt made a motion to accept and approve the schematic design and departmental adjacencies, meeting rooms, as presented.",
+   "tags": [
+    "schematic design",
+    "floor plan",
+    "departments"
+   ]
+  },
+  {
+   "topic": "Town Meeting Presentation Preparation",
+   "resolution": "discussed; next meeting to focus on it",
+   "quote": "next meeting on monday the 9th we will focus on this.",
+   "tags": [
+    "town meeting",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Community Outreach",
+   "resolution": "discussed; website and Facebook sharing",
+   "quote": "greg stated we would like to get the schematic design on the website.",
+   "tags": [
+    "outreach",
+    "website",
+    "Facebook"
+   ]
+  },
+  {
+   "topic": "Review and Approve Minutes",
+   "resolution": "no action (none)",
+   "quote": "review and approve minutes: none",
+   "tags": []
+  },
+  {
+   "topic": "Future Meeting Schedule",
+   "resolution": "set next meetings",
+   "quote": "next monday, november 9th at 5:30pm. town meeting after that",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action; remarks heard",
+   "quote": "dave passios congratulated the committee for its work and pulling through",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:13pm",
+   "quote": "david blatt made a motion to adjourn at 7:13pm, dave passios seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Schematic design",
+   "where": "text",
+   "quote": "tom lam submitted the schematic design to town department heads for approval."
+  },
+  {
+   "name": "Presentation slides (draft)",
+   "where": "text",
+   "quote": "tom reviewed the slides for the presentation."
+  },
+  {
+   "name": "Handout of the schematic design",
+   "where": "text",
+   "quote": "michael-ray jeffreys stated that it would be beneficial to have a handout of the schematic design."
+  },
+  {
+   "name": "Department sign-offs on the schematic design",
+   "where": "text",
+   "quote": "tom lam got sign offs from everyone except the town clerk who has been busy with the election."
+  }
+ ],
+ "tags": [
+  "Town Hall / TCP building design",
+  "schematic design",
+  "Boys and Girls Club",
+  "school co-location",
+  "Town Meeting presentation",
+  "community outreach",
+  "public comment",
+  "committee"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

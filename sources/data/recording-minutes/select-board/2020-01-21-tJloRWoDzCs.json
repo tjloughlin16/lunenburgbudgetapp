@@ -1,0 +1,918 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2020-01-21",
+ "video_id": "tJloRWoDzCs",
+ "video_url": "https://www.youtube.com/watch?v=tJloRWoDzCs",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2020-01-21-tJloRWoDzCs.json",
+  "sha256": "2da7377c763123fedac24891b25602a3c213cfda6b387cdabff71dd870bf8b54",
+  "caption_lines": 667,
+  "segments": 5077
+ },
+ "recording": {
+  "duration_s": 14191,
+  "duration": "3:56",
+  "spoken_chars": 184905,
+  "words_approx": 30817
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_01212020-5230",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-01-21-agenda-5230.txt",
+   "path": "sources/meetings/select-board/2020-01-21-agenda-5230.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01212020-5230",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-01-21-minutes-5230.txt",
+   "path": "sources/meetings/select-board/2020-01-21-minutes-5230.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-04T09:25:07Z",
+  "cost_usd": 0.36070840000000004
+ },
+ "minutes": {
+  "headline": "Board approved an earth removal permit 3-2 with conditions; denied firearm hunting on conservation land 3-2.",
+  "summary": "The Select Board denied a request to hunt with firearms on town conservation land, licensed a new auto dealer, and, after a long hearing with abutters objecting, approved a 50,000 cubic yard earth removal permit with conditions. The town manager presented the FY21-25 five-year financial forecast and the FY21 capital plan, and the superintendent discussed the school staffing plan, which drew sharp objections from one member. Routine appointments, a power broker agreement and a charter letter were also handled.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Jeffries",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mrs. Adams",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. McQuaid",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Alonza",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mrs. Luck",
+    "role": "vice chair"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Damon",
+    "role": "capital planning committee representative"
+   },
+   {
+    "name_as_heard": "the superintendent",
+    "role": "superintendent"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 240,
+    "topic": "Two residents asked permission to hunt with firearms on town conservation land.",
+    "stated_role": "resident",
+    "speaker_as_heard": "Paul long"
+   },
+   {
+    "t": 837,
+    "topic": "Conservation Commission land use policy prohibits firearm discharge on its land except Hunting Hill; spoke as himself.",
+    "stated_role": "resident, Conservation Commission member",
+    "speaker_as_heard": "Bob Pease"
+   },
+   {
+    "t": 3628,
+    "topic": "Abutter at 68 Townsend Harbor Road objected to dust, noise, septic risk and three years of earth removal.",
+    "stated_role": "abutter",
+    "speaker_as_heard": "Mark Resnick"
+   },
+   {
+    "t": 4024,
+    "topic": "Abutter at 70 Townsend Harbor Road objected to scale of removal, truck traffic, and the original ten yard letter; said he would sell.",
+    "stated_role": "abutter",
+    "speaker_as_heard": "Clifton Smith"
+   },
+   {
+    "t": 5877,
+    "topic": "Asked engineer whether abutters' septic systems were considered.",
+    "stated_role": "citizen"
+   },
+   {
+    "t": 11905,
+    "topic": "Finance Committee member said the forecast leaves out unplanned debt so the committee can see wiggle room.",
+    "stated_role": "citizen and Finance Committee member",
+    "speaker_as_heard": "Terry Burchfield"
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "capital",
+   "chapter-70",
+   "debt",
+   "facilities",
+   "free-cash",
+   "hiring",
+   "legal",
+   "library",
+   "override",
+   "personnel",
+   "planning-and-zoning",
+   "policy",
+   "primary-school",
+   "public-comment",
+   "public-safety",
+   "roads-and-dpw",
+   "staffing",
+   "state-aid",
+   "superintendent-report",
+   "tax-rate",
+   "town-departments",
+   "town-meeting",
+   "turkey-hill"
+  ],
+  "votes": [
+   {
+    "t": 1213,
+    "motion": "Do not permit hunting on the Lunenburg conservation land parcels.",
+    "outcome": "passed 3-2",
+    "procedural": false
+   },
+   {
+    "t": 1765,
+    "motion": "Approve the class 2 auto dealer license for 36 Summer Street.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 6850,
+    "motion": "Postpone the Proctor earth removal hearing to February 11 and invite the building commissioner and land-use director.",
+    "outcome": "failed",
+    "procedural": false
+   },
+   {
+    "t": 6969,
+    "motion": "Approve the earth removal permit with conditions on hours, dust control, no rock crushing, and screening only the top two feet of soil, weekdays only.",
+    "outcome": "passed 3-2",
+    "procedural": false
+   },
+   {
+    "t": 7727,
+    "motion": "Ratify appointment of David Gallagher as Council on Aging van driver.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 7749,
+    "motion": "Ratify appointment of Cathy Como as animal control officer.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 7936,
+    "motion": "Appoint Patrick Callahan to the Zoning Board of Appeals until June 30, 2022.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 13085,
+    "motion": "Sign the Colonial Power consultant agreement, same as last year's.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 13211,
+    "motion": "Have the chair sign the town charter letter to the state representative and senator.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 14169,
+    "motion": "Adjourn.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 110,
+    "topic": "Compost bin and rain barrel prices at the DPW",
+    "what_was_said": "A member promoted a bundle price for compost bin and rain barrel.",
+    "figures_as_heard": [
+     "$43",
+     "56",
+     "80",
+     "$19 savings"
+    ]
+   },
+   {
+    "t": 8568,
+    "topic": "New growth assumption in forecast",
+    "what_was_said": "Forecast assumes a lower new growth figure for FY21 and a smaller one for later years.",
+    "figures_as_heard": [
+     "three hundred and fifty thousand",
+     "three hundred thousand"
+    ]
+   },
+   {
+    "t": 9376,
+    "topic": "FY21 free cash use",
+    "what_was_said": "The forecast uses a certified free cash amount for FY21, split among capital, stabilization and OPEB.",
+    "figures_as_heard": [
+     "889 thousand one hundred and thirty three dollars",
+     "six hundred and seventy nine thousand one hundred and thirty three",
+     "hundred thousand",
+     "one hundred and ten thousand"
+    ]
+   },
+   {
+    "t": 9641,
+    "topic": "School five-year staffing plan added cost",
+    "what_was_said": "Town manager read added yearly cost of the school staffing plan on top of the projected increase.",
+    "figures_as_heard": [
+     "three hundred and thirty six thousand three hundred thirty dollars",
+     "1 million one hundred and seventy eight thousand 997 dollars",
+     "2 million seventy three thousand seventy dollars",
+     "two million nine hundred and seventeen thousand three hundred fifty-seven dollars",
+     "three million five hundred and ninety-four thousand three hundred and twenty-six"
+    ]
+   },
+   {
+    "t": 9896,
+    "topic": "FY25 school expense and gap",
+    "what_was_said": "A member compared forecast pages and questioned a large school increase and a multi-million deficit.",
+    "figures_as_heard": [
+     "46 million eight hundred and forty seven thousand dollars",
+     "four million dollars in the red",
+     "40% increase"
+    ]
+   },
+   {
+    "t": 12259,
+    "topic": "FY21 capital requests",
+    "what_was_said": "Capital requests total was reported, with Vertex items excluded from the recommended list.",
+    "figures_as_heard": [
+     "four million two hundred and thirty-nine thousand four hundred and thirty-eight dollars",
+     "1 million 329 thousand 133"
+    ]
+   },
+   {
+    "t": 12429,
+    "topic": "FY21 recommended capital plan",
+    "what_was_said": "Recommended capital plan to be funded by tax revenue and free cash.",
+    "figures_as_heard": [
+     "1 million three hundred and twenty nine thousand one hundred and thirty three dollars"
+    ]
+   },
+   {
+    "t": 13062,
+    "topic": "Colonial Power aggregation adder",
+    "what_was_said": "The broker's fee adder was confirmed as in the prior agreement.",
+    "figures_as_heard": [
+     "point zero zero one kilowatt hour"
+    ]
+   },
+   {
+    "t": 13251,
+    "topic": "Warrants",
+    "what_was_said": "Accounts payable, payroll deductions and payroll warrants were read.",
+    "figures_as_heard": [
+     "one hundred seventy three thousand four hundred fifty seven dollars and thirty eight cents",
+     "seven hundred eight thousand nine hundred forty six dollars and seventy six cents",
+     "eight hundred thirteen thousand sixty dollars and ninety eight cents"
+    ]
+   },
+   {
+    "t": 13655,
+    "topic": "Library grants",
+    "what_was_said": "Library received a grant for shelving and has a request pending for programs.",
+    "figures_as_heard": [
+     "$3500",
+     "$5,000"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 11905,
+    "decision": "Board will add a weekly budget and forecast discussion item to its agendas until Town Meeting."
+   },
+   {
+    "t": 14018,
+    "decision": "The January 28 meeting will be a public forum on the five-year forecast and capital plan instead of a regular meeting."
+   },
+   {
+    "t": 13321,
+    "decision": "Board will try to invite the former state representative to a future meeting to be recognized."
+   },
+   {
+    "t": 13595,
+    "decision": "Community recognition awards to be discussed at the workshop."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 2,
+    "t_end": 219,
+    "topic": "Opening, member comments, announcements",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 219,
+    "t_end": 1631,
+    "topic": "Request to hunt with firearms on conservation land",
+    "resolution": "voted: denied 3-2",
+    "tags": [
+     "policy",
+     "legal",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 1631,
+    "t_end": 1850,
+    "topic": "Class 2 auto dealer license hearing, 36 Summer Street",
+    "resolution": "voted: granted",
+    "tags": [
+     "economic-development",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1850,
+    "t_end": 7707,
+    "topic": "Earth removal permit hearing, 1325 Mass Ave",
+    "resolution": "voted: approved 3-2 with conditions",
+    "tags": [
+     "planning-and-zoning",
+     "legal",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 7707,
+    "t_end": 7959,
+    "topic": "Appointments ratified and ZBA appointment",
+    "resolution": "voted",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 7959,
+    "t_end": 8193,
+    "topic": "Town manager report: vacancies, old primary facilities funds, MassDOT meeting, upcoming meetings",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "facilities",
+     "primary-school"
+    ]
+   },
+   {
+    "t_start": 8193,
+    "t_end": 12112,
+    "topic": "Five-year financial forecast and school staffing plan",
+    "resolution": "informational; weekly agenda item agreed",
+    "tags": [
+     "budget",
+     "budget-fy27",
+     "staffing"
+    ]
+   },
+   {
+    "t_start": 12112,
+    "t_end": 13000,
+    "topic": "FY21 capital plan and TC Passios extended day building concerns",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 13000,
+    "t_end": 13251,
+    "topic": "Colonial Power agreement and charter letter",
+    "resolution": "voted",
+    "tags": [
+     "contracts-and-unions",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 13251,
+    "t_end": 14169,
+    "topic": "Warrants, action items, committee reports, upcoming meetings, adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "library",
+     "roads-and-dpw"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Vote count on the charter letter motion was not stated.",
+   "Several figures in the forecast presentation were garbled and the page 23 versus 29 reconciliation was unclear.",
+   "Exact vote tally on the postponement motion; the outcome is inferred only from the next motion being made."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 1442,
+    "about": "Members disagreed on whether to permit firearm hunting on conservation land.",
+    "sides": "Two members willing to permit, three members against",
+    "words_as_heard": "I would be appalled if the Board of Selectmen allowed it",
+    "kind": "members disagree"
+   },
+   {
+    "t": 6070,
+    "about": "Members disagreed over continuing the earth removal hearing for more input.",
+    "sides": "One member wanting building department input vs members calling it unnecessary",
+    "words_as_heard": "this is exactly the reason why people don't want to work in town",
+    "kind": "members disagree"
+   },
+   {
+    "t": 6884,
+    "about": "Member said the motion to continue treated abutters' concerns as laughable.",
+    "sides": "One member vs another member",
+    "words_as_heard": "I feel like laughing at my request is laughing at the abutters",
+    "kind": "charged language"
+   },
+   {
+    "t": 10064,
+    "about": "A member rejected the school five-year staffing projection as absurd.",
+    "sides": "A member vs the town manager and other members",
+    "words_as_heard": "I'm insulted",
+    "kind": "members disagree"
+   },
+   {
+    "t": 7480,
+    "about": "An abutter threatened to sell his home over the approved permit.",
+    "sides": "A resident against the board's decision",
+    "words_as_heard": "my home will be up for sale",
+    "kind": "public criticism"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 565,
+    "kind": "liability or legal",
+    "about": "Town liability if hunting were permitted on conservation land.",
+    "who": "a member",
+    "words_as_heard": "I would assume that the town would have a great deal of liability if they permitted it"
+   },
+   {
+    "t": 1589,
+    "kind": "safety",
+    "about": "Firearm discharge on land used year-round by families.",
+    "who": "a member",
+    "words_as_heard": "firearm discharged is by its very nature a dangerous business"
+   },
+   {
+    "t": 2830,
+    "kind": "condition",
+    "about": "Rock crushing would need to be documented as barred.",
+    "who": "a member",
+    "words_as_heard": "it would need to be documented that it's not occurring"
+   },
+   {
+    "t": 5662,
+    "kind": "safety",
+    "about": "Dust from excavation near a school and abutters' homes.",
+    "who": "a member",
+    "words_as_heard": "particulate matter does have a huge impact on people's health"
+   },
+   {
+    "t": 6028,
+    "kind": "condition",
+    "about": "Member would withhold vote to write conditions first.",
+    "who": "a member",
+    "words_as_heard": "I would withhold my vote today so that I can do a little bit more"
+   },
+   {
+    "t": 12579,
+    "kind": "safety",
+    "about": "State refused extended day vouchers because the TC Passios building failed standards; lead in water.",
+    "who": "a member",
+    "words_as_heard": "there's high levels of lead water"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 879,
+    "name_as_heard": "Conservation Commission's land-use policy",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "I gave you excerpts from the concert commit Conservation Commission's land-use policy",
+    "shown": true
+   },
+   {
+    "t": 2080,
+    "name_as_heard": "earth removal plans and figures",
+    "kind": "plan or drawing",
+    "words_as_heard": "this second figure is showing the proposed conditions post earth removal",
+    "shown": true
+   },
+   {
+    "t": 3501,
+    "name_as_heard": "letter from the Erskines",
+    "kind": "letter or email",
+    "words_as_heard": "somebody who submitted I know to us who were not able to be here",
+    "shown": false
+   },
+   {
+    "t": 8193,
+    "name_as_heard": "five-year forecast document",
+    "kind": "presentation",
+    "words_as_heard": "the five-year forecast document I gave it to people so they can project it on a screen",
+    "shown": true
+   },
+   {
+    "t": 12153,
+    "name_as_heard": "capital plan",
+    "kind": "report",
+    "words_as_heard": "the capital planning committee creates created a capital plan",
+    "shown": true
+   },
+   {
+    "t": 13062,
+    "name_as_heard": "Colonial Power consultant agreement",
+    "kind": "contract or agreement",
+    "words_as_heard": "colonial power consultant agreement",
+    "shown": true
+   },
+   {
+    "t": 13129,
+    "name_as_heard": "town charter documents and letter from Town Council",
+    "kind": "letter or email",
+    "words_as_heard": "a letter from Town Council regarding it",
+    "shown": true
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "five-year-financial-forecast",
+    "title": "Five-year financial forecast",
+    "question": "What does the FY21-25 forecast assume, and how large are the deficits with the school staffing plan?",
+    "t": 8193,
+    "words_as_heard": "the financial forecast for fiscal 21 through fiscal 25",
+    "data_in_play": [
+     "2.5 percent",
+     "three hundred and fifty thousand",
+     "3.5 million"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "capital-planning-requests",
+    "title": "Capital planning requests",
+    "question": "What is in the FY21 capital plan and what was left out?",
+    "t": 12259,
+    "words_as_heard": "28 capital requests totaling four million two hundred and thirty-nine thousand",
+    "data_in_play": [
+     "1 million three hundred and twenty nine thousand one hundred and thirty three"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "extended-day-space",
+    "title": "Extended day space",
+    "question": "Why were vouchers refused at TC Passios and what fixes would cost?",
+    "t": 12600,
+    "words_as_heard": "the state refused to fund the vouchers because the facility didn't meet state standards",
+    "data_in_play": [
+     "two million dollars"
+    ],
+    "existing": "thread:extended-day-fee"
+   },
+   {
+    "slug": "school-staffing-plan",
+    "title": "School staffing plan",
+    "question": "What does the school five-year staffing plan add each year?",
+    "t": 9641,
+    "words_as_heard": "The proposed five-year staffing plan for the school includes additional monies",
+    "data_in_play": [
+     "336,330",
+     "2 million seventy three thousand seventy dollars"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board approved a 50,000 cubic yard earth removal permit at 1325 Mass Ave, 3-2, with conditions on hours, dust control, no rock crushing and screening.",
+    "t": 6969
+   },
+   {
+    "line": "A motion to postpone the earth removal hearing to February 11 and invite the building commissioner and land-use director failed.",
+    "t": 6850
+   },
+   {
+    "line": "The board voted 3-2 not to permit hunting with firearms on the town conservation land parcels.",
+    "t": 1213
+   },
+   {
+    "line": "The town manager presented the FY21-25 five-year forecast; the board agreed to add a weekly budget and forecast item to its agendas until Town Meeting.",
+    "t": 11905
+   },
+   {
+    "line": "The January 28 meeting will be a public forum on the five-year forecast and capital plan instead of a regular meeting.",
+    "t": 14018
+   }
+  ],
+  "why_it_matters": [
+   "The earth removal permit allows several years of excavation and truck traffic next to homes on Townsend Harbor Road, and its conditions are the main protection for neighbors on dust, hours and septic systems.",
+   "The forecast and the school staffing plan bear on the next tax bill and on what Town Meeting will be asked to fund, and the January 28 forum is the scheduled chance for residents to speak on them."
+  ],
+  "watch_next": [
+   "January 28 public forum on the five-year forecast and capital plan.",
+   "The weekly budget and forecast agenda item on Select Board agendas through Town Meeting."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-04T09:25:13Z",
+   "cost_usd": 0.0306191
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01212020-5230",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-01-21-minutes-5230.txt",
+   "path": "sources/meetings/select-board/2020-01-21-minutes-5230.pdf"
+  },
+  "official_sha256": "4ace67758f5391f99f8e464cfc1abda17610baf793f5e541c12c3cd828cb7bc2",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on most appointments, the hunting vote and the main capital and warrant figures, though ours leaves out several official items. They differ on vote counts for the Proctor earth removal items and the ZBA appointment, the library grant amount, and whether the charter letter vote was audible.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 5,
+   "discrepancy": 6,
+   "only_in_ours": 6,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Hunting on conservation land vote",
+    "ours": "Do not permit hunting on the Lunenburg conservation land parcels. — passed 3-2",
+    "official": "motion: k. adams 2nd: p. luck to not permit firearm hunting on the these parcels of lunenburg conservation land",
+    "note": "Both record the motion not to permit hunting passing 3-2 (official: McQuaid, Jeffreys against).",
+    "t": 1213
+   },
+   {
+    "kind": "agree",
+    "about": "Class II auto dealer license, 36 Summer Street",
+    "ours": "Approve the class 2 auto dealer license for 36 Summer Street. — passed",
+    "official": "motion: .d. mcquaid 2nd: m. jeffreys to approve the class ii auto dealer license for 36 summer street",
+    "note": "Same motion; official minutes do not state a vote result, ours says passed.",
+    "t": 1765
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Proctor earth removal postponement vote",
+    "ours": "Postpone the Proctor earth removal hearing to February 11 and invite the building commissioner and land-use director. — failed",
+    "official": "vote: 2 in favor, 3 against (jeffreys, mcquaid, alonzo)",
+    "note": "Both show a failed vote, but official says it is not clearly tied to a motion (Jeffreys had withdrawn his continuation motion) and records the count 2-3 with Jeffreys among the no votes; check the recording for what was voted on and who voted how.",
+    "t": 6850
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Proctor earth removal permit vote",
+    "ours": "Approve the earth removal permit with conditions on hours, dust control, no rock crushing, and screening only the top two feet of soil, weekdays only. — passed 3-2",
+    "official": "motion: m. jeffreys to approve the earth removal permit as requested with the following conditions",
+    "note": "Official minutes give no vote result or count for the permit; check the recording to confirm it passed 3-2.",
+    "t": 6969
+   },
+   {
+    "kind": "agree",
+    "about": "Ratify David Gallagher as COA van driver",
+    "ours": "Ratify appointment of David Gallagher as Council on Aging van driver. — passed",
+    "official": "motion: k. adams to ratify the appointment of david gallagher as coa van driver 2nd: d. mcquaid vote: all in favor",
+    "note": "Same appointment, passed.",
+    "t": 7727
+   },
+   {
+    "kind": "caption_error",
+    "about": "Animal control officer name",
+    "ours": "Ratify appointment of Cathy Como as animal control officer. — passed",
+    "official": "motion: p. luck 2nd: k. adams to ratify the appointment of kathy comeau as animal control officer vote: all in favor",
+    "note": "Same appointment and outcome; name misheard in captions.",
+    "official_reading": "Kathy Comeau",
+    "t": 7749
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Patrick Callahan ZBA appointment vote",
+    "ours": "Appoint Patrick Callahan to the Zoning Board of Appeals until June 30, 2022. — passed",
+    "official": "motion: d. mcquaid 2nd: p. luck to appoint pat callahan to the zoning board of appeals with a term to expire june 30, 2022. vote: 4 in favor, 1 abstention (adams)",
+    "note": "Both passed, but ours gives no count while official records an Adams abstention; check the recording.",
+    "t": 7936
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Colonial Power / broker agreement",
+    "ours": "Sign the Colonial Power consultant agreement, same as last year's. — passed",
+    "official": "motion: d. mcquaid to sign the agreement with the broker 2nd: p. luck vote: all in favor",
+    "note": "Probably the same item (electric aggregation broker/consultant), but official does not name Colonial Power; confirm it is the same agreement.",
+    "t": 13085
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Town charter letters to legislators",
+    "ours": "Have the chair sign the town charter letter to the state representative and senator. — not audible",
+    "official": "to authorize the chair to sign the letters to representatve hay and senator tran requesting them to present the town charter to the state legislature vote:all in favor",
+    "note": "Ours could not hear the outcome; official says all in favor.",
+    "t": 13211
+   },
+   {
+    "kind": "agree",
+    "about": "Compost bin and rain barrel prices",
+    "ours": "Compost bin and rain barrel prices at the DPW: $43, 56, 80, $19 savings",
+    "official": "compost bins are for sale at the dpw for $43.00. if you purchase a rainwater barrel ($56) at the same time, you can get them both for $80, which is a $19 savings.",
+    "note": "Same figures.",
+    "t": 110
+   },
+   {
+    "kind": "agree",
+    "about": "New growth assumption",
+    "ours": "New growth assumption in forecast: three hundred and fifty thousand, three hundred thousand",
+    "official": "add new growth (estimate for fy21 $350,000 and $300,000 for f y22-f y25)",
+    "note": "Same figures.",
+    "t": 8568
+   },
+   {
+    "kind": "agree",
+    "about": "FY21 free cash use",
+    "ours": "FY21 free cash use: 889 thousand one hundred and thirty three dollars, six hundred and seventy nine thousand one hundred and thirty three, hundred thousand, one hundred and ten thousand",
+    "official": "provides for $650k in tax revenues for capital and uses $889,133 in free cash for capital, opeb, and regular",
+    "note": "$889,133 and $679,133 match; the trailing captions are noise.",
+    "t": 9376
+   },
+   {
+    "kind": "agree",
+    "about": "School five-year staffing plan costs",
+    "ours": "School five-year staffing plan added cost: three hundred and thirty six thousand three hundred thirty dollars, 1 million one hundred and seventy eight thousand 997 dollars, 2 million seventy three thousand seventy dollars, two million nine hundred and seventeen thousand three hundred fifty-seven dollars, three million five hundred and ninety-four thousand three hundred and twenty-six",
+    "official": "the proposed five year staffing plan for the school includes an additional $336,330 in fy21",
+    "note": "Figures match except the second year, where captions say 997 and official prints 178,097.",
+    "t": 9641
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY25 school expense and gap",
+    "ours": "FY25 school expense and gap: 46 million eight hundred and forty seven thousand dollars, four million dollars in the red, 40% increase",
+    "official": "",
+    "note": "Official minutes have no corresponding FY25 school expense, 4 million shortfall or 40% increase.",
+    "t": 9896
+   },
+   {
+    "kind": "agree",
+    "about": "FY21 capital requests total",
+    "ours": "FY21 capital requests: four million two hundred and thirty-nine thousand four hundred and thirty-eight dollars, 1 million 329 thousand 133",
+    "official": "there were 28 capital requests totaling $4,239,438 for fy2021:",
+    "note": "Same totals; $1,329,133 matches the capital funding table.",
+    "t": 12259
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Colonial Power aggregation adder",
+    "ours": "Colonial Power aggregation adder: point zero zero one kilowatt hour",
+    "official": "",
+    "note": "Official minutes have no adder figure.",
+    "t": 13062
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrant totals",
+    "ours": "Warrants: one hundred seventy three thousand four hundred fifty seven dollars and thirty eight cents, seven hundred eight thousand nine hundred forty six dollars and seventy six cents, eight hundred thirteen thousand sixty dollars and ninety eight cents",
+    "official": "$173,457.38, a payroll warrant in the amount of $813,060.98 and a deductions warrant in the amount of $708,946.46.76",
+    "note": "Same three warrants; official deductions figure is garbled, ours reads $708,946.76.",
+    "official_reading": "$708,946.46.76",
+    "t": 13251
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Library grants",
+    "ours": "Library grants: $3500, $5,000",
+    "official": "they recieved a $5000 grant from hannafords to replace some bookshelves, they have another request in for another $5000",
+    "note": "Official gives $5000 and $5000 pending; ours has $3500 for one; check the recording.",
+    "t": 13655
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Weekly budget and forecast agenda item",
+    "ours": "Board will add a weekly budget and forecast discussion item to its agendas until Town Meeting.",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 11905
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "January 28 public forum",
+    "ours": "The January 28 meeting will be a public forum on the five-year forecast and capital plan instead of a regular meeting.",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 14018
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Invite former state representative",
+    "ours": "Board will try to invite the former state representative to a future meeting to be recognized.",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 13321
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Community recognition awards",
+    "ours": "Community recognition awards to be discussed at the workshop.",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 13595
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Forecast and budget figures not in ours",
+    "ours": "",
+    "official": "target budget leaves a surplus of $150,000 in free cash that could go towards",
+    "note": "Official has $150,000 surplus, ~$535,000 MSBA, $40,000 Eagle House, pavement/stormwater, deficits and revenue totals that ours lacks.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Thank-you letters to Sewer Commission members",
+    "ours": "",
+    "official": "letters of thanks were signed to joan pease and ryan stober for their service on the sewer commission.",
+    "note": "Not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Economic Development Committee representative continued",
+    "ours": "",
+    "official": "economic development committee bos representative-this item was continued to another agenda.",
+    "note": "Not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Mr. Jeffries",
+    "ours": "Mr. Jeffries (member)",
+    "official": "katey adams, michael-ray jeffreys",
+    "note": "Misspelled name.",
+    "official_reading": "Michael-Ray Jeffreys",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Mr. Alonza",
+    "ours": "Mr. Alonza (member)",
+    "official": "members present: tom alonzo, chairman; damon mcquaid, clerk; phyllis luck, vice chairman;",
+    "note": "Misspelled; official lists him as chairman.",
+    "official_reading": "Tom Alonzo",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: board members and town manager",
+    "ours": "Mrs. Adams (member); Mr. McQuaid (member); Mrs. Luck (vice chair); Heather (town manager)",
+    "official": "also present: heather lemieux, town manager",
+    "note": "All present in both.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Superintendent",
+    "ours": "the superintendent (superintendent)",
+    "official": "supt. burnham stated tomorrow she would be presenting the school budget.",
+    "note": "Official names Supt. Burnham.",
+    "official_reading": "Supt. Burnham",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T09:28:00Z",
+   "cost_usd": 0.0809831
+  }
+ }
+}

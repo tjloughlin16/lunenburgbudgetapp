@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2020-06-23",
  "docid": "5669",
@@ -12,55 +12,423 @@
  },
  "votes": [
   {
-   "motion": "Elect Dave as Chair",
+   "motion": "Nominate Dave as Chair.",
    "moved_by": "John",
-   "seconded_by": "Mike",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "john nominated dave as chair and mike seconded. vote: mike-aye, carl-aye, brett-aye and john-aye"
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "john nominated dave as chair and mike seconded. vote: mike-aye, carl-aye, brett-aye and john-aye",
+   "seconded_by": "Mike"
   },
   {
-   "motion": "Elect John as Vice-Chair",
+   "motion": "Nominate John as Vice-Chair.",
    "moved_by": "Carl",
-   "seconded_by": "Brett",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "carl nominated john as vice-chair and brett seconded. vote: mike-aye, carl-aye, brett-aye, john-aye, dave-aye"
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "carl nominated john as vice-chair and brett seconded. vote: mike-aye, carl-aye, brett-aye, john-aye, dave-aye",
+   "seconded_by": "Brett"
   },
   {
-   "motion": "Elect Brett as Clerk",
+   "motion": "Nominate Brett as Clerk.",
    "moved_by": "John",
-   "seconded_by": "Carl",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "john nominated brett as clerk and carl seconded. vote: mike-aye, carl-aye, brett-aye, john-aye, dave-aye"
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "john nominated brett as clerk and carl seconded. vote: mike-aye, carl-aye, brett-aye, john-aye, dave-aye",
+   "seconded_by": "Carl"
   },
   {
-   "motion": "Approve the end-of-year commitment of $761.32",
+   "motion": "Approve the end-of-year commitment of $761.32 to be forwarded to the town accountant.",
    "moved_by": "Carl L.",
-   "seconded_by": "John R.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: carl l. second: john r. to approve the end-of-year commitment of $761.32. vote: mike-aye, carl-aye, john-aye, dave-aye"
+   "quote": "motion: carl l. second: john r. to approve the end-of-year commitment of $761.32. vote: mike-aye, carl-aye, john-aye, dave-aye",
+   "seconded_by": "John R."
   },
   {
-   "motion": "Waive the annual permit fees for Grease Traps for FY21",
+   "motion": "Waive the annual permit fees for Grease Traps for FY21.",
    "moved_by": "John R.",
-   "seconded_by": "Carl L.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: john r. second: carl l. to waive the annual permit fees for grease traps for fy21. vote: mike-aye, carl-aye, john-aye, dave-aye"
+   "quote": "motion: john r. second: carl l. to waive the annual permit fees for grease traps for fy21. vote: mike-aye, carl-aye, john-aye, dave-aye",
+   "seconded_by": "Carl L."
   },
   {
-   "motion": "Accept the minutes for 6/9/20",
+   "motion": "Accept the minutes of 6/9/20.",
    "moved_by": "John R.",
-   "seconded_by": "Mike D.",
-   "outcome": "passed 3-0-1",
+   "outcome": "passed; Carl abstained",
    "procedural": true,
-   "quote": "motion: john r. second: mike d. to accept the minutes for 6/9/20. vote: mike-aye, john-aye, dave-aye and carl abstained"
+   "quote": "motion: john r. second: mike d. to accept the minutes for 6/9/20. vote: mike-aye, john-aye, dave-aye and carl abstained.",
+   "seconded_by": "Mike D."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned minutes, readable. Six votes recorded: three elections of officers (procedural), two substantive motions, and approval of prior minutes (procedural).",
- "cost_usd": 0.0983435
+ "note": "Text is OCR (macOS Vision) and is partial: page 1 begins mid-sentence in the irrigation meter item, the call to order, roll call and earlier agenda items are not in the text, page 2 begins mid-sentence and the end-of-year commitment heading is missing, and page 3 cuts off at a truncated '(Minutes Clerk' signature line. No adjournment vote is recorded in the text. Recorded votes are listed as printed; vote counts for the Chair, Vice-Chair and Clerk elections are shown as ayes only, not as a printed count.",
+ "cost_usd": 0.011539520000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "dave said he was proud of the town turnout for the town election."
+  },
+  {
+   "name": "Mike",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "vote: mike-aye, carl-aye, brett-aye and john-aye"
+  },
+  {
+   "name": "Carl",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "carl nominated john as vice-chair and brett seconded."
+  },
+  {
+   "name": "John",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "john noted that he was sworn in earlier in the day."
+  },
+  {
+   "name": "Brett",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "(brett left the meeting.)"
+  },
+  {
+   "name": "Jack",
+   "role": "",
+   "status": "present",
+   "quote": "jack stated that the commission did their due diligence with the rfp"
+  },
+  {
+   "name": "Barb",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "business manager report - barb reported that the 3 budget articles passed at the 6/13 town meeting"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Carl to send Barb his RFP changes for distribution to the Commission; Barb and Jack to review and forward to Town Counsel for input.",
+   "quote": "the commission discussed this and agreed to have carl sent barb his changes which she can distribute to the commission"
+  },
+  {
+   "decision": "Barb to send a reminder letter giving participants who owe the meter fee 30 days to pay or be withdrawn from the program.",
+   "quote": "barb will send out the reminder letter advising those who owe the fee that they have 30 days to pay."
+  },
+  {
+   "decision": "Barb to send the proposed Irrigation Meter Policy changes to the Commission for review at the next meeting.",
+   "quote": "barb will send the commission the proposed changes to the policy for their review at the next meeting."
+  },
+  {
+   "decision": "Commission supported Dave and Jack meeting with Roger (Leominster) on the billing changeover.",
+   "quote": "commission discussed and supported having dave and jack meet with roger."
+  },
+  {
+   "decision": "Barb to send letters to establishments with grease traps.",
+   "quote": "barb will send letters out to establishments with grease traps."
+  },
+  {
+   "decision": "Commission agreed to pay the Woodward & Curran and Fitchburg invoices.",
+   "quote": "the commission agreed to pay the invoices."
+  },
+  {
+   "decision": "Commission agreed to look at the budget simplification suggestion in a workshop.",
+   "quote": "the commission discussed and agreed to look at it in a workshop."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Irrigation meter program fees",
+   "what_was_recorded": "Meter program fees were due 6/4 and must be received to get a credit on the August billing; only 31 of 57 participants had paid.",
+   "figures_as_printed": [],
+   "quote": "the meter program fees were due 6/4 and must be received in order to receive a credit on the august billing."
+  },
+  {
+   "topic": "361 Mass Ave sewer allocation payoff",
+   "what_was_recorded": "Lunenburg Nominee Trust requested a payoff figure for the sewer allocation; Town Counsel to calculate it with interest, possibly a credit from Fitchburg; the Commission will pay Fitchburg for 20 years.",
+   "figures_as_printed": [],
+   "quote": "barb was contacted by the lunenburg nominee trust(lnt), stating that they are closing on the sale of the property in july and they were requesting the payoff figure."
+  },
+  {
+   "topic": "YTD FY20 budget",
+   "what_was_recorded": "Barb said the town still has about $100k of revenue above expenses; Carl asked that actual costs be shown and noted spending cannot exceed what town meeting authorizes.",
+   "figures_as_printed": [
+    "$100k"
+   ],
+   "quote": "said they still have about $100k of revenue above expenses."
+  },
+  {
+   "topic": "Legal services invoices",
+   "what_was_recorded": "Commission discussed legal services invoices; Carl wants actual costs shown in the budget.",
+   "figures_as_printed": [],
+   "quote": "commission discussed legal services invoices and carl wants actual costs shown when the budget is"
+  },
+  {
+   "topic": "End-of-year commitment",
+   "what_was_recorded": "Commission approved the end-of-year commitment of $761.32 for verbal approval to the town accountant.",
+   "figures_as_printed": [
+    "$761.32"
+   ],
+   "quote": "to approve the end-of-year commitment of $761.32."
+  },
+  {
+   "topic": "Grease trap annual permit fees",
+   "what_was_recorded": "Annual Grease Trap permit fees waived in full for FY21 to help businesses during the Covid crisis; fees were due 7/1 with an 8/1 effective date.",
+   "figures_as_printed": [],
+   "quote": "to waive the annual permit fees for grease traps for fy21."
+  },
+  {
+   "topic": "Woodward & Curran invoice and contract balance",
+   "what_was_recorded": "Invoice for pump station analysis, I/I evidence evaluation and interim meeting prep; about $12k remains on the contract.",
+   "figures_as_printed": [
+    "$11,161.14",
+    "$12k"
+   ],
+   "quote": "woodward & curran - $11,161.14 (pump station analysis, i/l evidence evaluation and prep for interim meeting)"
+  },
+  {
+   "topic": "Fitchburg invoice",
+   "what_was_recorded": "Fitchburg invoice for the 4/26-5/25 period was presented and the Commission agreed to pay it.",
+   "figures_as_printed": [
+    "$11,308.74"
+   ],
+   "quote": "fitchburg invoice (4/26-5/25) for $11,308.74."
+  },
+  {
+   "topic": "Budget simplification",
+   "what_was_recorded": "Dave suggested scrapping the budget and making it simpler; referred to a workshop. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "dave suggested scrapping the budget and make it simpler."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "FY20 Retained Earnings Transfer article at the 6/13 Town Meeting",
+   "amount_as_printed": "not stated",
+   "outcome": "passed over at Town Meeting",
+   "quote": "and the article for the fy20 retained earnings transfer was passed over."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Carl",
+   "stated_role": "",
+   "topic": "town office hours and congratulations on election",
+   "quote": "carl clarified that all town offices are open by appointment only and he congratulated his fellow members on their election."
+  },
+  {
+   "speaker": "John",
+   "stated_role": "",
+   "topic": "swearing in",
+   "quote": "john noted that he was sworn in earlier in the day."
+  },
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "Town Election turnout",
+   "quote": "dave said he was proud of the town turnout for the town election."
+  },
+  {
+   "speaker": "Mike",
+   "stated_role": "",
+   "topic": "thanks for election, business efficiency",
+   "quote": "mike thanked everyone for their support in being elected to the commission and looks forward to working on making the business more efficient."
+  },
+  {
+   "speaker": "Carl",
+   "stated_role": "",
+   "topic": "Harvard sewer history and rural character",
+   "quote": "carl noted that harvard, where he previously lived, decided to only keep sewer in the center of town"
+  },
+  {
+   "speaker": "John",
+   "stated_role": "",
+   "topic": "Town Meeting attendance",
+   "quote": "john inquired about the attendance at the town meeting and carl replied around 60 residents attended."
+  },
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "thanks to Town Clerk",
+   "quote": "dave thanked the town clerk for setting up the town"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Irrigation meter program (start of item not in text)",
+   "resolution": "no action recorded in this portion",
+   "quote": "irrigation meters must be upgraded to remote reading capability by 9/1 to continue in the program.",
+   "tags": [
+    "irrigation meters"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "public comment-carl clarified that all town offices are open by appointment only",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "Dave elected Chair, John Vice-Chair, Brett Clerk",
+   "quote": "election of officers - john nominated dave as chair and mike seconded.",
+   "tags": [
+    "officer elections"
+   ]
+  },
+  {
+   "topic": "RFP Station Operations & Maintenance",
+   "resolution": "Carl's notes to go to Barb for distribution, then Barb and Jack to review and forward to Counsel",
+   "quote": "rfp. station operations & maintenance - jack stated that the commission did their due diligence with the rfp",
+   "tags": [
+    "RFP",
+    "legal"
+   ]
+  },
+  {
+   "topic": "361 Mass Ave Bright Farms proposed project and sewer allocation payment",
+   "resolution": "status reported; payoff figure to be calculated by Town Counsel",
+   "quote": "361 mass ave - bright farms proposed project - status, payment of sewer allocation - barb was contacted by",
+   "tags": [
+    "Fitchburg sewer allocation",
+    "Bright Farms 361 Mass Ave"
+   ]
+  },
+  {
+   "topic": "Irrigation Meter Policy update",
+   "resolution": "30-day payment letter to be sent; policy changes to next meeting",
+   "quote": "irrigation meter policy update discussion - barb reported she only received payments from 31 out of 57",
+   "tags": [
+    "irrigation meters"
+   ]
+  },
+  {
+   "topic": "YTD FY20 budget",
+   "resolution": "reviewed; actual costs to be shown for legal services",
+   "quote": "ytd fy20 budget- barb sent the commissioners the updated fy20 budget and said they still have about $100k",
+   "tags": [
+    "FY20 budget"
+   ]
+  },
+  {
+   "topic": "End-of-year commitment (heading cut off)",
+   "resolution": "approved",
+   "quote": "to approve the end-of-year commitment of $761.32.",
+   "tags": [
+    "commitments"
+   ]
+  },
+  {
+   "topic": "Leominster IMA billing changeover to flow meters",
+   "resolution": "Dave and Jack to meet with Roger",
+   "quote": "leominster ima billing changeover to flow meters-update - dave would like to set up a meeting with jack and",
+   "tags": [
+    "Leominster IMA"
+   ]
+  },
+  {
+   "topic": "Grease trap permit fees",
+   "resolution": "annual permit fees waived for FY21",
+   "quote": "grease trap discussion of annual effective date of 8/1 application, fees due 7/1",
+   "tags": [
+    "grease traps",
+    "COVID-19"
+   ]
+  },
+  {
+   "topic": "Minutes of 6/9 meeting",
+   "resolution": "accepted; Carl abstained",
+   "quote": "minutes of 6/9 meeting- motion: john r.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report",
+   "resolution": "invoices approved for payment; 1170 Mass Ave document recorded",
+   "quote": "business manager report - barb reported that the 3 budget articles passed at the 6/13 town meeting",
+   "tags": [
+    "invoices",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "budget to be reviewed in a workshop; commercial sewer expansion discussed",
+   "quote": "member agenda inputs for future meetings - dave suggested scrapping the budget and make it simpler.",
+   "tags": [
+    "budget",
+    "sewer expansion"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action",
+   "quote": "public comment - mike thanked everyone for their support in being elected to the commission",
+   "tags": [
+    "public comment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY20 Budget update",
+   "where": "list",
+   "quote": "handouts: fy20 budget update"
+  },
+  {
+   "name": "RFP Station Operations & Maintenance",
+   "where": "text",
+   "quote": "rfp. station operations & maintenance - jack stated that the commission did their due diligence with the rfp"
+  },
+  {
+   "name": "Carl's notes on the RFP",
+   "where": "text",
+   "quote": "carl wants to talk directly with counsel if they have any questions regarding carl's notes."
+  },
+  {
+   "name": "Irrigation Meter Policy and Credit Program",
+   "where": "text",
+   "quote": "she read her proposed change to the irrigation meter policy and credit program and"
+  },
+  {
+   "name": "1170 Mass Ave document",
+   "where": "text",
+   "quote": "she added that the 1170 mass ave document has been notarized and recorded."
+  },
+  {
+   "name": "Woodward & Curran invoice",
+   "where": "text",
+   "quote": "invoices - woodward & curran - $11,161.14 (pump station analysis, i/l"
+  },
+  {
+   "name": "Fitchburg invoice (4/26-5/25)",
+   "where": "text",
+   "quote": "fitchburg invoice (4/26-5/25) for $11,308.74."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "officer elections",
+  "irrigation meters",
+  "grease trap permits",
+  "FY20 budget",
+  "Fitchburg sewer allocation",
+  "Bright Farms 361 Mass Ave",
+  "Leominster IMA",
+  "RFP",
+  "invoices",
+  "public comment",
+  "COVID-19"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {}
 }

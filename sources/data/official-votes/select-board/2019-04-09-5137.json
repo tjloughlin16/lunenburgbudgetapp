@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-04-09",
  "docid": "5137",
@@ -12,62 +12,72 @@
  },
  "votes": [
   {
-   "motion": "Ratify the appointment of Katey Adams to the American with Disabilities Commission, BOS representative",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "to ratify the appointment of katey adams to the american with disabilities commission- bos representative vote: all in favor"
-  },
-  {
-   "motion": "Approve the Class II Auto Dealer license for Carlos Bismark Terrero d/b/a National Motors for 40 Summer Street",
+   "motion": "Approve the Class II Auto Dealer license for 40 Summer Street for Carlos Bismark Terrero d/b/a National Motors.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: d. mcquaid 2nd: p. luck to approve the class ii auto dealer license for 40 summer street for carlos bismark terrero d/b/a national motors vote: all in favor"
+   "quote": "to approve the class ii auto dealer license for 40 summer street for carlos bismark terrero d/b/a national motors"
   },
   {
-   "motion": "Put a hold on the economic development committee and reevaluate",
+   "motion": "Ratify the appointment of Katey Adams to the American with Disabilities Commission as BOS representative.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to ratify the appointment of katey adams to the american with disabilities commission-"
+  },
+  {
+   "motion": "Put a hold on the economic development committee and reevaluate.",
    "moved_by": "K. Adams",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: k. adams 2nd: p. luck to put a hold on the economic development committee and reevaluate discussion: mr. mc",
-   "quote_taken_from_text": true
+   "quote": "to put a hold on the economic development committee and reevaluate"
   },
   {
-   "motion": "Adopt the reimbursement policy with amendments",
+   "motion": "Adopt the reimbursement policy with amendments.",
    "moved_by": "K. Adams",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: k. adams to adopt the reimbursement policy with amendments 2*d: d. mcquaid vote: all in favor"
+   "quote": "to adopt the reimbursement policy with amendments"
   },
   {
-   "motion": "Authorize abating the old rescue wagon receivable balance of $108,900.84",
+   "motion": "Authorize abating the old rescue wagon receivable balance of $108,900.84.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: d. mcquaid 2\": p. luck to authorize abating the old rescue wagon receivable balance in the amount of $108,900.84 vote: all in favor"
+   "quote": "to authorize abating the old rescue wagon receivable balance in the amount of $108,900.84"
   },
   {
-   "motion": "Not recommend approval of Article 21",
+   "motion": "Not recommend approval of Article 21.",
    "moved_by": "K. Adams",
    "seconded_by": "P. Luck",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "motion: k. adams 2nd: p. luck to not recommend approval of article 21"
+   "quote": "to not recommend approval of article 21"
   },
   {
-   "motion": "Recommend approval of Article 23",
+   "motion": "Not recommend Article 22.",
+   "moved_by": "K. Adams",
+   "seconded_by": "P. Luck",
+   "outcome": "failed 2-2",
+   "procedural": false,
+   "quote": "to not recommend article 22 vote: ms. luck- aye, ms. adams-aye, mr. toale - nay, mr. mcquaid- nay"
+  },
+  {
+   "motion": "Recommend approval of Article 23.",
    "moved_by": "P. Luck",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 3-1",
    "procedural": false,
-   "quote": "motion: p. luck 2nd: d. mcquaid to recommend approval of article 23 discussion: ms. adams stated the hou",
-   "quote_taken_from_text": true
+   "quote": "to recommend approval of article 23"
+  },
+  {
+   "motion": "Board vote on a recommendation for Article 7 (FY2020 budget); the motion wording is not printed in the minutes.",
+   "outcome": "2-2, no recommendation",
+   "procedural": false,
+   "quote": "mir. toale called for a vote. vote: ms. luck-aye, ms. adams-aye, mr. toale - nay, mr. mcquaid- nay"
   },
   {
    "motion": "Adjourn the meeting at 10:06 p.m.",
@@ -75,11 +85,502 @@
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: d. mcquaid to adjourn the meeting at 10:06 p.m. 2'd: p. luck vote: all in favor",
-   "quote_taken_from_text": true
+   "quote": "to adjourn the meeting at 10:06 p.m."
   }
  ],
- "dropped_unquoted": 1,
- "note": "Minutes were OCR-extracted from a scanned document; some minor OCR artifacts preserved in quotes (e.g., \"2*d:\" for \"2nd:\", \"2\\\":\" for \"2nd:\"). One motion (Article 21) has no recorded vote result despite motion and second being stated.",
- "cost_usd": 0.1756185
+ "dropped_unquoted": 0,
+ "note": "OCR text with visible errors (e.g., 'thrce', 'Mir.', 'engincering', 'ARICO', '2*d'); quotes copied as printed. Article 7 vote has a tally but no motion wording printed. Article 21 has a motion with no tally recorded. Article 22 is a 2-2 tie. The Article 33 motion was withdrawn, so it is not counted as a vote. The Special Event Permit hearing has no vote. The minutes name no documents list, so documents_list is marked not printed.",
+ "cost_usd": 0.01804802,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen present: jamie toale, chairman; damon mcquaid, vice chairman;"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen present: jamie toale, chairman; damon mcquaid, vice chairman;"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "phyllis luck, clerk; katey adams, member"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "phyllis luck, clerk; katey adams, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; adam costa, town counsel"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; adam costa, town counsel"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "land use director adam burney stated we have gone over this several times in the last few"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "finance director karen brochu reported this is a very simple reimbursement policy that we are"
+  },
+  {
+   "name": "Carlos Bismark Terrero",
+   "role": "applicant",
+   "status": "present",
+   "quote": "carlos bismark terrero presented for the application. he stated he would like to open a used car"
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "tom alonzo, 284 lancaster ave., thanked the eagle house supporters for arranging the trophy"
+  },
+  {
+   "name": "Ingrid Cruse Helmer",
+   "status": "present",
+   "quote": "ingrid cruse helmer, 141 canterbury drive, informed about an upcoming speaker for resources"
+  },
+  {
+   "name": "Ana Lockwood",
+   "status": "present",
+   "quote": "ana lockwood, 91 main street, referred to the last meeting and discussion about the town"
+  },
+  {
+   "name": "Steve Weaver",
+   "status": "present",
+   "quote": "steve weaver, 288 holman street, stated at last week's meeting where three entertainment"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "dave passios, 56 whiting st., clarifying on the buffer zone item, stated if you are going to"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "status": "present",
+   "quote": "rhonda lisio, 181 reservoir road, commented on article 24, regarding moving municipal"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Toale closed the public hearing on the Special Event Permit after thanking attendees; the policy draft was not voted on and staff is to define 'special event' more clearly.",
+   "quote": "mr. toale stated we know we need to define what a special event is more. he closed the public hearing."
+  },
+  {
+   "decision": "Mr. Burney will remove the clause about membership events from the special event policy draft.",
+   "quote": "he will remove the clause about membership events."
+  },
+  {
+   "decision": "Mr. Burney has stopped updating the application form until the policy is completed.",
+   "quote": "mr. burney stated he has stopped updating the application form until the policy is completed."
+  },
+  {
+   "decision": "Timing (6:00 a.m. start time) on the special event policy was set aside as a discussion for later.",
+   "quote": "timing - 6:00 a.m. start time was a discussion for later"
+  },
+  {
+   "decision": "Enforcement and insurance items in the special event policy are to be worked on with legal counsel's assistance.",
+   "quote": "enforcement- work needed with legal counsel assistance"
+  },
+  {
+   "decision": "The Board will wait for Town Meeting to get the final balance on Article 4, and the Board concurred.",
+   "quote": "mr. toale asked for confirmation on the waiting until town meeting to get the final balance and the board concurred."
+  },
+  {
+   "decision": "Article 8 recommendation deferred to Town Meeting, with no Board recommendation.",
+   "quote": "ms. lemieux reported article 8 would be presented at town meeting so she assumed they would defer on any recommendation as well."
+  },
+  {
+   "decision": "Article 6 (FY 2020 Capital Plan) deferred.",
+   "quote": "article 6 (fy 2020 capital plan) was deferred as well."
+  },
+  {
+   "decision": "The Board does not take a position on Article 7 (FY2020 budget) after the tied vote.",
+   "quote": "mr. toale stated the board does not have a position."
+  },
+  {
+   "decision": "Article 33 and the citizens' petition warrant articles deferred; the Board will hear from citizen petitioners at Town Meeting before recommending.",
+   "quote": "ms. lemieux reported article 33 as well as the citizens' petition warrant articles was deferred."
+  },
+  {
+   "decision": "Senior Tax Work Off: once a recommendation comes from the Senior Work Off Committee, it will be added to the next Board agenda.",
+   "quote": "once we receive a recommendation from the senior work off committee to the board of selectmen, we will add it to the next agenda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Eagle House Red Sox ticket raffle",
+   "what_was_recorded": "Raffle tickets for four Red Sox seats and a Fenway tour were priced at $5.00 each or three for $10.00.",
+   "figures_as_printed": [
+    "$5.00",
+    "$10.00"
+   ],
+   "quote": "tickets will be $5.00 each or thrce for $10.00."
+  },
+  {
+   "topic": "Rescue wagon receivable balance",
+   "what_was_recorded": "A very old rescue wagon receivable balance of $108,900.84, unchanged for at least 20 years, was proposed for abatement.",
+   "figures_as_printed": [
+    "$108,900.84"
+   ],
+   "quote": "ms. brochu reported we have a very old rescue wagon receivable balance in the amount of $108,900.84."
+  },
+  {
+   "topic": "Ambulance receivables write-off",
+   "what_was_recorded": "A write-off of $108,900.84 in old ambulance receivables dating before 2003 was recommended as uncollectible.",
+   "figures_as_printed": [
+    "$108,900.84"
+   ],
+   "quote": "the recommendation before the board is to write-off a total of $108,900.84 from old ambulance receivables that date back prior to 2003"
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "The Board signed an accounts payable warrant for this amount.",
+   "figures_as_printed": [
+    "$552,144.33"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $552,144.33."
+  },
+  {
+   "topic": "Old Primary School Building repair (Article 21)",
+   "what_was_recorded": "Conveying the old Primary School Building was said to avoid putting $2 million of repair into the building.",
+   "figures_as_printed": [
+    "$2 million"
+   ],
+   "quote": "it is an effort to avoid putting $2 million of repair into the building."
+  },
+  {
+   "topic": "Design and engineering for consolidated town offices (Article 24)",
+   "what_was_recorded": "Article 24 asks for an appropriation, from taxation or available funds, for design and engineering of the TCP; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "raise and appropriate or transfer from available funds a sum of money for the design and engincering to consolidate town offices"
+  },
+  {
+   "topic": "FY2020 budget (Article 7)",
+   "what_was_recorded": "The FY2020 budget was discussed, including two new staff positions that Ms. Luck questioned; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "article 7 is the fy2020 budget. ms. luck had issues with the two new staff positions."
+  },
+  {
+   "topic": "Senior Tax Work Off Program",
+   "what_was_recorded": "Amending the program to raise the hourly wage and maximum abatement for seniors was discussed; no figures are printed.",
+   "figures_as_printed": [],
+   "quote": "to increase the hourly wage and maximum abatement for eligible seniors in this program"
+  },
+  {
+   "topic": "Employee reimbursement policy",
+   "what_was_recorded": "The policy ties mileage reimbursement to the IRS rate; hotel and food are named as reasonable travel costs; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "the reimbursement rate will correspond with the internal revenue service mileage rate at the time of the travel."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer to amend the fiscal year 17 budget (Article 5).",
+   "amount_as_printed": "",
+   "outcome": "Board will wait for Town Meeting for the final balance required; no transfer decided.",
+   "quote": "ms. lemieux reported article 5 was the transfer to amend the fiscal year 17 budget."
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Boys & Girls Club fundraiser and Eagle House trophy viewing",
+   "speaker": "Tom Alonzo",
+   "quote": "tom alonzo, 284 lancaster ave., thanked the eagle house supporters for arranging the trophy"
+  },
+  {
+   "topic": "ROAR speaker at Lunenburg High School",
+   "speaker": "Ingrid Cruse Helmer",
+   "quote": "ingrid cruse helmer, 141 canterbury drive, informed about an upcoming speaker for resources"
+  },
+  {
+   "topic": "Town Manager evaluation and contract wording",
+   "speaker": "Ana Lockwood",
+   "quote": "ana lockwood, 91 main street, referred to the last meeting and discussion about the town"
+  },
+  {
+   "topic": "Entertainment licenses at 300 Holman Street",
+   "speaker": "Steve Weaver",
+   "quote": "steve weaver, 288 holman street, stated at last week's meeting where three entertainment"
+  },
+  {
+   "topic": "Special event permit written comments",
+   "speaker": "Dave Passios",
+   "quote": "mr. burney stated he received the following email from resident dave passios,"
+  },
+  {
+   "topic": "Buffer zone in the special event policy",
+   "speaker": "Dave Passios",
+   "quote": "dave passios, 56 whiting st., clarifying on the buffer zone item, stated if you are going to"
+  },
+  {
+   "topic": "Whether the special event policy would come to Town Meeting",
+   "speaker": "Tom Alonzo",
+   "quote": "tom alonzo asked if it was the intent of the board that this would come before town meeting."
+  },
+  {
+   "topic": "Overnight tenting and multi-day events",
+   "speaker": "Steve Weaver",
+   "quote": "steve weaver, asked about the special events, is that going to be overnight tenting; will we have"
+  },
+  {
+   "topic": "Definition of special event",
+   "speaker": "Ana Lockwood",
+   "quote": "ana lockwood asked have you defined what actually a special event is."
+  },
+  {
+   "topic": "Article 24, moving municipal offices to the TCP",
+   "speaker": "Rhonda Lisio",
+   "quote": "rhonda lisio, 181 reservoir road, commented on article 24, regarding moving municipal"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening, Pledge, and announcements",
+   "resolution": "no action",
+   "tags": [
+    "announcements",
+    "Eagle House"
+   ],
+   "quote": "the meeting opened at 7:00 pm with the pledge of allegiance."
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "discussion, no action",
+   "tags": [
+    "public comment",
+    "Town Charter"
+   ],
+   "quote": "ms. adams has been asked if there would be a chance to amend the town charter on the floor of"
+  },
+  {
+   "topic": "Public hearing on Special Event Permit",
+   "resolution": "hearing closed; policy draft continued, no vote",
+   "tags": [
+    "special events",
+    "public hearing",
+    "policy"
+   ],
+   "quote": "public hearing on special event permit"
+  },
+  {
+   "topic": "Public hearing: Class II Auto Dealer license, Carlos Bismark Terrero",
+   "resolution": "approved",
+   "tags": [
+    "licensing",
+    "auto dealer"
+   ],
+   "quote": "public hearing class ii auto dealer license -carlos bismark terrero d/b/a national motors,"
+  },
+  {
+   "topic": "Ratify Katey Adams to ADA Commission",
+   "resolution": "ratified",
+   "tags": [
+    "appointments"
+   ],
+   "quote": "to ratify the appointment of katey adams to the american with disabilities commission-"
+  },
+  {
+   "topic": "Board member appointment to Economic Development Committee",
+   "resolution": "put on hold and to be reevaluated",
+   "tags": [
+    "economic development",
+    "committee charge"
+   ],
+   "quote": "appointment of board of selectmen member to the economic development committee"
+  },
+  {
+   "topic": "Reimbursement policy and abatement of ambulance receivables",
+   "resolution": "policy adopted with amendments; receivable abated; write-off discussed",
+   "tags": [
+    "finance",
+    "reimbursement",
+    "ambulance receivables"
+   ],
+   "quote": "reimbursement policy & abatement of ambulance receivables"
+  },
+  {
+   "topic": "Dementia Friendly kick-off and other updates",
+   "resolution": "informational, no action",
+   "tags": [
+    "announcements",
+    "community solar",
+    "recycling",
+    "MRPC study"
+   ],
+   "quote": "dementia friendly kick-off event"
+  },
+  {
+   "topic": "Upcoming meetings and calendar",
+   "resolution": "informational",
+   "tags": [
+    "meetings"
+   ],
+   "quote": "the finance committee will be meeting this thursday, april 11th at 7 pm and on"
+  },
+  {
+   "topic": "Minutes, warrants, and action file issues",
+   "resolution": "warrant signed; debt policy review requested",
+   "tags": [
+    "warrants",
+    "debt policy"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $552,144.33."
+  },
+  {
+   "topic": "Old business: recommendations on ATM articles",
+   "resolution": "mixed: several deferred, Article 21 and 22 not recommended, Article 23 recommended, Article 7 no position",
+   "tags": [
+    "town meeting",
+    "warrant articles"
+   ],
+   "quote": "recommendations on atm articles that were deferred"
+  },
+  {
+   "topic": "Upcoming meetings and Town Meeting schedule",
+   "resolution": "informational",
+   "tags": [
+    "meetings",
+    "town meeting"
+   ],
+   "quote": "upcoming meetings: mr. toale stated ms. lemieux will not be at next week's meeting due to"
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "discussion, no action",
+   "tags": [
+    "public comment",
+    "Article 24",
+    "TCP"
+   ],
+   "quote": "rhonda lisio, 181 reservoir road, commented on article 24, regarding moving municipal"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:06 p.m.",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "to adjourn the meeting at 10:06 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Reimbursement Policy",
+   "where": "text",
+   "quote": "draft reimbursement policy"
+  },
+  {
+   "name": "Special Event Permit draft #9 (with department comments)",
+   "where": "text",
+   "quote": "this is draft #9, i sent the draft around to other departments whose comments are listed"
+  },
+  {
+   "name": "Email from resident Dave Passios on the special event draft",
+   "where": "text",
+   "quote": "mr. burney stated he received the following email from resident dave passios,"
+  },
+  {
+   "name": "Employee Reimbursement Form",
+   "where": "text",
+   "quote": "all reimbursement requests must be submitted on the employee reimbursement form"
+  },
+  {
+   "name": "Accounts payable warrant",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $552,144.33."
+  },
+  {
+   "name": "MRP Implementation Plan for Recommendations from the 2017 Report on the Formation of a Business/Town Partnership",
+   "where": "text",
+   "quote": "when we received the mrp implementation plan for recommendations from the 2017 report"
+  },
+  {
+   "name": "Charge for the Economic Development Committee",
+   "where": "text",
+   "quote": "section 2. functions (b.) goals from the charge for the economic development committee"
+  },
+  {
+   "name": "Walkability and Parking Study (MRPC)",
+   "where": "text",
+   "quote": "walkability and parking study we requested last march."
+  },
+  {
+   "name": "Warrant Article 6 (FY 2020 Capital Plan)",
+   "where": "text",
+   "quote": "article 6 (fy 2020 capital plan) was deferred as well."
+  },
+  {
+   "name": "Warrant Article 8 (Salary Schedule, Chapter 70, Section 70-8.A)",
+   "where": "text",
+   "quote": "article 8. to see if the town will vote to replace the current salary schedule"
+  },
+  {
+   "name": "Warrant Article 21 (Old Primary School Building)",
+   "where": "text",
+   "quote": "mr. mcquaid noted article 21 is in response to the architectural preservation district"
+  },
+  {
+   "name": "Warrant Article 23 (Brooks House)",
+   "where": "text",
+   "quote": "arico 23. to see if the town will vote to authorize the board of selectmen to convey the building"
+  },
+  {
+   "name": "Warrant Article 24 (design and engineering, consolidate town offices)",
+   "where": "text",
+   "quote": "arnold 24. to see if the town will vote to raise and appropriate"
+  },
+  {
+   "name": "Citizens' petition articles 40 and 41 (zoning bylaw and special event bylaw)",
+   "where": "text",
+   "quote": "in regards to articles 40 and 41, which requests a zoning bylaw change and a"
+  },
+  {
+   "name": "Town Charter",
+   "where": "text",
+   "quote": "ms. adams has been asked if there would be a chance to amend the town charter on the floor of"
+  },
+  {
+   "name": "Special event application form",
+   "where": "text",
+   "quote": "mr. burney stated he has stopped updating the application form until the policy is completed."
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "special event permit",
+  "auto dealer license",
+  "economic development committee",
+  "reimbursement policy",
+  "ambulance receivables",
+  "town meeting warrant articles",
+  "FY2020 budget",
+  "Old Primary School",
+  "Brooks House",
+  "TCP municipal offices",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

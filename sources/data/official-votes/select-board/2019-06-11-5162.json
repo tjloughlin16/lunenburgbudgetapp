@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-06-11",
  "docid": "5162",
@@ -12,40 +12,364 @@
  },
  "votes": [
   {
-   "motion": "Retain current labor counsel and not go through a search process at this time",
+   "motion": "To retain current labor counsel and not go through a search process at this time.",
    "moved_by": "K. Adams",
    "seconded_by": "P. Luck",
-   "outcome": "passed 4-1",
+   "outcome": "passed, 4 in favor, 1 nay (Luck)",
    "procedural": false,
-   "quote": "motion: k. adams 2ni: p. luck to retain current labor counsel and not go through a search process at this time discussion: ms. luck stated sh",
-   "quote_taken_from_text": true
+   "quote": "motion: k. adams 2ni: p. luck to retain current labor counsel and not go through a search process at this time"
   },
   {
-   "motion": "Accept the Town Manager's goals with the minor adjustments as mentioned",
+   "motion": "To accept the Town Manager's goals with the minor adjustments as mentioned.",
    "moved_by": "D. MeQuaid",
    "seconded_by": "M. Jeffreys",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": false,
    "quote": "motion: d. mequaid 2n°: m. jeffreys to accept the town manager's goals with the minor adjustments as mentioned vote: all in favor"
   },
   {
-   "motion": "Approve the Minutes of March 19, 2019",
+   "motion": "To approve the Minutes of March 19, 2019.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed 4-0-1",
+   "outcome": "passed, 4 in favor, 1 abstention (Alonzo)",
    "procedural": true,
    "quote": "motion: m. jeffreys to approve the minutes of march 19, 2019 2n°: d. mcquaid vote: 4 in favor, 1 abstention (alonzo)"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting at 10:09 p.m.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": true,
    "quote": "motion: d. mcquaid to adjourn the meeting at 10:09 p.m. 2nd: p. luck vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned minutes; readable throughout. Minor OCR artifacts in second notation (\"2ni:\" and \"2n°:\" for \"2nd\") do not affect vote clarity. Board discussion of FY20 goals was extensive but no separate motions voted on goals individually.",
- "cost_usd": 0.1260165
+ "note": "OCR scan of the minutes, with several garbled passages (e.g., the top of page 6 and the paragraph before the minutes approval on page 9) that could not be read and were not recorded. Page 2 begins mid-sentence. Pages 10-14 are attached goal status documents, not proceedings. Names and motion labels are kept as OCR printed them (e.g., \"D. MeQuaid\", \"2ni\", \"Mr. Jettreys\"). Vote tallies are as printed; the Town Manager goals vote is printed only as \"All in Favor\" with no count.",
+ "cost_usd": 0.01184742,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chair; phyllis luck, vice chair; damon mcquaid,"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chair; phyllis luck, vice chair; damon mcquaid,"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chair; phyllis luck, vice chair; damon mcquaid,"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "clerk; katey adams, member; michael- ray jeffreys, member"
+  },
+  {
+   "name": "Michael- Ray Jeffreys",
+   "role": "Member",
+   "status": "present",
+   "quote": "clerk; katey adams, member; michael- ray jeffreys, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager"
+  },
+  {
+   "name": "Dave Blatt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dave blatt, 411 goodrich street, reported the task force met last week"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ana lockwood, 91 main street, requested clarification from the board on when public comment"
+  },
+  {
+   "name": "Steve Weaver",
+   "role": "not stated",
+   "status": "present",
+   "quote": "steve weaver, 288 holman street, reminded all that last week people had been notified that the"
+  },
+  {
+   "name": "Jaclyn Mayo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jaclyn mayo, 38 otis street, has lived here for two years with her wife and was looking forward"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "on behalf of the Lake Shirley Improvement Corporation (LSIC)",
+   "status": "present",
+   "quote": "joanna bilotta, 362 sunset lane, on behalf of the lake shirley improvement corporation"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Conservation Commission member",
+   "status": "not stated",
+   "quote": "also present were conservation commission members carl luck, todd dwyer, richard bursch and bob pease."
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Conservation Commission member",
+   "status": "not stated",
+   "quote": "also present were conservation commission members carl luck, todd dwyer, richard bursch and bob pease."
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Conservation Commission member",
+   "status": "not stated",
+   "quote": "also present were conservation commission members carl luck, todd dwyer, richard bursch and bob pease."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Conservation Commission member",
+   "status": "not stated",
+   "quote": "also present were conservation commission members carl luck, todd dwyer, richard bursch and bob pease."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Weaver was asked to submit his memorial park plan for the old Primary School site via email for consideration as a future agenda item.",
+   "quote": "mr. alonzo asked mr. weaver to submit his plan via email for consideration of a future agenda item."
+  },
+  {
+   "decision": "The Town Manager's inventory of property and vehicles is to be placed on the Google Drive.",
+   "quote": "mr. alonzo requested it be placed on the google drive."
+  },
+  {
+   "decision": "Revisiting liaisons to boards was added as a future agenda item.",
+   "quote": "mr. alonzo requested it as a future agenda item."
+  },
+  {
+   "decision": "No Board member thought any of the FY19 goals should be carried over to FY20; the Board agreed to limit itself to three goals.",
+   "quote": "no board member thought any of these goals should be carried over to fy20."
+  },
+  {
+   "decision": "Board members were asked to come up with three achievable goals for the next meeting.",
+   "quote": "come up with three goals that are achievable for the next meeting."
+  },
+  {
+   "decision": "Meeting schedule set: no meeting on July 2; meetings on June 18 and July 9, 16, and 23.",
+   "quote": "the board will meet on june 18 and july 9, 16, and 23."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Annual cost of labor counsel",
+   "what_was_recorded": "Ms. Lemieux estimated the town spends between $25,000 and $30,000 on labor counsel each year, and Mr. Alonzo restated the annual cost.",
+   "figures_as_printed": [
+    "$25,000- $30,000",
+    "25-30k"
+   ],
+   "quote": "ms. lemieux estimated the town spends between $25,000- $30,000 on labor counsel annually."
+  },
+  {
+   "topic": "Facilities and roads budget increases in FY20",
+   "what_was_recorded": "The FY20 budget recommendation adds money to the facilities maintenance and Town Roads accounts.",
+   "figures_as_printed": [
+    "$40,000",
+    "$50,000"
+   ],
+   "quote": "the fy20 budget recommendation includes an additional $40,000 for maintenance of facilities and an additional $50,000 in the town roads account."
+  },
+  {
+   "topic": "MassDOT Small Bridge grant",
+   "what_was_recorded": "The DPW Director applied for and received a MassDOT Small Bridge Program grant.",
+   "figures_as_printed": [
+    "$380,000"
+   ],
+   "quote": "the dpw director applied for and received a grant from massdot's small bridge program in the amount of"
+  },
+  {
+   "topic": "Green Communities grant award",
+   "what_was_recorded": "The Town was awarded Green Communities grant funds for energy efficiency projects.",
+   "figures_as_printed": [
+    "$198, 867"
+   ],
+   "quote": "the town was also awarded $198, 867 in green communities grant"
+  },
+  {
+   "topic": "Past cost estimate for streetlight conversion",
+   "what_was_recorded": "Mr. Alonzo recalled an earlier streetlight conversion venture was expensive, at the stated range.",
+   "figures_as_printed": [
+    "$700 to $900 k"
+   ],
+   "quote": "mr. alonzo recalled it was also an expensive venture at the time ($700 to $900 k)"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Adams",
+   "stated_role": "Member",
+   "topic": "death of school staff member",
+   "quote": "ms. adams announced denise galloway, administrative secretary at the lunenburg primary"
+  },
+  {
+   "speaker": "Ana Lockwood",
+   "stated_role": "91 Main Street",
+   "topic": "when public comment is welcome; special permit policy",
+   "quote": "ana lockwood, 91 main street, requested clarification from the board on when public comment"
+  },
+  {
+   "speaker": "Steve Weaver",
+   "stated_role": "288 Holman Street",
+   "topic": "300 Holman Street event; memorial park plan for old Primary School site",
+   "quote": "steve weaver, 288 holman street, reminded all that last week people had been notified that the"
+  },
+  {
+   "speaker": "Jaclyn Mayo",
+   "stated_role": "38 Otis Street",
+   "topic": "NOWOCO Pride and 300 Holman Street",
+   "quote": "jaclyn mayo, 38 otis street, has lived here for two years with her wife and was looking forward"
+  },
+  {
+   "speaker": "Joanna Bilotta",
+   "stated_role": "on behalf of the Lake Shirley Improvement Corporation (LSIC)",
+   "topic": "executive session roll call on June 4",
+   "quote": "joanna bilotta, 362 sunset lane, on behalf of the lake shirley improvement corporation"
+  },
+  {
+   "speaker": "Mr. Jeffreys",
+   "stated_role": "Member",
+   "topic": "support for fellow board members",
+   "quote": "mr. jettreys wanted to express his support for his fellow board members."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening, public comment and announcements",
+   "resolution": "heard; no action",
+   "quote": "the meeting opened at 7:00 p.m. with the pledge of allegiance.",
+   "tags": [
+    "public comment",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Green Communities request to approach Unitil on streetlights",
+   "resolution": "presented; no vote recorded",
+   "quote": "dave blatt, 411 goodrich street, reported the task force met last week and discussed and voted",
+   "tags": [
+    "streetlights",
+    "LED",
+    "Unitil",
+    "energy"
+   ]
+  },
+  {
+   "topic": "Putting labor counsel services out to bid",
+   "resolution": "retained current labor counsel; no search (4-1)",
+   "quote": "to retain current labor counsel and not go through a search process at this time",
+   "tags": [
+    "labor counsel",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "Workshop: review of FY19 Town Manager goals and FY20 goal setting",
+   "resolution": "accepted FY20 Town Manager goals with minor adjustments",
+   "quote": "the board reviewed the town manager goals first.",
+   "tags": [
+    "goals",
+    "town manager",
+    "FY20"
+   ]
+  },
+  {
+   "topic": "Workshop: review of FY19 Board goals and FY20 Board goals",
+   "resolution": "discussed; Board to bring three goals to next meeting",
+   "quote": "come up with three goals that are achievable for the next meeting.",
+   "tags": [
+    "goals",
+    "appointments",
+    "committees",
+    "infrastructure"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of March 19, 2019",
+   "resolution": "approved, 4 in favor, 1 abstention",
+   "quote": "to approve the minutes of march 19, 2019",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Action file, committee reports and upcoming meetings",
+   "resolution": "no action; liaison item added to future agenda",
+   "quote": "ms. adams asked about any updates on the intersection of electric ave. and",
+   "tags": [
+    "committee reports",
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Closing public comment and adjournment",
+   "resolution": "adjourned at 10:09 p.m.",
+   "quote": "to adjourn the meeting at 10:09 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Manager Goals and Objectives Fiscal Year 2019 Status Update",
+   "where": "list",
+   "quote": "see attached town manager goals and objectives fiscal year 2019-"
+  },
+  {
+   "name": "Communication audit and summary",
+   "where": "list",
+   "quote": "communication audit and summary is attached."
+  },
+  {
+   "name": "Explore Lunenburg brochure",
+   "where": "text",
+   "quote": "to develop the \"explore lunenburg\" brochure, which was completed at the end of 2018"
+  },
+  {
+   "name": "Complete Streets Prioritization Plan",
+   "where": "text",
+   "quote": "review the complete streets prioritization plan with board and apply"
+  },
+  {
+   "name": "Vertex Reports",
+   "where": "text",
+   "quote": "the fy20 capital plan also included all the repairs identified in the vertex reports"
+  }
+ ],
+ "tags": [
+  "select board",
+  "labor counsel",
+  "town manager goals",
+  "FY20 goals",
+  "streetlights LED Unitil",
+  "public comment",
+  "300 Holman Street",
+  "recycling",
+  "goal setting",
+  "minutes approval",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "see attached"
+ },
+ "dropped_unquoted_by_field": {}
 }

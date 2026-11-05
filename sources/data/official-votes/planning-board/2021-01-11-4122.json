@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-01-11",
  "docid": "4122",
@@ -12,31 +12,260 @@
  },
  "votes": [
   {
-   "motion": "Approve the corrected ANR Plan for BrightFarms",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Brenner",
+   "motion": "Approve the corrected ANR Plan for BrightFarms (361 Massachusetts Avenue).",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Brenner",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "p. bertram made motion to approve the corrected anr plan for b rightfarms, m. brenner seconded, roll call vote - p. bertram, aye; m. brenner, aye; m. allison, aye. vote passed 3-0."
+   "quote": "p. bertram made motion to approve the corrected anr plan for b rightfarms, m. brenner seconded"
   },
   {
-   "motion": "Approve both sets of minutes for 12/14/2020 and 12/14/2020, BrightFarms",
-   "moved_by": "Matthew Brenner",
-   "seconded_by": "Paula Bertram",
+   "motion": "Approve the minutes of 12/14/2020 and 12/14/2020, BrightFarms.",
+   "moved_by": "M. Brenner",
+   "seconded_by": "P. Bertram",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "m. brenner made motion to approve both sets of minutes noted below, p. bertram seconded, roll call vote- p. bertram, aye; m. brenner, aye; m. allison, aye. vote passed 3 -0."
+   "quote": "m. brenner made motion to approve both sets of minutes noted below, p. bertram seconded"
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Brenner",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Brenner",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "p. bertram made motion to adjourn, m. brenner seconded, roll call vote- p. bertram, aye; m. brenner, aye; m. allison, aye. vote passed 3-0."
+   "quote": "p. bertram made motion to adjourn, m. brenner seconded"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR notes: \"BrightFarms\" appears as \"B rightFarms\" (space in middle) in the minutes text as provided; this appears to be an OCR scanning artifact. All votes recorded with full voting details.",
- "cost_usd": 0.09727449999999999
+ "note": "Remote Zoom meeting; all votes were roll calls as printed. Two workshops had no votes. No public comment is recorded. Erik Torgersen's name is split in the letterhead ('Torgerse n') but printed in full in the roll call. Decision 4 is recorded as 'M. Brenner w ould email information' with no subject named; I described the subject as MRPC grant information from the Committee Reports section, which is an inference, so treat that wording with caution.",
+ "cost_usd": 0.007013419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, present; paula bertram, present;"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "matthew allison, present; paula bertram, present;"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew brenner, present."
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent: tanner cole, erik torgersen"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: tanner cole, erik torgersen"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A. Burney will work on revising the Chapter 250 Section 6.1 off-street parking draft.",
+   "quote": "a. burney would work on revising the draft."
+  },
+  {
+   "decision": "Discussion of the Chapter 325 subdivision submission procedure will continue at a future workshop.",
+   "quote": "discussion would continue at a future workshop."
+  },
+  {
+   "decision": "Board members did not agree to change the authority for unlisted parking uses from the Building Commissioner to the Zoning Board of Appeals.",
+   "quote": "board mem bers did not agree"
+  },
+  {
+   "decision": "M. Brenner will email the Massachusetts Regional Planning Commission (MRPC) grant information to the Land Use Director for distribution to Board members.",
+   "quote": "m. brenner w ould email information to land use director for distribution to board members."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital Planning Committee capital request threshold",
+   "what_was_recorded": "The Capital Planning Committee would discuss raising the threshold for capital requests to $30,000 in the future.",
+   "figures_as_printed": [
+    "$30,000"
+   ],
+   "quote": "the committee would be discussing raising the threshold to $30,000 for capital requests in the future."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and remote meeting notice",
+   "resolution": "no action",
+   "quote": "roll call conducted by adam burney, land use director",
+   "tags": [
+    "roll call",
+    "remote meeting",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "ANR plan, 361 Massachusetts Avenue (BrightFarms)",
+   "resolution": "approved corrected plan for endorsement",
+   "quote": "a new plan was presented for endorsement as there was a survey error",
+   "tags": [
+    "ANR plan",
+    "endorsement"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 12/14/2020 minutes (two sets)",
+   "quote": "m. brenner made motion to approve both sets of minutes noted below",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; several reports none",
+   "quote": "storm water task force- no report",
+   "tags": [
+    "committee reports",
+    "open space",
+    "capital planning",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Workshop: Chapter 325 Subdivision Regulations, submission and review of plans",
+   "resolution": "continued to future workshop",
+   "quote": "chapter 325, subdivision regulations, procedure for submission and review of plans",
+   "tags": [
+    "subdivision regulations",
+    "cul-de-sac",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Workshop: Chapter 250 Zoning Section 6.1 off-street parking",
+   "resolution": "continued; Burney to revise draft",
+   "quote": "chapter 250, zoning, section 250 -6.1, off street parking and loading areas",
+   "tags": [
+    "zoning",
+    "off-street parking",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Director's items: Master Plan RFP",
+   "resolution": "no action",
+   "quote": "a. burney was working on the rfp (request for proposal) for two chapters of the master plan.",
+   "tags": [
+    "master plan",
+    "RFP"
+   ]
+  },
+  {
+   "topic": "Director's items: Green Leaf Botanicals community outreach meeting",
+   "resolution": "noted; meeting scheduled 02.04.2021",
+   "quote": "the required communi ty meeting would be held 02.04.2021, 7 p.m.",
+   "tags": [
+    "cannabis",
+    "community meeting",
+    "site plan"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted next meeting January 25",
+   "quote": "meeting schedule: january 25",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:21 p.m.",
+   "quote": "made motion to adjourn, m. brenner seconded",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plan, 361 Massachusetts Avenue",
+   "where": "list",
+   "quote": "documents used at meeting: anr plan, 361 massachusetts avenue"
+  },
+  {
+   "name": "Minutes 11/23/2020",
+   "where": "list",
+   "quote": "minutes: 11/23/2020 11/23/2020, brightfarms"
+  },
+  {
+   "name": "Minutes 11/23/2020, BrightFarms",
+   "where": "list",
+   "quote": "11/23/2020, brightfarms"
+  },
+  {
+   "name": "Chapter 325, Section 4.0 Subdivision Regulations, DRAFT",
+   "where": "list",
+   "quote": "chapter 325, section 4.0 subdivision regulations, draft"
+  },
+  {
+   "name": "Chapter 325, Section 3.1 Subdivision Regulations",
+   "where": "list",
+   "quote": "chapter 325, section 3.1 subdivision regulations"
+  },
+  {
+   "name": "Chapter 250, Section 6.1 Zoning Regulations",
+   "where": "list",
+   "quote": "chapter 250, section 6.1 zoning regulations"
+  },
+  {
+   "name": "Table handout (Section 250-6.1 parking table)",
+   "where": "text",
+   "quote": "board discussion ensued on section 250 -6.1 and the table handout."
+  },
+  {
+   "name": "Minutes of 12/14/2020 and 12/14/2020, BrightFarms",
+   "where": "text",
+   "quote": "12/14/2020 12/14/2020, brightfarms"
+  },
+  {
+   "name": "ADA self-evaluation and transition plan (MRPC)",
+   "where": "text",
+   "quote": "the ada self-evaluation and transition plan would be presented to lunenburg in the beginning of february."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plan",
+  "subdivision regulations",
+  "zoning",
+  "off-street parking",
+  "cannabis",
+  "minutes approval",
+  "remote meeting",
+  "committee reports",
+  "master plan"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

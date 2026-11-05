@@ -1,0 +1,459 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "finance-committee",
+ "board": "Finance Committee",
+ "video_title": "Finance Committee",
+ "meeting_date": "2019-09-12",
+ "video_id": "S7gr3GHSQw0",
+ "video_url": "https://www.youtube.com/watch?v=S7gr3GHSQw0",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2019-09-12-S7gr3GHSQw0.json",
+  "sha256": "d4225ea77bd4ccbfb84d76593f6722d84b3de71cbc6a7564f5c3ead9b6c27904",
+  "caption_lines": 253,
+  "segments": 1909
+ },
+ "recording": {
+  "duration_s": 5401,
+  "duration": "1:30",
+  "spoken_chars": 69197,
+  "words_approx": 11532
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09122019-2149",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2019-09-12-agenda-2149.txt",
+   "path": "sources/meetings/finance-committee/2019-09-12-agenda-2149.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09122019-2149",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2019-09-12-minutes-2149.txt",
+   "path": "sources/meetings/finance-committee/2019-09-12-minutes-2149.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-04T12:50:51Z",
+  "cost_usd": 0.28930300000000003
+ },
+ "minutes": {
+  "headline": "Finance Committee set its fall schedule and year goals; no budget votes, minutes approved as amended.",
+  "summary": "The committee set its fall schedule around a special Town Meeting and a public hearing on the warrant. It discussed goals for the year: defining level services and level funded budgets, a framework for evaluating new positions, and tracking outside funding sources. It heard committee reports and the town manager's preview of special Town Meeting articles, then approved the minutes as amended and adjourned.",
+  "attendees": [
+   {
+    "name_as_heard": "Chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "finance director"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "capital",
+   "free-cash",
+   "policy",
+   "school-choice",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 5349,
+    "motion": "Accept the minutes as amended.",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 5392,
+    "motion": "Adjourn.",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 3401,
+    "topic": "Land purchase and grants",
+    "what_was_said": "Two grants would reimburse part of the purchase price, leaving a smaller cost to the town. The warrant article would raise the full price, with a rider that the purchase won't proceed without the grants.",
+    "figures_as_heard": [
+     "500,000",
+     "seven hundred seventy five thousand",
+     "two hundred and eighty thousand dollars"
+    ]
+   },
+   {
+    "t": 3602,
+    "topic": "Borrowing for land purchase",
+    "what_was_said": "Funding would likely be borrowing, since free cash is not available. Only the amount net of grants would be borrowed and the authorization later rescinded."
+   },
+   {
+    "t": 4157,
+    "topic": "School choice",
+    "what_was_said": "Receiving school choice numbers are falling and sending numbers are higher, each seat worth about the state cap.",
+    "figures_as_heard": [
+     "31.9",
+     "85.3",
+     "$5,000"
+    ]
+   },
+   {
+    "t": 4457,
+    "topic": "Police contract placeholder",
+    "what_was_said": "A placeholder article would fund the first year of a police contract by transfer from the salary reserve account."
+   },
+   {
+    "t": 4754,
+    "topic": "Free cash",
+    "what_was_said": "Free cash is not certified or available until the annual Town Meeting, where it is used for capital planning and the budget."
+   }
+  ],
+  "transfers": [
+   {
+    "t": 4457,
+    "description": "From the salary reserve account for the first year of the police collective bargaining agreement",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 759,
+    "decision": "Meetings set for September 26, October 3 (early start, before the training) and the October 10 public hearing; department heads scheduled afterward."
+   },
+   {
+    "t": 1223,
+    "decision": "A meeting on October 24 was planned for any remaining Town Meeting business."
+   },
+   {
+    "t": 3244,
+    "decision": "Chair to circulate the goals list; goals include definitions of level service/level funded, a framework for new positions, and a list of outside funding sources."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 1,
+    "t_end": 129,
+    "topic": "Approval of minutes under open meeting law",
+    "resolution": "informational",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 129,
+    "t_end": 366,
+    "topic": "Technology and process automation, space needs",
+    "resolution": "informational",
+    "tags": [
+     "technology",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 366,
+    "t_end": 605,
+    "topic": "Joint informational meeting on October 29",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 605,
+    "t_end": 1246,
+    "topic": "Fall schedule, special Town Meeting and public hearing",
+    "resolution": "schedule set",
+    "tags": [
+     "town-meeting",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 1246,
+    "t_end": 3288,
+    "topic": "Committee goals for the year",
+    "resolution": "no resolution",
+    "tags": [
+     "budget",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 3288,
+    "t_end": 4046,
+    "topic": "Land acquisition committee report",
+    "resolution": "informational",
+    "tags": [
+     "warrant-article",
+     "debt",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 4046,
+    "t_end": 4370,
+    "topic": "School Committee report, school choice and budget timeline",
+    "resolution": "informational",
+    "tags": [
+     "school-choice",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 4370,
+    "t_end": 5182,
+    "topic": "Town manager report on special Town Meeting articles and free cash",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting",
+     "free-cash",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 5182,
+    "t_end": 5308,
+    "topic": "Committee comments",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 5308,
+    "t_end": 5400,
+    "topic": "Minutes and adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Vote counts for minutes and adjournment were not stated.",
+   "Many speakers are not identified in the captions."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 4908,
+    "kind": "condition",
+    "about": "A member warned that a headline about a surplus confuses residents about cuts.",
+    "who": "a member",
+    "words_as_heard": "you have a headline in the newspaper that says that the town of Lunenburg has a million dollar surplus"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 780,
+    "name_as_heard": "land acquisition committee's report",
+    "kind": "report",
+    "words_as_heard": "the land acquisition committees report so that you have that"
+   },
+   {
+    "t": 2196,
+    "name_as_heard": "five-year forecast",
+    "kind": "report",
+    "words_as_heard": "I have the five-year forecast that was written"
+   },
+   {
+    "t": 3899,
+    "name_as_heard": "open space plan",
+    "kind": "report",
+    "words_as_heard": "the open space committees plan"
+   },
+   {
+    "t": 5308,
+    "name_as_heard": "minutes",
+    "kind": "prior minutes",
+    "words_as_heard": "we do have minutes to approve"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "free-cash-and-surplus-headlines",
+    "title": "Free cash explained",
+    "question": "What is free cash, when can it be used, and why does a surplus coexist with cuts?",
+    "t": 4754,
+    "words_as_heard": "there's a million dollars of free cash that's not touchable yet",
+    "data_in_play": [
+     "million dollars of free cash",
+     "1.6 or 1.7 on capital"
+    ],
+    "existing": "analysis:free-cash"
+   },
+   {
+    "slug": "saliba-land-acquisition-cost",
+    "title": "Saliba land purchase cost",
+    "question": "What would the land purchase cost the town after grants and borrowing?",
+    "t": 3401,
+    "words_as_heard": "the purchase of the land would be roughly about two hundred and eighty thousand dollars cost to the town",
+    "data_in_play": [
+     "500,000",
+     "seven hundred seventy five thousand"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Finance Committee set its fall schedule: meetings on September 26 and October 3, and a public hearing on the special Town Meeting warrant on October 10.",
+    "t": 759
+   },
+   {
+    "line": "The committee discussed year goals: defining level service and level funded budgets, a framework for evaluating new positions, and a list of outside funding sources.",
+    "t": 3244
+   },
+   {
+    "line": "The town manager previewed special Town Meeting articles, including a land purchase partly reimbursed by two grants and likely funded by borrowing.",
+    "t": 3401
+   },
+   {
+    "line": "A placeholder article would fund the first year of a police contract by transfer from the salary reserve account.",
+    "t": 4457
+   },
+   {
+    "line": "The committee took no budget votes and approved its minutes as amended before adjourning.",
+    "t": 5308
+   }
+  ],
+  "why_it_matters": [
+   "The land purchase article would authorize borrowing, so residents at the special Town Meeting will be asked to vote on a debt that is meant to be reduced by grant reimbursement and a later rescission.",
+   "The goals on level services and new positions set the terms the committee will use to judge department budget requests that affect future tax bills."
+  ],
+  "watch_next": [
+   "The October 10 public hearing on the special Town Meeting warrant.",
+   "The chair's circulated list of committee goals, and the October 24 meeting for any remaining Town Meeting business."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-04T12:50:57Z",
+   "cost_usd": 0.0264891
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09122019-2149",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2019-09-12-minutes-2149.txt",
+   "path": "sources/meetings/finance-committee/2019-09-12-minutes-2149.pdf"
+  },
+  "official_sha256": "f0251b90866ede5155268e08e6a0aea8e37394d73cc4ebe1f2b3961da6ab28e7",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the meeting schedule (Sept 26, Oct 3, Oct 10 hearing) and on the planned salary reserve transfer for the police contract, and neither records a vote. They differ on the land and grant figures, the attendee lists, and several items that appear in only one record, such as the October 24 meeting and the members' public comments.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 0,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Salary reserve transfer for police collective bargaining agreement",
+    "ours": "From the salary reserve account for the first year of the police collective bargaining agreement —  (discussed only)",
+    "official": "agreement, involving a transfer from the salary reserve account (which is an existing appropriation).",
+    "note": "Both record a planned transfer from the salary reserve for the police contract, with no amount and no vote.",
+    "t": 4457
+   },
+   {
+    "kind": "agree",
+    "about": "Meeting on October 3 before the training",
+    "ours": "Meetings set for September 26, October 3 (early start, before the training) and the October 10 public hearing; department heads scheduled afterward.",
+    "official": "consensus of the finance committee was also have a meeting on october 3rd at 6:30, prior to open meeting training which was previously scheduled.",
+    "note": "Both record an October 3 meeting ahead of the open meeting training.",
+    "t": 759
+   },
+   {
+    "kind": "agree",
+    "about": "October 10 public hearing",
+    "ours": "Meetings set for September 26, October 3 (early start, before the training) and the October 10 public hearing; department heads scheduled afterward.",
+    "official": "the finance committee will hold a public hearing on october 10th.",
+    "note": "Both record the October 10 public hearing.",
+    "t": 759
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting September 26",
+    "ours": "Meetings set for September 26, October 3 (early start, before the training) and the October 10 public hearing; department heads scheduled afterward.",
+    "official": "next meeting • september 26, 2019",
+    "note": "Both give September 26 as the next meeting.",
+    "t": 759
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Land purchase / property acquisition figures",
+    "ours": "Land purchase and grants: 500,000, seven hundred seventy five thousand, two hundred and eighty thousand dollars",
+    "official": "will be approximately $280,000. an article is anticipated for town meeting",
+    "note": "Both carry the $280,000 town cost, but our captions also have 500,000 and 775,000 figures. The official grant total is garbled in its OCR as 9500,000. Check the recording around t=3401 for the grant amounts and the total.",
+    "t": 3401
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "October 24 meeting for remaining Town Meeting business",
+    "ours": "A meeting on October 24 was planned for any remaining Town Meeting business.",
+    "official": "",
+    "note": "The official minutes do not mention an October 24 meeting.",
+    "t": 1223
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Goals list: definitions of level service, new position framework, outside funding list",
+    "ours": "Chair to circulate the goals list; goals include definitions of level service/level funded, a framework for new positions, and a list of outside funding sources.",
+    "official": "goal: gather a full accounting of operating expenses funded by non-municipal",
+    "note": "The official minutes record only the non-municipal funding accounting goal. They do not mention the level service definitions, the framework for new positions, or the chair circulating the list.",
+    "t": 3244
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School choice figures",
+    "ours": "School choice: 31.9, 85.3, $5,000",
+    "official": "",
+    "note": "The official minutes have no school choice figures.",
+    "t": 4157
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Free cash and perceived surplus",
+    "ours": "",
+    "official": "which leads citizens to believe the town is operating with a surplus due to the way we purposefully create and expend free cash.",
+    "note": "Our minutes do not record Peter Beardmore's comment on free cash and the perceived surplus.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comments by members",
+    "ours": "",
+    "official": "john henshaw commented that he researched open meeting law with respect to whether a member could vote on approving minutes having not attended the meeting in question, which is acceptable.",
+    "note": "Our minutes do not record the members' comments: open meeting law, process automation software, Janice Carrier, the MMA breakfast on Sept 27, and the selectmen's appreciation night on Sept 19.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees",
+    "ours": "Chair (chair); Town manager (town manager); Heather (finance director)",
+    "official": "terri burchfield, john henshaw, dave passios, jay simeone, peter beardmore, michelle walton",
+    "note": "Our minutes name no committee members and list a town manager and a finance director. The official minutes list six committee members and no staff. Check the recording or sign-in for who attended.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T12:51:53Z",
+   "cost_usd": 0.0424131
+  }
+ }
+}

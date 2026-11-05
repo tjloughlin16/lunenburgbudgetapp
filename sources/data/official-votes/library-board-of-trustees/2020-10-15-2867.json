@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2020-10-15",
  "docid": "2867",
@@ -12,23 +12,253 @@
  },
  "votes": [
   {
-   "motion": "Accept the weather closure policy as presented",
+   "motion": "Accept the updated weather closure policy as presented.",
    "moved_by": "",
-   "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "it was voted unanimously to accept the policy as presented"
+   "quote": "after short discussion it was voted unanimously to accept the policy as presented.",
+   "seconded_by": ""
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Kate",
-   "seconded_by": "Dick",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "motion to adjourn by kate, seconded by dick."
+   "quote": "motion to adjourn by kate, seconded by dick. meeting was adjourned at 7:53 p.m.",
+   "seconded_by": "Dick"
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes state \"All votes were done by roll call\" but only two votes are explicitly recorded: the weather policy (unanimously) and adjournment. Minutes approval is stated as \"reviewed and accepted as amended\" without explicit vote language or count.",
- "cost_usd": 0.0943395
+ "note": "Minutes are two text pages; pages 3-9 are blank. Votes are recorded only for the weather closure policy and the motion to adjourn. The approval of the September 17 minutes is recorded as accepted as amended with no vote. The meeting was remote (conference call and video link) with all votes by roll call, but no individual roll-call tallies are printed. Attendee status is recorded as present from the Attending line. No public comment was made.",
+ "cost_usd": 0.00570142,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:45 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Kate McCarron",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom ,maia wentrup."
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom ,maia wentrup."
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom ,maia wentrup."
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom ,maia wentrup."
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom ,maia wentrup."
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom ,maia wentrup."
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom ,maia wentrup."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The minutes of September 17th were accepted as amended.",
+   "quote": "the minutes for september 17th were reviewed and accepted as amended."
+  },
+  {
+   "decision": "Harry Kubetz will send out blank Director's evaluation forms and set a target date for their return to the subcommittee.",
+   "quote": "harry will send out blank forms and figure out a target date for getting them back for the subcommittee to review and compile."
+  },
+  {
+   "decision": "The Director's evaluation is to be completed by the December meeting so the budget can carry an accurate Director's salary number.",
+   "quote": "the director's evaluation should be completed by the december meeting"
+  },
+  {
+   "decision": "Strategic plan target: bring a plan to the BOT by June 2021 for review and a vote; a three-year plan is being targeted.",
+   "quote": "the aim is to bring a plan to the bot by june 2021 for review and a vote."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Budget expended to date",
+   "what_was_recorded": "The Director reported the budget is 22% expended, a bit behind the usual fall schedule.",
+   "figures_as_printed": [
+    "22%"
+   ],
+   "quote": "the budget is 22% expended, a bit behind schedule as is usual in the fall."
+  },
+  {
+   "topic": "Salary expenditure",
+   "what_was_recorded": "Salary spending is running a bit under budget because of two current vacancies; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "salary expenditure is a bit under budget because we currently have two vacancies."
+  },
+  {
+   "topic": "Director's salary for budget planning",
+   "what_was_recorded": "The Director's evaluation is to be finished by December so the budget can carry an accurate Director's salary number; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "so muir can plan the budget with an accurate director's salary number."
+  },
+  {
+   "topic": "LED lighting earmark request",
+   "what_was_recorded": "Board Comments reported that the BOS chair requested an earmark to convert library lights to LEDs.",
+   "figures_as_printed": [
+    "$40K"
+   ],
+   "quote": "he has requested an earmark for $40k to convert the lights at the library to leds."
+  },
+  {
+   "topic": "Letarte family poetry endowment",
+   "what_was_recorded": "The Friends are changing the investment options on the Letarte family poetry endowment; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "they are changing the investment options on the letarte family poetry endowment."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "accepted as amended (no vote recorded)",
+   "quote": "the minutes for september 17th were reviewed and accepted as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "reported, no action",
+   "quote": "we are four months into fy21.",
+   "tags": [
+    "budget",
+    "staffing",
+    "reopening",
+    "circulation"
+   ]
+  },
+  {
+   "topic": "Director's Evaluation Update",
+   "resolution": "chair to send forms; target date to be set",
+   "quote": "the director's evaluation should be completed by the december meeting",
+   "tags": [
+    "personnel",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "Policy Review/Update (weather closure policy)",
+   "resolution": "approved unanimously",
+   "quote": "after short discussion it was voted unanimously to accept the policy as presented.",
+   "tags": [
+    "policy"
+   ]
+  },
+  {
+   "topic": "Strategic Plan Subcommittee Update",
+   "resolution": "reported, no action",
+   "quote": "the subcommittee met and discussed when to target 3-6 months of planning.",
+   "tags": [
+    "strategic plan"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "reported, no action",
+   "quote": "the friends had a meeting on october 5th.",
+   "tags": [
+    "Friends",
+    "endowment",
+    "book sales"
+   ]
+  },
+  {
+   "topic": "Board Comments (BOS earmark for LED lights)",
+   "resolution": "reported, no action",
+   "quote": "harry passed on an update from michael-ray (bos).",
+   "tags": [
+    "facilities",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 7:53 p.m.",
+   "quote": "motion to adjourn by kate, seconded by dick.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "October 15th 2020 Agenda",
+   "where": "list",
+   "quote": "o october 15th 2020 agenda o october 2020 director's report"
+  },
+  {
+   "name": "October 2020 Director’s Report",
+   "where": "list",
+   "quote": "o october 15th 2020 agenda o october 2020 director's report"
+  },
+  {
+   "name": "October 2020 Adult Services Report",
+   "where": "list",
+   "quote": "o october 2020 adult services report o october 2020 children's area report"
+  },
+  {
+   "name": "October 2020 Children’s Area Report",
+   "where": "list",
+   "quote": "o october 2020 adult services report o october 2020 children's area report"
+  },
+  {
+   "name": "Closure Policy revised and adopted 10-15-20",
+   "where": "list",
+   "quote": "o closure policy revised and adopted 10-15-20"
+  },
+  {
+   "name": "Annual reports sent to MBLC",
+   "where": "text",
+   "quote": "annual reports have been completed and sent to mblc."
+  }
+ ],
+ "tags": [
+  "library",
+  "remote meeting",
+  "budget",
+  "director evaluation",
+  "weather closure policy",
+  "strategic plan",
+  "Friends of LPL",
+  "COVID-19 reopening",
+  "fines",
+  "facilities"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

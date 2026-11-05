@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2019-06-11",
  "docid": "749",
@@ -12,23 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the expense vouchers, abatements, warrants, commitments, payroll, and the April 9 and May 7, 2019 minutes",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll, and april 9, 2019 & may 7, 2019 minutes."
-  },
-  {
-   "motion": "That Rich serve as Chairman of the Board",
-   "moved_by": "Louis",
-   "seconded_by": "Rena",
+   "motion": "Louis moved that Rich serve as Chairman of the Board, seconded by Rena (reorganization).",
+   "moved_by": "Louis Franco",
+   "seconded_by": "Rena Swezey",
    "outcome": "not stated",
-   "procedural": true,
+   "procedural": false,
    "quote": "louis motioned that rich serve as chairman of the board and was seconded by rena."
   },
   {
-   "motion": "To not accept the Chapter 61B application at this time",
+   "motion": "After reviewing the Chapter 61B application for 5 Chestnut St, the Board voted to not accept it at this time.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -36,15 +28,252 @@
    "quote": "after reviewing it, the boa voted to not accept it at this time due to the fact that the property is still currently owned by paton, bernard, bertha & barry."
   },
   {
-   "motion": "To meet on Tuesday, July 9, 2019 at 5:00 pm",
+   "motion": "Board voted to meet on Tuesday, July 9, 2019 at 5:00 pm.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "not stated",
+   "outcome": "passed",
    "procedural": true,
    "quote": "board voted to meet on tuesday, july 9, 2019 at 5:00 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR-scanned but clearly readable with no voting ambiguities.",
- "cost_usd": 0.1383925
+ "note": "OCR text of two pages; page 2 opens mid-sentence (the 5 Chestnut St item is cut off) and the text is garbled in places. No vote counts are printed anywhere. Approvals of vouchers and 61B releases are stated as 'reviewed and approved' without a motion, so they are recorded as decisions, not votes. The attendance line does not clearly say which role belongs to Rena Swezey and which to Joshua Gendron; 'Regional Assessor' is printed after Rena's name, so roles are given as printed in the lists and may be misattributed. The Atlas item and the 61B affidavit/application are informational or contain no money. No public comment section appears. Received and filed stamp dated SEP 18 2019.",
+ "cost_usd": 0.00679372,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Letarte",
+   "status": "present",
+   "quote": "present: chairman, richard letarte, board members, louis franco, rena swezey, regional assessor, joshua gendron and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Louis Franco",
+   "status": "present",
+   "quote": "present: chairman, richard letarte, board members, louis franco, rena swezey, regional assessor, joshua gendron and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Rena Swezey",
+   "status": "present",
+   "quote": "present: chairman, richard letarte, board members, louis franco, rena swezey, regional assessor, joshua gendron and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Joshua Gendron",
+   "status": "present",
+   "quote": "present: chairman, richard letarte, board members, louis franco, rena swezey, regional assessor, joshua gendron and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Louise Paquette",
+   "status": "present",
+   "quote": "louise reported that eight (8) fy19 supplemental bills were committed in the amount of $38,631.37 on may 20, 2019."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll, and the April 9, 2019 and May 7, 2019 minutes (no separate motion or vote count recorded).",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll,"
+  },
+  {
+   "decision": "Approved two Chapter 61B Land Tax Lien releases for 200 Reservoir Road, owner Vera Barney (no separate motion or vote count recorded).",
+   "quote": "boa reviewed and approved two (2) chapter 61b land tax lien releases for"
+  },
+  {
+   "decision": "Accepted the Chapter 61B affidavit for 5 Chestnut St; a roll-back tax will not be warranted.",
+   "quote": "boa reviewed and accepted the affidavit document; a roll-back tax will not be warranted."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Motor vehicle commitment",
+   "what_was_recorded": "Motor vehicle commitment dated May 28, 2019 printed with two amounts.",
+   "figures_as_printed": [
+    "$119,232.10",
+    "$6,253.75"
+   ],
+   "quote": "motor vehicle commitment: may 28, 2019 - 2019-03 $119,232.10 2019-99 $6,253.75"
+  },
+  {
+   "topic": "FY19 supplemental bills",
+   "what_was_recorded": "Eight FY19 supplemental bills were committed in a stated total amount on May 20, 2019.",
+   "figures_as_printed": [
+    "$38,631.37"
+   ],
+   "quote": "supplemental bills: louise reported that eight (8) fy19 supplemental bills were committed in the amount of $38,631.37 on may 20, 2019."
+  },
+  {
+   "topic": "FY20 preliminary real estate tax",
+   "what_was_recorded": "Preliminary FY20 real estate tax total across 5058 properties; bills to be mailed on or about June 27.",
+   "figures_as_printed": [
+    "$13,744,059.75"
+   ],
+   "quote": "fy20 preliminary re tax: total properties: 5058: $13,744,059.75 bills to be mailed on or about june"
+  },
+  {
+   "topic": "Chapter 61B roll-back taxes paid on releases",
+   "what_was_recorded": "Roll-back taxes were paid on May 13 in connection with the two Chapter 61B lien releases for 200 Reservoir Road.",
+   "figures_as_printed": [
+    "$10,625.03"
+   ],
+   "quote": "roll back taxes paid in the amount of $10,625.03 on may 13,"
+  },
+  {
+   "topic": "Chapter 61B roll-back tax at 5 Chestnut St",
+   "what_was_recorded": "Affidavit accepted for 5 Chestnut St and no roll-back tax is warranted; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "boa reviewed and accepted the affidavit document; a roll-back tax will not be warranted."
+  },
+  {
+   "topic": "361 Mass Ave value-granting abatement adjustment",
+   "what_was_recorded": "Assessor reported an ATB withdrawal for 361 Mass Ave and referred to a prior vote approving an abatement adjustment.",
+   "figures_as_printed": [
+    "$12,405.39"
+   ],
+   "quote": "the boa voted at last month's meeting to approve an adjustment on the value granting abatement in the amount of $12,405.39."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of vouchers, abatements, warrants, commitments, payroll and minutes",
+   "resolution": "approved (no separate motion recorded)",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll,",
+   "tags": [
+    "vouchers",
+    "abatements",
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Reorganization",
+   "resolution": "Rich to continue as Chairman; motion result not stated",
+   "quote": "rich thanked the board members for their support and agreed to continue to serve in this capacity.",
+   "tags": [
+    "reorganization",
+    "chairman"
+   ]
+  },
+  {
+   "topic": "Motor vehicle commitment",
+   "resolution": "reported",
+   "quote": "motor vehicle commitment: may 28, 2019 - 2019-03 $119,232.10 2019-99 $6,253.75",
+   "tags": [
+    "motor vehicle",
+    "commitment"
+   ]
+  },
+  {
+   "topic": "FY19 supplemental bills",
+   "resolution": "reported",
+   "quote": "supplemental bills: louise reported that eight (8) fy19 supplemental bills were committed in the amount of $38,631.37 on may 20, 2019.",
+   "tags": [
+    "supplemental bills",
+    "FY19"
+   ]
+  },
+  {
+   "topic": "FY20 preliminary real estate tax",
+   "resolution": "reported; bills to be mailed on or about June 27",
+   "quote": "fy20 preliminary re tax: total properties: 5058: $13,744,059.75 bills to be mailed on or about june",
+   "tags": [
+    "FY20",
+    "real estate tax"
+   ]
+  },
+  {
+   "topic": "Chapter 61B land tax lien releases",
+   "resolution": "two releases approved",
+   "quote": "boa reviewed and approved two (2) chapter 61b land tax lien releases for",
+   "tags": [
+    "chapter 61B",
+    "lien release",
+    "roll-back tax"
+   ]
+  },
+  {
+   "topic": "Chapter 61B interested buyer, 5 Chestnut St",
+   "resolution": "affidavit accepted; Chapter 61B application not accepted",
+   "quote": "the boa has received notification of an interested buyer for property located at 5",
+   "tags": [
+    "chapter 61B",
+    "affidavit",
+    "land"
+   ]
+  },
+  {
+   "topic": "Atlas System Software (RMV excise conversion)",
+   "resolution": "informational; no action recorded",
+   "quote": "louise explained that the registry of motor vehicles' (rmv) excise tax",
+   "tags": [
+    "RMV",
+    "excise tax",
+    "Atlas"
+   ]
+  },
+  {
+   "topic": "Report by Assessor, 361 Mass Ave",
+   "resolution": "reported; ATB withdrawal received",
+   "quote": "josh reported that we are in receipt of an atb withdrawal for 361 mass ave.",
+   "tags": [
+    "abatement",
+    "ATB withdrawal"
+   ]
+  },
+  {
+   "topic": "CAMA conversion to iasWorld",
+   "resolution": "seeking legal counsel direction; no action recorded",
+   "quote": "the boa is seeking direction from legal counsel regarding the conversion to",
+   "tags": [
+    "CAMA",
+    "iasWorld",
+    "legal counsel"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "voted to meet July 9, 2019 at 5:00 pm",
+   "quote": "board voted to meet on tuesday, july 9, 2019 at 5:00 pm.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Affidavit pursuant to M.G.L. Chapter 61B (5 Chestnut St)",
+   "where": "text",
+   "quote": "an affidavit pursuant to m.g.l. chapter 61b was signed certifying and affirming that he"
+  },
+  {
+   "name": "Chapter 61B application (5 Chestnut St, submitted by interested buyer)",
+   "where": "text",
+   "quote": "a chapter 61b application was also submitted by the interested buyer."
+  },
+  {
+   "name": "ATB withdrawal for 361 Mass Ave",
+   "where": "text",
+   "quote": "we are in receipt of an atb withdrawal for 361 mass ave."
+  },
+  {
+   "name": "Master Agreement (CAMA conversion to iasWorld)",
+   "where": "text",
+   "quote": "regarding the legalities of the master agreement and what the ramifications will be"
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "chapter 61B",
+  "tax commitments",
+  "abatements",
+  "CAMA iasWorld",
+  "RMV Atlas system",
+  "reorganization",
+  "FY20 preliminary tax"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2019-06-11",
  "docid": "1897",
@@ -12,39 +12,366 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from the May 14, 2019 COA Meeting",
-   "moved_by": "Ms. DiGiacomo",
-   "seconded_by": "Ms. Dwyer",
+   "motion": "Accept the minutes of the May 14, 2019 COA meeting.",
+   "moved_by": "Betty DiGiacomo",
+   "seconded_by": "Jacquelyn Dwyer",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "ms. digiacomo motioned to accept the minutes from the may 14, 2019 coa meeting, ms. dwyer seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Nominate Ms. Lincoln as COA Chairperson and Ms. Rabbitt as Vice Chairperson beginning FY 2020",
-   "moved_by": "Ms. DiGiacomo",
-   "seconded_by": "Ms. Dwyer",
+   "motion": "Nominate Ms. Lincoln as COA Chairperson and Ms. Rabbitt as Vice Chairperson beginning FY 2020.",
+   "moved_by": "Betty DiGiacomo",
+   "seconded_by": "Jacquelyn Dwyer",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "ms. digiacomo moved to nominate ms. lincoln as the coa chairperson, and ms. rabbitt as vice chairperson beginning fy 2020, ms. dwyer seconded. on vote, motion carried unanimously."
+   "quote": "ms. digiacomo moved to nominate ms. lincoln as the coa chairperson, and ms. rabbitt as vice chairperson beginning fy 2020, ms. dwyer seconded."
   },
   {
-   "motion": "Recommend Mr. Pesenti and Ms. O'Sullivan to the Select Board to appoint to the Council on Aging",
-   "moved_by": "Ms. DiGiacomo",
-   "seconded_by": "Ms. Dwyer",
+   "motion": "Recommend Mr. Pesenti and Ms. O’Sullivan to the Select Board for appointment to the Council on Aging.",
+   "moved_by": "Betty DiGiacomo",
+   "seconded_by": "Jacquelyn Dwyer",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "ms. digiacomo moved to recommend mr. pesenti and ms. o'sullivan to the select board to appoint to the council on aging, ms. dwyer seconded. on vote, motion carried unanimously."
+   "quote": "ms. digiacomo moved to recommend mr. pesenti and ms. o'sullivan to the select board to appoint to the council on aging, ms. dwyer seconded."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Ms. DiGiacomo",
-   "seconded_by": "Ms. Dwyer",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Betty DiGiacomo",
+   "seconded_by": "Jacquelyn Dwyer",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "at 10:40 ms. digiacomo moved to adjourn the meeting, ms. dwyer seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0880315
+ "note": "Text is a readable extract with no scan problems, but page 1 contains a stray line \"Unanimously approved by COA at July 2, 2019 meeting.\" mid-paragraph, which is an approval annotation for a later meeting and was not treated as a vote. \"Ms. Lincoln\" is not disambiguated in the minutes; by context Deb Lincoln appears to be the \"Ms. Lincoln\" in the officer nomination, census question, shuffleboard report, and thank-you cards, but this is inferred. Chris Bibby is listed as a guest, while the discussion introduces \"Helen Christine Bibby\"; presumed to be the same person, not confirmed. Attendee roles other than Director, Chairperson and Eagle House Supporters Liaison are not printed. Absent line is blank. The \"Public comment none\" line is a non-speaker entry. Minutes name Pauline Roy, Sherri Bean, Clarence Goguen, Isabel Gallagher and David Dorren only in passing, so they are not listed as attendees. Vote outcomes are printed as \"unanimously\" and recorded as \"passed unanimously\".",
+ "cost_usd": 0.00749412,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sue Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "director sue doherty, chairperson pete lincoln"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "director sue doherty, chairperson pete lincoln"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "",
+   "status": "present",
+   "quote": "cheryl moisan, betty digiacomo, diane nowd"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "",
+   "status": "present",
+   "quote": "cheryl moisan, betty digiacomo, diane nowd"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "",
+   "status": "present",
+   "quote": "cheryl moisan, betty digiacomo, diane nowd"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "diane nowd, jane rabbitt,"
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "jacquelyn dwyer, deb lincoln, kevin mcnally"
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "",
+   "status": "present",
+   "quote": "jacquelyn dwyer, deb lincoln, kevin mcnally"
+  },
+  {
+   "name": "Kevin McNally",
+   "role": "",
+   "status": "present",
+   "quote": "jacquelyn dwyer, deb lincoln, kevin mcnally"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "",
+   "status": "present",
+   "quote": "judy tarbell, sarah grant, barbara brown"
+  },
+  {
+   "name": "Sarah Grant",
+   "role": "",
+   "status": "present",
+   "quote": "judy tarbell, sarah grant, barbara brown"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "",
+   "status": "present",
+   "quote": "judy tarbell, sarah grant, barbara brown"
+  },
+  {
+   "name": "Chris Bibby",
+   "role": "Guest (introduced as Helen Christine Bibby; candidate for COA)",
+   "status": "present",
+   "quote": "chris bibby, john pesenti, susan o'sullivan"
+  },
+  {
+   "name": "John Pesenti",
+   "role": "Guest (COA candidate)",
+   "status": "present",
+   "quote": "chris bibby, john pesenti, susan o'sullivan"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "role": "Guest (COA candidate)",
+   "status": "present",
+   "quote": "chris bibby, john pesenti, susan o'sullivan"
+  },
+  {
+   "name": "Marie Burchfield",
+   "role": "Eagle House Supporters Liaison",
+   "status": "present",
+   "quote": "eagle house supporters liaison marie burchfield"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed that the COA ask the Select Board to put the COA appointments first on its agenda.",
+   "quote": "ms. lincoln asked the board's permission to request the select board put the coa appointments first on their agenda, and the board agreed."
+  },
+  {
+   "decision": "The board was urged to share opinions on additional parking and walkability in the town center with Sherri Bean of MRPC by email.",
+   "quote": "the board was urged to share their opinions about additional parking and walkability in the town center with sherri bean of mrpc via email."
+  },
+  {
+   "decision": "Mr. Lincoln suggested waiting until fall to discuss the next Boston Post Cane recipient.",
+   "quote": "mr. lincoln suggested waiting until fall to talk about the next person to receive the award."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "HVAC bond bill funds",
+   "what_was_recorded": "The Town Manager reported the $25K bond bill money must be spent by end of June and an additional $40,000 was added; the HVAC will still be replaced regardless.",
+   "figures_as_printed": [
+    "$25K",
+    "$40,000"
+   ],
+   "quote": "status of $25k bond bill for hvac: ms. doherty reported that the town manager was contacted"
+  },
+  {
+   "topic": "Shuffleboard court completion",
+   "what_was_recorded": "A person was found who could finish the shuffleboard court for $850.",
+   "figures_as_printed": [
+    "$850"
+   ],
+   "quote": "found someone who could finish the court for $850."
+  },
+  {
+   "topic": "Color laser printer purchase",
+   "what_was_recorded": "A color laser printer was purchased with formula grant funds; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "also purchased with formula grant funds."
+  },
+  {
+   "topic": "Director salary grade/step increase",
+   "what_was_recorded": "A letter supported advancing the COA Director position from Grade 11 to Grade 14 in the Salary Admin. Plan; no dollar figure printed.",
+   "figures_as_printed": [
+    "Grade 11",
+    "Grade 14"
+   ],
+   "quote": "advancing the director position from grade 11 to 14"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "noted",
+   "quote": "mr. lincoln informed the board that clarence goguen, the current boston post cane recipient, has",
+   "tags": [
+    "announcements",
+    "Boston Post Cane"
+   ]
+  },
+  {
+   "topic": "Minutes approval (May 14, 2019)",
+   "resolution": "approved",
+   "quote": "ms. digiacomo motioned to accept the minutes from the may 14, 2019 coa meeting, ms. dwyer seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "discussed; end of year report deferred until FY 19 stats are in",
+   "quote": "director's report: ms. doherty said she is waiting for all stats to come in from fy 19",
+   "tags": [
+    "director",
+    "reporting"
+   ]
+  },
+  {
+   "topic": "Property tax work-off program and census outreach",
+   "resolution": "discussed; suggested outreach to school sign and Select Board",
+   "quote": "ms. doherty reported that raises for the program will come into effect on",
+   "tags": [
+    "property tax work-off",
+    "census"
+   ]
+  },
+  {
+   "topic": "MOC nutrition program",
+   "resolution": "reported",
+   "quote": "ms. doherty said the eagle house will continue to serve soup and sandwiches provided by moc on wednesdays.",
+   "tags": [
+    "nutrition",
+    "meals"
+   ]
+  },
+  {
+   "topic": "Director salary grade/step increase",
+   "resolution": "discussed; letter read",
+   "quote": "mr. lincoln read a letter in support of advancing the director position from grade 11 to 14",
+   "tags": [
+    "salary",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Bond bill for HVAC",
+   "resolution": "reported; HVAC to be replaced regardless",
+   "quote": "ms. doherty reported the hvac will still be replaced, regardless of the situation with",
+   "tags": [
+    "HVAC",
+    "bond bill",
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "MRPC walkability audit for Town Center",
+   "resolution": "discussed; board urged to email MRPC",
+   "quote": "ms. doherty and ms. lincoln attended the audit.",
+   "tags": [
+    "walkability",
+    "town center",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Vote on FY 20 COA officers",
+   "resolution": "approved",
+   "quote": "ms. digiacomo moved to nominate ms. lincoln as the coa chairperson, and ms. rabbitt as vice chairperson beginning fy 2020, ms. dwyer seconded.",
+   "tags": [
+    "officers",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Vote to recommend new COA members to Select Board",
+   "resolution": "approved recommendation of Pesenti and O’Sullivan",
+   "quote": "candidates than vacancies on the board this year, and added that ms. o'sullivan has been waiting",
+   "tags": [
+    "appointments",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Dementia Friendly Lunenburg",
+   "resolution": "reported",
+   "quote": "ms. doherty also said there would be a dementia friendly table at the car show with information.",
+   "tags": [
+    "dementia",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Building report",
+   "resolution": "reported",
+   "quote": "ms. doherty reported she replaced the tables usually used for bingo with new light",
+   "tags": [
+    "building",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Shuffleboard court",
+   "resolution": "reported",
+   "quote": "ms. lincoln reported that eagle house supporters member david dorren found",
+   "tags": [
+    "shuffleboard",
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Upcoming events",
+   "resolution": "reported",
+   "quote": "ms. doherty talked about upcoming events at the eagle house.",
+   "tags": [
+    "events"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "no action",
+   "quote": "notices and communications: none",
+   "tags": []
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "no action",
+   "quote": "ms. lincoln gave thank you cards to mr. lincoln, ms. dwyer, and mr. mcnally for serving on the",
+   "tags": [
+    "thanks",
+    "board members"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:40",
+   "quote": "at 10:40 ms. digiacomo moved to adjourn the meeting",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter in support of advancing the COA Director position from Grade 11 to 14 (author not stated)",
+   "where": "text",
+   "quote": "mr. lincoln read a letter in support of advancing the director position from grade 11 to 14"
+  }
+ ],
+ "tags": [
+  "Council on Aging",
+  "annual meeting",
+  "officers",
+  "appointments",
+  "HVAC",
+  "bond bill",
+  "salary",
+  "dementia friendly",
+  "walkability",
+  "Eagle House",
+  "shuffleboard",
+  "census"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

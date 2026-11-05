@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-10-28",
  "docid": "4015",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the ANR Plan for 71 Wildwood Road",
+   "motion": "Approve the ANR Plan for 71 Wildwood Road.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "p. bertram made motion to approve the anr plan for 71 wildwood road, t. cole seconded, all aye."
   },
   {
-   "motion": "Approve the ANR Plan for 99, 103 & 109 Youngs Road",
+   "motion": "Approve the ANR Plan for 99, 103 & 109 Youngs Road.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -28,24 +28,23 @@
    "quote": "t. cole made motion to approve the anr plan for 99, 103 & 109 youngs road, p. bertram seconded, all aye."
   },
   {
-   "motion": "Board voices its support for the Saliba Property land acquisition if asked at Town Meeting",
+   "motion": "That if asked, the Board voices its support for the Sa liba Property land acquisition at Town Meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Thompson",
    "outcome": "passed 3-1",
    "procedural": false,
-   "quote": "p. bertram made motion that if asked, the boar d voices its support for this land acquisition at town meeting, m. thompson seconded, discussion: a. burney asked for clarification; is the motion strictly for support of the acquisition? is p. bertram looking for a letter of support or is it sufficient f or the board to stand up at town meeting and voice its support? p. bertram responded either of those options was agreeable. m. thompson, aye; p. bertram, aye; t. cole, nay; m. allison, aye. vote passed 3-",
-   "quote_taken_from_text": true
+   "quote": "m. thompson, aye; p. bertram, aye; t. cole, nay; m. allison, aye. vote passed 3-1."
   },
   {
-   "motion": "Board adopts the Charge of the Lunenburg Economic Development Committee as drafted",
+   "motion": "Adopt the Charge of the Lunenburg Economic Development Committee as drafted.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Thompson",
    "outcome": "passed",
    "procedural": false,
-   "quote": "p. bertram made motion that the board adopt the charge of the lunenburg economic development committee as drafted, m. thompson seconded, all aye."
+   "quote": "p. bertram made motion that the board adopt the charge of the lunenburg economic development committee as drafted,"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -54,6 +53,299 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1022025
+ "note": "Text extraction splits some words and names (for example \"Sa liba\", \"a vailable\", \"represent ed\"); quotes copy the text as printed. No public comment section is recorded. The Land Acquisition vote is recorded as 3-1 with one nay (T. Cole). The minutes list Marjorie J. Boggio only in the letterhead, with no attendance, so she is not recorded as an attendee. Only one vote for the Land Acquisition motion is recorded; the Select Board's vote on the Earth Removal Bylaw is reported in passing and is not a vote of this Board.",
+ "cost_usd": 0.00780642,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, marisa thompson, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, marisa thompson, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, marisa thompson, adam r. burney"
+  },
+  {
+   "name": "Marisa Thompson",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, marisa thompson, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, marisa thompson, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: gregory bittner"
+  },
+  {
+   "name": "Frank Preston",
+   "role": "representing the applicant (Whitman & Bingham Associates)",
+   "status": "present",
+   "quote": "the applicant was represent ed by frank preston, whitman & bingham associates."
+  },
+  {
+   "name": "Larry Sabean",
+   "role": "representing the applicant (Hannigan Engineering)",
+   "status": "present",
+   "quote": "the applicant was represented by larry sabean, hannigan engineering."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 10.07.19 minutes were tabled due to an agenda misprint.",
+   "quote": "10.07.19- tabled due to agenda mis-print."
+  },
+  {
+   "decision": "Members will individually prioritize the Master Plan Elements before the next meeting, and A. Burney will summarize for the next meeting.",
+   "quote": "members will individually prioritize the elements,"
+  },
+  {
+   "decision": "A. Burney will reach out to the Lunenburg Business Association so a Lunenburg business owner can be appointed to the Economic Development Committee.",
+   "quote": "as a lunenburg business owner also needs to be appointed to the committee."
+  },
+  {
+   "decision": "The Conservation Commission, Open Space Committee, Select Board, and Agricultural Commission will be notified that the Economic Development Charge was accepted and asked to appoint representatives.",
+   "quote": "will be notified that the charge was accepted and they will need to appoint representatives."
+  },
+  {
+   "decision": "The Open Space Ad Hoc Committee Chair will go view the 361 Massachusetts Avenue site.",
+   "quote": "the committee chair will go view the site."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Land acquisition (Sa liba Property)",
+   "what_was_recorded": "The Town's cost for the 318-acre purchase will not exceed the stated figure, and both grants sought have been received.",
+   "figures_as_printed": [
+    "$282,000"
+   ],
+   "quote": "the town's cost will not exceed $282,000."
+  },
+  {
+   "topic": "Master planning funds and element update cost",
+   "what_was_recorded": "$50,000 is available for master planning through Capital Planning, and updating each Element will cost about $12,500.",
+   "figures_as_printed": [
+    "$50,000",
+    "$12,500 +/ -"
+   ],
+   "quote": "there is currently $50,000 a vailable for master planning through capital planning; updating each element will cost $12,500 +/ -."
+  },
+  {
+   "topic": "TCP Building Design Committee funding",
+   "what_was_recorded": "A Town Meeting vote authorized $265,000 for upgrading the building into Town offices.",
+   "figures_as_printed": [
+    "$265,000"
+   ],
+   "quote": "a town meeting vote authorized $265,000 for upgrading of the building into town offices."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR Plan, 59 & 71 Wildwood Road",
+   "resolution": "approved (ANR plan for 71 Wildwood Road)",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "Wildwood Road"
+   ],
+   "quote": "p. bertram made motion to approve the anr plan for 71 wildwood road, t. cole seconded, all aye."
+  },
+  {
+   "topic": "ANR Plan, 99, 103 & 109 Youngs Road",
+   "resolution": "approved",
+   "tags": [
+    "ANR",
+    "septic",
+    "Youngs Road"
+   ],
+   "quote": "t. cole made motion to approve the anr plan for 99, 103 & 109 youngs road, p. bertram seconded, all aye."
+  },
+  {
+   "topic": "Land acquisition, Sa liba Property, Board recommendation",
+   "resolution": "passed 3-1: Board will voice support at Town Meeting if asked",
+   "tags": [
+    "land acquisition",
+    "Town Meeting",
+    "conservation",
+    "recreation"
+   ],
+   "quote": "m. thompson, aye; p. bertram, aye; t. cole, nay; m. allison, aye. vote passed 3-1."
+  },
+  {
+   "topic": "Economic Development Committee charge",
+   "resolution": "charge adopted as drafted",
+   "tags": [
+    "economic development",
+    "committee charge"
+   ],
+   "quote": "a final draft was presented to board members."
+  },
+  {
+   "topic": "Solar bylaw",
+   "resolution": "continued to next meeting",
+   "tags": [
+    "solar bylaw",
+    "zoning"
+   ],
+   "quote": "discussion will continue at the next board meeting."
+  },
+  {
+   "topic": "Master Plan",
+   "resolution": "members to prioritize Elements; Burney to summarize next meeting",
+   "tags": [
+    "master plan",
+    "OSRP",
+    "housing"
+   ],
+   "quote": "members will individually prioritize the elements,"
+  },
+  {
+   "topic": "Minutes approval, 10.07.19",
+   "resolution": "tabled due to agenda misprint",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "10.07.19- tabled due to agenda mis-print."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "tags": [
+    "committees",
+    "Farmers Market",
+    "TCP Building",
+    "MJTC"
+   ],
+   "quote": "mjtc- no report; no board representative at this time."
+  },
+  {
+   "topic": "Director's items (Butterfly Lane, Stone Farm, MJTC)",
+   "resolution": "no action",
+   "tags": [
+    "road acceptance",
+    "bond release",
+    "Special Town Meeting"
+   ],
+   "quote": "butterfly lane, update- will be on the warrant for november special town meeting for road acceptance."
+  },
+  {
+   "topic": "Meeting schedule and ongoing items",
+   "resolution": "no action",
+   "tags": [
+    "schedule",
+    "Solar Energy Systems",
+    "Off Street Parking"
+   ],
+   "quote": "november 25- continued discussion on master plan and solar bylaw."
+  },
+  {
+   "topic": "Board comments",
+   "resolution": "no action (correction to Open Space Committee property)",
+   "tags": [
+    "361 Massachusetts Avenue",
+    "Open Space Committee"
+   ],
+   "quote": "p. bertram noted it was 361 massachusetts avenue and not 250 howard street"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:00 PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "t. cole made motion to adjourn, p. bertram seconded, all aye."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plan 59 & 71 Wildwood Road",
+   "where": "list",
+   "quote": "anr plan 59 & 71 wildwood road"
+  },
+  {
+   "name": "ANR Plan 99, 103, & 109 Youngs Road",
+   "where": "list",
+   "quote": "anr plan 99, 103, & 109 youngs road"
+  },
+  {
+   "name": "Minutes 10.07.19",
+   "where": "list",
+   "quote": "minutes 10.07.19 draft charge for economic development committee"
+  },
+  {
+   "name": "DRAFT Charge for Economic Development Committee",
+   "where": "list",
+   "quote": "draft charge for economic development committee"
+  },
+  {
+   "name": "Solar Energy System Bylaw",
+   "where": "list",
+   "quote": "solar energy system bylaw master plan"
+  },
+  {
+   "name": "Master Plan",
+   "where": "list",
+   "quote": "board members were in possession of the 2002 master plan."
+  },
+  {
+   "name": "Special Town Meeting Warrant (Sa liba Property land acquisition article)",
+   "where": "text",
+   "quote": "as placed on the special town meeting warrant"
+  },
+  {
+   "name": "Open Space and Recreation Plan (OSRP)",
+   "where": "text",
+   "quote": "the state conditionally approved the updated open space and recreation plan (osrp)"
+  },
+  {
+   "name": "Housing Production Plan",
+   "where": "text",
+   "quote": "housing production plan could be used towards element iii, housing."
+  },
+  {
+   "name": "Vertex and Tappe buildings' studies",
+   "where": "text",
+   "quote": "board members requested copies of the vertex and tappe buildings' studies."
+  },
+  {
+   "name": "Earth Removal Bylaw",
+   "where": "text",
+   "quote": "select board voted to support earth removal bylaw."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plans",
+  "land acquisition",
+  "Town Meeting",
+  "economic development",
+  "solar bylaw",
+  "master plan",
+  "committee reports",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

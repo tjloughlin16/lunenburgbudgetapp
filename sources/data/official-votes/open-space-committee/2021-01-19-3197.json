@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2021-01-19",
  "docid": "3197",
@@ -12,23 +12,205 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from 12/15/2020",
+   "motion": "Approve the 12/15/2020 minutes.",
    "moved_by": "Bob Pease",
    "seconded_by": "Paula Bertram",
    "outcome": "passed 3-0-2",
    "procedural": true,
-   "quote": "bob pease made a motion to approve the minutes, paula bertram seconded. voted in favor by roll call vote: bob pease, paula bertram, brandon kibbe. voted against: none abstained: lynne man (she had not yet reviewed) sarah cammer (she was not in attendance)."
+   "quote": "bob pease made a motion to approve the minutes, paula bertram seconded. voted in favor by roll call vote: bob pease, paula bertram, brandon kibbe."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:28 p.m.",
    "moved_by": "Paula Bertram",
    "seconded_by": "Sarah Cammer",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "paula bertram made a motion to adjourn at 8:28 p.m. seconded by sarah cammer, voted unanimously by roll call."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07599249999999999
+ "note": "Sarah Cammer is listed as present in the opening attendance line but is recorded as 'not in attendance' in the minutes-approval abstention note; attendance status recorded as present per the opening line. The minutes head the meeting 'Open Space Ad Hoc Committee' while the requested board name is Open Space Committee. Public comment heading contains only committee-member reports; no outside speaker is recorded. The minutes-approval count 3-0-2 is derived from the printed roll call (3 in favor, none against, 2 abstained). No documents list is printed.",
+ "cost_usd": 0.005517019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sarah Cammer",
+   "role": "committee member",
+   "status": "present",
+   "quote": "the committee met via zoom as scheduled with the following members present: sarah cammer, brandon kibbe, bob pease, lynne man, paula bertram, ana lockwood and mike toohill."
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "committee member",
+   "status": "present",
+   "quote": "the committee met via zoom as scheduled with the following members present: sarah cammer, brandon kibbe, bob pease, lynne man, paula bertram, ana lockwood and mike toohill."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "committee member",
+   "status": "present",
+   "quote": "the committee met via zoom as scheduled with the following members present: sarah cammer, brandon kibbe, bob pease, lynne man, paula bertram, ana lockwood and mike toohill."
+  },
+  {
+   "name": "Lynne Man",
+   "role": "committee member",
+   "status": "present",
+   "quote": "the committee met via zoom as scheduled with the following members present: sarah cammer, brandon kibbe, bob pease, lynne man, paula bertram, ana lockwood and mike toohill."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "committee member; recorded the minutes",
+   "status": "present",
+   "quote": "the committee met via zoom as scheduled with the following members present: sarah cammer, brandon kibbe, bob pease, lynne man, paula bertram, ana lockwood and mike toohill."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "committee member",
+   "status": "present",
+   "quote": "the committee met via zoom as scheduled with the following members present: sarah cammer, brandon kibbe, bob pease, lynne man, paula bertram, ana lockwood and mike toohill."
+  },
+  {
+   "name": "Mike Toohill",
+   "role": "committee member",
+   "status": "present",
+   "quote": "the committee met via zoom as scheduled with the following members present: sarah cammer, brandon kibbe, bob pease, lynne man, paula bertram, ana lockwood and mike toohill."
+  },
+  {
+   "name": "Myleen Mallari",
+   "role": "Tax Collector",
+   "status": "present",
+   "quote": "myleen mallari, tax collector, provided the committee with an overview of the tax title process."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee developed a list of parcels to investigate further: 51 Parmenter, 0 Shirley Reservoir Lake, 0 Fire Road 12, 860 Reservoir, 26 Sunset Lane, 725 Goodrich Street, 66 West Street, 225 Pleasant Street and 104 Fairview.",
+   "quote": "committee developed a list of parcels to investigate further including:"
+  },
+  {
+   "decision": "Assignments: Paula to investigate the lake Shirley, 860 Reservoir, 0 Lake Shirley and 725 Goodrich Street parcels; Mike to investigate 225 Pleasant Street; Brandon to reach out to Dave Prokoview on West Street; Bob to GPS the West Street trails.",
+   "quote": "paula will investigate the parcels on lake shirley, 860 reservoir, 0 lake shirley and 725 goodrich street. mike will investigate the 225 pleasant street parcel and brandon will reach out to dave prokoview regarding the west street parcel."
+  },
+  {
+   "decision": "Committee agreed that before reaching out to other Boards and Commissions it will notify the Board of Selectmen; Sarah volunteered to attend a Selectmen meeting when appropriate.",
+   "quote": "committee noted that prior to reaching out to the other boards and commissions we will notify the board of selectmen."
+  },
+  {
+   "decision": "Myleen Mallari to investigate whether the tax title process manual is available as public information.",
+   "quote": "myleen responded affirmatively and will investigate if the manual is available as public information."
+  },
+  {
+   "decision": "Committee to continue pursuing 1529 Mass. Avenue; Bob to meet with Adam Costa on the process for transferring land to the care and custody of the Conservation Commission.",
+   "quote": "bob informed the committee that he will be meeting with adam costa to discuss the process for transferring land to the care and custody of the conservation commission."
+  },
+  {
+   "decision": "Brandon to attempt to download his numerous deeds for committee members.",
+   "quote": "brandon had researched many parcels when compiling the open space plan and has numerous deeds which he will attempt to download for committee members."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Land of low value threshold (tax title)",
+   "what_was_recorded": "Tax Collector said parcels classified as land of low value follow a different process, with a $15,000 threshold.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "myleen informed the committee that parcels classified as land of low value is a different process; the threshold is $15,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "opened meeting at 6:32 p.m.; pandemic notice read",
+   "quote": "chairman opened the meeting at 6:32 p.m. and read the pandemic notice as posted on the agenda.",
+   "tags": [
+    "procedure",
+    "Zoom meeting"
+   ]
+  },
+  {
+   "topic": "Review/approve 12/15/2020 minutes",
+   "resolution": "approved 3-0-2",
+   "quote": "bob pease made a motion to approve the minutes, paula bertram seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Discussion with Tax Collector on tax title process",
+   "resolution": "no action; Tax Collector to look for process manual",
+   "quote": "myleen mallari, tax collector, provided the committee with an overview of the tax title process.",
+   "tags": [
+    "tax title",
+    "tax collector",
+    "land taking",
+    "foreclosure"
+   ]
+  },
+  {
+   "topic": "Continuation of general municipal land discussion",
+   "resolution": "parcel list developed; members assigned to investigate",
+   "quote": "committee developed a list of parcels to investigate further including:",
+   "tags": [
+    "parcels",
+    "conservation",
+    "open space",
+    "recreation",
+    "land acquisition"
+   ]
+  },
+  {
+   "topic": "Public comment (committee reports)",
+   "resolution": "no action; Selectmen notification and Selectmen liaison discussed",
+   "quote": "bob pease informed the committee that the town manager had reached out to him and brandon to determine where we are in this process.",
+   "tags": [
+    "Board of Selectmen",
+    "Conservation Commission",
+    "Parks Commission"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:28 p.m.",
+   "quote": "paula bertram made a motion to adjourn at 8:28 p.m. seconded by sarah cammer, voted unanimously by roll call.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Manual outlining the tax title process",
+   "where": "text",
+   "quote": "bob pease asked if there is a manual that outlines the process, myleen responded affirmatively and will investigate if the manual is available as public information."
+  },
+  {
+   "name": "Open space plan",
+   "where": "text",
+   "quote": "brandon had researched many parcels when compiling the open space plan and has numerous deeds which he will attempt to download for committee members."
+  },
+  {
+   "name": "Deeds for parcels",
+   "where": "text",
+   "quote": "brandon had researched many parcels when compiling the open space plan and has numerous deeds which he will attempt to download for committee members."
+  }
+ ],
+ "tags": [
+  "open space",
+  "conservation land",
+  "tax title",
+  "tax taking",
+  "parcel review",
+  "Zoom meeting",
+  "land transfer",
+  "Board of Selectmen"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

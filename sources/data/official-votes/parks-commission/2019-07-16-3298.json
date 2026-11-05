@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2019-07-16",
  "docid": "3298",
@@ -12,23 +12,331 @@
  },
  "votes": [
   {
-   "motion": "Approve the June 2019 minutes",
-   "outcome": "passed 2-0",
-   "procedural": true,
+   "motion": "Approve the June 2019 minutes.",
    "moved_by": "Karin Menard",
    "seconded_by": "Susanna Jewell",
+   "outcome": "passed 2-0",
+   "procedural": true,
    "quote": "karin motioned and susanna seconded to approve the june 2019 minutes - approved 2-0"
   },
   {
-   "motion": "Close Wallis Park from Dusk till Dawn",
-   "outcome": "passed 3-0",
-   "procedural": false,
+   "motion": "Close Wallis Park from dusk till dawn.",
    "moved_by": "Karin Menard",
    "seconded_by": "Susanna Jewell",
+   "outcome": "passed 3-0",
+   "procedural": false,
    "quote": "karin motioned and susanna seconded that to close wallis park from dusk till dawn. approved 3-0."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0640654
+ "note": "Text is a rough transcription with spelling and grammar errors; quotes follow it as printed. Not a scan. No motion to adjourn is recorded (adjournment at 7:45pm is stated without a vote). John Palumbo arrived at 6:10pm, after the call to order. \"Michelle Bellisa\" (page 2) and \"Michelle Bellessa\" (page 1) are probably the same person; both spellings are recorded as printed. Nancy Forest and Chief Marino are named but did not attend or speak, so they are not listed as attendees.",
+ "cost_usd": 0.006665819999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "karin called the meeting to order at 6:01pm. attendance - karin menard, susanna jewell, john palumbo (arrived at 6:10pm) and jack rodriquenz, dpw director."
+  },
+  {
+   "name": "Susanna Jewell",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "karin called the meeting to order at 6:01pm. attendance - karin menard, susanna jewell, john palumbo (arrived at 6:10pm) and jack rodriquenz, dpw director."
+  },
+  {
+   "name": "John Palumbo",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "karin called the meeting to order at 6:01pm. attendance - karin menard, susanna jewell, john palumbo (arrived at 6:10pm) and jack rodriquenz, dpw director."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "karin called the meeting to order at 6:01pm. attendance - karin menard, susanna jewell, john palumbo (arrived at 6:10pm) and jack rodriquenz, dpw director."
+  },
+  {
+   "name": "Lynn Major",
+   "role": "beach employee, school employee, non resident (as stated by speaker)",
+   "status": "present",
+   "quote": "lynn major (beach employee, school employee, non resident) said she has been employed at the town beach for over 30 years"
+  },
+  {
+   "name": "Michelle Bellessa",
+   "role": "member of the public",
+   "status": "present",
+   "quote": "michelle bellessa said that signing up online was not a user friendly process and she wasn't sure of all the steps"
+  },
+  {
+   "name": "Cheryl Shaw",
+   "role": "member of the public",
+   "status": "present",
+   "quote": "cheryl shaw mentioned that it occasionally auto populate the wrong address."
+  },
+  {
+   "name": "Melony Letarte",
+   "role": "member of the public",
+   "status": "present",
+   "quote": "melony letarte thought if we were defining the family as two adults then it shouldn't matter if the live in the same residence"
+  },
+  {
+   "name": "Mike Young",
+   "role": "member of the public",
+   "status": "present",
+   "quote": "mike young said that the majority of folks using the courts"
+  },
+  {
+   "name": "Dan Hager",
+   "role": "member of the public",
+   "status": "present",
+   "quote": "dan hager said he has a young son and would love to see him be able to grow up at the park"
+  },
+  {
+   "name": "Chris Letarte",
+   "role": "member of the public",
+   "status": "present",
+   "quote": "chris letarte said that he pulled a page and a half of complaint calls at the police station since april 2018"
+  },
+  {
+   "name": "Michelle Bellisa",
+   "role": "member of the public (spelling as printed on page 2; likely the same person as Michelle Bellessa)",
+   "status": "present",
+   "quote": "michelle bellisa said that it sounds like a culture has been allowed to permeate wallis park"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Park Director job description: the commission flagged two areas of concern and asked that they be brought back to the town manager to be rewritten.",
+   "quote": "the commission read through the job description and flagged two areas and asked that those areas of concerns be brought back to the town manager to rewrite."
+  },
+  {
+   "decision": "Marshall Park revitalization discussion held over to the next meeting due to time constraints.",
+   "quote": "due to time constraints it was decided to hold this discussion for the next meeting"
+  },
+  {
+   "decision": "Karin Menard to speak with Nancy Forest about how early a seasonal job posting could be made.",
+   "quote": "karin said she would speak with nancy forest to see how early a season job posting could be made."
+  },
+  {
+   "decision": "Karin Menard to reach out to Chief Marino about Wallis Park.",
+   "quote": "karin said she would reach out to chief marino."
+  },
+  {
+   "decision": "Karin Menard to note the online pass registration concerns raised by the public for improvement next year.",
+   "quote": "would note all of their concerns in hopes of making the process better for next year."
+  },
+  {
+   "decision": "Street-related requests (speed bump, traffic) referred to the Chief of Police because the street is outside Park Commission jurisdiction.",
+   "quote": "karin said the street does not fall under the jurisdiction of the park commission and to contact the chief of police."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Wallis Park court resurfacing",
+   "what_was_recorded": "Jack did not arrange the resurfacing because he did not want to spend the time and money on it before the commission possibly changed the court use.",
+   "figures_as_printed": [],
+   "quote": "didn't want to spend the time and money to resurface only to have the commission change the use"
+  },
+  {
+   "topic": "Online pass technology fee",
+   "what_was_recorded": "A public speaker objected to buying passes online with a technology fee; Karin said the fee is set by the Board of Selectman, not the Park Commission.",
+   "figures_as_printed": [],
+   "quote": "forcing people to purchases passes online and then having a technology fee seems unfair"
+  },
+  {
+   "topic": "Town Beach revenue",
+   "what_was_recorded": "A beach employee said this season is the first in a long time with an infusion of money; no dollar amount was printed.",
+   "figures_as_printed": [],
+   "quote": "this season is the first season she has seen an infusion of money in quite a long time"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Lynn Major",
+   "stated_role": "beach employee, school employee, non resident",
+   "topic": "Town Beach round table",
+   "quote": "lynn major (beach employee, school employee, non resident) said she has been employed at the town beach for over 30 years"
+  },
+  {
+   "speaker": "Michelle Bellessa",
+   "stated_role": "",
+   "topic": "Online pass registration",
+   "quote": "michelle bellessa said that signing up online was not a user friendly process and she wasn't sure of all the steps"
+  },
+  {
+   "speaker": "Cheryl Shaw",
+   "stated_role": "",
+   "topic": "Online pass registration",
+   "quote": "cheryl shaw mentioned that it occasionally auto populate the wrong address."
+  },
+  {
+   "speaker": "Melony Letarte",
+   "stated_role": "",
+   "topic": "Pass definition of family and technology fee",
+   "quote": "melony letarte thought if we were defining the family as two adults then it shouldn't matter if the live in the same residence"
+  },
+  {
+   "speaker": "Lynn Major",
+   "stated_role": "beach employee, school employee, non resident",
+   "topic": "Wallis Park summer basketball",
+   "quote": "lynn major asked if there were any plans for summer basketball there again"
+  },
+  {
+   "speaker": "Mike Young",
+   "stated_role": "",
+   "topic": "Wallis Park courts behavior",
+   "quote": "mike young said that the majority of folks using the courts"
+  },
+  {
+   "speaker": "Dan Hager",
+   "stated_role": "",
+   "topic": "Wallis Park court removal",
+   "quote": "dan hager said he has a young son and would love to see him be able to grow up at the park"
+  },
+  {
+   "speaker": "Chris Letarte",
+   "stated_role": "",
+   "topic": "Wallis Park complaints and court change",
+   "quote": "chris letarte said that he pulled a page and a half of complaint calls at the police station since april 2018"
+  },
+  {
+   "speaker": "Michelle Bellisa",
+   "stated_role": "",
+   "topic": "Wallis Park culture and signage",
+   "quote": "michelle bellisa said that it sounds like a culture has been allowed to permeate wallis park"
+  },
+  {
+   "speaker": "Cheryl Shaw",
+   "stated_role": "",
+   "topic": "Wallis Park signs, dog signs, speed bump",
+   "quote": "cheryl shaw said that more no smoking sign on wallis sign needs to go up as there has been lots of smoking"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "no action",
+   "quote": "karin called the meeting to order at 6:01pm. attendance - karin menard, susanna jewell, john palumbo",
+   "tags": [
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Approval of June 2019 minutes",
+   "resolution": "approved 2-0",
+   "quote": "karin motioned and susanna seconded to approve the june 2019 minutes - approved 2-0",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Manager / DPW Director updates",
+   "resolution": "no action",
+   "quote": "jack updated the commission that the nashoba board of health had inspected the snack shack at wallis park",
+   "tags": [
+    "DPW",
+    "Wallis Park",
+    "beach",
+    "trash"
+   ]
+  },
+  {
+   "topic": "Park Director job description",
+   "resolution": "two areas flagged; sent to town manager to rewrite",
+   "quote": "the commission read through the job description and flagged two areas and asked that those areas of concerns be brought back to the town manager to rewrite.",
+   "tags": [
+    "personnel",
+    "job description"
+   ]
+  },
+  {
+   "topic": "Town Beach",
+   "resolution": "no action; public round table held",
+   "quote": "town beach- karin gave a brief update on pass sales and said despite a few complaints",
+   "tags": [
+    "beach",
+    "passes",
+    "registration",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Marshall Park revitalization",
+   "resolution": "continued to next meeting",
+   "quote": "6.marshall park revitalization - due to time constraints it was decided to hold this discussion for the next meeting.",
+   "tags": [
+    "Marshall Park"
+   ]
+  },
+  {
+   "topic": "Wallis Park courts and closure",
+   "resolution": "approved 3-0 closing park dusk to dawn",
+   "quote": "7.wallis park - karin gave a brief history of the resurfacing.",
+   "tags": [
+    "Wallis Park",
+    "basketball",
+    "tennis",
+    "closure",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Other business",
+   "resolution": "no action",
+   "quote": "a. other business matters that may legally come before the board not known at the time of posting - none",
+   "tags": [
+    "other business"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for August 14th",
+   "quote": "9. next meeting date / agenda - august 14th.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:45pm; no motion recorded",
+   "quote": "10. meeting adjourned at 7:45pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Park Director job description",
+   "where": "text",
+   "quote": "the commission read through the job description and flagged two areas and asked that those areas of concerns be brought back to the town manager to rewrite."
+  },
+  {
+   "name": "Step by step instruction sheet for online pass sign-up",
+   "where": "text",
+   "quote": "karin told the group that there was a step by step instruction sheet online but would note all of their concerns"
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "Wallis Park",
+  "Town Beach",
+  "basketball and tennis courts",
+  "park closure",
+  "pass registration",
+  "technology fee",
+  "seasonal hiring",
+  "Park Director job description",
+  "Marshall Park",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

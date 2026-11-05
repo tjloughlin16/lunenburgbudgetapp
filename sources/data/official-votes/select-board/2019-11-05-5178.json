@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-11-05",
  "docid": "5178",
@@ -12,15 +12,442 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Approve the tollbooth/boot drive permit request for Dec. 14, 9 AM to 3 PM, Salvation Army (motion wording not printed).",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "P. Luck",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "motion: m. jeffreys 2nd: p. luck"
+  },
+  {
+   "motion": "Approve the minutes of September 3, 2019.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes of september 3, 2019 were approved."
+  },
+  {
+   "motion": "Enter executive session under M.G.L. c. 30A, § 21, Reason #3, to discuss strategy on collective bargaining, and re-enter open session.",
+   "moved_by": "P. Luck",
+   "seconded_by": "M. Jeffreys",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "motion: p. luck 2n: m. jeffreys to enter into executive session pursuant to m.g.l. c. 30a, § 21, reason #3"
+  },
+  {
+   "motion": "Adjourn the meeting at 9:10 p.m.",
    "moved_by": "K. Adams",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: k. adams to adjourn the meeting at 9:10 p.m. 2n°: p. luck vote: all in favor"
+   "quote": "motion: k. adams to adjourn the meeting at 9:10 p.m."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR text from scanned pages. One motion (Salvation Army tollbooth/boot drive permit) is recorded with movers and seconders (M. Jeffreys/P. Luck) but without explicit motion language or vote outcome, so it cannot be included per requirements for verbatim quotes starting with the words that make the motion.",
- "cost_usd": 0.1235535
+ "dropped_unquoted": 0,
+ "note": "OCR text with gaps and garbling. Page 3 begins mid-sentence and page 4 begins mid-discussion of Article 12, so Articles 2-3 discussion and the start of the Article 12 discussion are missing. The executive session re-entry and its vote result fall at a page break and are not printed. The Salvation Army permit motion (M. Jeffreys / P. Luck) has no wording and no result. The minutes approval has no motion or mover printed; recorded as passed from \"were approved\". Several names are garbled in OCR (e.g., \"Michael-..Ray Jeffreys\", \"2n:\"). Votes recorded only where a motion was printed; the Dec. 14 permit vote is recorded with outcome not stated.",
+ "cost_usd": 0.009859920000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; katey adams, michael-..ray"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; katey adams, michael-..ray"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "not stated",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; katey adams, michael-..ray"
+  },
+  {
+   "name": "Michael-..Ray Jeffreys",
+   "role": "not stated",
+   "status": "present",
+   "quote": "katey adams, michael-..ray jeffreys"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "not present: damon mcquaid, clerk;"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; jack rodriquenz, dpw director"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; jack rodriquenz, dpw director"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "presenter, Island Road",
+   "status": "present",
+   "quote": "dave macdonald, island road, and envoy lynnette valentine of the salvation army presented for the"
+  },
+  {
+   "name": "Lynnette Valentine",
+   "role": "Envoy, Salvation Army",
+   "status": "present",
+   "quote": "dave macdonald, island road, and envoy lynnette valentine of the salvation army presented for the"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "After discussion, it was decided that Ms. Adams would present the Article 13 slide show with Mr. Jeffreys at Special Town Meeting.",
+   "quote": "after discussion, it was decided ms. adams would present the slide show with mr. jeffreys."
+  },
+  {
+   "decision": "The Board signed the accounts payable, deductions and payroll warrants and the FY20 2nd Quarter Water Commitment.",
+   "quote": "the board signed an accounts payable warrant in the amount of $579,454.27"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Senior Tax Workoff Program",
+   "what_was_recorded": "Seniors can work up to 125 hours at $12 per hour for a $1,500 property tax abatement; income limits given.",
+   "figures_as_printed": [
+    "$12",
+    "125 hours",
+    "$1,500",
+    "$50,000",
+    "$75,000"
+   ],
+   "quote": "qualified seniors can now work up to 125 hours annually at $12 per hour to receive a $1,500"
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Board signed the accounts payable, deductions and payroll warrants.",
+   "figures_as_printed": [
+    "$579,454.27",
+    "$281,396.88",
+    "$795,126.41"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $579,454.27"
+  },
+  {
+   "topic": "FY20 2nd Quarter Water Commitment",
+   "what_was_recorded": "Water commitment signed.",
+   "figures_as_printed": [
+    "$6998.88"
+   ],
+   "quote": "the fy20 2nd quarter water commitment in the amount of $6998.88 was"
+  },
+  {
+   "topic": "MVP Action Grant",
+   "what_was_recorded": "MVP Action Grant funding is eligible up to a stated maximum per project; the town will apply for a planning grant.",
+   "figures_as_printed": [
+    "$2 million"
+   ],
+   "quote": "mvp action grant funding, which is up to $2 million per project."
+  },
+  {
+   "topic": "Butterfly Lane road acceptance",
+   "what_was_recorded": "Developer cost to pave Butterfly Lane in 2019 was stated, as was annual Stormceptor cleaning cost.",
+   "figures_as_printed": [
+    "$32,000",
+    "$650.00"
+   ],
+   "quote": "mr. rodriquenz stated it cost the developer $32,000 to pave in 2019 and no work would be needed for a few years."
+  },
+  {
+   "topic": "Collective bargaining agreement cost",
+   "what_was_recorded": "Year two and year three cost estimates and total cost of the agreement were given; no added FY20 funds needed.",
+   "figures_as_printed": [
+    "$81,000",
+    "$74,000",
+    "$139,000"
+   ],
+   "quote": "year two increases are estimated at $81,000 and year three are estimated at $74,000"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Luck",
+   "topic": "Senior Tax Workoff Program congratulations",
+   "quote": "ms. luck congratulated the senior tax workoff program committee for implementing changes to the"
+  },
+  {
+   "speaker": "Ms. Luck",
+   "topic": "Storm Water Task Force survey",
+   "quote": "ms. luck announced the storm water task force has a survey for residents."
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "topic": "Thanks for October 29 symposium",
+   "quote": "mr. alonzo thanked teri burchfield and the finance committee for hosting the symposium on october"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "ms. luck congratulated the senior tax workoff program committee for implementing changes to the",
+   "tags": [
+    "public comment",
+    "senior tax workoff",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Appointments: Salvation Army tollbooth/boot drive permit request for Dec. 14",
+   "resolution": "motion recorded; wording and result not printed",
+   "quote": "tollbooth/boot drive permits request for dec. 14; 9 am to 3 pm; salvation army",
+   "tags": [
+    "permit",
+    "salvation army",
+    "fundraiser"
+   ]
+  },
+  {
+   "topic": "Board and committee vacancies (talent bank)",
+   "resolution": "no action",
+   "quote": "talent bank forms can be obtained on the town website and forwarded to the board of selectmen's",
+   "tags": [
+    "appointments",
+    "vacancies",
+    "talent bank"
+   ]
+  },
+  {
+   "topic": "Summer Street Reconstruction Project",
+   "resolution": "update, no action",
+   "quote": "the project signage will be installed this week.",
+   "tags": [
+    "roads",
+    "summer street"
+   ]
+  },
+  {
+   "topic": "APDC bylaw (May 2, 2015 ATM Article 26) update",
+   "resolution": "update, no action",
+   "quote": "the town clerk resubmitted the version that was voted at the town meeting to the attorney",
+   "tags": [
+    "bylaw",
+    "architectural preservation district"
+   ]
+  },
+  {
+   "topic": "MRPC Walkability and Parking Study",
+   "resolution": "update; to be a future agenda item",
+   "quote": "i received a draft walkability and parking study from sheri bean of montachusett regional planning",
+   "tags": [
+    "planning",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Municipal Vulnerability Preparedness (MVP) grant",
+   "resolution": "update; application to be submitted by January 15",
+   "quote": "we will be submitting an application by the deadline, which is",
+   "tags": [
+    "grants",
+    "climate",
+    "resiliency"
+   ]
+  },
+  {
+   "topic": "925 Mass Ave update",
+   "resolution": "update, no action",
+   "quote": "we have successfully received an administrative search warrant from the district court to enter 925",
+   "tags": [
+    "925 mass ave",
+    "phase I site assessment",
+    "brownfields"
+   ]
+  },
+  {
+   "topic": "FY21-FY25 capital plan development",
+   "resolution": "update, no action",
+   "quote": "departments received the google sheets being used to fill in their fy21 through fy25 capital requests",
+   "tags": [
+    "capital plan",
+    "budget"
+   ]
+  },
+  {
+   "topic": "FY21 budget process",
+   "resolution": "update, no action",
+   "quote": "budget process has begun with preliminary budget discussions with various department heads",
+   "tags": [
+    "budget",
+    "clearGov"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings, events and announcements",
+   "resolution": "no action",
+   "quote": "town offices are closed in observance of veterans day on november 11th and thanksgiving on november",
+   "tags": [
+    "announcements",
+    "holidays"
+   ]
+  },
+  {
+   "topic": "Old Business 1: November 12, 2019 Special Town Meeting articles",
+   "resolution": "discussed; Article 2 may change pending new growth certification",
+   "quote": "ms. lemieux pointed out article 2 may change between now and town meeting.",
+   "tags": [
+    "special town meeting",
+    "stabilization",
+    "sewer enterprise"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting Article 12 (Butterfly Lane) and Article 13",
+   "resolution": "discussed; Adams and Jeffreys to present Article 13",
+   "quote": "the next article discussed was article 12, the acceptance of butterfly lane as a public way.",
+   "tags": [
+    "special town meeting",
+    "roads",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Current Business 1: survey for reuse of old Primary Building/Land",
+   "resolution": "discussed; list of options read; no action recorded",
+   "quote": "mr. jeffreys stated he formatted the list in alphabetical order",
+   "tags": [
+    "primary building",
+    "ritter building",
+    "town hall"
+   ]
+  },
+  {
+   "topic": "Current Business 2: October 29 symposium",
+   "resolution": "discussed; Board found presentations helpful",
+   "quote": "ms. luck asked about the land use director's use of the population number of 11,000.",
+   "tags": [
+    "symposium",
+    "planning"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "minutes approved; warrants and water commitment signed",
+   "quote": "minutes of september 3, 2019 were approved.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports only",
+   "quote": "ms. luck reported the storm water task force met on october 24.",
+   "tags": [
+    "committees",
+    "stormwater",
+    "council on aging"
+   ]
+  },
+  {
+   "topic": "Executive session (collective bargaining)",
+   "resolution": "entered executive session; outcome of re-entry vote not printed",
+   "quote": "motion: p. luck 2n: m. jeffreys to enter into executive session pursuant to m.g.l. c. 30a, § 21, reason #3",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "union contract"
+   ]
+  },
+  {
+   "topic": "Collective bargaining agreement terms",
+   "resolution": "discussed; no action recorded",
+   "quote": "based on the appropriation approved at the annual town meeting, there",
+   "tags": [
+    "union contract",
+    "police",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:10 p.m.",
+   "quote": "motion: k. adams to adjourn the meeting at 9:10 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Excel spreadsheet explaining the Sewer Enterprise Fund amendment (Article 3)",
+   "where": "text",
+   "quote": "she directed the board to an excel spreadsheet that further explained the sewer enterprise fund amendment"
+  },
+  {
+   "name": "Architectural Preservation District Bylaw from May 2, 2015 ATM (Article 26)",
+   "where": "text",
+   "quote": "architectural preservation district bylaw from may 2, 2015 atm (article 26) update:"
+  },
+  {
+   "name": "Draft Walkability and Parking Study (Montachusett Regional Planning Commission, from Sheri Bean)",
+   "where": "text",
+   "quote": "i received a draft walkability and parking study from sheri bean of montachusett regional planning"
+  },
+  {
+   "name": "Administrative Search Warrant from the District Court (925 Massachusetts Avenue)",
+   "where": "text",
+   "quote": "we have successfully received an administrative search warrant from the district court to enter 925"
+  },
+  {
+   "name": "Google Sheets for FY21-FY25 capital requests",
+   "where": "text",
+   "quote": "departments received the google sheets being used to fill in their fy21 through fy25 capital requests"
+  },
+  {
+   "name": "Survey for reuse of the old Primary Building/Land (list of options)",
+   "where": "text",
+   "quote": "mr. jeffreys stated he formatted the list in alphabetical order"
+  },
+  {
+   "name": "November 12, 2019 Special Town Meeting warrant articles",
+   "where": "text",
+   "quote": "discussion on november 12, 2019 special town meeting articles"
+  },
+  {
+   "name": "Accounts payable, deductions and payroll warrants",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $579,454.27"
+  },
+  {
+   "name": "Talent bank forms",
+   "where": "text",
+   "quote": "talent bank forms can be obtained on the town website and forwarded to the board of selectmen's"
+  }
+ ],
+ "tags": [
+  "select board",
+  "town manager",
+  "DPW",
+  "special town meeting",
+  "budget warrants",
+  "collective bargaining",
+  "executive session",
+  "stormwater",
+  "primary building reuse",
+  "salvation army permit",
+  "capital plan",
+  "FY21 budget"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "she directed the board to an excel spreadsheet"
+ },
+ "dropped_unquoted_by_field": {}
 }

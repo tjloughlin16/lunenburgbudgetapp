@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2019-11-05",
  "docid": "1265",
@@ -12,6 +12,281 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes explicitly recorded with motion, seconder, and outcome in the required format. The minutes describe actions (tabling approval of minutes, adjourning the meeting) but do not record them as formal votes with required voting language.",
- "cost_usd": 0.0758365
+ "note": "No motions, votes, or roll-call results are recorded in this text; votes is empty. Attendance is an OCR column layout: it is not clear whether John Henshaw and Damon McQuaid sit under Present or Absent. Henshaw is recorded as calling the meeting to order, so he is marked present; McQuaid is marked not stated. Budget figures are the Fire and Police requests as printed, not board decisions. Stamped RECEIVED & FILED JAN 22 2020.",
+ "cost_usd": 0.005189919999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Henshaw",
+   "role": "",
+   "status": "present",
+   "quote": "meeting called to order at 5:04 by mr. henshaw"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "",
+   "status": "present",
+   "quote": "matthew allison, caroline griffis, jim laveck"
+  },
+  {
+   "name": "Caroline Griffis",
+   "role": "",
+   "status": "present",
+   "quote": "matthew allison, caroline griffis, jim laveck"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "",
+   "status": "present",
+   "quote": "matthew allison, caroline griffis, jim laveck"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "",
+   "status": "not stated",
+   "quote": "damon mcquaid"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "heather lemieux, town manager; fire chief patrick sullivan; police chief james marino;"
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "heather lemieux, town manager; fire chief patrick sullivan; police chief james marino;"
+  },
+  {
+   "name": "James Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "heather lemieux, town manager; fire chief patrick sullivan; police chief james marino;"
+  },
+  {
+   "name": "Thomas Gammel",
+   "role": "Police Lt.",
+   "status": "present",
+   "quote": "police lt. thomas gammel; public safety coordinator amanda moore; ms. rhonda lisio; mr. david passios."
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Public Safety Coordinator",
+   "status": "present",
+   "quote": "police lt. thomas gammel; public safety coordinator amanda moore; ms. rhonda lisio; mr. david passios."
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "",
+   "status": "present",
+   "quote": "police lt. thomas gammel; public safety coordinator amanda moore; ms. rhonda lisio; mr. david passios."
+  },
+  {
+   "name": "David Passios",
+   "role": "",
+   "status": "present",
+   "quote": "police lt. thomas gammel; public safety coordinator amanda moore; ms. rhonda lisio; mr. david passios."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approval of the prior minutes was tabled until the next meeting (no vote recorded).",
+   "quote": "approval of minutes: the committee tabled until next meeting"
+  },
+  {
+   "decision": "Capital Request #FD17-05-A ($156,000) is to be removed from the Capital Plan, because of the $100,000 SCBA earmark received in FY20 (no vote recorded).",
+   "quote": "capital request #fd17-05-a in the amount of $156,000 will be removed from the capital plan."
+  },
+  {
+   "decision": "Capital Request #FD17-06 for Radio Frequency Forced Migration ($200,000) is to be removed from the Capital Plan at the Fire Chief's request (no vote recorded).",
+   "quote": "capital request #fd17-06 for radio frequency forced migration in the amount of $200,000 be removed from the capital plan as it is not needed at this time."
+  },
+  {
+   "decision": "Capital Request #PD16-07 for Bulletproof Vests was pushed out from FY21 to FY22 and reduced to $32,000 (no vote recorded).",
+   "quote": "capital request #pd16-07 for bulletproof vests in the amount of $38,000 was pushed out from fy21 to fy22 and reduced to $32,000."
+  },
+  {
+   "decision": "Capital Request #PD17-03 for Tasers ($18,000) was recommended by the Police Chief for removal from the Capital Plan (no vote recorded).",
+   "quote": "capital request #pd17-03 for tasers for $18,000 was recommended to be removed by the police chief."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fire Dept. paramedic-level equipping of an ambulance (FY21)",
+   "what_was_recorded": "Fire Department requested $55,000 to equip one ambulance to the Paramedic Level, with the printed component amounts.",
+   "figures_as_printed": [
+    "$55,000",
+    "$32,000",
+    "$10,000",
+    "$9,300",
+    "$3,500"
+   ],
+   "quote": "$55,000 to equip one of the ambulances to the paramedic level."
+  },
+  {
+   "topic": "Fire Dept. SCBA replacement (FY21)",
+   "what_was_recorded": "Fire Department requested $115,000 to replace the remaining Self-Contained Breathing Apparatus, completing replacement after a $100,000 FY20 earmark.",
+   "figures_as_printed": [
+    "$115,000",
+    "$100,000"
+   ],
+   "quote": "$115,000 to replace the remaining self-contained breathing apparatus."
+  },
+  {
+   "topic": "Fire Dept. Capital Request #FD17-05-A removal",
+   "what_was_recorded": "Capital Request #FD17-05-A is to be removed from the Capital Plan because of the FY20 earmark.",
+   "figures_as_printed": [
+    "$156,000",
+    "$100,000"
+   ],
+   "quote": "capital request #fd17-05-a in the amount of $156,000 will be removed from the capital plan."
+  },
+  {
+   "topic": "Fire Dept. Capital Request #FD17-06 removal",
+   "what_was_recorded": "Radio Frequency Forced Migration request is to be removed from the Capital Plan as not needed at this time.",
+   "figures_as_printed": [
+    "$200,000"
+   ],
+   "quote": "capital request #fd17-06 for radio frequency forced migration in the amount of $200,000 be removed from the capital plan as it is not needed at this time."
+  },
+  {
+   "topic": "Fire Dept. Squad 3 mid-life overhaul (new request #FD20-01)",
+   "what_was_recorded": "A new FY21 request for a Mid-Life Overhaul of Squad 3 was added to the plan.",
+   "figures_as_printed": [
+    "$65,000"
+   ],
+   "quote": "a new capital request (#fd20-01) was added in fy21 for a mid-life overhaul of squad 3 in the amount of $65,000."
+  },
+  {
+   "topic": "Police Dept. marked police vehicle (FY21)",
+   "what_was_recorded": "Police Department requested a new marked police vehicle for $67,000, and the ACO vehicle replacement was described with a recommended Ford Transit Connect Van.",
+   "figures_as_printed": [
+    "$67,000"
+   ],
+   "quote": "$67,000 for police vehicle, marked, new:"
+  },
+  {
+   "topic": "Police Dept. portable radio replacement (FY21)",
+   "what_was_recorded": "Police Department requested $45,000 to replace portable radio equipment; each radio can cost between $2-6,000.",
+   "figures_as_printed": [
+    "$45,000",
+    "$2-6,000"
+   ],
+   "quote": "$45,000 to replace portable radio equipment: the radio equipment is on a 5-6 year replacement schedule."
+  },
+  {
+   "topic": "Police Dept. bulletproof vests (PD16-07)",
+   "what_was_recorded": "Bulletproof vest request was pushed from FY21 to FY22 and reduced.",
+   "figures_as_printed": [
+    "$38,000",
+    "$32,000"
+   ],
+   "quote": "capital request #pd16-07 for bulletproof vests in the amount of $38,000 was pushed out from fy21 to fy22 and reduced to $32,000."
+  },
+  {
+   "topic": "Police Dept. Tasers (PD17-03)",
+   "what_was_recorded": "Taser request recommended for removal by the Police Chief; batteries expected usable until 2023.",
+   "figures_as_printed": [
+    "$18,000"
+   ],
+   "quote": "capital request #pd17-03 for tasers for $18,000 was recommended to be removed by the police chief."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Rhonda Lisio",
+   "stated_role": "",
+   "topic": "prioritizing capital requests by safety and community benefit",
+   "quote": "ms. lisio expressed the need to prioritize capital requests with safety issues first then approve requests that would"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 5:04 by Mr. Henshaw",
+   "quote": "meeting called to order at 5:04 by mr. henshaw",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no comment",
+   "quote": "public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "tabled until next meeting",
+   "quote": "approval of minutes: the committee tabled until next meeting",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "FY21-FY25 Capital Plan requests review with Fire and Police Chiefs",
+   "resolution": "reviewed; plan changes recorded, no vote",
+   "quote": "the committee reviewed the fy21-fy25 capital plan requests with the fire and police chiefs",
+   "tags": [
+    "capital plan",
+    "fire department",
+    "police department",
+    "FY21-FY25"
+   ]
+  },
+  {
+   "topic": "Other business / action items",
+   "resolution": "none",
+   "quote": "other business/action items: none",
+   "tags": [
+    "other business"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for November 19 at 5:00 p.m. at Town Hall",
+   "quote": "next meeting is november 19 at 5:00 p.m. at town hall.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "Ms. Lisio spoke on prioritizing safety-related requests",
+   "quote": "ms. lisio expressed the need to prioritize capital requests with safety issues first then approve requests that would",
+   "tags": [
+    "public comment",
+    "safety"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:20 p.m. (no vote recorded)",
+   "quote": "meeting adjournment at 6:20 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "capital plan",
+  "FY21-FY25",
+  "fire department",
+  "police department",
+  "capital requests",
+  "public comment",
+  "minutes tabled",
+  "no votes recorded"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

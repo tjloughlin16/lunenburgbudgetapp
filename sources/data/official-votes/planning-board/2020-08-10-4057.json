@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2020-08-10",
  "docid": "4057",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the July 27, 2020 minutes",
+   "motion": "Approve the minutes of 07.27.2020.",
    "moved_by": "T. Cole",
    "seconded_by": "M. Brenner",
    "outcome": "passed 4-0",
@@ -20,15 +20,15 @@
    "quote": "t. cole made motion to approve, m. brenner seconded, roll call vote - t. cole, aye; m. brenner, aye; e. torgersen, aye; m. allison, aye. vote passed 4-0."
   },
   {
-   "motion": "Approve the July 27, 2020 Northfield Road minutes",
+   "motion": "Approve the minutes of 07.27.2020, Northfield Road.",
    "moved_by": "T. Cole",
    "seconded_by": "M. Brenner",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "t. cole made motion to approve, m. brenner seconded, roll call vote - t. cole, aye; m. brenner, aye; e. torgersen, aye; m. allison, aye. vote passed 4-0."
+   "quote": "07.27.2020, northfield road - t. cole made motion to approve, m. brenner seconded, roll call vote - t. cole, aye; m. brenner, aye; e. torgersen, aye; m. allison, aye."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Cole",
    "seconded_by": "M. Brenner",
    "outcome": "passed 4-0",
@@ -37,6 +37,202 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1016195
+ "note": "Clean text extraction with no scanned gaps. Three motions recorded with roll-call results. Discussion items (stormwater and LID bylaws, subdivision workshops, 400 Howard Street) have no motions recorded. No public comment period is recorded in the minutes. No dollar figures appear in the text. Marjorie J. Boggio appears only in the letterhead and is not recorded as taking part, so she is omitted.",
+ "cost_usd": 0.006810019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: matthew allison, present; tanner cole, present;"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: matthew allison, present; tanner cole, present;"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: matthew allison, present; tanner cole, present;"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: matthew allison, present; tanner cole, present;"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: paula bertram"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A. Burney would draw up a calendar of workshop dates for the subdivision rules and regulations, to be given to the public so applicants can plan submittals.",
+   "quote": "a. burney would draw up a calendar noting workshop dates to the public"
+  },
+  {
+   "decision": "T. Cole asked that the citizen's concern about a recently approved project go on a future Board agenda for discussion; no vote recorded.",
+   "quote": "t. cole would like to see this on a future board agenda for discussion."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Remote meeting preface",
+   "resolution": "no action",
+   "quote": "a. bu rney prefaced the meeting with the following reading",
+   "tags": [
+    "remote meeting",
+    "COVID-19",
+    "open meeting law"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Board comment: citizen concern on stormwater permits",
+   "resolution": "requested for future agenda",
+   "quote": "t. cole requested the board discuss how to meet the concerns of the citizen",
+   "tags": [
+    "stormwater permits",
+    "citizen concern"
+   ]
+  },
+  {
+   "topic": "Chapter 204 Stormwater & Storm Sewers bylaw update",
+   "resolution": "discussed, no action",
+   "quote": "ch 204, stormwater & storm sewers - this was adopted a number of years ago as a zoning bylaw",
+   "tags": [
+    "stormwater bylaw",
+    "NPDES",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "LID (Low Impact Development) bylaw",
+   "resolution": "discussed, no action",
+   "quote": "there was discussion regarding issuance of building permits by the building commissioner",
+   "tags": [
+    "LID bylaw",
+    "building permits"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 4-0 (07.27.2020 and 07.27.2020 Northfield Road)",
+   "quote": "t. cole made motion to approve, m. brenner seconded, roll call vote",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received, no action",
+   "quote": "engineering firm took samples of suspected hazardous materials",
+   "tags": [
+    "TCP Building Design Committee",
+    "Agricultural Commission",
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Rules & Regulations Governing the Subdivision of Land",
+   "resolution": "discussed, workshop schedule to be published",
+   "quote": "a. burney would draw up a calendar noting workshop dates to the public",
+   "tags": [
+    "subdivision rules",
+    "workshops",
+    "ANR"
+   ]
+  },
+  {
+   "topic": "400 Howard Street",
+   "resolution": "no action; under staff review",
+   "quote": "the proposal is being reviewed by both a. burney and the building commissioner for compliance with the bylaw.",
+   "tags": [
+    "400 Howard Street",
+    "zoning compliance"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "northfield road scenic hearing",
+   "tags": [
+    "meeting schedule",
+    "Northfield Road"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "noted",
+   "quote": "chapter 204, stormwater and storm sewers",
+   "tags": [
+    "stormwater bylaw",
+    "LID bylaw"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:45 p.m.",
+   "quote": "t. cole made motion to adjourn, m. brenner seconded, roll call vote",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 07.27.2020",
+   "where": "list",
+   "quote": "minutes 07.27.2020 07.27.2020, northfield road"
+  },
+  {
+   "name": "Minutes 07.27.2020, Northfield Road",
+   "where": "list",
+   "quote": "07.27.2020, northfield road"
+  },
+  {
+   "name": "Stormwater & Storm Sewers Bylaw, DRAFT",
+   "where": "list",
+   "quote": "stormwater & storm sewers bylaw, draft"
+  },
+  {
+   "name": "LID Bylaw (sample)",
+   "where": "list",
+   "quote": "stormwater & storm sewers bylaw, draft lid bylaw (sample)"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "stormwater bylaw",
+  "LID bylaw",
+  "subdivision rules",
+  "400 Howard Street",
+  "minutes approval",
+  "remote meeting",
+  "COVID-19",
+  "northfield road",
+  "TCP building"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

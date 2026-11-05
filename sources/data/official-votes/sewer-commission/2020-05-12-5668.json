@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2020-05-12",
  "docid": "5668",
@@ -12,31 +12,391 @@
  },
  "votes": [
   {
-   "motion": "Allow 57 & 63 Cross Road to tie into the sewer system upon approval of a proper application",
+   "motion": "Allow 57 & 63 Cross Road, in the Sewer Service Area, to tie in upon approval of a proper application.",
    "moved_by": "Carl L.",
-   "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: carl l. second: mike n. that 57 & 63 cross road are in the sewer service area (ssa) and shall be allowed to tie in upon approval of a proper application."
+   "quote": "motion: carl l. second: mike n. that 57 & 63 cross road are in the sewer service area (ssa) and shall be allowed to tie in upon approval of a proper application.",
+   "seconded_by": "Mike N."
   },
   {
-   "motion": "Accept the minutes of 4/23/20 and 4/28/20",
+   "motion": "Accept the minutes of 4/23/20 and 4/28/20.",
    "moved_by": "Carl L.",
-   "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: carl l. to accept the minutes for 4/23/20 & 4/28/20 second: mike n. roll call vote: mike-aye, carl-aye, brett-aye and dave-aye."
+   "quote": "motion: carl l. to accept the minutes for 4/23/20 & 4/28/20",
+   "seconded_by": "Mike N."
   },
   {
-   "motion": "Adjourn at 5:28pm",
+   "motion": "Approve the invoices from W&C ($883.26) and Mead Talerman & Costa ($1225.02) for 1170 Mass Ave, SWSS and the RFP.",
+   "moved_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "invoices- w&c- $883.26 and mead talerman & costa - $1225.02 (for 1170 mass ave, swss and the rfp) were approved.",
+   "seconded_by": ""
+  },
+  {
+   "motion": "Adjourn the meeting at 5:28pm.",
    "moved_by": "Mike N",
-   "seconded_by": "Brett R.",
-   "outcome": "passed unanimously",
+   "outcome": "passed unanimous",
    "procedural": true,
-   "quote": "motion: mike n to adjourn at 5:28pm second: brett r. vote: unanimous"
+   "quote": "motion: mike n to adjourn at 5:28pm second: brett r. vote: unanimous",
+   "seconded_by": "Brett R."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Scanned OCR from macOS Vision. Three votes found and recorded: the SSA property connection decision, approval of prior meeting minutes, and adjournment. No other motions voted on are recorded in these minutes.",
- "cost_usd": 0.13088650000000002
+ "note": "Scanned pages OCR'd with macOS Vision; only two pages supplied. Page 1 opens mid-announcement with the speaker not named. Page 2 opens mid-sentence in the Woodward & Curran discussion, so that item's start is missing. OCR errors appear in the text (e.g., \"Bard\" and \"Cart\" for Barb and Carl, \"swo\" for SWSS); the names are read as the members they most plausibly are. No attendance roll is printed, so attendance is taken from the roll call and speaking lines. The invoice approval records \"were approved\" with no printed motion, seconder or count, so it is logged as passed with no mover. Carl L., Mike N. and Brett R. are shown as printed in motions.",
+ "cost_usd": 0.01038432,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave",
+   "status": "present",
+   "quote": "dave announced that the town caucus was cancelled, and town election will"
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb noted that the properties had not been charged a betterment when the sewer went in"
+  },
+  {
+   "name": "Jack",
+   "status": "present",
+   "quote": "public comment-jack said he was contacted by a resident on 1564 mass ave."
+  },
+  {
+   "name": "Carl L.",
+   "status": "present",
+   "quote": "carl noted that they can connect as long as the house does not cross over the ssa boundary."
+  },
+  {
+   "name": "Mike N.",
+   "status": "present",
+   "quote": "roll call vote: mike-aye, carl-aye, brett-aye and dave-aye."
+  },
+  {
+   "name": "Brett",
+   "status": "present",
+   "quote": "brett asked to have meetings at 5pm and all agreed."
+  },
+  {
+   "name": "Jamie Rheault",
+   "status": "present",
+   "quote": "jamie, the engineer on the project, explained that his client wants to put in houses at 57 & 63 cross road and connect to sewer."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Barb and Jack will talk to Town Counsel about clarifying language in the Station Operations & Maintenance RFP draft; Jack said it is more important to get it right even if it takes a couple extra weeks.",
+   "quote": "the commission agreed to have barb and jack talk to town counsel."
+  },
+  {
+   "decision": "Generator maintenance: solicit 3 quotes, keep near the budgeted amount with repairs, and place the work under the DPW with an agreed scope and once-per-year maintenance frequency.",
+   "quote": "commission agreed to solicit 3 quotes and to try and keep it around the budgeted amount of $11k with repairs."
+  },
+  {
+   "decision": "Commission had no issue with the draft SWSS notice of default; Barb will talk to Counsel during counsel hours and advise that it can be sent.",
+   "quote": "commission agreed that they had no issue with the draft notice. barb will talk to counsel again during counsel"
+  },
+  {
+   "decision": "Commission will consult Counsel about recovering losses for costs incurred by SWSS's breach.",
+   "quote": "the commission discussed recovering losses for costs incurred by swss's breach and will consult counsel regarding next steps."
+  },
+  {
+   "decision": "Jack's contact about the 1564 Mass Ave. hardship is to be added to the next meeting's agenda.",
+   "quote": "asked to have the discussion added to the next meeting."
+  },
+  {
+   "decision": "Carl asked Woodward & Curran to look at the manhole data in the major areas of concern; Barb will confirm W&C attendance at the 6/9 meeting.",
+   "quote": "carl also asked w&c to look at the manhole data in the major areas of concern. barb will confirm w/w&c to attend the 6/9 meeting"
+  },
+  {
+   "decision": "Dave will work on a postcard campaign requesting write-in candidates for the Town Election, after the clerk raised concerns about stickers.",
+   "quote": "dave will work on it."
+  },
+  {
+   "decision": "Meetings moved to 5pm; next meeting 5/26 at 5pm via Zoom, using the second Zoom number to avoid conflict with the BOS meeting.",
+   "quote": "barb said the next meeting will be 5/26 at 5pm via zoom and was asked to use the 2nd zoom number"
+  },
+  {
+   "decision": "Agenda inputs listed: 5/26 meeting to include the 1564 Mass Ave. hardship and 1170 Mass Ave Betterment; 6/9 meeting to include the Woodward & Curran interim meeting.",
+   "quote": "5/26 meeting- 1564 mass ave. hardship and 1170 mass ave betterment, 6/9 meeting- woodward & curran interim meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Irrigation Meter credit program fee",
+   "what_was_recorded": "Barb said invoices with a $50 fee to join the Irrigation Meter credit program were sent, due 6/4/20.",
+   "figures_as_printed": [
+    "$50",
+    "6/4/20"
+   ],
+   "quote": "barb added that she has sent out invoices with the $50 fee to participate in the irrigation meter credit program and they are due by"
+  },
+  {
+   "topic": "Privilege fee for 57 & 63 Cross Road",
+   "what_was_recorded": "Properties that were not charged a betterment when the sewer went in will need to pay a privilege fee.",
+   "figures_as_printed": [
+    "$13,997.47"
+   ],
+   "quote": "will need to pay a privilege fee of $13,997.47."
+  },
+  {
+   "topic": "Generator maintenance budget",
+   "what_was_recorded": "Commission aimed to keep the generator maintenance contract around the budgeted amount, including repairs.",
+   "figures_as_printed": [
+    "$11k"
+   ],
+   "quote": "try and keep it around the budgeted amount of $11k with repairs."
+  },
+  {
+   "topic": "FY21 sewer rate increase",
+   "what_was_recorded": "A 10% rate increase effective 7/1/20 appears in the October billing; the per-1000 cubic foot rate and the minimum charge both rise.",
+   "figures_as_printed": [
+    "10%",
+    "$115",
+    "$126.50/1000cf",
+    "$97.20",
+    "$107"
+   ],
+   "quote": "the current rate is $115 per 1000 cubic foot(cf) and will go to $126.50/1000cf, and the minimum charge will increase from $97.20 to $107."
+  },
+  {
+   "topic": "Capital Reserve transfer warrant amount",
+   "what_was_recorded": "The Capital Reserve amount for the warrant article changed from $29,000 to $30,000 after the budget was approved.",
+   "figures_as_printed": [
+    "$29,000",
+    "$30,000"
+   ],
+   "quote": "the capital reserve amount, originally $29,000, now shows as $30,000 on the current budget"
+  },
+  {
+   "topic": "Invoices approved (W&C and Mead Talerman & Costa)",
+   "what_was_recorded": "Business Manager reported two invoices, which were approved.",
+   "figures_as_printed": [
+    "$883.26",
+    "$1225.02"
+   ],
+   "quote": "invoices- w&c- $883.26 and mead talerman & costa - $1225.02 (for 1170 mass ave, swss and the rfp) were approved."
+  },
+  {
+   "topic": "Legal costs",
+   "what_was_recorded": "Carl cautioned that legal costs need care because they will soon add up to about $10k.",
+   "figures_as_printed": [
+    "$10k"
+   ],
+   "quote": "carl cautioned that they need to be careful with legal costs as they will add up to $10k soon."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Capital Reserve Transfer warrant article amount for the FY21 budget",
+   "outcome": "Amount to appear on the warrant at $30,000, changed from the originally voted $29,000",
+   "amount_as_printed": "$30,000",
+   "quote": "the capital reserve amount, originally $29,000, now shows as $30,000 on the current budget, and that is the"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Jack",
+   "stated_role": "",
+   "topic": "1564 Mass Ave. hardship",
+   "quote": "public comment-jack said he was contacted by a resident on 1564 mass ave. concerning a hardship and asked to have the discussion added to the next meeting."
+  },
+  {
+   "speaker": "Carl",
+   "stated_role": "",
+   "topic": "closing remarks on meeting",
+   "quote": "public comment - carl said it was a productive meeting. dave asked everyone to be safe."
+  },
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "closing remarks, safety",
+   "quote": "dave asked everyone to be safe."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements: irrigation meter deadline and Town Election",
+   "resolution": "noted; no action",
+   "quote": "reminded all that per the commission's vote of 4/28/20 regarding the irrigation meter policy, the implementation date for",
+   "tags": [
+    "irrigation meters",
+    "town election"
+   ]
+  },
+  {
+   "topic": "Public comment: 1564 Mass Ave. hardship",
+   "resolution": "added to next meeting",
+   "quote": "public comment-jack said he was contacted by a resident on 1564 mass ave. concerning a hardship",
+   "tags": [
+    "hardship",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Appointment: 57 & 63 Cross Road Sewer Service Area status",
+   "resolution": "approved 4-0; may tie in upon proper application",
+   "quote": "jamie, the engineer on the project, explained that his client wants to put in houses at 57 & 63 cross road and connect to sewer.",
+   "tags": [
+    "sewer service area",
+    "privilege fee",
+    "connection"
+   ]
+  },
+  {
+   "topic": "RFP status: Station Operations & Maintenance",
+   "resolution": "Barb and Jack to consult Town Counsel",
+   "quote": "the commission discussed the comments noted on the o&m rfp draft by the town counsel and town manager.",
+   "tags": [
+    "RFP",
+    "pump station",
+    "O&M"
+   ]
+  },
+  {
+   "topic": "RFP for generator maintenance",
+   "resolution": "solicit 3 quotes; put under DPW",
+   "quote": "the commission discussed the generator rfp and whether it is necessary to do a full rfp",
+   "tags": [
+    "generator",
+    "maintenance",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "SWSS termination of contract update",
+   "resolution": "no objection to draft notice; Barb to advise Counsel",
+   "quote": "the commission had received a draft of the notice of default for swss from town counsel",
+   "tags": [
+    "SWSS",
+    "contract",
+    "litigation"
+   ]
+  },
+  {
+   "topic": "FY21 budget",
+   "resolution": "noted; rate increase and warrant amount set",
+   "quote": "barb noted that the budget was presented to fincom.",
+   "tags": [
+    "FY21 budget",
+    "rates",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Woodward & Curran update",
+   "resolution": "interim meeting 6/9; no vote",
+   "quote": "carl also asked w&c to look at the manhole data in the major areas of concern.",
+   "tags": [
+    "Woodward & Curran",
+    "manholes"
+   ]
+  },
+  {
+   "topic": "Re-elections due to Covid-19",
+   "resolution": "Dave to work on postcard campaign",
+   "quote": "discussion about re-elections due to covid-19 - dave noted that the town caucus was cancelled",
+   "tags": [
+    "election",
+    "covid-19",
+    "candidates"
+   ]
+  },
+  {
+   "topic": "Minutes of 4/23/20 and 4/28/20",
+   "resolution": "approved 4-0",
+   "quote": "minutes of 4/23/20 & 4/28/20 motion: carl l. to accept the minutes for 4/23/20 & 4/28/20",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Meeting time and schedule",
+   "resolution": "agreed to 5pm meetings; next meeting 5/26 via Zoom",
+   "quote": "brett asked to have meetings at 5pm and all agreed.",
+   "tags": [
+    "meeting schedule",
+    "zoom"
+   ]
+  },
+  {
+   "topic": "Business Manager report",
+   "resolution": "invoices approved; other items noted",
+   "quote": "business manager report - barb reported that she is working on the q4 bills, to be mailed asap.",
+   "tags": [
+    "billing",
+    "invoices",
+    "legal costs",
+    "meter import"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "listed for 5/26 and 6/9 agendas",
+   "quote": "member agenda inputs for future meetings - 5/26 meeting- 1564 mass ave. hardship and 1170 mass ave betterment",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action",
+   "quote": "public comment - carl said it was a productive meeting. dave asked everyone to be safe.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5:28pm, unanimous",
+   "quote": "motion: mike n to adjourn at 5:28pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "SSA Map for 57 & 63 Cross Road",
+   "where": "list",
+   "quote": "ssa map for 57 & 63 cross road"
+  },
+  {
+   "name": "REP Draft for FY21 Pump Station O&M with comments from Counsel and Town Manager",
+   "where": "list",
+   "quote": "rep draft for fy21 pump station o&m with comments from counsel and town manager"
+  },
+  {
+   "name": "Draft notice of default for SWSS (from Town Counsel)",
+   "where": "text",
+   "quote": "the commission had received a draft of the notice of default for swss from town counsel"
+  },
+  {
+   "name": "O&M RFP draft (with comments from Town Counsel and Town Manager)",
+   "where": "text",
+   "quote": "the commission discussed the comments noted on the o&m rfp draft by the town counsel and town manager."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "sewer service area",
+  "FY21 budget",
+  "rate increase",
+  "O&M RFP",
+  "generator maintenance",
+  "SWSS contract",
+  "irrigation meters",
+  "town election",
+  "covid-19",
+  "minutes approval",
+  "invoices"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {}
 }

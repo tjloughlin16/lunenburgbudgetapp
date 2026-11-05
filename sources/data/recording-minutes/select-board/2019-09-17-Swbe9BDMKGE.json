@@ -409,5 +409,198 @@
    "at": "2026-11-04T12:42:50Z",
    "cost_usd": 0.0275111
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09172019-5142",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-09-17-minutes-5142.txt",
+   "path": "sources/meetings/select-board/2019-09-17-minutes-5142.pdf"
+  },
+  "official_sha256": "9feb3ef3aa383b038d26b40d34c0e625e21065c449b36e83303f8e3f713f9d77",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on the three licenses and requests and on the Complete Streets beach and Main Street figures. Ours omits most of the later votes (Complete Streets application votes, signs, beer and wine petition, warrant articles, demolition article) and the member roster. The peddler's license count in the official text is garbled, and our $400,000 cap and $310,000 town share don't match the official $340,000.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 4,
+   "discrepancy": 10,
+   "only_in_ours": 0,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Common victualler license, 39 Mass Ave",
+    "ours": "Grant the common victualer license to the coffee roasting shop and cafe at 39 Mass Ave — passed",
+    "official": "to approve the comon victualler license for smokestack roasters, llc at 39 mass ave.",
+    "note": "Same license, same address, passed in both; official names the business (Smokestack Roasters)."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Peddler's license vote count",
+    "ours": "Grant a peddler's license to the Edward Jones financial advisor to go door to door 9:00 a.m. until sundown — passed 4-1",
+    "official": "to approve the peddler's license to steve mongelli/edward jones investments between the hours",
+    "note": "Both say it passed with one against, but official prints '4 in favor-4, 1 against (Jeffreys)', which is internally inconsistent (4 in favor-4); check the original tally."
+   },
+   {
+    "kind": "agree",
+    "about": "Boys and Girls Club tollbooth October 12",
+    "ours": "Approve the Boys and Girls Club tollbooth request for October 12 — passed",
+    "official": "to approve the tollbooth fundraiser request on october 12 from 9 am to 1 pm",
+    "note": "Same approval, same date and hours (9 am to 1 pm)."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Complete Streets application vote (items #1, #4, #3, $340,000) failed 2-3",
+    "ours": "",
+    "official": "to submit the application to complete streets with items #1, #4 and #3 totalling $340,000 vote: 2 in favor, 3 against (luck, mcquaid, alonzo)",
+    "note": "Our minutes record no vote on this motion; check the recording around the Complete Streets discussion (~t=1526-1793)."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Alternative application #1 to Complete Streets passed 4-1",
+    "ours": "",
+    "official": "to submit alternative application #1 to complete streets",
+    "note": "Our minutes record no vote on the alternative application; check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Architectural Preservation District signs funding vote",
+    "ours": "",
+    "official": "to approve the request to fund the signs for the architectural preservation district",
+    "note": "Vote only in the official minutes; check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Petition for two beer and wine off-premise licenses (Lanni Orchards)",
+    "ours": "",
+    "official": "to petition for two separate beer and wine off premise licenses; one for lanni orchards and the",
+    "note": "Vote only in the official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Inclusion of articles in the special town meeting warrant",
+    "ours": "",
+    "official": "to approve inclusion of the above listed articles presented by town manager for the special town meeting warrant",
+    "note": "Vote only in the official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Non-binding article for demolition of old Primary School, passed 3-2",
+    "ours": "",
+    "official": "to create a non-binding article for demolition of the old primary school",
+    "note": "Vote only in the official minutes; check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Complete Streets funding cap / town share",
+    "ours": "Complete Streets funding cap: four hundred thousand dollars; Town share of Complete Streets projects: three hundred ten thousand dollars",
+    "official": "to submit the application to complete streets with items #1, #4 and #3 totalling $340,000",
+    "note": "Our figures ($400,000 cap, $310,000 town share) do not match the official $340,000 combined total, which is not a digit-grouping issue; check the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Complete Streets beach and Main Street requests",
+    "ours": "Complete Streets Tier three funding, beach project: two hundred twenty thousand; Main Street/town center project: two hundred thirty thousand",
+    "official": "the beach project funding request is $220,000 and the main street project is $230,000.",
+    "note": "Both give $220,000 and $230,000."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Primary school roof repair figure",
+    "ours": "Primary school roof repair: eleven thousand",
+    "official": "discussion about estimate for repairs to old primary school",
+    "note": "Our minutes give an $11,000 figure; official prints no estimate (nearest are $50,000 available and $27k ADA ramp). Check the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Accounts payable, deductions and payroll warrants",
+    "ours": "",
+    "official": "the board signed an accounts payable warrant in the amount of $311,451.98, a deductions warrant in the amount of $167,816.57, and a payroll warrant in the amount of $811,390.09.",
+    "note": "Warrant amounts are not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Pleasant Street bridge $380,000 grant",
+    "ours": "",
+    "official": "wereceived$380,000 fortherepair ofthisbridgethrough",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "250 Howard Street right of first refusal and 47-day article deadline",
+    "ours": "",
+    "official": "the board will wait for feedback from the other notified boards.",
+    "note": "Decision in official minutes only (as is the 47-day consensus)."
+   },
+   {
+    "kind": "agree",
+    "about": "Tollbooth details decision",
+    "ours": "Boys and Girls Club tollbooth approved for October 12, 9 a.m. to 1 p.m., volunteers 18 and over.",
+    "official": "to approve the tollbooth fundraiser request on october 12 from 9 am to 1 pm",
+    "note": "Date and hours match; the volunteer age is not in the quoted official text."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chairman name",
+    "ours": "Chairman Alonso (chair)",
+    "official": "members present: tom alonzo, chairman; phyllis luck, vice chairman, damon mcquaid, clerk;",
+    "note": "Misheard spelling of Alonzo.",
+    "official_reading": "Tom Alonzo"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Selectman Jeffries",
+    "ours": "Selectman Jeffries (member)",
+    "official": "katey adams, michael- ray jeffreys",
+    "note": "Spelling variant of Jeffreys.",
+    "official_reading": "Michael-Ray Jeffreys"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Mrs. Adams",
+    "ours": "Mrs. Adams (member)",
+    "official": "katey adams, michael- ray jeffreys",
+    "note": "Katey Adams is present in both."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town manager Heather",
+    "ours": "Heather (town manager)",
+    "official": "others present: heather lemieux, town manager",
+    "note": "First name only in ours.",
+    "official_reading": "Heather Lemieux"
+   },
+   {
+    "kind": "caption_error",
+    "about": "DPW director Jack",
+    "ours": "Jack (DPW director)",
+    "official": "dpw director rodriquenz was also present.",
+    "note": "Name differs: 'Jack' vs 'Rodriquenz'; likely a mishearing or first-name usage.",
+    "official_reading": "Rodriquenz"
+   },
+   {
+    "kind": "agree",
+    "about": "Presenters Rich Benevento and Bill Mertz",
+    "ours": "Rich Benevento (presenter); Bill Mertz (presenter)",
+    "official": "also present from world tech was bill mertz.",
+    "note": "Both present from World Tech."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees Phyllis Luck and Damon McQuaid",
+    "ours": "",
+    "official": "members present: tom alonzo, chairman; phyllis luck, vice chairman, damon mcquaid, clerk;",
+    "note": "Our minutes list only three members, though the official records five and votes involve Luck and McQuaid; check who was present."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T12:47:12Z",
+   "cost_usd": 0.060369099999999995
+  }
  }
 }

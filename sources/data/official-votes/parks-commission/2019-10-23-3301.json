@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2019-10-23",
  "docid": "3301",
@@ -12,31 +12,259 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of September 2019",
+   "motion": "Approve the minutes of September 2019.",
    "moved_by": "Susanna",
    "seconded_by": "Karin",
-   "outcome": "Approved 2-0",
+   "outcome": "passed 2-0",
    "procedural": true,
    "quote": "susanna motioned and karin seconded to approve the minutes of september 2019 - approved 2-0"
   },
   {
-   "motion": "Have Susanna represent the Park Commission on the Open Space Committee",
+   "motion": "Have Susanna represent the Park Commission on the Open Space Committee.",
    "moved_by": "Karin",
    "seconded_by": "John Palumbo",
-   "outcome": "approved 3-0",
+   "outcome": "passed 3-0",
    "procedural": false,
    "quote": "karin motioned and john palumbo seconded to have susanna represent the park commission on the open space committee - approved 3-0"
   },
   {
-   "motion": "Adjourn at 8:03pm",
+   "motion": "Adjourn the meeting at 8:03pm.",
    "moved_by": "John",
    "seconded_by": "Susanna",
-   "outcome": "approved 3-0",
+   "outcome": "passed 3-0",
    "procedural": true,
    "quote": "john motioned and susanna seconded to adjourn at 8:03pm - approved 3-0"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07310540000000001
+ "note": "Text is readable and complete for the meeting. Page headers read 'Page of 31/32/33', which is inconsistent across pages. John Palumbo's arrival at 6:40pm is noted, so his presence from the start is not shown. No documents list is printed; the document references are only in passing. No roll call or role is printed for John Palumbo.",
+ "cost_usd": 0.005996219999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendance: karin menard, susanna jewell, john palumbo"
+  },
+  {
+   "name": "Susanna Jewell",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "attendance: karin menard, susanna jewell, john palumbo"
+  },
+  {
+   "name": "John Palumbo",
+   "status": "present",
+   "quote": "attendance: karin menard, susanna jewell, john palumbo"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director jack rodriquenz, kayla wright (incoming recreation director)"
+  },
+  {
+   "name": "Kayla Wright",
+   "role": "incoming Recreation Director",
+   "status": "present",
+   "quote": "dpw director jack rodriquenz, kayla wright (incoming recreation director)"
+  },
+  {
+   "name": "Lynn Major",
+   "role": "Lifeguard",
+   "status": "present",
+   "quote": "lynn major, lifeguard, asked if the intention was for the beach to be self funded or if it should be considered an asset."
+  },
+  {
+   "name": "Gen Nass",
+   "role": "2019 Beach Coordinator",
+   "status": "present",
+   "quote": "he asked gen nass, 2019 beach coordinator, if she knew what the ratio of swimmers to lifeguards needed to be."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The next meeting date was set for January 13, 2020.",
+   "quote": "next meeting date - january 13, 2020"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Marshall Park water leak",
+   "what_was_recorded": "A water bill of $4,000 prompted a search for another leak at Marshall Park, and the water has been shut off pending the fix.",
+   "figures_as_printed": [
+    "$4,000"
+   ],
+   "quote": "there appears to be another water leak at marshall park as we got a bill for $4,000"
+  },
+  {
+   "topic": "Beach funding",
+   "what_was_recorded": "Swim lessons were made self-funded a few years back; the remainder of beach funding comes from the town budget plus pass fee money. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "the remainder is funded through a combination of funding through the town budget as well as money collected for pass fees"
+  },
+  {
+   "topic": "Capital plan project threshold",
+   "what_was_recorded": "Jack recommended the commission bring projects of at least 10k with a 5-year life span for pricing into the capital plan.",
+   "figures_as_printed": [
+    "10k"
+   ],
+   "quote": "come up with projects at least 10k and 5 year life span that he can get priced out"
+  },
+  {
+   "topic": "Saliba Property acquisition",
+   "what_was_recorded": "The total project cost is about $782k, with a state grant awarded to the town for 500k; the warrant article would authorize the full 782k expenditure, with 500k reimbursed by the state.",
+   "figures_as_printed": [
+    "$782k",
+    "500k",
+    "782k"
+   ],
+   "quote": "the total project cost is about $782k and that grant was awarded to the town for 500k"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Lynn Major",
+   "stated_role": "Lifeguard",
+   "topic": "beach self-funding and swim lessons",
+   "quote": "lynn major, lifeguard, asked if the intention was for the beach to be self funded or if it should be considered an asset."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of September 2019 minutes",
+   "resolution": "approved 2-0",
+   "quote": "susanna motioned and karin seconded to approve the minutes of september 2019 - approved 2-0",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Manager / DPW Director updates",
+   "resolution": "no action",
+   "quote": "jack updated the commission that there appears to be another water leak at marshall park",
+   "tags": [
+    "water leak",
+    "fields",
+    "fencing"
+   ]
+  },
+  {
+   "topic": "Recap of 2019 beach season",
+   "resolution": "discussed; no action",
+   "quote": "recap and discussion of 2019 beach season - karin let the group know that there were 144 passes sold this season",
+   "tags": [
+    "beach",
+    "lifeguards",
+    "passes",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Capital Plan and Budget",
+   "resolution": "discussed; no action",
+   "quote": "capital plan and budget - jack said that the capital plan season is starting",
+   "tags": [
+    "capital plan",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Wallis Park tree removal request",
+   "resolution": "discussed; no action",
+   "quote": "wallis park - jack said he received a complaint from a resident in the neighborhood about a large tree",
+   "tags": [
+    "Wallis Park",
+    "tree",
+    "handicap ramp"
+   ]
+  },
+  {
+   "topic": "Land acquisition update and warrant article",
+   "resolution": "no action",
+   "quote": "land acquisition update and warrant article - karin updated the group that the town has negotiated a purchase of the saliba property",
+   "tags": [
+    "land acquisition",
+    "Saliba Property",
+    "warrant article",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Open Space update and representation",
+   "resolution": "Susanna appointed as Park Commission representative on Open Space Committee, 3-0",
+   "quote": "open space update and representation - karin said that the open space plan was submitted to the state",
+   "tags": [
+    "open space",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Other business",
+   "resolution": "no action; correspondence noted",
+   "quote": "other business matters that may legally come before the board not known at the time of posting - none",
+   "tags": [
+    "correspondence",
+    "Kids Kingdom"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for January 13, 2020",
+   "quote": "next meeting date - january 13, 2020",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:03pm, 3-0",
+   "quote": "john motioned and susanna seconded to adjourn at 8:03pm - approved 3-0",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Spread sheet of day-to-day beach information, 2019 season",
+   "where": "text",
+   "quote": "she also provided the group with a spread sheet highlighting the day to day information collected by the beach this past summer"
+  },
+  {
+   "name": "Beach log sheets filled out by the beach coordinator",
+   "where": "text",
+   "quote": "per the log sheets filled out by the beach coordinator there were some occasions that there were only 2 lifeguards on"
+  },
+  {
+   "name": "Open Space plan",
+   "where": "text",
+   "quote": "karin said that the open space plan was submitted to the state and was sent back from some additional information and revisions"
+  },
+  {
+   "name": "Warrant article for Special Town Meeting (Saliba Property)",
+   "where": "text",
+   "quote": "karin said that the warrant article would be to authorize the complete expenditure of 782k"
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "beach season",
+  "lifeguard staffing",
+  "capital plan",
+  "land acquisition",
+  "Saliba Property",
+  "open space",
+  "water leak",
+  "Wallis Park",
+  "warrant article"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

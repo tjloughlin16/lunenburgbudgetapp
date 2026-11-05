@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2020-02-27",
  "docid": "2861",
@@ -12,31 +12,276 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from January 2020 as amended",
+   "motion": "Accept the January 2020 minutes as amended by Dick.",
    "moved_by": "Dick",
    "seconded_by": "Maia",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion to accept minutes as amended by dick, seconded by maia. motion was unanimously approved."
   },
   {
-   "motion": "Accept the changes to the meeting room policies",
+   "motion": "Accept the changes to the meeting room policies (library card required to reserve; wording on group room usage changed).",
    "moved_by": "Dick",
    "seconded_by": "Maia",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "dick made a motion to accept the policy change, seconded by maia, and passed unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Bob",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn by dick, seconded by bob. meeting was adjourned at 8:11 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08123050000000001
+ "note": "Text is a readable extraction. Pages 3-10 contain only blank lines. No tally is recorded for the adjournment motion. Harry Kubetz is listed as attending remotely via Skype. Fine-free, trust fund and Director's Report items were discussed with no motion recorded.",
+ "cost_usd": 0.00540472,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "remote",
+   "quote": "harry kubetz remotely via skype"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dick mailloux, maia"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "not stated",
+   "status": "present",
+   "quote": "wentrup"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "lars widstrand, donna saiia"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "lars widstrand, donna saiia"
+  },
+  {
+   "name": "Jim Besarkarski",
+   "role": "Chairman of Trust Fund Commission",
+   "status": "not stated",
+   "quote": "jim besarkarski - chairman of trust fund commission expressed an interest in combining the library"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Materials spending and state requirement",
+   "what_was_recorded": "Materials spending is behind schedule; 95k was spent on materials in FY19, and state regulation requires 16% of the budget go to materials, which Muir said should not be a problem this year.",
+   "figures_as_printed": [
+    "95k",
+    "16%"
+   ],
+   "quote": "95k was spent on materials in fy19. state regulation requires 16% of the budget be allocated to materials."
+  },
+  {
+   "topic": "FY21 building maintenance moved to DPW budget",
+   "what_was_recorded": "The FY21 budget has zero allocated for building maintenance; that cost will be transferred to the DPW budget, which will be increased to cover it.",
+   "figures_as_printed": [
+    "zero"
+   ],
+   "quote": "muir noted that the fy21 budget has zero allocated for building maintenance. that cost will be transferred over to the dpw budget which will be increased to cover it."
+  },
+  {
+   "topic": "Programs budget",
+   "what_was_recorded": "The 5k requested for programs was left intact in the preliminary FY21 budget.",
+   "figures_as_printed": [
+    "5k"
+   ],
+   "quote": "dick was happy to note that the 5k requested for programs was left intact."
+  },
+  {
+   "topic": "Heating charges",
+   "what_was_recorded": "Heating charges rose the past month but remain under budget overall.",
+   "figures_as_printed": [],
+   "quote": "heating charges were up the past month but are still under budget overall."
+  },
+  {
+   "topic": "Fines replaced by voluntary donations (fine-free proposal)",
+   "what_was_recorded": "Fines have been dropping off; the proposal is to replace overdue fines with voluntary donations for overdue materials.",
+   "figures_as_printed": [],
+   "quote": "fines have been dropping off. proposal is for fines to be replaced by voluntary donations for overdue materials."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dick",
+   "stated_role": "",
+   "topic": "congratulations on FinCom presentation",
+   "quote": "dick congratulated muir on his presentation to the town finance committee."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "dick congratulated muir on his presentation to the town finance committee."
+  },
+  {
+   "topic": "Approval of Minutes (January 2020)",
+   "resolution": "approved as amended",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "motion to accept minutes as amended by dick, seconded by maia. motion was unanimously approved."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "meeting room policy change accepted; otherwise noted",
+   "tags": [
+    "director",
+    "budget",
+    "meeting room policy",
+    "FinCom",
+    "personnel review"
+   ],
+   "quote": "dick made a motion to accept the policy change, seconded by maia, and passed unanimously."
+  },
+  {
+   "topic": "Fine-Free Discussion",
+   "resolution": "discussed; data gathering continues",
+   "tags": [
+    "fines",
+    "fine-free",
+    "circulation"
+   ],
+   "quote": "fines have been dropping off. proposal is for fines to be replaced by voluntary donations for overdue materials."
+  },
+  {
+   "topic": "Trust Funds – Next Steps",
+   "resolution": "discussed; no action",
+   "tags": [
+    "trust fund",
+    "warrant article"
+   ],
+   "quote": "muir has been working on the warrant article with the town counsel."
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "noted",
+   "tags": [
+    "Friends of LPL",
+    "events"
+   ],
+   "quote": "a chocolate tasting is being discussed for april 25 th with a wish to include an instructional element."
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "noted",
+   "tags": [
+    "board",
+    "elections",
+    "resignation"
+   ],
+   "quote": "harry notified the board that lars is resigning as of june 30 th, 2020."
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:11 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion to adjourn by dick, seconded by bob. meeting was adjourned at 8:11 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "February 2020 Agenda",
+   "where": "list",
+   "quote": "february 2020 agenda"
+  },
+  {
+   "name": "February Director’s Report",
+   "where": "list",
+   "quote": "february director's report"
+  },
+  {
+   "name": "FY2021 Budget document",
+   "where": "list",
+   "quote": "fy2021 budget document"
+  },
+  {
+   "name": "February 2020 Adult Services Report",
+   "where": "list",
+   "quote": "february 2020 adult services report"
+  },
+  {
+   "name": "February 2020 YA Report",
+   "where": "list",
+   "quote": "february 2020 ya report"
+  },
+  {
+   "name": "February 2020 Children’s Area Report",
+   "where": "list",
+   "quote": "february 2020 children's area report"
+  },
+  {
+   "name": "Annual report (submitted February 15)",
+   "where": "text",
+   "quote": "the annual report was submitted on february 15 th."
+  },
+  {
+   "name": "Meeting room policies (changes)",
+   "where": "text",
+   "quote": "muir presented some changes to the meeting room policies."
+  },
+  {
+   "name": "Library warrant article",
+   "where": "text",
+   "quote": "muir has been working on the warrant article with the town counsel."
+  }
+ ],
+ "tags": [
+  "library",
+  "FY21 budget",
+  "fine-free",
+  "trust fund warrant article",
+  "meeting room policy",
+  "director evaluation",
+  "Friends of LPL",
+  "board elections"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

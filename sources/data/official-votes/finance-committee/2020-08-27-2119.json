@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2020-08-27",
  "docid": "2119",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dave",
    "seconded_by": "Jay",
    "outcome": "passed",
@@ -21,6 +21,345 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "One procedural vote recorded. The July 23rd meeting minutes approval was moved by Peter but he withdrew the motion before any vote was taken, so it does not count.",
- "cost_usd": 0.0920165
+ "note": "Text extract, not a scan. Only one recorded vote (adjournment, outcome given as 'all in favor' with no count). Peter's motion to approve the July 23 minutes was withdrawn, so it is not recorded as a vote. Jay Simeone is listed as absent in the header but 'Jay joined the meeting' at 20:00, so recorded as present. Karen Brochu's attendance is not stated outright; she is recorded as present because she gave the Town Manager/Finance Director report. Carol Archembault's statement was read into the record; her attendance is recorded as not stated. Dollar figure '$1,207, 219' and '$1,107, 694' are printed with a space after the comma, as in the minutes.",
+ "cost_usd": 0.010386520000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore, dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore, dave passios"
+  },
+  {
+   "name": "John Henshaw",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore, dave passios, john henshaw"
+  },
+  {
+   "name": "Chris Menard",
+   "status": "present",
+   "quote": "john henshaw, chris menard"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "jay joined the meeting."
+  },
+  {
+   "name": "Heather Sroka",
+   "status": "absent",
+   "quote": "heather sroka will not be present"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Manager/Finance Director",
+   "status": "present",
+   "quote": "karen brochu - overtime costs related to covid would be reimbursed from the cares act and fema."
+  },
+  {
+   "name": "Carol Archembault",
+   "role": "Lunenburg School Committee Chairperson",
+   "status": "not stated",
+   "quote": "carol archembault the lunenburg school committee chairperson is the"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Rubric the Committee uses for building projects to be added to the agenda for discussion and exploration.",
+   "quote": "will add rubric to the agenda for discussion and exploration."
+  },
+  {
+   "decision": "Peter's July 23 motion to approve minutes was withdrawn; the minutes are held so Heather can polish them.",
+   "quote": "john wants heather to polish them up a little."
+  },
+  {
+   "decision": "Terri to try to locate the staffing plan and forward it with the five-year forecast.",
+   "quote": "terri will attempt to locate the document and forward it with the five-year forecast."
+  },
+  {
+   "decision": "Peter to email Town Department heads to bring the capital items question to the CPC.",
+   "quote": "peter should send an email to town department heads to bring that to the cpc."
+  },
+  {
+   "decision": "Town Manager to provide the Fin Com the close-out reports.",
+   "quote": "karen - will provide the fin com the reports."
+  },
+  {
+   "decision": "Peter to share some folders so John can look at SharePoint.",
+   "quote": "peter will share some folders so john can look at sharepoint."
+  },
+  {
+   "decision": "Chris to coordinate file-sharing setup with Mr. Malindrinos; Chris to set up OneDrive with the Town Manager's approval.",
+   "quote": "chris to set-up onedrive and town manager's thumbs up."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Covid overtime reimbursement",
+   "what_was_recorded": "Covid overtime is reimbursable through CARES Act and FEMA; FY20 overtime submitted with 25% received so far, about $7,000 total.",
+   "figures_as_printed": [
+    "25%",
+    "$7,000"
+   ],
+   "quote": "so far not a huge amount of money for fy20--approximately $7,000."
+  },
+  {
+   "topic": "Covid PPE reimbursement",
+   "what_was_recorded": "Increased PPE spending has been recovered 100%, though reimbursements are not yet received, possibly a short-term cash flow effect.",
+   "figures_as_printed": [
+    "100%"
+   ],
+   "quote": "the increase ppe that the town has made has been recovered 100%."
+  },
+  {
+   "topic": "FY20 revenues",
+   "what_was_recorded": "FY20 revenues exceeded estimate by .6%, a total of $267,291.",
+   "figures_as_printed": [
+    ".6%",
+    "$267,291"
+   ],
+   "quote": "the revenues of fy20 exceeded estimate of .6% or a total of $267,291."
+  },
+  {
+   "topic": "FY20 expenditures and appropriation close-outs",
+   "what_was_recorded": "Expenditures were 2.8% under budget, a total of $1,207, 219 in appropriation close-outs.",
+   "figures_as_printed": [
+    "2.8%",
+    "$1,207, 219"
+   ],
+   "quote": "expenditures were 2.8% less than budgeted for a total of $1,207, 219"
+  },
+  {
+   "topic": "Undesignated fund balance and free cash",
+   "what_was_recorded": "Undesignated fund balance is $644,000 higher than at the close of FY19; a significant free cash certification is expected.",
+   "figures_as_printed": [
+    "$644,000"
+   ],
+   "quote": "$644,000 higher than at the close of fy19."
+  },
+  {
+   "topic": "Prior-year free cash certification",
+   "what_was_recorded": "Last year's free cash certification was $1,107, 694; this year's may translate almost dollar for dollar.",
+   "figures_as_printed": [
+    "$1,107, 694"
+   ],
+   "quote": "last year's certification of free cash was $1,107, 694"
+  },
+  {
+   "topic": "Parks Department fence work",
+   "what_was_recorded": "$7,000 was encumbered from the Parks budget for fence work on the Wallace/Wallis Park basketball court project, covering the overage above the capital appropriation.",
+   "figures_as_printed": [
+    "$7,000"
+   ],
+   "quote": "$7,000 incumbered for the fence work from the parks budget."
+  },
+  {
+   "topic": "Remote course through Educere",
+   "what_was_recorded": "School district would arrange a rare upper-level course through Educere at a cost of $200 per student per course.",
+   "figures_as_printed": [
+    "$200"
+   ],
+   "quote": "be taught through educere at a cost of $200 per student per course."
+  },
+  {
+   "topic": "SharePoint and OneDrive file-sharing cost",
+   "what_was_recorded": "Steve Malindrinos said SharePoint costs $6 per user per month; OneDrive is free; a 6 GB threshold was mentioned.",
+   "figures_as_printed": [
+    "$6 per user per month",
+    "6$ per month per person"
+   ],
+   "quote": "share point is $6 per user per month."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Parks Department fence overage on the basketball court resurfacing capital project: the expenditure was split, with the capital article paying its share and the Parks operating line covering the rest.",
+   "amount_as_printed": "$7,000",
+   "outcome": "No physical transfer of funds; expenditure split between capital article and Parks operating budget.",
+   "quote": "there is no physical transfer of funds."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "",
+   "topic": "Passing of Bruce Smith",
+   "quote": "peter beardmore note the passing of bruce smith."
+  },
+  {
+   "speaker": "Carol Archembault",
+   "stated_role": "Lunenburg School Committee Chairperson",
+   "topic": "School remote learning model statement",
+   "quote": "carol archembault the lunenburg school committee chairperson is the"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Parks report addendum and basketball court",
+   "quote": "dave passios a couple of things he left out earlier."
+  },
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "",
+   "topic": "Parks money incumbered without a transfer",
+   "quote": "peter beardmore - questions regarding the money incumbered in parks"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm",
+   "tags": [
+    "call to order",
+    "covid advisory"
+   ]
+  },
+  {
+   "topic": "Public comment (first)",
+   "resolution": "received",
+   "quote": "peter beardmore note the passing of bruce smith.",
+   "tags": [
+    "public comment",
+    "school remote model"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "discussed; rubric to next agenda",
+   "quote": "john spoke to the police and fire chief a few days ago.",
+   "tags": [
+    "police",
+    "fire",
+    "covid",
+    "parks",
+    "building projects",
+    "rubric"
+   ]
+  },
+  {
+   "topic": "Town Manager/Finance Director report",
+   "resolution": "discussed; no action",
+   "quote": "karen brochu - overtime costs related to covid would be reimbursed from the cares act and fema.",
+   "tags": [
+    "free cash",
+    "close-out",
+    "capital plan",
+    "covid reimbursement"
+   ]
+  },
+  {
+   "topic": "Meeting minutes (July 23)",
+   "resolution": "motion withdrawn; held for polishing",
+   "quote": "peter withdraws his motion.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Budget review",
+   "resolution": "deferred to next meeting",
+   "quote": "terri - did everyone have a chance to review the budget information?",
+   "tags": [
+    "budget",
+    "five-year forecast",
+    "staffing plan",
+    "dashboard"
+   ]
+  },
+  {
+   "topic": "File sharing options (OneDrive/SharePoint)",
+   "resolution": "Chris to set up OneDrive",
+   "quote": "file sharing options - chris could share - options from steve malindrinos",
+   "tags": [
+    "file sharing",
+    "technology",
+    "sharepoint",
+    "onedrive"
+   ]
+  },
+  {
+   "topic": "Public comment (second) and Parks/Capital questions",
+   "resolution": "discussed; no action",
+   "quote": "dave passios a couple of things he left out earlier.",
+   "tags": [
+    "parks",
+    "capital plan",
+    "fence",
+    "town charter",
+    "assessing software"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned; next meeting September 10",
+   "quote": "motion to adjourn dave seconded by jay all in favor",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Dashboard Document",
+   "where": "text",
+   "quote": "he is one that requested the dashboard document"
+  },
+  {
+   "name": "Five-year forecast",
+   "where": "text",
+   "quote": "there is a five- year forecast."
+  },
+  {
+   "name": "Police and Fire staffing plan (10-year)",
+   "where": "text",
+   "quote": "staffing plan the police and fire put together for the 10 year"
+  },
+  {
+   "name": "July 23 meeting minutes",
+   "where": "text",
+   "quote": "we did see the minutes for july 23rd that heather had"
+  },
+  {
+   "name": "Town Charter",
+   "where": "text",
+   "quote": "spoke to town counsel - town charter has cleared the legislature."
+  },
+  {
+   "name": "Capital Plan",
+   "where": "text",
+   "quote": "because the cp was voted as a lump sum money could be moved anywhere"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "covid costs",
+  "free cash",
+  "capital plan",
+  "parks",
+  "school remote learning",
+  "school building project",
+  "file sharing",
+  "minutes",
+  "budget review",
+  "assessing software"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-01-05",
  "docid": "5287",
@@ -12,65 +12,432 @@
  },
  "votes": [
   {
-   "motion": "approve the license application for the common victualler license at 451 Mass. Ave. for KCM Donuts d/b/a Dunkin Donuts",
+   "motion": "Approve the common victualler license at 451 Mass. Ave. for KCM Donuts d/b/a Dunkin Donuts.",
    "moved_by": "J. Marino",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: j. marino 2n: t. dwyer to approve the license application for the common victualler license at 451 mass. ave. for kcm donuts d/b/a dunkin donuts vote: mr. dwyer-aye, ms. adams-aye, mr. marino-aye, mr. alonzo-aye"
+   "quote": "motion: j. marino 2n: t. dwyer to approve the license application for the common victualler license at 451 mass. ave. for kcm donuts d/b/a dunkin donuts"
   },
   {
-   "motion": "open the Annual Town Meeting warrant on January 12, 2021 and close the warrant on March 15, 2021 at 4 PM",
+   "motion": "Open the Annual Town Meeting warrant on January 12, 2021 and close it on March 15, 2021 at 4 PM.",
    "moved_by": "T. Dwyer",
    "seconded_by": "J. Marino",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: t. dwyer 2n°: j. marino to open the annual town meeting warrant on january 12, 2021 and close the warrant on march 15, 2021 at 4 pm vote: mr. dwyer-aye, ms. adams- aye, mr. marino-aye, mr. jeffreys- aye, mr. alonzo-aye"
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: t. dwyer 2n°: j. marino to open the annual town meeting warrant on january 12, 2021 and close the warrant on march 15, 2021 at 4 pm"
   },
   {
-   "motion": "appoint Katey Adams as liaison to Monty Tech for the old Primary School landscape design",
+   "motion": "Appoint Katey Adams as liaison to Monty Tech for the old Primary School landscape design.",
    "moved_by": "J. Marino",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: j. marino 2nd: t. dwyer to appoint katey adams as liaison to monty tech for the old primary school landscape design vote: ms. adams-aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "motion: j. marino 2nd: t. dwyer to appoint katey adams as liaison to monty tech for the old primary school landscape design"
   },
   {
-   "motion": "approve the Clearinghouse Policy as presented",
+   "motion": "Approve the Clearinghouse Policy as presented.",
    "moved_by": "J. Marino",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: j. marino 2n: t. dwyer to approve the license application for the common victualler license at 451 mass. ave. for kcm donuts d/b/a dunkin donuts vote: mr. d",
-   "quote_taken_from_text": true
+   "quote": "motion: j. marino 2n: t. dwyer to approve the clearinghouse policy as presented"
   },
   {
-   "motion": "authorize the Chair to sign the grant of exclusive parking easement to the Historical Society",
+   "motion": "Authorize the Chair to sign the grant of exclusive parking easement to the Historical Society.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "K. Adams",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2nd: k. adams to authorize the chair to sign the grant of exclusive parking easement to the historical society vote: ms. adams-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. marino-aye, mr. alonzo-aye"
+   "quote": "motion: m. jeffreys 2nd: k. adams to authorize the chair to sign the grant of exclusive parking easement to the historical society"
   },
   {
-   "motion": "approve the Class II license renewal for KB Cars LLC",
+   "motion": "Approve the Class II license renewal for KB Cars LLC.",
    "moved_by": "T. Dwyer",
    "seconded_by": "J. Marino",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. dwyer 2nd: j. marino to approve the class il license renewal for kb cars llc vote: ms. adams-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. marino-aye, mr. alonzo- ay",
-   "quote_taken_from_text": true
+   "quote": "motion: t. dwyer 2nd: j. marino to approve the class il license renewal for kb cars llc"
   },
   {
-   "motion": "adjourn the meeting at 8:47 p.m.",
+   "motion": "Adjourn the meeting at 8:47 p.m.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: m. jeffreys 2nd:t. dwyer to adjourn the meeting at 8:47 p.m. vote: mr. dwyer-aye, ms. adams- aye, mr. marino-aye, mr. jeffreys- aye, mr. alonzo-aye"
+   "quote": "motion: m. jeffreys 2nd:t. dwyer to adjourn the meeting at 8:47 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR minutes, one vote count for KCM Donuts reflected four members present (Jeffreys had not yet arrived at that point in the meeting)",
- "cost_usd": 0.12095349999999999
+ "note": "OCR text, not a scan; some OCR errors (e.g. \"2n:\", \"Class Il\", \"Mr. Jetfreys\") were kept as printed. Item 4 heading is missing (text jumps from item 3 to a by-law committee paragraph), and the warrant list (item 9) has no heading or number. No vote is recorded on the warrants. Mr. Jeffreys was delayed at the opening and is not among the KCM Donuts vote names. The KCM vote lists four names with no printed count. The minutes name no documents list.",
+ "cost_usd": 0.011254120000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "",
+   "status": "present",
+   "quote": "katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "John Nadreau",
+   "role": "",
+   "status": "present",
+   "quote": "john nadreau and joe cadette were present for the license application."
+  },
+  {
+   "name": "Joe Cadette",
+   "role": "",
+   "status": "present",
+   "quote": "john nadreau and joe cadette were present for the license application."
+  },
+  {
+   "name": "Bill Tyler",
+   "role": "Cemetery Chairman",
+   "status": "present",
+   "quote": "bill tyler, 5 graham st., wished everybody a happy new year."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Katey Adams will consult with Town Manager Lemieux on scheduling the Monty Tech meetings; Lemieux will contact Adams once the date and time are set.",
+   "quote": "ms. adams will consult with ms. lemieux on the schedule for meeting with monty tech for this project."
+  },
+  {
+   "decision": "Mr. Alonzo asked that the by-law review committee be advertised for interested parties; the committee would make recommendations to the 2022 Annual Town Meeting.",
+   "quote": "mr. alonzo asked for it to be advertised for interested parties."
+  },
+  {
+   "decision": "Chair directed that Town Counsel's opinion be obtained on possession of firearms on public land, with counsel to attend a future meeting when the topic is discussed.",
+   "quote": "mr. alonzo stated we need to get an opinion from town counsel regarding possession of a firearm on public land and that counsel should be present at a future meeting when this is discussed."
+  },
+  {
+   "decision": "Town Manager will pass the Conservation Commission and Open Space Committee information along to the pertinent chairmen.",
+   "quote": "ms. lemieux will pass along the information to the pertinent chairmen."
+  },
+  {
+   "decision": "Chair asked board members to submit suggestions for an appointments procedure to him so he can compile them for a future discussion.",
+   "quote": "he reminded the board to submit their suggestions for a procedure to him so he can compile them for a future discussion."
+  },
+  {
+   "decision": "Town Manager will ask the Assistant Town Manager to proceed with a Request for Proposals for the Brooks House, unless the Board objects; no objection is recorded.",
+   "quote": "i will be asking the assistant town manager to proceed with putting together a request for proposals to carry this out, unless the board has an objection to this."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Payroll and accounts payable warrants",
+   "what_was_recorded": "Four warrants are listed with dollar totals; no vote on the warrants is recorded.",
+   "quote": "payroll warrant #13p21, dated 12/24/2020, $914,586.46; • payroll deduction warrant #30 21, dated 12/23/2020, $199,842.6",
+   "figures_as_printed": [
+    "$914,586.46",
+    "$199,842.67",
+    "$108,797.00",
+    "$773,113.47"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "North Cemetery ADA parking lot grant",
+   "what_was_recorded": "Town Manager reports an award of a state Massachusetts Office on Disability grant for the North Cemetery project.",
+   "quote": "received notification that we were awarded $32,000 forthis project",
+   "figures_as_printed": [
+    "$32,000"
+   ]
+  },
+  {
+   "topic": "Pay As You Throw bags online ordering cost",
+   "what_was_recorded": "Town Manager reports the online bag package price and shipping fee for residents who cannot reach retail stores.",
+   "quote": "the packages are 2 large bags totaling $5.70 and there is a shipping fee of $2.75/pack and it takes 3-5 business days for delivery.",
+   "figures_as_printed": [
+    "$5.70",
+    "$2.75/pack"
+   ]
+  },
+  {
+   "topic": "CARES Act funding",
+   "what_was_recorded": "Town Manager reports amounts submitted and reimbursed under CARES Act and the total eligible amount for the Town.",
+   "quote": "we have submitted roughly $555,000 of which we were eligible for reimbursement for approximately $434,000.",
+   "figures_as_printed": [
+    "$555,000",
+    "$434,000",
+    "$1,027,771"
+   ]
+  },
+  {
+   "topic": "Fire Department turnout gear grant",
+   "what_was_recorded": "Fire Chief reports receipt of a grant for turnout gear.",
+   "quote": "the fire chief relayed he had received a $15,000 grant for turnout gear.",
+   "figures_as_printed": [
+    "$15,000"
+   ]
+  },
+  {
+   "topic": "Flat Hill Road drainage survey costs",
+   "what_was_recorded": "Town Manager expects costs for the survey service to rise after the current contract expires; no figure printed.",
+   "quote": "i expect our costs for this service to increase exponentially.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Bill Tyler",
+   "stated_role": "Cemetery Chairman",
+   "topic": "thanks for North Cemetery grant and design",
+   "quote": "as the cemetery chairman, he thanked ms. lemieux for her persistence on the grant application and the dpw director on his forthcoming design of the project."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order, roll call, Pledge",
+   "resolution": "no action",
+   "quote": "chairman alonzo called the meeting to order at 7:01 p.m. and announced in accordance with",
+   "tags": [
+    "meeting opening",
+    "remote meeting"
+   ]
+  },
+  {
+   "topic": "Announcements (Flat Hill Road lane reduction, Christmas tree chipping, MassDOT bridge project)",
+   "resolution": "informational",
+   "quote": "mr. alonzo announced flat hill road is being reduced to one lane where the bridge is located",
+   "tags": [
+    "announcements",
+    "roads",
+    "bridge"
+   ]
+  },
+  {
+   "topic": "Common victualler license hearing - KCM Donuts Inc. d/b/a Dunkin Donuts, 451 Mass. Ave.",
+   "resolution": "approved license",
+   "quote": "john nadreau and joe cadette were present for the license application.",
+   "tags": [
+    "licensing",
+    "common victualler"
+   ]
+  },
+  {
+   "topic": "Open Annual Town Meeting warrant",
+   "resolution": "approved warrant schedule",
+   "quote": "ms. lemieux has drawn up the schedule leading up to annual town meeting according to the",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Liaison to Monty Tech for Old Primary School landscape",
+   "resolution": "Katey Adams appointed liaison",
+   "quote": "ms. adams expressed interest in the position.",
+   "tags": [
+    "Monty Tech",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Review Clearinghouse Policy",
+   "resolution": "approved as presented",
+   "quote": "ms. lemieux reported this is a new requirement due to a change in federal law",
+   "tags": [
+    "policy",
+    "drug and alcohol testing",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "By-law review committee (item number and heading missing from text)",
+   "resolution": "advertise; recommendations to 2022 Annual Town Meeting; no vote",
+   "quote": "the bylaws have been codified, so are easier to work on.",
+   "tags": [
+    "bylaws",
+    "committee"
+   ]
+  },
+  {
+   "topic": "Discharge and carry weapons on town property",
+   "resolution": "discussed; Town Counsel opinion to be sought",
+   "quote": "mr. alonzo stated due to the conservation commission reviewing their land use policy, this item",
+   "tags": [
+    "firearms",
+    "hunting",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Long-term planning of parcels for Conservation Commission and Open Space Committee",
+   "resolution": "discussed; no vote",
+   "quote": "the osc is not interested in conveying town owned properties to the open space committee",
+   "tags": [
+    "conservation land",
+    "town property"
+   ]
+  },
+  {
+   "topic": "Grant of Exclusive Parking Easement to Historical Society",
+   "resolution": "authorized Chair to sign",
+   "quote": "to authorize the chair to sign the grant of exclusive parking easement to the historical society",
+   "tags": [
+    "easement",
+    "Historical Society"
+   ]
+  },
+  {
+   "topic": "Payroll and accounts payable warrants (item number missing from text)",
+   "resolution": "listed; no vote recorded",
+   "quote": "payroll warrant #13p21, dated 12/24/2020, $914,586.46;",
+   "tags": [
+    "warrants",
+    "payables"
+   ]
+  },
+  {
+   "topic": "Action items (appointments procedure)",
+   "resolution": "no action; suggestions requested",
+   "quote": "he reminded the board to submit their suggestions for a procedure to him so he can compile them",
+   "tags": [
+    "procedure",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Committee reports (Capital Planning Committee, MRPC)",
+   "resolution": "reported",
+   "quote": "mr. alonzo reported capital planning committee met and prioritized all the submissions from",
+   "tags": [
+    "capital plan",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Old business: 2021 license renewal KB Cars LLC, 555 Chase Road",
+   "resolution": "approved license renewal",
+   "quote": "to approve the class il license renewal for kb cars llc",
+   "tags": [
+    "licensing",
+    "auto dealer"
+   ]
+  },
+  {
+   "topic": "Town Manager report and COVID-19 update",
+   "resolution": "received; no action",
+   "quote": "the board of health issued their weekly update and the cumulative laboratory confirmed number of",
+   "tags": [
+    "COVID-19",
+    "town manager report",
+    "CARES Act",
+    "encroachment",
+    "grants",
+    "Brooks House",
+    "PAYT bags"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "listed",
+   "quote": "january 12 (workshop), january 19, february 2, 2021",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (second session)",
+   "resolution": "heard",
+   "quote": "bill tyler, 5 graham st., wished everybody a happy new year.",
+   "tags": [
+    "public comment",
+    "cemetery"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:47 p.m.",
+   "quote": "to adjourn the meeting at 8:47 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Manager report",
+   "where": "text",
+   "quote": "ms. lemieux referred to her town manager report:"
+  },
+  {
+   "name": "Clearinghouse Policy (draft, provided by labor counsel)",
+   "where": "text",
+   "quote": "the draft policy was provided by labor counsel."
+  },
+  {
+   "name": "Conceptual Drainage Plan dated October 27th",
+   "where": "text",
+   "quote": "on the conceptual drainage plan dated october 27th that was presented to the board at the november 10th meeting."
+  },
+  {
+   "name": "Town Counsel email on hunting on public land (last year)",
+   "where": "text",
+   "quote": "mr. alonzo pointed out that town counsel had advised last year in an email"
+  },
+  {
+   "name": "Grant of Exclusive Parking Easement to Historical Society",
+   "where": "text",
+   "quote": "to authorize the chair to sign the grant of exclusive parking easement to the historical society"
+  },
+  {
+   "name": "Payroll, payroll deduction, Medicare Part B and accounts payable warrants",
+   "where": "text",
+   "quote": "payroll warrant #13p21, dated 12/24/2020, $914,586.46;"
+  }
+ ],
+ "tags": [
+  "licensing",
+  "town meeting warrant",
+  "Monty Tech",
+  "firearms",
+  "conservation land",
+  "warrants",
+  "COVID-19",
+  "CARES Act",
+  "Flat Hill Road",
+  "North Cemetery grant",
+  "Brooks House",
+  "PAYT bags"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

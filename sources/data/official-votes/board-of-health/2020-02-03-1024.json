@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2020-02-03",
  "docid": "1024",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "To approve the variance for offset to property line from 50 feet to 38 feet at 31 Round Road.",
+   "motion": "Approve the variance for 31 Round Road: offset to property line from 50 feet to 38 feet.",
    "moved_by": "Fortin",
    "seconded_by": "Emond",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "after discussion and on motion by fortin and second by emond, the variance was approved. all in favor."
   },
   {
-   "motion": "To approve the variances for offset to well from 100 feet to 82 feet and offset to foundation from 10 feet to 8.5 feet at 134 Youngs Road.",
+   "motion": "Approve the variances for 134 Youngs Road: offset to well from 100 feet to 82 feet, and offset to foundation from 10 feet to 8.5 feet.",
    "moved_by": "Emond",
    "seconded_by": "Fortin",
    "outcome": "passed",
@@ -28,15 +28,170 @@
    "quote": "after discussion and on motion by emond and second by fortin, the variances were approved. all in favor."
   },
   {
-   "motion": "To approve the variance for trenches between trenches and allow a boulder wall provided it is certified by an engineer at 66 Gibson.",
+   "motion": "Approve the variance for 66 Gibson allowing trenches within trenches for the reserve area, and allow a boulder wall provided it is certified by an engineer.",
    "moved_by": "Mayhew",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by mayhew and second by fortin, the variance was approved for trenches between trenches. further, a boulder wall is allowed provided it is certified by an engineer. all in favor."
+   "quote": "on motion by mayhew and second by fortin, the variance was approved for trenches between trenches. further, a boulder wall is allowed provided it is certified by an engineer."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes state January 6, 2020 minutes were approved, but no motion, mover, seconder, or vote count is recorded for that approval — only \"MINUTES APPROVED:\" with no action clause, so it is not recorded here.",
- "cost_usd": 0.0822785
+ "note": "Votes are recorded only as 'All in favor' with no vote count. Approval of the January 6, 2020 minutes and adjournment are listed without a recorded motion, so they are not recorded as votes. Title 5 acknowledgments and permit signings are recorded as decisions without a vote. The minutes name no dollar figures.",
+ "cost_usd": 0.00359602,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Perry Jewell",
+   "role": "Chair (Chairman, as printed)",
+   "status": "present",
+   "quote": "present: perry jewell, george emond, paul fortin and warren mayhew"
+  },
+  {
+   "name": "George Emond",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: perry jewell, george emond, paul fortin and warren mayhew"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: perry jewell, george emond, paul fortin and warren mayhew"
+  },
+  {
+   "name": "Warren Mayhew",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: perry jewell, george emond, paul fortin and warren mayhew"
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "present",
+   "quote": "agent jim garreffi reviewed the plans and new well location."
+  },
+  {
+   "name": "Mike Sullivan",
+   "role": "Well driller",
+   "status": "present",
+   "quote": "well driller mike sullivan verified the location of abutting septic systems."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "dan proctor met with the board on behalf of the owner. this system is in failure."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chairman Perry Jewell allowed the well installation at 31 Round Road to go forward, with the offset variance request to be heard at the next regularly scheduled meeting.",
+   "quote": "agent garreffi spoke with chairman perry jewell who allowed the installing to go forward, with the request for the offset variance to be heard at the next"
+  },
+  {
+   "decision": "Board acknowledged Title 5 inspection reports for ten properties.",
+   "quote": "title 5 inspection reports acknowledged:"
+  },
+  {
+   "decision": "Board signed septic permits for five properties.",
+   "quote": "septic permits signed:"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of January 6, 2020",
+   "resolution": "listed as approved; no motion recorded",
+   "quote": "minutes approved: january 6, 2020",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged: 357 burrage 182 mass ave",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits",
+   "resolution": "signed",
+   "quote": "septic permits signed: 50 fire road 24 45 howard street youngs road lot 1",
+   "tags": [
+    "septic",
+    "permits"
+   ]
+  },
+  {
+   "topic": "31 Round Road well and offset variance",
+   "resolution": "variance approved; installation allowed to proceed by chair",
+   "quote": "the existing well for this property is failing and does not produce enough water.",
+   "tags": [
+    "variance",
+    "well",
+    "emergency"
+   ]
+  },
+  {
+   "topic": "134 Youngs Road septic variances",
+   "resolution": "variances approved",
+   "quote": "the existing system is pits in the groundwater.",
+   "tags": [
+    "variance",
+    "septic",
+    "well"
+   ]
+  },
+  {
+   "topic": "66 Gibson septic variance",
+   "resolution": "variance approved with boulder wall condition",
+   "quote": "on motion by mayhew and second by fortin, the variance was approved for trenches between trenches.",
+   "tags": [
+    "variance",
+    "septic",
+    "boulder wall"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:15 pm; no motion recorded",
+   "quote": "meeting adjourned at 8:15 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Plans and new well location (31 Round Road)",
+   "where": "text",
+   "quote": "agent jim garreffi reviewed the plans and new well location."
+  },
+  {
+   "name": "Green cards (abutter notification, 134 Youngs Road)",
+   "where": "text",
+   "quote": "green cards were submitted to the board"
+  }
+ ],
+ "tags": [
+  "Board of Health",
+  "Title 5",
+  "septic",
+  "variances",
+  "well",
+  "septic permits",
+  "Ritter Memorial Building"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

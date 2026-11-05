@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2020-08-11",
  "docid": "5671",
@@ -14,21 +14,354 @@
   {
    "motion": "Accept the Flow Assessment monitoring contract and the equipment leasing contract.",
    "moved_by": "John R.",
-   "seconded_by": "Brett R.",
-   "outcome": "passed 3-0",
+   "outcome": "passed 3-0 (Brett-aye, John-aye, Dave-aye)",
    "procedural": false,
-   "quote": "to accept the flow assessment monitoring contract and the equipment leasing contract. vote: brett-aye, john-aye and dave-aye."
+   "quote": "motion: john r. second: brett r. to accept the flow assessment monitoring contract and the equipment leasing contract. vote: brett-aye, john-aye and dave-aye.",
+   "seconded_by": "Brett R."
   },
   {
    "motion": "Accept the minutes of 7/28/20.",
    "moved_by": "Brett R.",
-   "seconded_by": "John R.",
-   "outcome": "passed 3-0",
+   "outcome": "passed 3-0 (Brett-aye, John-aye, Dave-aye)",
    "procedural": true,
-   "quote": "to accept the minutes of 7/28/20. vote: brett-aye, john-aye and dave-aye."
+   "quote": "motion: brett r. second: john r. to accept the minutes of 7/28/20. vote: brett-aye, john-aye and dave-aye.",
+   "seconded_by": "John R."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded. Both passed unanimously 3-0 (Brett, John, Dave all voting aye).",
- "cost_usd": 0.0900995
+ "note": "OCR text of a scanned minutes page set. Page 2 opens mid-sentence (garbled: \"Ine main contract or sy, you needs commission approval\"). The minutes do not print a roll call, so attendance is inferred from speaking and voting; roles are not printed for anyone. The clerk's signature line is garbled (\"four h. Sewery\") and was not recorded as an attendee. Votes list only first names, shown as printed. Vote counts 3-0 are derived from the printed aye lines. No transfers were recorded.",
+ "cost_usd": 0.007544219999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dave explained the pre-bid conference procedure, noting that they will"
+  },
+  {
+   "name": "Brett",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: brett-aye, john-aye and dave-aye."
+  },
+  {
+   "name": "John",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john said that carl's notes brought up valid points"
+  },
+  {
+   "name": "Jack",
+   "role": "not stated",
+   "status": "present",
+   "quote": "public comment-jack said he had scheduled jetting of the lines, that had been put off from the last fiscal year."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barb noted that the draft report was"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed that the meter import must proceed and be operational before it is added to the Woodward & Curran contract.",
+   "quote": "the commission agreed that they need to proceed with the meter import and get it operational, before adding it to the contract."
+  },
+  {
+   "decision": "The Town Manager okayed having Jane work up to 19 hrs/week to help Barb with the meter import project.",
+   "quote": "the town manager okayed having jane work up to 19 hrs/week, to help barb with the project."
+  },
+  {
+   "decision": "Dave asked Barb to give the Commission and Town Manager a schedule for completing the meter import project.",
+   "quote": "dave asked barb to give the commission and town manager a schedule for completing the project."
+  },
+  {
+   "decision": "Dave suggested Barb contact Woodward & Curran to report what was discussed and ask what they can offer; Dave also suggested sending Carl's questions and notes to W&C.",
+   "quote": "dave also suggested that barb contact w&c to let them know what was discussed and ask them what they can offer."
+  },
+  {
+   "decision": "Barb will email Brett and Mike when the next flow meter assessment is scheduled, so a Commissioner can observe the quarterly inspection.",
+   "quote": "barb will email brett and mike when the next assessment is scheduled."
+  },
+  {
+   "decision": "Barb will send the new legal policy to the Commission for discussion at a future meeting.",
+   "quote": "barb will send it out to the commission for discussion at a future meeting."
+  },
+  {
+   "decision": "Barb, Jack and Brett will be on the pre-bid conference call on 8/12 for the pump station O&M RFP.",
+   "quote": "barb, jack and brett will be on the call."
+  },
+  {
+   "decision": "Bright Farms will be placed on the 8/25 agenda to discuss the project.",
+   "quote": "they will be on the agenda of 8/25 to discuss the project."
+  },
+  {
+   "decision": "Dave suggested Jack calculate the cost of the clogs and ask Heather whether reimbursement can be obtained from the Safe Act.",
+   "quote": "dave suggested jack calculate the cost due to the clogs and ask heather if they can get reimbursement from the safe act."
+  },
+  {
+   "decision": "Brett asked that discussion of Jack's suggestions for cameraing lines and repairing manhole covers be added to a future agenda.",
+   "quote": "brett asked to add discussion of jack's suggestions for cameraing lines and repairing manhole covers."
+  },
+  {
+   "decision": "The Commission will look at the pump station maintenance plan in the next quarter.",
+   "quote": "dave said they will be looking at the maintenance plan in the next quarter."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Flow Assessment equipment lease",
+   "what_was_recorded": "The equipment leasing agreement with Flow Assessment covers the leasing for the year at a stated cost.",
+   "figures_as_printed": [
+    "$5,400"
+   ],
+   "quote": "the agreement is for $5,400 to cover the leasing for the year."
+  },
+  {
+   "topic": "Meter pit equipment upgrades in FY21 Budget",
+   "what_was_recorded": "Equipment upgrades in the meter pits that will be obsolete by year end were included in the FY21 Budget; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "these upgrades were included in the fy21 budget."
+  },
+  {
+   "topic": "Buying versus renting flow meters",
+   "what_was_recorded": "Jack noted the meters might be purchased for less, but renting lets Flow Assessment stock and maintain them; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "they might be able to purchase for a less but by renting the meters, flow assessment will stock and maintain them."
+  },
+  {
+   "topic": "SCADA upgrades at pump stations",
+   "what_was_recorded": "Upgrading all stations with SCADA was discussed as very expensive and cost prohibitive; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the cost for upgrading the stations was very expensive"
+  },
+  {
+   "topic": "FY20 budget",
+   "what_was_recorded": "Barb sent the final year-to-date FY20 budget and reported all FY20 bills have been paid; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "barb sent the commission the final year-to-date budget and all fy20 bills have been paid."
+  },
+  {
+   "topic": "Grease trap renewal fees",
+   "what_was_recorded": "Grease trap renewals are due 8/15; one customer thanked the Commission for waiving the fees; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "she has received 7 back out of 19 and also one thank you for waiving the fees."
+  },
+  {
+   "topic": "Irrigation policy fees",
+   "what_was_recorded": "The irrigation policy update changes the policy name, fees and repercussions for non-payment; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the changes are the policy name, fees and repercussions for non-payment."
+  },
+  {
+   "topic": "Bright Farms fees",
+   "what_was_recorded": "Barb communicated with Bright Farms on fees; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "barb communicated with them on fees"
+  },
+  {
+   "topic": "Clog costs and Safe Act reimbursement",
+   "what_was_recorded": "Jack is to calculate the cost of clogs caused by wipes and the Commission asked whether reimbursement can be obtained from the Safe Act; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "dave suggested jack calculate the cost due to the clogs and ask heather if they can get reimbursement from the safe act."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jack",
+   "stated_role": "not stated",
+   "topic": "jetting of lines, wipes and manhole covers",
+   "quote": "public comment-jack said he had scheduled jetting of the lines, that had been put off from the last fiscal year."
+  },
+  {
+   "speaker": "John",
+   "stated_role": "not stated",
+   "topic": "wipes and flow meters",
+   "quote": "john asked jack if the wipes are getting down into the flow meters."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment on jetting and I/I",
+   "resolution": "no action; Jack's suggestions added to a future agenda",
+   "quote": "public comment-jack said he had scheduled jetting of the lines, that had been put off from the last fiscal year.",
+   "tags": [
+    "jetting",
+    "I/I",
+    "public comment",
+    "manhole covers"
+   ]
+  },
+  {
+   "topic": "I/I 3rd Party Contract and Draft Report Review and Meter Import Project",
+   "resolution": "discussed; meter import to proceed before adding to contract; draft report on a separate meeting",
+   "quote": "i/l 3rd party contract and draft report review and meter import project- barb noted that the draft report was",
+   "tags": [
+    "I/I",
+    "Woodward & Curran",
+    "meter import",
+    "draft report",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Flow Assessment monitoring and equipment lease contracts",
+   "resolution": "approved",
+   "quote": "motion: john r. second: brett r. to accept the flow assessment monitoring contract and the equipment leasing contract.",
+   "tags": [
+    "flow meters",
+    "contracts",
+    "Flow Assessment"
+   ]
+  },
+  {
+   "topic": "RFP Status - Pump Station Operations & Maintenance",
+   "resolution": "reported; pre-bid conference 8/12, bids due 8/21",
+   "quote": "rfp status-pump station operations & maintenance- barb reported they had 6 responses",
+   "tags": [
+    "RFP",
+    "pump stations",
+    "bids"
+   ]
+  },
+  {
+   "topic": "Bright Farms",
+   "resolution": "placed on 8/25 agenda",
+   "quote": "bright farms- barb communicated with them on fees and they will be on the agenda of 8/25",
+   "tags": [
+    "Bright Farms",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Grease Trap program",
+   "resolution": "reported; renewals due 8/15",
+   "quote": "grease trap program - barb reported that the annual renewal letters went out",
+   "tags": [
+    "grease trap",
+    "renewals"
+   ]
+  },
+  {
+   "topic": "FY20 Budget",
+   "resolution": "reported; FY20 bills paid",
+   "quote": "yd fy 20 budget -barb sent the commission the final year-to-date budget",
+   "tags": [
+    "budget",
+    "FY20"
+   ]
+  },
+  {
+   "topic": "Minutes of 7/28",
+   "resolution": "approved",
+   "quote": "motion: brett r. second: john r. to accept the minutes of 7/28/20.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Discussion - legal policy",
+   "resolution": "to be sent to Commission for a future meeting",
+   "quote": "dave talked to heather (town manager) about the legal policy and they have put together a",
+   "tags": [
+    "legal policy"
+   ]
+  },
+  {
+   "topic": "Business Manager Report - Irrigation policy update and public hearing schedule",
+   "resolution": "public hearings set for 8/25 and 9/8",
+   "quote": "the two public hearings will be the 8/25 and 9/8 meetings.",
+   "tags": [
+    "irrigation policy",
+    "public hearing",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Communication",
+   "resolution": "reported; website updated",
+   "quote": "communication- barb had updated the website with the rfp",
+   "tags": [
+    "website",
+    "communication"
+   ]
+  },
+  {
+   "topic": "Member Agenda Inputs for Future Meetings",
+   "resolution": "Jack's suggestions added to future agenda",
+   "quote": "brett asked to add discussion of jack's suggestions for cameraing",
+   "tags": [
+    "agenda",
+    "I/I",
+    "manhole covers"
+   ]
+  },
+  {
+   "topic": "Public comment on wipes and maintenance plan",
+   "resolution": "no action; maintenance plan review next quarter; Safe Act reimbursement to be explored",
+   "quote": "public comment-john asked jack if the wipes are getting down into the flow meters.",
+   "tags": [
+    "wipes",
+    "flow meters",
+    "maintenance plan",
+    "reimbursement"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Carl Luck's 3rd party input email and Compliance concerns with contract's scope of services",
+   "where": "list",
+   "quote": "carl luck's 3rd party input email and compliance concerns with contract's scope of services."
+  },
+  {
+   "name": "Flow Assessment contracts for Flow Monitoring and Equipment Lease",
+   "where": "list",
+   "quote": "flow assessment contracts for flow monitoring and equipment lease"
+  },
+  {
+   "name": "Draft Report",
+   "where": "text",
+   "quote": "the draft report was sent to the commission, along with carl's input on the draft."
+  },
+  {
+   "name": "RFP - Pump Station Operations & Maintenance",
+   "where": "text",
+   "quote": "rfp status-pump station operations & maintenance- barb reported they had 6 responses"
+  },
+  {
+   "name": "proposed Deduct Meter Policy",
+   "where": "text",
+   "quote": "the proposed deduct meter policy."
+  },
+  {
+   "name": "new legal policy",
+   "where": "text",
+   "quote": "dave talked to heather (town manager) about the legal policy and they have put together a"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "I/I",
+  "meter import",
+  "flow meters",
+  "contracts",
+  "RFP",
+  "grease trap",
+  "budget",
+  "public comment",
+  "Woodward & Curran",
+  "Flow Assessment",
+  "jetting",
+  "wipes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {}
 }

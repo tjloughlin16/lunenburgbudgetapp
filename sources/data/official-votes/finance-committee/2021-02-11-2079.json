@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2021-02-11",
  "docid": "2079",
@@ -12,15 +12,442 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Motion to adjourn the meeting.",
    "moved_by": "Dave",
    "seconded_by": "Peter",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn 8:21 dave, seconded peter, passes unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted from scanned minutes via macOS Vision. The text is clear and readable.",
- "cost_usd": 0.0815975
+ "note": "OCR text from a scan with garbled layout: the present list is run together, agenda item 4 and item 7 headings are missing, page 6 starts mid-sentence, and the Heather L. and Heather S. speaker labels are as printed. No votes other than the adjournment motion are recorded. Dollar figures are as OCR'd; the expenditure table has dollar signs split from their figures and the FY 2022 Total is not labelled by year. The minutes name a presentation ('attached presentation') but do not set out a documents list.",
+ "cost_usd": 0.009022,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm and read the"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "member (as printed in attendance line)",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "member (printed as Dave in the minutes)",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "member",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "member (printed as Chris in the minutes)",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "member",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "member (printed as Heather S. in public comment)",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Heather L.",
+   "role": "not stated (presented budget information; printed only as Heather L.)",
+   "status": "present",
+   "quote": "heather l. - yes - built into the budget as salary reserve."
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "karen brochu - can get that figure for us."
+  },
+  {
+   "name": "Chief Sullivan",
+   "role": "not stated (printed as Chief Sullivan)",
+   "status": "not stated",
+   "quote": "chief sullivan - hoping that's the case and if the budget could increase that line"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes for December and January were deferred; Peter and Jay will take them up next week (no vote recorded).",
+   "quote": "peter and jay will take up next week."
+  },
+  {
+   "decision": "Capital Planning Policy Review is the next meeting item; the chair noted no need for FinCom involvement at this time.",
+   "quote": "next meeting - capital planning policy review - no need to have fincom involvement at this time."
+  },
+  {
+   "decision": "The chair said time in April should be set aside to take up the proposed policy on purchase thresholds and oversight of nonbudget spending.",
+   "quote": "terri - we should have some time in april to set aside for that."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Property tax revenue estimate",
+   "what_was_recorded": "Property taxes are printed at $280,590 with a 2 2% increase (as printed).",
+   "figures_as_printed": [
+    "$280,590"
+   ],
+   "quote": "property taxes - $280,590 - 2 2% increase"
+  },
+  {
+   "topic": "Local receipts",
+   "what_was_recorded": "A $50,000 increase is estimated for Motor Vehicle Excise Tax.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "local receipts - $50,000 increase estimated for motor vehicle excise tax"
+  },
+  {
+   "topic": "New growth assumption",
+   "what_was_recorded": "New growth is assumed at $280,590.",
+   "figures_as_printed": [
+    "$280,590"
+   ],
+   "quote": "new growth - assumes $280,590"
+  },
+  {
+   "topic": "Total budget figure",
+   "what_was_recorded": "A total of $44,949,784 is printed directly before the FY 2022 target budget highlights; the minutes do not say which budget year it covers.",
+   "figures_as_printed": [
+    "$44,949,784"
+   ],
+   "quote": "total - $44,949,784 fy 2022 - target budget highlights"
+  },
+  {
+   "topic": "Police",
+   "what_was_recorded": "$35K is listed for an additional Patrol Officer in the FY 2022 target budget.",
+   "figures_as_printed": [
+    "$35K"
+   ],
+   "quote": "police - $35k for additional patrol officer"
+  },
+  {
+   "topic": "Fire",
+   "what_was_recorded": "$81K is listed for an additional Career Firefighter in the FY 2022 target budget.",
+   "figures_as_printed": [
+    "$81K"
+   ],
+   "quote": "fire - $81k for additional career firefighter"
+  },
+  {
+   "topic": "DPW pavement management",
+   "what_was_recorded": "$50K is listed for Pavement Management in the FY 2022 target budget.",
+   "figures_as_printed": [
+    "$50K"
+   ],
+   "quote": "dpw - $50k for pavement management"
+  },
+  {
+   "topic": "Public school increase",
+   "what_was_recorded": "$528 is listed for a 2.5% increase to the Public School budget.",
+   "figures_as_printed": [
+    "$528"
+   ],
+   "quote": "public school - $528 for a 2.5% increase"
+  },
+  {
+   "topic": "MontyTech assessment",
+   "what_was_recorded": "$22K is listed for a 2.5% increase in the MontyTech Assessment.",
+   "figures_as_printed": [
+    "$22K"
+   ],
+   "quote": "montytech assessment - $22k for a 2.5% increase"
+  },
+  {
+   "topic": "Worcester Regional Retirement",
+   "what_was_recorded": "$150K is listed for a 10% increase in Worcester Reg. Retirement.",
+   "figures_as_printed": [
+    "$150K"
+   ],
+   "quote": "worcester reg. retirement - $150k or 10% increase"
+  },
+  {
+   "topic": "Health insurance",
+   "what_was_recorded": "$179K is listed for a 3% rate increase for active employees and a 5% rate increase for town and school retirees.",
+   "figures_as_printed": [
+    "$179K"
+   ],
+   "quote": "health insurance - $179k 3% rate increase for active and 5% rate increase for"
+  },
+  {
+   "topic": "Solid waste and recycling program",
+   "what_was_recorded": "$30K is listed for a 15% increase in the Solid Waste/Recycling Program.",
+   "figures_as_printed": [
+    "$30K"
+   ],
+   "quote": "solid waste/recycling program - $30k- 15% increase"
+  },
+  {
+   "topic": "Above-budget highlights",
+   "what_was_recorded": "Above-budget amounts are listed by department, from $15K to $154K, with $154K for Lunenburg Public School.",
+   "figures_as_printed": [
+    "$23K",
+    "$15K",
+    "$22K",
+    "$43K",
+    "$24K",
+    "$24K",
+    "$154K"
+   ],
+   "quote": "$23k - general government $15k - police $22k - fire $43k - facilities"
+  },
+  {
+   "topic": "Non-discretionary debt service",
+   "what_was_recorded": "Total non-discretionary debt service for FY 2022 is printed as $4, 562,594; it includes tax outside 2 2/1%, water, sewer, and MSBA School.",
+   "figures_as_printed": [
+    "$4, 562,594"
+   ],
+   "quote": "includes - tax outside 2 2/1%, water, sewer, msba school total - $4, 562,594"
+  },
+  {
+   "topic": "FY 2022 expenditures",
+   "what_was_recorded": "The expenditure table lists capital articles, prior year expenses, OPEB liability, stabilization fund and special purpose stabilization figures, totaling $1,780,869. The OCR splits some dollar signs from their figures.",
+   "figures_as_printed": [
+    "$1,499,825",
+    "$ 626",
+    "$ 180,418",
+    "$ 100,000",
+    "$1,780,869"
+   ],
+   "quote": "$1,499,825 $ 626 $ 180,418 $ 100,000 $ $1,780,869"
+  },
+  {
+   "topic": "Preliminary budget balances",
+   "what_was_recorded": "The preliminary budget is said to leave a $494K unappropriated balance and $834K of Free Cash.",
+   "figures_as_printed": [
+    "$494K",
+    "$834K"
+   ],
+   "quote": "leaves $494k unappropriated balance"
+  },
+  {
+   "topic": "Unappropriated cash and DPW vehicle",
+   "what_was_recorded": "Dave raised keeping the $800K plus in unappropriated cash and using it to buy the DPW vehicle.",
+   "figures_as_printed": [
+    "$800K"
+   ],
+   "quote": "if we maintain that $800k plus in unappropriated cash wouldn't it better"
+  },
+  {
+   "topic": "Fire turn-out gear",
+   "what_was_recorded": "Dave asked whether the Fire Department's $10,000 line item increase for turn-out gear is enough; Chief Sullivan said a regular increase would take gear out of the Capital Plan.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "with the fire deparment's $10,000 line item increase for turn-out gear is"
+  },
+  {
+   "topic": "Special Purpose Stabilization Fund balance",
+   "what_was_recorded": "Heather L. gave the Special Purpose Stabilization Fund balance as approximately $1,196.470.",
+   "figures_as_printed": [
+    "$1,196.470"
+   ],
+   "quote": "heather l. - special purpose stabilization fund figure is approximately $1,196.470."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Peter",
+   "stated_role": "not stated",
+   "topic": "PACC streaming problems during public comment",
+   "quote": "peter - had a conversation with someone who was quite frustrated to connect"
+  },
+  {
+   "speaker": "Heather L.",
+   "stated_role": "not stated",
+   "topic": "response on streaming problem",
+   "quote": "heather l. - the problem has been identified and addressed. worked it out"
+  },
+  {
+   "speaker": "Heather S.",
+   "stated_role": "not stated",
+   "topic": "when the streaming was fixed",
+   "quote": "heather s. - when was it fixed? watching the boys basketball game live and it"
+  },
+  {
+   "speaker": "Heather L.",
+   "stated_role": "not stated",
+   "topic": "announcement of second Community Outreach meeting on Adult Use Cannabis Facility",
+   "quote": "heather l. - a second community outreach meeting with greenleaf about the"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and advisory statement",
+   "resolution": "no action",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm and read the",
+   "tags": [
+    "call to order",
+    "zoom"
+   ]
+  },
+  {
+   "topic": "Chair report",
+   "resolution": "no action",
+   "quote": "2. chair report no report.",
+   "tags": [
+    "chair report"
+   ]
+  },
+  {
+   "topic": "Public comment on PACC streaming",
+   "resolution": "no action",
+   "quote": "peter - had a conversation with someone who was quite frustrated to connect",
+   "tags": [
+    "public comment",
+    "streaming",
+    "PACC"
+   ]
+  },
+  {
+   "topic": "FY 2022 target budget highlights and preliminary budget",
+   "resolution": "presented, discussed; no vote",
+   "quote": "would like to start a health insurance stabilization fund for any potential",
+   "tags": [
+    "budget",
+    "FY2022",
+    "target budget",
+    "preliminary budget",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Health insurance and vision plan discussion",
+   "resolution": "discussed; no vote",
+   "quote": "chris - on the health insurance - why is it so much lower?",
+   "tags": [
+    "health insurance",
+    "vision plan",
+    "school budget",
+    "one-time savings"
+   ]
+  },
+  {
+   "topic": "Collective bargaining, DPW vehicle, fire turn-out gear, special purpose stabilization fund",
+   "resolution": "discussed; no vote",
+   "quote": "dave - with all the collective bargaining agreements pending - do we have all",
+   "tags": [
+    "collective bargaining",
+    "salary reserve",
+    "DPW vehicle",
+    "fire gear",
+    "stabilization fund"
+   ]
+  },
+  {
+   "topic": "Stabilization fund articles for Town Meeting",
+   "resolution": "discussed; no vote",
+   "quote": "dave - the stabilization fund - will that be an article to create that at town",
+   "tags": [
+    "stabilization fund",
+    "Town Meeting",
+    "articles"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "deferred to next week",
+   "quote": "peter and jay will take up next week.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports (Capital Planning, School Committee)",
+   "resolution": "reported; no vote",
+   "quote": "dave - cap planning if there is more funding the committee will move down the cap planning list.",
+   "tags": [
+    "capital planning",
+    "school committee",
+    "SER funding"
+   ]
+  },
+  {
+   "topic": "Spending policy and oversight of nonbudget spending",
+   "resolution": "discussed; deferred to April",
+   "quote": "would like to have a policy drafted with a threshold for purchases and oversight",
+   "tags": [
+    "transfers",
+    "oversight",
+    "policy",
+    "nonbudget spending"
+   ]
+  },
+  {
+   "topic": "Public comment and announcement",
+   "resolution": "announcement made; no action",
+   "quote": "heather l. - a second community outreach meeting with greenleaf about the",
+   "tags": [
+    "public comment",
+    "cannabis facility",
+    "Greenleaf"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:21 PM, passed unanimously",
+   "quote": "motion to adjourn 8:21 dave, seconded peter, passes unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FinCom budget presentation (attached; undated in minutes)",
+   "where": "text",
+   "quote": "fy 2022 - above budget highlights (more details on the attached presentation)"
+  },
+  {
+   "name": "Capital Plan",
+   "where": "text",
+   "quote": "chris - with the capital plan are you recommending to go lower in priority?"
+  }
+ ],
+ "tags": [
+  "FY2022 budget",
+  "target budget",
+  "preliminary budget",
+  "health insurance",
+  "vision plan",
+  "school budget",
+  "stabilization fund",
+  "free cash",
+  "unappropriated balance",
+  "Town Meeting",
+  "public comment",
+  "PACC streaming",
+  "minutes",
+  "capital planning",
+  "MontyTech",
+  "solid waste",
+  "Zoom"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

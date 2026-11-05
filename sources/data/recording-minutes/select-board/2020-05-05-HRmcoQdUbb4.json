@@ -1,0 +1,804 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2020-05-05",
+ "video_id": "HRmcoQdUbb4",
+ "video_url": "https://www.youtube.com/watch?v=HRmcoQdUbb4",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2020-05-05-HRmcoQdUbb4.json",
+  "sha256": "780ca3ed7d50efafe622048f389a4f5057148207ca69ae35a79d7f3f462ad28a",
+  "caption_lines": 522,
+  "segments": 4704
+ },
+ "recording": {
+  "duration_s": 11077,
+  "duration": "3:04",
+  "spoken_chars": 133023,
+  "words_approx": 22170
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05052020-5198",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-05-05-agenda-5198.txt",
+   "path": "sources/meetings/select-board/2020-05-05-agenda-5198.pdf"
+  },
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05052020-6343",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-05-05-agenda-6343.txt",
+   "path": "sources/meetings/select-board/2020-05-05-agenda-6343.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05052020-5198",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-05-05-minutes-5198.txt",
+   "path": "sources/meetings/select-board/2020-05-05-minutes-5198.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05052020-6343",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-05-05-minutes-6343.txt",
+   "path": "sources/meetings/select-board/2020-05-05-minutes-6343.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-04T02:37:58Z",
+  "cost_usd": 0.42700150000000003
+ },
+ "minutes": {
+  "headline": "Board approved two liquor license transfers, heard the fuel tank location dispute, and recommended 13 warrant articles",
+  "summary": "Remote meeting. The board approved an all-alcohol license transfer with a pledge and returned a pizzeria license to its prior owner. It heard the DPW director, the chiefs and the Conservation Commission on the location of the town fuel tanks near Mopus Brook, with no action taken. It reviewed FY21 budget adjustments and the annual town meeting warrant articles, recommending some, removing some, and deferring the rest to next week.",
+  "attendees": [
+   {
+    "name_as_heard": "tom alonso",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "phyllis luck",
+    "role": "vice chair"
+   },
+   {
+    "name_as_heard": "katie adams",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "michael ray jeffries",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "madame town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "jack",
+    "role": "DPW director"
+   },
+   {
+    "name_as_heard": "chief moreno",
+    "role": "chief"
+   },
+   {
+    "name_as_heard": "chief sullivan",
+    "role": "chief"
+   },
+   {
+    "name_as_heard": "brian marchetti",
+    "role": "presenter (engineer)"
+   },
+   {
+    "name_as_heard": "richard bursch",
+    "role": "conservation commission chair"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 5485,
+    "topic": "Petitioner for an additional all-alcohol off-premise license at a country variety store asked how to proceed after being told the article is not in proper form."
+   },
+   {
+    "t": 6352,
+    "topic": "Former resident said the wording could be fixed in the motion or by amendment on the floor."
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "facilities",
+   "grants",
+   "legal",
+   "public-safety",
+   "town-departments",
+   "town-meeting",
+   "transfers",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 1012,
+    "motion": "Approve transfer of the all-alcohol restaurant license to the new bar corporation at 494 Electric Ave, including the pledge",
+    "outcome": "passed 4-0",
+    "procedural": false
+   },
+   {
+    "t": 1484,
+    "motion": "Transfer the license back to Ember's Pizzeria",
+    "outcome": "passed 4-0",
+    "procedural": false
+   },
+   {
+    "t": 5396,
+    "motion": "Conservation Commission adjourns",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 7243,
+    "motion": "Accept minutes of Feb 18 and March 3, 2020",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 8357,
+    "motion": "Remove warrant articles h and i (collective bargaining)",
+    "outcome": "passed 4-0",
+    "procedural": false
+   },
+   {
+    "t": 8442,
+    "motion": "Remove warrant article k (OPEB)",
+    "outcome": "passed 4-0",
+    "procedural": false
+   },
+   {
+    "t": 8723,
+    "motion": "Remove warrant article s (PAC capital)",
+    "outcome": "passed 4-0",
+    "procedural": false
+   },
+   {
+    "t": 10030,
+    "motion": "Recommend approval of the consensus list of warrant articles",
+    "outcome": "passed 4-0",
+    "procedural": false
+   },
+   {
+    "t": 11013,
+    "motion": "Enter executive session on pending litigation (dangerous dog appeal) and adjourn after",
+    "outcome": "passed 4-0",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 7691,
+    "topic": "FY21 budget adjustments",
+    "what_was_said": "Revenues updated for final enterprise numbers and a technology budget reduction; prior-year invoices need a town meeting vote.",
+    "figures_as_heard": [
+     "18 063",
+     "476.21",
+     "998 thousand 492.11 cents"
+    ]
+   },
+   {
+    "t": 7863,
+    "topic": "Enterprise budgets",
+    "what_was_said": "Sewer, solid waste and water enterprise figures reviewed.",
+    "figures_as_heard": [
+     "302 000",
+     "25 000",
+     "one million eight hundred and twenty thousand two hundred and three dollars and forty four cents"
+    ]
+   },
+   {
+    "t": 7990,
+    "topic": "OPEB / stabilization",
+    "what_was_said": "Town manager recommends deferring the OPEB article and moving the amount to stabilization.",
+    "figures_as_heard": [
+     "110",
+     "210"
+    ]
+   },
+   {
+    "t": 10383,
+    "topic": "Town hall handicap ramp",
+    "what_was_said": "Bid awarded, partly paid by a state earmark and the rest from facilities budget.",
+    "figures_as_heard": [
+     "forty six thousand six hundred nineteen dollars",
+     "twenty seven thousand dollars"
+    ]
+   },
+   {
+    "t": 10404,
+    "topic": "DPW roof project",
+    "what_was_said": "Came in under the allotted total.",
+    "figures_as_heard": [
+     "7200",
+     "84 000"
+    ]
+   },
+   {
+    "t": 10508,
+    "topic": "Green Communities and Community Compact grants",
+    "what_was_said": "Competitive grant applied for; compact grants approved.",
+    "figures_as_heard": [
+     "108 962",
+     "fifty thousand dollar"
+    ]
+   },
+   {
+    "t": 4366,
+    "topic": "Fuel tank engineering analysis",
+    "what_was_said": "A member said an analysis of the best location would cost little compared with potential spending.",
+    "figures_as_heard": [
+     "five thousand dollars"
+    ]
+   },
+   {
+    "t": 7289,
+    "topic": "Warrants signed",
+    "what_was_said": "Deduction, accounts payable and payroll warrants signed.",
+    "figures_as_heard": [
+     "two hundred sixty one thousand ninety two dollars and seventy one cents",
+     "two hundred eighty seven thousand two hundred forty two dollars and seventy nine cents",
+     "eight hundred eight thousand nine hundred eighty two dollars and eighty five cents"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 7990,
+    "description": "Amount planned for OPEB trust to be moved into the stabilization fund instead",
+    "amount_as_heard": "110",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 6248,
+    "decision": "Town counsel to be asked whether the citizen petition wording can be amended on the floor; board will not vote to support it until then."
+   },
+   {
+    "t": 9570,
+    "decision": "Held articles to be taken up next week when the clerk returns."
+   },
+   {
+    "t": 10654,
+    "decision": "Town manager evaluation postponed until after the election."
+   },
+   {
+    "t": 10734,
+    "decision": "Next meeting May 12 to cover the remaining warrant articles."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 28,
+    "t_end": 470,
+    "topic": "Opening, remote meeting notices, board comments on absentee ballots",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 474,
+    "t_end": 600,
+    "topic": "Town caucus cancelled",
+    "resolution": "informational",
+    "tags": [
+     "elections"
+    ]
+   },
+   {
+    "t_start": 601,
+    "t_end": 1150,
+    "topic": "Public hearing: all-alcohol license transfer with pledge",
+    "resolution": "voted",
+    "tags": [
+     "legal",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 1155,
+    "t_end": 1550,
+    "topic": "Embers Pizzeria license transfer back",
+    "resolution": "voted",
+    "tags": [
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 1551,
+    "t_end": 5440,
+    "topic": "Fuel tank location with DPW, chiefs and Conservation Commission",
+    "resolution": "no action",
+    "tags": [
+     "facilities",
+     "public-safety",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 5463,
+    "t_end": 6440,
+    "topic": "Citizen petition for additional liquor license",
+    "resolution": "referred to town counsel",
+    "tags": [
+     "warrant-article",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 6503,
+    "t_end": 7130,
+    "topic": "Town manager COVID-19 report and event questions",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report"
+    ]
+   },
+   {
+    "t_start": 7243,
+    "t_end": 7570,
+    "topic": "Minutes, warrants, action items",
+    "resolution": "voted",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 7584,
+    "t_end": 8080,
+    "topic": "FY21 budget adjustments",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "budget-fy27"
+    ]
+   },
+   {
+    "t_start": 8082,
+    "t_end": 10130,
+    "topic": "Annual town meeting warrant article review",
+    "resolution": "voted",
+    "tags": [
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 10134,
+    "t_end": 10640,
+    "topic": "Town manager report",
+    "resolution": "informational",
+    "tags": [
+     "grants",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 10654,
+    "t_end": 11057,
+    "topic": "Evaluation, schedule, board comments, executive session",
+    "resolution": "voted to enter executive session",
+    "tags": [
+     "executive-session",
+     "personnel"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Vote on accepting the minutes: only some ayes are in the captions.",
+   "Several warrant article letters and amounts are garbled.",
+   "Spoken budget figures in the revenue worksheet review are partly garbled."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 1961,
+    "about": "Fire chief angry that the fuel tank project is being questioned after the town meeting vote.",
+    "sides": "a chief against questioning of the project",
+    "words_as_heard": "i'm really angry about this",
+    "kind": "charged language"
+   },
+   {
+    "t": 4426,
+    "about": "Members disagreed over whether the board should second-guess the tank location.",
+    "sides": "a member wanting an engineering analysis versus members saying it is outside the board's role",
+    "words_as_heard": "i feel like we're caught in a discussion that doesn't belong in our jurisdiction",
+    "kind": "members disagree"
+   },
+   {
+    "t": 9116,
+    "about": "Board split on whether to remove the old primary school demolition article.",
+    "sides": "one member for removing, others for keeping",
+    "words_as_heard": "so that means we have a disagreement",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 1939,
+    "kind": "safety",
+    "about": "Chief says the public is in jeopardy if emergency vehicles lack immediate fuel.",
+    "who": "a chief",
+    "words_as_heard": "otherwise it puts the public in in jeopardy"
+   },
+   {
+    "t": 4137,
+    "kind": "safety",
+    "about": "Conservation chair warns of a fuel spill reaching Mopus Brook and downstream reserves.",
+    "who": "a conservation commission member",
+    "words_as_heard": "if we dump eight thousand gallons of fuel through some unknown mechanism"
+   },
+   {
+    "t": 4924,
+    "kind": "condition",
+    "about": "A member says money should not be spent on conservation review unless the location was shown to be best.",
+    "who": "a member",
+    "words_as_heard": "my answer to that is no no we should not spend money on on going through conservation"
+   },
+   {
+    "t": 5575,
+    "kind": "liability or legal",
+    "about": "Town counsel says the citizen petition would not have the intended legal effect.",
+    "who": "the town manager",
+    "words_as_heard": "it's not in the proper form or substance"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 7584,
+    "name_as_heard": "adjustments to fiscal 21 budget",
+    "kind": "spreadsheet",
+    "words_as_heard": "adjustments to fiscal 21 budget",
+    "shown": true
+   },
+   {
+    "t": 7777,
+    "name_as_heard": "revenue expense worksheet",
+    "kind": "spreadsheet",
+    "words_as_heard": "it's the revenue expense worksheet",
+    "shown": true
+   },
+   {
+    "t": 8082,
+    "name_as_heard": "annual town meeting warrant drafts",
+    "kind": "warrant article",
+    "words_as_heard": "everybody has their track drafts",
+    "shown": true
+   },
+   {
+    "t": 7243,
+    "name_as_heard": "minutes of february 18 and march 3",
+    "kind": "prior minutes",
+    "words_as_heard": "minutes of february 18th and march 3rd",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "town-fuel-tank-replacement",
+    "title": "Fuel tank replacement",
+    "question": "What will the fuel tank replacement cost and could an alternate location change it?",
+    "t": 1751,
+    "words_as_heard": "it was voted last year's town meeting to uh to move forward with the project",
+    "data_in_play": [
+     "five thousand dollars"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "old-primary-school-demolition",
+    "title": "Old primary school demolition",
+    "question": "What would demolition and design of the old primary school site cost?",
+    "t": 8807,
+    "words_as_heard": "the demolition and the recreation of uh the a park or open space at that site",
+    "data_in_play": [],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted 4-0 to recommend a consensus list of annual town meeting warrant articles, after removing the collective bargaining, OPEB and PAC capital articles.",
+    "t": 10030
+   },
+   {
+    "line": "The board voted 4-0 to approve an all-alcohol restaurant license transfer with a pledge, and 4-0 to return a pizzeria license to its prior owner.",
+    "t": 1012
+   },
+   {
+    "line": "The board heard the DPW director, the chiefs and the Conservation Commission on where to site the town fuel tanks near Mopus Brook; no action was taken.",
+    "t": 1551
+   },
+   {
+    "line": "On a citizen petition for an additional liquor license, the board will ask town counsel whether the wording can be amended on the floor before voting to support it.",
+    "t": 6248
+   },
+   {
+    "line": "Held articles move to the May 12 meeting; the town manager evaluation was postponed until after the election.",
+    "t": 9570
+   }
+  ],
+  "why_it_matters": [
+   "The recommended warrant articles are what residents will be asked to vote on at town meeting, and the deferred OPEB article and the FY21 budget adjustments bear on future tax bills.",
+   "The fuel tank location is undecided, so the cost and siting of a town facility near a brook remain open."
+  ],
+  "watch_next": [
+   "May 12 Select Board meeting, which is to cover the remaining warrant articles.",
+   "Town counsel's answer on whether the citizen petition wording can be amended on the floor."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-04T02:38:04Z",
+   "cost_usd": 0.0286091
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05052020-5198",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-05-05-minutes-5198.txt",
+   "path": "sources/meetings/select-board/2020-05-05-minutes-5198.pdf"
+  },
+  "official_sha256": "8ccff4df9b4c3706916625bc05c024b3e3794cf7a3f1f23d9ba99c1d63ee89c2",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the main votes (license transfers, removal of articles H, I and K) and on most figures. They differ mainly on the removal of article S and the consensus-list vote, which have no clear official counterpart. The OPEB and Stabilization deferral, the police chief's name, and the town counsel framing also need checking against the recording.",
+  "counts": {
+   "agree": 13,
+   "caption_error": 7,
+   "discrepancy": 5,
+   "only_in_ours": 2,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Alcohol license transfer to Il Forno at 494 Electric Ave",
+    "ours": "Approve transfer of the all-alcohol restaurant license to the new bar corporation at 494 Electric Ave, including the pledge — passed 4-0",
+    "official": "to approve the transfer of the all alcohol license from sean flan inc. to ii forno for the 494 electric avenue",
+    "note": "Both record a 4-0 vote approving the transfer; ours doesn't name the corporations."
+   },
+   {
+    "kind": "agree",
+    "about": "Transfer license back to Ember's Pizzeria",
+    "ours": "Transfer the license back to Ember's Pizzeria — passed 4-0",
+    "official": "to transfer the alcohol license from randy and lena grosser back to embers pizzeria",
+    "note": "Same motion, 4-0 in both."
+   },
+   {
+    "kind": "agree",
+    "about": "Remove warrant articles H and I",
+    "ours": "Remove warrant articles h and i (collective bargaining) — passed 4-0",
+    "official": "to remove articles \"h\" and \"i\" from the warrant",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Remove warrant article K (OPEB)",
+    "ours": "Remove warrant article k (OPEB) — passed 4-0",
+    "official": "to remove article \"k\" from the warrant",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Removal of warrant article S (PAC capital)",
+    "ours": "Remove warrant article s (PAC capital) — passed 4-0",
+    "official": "",
+    "note": "Our minutes record a 4-0 vote removing article S, but the official minutes list no such vote or removal. Check the recording near t=8723 and the official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Consensus list of warrant articles vs. articles left for next meeting",
+    "ours": "Recommend approval of the consensus list of warrant articles — passed 4-0",
+    "official": "motion: m. jeffreys 2n; p. luck ms. adams-aye, ms. luck-aye, mr. jeffreys-aye, mr. alonzo-aye",
+    "note": "The official 4-0 vote has no motion text, and the next line lists the articles left for next meeting. Check whether this is the same vote as our consensus-list recommendation."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Second motion with no recorded result",
+    "ours": "",
+    "official": "motion: k. adams 2n°: p. luck",
+    "note": "The official minutes have a motion with no vote result. Check the recording to see what it was and whether it passed."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "OPEB $110,000 moved to Stabilization",
+    "ours": "Amount planned for OPEB trust to be moved into the stabilization fund instead — 110 (discussed only)",
+    "official": "from last week is $110,000 transferred to the opeb liability.",
+    "note": "Both discuss the $110,000 (ours heard as 110). The official says the Town Manager would recommend deferring to the fall Town Meeting with the amount in Stabilization. Ours omits the deferral, so check the recording."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Technology budget reduction / FY21 adjustments",
+    "ours": "18 063",
+    "official": "general government reflects the reduction from the technology dept. budget of $18,063.",
+    "note": "Same figure; ours lacks the comma and dollar sign.",
+    "official_reading": "$18,063"
+   },
+   {
+    "kind": "agree",
+    "about": "Prior year bills total",
+    "ours": "476.21",
+    "official": "we also have two prior year bills totaling $476.21 that will have",
+    "note": "Same figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Enterprise budgets Solid Waste and Water",
+    "ours": "302 000, 25 000",
+    "official": "enterprise funds for solid waste ($302,000),",
+    "note": "Both give $302,000 and $25,000."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town Hall handicap ramp contract",
+    "ours": "forty six thousand six hundred nineteen dollars, twenty seven thousand dollars",
+    "official": "awarded to cornerstone builders of holyoke for a total of $46,619.",
+    "note": "Same amounts: $46,619 contract and $27,000 earmark.",
+    "official_reading": "$46,619"
+   },
+   {
+    "kind": "agree",
+    "about": "DPW roof project",
+    "ours": "7200, 84 000",
+    "official": "final cost came in $7,200 less than the allotted total of $84,000",
+    "note": "Same figures."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Green Communities grant figure",
+    "ours": "108 962, fifty thousand dollar",
+    "official": "[$108,962.75]",
+    "note": "Same figure with cents missing; the $50,000 Community Compact award also agrees.",
+    "official_reading": "$108,962.75"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fuel tank engineering analysis",
+    "ours": "Fuel tank engineering analysis: five thousand dollars",
+    "official": "",
+    "note": "The official mentions fuel tank mitigation costs but gives no $5,000 analysis figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrants signed totals",
+    "ours": "two hundred sixty one thousand ninety two dollars and seventy one cents, two hundred eighty seven thousand two hundred forty two dollars and seventy nine cents, eight hundred eight thousand nine hundred eighty two dollars and eighty five cents",
+    "official": "",
+    "note": "The official minutes give no warrant totals."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Debt exclusions and debt service figures",
+    "ours": "",
+    "official": "debt exclusions for the estimated cost for the middle/high school project and pavement management ($2,864,738.45)",
+    "note": "Our figures omit the $2,864,738.45 and $1,590,980.65 debt figures."
+   },
+   {
+    "kind": "agree",
+    "about": "Town manager evaluation postponed",
+    "ours": "Town manager evaluation postponed until after the election.",
+    "official": "she would like to take the bos' offer to do it after the election.",
+    "note": "Same decision."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Citizen petition wording and town counsel",
+    "ours": "Town counsel to be asked whether the citizen petition wording can be amended on the floor; board will not vote to support it until then.",
+    "official": "ms. lemieux will report back after talking to town counsel.",
+    "note": "Both involve a town counsel inquiry, but the official frames it as whether Mr. Wernick can try again at the fall Town Meeting. Ours says amendment on the floor. Check the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Remaining articles taken up at next meeting",
+    "ours": "Held articles to be taken up next week when the clerk returns.",
+    "official": "articles d, f, g, j, l, u, x, y, z, aa, bb, cc and ii will be discussed at the next meeting.",
+    "note": "Both defer the remaining articles to the next meeting; the reason (clerk returning) is only in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Re-opening task force",
+    "ours": "",
+    "official": "i have put together a re-opening task force that consists of our board of health agent from nashoba associated boards of",
+    "note": "Our minutes do not mention the task force."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Recycling coordinator position on hold",
+    "ours": "",
+    "official": "the recycling education and enforcement coordinator position has been put on hold due to covid-19.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "tom alonso (chair)",
+    "official": "chairman alonzo called the meeting to order at 7:02 p.m.",
+    "note": "Spelling differs.",
+    "official_reading": "Alonzo"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Jeffries",
+    "ours": "michael ray jeffries (member)",
+    "official": "vote: ms. adams-aye, mr. jeffreys-aye, ms. luck-aye, mr. alonzo-aye",
+    "note": "Spelling differs.",
+    "official_reading": "Jeffreys"
+   },
+   {
+    "kind": "agree",
+    "about": "Board members Luck and Adams",
+    "ours": "phyllis luck (vice chair); katie adams (member)",
+    "official": "vote: ms. luck-aye, ms. adams- aye, mr. jeffreys- aye, mr. alonzo -aye",
+    "note": "Both present."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town manager name",
+    "ours": "madame town manager (town manager)",
+    "official": "also present: heather lemieux, town manager;",
+    "note": "Captions heard only a title.",
+    "official_reading": "Heather Lemieux"
+   },
+   {
+    "kind": "caption_error",
+    "about": "DPW director",
+    "ours": "jack (DPW director)",
+    "official": "dpw director jack rodriquenz",
+    "note": "Ours has a first name only.",
+    "official_reading": "Jack Rodriquenz"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Police chief",
+    "ours": "chief moreno (chief)",
+    "official": "police chief jim marino",
+    "note": "The names differ; Moreno may be a mishearing of Marino. Check the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "Fire chief Sullivan",
+    "ours": "chief sullivan (chief)",
+    "official": "fire chiet patrick sullivan,",
+    "note": "Same person."
+   },
+   {
+    "kind": "agree",
+    "about": "Brian Marchetti, engineer",
+    "ours": "brian marchetti (presenter (engineer))",
+    "official": "mr. marchetti from mccarty engineering was contacted by the dpw to file the notice of intent.",
+    "note": "Same person."
+   },
+   {
+    "kind": "agree",
+    "about": "Richard Bursch, conservation commission",
+    "ours": "richard bursch (conservation commission chair)",
+    "official": "conservation commission members: richard bursch, bob pease, ken jones, jack rabbitt, carl luck",
+    "note": "Same person; the official lists him as a member and does not say chair."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other attendees (Grossers, Ricker, Aveni, Mohammed, Moore, conservation members)",
+    "ours": "",
+    "official": "randy grosser, lena grosser, ken ricker, dpw director jack rodriquenz, police chief jim marino",
+    "note": "The official lists many more attendees than ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 2,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T02:40:44Z",
+   "cost_usd": 0.0767891
+  }
+ }
+}

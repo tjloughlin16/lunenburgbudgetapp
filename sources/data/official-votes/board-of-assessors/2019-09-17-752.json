@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2019-09-17",
  "docid": "752",
@@ -12,13 +12,250 @@
  },
  "votes": [
   {
-   "motion": "To table the review of new Chapter applications until the next meeting",
-   "outcome": "not stated",
-   "procedural": true,
+   "motion": "Table the review of new Chapter applications until the next meeting.",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "board voted to table the review of new chapter applications until the next meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned minutes. Other actions recorded as \"reviewed and approved\" (prior minutes, vouchers, exemptions, authorizations, privilege fees) do not include explicit voting language or vote outcomes recorded.",
- "cost_usd": 0.09583449999999999
+ "note": "OCR text (macOS Vision). Page 2 is only a garbled signature block. Most approvals are recorded as \"approved\" or \"reviewed and approved\" with no motion, mover, seconder or count, so only the tabling is recorded as a vote. Several figures look OCR-garbled and are printed as they appear ($6.998.74, $355,000t, \"September 10'\"). Mr. Cardinal is named but the minutes say he did not attend the BOA meeting, so he is not listed as an attendee. The Town Manager, Police Chief and an Officer are mentioned but not named and are not listed. No public comment section appears.",
+ "cost_usd": 0.00556952,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "the meeting opened at 5:00 pm. chairman, richard letarte,"
+  },
+  {
+   "name": "Louis Franco",
+   "role": "Board Members",
+   "status": "present",
+   "quote": "board members, louis franco, rena swezey, associate regional assessor, joshua gendron and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Board Members",
+   "status": "present",
+   "quote": "board members, louis franco, rena swezey, associate regional assessor, joshua gendron and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Joshua Gendron",
+   "role": "Associate Regional Assessor",
+   "status": "present",
+   "quote": "board members, louis franco, rena swezey, associate regional assessor, joshua gendron and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "board members, louis franco, rena swezey, associate regional assessor, joshua gendron and louise paquette, administrative assessor."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and the July 30, 2019 minutes (no motion or count recorded).",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and july 30, 2019 minutes."
+  },
+  {
+   "decision": "Board reviewed and approved 92 statutory exemption applications, total amount granted $54,932.00.",
+   "quote": "92 applications for exemptions were reviewed and approved. total amount granted: $54,932.00."
+  },
+  {
+   "decision": "Board approved the form authorizing Louise Paquette to sign on behalf of the Board for DLS Gateway entries.",
+   "quote": "boa reviewed and approved the form authorizing louise to sign on behalf of the board."
+  },
+  {
+   "decision": "Rollback prepared and committed for Szocik / Proctor; no rollback due on 400 Howard St. because it has not received Chapter designation since 2013.",
+   "quote": "no rollback due on 400 howard st.; has not received chapter designation since 2013."
+  },
+  {
+   "decision": "Board approved the Sewer Privilege fee commitment / warrant for 146 Lancaster Ave. (071-029, Tapply, William & Bevin).",
+   "quote": "boa reviewed and approved the commitment / warrant sewer privilege fee in the amount of $6.998.74."
+  },
+  {
+   "decision": "Mr. Cardinal agreed to withdraw his 235 West St. Appellate Tax Board application; a corrected certificate stating the abatement was granted based on data change is to be mailed by certified mail.",
+   "quote": "louise will mail the certificate via certified mail."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Statutory exemptions",
+   "what_was_recorded": "92 exemption applications were reviewed and approved with a total amount granted printed.",
+   "figures_as_printed": [
+    "$54,932.00"
+   ],
+   "quote": "92 applications for exemptions were reviewed and approved. total amount granted: $54,932.00."
+  },
+  {
+   "topic": "MVE Veteran Exemption reimbursement via DLS Gateway",
+   "what_was_recorded": "Louise reported preparing the MVE Veteran Exemption report for Gateway reimbursement.",
+   "figures_as_printed": [
+    "$3,013.13"
+   ],
+   "quote": "louise reported that she has prepared the mve veteran exemption report to be submitted in gateway for reimbursement in the amount of $3,013.13."
+  },
+  {
+   "topic": "Chapter 61A rollback, Szocik / Proctor",
+   "what_was_recorded": "A rollback was prepared and committed for Szocik / Proctor for a property no longer under Chapter 61A.",
+   "figures_as_printed": [
+    "$3,699.99"
+   ],
+   "quote": "rollback prepared and committed in the amount of $3,699.99 for szocik / proctor."
+  },
+  {
+   "topic": "Sewer Privilege fee, 146 Lancaster Ave. (Sewer Order #24)",
+   "what_was_recorded": "The Board approved the commitment / warrant for the Sewer Privilege fee.",
+   "figures_as_printed": [
+    "$6.998.74"
+   ],
+   "quote": "boa reviewed and approved the commitment / warrant sewer privilege fee in the amount of $6.998.74."
+  },
+  {
+   "topic": "New Growth estimate",
+   "what_was_recorded": "Josh presented estimated New Growth valuations and estimated growth revenues; a finalized report is to come at the next meeting.",
+   "figures_as_printed": [
+    "$19,090,659",
+    "$355,000t"
+   ],
+   "quote": "josh presented to the boa estimated new growth valuations for real estate and personal property at approximately $19,090,659 with growth revenues estimated at $355,000t."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Routine approvals (vouchers, abatements, warrants, commitments, payroll, July 30, 2019 minutes)",
+   "resolution": "approved",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and july 30, 2019 minutes.",
+   "tags": [
+    "approvals",
+    "warrants",
+    "commitments"
+   ]
+  },
+  {
+   "topic": "Statutory Exemptions",
+   "resolution": "approved 92 applications",
+   "quote": "92 applications for exemptions were reviewed and approved. total amount granted: $54,932.00.",
+   "tags": [
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "Signature Authorization for DLS Gateway Entries",
+   "resolution": "approved form authorizing signature",
+   "quote": "boa reviewed and approved the form authorizing louise to sign on behalf of the board.",
+   "tags": [
+    "DLS Gateway",
+    "veterans"
+   ]
+  },
+  {
+   "topic": "Chapter Reviews",
+   "resolution": "rollback committed; new Chapter applications tabled",
+   "quote": "board voted to table the review of new chapter applications until the next meeting.",
+   "tags": [
+    "chapter 61A",
+    "rollback"
+   ]
+  },
+  {
+   "topic": "Privilege Fee / Sewer Order #24",
+   "resolution": "approved commitment / warrant",
+   "quote": "boa reviewed and approved the commitment / warrant sewer privilege fee in the amount of $6.998.74.",
+   "tags": [
+    "sewer privilege"
+   ]
+  },
+  {
+   "topic": "Correspondence about a disgruntled taxpayer",
+   "resolution": "no action (reported to Police Chief per Town Manager)",
+   "quote": "office has been in receipt of numerous visits, calls & emails from a disgruntled taxpayer.",
+   "tags": [
+    "staff safety",
+    "taxpayer conduct"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant articles",
+   "resolution": "no action (informational)",
+   "quote": "special town meeting - tuesday, november 12, 2019 - warrant articles will be open on september 10' and be must be submitted on or before september 30, 2019.",
+   "tags": [
+    "special town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Report by Assessor: New Growth",
+   "resolution": "informational; finalized report due next meeting",
+   "quote": "josh presented to the boa estimated new growth valuations for real estate and personal property at approximately $19,090,659 with growth revenues estimated at $355,000t.",
+   "tags": [
+    "new growth",
+    "valuation"
+   ]
+  },
+  {
+   "topic": "Appellate Tax Board case, 235 West St.",
+   "resolution": "applicant agreed to withdraw; certificate correction to be mailed",
+   "quote": "he agreed to withdraw his application with the atb with the understanding that another",
+   "tags": [
+    "appellate tax board",
+    "abatement"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "MVE Veteran Exemption report (Gateway reimbursement)",
+   "where": "text",
+   "quote": "louise reported that she has prepared the mve veteran exemption report to be submitted in gateway for reimbursement in the amount of $3,013.13."
+  },
+  {
+   "name": "Form authorizing Louise Paquette to sign on behalf of the Board",
+   "where": "text",
+   "quote": "boa reviewed and approved the form authorizing louise to sign on behalf of the board."
+  },
+  {
+   "name": "Certificate of rollbacks",
+   "where": "text",
+   "quote": "certificate of rollbacks prepared, reviewed and signed by board for properties no longer under chapter 61a"
+  },
+  {
+   "name": "Sewer Privilege fee commitment / warrant (Sewer Order #24)",
+   "where": "text",
+   "quote": "boa reviewed and approved the commitment / warrant sewer privilege fee in the amount of $6.998.74."
+  },
+  {
+   "name": "Certificate correction for 235 West St. (abatement granted based on data change)",
+   "where": "text",
+   "quote": "certificate corrections were made stating that the abatement was granted based on data change."
+  },
+  {
+   "name": "Special Town Meeting warrant articles, Tuesday, November 12, 2019",
+   "where": "text",
+   "quote": "special town meeting - tuesday, november 12, 2019 - warrant articles will be open on september 10' and be must be submitted on or before september 30, 2019."
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "exemptions",
+  "abatements",
+  "chapter 61A",
+  "rollback",
+  "new growth",
+  "appellate tax board",
+  "sewer privilege",
+  "special town meeting",
+  "staff safety",
+  "warrants and commitments"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

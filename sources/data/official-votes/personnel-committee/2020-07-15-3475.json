@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2020-07-15",
  "docid": "3475",
@@ -12,31 +12,159 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of the April 13, 2020 meeting as presented",
+   "motion": "Accept the minutes of the April 13, 2020 meeting as presented.",
    "moved_by": "D. MacDonald",
    "seconded_by": "S. Andrews",
-   "outcome": "passed",
+   "outcome": "passed (roll call, all in favor)",
    "procedural": true,
    "quote": "motion by d. macdonald to accept the minutes as presented: second s. andrews roll call vote: all in favor"
   },
   {
-   "motion": "Accept the recommendation to place the Principal Assessor candidate at Grade 15, step 4",
+   "motion": "Accept the recommendation to place the Principal Assessor candidate at Grade 15, step 4.",
    "moved_by": "D. MacDonald",
    "seconded_by": "S. Andrews",
-   "outcome": "passed",
+   "outcome": "passed (roll call, all in favor)",
    "procedural": false,
-   "quote": "motion by d. macdonald to accept the recommendation for the principal assessor candidate to be placed at a grade 15 step 4 second: s. andrews roll call vote: all in favor"
+   "quote": "motion by d. macdonald to accept the recommendation for the principal assessor candidate to be placed at a grade 15 step 4"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 5:55pm.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. MacDonald",
-   "outcome": "passed",
+   "outcome": "passed (roll call, all in favor)",
    "procedural": true,
-   "quote": "motion: s. andrews: adjourn meeting 5:55pm second: d. macdonald roll call vote: all in favor"
+   "quote": "motion: s. andrews: adjourn meeting 5:55pm second: d. macdonald"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0825245
+ "note": "Minutes are plain text, no scan issues. Each roll call is recorded only as \"All in Favor\" with no per-member tally, so outcomes are recorded as passed without counts. The minutes name the vice chair as \"Erik Arnold\" in the attendance list and \"Eric Arnold\" where he presides; the name is recorded as printed in the attendance list. Attendance is recorded only as a Zoom meeting with all attendees remote, so status is set to remote; Mike Fiorentino is recorded as not attending. No public comment is printed.",
+ "cost_usd": 0.00422102,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sue Andrews",
+   "role": "Committee member",
+   "status": "remote",
+   "quote": "meeting began at 5:40pm with all attendee's via zoom"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Committee member",
+   "status": "remote",
+   "quote": "meeting began at 5:40pm with all attendee's via zoom"
+  },
+  {
+   "name": "Erik Arnold",
+   "role": "Vice Chair (presiding as Chairman)",
+   "status": "remote",
+   "quote": "sue andrews, dave macdonald, erik arnold (vice chair)"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "remote",
+   "quote": "also present; heather lemieux, town manager, julie belliveau, asst. town manager/hr director,"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "remote",
+   "quote": "also present; heather lemieux, town manager, julie belliveau, asst. town manager/hr director,"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "visitor",
+   "status": "remote",
+   "quote": "donna fortune, visitor"
+  },
+  {
+   "name": "Mike Fiorentino",
+   "role": "Committee member (resigned)",
+   "status": "absent",
+   "quote": "mike fiorentino would not be attending this meeting, and had resigned as a member of the committee."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "D. MacDonald requested that the Town Manager send a letter of appreciation from the town to S. Chase thanking him for his service; no vote recorded.",
+   "quote": "d. macdonald requested that the town manager send a letter of appreciation from the town to s. chase thanking him for his service."
+  },
+  {
+   "decision": "The Grade 15 for the Principal Assessor role is to be approved at the next appropriate Town Meeting, as noted in previous minutes; no vote recorded on this note.",
+   "quote": "the grade of this role at a 15 will be approved at the next appropriate town meeting as noted in previous minutes."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Principal Assessor hiring and grade placement",
+   "what_was_recorded": "The minutes say there is remaining surplus budget funding for the Principal Assessor hire at Grade 15, step 4; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "there is remaining surplus budget funding for this action."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Old business: minutes of April 13, 2020",
+   "resolution": "approved as presented",
+   "tags": [
+    "minutes",
+    "approval"
+   ],
+   "quote": "minutes april 13, 2020 meeting reviewed"
+  },
+  {
+   "topic": "Ongoing business: Principal Assessor personnel action",
+   "resolution": "approved (hire at Grade 15, step 4)",
+   "tags": [
+    "hiring",
+    "personnel action",
+    "Principal Assessor",
+    "grade placement"
+   ],
+   "quote": "j. belliveau presented a personnel action form for the committee's review."
+  },
+  {
+   "topic": "Member notices: visitor and resignation of Mike Fiorentino",
+   "resolution": "noted, no action",
+   "tags": [
+    "membership",
+    "visitor"
+   ],
+   "quote": "donna is interested in this committee's work and wanted to attend as visitor to determine ongoing interest"
+  },
+  {
+   "topic": "New business: departure of S. Chase",
+   "resolution": "Town Manager directed to send letter of appreciation (no vote)",
+   "tags": [
+    "departure",
+    "letter of appreciation"
+   ],
+   "quote": "d. macdonald noted that s. chase would be leaving this committee after a long association"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Personnel Action Form (Principal Assessor hire, Grade 15 step 4)",
+   "where": "list",
+   "quote": "j. belliveau presented a personnel action form for the committee's review."
+  }
+ ],
+ "tags": [
+  "personnel committee",
+  "hiring",
+  "Principal Assessor",
+  "grade placement",
+  "surplus budget",
+  "committee membership",
+  "Zoom meeting",
+  "2020"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "j. belliveau presented a personnel action form"
+ },
+ "dropped_unquoted_by_field": {}
 }

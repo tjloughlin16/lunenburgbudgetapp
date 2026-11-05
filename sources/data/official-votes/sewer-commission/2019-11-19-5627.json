@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2019-11-19",
  "docid": "5627",
@@ -12,55 +12,328 @@
  },
  "votes": [
   {
-   "motion": "Reduce the late fee for A & D Crossroads from $950 to $350",
+   "motion": "Reduce the late fee for A & D Crossroads from $950 to $350.",
    "moved_by": "Ryan S.",
    "seconded_by": "Mike N.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: ryan s. reduce the late fee for a & d crossroads from $950 to $350. second: mike n. vote: unanimous"
   },
   {
-   "motion": "Assess the privilege fee for 400 Electric Avenue",
+   "motion": "Assess the Privilege Fee for 400 Electric Avenue.",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: carl l. to assess the privilege fee for 400 electric avenue second: ryan s. vote: unanimous"
   },
   {
-   "motion": "Accept the minutes of the 10/29/19 meeting",
+   "motion": "Accept the minutes of the 10/29/19 regular meeting.",
    "moved_by": "Ryan S.",
    "seconded_by": "Carl L.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion: ryan s. to accept the minutes of 10/29/19. second: carl l. vote: unanimous"
   },
   {
-   "motion": "Approve the executive session minutes of 8/1/17, with members not in attendance voting only as to form and not substance",
+   "motion": "Approve the minutes of the 8/1/17 Highfield Village executive session, with members not in attendance voting only as to form and not substance.",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "motion: carl l. second: ryan s. to move that the board/commission vote to approve the minutes of its 8/1/17 meeting, provided that members not in attendance at such meeting, or not then members of the commission, are voting only as to form and not substance, where they have no firsthand knowledge of all that occurred at such meeting. vote: unanimous"
+   "quote": "motion: carl l. second: ryan s. to move that the board/commission vote to approve the minutes of its 8/1/17 meeting"
   },
   {
-   "motion": "Accept the executive session minutes for 8/1/17 and 9/24/19",
+   "motion": "Accept the Executive Session minutes for 8/1/17 and 9/24/19.",
    "moved_by": "Ryan S.",
    "seconded_by": "Mike N.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion ryan s. to accept the executive session minutes for 8/1/17 and 9/24/19. second: mike n. vote: unanimous"
   },
   {
-   "motion": "Make the previous Highfield Village executive session minutes public",
+   "motion": "Make the previous Highfield Village Executive Session minutes public.",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed",
-   "procedural": true,
+   "outcome": "passed, unanimous",
+   "procedural": false,
    "quote": "motion: carl l. to make the previous highfield village executive session minutes public. second: ryan s. vote: unanimous"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR extract from scanned minutes. Six votes recorded, all passed unanimously. No votes on adjournment or executive session entry found in this document.",
- "cost_usd": 0.1038675
+ "dropped_unquoted": 1,
+ "note": "OCR text (macOS Vision). Page 1 begins mid-paragraph, so the opening A & D Crossroads discussion is incomplete. Page 4 has no readable text. The SWSS clarification letter was a handout, but its contents are not reproduced. No roll call is printed, so attendance is inferred from speaking roles and is marked not stated except where the minutes say so. The Fitchburg invoice is recorded as approved with no motion, so it is not counted as a vote. Votes are recorded as \"Unanimous\" with no count.",
+ "cost_usd": 0.00766002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joan",
+   "status": "not stated",
+   "quote": "joan thanked all members of swss for coming in."
+  },
+  {
+   "name": "Ryan S.",
+   "status": "not stated",
+   "quote": "ryan was glad that the swss discussion went well."
+  },
+  {
+   "name": "Mike N.",
+   "status": "not stated",
+   "quote": "motion: ryan s. reduce the late fee for a & d crossroads from $950 to $350. second: mike n. vote: unanimous"
+  },
+  {
+   "name": "Carl L.",
+   "status": "not stated",
+   "quote": "motion: carl l. to assess the privilege fee for 400 electric avenue second: ryan s. vote: unanimous"
+  },
+  {
+   "name": "Barb",
+   "status": "not stated",
+   "quote": "barb added that they were assessed 3 units and had already paid for 1 unit."
+  },
+  {
+   "name": "Jack",
+   "status": "not stated",
+   "quote": "jack reiterated how important it is to have this maintenance component and it was good to have a cooperative meeting."
+  },
+  {
+   "name": "Dave M.",
+   "status": "present",
+   "quote": "(dave m. entered the meeting.)"
+  },
+  {
+   "name": "Deb Trumbull",
+   "role": "SWSS (per handout heading)",
+   "status": "present",
+   "quote": "handouts: swss clarification letter from deb trumbull"
+  },
+  {
+   "name": "John",
+   "role": "SWSS (as the discussion implies)",
+   "status": "present",
+   "quote": "john replied that the age of the system must be considered and that they have installed new pumps."
+  },
+  {
+   "name": "Peter",
+   "status": "not stated",
+   "quote": "peter offered to pay fees for 8/15-8/29 when they came in to make the payment, or $350."
+  },
+  {
+   "name": "Jimmy",
+   "role": "Ixtapa restaurant owner",
+   "status": "not stated",
+   "quote": "sent jimmy (ixtapa restaurant owner) to the town hall to pay the late fees on 8/29."
+  },
+  {
+   "name": "David Brambila",
+   "role": "owner",
+   "status": "not stated",
+   "quote": "talked to the owner, david brambila, concerning the permit due 8/16"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission agreed to have Peter just pay the $350 late fee instead of the $950 owed.",
+   "quote": "commission agreed to have peter just pay the $350 late fee."
+  },
+  {
+   "decision": "Commission agreed to have Barb send the update for the SSA map to Cartographics after 189 Cross Road was included in the SSA.",
+   "quote": "commission agreed to have barb send the update for the ssa map to cartographics."
+  },
+  {
+   "decision": "Fitchburg monthly invoice approved (no motion recorded).",
+   "quote": "invoices - fitchburg monthly invoice for $ 12,730.87 approved."
+  },
+  {
+   "decision": "Commission agreed to have SWSS attend the first meeting of every quarter.",
+   "quote": "the commission agreed that it all comes down to better communication and agreed to have swss come in for the 1st meeting of every quarter."
+  },
+  {
+   "decision": "Until the contract is re-worded, a reasonable amount of excessive charges for repairs will be accepted; invoices will be shared with the Commission each month and issues discussed with SWSS quarterly.",
+   "quote": "commission discussed paying for callouts after 11pm. and that until the contract is re-worded, there will be a reasonable amount of excessive charges for repairs."
+  },
+  {
+   "decision": "Invoices shared with the Commission each month; the Commission can discuss SWSS issues quarterly.",
+   "quote": "invoices will be shared with the commission each month and the commission can discuss any issues with swss quarterly."
+  },
+  {
+   "decision": "Commission will discuss charges in a meeting and, if all agree, ask Barb to go to Jack with any questions.",
+   "quote": "commission will discuss charges in a meeting and if all agree, will ask barb to go to jack with any questions."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "A & D Crossroads permit fee and late fees",
+   "what_was_recorded": "The annual permit fee, non-compliance fee and daily late fee accrued while payment was late, leaving $950 due; Jimmy paid $4,500 instead of the $700 due, and the Commission reduced the late fee to $350.",
+   "figures_as_printed": [
+    "$700",
+    "$4,500",
+    "$650",
+    "$50",
+    "$25/day",
+    "$950",
+    "$350"
+   ],
+   "quote": "instead of paying the $700 due, jimmy paid $4,500, which was the amount for the sewer and water bill."
+  },
+  {
+   "topic": "Privilege fee for 400 Electric Avenue",
+   "what_was_recorded": "Privilege fee to be assessed for 400 Electric Ave., which was connected in September; the parcel was assessed 3 units and had already paid for 1.",
+   "figures_as_printed": [
+    "$23,102.94"
+   ],
+   "quote": "the privilege fee to be assessed is $23,102.94."
+  },
+  {
+   "topic": "Fitchburg monthly sewer invoice",
+   "what_was_recorded": "Fitchburg monthly invoice approved.",
+   "figures_as_printed": [
+    "$ 12,730.87"
+   ],
+   "quote": "invoices - fitchburg monthly invoice for $ 12,730.87 approved."
+  },
+  {
+   "topic": "SWSS parts markup and billable hours",
+   "what_was_recorded": "SWSS adds no markup on parts; SWSS has agreements with other towns for hours per week with excess billable, but Lunenburg is not set up that way; excessive callouts are billable. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "deb added that they have agreements with other towns for so many hours per week, with excess hours billable, but lunenburg is not set up that way."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Email distribution and no discussion during the meeting",
+   "speaker": "Joan",
+   "stated_role": "",
+   "quote": "joan asked that we include everyone on any emails that go out and that there cannot be any discussions."
+  },
+  {
+   "topic": "SWSS discussion went well",
+   "speaker": "Ryan",
+   "stated_role": "",
+   "quote": "ryan was glad that the swss discussion went well."
+  },
+  {
+   "topic": "Maintenance component and cooperative meeting",
+   "speaker": "Jack",
+   "stated_role": "",
+   "quote": "jack reiterated how important it is to have this maintenance component and it was good to have a cooperative meeting."
+  },
+  {
+   "topic": "Communication with the town and vendors",
+   "speaker": "Dave",
+   "stated_role": "",
+   "quote": "dave added that it is important to communicate and to let the town know the commission is working together with vendors."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Late fee, A & D Crossroads (Peter)",
+   "resolution": "late fee reduced from $950 to $350",
+   "quote": "motion: ryan s. reduce the late fee for a & d crossroads from $950 to $350.",
+   "tags": [
+    "late fees",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Privilege fee assessment, 400 Electric Ave.",
+   "resolution": "assessed",
+   "quote": "privilege fee assessment - 400 electric ave. was connected in september",
+   "tags": [
+    "privilege fee",
+    "connections"
+   ]
+  },
+  {
+   "topic": "Minutes of 10/29/19 regular meeting",
+   "resolution": "approved",
+   "quote": "to accept the minutes of 10/29/19.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Past Highfield Village executive session minutes (8/1/17 and 9/24/19)",
+   "resolution": "approved and made public",
+   "quote": "to accept the executive session minutes for 8/1/17 and 9/24/19.",
+   "tags": [
+    "executive session",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager Report: SSA expansion, grease trap program, invoices",
+   "resolution": "SSA map update to Cartographics; Fitchburg invoice approved",
+   "quote": "sewer service area (ssa) expansion approval at special town meeting -189 cross rd",
+   "tags": [
+    "sewer service area",
+    "grease trap",
+    "invoices"
+   ]
+  },
+  {
+   "topic": "SWSS contract: 24/7 coverage, callouts and billing",
+   "resolution": "SWSS to attend first meeting of each quarter; invoices shared monthly",
+   "quote": "the commission discussed with swss what is covered under 24/7 in the contract.",
+   "tags": [
+    "SWSS",
+    "contract",
+    "callouts",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs for future meetings: Leominster IMA",
+   "resolution": "no action",
+   "quote": "member agenda inputs for future meetings- leominster ima",
+   "tags": [
+    "Leominster IMA"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "public comment-joan asked that we include everyone on any emails that go out and that there cannot be any discussions.",
+   "tags": [
+    "public comment",
+    "communication"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "SWSS Clarification Letter from Deb Trumbull",
+   "where": "list",
+   "quote": "handouts: swss clarification letter from deb trumbull"
+  },
+  {
+   "name": "Article 8 (Special Town Meeting, 11/12)",
+   "where": "text",
+   "quote": "as written in article 8 and commission agreed to have barb send the update for the ssa map to cartographics."
+  },
+  {
+   "name": "SWSS contract",
+   "where": "text",
+   "quote": "carl read from contract that swss could ask for a meeting to discuss excessive service."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "late fees",
+  "privilege fee",
+  "SWSS contract",
+  "sewer service area",
+  "invoices",
+  "minutes",
+  "executive session",
+  "Leominster IMA"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts"
+ },
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

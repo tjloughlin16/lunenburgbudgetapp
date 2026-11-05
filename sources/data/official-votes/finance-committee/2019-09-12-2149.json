@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2019-09-12",
  "docid": "2149",
@@ -12,23 +12,283 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from the August 22, 2019 meeting",
+   "motion": "Accept the minutes of the August 22, 2019 meeting.",
    "moved_by": "David Passios",
    "seconded_by": "John Henshaw",
-   "outcome": "Approved unanimously",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "david passios moved to accept the minutes from august 22, 2019 meeting , john henshaw). approved unanimously."
+   "quote": "david passios moved to accept the minutes from august 22, 2019 meeting"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "John Henshaw",
    "seconded_by": "David Passios",
-   "outcome": "Approved unanimously",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "john henshaw motioned/ david passios seconded; unanimous approval"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan from macOS Vision. The text on page 4 item 9 shows a formatting artifact (\"), John Henshaw)\") where the seconder's name appears in a non-standard position; John Henshaw is identified as the seconder based on contextual placement in the motion record.",
- "cost_usd": 0.1020045
+ "note": "OCR text is partly garbled: the 'Approved' and 'Unanamocsly' header words are misread, item 4's number and item 6's heading are missing, the grant total reads '9500,000' with no dollar sign, and the joint-meeting paragraph is partly unreadable. Only two motions were recorded (minutes approval and adjournment), both with a unanimous result and no printed count. The consensus on the October 3 meeting and the goals discussion were not votes. The minutes carry a RECEIVED & FILED stamp dated OCT 01 2019.",
+ "cost_usd": 0.00699392,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, dave passios, jay simeone, peter beardmore, michelle walton"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, dave passios, jay simeone, peter beardmore, michelle walton"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, dave passios, jay simeone, peter beardmore, michelle walton"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, dave passios, jay simeone, peter beardmore, michelle walton"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, dave passios, jay simeone, peter beardmore, michelle walton"
+  },
+  {
+   "name": "Michelle Walton",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, dave passios, jay simeone, peter beardmore, michelle walton"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Finance Committee held a consensus to also have a meeting on October 3rd at 6:30, before the previously scheduled Open Meeting training.",
+   "quote": "consensus of the finance committee was also have a meeting on october 3rd at 6:30, prior to open meeting training which was previously scheduled."
+  },
+  {
+   "decision": "The Finance Committee will hold a public hearing on October 10th (Special Town Meeting, scheduled for November 12, 2019).",
+   "quote": "the finance committee will hold a public hearing on october 10th."
+  },
+  {
+   "decision": "The next meeting was set for September 26, 2019.",
+   "quote": "next meeting • september 26, 2019"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Property acquisition funded by grants (town cost)",
+   "what_was_recorded": "If two separate grants were approved, the cost to the town to acquire the property would be approximately $280,000; an article is anticipated for town meeting. The grant total is garbled in the OCR text.",
+   "figures_as_printed": [
+    "$280,000",
+    "9500,000"
+   ],
+   "quote": "will be approximately $280,000. an article is anticipated for town meeting"
+  },
+  {
+   "topic": "Free cash and perceived town surplus",
+   "what_was_recorded": "Peter Beardmore said citizens wrongly believe the town has a surplus because of how free cash is created and spent; no figures given.",
+   "figures_as_printed": [],
+   "quote": "which leads citizens to believe the town is operating with a surplus due to the way we purposefully create and expend free cash."
+  },
+  {
+   "topic": "Police collective bargaining agreement transfer",
+   "what_was_recorded": "A place-holder article for the police collective bargaining agreement will involve a transfer from the salary reserve account; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "agreement, involving a transfer from the salary reserve account (which is an existing appropriation)."
+  },
+  {
+   "topic": "Goal on non-municipal funded operating expenses",
+   "what_was_recorded": "Proposed goal to gather a full accounting of operating expenses funded by grants and donations, to show future budgetary exposure; no figures.",
+   "figures_as_printed": [],
+   "quote": "goal: gather a full accounting of operating expenses funded by non-municipal"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from the salary reserve account for the police collective bargaining agreement (place-holder article).",
+   "outcome": "Planned as a place-holder article for Special Town Meeting; no amount printed and no vote recorded.",
+   "amount_as_printed": "not printed",
+   "quote": "agreement, involving a transfer from the salary reserve account (which is an existing appropriation)."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "John Henshaw",
+   "stated_role": "",
+   "topic": "Open meeting law and voting on minutes",
+   "quote": "john henshaw commented that he researched open meeting law with respect to whether a member could vote on approving minutes having not attended the meeting in question, which is acceptable."
+  },
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "",
+   "topic": "Process automation software",
+   "quote": "peter beardmore commented that he would like the board to engage in discussions with town department heads on the topic of process automation software"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Passing of Janice Carrier",
+   "quote": "dave passios commented noting the passing of janice carrier, a great loss to the town."
+  },
+  {
+   "speaker": "Michelle Walton",
+   "stated_role": "",
+   "topic": "MMA Legislative Breakfast",
+   "quote": "michelle walton commented that on september 27th there will be the massachusetts municipal association legislative breakfast"
+  },
+  {
+   "speaker": "Terri Burchfield",
+   "stated_role": "",
+   "topic": "Selectmen's appreciation night",
+   "quote": "terri burchfield commented there will be the selectmen's appreciation night on september 19th, 6-8pm ,at the eagle house."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "1. Call to Order",
+   "resolution": "called to order at 7pm; no action",
+   "quote": "terri burchfield, chair called the meeting to order at 7pm.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "2. Public Comment (board members)",
+   "resolution": "comments recorded; no action",
+   "quote": "john henshaw commented that he researched open meeting law",
+   "tags": [
+    "open meeting law",
+    "process automation"
+   ]
+  },
+  {
+   "topic": "3. Joint meeting",
+   "resolution": "in progress; no action recorded",
+   "quote": "this has been complicated somewhat by the scheduling of the",
+   "tags": [
+    "joint meeting",
+    "department heads"
+   ]
+  },
+  {
+   "topic": "4. Special Town Meeting",
+   "resolution": "scheduled; public hearing set; extra meeting by consensus",
+   "quote": "special town meeting has been scheduled for november 12, 2019.",
+   "tags": [
+    "special town meeting",
+    "warrant",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "5. Goals",
+   "resolution": "discussed potential goals; no vote recorded",
+   "quote": "the committee discussed adopting the following potential goals:",
+   "tags": [
+    "goals",
+    "level service",
+    "free cash",
+    "forecasting",
+    "staff positions"
+   ]
+  },
+  {
+   "topic": "6. Reports and property acquisition (heading lost in OCR)",
+   "resolution": "reported; no action",
+   "quote": "peter beardmore reported that the school committee met on september 4.",
+   "tags": [
+    "land acquisition",
+    "grants",
+    "school committee",
+    "school choice"
+   ]
+  },
+  {
+   "topic": "7. Town Manager Report",
+   "resolution": "reported; no action",
+   "quote": "new growth numbers should be submitted by first week of october.",
+   "tags": [
+    "new growth",
+    "special town meeting articles",
+    "police contract",
+    "chase road",
+    "personnel",
+    "right of first refusal"
+   ]
+  },
+  {
+   "topic": "8. Public Comment",
+   "resolution": "comments recorded; no action",
+   "quote": "dave passios commented noting the passing of janice carrier, a great loss to the town.",
+   "tags": [
+    "public comment",
+    "MMA",
+    "selectmen"
+   ]
+  },
+  {
+   "topic": "9. Minutes",
+   "resolution": "approved August 22, 2019 minutes",
+   "quote": "david passios moved to accept the minutes from august 22, 2019 meeting",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "10. Next Meeting",
+   "resolution": "set for September 26, 2019",
+   "quote": "next meeting • september 26, 2019",
+   "tags": [
+    "next meeting"
+   ]
+  },
+  {
+   "topic": "11. Adjournment",
+   "resolution": "adjourned unanimously",
+   "quote": "john henshaw motioned/ david passios seconded; unanimous approval",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town Meeting warrant",
+   "where": "text",
+   "quote": "the warrant closes on september 30."
+  },
+  {
+   "name": "Minutes of the August 22, 2019 meeting",
+   "where": "text",
+   "quote": "accept the minutes from august 22, 2019 meeting"
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "Special Town Meeting",
+  "land acquisition",
+  "grants",
+  "free cash",
+  "goals",
+  "police contract",
+  "school committee",
+  "public comment",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

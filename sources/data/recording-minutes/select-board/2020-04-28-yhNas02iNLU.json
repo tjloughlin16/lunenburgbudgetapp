@@ -1,0 +1,816 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2020-04-28",
+ "video_id": "yhNas02iNLU",
+ "video_url": "https://www.youtube.com/watch?v=yhNas02iNLU",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2020-04-28-yhNas02iNLU.json",
+  "sha256": "b01c52fa98fcaa9860ef131f9d13360922c780483cd751b6b13147ebb6a5ddb8",
+  "caption_lines": 445,
+  "segments": 3128
+ },
+ "recording": {
+  "duration_s": 9589,
+  "duration": "2:39",
+  "spoken_chars": 113226,
+  "words_approx": 18871
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04282020-5197",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-04-28-agenda-5197.txt",
+   "path": "sources/meetings/select-board/2020-04-28-agenda-5197.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04282020-5197",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-04-28-minutes-5197.txt",
+   "path": "sources/meetings/select-board/2020-04-28-minutes-5197.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-04T02:46:30Z",
+  "cost_usd": 0.2640944
+ },
+ "minutes": {
+  "headline": "Select Board met jointly with state legislators on FY21 aid, then reviewed the revised budget and warrant articles without a vote.",
+  "summary": "The Select Board and Finance Committee heard the state senator and representative say state aid and the state budget are uncertain. The Town Manager presented a revised FY21 budget with a surplus held as a cushion, and the board debated the Community Preservation Act article, OPEB, and the capital plan. The board then went through the warrant articles and put votes on them off to next week. The meeting ended with a vote to adjourn.",
+  "attendees": [
+   {
+    "name_as_heard": "Tom Alonzo",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mr. Jeffries",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mrs. Luck",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Senator Dean Tran",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Representative Stephen Hay",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Town Manager (Heather)",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Karen",
+    "role": "finance director"
+   },
+   {
+    "name_as_heard": "Terry Burchfield",
+    "role": "Finance Committee chair"
+   },
+   {
+    "name_as_heard": "Mr. Beardmore",
+    "role": "Finance Committee member"
+   },
+   {
+    "name_as_heard": "Mr. Paseos",
+    "role": "Finance Committee member"
+   },
+   {
+    "name_as_heard": "John Henshaw",
+    "role": "Finance Committee member"
+   },
+   {
+    "name_as_heard": "Michelle Walton",
+    "role": "Finance Committee member"
+   },
+   {
+    "name_as_heard": "Tammy",
+    "role": "Monty Tech representative"
+   },
+   {
+    "name_as_heard": "Mrs. Lantry",
+    "role": "presenter (Community Preservation Act)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 228,
+    "topic": "Chair asked for public comment at the start; none was taken."
+   },
+   {
+    "t": 9396,
+    "topic": "Chair asked for public comment at the end; no hands were raised."
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "capital",
+   "chapter-70",
+   "executive-session",
+   "free-cash",
+   "legal",
+   "monty-tech",
+   "retirement",
+   "state-aid",
+   "town-departments",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 3371,
+    "motion": "Finance Committee motion to adjourn its portion of the joint meeting",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 9561,
+    "motion": "Motion to adjourn the Select Board meeting",
+    "moved_by": "",
+    "outcome": "passed (ayes from Mrs. Luck, Mr. Jeffries and the chair)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 372,
+    "topic": "Governor's proposed state budget / Chapter 70",
+    "what_was_said": "The senator described the governor's proposed budget for Chapter 70 as not final, with the legislature yet to act.",
+    "figures_as_heard": [
+     "5.5 billion dollars"
+    ]
+   },
+   {
+    "t": 1066,
+    "topic": "Monty Tech assessment increase",
+    "what_was_said": "A Finance Committee member said Lunenburg's Monty Tech increase was far larger than the school's total budget increase.",
+    "figures_as_heard": [
+     "fifty thousand dollars and change",
+     "over a hundred and ten thousand dollars"
+    ]
+   },
+   {
+    "t": 1468,
+    "topic": "Unrestricted local aid",
+    "what_was_said": "The senator said Lunenburg's projected unrestricted local aid from the governor's budget could change.",
+    "figures_as_heard": [
+     "1.2 or 1.3 million dollars"
+    ]
+   },
+   {
+    "t": 1529,
+    "topic": "Possible state aid cut",
+    "what_was_said": "A Finance Committee member asked whether to plan for a 10% cut in state aid. The legislators declined to give a number.",
+    "figures_as_heard": [
+     "10%"
+    ]
+   },
+   {
+    "t": 3508,
+    "topic": "Third quarter revenue report",
+    "what_was_said": "The finance director reported collections through March 31 and which categories ran over or under target.",
+    "figures_as_heard": [
+     "33 million three hundred eighty thousand nine hundred and twenty five dollars",
+     "78%",
+     "two million five hundred and sixty thousand eight hundred and five dollars"
+    ]
+   },
+   {
+    "t": 3612,
+    "topic": "Snow removal deficit",
+    "what_was_said": "The finance director said the snow removal deficit should be covered by a year-end transfer.",
+    "figures_as_heard": [
+     "98 thousand three hundred and seven dollars"
+    ]
+   },
+   {
+    "t": 4149,
+    "topic": "FY21 budget reductions",
+    "what_was_said": "The Town Manager said she cut new positions, reduced the school budget increase, halved the capital plan, and cut pavement management.",
+    "figures_as_heard": [
+     "two and a half percent",
+     "one point five eight percent",
+     "50,000"
+    ]
+   },
+   {
+    "t": 4282,
+    "topic": "Stormwater and cherry sheet adjustments",
+    "what_was_said": "The Town Manager described a stormwater cut and a cherry sheet charge increase, leaving a surplus.",
+    "figures_as_heard": [
+     "twenty five thousand",
+     "fourteen thousand six sixty one",
+     "nine hundred and eighty two thousand one hundred and fifty six dollars"
+    ]
+   },
+   {
+    "t": 4396,
+    "topic": "Items payable from FY20",
+    "what_was_said": "The Town Manager said some technology and voting booth spending could be bought this year and removed from FY21.",
+    "figures_as_heard": [
+     "thirty thousand"
+    ]
+   },
+   {
+    "t": 4456,
+    "topic": "Stabilization balance",
+    "what_was_said": "The Town Manager said stabilization reserves are about three million dollars and could be tapped at the fall Town Meeting.",
+    "figures_as_heard": [
+     "three million"
+    ]
+   },
+   {
+    "t": 4684,
+    "topic": "OPEB deposit from free cash",
+    "what_was_said": "Mrs. Luck objected to funding the OPEB deposit this year, and the Town Manager said it comes from free cash.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 7549,
+    "topic": "Stabilization fund transfer article (OPEB)",
+    "what_was_said": "A warrant article would move money from free cash. A member wants it removed.",
+    "figures_as_heard": [
+     "a hundred thousand",
+     "a hundred and ten thousand"
+    ]
+   },
+   {
+    "t": 8825,
+    "topic": "Capital plan reduced",
+    "what_was_said": "The Town Manager said the reduced capital plan is funded from free cash and asked whether to defer it to the fall.",
+    "figures_as_heard": [
+     "six hundred and sixty four thousand eight hundred dollars",
+     "1.3 million"
+    ]
+   },
+   {
+    "t": 9083,
+    "topic": "Culvert design",
+    "what_was_said": "A member questioned design costs for the Flat Hill culvert, and the Town Manager said it is an emergency priority.",
+    "figures_as_heard": [
+     "$112,000"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 3612,
+    "description": "Year-end transfer to cover the snow removal deficit (Mass General Laws chapter 44)",
+    "amount_as_heard": "98 thousand three hundred and seven dollars",
+    "outcome": "discussed only"
+   },
+   {
+    "t": 7549,
+    "description": "Free cash into the stabilization/OPEB fund via warrant article",
+    "amount_as_heard": "a hundred thousand",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 1727,
+    "decision": "Representative Hay will contact the House Ways and Means chair for guidance on state aid cut percentages and report back to the board."
+   },
+   {
+    "t": 7172,
+    "decision": "The Community Preservation Act article will go on next week's agenda so the vote can be taken with a fuller board."
+   },
+   {
+    "t": 8676,
+    "decision": "The board will not adjourn next week until it has gone through the warrant articles and made recommendations; the last two meetings for this are May 5 and May 12."
+   },
+   {
+    "t": 8718,
+    "decision": "Board asked for a review of liquor violations at the petitioners' other locations before discussing the new license article."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 264,
+    "topic": "Opening, roll call, announcements",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 287,
+    "t_end": 3371,
+    "topic": "Joint meeting with state legislators on state aid, Chapter 70, Monty Tech and the 1/12 budget",
+    "resolution": "informational",
+    "tags": [
+     "state-aid",
+     "chapter-70",
+     "monty-tech"
+    ]
+   },
+   {
+    "t_start": 3467,
+    "t_end": 3800,
+    "topic": "Finance director's third quarter report",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "transfers"
+    ]
+   },
+   {
+    "t_start": 3866,
+    "t_end": 6122,
+    "topic": "Revised FY21 budget, reserves, OPEB, and school planning",
+    "resolution": "informational, no vote",
+    "tags": [
+     "budget-fy27",
+     "free-cash",
+     "retirement"
+    ]
+   },
+   {
+    "t_start": 6164,
+    "t_end": 7172,
+    "topic": "Community Preservation Act article",
+    "resolution": "vote deferred to next week",
+    "tags": [
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 7172,
+    "t_end": 8738,
+    "topic": "Review of warrant articles (stabilization, positions, streetlights, old primary school demolition, liquor license petition)",
+    "resolution": "informational, votes next week",
+    "tags": [
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 8738,
+    "t_end": 9396,
+    "topic": "Capital plan deferral",
+    "resolution": "no resolution",
+    "tags": [
+     "capital",
+     "free-cash"
+    ]
+   },
+   {
+    "t_start": 9396,
+    "t_end": 9600,
+    "topic": "Public comment, board comments, adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "The Finance Committee's vote to adjourn and the audio during its roll call were not clear.",
+   "Figures in the quarterly report have misheard fiscal-year labels such as FY2000, FY2008 and FY2010.",
+   "The roll-call voice count on the final adjournment vote is only partly stated."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 4727,
+    "about": "Mrs. Luck and Mr. Jeffries disagreed over whether the FY21 budget is conservative and whether the OPEB deposit should be spent.",
+    "sides": "a member against spending and against calling the budget conservative; another member supporting the budget",
+    "words_as_heard": "we're gonna have to agree to disagree that the budget is conservative",
+    "kind": "members disagree"
+   },
+   {
+    "t": 6490,
+    "about": "Members disagreed over putting the Community Preservation Act on the warrant during the pandemic.",
+    "sides": "two members opposed to adding any tax now; the chair in favor of letting voters decide",
+    "words_as_heard": "I think that this is just the worst possible full time to propose adding more to people's taxes",
+    "kind": "members disagree"
+   },
+   {
+    "t": 9277,
+    "about": "Members disagreed on deferring capital projects.",
+    "sides": "a member favoring deferral against other members seeking to keep the list",
+    "words_as_heard": "I broadly speaking you know we there's a huge problem to these lists",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 9257,
+    "kind": "liability or legal",
+    "about": "Senior Center entrance project justified as a liability issue from leaks and ice.",
+    "who": "the Town Manager",
+    "words_as_heard": "it's a liability issue and they've had leaks in the building"
+   },
+   {
+    "t": 6609,
+    "kind": "condition",
+    "about": "A member would support the CPA article only if there were no net added tax.",
+    "who": "a member",
+    "words_as_heard": "if the town was to forego some tax another cash tax increase I'd be I'd be okay"
+   },
+   {
+    "t": 6695,
+    "kind": "condition",
+    "about": "A member would not support more tax spending until the pandemic's economic impact is understood.",
+    "who": "a member",
+    "words_as_heard": "until I have a good understanding of what the economic impact is"
+   },
+   {
+    "t": 9105,
+    "kind": "safety",
+    "about": "Flat Hill culvert described as failed and an emergency.",
+    "who": "the Town Manager",
+    "words_as_heard": "that's an emergency type situation where we should be addressing that culvert"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 3890,
+    "name_as_heard": "adjustments to the fiscal 21 budget dated April 28",
+    "kind": "budget document",
+    "words_as_heard": "the adjustments to the festus call 21 budget dated April 28"
+   },
+   {
+    "t": 3955,
+    "name_as_heard": "revenue expense sheet dated April 28",
+    "kind": "spreadsheet",
+    "words_as_heard": "the revenue expense sheet David April 28"
+   },
+   {
+    "t": 3488,
+    "name_as_heard": "quarterly memo",
+    "kind": "memo",
+    "words_as_heard": "read the memo which is brief"
+   },
+   {
+    "t": 6186,
+    "name_as_heard": "tracked copy of the warrant",
+    "kind": "warrant article",
+    "words_as_heard": "we have a tracked copy in our drives"
+   },
+   {
+    "t": 8950,
+    "name_as_heard": "revised capital plan email",
+    "kind": "letter or email",
+    "words_as_heard": "it wasn't an email that I sent out in advance"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "capital-plan-town-meeting-vote",
+    "title": "Capital plan vote",
+    "question": "What are the 11 capital items remaining and what do they cost?",
+    "t": 8825,
+    "words_as_heard": "capital plan who is reduced to six hundred and sixty four thousand eight hundred dollars",
+    "data_in_play": [
+     "six hundred and sixty four thousand eight hundred dollars",
+     "1.3 million"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "community-preservation-act",
+    "title": "Community Preservation Act",
+    "question": "What would a 1 percent CPA surcharge cost the average homeowner?",
+    "t": 6331,
+    "words_as_heard": "we are going to come in at one to one and a half percent",
+    "data_in_play": [
+     "one hundred and forty five dollars",
+     "forty five dollars"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "opeb-deposits",
+    "title": "OPEB trust deposits",
+    "question": "Should the OPEB deposit from free cash go forward this year?",
+    "t": 4684,
+    "words_as_heard": "I haven't seen any indication that a peb is going to be eliminated",
+    "data_in_play": [
+     "a hundred and ten thousand"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board took no votes; it reviewed the revised FY21 budget and warrant articles and put recommendations off to next week.",
+    "t": 8676
+   },
+   {
+    "line": "The state senator and representative told the joint meeting that state aid and the state budget are not settled and declined to give a cut percentage.",
+    "t": 1529
+   },
+   {
+    "line": "The Town Manager presented a revised FY21 budget with new positions cut, a smaller school increase, a halved capital plan and a surplus held as a cushion.",
+    "t": 4149
+   },
+   {
+    "line": "The Community Preservation Act article was held to next week's agenda so the vote can be taken with a fuller board.",
+    "t": 7172
+   },
+   {
+    "line": "Members debated a warrant article moving free cash into the OPEB stabilization fund, and one member wants it removed.",
+    "t": 7549
+   }
+  ],
+  "why_it_matters": [
+   "The FY21 budget that Town Meeting will be asked to approve rests on state aid figures that were still unknown, so the tax impact and any later cuts could change.",
+   "Warrant articles on the Community Preservation Act, OPEB funding from free cash and a new liquor license were discussed but not decided, so residents have until the board's recommendations to weigh in."
+  ],
+  "watch_next": [
+   "Select Board meetings on May 5 and May 12, the last two for recommendations on the warrant articles, including the Community Preservation Act vote.",
+   "Representative Hay's report back after contacting the House Ways and Means chair about state aid cut percentages."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-04T02:46:35Z",
+   "cost_usd": 0.0287811
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04282020-5197",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-04-28-minutes-5197.txt",
+   "path": "sources/meetings/select-board/2020-04-28-minutes-5197.pdf"
+  },
+  "official_sha256": "ffa1e06cc2d591dd9440192bdcd3ed5af59613eda833b9a48658ae3b4b229c3c",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on most figures (snow deficit, collections, 10% aid cut, school budget reduction, $664,800 capital plan), with several caption misreadings. Neither records a formal vote; the main differences are the Police CBA/PEG items only in the official minutes, the official minutes showing no transfer, and the capital plan description.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 9,
+   "discrepancy": 3,
+   "only_in_ours": 6,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Snow removal deficit amount",
+    "ours": "Snow removal deficit: 98 thousand three hundred and seven dollars",
+    "official": "as of 3/31/20, there is a deficit in this account for $98,307.36.",
+    "official_reading": "$98,307.36",
+    "note": "Same deficit; the captions dropped the cents.",
+    "t": 3612
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Snow removal deficit transfer",
+    "ours": "Year-end transfer to cover the snow removal deficit (Mass General Laws chapter 44) — 98 thousand three hundred and seven dollars (discussed only)",
+    "official": "as of 3/31/20, there is a deficit in this account for $98,307.36.",
+    "note": "Ours lists a transfer as discussed; the official TRANSFERS section is none and only says the deficit can be eliminated via approved transfers. Check whether any transfer was voted or only anticipated.",
+    "t": 3612
+   },
+   {
+    "kind": "caption_error",
+    "about": "Third quarter total collections",
+    "ours": "33 million three hundred eighty thousand nine hundred and twenty five dollars, 78%",
+    "official": "total collections to date are $33,388,925.48, or 78% of fy20 estimates through 3/31/20.",
+    "official_reading": "$33,388,925.48",
+    "note": "Same figure; captions garbled 388,925 as 380,925.",
+    "t": 3508
+   },
+   {
+    "kind": "agree",
+    "about": "Local receipts collected",
+    "ours": "two million five hundred and sixty thousand eight hundred and five dollars",
+    "official": "local receipts: we have collected $2,560,804.58 or 84% of the",
+    "note": "Same figure, rounded; 805 vs 804.58.",
+    "t": 3508
+   },
+   {
+    "kind": "caption_error",
+    "about": "Budget surplus after adjustments",
+    "ours": "nine hundred and eighty two thousand one hundred and fifty six dollars",
+    "official": "after some other adjustments that would leave a surplus of $982,156.32.",
+    "official_reading": "$982,156.32",
+    "note": "Same figure without cents.",
+    "t": 4282
+   },
+   {
+    "kind": "agree",
+    "about": "School budget reduction 2.5% to 1.58%",
+    "ours": "FY21 budget reductions: two and a half percent, one point five eight percent, 50,000",
+    "official": "the lunenburg public school budget was reduced from a 2.5% to a 1.58% budget",
+    "note": "Percentages match.",
+    "t": 4149
+   },
+   {
+    "kind": "agree",
+    "about": "Pavement management $50,000 reduction",
+    "ours": "50,000",
+    "official": "we also reduced the additional pavement management funding of $50,000.",
+    "note": "Same amount.",
+    "t": 4149
+   },
+   {
+    "kind": "agree",
+    "about": "Stabilization balance about $3 million",
+    "ours": "Stabilization balance: three million",
+    "official": "we have about $3 million in our stabilization funds.",
+    "note": "Match.",
+    "t": 4456
+   },
+   {
+    "kind": "agree",
+    "about": "Governor's Chapter 70 $5.5 billion",
+    "ours": "Governor's proposed state budget / Chapter 70: 5.5 billion dollars",
+    "official": "the governor published his proposed budget in january for chapter 70 at about $5.5 billion dollars",
+    "note": "Match.",
+    "t": 372
+   },
+   {
+    "kind": "agree",
+    "about": "Possible 10% state aid cut",
+    "ours": "Possible state aid cut: 10%",
+    "official": "ms. burchfield asked if the town should plan for a 10% reduction in state aid.",
+    "note": "Match.",
+    "t": 1529
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Almost 11% state aid reduction",
+    "ours": "",
+    "official": "we exceed that reduction if you apply what we have for a surplus to our state aid number; an almost 11% reduction.",
+    "note": "Official has the almost 11% figure; ours does not capture it."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Monty Tech assessment dollar figures",
+    "ours": "Monty Tech assessment increase: fifty thousand dollars and change, over a hundred and ten thousand dollars",
+    "official": "at that time we learned lunenburg would be paying double the increase, partially due to an enrollment increase.",
+    "note": "Official gives the double-increase point but no dollar figures; verify the amounts."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Unrestricted local aid 1.2 or 1.3 million",
+    "ours": "Unrestricted local aid: 1.2 or 1.3 million dollars",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Police CBA / stabilization-OPEB $100,000 article",
+    "ours": "Free cash into the stabilization/OPEB fund via warrant article — a hundred thousand (discussed only)",
+    "official": "ms. lemieux stated $110,000 from free cash.",
+    "note": "Ours has $100,000 (and $110,000) toward stabilization/OPEB; official has $110,000 from Free Cash for the first year of the Police CBA. Check the recording for which purpose each amount went to.",
+    "t": 7549
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Capital plan reduction vs deferral",
+    "ours": "Capital plan reduced: six hundred and sixty four thousand eight hundred dollars, 1.3 million",
+    "official": "the remaining amount of $664,800 for the capital plan until fall town meeting.",
+    "note": "Amount matches, but ours says reduced and official says deferred to fall Town Meeting (elsewhere cut in half). Check what was decided.",
+    "t": 8825
+   },
+   {
+    "kind": "only_in_official",
+    "about": "PEG Access $120,000 article",
+    "ours": "",
+    "official": "the sum of $120,000 for the fy 2021 capital budget for the public educational government (peg) access enterprise fund",
+    "note": "Official records this warrant article; ours does not."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Culvert design $112,000",
+    "ours": "Culvert design: $112,000",
+    "official": "",
+    "note": "Not in the official minutes. Possibly misheard $112,500 from the capital list; check."
+   },
+   {
+    "kind": "agree",
+    "about": "CPA article voting deferred until fuller board",
+    "ours": "The Community Preservation Act article will go on next week's agenda so the vote can be taken with a fuller board.",
+    "official": "discussion ensued about voting on these articles with a full board present. the next meeting will be focused on the warrant articles and recommendations.",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting focus on warrant articles",
+    "ours": "The board will not adjourn next week until it has gone through the warrant articles and made recommendations; the last two meetings for this are May 5 and May 12.",
+    "official": "the next meeting will be focused on the warrant articles and recommendations.",
+    "note": "Consistent; ours adds dates."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Hay to contact Ways and Means chair",
+    "ours": "Representative Hay will contact the House Ways and Means chair for guidance on state aid cut percentages and report back to the board.",
+    "official": "",
+    "note": "Follow-up not in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Liquor violations review request",
+    "ours": "Board asked for a review of liquor violations at the petitioners' other locations before discussing the new license article.",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chairman welcomed Lantry back",
+    "ours": "",
+    "official": "he appreciated ms. lantry coming back and told her she was more than welcome to come back when the full board is present.",
+    "note": "Not in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "CPA surcharge cost about $45 per year",
+    "ours": "",
+    "official": "it's going to cost the average person around $45 per year since the percentage reduction to 1%.",
+    "note": "Not in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board member Jetfreys",
+    "ours": "Mr. Jeffries (member)",
+    "official": "members present: tom alonzo, chairman; phyllis luck, vice chairman; michael-ray jetfreys",
+    "official_reading": "Michael-Ray Jetfreys",
+    "note": "Misheard name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Representative Hay",
+    "ours": "Representative Stephen Hay (presenter)",
+    "official": "senator dean tran, state representative stephan hay",
+    "official_reading": "Stephan Hay",
+    "note": "Spelling of first name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Finance committee member Passios",
+    "ours": "Mr. Paseos (Finance Committee member)",
+    "official": "finance committee members present: teri burchfield, chair; john henshaw, michelle walton, dave passios, peter beardmore, jay simeone",
+    "official_reading": "Dave Passios",
+    "note": "Misheard name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Finance Committee chair",
+    "ours": "Terry Burchfield (Finance Committee chair)",
+    "official": "finance committee members present: teri burchfield, chair; john henshaw, michelle walton, dave passios, peter beardmore, jay simeone",
+    "official_reading": "Teri Burchfield",
+    "note": "Spelling."
+   },
+   {
+    "kind": "agree",
+    "about": "Mrs. Luck present",
+    "ours": "Mrs. Luck (member)",
+    "official": "members present: tom alonzo, chairman; phyllis luck, vice chairman; michael-ray jetfreys",
+    "note": "Phyllis Luck is vice chairman; consistent."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Finance director Karen",
+    "ours": "Karen (finance director)",
+    "official": "also present: town manager heather lemieux; karen brochu, finance director",
+    "official_reading": "Karen Brochu",
+    "note": "Same person; ours lacks last name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter Lantry",
+    "ours": "Mrs. Lantry (presenter (Community Preservation Act))",
+    "official": "rebecca lantry, historical commission chair",
+    "official_reading": "Rebecca Lantry",
+    "note": "Same person."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees not in ours",
+    "ours": "",
+    "official": "mike cassidy, business manager/hr director for lunenburg public schools",
+    "note": "Official lists Mike Cassidy and Jay Simeone as present, plus absent members Damon McQuaid and Katey Adams; ours lists none of them."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Monty Tech representative Tammy",
+    "ours": "Tammy (Monty Tech representative)",
+    "official": "",
+    "note": "Not listed in the official attendees."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T02:48:16Z",
+   "cost_usd": 0.0720731
+  }
+ }
+}

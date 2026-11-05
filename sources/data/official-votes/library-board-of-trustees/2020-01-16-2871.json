@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2020-01-16",
  "docid": "2871",
@@ -12,55 +12,320 @@
  },
  "votes": [
   {
-   "motion": "approve minutes from December 19, 2019",
-   "outcome": "unanimously approved",
-   "procedural": true,
+   "motion": "Approve the minutes of December 19, 2019, with a few edits.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed unanimously",
+   "procedural": true,
    "quote": "motion to approve minutes was unanimously approved with a few edits."
   },
   {
-   "motion": "approve minutes from December 29 special meeting",
-   "outcome": "approved",
-   "procedural": true,
+   "motion": "Approve the minutes of the December 29, 2019 special meeting.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "minutes for the december 29th special meeting were also approved."
   },
   {
-   "motion": "support director's proposal for fine-free implementation with two-stage approach",
-   "outcome": "approved",
-   "procedural": false,
+   "motion": "Support Muir's two-stage fine free implementation proposal.",
    "moved_by": "Lars",
    "seconded_by": "Donna",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "a motion to support muir was proposed by lars, seconded by donna and approved by the board."
   },
   {
-   "motion": "accept director evaluation as amended",
-   "outcome": "approved",
-   "procedural": false,
+   "motion": "Accept the director evaluation review as amended.",
    "moved_by": "Dick",
    "seconded_by": "Kate",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "the board voted to accept the review as amended. dick made the motion and kate seconded."
   },
   {
-   "motion": "accept $2,800 (4%) salary increase for director",
-   "outcome": "approved",
-   "procedural": false,
+   "motion": "Accept the director salary increase of 4%/$2800.",
    "moved_by": "Dick",
    "seconded_by": "Kate",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "dick made a motion to accept the salary increase seconded by kate and the motion was approved."
-  },
-  {
-   "motion": "adjourn meeting",
-   "outcome": "approved",
-   "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "meeting adjourned at 8:57 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0934225
+ "note": "The opening line calls this a 'special meeting' while the header reads 'Meeting minutes' and the agenda is regular-style; the minutes record no vote tallies, no mover for the minutes approvals, and no motion to adjourn. Pages 3-12 are blank. The director's report says 'Muir met with the Town Manager and with FinCom on 2/20', a date after this January 16 meeting. Figures such as '1k' and '50k' are printed without dollar signs and are recorded as printed.",
+ "cost_usd": 0.0058977199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, lars widstrand, maia wentrup"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, lars widstrand, maia wentrup"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, lars widstrand, maia wentrup"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "called to order at 6:46 p.m. by chairperson harry kubetz"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, lars widstrand, maia wentrup"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, lars widstrand, maia wentrup"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, lars widstrand, maia wentrup"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, lars widstrand, maia wentrup"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "BOS",
+   "status": "present",
+   "quote": "michael-ray jeffreys - bos"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The chair asked that school teachers and administrators be invited to attend a BOT meeting to reconnect and touch base.",
+   "quote": "harry asked that we invite school teachers and administrators to attend a bot meeting to reconnect and touch base."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY21 town budget target",
+   "what_was_recorded": "The Town Manager's target FY21 budget is described as effectively flat; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the town manager's target fy21 budget is effectively flat."
+  },
+  {
+   "topic": "Building repairs line",
+   "what_was_recorded": "Board asked why building repairs doubled in FY21; the FY20 figure was given as 1k and the Friends have been funding some projects.",
+   "figures_as_printed": [
+    "1k"
+   ],
+   "quote": "michael-ray asked why building repairs were double in fy21 from the previous year. fy20 was 1k."
+  },
+  {
+   "topic": "Friends of the Library total contribution",
+   "what_was_recorded": "The Friends' total contribution was given as around 50k.",
+   "figures_as_printed": [
+    "50k"
+   ],
+   "quote": "harry asked about the friends' total contribution. muir: around 50k."
+  },
+  {
+   "topic": "Friends cookie walk proceeds",
+   "what_was_recorded": "The cookie walk brought in around $1300.",
+   "figures_as_printed": [
+    "$1300"
+   ],
+   "quote": "the cookie walk brought in around $1300."
+  },
+  {
+   "topic": "Director salary increase",
+   "what_was_recorded": "The board agreed on a salary increase of 4% or $2800 along with the director review.",
+   "figures_as_printed": [
+    "4%/$2800"
+   ],
+   "quote": "the board agreed on a 4%/$2800 salary increase along with the review."
+  },
+  {
+   "topic": "Fines collected and fine policy",
+   "what_was_recorded": "Discussion followed on the amount of fines collected and current fine collection policies; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "some discussion followed on the amount of fines collected and current policies on collecting fines."
+  },
+  {
+   "topic": "Hannaford grant for children's room shelf",
+   "what_was_recorded": "A grant from Hannaford for a new shelf in the Children's room has gone through; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the grant from hannaford for the new shelf in the children's room has gone through."
+  },
+  {
+   "topic": "Teen material spending and new programs line",
+   "what_was_recorded": "Teen material spending is behind; a new line for programs has been requested; no figures are printed.",
+   "figures_as_printed": [],
+   "quote": "teen material spending is a bit behind."
+  },
+  {
+   "topic": "Outside consultant for strategic plan",
+   "what_was_recorded": "A request has been submitted to fund an outside consultant for the strategic plan; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "a request has been submitted to fund an outside consultant for the strategic plan."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Michael-Ray Jeffreys",
+   "stated_role": "BOS",
+   "topic": "snow clearing and library liability insurance",
+   "quote": "michael-ray said the library should be covered under the town's public building insurance if there are any liability concerns."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action; discussed snow clearing and insurance",
+   "quote": "harry mentioned the clearing of the public walkways during and after snowstorms",
+   "tags": [
+    "snow removal",
+    "insurance"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved December 19, 2019 minutes with edits and December 29, 2019 special meeting minutes",
+   "quote": "motion to approve minutes was unanimously approved with a few edits.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "no action; budget, programs, grants, and fifth grade visits reported",
+   "quote": "we are 58% through the fiscal year.",
+   "tags": [
+    "budget",
+    "FY21",
+    "programs",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Fine Free Discussion",
+   "resolution": "board supported two-stage implementation proposed by the director",
+   "quote": "muir recommended a two-stage implementation.",
+   "tags": [
+    "fines",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Trust Funds – Next Steps",
+   "resolution": "no action; director to work with town counsel on warrant article language",
+   "quote": "muir is meeting with the town counsel to work on the language for the town meeting warrant article.",
+   "tags": [
+    "trust funds",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "no action",
+   "quote": "the cookie walk brought in around $1300.",
+   "tags": [
+    "Friends of the Library",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Director Evaluation Completion",
+   "resolution": "accepted review as amended; approved 4%/$2800 salary increase",
+   "quote": "harry reviewed the completed evaluation with the board.",
+   "tags": [
+    "director evaluation",
+    "salary"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action",
+   "quote": "donna will be absent for the february meeting.",
+   "tags": [
+    "board comments"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:57 p.m.",
+   "quote": "meeting adjourned at 8:57 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "January 16, 2020 Agenda",
+   "where": "list",
+   "quote": "o january 16, 2020 agenda"
+  },
+  {
+   "name": "January Director’s Report",
+   "where": "list",
+   "quote": "o january director's report"
+  },
+  {
+   "name": "FY2021 Budget document",
+   "where": "list",
+   "quote": "o fy2021 budget document"
+  },
+  {
+   "name": "Fine Free Recommendation document",
+   "where": "list",
+   "quote": "o fine free recommendation document"
+  },
+  {
+   "name": "January 2020 Adult Services Report",
+   "where": "list",
+   "quote": "o january 2020 adult services report"
+  },
+  {
+   "name": "January 2020 YA Report",
+   "where": "list",
+   "quote": "o january 2020 ya report"
+  },
+  {
+   "name": "January 2020 Children’s Area Report",
+   "where": "list",
+   "quote": "o january 2020 children's area report"
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "FY21 budget",
+  "fine free",
+  "director evaluation",
+  "salary",
+  "Friends of the Library",
+  "trust funds",
+  "snow removal",
+  "insurance"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

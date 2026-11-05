@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2019-07-01",
  "docid": "1898",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the June 11, 2019 meeting",
+   "motion": "Approve the minutes of the June 11, 2019 meeting.",
    "moved_by": "Ms. DiGiacomo",
    "seconded_by": "Ms. Grant",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "ms. digiacomo motioned to approve the minutes from the june 11, 2019 meeting, ms. grant seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 10:34 a.m.",
    "moved_by": "Ms. DiGiacomo",
    "seconded_by": "Mr. Pesenti",
    "outcome": "passed unanimously",
@@ -28,7 +28,305 @@
    "quote": "ms. digiacomo moved to adjourn the meeting at 10:34 a.m. mr. pesenti seconded. on vote, motion carried unanimously."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0880005
+ "dropped_unquoted": 1,
+ "note": "The meeting date supplied (2019-07-01) differs from the date printed in the minutes (July 2, 2019); the record follows the minutes. The minutes contain a stamp, \"Unanimously approved by COA at August 13, 2019 meeting\", which records a later approval of these minutes and is not a vote at this meeting, so it is not recorded as a vote. Only two motions are recorded, both procedural. The Public Comment heading has no speakers under it. The minutes are signed by Amanda Koeck but do not state whether she attended.",
+ "cost_usd": 0.00492922,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, director susan doherty, jane rabbitt, chery moisan, betty digiacomo, pete lincoln,"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, director susan doherty, jane rabbitt, chery moisan, betty digiacomo, pete lincoln,"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, director susan doherty, jane rabbitt, chery moisan, betty digiacomo, pete lincoln,"
+  },
+  {
+   "name": "Chery Moisan",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, director susan doherty, jane rabbitt, chery moisan, betty digiacomo, pete lincoln,"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, director susan doherty, jane rabbitt, chery moisan, betty digiacomo, pete lincoln,"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, director susan doherty, jane rabbitt, chery moisan, betty digiacomo, pete lincoln,"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "",
+   "status": "present",
+   "quote": "judy tarbell, barbara brown, sarah grant, john pesenti, susan o'sullivan"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "",
+   "status": "present",
+   "quote": "judy tarbell, barbara brown, sarah grant, john pesenti, susan o'sullivan"
+  },
+  {
+   "name": "Sarah Grant",
+   "role": "",
+   "status": "present",
+   "quote": "judy tarbell, barbara brown, sarah grant, john pesenti, susan o'sullivan"
+  },
+  {
+   "name": "John Pesenti",
+   "role": "",
+   "status": "present",
+   "quote": "judy tarbell, barbara brown, sarah grant, john pesenti, susan o'sullivan"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "role": "",
+   "status": "present",
+   "quote": "judy tarbell, barbara brown, sarah grant, john pesenti, susan o'sullivan"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: diane nowd guests:"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Lincoln asked for a list of volunteers for the next meeting (cookout planning).",
+   "quote": "ms. lincoln asked for a list of volunteers for the next meeting."
+  },
+  {
+   "decision": "Ms. Lincoln asked the board to come up with ideas to beef up attendance at the Volunteer Recognition Cookout.",
+   "quote": "asked the board to come up with ideas to beef up attendance."
+  },
+  {
+   "decision": "Board members were asked to come up with questions and ideas for a new COA board member orientation packet; Ms. Rabbitt suggested looking at other towns' orientation packets.",
+   "quote": "ms. lincoln asked board members to come up with questions and ideas to create a new orientation packet."
+  },
+  {
+   "decision": "Ms. Doherty will contact the superintendent to see whether a census message can be posted on the sign in front of the middle/high school.",
+   "quote": "ms. doherty said she'd contact the superintendent to see if a message could be posted on the sign out front of the middle/high school."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Director's report: formula grant funds for instructors",
+   "what_was_recorded": "Director will use FY2019 formula grant funds to pay instructors for pickle ball, Zumba, and a new program called Nirvana; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "she will use formula grant funds for fiscal year 2019 to focus on paying instructors for pickle ball, zumba, and a new program called nirvana."
+  },
+  {
+   "topic": "Shuffleboard court completion",
+   "what_was_recorded": "Finishing of the shuffleboard court is in progress; a contractor was found to finish it for a stated price.",
+   "figures_as_printed": [
+    "$850.00"
+   ],
+   "quote": "dave dorren of the supporters has found someone to finish it for $850.00."
+  },
+  {
+   "topic": "Walkway painting",
+   "what_was_recorded": "DPW contacted three people to paint the walkway; cost to be covered by Formula Grant funds; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the cost will be covered by formula grant funds."
+  },
+  {
+   "topic": "Gordon Edes event fundraiser for Jimmy Fund",
+   "what_was_recorded": "Gordon Edes raised money for the Jimmy Fund in his father's name.",
+   "figures_as_printed": [
+    "$300"
+   ],
+   "quote": "he was able to raise $300 for the jimmy fund in his father's name."
+  },
+  {
+   "topic": "Eagle House Supporters fundraising (World Series trophy and ticket raffle)",
+   "what_was_recorded": "About $4,000 was raised for the Supporters from the World Series trophy and a raffle of four tickets behind home plate at Fenway Park.",
+   "figures_as_printed": [
+    "$4,000"
+   ],
+   "quote": "about $4,000 was raised for the supporters."
+  },
+  {
+   "topic": "Volunteer Recognition Cookout funding",
+   "what_was_recorded": "The cookout is paid for by the Eagle House Supporters; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the event is paid for by the eagle house supporters."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (June 11, 2019 meeting)",
+   "resolution": "approved unanimously",
+   "quote": "ms. digiacomo motioned to approve the minutes from the june 11, 2019 meeting, ms. grant seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "reported; no action",
+   "quote": "ms. doherty reported she will use formula grant funds for fiscal year 2019",
+   "tags": [
+    "director",
+    "formula grant",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Property Tax Work-Off",
+   "resolution": "discussed; no action",
+   "quote": "ms. doherty reported that income eligibility for the program has increased",
+   "tags": [
+    "property tax work-off",
+    "eligibility"
+   ]
+  },
+  {
+   "topic": "Set date for Volunteer Recognition Cookout",
+   "resolution": "date set for September 6, 2019",
+   "quote": "the date for this year's cookout is september 6, 2019.",
+   "tags": [
+    "volunteers",
+    "cookout"
+   ]
+  },
+  {
+   "topic": "New COA Board Member Orientation",
+   "resolution": "board asked to submit questions and ideas; no action",
+   "quote": "ms. lincoln showed the board the orientation packet that's been used in the past",
+   "tags": [
+    "board orientation",
+    "training"
+   ]
+  },
+  {
+   "topic": "Boston Post Cane",
+   "resolution": "informational; no action",
+   "quote": "mr. lincoln described how the boston post cane came to be",
+   "tags": [
+    "boston post cane"
+   ]
+  },
+  {
+   "topic": "Lunenburg Salary Admin. Plan pertaining to COA Director",
+   "resolution": "reported; solution expected by Fall Town Meeting",
+   "quote": "a solution should be in place by fall town meeting.",
+   "tags": [
+    "personnel",
+    "salary plan"
+   ]
+  },
+  {
+   "topic": "Dementia Friendly Lunenburg",
+   "resolution": "reported; no action",
+   "quote": "the action team is quickly approaching getting the town to \"dementia friendly\" status.",
+   "tags": [
+    "dementia",
+    "memory cafe"
+   ]
+  },
+  {
+   "topic": "Shuffleboard Court",
+   "resolution": "reported; no action",
+   "quote": "ms. lincoln reported the finishing of the project is in progress",
+   "tags": [
+    "shuffleboard",
+    "eagle house"
+   ]
+  },
+  {
+   "topic": "Building Report",
+   "resolution": "reported; no action",
+   "quote": "ms. doherty reported the dpw has contacted three people to paint the walkway",
+   "tags": [
+    "building",
+    "eagle house",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Upcoming Events and census forms",
+   "resolution": "discussed; Director to contact superintendent",
+   "quote": "ms. doherty said she'd contact the superintendent to see if a message could be posted",
+   "tags": [
+    "events",
+    "census"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters Report",
+   "resolution": "reported; no action",
+   "quote": "ms. lincoln reported that the gordon edes event was well attended",
+   "tags": [
+    "fundraising",
+    "eagle house supporters",
+    "ham and bean supper"
+   ]
+  },
+  {
+   "topic": "Notices and Communications",
+   "resolution": "heading printed; no items recorded",
+   "quote": "notices and communications:",
+   "tags": []
+  },
+  {
+   "topic": "Board Comment",
+   "resolution": "noted; no action",
+   "quote": "mr. lincoln expressed his gratitude to selectman tom alonzo",
+   "tags": [
+    "reappointments"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:34 a.m.",
+   "quote": "ms. digiacomo moved to adjourn the meeting at 10:34 a.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "COA board member orientation packet (used in the past)",
+   "where": "text",
+   "quote": "ms. lincoln showed the board the orientation packet that's been used in the past and suggested updating the packet."
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "eagle house",
+  "senior programs",
+  "volunteers",
+  "property tax work-off",
+  "fundraising",
+  "board orientation",
+  "dementia friendly",
+  "personnel"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

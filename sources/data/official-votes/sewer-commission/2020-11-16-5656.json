@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2020-11-16",
  "docid": "5656",
@@ -12,63 +12,407 @@
  },
  "votes": [
   {
-   "motion": "Bring the pipe connection for Bright Farms to the property line and use the Bright Farms contractor to make that connection",
+   "motion": "Bring the pipe connection for Bright Farms to the property line and use the Bright Farms contractor to make that connection.",
    "moved_by": "Mike D.",
    "seconded_by": "John R.",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: mike d. second: john r. to bring the pipe connection for bright farms to the property line and to use the bright farms contractor to make that connection. roll call vote - mike-aye, brett-aye, carl-aye, john-aye and dave-aye."
+   "quote": "motion: mike d. second: john r. to bring the pipe connection for bright farms to the property line and to use the bright farms contractor to make that connection."
   },
   {
-   "motion": "Pay the final Woodard & Curran invoice for 1 & I 3rd party review",
+   "motion": "Pay the final Woodard & Curran invoice for 1 & I 3rd party review.",
    "moved_by": "John R.",
    "seconded_by": "Mike D.",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: john r. second: mike d. to pay the final woodard & curran invoice for 1 & i 3rd party review. discussion: carl asked if the support would cover the algorithm. dave ",
-   "quote_taken_from_text": true
+   "quote": "motion: john r. second: mike d. to pay the final woodard & curran invoice for 1 & i 3rd party review."
   },
   {
-   "motion": "Assess privilege fees for 57 & 63 Cross Road at $13,997.47 each",
+   "motion": "Assess the privilege fee for 57 & 63 Cross Road @ $13,997.47 each.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: john r. second: brett r. to assess the privilege fee for 57 & 63 cross road @ $13,997.47 each. roll call vote - mike-aye, carl-aye, john-aye, brett-aye and dave-aye."
+   "quote": "motion: john r. second: brett r. to assess the privilege fee for 57 & 63 cross road @ $13,997.47 each."
   },
   {
-   "motion": "Approve the 10/27/20 Minutes",
+   "motion": "Approve the 10/27/20 minutes.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: john r. to approve the 10/27/20 minutes. second: brett r. roll call vote - mike-aye, carl-aye, john-aye, brett-aye and dave-aye."
+   "quote": "motion: john r. to approve the 10/27/20 minutes. second: brett r."
   },
   {
-   "motion": "Cancel the 11/24 meeting",
+   "motion": "Cancel the 11/24 meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "to cancel the 11/24 meeting. roll call vote - mike-aye, carl-aye, john-aye, brett-aye and dave-aye."
   },
   {
-   "motion": "Cancel the 12/29 meeting",
+   "motion": "Cancel the 12/29 meeting.",
    "moved_by": "Brett R.",
    "seconded_by": "John R.",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: brett r. second: john r. to cancel the 12/29 meeting. roll call vote - mike-aye, carl-aye, john-aye, brett-aye and dave-aye."
+   "procedural": false,
+   "quote": "motion: brett r. second: john r. to cancel the 12/29 meeting."
   },
   {
-   "motion": "Adjourn at 6:42pm",
+   "motion": "Adjourn the meeting at 6:42pm.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike D.",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: brett r. to adjourn at 6:42pm second: mike d. roll call vote - mike-aye, carl-aye, john-aye, brett-aye and dave-aye ",
-   "quote_taken_from_text": true
+   "quote": "motion: brett r. to adjourn at 6:42pm second: mike d."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan from macOS Vision. The Motion/Second attribution for the 11/24 meeting cancellation vote appears to have been lost at a page break (between page 2 and page 3), though the vote outcome is clearly recorded. All votes are unanimous (5-0).",
- "cost_usd": 0.11703749999999999
+ "note": "Text is OCR of three pages. Page 1 begins mid-sentence and page 2 begins mid-sentence, so the opening of the meeting is partly missing. The motion header and mover for the 11/24 cancellation are missing, so moved_by and seconded_by are blank. The first privilege-fee motion was withdrawn and revised; only the revised motion is recorded as a vote. The Woodard & Curran invoice amount is not printed. \"1 & I 3rd party review\" may be an OCR misreading. No formal attendance roll is recorded; the five members are shown only in roll-call votes, and \"present\" status is inferred from participation or roll call. The clerk signature is garbled.",
+ "cost_usd": 0.011995620000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave",
+   "status": "present",
+   "quote": "dave asked for a motion to approve bringing the line to the property."
+  },
+  {
+   "name": "Carl",
+   "status": "present",
+   "quote": "carl asked if they could confirm that the line does not have any easements or right-a-ways."
+  },
+  {
+   "name": "Mike D.",
+   "status": "present",
+   "quote": "mike and brett agreed with a single meter."
+  },
+  {
+   "name": "John R.",
+   "status": "present",
+   "quote": "john said that if the line does not go to the property line, the town should pay for it and move forward on the permitting from the state."
+  },
+  {
+   "name": "Brett R.",
+   "status": "present",
+   "quote": "brett commented that it is good to hear his experience with sewer systems and he is looking forward to working with him."
+  },
+  {
+   "name": "Sean O'Neil",
+   "role": "Bright Farms",
+   "status": "present",
+   "quote": "sean o'neil, bright farms and jeff walsh, graves engineering- bright farms project discussion- barb stated that sean and jeff were present to answer questions on project."
+  },
+  {
+   "name": "Jeff Walsh",
+   "role": "Graves Engineering",
+   "status": "present",
+   "quote": "sean o'neil, bright farms and jeff walsh, graves engineering- bright farms project discussion- barb stated that sean and jeff were present to answer questions on project."
+  },
+  {
+   "name": "Steve Powell",
+   "role": "the landowner",
+   "status": "present",
+   "quote": "steve noted he is working with mass ave. motors, regarding tying in and moving their entrance to the subdivision road."
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "the civil engineer",
+   "status": "present",
+   "quote": "brian added that they want to think ahead to maximize the property, but do not want to get in the way of bright farms."
+  },
+  {
+   "name": "Chi Mann",
+   "role": "civil engineer for Bright Farms",
+   "status": "present",
+   "quote": "also attending are chi mann and nick long - civil engineers for bright farms."
+  },
+  {
+   "name": "Nick Long",
+   "role": "civil engineer for Bright Farms",
+   "status": "present",
+   "quote": "also attending are chi mann and nick long - civil engineers for bright farms."
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "DPW Director effective 11/9/20",
+   "status": "present",
+   "quote": "rob oliva, dpw director effective 11/9/20 - rob introduced himself to the commissioners and gave a short summary of his experience as a civil engineer"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Maintenance Plan final report placed on the agenda of the meeting after the next one so Rob can review it.",
+   "quote": "dave suggested putting it on a future agenda so rob can review it. all agreed and will add it to the agenda of the meeting after the next one."
+  },
+  {
+   "decision": "Barb will pay the Woodard & Curran bill.",
+   "quote": "barb said she will pay that bill."
+  },
+  {
+   "decision": "Rob Oliva will look into the generator contract and options before the next meeting.",
+   "quote": "rob added he will look into the generator contract and options, prior to the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Generator maintenance price",
+   "what_was_recorded": "Barb reported a generator maintenance price from Weld's contractor arrangement with Al Packard.",
+   "quote": "barb reported that al packard is working with weld, who previously worked on the generators and she received a maintenance price of $4,825/year.",
+   "figures_as_printed": [
+    "$4,825/year"
+   ]
+  },
+  {
+   "topic": "Empey budget",
+   "what_was_recorded": "Dave asked about the Empey budget and Barb said it is going very well with no extra charges; no figure printed.",
+   "quote": "dave asked how the empey budget is going and barb replied very well - there have been no extra charges.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY21 year-to-date budget",
+   "what_was_recorded": "As of the first week of November, revenues and expenses were reported, with expenses including the annual transfer for indirect expenses.",
+   "quote": "revenues were $334,167 and expenses were $304,000, which includes the annual transfer for indirect expenses.",
+   "figures_as_printed": [
+    "$334,167",
+    "$304,000"
+   ]
+  },
+  {
+   "topic": "FY21 budget outsourcing figures",
+   "what_was_recorded": "The Commission discussed the outsourcing figures; no figure printed.",
+   "quote": "the commission discussed the outsourcing figures.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Sewer privilege fees, 57 & 63 Cross Road",
+   "what_was_recorded": "Both properties connected to the main and privilege fees were assessed at the stated amount each.",
+   "quote": "barb reported that both properties have connected to the main and they can now assess the privilege fees of $13,997.47 each.",
+   "figures_as_printed": [
+    "$13,997.47"
+   ]
+  },
+  {
+   "topic": "Woodard & Curran final invoice",
+   "what_was_recorded": "The board voted to pay the final Woodard & Curran invoice for 1 & I 3rd party review; the invoice amount is not printed.",
+   "quote": "to pay the final woodard & curran invoice for 1 & i 3rd party review.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Bright Farms lateral cost",
+   "what_was_recorded": "Discussion of who pays for the lateral; the town would pay if the line does not reach the property line. No figure printed.",
+   "quote": "john said that if the line does not go to the property line, the town should pay for it and move forward on the permitting from the state.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Carl",
+   "stated_role": "",
+   "topic": "welcome to Rob Oliva; Maintenance Plan comments by email",
+   "quote": "carl welcomed rob oliva to lunenburg. he also noted that he will be emailing his comments regarding the maintenance plan, along with his questions for the new dpw director, to the commissioners and wanted that noted in the minutes."
+  },
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "thanks for Salvation Army toy collection and parade",
+   "quote": "dave thanked all who participated in the toy collection/parade for the salvation army and all who made it a great event."
+  },
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "Thanksgiving greeting",
+   "quote": "dave wished all a happy thanksgiving."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "noted, no action",
+   "quote": "public comment- carl welcomed rob oliva to lunenburg.",
+   "tags": [
+    "public comment",
+    "welcome"
+   ]
+  },
+  {
+   "topic": "Appointment: Bright Farms project (Sean O'Neil, Jeff Walsh)",
+   "resolution": "approved bringing the pipe connection to the property line",
+   "quote": "sean o'neil, bright farms and jeff walsh, graves engineering- bright farms project discussion",
+   "tags": [
+    "Bright Farms",
+    "sewer connection",
+    "right-of-way",
+    "metering"
+   ]
+  },
+  {
+   "topic": "Rob Oliva, DPW Director introduction",
+   "resolution": "no action",
+   "quote": "rob oliva, dpw director effective 11/9/20 - rob introduced himself to the commissioners",
+   "tags": [
+    "DPW director",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Woodard & Curran letter and final invoice",
+   "resolution": "invoice paid by vote; Barb to pay",
+   "quote": "dave asked for a vote to pay the invoice.",
+   "tags": [
+    "Woodard & Curran",
+    "billing tool",
+    "invoice"
+   ]
+  },
+  {
+   "topic": "Maintenance Plan final report",
+   "resolution": "placed on agenda of the meeting after the next one",
+   "quote": "maintenance plan - final report overview.",
+   "tags": [
+    "maintenance plan"
+   ]
+  },
+  {
+   "topic": "Sewer privilege fee assessment, 57 & 63 Cross Road",
+   "resolution": "fees assessed at $13,997.47 each",
+   "quote": "sewer privilege fee assessment - 57 & 63 cross road",
+   "tags": [
+    "privilege fee",
+    "assessment"
+   ]
+  },
+  {
+   "topic": "Minutes of 10/27/20",
+   "resolution": "approved",
+   "quote": "minutes- 10/27/20 motion: john r. to approve the 10/27/20 minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Cancel 11/24 meeting",
+   "resolution": "cancelled",
+   "quote": "to cancel the 11/24 meeting.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Cancel 12/29 meeting",
+   "resolution": "cancelled",
+   "quote": "december 29th meeting -dave proposed cancelling the december 29th meeting",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Business Manager Report",
+   "resolution": "no action; generator contract review pending with Rob",
+   "quote": "business manager report - generator maintenance- barb reported that al packard is working with weld",
+   "tags": [
+    "generator maintenance",
+    "FY21 budget",
+    "GIS map",
+    "grease trap"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "no action",
+   "quote": "member agenda inputs for future meetings- dave suggested commissioners send any questions to rob",
+   "tags": [
+    "agenda",
+    "DPW director"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "noted, no action",
+   "quote": "dave wished all a happy thanksgiving.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "listed for information",
+   "quote": "upcoming scheduled sewer commission activities:",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:42pm",
+   "quote": "motion: brett r. to adjourn at 6:42pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Bright Farms site plan",
+   "where": "text",
+   "quote": "want to make sure the sewer commission is happy with the site plan."
+  },
+  {
+   "name": "Department of Transportation (DOT) application for right-of-way work",
+   "where": "text",
+   "quote": "transportation(dot) application comes from the town for any work in the right a way."
+  },
+  {
+   "name": "Letter to Woodard & Curran re: Billing Tool and Final Invoice",
+   "where": "text",
+   "quote": "discussion on letter to woodard & curran re: billing tool and final invoice"
+  },
+  {
+   "name": "Woodard & Curran final invoice",
+   "where": "text",
+   "quote": "to pay the final woodard & curran invoice for 1 & i 3rd party review."
+  },
+  {
+   "name": "Maintenance Plan final report",
+   "where": "text",
+   "quote": "maintenance plan - final report overview."
+  },
+  {
+   "name": "Current year-to-date budget (FY21)",
+   "where": "text",
+   "quote": "barb sent out the current year-to-date budget."
+  },
+  {
+   "name": "Town GIS maps",
+   "where": "text",
+   "quote": "barb noted that the town gis maps have been updated and the manhole ids have been added to the map."
+  },
+  {
+   "name": "Generator contract",
+   "where": "text",
+   "quote": "rob added he will look into the generator contract and options, prior to the next meeting."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "Bright Farms",
+  "sewer connection",
+  "right-of-way",
+  "privilege fee",
+  "Woodard & Curran",
+  "generator maintenance",
+  "FY21 budget",
+  "DPW director",
+  "maintenance plan",
+  "meeting schedule",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

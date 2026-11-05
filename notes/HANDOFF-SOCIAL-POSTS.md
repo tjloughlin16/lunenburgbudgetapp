@@ -1,8 +1,7 @@
 ---
-status: parked
+status: reference
 updated: 2026-11-04
-next: post templates by shape; automated posts (designed, not built)
-waiting_on: TJ: "put this on the to-do, not to do now" (21 Oct)
+genlock: G-AFST6 -- next steps, prohibitions and open questions live there (genlock goal show G-AFST6)
 ---
 
 # Social posts: where they stand, and what is next

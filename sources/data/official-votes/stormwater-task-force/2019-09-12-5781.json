@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2019-09-12",
  "docid": "5781",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the June 13 meeting minutes",
+   "motion": "Approve the June 13, August 1, and August 15 meeting minutes.",
    "moved_by": "Matt Allison",
    "seconded_by": "Phyllis Luck",
    "outcome": "passed",
@@ -20,23 +20,7 @@
    "quote": "there were motions made by matt allison to approve the june 13, august 1, and august 15 meeting minutes; motions were seconded by phyllis luck, all voted in favor."
   },
   {
-   "motion": "Approve the August 1 meeting minutes",
-   "moved_by": "Matt Allison",
-   "seconded_by": "Phyllis Luck",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "there were motions made by matt allison to approve the june 13, august 1, and august 15 meeting minutes; motions were seconded by phyllis luck, all voted in favor."
-  },
-  {
-   "motion": "Approve the August 15 meeting minutes",
-   "moved_by": "Matt Allison",
-   "seconded_by": "Phyllis Luck",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "there were motions made by matt allison to approve the june 13, august 1, and august 15 meeting minutes; motions were seconded by phyllis luck, all voted in favor."
-  },
-  {
-   "motion": "Adjourn the meeting at 7:15 pm",
+   "motion": "Adjourn the meeting at 7:15 pm.",
    "moved_by": "Matt Allison",
    "seconded_by": "Phyllis Luck",
    "outcome": "passed",
@@ -45,6 +29,214 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR from macOS Vision. Four votes recorded: three to approve prior meeting minutes (June 13, August 1, August 15) grouped in one sentence, and one to adjourn.",
- "cost_usd": 0.0803415
+ "note": "Text is OCR of scanned pages with errors (e.g., 'Keport', 'DP W', 'CMRSWC' vs 'CMSWC', 'in in'). No attendance roll call is recorded, so attendee status is inferred from the text. No public comment section appears. Two votes are recorded with results; no other votes or dollar figures appear. Town Manager is not named.",
+ "cost_usd": 0.00579752,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Phyllis Luck",
+   "role": "Chair SWTF; Vice Chair, BOS",
+   "status": "present",
+   "quote": "phyllis luck reported on the statewide stormwater coalition meeting held on 8/1/19."
+  },
+  {
+   "name": "Matt Allison",
+   "role": "not stated",
+   "status": "present",
+   "quote": "matt allison announced that there will be pumpkin carving at 7 pm on october 18, at the senior"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "adam burney had noted that on page 3"
+  },
+  {
+   "name": "Rodriquenz",
+   "role": "DP W Director",
+   "status": "present",
+   "quote": "dp w director rodriquenz commented that nick cristofori had been very communicative and responsive during the process."
+  },
+  {
+   "name": "Nick Cristofori",
+   "role": "project lead, consultant (CEI)",
+   "status": "not stated",
+   "quote": "project lead, nick cristofori"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "heather lemieux had sent via email the annual report for the municipal separate storm sewer"
+  },
+  {
+   "name": "Newton Tedder",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "newton tedder went through the keport, due september 30, 2019."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Once minor corrections to the Year 1 MS4 Annual Report are made, CEI will forward it to the Town Manager, who will sign it so it can be submitted to DEP/EPA before the September 30 deadline.",
+   "quote": "when the few minor corrections have been completed, cei will forward the annual report to the town manager, who will sign the report"
+  },
+  {
+   "decision": "Adam Burney reached out to CEI's Nick Cristofori to have the noted Annual Report corrections (pages 3, 4 and 13) made.",
+   "quote": "so he'd reached out to nick to have this corrected, as well as the information"
+  },
+  {
+   "decision": "Phyllis Luck will contact the Lunenburg Public Library to find suitable dates in April 2020 for the MS4 Permit Year 2 IDDE training.",
+   "quote": "phyllis will reach out to the library to find suitable dates in april 2020 for this training."
+  },
+  {
+   "decision": "The next SWTF meeting will be used to prepare a slide show for the November Town Meeting; members are asked to bring ideas.",
+   "quote": "it was determined that this will be the opportunity to prepare a slide show for town meeting; all attendees are encouraged to bring their ideas for the november town meeting presentation to this meeting."
+  },
+  {
+   "decision": "Fourth-quarter SWTF meeting dates set as October 24, November 14, and December 12, held Thursdays at 6:30 pm in the Ritter Building upper conference room unless otherwise noted.",
+   "quote": "quarter: october 24, november 14, and december 12."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "IDDE training hosted locally in Lunenburg",
+   "what_was_recorded": "Hosting the MS4 Permit Year 2 IDDE training at the Library would let more DPW personnel be trained at no cost to the Town.",
+   "quote": "having the training local will allow the dpw to have more personnel trained, and at no cost to the town!",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Year 1 MS4 Annual Report draft review",
+   "resolution": "reviewed; minor corrections pending, then to Town Manager for signature",
+   "quote": "all present were very pleased with the quality of the annual report",
+   "tags": [
+    "MS4 permit",
+    "annual report",
+    "DEP/EPA"
+   ]
+  },
+  {
+   "topic": "Year 2 IDDE training hosted at Lunenburg library",
+   "resolution": "Phyllis Luck to contact library for April 2020 dates",
+   "quote": "phyllis luck volunteered, at the last cmswc steering committee meeting, to have lunenburg host the ms4 permit year 2",
+   "tags": [
+    "IDDE training",
+    "library",
+    "CMSWC"
+   ]
+  },
+  {
+   "topic": "Statewide Stormwater Coalition report and EPA webinar",
+   "resolution": "reported; no action",
+   "quote": "phyllis luck reported on the statewide stormwater coalition meeting held on 8/1/19.",
+   "tags": [
+    "EPA",
+    "webinar",
+    "coalition"
+   ]
+  },
+  {
+   "topic": "SOP workshop and Rubber Ducky video",
+   "resolution": "discussed; no action",
+   "quote": "all were reminded that the \"rubber ducky\" video has been redone; it is now available for",
+   "tags": [
+    "outreach",
+    "SOP",
+    "video"
+   ]
+  },
+  {
+   "topic": "Coalition award and next meeting announcement",
+   "resolution": "announced; no action",
+   "quote": "it was announced that the cmrswc had been selected as a recipient of the epa new england",
+   "tags": [
+    "award",
+    "coalition"
+   ]
+  },
+  {
+   "topic": "Pumpkin carving outreach",
+   "resolution": "announced; survey possibly offered there",
+   "quote": "matt allison announced that there will be pumpkin carving at 7 pm on october 18, at the senior",
+   "tags": [
+    "outreach",
+    "stormwater survey"
+   ]
+  },
+  {
+   "topic": "Next meeting and Town Meeting slide show",
+   "resolution": "slide show to be prepared at next meeting",
+   "quote": "in discussing the next swtf meeting, it was determined that this will be the opportunity to prepare a",
+   "tags": [
+    "Town Meeting",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved June 13, August 1, and August 15 minutes",
+   "quote": "there were motions made by matt allison to approve the june 13, august 1, and august 15 meeting minutes;",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Fourth-quarter meeting schedule",
+   "resolution": "set October 24, November 14, December 12",
+   "quote": "quarter: october 24, november 14, and december 12.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:15 pm",
+   "quote": "to adjourn the meeting at 7:15 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Annual Report for the Municipal Separate Storm Sewer System (MS4) Permit, Draft",
+   "where": "text",
+   "quote": "heather lemieux had sent via email the annual report for the municipal separate storm sewer system (ms4) permit, draft (attached)"
+  },
+  {
+   "name": "EPA Webinar on the submittal of the Year 1 Annual Report for the MS4 Permit",
+   "where": "text",
+   "quote": "all present viewed the epa webinar on the submittal of the year 1 annual report for the ms4 permit."
+  },
+  {
+   "name": "Rubber Ducky video",
+   "where": "text",
+   "quote": "all were reminded that the \"rubber ducky\" video has been redone; it is now available for"
+  },
+  {
+   "name": "Stormwater survey",
+   "where": "text",
+   "quote": "perhaps that will be a good opportunity to have the stormwater survey available as it will be"
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "MS4 permit",
+  "annual report",
+  "IDDE training",
+  "outreach",
+  "Town Meeting",
+  "minutes approval",
+  "DPW"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2021-01-11",
  "docid": "3330",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from November 9th and December 1st",
+   "motion": "Approve the minutes from Nov 9 and Dec 1.",
    "moved_by": "Chris",
    "seconded_by": "Dave",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "chris motioned and dave seconded a motion to approve minutes from nov 9th and dec 1st : dave yes chris yes ana yes karin yes"
+   "quote": "chris motioned and dave seconded a motion to approve minutes from nov 9th and dec 1st"
   },
   {
-   "motion": "Nominate Ana as Parks Commission representative for Open Space representation",
+   "motion": "Nominate Ana Lockwood as the Open Space representative.",
    "moved_by": "Karin",
    "seconded_by": "Dave",
    "outcome": "passed",
@@ -28,15 +28,316 @@
    "quote": "ana volunteered. karin nominated her, dave seconded. roll call vote and all in favor."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:33.",
    "moved_by": "Chris",
    "seconded_by": "Susanna",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn by chris 8:33, seconded by susanna. roll call vote: susanna yes dave yes ana yes chris yes karin yes"
+   "quote": "motion to adjourn by chris 8:33, seconded by susanna. roll call vote:"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0888974
+ "note": "Text is OCR-style extraction with ligature and curly-quote characters; quotes copied as printed. No outcome count is printed for the minutes approval (four yes votes listed, Susanna's vote not recorded due to tech issues) or the adjournment roll call (five yes listed); both are marked passed on the roll-call tally. The hunting item is headed 'and Vote' but records only 'All in agreement' with no motion, so it is a decision, not a vote. No dollar figures were recorded for the beach fee or the Marshall project. Karen Brouchue is mentioned but did not take part, so is not listed as an attendee.",
+ "cost_usd": 0.00856142,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "in attendance were karin menard, dave passios, susanna jewell, kayla wright, chris sullivan, and ana lockwood."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "in attendance were karin menard, dave passios, susanna jewell, kayla wright, chris sullivan, and ana lockwood."
+  },
+  {
+   "name": "Susanna Jewell",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "in attendance were karin menard, dave passios, susanna jewell, kayla wright, chris sullivan, and ana lockwood."
+  },
+  {
+   "name": "Kayla Wright",
+   "role": "Rec Director",
+   "status": "present",
+   "quote": "rec director, kayla wright, updates:"
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "in attendance were karin menard, dave passios, susanna jewell, kayla wright, chris sullivan, and ana lockwood."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "",
+   "status": "present",
+   "quote": "in attendance were karin menard, dave passios, susanna jewell, kayla wright, chris sullivan, and ana lockwood."
+  },
+  {
+   "name": "Jared Bowser",
+   "role": "guest and lifeguard at the town beach",
+   "status": "present",
+   "quote": "jared bowser, guest and lifeguard at the town beach, was present for this discussion."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Kayla will bring beach rental pricing and policy to the next meeting.",
+   "quote": "kayla will work on getting pricing/policy to us for next meeting."
+  },
+  {
+   "decision": "All beach renters will need to have a Certiﬁcate of Liability.",
+   "quote": "all renters will need to have a certiﬁcate of liability."
+  },
+  {
+   "decision": "Kayla will base the rental fee to include costs such as trash and electricity.",
+   "quote": "kayla will base the fee to include all of that."
+  },
+  {
+   "decision": "Commission agreed the hunting policy should say no hunting or weapons on Parks properties outside an official park program; the wording was then drafted and trapping will be added at the next meeting.",
+   "quote": "trapping will be added at our next meeting."
+  },
+  {
+   "decision": "Dave will follow up with the DPW director about the Marshall track.",
+   "quote": "dave hasn't had the chance to talk to the dpw director about it yet but he will follow up."
+  },
+  {
+   "decision": "Karin will remove items that do not belong on the Marshall Park list and get it to Kayla before the next meeting.",
+   "quote": "karin requesting that we remove the items that don't belong on the list and get it to kayla before the next meeting."
+  },
+  {
+   "decision": "Commission agreed a skateboard park, if there is one in town, should be in Marshall Park.",
+   "quote": "chris said that there seems to be a consensus on the commission that if there is a skateboard park in town then it should be in marshall park."
+  },
+  {
+   "decision": "Whether to put a consulting help or survey of Marshall on the May warrant will be revisited at the February meeting.",
+   "quote": "we will revisit in our february meeting."
+  },
+  {
+   "decision": "Policy will be built in chunks; Karin will put maintenance policy on the next agenda.",
+   "quote": "karin will put it on our next agenda to discuss maintenance policy."
+  },
+  {
+   "decision": "Susanna will do homework on the revolving account for the next meeting; Karin will add it to the next agenda.",
+   "quote": "will do homework for next meeting."
+  },
+  {
+   "decision": "Next meeting is set for January 25 with the Skateboard Park.",
+   "quote": "next meeting is january 25 with the skateboard park."
+  },
+  {
+   "decision": "February meeting set for Feb 12 at 6:30 pm.",
+   "quote": "february meeting-susanna requested a thursday or friday. feb 12. 630 pm."
+  },
+  {
+   "decision": "Commission agreed to work on Parks policy in chunks rather than all at once, starting with maintenance.",
+   "quote": "lets work on policy in chunks instead of trying to do it all at once."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Beach rental costs",
+   "what_was_recorded": "Chris asked whether rentals incur additional costs such as trash and electricity, and the fee is to cover them; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "chris asked if there are additional costs incurred from rentals, ie trash, electricity, etc."
+  },
+  {
+   "topic": "Revolving account spending threshold",
+   "what_was_recorded": "Dave raised concern about spending the revolving account down under a threshold of $30k.",
+   "figures_as_printed": [
+    "$30k"
+   ],
+   "quote": "spending down under $30k v not having to."
+  },
+  {
+   "topic": "Marshall Park capital funding",
+   "what_was_recorded": "Capital planning ranked the Marshall Park project 13/22, so it will not be funded this year; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "capital planning ranked this project 13/22. therefore we will not make the cut for funding for this year."
+  },
+  {
+   "topic": "Warrant article for consulting or survey",
+   "what_was_recorded": "Dave asked whether to put consulting help or a survey of Marshall on the May warrant; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "dave asked the commission-do we want to get something on the warrant for may-for consulting help or a survey of marshall?"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jared Bowser",
+   "stated_role": "guest and lifeguard at the town beach",
+   "topic": "beach rental events and lifeguard coverage",
+   "quote": "he advised to not have too many events at once, given the size of the beach."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "called to order at 6:30 pm",
+   "quote": "karin called the meeting to order at 630 pm.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Approval of minutes (Nov 9 and Dec 1)",
+   "resolution": "approved",
+   "quote": "chris motioned and dave seconded a motion to approve minutes from nov 9th and dec 1st",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Recreation Director updates",
+   "resolution": "no action",
+   "quote": "winter programs are opened. skating rink ordered.",
+   "tags": [
+    "winter programs",
+    "recreation"
+   ]
+  },
+  {
+   "topic": "Non-departmental beach usage and policy creation",
+   "resolution": "continued",
+   "quote": "kayla will work on getting pricing/policy to us for next meeting.",
+   "tags": [
+    "beach",
+    "rentals",
+    "lifeguards",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Hunting on Parks properties",
+   "resolution": "consensus on wording; trapping deferred to next meeting",
+   "quote": "chris suggested we say no to all hunting, with any weapons, on parks properties.",
+   "tags": [
+    "hunting",
+    "conservation commission"
+   ]
+  },
+  {
+   "topic": "Marshall track",
+   "resolution": "Dave to follow up with DPW director",
+   "quote": "dave hasn't had the chance to talk to the dpw director about it yet but he will follow up.",
+   "tags": [
+    "marshall park",
+    "track",
+    "dogs"
+   ]
+  },
+  {
+   "topic": "Spring 2021 volunteer clean up days",
+   "resolution": "discussed, no action",
+   "quote": "chris suggested an earth day, april 22, kick-off.",
+   "tags": [
+    "volunteers",
+    "clean up"
+   ]
+  },
+  {
+   "topic": "Park properties improvements and Marshall Park Master Plan",
+   "resolution": "continued; list to be consolidated",
+   "quote": "capital planning ranked this project 13/22. therefore we will not make the cut for funding for this year.",
+   "tags": [
+    "marshall park",
+    "master plan",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Parks policy and procedures for maintenance and general use",
+   "resolution": "continued; maintenance policy on next agenda",
+   "quote": "karin will put it on our next agenda to discuss maintenance policy.",
+   "tags": [
+    "policy",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Revolving account",
+   "resolution": "continued; homework for next meeting",
+   "quote": "will do homework for next meeting.",
+   "tags": [
+    "revolving account",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Open Space representation",
+   "resolution": "Ana Lockwood nominated and approved",
+   "quote": "ana volunteered. karin nominated her, dave seconded. roll call vote and all in favor.",
+   "tags": [
+    "open space",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Next meeting and Skateboard Park",
+   "resolution": "scheduled January 25",
+   "quote": "next meeting is january 25 with the skateboard park.",
+   "tags": [
+    "skateboard park",
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "February meeting date",
+   "resolution": "set Feb 12, 6:30 pm",
+   "quote": "february meeting-susanna requested a thursday or friday. feb 12. 630 pm.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:33 pm",
+   "quote": "motion to adjourn by chris 8:33, seconded by susanna.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Marshall Park priorities and ideas list (generated by the parks commission and compiled by Kayla)",
+   "where": "text",
+   "quote": "karin reviewed the list generated by the parks commission and complied by kayla."
+  },
+  {
+   "name": "Marshall Park Master Plan",
+   "where": "text",
+   "quote": "including continued discussion about marshall park master plan."
+  },
+  {
+   "name": "Revolving fund warrant article discussed at last meeting",
+   "where": "text",
+   "quote": "the warrant article discussed last meeting was not the"
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "beach rentals",
+  "lifeguards",
+  "hunting policy",
+  "marshall park",
+  "master plan",
+  "skateboard park",
+  "volunteer clean up",
+  "revolving account",
+  "open space",
+  "maintenance policy",
+  "2021"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

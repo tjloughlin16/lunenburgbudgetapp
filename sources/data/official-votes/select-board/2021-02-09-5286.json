@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-02-09",
  "docid": "5286",
@@ -12,36 +12,36 @@
  },
  "votes": [
   {
-   "motion": "Approve the common victualler license for Voyage Nutrition located at 5 Summer Street, #10",
+   "motion": "Approve the common victualler license for Voyage Nutrition located at 5 Summer Street, #10.",
    "moved_by": "T. Dwyer",
    "seconded_by": "K. Adams",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: t. dwyer 2nd:k. adams to approve the common victualler license for voyage nutrition located at 5 summer street, #10 vote: ms. adams- aye, mr. marino- aye, mr. dwyer- aye, mr. jeffreys -aye"
+   "quote": "to approve the common victualler license for voyage nutrition located at 5 summer street, #10"
   },
   {
-   "motion": "Approve the minutes of January 5, 12, 19, 2021 as presented",
+   "motion": "Approve the minutes of January 5, 12, 19, 2021 as presented.",
    "moved_by": "J. Marino",
    "seconded_by": "K. Adams",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: j. marino 2nd: k. adams to approve the minutes of january 5, 12, 19, 2021 as presented vote: ms. adams- aye, mr. marino - aye, mr. dwyer-aye, mr. jeffreys -aye"
+   "quote": "to approve the minutes of january 5, 12, 19, 2021 as presented"
   },
   {
-   "motion": "Approve the 3rd Quarter Water Commitment in the amount of $9,412.90",
+   "motion": "Approve the 3rd Quarter Water Commitment in the amount of $9412.90.",
    "moved_by": "T. Dwyer",
    "seconded_by": "J. Marino",
    "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "motion: t. dwyer 2nd: j. marino to approve the 3rd quarter water commitment in the amount of $9412.90 vote: ms. adams- aye, mr. marino - aye, mr. dwyer-aye, mr. jeffreys -aye"
+   "procedural": false,
+   "quote": "to approve the 3rd quarter water commitment in the amount of $9412.90"
   },
   {
-   "motion": "Authorize the Vice Chairman to sign warrants in the absence of the Chairman of the Select Board",
+   "motion": "Authorize the Vice Chairman to sign warrants in the absence of the Chairman of the Select Board.",
    "moved_by": "J. Marino",
    "seconded_by": "T. Dwyer",
    "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "motion: j. marino 2nd: t. dwyer to authorize the vice chairman to sign warrants in the absence of the chairman of the select board vote: ms. adams- aye, mr. marino - aye, mr. dwyer-aye, mr. jeffreys -aye"
+   "procedural": false,
+   "quote": "to authorize the vice chairman to sign warrants in the absence of the chairman of the select board"
   },
   {
    "motion": "Adjourn the meeting at 8:27 p.m.",
@@ -49,10 +49,499 @@
    "seconded_by": "J. Marino",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion: k. adams 2nd: j. marino to adjourn the meeting at 8:27 p.m. vote: ms. adams- aye, mr. marino- aye, mr. jeffreys- aye"
+   "quote": "to adjourn the meeting at 8:27 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All five votes passed unanimously. The adjournment vote shows 3-0 because Mr. Dwyer had exited the meeting earlier.",
- "cost_usd": 0.13330150000000002
+ "note": "Text is extracted from a PDF; budget tables are partly garbled, so table figures may be misaligned and were quoted only where the sentence text is clear. The roll call lists Tom Alonzo as not present, yet the minutes also say 'Mr. Alonzo read the remote meeting information'; Vice Chairman Jeffreys chaired. Item 5 (warrants) lists three warrants with amounts but records no motion. Dwyer exited during committee reports, after the votes on items 2 to 4. Votes on the 4-0 items list four ayes; the adjournment lists three.",
+ "cost_usd": 0.01954372,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino",
+   "role": "Vice Chairman"
+  },
+  {
+   "name": "Katey Adams",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino",
+   "role": "Clerk"
+  },
+  {
+   "name": "Todd Dwyer",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino",
+   "role": ""
+  },
+  {
+   "name": "Jim Marino",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino",
+   "role": ""
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "absent",
+   "quote": "not present: tom alonzo, chair",
+   "role": "Chair"
+  },
+  {
+   "name": "Heather Lemieux",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager",
+   "role": "Town Manager"
+  },
+  {
+   "name": "Jonathan Frenette",
+   "status": "present",
+   "quote": "owner jonathan frenette was present for the license application.",
+   "role": "Owner"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Lemieux to reach out to the Water District Supt. and the DPW Director about meeting with the Lunenburg Water District Commission on the Howard Street water lines and pavement moratorium; Mr. Jeffreys agreed such a meeting would be beneficial.",
+   "quote": "planned to reach out to the water district supt. and the dpw director"
+  },
+  {
+   "decision": "Town Manager to hold a second Green Leaf Botanicals Community Outreach Meeting on March 10th, run through the Select Board Zoom account with a toll free number, re-advertised and re-noticed.",
+   "quote": "holding another community outreach meeting on march 10th"
+  },
+  {
+   "decision": "The next meeting with Green Leaf was to be held after the community outreach meeting, per consultation with the Chair.",
+   "quote": "the next meeting with green leaf was to be held after the community outreach meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Free Cash to FY22 capital items",
+   "what_was_recorded": "The preliminary budget uses Free Cash toward capital items.",
+   "figures_as_printed": [
+    "$688,825"
+   ],
+   "quote": "$688,825 of free cash towards capital items;"
+  },
+  {
+   "topic": "Free Cash to OPEB liability",
+   "what_was_recorded": "The preliminary budget uses Free Cash for OPEB liability costs, set at 10% of the prior year's certified free cash.",
+   "figures_as_printed": [
+    "$180,418"
+   ],
+   "quote": "$180,418 of free cash towards opeb liability costs (10% of previous year's certified free cash);"
+  },
+  {
+   "topic": "Free Cash to regular Stabilization",
+   "what_was_recorded": "A deposit of Free Cash into the regular Stabilization Account per policy.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "$100,000 of free cash deposited into the regular stabilization account per the policy."
+  },
+  {
+   "topic": "Property tax levy",
+   "what_was_recorded": "Maximum allowable FY2022 tax levy stated as the property tax revenue figure.",
+   "figures_as_printed": [
+    "$29,803,960"
+   ],
+   "quote": "maximum allowable tax levy for fy2022 = $29,803,960"
+  },
+  {
+   "topic": "State aid",
+   "what_was_recorded": "Governor's proposal adds Chapter 70 and unrestricted general government aid; total FY22 State Aid estimate stated.",
+   "figures_as_printed": [
+    "$49,680",
+    "$39,302",
+    "$9,444,372"
+   ],
+   "quote": "budget proposal provides for additional $49,680 in chapter 70 funds (.6% increase)"
+  },
+  {
+   "topic": "Local receipts",
+   "what_was_recorded": "Local receipts estimate increased for motor vehicle excise taxes.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "included a $50,000 increase over previous fy's estimate for motor vehicle excise taxes"
+  },
+  {
+   "topic": "FY21 snow and ice deficit",
+   "what_was_recorded": "Unexpended free cash could cover the FY21 snow and ice deficit if year-end transfers do not.",
+   "figures_as_printed": [
+    "$834,942"
+   ],
+   "quote": "$834,942 of unexpended free cash that could help cover the deficit"
+  },
+  {
+   "topic": "Health insurance increase",
+   "what_was_recorded": "Health insurance line increased over final FY21 budget based on rate assumptions.",
+   "figures_as_printed": [
+    "$170,000"
+   ],
+   "quote": "health insurance-$170,000 more than final fy21 budget based on 3% rate increase for active employees"
+  },
+  {
+   "topic": "Health insurance holiday premium",
+   "what_was_recorded": "The MIIA Holiday Premium reduces the health insurance line item.",
+   "figures_as_printed": [
+    "$110,000"
+   ],
+   "quote": "the holiday premium will reduce this line item by $110,000 (based on 3% increase for active plans)."
+  },
+  {
+   "topic": "Lunenburg Public Schools funding",
+   "what_was_recorded": "School increase of $528,000 for 2.5%; holiday premium savings let the recommendation meet the Superintendent's 3.23% budget.",
+   "figures_as_printed": [
+    "$528,000",
+    "$239K"
+   ],
+   "quote": "lunenburg public schools-$528,000 for a 2.5% increase"
+  },
+  {
+   "topic": "Monty Tech assessment",
+   "what_was_recorded": "Monty Tech regional assessment increase of 2.5%, funded at $22,000 more.",
+   "figures_as_printed": [
+    "$22,000"
+   ],
+   "quote": "monty tech regional assessment- $22,000 for a 2.5% increase"
+  },
+  {
+   "topic": "Solid waste and recycling",
+   "what_was_recorded": "Solid Waste/Recycling Program increase of 15% for town-related costs.",
+   "figures_as_printed": [
+    "$30,000"
+   ],
+   "quote": "solid waste/recycling program- $30,000 or 15% increase for town related costs"
+  },
+  {
+   "topic": "Worcester Regional Retirement assessment",
+   "what_was_recorded": "Assessment came in 1.92% higher, about $29,000 more than the previous FY.",
+   "figures_as_printed": [
+    "$29,000"
+   ],
+   "quote": "our assessment came in at a 1.92% increase or $29,000 more than the previous fy."
+  },
+  {
+   "topic": "FY22 debt service",
+   "what_was_recorded": "Total appropriation for FY2022 debt service.",
+   "figures_as_printed": [
+    "$4,562,594"
+   ],
+   "quote": "total appropriation for fy2022 debt service = $4,562,594"
+  },
+  {
+   "topic": "Free Cash used for FY22 capital",
+   "what_was_recorded": "Free Cash used to offset the FY22 capital plan, OPEB and stabilization.",
+   "figures_as_printed": [
+    "$969,243"
+   ],
+   "quote": "uses $969,243 from certified free cash available for appropriation used to offset the fy22"
+  },
+  {
+   "topic": "Unappropriated balance",
+   "what_was_recorded": "Preliminary budget leaves an unappropriated balance that can backfill Monty Tech and solid waste increases.",
+   "figures_as_printed": [
+    "$494K"
+   ],
+   "quote": "preliminary budget leaves an unappropriated balance of $494k that can backfill any"
+  },
+  {
+   "topic": "Remaining Free Cash",
+   "what_was_recorded": "Remaining Free Cash available for warrant articles, capital, snow deficit or stabilization.",
+   "figures_as_printed": [
+    "$834K"
+   ],
+   "quote": "current recommendation leaves a balance of $834k of free cash that can be used for"
+  },
+  {
+   "topic": "Police staffing",
+   "what_was_recorded": "Target budget adds one patrol officer.",
+   "figures_as_printed": [
+    "$35,000"
+   ],
+   "quote": "police- $35,000 for additional patrol officer"
+  },
+  {
+   "topic": "Pavement management",
+   "what_was_recorded": "Additional funds for pavement management above the target.",
+   "figures_as_printed": [
+    "$50K"
+   ],
+   "quote": "additional $50k for pavement management"
+  },
+  {
+   "topic": "Overlay account",
+   "what_was_recorded": "Overlay account funded at $120K.",
+   "figures_as_printed": [
+    "$120K"
+   ],
+   "quote": "the overlay account is funded at $120k and tax title is level funded."
+  },
+  {
+   "topic": "Federal CARES Act funding",
+   "what_was_recorded": "Up to a stated amount of CARES Act funding to the Town.",
+   "figures_as_printed": [
+    "$1,027,771"
+   ],
+   "quote": "cares act for town: up to $1,027,771"
+  },
+  {
+   "topic": "ESSER II funding for schools",
+   "what_was_recorded": "Second round of ESSER funding available until 9/30/2023.",
+   "figures_as_printed": [
+    "$588,834"
+   ],
+   "quote": "relief funding in the amount of $588,834 that is available until 9/30/2023."
+  },
+  {
+   "topic": "ESSER II funding for Monty Tech",
+   "what_was_recorded": "Monty Tech received ESSER II funding expected to positively affect assessments.",
+   "figures_as_printed": [
+    "$661,823"
+   ],
+   "quote": "monty tech also received esser ii funding in the amount of $661,823 that should positively impact the assessments."
+  },
+  {
+   "topic": "FY2021 grants",
+   "what_was_recorded": "Police grant received in FY2021 for body worn cameras.",
+   "figures_as_printed": [
+    "$36,404"
+   ],
+   "quote": "jag grant for body worn cameras: $36,404"
+  },
+  {
+   "topic": "Warrants approved list",
+   "what_was_recorded": "Accounts payable and payroll warrants listed with amounts; no motion recorded.",
+   "figures_as_printed": [
+    "$352,825.19",
+    "565,998.03",
+    "$831,028.72"
+   ],
+   "quote": "accounts payable warrant #35 21, dated 2/2/2021, in the amount of $352,825.19"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from Special Purpose Stabilization Fund to pay for a large DPW vehicle in the FY22 Capital Plan.",
+   "amount_as_printed": "$211,000",
+   "outcome": "proposed in the preliminary budget; no vote recorded",
+   "quote": "transfers $211,000 from the special purpose stabilization fund to pay for a large dpw vehicle in the fy22 capital plan"
+  },
+  {
+   "description": "Transfer from Artificial Turf Revolving Fund to pay associated costs of the Artificial Turf Field Debt for FY22.",
+   "amount_as_printed": "$44,318",
+   "outcome": "proposed in the preliminary budget; no vote recorded",
+   "quote": "transfers $44,318 from the artificial turf revolving fund to pay the associated costs for the"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Ms. Adams",
+   "stated_role": "Clerk",
+   "topic": "Lunenburg Water District extension, Howard Street, pavement moratorium, Green Leaf outreach",
+   "quote": "ms. adams attended the public hearing for the notice of the extension of the lunenburg water district."
+  },
+  {
+   "speaker": "Ms. Lemieux",
+   "stated_role": "Town Manager",
+   "topic": "Green Leaf Community Host Agreement and outreach meeting",
+   "quote": "ms. lemieux noted the agreement had been reviewed at a recent select board meeting and the draft"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "discussed; no action",
+   "quote": "ms. adams attended the public hearing for the notice of the extension of the lunenburg water district.",
+   "tags": [
+    "public comment",
+    "water district",
+    "Green Leaf"
+   ]
+  },
+  {
+   "topic": "Announcements (MBTA service changes)",
+   "resolution": "informational",
+   "quote": "the mbta is planning some service changes that will go into effect in march and april.",
+   "tags": [
+    "MBTA",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Common victualler license, Voyage Nutrition",
+   "resolution": "approved",
+   "quote": "common victualler license hearing for voyage nutrition/jonathan frenette, 5 summer street, #10",
+   "tags": [
+    "licensing",
+    "common victualler"
+   ]
+  },
+  {
+   "topic": "FY22 Preliminary Budget presentation (Town Manager)",
+   "resolution": "presented; board supportive",
+   "quote": "ms. lemieux presented her powerpoint presentation to the board",
+   "tags": [
+    "budget",
+    "FY22",
+    "capital plan",
+    "free cash"
+   ]
+  },
+  {
+   "topic": "Approval of minutes, January 5 and 12, 2021",
+   "resolution": "approved",
+   "quote": "2. approval of minutes of january 5, january 12, 2021",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "3rd Quarter Water Commitment",
+   "resolution": "approved",
+   "quote": "3. approval of 3rd quarter water commitment: $9,412.90",
+   "tags": [
+    "water",
+    "commitments"
+   ]
+  },
+  {
+   "topic": "Vice Chairman to sign warrants",
+   "resolution": "approved",
+   "quote": "4. authorization of vice chairman to sign warrants in the absence of the chairman",
+   "tags": [
+    "governance",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "listed; no motion recorded",
+   "quote": "accounts payable warrant #35 21, dated 2/2/2021, in the amount of $352,825.19",
+   "tags": [
+    "warrants",
+    "payables",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Action items",
+   "resolution": "discussed; staff follow-up",
+   "quote": "ms. adams asked if it was possible to meet with the lunenburg water district commission",
+   "tags": [
+    "water district",
+    "Green Leaf",
+    "gas tanks",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received",
+   "quote": "mr. dwyer reported the planning board is working on updating their rules and regulations",
+   "tags": [
+    "committees",
+    "Council on Aging",
+    "planning"
+   ]
+  },
+  {
+   "topic": "Old business: FY22 budget discussion",
+   "resolution": "no discussion",
+   "quote": "there was no discussion at this time.",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational",
+   "quote": "interested persons can find application forms on the town website",
+   "tags": [
+    "vacancies",
+    "ADA",
+    "bids",
+    "fuel tanks",
+    "meetings"
+   ]
+  },
+  {
+   "topic": "COVID-19 update",
+   "resolution": "informational",
+   "quote": "the board of health issued their weekly update and the cumulative laboratory confirmed number of covid-19 cases reported to the town as of february 5th was 569 and one death.",
+   "tags": [
+    "COVID-19",
+    "vaccination"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "none",
+   "quote": "there was none at this time.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:27 p.m.",
+   "quote": "to adjourn the meeting at 8:27 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Manager's FY22 Preliminary Budget Presentation (PowerPoint)",
+   "where": "list",
+   "quote": "ms. lemieux presented her powerpoint presentation to the board"
+  },
+  {
+   "name": "Accounts Payable Warrant #35 21, dated 2/2/2021",
+   "where": "text",
+   "quote": "accounts payable warrant #35 21, dated 2/2/2021, in the amount of $352,825.19"
+  },
+  {
+   "name": "Community Host Agreement (draft sent to Town Counsel)",
+   "where": "text",
+   "quote": "the community host agreement was being reviewed but it was not"
+  },
+  {
+   "name": "Draft language amending the Architectural Preservation District by-law",
+   "where": "text",
+   "quote": "he reported he has sent draft language amending the current architectural preservation district"
+  },
+  {
+   "name": "Spill Prevention, Control, and Countermeasure Plan (SPCC)",
+   "where": "text",
+   "quote": "spill prevention, control, and countermeasure plan"
+  },
+  {
+   "name": "ADA Self Evaluation portion of the ADA Self-Evaluation and Transition Plan (draft from MRPC)",
+   "where": "text",
+   "quote": "i received a draft copy of the ada self evaluation portion of our ada self-evaluation and"
+  }
+ ],
+ "tags": [
+  "select board",
+  "FY22 budget",
+  "preliminary budget",
+  "free cash",
+  "state aid",
+  "health insurance",
+  "water district",
+  "Green Leaf Botanicals",
+  "common victualler license",
+  "warrants",
+  "COVID-19",
+  "remote meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. lemieux presented her powerpoint presentation to the board"
+ },
+ "dropped_unquoted_by_field": {}
 }

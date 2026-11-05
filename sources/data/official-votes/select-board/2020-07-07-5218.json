@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-07-07",
  "docid": "5218",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager appointments of seasonal beach staff",
+   "motion": "Ratify the Town Manager's seasonal staff appointments as presented (Genevieve Nass as Beach Coordinator and listed seasonal lifeguards).",
    "moved_by": "T. Dwyer",
    "seconded_by": "K. Adams",
    "outcome": "passed 5-0",
@@ -20,47 +20,434 @@
    "quote": "motion: t. dwyer 2nd: k. adams to ratify the town manager appointments as presented vote: ms. adams-aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys- aye, mr. alonzo-aye"
   },
   {
-   "motion": "Table the discussion of transportation vendor payments",
+   "motion": "Table the discussion on the school bus vendor payments until a later date.",
    "moved_by": "J. Marino",
    "seconded_by": "T. Dwyer",
    "outcome": "passed 4-1",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: j. marino to table this discussion until a later date vote: ms. adams- nay, mr. marino-aye, mr. dwyer- aye, mr. jeffreys-aye, mr. alonzo-aye"
   },
   {
-   "motion": "Authorize Chairman Alonzo to sign letters requesting special legislation for library trust funds investment and an additional alcohol license for Jaxx Country Variety",
+   "motion": "Authorize Chairman Alonzo to sign letters requesting the legislature adopt special legislation for the Library trust fund investment Act and an additional all-alcohol license for Jaxx Country Variety.",
    "moved_by": "K. Adams",
    "seconded_by": "J. Marino",
    "outcome": "passed 4-0-1",
    "procedural": false,
-   "quote": "motion: k. adams 2°°: j. marino to authorize chairman alonzo to sign the letters requesting the legislature adopt special legislation for an act authorizing the investment of town of lunenburg library trust funds and an act authorizing the town to grant an additional license for the sale of all alcoholic beverages not to be drunk on the premises for jaxx country variety discussion: mr. jeffreys stated he would be abstaining due to previous business relationships with jax country variety, however he did support the vote for the library. vote: ms. adams-aye, mr. dwyer- aye, mr. jeffreys- abstain, mr. marino- aye, mr. alonzo-aye"
+   "quote": "vote: ms. adams-aye, mr. dwyer- aye, mr. jeffreys- abstain, mr. marino- aye, mr. alonzo-aye"
   },
   {
-   "motion": "Appoint Mr. Jeffreys to the TCP Building Design Committee",
-   "moved_by": "Mr. Jeffreys",
+   "motion": "Appoint Mr. Jeffreys to the TCP Building Design Committee after Mr. Dwyer withdrew his request.",
+   "moved_by": "",
    "seconded_by": "Mr. Dwyer",
    "outcome": "passed 3-2",
    "procedural": false,
-   "quote": "mr. jeffreys offered to serve on the committee. mr. dwyer seconded that. vote: ms. adams- nay, mr. marino-aye, mr. jeffreys- aye, mr. dwyer-aye, mr. alonzo- nay"
+   "quote": "vote: ms. adams- nay, mr. marino-aye, mr. jeffreys- aye, mr. dwyer-aye, mr. alonzo- nay"
   },
   {
-   "motion": "Approve the minutes of April 28, 2020",
+   "motion": "Approve the minutes of April 28, 2020 as presented.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Alonzo",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion: m. jeffreys 2nd: t. alonzo to approve the minutes of april 28, 2020 as presented vote: mr. jeffreys- aye, mr. alonzo-aye, ms. adams-aye"
+   "quote": "to approve the minutes of april 28, 2020 as presented vote: mr. jeffreys- aye, mr. alonzo-aye, ms. adams-aye"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "K. Adams",
+   "motion": "Adjourn the meeting at 9:54 p.m.",
+   "moved_by": "K Adams",
    "seconded_by": "T. Dwyer",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: k adams to adjourn the meeting at 9:54 p.m. vote: ms. adams- aye, mr. jeffreys -aye, mr. dwyer-aye, mr. marino-aye, mr. alonzo - aye"
+   "quote": "to adjourn the meeting at 9:54 p.m. vote: ms. adams- aye, mr. jeffreys -aye, mr. dwyer-aye, mr. marino-aye, mr. alonzo - aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned text with minor formatting artifacts (e.g., \"2°°:\" and \"2':\" for \"2nd:\"), but all votes are clearly recorded and readable.",
- "cost_usd": 0.18430449999999998
+ "note": "OCR text from scanned minutes with gaps and garbling. Page 2 starts mid-item (bus vendor payments), page 3 starts mid-statement (cemetery), page 5 starts mid-item (committee appointments), and page 6 starts mid-item 8. Some names are garbled or inconsistent (Jaxx/Jax, Marin o/Marino, T. Alonzo, K Adams). The first motion to not approve the bus payments was withdrawn when its second was withdrawn, so it is not recorded as a vote; only the tabling motion is. The seconder of the tabling motion is printed as \"2': T. Dwyer\" and is recorded as T. Dwyer. The TCP appointment motion has no printed mover. Some committee appointments (MPO, Storm Water) are noted without printed votes. The Town Manager's name is not printed; Ms. Lemieux's role is not stated.",
+ "cost_usd": 0.01036642,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m. and announced in accordance with the requirements"
+  },
+  {
+   "name": "Ms. Adams",
+   "role": "",
+   "status": "present",
+   "quote": "vote: ms. adams-aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys- aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Mr. Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "vote: ms. adams-aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys- aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Mr. Marino",
+   "role": "",
+   "status": "present",
+   "quote": "vote: ms. adams-aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys- aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Mr. Jeffreys",
+   "role": "",
+   "status": "present",
+   "quote": "vote: ms. adams-aye, mr. dwyer- aye, mr. jeffreys- abstain, mr. marino- aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "",
+   "status": "present",
+   "quote": "ms. lemieux reported the parks commission voted to open the town beach on july 13\"\"."
+  },
+  {
+   "name": "Mr. Cassidy",
+   "role": "",
+   "status": "present",
+   "quote": "mr. cassidy clarified that the proposed payments would go towards operating costs during the closure."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Park Commissioner",
+   "status": "present",
+   "quote": "dave passios, park commissioner, reported there will not be swimming lessons this year due to the restrictions set"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Finance Committee member",
+   "status": "not stated",
+   "quote": "finance committee members: dave passios, peter beardmore"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board requested that a letter of thanks be sent from the Board to Rebecca Lantry and Dave Passios for their years of volunteerism.",
+   "quote": "mr. alonzo requested letter of thanks be sent to both from the board for their years of volunteerism."
+  },
+  {
+   "decision": "Ms. Lemieux will set up a link on the Town website to the Recreation Director's posts, which were made on software rather than a web page.",
+   "quote": "she stated she would set it up tomorrow."
+  },
+  {
+   "decision": "Ms. Lemieux will provide an approved line item budget for all departments, not including the schools, later in the week.",
+   "quote": "ms. lemieux will provide that later in the week."
+  },
+  {
+   "decision": "The Town Manager and a BOS representative will reach out to schedule a meeting with all cemetery stakeholders to reset communication.",
+   "quote": "the town manager and a bos representative will reach out to schedule a meeting with all cemetery stakeholders"
+  },
+  {
+   "decision": "Ms. Adams requested that etiquette be discussed at a future meeting.",
+   "quote": "ms. adams requested etiquette be discussed at a future meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School bus vendor payments (Dee Bus Service and Van Pool Transportation)",
+   "what_was_recorded": "The School Committee approved payments not to exceed the printed amounts to the two bus vendors for the closure period; the Board tabled its discussion, and the payment percentage was described as 45% of operating expenses plus 5% for extracurricular services.",
+   "figures_as_printed": [
+    "$90,000",
+    "$41,112",
+    "$8,000",
+    "45%",
+    "5%"
+   ],
+   "quote": "the school committee voted to approve that dee bus service would receive a payment not to exceed $90,000 and van"
+  },
+  {
+   "topic": "Van Pool credit",
+   "what_was_recorded": "Van Pool received an $8,000 credit to offset some expenses and was not eligible for the payroll protection program.",
+   "figures_as_printed": [
+    "$8,000"
+   ],
+   "quote": "van pool was not eligible for the payroll protection program but they did get an $8,000 credit to offset some of their expenses."
+  },
+  {
+   "topic": "Warrant #67-20",
+   "what_was_recorded": "Warrant #67-20 dated 6/29/20 was signed by the Chairman last week.",
+   "figures_as_printed": [
+    "$259,102.15"
+   ],
+   "quote": "#67-20 dated 6/29/20 in the amount of $259,102.15"
+  },
+  {
+   "topic": "Warrant #1-21",
+   "what_was_recorded": "Warrant #1-21 dated 7/1/20 was signed last week and included a larger item noted by Ms. Lemieux.",
+   "figures_as_printed": [
+    "$1,507,561.60"
+   ],
+   "quote": "#1-21 dated 7/1/20 in the amount of $1,507,561.60 ms. lemieux noted this warrant included the"
+  },
+  {
+   "topic": "Saliba property grant reimbursement",
+   "what_was_recorded": "The reimbursement request submitted by June 30 covered the LAND Grant and the PARC Grant for the Saliba property.",
+   "figures_as_printed": [
+    "$400,000",
+    "$100,000"
+   ],
+   "quote": "reimbursement submission for the $400,000 land grant and the $100,000 parc grant by june 30th"
+  },
+  {
+   "topic": "Health insurance premium holiday",
+   "what_was_recorded": "A July 2020 premium holiday releasing $25 million of reserves was reported, with estimated savings of about $50,000 for the Town and $118,000 for the School, to be held as surplus.",
+   "figures_as_printed": [
+    "$25 million",
+    "$50,000",
+    "$118,000"
+   ],
+   "quote": "this equates to approximately $50,000 savings on the town side and $118,000 on the school side."
+  },
+  {
+   "topic": "MIIA participation and dividend credits",
+   "what_was_recorded": "MIIA credits will reduce the FY 2021 insurance payment.",
+   "figures_as_printed": [
+    "$16,778"
+   ],
+   "quote": "we also received participation and dividend credits from miia totaling $16,778 that will go towards reducing our"
+  },
+  {
+   "topic": "Chapter 90 road and bridge funding",
+   "what_was_recorded": "Lunenburg's FY2021 Chapter 90 apportionment was reported, compared with the prior year's apportionment after a supplemental increase.",
+   "figures_as_printed": [
+    "$200 million",
+    "$415,929",
+    "$414,649",
+    "$456, 114",
+    "$20 million"
+   ],
+   "quote": "lunenburg's apportionment for fiscal year 2021 is $415,929."
+  },
+  {
+   "topic": "State interim budget",
+   "what_was_recorded": "Governor Baker signed an interim state budget that funds local aid for July on FY2020 Cherry Sheet estimates.",
+   "figures_as_printed": [
+    "$5.25 billion"
+   ],
+   "quote": "on june 26th governor baker signed a $5.25 billion interim budget for fiscal year 2021"
+  },
+  {
+   "topic": "HB 4820 reimbursement for voting costs",
+   "what_was_recorded": "The Town asked legislators about reimbursement for added COVID-19 voting costs; no definitive answer yet. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "she stated we reached out to our legislators to see if there would be reimbursement for"
+  },
+  {
+   "topic": "Bus contract reimbursement under CARES Act",
+   "what_was_recorded": "Ms. Lemieux did not believe the bus service was reimbursable under the CARES Act, which covers unbudgeted pandemic expenses. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "when asked, ms. lemieux did not believe this service was reimbursable under the cares act"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Town Beach and town communication",
+   "speaker": "Ms. Adams",
+   "stated_role": "",
+   "quote": "ms. adams stated there are still a lot of questions about the town beach and she heard it is opening on july 13t."
+  },
+  {
+   "topic": "Bus contract payout and DPW cemetery problems",
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "quote": "dave passios, 56 whiting street, congratulated the bos for questioning the bus contract payout and seeking more information."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and opening",
+   "resolution": "Pledge recited; Town Beach questions raised; no action",
+   "quote": "ms. adams stated there are still a lot of questions about the town beach and she heard it is opening on july 13t.",
+   "tags": [
+    "public comment",
+    "town beach"
+   ]
+  },
+  {
+   "topic": "Resignations and seasonal appointments",
+   "resolution": "Resignations announced; seasonal staff appointments ratified 5-0; thank-you letters directed",
+   "quote": "the resignation of rebecca lantry from the historical commission effective june 18, 2020 was announced.",
+   "tags": [
+    "appointments",
+    "resignations",
+    "parks",
+    "town beach"
+   ]
+  },
+  {
+   "topic": "School bus vendor payments",
+   "resolution": "Discussion tabled 4-1",
+   "quote": "the school committee voted to approve that dee bus service would receive a payment not to exceed $90,000 and van",
+   "tags": [
+    "school bus",
+    "vendor payments",
+    "COVID-19",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Cemetery management",
+   "resolution": "Discussion only; the Town Manager and a BOS representative to arrange a stakeholder meeting",
+   "quote": "discussion ensued on how to proceed going forward for the management of the cemeteries.",
+   "tags": [
+    "cemetery",
+    "DPW",
+    "communication"
+   ]
+  },
+  {
+   "topic": "HB 4820 voting options",
+   "resolution": "Informational discussion; no action",
+   "quote": "ms. lemieux reported this is for informational purposes for the board, which provides for increased voting",
+   "tags": [
+    "voting",
+    "COVID-19",
+    "legislation"
+   ]
+  },
+  {
+   "topic": "Home rule petitions for library trust funds and Jaxx liquor license",
+   "resolution": "Chairman authorized to sign letters 4-0-1",
+   "quote": "ms. lemieux requested the board authorize the chairman to sign a letter drafted by legal counsel to",
+   "tags": [
+    "home rule",
+    "liquor license",
+    "library",
+    "legislature"
+   ]
+  },
+  {
+   "topic": "Committee appointments (Capital Planning, MPO, Storm Water, TCP Building Design)",
+   "resolution": "Jeffreys appointed to TCP Building Design Committee 3-2; other appointments noted without votes",
+   "quote": "tcp building design committee- mr. jeffreys asked mr. dwyer about his professional background.",
+   "tags": [
+    "appointments",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of April 28, 2020",
+   "resolution": "Approved 3-0",
+   "quote": "to approve the minutes of april 28, 2020 as presented vote: mr. jeffreys- aye, mr. alonzo-aye, ms. adams-aye",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "Warrants reported as signed; no action",
+   "quote": "ms. lemieux reported the following warrants were signed by mr. alonzo last week.",
+   "tags": [
+    "warrants",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Line item budget and maintenance logs (item 8, text partial)",
+   "resolution": "Line item budget to be provided later in week",
+   "quote": "he also asked an approved line item budget for all departments, not including the schools, just to see where we are",
+   "tags": [
+    "budget",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "None this week",
+   "quote": "committee reports- there were none this week.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "Reported; no action",
+   "quote": "fuel tank update the conservation commission approved the notice of intent for the installation of new above ground fuel tanks",
+   "tags": [
+    "fuel tank",
+    "Saliba property",
+    "health insurance",
+    "Chapter 90",
+    "925 Mass Ave",
+    "police chief",
+    "vacancies",
+    "COVID-19",
+    "council on aging",
+    "library"
+   ]
+  },
+  {
+   "topic": "Public comment (close of meeting)",
+   "resolution": "Heard; no action",
+   "quote": "dave passios, 56 whiting street, congratulated the bos for questioning the bus contract payout and seeking more information.",
+   "tags": [
+    "public comment",
+    "DPW",
+    "charter"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "Adjourned 5-0 at 9:54 p.m.",
+   "quote": "to adjourn the meeting at 9:54 p.m. vote: ms. adams- aye, mr. jeffreys -aye, mr. dwyer-aye, mr. marino-aye, mr. alonzo - aye",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "House Bill 4820 (voting options in response to COVID-19)",
+   "where": "text",
+   "quote": "discussion on house bill 4820 addressing voting options in response to covid-19"
+  },
+  {
+   "name": "Warrant #67-20 dated 6/29/20",
+   "where": "text",
+   "quote": "#67-20 dated 6/29/20 in the amount of $259,102.15"
+  },
+  {
+   "name": "Warrant #1-21 dated 7/1/20",
+   "where": "text",
+   "quote": "#1-21 dated 7/1/20 in the amount of $1,507,561.60 ms. lemieux noted this warrant included the"
+  },
+  {
+   "name": "Cemetery one-year work plan",
+   "where": "text",
+   "quote": "the town manager has already worked to have them create a one-year work plan detailing all the cemetery"
+  },
+  {
+   "name": "Quality Assurance Project Plan (925 Mass Avenue Phase II site assessment)",
+   "where": "text",
+   "quote": "submitted the quality assurance project plan in aprilas required to the epa."
+  },
+  {
+   "name": "Cemetery Superintendent job description",
+   "where": "text",
+   "quote": "as someone who spends most of their time involved with all the happenings at the cemeteries"
+  }
+ ],
+ "tags": [
+  "select board",
+  "school bus contract",
+  "cemetery",
+  "appointments",
+  "resignations",
+  "home rule petition",
+  "liquor license",
+  "COVID-19",
+  "budget",
+  "grants",
+  "insurance",
+  "Chapter 90",
+  "town beach",
+  "police chief"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

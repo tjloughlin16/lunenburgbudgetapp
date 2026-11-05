@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2019-06-20",
  "docid": "2852",
@@ -12,55 +12,403 @@
  },
  "votes": [
   {
-   "motion": "Approve the May 23, 2019 minutes as amended",
+   "motion": "Approve the minutes of May 23, 2019 as amended.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously by roll call",
    "procedural": true,
    "quote": "motion to approve minutes as amended was unanimously approved by roll call."
   },
   {
-   "motion": "Pass over the group library policy discussion",
-   "moved_by": "Dick",
-   "seconded_by": "Lars",
-   "outcome": "failed 3-4",
-   "procedural": false,
-   "quote": "made a motion to pass over it, seconded by lars. motion failed. in favor: dick, lars, bob. opposed: maia, kate, harry, donna."
-  },
-  {
-   "motion": "Accept the group library policy that group use is at the director's discretion",
-   "moved_by": "Donna",
-   "seconded_by": "Lars",
-   "outcome": "unanimously approved",
-   "procedural": false,
-   "quote": "donna made a motion to accept this, seconded by lars. the motion passed unanimously."
-  },
-  {
-   "motion": "Have Harry and Maia investigate trust fund management options and how to make informed decisions",
+   "motion": "Have Harry and Maia investigate options for the trust funds and how to make informed decisions.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed",
+   "outcome": "passed, Maia opposed",
    "procedural": false,
    "quote": "a motion was made to have harry and maia investigate options and how to make informed decisions. motion passed with maia opposed."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Pass over the group policy item (motion to table or drop the policy discussion).",
    "moved_by": "Dick",
-   "seconded_by": "Donna",
-   "outcome": "unanimously approved",
-   "procedural": true,
-   "quote": "dick made a motion to adjourn seconded by donna. unanimousiy approved and the meeting was adjourned at 8:40 p.m."
+   "seconded_by": "Lars",
+   "outcome": "failed 3-4",
+   "procedural": false,
+   "quote": "dick questioned the need for a policy and made a motion to pass over it, seconded by lars. motion failed. in favor: dick, lars, bob. opposed: maia, kate, harry, donna."
   },
   {
-   "motion": "Pay for custodial fees associated with the June 30 Walking to Listen library program",
+   "motion": "Accept the library group-use language: 'Group use of the library is at the discretion of the director.'",
+   "moved_by": "Donna",
+   "seconded_by": "Lars",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "donna made a motion to accept this, seconded by lars. the motion passed unanimously."
+  },
+  {
+   "motion": "Pay the custodial fees associated with the June 30 Walking to Listen library program.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was made and approver to pay for the custodial fees associated with the june 30* walking to listen library program"
+   "quote": "a motion was made and approver to pay for the custodial fees associated with the june 30* walking to"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Dick",
+   "seconded_by": "Donna",
+   "outcome": "passed unanimously",
+   "procedural": true,
+   "quote": "dick made a motion to adjourn seconded by donna. unanimousiy approved and the meeting was adjourned"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes with minor character errors (e.g., \"approver\" for \"approved\", \"Unanimousiy\" for \"Unanimously\"). These errors are preserved in quotes per instructions.",
- "cost_usd": 0.1320165
+ "note": "The text is OCR of scanned pages and is heavily garbled on pages 3 to 6 and 8 to 9. The budget table on page 3 is largely unreadable, so its figures are given as legible in the OCR. The attendance header is cut off (it reads only 'Conroy, Lars Widstrand, Harry Kubetz.'), so no roll of attendance is printed and statuses are inferred from speaking or voting. Board members are named by first name only. The Friends custodial-fee motion has no mover or seconder printed and the OCR reads 'approver'. The first vote (minutes) and the custodial-fee motion record no mover. The page-9 Friends sheet names 'Debra Laffond' while the text names 'Debbie Laffond'; both are kept as printed.",
+ "cost_usd": 0.01074072,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:46 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick",
+   "role": "",
+   "status": "present",
+   "quote": "dick made a motion to adjourn seconded by donna."
+  },
+  {
+   "name": "Donna",
+   "role": "",
+   "status": "present",
+   "quote": "donna made a motion to accept this, seconded by lars."
+  },
+  {
+   "name": "Lars",
+   "role": "",
+   "status": "present",
+   "quote": "lars noted that there are two staff volunteers for town tax abatement."
+  },
+  {
+   "name": "Maia",
+   "role": "",
+   "status": "present",
+   "quote": "motion passed with maia opposed."
+  },
+  {
+   "name": "Bob",
+   "role": "",
+   "status": "present",
+   "quote": "in favor: dick, lars, bob."
+  },
+  {
+   "name": "Kate",
+   "role": "Friends of LPL update",
+   "status": "present",
+   "quote": "update from kate. semi-annual book and bake sale raised $3013."
+  },
+  {
+   "name": "Kate McCarron",
+   "role": "",
+   "status": "present",
+   "quote": "kate mccarron offered a public apology for any confusion or misconstruing of her remarks in the process for electing"
+  },
+  {
+   "name": "Muir",
+   "role": "",
+   "status": "present",
+   "quote": "muir handed out a library org chart."
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Director of Municipal Finance",
+   "status": "not stated",
+   "quote": "karen brochu, director of municipal finance, will do a budget transfer to cover expenses in various areas of the library"
+  },
+  {
+   "name": "Myleen",
+   "role": "town treasurer",
+   "status": "not stated",
+   "quote": "muir met with myleen (town treasurer) regarding the library trust funds."
+  },
+  {
+   "name": "Debbie Laffond",
+   "role": "",
+   "status": "not stated",
+   "quote": "replaced by debbie laffond with money from the friends."
+  },
+  {
+   "name": "Debra Laffond",
+   "role": "Childrer's librarian",
+   "status": "not stated",
+   "quote": "debra laffond, childrer's librarian"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Harry committed to bring answers on the trust fund question to the next meeting, working with Maia.",
+   "quote": "harry suggested he would work together with maia and committed to having some answers for our next meeting."
+  },
+  {
+   "decision": "The board will use the same form and procedure already discussed for the director evaluation.",
+   "quote": "bot will use the same form and the procedure that we have already discussed"
+  },
+  {
+   "decision": "Question of budgeting for consultants on a strategic plan was held for future consideration.",
+   "quote": "question was raised whether to budget money to hire consultants to help develop a strategic plan. will be held for future consideration."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Budget status",
+   "what_was_recorded": "The director reported the budget is not fully expended yet.",
+   "figures_as_printed": [],
+   "quote": "budget is not 100% expended yet"
+  },
+  {
+   "topic": "Budget transfer for library expenses",
+   "what_was_recorded": "Municipal finance will do a budget transfer to cover expenses in library materials and technology needs; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "karen brochu, director of municipal finance, will do a budget transfer to cover expenses in various areas of the library"
+  },
+  {
+   "topic": "Backup capability upgrade",
+   "what_was_recorded": "Estimate for upgrading backup beyond the current one copy.",
+   "figures_as_printed": [
+    "$1200"
+   ],
+   "quote": "upgrading the backup capability beyond the current one copy. estimate of $1200 for this."
+  },
+  {
+   "topic": "Network bandwidth upgrade",
+   "what_was_recorded": "Cost of upgrading library network bandwidth.",
+   "figures_as_printed": [
+    "$2400"
+   ],
+   "quote": "cost of upgrade to library network: $2400 to upgrade bandwidth"
+  },
+  {
+   "topic": "Digital signage replacement",
+   "what_was_recorded": "Estimate to replace the lobby column monitor with a larger one for PowerPoint.",
+   "figures_as_printed": [
+    "$400"
+   ],
+   "quote": "estimate for this is $400."
+  },
+  {
+   "topic": "Fines forgiven in fine-free week",
+   "what_was_recorded": "Fines forgiven during the fine-free week.",
+   "figures_as_printed": [
+    "$406"
+   ],
+   "quote": "this week has been a fine-free week with $406 in fines forgiven."
+  },
+  {
+   "topic": "Budget expenditure table",
+   "what_was_recorded": "A budget table of FY20 and FY19 lines with expenditure percentages; the OCR is largely unreadable and totals are partly legible.",
+   "figures_as_printed": [
+    "428,539",
+    "381,404",
+    "72,517",
+    "53,351",
+    "93,658"
+   ],
+   "quote": "65,757 355 428,539 $ 381,404"
+  },
+  {
+   "topic": "Friends book and bake sale proceeds",
+   "what_was_recorded": "The Friends' semi-annual book and bake sale raised money.",
+   "figures_as_printed": [
+    "$3013"
+   ],
+   "quote": "semi-annual book and bake sale raised $3013."
+  },
+  {
+   "topic": "Friends summer program funding",
+   "what_was_recorded": "Friends' summer program amounts for adult and children programs and supplies.",
+   "figures_as_printed": [
+    "$1,500",
+    "$500",
+    "$1,500"
+   ],
+   "quote": "summer programs: $1,500/aduit; $500/children, $1,500/4a supplies and program"
+  },
+  {
+   "topic": "Children's train table replacement",
+   "what_was_recorded": "The old train table was replaced using money from the Friends; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "the train table in the children's area has died and was replaced by debbie laffond with money from the friends."
+  },
+  {
+   "topic": "Custodial fees for Walking to Listen program",
+   "what_was_recorded": "Board approved paying custodial fees for the June 30 program; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "a motion was made and approver to pay for the custodial fees associated with the june 30* walking to"
+  },
+  {
+   "topic": "Trust fund treasurer appointment",
+   "what_was_recorded": "Appointing a treasurer for the trust funds may incur additional fees.",
+   "figures_as_printed": [],
+   "quote": "appoint a treasurer? may incur additional fees."
+  },
+  {
+   "topic": "Strategic plan consultants",
+   "what_was_recorded": "Whether to budget money to hire consultants for a strategic plan; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "question was raised whether to budget money to hire consultants to help develop a strategic plan."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Budget transfer by municipal finance to cover library expenses such as library materials and technology needs.",
+   "outcome": "stated as planned; no amount or vote recorded",
+   "amount_as_printed": "not printed",
+   "quote": "will do a budget transfer to cover expenses in various areas of the library such as library materials and technology needs."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Kate McCarron",
+   "stated_role": "",
+   "topic": "apology over remarks on electing officers",
+   "quote": "kate mccarron offered a public apology for any confusion or misconstruing of her remarks in the process for electing"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Public Comment",
+   "resolution": "apology received, no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "kate mccarron offered a public apology for any confusion or misconstruing of her remarks in the process for electing"
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved as amended",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "the minutes for may 23, 2019 were reviewed. some amendments were suggested."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; budget transfer, technology needs and staffing noted",
+   "tags": [
+    "director report",
+    "budget",
+    "technology",
+    "staffing"
+   ],
+   "quote": "budget is not 100% expended yet"
+  },
+  {
+   "topic": "Trust Fund Expenditure Guidance",
+   "resolution": "Harry and Maia to investigate options",
+   "tags": [
+    "trust funds",
+    "treasurer"
+   ],
+   "quote": "muir met with myleen (town treasurer) regarding the library trust funds."
+  },
+  {
+   "topic": "Plan for Director Evaluation",
+   "resolution": "same form and procedure to be used",
+   "tags": [
+    "director evaluation"
+   ],
+   "quote": "bot will use the same form and the procedure that we have already discussed"
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "received; Friends funding noted",
+   "tags": [
+    "Friends",
+    "fundraising"
+   ],
+   "quote": "update from kate. semi-annual book and bake sale raised $3013."
+  },
+  {
+   "topic": "Group Policy",
+   "resolution": "motion to pass over failed; accepted language on group use",
+   "tags": [
+    "policy",
+    "group visits"
+   ],
+   "quote": "continuation of ongoing discussion of library policy for accommodating regular visits of large groups."
+  },
+  {
+   "topic": "Library Strategic Plan",
+   "resolution": "held for future consideration",
+   "tags": [
+    "strategic plan"
+   ],
+   "quote": "will be held for future consideration."
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action",
+   "tags": [
+    "board comments"
+   ],
+   "quote": "board comments • no board comments"
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:40 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "the meeting was adjourned at 8:40 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "June 2019 Director's Report",
+   "where": "list",
+   "quote": "june 2019 director's report • lpl org chart"
+  },
+  {
+   "name": "LPL Org Chart",
+   "where": "list",
+   "quote": "june 2019 director's report • lpl org chart"
+  },
+  {
+   "name": "June 2019 YA Report",
+   "where": "list",
+   "quote": "lpl org chart june 2019 ya report"
+  },
+  {
+   "name": "June 2019 Children's Area Report",
+   "where": "list",
+   "quote": "june 2019 children's area report"
+  },
+  {
+   "name": "Friend's Report for LPL Trustees",
+   "where": "list",
+   "quote": "friend's report for lpl trustees"
+  },
+  {
+   "name": "Chelmsford library policy",
+   "where": "text",
+   "quote": "muir read a policy he got from the chelmsford library."
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "trust funds",
+  "group policy",
+  "director evaluation",
+  "Friends of LPL",
+  "technology",
+  "summer reading",
+  "staffing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

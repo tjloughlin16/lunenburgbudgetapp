@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2019-09-17",
  "docid": "1900",
@@ -12,23 +12,218 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the August 13, 2019 meeting as amended",
-   "moved_by": "Betty DiGiacomo",
-   "seconded_by": "Pete Lincoln",
+   "motion": "Approve the minutes of the August 13, 2019 meeting as amended.",
+   "moved_by": "Ms. DiGiacomo",
+   "seconded_by": "Mr. Lincoln",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "ms. digiacomo motioned to approve the minutes of the august 13, 2019 meeting as amended. mr. lincoln seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Betty DiGiacomo",
-   "seconded_by": "Pete Lincoln",
+   "motion": "Adjourn the meeting at 10:06 a.m.",
+   "moved_by": "Ms. DiGiacomo",
+   "seconded_by": "Mr. Lincoln",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "at 10:06 a.m. ms. digiacomo motioned to adjourn the meeting, mr. lincoln seconded. on vote, motion carried unanimously."
+   "quote": "ms. digiacomo motioned to adjourn the meeting, mr. lincoln seconded. on vote, motion carried unanimously."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0885885
+ "dropped_unquoted": 1,
+ "note": "Text extraction, not a scan; all votes readable. A stray line in the page 1 text, 'Unanimously approved by COA at October 8, 2019 meeting', sits mid-Director's Report and reads as a later approval annotation, not minutes body. The minutes say only 'Mr. Lincoln' and 'Ms. Lincoln'; Mr. Lincoln is taken as Pete Lincoln and Ms. Lincoln as Deb Lincoln (Chairperson), but this is inferred. The PUBLIC COMMENT heading has no content recorded, so no public comment or public-comment topic is listed. The minutes name no dollar figures. Non-attendees named in passing (Lucy Chartrand, Tom Alonzo, Kit Walker, Jim Marino, Tanner Cole, Chris Bibby, Jan Carrier) are not listed as attendees. The clerk, Amanda Koeck, appears only in the signature line and is not listed.",
+ "cost_usd": 0.00609582,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Susan Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, cheryl moisan, betty digiacomo, diane"
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, cheryl moisan, betty digiacomo, diane"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, cheryl moisan, betty digiacomo, diane"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, cheryl moisan, betty digiacomo, diane"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, cheryl moisan, betty digiacomo, diane"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "ms. lincoln, ms. rabbitt, the new members, and ms. doherty will assess and update the packet contents for future new members of the coa."
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "",
+   "status": "present",
+   "quote": "mr. lincoln seconded. on vote, motion carried unanimously."
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, cheryl moisan, betty digiacomo, diane"
+  },
+  {
+   "name": "Sarah Grant",
+   "role": "",
+   "status": "present",
+   "quote": "ms. grant added that there were 22 volunteers to help make the event possible."
+  },
+  {
+   "name": "John Pesenti",
+   "role": "",
+   "status": "present",
+   "quote": "mr. pesenti highly recommended investing in a leaf guard gutter to go along the porch roof."
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "role": "",
+   "status": "present",
+   "quote": "a version of the old packet was distributed to new members ms. o'sullivan and mr. pesenti."
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: barbara brown"
+  },
+  {
+   "name": "Marie Burchfield",
+   "role": "Council on Aging Liaison to the Eagle House Supporters",
+   "status": "present",
+   "quote": "guests: council on aging liaison to the eagle house supporters marie burchfield"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Lincoln, Ms. Rabbitt, the new members, and Ms. Doherty will assess and update the new-member packet contents for future COA members.",
+   "quote": "ms. lincoln, ms. rabbitt, the new members, and ms. doherty will assess and update the packet contents for future new members of the coa."
+  },
+  {
+   "decision": "Ms. Doherty will request that the personnel committee consider raising the starting pay rate of new van driver Helen Godin.",
+   "quote": "ms. doherty will request the personnel committee consider raising her starting rate of pay given her experience."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Van driver starting pay",
+   "what_was_recorded": "Ms. Doherty will ask the personnel committee to consider raising new van driver Helen Godin's starting rate of pay; no figure given.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty will request the personnel committee consider raising her starting rate of pay given her experience."
+  },
+  {
+   "topic": "Sidewalk and ramp study cost",
+   "what_was_recorded": "The ADA committee's estimated cost for the sidewalk study included Emerald Place, so the cost of adding sidewalks is unknown; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the estimated cost also included emerald place, which actually isn't to be included in future projects, so the cost of adding sidewalks is unknown."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "ms. lincoln wished a happy birthday to all the people with a birthday in september.",
+   "tags": [
+    "announcements",
+    "birthdays",
+    "staff departure"
+   ]
+  },
+  {
+   "topic": "Minutes approval (August 13, 2019)",
+   "resolution": "approved as amended",
+   "quote": "ms. digiacomo motioned to approve the minutes of the august 13, 2019 meeting as amended. mr. lincoln seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "reported; new-member packet to be updated",
+   "quote": "new council on aging board member orientation: a version of the old packet was distributed to new members",
+   "tags": [
+    "orientation",
+    "Boston Post Cane",
+    "building",
+    "dumpster",
+    "events"
+   ]
+  },
+  {
+   "topic": "Notices and Communications",
+   "resolution": "reported; van driver hire and pay review to be requested",
+   "quote": "ms. doherty reported she has been participating in the americans with disabilities act committee meetings",
+   "tags": [
+    "ADA",
+    "sidewalks",
+    "van driver",
+    "transportation"
+   ]
+  },
+  {
+   "topic": "Board Comment",
+   "resolution": "no action",
+   "quote": "mr. lincoln asked about the rocks along memorial dr. and whether they would be removed.",
+   "tags": [
+    "Memorial Dr",
+    "rocks"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:06 a.m.",
+   "quote": "adjournment at 10:06 a.m. ms. digiacomo motioned to adjourn the meeting, mr. lincoln seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "old packet (New Council on Aging Board Member Orientation)",
+   "where": "text",
+   "quote": "a version of the old packet was distributed to new members ms. o'sullivan and mr. pesenti."
+  }
+ ],
+ "tags": [
+  "Council on Aging",
+  "Eagle House",
+  "senior services",
+  "minutes approval",
+  "orientation",
+  "Boston Post Cane",
+  "dumpster",
+  "ADA sidewalks",
+  "van driver",
+  "Memorial Dr rocks",
+  "fundraiser"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "a version of the old packet was distributed to new members"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

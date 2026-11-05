@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2020-04-23",
  "docid": "2999",
@@ -12,64 +12,340 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from February 20, 2020",
-   "outcome": "passed",
+   "motion": "Approve the minutes of the February 20, 2020 meeting.",
    "moved_by": "Karin Menard",
    "seconded_by": "Linda McDonald",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "karin menard made a motion to approve the minutes; linda mcdonald seconded and all were in favor."
+   "quote": "made a motion to approve the minutes; linda mcdonald seconded and all were in favor."
   },
   {
-   "motion": "accept the March 31, 2020 financial report",
-   "outcome": "passed",
+   "motion": "Accept the March 31, 2020 financial report.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Karin Menard",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "deborah christen made a motion to accept the march 31, 2020 financial report. karin menard seconded; all were in favor."
+   "quote": "deborah christen made a motion to accept the march 31, 2020 financial report."
   },
   {
-   "motion": "approve Amendment #8 to the Contract for Financial Assistance with DHCD",
-   "outcome": "passed",
+   "motion": "Approve Amendment #8 to the Contract for Financial Assistance with DHCD.",
    "moved_by": "Karin Menard",
    "seconded_by": "Deborah Christen",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by karin menard made a motion to approve amendment #8 to the contract for financial assistance with dhcd. deborah christen seconded and the motion was passed with all in favor."
+   "quote": "made a motion to approve amendment #8 to the contract for financial assistance with dhcd."
   },
   {
-   "motion": "approve Resolution 202004, Approval of Execution of the Commonwealth of Massachusetts Operating Subsidy Agreement",
-   "outcome": "passed",
+   "motion": "Approve Resolution 202004, execution of the Commonwealth of Massachusetts Operating Subsidy Agreement.",
    "moved_by": "Karin Menard",
    "seconded_by": "Deborah Christen",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by karin menard to approve resolution 202005. deborah christen seconded and the motion was passed with all in favor.",
-   "quote_taken_from_text": true
+   "quote": "motion made by karin me nard to approve resolution 202004."
   },
   {
-   "motion": "approve Resolution 202005, Approval of Accounting Services Contract",
-   "outcome": "passed",
+   "motion": "Approve Resolution 202005, Accounting Services Contract.",
    "moved_by": "Karin Menard",
    "seconded_by": "Deborah Christen",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by karin menard to approve resolution 202005. deborah christen seconded and the motion was passed with all in favor."
+   "quote": "motion made by karin menard to approve resolution 202005."
   },
   {
-   "motion": "approve Resolution 202006, Approval to Write-Off Quarterly Unrecoverable Debts",
-   "outcome": "passed",
+   "motion": "Approve Resolution 202006, write-off of quarterly unrecoverable debts.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Karin Menard",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by deborah christen to approve resolution 202006 karin menard seconded and the motion was passed with all in favor."
+   "quote": "motion made by deborah christen to approve resolution 202006"
   },
   {
-   "motion": "adjourn the meeting",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting at 7:03 p.m.",
    "moved_by": "Karin Menard",
    "seconded_by": "Deborah Christen",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "karin menard made a motion to adjourn the meeting at 7:03 p.m. deborah christen seconded, all were in favor and the meeting was adjourned."
+   "quote": "karin menard made a motion to adjourn the meeting at"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clearly readable; all recorded votes extracted.",
- "cost_usd": 0.0914345
+ "note": "Text is a PDF-style extraction with broken and doubled spacing (e.g., \"Me nard\", \"COVID -19\"); quotes were copied as printed. Votes are recorded as \"all in favor\" or \"passed with all in favor\" with no tallies, so outcome is recorded as \"passed\". The minutes print \"fiscal year 2023\" for a April 2020 meeting; reproduced as printed. Page 4 contains only a footer.",
+ "cost_usd": 0.00795102,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Linda McDonald",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "linda mcdonald, vice chair"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "deborah a.h. christen, member"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Member",
+   "status": "present",
+   "quote": "karin menard, member"
+  },
+  {
+   "name": "Ronald Dionne",
+   "role": "Member",
+   "status": "absent",
+   "quote": "ronald dionne, member"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, executive director"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "adam gautie, assistant executive director"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  },
+  {
+   "name": "Lourdes",
+   "role": "tenant",
+   "status": "remote",
+   "quote": "a tenant just called in lourdes from k3 in pearl brook apartments."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The housing authority will look again at what can be done about the speed bumps near the curve in Pearl Brook, and revisit the issue.",
+   "quote": "the housing authority will take another look to see what can be done."
+  },
+  {
+   "decision": "Staff will talk with the electrician and the Director of Maintenance about possible flashing signs or lights in the area, if it causes no issues with the units.",
+   "quote": "can talk with the electrician and director of maintenance to see what possibilities are."
+  },
+  {
+   "decision": "Executive Director will start interviewing candidates for the Director of Finance position, which is open because of the June retirement.",
+   "quote": "we will start interviewing next week; received a lot of resumes."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Financial report, reserve level",
+   "what_was_recorded": "The Executive Director reported the healthy reserve percentage on page F1.",
+   "figures_as_printed": [
+    "73.80%"
+   ],
+   "quote": "healthy reserve at 73.80%."
+  },
+  {
+   "topic": "Financial report, rents budget versus receipts",
+   "what_was_recorded": "Three months into the fiscal year, rents were budgeted at one figure and received at a higher figure.",
+   "figures_as_printed": [
+    "$58,559",
+    "$64,823"
+   ],
+   "quote": "rents budgeted $58,559; received $64,823."
+  },
+  {
+   "topic": "DHCD formula funding, Amendment #8",
+   "what_was_recorded": "Formula funding for the fiscal year monies was presented, with the contract end date extended by one year.",
+   "figures_as_printed": [
+    "$70,196"
+   ],
+   "quote": "this is our fiscal year 2023 monies of $70,196"
+  },
+  {
+   "topic": "Health and Safety Initiative money for exterior lighting",
+   "what_was_recorded": "Health and Safety Initiative money was provided under an existing DHCD contract for exterior lighting near the parking and dumpsters.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "money for $20,000 for exterior lighting near the parking and the dumpsters."
+  },
+  {
+   "topic": "Write-off of unrecoverable debt",
+   "what_was_recorded": "A vacating tenant owed a balance, and the authority will most likely not try to recover it because of damages to the apartment.",
+   "figures_as_printed": [
+    "$934.00"
+   ],
+   "quote": "we had a person vacating owing $934.00."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Lourdes",
+   "stated_role": "tenant",
+   "topic": "speed bumps and traffic near Pearl Brook Apartments",
+   "quote": "a tenant just called in lourdes from k3 in pearl brook apartments. question was when are the speed bumps going to be put back in."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order, public comment, and February minutes",
+   "resolution": "roll call taken, quorum declared, February 20, 2020 minutes approved",
+   "quote": "vice chair linda mcdonald asked for a roll call of members present:",
+   "tags": [
+    "call to order",
+    "minutes",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Resident concern about speed bumps",
+   "resolution": "housing authority to look again; flashing lights to be explored with electrician and Director of Maintenance",
+   "quote": "question was when are the speed bumps going to be put back in.",
+   "tags": [
+    "resident safety",
+    "speed bumps",
+    "traffic"
+   ]
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "reported; COVID-19 response and Director of Finance retirement noted",
+   "quote": "massnahro annual conference postponed until september due to the covid -19 outbreak.",
+   "tags": [
+    "COVID-19",
+    "staffing",
+    "conference"
+   ]
+  },
+  {
+   "topic": "Financial report, March 31, 2020",
+   "resolution": "accepted",
+   "quote": "financial report - march 31, 2020 - ben gold",
+   "tags": [
+    "financial report",
+    "reserves",
+    "rents"
+   ]
+  },
+  {
+   "topic": "Modernization and work order report",
+   "resolution": "reported, no action",
+   "quote": "56 routine work orders received, 55 completed; 3 emergency work orders, all completed.",
+   "tags": [
+    "maintenance",
+    "modernization",
+    "work orders"
+   ]
+  },
+  {
+   "topic": "State-aided housing report",
+   "resolution": "reported, no action",
+   "quote": "we received ten (10) standard applications in march - 5 elderly/young disabled and 5 family.",
+   "tags": [
+    "waiting list",
+    "occupancy",
+    "leasing"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "none",
+   "quote": "unfinished business - none.",
+   "tags": []
+  },
+  {
+   "topic": "New business resolutions",
+   "resolution": "Amendment #8 approved; Resolutions 202004, 202005, and 202006 approved",
+   "quote": "the following resolution was presented by the chair:",
+   "tags": [
+    "DHCD",
+    "operating subsidy",
+    "accounting",
+    "write-off"
+   ]
+  },
+  {
+   "topic": "Other correspondence",
+   "resolution": "received, no action",
+   "quote": "dhcd phns 2020 -05 through 2020 -16.",
+   "tags": [
+    "DHCD",
+    "COVID-19"
+   ]
+  },
+  {
+   "topic": "Resident participation",
+   "resolution": "no action; none requested",
+   "quote": "no resident participation requested.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:03 p.m.",
+   "quote": "karin menard made a motion to adjourn the meeting at",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "DHCD PHNs 2020-05 through 2020-16",
+   "where": "list",
+   "quote": "dhcd phns 2020 -05 through 2020 -16."
+  },
+  {
+   "name": "Resolution 20 2003 CFA Amendment #8 (Contract for Financial Assistance with DHCD)",
+   "where": "text",
+   "quote": "made a motion to approve amendment #8 to the contract for financial assistance with dhcd."
+  },
+  {
+   "name": "Resolution 202004 Approval of Execution of the Commonwealth of Massachusetts Operating Subsidy Agreement",
+   "where": "text",
+   "quote": "our five -year subsidy agreement expires june 30, 2020"
+  },
+  {
+   "name": "Resolution 202005 Approval of Accounting Services Contract",
+   "where": "text",
+   "quote": "resolution 202005 approval of accounting services contract"
+  },
+  {
+   "name": "Resolution 202006 Approval to Write-Off Quarterly Unrecoverable Debts",
+   "where": "text",
+   "quote": "resolution 202006 approval to write -off quarterly unrecoverable debts"
+  },
+  {
+   "name": "Financial Report – March 31, 2020",
+   "where": "text",
+   "quote": "financial report - march 31, 2020 - ben gold"
+  },
+  {
+   "name": "Modernization/Work Order Report (Adam Gautie)",
+   "where": "text",
+   "quote": "modernization/work order report - adam gautie:"
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "virtual meeting",
+  "COVID-19",
+  "financial report",
+  "DHCD contracts",
+  "operating subsidy",
+  "accounting services",
+  "write-off",
+  "speed bumps",
+  "resident safety",
+  "staffing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "7. other correspondence:"
+ },
+ "dropped_unquoted_by_field": {}
 }

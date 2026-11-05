@@ -1,0 +1,670 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Board of Selectmen Meeting",
+ "meeting_date": "2020-05-19",
+ "video_id": "PnnSBM_MSO8",
+ "video_url": "https://www.youtube.com/watch?v=PnnSBM_MSO8",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2020-05-19-PnnSBM_MSO8.json",
+  "sha256": "f6075dbdc0c96ea1bd3a7cfc55c867284f460c96dc7fd11ed673474fc490264e",
+  "caption_lines": 338,
+  "segments": 2569
+ },
+ "recording": {
+  "duration_s": 7144,
+  "duration": "1:59",
+  "spoken_chars": 93556,
+  "words_approx": 15592
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05192020-5200",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-05-19-agenda-5200.txt",
+   "path": "sources/meetings/select-board/2020-05-19-agenda-5200.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05192020-5200",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-05-19-minutes-5200.txt",
+   "path": "sources/meetings/select-board/2020-05-19-minutes-5200.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-04T02:22:57Z",
+  "cost_usd": 0.2309684
+ },
+ "minutes": {
+  "headline": "Board heard safety planning for a June Town Meeting and bought the Saliba land; Town Meeting not postponed.",
+  "summary": "The Select Board approved moving the skateboard park tollbooth date, voted to treat the Saliba land purchase as a unique acquisition and to authorize signing, and spent most of the night on safety precautions for an in-person June Town Meeting with the moderator, counsel, fire, police and health officials. Members clashed over the FY2021 budget, the hiring of a principal assessor, and whether to plan for a state aid cut. A resident urged postponing Town Meeting and using a one-twelfth budget. The town manager reported on federal relief money and the West Street bids.",
+  "attendees": [
+   {
+    "name_as_heard": "Tom Alonso",
+    "role": "chair",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mr. McQuade",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Miss Adams",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mrs. Locke",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Town Manager",
+    "role": "town manager",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Tim Murphy",
+    "role": "town moderator",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Adam Acosta",
+    "role": "town counsel",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Chief Sullivan",
+    "role": "fire chief",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Jim Guffey",
+    "role": "Board of Health representative",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Jim Marino",
+    "role": "chief of police",
+    "remote": true
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 296,
+    "speaker_as_heard": "Carl Luck, 50 Sunset Lane",
+    "stated_role": "resident",
+    "topic": "Urged postponing Town Meeting, a one-twelfth budget, and said the proposed budget's revenue is overstated and Town Meeting in June would exclude vulnerable residents."
+   },
+   {
+    "t": 6939,
+    "stated_role": "police chief",
+    "topic": "Cautioned that the Town Meeting safety plan must be fluid, with enough help and supplies on hand."
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "free-cash",
+   "grants",
+   "hiring",
+   "legal",
+   "personnel",
+   "planning-and-zoning",
+   "public-comment",
+   "public-safety",
+   "state-aid",
+   "town-departments",
+   "town-meeting"
+  ],
+  "votes": [
+   {
+    "t": 800,
+    "motion": "Move the skateboard park tollbooth request to September 26, 2020",
+    "moved_by": "member",
+    "outcome": "passed 4-0 by roll call (Adams, McQuade, Locke, chair aye)",
+    "procedural": false
+   },
+   {
+    "t": 1922,
+    "motion": "Declare the purchase of the Saliba property at 994 Northfield Road a unique acquisition",
+    "outcome": "passed (all four members aye)",
+    "procedural": false
+   },
+   {
+    "t": 2131,
+    "motion": "Proceed with execution of the Saliba property purchase and authorize the chair to sign the documents",
+    "outcome": "passed (all four members aye)",
+    "procedural": false
+   },
+   {
+    "t": 7106,
+    "motion": "Adjourn",
+    "outcome": "passed by roll call (all four aye)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1097,
+    "topic": "FY2021 budget change",
+    "what_was_said": "One change to the budget sheet: a prior-year bill is to be paid from free cash, raising free cash used and changing the stated surplus.",
+    "figures_as_heard": [
+     "four hundred and seventy six dollars and 21 cents",
+     "million fifty six thousand four hundred twenty-five dollars"
+    ]
+   },
+   {
+    "t": 1285,
+    "topic": "Possible state aid reduction",
+    "what_was_said": "A member said a state aid cut of the size cited would exceed the budget's surplus.",
+    "figures_as_heard": [
+     "twenty eight twenty five percent",
+     "two point three million dollars"
+    ]
+   },
+   {
+    "t": 2048,
+    "topic": "Saliba property purchase",
+    "what_was_said": "The purchase price is funded partly by state park and land grant funds and partly by town funds authorized at an earlier special town meeting.",
+    "figures_as_heard": [
+     "seven hundred and seventy five thousand dollars",
+     "five thousand dollars",
+     "two hundred twenty five thousand dollars"
+    ]
+   },
+   {
+    "t": 5356,
+    "topic": "Warrants signed",
+    "what_was_said": "The manager read accounts payable, deduction and payroll warrants, the large payable driven by a school payment.",
+    "figures_as_heard": [
+     "two million three hundred seventy three thousand five hundred thirty nine dollars and ninety four cents",
+     "560 three thousand two hundred fifty five dollars and seventy nine seventy five cents",
+     "eight hundred ten thousand two hundred twenty four dollars and forty-five cents"
+    ]
+   },
+   {
+    "t": 5936,
+    "topic": "CARES Act relief funds",
+    "what_was_said": "The town has received some relief money, the schools will receive an allocation, and the town has a total eligible amount; CARES funds can match FEMA's share.",
+    "figures_as_heard": [
+     "seven thousand thirty five dollars",
+     "one hundred and ninety eight thousand",
+     "one million twenty seven thousand seven hundred and seventy one dollars"
+    ]
+   },
+   {
+    "t": 6084,
+    "topic": "West Street property bids",
+    "what_was_said": "Three bids were received; the high bidder met the conditions.",
+    "figures_as_heard": [
+     "35 thousand"
+    ]
+   },
+   {
+    "t": 905,
+    "topic": "Principal assessor position",
+    "what_was_said": "Position would be a reallocation of existing funds starting no earlier than July 1; a member objected during a hiring freeze.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 167,
+    "decision": "Pledge of Allegiance procedure deferred to a future agenda discussion."
+   },
+   {
+    "t": 5695,
+    "decision": "Pledge, write-in candidate outreach and the West Street bid award to go on the June 2 agenda; dog license workshop held until after Town Meeting."
+   },
+   {
+    "t": 5271,
+    "decision": "Board Of Health rep to work with the town manager, moderator, chiefs and others to draft a Town Meeting safety plan."
+   },
+   {
+    "t": 6772,
+    "decision": "Town manager to provide a draft Town Meeting plan by the Thursday or Friday before the next meeting; item stays on the June 2 agenda."
+   },
+   {
+    "t": 6876,
+    "decision": "Board members to email the town clerk asking for her election plan."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 190,
+    "topic": "Opening, roll call and pledge",
+    "resolution": "pledge deferred to discussion",
+    "tags": []
+   },
+   {
+    "t_start": 190,
+    "t_end": 484,
+    "topic": "Public comment, including call to postpone Town Meeting",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "town-meeting",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 484,
+    "t_end": 757,
+    "topic": "Announcements: Memorial Day program, farmers market",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 757,
+    "t_end": 860,
+    "topic": "Skateboard park tollbooth date change",
+    "resolution": "voted",
+    "tags": [
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 860,
+    "t_end": 1097,
+    "topic": "Principal assessor hiring and hiring freeze",
+    "resolution": "discussed, no vote",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1097,
+    "t_end": 1900,
+    "topic": "FY2021 budget, free cash change, and state aid cut debate",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "state-aid",
+     "free-cash"
+    ]
+   },
+   {
+    "t_start": 1900,
+    "t_end": 2175,
+    "topic": "Saliba property acquisition",
+    "resolution": "voted",
+    "tags": [
+     "legal",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2175,
+    "t_end": 5340,
+    "topic": "Safety precautions for annual Town Meeting",
+    "resolution": "working group to draft plan",
+    "tags": [
+     "town-meeting",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 5340,
+    "t_end": 5812,
+    "topic": "Warrants, future agenda items, tires and Walmart intersection",
+    "resolution": "agenda items set",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 5812,
+    "t_end": 6650,
+    "topic": "Town manager report: vacancies, CARES funding, West Street bids, COVID update",
+    "resolution": "informational",
+    "tags": [
+     "grants",
+     "town-departments",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 6650,
+    "t_end": 7106,
+    "topic": "Town Meeting plan follow-up, election plan, public comment",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting",
+     "elections"
+    ]
+   },
+   {
+    "t_start": 7106,
+    "t_end": 7140,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "The Saliba vote text and some parcel and deed numbers were garbled.",
+   "Several of the dollar warrant figures, including a payroll warrant, were garbled.",
+   "Some speakers in the Town Meeting discussion were not clearly identified."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 990,
+    "about": "Whether to hire a principal assessor during a hiring freeze rather than keep the outside contractor.",
+    "sides": "A member against hiring now versus other members and the town manager noting the assessors board asked for a bid",
+    "words_as_heard": "well when you say we're very happy with I guess you're leaving out the fact that the Board of Assessors and another elected body have decided to go out and ask for a bid",
+    "kind": "members disagree"
+   },
+   {
+    "t": 1442,
+    "about": "Whether planning for a state aid cut is speculation, and whether it was hostile to say so.",
+    "sides": "Two members expecting difficulties versus a member and the chair calling it speculation",
+    "words_as_heard": "I felt like the conversation was becoming very tense",
+    "kind": "members disagree"
+   },
+   {
+    "t": 3394,
+    "about": "Whether people not wearing masks should be seated or checked in separately.",
+    "sides": "Members favoring separate sections versus a member cautioning against excluding people",
+    "words_as_heard": "I don't think we should pick the groups to segregate",
+    "kind": "members disagree"
+   },
+   {
+    "t": 6793,
+    "about": "Who should plan the election: the town clerk or the town manager.",
+    "sides": "A member saying the clerk is elected and independent versus a member wanting collaboration with town resources",
+    "words_as_heard": "the town manager has no authority over the town clerk",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 2388,
+    "kind": "liability or legal",
+    "about": "A June Town Meeting would exclude vulnerable residents.",
+    "who": "a member",
+    "words_as_heard": "it's discriminatory we're not encouraging participation or discouraging participation"
+   },
+   {
+    "t": 4154,
+    "kind": "liability or legal",
+    "about": "Segregating mask and non-mask attendees requires equal treatment.",
+    "who": "town counsel",
+    "words_as_heard": "I would have real trouble segregating those with and without face masks if you couldn't provide equal treatment to each group"
+   },
+   {
+    "t": 4195,
+    "kind": "liability or legal",
+    "about": "Any Town Meeting decision may be challenged.",
+    "who": "town counsel",
+    "words_as_heard": "there won't be a challenge to any decision that you make in the interest of public health or safety"
+   },
+   {
+    "t": 2997,
+    "kind": "safety",
+    "about": "Shared microphones could spread droplets.",
+    "who": "a member",
+    "words_as_heard": "the microphone must have to be clean between each use right"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 757,
+    "name_as_heard": "change in dates request",
+    "kind": "letter or email",
+    "words_as_heard": "the change in dates is in our Drive Google Drive",
+    "shown": true
+   },
+   {
+    "t": 1097,
+    "name_as_heard": "budget sheet dated today",
+    "kind": "budget document",
+    "words_as_heard": "we just got a sheet that says it's dated today",
+    "shown": true
+   },
+   {
+    "t": 1160,
+    "name_as_heard": "email from Senator",
+    "kind": "letter or email",
+    "words_as_heard": "I'd like you to read the you know the latest email from Senator Tran",
+    "shown": true
+   },
+   {
+    "t": 1901,
+    "name_as_heard": "Saliba purchase documents",
+    "kind": "contract or agreement",
+    "words_as_heard": "these documents are in our Google Drive",
+    "shown": true
+   },
+   {
+    "t": 2257,
+    "name_as_heard": "Berkshire County boards of health memo",
+    "kind": "memo",
+    "words_as_heard": "an extensive seven-page document talking about different things that we can consider",
+    "shown": true
+   },
+   {
+    "t": 6251,
+    "name_as_heard": "COVID-19 update report",
+    "kind": "report",
+    "words_as_heard": "I highlighted this week's report",
+    "shown": true
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "arpa-funds",
+    "title": "CARES Act relief funds",
+    "question": "How much federal relief money is the town eligible for and what can it cover?",
+    "t": 5936,
+    "words_as_heard": "luneberg's total eligible amount for fiscal 20 and 21 is one million twenty seven thousand seven hundred and seventy one dollars",
+    "data_in_play": [
+     "one million twenty seven thousand seven hundred and seventy one dollars",
+     "seven thousand thirty five dollars"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted to proceed with the Saliba property purchase at 994 Northfield Road and authorized the chair to sign the documents.",
+    "t": 2131
+   },
+   {
+    "line": "The Board first declared the Saliba purchase a unique acquisition, with all four members voting aye.",
+    "t": 1922
+   },
+   {
+    "line": "Most of the meeting went to safety precautions for an in-person June Town Meeting; a working group will draft a plan and Town Meeting was not postponed.",
+    "t": 5271
+   },
+   {
+    "line": "Members disagreed over the FY2021 budget, a free cash change, a possible state aid cut, and hiring a principal assessor during a hiring freeze.",
+    "t": 1097
+   },
+   {
+    "line": "The Board voted 4-0 by roll call to move the skateboard park tollbooth request to September 26, 2020.",
+    "t": 800
+   }
+  ],
+  "why_it_matters": [
+   "The Saliba purchase commits state grant money and town funds approved at an earlier special town meeting to a land acquisition.",
+   "How Town Meeting is held, and whether the FY2021 budget rests on state aid and free cash that may shrink, shapes how and when residents can vote on the budget that sets next year's tax bill."
+  ],
+  "watch_next": [
+   "June 2 Select Board meeting: the town manager's draft Town Meeting plan, the West Street bid award, and write-in candidate outreach are due on the agenda.",
+   "Board members are to email the town clerk for her election plan."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-04T02:23:02Z",
+   "cost_usd": 0.0291671
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05192020-5200",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-05-19-minutes-5200.txt",
+   "path": "sources/meetings/select-board/2020-05-19-minutes-5200.pdf"
+  },
+  "official_sha256": "abcf4af7541353b70bc002bac1834c90ee45771803912e777f1165951c9ecd2b",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the three main votes, the Saliba purchase figures, the West Street bid and most attendees, with several caption garbles in the dollar figures and names. Our minutes record decisions about the Town Meeting plan and the June 2 agenda that the official minutes do not include, and the skateboard park date is a possible conflict: ours has a roll call vote and the official has Mr. McQuaid, with a fourth member listed as Mr. Alonzo rather than a chair label.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 6,
+   "discrepancy": 0,
+   "only_in_ours": 2,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Skate park tollbooth date change vote",
+    "ours": "Move the skateboard park tollbooth request to September 26, 2020 — passed 4-0 by roll call (Adams, McQuade, Locke, chair aye)",
+    "official": "motion: k. adams 2\": d. mcquaid to authorize the change of date to september 26th vote: ms. adams- aye, mr. mcquaid-aye, ms. luck- aye, mr. alonzo-aye",
+    "note": "Same motion, date, outcome and 4-0 roll call; only name spellings differ.",
+    "t": 800
+   },
+   {
+    "kind": "agree",
+    "about": "Unique acquisition vote, 994 Northfield Road",
+    "ours": "Declare the purchase of the Saliba property at 994 Northfield Road a unique acquisition — passed (all four members aye)",
+    "official": "vote: ms. adams- aye, mr. mcquaid-aye, ms. luck-aye, mr. alonzo- aye",
+    "note": "Both record passage with all four members aye.",
+    "t": 1922
+   },
+   {
+    "kind": "agree",
+    "about": "Proceed with Saliba purchase and authorize chair to sign",
+    "ours": "Proceed with execution of the Saliba property purchase and authorize the chair to sign the documents — passed (all four members aye)",
+    "official": "i move to proceed with the execution of the purchase of the saliba property at 994 northfield road as voted at the november 12, 2019 special town meeting",
+    "note": "Same motion and passage; the official adds the Nov 12, 2019 Special Town Meeting reference.",
+    "t": 2131
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY2021 budget change figures",
+    "ours": "four hundred and seventy six dollars and 21 cents, million fifty six thousand four hundred twenty-five dollars",
+    "official": "a prior year's bill of $476.20 to be paid out of free cash, increasing our surplus to $1,066,425.",
+    "note": "Same item; captions give 21 cents and 'million fifty six thousand' for $476.20 and $1,066,425.",
+    "official_reading": "$476.20 and $1,066,425",
+    "t": 1097
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Possible state aid reduction",
+    "ours": "Possible state aid reduction: twenty eight twenty five percent, two point three million dollars",
+    "official": "",
+    "note": "The official minutes in this structure carry no state aid reduction figure; check the recording and the official text.",
+    "t": 1285
+   },
+   {
+    "kind": "caption_error",
+    "about": "Saliba purchase price and funding",
+    "ours": "seven hundred and seventy five thousand dollars, five thousand dollars, two hundred twenty five thousand dollars",
+    "official": "the property will be purchased for $775,000, with $500,000 coming from state parc and land grant funds and the remaining $275,000 from the town of",
+    "note": "Captions garbled $500,000 as 'five thousand' and $275,000 as 'two hundred twenty five thousand'.",
+    "official_reading": "$775,000, $500,000 and $275,000",
+    "t": 2048
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrants signed",
+    "ours": "two million three hundred seventy three thousand five hundred thirty nine dollars and ninety four cents, 560 three thousand two hundred fifty five dollars and seventy nine seventy five cents, eight hundred ten thousand two hundred twenty four dollars and forty-five cents",
+    "official": "a/p warrant #57 20 $2,373,539.94",
+    "note": "Totals match except the second, which captions garble to '560 three thousand ... seventy nine seventy five cents' for $563,255.75; the official also lists $11,810.88 which ours lacks.",
+    "official_reading": "$2,373,539.94, $563,255.75, $11,810.88, $810,224.45",
+    "t": 5356
+   },
+   {
+    "kind": "caption_error",
+    "about": "CARES Act relief funds",
+    "ours": "seven thousand thirty five dollars, one hundred and ninety eight thousand, one million twenty seven thousand seven hundred and seventy one dollars",
+    "official": "we received $7,035.89 from the department of health and human services",
+    "note": "Same figures: $7,035.89 (cents dropped), $198,000 for schools and $1,027,771 eligible total.",
+    "official_reading": "$7,035.89, $198,000, $1,027,771",
+    "t": 5936
+   },
+   {
+    "kind": "agree",
+    "about": "West Street property bids",
+    "ours": "West Street property bids: 35 thousand",
+    "official": "with a high bid of $35,000.",
+    "note": "Same high bid.",
+    "t": 6084
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town Meeting safety plan and June 2 agenda items",
+    "ours": "Town manager to provide a draft Town Meeting plan by the Thursday or Friday before the next meeting; item stays on the June 2 agenda.",
+    "official": "",
+    "note": "The official minutes show no decisions on the Town Meeting plan, the June 2 agenda, the dog license workshop or the town clerk email; check whether these were agreed.",
+    "t": 6772
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Mosquito tire request and Gold Star lighting",
+    "ours": "",
+    "official": "ms. luck asked town manager to ensure all town tires are free of water to prevent mosquito breeding.",
+    "note": "Official records Ms. Luck's request and the Gazebo gold lighting for Memorial Day; ours does not.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town counsel name",
+    "ours": "Adam Acosta (town counsel)",
+    "official": "adam costa, town counsel;",
+    "note": "Misheard surname.",
+    "official_reading": "Adam Costa",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board of Health representative",
+    "ours": "Jim Guffey (Board of Health representative)",
+    "official": "jim garreffi, nashoba district sanitarian",
+    "note": "Likely the same person, misheard name and title; a person should confirm.",
+    "official_reading": "Jim Garreffi (Nashoba District Sanitarian)",
+    "t": 5271
+   },
+   {
+    "kind": "agree",
+    "about": "Board members and officials present",
+    "ours": "Tom Alonso (chair); Mr. McQuade; Miss Adams; Mrs. Locke; Tim Murphy; Chief Sullivan; Jim Marino",
+    "official": "also present: heather lemieux, town manager; tim murphy, town moderator; adam costa, town counsel;",
+    "note": "Same attendees apart from spelling variants (Alonso/Alonzo, McQuade/McQuaid, Locke/Luck).",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member and public commenter",
+    "ours": "",
+    "official": "member not present: michael-ray jeffreys",
+    "note": "Official lists Michael-Ray Jeffreys absent and Carl Tuck's public comment; ours has neither.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T02:25:09Z",
+   "cost_usd": 0.0559431
+  }
+ }
+}

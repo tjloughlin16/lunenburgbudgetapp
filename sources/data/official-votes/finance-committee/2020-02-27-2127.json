@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2020-02-27",
  "docid": "2127",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Transfer $60 from line 534500 (advertising) and $20 from line 53700 (dues membership) to line 573100 (Finance Committee meetings and schools)",
+   "motion": "Transfer $60 from line 534500 (advertising) and $20 from line 53700 (dues membership) to line 573100 (meetings and schools) for the Finance Committee.",
    "moved_by": "John Henshaw",
    "seconded_by": "Jay Simeone",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "john henshaw moved, jay simeone 2nd. roll call vote: peter beardmore - yes, jay simeone - yes, john henshaw - yes, michelle walton - yes, terri burchfield - yes. dave passios arrived later and did not vote. motion passed."
+   "quote": "john henshaw moved, jay simeone 2nd. roll call vote: peter beardmore - yes, jay simeone - yes, john henshaw - yes"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "John Henshaw",
    "seconded_by": "Dave Passios",
    "outcome": "passed unanimously",
@@ -29,6 +29,231 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Fire and Police department budget presentations were discussed but no votes were taken. Town Manager's report and public comments contained no motions.",
- "cost_usd": 0.10124449999999999
+ "note": "Present line lists Dave Passios twice; he is recorded as arriving later and not voting on the transfer. Peter Beardmore is listed as Remote, and the header gives him the title Secretary. The town manager is not named. Links to slides and narrative documents are given without descriptive titles and the page-2 links are partly cut. No vote is printed for the budget presentations or the town manager report. Only the transfer and adjournment motions are recorded with votes.",
+ "cost_usd": 0.00569202,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, dave passios, michelle walton, jay simeone, dave passios"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, dave passios, michelle walton, jay simeone, dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "dave passios arrived later and did not vote."
+  },
+  {
+   "name": "Michelle Walton",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, dave passios, michelle walton, jay simeone, dave passios"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, dave passios, michelle walton, jay simeone, dave passios"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Secretary",
+   "status": "remote",
+   "quote": "peter beardmore commented that he was disappointed with support from the town technology department to help facilitate remote participation"
+  },
+  {
+   "name": "Chief Sullivan",
+   "role": "Chief",
+   "status": "present",
+   "quote": "chief sullivan presented his proposed budget and a review of fire department operations"
+  },
+  {
+   "name": "Chief Marino",
+   "role": "Chief",
+   "status": "present",
+   "quote": "chief marino presented his proposed budget and a review of police department operations"
+  },
+  {
+   "name": "Thomas Gammel",
+   "role": "Lieutenant",
+   "status": "present",
+   "quote": "lieutenant thomas gammel outlined the departments in-service training"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Transfer of funds to meetings and schools line",
+   "what_was_recorded": "Transfers of $60 and $20 from advertising and dues membership lines to meetings and schools for the Finance Committee.",
+   "quote": "transfer from line item 534500, advertising ($60); and from 53700, dues membership ($20) to 573100, meetings and schools for finance committee.",
+   "figures_as_printed": [
+    "$60",
+    "$20",
+    "534500",
+    "53700",
+    "573100"
+   ]
+  },
+  {
+   "topic": "Fire Department proposed budget",
+   "what_was_recorded": "Chief Sullivan presented the Fire Department proposed budget; no dollar figures are printed.",
+   "quote": "chief sullivan presented his proposed budget and a review of fire department operations",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Police Department proposed budget",
+   "what_was_recorded": "Chief Marino presented the Police Department proposed budget; no dollar figures are printed.",
+   "quote": "chief marino presented his proposed budget and a review of police department operations",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Solar project delay effect on new growth",
+   "what_was_recorded": "The town manager reported a solar project delay would have a negative effect on new growth, and current new growth is stated.",
+   "quote": "the town manager reported that a delay in a solar project will have a $40,600 negative effect on new growth.",
+   "figures_as_printed": [
+    "$40,600",
+    "$193,400"
+   ]
+  },
+  {
+   "topic": "Regional dispatch assessment",
+   "what_was_recorded": "The assessment for regional dispatch will reduce by approximately a stated amount.",
+   "quote": "the assessment for regional dispatch will reduce by approximately $15k.",
+   "figures_as_printed": [
+    "$15K"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from line item 534500, advertising, and from 53700, dues membership, to 573100, meetings and schools, for Finance Committee.",
+   "outcome": "passed",
+   "quote": "transfer from line item 534500, advertising ($60); and from 53700, dues membership ($20) to 573100, meetings and schools for finance committee.",
+   "amount_as_printed": "$60 and $20"
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Remote participation support",
+   "quote": "peter beardmore commented that he was disappointed with support from the town technology department to help facilitate remote participation",
+   "speaker": "Peter Beardmore",
+   "stated_role": ""
+  },
+  {
+   "topic": "Architecture firm contract",
+   "quote": "dave passios reported that the contract with the architecture firm was in negotiation.",
+   "speaker": "Dave Passios",
+   "stated_role": ""
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Transfers",
+   "resolution": "approved by roll call, passed",
+   "quote": "transfer from line item 534500, advertising ($60); and from 53700, dues membership ($20) to 573100, meetings and schools for finance committee.",
+   "tags": [
+    "transfers",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Public comment on remote participation",
+   "resolution": "no action",
+   "quote": "peter beardmore commented that he was disappointed with support from the town technology department to help facilitate remote participation",
+   "tags": [
+    "remote participation",
+    "technology"
+   ]
+  },
+  {
+   "topic": "Fire Department budget presentation",
+   "resolution": "presented, no action",
+   "quote": "chief sullivan presented his proposed budget and a review of fire department operations",
+   "tags": [
+    "fire department",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Police Department budget presentation",
+   "resolution": "presented, no action",
+   "quote": "chief marino presented his proposed budget and a review of police department operations",
+   "tags": [
+    "police department",
+    "budget",
+    "training"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported, no action",
+   "quote": "the town manager reported that a delay in a solar project will have a $40,600 negative effect on new growth.",
+   "tags": [
+    "new growth",
+    "solar project",
+    "regional dispatch",
+    "overlay"
+   ]
+  },
+  {
+   "topic": "Public comment on architecture firm contract",
+   "resolution": "no action",
+   "quote": "dave passios reported that the contract with the architecture firm was in negotiation.",
+   "tags": [
+    "architecture firm",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned unanimously at 8:40PM",
+   "quote": "motion, john henshaw, 2nd dave passios, unanimously approved.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Fire Department Operations powerpoint presentation (link at 1drv.ms)",
+   "where": "list",
+   "quote": "chief sullivan presented his proposed budget and a review of fire department operations as outlined in a powerpoint presentation that can be referenced here:"
+  },
+  {
+   "name": "Police Department operations powerpoint presentation (link at 1drv.ms)",
+   "where": "list",
+   "quote": "police department operations as outlined in a powerpoint presentation that can be reference here:"
+  },
+  {
+   "name": "Police Department narrative document (link at 1drv.ms)",
+   "where": "list",
+   "quote": "with a narrative document here:"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "transfers",
+  "fire department budget",
+  "police department budget",
+  "new growth",
+  "solar project",
+  "regional dispatch",
+  "remote participation",
+  "architecture firm contract",
+  "town meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "as outlined in a powerpoint presentation that can be referenced here"
+ },
+ "dropped_unquoted_by_field": {}
 }

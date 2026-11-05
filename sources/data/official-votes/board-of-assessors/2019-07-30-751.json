@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2019-07-30",
  "docid": "751",
@@ -12,15 +12,269 @@
  },
  "votes": [
   {
-   "motion": "to meet on Tuesday, September 17, 2019 at 5:00 pm",
+   "motion": "Meet on Tuesday, September 17, 2019 at 5:00 pm.",
+   "moved_by": "",
    "outcome": "not stated",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "board voted to meet on tuesday, september 17, 2019 at 5:00 pm."
+   "quote": "board voted to meet on tuesday, september 17, 2019 at 5:00 pm.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. Multiple items described as \"reviewed and approved\" (vouchers, abatements, warrants, commitments, payroll, June 11 minutes, Form LA 13A, MVE tax abatement, iasWorld software recommendation) lack explicit vote language (motion, seconded, vote count, or unanimously). Only one vote contains explicit \"voted\" language. No vote to adjourn is recorded, only \"Meeting adjourned 6:40 pm.\"",
- "cost_usd": 0.09065350000000001
+ "note": "OCR text (macOS Vision). Page 2 is partly garbled, including the opening of the Building Permit Inspections item and the signature block; quotes were taken from legible lines. The only recorded vote is the motion to meet September 17, 2019, which has no mover, seconder, or count. The approval of vouchers and minutes, and the agreement on iasWorld, are recorded without a motion or count, so they are listed as decisions. The adjournment at 6:40 pm has no vote recorded. Joshua's role and attendance are not stated.",
+ "cost_usd": 0.00617012,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, richard letarte, board members, louis franco,"
+  },
+  {
+   "name": "Louis Franco",
+   "role": "Board Members",
+   "status": "present",
+   "quote": "present: chairman, richard letarte, board members, louis franco,"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "rena swezey, regional assessor, harald scheid, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "",
+   "status": "present",
+   "quote": "rena swezey, regional assessor, harald scheid, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "rena swezey, regional assessor, harald scheid, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Joshua",
+   "role": "",
+   "status": "not stated",
+   "quote": "meeting with town counsel, town manager, louise and joshua regarding the new cama software tyler iasworld contract."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll, and the June 11, 2019 minutes (approval recorded without a motion or vote count).",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll, and june 11, 2019 minutes."
+  },
+  {
+   "decision": "BOA reviewed and signed Form LA 13A and the form was submitted to DLS Gateway.",
+   "quote": "boa reviewed and signed form la 13a; form submitted to dls gateway."
+  },
+  {
+   "decision": "The BOA agreed to support the Chairman's recommendation to go forward with iasWorld assessment software (Tyler contract) after discussion with Town Counsel.",
+   "quote": "the boa agreed to support his recommendation."
+  },
+  {
+   "decision": "New chapter 61A application for 380 Goodrich Street tabled until the Chapter Specialist reviews and inspects the property.",
+   "quote": "the boa will review this once the chapter specialist reviews and inspects the property."
+  },
+  {
+   "decision": "For the 235 West St. Appellate Tax Board case, the BOA requested a letter be drafted to the property owner on the reason for filing; Joshua to prepare to mail it. The Board recommended inviting the owner to the next meeting.",
+   "quote": "the board recommended that the property owner be invited to attend the next meeting; they would be happy to address any questions or concerns he may have."
+  },
+  {
+   "decision": "Louise will contact the interested party on the unrecorded-parcel building permit matter and suggest they may need to hire someone to conduct a title search.",
+   "quote": "lou stated he will be in touch with the interested party and will suggest to them that they may need to hire someone to conduct a title search."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Chapter rollback collected",
+   "what_was_recorded": "A chapter rollback amount was collected for FY 2019.",
+   "figures_as_printed": [
+    "$19,036.68"
+   ],
+   "quote": "chapter rollback collected in the amount of $19,036.68 for fy 2019."
+  },
+  {
+   "topic": "2006 MVE excise tax abatement",
+   "what_was_recorded": "BOA approved an excise tax abatement as uncollectable.",
+   "figures_as_printed": [
+    "$4,038.37"
+   ],
+   "quote": "boa reviewed and approved excise tax abatement in the amount of $4,038.37 as uncollectable."
+  },
+  {
+   "topic": "2019-04 MVE tax commitment",
+   "what_was_recorded": "A July 30, 2019 MVE tax commitment was recorded.",
+   "figures_as_printed": [
+    "$99,072.60"
+   ],
+   "quote": "2019-04 mve tax commitment: july 30, 2019 commitment in the amount of $99,072.60"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Routine approvals (vouchers, abatements, warrants, commitments, payroll, minutes)",
+   "resolution": "approved",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll, and june 11, 2019 minutes.",
+   "tags": [
+    "approvals",
+    "vouchers",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Statutory exemption qualifications and applications",
+   "resolution": "reported, no action",
+   "quote": "louise reported that approx. 132 applications were mailed this past month which also included 21 new applications.",
+   "tags": [
+    "exemptions",
+    "applications"
+   ]
+  },
+  {
+   "topic": "Committed and revised assessment report",
+   "resolution": "Form LA 13A signed and submitted",
+   "quote": "boa reviewed and signed form la 13a; form submitted to dls gateway.",
+   "tags": [
+    "DLS",
+    "rollback"
+   ]
+  },
+  {
+   "topic": "2006 MVE tax",
+   "resolution": "abatement approved",
+   "quote": "boa reviewed and approved excise tax abatement in the amount of $4,038.37 as uncollectable.",
+   "tags": [
+    "motor vehicle excise",
+    "abatement"
+   ]
+  },
+  {
+   "topic": "2019-04 MVE tax commitment",
+   "resolution": "noted",
+   "quote": "2019-04 mve tax commitment: july 30, 2019 commitment in the amount of $99,072.60",
+   "tags": [
+    "motor vehicle excise",
+    "commitment"
+   ]
+  },
+  {
+   "topic": "Personal property inspections",
+   "resolution": "reported, no action",
+   "quote": "louise reported that real estate research consultants, inc (rrc) is in the process of conducting of inspections and the police department has been notified",
+   "tags": [
+    "personal property",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "Community Software Consortium (CSC) Public Access discontinued",
+   "resolution": "reported, no action",
+   "quote": "louise reported that an email was received from csc on june 3, 2019 regarding public access",
+   "tags": [
+    "software",
+    "Public Access",
+    "Tyler conversion"
+   ]
+  },
+  {
+   "topic": "Assessment software (Tyler iasWorld)",
+   "resolution": "BOA agreed to support iasWorld recommendation",
+   "quote": "the boa agreed to support his recommendation.",
+   "tags": [
+    "CAMA",
+    "software",
+    "Tyler",
+    "iasWorld"
+   ]
+  },
+  {
+   "topic": "Chapter 61A application, 380 Goodrich Street",
+   "resolution": "tabled",
+   "quote": "the boa will review this once the chapter specialist reviews and inspects the property.",
+   "tags": [
+    "chapter 61A",
+    "land use"
+   ]
+  },
+  {
+   "topic": "Appellate Tax Board case, 235 West St.",
+   "resolution": "letter to owner requested; owner invited to next meeting",
+   "quote": "the boa requested that a letter be drafted to the property owner regarding the reason for filing.",
+   "tags": [
+    "appellate tax board",
+    "abatement"
+   ]
+  },
+  {
+   "topic": "Building permit inspections and new construction",
+   "resolution": "discussed; staff to contact interested party",
+   "quote": "discussion regarding new construction and the communication of receiving building / occupancy permits.",
+   "tags": [
+    "building permits",
+    "occupancy",
+    "title search"
+   ]
+  },
+  {
+   "topic": "Next meeting scheduling",
+   "resolution": "voted to meet September 17, 2019 at 5:00 pm",
+   "quote": "board voted to meet on tuesday, september 17, 2019 at 5:00 pm.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Qualification info (attached to statutory exemption item)",
+   "where": "list",
+   "quote": "louise reported that approx. 132 applications were mailed this past month which also included 21 new applications. (see attached qualification info)"
+  },
+  {
+   "name": "Form LA 13A",
+   "where": "text",
+   "quote": "boa reviewed and signed form la 13a; form submitted to dls gateway."
+  },
+  {
+   "name": "Email from CSC dated June 3, 2019 regarding Public Access",
+   "where": "text",
+   "quote": "louise reported that an email was received from csc on june 3, 2019 regarding public access"
+  },
+  {
+   "name": "Chapter 61A application, 380 Goodrich Street",
+   "where": "text",
+   "quote": "a new chapter 61a application was received regarding property located at 380 goodrich street."
+  },
+  {
+   "name": "June 11, 2019 minutes",
+   "where": "text",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll, and june 11, 2019 minutes."
+  }
+ ],
+ "tags": [
+  "assessors",
+  "abatements",
+  "exemptions",
+  "tax commitments",
+  "motor vehicle excise",
+  "assessment software",
+  "iasWorld",
+  "chapter 61A",
+  "appellate tax board",
+  "personal property",
+  "building permits",
+  "scheduling"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "see attached qualification info"
+ },
+ "dropped_unquoted_by_field": {}
 }

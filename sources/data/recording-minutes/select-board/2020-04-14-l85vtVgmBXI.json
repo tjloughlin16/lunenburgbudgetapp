@@ -1,0 +1,788 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen",
+ "meeting_date": "2020-04-14",
+ "video_id": "l85vtVgmBXI",
+ "video_url": "https://www.youtube.com/watch?v=l85vtVgmBXI",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2020-04-14-l85vtVgmBXI.json",
+  "sha256": "bda62c031b833b4749883d8d98c28cce1e43ccbec9f07edb893b91320450351f",
+  "caption_lines": 400,
+  "segments": 2834
+ },
+ "recording": {
+  "duration_s": 8615,
+  "duration": "2:23",
+  "spoken_chars": 102504,
+  "words_approx": 17084
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04142020-5195",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-04-14-agenda-5195.txt",
+   "path": "sources/meetings/select-board/2020-04-14-agenda-5195.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04142020-5195",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-04-14-minutes-5195.txt",
+   "path": "sources/meetings/select-board/2020-04-14-minutes-5195.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-04T05:56:44Z",
+  "cost_usd": 0.3308208
+ },
+ "minutes": {
+  "headline": "Select Board granted three liquor/entertainment licenses, adopted COVID leave policies, and authorized emergency spending; CPA ballot question deferred.",
+  "summary": "Held remotely during the COVID-19 pandemic, the Select Board held two license hearings, adopted emergency sick leave and family medical leave policies, and voted to seek approval for emergency COVID spending. It also set a tax penalty waiver, released the town's right of first refusal on Chapter 61 land, and debated putting the Community Preservation Act on the ballot, deferring until the next week. The town manager reported that the FY21 budget outlook is uncertain, and members pressed for more conservative planning.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. McQuade",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mrs. Adams",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Jeffries",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mrs. Luck",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Karen",
+    "role": "finance director"
+   },
+   {
+    "name_as_heard": "Julie",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Attorney Kosta",
+    "role": "town counsel"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 8390,
+    "speaker_as_heard": "Dave Paseos",
+    "stated_role": "resident",
+    "topic": "Recalled that the Town Meeting fuel tank discussion concerned relocating tanks to allow installing above-ground tanks before removing underground ones."
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "contracts-and-unions",
+   "grants",
+   "legal",
+   "personnel",
+   "planning-and-zoning",
+   "public-comment",
+   "public-safety",
+   "roads-and-dpw",
+   "state-aid",
+   "town-departments",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 853,
+    "motion": "Grant wine and malt on-premises license to Smokestack Roasters, 39 Mass Ave",
+    "moved_by": "Mrs. Adams",
+    "outcome": "passed (roll call, all ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 1630,
+    "motion": "Approve all alcohol general on-premises license for Whiskey Girl Bar LLC",
+    "outcome": "passed (Jeffries no; others aye)",
+    "procedural": false
+   },
+   {
+    "t": 1824,
+    "motion": "Approve weekday entertainment and jukebox licenses for Whiskey Girl Bar",
+    "moved_by": "Mr. McQuade",
+    "outcome": "passed (roll call, all ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 2539,
+    "motion": "Approve emergency paid sick leave policy",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 3337,
+    "motion": "Approve emergency Family Medical Leave policy",
+    "outcome": "passed (roll call, ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 3890,
+    "motion": "Request approval from Director of Accounts for estimated emergency COVID-19 expenditures under c.44 s.31",
+    "outcome": "passed (roll call, ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 4125,
+    "motion": "Keep tax due date May 1, extend exemption deadline and waive penalties and interest to June 29 per ch. 53 of Acts of 2020",
+    "outcome": "passed (roll call, ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 4509,
+    "motion": "Approve minutes of Jan 28, Feb 4 and Feb 11 2020",
+    "outcome": "passed (one member abstained)",
+    "procedural": true
+   },
+   {
+    "t": 5382,
+    "motion": "Not exercise right of first refusal on Chapter 61 land at Holman Street and Northfield Road",
+    "moved_by": "Mr. Jeffries",
+    "outcome": "passed 4-0-1 (one abstention)",
+    "procedural": false
+   },
+   {
+    "t": 8582,
+    "motion": "Adjourn",
+    "outcome": "passed (roll call, ayes heard)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2263,
+    "topic": "Emergency paid sick leave caps",
+    "what_was_said": "Caps on daily and aggregate benefits were described for child care or caring for others.",
+    "figures_as_heard": [
+     "200 a day",
+     "two thousand dollars in aggregate"
+    ]
+   },
+   {
+    "t": 2346,
+    "topic": "FEMA reimbursement of COVID costs",
+    "what_was_said": "COVID costs will be tracked separately for FEMA reimbursement, though regular payroll may not qualify.",
+    "figures_as_heard": [
+     "75%"
+    ]
+   },
+   {
+    "t": 3610,
+    "topic": "Emergency COVID-19 expenditure authorization",
+    "what_was_said": "Board asked the state to approve an estimated spending authorization for COVID expenses.",
+    "figures_as_heard": [
+     "$100,000"
+    ]
+   },
+   {
+    "t": 3652,
+    "topic": "COVID costs to date",
+    "what_was_said": "Finance director reported known costs submitted so far, with more not yet seen; school Chromebooks were part.",
+    "figures_as_heard": [
+     "thirty thousand four hundred dollars",
+     "17,000"
+    ]
+   },
+   {
+    "t": 7705,
+    "topic": "FY21 budget revamp scenario",
+    "what_was_said": "Town manager outlined removing new positions, level-funding state aid and cutting new growth, still leaving a shortfall.",
+    "figures_as_heard": [
+     "130,000",
+     "30,000 overall deficit"
+    ]
+   },
+   {
+    "t": 7619,
+    "topic": "State revenue outlook",
+    "what_was_said": "Economic roundtable testimony projected dramatic state revenue shortfalls.",
+    "figures_as_heard": [
+     "up to 20%"
+    ]
+   },
+   {
+    "t": 5774,
+    "topic": "Community Preservation Act state matching",
+    "what_was_said": "A member read data on state match rates for CPA communities and surcharge levels.",
+    "figures_as_heard": [
+     "3%",
+     "39%",
+     "100 percent match"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 5677,
+    "decision": "Board agreed to notify the property owner that the town will not exercise its right of first refusal."
+   },
+   {
+    "t": 7030,
+    "decision": "Board consensus to invite the CPA proponent to next week's meeting and keep the CPA ballot question on the agenda."
+   },
+   {
+    "t": 4599,
+    "decision": "Town manager to follow up with the superintendent on a teachers union negotiations update."
+   },
+   {
+    "t": 8316,
+    "decision": "Meeting planned for April 28 if there are agenda items; town manager to send Finance Committee documents to the board."
+   },
+   {
+    "t": 8210,
+    "decision": "Town manager to find out why the fuel tanks are proposed for the same location."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 48,
+    "topic": "Technical setup",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 48,
+    "t_end": 245,
+    "topic": "Opening, remote meeting notice and roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 245,
+    "t_end": 419,
+    "topic": "Public comment and announcements",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 419,
+    "t_end": 936,
+    "topic": "Smokestack Roasters wine and malt license hearing",
+    "resolution": "voted",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 936,
+    "t_end": 1867,
+    "topic": "Whiskey Girl country bar licenses hearing",
+    "resolution": "voted",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 1893,
+    "t_end": 3397,
+    "topic": "Emergency sick leave and family medical leave policies",
+    "resolution": "voted",
+    "tags": [
+     "personnel",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 3397,
+    "t_end": 3932,
+    "topic": "Emergency COVID-19 expenditures authorization",
+    "resolution": "voted",
+    "tags": [
+     "budget",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 3932,
+    "t_end": 4219,
+    "topic": "Tax due date and penalty waiver",
+    "resolution": "voted",
+    "tags": [
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 4219,
+    "t_end": 4509,
+    "topic": "Town manager COVID-19 update",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report"
+    ]
+   },
+   {
+    "t_start": 4509,
+    "t_end": 4850,
+    "topic": "Minutes and action items, budget timing",
+    "resolution": "voted",
+    "tags": [
+     "budget",
+     "budget-fy27"
+    ]
+   },
+   {
+    "t_start": 4850,
+    "t_end": 4935,
+    "topic": "Stormwater committee report",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 4935,
+    "t_end": 5677,
+    "topic": "Right of first refusal on Chapter 61 land",
+    "resolution": "voted",
+    "tags": [
+     "legal",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 5706,
+    "t_end": 7050,
+    "topic": "Community Preservation Act ballot question",
+    "resolution": "deferred to next week",
+    "tags": [
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 7050,
+    "t_end": 8360,
+    "topic": "Town manager report: FY21 budget outlook, grants, assessors, sewer, fuel tanks",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "budget-fy27",
+     "state-aid"
+    ]
+   },
+   {
+    "t_start": 8360,
+    "t_end": 8603,
+    "topic": "Public comment, board comments, adjournment",
+    "resolution": "voted",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Individual roll-call votes on several motions were only partly captured.",
+   "Some dollar amounts, including the school-related COVID cost figure, are unreliable.",
+   "The vote on the minutes is partly unclear; one member abstained."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 4620,
+    "about": "A member said she felt ignored on requests for union negotiation and budget updates; others replied budget discussion needs figures first.",
+    "sides": "one member against the chair and town manager over meeting scheduling and budget timing",
+    "words_as_heard": "I'm just I'm feeling a bit ignored on that one",
+    "kind": "members disagree"
+   },
+   {
+    "t": 7769,
+    "about": "A member said the town manager's revamped scenario is not conservative enough, and the manager defended conservative local receipts.",
+    "sides": "a member against the town manager",
+    "words_as_heard": "leaving state aid and local receipts at last year's level is absurd",
+    "kind": "members disagree"
+   },
+   {
+    "t": 6637,
+    "about": "Members disagreed on whether to put the CPA on the ballot in this economic climate.",
+    "sides": "members favoring postponement against members favoring sending it to voters",
+    "words_as_heard": "not to be tone deaf to what people are going through",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 1460,
+    "kind": "safety",
+    "about": "Concern about serving minors given an open violation at another location.",
+    "who": "a member",
+    "words_as_heard": "it's concerning to me that you are requesting currently having an open violation that is unresolved"
+   },
+   {
+    "t": 771,
+    "kind": "safety",
+    "about": "Slow glass replacement in the lease could leave the premises open once alcohol is on site.",
+    "who": "a member",
+    "words_as_heard": "30 days is probably too long if you're gonna have alcohol on site"
+   },
+   {
+    "t": 6884,
+    "kind": "condition",
+    "about": "Member would support the CPA only if the economy improves.",
+    "who": "a member",
+    "words_as_heard": "I would be a no this year but yes next year if the economic situation was different"
+   },
+   {
+    "t": 8170,
+    "kind": "safety",
+    "about": "Fuel tank location near conservation land and a sensitive brook.",
+    "who": "a member",
+    "words_as_heard": "there's too much risk that we don't need to take"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 506,
+    "name_as_heard": "the application in our Google Drive",
+    "kind": "application or permit",
+    "words_as_heard": "we have the application in our Google Drive"
+   },
+   {
+    "t": 1939,
+    "name_as_heard": "emergency Family Medical Leave and emergency paid sick leave policies",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "two copies one of each policy"
+   },
+   {
+    "t": 3426,
+    "name_as_heard": "town manager memo on emergency expenditures",
+    "kind": "memo",
+    "words_as_heard": "I'm just gonna read the memo"
+   },
+   {
+    "t": 5774,
+    "name_as_heard": "CPA data letter",
+    "kind": "letter or email",
+    "words_as_heard": "it was sent to the fin command the board of selectmen"
+   },
+   {
+    "t": 5233,
+    "name_as_heard": "planning board memo",
+    "kind": "memo",
+    "words_as_heard": "it was also referenced in the memo"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "covid-emergency-spending",
+    "title": "COVID emergency spending",
+    "question": "How much has the town spent on COVID and what will be reimbursed?",
+    "t": 3397,
+    "words_as_heard": "estimated $100,000 in Co bid 19 related expenditures",
+    "data_in_play": [
+     "$100,000",
+     "thirty thousand four hundred dollars",
+     "75%"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "community-preservation-act",
+    "title": "Community Preservation Act",
+    "question": "What would the CPA surcharge cost taxpayers and what state match could Lunenburg expect?",
+    "t": 5706,
+    "words_as_heard": "adoption of the Community Preservation Act",
+    "data_in_play": [
+     "3%",
+     "39%"
+    ],
+    "existing": "community-preservation-act"
+   }
+  ]
+ },
+ "digest": {
+  "watch_next": [
+   "Next week's Select Board meeting, where the Community Preservation Act ballot question stays on the agenda and the proponent is to be invited.",
+   "A possible April 28 meeting if there are agenda items; the town manager is to send Finance Committee documents to the board."
+  ],
+  "what_happened": [
+   {
+    "line": "The Select Board approved emergency COVID-19 measures: a paid sick leave policy, a Family Medical Leave policy, and a request to the state for emergency spending approval.",
+    "t": 3890
+   },
+   {
+    "line": "The board kept the May 1 tax due date but extended the exemption deadline and waived penalties and interest to June 29.",
+    "t": 4125
+   },
+   {
+    "line": "The board granted a wine and malt license to Smokestack Roasters and an all-alcohol license plus entertainment licenses to Whiskey Girl Bar; one member voted no on the all-alcohol license.",
+    "t": 1630
+   },
+   {
+    "line": "The board voted 4-0-1 not to exercise the town's right of first refusal on Chapter 61 land at Holman Street and Northfield Road.",
+    "t": 5382
+   },
+   {
+    "line": "The Community Preservation Act ballot question was deferred a week, and the town manager described an FY21 budget shortfall even after cuts.",
+    "t": 7705
+   }
+  ],
+  "why_it_matters": [
+   "The tax penalty waiver and the leave policies bear directly on household bills and on workers' pay during the pandemic.",
+   "The town manager described an FY21 budget that remains short even with new positions removed and state aid held level, so service levels and next year's tax bill are uncertain.",
+   "A Community Preservation Act ballot question would add a surcharge to property tax bills if voters approve it. It is still undecided."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-04T05:56:50Z",
+   "cost_usd": 0.030751099999999996
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04142020-5195",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-04-14-minutes-5195.txt",
+   "path": "sources/meetings/select-board/2020-04-14-minutes-5195.pdf"
+  },
+  "official_sha256": "28d0eb23f48b31b1fb5c020b8cd7ed5685171f1a7ad9421705f5ff3c074e363a",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree closely on the licenses, the policies, the COVID expenditure request, the right-of-first-refusal vote and most figures. They differ mainly on the tax exemption deadline date and on a few items only one record has.",
+  "counts": {
+   "agree": 15,
+   "caption_error": 4,
+   "discrepancy": 1,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Smokestack Roasters wine and malt license vote",
+    "ours": "Grant wine and malt on-premises license to Smokestack Roasters, 39 Mass Ave — passed (roll call, all ayes heard)",
+    "official": "to approve the wine and malt on premises license to smokestack roasters, llc at 39 massachusetts avenue",
+    "note": "Same vote and outcome in both records.",
+    "t": 853
+   },
+   {
+    "kind": "agree",
+    "about": "Whiskey Girl all alcohol general on-premises license (Jeffries/Jeffreys nay)",
+    "ours": "Approve all alcohol general on-premises license for Whiskey Girl Bar LLC — passed (Jeffries no; others aye)",
+    "official": "to approve the general on premises license for whiskey girl bar ll.c, d/b/a whiskey girl country bar, located at 10 summer street, unit #10",
+    "note": "Both record passage with one nay from Jeffries/Jeffreys (4-1).",
+    "t": 1630
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Whiskey Girl weekday entertainment and jukebox licenses vote",
+    "ours": "Approve weekday entertainment and jukebox licenses for Whiskey Girl Bar — passed (roll call, all ayes heard)",
+    "official": "",
+    "note": "The official minutes list no separate vote on entertainment/jukebox licenses; a person should check whether it was voted and omitted.",
+    "t": 1824
+   },
+   {
+    "kind": "agree",
+    "about": "Emergency paid sick leave policy vote",
+    "ours": "Approve emergency paid sick leave policy — passed unanimously",
+    "official": "to approve the emergency sick leave policy",
+    "note": "Same vote and outcome.",
+    "t": 2539
+   },
+   {
+    "kind": "agree",
+    "about": "Emergency Family Medical Leave policy vote",
+    "ours": "Approve emergency Family Medical Leave policy — passed (roll call, ayes heard)",
+    "official": "to approve the emergency family and medical leave policy as discussed",
+    "note": "Same vote and outcome.",
+    "t": 3337
+   },
+   {
+    "kind": "agree",
+    "about": "Request to Director of Accounts for COVID-19 expenditures; $100,000",
+    "ours": "Request approval from Director of Accounts for estimated emergency COVID-19 expenditures under c.44 s.31 — passed (roll call, ayes heard)",
+    "official": "to request approval from the director of accounts of the division of local services to expend an estimated $100,000 in covid-19 related expenditures that include,",
+    "note": "Same vote; the $100,000 figure matches ours.",
+    "t": 3890
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Tax exemption deadline extension",
+    "ours": "Keep tax due date May 1, extend exemption deadline and waive penalties and interest to June 29 per ch. 53 of Acts of 2020 — passed (roll call, ayes heard)",
+    "official": "to keep the current deadline for tax payments at may 1 and extend the deadline for exemptions until june 1st and waive of penalties and interest per c. 53 through june",
+    "note": "Official gives the exemption deadline as June 1 and the waiver through June 29; ours gives June 29 for the exemption deadline too, so check the recording.",
+    "t": 4125
+   },
+   {
+    "kind": "agree",
+    "about": "Right of first refusal on Chapter 61 land, 4-0-1",
+    "ours": "Not exercise right of first refusal on Chapter 61 land at Holman Street and Northfield Road — passed 4-0-1 (one abstention)",
+    "official": "to not exercise the right of first refusal for the above listed property",
+    "note": "Same vote and the same 4-0-1 tally.",
+    "t": 5382
+   },
+   {
+    "kind": "agree",
+    "about": "FEMA reimbursement 75%",
+    "ours": "FEMA reimbursement of COVID costs: 75%",
+    "official": "should be reimbursed at 75%, except for payroll expenses",
+    "note": "Same figure.",
+    "t": 2346
+   },
+   {
+    "kind": "agree",
+    "about": "Emergency COVID-19 expenditure authorization $100,000",
+    "ours": "Emergency COVID-19 expenditure authorization: $100,000",
+    "official": "she believed $100,000 was enough to get to the end of this fiscal year",
+    "note": "Same figure.",
+    "t": 3610
+   },
+   {
+    "kind": "caption_error",
+    "about": "COVID costs to date",
+    "ours": "COVID costs to date: thirty thousand four hundred dollars, 17,000",
+    "official": "brochu reported the dollar amount is $30,400, but there are additional expenses such as",
+    "note": "Same $30,400 figure; the 17,000 appears to be a caption artifact or a separate item not in the official minutes.",
+    "official_reading": "$30,400",
+    "t": 3652
+   },
+   {
+    "kind": "agree",
+    "about": "State revenue shortfall up to 20%",
+    "ours": "State revenue outlook: up to 20%",
+    "official": "there will be dramatic shortfalls in state revenues up to 20%, unemployment may rise to",
+    "note": "Same figure.",
+    "t": 7619
+   },
+   {
+    "kind": "agree",
+    "about": "FY21 budget revamp scenario $130,000 / $30,000 deficit",
+    "ours": "FY21 budget revamp scenario: 130,000, 30,000 overall deficit",
+    "official": "this would equate to a $30,000 deficit",
+    "note": "Same figures.",
+    "t": 7705
+   },
+   {
+    "kind": "agree",
+    "about": "CPA 3% and 100% figures",
+    "ours": "Community Preservation Act state matching: 3%, 39%, 100 percent match",
+    "official": "now is not the time to be asking people to add an additional 3% to their tax",
+    "note": "The 3% figure matches. The official gives 49% adopting communities where ours has 39%, which is probably misheard.",
+    "t": 5774
+   },
+   {
+    "kind": "agree",
+    "about": "Right of first refusal decision to notify owner",
+    "ours": "Board agreed to notify the property owner that the town will not exercise its right of first refusal.",
+    "official": "to not exercise the right of first refusal for the above listed property",
+    "note": "Same outcome.",
+    "t": 5677
+   },
+   {
+    "kind": "agree",
+    "about": "CPA proponent invited to next meeting",
+    "ours": "Board consensus to invite the CPA proponent to next week's meeting and keep the CPA ballot question on the agenda.",
+    "official": "it was decided to check with ms. lantry to see if she could discuss this further with the board at the next meeting.",
+    "note": "Both have the CPA proponent asked to the next meeting.",
+    "t": 7030
+   },
+   {
+    "kind": "agree",
+    "about": "Teachers union negotiations follow-up",
+    "ours": "Town manager to follow up with the superintendent on a teachers union negotiations update.",
+    "official": "ms. lemieux stated she had not had a chance to speak with the school superintendent. she will follow up on that tomorrow.",
+    "note": "Same action.",
+    "t": 4599
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "April 28 meeting and Finance Committee documents",
+    "ours": "Meeting planned for April 28 if there are agenda items; town manager to send Finance Committee documents to the board.",
+    "official": "",
+    "note": "The official minutes do not record this scheduling decision.",
+    "t": 8316
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fuel tanks same-location follow-up",
+    "ours": "Town manager to find out why the fuel tanks are proposed for the same location.",
+    "official": "",
+    "note": "Official minutes record only Dave Passios's public comment on the fuel tank location, not this assignment.",
+    "t": 8210
+   },
+   {
+    "kind": "only_in_official",
+    "about": "MEMA check on sick leave costs",
+    "ours": "",
+    "official": "ms. lemieux stated she would check with the mema regional coordinator regarding this question.",
+    "note": "Official has this follow-up; ours does not.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Ms. Nicoll license pickup",
+    "ours": "",
+    "official": "he advised ms. nicoll to work out picking up the license with the office.",
+    "note": "Official has this advice; ours does not.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. McQuaid",
+    "ours": "Mr. McQuade (member)",
+    "official": "mr. mcquaid-\"yes, i am here\"",
+    "note": "The captions misheard the surname.",
+    "official_reading": "Mr. McQuaid",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Jeffreys",
+    "ours": "Mr. Jeffries (member)",
+    "official": "mr. jeffreys - \"yes, i am here,\"",
+    "note": "Spelling variant of the same surname.",
+    "official_reading": "Mr. Jeffreys",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: town counsel",
+    "ours": "Attorney Kosta (town counsel)",
+    "official": "(town counsel adam costa joined the meeting.)",
+    "note": "The captions misheard the surname.",
+    "official_reading": "Adam Costa",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: chair, Adams, Luck, Lemieux, Karen, Julie",
+    "ours": "chair (chair); Mrs. Adams; Mrs. Luck; Heather (town manager); Karen (finance director); Julie (presenter)",
+    "official": "also present: town manager heather lemieux; assistant town manager julie belliveau,",
+    "note": "Same people. Ours names the chair only by title, and the official names Mr. Alonzo.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T05:58:30Z",
+   "cost_usd": 0.06802309999999999
+  }
+ }
+}

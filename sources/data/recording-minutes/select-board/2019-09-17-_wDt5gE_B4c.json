@@ -221,5 +221,148 @@
    "at": "2026-11-04T12:40:50Z",
    "cost_usd": 0.0235391
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09172019-5142",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-09-17-minutes-5142.txt",
+   "path": "sources/meetings/select-board/2019-09-17-minutes-5142.pdf"
+  },
+  "official_sha256": "9feb3ef3aa383b038d26b40d34c0e625e21065c449b36e83303f8e3f713f9d77",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on little: ours captured no votes, transfers or decisions, only two garbled figures, and a partial attendee list. The official minutes record eight votes, including the failed 2-3 Complete Streets motion and the 4-1 alternative, plus several figures and decisions our minutes lack, so check the recording for those votes.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 3,
+   "discrepancy": 3,
+   "only_in_ours": 0,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Votes on licenses, Complete Streets, signs, beer/wine petition, warrant articles, demolition article",
+    "ours": "VOTES: none",
+    "official": "to submit the application to complete streets with items #1, #4 and #3 totalling $340,000 vote: 2 in favor, 3 against (luck, mcquaid, alonzo)",
+    "note": "Official minutes record eight non-procedural votes (licenses, Complete Streets failed 2-3 then alternative #1 passed 4-1, signs, beer/wine petition, warrant articles, demolition article 3-2); ours records none, so check the recording for the votes.",
+    "t": 727
+   },
+   {
+    "kind": "agree",
+    "about": "Complete Streets $340,000 request",
+    "ours": "Complete Streets grant request: four hundred thousand dollars, three hundred and forty thousand",
+    "official": "to submit the application to complete streets with items #1, #4 and #3 totalling $340,000",
+    "note": "The $340,000 figure matches; the 'four hundred thousand' in ours looks like extra or misheard material, and the official minutes do not give it.",
+    "t": 727
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Town share of project costs",
+    "ours": "Town share of project costs: 21%, sixty two point nine sixty percent fifty percent",
+    "official": "",
+    "note": "The official minutes print no town-share percentages; the captions are garbled, so check the recording for the actual percentages.",
+    "t": 1024
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Pleasant Street bridge funding",
+    "ours": "",
+    "official": "wereceived$380,000 fortherepair ofthisbridgethrough",
+    "note": "Official records $380,000 from MassDOT Small Bridge Program; ours has no such figure.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Beach and Main Street project requests",
+    "ours": "",
+    "official": "the beach project funding request is $220,000 and the main street project is $230,000.",
+    "note": "Official gives the $220,000 and $230,000 figures; ours lacks them.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Warrants signed",
+    "ours": "",
+    "official": "the board signed an accounts payable warrant in the amount of $311,451.98, a deductions warrant in the amount of $167,816.57, and a payroll warrant in the amount of $811,390.09.",
+    "note": "Warrant amounts appear only in official.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Demolition cost and building funds",
+    "ours": "",
+    "official": "you have to come up with half a million dollars to tear",
+    "note": "Official records half a million for demolition and about $50,000 available for projects; neither appears in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Decisions: 250 Howard St ROFR, 47-day deadline, moderator",
+    "ours": "",
+    "official": "general consensus of the board was 47 days and adjusting board meetings.",
+    "note": "Official records decisions, including waiting on feedback for 250 Howard Street and talking to the moderator; ours records no decisions.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Jeffries",
+    "ours": "Mr. Jeffries (member)",
+    "official": "katey adams, michael- ray jeffreys",
+    "note": "Spelling differs; same person.",
+    "official_reading": "Michael-Ray Jeffreys",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Member Adams",
+    "ours": "Mrs. Adams (member)",
+    "official": "katey adams, michael- ray jeffreys",
+    "note": "Katey Adams is present in both.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member McQuade",
+    "ours": "Mr. McQuade (member)",
+    "official": "members present: tom alonzo, chairman; phyllis luck, vice chairman, damon mcquaid, clerk;",
+    "note": "Misheard name for McQuaid.",
+    "official_reading": "Damon McQuaid",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other attendees (Alonzo, Luck, Lemieux, presenters)",
+    "ours": "",
+    "official": "others present: heather lemieux, town manager",
+    "note": "Official lists Alonzo, Luck, Lemieux and presenters not captured in ours.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Bill (official addressed)",
+    "ours": "Bill (official addressed)",
+    "official": "also present from world tech was bill mertz.",
+    "note": "Bill is Bill Mertz of World Tech.",
+    "official_reading": "Bill Mertz",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Jack (town official addressed)",
+    "ours": "Jack (town official addressed)",
+    "official": "dpw director rodriquenz was also present.",
+    "note": "No Jack in official; possibly the DPW director or someone else, so check the recording.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T12:46:34Z",
+   "cost_usd": 0.0489211
+  }
  }
 }

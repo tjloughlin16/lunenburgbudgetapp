@@ -1,0 +1,56 @@
+{
+ "board": "Finance Committee",
+ "board_slug": "finance-committee",
+ "meeting_date": "2020-07-09",
+ "source": {
+  "sha256": "8cb2eddc1a143caac1b7131fbc014ea2a084fdfd75b003625cfd17fd4a533744",
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2020-07-09-4wo6jwfroSs.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "415 929",
+    "fiscal_year": 2021,
+    "kind": "state_aid",
+    "scope": "town",
+    "statement": "Chapter 90 apportionment for fiscal 21 announced.",
+    "status": "announced",
+    "t": 1176,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "5.25 billion",
+    "fiscal_year": 2021,
+    "kind": "state_aid",
+    "scope": "both",
+    "statement": "Interim state budget funds local aid at fiscal 20 cherry sheet amounts for July.",
+    "status": "announced",
+    "t": 1219,
+    "who": "the town manager"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "layoffs",
+    "condition": "if the town does not have all the money to fund the budget",
+    "fiscal_year": 2021,
+    "prediction": "The town may have to lay off employees and cut expenses further if money is short.",
+    "scope": "town",
+    "t": 633,
+    "who": "a resident"
+   }
+  ]
+ },
+ "video_id": "4wo6jwfroSs",
+ "video_url": "https://www.youtube.com/watch?v=4wo6jwfroSs",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-11-03T19:41:34Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

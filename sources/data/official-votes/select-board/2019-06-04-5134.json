@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-06-04",
  "docid": "5134",
@@ -12,25 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Approve the pole petition for Pine Grove Road, plan# 965-L by Unitil Gas & Electric",
+   "motion": "Approve the pole petition for Pine Grove Road, plan 965-L by Unitil Gas & Electric.",
    "moved_by": "K. Adams",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "motion: k. adams 2nd: d. mcquaid to approve the pole petition for pine grove road, plan# 965-l by unitil gas & electric discussion: mr. jeffreys asked where t",
-   "quote_taken_from_text": true
+   "quote": "motion: k. adams 2nd: d. mcquaid to approve the pole petition for pine grove road, plan# 965-l by unitil gas & electric"
   },
   {
-   "motion": "Approve the one day special license for Saturday, June 8th for the Dragonfly Garden Café at 3 Lancaster Avenue",
+   "motion": "Approve the one day special (wine and malt) license for Saturday, June 8 for the Dragonfly Garden Cafe at 3 Lancaster Avenue.",
    "moved_by": "K. Adams",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "motion: k. adams 2nd: d. mcquaid to approve the pole petition for pine grove road, plan# 965-l by unitil gas & electric discussion: mr. jeffreys asked where the driv",
-   "quote_taken_from_text": true
+   "quote": "motion: k. adams 2nd: d. mcquaid to approve the one day special license for saturday"
   },
   {
-   "motion": "Ratify the Town Manager's appointments as presented",
+   "motion": "Approve the Town of Lunenburg special event policy with the edits, a yard sale exempted, and the start time changed from 6:00 a.m. to 8:00 a.m. (motion withdrawn by the mover before a vote so further work could be done).",
+   "moved_by": "K. Adams",
+   "seconded_by": "P. Luck",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "to approve the town of lunenburg's special event policy presented with the edits and including that a yard sale is exempted"
+  },
+  {
+   "motion": "Ratify the Town Manager's appointments as presented (Beach Coordinator and seasonal lifeguards).",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Adams",
    "outcome": "not stated",
@@ -38,15 +44,638 @@
    "quote": "motion: d. mcquaid 2nd: k. adams that the board ratify the town manager's appointments as presented"
   },
   {
-   "motion": "Approve and release the above listed Executive Session minutes",
+   "motion": "Invite people who have submitted talent bank forms to attend and participate in the reappointment process.",
+   "moved_by": "K. Adams",
+   "seconded_by": "P. Luck",
+   "outcome": "passed (all in favor)",
+   "procedural": false,
+   "quote": "to invite people who have submitted talent bank forms to attend and participate in the reappointment process"
+  },
+  {
+   "motion": "Approve and release the listed Executive Session minutes.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": true,
    "quote": "motion: d. mcquaid to approve and release the above listed executive session minutes 2nd: p. luck vote: all in favor"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR extraction from macOS Vision; text quality good. One motion (special event policy, K. Adams / P. Luck) was formally withdrawn before a vote was taken and is not included.",
- "cost_usd": 0.1134635
+ "dropped_unquoted": 0,
+ "note": "OCR text from macOS Vision with garbled and clipped passages: page 2 begins mid-sentence; page 4 header is garbled; page 9-10 and 12 have missing or broken sentences; page 13-14 break cuts off the opening of the energy-cost item; page 16-17 cut off the executive session motion, and only a fragment 'aye' appears, so no vote on entering executive session is recorded and no mover is named. Adjournment at 10:26 p.m. is recorded without a motion. Special event policy motion was withdrawn before a vote. Ratification of Town Manager appointments has no printed result. Board members' own remarks under the public comment headings are not listed as public speakers. Quotes were copied from the OCR text with line breaks collapsed, so small OCR errors in the source are carried through.",
+ "cost_usd": 0.01964332,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen members present: damon mcquaid, vice chairman; phyllis luck, clerk;"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board of selectmen members present: damon mcquaid, vice chairman; phyllis luck, clerk;"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Board of Selectmen member (no title printed)",
+   "status": "present",
+   "quote": "katey adams, tom alonzo, michael-ray jeffreys"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Board of Selectmen member (no title printed)",
+   "status": "present",
+   "quote": "katey adams, tom alonzo, michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Board of Selectmen member (no title printed)",
+   "status": "present",
+   "quote": "katey adams, tom alonzo, michael-ray jeffreys"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others present: town manager heather lemieux; adam costa, town legal counsel; adam burney, land use director"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Legal Counsel",
+   "status": "present",
+   "quote": "others present: town manager heather lemieux; adam costa, town legal counsel; adam burney, land use director"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "others present: town manager heather lemieux; adam costa, town legal counsel; adam burney, land use director"
+  },
+  {
+   "name": "Jim Dee",
+   "role": "representing Unitil (presenter on pole petition)",
+   "status": "present",
+   "quote": "jim dee from unitil presented for the petition to get permission to set two poles on pine grove road"
+  },
+  {
+   "name": "Joslin Schneider",
+   "role": "presenter, one day license request (no title printed)",
+   "status": "present",
+   "quote": "joslin schneider presented for the request and is looking to offer a six course tasting menu"
+  },
+  {
+   "name": "Anthony Bovenzi",
+   "role": "applicant on 300 Holman Street entertainment licenses (statement read by Jaiesta Fields)",
+   "status": "absent",
+   "quote": "read a statement from anthony bovenzi, one of the applicants listed on the entertainment licenses"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "President of Lake Shirley Improvement Corp. (LSIC)",
+   "status": "present",
+   "quote": "joanna bilotta, 362 sunset lane, president of lake shirley improvement corp. (lsic), stated"
+  },
+  {
+   "name": "Steve Weaver",
+   "role": "resident, 288 Holman Street",
+   "status": "present",
+   "quote": "steve weaver, 288 holman street, stated mr. alonzo's speech at the memorial day ceremony"
+  },
+  {
+   "name": "John Tata",
+   "role": "resident, 135 Flynn Road",
+   "status": "present",
+   "quote": "john tata, 135 flynn road, asked is it not true that every board is required to maintain minutes"
+  },
+  {
+   "name": "Jaiesta Fields",
+   "role": "legal representative for NOWOCO Pride, 95 Sunset Lane",
+   "status": "present",
+   "quote": "jaiesta fields, 95 sunset lane, legal representative for nowoco pride, read a statement from"
+  },
+  {
+   "name": "Jackie Ramondelli",
+   "role": "LSIC board member, 599 Reservoir Road",
+   "status": "present",
+   "quote": "jackie ramondelli, 599 reservoir road, commented on lsic meeting with the conservation"
+  },
+  {
+   "name": "Gary Spindt",
+   "role": "LSIC, 7 Ruth Street",
+   "status": "present",
+   "quote": "gary spindt, 7 ruth street, related there is concern among the lsic of the conflict of interest"
+  },
+  {
+   "name": "Ashley Brawn",
+   "role": "LSIC board, 607 Reservoir Road",
+   "status": "present",
+   "quote": "ashley brawn, 607 reservoir road, also on the lsic board, stated our government is based on"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "no role printed",
+   "status": "present",
+   "quote": "dave passios noted sometimes in the same sentence you are describing a policy and guidelines;"
+  },
+  {
+   "name": "Helen Obermeyer-Simmons",
+   "role": "resident, 323 Northfield Road",
+   "status": "present",
+   "quote": "helen obermeyer-simmons, 323 northfield road, stated she was one of the people planning the"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Conservation Commission member, 361 Mulpus Road",
+   "status": "present",
+   "quote": "todd dwyer, 361 mulpus road, conservation commission member, stated it makes sense rather"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Chairman of the Conservation Commission, 308 Electric Avenue",
+   "status": "present",
+   "quote": "richard bursch, 308 electric avenue, chairman of the conservation commission, stated he was"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Alonzo asked Mr. Dee (Unitil) to indicate driveways on future pole plans.",
+   "quote": "he asked mr. dee to indicate driveways on future plans."
+  },
+  {
+   "decision": "Mr. Alonzo suggested a workshop on the special event policy; it is tentatively to be scheduled for July.",
+   "quote": "mr. alonzo suggested a workshop on this policy might help. it will be tentatively scheduled for july."
+  },
+  {
+   "decision": "Mr. Burney to consult the Police Chief on what quantifies the disturbing the peace statute for the special event policy.",
+   "quote": "mr. burney will consult with the police chief regarding what quantifies the disturbing the peace statute."
+  },
+  {
+   "decision": "Mr. Burney to amend the special event policy timing to 7:00 a.m. (activities including setup).",
+   "quote": "mr. burney will amend to 7:00 a.m. (activities including setup)."
+  },
+  {
+   "decision": "Wording to be inserted in the special event policy to address non-permitted events in the enforcement section.",
+   "quote": "wording should be inserted in the policy to address non-permitted events in the enforcement section."
+  },
+  {
+   "decision": "Executive Assistant Peterson to contact talent bank applicants about interviewing and inform those up for reappointment that they are welcome to attend.",
+   "quote": "executive assistant peterson will contact the talent bank form applicants about the opportunity"
+  },
+  {
+   "decision": "Board concurred that applicants should be asked whether they are willing to serve on other boards with vacancies.",
+   "quote": "during the process we should ask them if they are willing to serve on other boards. the board concurred."
+  },
+  {
+   "decision": "Mr. Alonzo requested vacation schedules from board members for July and August.",
+   "quote": "mr. alonzo requested vacation schedules from the board members for the months of july and august."
+  },
+  {
+   "decision": "Amendment to the Casella Contract for Solid Waste Recycling and Disposal Services tabled until a future date.",
+   "quote": "amendment to the casella contract for solid waste recycling and disposal services-this item"
+  },
+  {
+   "decision": "Review of Town Manager Performance Evaluation Form and Process tabled until a future date.",
+   "quote": "review of town manager performance evaluation form and process is tabled until a future date."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts payable, payroll and payroll deductions warrants signed",
+   "what_was_recorded": "The Board signed three warrants: accounts payable, payroll, and payroll deductions.",
+   "figures_as_printed": [
+    "$320,065.21",
+    "$837,110.10",
+    "$257,799.99"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $320,065.21; a payroll warrant in the amount of $837,110.10 and a payroll deductions warrant in the amount of $257,799.99."
+  },
+  {
+   "topic": "Eagle House state earmark reimbursement (FY19)",
+   "what_was_recorded": "A FY19 state earmark of not less than $25,000 for the Eagle House lets the town seek reimbursement of up to $25,000 for FY19 expenditures, which will positively affect free cash certified in the fall.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "not less than $25,000 shall be expended on the lunenburg eagle house senior community center"
+  },
+  {
+   "topic": "Energy costs for the coming year",
+   "what_was_recorded": "Projected energy cost is reported as approximately $300 more than the current year, based on current electricity and natural gas usage; the minutes' opening context is missing.",
+   "figures_as_printed": [
+    "$300"
+   ],
+   "quote": "approximately $300 more than the current year."
+  },
+  {
+   "topic": "925 Massachusetts Avenue former gas station clean-up",
+   "what_was_recorded": "The Town has pursued clean-up of the old gas station without taking on clean-up costs, working with Brownfield funds and MassDevelopment; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "without the liability of clean-up costs of this old gas station"
+  },
+  {
+   "topic": "Nexamp community solar discounts",
+   "what_was_recorded": "Nexamp community solar offers residents discounted electricity; town, sewer and school accounts are being enrolled, with discounts expected January to March 2020. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "that offers residents discounted electricity from community solar projects"
+  },
+  {
+   "topic": "Walking audit budget (MRPC)",
+   "what_was_recorded": "Consultant Sheri Bean reportedly did not think there was enough in the budget to attend another public audit; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "she didn't think there was enough in the budget for her to attend another public audit"
+  },
+  {
+   "topic": "MassDEP Education and Enforcement Coordinator Grant",
+   "what_was_recorded": "Board of Health decided not to rush waste hauler regulation changes given the grant due date of June 12th; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the due date of june 12th for the massdep education and enforcement coordinator grant"
+  },
+  {
+   "topic": "Special event policy cleanup costs",
+   "what_was_recorded": "Under the draft policy, if the applicant has not cleaned up within 48 hours the Town arranges cleanup and charges the applicant; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "cleanup will be arranged by the town and charged to the applicant."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Adams",
+   "stated_role": "Board member",
+   "topic": "walkability study",
+   "quote": "ms. adams stated she missed the walkability study but she attempted to walk"
+  },
+  {
+   "speaker": "Joanna Bilotta",
+   "stated_role": "President of Lake Shirley Improvement Corp. (LSIC)",
+   "topic": "Lake Shirley Order of Conditions",
+   "quote": "lake shirley is a 360 acre parcel of water."
+  },
+  {
+   "speaker": "Steve Weaver",
+   "stated_role": "resident, 288 Holman Street",
+   "topic": "appointments, town center parking, 300 Holman Street licenses",
+   "quote": "steve weaver, 288 holman street, stated mr. alonzo's speech at the memorial day ceremony"
+  },
+  {
+   "speaker": "John Tata",
+   "stated_role": "resident, 135 Flynn Road",
+   "topic": "timely approval of minutes",
+   "quote": "john tata, 135 flynn road, asked is it not true that every board is required to maintain minutes"
+  },
+  {
+   "speaker": "Jaiesta Fields",
+   "stated_role": "legal representative for NOWOCO Pride, 95 Sunset Lane",
+   "topic": "300 Holman Street entertainment licenses",
+   "quote": "jaiesta fields, 95 sunset lane, legal representative for nowoco pride, read a statement from"
+  },
+  {
+   "speaker": "Jackie Ramondelli",
+   "stated_role": "LSIC board member, 599 Reservoir Road",
+   "topic": "Lake Shirley Conservation Commission conflict of interest",
+   "quote": "jackie ramondelli, 599 reservoir road, commented on lsic meeting with the conservation"
+  },
+  {
+   "speaker": "Gary Spindt",
+   "stated_role": "LSIC, 7 Ruth Street",
+   "topic": "Conservation Commission conflict of interest",
+   "quote": "gary spindt, 7 ruth street, related there is concern among the lsic of the conflict of interest"
+  },
+  {
+   "speaker": "Ashley Brawn",
+   "stated_role": "LSIC board, 607 Reservoir Road",
+   "topic": "Order of Conditions changes",
+   "quote": "ashley brawn, 607 reservoir road, also on the lsic board, stated our government is based on"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "no role printed",
+   "topic": "special event policy versus guidelines",
+   "quote": "dave passios noted sometimes in the same sentence you are describing a policy and guidelines;"
+  },
+  {
+   "speaker": "Helen Obermeyer-Simmons",
+   "stated_role": "resident, 323 Northfield Road",
+   "topic": "canceled photo exhibition",
+   "quote": "helen obermeyer-simmons, 323 northfield road, stated she was one of the people planning the"
+  },
+  {
+   "speaker": "Todd Dwyer",
+   "stated_role": "Conservation Commission member, 361 Mulpus Road",
+   "topic": "reappointment process",
+   "quote": "todd dwyer, 361 mulpus road, conservation commission member, stated it makes sense rather"
+  },
+  {
+   "speaker": "Richard Bursch",
+   "stated_role": "Chairman of the Conservation Commission, 308 Electric Avenue",
+   "topic": "reappointment and talent bank process",
+   "quote": "richard bursch, 308 electric avenue, chairman of the conservation commission, stated he was"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment (first)",
+   "resolution": "heard; no action",
+   "quote": "ms. adams stated she missed the walkability study but she attempted to walk",
+   "tags": [
+    "public comment",
+    "walkability",
+    "Lake Shirley",
+    "300 Holman Street"
+   ]
+  },
+  {
+   "topic": "Pine Grove Road pole petition (Unitil)",
+   "resolution": "approved 4-1",
+   "quote": "motion: k. adams 2nd: d. mcquaid to approve the pole petition for pine grove road, plan# 965-l by unitil gas & electric",
+   "tags": [
+    "pole petition",
+    "Unitil",
+    "driveways"
+   ]
+  },
+  {
+   "topic": "One Day Wine & Malt License - Dragonfly Garden Cafe",
+   "resolution": "approved",
+   "quote": "motion: k. adams 2nd: d. mcquaid to approve the one day special license for saturday",
+   "tags": [
+    "liquor license",
+    "one day license"
+   ]
+  },
+  {
+   "topic": "Special Event Permit policy discussion",
+   "resolution": "continued; motion withdrawn; workshop tentatively July",
+   "quote": "to approve the town of lunenburg's special event policy presented with the edits and including that a yard sale is exempted",
+   "tags": [
+    "special event permit",
+    "policy",
+    "abutters",
+    "timing"
+   ]
+  },
+  {
+   "topic": "Town Manager appointments (ratification)",
+   "resolution": "ratify motion made; result not recorded",
+   "quote": "ms. lemieux referred the board to the following town manager appointments and requested",
+   "tags": [
+    "appointments",
+    "beach",
+    "lifeguards"
+   ]
+  },
+  {
+   "topic": "Process of annual appointments and reappointments",
+   "resolution": "approved; invite talent bank applicants to reappointment process",
+   "quote": "mr. alonzo stated up until now if you wanted to be reappointed you would fill out a",
+   "tags": [
+    "reappointment",
+    "talent bank",
+    "boards"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "no action",
+   "quote": "as a follow-up to a request by the board to address the dangerous intersection at electric ave",
+   "tags": [
+    "town manager",
+    "events",
+    "traffic",
+    "925 Mass Ave",
+    "walkability",
+    "Summer Street",
+    "Eagle House",
+    "Nexamp",
+    "stormwater",
+    "dementia friendly"
+   ]
+  },
+  {
+   "topic": "Minutes / Warrants / Action File Issues",
+   "resolution": "warrants signed; no action on action file issue",
+   "quote": "the board signed an accounts payable warrant in the amount of $320,065.21",
+   "tags": [
+    "warrants",
+    "payroll",
+    "letters"
+   ]
+  },
+  {
+   "topic": "Approval and release of Executive Session minutes",
+   "resolution": "approved and released",
+   "quote": "motion: d. mcquaid to approve and release the above listed executive session minutes 2nd: p. luck vote: all in favor",
+   "tags": [
+    "executive session",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action",
+   "quote": "ms. luck reported the storm water task force met on may 23d and reviewed the stormwater",
+   "tags": [
+    "stormwater task force",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "tabled (Casella contract amendment; Town Manager evaluation form)",
+   "quote": "amendment to the casella contract for solid waste recycling and disposal services-this item",
+   "tags": [
+    "Casella",
+    "solid waste",
+    "town manager evaluation"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting and events schedule",
+   "resolution": "no action",
+   "quote": "mr. alonzo requested vacation schedules from the board members for the months of july and august.",
+   "tags": [
+    "schedule",
+    "goal setting workshop"
+   ]
+  },
+  {
+   "topic": "Public Comment (second)",
+   "resolution": "heard; no action",
+   "quote": "richard bursch, 308 electric avenue, chairman of the conservation commission, stated he was",
+   "tags": [
+    "public comment",
+    "reappointment"
+   ]
+  },
+  {
+   "topic": "Executive Session and adjournment",
+   "resolution": "entered executive session (litigation); adjourned 10:26 p.m.",
+   "quote": "mr. alonzo stated he would entertain a motion to enter into executive session and to adjourn",
+   "tags": [
+    "executive session",
+    "litigation",
+    "Aldrich"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Redlined draft of the special event permit (in Board packet)",
+   "where": "list",
+   "quote": "he referred the board to the redlined draft in their packet."
+  },
+  {
+   "name": "Pine Grove Road Plan # 965-L dated May 2, 2019",
+   "where": "text",
+   "quote": "pine grove road plan # 965- l dated may 2, 2019"
+  },
+  {
+   "name": "Town of Lunenburg special event policy",
+   "where": "text",
+   "quote": "to approve the town of lunenburg's special event policy presented with the edits"
+  },
+  {
+   "name": "Town of Lunenburg Board of Selectmen Policies and Procedures, as amended",
+   "where": "text",
+   "quote": "town of lunenburg board of selectmen policies and procedures, as amended"
+  },
+  {
+   "name": "Special Event Application Event Layout Plan",
+   "where": "text",
+   "quote": "all special event applications shall include an event layout plan that includes"
+  },
+  {
+   "name": "Chapter 332 of the Code of Lunenburg",
+   "where": "text",
+   "quote": "traffic and parking plans shall not violate chapter 332 of the code of lunenburg."
+  },
+  {
+   "name": "Chapter 26 of the Code of Lunenburg",
+   "where": "text",
+   "quote": "per chapter 26 of the code of lunenburg, the lunenburg fire department must be contacted"
+  },
+  {
+   "name": "Chapter 249 Section 4 of the General Laws",
+   "where": "text",
+   "quote": "through the process and procedure outlined in chapter 249"
+  },
+  {
+   "name": "Order of Conditions (OOC) issued by the Conservation Commission",
+   "where": "text",
+   "quote": "conditions (ooc) issued by the conservation commission."
+  },
+  {
+   "name": "Sentinel article quoting Matt Marro",
+   "where": "text",
+   "quote": "the sentinel ran an article and quoted matt marro who said 95% of the changes were refinement to the language."
+  },
+  {
+   "name": "Title report filed with Land Court",
+   "where": "text",
+   "quote": "our tax attorney filed a title report with land court in february"
+  },
+  {
+   "name": "Motion to Amend the Petition for Tax Taking",
+   "where": "text",
+   "quote": "a motion to amend the petition for tax taking had to be filed"
+  },
+  {
+   "name": "Police Chief letter of May 24th to MassDOT",
+   "where": "text",
+   "quote": "the police chiefsent a letter on may 24th to massdot requesting a review"
+  },
+  {
+   "name": "Request for Proposals for MS4 engineering services (FY20 to FY22)",
+   "where": "text",
+   "quote": "i put together a request for proposals for ms4 engineering services to comply with year 2"
+  },
+  {
+   "name": "Stormwater management plan",
+   "where": "text",
+   "quote": "and reviewed the stormwater management plan"
+  },
+  {
+   "name": "Executive Session minutes listed for approval (October 1, 2013 through July 24, 2018)",
+   "where": "list",
+   "quote": "to approve and release the above listed executive session minutes"
+  },
+  {
+   "name": "Accounts payable, payroll and payroll deductions warrants",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $320,065.21"
+  },
+  {
+   "name": "Talent bank forms",
+   "where": "text",
+   "quote": "when i get talent bank forms from ms. peterson, i invite"
+  },
+  {
+   "name": "Reappointment form",
+   "where": "text",
+   "quote": "fill out a reappointment form, submit it in a timely fashion"
+  },
+  {
+   "name": "Waste Hauler Regulations (Board of Health)",
+   "where": "text",
+   "quote": "due to the short time-frame to make any necessary changes to their waste hauler regulations"
+  },
+  {
+   "name": "MassDEP Education and Enforcement Coordinator Grant",
+   "where": "text",
+   "quote": "the due date of june 12th for the massdep education and enforcement coordinator grant"
+  },
+  {
+   "name": "FY19 State budget earmark for Eagle House",
+   "where": "text",
+   "quote": "an earmark in the fy19 state budget that was evidently included"
+  },
+  {
+   "name": "Amendment to the Casella Contract for Solid Waste Recycling and Disposal Services",
+   "where": "text",
+   "quote": "amendment to the casella contract for solid waste recycling and disposal services-this item"
+  },
+  {
+   "name": "Town Manager Performance Evaluation Form and Process",
+   "where": "text",
+   "quote": "review of town manager performance evaluation form and process is tabled until a future date."
+  },
+  {
+   "name": "M.G.L. c. 30, Section 21, Paragraph 3 (executive session basis)",
+   "where": "text",
+   "quote": "pursuant to m.g.l. c. 30, section 21, paragraph 3, to"
+  }
+ ],
+ "tags": [
+  "public comment",
+  "Lake Shirley",
+  "conservation commission",
+  "300 Holman Street licenses",
+  "special event permit",
+  "liquor license",
+  "pole petition",
+  "appointments",
+  "reappointment process",
+  "town manager report",
+  "warrants",
+  "executive session",
+  "Eagle House",
+  "stormwater",
+  "Summer Street",
+  "925 Mass Ave",
+  "walkability",
+  "casella contract"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "he referred the board to the redlined draft in their packet."
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-12-09",
  "docid": "4018",
@@ -12,55 +12,311 @@
  },
  "votes": [
   {
-   "motion": "Approve the ANR Plan as submitted for 322 Flat Hill Road",
+   "motion": "Approve the ANR Plan as submitted for 322 Flat Hill Road.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "p. bertram made motion to approve the anr plan as submitted for 322 flat hill road, t. cole seconded, all aye."
   },
   {
-   "motion": "Notify land use boards of the potential withdrawal from Chapter for 322 Flat Hill Road",
+   "motion": "That land use boards be notified of the potential withdrawal of 322 Flat Hill Road from Chapter Land.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "p. bertram made motion that land use boards be notified of the potential withdrawal from chapter, t. cole, seconded, all aye."
   },
   {
-   "motion": "Approve the proposed common drive at 335 Chase Road with the stipulation that the fieldstone wall be retained",
+   "motion": "Approve the proposed common drive at 335 Chase Road with the stipulation that the field stone wall be retained.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
-   "quote": "p. bertram made motion to approve the proposed common drive at 335 chase road with the stipulation that the field stone wall be retained, t. cole seconded, al l aye."
+   "quote": "p. bertram made motion to approve the proposed common drive at 335 chase road with the stipulation that the field stone wall be retained"
   },
   {
-   "motion": "Approve the ANR Plan for 335 Chase Road",
+   "motion": "Approve the ANR Plan for 335 Chase Road.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "p. bertram made motion to approve the anr plan for 335 chase road, t. cole seconded, all aye."
   },
   {
-   "motion": "Release the surety for Emerald Place at Lake Whalom",
+   "motion": "Release the surety for Emerald Place at Lake Whalom.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "p. bertram made motion to release the surety for emerald place at lake whalom, t. cole seconded, all aye."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
    "quote": "p. bertram made motion to adjourn, t. cole seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes passed unanimously (all aye). Three voting members were present: Matthew Allison, Tanner Cole, and Paula Bertram. Marisa Thompson was absent. The minutes are clearly readable with no scanning issues.",
- "cost_usd": 0.0991645
+ "note": "Text is readable; no public comment section is recorded. The Population Projection item under Director's Items has no text. Minutes approval of 11.25.19 was tabled, so no vote on it is recorded. Marjorie J. Boggio appears only in the letterhead, not as attending, so she is omitted.",
+ "cost_usd": 0.00694262,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "tanner cole, vice chair"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "paula bertram, member"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam r. burney land use director"
+  },
+  {
+   "name": "Marisa Thompson",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: marisa thompson"
+  },
+  {
+   "name": "John Boardman P.E., Places Associates, Inc.",
+   "role": "presenter",
+   "status": "present",
+   "quote": "the plan was presented by john boardman p.e., places associates, inc."
+  },
+  {
+   "name": "David LeRoy, Hannigan Engineering",
+   "role": "presenter",
+   "status": "present",
+   "quote": "plan presented by david leroy, hannigan engineering."
+  },
+  {
+   "name": "Neil Gorman, David Ross Associates",
+   "role": "presenter",
+   "status": "present",
+   "quote": "neil gorman, david ross associates noted this previously came before the board in spring 2019."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Robbs Hill Road and Sunset Lane proposed common drive rescheduled to the January 13 Board meeting at the applicant's request; the Board was in agreement, with no vote recorded.",
+   "quote": "application will be presented at the january 13th board meeting."
+  },
+  {
+   "decision": "Solar bylaw: a question on the extent of the vegetated buffer will be added for public input, and edits made to the draft survey; discussion continues January 13.",
+   "quote": "edits will be made to the survey and discussion will continue at the january 13th board meeting."
+  },
+  {
+   "decision": "A. Burney directed to reach out to both the Town Manager and the Select Board about including the Planning Board in discussions on town-owned buildings.",
+   "quote": "board members requested a. burney rea ch out to both the town manager and the select board regarding same.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Minutes of 11.25.19 tabled for discussion at the January 13 meeting.",
+   "quote": "11.25.19- tabled for discussion on january 13th."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Emerald Place at Lake Whalom surety (bond) release",
+   "what_was_recorded": "The surety bond for Emerald Place at Lake Whalom was reviewed and released; the minutes print no dollar figure for the bond.",
+   "figures_as_printed": [],
+   "quote": "bond releases up to august 2014."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "322 Flat Hill Road ANR Plan",
+   "resolution": "approved; memo to land use boards on possible Chapter Land withdrawal",
+   "quote": "the plan was presented by john boardman p.e., places associates, inc.",
+   "tags": [
+    "ANR",
+    "land division",
+    "Chapter 61B"
+   ]
+  },
+  {
+   "topic": "335 Chase Road proposed common drive",
+   "resolution": "approved with stipulation that the stone wall be retained",
+   "quote": "p. bertram made motion to approve the proposed common drive at 335 chase road with the stipulation that the field stone wall be retained",
+   "tags": [
+    "common driveway",
+    "scenic road",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "335 Chase Road ANR Plan",
+   "resolution": "approved",
+   "quote": "p. bertram made motion to approve the anr plan for 335 chase road, t. cole seconded, all aye.",
+   "tags": [
+    "ANR"
+   ]
+  },
+  {
+   "topic": "Robbs Hill Road and Sunset Lane proposed common drive",
+   "resolution": "rescheduled to January 13",
+   "quote": "application will be presented at the january 13th board meeting.",
+   "tags": [
+    "common driveway"
+   ]
+  },
+  {
+   "topic": "Emerald Place at Lake Whalom surety release",
+   "resolution": "surety released",
+   "quote": "p. bertram made motion to release the surety for emerald place at lake whalom, t. cole seconded, all aye.",
+   "tags": [
+    "surety",
+    "bond release",
+    "sidewalks"
+   ]
+  },
+  {
+   "topic": "Solar bylaw",
+   "resolution": "continued to January 13",
+   "quote": "edits will be made to the survey and discussion will continue at the january 13th board meeting.",
+   "tags": [
+    "solar bylaw",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Master plan",
+   "resolution": "A. Burney to contact Town Manager and Select Board",
+   "quote": "board members requested a. burney rea ch out to both the town manager and the select board regarding same.",
+   "tags": [
+    "master plan",
+    "town-owned buildings"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "tabled to January 13",
+   "quote": "11.25.19- tabled for discussion on january 13th.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports received",
+   "quote": "committee approved rfq (request for quotes).",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Director's items (MJTC/MRPC vacancies, Open Space Residential Design Bylaw, Tree Clearing Bylaw, Population Projection)",
+   "resolution": "discussed; no action",
+   "quote": "the state model gives more discretion for limiting the size of a development.",
+   "tags": [
+    "open space bylaw",
+    "tree clearing",
+    "low impact development"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "january 13- robbs hill road and sunset lane, proposed common drive",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "status noted (solar in process, parking on hold, master plan in process)",
+   "quote": "mgl, ch. 41, section 81d, master plan- in process",
+   "tags": [
+    "ongoing items"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:30 PM",
+   "quote": "p. bertram made motion to adjourn, t. cole seconded, all aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "335 Chase Road ANR Plan",
+   "where": "list",
+   "quote": "documents used at meeting: 335 chase road anr plan"
+  },
+  {
+   "name": "Common Driveway Plan",
+   "where": "list",
+   "quote": "anr plan common driveway plan 322 flat hill road, anr plan"
+  },
+  {
+   "name": "322 Flat Hill Road, ANR Plan",
+   "where": "list",
+   "quote": "322 flat hill road, anr plan minutes 11.25.19"
+  },
+  {
+   "name": "Minutes 11.25.19",
+   "where": "list",
+   "quote": "minutes 11.25.19 solar survey, draft"
+  },
+  {
+   "name": "Solar Survey, DRAFT",
+   "where": "list",
+   "quote": "minutes 11.25.19 solar survey, draft"
+  },
+  {
+   "name": "Open Space Residential Design Bylaw, State Model",
+   "where": "list",
+   "quote": "solar survey, draft open space residential design bylaw, state model"
+  },
+  {
+   "name": "RFQ (request for quotes) approved by TCP Building Design Committee",
+   "where": "text",
+   "quote": "committee approved rfq (request for quotes)."
+  },
+  {
+   "name": "Subdivision of Land Rules and Regulations",
+   "where": "text",
+   "quote": "a. burney noted that could be incorporated into the subdivision of land rules and regulations."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plans",
+  "common driveway",
+  "subdivision",
+  "surety release",
+  "solar bylaw",
+  "master plan",
+  "open space bylaw",
+  "Chapter 61B"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

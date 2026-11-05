@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2020-07-27",
  "docid": "4075",
@@ -12,15 +12,130 @@
  },
  "votes": [
   {
-   "motion": "Accept the withdrawal of the scenic road application without prejudice",
+   "motion": "Accept, without prejudice, the withdrawal of the application for the public hearing for the scenic road on Northfield Road.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion to accept , without prejudice, the withdrawal of the application for th e public hearing for the scenic road on northfield road, t. cole seconded. roll call vote- t. cole, aye; p. bertram, aye; m. brenner, aye; m. allison, aye. vote passed 4-0."
+   "quote": "p. bertram made motion to accept , without prejudice, the withdrawal of the application for th e public hearing for the scenic road on northfield road, t. cole seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1106135
+ "note": "Text is a complete extract of the hearing. The minutes record no public comment, no closing or adjournment motion, and no vote on opening the hearing, even though the preface says the meeting would feature public comment. The Administrative Assistant (Marjorie J. Boggio) is printed on the letterhead but not named as taking part, so she is omitted. The listed application is the Scenic Road Application.",
+ "cost_usd": 0.00403652,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, present"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "tanner cole, present"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "paula bertram, present"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew brenner, present."
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use dire cto",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Ed McSweeney",
+   "role": "representing the applicant (Bray Ave 9, LLC)",
+   "status": "present",
+   "quote": "the applicant bray ave 9, llc was represented by ed mcsweeney."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board wants an engineered plan showing the exact driveway locations before it can act on the scenic driveway request.",
+   "quote": "the board would like to view an engineered plan."
+  },
+  {
+   "decision": "Chair Allison asked that the next plan show all current and proposed lots with proposed driveway locations, including the Brightman lot.",
+   "quote": "m. allison would like to see all the current and proposed lots with proposed driveway locations , to include the brightman lot ."
+  },
+  {
+   "decision": "The shared driveway would be handled as a separate application.",
+   "quote": "he also noted that a shared driveway would be a separate application."
+  },
+  {
+   "decision": "The applicant will file a request for two scenic driveway approvals.",
+   "quote": "the applicant will provide a request for two scenic driveway approvals."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing on scenic road and tree removal, 300 Holman Street West (Northfield Road driveways)",
+   "resolution": "application withdrawn without prejudice at applicant's request; vote 4-0",
+   "quote": "the applicant requested to withdraw the application without prejudice .",
+   "tags": [
+    "scenic road",
+    "tree removal",
+    "driveways",
+    "withdrawal"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Scenic Road Application",
+   "where": "list",
+   "quote": "documents used at meeting: scenic road application"
+  },
+  {
+   "name": "Draft ANR Plan showing the division of the Brightman property",
+   "where": "text",
+   "quote": "t he applicant supplied a draft anr plan showing the division of the brightman property.",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Application packet and public notice",
+   "where": "text",
+   "quote": "had not been included in the application packet nor the public notice."
+  }
+ ],
+ "tags": [
+  "scenic road",
+  "tree removal",
+  "driveways",
+  "public hearing",
+  "withdrawal",
+  "remote meeting",
+  "COVID-19",
+  "Northfield Road",
+  "Holman Street West"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

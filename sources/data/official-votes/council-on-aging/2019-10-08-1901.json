@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2019-10-08",
  "docid": "1901",
@@ -12,23 +12,240 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the September 10, 2019 meeting",
+   "motion": "Approve the minutes of the September 10, 2019 meeting.",
    "moved_by": "Ms. DiGiacomo",
-   "seconded_by": "Mr. Lincoln",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "ms. digiacomo motioned to approve the minutes of the september 10, 2019 meeting, mr. lincoln seconded. on vote, motion carried unanimously."
+   "quote": "ms. digiacomo motioned to approve the minutes of the september 10, 2019 meeting, mr. lincoln seconded. on vote, motion carried unanimously.",
+   "seconded_by": "Mr. Lincoln"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 11:09 a.m.",
    "moved_by": "Ms. DiGiacomo",
-   "seconded_by": "Mr. Lincoln",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "ms. digiacomo motioned to adjourn, mr. lincoln seconded. on vote, motion carried unanimously."
+   "quote": "at 11:09 a.m. ms. digiacomo motioned to adjourn, mr. lincoln seconded. on vote, motion carried unanimously.",
+   "seconded_by": "Mr. Lincoln"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0816865
+ "note": "OCR text from macOS Vision of a three-page set. No roll call or attendance list; the only attendance line is GUESTS. Attendance and roles are inferred from who spoke or moved. No chair is named. The 'PUBLIC COMMENT' heading appears with nothing under it, so no public comment is recorded. The text names both 'Mr. Lincoln' and 'Ms. Lincoln' and does not say whether they are the same person; both are recorded as printed. Only two votes are recorded (minutes approval and adjournment). The 'RECEIVED & FILED' stamp reads NOV 2 6 2019. The census presentation slides are referenced in the text but no document list is printed.",
+ "cost_usd": 0.00632342,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ms. DiGiacomo",
+   "role": "board member (role not printed)",
+   "status": "present",
+   "quote": "ms. digiacomo motioned to approve the minutes of the september 10, 2019 meeting, mr. lincoln seconded."
+  },
+  {
+   "name": "Mr. Lincoln",
+   "role": "board member (role not printed)",
+   "status": "present",
+   "quote": "mr. lincoln asked about the content of the questionnaire, and about how people who are living in the country illegally are being counted"
+  },
+  {
+   "name": "Ms. Lincoln",
+   "role": "board member (role not printed)",
+   "status": "present",
+   "quote": "ms. lincoln reported that letters were distributed to the 143 members of the eagle house supporters highlighting the successful fund raising attempts"
+  },
+  {
+   "name": "Ms. Doherty",
+   "role": "board member (role not printed)",
+   "status": "present",
+   "quote": "ms. doherty explained that what are labeled in the packet as bylaws are actually supposed to be called policies and procedures."
+  },
+  {
+   "name": "Ms. Rabbitt",
+   "role": "board member (role not printed)",
+   "status": "present",
+   "quote": "ms. rabbitt commented that there seems to be a bigger push to ensure people are filling out the census in 2020"
+  },
+  {
+   "name": "Ms. Grant",
+   "role": "volunteer tea party organizer (role as described in minutes)",
+   "status": "present",
+   "quote": "ms. grant thanked those who donated their time and efforts to make the tea party another success"
+  },
+  {
+   "name": "Adriene Queriroz",
+   "role": "Partnership Specialist",
+   "status": "present",
+   "quote": "2020 u.s. census presentation: adriene queriroz, partnership specialist"
+  },
+  {
+   "name": "Marie Burchfield",
+   "role": "Council on Aging Liaison to the Eagle House Supporters",
+   "status": "present",
+   "quote": "guests: council on aging liaison to the eagle house supporters marie burchfield"
+  },
+  {
+   "name": "Amanda Koeck",
+   "role": "Administrative Assistant (minutes recorder)",
+   "status": "not stated",
+   "quote": "respectfully submitted, amanda koeck"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed that it should have at least some rules put down in writing, such as the meeting time and an attendance policy (discussed under the board member orientation item; no vote recorded).",
+   "quote": "the board agreed they should have at least some rules put down in writing, such as the meeting time, and an attendance policy."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tea party fundraiser proceeds",
+   "what_was_recorded": "The tea party raised $2,526; the Eagle House Supporters received $1,000 and $1,526 went to the COA Gift Fund, earmarked for dementia friendly projects.",
+   "figures_as_printed": [
+    "$2,526",
+    "$1,000",
+    "$1,526"
+   ],
+   "quote": "ms. doherty thanked ms. grant for another successful tea party, which raised $2,526."
+  },
+  {
+   "topic": "2020 Census federal funds",
+   "what_was_recorded": "Ms. Queriroz said an accurate census count would assist in how federal funds are invested to prepare for emergencies; no dollar figure given.",
+   "figures_as_printed": [],
+   "quote": "an accurate count would assist in how federal funds are invested to prepare for emergencies."
+  },
+  {
+   "topic": "Eagle House computer purchase",
+   "what_was_recorded": "The Eagle House Supporters bought a new computer; IT repaired it, and it is now in the computer room for public use. No price printed.",
+   "figures_as_printed": [],
+   "quote": "eagle house supporters have purchased a new computer."
+  },
+  {
+   "topic": "Eagle House Supporters fundraising letter",
+   "what_was_recorded": "Letters to 143 members summarized the year's fundraising (Red Sox tickets, World Series Trophy, Ham and Bean Supper, raffles); no dollar amounts printed.",
+   "figures_as_printed": [],
+   "quote": "letters were distributed to the 143 members of the eagle house supporters highlighting the successful fund raising attempts"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of September 10, 2019 minutes",
+   "resolution": "approved unanimously",
+   "quote": "ms. digiacomo motioned to approve the minutes of the september 10, 2019 meeting, mr. lincoln seconded. on vote, motion carried unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "2020 U.S. Census presentation",
+   "resolution": "presented; no action recorded",
+   "quote": "ms. queriroz showed a power point presentation on the 2020 census, which explained the importance of an accurate count",
+   "tags": [
+    "census",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "New board member orientation packet",
+   "resolution": "discussed; board agreed to put basic rules in writing",
+   "quote": "the current one has some documents in it that are more than ten years old, which includes the former bylaws",
+   "tags": [
+    "orientation",
+    "policy",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Eagle House updates",
+   "resolution": "reported; no action",
+   "quote": "eagle house supporters have purchased a new computer.",
+   "tags": [
+    "eagle house",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Tea party",
+   "resolution": "reported; no action",
+   "quote": "ms. doherty thanked ms. grant for another successful tea party, which raised $2,526.",
+   "tags": [
+    "fundraising",
+    "eagle house"
+   ]
+  },
+  {
+   "topic": "MCOA conference",
+   "resolution": "reported; no action",
+   "quote": "ms. doherty reported that she sent administrative assistant amanda koeck and outreach coordinator pauline roy to the conference",
+   "tags": [
+    "conference",
+    "dementia friendly"
+   ]
+  },
+  {
+   "topic": "New COA van driver",
+   "resolution": "reported; no action",
+   "quote": "ms. doherty reported that she's hired a new van driver helen godin, who is a recently retired mart driver.",
+   "tags": [
+    "transportation",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Upcoming October events",
+   "resolution": "reported; no action",
+   "quote": "ms. doherty highlighted upcoming events for the month of october.",
+   "tags": [
+    "events"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "reported; no action",
+   "quote": "ms. lincoln reported that letters were distributed to the 143 members of the eagle house supporters highlighting the successful fund raising attempts",
+   "tags": [
+    "eagle house",
+    "fundraising"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "2020 Census Power Point presentation (presented by Adriene Queriroz)",
+   "where": "text",
+   "quote": "ms. queriroz showed a power point presentation on the 2020 census, which explained the importance of an accurate count"
+  },
+  {
+   "name": "Council on Aging new board member orientation packet",
+   "where": "text",
+   "quote": "the current one has some documents in it that are more than ten years old, which includes the former bylaws"
+  },
+  {
+   "name": "Letters to Eagle House Supporters members (fundraising summary)",
+   "where": "text",
+   "quote": "letters were distributed to the 143 members of the eagle house supporters highlighting the successful fund raising attempts"
+  },
+  {
+   "name": "Video footage of the tea party (YouTube, Lunenburg Access)",
+   "where": "text",
+   "quote": "video footage of this year's tea party is on youtube under lunenburg access."
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "census 2020",
+  "eagle house",
+  "fundraising",
+  "tea party",
+  "board orientation",
+  "van driver",
+  "dementia friendly",
+  "minutes approval",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

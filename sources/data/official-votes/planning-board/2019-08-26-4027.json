@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-08-26",
  "docid": "4027",
@@ -12,22 +12,134 @@
  },
  "votes": [
   {
-   "motion": "claim the funds in the Surety Bond",
+   "motion": "Claim the funds in the Surety Bond for the outstanding work at Stone Farm Estates.",
    "moved_by": "P. Bertram",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "p. bertram made motion to claim the funds in the surety bond."
+   "quote": "p. bertram made motion to claim the funds in the surety bond.",
+   "seconded_by": ""
   },
   {
-   "motion": "close the Hearing",
+   "motion": "Close the public hearing.",
    "moved_by": "T. Cole",
-   "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": true,
-   "quote": "t. cole made motion to close the hearing, p. bertram seconded, all aye."
+   "quote": "t. cole made motion to close the hearing, p. bertram seconded, all aye.",
+   "seconded_by": "P. Bertram"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11082750000000001
+ "note": "The minutes record a motion by P. Bertram to claim the surety bond funds but no seconder, vote count, or result, so that motion is recorded as 'not stated'. The minutes also give a start time of 6:40 PM and a close at 7:00 PM. Marjorie J. Boggio appears only in the letterhead and is not recorded as attending, so she is omitted.",
+ "cost_usd": 0.00367612,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: gregory bittner"
+  },
+  {
+   "name": "Donald Gurney",
+   "role": "President of the Condominium Trust",
+   "status": "present",
+   "quote": "by donald gurney, president of the condominium trust identifying the same items."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Outstanding construction items and bond reduction (Graves Engineering review)",
+   "what_was_recorded": "Graves Engineering's review listed outstanding construction items of about $27,000 for completion, and the bond was reduced by that amount to be retained.",
+   "figures_as_printed": [
+    "$27,000"
+   ],
+   "quote": "$27,000 for completion, therefore, the bond was reduced with that amount to be retained."
+  },
+  {
+   "topic": "Sufficiency of the retained bond amount",
+   "what_was_recorded": "Donald Gurney said his concern is that the $27,000 retained will not be sufficient to complete the outstanding items.",
+   "figures_as_printed": [
+    "$27,000"
+   ],
+   "quote": "his concern that $27,000 will not be sufficient."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Donald Gurney",
+   "stated_role": "37 Riley Road",
+   "topic": "outstanding items and whether $27,000 is sufficient",
+   "quote": "reiterated the various outstanding items listed in graves engineering letter and his concern that $27,000 will not be sufficient."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Stone Farm Estates subdivision surety public hearing",
+   "resolution": "motion to claim bond made, result not recorded; hearing closed",
+   "quote": "the hearing was to discuss the application of subdivision surety to the completion of outstanding work under mgl ch 41",
+   "tags": [
+    "subdivision",
+    "surety bond",
+    "public hearing",
+    "Stone Farm"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from Donald Gurney dtd 08.26.19",
+   "where": "list",
+   "quote": "letter from donald gurney dtd 08.26.19"
+  },
+  {
+   "name": "Construction Cost Proposal Review, Graves engineering, Inc., dtd 12.20.17",
+   "where": "list",
+   "quote": "construction cost proposal review, graves engineering, inc., dtd 12.20.17"
+  },
+  {
+   "name": "Letter to the Project Manager from A. Burney requesting items be completed by 1 June 2019",
+   "where": "text",
+   "quote": "the project manager requesting items be completed by 1 june 2019"
+  }
+ ],
+ "tags": [
+  "Stone Farm Estates",
+  "subdivision surety",
+  "bond claim",
+  "public hearing",
+  "Lisciotti Development",
+  "Graves Engineering"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

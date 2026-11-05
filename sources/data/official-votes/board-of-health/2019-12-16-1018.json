@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2019-12-16",
  "docid": "1018",
@@ -12,48 +12,231 @@
  },
  "votes": [
   {
-   "motion": "Septic system variances approved for 69 Kilburn Street with addition of cleanout",
+   "motion": "Approve the variances for 69 Kilburn Street with the addition of a cleanout.",
    "moved_by": "Emond",
    "seconded_by": "Mayhew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by emond and second by mayhew, the variances were approved with the addition of a cleanout. all in favor."
+   "quote": "emond and second by mayhew, the variances were approved with the addition of a cleanout."
   },
   {
-   "motion": "Septic system variances approved for 134 Youngs Road",
+   "motion": "Approve the variances for 134 Youngs Road.",
    "moved_by": "Emond",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by emond and second by mayhew, the variances were approved with the addit",
-   "quote_taken_from_text": true
+   "quote": "second by fortin, the variances were approved."
   },
   {
-   "motion": "Septic system variances approved for 147 Cove Road",
+   "motion": "Approve the variances for 147 Cove Road.",
    "moved_by": "Mayhew",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by mayhew and second by fortin, the variances were approved."
+   "quote": "on motion by mayhew and second by fortin, the variances were approved."
   },
   {
-   "motion": "Septic system variances approved for 90 Hemlock Drive",
+   "motion": "Approve the variances for 90 Hemlock Drive.",
    "moved_by": "Fortin",
    "seconded_by": "Mayhew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by fortin and second by mayhew, the variances were approved."
+   "quote": "on motion by fortin and second by mayhew, the variances were approved."
   },
   {
-   "motion": "Septic tank replacement approved for 64 Arbor Street by January 2021 by licensed installer",
+   "motion": "Accept the agreement that Mr. Woodrow replace the septic tank at 64 Arbor Street within one year, until January 2021, using a licensed installer certified by that installer.",
    "moved_by": "Fortin",
    "seconded_by": "Mayhew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by fortin, second by mayhew. all in favor."
+   "quote": "motion by fortin, second by mayhew."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes approval listed but without a motion statement; 322 Flat Hill Road matter continued without a vote.",
- "cost_usd": 0.0954285
+ "note": "The text has split words from extraction (e.g., 'Em ond', 'Th e', 'Varianc es') and page breaks mid-sentence. The mover of the 134 Youngs Road motion is printed 'Em ond' and is recorded as Emond. No vote is recorded for approving the November 2019 minutes or for adjournment; the 'Motion' label before adjournment has no text. The Title 5 reports and septic permits are listed by address only and are not treated as documents. No dollar figures are printed.",
+ "cost_usd": 0.00569472,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Perry Jewell",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: perry jewell, george emond, paul fortin and warren mayhew"
+  },
+  {
+   "name": "George Emond",
+   "status": "present",
+   "quote": "present: perry jewell, george emond, paul fortin and warren mayhew"
+  },
+  {
+   "name": "Paul Fortin",
+   "status": "present",
+   "quote": "present: perry jewell, george emond, paul fortin and warren mayhew"
+  },
+  {
+   "name": "Warren Mayhew",
+   "status": "present",
+   "quote": "present: perry jewell, george emond, paul fortin and warren mayhew"
+  },
+  {
+   "name": "Dawn Proctor",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "dawn proctor met with the board on behalf of the owner."
+  },
+  {
+   "name": "Doug Smith",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "doug smith met with the board on behalf of the owner."
+  },
+  {
+   "name": "John Boardman",
+   "role": "Engineer, on behalf of the owner",
+   "status": "present",
+   "quote": "john boardman, engineer, met with the board on behalf of the owner."
+  },
+  {
+   "name": "Matthew Woodrow (Woody)",
+   "status": "present",
+   "quote": "matthew woodrow (woody) was present at the meeting together with ryan stober."
+  },
+  {
+   "name": "Ryan Stober",
+   "status": "present",
+   "quote": "matthew woodrow (woody) was present at the meeting together with ryan stober."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 322 Flat Hill Road well variance matter was continued to January 6, 2020 at 7 pm.",
+   "quote": "it was decided that this matter would be continued until january 6, 2020 at 7 pm."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Matthew Woodrow (Woody)",
+   "stated_role": "",
+   "topic": "64 Arbor Street septic tank and court case",
+   "quote": "he feels that he has been persecuted and demeaned by the board."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes",
+   "resolution": "approved",
+   "quote": "minutes approved: november 2019",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged:",
+   "tags": [
+    "Title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits",
+   "resolution": "signed",
+   "quote": "septic permits signed:",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "69 Kilburn Street variances",
+   "resolution": "approved with cleanout added",
+   "quote": "dawn proctor met with the board on behalf of the owner.",
+   "tags": [
+    "variance",
+    "septic failure",
+    "wetlands",
+    "well offset"
+   ]
+  },
+  {
+   "topic": "134 Youngs Road variances",
+   "resolution": "approved",
+   "quote": "variances requested are distance to well, 100 feet to 82 feet",
+   "tags": [
+    "variance",
+    "septic failure",
+    "well offset"
+   ]
+  },
+  {
+   "topic": "147 Cove Road variances",
+   "resolution": "approved",
+   "quote": "the lot is small and has high ground water.",
+   "tags": [
+    "variance",
+    "septic failure",
+    "groundwater"
+   ]
+  },
+  {
+   "topic": "90 Hemlock Drive variances",
+   "resolution": "approved",
+   "quote": "variances requested are offset to wetlands from 100 feet to 70 feet",
+   "tags": [
+    "variance",
+    "septic failure",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "322 Flat Hill Road well variance",
+   "resolution": "continued to January 6, 2020",
+   "quote": "the owner has a large parcel of land and is proposing dividing it into",
+   "tags": [
+    "variance",
+    "well offset",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "64 Arbor Street septic tank",
+   "resolution": "agreed tank replacement by January 2021",
+   "quote": "motion by fortin, second by mayhew.",
+   "tags": [
+    "septic tank",
+    "court case",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:15 pm",
+   "quote": "meeting adjourned at 8:15 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "Board of Health",
+  "Title 5",
+  "septic permits",
+  "variances",
+  "well offsets",
+  "wetlands",
+  "groundwater",
+  "septic failure",
+  "subdivision",
+  "court case",
+  "septic tank replacement"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

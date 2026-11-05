@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-01-14",
  "docid": "5229",
@@ -12,33 +12,316 @@
  },
  "votes": [
   {
-   "motion": "To conduct a hazardous waste assessment on the old Primary School building",
+   "motion": "Hazardous waste assessment on the old Primary School building (as amended by withdrawal and restatement).",
    "moved_by": "K. Adams",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: k. adams 2nd: m. jeffreys to conduct a hazardous waste assessment on the old primary school building discussion: mr. alonzo asked where are we getting the money. ms. adams suggeste",
-   "quote_taken_from_text": true
+   "quote": "to conduct a hazardous waste assessment on the old primary school building"
   },
   {
-   "motion": "To secure estimates for demolition of the building and funding for future design of a town green",
+   "motion": "Submit a warrant article to fund a demolition estimate of the old Primary School building and design of the future site of a town common (wording amended to estimates for demolition and funding for future design of a town green).",
    "moved_by": "K. Adams",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
    "procedural": false,
-   "quote": "mr. jeffreys suggested amending the motion\" to secure estimates for demolition of the building and funding for future design of a town green.\" ms. adams amende",
-   "quote_taken_from_text": true
+   "quote": "to submit a warrant article to fund a demolition estimate of the old primary school building"
   },
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:56 p.m.",
    "moved_by": "P. Luck",
    "seconded_by": "K. Adams",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. luck to adjourn the meeting at 8:56 p.m. 2nd: k. adams vote: all in favor"
+   "quote": "to adjourn the meeting at 8:56 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extraction; votes clearly recorded despite some garbled text in discussion sections.",
- "cost_usd": 0.1509925
+ "note": "OCR scan with garbled and partly illegible lines (e.g., the amended motion text and the line 'Mer motion to gested adding'). Motion by K. Adams to request funding at ATM for a hazardous waste assessment and demolition/design estimate was withdrawn by Mr. Jeffreys and restated, so it is not recorded as a vote. Vote results for the two restated motions appear as 'Vote: All in Favor' with no count printed; recorded as passed. Dollar figures are as printed in OCR.",
+ "cost_usd": 0.008058619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "member not present: damon mcquaid, clerk"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, expressed dissatisfaction with the town charter still not being"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "land use director adam burney stated you only need to go to the apdc for demolition delay"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Lemieux to check the current DPW budget for available money for the hazardous assessment and report back at the next meeting.",
+   "quote": "she should have an update by the next meeting."
+  },
+  {
+   "decision": "Ms. Lemieux will inform the Library Director that Mr. Jeffreys offered to be the BOS liaison.",
+   "quote": "mr. jeffreys offered. ms. lemieux will inform the library director."
+  },
+  {
+   "decision": "Ms. Lemieux will work with Mr. Alonzo to place Complete Streets discussion/design on a future agenda.",
+   "quote": "she will work with mr. alonzo about placing it on a future agenda."
+  },
+  {
+   "decision": "Mr. Jeffreys will look into whether Ayer and other comparable towns have a facility maintenance position.",
+   "quote": "mr. jeffreys believed ayer did, he will look into that and other comparable towns."
+  },
+  {
+   "decision": "Board completed workshop action ii and moved on to action iii; action iv declared moot.",
+   "quote": "the board completed action ii, so we are on to action ili. action iv is a moot point."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts payable warrant signed",
+   "what_was_recorded": "An accounts payable warrant was signed in the stated amount.",
+   "figures_as_printed": [
+    "$42,367.19"
+   ],
+   "quote": "an accounts payable warrant in the amount of $42,367.19 was signed."
+  },
+  {
+   "topic": "925 Mass Ave Brownfields funding via MRPC",
+   "what_was_recorded": "The Montachusett Brownfields Group voted to proceed with an initial amount for Phase II site assessment, with possible further funding later.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "the montachusett brownfields group voted to proceed with an initial $20,000 and will"
+  },
+  {
+   "topic": "Complete Streets grant award",
+   "what_was_recorded": "The town received the full requested Complete Streets grant for the Main Street at Oak Ave sidewalk connection and related improvements.",
+   "figures_as_printed": [
+    "$258,460"
+   ],
+   "quote": "the grant amount was for our full request of $258,460 for the main street at oak ave sidewalk connection"
+  },
+  {
+   "topic": "Funding for hazardous assessment from DPW building maintenance account",
+   "what_was_recorded": "Ms. Lemieux would check whether funding around a stated amount is available in the DPW building maintenance account.",
+   "figures_as_printed": [
+    "$8,000"
+   ],
+   "quote": "will see if there is funding (around $8,000) available"
+  },
+  {
+   "topic": "DPW account used for ice and snow deficit",
+   "what_was_recorded": "The town usually funds its year-end ice and snow removal deficit spending from the DPW account, which bears on whether money is available for the assessment.",
+   "figures_as_printed": [],
+   "quote": "she noted we usually fund our deficit spending for the ice and snow removal at the end of the year with that account."
+  },
+  {
+   "topic": "Funds previously set aside for closing up the old Primary School building",
+   "what_was_recorded": "Board discussed whether funds meant for closing up the old Primary School building could be redirected to a hazardous assessment.",
+   "figures_as_printed": [],
+   "quote": "ms. adams noted those funds were for buttoning up the old primary"
+  },
+  {
+   "topic": "Cost to renovate old Primary School building",
+   "what_was_recorded": "Mr. Alonzo said the building would need millions of dollars to fix, which he wanted the APDC to recognize.",
+   "figures_as_printed": [
+    "millions of dollars"
+   ],
+   "quote": "recognize the millions of dollars needed to fix this building"
+  },
+  {
+   "topic": "Grant to MART for transportation services",
+   "what_was_recorded": "MART received a grant to make transportation services more efficient with Councils on Aging.",
+   "figures_as_printed": [
+    "$165,000"
+   ],
+   "quote": "they have received a $165,000 grant to work with"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Town Charter approval delay and park commission ballot slots",
+   "quote": "dave passios, 56 whiting street, expressed dissatisfaction with the town charter still not being"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Hand count and APDC bylaw on old Primary School demolition",
+   "quote": "dave passios, regarding the proposed warrant article, suggested a hand count at any future town meeting"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action; Charter status and Unitil rate filing noted",
+   "quote": "dave passios, 56 whiting street, expressed dissatisfaction with the town charter still not being",
+   "tags": [
+    "public comment",
+    "town charter",
+    "unitil"
+   ]
+  },
+  {
+   "topic": "Interviews, appointments, resignations",
+   "resolution": "informational; no action",
+   "quote": "ms. lemieux reported the resignation of brian clark as dpw heavy equipment operator two weeks ago.",
+   "tags": [
+    "staffing",
+    "dpw",
+    "retirement"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational; no action",
+   "quote": "the following is a list of vacancies on the following committees:",
+   "tags": [
+    "vacancies",
+    "brownfields",
+    "complete streets",
+    "ada transition plan",
+    "recycling",
+    "labor contracts"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants, action items",
+   "resolution": "no minutes for approval; AP warrant signed; senior tax work-off wording raised",
+   "quote": "there were no minutes for approval this evening. an accounts payable warrant",
+   "tags": [
+    "warrant",
+    "senior tax work off"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "informational; Library liaison vacancy filled by offer",
+   "quote": "mr. alonzo stated the library director is seeking another bos liaison since bob ebersole left.",
+   "tags": [
+    "council on aging",
+    "mart",
+    "library"
+   ]
+  },
+  {
+   "topic": "Workshop: Selectmen Objective 2, old Primary School building",
+   "resolution": "discussed; motions to conduct hazardous assessment and submit warrant article passed",
+   "quote": "to identify, define and propose at least one project to the 2020 annual town meeting regarding the use",
+   "tags": [
+    "old primary school",
+    "apdc",
+    "hazardous waste",
+    "demolition",
+    "town green",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "no action; January 28 public forum noted",
+   "quote": "the next board meeting will be january 21, 2020 and the january 28' meeting",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action; facility maintenance position suggested",
+   "quote": "dave passios, regarding the proposed warrant article, suggested a hand count at any future town meeting",
+   "tags": [
+    "public comment",
+    "facility manager",
+    "apdc"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:56 p.m.",
+   "quote": "to adjourn the meeting at 8:56 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Site Nomination Form for 925 Mass Ave (Phase II site assessment costs)",
+   "where": "text",
+   "quote": "the site nomination form that we submitted for 925 mass ave for phase ii site assessment costs would"
+  },
+  {
+   "name": "ADA Public Rights of Way Transition Plan (Stantec, via MRPC)",
+   "where": "text",
+   "quote": "ada public rights of way transition plan (tm goal #3, ii, iii):"
+  },
+  {
+   "name": "Five Year Financial Forecast and Capital Plan presentation",
+   "where": "text",
+   "quote": "capital plan presentation will be on january 21s"
+  },
+  {
+   "name": "Town meeting poll tabulation on old Primary School choices",
+   "where": "text",
+   "quote": "he referred to the tabulation of the town meeting"
+  }
+ ],
+ "tags": [
+  "select board",
+  "old primary school",
+  "apdc",
+  "hazardous waste",
+  "town charter",
+  "complete streets",
+  "ada transition plan",
+  "brownfields",
+  "recycling",
+  "labor contracts",
+  "budget",
+  "committee vacancies",
+  "town meeting warrant article"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

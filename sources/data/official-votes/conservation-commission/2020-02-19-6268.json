@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2020-02-19",
  "docid": "6268",
@@ -12,64 +12,478 @@
  },
  "votes": [
   {
-   "motion": "Approve up to 500 dollars from the Hawes Gift Fund for Drew Tobin's Hollis Road Bat Houses project",
+   "motion": "Approve up to 500 dollars from the Hawes Gift Fund for the Drew Tobin Eagle Scout bat house project.",
+   "moved_by": "BP",
+   "seconded_by": "KJ",
    "outcome": "passed unanimously",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Kenneth Jones",
    "procedural": false,
    "quote": "a motion was made by bp to approve up to 500 dollars from the hawes gift fund. kj seconded and the commission voted unanimously."
   },
   {
-   "motion": "Continue the 335 Chase Road Notices of Intent hearings to March 4, 2020",
+   "motion": "Continue the Wilbur Abbott III Notice of Intent hearings (335 Chase Road, lots 1-3) to March 4, 2020.",
+   "moved_by": "JR",
+   "seconded_by": "KJ",
    "outcome": "passed unanimously",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Kenneth Jones",
-   "procedural": true,
+   "procedural": false,
    "quote": "the motion to continue was made by jr and seconded by kj with a unanimous vote to ===page 3=== approv",
    "quote_taken_from_text": true
   },
   {
-   "motion": "Continue the Dan & Jean Proctor earth removal and storm water management hearing to March 4, 2020",
+   "motion": "Continue the Dan & Jean Proctor Notice of Intent hearing (1325 Mass Ave) to March 4, 2020.",
+   "moved_by": "BP",
+   "seconded_by": "CL",
    "outcome": "passed unanimously",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Carl Luck",
-   "procedural": true,
+   "procedural": false,
    "quote": "the meeting was continued to the march 4, 2020 meeting by a motion of bp and a second by cl with a unanimous vote to approve the motion."
   },
   {
-   "motion": "Continue the DPW culvert replacement hearing to March 4, 2020",
+   "motion": "Continue the DPW Notice of Intent hearing for replacement of culverts at Sunset Lane and Northfield Road to March 4, 2020.",
+   "moved_by": "BP",
+   "seconded_by": "CC",
    "outcome": "passed unanimously",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Catie Childs",
-   "procedural": true,
+   "procedural": false,
    "quote": "this was passed by a motion of bp a second by cc with a unanimous vote to approve the motion."
   },
   {
-   "motion": "Schedule a site walk for 179/183 Island Road on February 22, 2020 at 9 AM",
+   "motion": "Hold a site walk for the Hickory Hills / 179/183 Island Road enforcement matter (scheduled Feb 22, 2020 at 9 AM).",
+   "moved_by": "BP",
+   "seconded_by": "CL",
    "outcome": "passed unanimously",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Carl Luck",
-   "procedural": true,
+   "procedural": false,
    "quote": "the site walk agreed to by a motion of bp and a second by cl with a unanimous vote to approve the motion."
   },
   {
-   "motion": "Approve extension permit for Brockelman Perrins Pond with addition of yearly status letter regarding chemicals used, timing and quantities",
+   "motion": "Approve the Brockelman Perrins Pond extension permit, adding a yearly status letter listing chemicals used, timing and quantities.",
+   "moved_by": "KJ",
+   "seconded_by": "cc",
    "outcome": "passed unanimously",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Catie Childs",
    "procedural": false,
    "quote": "the commission approved with the addition of a yearly status letter to include chemicals used, timing and quantities by a motion of kj and second by cc with a unanimous vote"
   },
   {
-   "motion": "Approve the February 5, 2020 meeting minutes",
+   "motion": "Approve the minutes of February 5, 2020.",
+   "moved_by": "BP",
+   "seconded_by": "CC",
    "outcome": "passed unanimously",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Catie Childs",
    "procedural": true,
    "quote": "bp moved to approve, cc seconded and the commission voted unanimously"
   }
  ],
  "dropped_unquoted": 1,
- "note": "All votes passed unanimously. One set of prior minutes (May 29, 2019) was listed for review but the minutes indicate it was merely \"continued\" with no vote recorded.",
- "cost_usd": 0.11814050000000001
+ "note": "Minutes are a text extraction with garbled spacing; the attendance line uses initials only (TD, CC, Cl KJ, BP, JR, MM), so names were matched to initials from context, and CL is taken as Carl Luck. Richard Bursch (Chair) and Jeffrey Vivano appear only in the header and are not recorded as taking part; no roll call or absence is stated. All recorded votes were unanimous with no counts. The minutes are cut off mid-sentence on page 5 and page 6 is blank, so no adjournment motion or closing time appears. Some quotes are from text where the page break was collapsed to a single space.",
+ "cost_usd": 0.011398120000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair, presiding",
+   "status": "present",
+   "quote": "with vice chair dwyer presiding."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Commission member (initials BP)",
+   "status": "present",
+   "quote": "bp moved to approve, cc seconded"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "Commission member (initials CC)",
+   "status": "present",
+   "quote": "bp moved to approve, cc seconded"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Commission member (initials CL)",
+   "status": "present",
+   "quote": "cl requested that there should be a maintenance agreement for the culvert."
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "Commission member (initials KJ)",
+   "status": "present",
+   "quote": "kj seconded and the commission voted unanimously."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Commission member (initials JR)",
+   "status": "present",
+   "quote": "jr noted hickory hills has started a storm water committee"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator (staff, initials MM)",
+   "status": "present",
+   "quote": "mm noted the new online permitting is now public."
+  },
+  {
+   "name": "Chris Anderson",
+   "role": "from Hannigan Engineering",
+   "status": "present",
+   "quote": "chris anderson from hannigan engineering appeared before the commission."
+  },
+  {
+   "name": "Drew Tobin",
+   "role": "Eagle Scout",
+   "status": "present",
+   "quote": "drew tobin informed the commission of this project"
+  },
+  {
+   "name": "Mr. McPartland",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. mcpartland outlined the difference between the zone ii and the zone iii"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "not stated (applicant family, Dan & Jean Proctor)",
+   "status": "present",
+   "quote": "dan proctor noted that the water trucks will be onsite and calcium flakes will be on site."
+  },
+  {
+   "name": "Mark Rzeznikiewicz",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mark rzeznikiewicz noted to the commission that it had been established that there would be no blasting,"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "not stated",
+   "status": "present",
+   "quote": "katey adams asked what the procedure was for certifying the vernal pool."
+  },
+  {
+   "name": "Alan Dantonio",
+   "role": "not stated",
+   "status": "present",
+   "quote": "alan dantonio was concerned about his back yard and claimed he was not notified."
+  },
+  {
+   "name": "Joan Pease",
+   "role": "representing the Hickory Hills Landowners",
+   "status": "present",
+   "quote": "joan pease appeared before the commission representing the"
+  },
+  {
+   "name": "Peter Cowley",
+   "role": "part of the board on Hickory Hills",
+   "status": "present",
+   "quote": "peter cowley as a part of the board on hickory hills appeared"
+  },
+  {
+   "name": "Mr Obrien",
+   "role": "property owner, 179/183 Island Road",
+   "status": "present",
+   "quote": "he stated he did not add anything to the water"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The applicant (Hannigan Engineering) is asked by the board to have areas of impacts and trees demarcated in the field before the Feb 29 site inspection.",
+   "quote": "a site inspection was scheduled for february 29, 2020 at 9 am."
+  },
+  {
+   "decision": "Chair Dwyer asked that trees greater than 6 inch caliper be marked both on the plan and in the field (Abbott hearing).",
+   "quote": "td asked for the trees greater than 6 inch caliper to be marked both on the plan and in the field."
+  },
+  {
+   "decision": "Site inspection for the Hickory Hills / 179/183 Island Road enforcement matter scheduled for Feb 22, 2020 at 9 AM; Mr Obrien consented to the visit.",
+   "quote": "the site inspection was schedul ed for feb 22, 2020 at 9 am."
+  },
+  {
+   "decision": "Staff (MM) will meet with Ms. Bell, the 51 Fire Road 19 applicant, before the next meeting.",
+   "quote": "ms. bell has reached out to mm and he will be meeting with her by the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Drew Tobin Eagle Scout bat houses, Hollis Road",
+   "what_was_recorded": "The bat house project for 4 bat houses was reported at a stated cost; Mr. Tobin would keep fund raising to offset it.",
+   "figures_as_printed": [
+    "442 dollars"
+   ],
+   "quote": "the hollis road property at a cost of 442 dollars."
+  },
+  {
+   "topic": "Hawes Gift Fund authorization for bat houses",
+   "what_was_recorded": "The commission authorized up to a stated amount from the Hawes Gift Fund for the bat house project, covering the full expected cost in the meantime.",
+   "figures_as_printed": [
+    "500 dollars"
+   ],
+   "quote": "a motion was made by bp to approve up to 500 dollars from the hawes gift fund."
+  },
+  {
+   "topic": "Trails grant status",
+   "what_was_recorded": "Old Business agenda item to update on the trails grant and status of contracts; no figures printed and no discussion recorded.",
+   "figures_as_printed": [],
+   "quote": "old business - update on trails grant - status of contracts"
+  },
+  {
+   "topic": "Approval of funds for tax bill inserts",
+   "what_was_recorded": "Agenda item listed for approval of funds for tax bill inserts; no figures printed and no discussion recorded.",
+   "figures_as_printed": [],
+   "quote": "approval of funds for tax bill inserts"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Hickory Hills storm water committee",
+   "speaker": "JR",
+   "stated_role": "",
+   "quote": "jr noted hickory hills has started a storm water committee"
+  },
+  {
+   "topic": "Dantonio/Proctor 1325 Mass Ave storm water and vernal pool",
+   "speaker": "Katey Adams",
+   "stated_role": "",
+   "quote": "katey adams asked what the procedure was for certifying the vernal pool."
+  },
+  {
+   "topic": "Proctor 1325 Mass Ave runoff and notification",
+   "speaker": "Alan Dantonio",
+   "stated_role": "",
+   "quote": "alan dantonio was concerned about his back yard and claimed he was not notified."
+  },
+  {
+   "topic": "Proctor 1325 Mass Ave blasting and storm drains",
+   "speaker": "Mark Rzeznikiewicz",
+   "stated_role": "",
+   "quote": "mark rzeznikiewicz noted to the commission that it had been established that there would be no blasting,"
+  },
+  {
+   "topic": "Proctor 1325 Mass Ave dust control",
+   "speaker": "Dan Proctor",
+   "stated_role": "applicant",
+   "quote": "dan proctor noted that the water trucks will be onsite and calcium flakes will be on site."
+  },
+  {
+   "topic": "179/183 Island Road enforcement, deed and shoreline",
+   "speaker": "Joan Pease",
+   "stated_role": "representing the Hickory Hills Landowners",
+   "quote": "joan pease appeared before the commission representing the"
+  },
+  {
+   "topic": "179/183 Island Road enforcement, structures within 50 feet of water",
+   "speaker": "Peter Cowley",
+   "stated_role": "part of the board on Hickory Hills",
+   "quote": "peter cowley as a part of the board on hickory hills appeared"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "JR noted Hickory Hills storm water committee; no public comment on Abbott hearing",
+   "quote": "jr noted hickory hills has started a storm water committee",
+   "tags": [
+    "public comment",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Appointment: Drew Tobin Eagle Scout bat houses",
+   "resolution": "approved up to $500 from Hawes Gift Fund",
+   "quote": "drew tobin informed the commission of this project for 4 bat",
+   "tags": [
+    "bat houses",
+    "gift fund",
+    "Eagle Scout"
+   ]
+  },
+  {
+   "topic": "72 Hemlock field change request",
+   "resolution": "continued; applicant has not resubmitted plans; no vote recorded",
+   "quote": "mm noted the applicant hasn't re-submitted the revised plans",
+   "tags": [
+    "72 Hemlock",
+    "field change",
+    "continued"
+   ]
+  },
+  {
+   "topic": "Notice of Intent, Wilbur Abbott III, 335 Chase Road (lots 1-3, common driveway and two single family homes)",
+   "resolution": "continued to March 4, 2020; site inspection Feb 29, 2020",
+   "quote": "the meeting was continued to the meeting of march 4, 2020 at 960 mass ave.",
+   "tags": [
+    "notice of intent",
+    "wetlands",
+    "buffer zone",
+    "driveway",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Continued NOI, Dan & Jean Proctor, 1325 Mass Ave (removal of earth and stormwater management)",
+   "resolution": "continued to March 4, 2020",
+   "quote": "the meeting was continued to the march 4, 2020 meeting by a motion of bp and a second by cl",
+   "tags": [
+    "notice of intent",
+    "earth removal",
+    "stormwater",
+    "Zone II",
+    "MEPA"
+   ]
+  },
+  {
+   "topic": "Continued NOI, DPW culverts at Sunset Lane and Northfield Road",
+   "resolution": "continued to March 4, 2020 for engineer redesign",
+   "quote": "mm noted the engineer is still working on a redesign of an insert and recommended a continuance.",
+   "tags": [
+    "culverts",
+    "DPW",
+    "notice of intent"
+   ]
+  },
+  {
+   "topic": "Continued NOI, Nanci Bell, 51 Fire Road 19 (retaining wall)",
+   "resolution": "continued to March 4, 2020 at 7 PM",
+   "quote": "the meeting was continued to the meeting scheduled for march 4, 2020 at 7 pm.",
+   "tags": [
+    "retaining wall",
+    "notice of intent"
+   ]
+  },
+  {
+   "topic": "Enforcement: EO-164 Page Street, Emerald Place Beach, Fire Road 12, 179/183 Island Road (Hickory Hills)",
+   "resolution": "Page Street to be removed for May 2020; Emerald Place update in spring; Island Road site walk Feb 22, 2020 approved",
+   "quote": "the site inspection was schedul ed for feb 22, 2020 at 9 am.",
+   "tags": [
+    "enforcement",
+    "Hickory Hills",
+    "lakebed",
+    "shoreline",
+    "vegetation"
+   ]
+  },
+  {
+   "topic": "New Business agenda list",
+   "resolution": "listed only; no discussion or action recorded for Gilchrest Street site walk, Gouldrup Stewardship Plan, Tax Bill Inserts funds, open space parcels, land use regulations",
+   "quote": "new business - site walk for gilchrest street property for trail access",
+   "tags": [
+    "agenda",
+    "trail access",
+    "stewardship plan",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Certificates of Compliance and Extension Permit, Brockelman Perrins Pond",
+   "resolution": "extension permit approved with a yearly status letter condition",
+   "quote": "the commission approved with the addition of a yearly status letter to include chemicals used, timing and quantities",
+   "tags": [
+    "extension permit",
+    "Brockelman Perrins Pond",
+    "chemicals"
+   ]
+  },
+  {
+   "topic": "Minutes of previous meetings",
+   "resolution": "February 5, 2020 minutes approved; May 29, 2019 minutes continued",
+   "quote": "bp moved to approve, cc seconded and the commission voted unanimously",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Agent's report and action items",
+   "resolution": "no action recorded; online permitting noted as now public",
+   "quote": "mm noted the new online permitting is now public.",
+   "tags": [
+    "online permitting",
+    "hunting signage",
+    "Hickory Hills",
+    "Lake Shirley drawdown"
+   ]
+  },
+  {
+   "topic": "Adjournment and meeting schedule",
+   "resolution": "next meeting March 4, 2020 at Ritter Memorial Building, 960 Mass; no adjournment vote recorded (minutes end mid-sentence)",
+   "quote": "next meeting is march 4, 2020 at the",
+   "tags": [
+    "adjournment",
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent, Wilbur Abbott III, 335 Chase Road (common driveway, lot 1; single family homes with driveway and septic, lots 2 and 3)",
+   "where": "text",
+   "quote": "notice of intent for the construction of a common driveway within the 100 foot buffer zone at 335 chase road."
+  },
+  {
+   "name": "Notice of Intent, Dan & Jean Proctor, 1325 Mass Ave",
+   "where": "text",
+   "quote": "dan & jean proctor have filed a notice of intent for the removal of earth and storm water management"
+  },
+  {
+   "name": "DPW Notice of Intent, replacement of culverts at Sunset Lane and Northfield Road",
+   "where": "text",
+   "quote": "dpw has filed a notice of intent for the replacement of culverts at sunset lane and northfield road."
+  },
+  {
+   "name": "Notice of Intent by Nanci Bell, replacement of retaining wall, 51 Fire Road 19",
+   "where": "text",
+   "quote": "a notice of intent by nanci bell for the replacement of an existing retaining wall at 51 fire road 19."
+  },
+  {
+   "name": "MEPA filing presented by the Proctor applicant",
+   "where": "text",
+   "quote": "the applicant presented a mepa filing the afternoon of the 19 th"
+  },
+  {
+   "name": "Deed on Hickory Hills property line (one foot within the high watermark), 179/183 Island Road",
+   "where": "text",
+   "quote": "presented the commission with a deed illustrating that the"
+  },
+  {
+   "name": "Hickory Hills landowners association deed and rules",
+   "where": "text",
+   "quote": "presented the commission with a deed outlining the hickory hills"
+  },
+  {
+   "name": "Engineered plan for the Hickory Hills shoreline",
+   "where": "text",
+   "quote": "the engineered plan can be utilized to verify the"
+  },
+  {
+   "name": "Storm water maintenance plan (Proctor)",
+   "where": "text",
+   "quote": "the storm water maintenance plan would be amended to clear"
+  },
+  {
+   "name": "Minutes of February 5, 2020 meeting",
+   "where": "text",
+   "quote": "review of february 5, 2020 minutes"
+  },
+  {
+   "name": "Minutes of May 29, 2019 meeting",
+   "where": "text",
+   "quote": "review of may 29, 2019 meeting minutes - continued"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands bylaw",
+  "notice of intent",
+  "continuances",
+  "buffer zone",
+  "stormwater",
+  "enforcement",
+  "Hickory Hills",
+  "Island Road",
+  "bat houses",
+  "gift fund",
+  "culverts",
+  "extension permit",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "votes": 1
+ }
 }

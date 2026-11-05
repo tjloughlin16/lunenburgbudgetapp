@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2020-02-04",
  "docid": "2654",
@@ -12,23 +12,151 @@
  },
  "votes": [
   {
-   "motion": "approve minutes from January 8th meeting",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Approve the minutes of the January 8th meeting.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "minutes from the january 8th meeting were read and approved."
   },
   {
-   "motion": "approve the final design of the historic district signs",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Approve the final design of the Historic District signs, which shall read \"historic district\" and not \"historical district\".",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed unanimously",
+   "procedural": false,
    "quote": "the final design of the signs was selected and approved by unanimous vote."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is clearly readable. The third item on logging and stone walls records \"The Commission agreed to recommend\" but does not explicitly describe a motion or vote, so it is not included per the instruction to not invent votes from discussion.",
- "cost_usd": 0.08703550000000002
+ "note": "Text is a clean extraction, not a scan. The minutes record one approval with no motion, mover, seconder or count (\"read and approved\"), recorded here as passed. The adjournment at 8:00 has no recorded motion or vote, so it is not listed. Chuck Venezia of the Historical Society is named only as notified of the logging application; the minutes do not say he attended or spoke, so he is not listed as attendee or public commenter. No dollar figures appear in the minutes.",
+ "cost_usd": 0.00313662,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rebecca Lantry",
+   "role": "Chair",
+   "status": "present",
+   "quote": "meeting opened by chair lantry at 6:30 with lantry, mcgrath, sanderson, lakso and dwyer present."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "member",
+   "status": "present",
+   "quote": "meeting opened by chair lantry at 6:30 with lantry, mcgrath, sanderson, lakso and dwyer present."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "meeting opened by chair lantry at 6:30 with lantry, mcgrath, sanderson, lakso and dwyer present."
+  },
+  {
+   "name": "Jennifer Sanderson",
+   "role": "member",
+   "status": "present",
+   "quote": "meeting opened by chair lantry at 6:30 with lantry, mcgrath, sanderson, lakso and dwyer present."
+  },
+  {
+   "name": "Bill Lakso",
+   "role": "member",
+   "status": "present",
+   "quote": "meeting opened by chair lantry at 6:30 with lantry, mcgrath, sanderson, lakso and dwyer present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed to recommend that the logging application not be approved without the stipulation that the stone walls be preserved, or re-built if disturbed.",
+   "quote": "the commission agreed to recommend that the application not be approved without the stip- ulation that the stone walls be preserved, or re-built if disturbed."
+  },
+  {
+   "decision": "Lantry will draft a Community Preservation Act warrant article, to be deliberated at the next meeting in early March.",
+   "quote": "lantry will draft a warrant article to be deliberated at the next meeting in early march."
+  },
+  {
+   "decision": "McGrath will confirm the status of the new weather vane for town hall.",
+   "quote": "it may not have been installed due to structural concerns about the spire. mcgrath will confirm."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes from the january 8th meeting were read and approved."
+  },
+  {
+   "topic": "Demolition requests",
+   "resolution": "no action (none)",
+   "tags": [
+    "demolition"
+   ],
+   "quote": "demolition requests: none"
+  },
+  {
+   "topic": "Historic District signs",
+   "resolution": "approved final design",
+   "tags": [
+    "signs",
+    "historic district"
+   ],
+   "quote": "the final design of the signs was selected and approved by unanimous vote."
+  },
+  {
+   "topic": "Community Preservation Act",
+   "resolution": "warrant article to be drafted and deliberated at next meeting",
+   "tags": [
+    "community preservation act",
+    "warrant article"
+   ],
+   "quote": "lantry will draft a warrant article to be deliberated at the next meeting in early march."
+  },
+  {
+   "topic": "Weather vane for town hall (unfinished business)",
+   "resolution": "McGrath to confirm status",
+   "tags": [
+    "town hall",
+    "weather vane"
+   ],
+   "quote": "it may not have been installed due to structural concerns about the spire. mcgrath will confirm."
+  },
+  {
+   "topic": "Logging application near Massachusetts Avenue and Arbor Street (new business)",
+   "resolution": "recommend not approved without stone wall stipulation",
+   "tags": [
+    "logging",
+    "stone walls",
+    "demolition review"
+   ],
+   "quote": "the commission agreed to recommend that the application not be approved without the stip- ulation that the stone walls be preserved, or re-built if disturbed."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Warrant article (Community Preservation Act), to be drafted by Lantry",
+   "where": "text",
+   "quote": "lantry will draft a warrant article to be deliberated at the next meeting in early march."
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "historic district signs",
+  "community preservation act",
+  "weather vane",
+  "town hall",
+  "logging application",
+  "stone walls",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

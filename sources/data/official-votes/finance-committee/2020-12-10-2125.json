@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2020-12-10",
  "docid": "2125",
@@ -12,15 +12,317 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dave",
    "seconded_by": "Jay",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn - dave motioned jay seconded - all in favor"
+   "quote": "motion to adjourn - dave motioned jay seconded - all in favor. 8:26 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One procedural vote recorded. The minutes explicitly state the committee held off on approving October 8th minutes until the next meeting, so that is not counted as a vote.",
- "cost_usd": 0.0800415
+ "note": "Text is OCR of a scanned minutes document. Page 2 opens mid-item: the headings for agenda items 3 and 4 are missing. Several speaker names are ambiguous (\"Heather L.\", \"Heather S.\", \"Terrri\" typo); Heather Sroka is the only full Heather named. Only one motion is recorded (adjournment, all in favor, no count). Some figures contain OCR artifacts (e.g., \"December 5t'\"); figures are copied as they appear. Discussion of a Select Board / Turkey Hill skate park matter contains no recorded vote.",
+ "cost_usd": 0.0069564200000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm and read the"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "not stated",
+   "status": "present",
+   "quote": "terrri burchfield, dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "not stated",
+   "status": "present",
+   "quote": "terrri burchfield, dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "not stated",
+   "status": "present",
+   "quote": "terrri burchfield, dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "newest member of the committee",
+   "status": "present",
+   "quote": "terri welcomed the newest member of the committee mr. evan watters."
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "not stated",
+   "status": "present",
+   "quote": "terrri burchfield, dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: peter beardmore"
+  },
+  {
+   "name": "Heather L.",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "heather l. agrees with heather s. even though it's a cola every year"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approval of the minutes from the October 8 meeting was held over to the next meeting.",
+   "quote": "holding off on approving the minutes until the next meeting."
+  },
+  {
+   "decision": "Heather said the school contract increase question would be added to the financial forecast to see the effect on the budget.",
+   "quote": "heather - we'll add that to the financial forecast to see the effect on the budget."
+  },
+  {
+   "decision": "Terri directed members to prepare to discuss the fiscal policies.",
+   "quote": "prepare to discuss the fiscal policies."
+  },
+  {
+   "decision": "Evan Watters said he will take up the liaison role for Police and Fire.",
+   "quote": "evan - will take up that role as liaison for police and fire."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Police Chief grants",
+   "what_was_recorded": "Police Chief was awarded an $8,000 Risk Management Grant for software upgrade and evidence room cameras.",
+   "quote": "was awarded $8,000 risk management grant for upgrade of software and additional cameras for the evidence room entryway.",
+   "figures_as_printed": [
+    "$8,000"
+   ]
+  },
+  {
+   "topic": "Justice Assistance Grant for body cameras",
+   "what_was_recorded": "Police received $34,400 Justice Assistance Grant for body cameras.",
+   "quote": "also received $34,400 for the justice assistance grant for the body cameras",
+   "figures_as_printed": [
+    "$34,400"
+   ]
+  },
+  {
+   "topic": "Click It or Ticket Grant",
+   "what_was_recorded": "Police received a $9,800 Click It or Ticket Grant for seatbelt enforcement.",
+   "quote": "$9,800 for the click it or ticket grant",
+   "figures_as_printed": [
+    "$9,800"
+   ]
+  },
+  {
+   "topic": "Body camera storage cost and ongoing maintenance",
+   "what_was_recorded": "Dave believed camera storage cost was a $700 figure; Heather said that was part of the grant amount and ongoing maintenance would run $1,000 - $2,000.",
+   "quote": "dave - cost of camera storage. he believed it was a $700 figure. what is the",
+   "figures_as_printed": [
+    "$700",
+    "$1,000 - $2,000"
+   ]
+  },
+  {
+   "topic": "Letarte donation",
+   "what_was_recorded": "A $10,000 donation from Rich and MaryEllen Letarte was received for remote learning devices, with the remainder to go to the local food bank; the School will use it to buy Chromebooks.",
+   "quote": "$10,000 donation from rich and maryellen letarte for the use of purchasing",
+   "figures_as_printed": [
+    "$10,000"
+   ]
+  },
+  {
+   "topic": "FY tax rate",
+   "what_was_recorded": "Town was notified on December 5 that the tax rate was approved at $17.74 per $1,000.",
+   "quote": "that tax rate was approved at $17.74 per $1,000",
+   "figures_as_printed": [
+    "$17.74 per $1,000"
+   ]
+  },
+  {
+   "topic": "Streetlight purchase",
+   "what_was_recorded": "Purchase of the streetlights from Unitil discussed; a formal Letter of Intent was submitted with a request for an updated dollar figure. No amount printed.",
+   "quote": "purchase of the streetlights - contacted unitil after the stm",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Community Development Block Grant small business grants",
+   "what_was_recorded": "Regional CDBG small grants of up to $10,000 for businesses with no more than 5 employees.",
+   "quote": "small grants up to $10,000 for businesses with no more than 5 employees.",
+   "figures_as_printed": [
+    "$10,000"
+   ]
+  },
+  {
+   "topic": "Health insurance budget",
+   "what_was_recorded": "Active health insurance increase budgeted at 3%.",
+   "quote": "health insurance - active insurance increase of 3% budget",
+   "figures_as_printed": [
+    "3%"
+   ]
+  },
+  {
+   "topic": "School legal fees",
+   "what_was_recorded": "Heather S. noted school legal fees were $62,000 and asked how much was attributable to negotiations.",
+   "quote": "legal fees for the schools was $62,000 - wonder how much of that",
+   "figures_as_printed": [
+    "$62,000"
+   ]
+  },
+  {
+   "topic": "School fire alarm earmark",
+   "what_was_recorded": "Budget earmark of $25,000 for school fire alarm system upgrade, from capital bond funds.",
+   "quote": "$25,000 budget earmark for school fire alarm system upgrade",
+   "figures_as_printed": [
+    "$25,000"
+   ]
+  },
+  {
+   "topic": "Firefighter gear bond funds",
+   "what_was_recorded": "$100,000 for firefighter gear from prior years, waiting to be released from the bond.",
+   "quote": "$100,000 firefighter gear - previous years waiting to be released from the bond",
+   "figures_as_printed": [
+    "$100,000"
+   ]
+  },
+  {
+   "topic": "Skate park fundraising",
+   "what_was_recorded": "Skate park group has raised $63,000 so far; asked how much is needed.",
+   "quote": "heather l. - they've raised $63,000 so far.",
+   "figures_as_printed": [
+    "$63,000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and advisory statement",
+   "resolution": "called to order 7:00 PM; no action",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm and read the",
+   "tags": [
+    "procedure",
+    "zoom"
+   ]
+  },
+  {
+   "topic": "Chair report",
+   "resolution": "minutes approval held to next meeting; budget calendar forwarded",
+   "quote": "holding off on approving the minutes until the next meeting.",
+   "tags": [
+    "minutes",
+    "budget calendar"
+   ]
+  },
+  {
+   "topic": "Suggestions for next meeting",
+   "resolution": "no comments",
+   "quote": "does anyone have any suggestions tor the next sim! no comments.",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Town contracts and COLA policy",
+   "resolution": "discussed; no action",
+   "quote": "terri - potential discussion around approving the contracts going forward -",
+   "tags": [
+    "contracts",
+    "COLA",
+    "negotiations",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "update received; no action",
+   "quote": "will provide the same updates she provided to the sb",
+   "tags": [
+    "grants",
+    "police",
+    "fire",
+    "budget",
+    "streetlights",
+    "tax rate"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; no action",
+   "quote": "chris last open space meeting-",
+   "tags": [
+    "open space",
+    "reserve funds",
+    "Community Preservation Act",
+    "town hall renovation",
+    "parks",
+    "skate park",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Capital Planning fiscal policies",
+   "resolution": "discussion; Damon asked to attend; no action",
+   "quote": "terri - asked damon to come and discuss capital planning fiscal policies.",
+   "tags": [
+    "fiscal policy",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:26 p.m.",
+   "quote": "motion to adjourn - dave motioned jay seconded - all in favor. 8:26 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Budget calendar",
+   "where": "list",
+   "quote": "budget calendar forwarded to the members"
+  },
+  {
+   "name": "One-pager from Northboro (Matrox-related plan summary)",
+   "where": "text",
+   "quote": "chris - that one pager like from northboro would be good."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "Zoom meeting",
+  "COLA",
+  "town contracts",
+  "grants",
+  "police",
+  "tax rate",
+  "streetlights",
+  "capital planning",
+  "reserve funds",
+  "Community Preservation Act",
+  "skate park",
+  "Flat Hill Orchard",
+  "town hall renovation",
+  "school budget"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "budget calendar forwarded to the members"
+ },
+ "dropped_unquoted_by_field": {}
 }

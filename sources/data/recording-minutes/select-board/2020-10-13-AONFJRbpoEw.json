@@ -1,0 +1,929 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen",
+ "meeting_date": "2020-10-13",
+ "video_id": "AONFJRbpoEw",
+ "video_url": "https://www.youtube.com/watch?v=AONFJRbpoEw",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2020-10-13-AONFJRbpoEw.json",
+  "sha256": "acadd42d8433cd816b9ee501cbec18a39a14e1330e6029716e0193fcec181ca9",
+  "caption_lines": 441,
+  "segments": 4028
+ },
+ "recording": {
+  "duration_s": 9215,
+  "duration": "2:33",
+  "spoken_chars": 110183,
+  "words_approx": 18363
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10132020-5219",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-10-13-agenda-5219.txt",
+   "path": "sources/meetings/select-board/2020-10-13-agenda-5219.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10132020-5219",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-10-13-minutes-5219.txt",
+   "path": "sources/meetings/select-board/2020-10-13-minutes-5219.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-03T16:52:33Z",
+  "cost_usd": 0.3637435
+ },
+ "minutes": {
+  "headline": "Board appointed Jeffrey Viviano to Conservation Commission and voted 4-1 to keep two land-transfer articles on the warrant.",
+  "summary": "The Select Board interviewed and appointed a Conservation Commission member, then debated whether two conservation land-transfer articles were validly made under open meeting law and voted to keep them. It went through the special town meeting warrant articles, voting recommendations on several and deferring others, and reviewed a shorter eight-year tax increment financing agreement for Bright Farms. It also approved a sick leave policy change, minutes, and sign policy edits, and heard the town manager's reports.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Mourinho",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Ms. Adams",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Dwyer",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Jeffries",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Town Manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Mr. Pease",
+    "role": "chair of the conservation commission"
+   },
+   {
+    "name_as_heard": "Mr. Rabbit",
+    "role": "member of the conservation commission"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 215,
+    "topic": "Chair asked for public comment at the start; none offered."
+   },
+   {
+    "t": 9164,
+    "topic": "Chair asked for public comment at the end; none offered."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "economic-development",
+   "free-cash",
+   "grants",
+   "hiring",
+   "legal",
+   "library",
+   "personnel",
+   "policy",
+   "seniors",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 2115,
+    "motion": "Appoint Jeffrey Viviano of 338 Sunset Lane to the Conservation Commission, term to expire June 30, 2022",
+    "moved_by": "Ms. Adams",
+    "outcome": "passed 5-0 by roll call",
+    "procedural": false
+   },
+   {
+    "t": 3939,
+    "motion": "Keep the two conservation land-transfer articles on the special town meeting warrant",
+    "moved_by": "Mr. Mourinho",
+    "outcome": "passed 4-1 (Ms. Adams no)",
+    "procedural": false
+   },
+   {
+    "t": 5022,
+    "motion": "Recommend article C, prior year bill",
+    "outcome": "passed 5-0 by roll call",
+    "procedural": false
+   },
+   {
+    "t": 5063,
+    "motion": "Recommend article E, deposit into the special purpose stabilization fund",
+    "outcome": "passed 5-0 by roll call",
+    "procedural": false
+   },
+   {
+    "t": 5103,
+    "motion": "Recommend article F, deposit into the OPEB trust fund",
+    "outcome": "passed 4-1 (chair no)",
+    "procedural": false
+   },
+   {
+    "t": 5269,
+    "motion": "Recommend article I, transfer to the PEG access capital line",
+    "outcome": "passed 5-0 by roll call",
+    "procedural": false
+   },
+   {
+    "t": 5415,
+    "motion": "Recommend article K, general obligation bond premium application",
+    "outcome": "passed 5-0 by roll call",
+    "procedural": false
+   },
+   {
+    "t": 5476,
+    "motion": "Recommend article L, add positions to the salary administration plan",
+    "outcome": "passed 5-0 by roll call",
+    "procedural": false
+   },
+   {
+    "t": 5562,
+    "motion": "Recommend article P, TC building design committee report",
+    "outcome": "passed 5-0 by roll call",
+    "procedural": false
+   },
+   {
+    "t": 5584,
+    "motion": "Recommend article Q, transfer of 111 Multis Road rear to Conservation Commission",
+    "outcome": "passed 4-1 (Ms. Adams no)",
+    "procedural": false
+   },
+   {
+    "t": 5628,
+    "motion": "Recommend article R, transfer of 970 New West Townsend Road rear to Conservation Commission",
+    "moved_by": "Mr. Jeffries",
+    "outcome": "passed 4-1 (Ms. Adams no)",
+    "procedural": false
+   },
+   {
+    "t": 7098,
+    "motion": "Accept the modified emergency paid sick leave policy",
+    "outcome": "passed 5-0 by roll call",
+    "procedural": false
+   },
+   {
+    "t": 7162,
+    "motion": "Approve September 1 and September 8, 2020 minutes",
+    "outcome": "passed 5-0 by roll call",
+    "procedural": true
+   },
+   {
+    "t": 9184,
+    "motion": "Adjourn",
+    "outcome": "passed 5-0 by roll call",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 4126,
+    "topic": "New growth revenue",
+    "what_was_said": "The town manager said the certified new growth figure is higher than estimated.",
+    "figures_as_heard": [
+     "308 732"
+    ]
+   },
+   {
+    "t": 4228,
+    "topic": "Deferred capital and canine cruiser swap",
+    "what_was_said": "Swapping the canine cruiser with a hybrid cruiser would use green communities grant money and cut the cost. Another cruiser may qualify for the same discount.",
+    "figures_as_heard": [
+     "five thousand dollars",
+     "6 000",
+     "ten thousand"
+    ]
+   },
+   {
+    "t": 4329,
+    "topic": "Special purpose stabilization fund",
+    "what_was_said": "Town manager recommended a deposit to offset vehicle and equipment requests expected in the next fiscal year.",
+    "figures_as_heard": [
+     "250 000",
+     "five hundred thousand dollars"
+    ]
+   },
+   {
+    "t": 4350,
+    "topic": "Article C prior year bill",
+    "what_was_said": "A prior year bill was found that needs action at special town meeting.",
+    "figures_as_heard": [
+     "150"
+    ]
+   },
+   {
+    "t": 4556,
+    "topic": "OPEB trust fund deposit",
+    "what_was_said": "Deposit is based on a policy of depositing a share of prior year free cash and helps with bonding.",
+    "figures_as_heard": [
+     "110 dollars",
+     "10 of the prior year's certified free cash"
+    ]
+   },
+   {
+    "t": 4596,
+    "topic": "PEG access capital line",
+    "what_was_said": "Deferred capital article for cable access, since retained earnings were insufficient.",
+    "figures_as_heard": [
+     "120 000"
+    ]
+   },
+   {
+    "t": 4618,
+    "topic": "Sewer reserve capacity stabilization fund",
+    "what_was_said": "Sewer requested a transfer into the stabilization fund; the board postponed.",
+    "figures_as_heard": [
+     "sixty eight thousand ninety seven dollars and fifty nine cents"
+    ]
+   },
+   {
+    "t": 5415,
+    "topic": "Bond premium article K",
+    "what_was_said": "Application of bond premium toward future capital.",
+    "figures_as_heard": [
+     "one million six hundred ninety five thousand dollars"
+    ]
+   },
+   {
+    "t": 5710,
+    "topic": "Bright Farms TIF",
+    "what_was_said": "An eight-year schedule gives the same tax break sooner and a small net gain to the town.",
+    "figures_as_heard": [
+     "996 600",
+     "32 000",
+     "10 million dollar investment"
+    ]
+   },
+   {
+    "t": 6904,
+    "topic": "Legislative earmark priorities",
+    "what_was_said": "Four projects were listed for state legislators; the board swapped the top two.",
+    "figures_as_heard": [
+     "355 000",
+     "127 thousand dollars",
+     "180 000",
+     "forty thousand dollars"
+    ]
+   },
+   {
+    "t": 8810,
+    "topic": "Free cash certified",
+    "what_was_said": "Free cash was certified higher than estimated because extra school circuit breaker money was left over, to be transferred at town meeting.",
+    "figures_as_heard": [
+     "one million eight hundred and four thousand and one hundred and eighty five dollars",
+     "103 000"
+    ]
+   },
+   {
+    "t": 8913,
+    "topic": "Electronic voting equipment",
+    "what_was_said": "Equipment is a CARES Act eligible expense.",
+    "figures_as_heard": [
+     "eighteen thousand for six hundred voting devices"
+    ]
+   },
+   {
+    "t": 9081,
+    "topic": "Town manager raise",
+    "what_was_said": "The board voted in executive session to give the town manager a raise.",
+    "figures_as_heard": [
+     "four percent",
+     "134 955"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 4618,
+    "description": "Transfer from sewer available funds into the sewer reserve capacity stabilization fund (article J)",
+    "amount_as_heard": "sixty eight thousand ninety seven dollars and fifty nine cents",
+    "outcome": "discussed only; postponed to next week"
+   },
+   {
+    "t": 8830,
+    "description": "Circuit breaker excess in the school account to be transferred at the spring annual town meeting",
+    "amount_as_heard": "103 000",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 2012,
+    "decision": "Board chose to proceed with the Viviano appointment; Mr. Larouche was encouraged to attend commission meetings as an associate member."
+   },
+   {
+    "t": 4852,
+    "decision": "Board will vote recommendations on remaining warrant articles next week; items A, B, D, G, H, M, N, O, S and T deferred."
+   },
+   {
+    "t": 5352,
+    "decision": "Article J postponed one week for an explanation of the reserve capacity stabilization fund."
+   },
+   {
+    "t": 6698,
+    "decision": "Majority prefers an eight-year Bright Farms TIF; manager to run it past town counsel and Bright Farms and update the draft."
+   },
+   {
+    "t": 6994,
+    "decision": "Legislative priority list reordered so the primary school fire alarm is first."
+   },
+   {
+    "t": 6803,
+    "decision": "Temporary telework policy tabled to a future meeting."
+   },
+   {
+    "t": 8516,
+    "decision": "Sign policy amended on several points; final draft to return at a later meeting."
+   },
+   {
+    "t": 7266,
+    "decision": "Town manager to make the talent bank form a fillable PDF with a signature line and a larger bio box."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 238,
+    "topic": "Opening, roll call, pledge, public comment",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 238,
+    "t_end": 2486,
+    "topic": "Conservation Commission appointment interview and late applicant",
+    "resolution": "voted; Viviano appointed",
+    "tags": [
+     "personnel",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 2506,
+    "t_end": 4043,
+    "topic": "Conservation land transfer warrant articles and open meeting law dispute",
+    "resolution": "voted to keep articles on warrant",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 4043,
+    "t_end": 5690,
+    "topic": "Special town meeting warrant articles and recommendations",
+    "resolution": "several recommended; others deferred",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 5690,
+    "t_end": 6803,
+    "topic": "Bright Farms tax increment financing agreement",
+    "resolution": "no vote; eight-year term preferred",
+    "tags": [
+     "economic-development",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 6803,
+    "t_end": 7098,
+    "topic": "Telework policy tabled and legislative priorities",
+    "resolution": "tabled; priorities reordered",
+    "tags": [
+     "policy",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 7098,
+    "t_end": 7462,
+    "topic": "Sick leave policy, minutes, talent bank form",
+    "resolution": "voted",
+    "tags": [
+     "policy",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 7462,
+    "t_end": 7741,
+    "topic": "Committee reports",
+    "resolution": "informational",
+    "tags": [
+     "seniors",
+     "library"
+    ]
+   },
+   {
+    "t_start": 7741,
+    "t_end": 8537,
+    "topic": "Signage policy on town property",
+    "resolution": "amendments agreed; final draft to return",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 8537,
+    "t_end": 9205,
+    "topic": "COVID update, town manager report, free cash, manager raise, adjournment",
+    "resolution": "informational; adjourned",
+    "tags": [
+     "free-cash",
+     "superintendent-report",
+     "personnel"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Stabilization fund article D amount was not settled.",
+   "Ms. Adams's voice was muted on the article F roll call; the chair stated four to one."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 2796,
+    "about": "Whether the conservation land-transfer warrant articles were validly created under open meeting law, and whether to defer them to spring.",
+    "sides": "One member against the articles and for waiting; the conservation chair, the chair and other members for keeping them",
+    "words_as_heard": "i had questioned whether or not they were valid warrant articles because there was no agenda to create them",
+    "kind": "members disagree"
+   },
+   {
+    "t": 2880,
+    "about": "Whether reaffirming the vote after the warrant closed was valid.",
+    "sides": "a member against the conservation chair",
+    "words_as_heard": "i disagree with that interpretation we get to decide what's on it",
+    "kind": "members disagree"
+   },
+   {
+    "t": 3608,
+    "about": "A member said she felt the commission violated open meeting law and that the board was not told of the transfers.",
+    "sides": "a member against the conservation commission process",
+    "words_as_heard": "i was blindsided as a guest watching that meeting",
+    "kind": "public criticism"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 2796,
+    "kind": "liability or legal",
+    "about": "A member questioned whether the conservation warrant articles were validly created without an agenda topic.",
+    "who": "a member",
+    "words_as_heard": "i had questioned whether or not they were valid warrant articles because there was no agenda to create them"
+   },
+   {
+    "t": 1477,
+    "kind": "condition",
+    "about": "A member said she could not support a late candidate who missed the posting window.",
+    "who": "a member",
+    "words_as_heard": "i don't see any path where i could support that"
+   },
+   {
+    "t": 5144,
+    "kind": "condition",
+    "about": "A member wanted to avoid tying up money for the OPEB deposit until the financial picture was known.",
+    "who": "a member",
+    "words_as_heard": "i also don't want to tie up money that we don't necessarily want to tie up unless we absolutely know that we have enough to cover"
+   },
+   {
+    "t": 6566,
+    "kind": "condition",
+    "about": "A member asked that the Bright Farms agreement include part-time jobs for seniors.",
+    "who": "a member",
+    "words_as_heard": "if they're open to a revision here that creates permanent jobs and some part-time positions that uh for senior populations"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 2527,
+    "name_as_heard": "related documents with graphics for the two properties",
+    "kind": "plan or drawing",
+    "words_as_heard": "there in your google drive are the related documents with graphics um depicting where those properties are located",
+    "shown": true
+   },
+   {
+    "t": 4106,
+    "name_as_heard": "the adjustments sheet",
+    "kind": "spreadsheet",
+    "words_as_heard": "i'm going to pull up the adjustments sheet",
+    "shown": true
+   },
+   {
+    "t": 5710,
+    "name_as_heard": "the TIF ten-year and eight-year projections",
+    "kind": "spreadsheet",
+    "words_as_heard": "two projections one of the ten year which i had provided last week and secondly for an eight year agreement",
+    "shown": true
+   },
+   {
+    "t": 6228,
+    "name_as_heard": "draft TIF agreement",
+    "kind": "contract or agreement",
+    "words_as_heard": "i also took a stab at putting a written tiff agreement just a draft together",
+    "shown": true
+   },
+   {
+    "t": 6884,
+    "name_as_heard": "memo on legislative fiscal priorities",
+    "kind": "memo",
+    "words_as_heard": "i put together a short memo uh just outlining the projects that the board voted on last february",
+    "shown": true
+   },
+   {
+    "t": 7056,
+    "name_as_heard": "emergency paid sick leave policy redline",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "this is a redline document",
+    "shown": true
+   },
+   {
+    "t": 7741,
+    "name_as_heard": "signage policy for town property",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "policy on approval process for signage on town property there's a document in there",
+    "shown": true
+   },
+   {
+    "t": 7162,
+    "name_as_heard": "September 1st and September 8th minutes",
+    "kind": "prior minutes",
+    "words_as_heard": "approval of september 1st and september 8th 2020 minutes",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "bright-farms-tif",
+    "title": "Bright Farms TIF",
+    "question": "What would an eight-year versus ten-year tax increment financing deal cost or return to the town?",
+    "t": 5710,
+    "words_as_heard": "there's a net impact net zero impact compared to the 10-year tif proposal but slightly more funding for the town",
+    "data_in_play": [
+     "996 600",
+     "32 000",
+     "10 million dollar investment"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "special-town-meeting-articles",
+    "title": "Special town meeting articles",
+    "question": "What money is each special town meeting warrant article asking for?",
+    "t": 4086,
+    "words_as_heard": "article a is the budget article to amend the fiscal 21 budget",
+    "data_in_play": [
+     "250 000",
+     "110 dollars",
+     "120 000",
+     "150"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "streetlight-led-conversion",
+    "title": "Streetlight LED conversion",
+    "question": "What will the street light LED conversion article cost and save?",
+    "t": 4308,
+    "words_as_heard": "until there's uh a final figure from the street lights led article",
+    "data_in_play": [],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted 4-1 to keep two conservation land-transfer articles on the special town meeting warrant after a dispute over whether they were validly made under open meeting law.",
+    "t": 3939
+   },
+   {
+    "line": "The Board appointed a new Conservation Commission member, 5-0 by roll call, for a term ending June 30, 2022.",
+    "t": 2115
+   },
+   {
+    "line": "The Board voted recommendations on several special town meeting articles, including a 4-1 vote for a deposit into the OPEB trust fund, and deferred ten others to next week.",
+    "t": 5103
+   },
+   {
+    "line": "A majority preferred an eight-year Bright Farms tax increment financing agreement; the manager will check it with town counsel and Bright Farms and revise the draft.",
+    "t": 6698
+   },
+   {
+    "line": "The Board accepted a modified emergency paid sick leave policy 5-0 and tabled a temporary telework policy to a future meeting.",
+    "t": 7098
+   }
+  ],
+  "why_it_matters": [
+   "The warrant articles the Board recommends are the ones residents will be asked to vote on at special town meeting, including deposits into reserve funds and transfers of town land to the Conservation Commission.",
+   "The Bright Farms tax increment financing term sets how long and how fast the company's local property tax break runs, and what the town collects in the meantime."
+  ],
+  "watch_next": [
+   "Next week's Select Board meeting: recommendations on the deferred articles (A, B, D, G, H, M, N, O, S, T) and on article J, the sewer reserve capacity stabilization fund.",
+   "A revised Bright Farms TIF draft, after review by town counsel and Bright Farms."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-03T16:52:46Z",
+   "cost_usd": 0.0320411
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10132020-5219",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-10-13-minutes-5219.txt",
+   "path": "sources/meetings/select-board/2020-10-13-minutes-5219.pdf"
+  },
+  "official_sha256": "9df9a1cf9ccb4772f626006a8c6547fd60fc1574d989429f6d857ba8191b3bb2",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on most votes and figures: Viviano, the conservation articles, Articles F, I, K, L, P, Q and R, and the sick leave policy, plus the dollar amounts. The main difference is that we record 5-0 votes on Articles C and E and a postponement of Article J, none of which appear in the official minutes. The captions also garbled the board members' names, including the chair's, and our attendee list omits Marino.",
+  "counts": {
+   "agree": 18,
+   "caption_error": 4,
+   "discrepancy": 4,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Viviano appointment to Conservation Commission",
+    "ours": "Appoint Jeffrey Viviano of 338 Sunset Lane to the Conservation Commission, term to expire June 30, 2022 — passed 5-0 by roll call",
+    "official": "to appoint jeffrey viviano to the conservation commission with a term to expire june 30, 2022 vote: ms. adams- aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys-aye, mr. alonzo-aye",
+    "note": "Same vote, same term, 5-0.",
+    "t": 2115
+   },
+   {
+    "kind": "agree",
+    "about": "Conservation articles remain on warrant",
+    "ours": "Keep the two conservation land-transfer articles on the special town meeting warrant — passed 4-1 (Ms. Adams no)",
+    "official": "to have the two articles submitted by the conservation commission remain on the warrant vote: mr. jeffreys-aye, mr. dwyer-aye, mr. marino-aye, ms. adams-nay, mr. alonzo-aye",
+    "note": "Same 4-1 with Adams dissenting.",
+    "t": 3939
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Article F OPEB vote: who dissented",
+    "ours": "Recommend article F, deposit into the OPEB trust fund — passed 4-1 (chair no)",
+    "official": "to recommend article f. ($110,000 deposit to opeb account) vote: mr. dwyer-aye, mr. marino-aye, mr. jeffreys- aye, ms. adams-aye, mr. alonzo-nay",
+    "note": "Both 4-1, and the official dissenter is Alonzo, who is chair there. Our captions name the chair Mourinho, so this likely matches. Check the chair's name and the dissent.",
+    "t": 5103
+   },
+   {
+    "kind": "agree",
+    "about": "Article I PEG/PAC $120,000",
+    "ours": "Recommend article I, transfer to the PEG access capital line — passed 5-0 by roll call",
+    "official": "to recommend article i. ($120,000 deposit into the pac enterprise fund) vote: mr. dwyer-aye, mr. marino-aye, mr. jeffreys-aye, ms. adams-aye, mr. alonzo-aye",
+    "note": "Same article, same 5-0 vote, $120,000 in both. The fund is called a capital line in ours and an enterprise fund in the official minutes.",
+    "t": 5269
+   },
+   {
+    "kind": "agree",
+    "about": "Article K bond premium",
+    "ours": "Recommend article K, general obligation bond premium application — passed 5-0 by roll call",
+    "official": "to recommend article k. (appropriates the premium paid upon the sale of the town's $1,695,000.00 general obligation municipal purpose loan of 2020, bonds)",
+    "note": "Same article, 5-0, $1,695,000.",
+    "t": 5415
+   },
+   {
+    "kind": "agree",
+    "about": "Article L salary administration plan",
+    "ours": "Recommend article L, add positions to the salary administration plan — passed 5-0 by roll call",
+    "official": "mo recommend article l. (amends the code of lunenburg, chapter 70, entitled, «alory",
+    "note": "Same article recommended 5-0.",
+    "t": 5476
+   },
+   {
+    "kind": "agree",
+    "about": "Article P TC building design committee",
+    "ours": "Recommend article P, TC building design committee report — passed 5-0 by roll call",
+    "official": "to recommend article p. (interim report from the tcp building design committee) vote: mr. dwyer-aye, mr. marino-aye, mr. jeffreys-aye, ms. adams-aye, mr. alonzo-aye",
+    "note": "Same 5-0.",
+    "t": 5562
+   },
+   {
+    "kind": "caption_error",
+    "about": "Article Q 111 Mulpus Road rear",
+    "ours": "Recommend article Q, transfer of 111 Multis Road rear to Conservation Commission — passed 4-1 (Ms. Adams no)",
+    "official": "to recommend article q. (transfers care/custody of 111 mulpus rd. rear from select board to conservation)",
+    "note": "Street name misheard; the vote is the same 4-1.",
+    "official_reading": "Mulpus Rd.",
+    "t": 5584
+   },
+   {
+    "kind": "agree",
+    "about": "Article R 970 NW Townsend Road rear",
+    "ours": "Recommend article R, transfer of 970 New West Townsend Road rear to Conservation Commission — passed 4-1 (Ms. Adams no)",
+    "official": "to recommend article r. (transfers care/custody of 970 nw townsend rd. rear from select board to conservation)",
+    "note": "Same article and 4-1 vote.",
+    "t": 5628
+   },
+   {
+    "kind": "agree",
+    "about": "Emergency paid sick leave policy",
+    "ours": "Accept the modified emergency paid sick leave policy — passed 5-0 by roll call",
+    "official": "to approve the amended emergency paid sick leave policy vote: mr. jeffreys- aye, mr. dwyer- aye, mr. marino-aye, ms. adams-aye, mr. alonzo-aye",
+    "note": "Same 5-0.",
+    "t": 7098
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Recommendation votes on Articles C and E",
+    "ours": "Recommend article C, prior year bill — passed 5-0 by roll call; Recommend article E, deposit into the special purpose stabilization fund — passed 5-0 by roll call",
+    "official": "she was recommending depositing $250,000 to the special stabilization fund because there is",
+    "note": "We record 5-0 votes on C and E. The official minutes show no vote on either, only the manager's recommendation on the stabilization deposit. Check the recording and the official minutes.",
+    "t": 5022
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Legislative priorities vote",
+    "ours": "Legislative priority list reordered so the primary school fire alarm is first.",
+    "official": "mr. dwyer suggested switching #1 and #2 in order of request. the board concurred.",
+    "note": "We say the fire alarm moved to first. The official minutes say #1 and #2 were switched, and #1 is demolition of the old primary school. The two may be consistent, but check the order and whether a formal vote was taken. Ours records no vote.",
+    "t": 6994
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Article J sewer transfer outcome",
+    "ours": "Transfer from sewer available funds into the sewer reserve capacity stabilization fund (article J) — sixty eight thousand ninety seven dollars and fifty nine cents (discussed only; postponed to next week)",
+    "official": "article j transfers $68,097.59 into the sewer reserve capacity stabilization fund.",
+    "note": "The amount agrees at $68,097.59. Ours says Article J was postponed one week. The official minutes record no postponement or vote, so check whether it was postponed.",
+    "t": 4618
+   },
+   {
+    "kind": "agree",
+    "about": "Special stabilization fund $250,000",
+    "ours": "Special purpose stabilization fund: 250 000, five hundred thousand dollars",
+    "official": "she was recommending depositing $250,000 to the special stabilization fund because there is",
+    "note": "$250,000 against about $500,000 in requests, in both.",
+    "t": 4329
+   },
+   {
+    "kind": "agree",
+    "about": "Prior year bill $150",
+    "ours": "Article C prior year bill: 150",
+    "official": "today we found a bill amounting to $150 for a prior's year",
+    "note": "Same figure.",
+    "t": 4350
+   },
+   {
+    "kind": "agree",
+    "about": "OPEB deposit $110,000",
+    "ours": "OPEB trust fund deposit: 110 dollars, 10 of the prior year's certified free cash",
+    "official": "article f transfers $110,000 to the other post employment benefits (opeb) trust fund.",
+    "note": "Captions garbled the figure, but the item matches.",
+    "t": 4556
+   },
+   {
+    "kind": "caption_error",
+    "about": "Electronic voting equipment",
+    "ours": "Electronic voting equipment: eighteen thousand for six hundred voting devices",
+    "official": "the cost is approximately $18,000 for 600 voting devices.",
+    "note": "Same figure, written differently.",
+    "official_reading": "$18,000 for 600 voting devices",
+    "t": 8913
+   },
+   {
+    "kind": "agree",
+    "about": "Town manager 4% raise to $134,955",
+    "ours": "Town manager raise: four percent, 134 955",
+    "official": "the board voted to award a 4% increase. her fiscal year 2021 salary will now be $134,955.",
+    "note": "Same figures. Ours lists no vote on this. The official minutes call it a vote reported from last week's executive session.",
+    "t": 9081
+   },
+   {
+    "kind": "agree",
+    "about": "Legislative earmark figures",
+    "ours": "Legislative earmark priorities: 355 000, 127 thousand dollars, 180 000, forty thousand dollars",
+    "official": "$355,000 for hazardous materials abatement and demolition of the old primary",
+    "note": "Same four amounts: $355,000, $127,000, $180,000, $40,000.",
+    "t": 6904
+   },
+   {
+    "kind": "agree",
+    "about": "Canine and hybrid cruiser savings and unexpended capital",
+    "ours": "Deferred capital and canine cruiser swap: five thousand dollars, 6 000, ten thousand",
+    "official": "part of that was $5,000 towards a hybrid cruiser",
+    "note": "$5,000 and $6,000 match. Ours also has a ten thousand figure that the official text lacks.",
+    "t": 4228
+   },
+   {
+    "kind": "agree",
+    "about": "Bright Farms TIF length",
+    "ours": "Majority prefers an eight-year Bright Farms TIF; manager to run it past town counsel and Bright Farms and update the draft.",
+    "official": "the majority of the board decided to negotiate for an eight year agreement",
+    "note": "Both record the eight-year preference and review by town counsel. Ours also names Bright Farms.",
+    "t": 6698
+   },
+   {
+    "kind": "agree",
+    "about": "Viviano appointment decision and Larouche",
+    "ours": "Board chose to proceed with the Viviano appointment; Mr. Larouche was encouraged to attend commission meetings as an associate member.",
+    "official": "after some discussion and comments from mr. rabbitt, the board decided to proceed with the appointment.",
+    "note": "Same decision.",
+    "t": 2012
+   },
+   {
+    "kind": "agree",
+    "about": "Sign policy amended",
+    "ours": "Sign policy amended on several points; final draft to return at a later meeting.",
+    "official": "the first line (#1) was changed to",
+    "note": "Both record amendments to the sign policy.",
+    "t": 8516
+   },
+   {
+    "kind": "agree",
+    "about": "Talent bank form",
+    "ours": "Town manager to make the talent bank form a fillable PDF with a signature line and a larger bio box.",
+    "official": "mr. marino requested the talent bank form be amended to add additional space for",
+    "note": "Both add bio space and a signature line. The fillable PDF is only in ours.",
+    "t": 7266
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Telework policy tabled",
+    "ours": "Temporary telework policy tabled to a future meeting.",
+    "official": "",
+    "note": "The official minutes in this structured extract do not mention the telework policy.",
+    "t": 6803
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Remaining warrant articles deferred and New growth",
+    "ours": "Board will vote recommendations on remaining warrant articles next week; items A, B, D, G, H, M, N, O, S and T deferred.",
+    "official": "",
+    "note": "The official extract does not record the deferral list or the new growth figure of 308,732.",
+    "t": 4852
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Circuit breaker / free cash",
+    "ours": "Free cash certified: one million eight hundred and four thousand and one hundred and eighty five dollars, 103 000",
+    "official": "",
+    "note": "The official extract has no free cash or circuit breaker $103,000 item.",
+    "t": 8810
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Health insurance for new positions, Trackless, FY21 budget table",
+    "ours": "",
+    "official": "does not include the $170,000 trackless to be paid out of chapter 90 funds",
+    "note": "Official minutes have the $9,375 health insurance offset, the $170,000 Trackless and the FY21 adjustments table. Ours has none of them.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Eviction diversion funding",
+    "ours": "",
+    "official": "the administration is making a $171 million total commitment this fiscal year",
+    "note": "State figures in the official minutes only.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendees: board names",
+    "ours": "Mr. Mourinho (chair); Mr. Jeffries; Ms. Adams; Mr. Dwyer",
+    "official": "chairman alonzo called the meeting to order at 7:01 p.m.",
+    "note": "Chair and member names were misheard. The official names are Alonzo (chair), Jeffreys, Marino, Adams and Dwyer. Ours omits Marino.",
+    "official_reading": "Alonzo, Jeffreys, Marino",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Conservation commissioner Rabbit",
+    "ours": "Mr. Rabbit (member of the conservation commission)",
+    "official": "jack rabbit, conservation commissioner",
+    "note": "The name matches, with a minor spelling difference. The official minutes also use Rabbitt once.",
+    "official_reading": "Jack Rabbit",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-03T16:55:09Z",
+   "cost_usd": 0.0876651
+  }
+ }
+}

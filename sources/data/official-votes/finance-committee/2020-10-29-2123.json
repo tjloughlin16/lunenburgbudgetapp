@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2020-10-29",
  "docid": "2123",
@@ -11,7 +11,321 @@
   "doc_url": "/docs/meetings/finance-committee/2020-10-29-minutes-2123.pdf"
  },
  "votes": [],
- "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes document discussions of the Green Community street lights project, Town Manager and Finance reports, CARES Act funding, and committee reports, but contain no formal motions, votes, or procedural votes (such as adjournment or executive session entry). The minutes explicitly state \"Minutes - none for approval\" indicating no prior minutes were voted on.",
- "cost_usd": 0.0761255
+ "dropped_unquoted": 1,
+ "note": "OCR text from a Zoom meeting; layout is scrambled in places (page 1 sidebar, out-of-order lines). Page 9 is blank. The minutes record no motions or votes, no adjournment motion (only 'before we adjourn'), and the Absent line is blank. Dollar figures are as printed; the Fire and Clerical lines are fragmentary.",
+ "cost_usd": 0.01301595,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "terri burchfield, peter beardmore, dave passios, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Peter Beardmore",
+   "status": "present",
+   "quote": "terri burchfield, peter beardmore, dave passios, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "terri burchfield, peter beardmore, dave passios, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "terri burchfield, peter beardmore, dave passios, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Chris Menard",
+   "status": "present",
+   "quote": "terri burchfield, peter beardmore, dave passios, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "heather sroka, secretary"
+  },
+  {
+   "name": "Dave Blatt",
+   "status": "present",
+   "quote": "dave blatt - power point presentation - attached"
+  },
+  {
+   "name": "Heather L.",
+   "status": "present",
+   "quote": "heather l. - updates related to the warrant."
+  },
+  {
+   "name": "Karen B.",
+   "status": "present",
+   "quote": "karen b. - cares act - round 2 reimbursements on the town side"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair notified the Town Manager to post the vacancy created by John Henshaw's resignation from FinCom.",
+   "quote": "she notified town manager to post the position."
+  },
+  {
+   "decision": "Dave Blatt will fine-tune the street lights presentation so the numbers are more accurate.",
+   "quote": "dave blatt will finetune this presentation so that it's more accurate with numbers."
+  },
+  {
+   "decision": "Heather L. will put together an estimate of contract management costs for the street lights contract, per Chris's request.",
+   "quote": "heather l. could put an estimate together per chris's request - for contract management costs."
+  },
+  {
+   "decision": "No additional meeting added; the Committee's next meeting is 11/12 to run through the warrant articles again.",
+   "quote": "terri - nov 12th to run through the warrant articles again."
+  },
+  {
+   "decision": "Chair set aside warrant articles for the next meeting.",
+   "quote": "terri- will set aside warrant articles for this meeting."
+  },
+  {
+   "decision": "Special accounts, revolving accounts and grants added as a standing agenda item for discussion.",
+   "quote": "terri - will include as a standing item so it can be discussed."
+  },
+  {
+   "decision": "Committee to follow up on debt and recommendations on building projects.",
+   "quote": "we should follow- upon debt and recommendations on building projects",
+   "quote_taken_from_text": true
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Street lights conversion savings and maintenance",
+   "what_was_recorded": "Discussion that savings from the street light conversion would go toward the cost of a private maintenance contract; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "cost associated with this - negotiate a private maintenance contract"
+  },
+  {
+   "topic": "Street lights contract management estimate",
+   "what_was_recorded": "An estimate of contract management costs was requested for a contract of three years' length; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "length of contract would be 3 years."
+  },
+  {
+   "topic": "Warrant reordering and Stabilization fund",
+   "what_was_recorded": "Streetlights article moved up to Article 4 so the vote outcome would inform the final Stabilization fund figure; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "reasoning the vote outcome would help with the final figure for the stabilization fund."
+  },
+  {
+   "topic": "Fire personnel contract impacts",
+   "what_was_recorded": "Printed cost impacts for Fire from longevity, education and ALS stipend changes, with a total impact.",
+   "figures_as_printed": [
+    "$8427.30",
+    "$2,536.27",
+    "$4,000",
+    "$1,500",
+    "$16,463-57"
+   ],
+   "quote": "total impact for fire - $16,463-57"
+  },
+  {
+   "topic": "Clerical contract impact",
+   "what_was_recorded": "A printed negative cost impact for the Clerical group.",
+   "figures_as_printed": [
+    "-$13,389.42"
+   ],
+   "quote": "clerical -$13,389.42"
+  },
+  {
+   "topic": "Collective bargaining cost-of-living adjustments",
+   "what_was_recorded": "Discussion of 2% COLAs in the Town's collective bargaining agreements, previous COLAs and the Police 3-year contract, with School Department comparison.",
+   "figures_as_printed": [
+    "2%"
+   ],
+   "quote": "heather l. - 2% cola"
+  },
+  {
+   "topic": "250 Howard Street TIF",
+   "what_was_recorded": "Discussion of a tri-party agreement and a possible TIF on an expansion, to be taken up at the STM; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "250 howard street - sb meeting on that article - triparty agreement at that time"
+  },
+  {
+   "topic": "Insurance post-65 program (MAYA)",
+   "what_was_recorded": "MAYA proposed a post-65 program offering a 2% discount on the 2022 renewal cost.",
+   "figures_as_printed": [
+    "2%"
+   ],
+   "quote": "2% discount on 2022 renewal cost."
+  },
+  {
+   "topic": "Capital Planning policy threshold change",
+   "what_was_recorded": "The major Capital Planning policy change raises the threshold from $10,000 to $30,000.",
+   "figures_as_printed": [
+    "$10,000",
+    "$30,000"
+   ],
+   "quote": "the major policy change is the threshold goes from $10,000 to $30,000"
+  },
+  {
+   "topic": "Livestreaming grant",
+   "what_was_recorded": "A $62,000 grant for livestreaming was missed due to a deadline error; CARES Act funding will be used in its place.",
+   "figures_as_printed": [
+    "$62,000"
+   ],
+   "quote": "specifics misread and missed the deadline for the grant - $62,000"
+  },
+  {
+   "topic": "CARES Act Round 2 reimbursements",
+   "what_was_recorded": "Karen B. reported the Town's total eligible CARES Act amount and amounts submitted in Round 1, to be submitted in Round 2, and remaining.",
+   "figures_as_printed": [
+    "$1,027,771",
+    "$147,421",
+    "$282,112",
+    "$598,238"
+   ],
+   "quote": "total eligible amount the town had $1,027,771"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Peter Beardmore",
+   "topic": "John Henshaw resignation and Trackless purchase policy",
+   "quote": "he wanted to make an additional comment regarding the trackless and the process regarding the purchase."
+  },
+  {
+   "speaker": "Peter Beardmore",
+   "topic": "Future discussion topics",
+   "quote": "peter - future discussion topics"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:00 PM via Zoom; recorded",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm",
+   "tags": [
+    "procedure",
+    "zoom"
+   ]
+  },
+  {
+   "topic": "Public Comment (John Henshaw resignation)",
+   "resolution": "noted resignation; position to be posted",
+   "quote": "terri announces that john henshaw has resigned from fincom.",
+   "tags": [
+    "vacancy",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Green Community - Street Lights Project",
+   "resolution": "discussed; no recommendation yet; to be decided at STM",
+   "quote": "3. green community - street lights project",
+   "tags": [
+    "street lights",
+    "green community",
+    "STM"
+   ]
+  },
+  {
+   "topic": "Town Manager and Finance Reports",
+   "resolution": "discussed warrant, collective bargaining, TIF, insurance, special revenue funds; no action",
+   "quote": "4. town manager and finance reports -",
+   "tags": [
+    "warrant",
+    "collective bargaining",
+    "insurance",
+    "TIF"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "none for approval",
+   "quote": "5. minutes - none for approval",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "TCP building and School Committee reports received; livestreaming grant noted",
+   "quote": "6. committee reports.",
+   "tags": [
+    "school committee",
+    "livestreaming",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Capital Planning and standing agenda items",
+   "resolution": "discussed Capital Planning policy and transparency; standing item added; no vote",
+   "quote": "chris - what agenda item is that?? capital planning fiscal policy change",
+   "tags": [
+    "capital planning",
+    "agenda",
+    "transparency"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Dave Blatt - Power Point Presentation (Green Community street lights), attached",
+   "where": "list",
+   "quote": "dave blatt - power point presentation - attached"
+  },
+  {
+   "name": "Special revenue fund list sent out by Karen",
+   "where": "text",
+   "quote": "chris - the special revenue fund list karen sent out."
+  },
+  {
+   "name": "Share document from Chris (example from another town with one-sheet info)",
+   "where": "text",
+   "quote": "terri - thank you to chris for the share document providing an example from another town with the one-sheet info."
+  },
+  {
+   "name": "Warrant",
+   "where": "text",
+   "quote": "warrant was finalized the last sb meeting."
+  },
+  {
+   "name": "MOUs (collective bargaining)",
+   "where": "text",
+   "quote": "the mous need to be signed but have been voted on."
+  },
+  {
+   "name": "Email Jay sent prior to STM",
+   "where": "text",
+   "quote": "wondering if jay can send around the email he sent prior to stm."
+  },
+  {
+   "name": "Globe article on street lights",
+   "where": "text",
+   "quote": "there was a recent article in the globe regarding this."
+  }
+ ],
+ "tags": [
+  "street lights",
+  "Green Community",
+  "warrant",
+  "STM",
+  "collective bargaining",
+  "COLA",
+  "CARES Act",
+  "capital planning",
+  "TIF",
+  "insurance",
+  "revolving funds",
+  "grants",
+  "FinCom vacancy",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "dave blatt - power point presentation - attached"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

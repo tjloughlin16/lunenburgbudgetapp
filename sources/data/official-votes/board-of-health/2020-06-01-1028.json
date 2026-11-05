@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2020-06-01",
  "docid": "1028",
@@ -12,55 +12,259 @@
  },
  "votes": [
   {
-   "motion": "Approve three variances for 26 Ramgren Road including groundwater offset reduction and inlet/outlet tee modifications",
+   "motion": "Approve the three variances for 26 Ramgren Road, on the condition that the variance request letter be corrected to include actual distances.",
    "moved_by": "Emond",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by emond and second by fortin, the board approved the three variances with th e condition that the variance request letter be corrected to include actual distances. all in favor by roll call vote."
+   "quote": "on motion by emond and second by fortin, the board approved the three variances"
   },
   {
-   "motion": "Approve groundwater offset variance from 5 feet to 4 feet for 23-25 Hollis Road",
+   "motion": "Approve the groundwater offset variance for 23-25 Hollis Road (5 feet to 4 feet).",
    "moved_by": "Emond",
    "seconded_by": "Watters",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by emond and second by watters, the variances were approved. all in favor by roll call vote."
+   "quote": "after discussion and on motion by emond and second by watters, the variances were approved."
   },
   {
-   "motion": "Approve septic system variances for 120 Sunset Lane",
+   "motion": "Approve the variances for 120 Sunset Lane.",
    "moved_by": "Watters",
    "seconded_by": "Emond",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by watters and second by emond, the variances were approved. all in favor by roll call vote."
+   "quote": "after discussion and on motion by watters and second by emond, the variances were approved."
   },
   {
-   "motion": "Remove the two bedroom deed restriction from 717 Reservoir Road",
+   "motion": "Remove the two-bedroom deed restriction at 717 Reservoir Road.",
    "moved_by": "Fortin",
    "seconded_by": "Emond",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by fortin and second by emond, the board voted to remove the deed restriction. all in favor by roll call vote."
+   "quote": "after discussion and on motion by fortin and second by emond, the board voted to remove the deed restriction."
   },
   {
-   "motion": "Elect George Emond as Chairman, Perry Jewell as Vice Chairman, and Paul Fortin as Secretary",
+   "motion": "Elect Perry Jewell as Vice Chairman, George Emond as Chairman, and Paul Fortin as Secretary, as nominated.",
    "moved_by": "Paul Fortin",
    "seconded_by": "George Emond",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "on motion by paul fortin and second by george emond the above were elected. all in favor"
+   "procedural": false,
+   "quote": "on motion by paul fortin and second by george emond the above were elected."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:45 pm.",
    "moved_by": "Emond",
    "seconded_by": "Watters",
    "outcome": "passed",
    "procedural": true,
-   "quote": "on motion by emond and seconded by watters, the meeting was adjourned at 8:45 pm. by roll call vote, all in favor."
+   "quote": "on motion by emond and seconded by watters, the meeting was adjourned at 8:45 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Six votes recorded, all passed by roll call vote. The minutes are a clear text transcription with no scanning issues.",
- "cost_usd": 0.0969675
+ "note": "Text is extracted with stray spacing and line-break errors (e.g., 'th e', 'u nder'), so some quotes were chosen from clean spans. No public comment section is printed. Warren Mayhew attended only in part. The minutes call George Emond 'Chairman' during the COVID discussion, before the reorganization vote that elected him Chairman. Votes are recorded as 'all in favor by roll call' with no tally, so outcomes are 'passed'.",
+ "cost_usd": 0.00556352,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Perry Jewell",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "roll call conducted by chairman, perry jewell"
+  },
+  {
+   "name": "George Emond",
+   "role": "Board member; later referred to as Chairman",
+   "status": "present",
+   "quote": "perry jewell, george emond, paul fortin, warren"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "Board member",
+   "status": "present",
+   "quote": "perry jewell, george emond, paul fortin, warren"
+  },
+  {
+   "name": "Warren Mayhew",
+   "role": "Board member (partial attendance)",
+   "status": "present",
+   "quote": "warren mayhew was no longer a part of the meeting."
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Board member (new member)",
+   "status": "present",
+   "quote": "chairman perry jewell noted that this was the first complete meeting for new member evan watters."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Board of Health Agent, Nashoba Associated Board of Health",
+   "status": "present",
+   "quote": "also present, jim garreffi, board of health agent, nashoba"
+  },
+  {
+   "name": "Jack Maloney",
+   "role": "representing the owner (26 Ramgren Road)",
+   "status": "present",
+   "quote": "jack maloney met with the board on behalf of the owner."
+  },
+  {
+   "name": "Leslie Shultz",
+   "role": "property owner (26 Ramgren Road)",
+   "status": "present",
+   "quote": "leslie shultz, property owner,"
+  },
+  {
+   "name": "Doug Smith",
+   "role": "representing the owner (23-25 Hollis Road)",
+   "status": "present",
+   "quote": "doug smith met with the board on behalf of the owner."
+  },
+  {
+   "name": "Steve Marsden",
+   "role": "representing the owner (120 Sunset Lane)",
+   "status": "present",
+   "quote": "steve marsden met with the board on behalf of the owner."
+  },
+  {
+   "name": "Andrea Schnepf",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "administrative assistant andrea schnepf stated that a two bedroom deed restriction was placed on this property"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Any dollar fine for a non-compliant business must come back before the board for a vote before it can be issued; no fine amount was set in advance.",
+   "quote": "chairman geor ge emond stated that no, it would have to come before the board again before a fine could be issued.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "As a condition of the 120 Sunset Lane permit, the existing well must be tested for potability.",
+   "quote": "as a requirement of the permit being, approved, the existing wall will need to be checked for potability."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fines for non-compliant businesses (COVID-19 enforcement)",
+   "what_was_recorded": "The board's fining power is capped at a maximum of $300.00 per day; the administrative assistant asked about setting a dollar amount, and no amount was set.",
+   "figures_as_printed": [
+    "$300.00/day"
+   ],
+   "quote": "fine a maximum of $300.00/day"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Opening and welcome of new member",
+   "resolution": "no action",
+   "tags": [
+    "remote meeting",
+    "new member"
+   ],
+   "quote": "chairman perry jewell noted that this was the first complete meeting for new member evan watters."
+  },
+  {
+   "topic": "26 Ramgren Road variances",
+   "resolution": "approved three variances with condition",
+   "tags": [
+    "septic",
+    "variance",
+    "groundwater"
+   ],
+   "quote": "on motion by emond and second by fortin, the board approved the three variances"
+  },
+  {
+   "topic": "23-25 Hollis Road variance",
+   "resolution": "approved",
+   "tags": [
+    "septic",
+    "variance",
+    "groundwater"
+   ],
+   "quote": "after discussion and on motion by emond and second by watters, the variances were approved."
+  },
+  {
+   "topic": "120 Sunset Lane variances",
+   "resolution": "approved",
+   "tags": [
+    "septic",
+    "variance",
+    "lake"
+   ],
+   "quote": "after discussion and on motion by watters and second by emond, the variances were approved."
+  },
+  {
+   "topic": "717 Reservoir Road deed restriction",
+   "resolution": "removed deed restriction",
+   "tags": [
+    "septic",
+    "deed restriction"
+   ],
+   "quote": "the board voted to remove the deed restriction."
+  },
+  {
+   "topic": "COVID-19 update",
+   "resolution": "no action",
+   "tags": [
+    "covid-19",
+    "mask enforcement",
+    "fines",
+    "beaches"
+   ],
+   "quote": "agent garreffi spoke with regard to the covid update."
+  },
+  {
+   "topic": "Reorganization of the board",
+   "resolution": "elected officers",
+   "tags": [
+    "officers",
+    "reorganization"
+   ],
+   "quote": "on motion by paul fortin and second by george emond the above were elected."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:45 pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "on motion by emond and seconded by watters, the meeting was adjourned at 8:45 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Variance request letter (26 Ramgren Road)",
+   "where": "text",
+   "quote": "that the variance request letter be corrected to include actual distances."
+  },
+  {
+   "name": "Governor’s Order Suspending Certain Provisions of the Open Meeting Law, G.L.c.30A, Section 20",
+   "where": "text",
+   "quote": "allows public bodies to meet entirely remotely so long as reasonable public access is afforded"
+  },
+  {
+   "name": "Reopening guidelines (Town website)",
+   "where": "text",
+   "quote": "the reopening guidelines are available on the website."
+  }
+ ],
+ "tags": [
+  "board of health",
+  "variances",
+  "septic systems",
+  "deed restriction",
+  "covid-19",
+  "reorganization",
+  "remote meeting",
+  "fines",
+  "town beach"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

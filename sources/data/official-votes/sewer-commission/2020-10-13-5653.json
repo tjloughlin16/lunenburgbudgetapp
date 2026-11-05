@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2020-10-13",
  "docid": "5653",
@@ -12,41 +12,399 @@
  },
  "votes": [
   {
-   "motion": "Allow John Esposito to proceed with preparing plans for a sewer extension to 384 Mass Ave, pending DPW Director approval",
+   "motion": "Roll call on letting John Esposito proceed with the Munyon sewer extension to 384 Mass Ave if Jack (DPW) approves; the motion wording is not printed in the minutes.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed 3-1",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "dave asked if that was okay with everyone to let john proceed if jack approves, and the commission can get an update at the next meeting in 2 ===page 2=== with a failed septic but he is looking for a scope of work before he proceeds. roll call vote: john-yes, brett-yes, dave-yes",
-   "quote_taken_from_text": true
+   "quote": "roll call vote: john-yes, brett-yes, dave-yes and carl-no."
   },
   {
-   "motion": "Accept Woodward & Curran's final I/l 3rd Party Data Review report",
+   "motion": "To accept Woodward & Curran's final 3rd Party Data Review report.",
    "moved_by": "Carl L.",
    "seconded_by": "John R.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: carl l. second: john r. to accept woodward & curran's final i/l 3rd party data review report. discussion: dave thanked carl for all his work with woodwar",
-   "quote_taken_from_text": true
+   "quote": "motion: carl l. second: john r. to accept woodward & curran's final i/l 3rd party data review report."
   },
   {
-   "motion": "Approve the minutes from the September 29, 2020 meeting",
+   "motion": "To approve the minutes of 9/29 (the minutes print the heading and the motion only; the wording of the approval is not shown).",
    "moved_by": "Brett R.",
    "seconded_by": "John R.",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion - brett r. second- john r."
+   "quote": "minutes- 9/29- motion - brett r. second- john r."
   },
   {
-   "motion": "Adjourn the meeting at 6:48 p.m.",
+   "motion": "To adjourn the meeting at 6:48pm.",
    "moved_by": "John R.",
    "seconded_by": "Carl L.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: john r. to adjourn: 6:48pm second: carl l. roll call vote: carl-yes, john-yes, brett-yes, and dave-yes"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR-scanned; first vote shows page-break artifact (\"with a failed septic...\") in original text but motion and vote outcome are clear.",
- "cost_usd": 0.17060750000000002
+ "note": "Text is a macOS Vision OCR extract; no date, call-to-order or header is printed, so the 2020-10-13 date is taken from the request. The motion wording for the Munyon/Esposito roll call is not printed (recorded as not stated, and the vote does not show a tally result). The 9/29 minutes motion records no result. Figures and quotes are from OCR and may contain transcription errors (e.g., \"I/l\", \"tile\", \"reterring\"). Attendance is inferred from roll calls and speaking; the minutes do not state who was present in a roll-call-of-attendance list.",
+ "cost_usd": 0.00990502,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl L.",
+   "status": "present",
+   "quote": "roll call vote: carl-yes, john-yes, brett-yes, and dave-yes"
+  },
+  {
+   "name": "Dave",
+   "status": "present",
+   "quote": "dave sent his condolences to the bowen family, for the loss of don bowen, former chair and long-time member of the zba."
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb responded with jack's (dpw) concern of adding 1 connection at a time, and then what about the next one, etc."
+  },
+  {
+   "name": "John R.",
+   "status": "present",
+   "quote": "motion: john r. to adjourn: 6:48pm"
+  },
+  {
+   "name": "Brett R.",
+   "status": "present",
+   "quote": "brett commented that in a previous meeting they told the feehans, who had a failed septic system, that they needed to prove"
+  },
+  {
+   "name": "Pam Munyon",
+   "status": "present",
+   "quote": "pam munyon and john esposito (contractor) - sewer extension to 384 mass ave- pam stated that they have a"
+  },
+  {
+   "name": "John Esposito",
+   "role": "Contractor",
+   "status": "present",
+   "quote": "pam munyon and john esposito (contractor) - sewer extension to 384 mass ave- pam stated that they have a"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed to table the Maintenance Plan draft review to the next meeting, with a full commission present and printed copies for each Commissioner.",
+   "quote": "the commission discussed the document versions and agreed to table the review to the next meeting."
+  },
+  {
+   "decision": "Dave asked Barb to add the Maintenance Plan review to the next agenda.",
+   "quote": "dave asked barb to add the review to the next agenda."
+  },
+  {
+   "decision": "John Esposito will get the drawing to Jack (DPW) as soon as possible; Barb will talk to Jack since the state may need to approve.",
+   "quote": "john will get the drawing up to jack as soon as possible."
+  },
+  {
+   "decision": "Barb will send the link to the original Wright Pierce Maintenance Plan document and the February document to the Commissioners.",
+   "quote": "barb said she will send the link to the original wright pierce document, as well as the february document."
+  },
+  {
+   "decision": "The Commission agreed to pay the Woodward & Curran final bill if Lauren and Dave (W&C) agree to support the billing tool for a period of time, per the draft letter.",
+   "quote": "the commission agreed."
+  },
+  {
+   "decision": "Barb will talk to Al (Empey) about more frequent reports, and will match the starting reading against the next billing.",
+   "quote": "she will talk to al about more frequent reports."
+  },
+  {
+   "decision": "Dave asked Barb to forward the Planning Board agendas to all Commissioners.",
+   "quote": "dave asked barb to forward the planning board agendas to all commissioners."
+  },
+  {
+   "decision": "The Commission requested that Barb forward Brett's bylaw section, which he will email her, to all Commissioners.",
+   "quote": "and the commission requested that barb forward it to all commissioners."
+  },
+  {
+   "decision": "Brett suggested the Commission review the bylaws at a future meeting; the bylaw review is listed as a Member Agenda Input for future meetings.",
+   "quote": "brett suggested that the commission review the bylaws at a future meeting to make sure we are on the same page, for others who have a similar problem."
+  },
+  {
+   "decision": "Member agenda inputs for future meetings were listed as the By-law discussion and the Maintenance Plan review.",
+   "quote": "member agenda inputs for future meetings- by-law discussion, maintenance plan review"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Maintenance Plan costs to customers",
+   "what_was_recorded": "The minutes state the Maintenance Plan goal includes controlling costs to customers, with no dollar figure given.",
+   "figures_as_printed": [],
+   "quote": "as well as the costs to the customers."
+  },
+  {
+   "topic": "Munyon sewer extension - ledge cost to homeowner",
+   "what_was_recorded": "John E. said the ledge under the street would make the connection very expensive for a homeowner to pursue; no figure given.",
+   "figures_as_printed": [],
+   "quote": "john e. added that the ledge under the street would make it very expensive for a homeowner to pursue."
+  },
+  {
+   "topic": "Munyon supplemental betterment",
+   "what_was_recorded": "Barb noted the Munyons may have to pay a supplemental betterment if there is a future extension to the line; no figure given.",
+   "figures_as_printed": [],
+   "quote": "also the munyons may have to pay a supplemental betterment if there is future extension to the line."
+  },
+  {
+   "topic": "Nominal abutter fee for Walmart extension",
+   "what_was_recorded": "Barb said interested abutters could pay a nominal fee (not a betterment) when Walmart went in, but she has no record of payment; no figure given.",
+   "figures_as_printed": [],
+   "quote": "any interested abutters could pay a nominal fee (not a betterment)"
+  },
+  {
+   "topic": "Woodward & Curran final bill",
+   "what_was_recorded": "Barb confirmed receipt of the final bill and will pay it when Woodward & Curran sign off; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "barb will be paying woodward & curran's final bill when she receives their signoff."
+  },
+  {
+   "topic": "Grease trap non-compliance letter",
+   "what_was_recorded": "If a grease trap account does not respond about its annual permit renewal, Barb will start the $50 non-compliance letter process.",
+   "figures_as_printed": [
+    "$50"
+   ],
+   "quote": "if she has no response, she will start the $50 non-compliance letter process."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Brett",
+   "stated_role": "",
+   "topic": "Feehan septic and sewer bylaw review",
+   "quote": "brett commented that in a previous meeting they told the feehans, who had a failed septic system, that they needed to prove"
+  },
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "Lobsters for Lunenburg fundraiser",
+   "quote": "public comment - dave reported the lobsters for lunenburg fund raiser has sold out on lobsters but there are"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Maintenance Plan background and postponement",
+   "resolution": "postponed to next meeting",
+   "quote": "carl proposed postponing the discussion to the next meeting, to have input from the dpw director and other commissioners not present.",
+   "tags": [
+    "maintenance plan",
+    "postponed"
+   ]
+  },
+  {
+   "topic": "Condolences to the Bowen family",
+   "resolution": "no action",
+   "quote": "dave sent his condolences to the bowen family, for the loss of don bowen, former chair and long-time member of the zba.",
+   "tags": [
+    "condolences"
+   ]
+  },
+  {
+   "topic": "Appointment: Munyon sewer extension to 384 Mass Ave",
+   "resolution": "roll call taken; John Esposito to draw plan and proceed if Jack approves",
+   "quote": "pam munyon and john esposito (contractor) - sewer extension to 384 mass ave- pam stated that they have a",
+   "tags": [
+    "sewer extension",
+    "Munyon",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Maintenance Plan review draft",
+   "resolution": "tabled to next meeting",
+   "quote": "maintenance plan- review draft- dave agreed they need a full commission to discuss the draft",
+   "tags": [
+    "maintenance plan"
+   ]
+  },
+  {
+   "topic": "Bright Project update",
+   "resolution": "no action",
+   "quote": "bright project -barb reported that there were no updates from them regarding fitchburg",
+   "tags": [
+    "Bright Farms",
+    "sewer plans"
+   ]
+  },
+  {
+   "topic": "3rd Party Data Review - Woodward & Curran final report",
+   "resolution": "final report accepted",
+   "quote": "carl said he reviewed the final report and that it is a good document.",
+   "tags": [
+    "Woodward & Curran",
+    "infiltration",
+    "contract close-out"
+   ]
+  },
+  {
+   "topic": "Retirement of DPW Director",
+   "resolution": "discussed; no action",
+   "quote": "retirement of dpw director-jack rodriquenz will be retiring 10/30.",
+   "tags": [
+    "DPW",
+    "staffing",
+    "O&M contractor"
+   ]
+  },
+  {
+   "topic": "Minutes of 9/29",
+   "resolution": "motion made; result not stated",
+   "quote": "minutes- 9/29- motion - brett r. second- john r.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Invoices",
+   "resolution": "no action",
+   "quote": "invoices- no fitchburg invoice yet and barb will be paying woodward & curran's final bill when she receives their signoff.",
+   "tags": [
+    "invoices",
+    "Woodward & Curran"
+   ]
+  },
+  {
+   "topic": "Grease trap permit renewals",
+   "resolution": "no action; $50 letter if no response",
+   "quote": "grease trap status- barb has 4 accounts to contact regarding their annual permit renewal.",
+   "tags": [
+    "grease trap",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "no action",
+   "quote": "communications- barb reported that she continues to send the minutes and agendas to the department heads.",
+   "tags": [
+    "communications"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "noted for future agendas",
+   "quote": "member agenda inputs for future meetings- by-law discussion, maintenance plan review",
+   "tags": [
+    "bylaws",
+    "maintenance plan"
+   ]
+  },
+  {
+   "topic": "Public comment: Feehan septic and bylaw review",
+   "resolution": "bylaw review requested for future meeting",
+   "quote": "public comment-brett commented that in a previous meeting they told the feehans, who had a failed septic",
+   "tags": [
+    "bylaws",
+    "septic",
+    "Feehan"
+   ]
+  },
+  {
+   "topic": "Public comment: Lobsters for Lunenburg fundraiser",
+   "resolution": "no action",
+   "quote": "public comment - dave reported the lobsters for lunenburg fund raiser has sold out on lobsters but there are",
+   "tags": [
+    "fundraiser"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "no action",
+   "quote": "october 27, 2020 @ 5pm - regular meeting, remote participation",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:48pm",
+   "quote": "motion: john r. to adjourn: 6:48pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Maintenance Plan review draft (latest version, hard copies to be available)",
+   "where": "text",
+   "quote": "maintenance plan- review draft- dave agreed they need a full commission to discuss the draft"
+  },
+  {
+   "name": "Original Wright Pierce Maintenance Plan document",
+   "where": "text",
+   "quote": "barb said she will send the link to the original wright pierce document, as well as the february document."
+  },
+  {
+   "name": "February Maintenance Plan document",
+   "where": "text",
+   "quote": "barb said she will send the link to the original wright pierce document, as well as the february document."
+  },
+  {
+   "name": "Comprehensive Waste Management Plan (Wright Pierce)",
+   "where": "text",
+   "quote": "who developed the comprehensive waste management plan. it was reviewed in december 2019"
+  },
+  {
+   "name": "Drawings/as-builts for 362 Mass Ave",
+   "where": "text",
+   "quote": "the commission discussed the drawings/as-builts and barb noted she needs one for 362 mass ave."
+  },
+  {
+   "name": "Draft letter to Woodward and Curran",
+   "where": "text",
+   "quote": "barb had sent the commissioners a draft of the letter to woodard and curran where she proposed"
+  },
+  {
+   "name": "Woodward & Curran final 3rd Party Data Review report",
+   "where": "text",
+   "quote": "motion: carl l. second: john r. to accept woodward & curran's final i/l 3rd party data review report."
+  },
+  {
+   "name": "Excel sheet (3rd Party Data Review equations and links)",
+   "where": "text",
+   "quote": "in regard to the excel sheet, he noted that it is hard to confirm that the equations and links work"
+  },
+  {
+   "name": "Updated sewer plans (Bright Farms / Graves Engineering)",
+   "where": "text",
+   "quote": "graves engineering has received the updated sewer plans and will be reviewing this week"
+  },
+  {
+   "name": "Sewer Use Regulations, page 14 (Sewer Commission Development Policy)",
+   "where": "text",
+   "quote": "barb read from page 14 of the sewer use regulations, under sewer commission development policy, regarding alternate solutions."
+  },
+  {
+   "name": "Sewer Districting bylaw (purposes for connection)",
+   "where": "text",
+   "quote": "the section he was reterring to was in the sewer districting bylaw, under purposes for connection."
+  },
+  {
+   "name": "Planning Board agendas",
+   "where": "text",
+   "quote": "dave asked barb to forward the planning board agendas to all commissioners."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "maintenance plan",
+  "sewer extension",
+  "Munyon",
+  "Woodward & Curran",
+  "DPW retirement",
+  "grease trap",
+  "bylaws",
+  "Feehan septic",
+  "public comment",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

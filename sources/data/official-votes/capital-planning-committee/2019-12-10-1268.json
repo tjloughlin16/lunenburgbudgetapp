@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2019-12-10",
  "docid": "1268",
@@ -11,7 +11,213 @@
   "doc_url": "/docs/meetings/capital-planning-committee/2019-12-10-minutes-1268.pdf"
  },
  "votes": [],
- "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe committee discussions and reviews of capital planning items but do not record any motions, seconds, or voting outcomes. Adjournment at 6:53 is noted but no motion to adjourn is documented.",
- "cost_usd": 0.0715375
+ "dropped_unquoted": 1,
+ "note": "The minutes record no votes at all, including no motion to approve minutes or to adjourn; the adjournment at 6:53 is stated without a motion. The minutes are a single page of agenda items with no vote tallies, so the votes list is empty.",
+ "cost_usd": 0.00382472,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "john henshaw, damon mcquaid"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "john henshaw, damon mcquaid"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr",
+   "status": "present",
+   "quote": "matthew allison, caroline griffis, jim laveck"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "Mbr",
+   "status": "present",
+   "quote": "matthew allison, caroline griffis, jim laveck"
+  },
+  {
+   "name": "Caroline Griffis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "matthew allison, caroline griffis, jim laveck"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: heather lemieux, mr. passios, mr. rodriquenz"
+  },
+  {
+   "name": "Mr. Passios",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: heather lemieux, mr. passios, mr. rodriquenz"
+  },
+  {
+   "name": "Mr. Rodriquenz",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: heather lemieux, mr. passios, mr. rodriquenz"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Rodriquenz will prioritize the Vertex report projects.",
+   "quote": "mr. rodriquenz will prioritize the vertex report projects."
+  },
+  {
+   "decision": "Minutes will be revised pending Committee review.",
+   "quote": "minutes needed changes and will be revised pending committee review"
+  },
+  {
+   "decision": "Action item: complete changes to worksheets.",
+   "quote": "other business/action items complete changes to worksheets"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Vertex report projects impact on DPW facilities capital budget",
+   "what_was_recorded": "Vertex report projects will increase the DPW facilities capital budget over the next five years by the amount printed.",
+   "figures_as_printed": [
+    "$3,034,600.00"
+   ],
+   "quote": "vertex report projects will increase the dpw facilities capital budget by $3,034,600.00 over the next 5 years."
+  },
+  {
+   "topic": "FY21 facilities capital requests",
+   "what_was_recorded": "List of FY21 facilities capital requests from DPW with the amount for each item; some items note grant or bond applications.",
+   "figures_as_printed": [
+    "$135,000.00",
+    "$126,000.00",
+    "$22,000.00",
+    "$25,500.00",
+    "$24,000.00",
+    "$20,000.00",
+    "$12,000.00"
+   ],
+   "quote": "public safety carport reconfiguration $135,000.00 library, carpet (includes moving books) $126,000.00"
+  },
+  {
+   "topic": "Trackless equipment and attachments request",
+   "what_was_recorded": "FY21 equipment request for a trackless machine and attachments, for sidewalk snow removal and road edge trimming.",
+   "figures_as_printed": [
+    "$170,000.00"
+   ],
+   "quote": "trackless & attachments $170,000.00 (sidewalk snow removal, road edge trimming)"
+  },
+  {
+   "topic": "Flat Hill culvert design and engineering",
+   "what_was_recorded": "FY21 infrastructure request for culvert design and engineering at Flat Hill, with the town applying for Small Bridge Program funds.",
+   "figures_as_printed": [
+    "$112,500.00"
+   ],
+   "quote": "flat hill, culvert design and engineering $112,500.00 applying for funds from small bridge program"
+  },
+  {
+   "topic": "Available grants and deferred building repairs",
+   "what_was_recorded": "Mr. Passios asked whether all available grants had been applied for and whether deferred building repairs were causing damage; Mr. Rodriquenz said damage has occurred and repairs have been made.",
+   "figures_as_printed": [],
+   "quote": "mr. passios asked if all available grants have been applied for."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no comment (none)",
+   "quote": "public comment: comment from the public, comment from the committee none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Minutes changes",
+   "resolution": "revised pending Committee review",
+   "quote": "minutes needed changes and will be revised pending committee review",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "FY21-FY25 Capital Plan requests from DPW",
+   "resolution": "reviewed; Vertex report projects to be prioritized by Mr. Rodriquenz",
+   "quote": "the committee reviewed the fy21-fy25 capital plan requests from dpw",
+   "tags": [
+    "capital plan",
+    "DPW",
+    "facilities",
+    "Vertex report"
+   ]
+  },
+  {
+   "topic": "Collins Scoring points",
+   "resolution": "reviewed",
+   "quote": "reviewed the collins scoring points that will be used to prioritize the fy 21 capital budget projects",
+   "tags": [
+    "scoring",
+    "FY21 capital budget"
+   ]
+  },
+  {
+   "topic": "Other business and action items",
+   "resolution": "action item: complete changes to worksheets",
+   "quote": "other business/action items complete changes to worksheets",
+   "tags": [
+    "worksheets"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for December 17, 2019 at 5:00",
+   "quote": "next meeting december 17, 2019 at 5:00",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Grants and building repairs questions",
+   "resolution": "discussion, no action recorded",
+   "quote": "mr. passios asked if all available grants have been applied for.",
+   "tags": [
+    "grants",
+    "building repairs"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Vertex report",
+   "where": "text",
+   "quote": "there was a lot of discussion about the vertex report and the projects that remain open."
+  },
+  {
+   "name": "Collins Scoring points",
+   "where": "text",
+   "quote": "reviewed the collins scoring points that will be used to prioritize the fy 21 capital budget projects"
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "DPW",
+  "FY21 capital budget",
+  "facilities",
+  "Vertex report",
+  "grants",
+  "building repairs",
+  "scoring"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

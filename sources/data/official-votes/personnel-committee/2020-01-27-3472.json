@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2020-01-27",
  "docid": "3472",
@@ -12,47 +12,266 @@
  },
  "votes": [
   {
-   "motion": "Accept minutes from November 7, October 24, September 3, and August 27, 2019",
+   "motion": "Accept all the minutes presented (Nov 7, 2019, Oct 24, 2019, Sept 3, 2019, Aug 27, 2019).",
    "moved_by": "D. MacDonald",
    "seconded_by": "E. Arnold",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": true,
    "quote": "motion by d. macdonald to accept all the minutes presented; second: e. arnold vote: all in favor"
   },
   {
-   "motion": "Approve Videographer role as a Grade 3 and submit for final approval at next appropriate Town Meeting",
+   "motion": "Approve the Videographer role as a Grade 3 and submit for final approval at the next appropriate Town Meeting.",
    "moved_by": "D. MacDonald",
    "seconded_by": "S. Andrews",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
    "quote": "motion: d. macdonald: approve videographer role as a grade 3 and submit for final approval at next appropriate town meeting. 2nd: s. andrews vote: all in favor"
   },
   {
-   "motion": "Table discussion on Sr. Videographer role; job description will be amended to include project leadership responsibilities and brought back to committee",
+   "motion": "Table discussion on the Sr. Videographer role; the job description will be amended to include project leadership responsibilities and brought back to committee.",
    "moved_by": "D. MacDonald",
    "seconded_by": "S. Andrews",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: d. macdonald: table discussion on sr. videographer role, job description will be amended to include project leadership responsibilities and brought back to committee; second: s. andrews vote: all in favor"
+   "outcome": "passed (all in favor)",
+   "procedural": false,
+   "quote": "motion: d. macdonald: table discussion on sr. videographer role, job description will be amended to include project leadership responsibilities and brought back to committee"
   },
   {
-   "motion": "Approve Water Safety Instructor role as a Grade 4 and submit for final approval at next appropriate Town Meeting",
+   "motion": "Approve the Water Safety Instructor role as a Grade 4 and submit for final approval at the next appropriate Town Meeting.",
    "moved_by": "D. MacDonald",
    "seconded_by": "S. Andrews",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
    "quote": "motion: d. macdonald: approve water safety instructor role as a grade 4 and submit for final approval at next appropriate town meeting. 2nd: s. andrews vote: all in favor"
   },
   {
-   "motion": "Adjourn meeting",
+   "motion": "Adjourn the meeting at 7:00pm.",
    "moved_by": "E. Arnold",
    "seconded_by": "S. Chase",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": true,
    "quote": "motion: e. arnold: adjourn meeting 7:00pm second: s. chase vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR-extracted from macOS Vision. All five votes recorded in the minutes were identified: four substantive personnel actions and one procedural adjournment. All votes passed unanimously.",
- "cost_usd": 0.0845855
+ "note": "OCR text (macOS Vision) of two pages; some line breaks collapsed in quotes. Committee members appear only as movers, seconders and voters; no roll call or committee roster is printed. Attendance line says all attendees were present. The DPW director is printed as 'Jack Rodriquenz' in the attendance list and 'Jack Rodriquez' in the discussion; recorded as printed. No public comment section, no dollar figures, and no documents list is printed. Beach Director and Life Guard job descriptions show no recorded motion. Adjournment is recorded as 7:00pm, after a 5:30pm start.",
+ "cost_usd": 0.00539482,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "heather lemieux, town manager, julie belliveau, asst. town manager/hr director"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "heather lemieux, town manager, julie belliveau, asst. town manager/hr director"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "Director DPW",
+   "status": "present",
+   "quote": "jack rodriquenz, director dpw, kayla wright, recreation director, jo mclaughlin, manager lat"
+  },
+  {
+   "name": "Kayla Wright",
+   "role": "Recreation Director",
+   "status": "present",
+   "quote": "jack rodriquenz, director dpw, kayla wright, recreation director, jo mclaughlin, manager lat"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Manager LAT",
+   "status": "present",
+   "quote": "jack rodriquenz, director dpw, kayla wright, recreation director, jo mclaughlin, manager lat"
+  },
+  {
+   "name": "D. MacDonald",
+   "role": "not printed (committee member as named in motions)",
+   "status": "present",
+   "quote": "meeting began at 5:30pm with all attendee's present."
+  },
+  {
+   "name": "E. Arnold",
+   "role": "not printed (committee member as named in motions)",
+   "status": "present",
+   "quote": "meeting began at 5:30pm with all attendee's present."
+  },
+  {
+   "name": "S. Andrews",
+   "role": "not printed (committee member as named in motions)",
+   "status": "present",
+   "quote": "meeting began at 5:30pm with all attendee's present."
+  },
+  {
+   "name": "S. Chase",
+   "role": "not printed (committee member as named in motions)",
+   "status": "present",
+   "quote": "meeting began at 5:30pm with all attendee's present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee recommended that the Union contract be reviewed for the Seasonal DPW Laborer/truck driver and similar intermittent roles; once that review and a job description are complete, the role returns to committee for final review and approval.",
+   "quote": "the committee recommended that the union contract be reviewed as these would not be considered union employees, as regular dpw workers are"
+  },
+  {
+   "decision": "Julie Belliveau will propose alternatives at the next meeting on adjusting SAP salary grades so starting wages meet the Massachusetts State Minimum Wage.",
+   "quote": "she will propose alternatives at next meeting."
+  },
+  {
+   "decision": "Julie Belliveau will continue to explore a more formalized position rating guide and present options at a future meeting.",
+   "quote": "she will continue to explore and present options at a future meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "LAT Videographer roles moved from contractors to employees",
+   "what_was_recorded": "The LAT Senior Videographer and Videographer roles were included in the current budget, and some current workers were paid on 1099s before becoming employees.",
+   "figures_as_printed": [],
+   "quote": "videographer, both were included in the current budget. these roles created as current interpretation of how town utilizes contractors has changed."
+  },
+  {
+   "topic": "State minimum wage and SAP step grid",
+   "what_was_recorded": "Several lower grade roles in the step grid have step one below the Massachusetts State Minimum Wage, and alternatives are being reviewed.",
+   "figures_as_printed": [],
+   "quote": "currently the step grid has several lower grade roles where step one is less than minimum wage."
+  },
+  {
+   "topic": "Seasonal DPW roles moved to town payroll",
+   "what_was_recorded": "Seasonal DPW laborer/truck driver and similar intermittent roles now need to be employees on the town payroll rather than contractors or vendors, a change for snow removal contractors.",
+   "figures_as_printed": [],
+   "quote": "this role and any others that fall into similar roles as intermittent workers now need to be considered employees and on the town payroll."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Old business: minutes approval",
+   "resolution": "approved minutes of Nov 7, Oct 24, Sept 3, and Aug 27, 2019",
+   "quote": "minutes from nov 7, 2019, oct 24, 2019, sept 3, 2019, aug 27, 2019 reviewed motion by d. macdonald to accept all the minutes presented",
+   "tags": [
+    "minutes",
+    "procedural"
+   ]
+  },
+  {
+   "topic": "Personnel Action Forms",
+   "resolution": "no action; none requiring review",
+   "quote": "no personnel action forms requiring review",
+   "tags": [
+    "personnel actions"
+   ]
+  },
+  {
+   "topic": "LAT Videographer and Sr. Videographer job descriptions",
+   "resolution": "Videographer approved as Grade 3 for Town Meeting; Sr. Videographer tabled and sent back to committee",
+   "quote": "jo mclaughlin presented revised job descriptions for two roles for the lat, senior",
+   "tags": [
+    "job descriptions",
+    "grading",
+    "LAT",
+    "contractors to employees"
+   ]
+  },
+  {
+   "topic": "Beach Director and Life Guard job descriptions",
+   "resolution": "presented by Kayla Wright; no motion recorded on these two roles",
+   "quote": "kayla wright presented two revised job descriptions, beach director and life guard.",
+   "tags": [
+    "job descriptions",
+    "recreation"
+   ]
+  },
+  {
+   "topic": "Water Safety Instructor job description",
+   "resolution": "approved as Grade 4 for Town Meeting",
+   "quote": "motion: d. macdonald: approve water safety instructor role as a grade 4 and submit for final approval at next appropriate town meeting.",
+   "tags": [
+    "job descriptions",
+    "grading",
+    "recreation"
+   ]
+  },
+  {
+   "topic": "Seasonal DPW Laborer/truck driver and contractor vs employee status",
+   "resolution": "discussed; committee recommended union contract review; returns to committee after job description",
+   "quote": "jack rodriquez reviewed a recent regulatory assessment regarding the use of contractors' vs employees for town roles.",
+   "tags": [
+    "DPW",
+    "contractors",
+    "union",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "State minimum wage and SAP salary grades",
+   "resolution": "continued; Town Manager's HR Director to propose alternatives at next meeting",
+   "quote": "she will propose alternatives at next meeting.",
+   "tags": [
+    "minimum wage",
+    "salary grades"
+   ]
+  },
+  {
+   "topic": "Position rating guide",
+   "resolution": "continued; options to be presented at a future meeting",
+   "quote": "she will continue to explore and present options at a future meeting.",
+   "tags": [
+    "position rating"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:00pm",
+   "quote": "motion: e. arnold: adjourn meeting 7:00pm second: s. chase vote: all in favor",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Revised job descriptions for LAT Senior Videographer and Videographer",
+   "where": "text",
+   "quote": "jo mclaughlin presented revised job descriptions for two roles for the lat, senior videographer, and videographer, both were included in the current budget."
+  },
+  {
+   "name": "Revised job descriptions for Beach Director and Life Guard",
+   "where": "text",
+   "quote": "kayla wright presented two revised job descriptions, beach director and life guard."
+  },
+  {
+   "name": "Water Safety Instructor job description",
+   "where": "text",
+   "quote": "motion: d. macdonald: approve water safety instructor role as a grade 4 and submit for final approval at next appropriate town meeting."
+  },
+  {
+   "name": "Recent regulatory assessment regarding use of contractors vs employees for town roles",
+   "where": "text",
+   "quote": "jack rodriquez reviewed a recent regulatory assessment regarding the use of contractors' vs employees for town roles."
+  }
+ ],
+ "tags": [
+  "personnel",
+  "job descriptions",
+  "grading",
+  "SAP salary grades",
+  "minimum wage",
+  "contractors vs employees",
+  "DPW",
+  "recreation",
+  "LAT",
+  "union",
+  "Town Meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

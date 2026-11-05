@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2019-09-10",
  "docid": "5624",
@@ -10,8 +10,278 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09102019-5624",
   "doc_url": "/docs/meetings/sewer-commission/2019-09-10-minutes-5624.pdf"
  },
- "votes": [],
+ "votes": [
+  {
+   "motion": "Adjourn the meeting at 8:09pm.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed unanimously",
+   "procedural": true,
+   "quote": "to adjourn: 8:09pm respectively submitted, vote: unanimous"
+  }
+ ],
  "dropped_unquoted": 0,
- "note": "Minutes record \"Vote: Unanimous\" at the end but do not document the motion being voted on or its subject matter. No explicit motion language (moved by, seconded by) is present. Likely a procedural vote (possibly adjournment) given its placement at meeting end, but without the motion documented, cannot record per the requirements.",
- "cost_usd": 0.0881885
+ "note": "Text is macOS Vision OCR of two pages; typos (e.g. 'Oct 15'h', 'Woodard & Currran') kept as printed. No roll call, so attendance status is inferred only from speaking or acting at the meeting; 'not stated' used otherwise. Only one motion with a recorded result (adjourn, unanimous); mover and seconder not printed. Other actions (signing, SWSS invitations, Town Counsel talks) are recorded without votes and are listed as decisions. The minutes end with 'Respectively submitted,' with no name. No dollar figures are printed for generator maintenance, Leominster capital payments, or late fees.",
+ "cost_usd": 0.005845919999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "role": "liaison to Leominster",
+   "status": "present",
+   "quote": "carl, as liaison to leominster, met with roger books today."
+  },
+  {
+   "name": "Joan",
+   "role": "",
+   "status": "present",
+   "quote": "joan noted that swss was the only one to bid on this year's rfp."
+  },
+  {
+   "name": "Jack",
+   "role": "",
+   "status": "present",
+   "quote": "jack suggested that ryan may want to also tour with the generator people.."
+  },
+  {
+   "name": "Dave",
+   "role": "",
+   "status": "present",
+   "quote": "dave suggested having town counsel put together a package to negotiate the debt service payment."
+  },
+  {
+   "name": "Barb",
+   "role": "",
+   "status": "not stated",
+   "quote": "jack and barb thoroughly go over every invoice from swss and call them about any charges they question"
+  },
+  {
+   "name": "Ryan",
+   "role": "",
+   "status": "present",
+   "quote": "ryan reported that he went on the pump station tour with wright pierce and robert from swss."
+  },
+  {
+   "name": "Al Wernick",
+   "role": "Jaxx & Bad Larry's",
+   "status": "absent",
+   "quote": "al wernick, jaxx & bad larry's - non-compliance status for grease trap permit renewals- did not show up."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission agreed to have SWSS attend meetings at least quarterly and to ask Deb to come to a meeting to discuss billing.",
+   "quote": "the commission agreed to have swss come to meetings, at least quarterly and to ask deb to come to a meeting to discuss billing."
+  },
+  {
+   "decision": "Commission agreed to invite SWSS to the Oct 15 meeting to discuss the bills and callouts.",
+   "quote": "they agreed to invite swss to oct 15'h meeting to discuss the bills and callouts."
+  },
+  {
+   "decision": "Carl and Barb to talk to Town Counsel to come up with a plan for negotiating the Leominster debt service payment.",
+   "quote": "the commission agreed to have carl and barb talk to town counsel to come up with a plan for negotiating the debt service."
+  },
+  {
+   "decision": "Joan to ask Barb when Wright Pierce will come in to give an update on the Maintenance Plan project.",
+   "quote": "joan will ask barb when wright pierce will be coming in to give an update on the project."
+  },
+  {
+   "decision": "Commission signed the Privilege fee Assessment for 146 Lancaster Ave and the Q1 Commitment.",
+   "quote": "the commission signed the privilege fee assessment for 146 lancaster ave which had been voted on at the 8/12 meeting and the q1 commitment for $214,203.73."
+  },
+  {
+   "decision": "The signed SWSS contract (updated to add new members) was sent back to SWSS.",
+   "quote": "the signed contract has been sent back to swss."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "SWSS spending above contract",
+   "what_was_recorded": "Carl said the Commission appears to be spending $5-10,000 over the SWSS contract, and the Commission discussed comparing annual payments to the contract.",
+   "figures_as_printed": [
+    "$5-10,000"
+   ],
+   "quote": "carl said that it looks like the commission is spending $5-10,000 over the contract."
+  },
+  {
+   "topic": "Privilege fee assessment and Q1 commitment",
+   "what_was_recorded": "The Commission signed the Privilege fee Assessment for 146 Lancaster Ave and the Q1 Commitment.",
+   "figures_as_printed": [
+    "$214,203.73"
+   ],
+   "quote": "the commission signed the privilege fee assessment for 146 lancaster ave which had been voted on at the 8/12 meeting and the q1 commitment for $214,203.73."
+  },
+  {
+   "topic": "SWSS generator maintenance cost",
+   "what_was_recorded": "The updated SWSS contract discussion included the cost of generator maintenance; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "commission discussed the updated contract in order to update new"
+  },
+  {
+   "topic": "Leominster billing basis and rates",
+   "what_was_recorded": "Leominster wants to convert to billing via the Graham Street meter; Jack suggested charging 33% of total starting January 1st and 66% after 6 months; rate calculations and volumes were discussed.",
+   "figures_as_printed": [],
+   "quote": "jack suggested asking roger to charge 33% of total starting january 1st and 66% after 6 months"
+  },
+  {
+   "topic": "Leominster capital improvement payments",
+   "what_was_recorded": "Carl explained the capital improvement payments for Leominster that will need to be budgeted in the next fiscal year; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "carl explained the capital improvement payments for leominster that will need to be budgeted in the next fiscal year."
+  },
+  {
+   "topic": "3rd party I/I contract with Woodward & Curran",
+   "what_was_recorded": "Joan said the contract is with Town Counsel with no change in price; Jack suggested splitting the contract into priced pieces so costs could be reduced if certain activities are not done.",
+   "figures_as_printed": [],
+   "quote": "joan said that the contract is with town counsel, with no change in price."
+  },
+  {
+   "topic": "Jaxx & Bad Larry's late renewal and past due fees",
+   "what_was_recorded": "Joan explained payment plans for past due penalty fees and said she is not in favor of reducing the end of year renewal fee; the Commission reviewed renewal fees and the fee for late renewals.",
+   "figures_as_printed": [],
+   "quote": "joan explained the payment plans for past due penalty fees but added that she is not in favor"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ryan",
+   "stated_role": "",
+   "topic": "pump station tour findings",
+   "quote": "ryan reported that he went on the pump station tour with wright pierce and robert from swss."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Non-compliance status, grease trap permit renewals (Al Wernick, Jaxx & Bad Larry's)",
+   "resolution": "noted; applicant did not show up",
+   "quote": "al wernick, jaxx & bad larry's - non-compliance status for grease trap permit renewals- did not show up.",
+   "tags": [
+    "grease trap",
+    "permits",
+    "Jaxx & Bad Larry's"
+   ]
+  },
+  {
+   "topic": "Public comment: pump station tour",
+   "resolution": "no action; Jack suggested touring with generator people",
+   "quote": "ryan reported that he went on the pump station tour with wright pierce and robert from swss.",
+   "tags": [
+    "pump stations",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "SWSS contract and invoice discussion",
+   "resolution": "signed contract sent back to SWSS; SWSS to attend meetings quarterly and be invited to Oct 15 meeting",
+   "quote": "the signed contract has been sent back to swss.",
+   "tags": [
+    "SWSS",
+    "contract",
+    "invoices",
+    "callouts"
+   ]
+  },
+  {
+   "topic": "Leominster IMA: bill basis and debt service payment",
+   "resolution": "Carl and Barb to talk to Town Counsel about negotiating the debt service; no other vote",
+   "quote": "the commission agreed to have carl and barb talk to town counsel to come up with a plan for negotiating the debt service.",
+   "tags": [
+    "Leominster",
+    "IMA",
+    "debt service",
+    "I/I",
+    "billing"
+   ]
+  },
+  {
+   "topic": "New member updates and Maintenance Plan Contract (Wright Pierce)",
+   "resolution": "Joan to ask Barb when Wright Pierce will give an update",
+   "quote": "joan will ask barb when wright pierce will be coming in to give an update on the project.",
+   "tags": [
+    "Wright Pierce",
+    "maintenance plan"
+   ]
+  },
+  {
+   "topic": "3rd Party I/I Contract with Woodward & Curran",
+   "resolution": "discussed; no action recorded",
+   "quote": "joan said that the contract is with town counsel, with no change in price.",
+   "tags": [
+    "Woodward & Curran",
+    "I/I",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Privilege fee assessment and Q1 commitment signing",
+   "resolution": "signed",
+   "quote": "the commission signed the privilege fee assessment for 146 lancaster ave which had been voted on at the 8/12 meeting",
+   "tags": [
+    "privilege fee",
+    "commitment",
+    "146 Lancaster Ave"
+   ]
+  },
+  {
+   "topic": "Jaxx & Bad Larry's renewal fees and late logs",
+   "resolution": "reviewed; no action recorded",
+   "quote": "bad larry's is non-compliant for late logs three times and jaxx renewed late and missed the pumping deadline.",
+   "tags": [
+    "Jaxx & Bad Larry's",
+    "renewal fees",
+    "late fees",
+    "pumping deadline"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:09pm, unanimous",
+   "quote": "to adjourn: 8:09pm respectively submitted, vote: unanimous",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "SWSS contract (updated to update new members)",
+   "where": "text",
+   "quote": "commission discussed the updated contract in order to update new"
+  },
+  {
+   "name": "Invoices from SWSS, going back 7 years",
+   "where": "text",
+   "quote": "carl's request to get copies of invoices from swss, going back 7 years."
+  },
+  {
+   "name": "Privilege fee Assessment for 146 Lancaster Ave",
+   "where": "text",
+   "quote": "the commission signed the privilege fee assessment for 146 lancaster ave"
+  },
+  {
+   "name": "Q1 Commitment",
+   "where": "text",
+   "quote": "the q1 commitment for $214,203.73."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "SWSS contract",
+  "Leominster IMA",
+  "I/I",
+  "Woodward & Curran",
+  "pump stations",
+  "grease trap",
+  "Jaxx & Bad Larry's",
+  "privilege fee",
+  "debt service",
+  "invoices"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

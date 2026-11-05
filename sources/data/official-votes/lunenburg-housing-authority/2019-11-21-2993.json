@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2019-11-21",
  "docid": "2993",
@@ -12,32 +12,316 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from October 1, 2019 and October 17, 2019 meetings",
+   "motion": "Accept the October financial report.",
+   "moved_by": "Deborah Christen",
+   "seconded_by": "Ronald Dionne",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "deborah christen made a motion to acc ept the october financial r eport. ronald dionne seconded; all were in favor."
+  },
+  {
+   "motion": "Approve the DHCD FY2020 400-1 Operating Budget as presented by Sheila Lancelotta.",
+   "moved_by": "Deborah Christen",
+   "seconded_by": "Ronald Dionne",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "ronald dionne seconded and the motion was passed by a 4 to 0 vote."
+  },
+  {
+   "motion": "Accept the minutes of the October 1, 2019 and October 17, 2019 meetings.",
    "moved_by": "Ronald Dionne",
    "seconded_by": "Deborah Christen",
    "outcome": "passed",
    "procedural": true,
-   "quote": "ronald dionne made a motion to accept both minutes; deborah christen seconded and the minutes were accepted."
+   "quote": "deborah christen seconded and the minutes were accepted."
   },
   {
-   "motion": "Authorize the Chair or their designee to sign necessary documents for substantial completion of roof replacement at 705 Family Units, DHCD Fish #162032",
+   "motion": "Authorize the Chair or their designee to sign the necessary documents in connection with the substantial completion of the roof replacement (Resolution 201920).",
    "moved_by": "Deborah Christen",
    "seconded_by": "Ronald Dionne",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion made by deborah christen to authorize the chair or their designee to sign the necessary document s in connection with the substantial completion of the roof replacement. ronald dionne seconded and the motion was passed by a 4 to 0 vote",
-   "quote_taken_from_text": true
+   "quote": "motion made by deborah christen to authorize the chair or their designee to sign the necessary document"
   },
   {
-   "motion": "Authorize the Chair or their designee to sign necessary documents for final completion of roof replacement at 705 Family Units, DHCD Fish #162032",
+   "motion": "Authorize the Chair or their designee to sign the necessary documents in connection with the final completion of the roof replacement (Resolution 201921).",
    "moved_by": "Deborah Christen",
    "seconded_by": "Ronald Dionne",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion made by deborah christen to authorize the chair or their designee to sign the necessary documents in connection with the final completion of the roof replacement. ronald dionne seconded and the motion was passed by a 4 to 0 vote."
+   "quote": "sign the necessary documents in connection with the final completion of the roof replacement."
+  },
+  {
+   "motion": "Adjourn the meeting at 7:10 p.m.",
+   "moved_by": "Deborah Christen",
+   "seconded_by": "Ronald Dionne",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "ronald dionne seconded, all were in favor, and the meeting was adjourned."
   }
  ],
- "dropped_unquoted": 3,
- "note": "",
- "cost_usd": 0.0939055
+ "dropped_unquoted": 0,
+ "note": "Text-extracted minutes (2 pages), readable with no scan problems. Item numbering jumps from 3 to 5 (no item 4). Public comment speakers are not named. Some quotes are taken from lines where the extraction split words or inserted odd spaces; quotes were chosen to avoid those spots. The adjournment mover prints as 'Deborah Christ en'; recorded here as Deborah Christen. The financial report and minutes votes have no printed count, so they are recorded as 'passed'. Ronald Dionne abstained on the minutes approval because he was not at those meetings. Steve Larry (RCAT Regional Engineer) is referenced but did not take part, so he is not listed as an attendee.",
+ "cost_usd": 0.00676882,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Linda McDonald",
+   "role": "Vice Chair (presided)",
+   "status": "present",
+   "quote": "linda mcdonald, vice chair"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "deborah a.h. christen, member"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Member",
+   "status": "present",
+   "quote": "karin menard, member"
+  },
+  {
+   "name": "Ronald Dionne",
+   "role": "Member",
+   "status": "present",
+   "quote": "ronald dionne, member"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, executive director"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "adam gautie, assistant executive director"
+  },
+  {
+   "name": "Sheila Lancelotta",
+   "role": "Director of Finance",
+   "status": "present",
+   "quote": "sheila lancelotta, director of finance"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Staff will fill in the tenant parking area near the family units along the wall and seed it, in response to public comment.",
+   "quote": "will fill in with loom and seed the area."
+  },
+  {
+   "decision": "Staff reached out to Steve Larry/RCAT for ideas on using the DHCD health and safety exemption.",
+   "quote": "we have reached out to steve larry/rcat for some ideas on using the health"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "October financial report: reserves, shelter rents, net metering",
+   "what_was_recorded": "Reserves were reported at 68.21%, up from 42% in January and 60% in June; shelter rents were budgeted at $209,000 against actual of $206,000; net metering credits were $15,000.",
+   "figures_as_printed": [
+    "68.21%",
+    "42%",
+    "60%",
+    "$209,000",
+    "$206,000",
+    "$15,000"
+   ],
+   "quote": "reserves are at 68.21% (42% in january, 60% in june). shelter rents were budgeted at $209,000; actual is $206,000."
+  },
+  {
+   "topic": "DHCD FY2020 400-1 Operating Budget funding",
+   "what_was_recorded": "Sheila Lancelotta reviewed three DHCD funding areas (a 10% ANUEL increase, a one-time $5,000 technical award, and a $200 per unit health and safety exemption totaling $10,800) and presented a balanced budget.",
+   "figures_as_printed": [
+    "$5,000",
+    "$200",
+    "$10,800",
+    "10%"
+   ],
+   "quote": "a direct exemption of $200 per unit for health and safety ($10,800)."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Brick walkway in front of Community Room",
+   "quote": "brick walkway in front of community room is higher than the area around it."
+  },
+  {
+   "topic": "Tenant parking area near family units",
+   "quote": "tenant parking area near family units along the wall needs attention."
+  },
+  {
+   "topic": "Recycling pick-ups",
+   "quote": "recycling is always overflowing; can more pick-ups be scheduled."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and public comments",
+   "resolution": "no action; public comments received",
+   "quote": "vice chair linda mcdonald declared a quorum present and opened the meeting at 6:30 p.m.",
+   "tags": [
+    "quorum",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "October financial report",
+   "resolution": "accepted",
+   "quote": "deborah christen made a motion to acc ept the october financial r eport.",
+   "tags": [
+    "finance",
+    "reserves",
+    "rents"
+   ]
+  },
+  {
+   "topic": "Resolution 201919: FY2020 400-1 Operating Budget submission to DHCD",
+   "resolution": "approved 4-0",
+   "quote": "ronald dionne seconded and the motion was passed by a 4 to 0 vote.",
+   "tags": [
+    "budget",
+    "DHCD",
+    "FY2020"
+   ]
+  },
+  {
+   "topic": "Minutes of October 1 and October 17, 2019",
+   "resolution": "accepted; Dionne abstained",
+   "quote": "deborah christen seconded and the minutes were accepted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "no action; reported",
+   "quote": "ben gold appointed to massnahro board of directors.",
+   "tags": [
+    "audit",
+    "MassNAHRO",
+    "staff report"
+   ]
+  },
+  {
+   "topic": "Modernization report",
+   "resolution": "no action; reported",
+   "quote": "septic system replacement (fish #162031) - in planning phase with dhcd",
+   "tags": [
+    "modernization",
+    "capital projects",
+    "work orders"
+   ]
+  },
+  {
+   "topic": "State-aided housing report",
+   "resolution": "no action; reported",
+   "quote": "we are currently at 100% occupancy.",
+   "tags": [
+    "occupancy",
+    "applications",
+    "leasing"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "none",
+   "quote": "7. unfinished business: none",
+   "tags": []
+  },
+  {
+   "topic": "Resolutions 201920 and 201921: roof replacement completion at 705 Family Units",
+   "resolution": "approved 4-0 (both)",
+   "quote": "certificate of final completion and payment in conjunction with the roof",
+   "tags": [
+    "roof replacement",
+    "DHCD",
+    "completion"
+   ]
+  },
+  {
+   "topic": "Other correspondence",
+   "resolution": "received; no action",
+   "quote": "phn 2019-25 aimm program rules and application",
+   "tags": [
+    "DHCD notices",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Resident participation",
+   "resolution": "none requested",
+   "quote": "no resident participation requested.",
+   "tags": [
+    "resident participation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:10 p.m.",
+   "quote": "ronald dionne seconded, all were in favor, and the meeting was adjourned.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PHN 2019-25 AIMM Program Rules and Application",
+   "where": "list",
+   "quote": "phn 2019-25 aimm program rules and application"
+  },
+  {
+   "name": "PHN 2019-26 Notice of Funding Availability (NOFA) for Creative Place-making Grants",
+   "where": "list",
+   "quote": "phn 2019-26 notice of funding availability (nofa) for creative place-making grants"
+  },
+  {
+   "name": "October Financial Report",
+   "where": "text",
+   "quote": "at this time vice chair linda mcdonald moved to the october financial report as sheila"
+  },
+  {
+   "name": "DHCD FY2020 400-1 Operating Budget",
+   "where": "text",
+   "quote": "sheila lancelotta continued to go over the budget with the board"
+  },
+  {
+   "name": "Resolution 201920 Certificate of Substantial Completion (roof replacement, 705 Family Units, DHCD Fish #162032)",
+   "where": "text",
+   "quote": "resolution 201920 certificate of substantial completion in conjunction with the roof replacement"
+  },
+  {
+   "name": "Resolution 201921 Certificate of Final Completion and Payment (roof replacement, 705 Family Units, DHCD Fish #162032)",
+   "where": "text",
+   "quote": "certificate of final completion and payment in conjunction with the roof"
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "DHCD",
+  "FY2020 budget",
+  "financial report",
+  "roof replacement",
+  "modernization",
+  "state-aided housing",
+  "public comment",
+  "correspondence"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "other correspondence:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2020-07-23",
  "docid": "2864",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve June 21st minutes as presented",
+   "motion": "Accept the June 21st minutes as presented.",
    "moved_by": "Dick",
    "seconded_by": "Kate",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "dick made a motion to accept, seconded by kate. passed unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Donna",
    "outcome": "passed",
@@ -29,6 +29,206 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08253049999999999
+ "note": "Text is extracted and readable on page 1; pages 2-7 contain no minutes text beyond a stray bullet. The meeting was remote (conference call and video link), and the header says all votes were by roll call, but only two motions are recorded with results. Attendee status is \"present\" because the minutes list them under Attending and do not label each as remote. Michael-Ray is mentioned but not shown as taking part, so he is not listed.",
+ "cost_usd": 0.00457602,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, maia wentrup",
+   "role": ""
+  },
+  {
+   "name": "Muir Haman",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, maia wentrup",
+   "role": "Director LPL"
+  },
+  {
+   "name": "Bob Conroy",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, maia wentrup",
+   "role": ""
+  },
+  {
+   "name": "Harry Kubetz",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:47 p.m. by chairperson harry kubetz.",
+   "role": "Chairperson"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, maia wentrup",
+   "role": ""
+  },
+  {
+   "name": "Donna Saiia",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, maia wentrup",
+   "role": ""
+  },
+  {
+   "name": "Maia Wentrup",
+   "status": "present",
+   "quote": "maia pointed out that the safety of the staff needs to be considered also.",
+   "role": ""
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board agreed to post the open 7th Trustee position so the Trustees can nominate candidates, with a joint BOS and BOT meeting to select the person until the next election.",
+   "quote": "we need to post the open position. the trustees can then nominate candidates."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY20 budget expenditure",
+   "what_was_recorded": "FY20 was very close to being fully spent on all budget lines.",
+   "figures_as_printed": [
+    "100%"
+   ],
+   "quote": "fy20 is very close to being 100% expended on all budget lines."
+  },
+  {
+   "topic": "Office supplies spending",
+   "what_was_recorded": "Office supplies were expended at only 47%; Muir said the Amazon statement is not out and some invoices have not been received.",
+   "figures_as_printed": [
+    "47%"
+   ],
+   "quote": "kate asked about office supplies which are expended at only 47%."
+  },
+  {
+   "topic": "FY21 preliminary budget",
+   "what_was_recorded": "The FY21 preliminary budget was approved at Town Meeting, and only salary has been expended so far.",
+   "figures_as_printed": [],
+   "quote": "the fy21 preliminary budget was approved at town meeting."
+  },
+  {
+   "topic": "Transfers into library materials",
+   "what_was_recorded": "Funds were transferred from salary and a few other places into library materials; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "some funds were transferred from salary and a few other places into library materials."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Funds transferred from salary and a few other places into library materials",
+   "amount_as_printed": "not stated",
+   "outcome": "transferred (reported in Director's Report)",
+   "quote": "some funds were transferred from salary and a few other places into library materials."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Roll call and remote meeting requirements",
+   "resolution": "no action",
+   "tags": [
+    "remote meeting",
+    "roll call"
+   ],
+   "quote": "harry did a roll call for attendance. o harry read the requirements for remote meeting."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "no public comment. o harry did a roll call for attendance."
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved June 21 minutes as presented",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "the june 21st minutes were reviewed and accepted as presented."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "reported, no action",
+   "tags": [
+    "budget",
+    "FY20 close",
+    "FY21 budget",
+    "reopening",
+    "summer reading",
+    "interlibrary loan"
+   ],
+   "quote": "fy20 is very close to being 100% expended on all budget lines."
+  },
+  {
+   "topic": "Friends of LPL update",
+   "resolution": "reported, no action",
+   "tags": [
+    "Friends of LPL"
+   ],
+   "quote": "the friends annual meeting is this saturday, july 25 th. will be held outside at the library."
+  },
+  {
+   "topic": "Board comments: 7th Trustee vacancy and trust fund article",
+   "resolution": "agreed to post the open position",
+   "tags": [
+    "trustee vacancy",
+    "appointment",
+    "trust fund"
+   ],
+   "quote": "we should have 7 according to the town charter. we need to post the open position."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:45 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion to adjourn by dick, seconded by donna. meeting was adjourned at 7:45 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "July 23rd 2020 Agenda",
+   "where": "list",
+   "quote": "july 23rd 2020 agenda"
+  },
+  {
+   "name": "July Director’s Report",
+   "where": "list",
+   "quote": "july director's report"
+  },
+  {
+   "name": "July 2020 Adult Services Report",
+   "where": "list",
+   "quote": "july 2020 adult services report"
+  },
+  {
+   "name": "July 2020 Children’s Area Report",
+   "where": "list",
+   "quote": "july 2020 children's area report"
+  },
+  {
+   "name": "Preliminary FY21 budget report",
+   "where": "text",
+   "quote": "muir prese nted a preliminary fy21 budget report."
+  }
+ ],
+ "tags": [
+  "library",
+  "remote meeting",
+  "budget",
+  "FY20 close",
+  "FY21 budget",
+  "COVID reopening",
+  "trustee vacancy",
+  "Friends of LPL",
+  "summer reading"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

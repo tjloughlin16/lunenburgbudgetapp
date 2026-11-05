@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-06-18",
  "docid": "6346",
@@ -12,32 +12,175 @@
  },
  "votes": [
   {
-   "motion": "To enter Executive Session to consider the purchase, exchange, taking, lease, or value of real property concerning Northfield Road, Howard Street, and New West Townsend Road",
+   "motion": "Enter Executive Session under M.G.L. c. 30 § 21 (purpose 6, real property: Northfield Road, Howard Street, New West Townsend Road) and re-enter Open Session afterward.",
    "moved_by": "Mr. McQuaid",
-   "seconded_by": "",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "mr. mcquaid made the motion and ms. vote: ms. luck- aye, mr. jeffreys- aye, mr. mcquaid- aye, mr: alonzo- aye"
+   "quote": "vote: ms. luck- aye, mr. jeffreys- aye, mr. mcquaid- aye, mr: alonzo- aye"
   },
   {
-   "motion": "That the Board supports signing the LAND and PARC grant applications for the Saliba property and authorizes the Chair or Town Manager to sign the grant applications",
+   "motion": "The Board supports signing the LAND and PARC grant applications for the Saliba property, as amended to authorize the Chair to sign or the Town Manager in the Chair's absence.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. jeffreys amended his motion to include authorizing the chair to sign or the town manager in the chair's absence, the grant applications and mr, mcquaid seconded the amendment. vote: ms. adams- ayo, ms. luck -ayc, mr, jeffreys -aye, mr. mequaid -aye, mr. alonzo -aye",
-   "quote_taken_from_text": true
+   "quote": "vote: ms. adams- ayo, ms. luck -ayc, mr, jeffreys -aye, mr. mequaid -aye, mr. alonzo -aye"
   },
   {
-   "motion": "To exit Executive Session and return to Open Session",
+   "motion": "Exit Executive Session and return to Open Session.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Adams",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: d. mcquaid 2°°: k. adams to exit executive session and return to open session vote: ms. adams-aye, ms. luck -aye, mr. jeffreys -aye, mr. mcqunid -aye, mr. alonzo -aye"
+   "quote": "vote: ms. adams-aye, ms. luck -aye, mr. jeffreys -aye, mr. mcqunid -aye, mr. alonzo -aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; text cuts off after \"and Ms.\" on first motion with seconding name incomplete. All three votes shown; recess and adjournment noted in minutes but not voted on.",
- "cost_usd": 0.1523925
+ "note": "OCR scan with errors. The first motion's text is cut off and no seconder is printed; the purpose reads 'Renson #6', presumably purpose 6 under M.G.L. c. 30 § 21. Ms. Adams entered after the first vote, so that vote lists four members. The minutes say the meeting adjourned at 6:47 p.m. but also that the Chair stated a recess until 7:00 p.m.; both are recorded as printed. No public comment section is printed. Blaine M. Peterson signed the minutes and is not listed as an attendee.",
+ "cost_usd": 0.00596412,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman alonzo called the meeting to order at 6:30 p.m."
+  },
+  {
+   "name": "Luck",
+   "role": "",
+   "status": "present",
+   "quote": "vote: ms. luck- aye, mr. jeffreys- aye, mr. mcquaid- aye, mr: alonzo- aye"
+  },
+  {
+   "name": "Jeffreys",
+   "role": "",
+   "status": "present",
+   "quote": "vote: ms. luck- aye, mr. jeffreys- aye, mr. mcquaid- aye, mr: alonzo- aye"
+  },
+  {
+   "name": "McQuaid",
+   "role": "",
+   "status": "present",
+   "quote": "mr. mcquaid made the motion and ms."
+  },
+  {
+   "name": "Adams",
+   "role": "",
+   "status": "present",
+   "quote": "vote: ms. adams- ayo, ms. luck -ayc, mr, jeffreys -aye, mr. mequaid -aye, mr. alonzo -aye"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux; ken jones, land acquisition committee member, paula bertram"
+  },
+  {
+   "name": "Ken Jones",
+   "role": "Land Acquisition Committee member",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux; ken jones, land acquisition committee member, paula bertram"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux; ken jones, land acquisition committee member, paula bertram"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair stated the board would recess until 7:00 p.m. (no vote recorded).",
+   "quote": "mr. alonzo stated they would recess until 7:00 p.m."
+  },
+  {
+   "decision": "Minutes record the meeting as adjourned at 6:47 p.m. (no adjournment motion recorded).",
+   "quote": "the meeting adjourned at 6:47 p.mm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "PARC grant limit for southerly portion of Saliba property",
+   "what_was_recorded": "The PARC grant for the southerly portion is limited to $100,000.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "ms. bertram stated the parc grant for the southerly portion is limited to $100,000."
+  },
+  {
+   "topic": "LAND grant limit for northerly portion of Saliba property",
+   "what_was_recorded": "The LAND grant for the northerly portion is limited at $400,000.",
+   "figures_as_printed": [
+    "$400,000"
+   ],
+   "quote": "the land grant for the northerly portion is limited at $400,000."
+  },
+  {
+   "topic": "Negotiated purchase price, Saliba property",
+   "what_was_recorded": "The negotiated price for both parcels was $775,000.",
+   "figures_as_printed": [
+    "$775,000"
+   ],
+   "quote": "the negotiated price for both parcels was $775,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session on real property (Northfield Road, Howard Street, New West Townsend Road)",
+   "resolution": "entered executive session and returned to open session",
+   "tags": [
+    "executive session",
+    "real property",
+    "land acquisition"
+   ],
+   "quote": "chairman alonzo called the meeting to order at 6:30 p.m. and requested a motion to enter into executive session"
+  },
+  {
+   "topic": "Saliba property LAND and PARC grant applications",
+   "resolution": "approved: Board supports signing the applications; Chair or Town Manager (in Chair's absence) authorized to sign",
+   "tags": [
+    "grants",
+    "Saliba property",
+    "open space",
+    "land acquisition"
+   ],
+   "quote": "that the board supports signing the land and parc grant applications for the saliba property"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from Brandon Kibbe, Land Acquisition Committee Chair, to the Massachusetts Historical Commission requesting a letter of support for PARC and LAND grants (Saliba property)",
+   "where": "list",
+   "quote": "ms. luck referred the board to the letter from brandon kibbe, land acquisition committee chair, to the massachusetts historical"
+  },
+  {
+   "name": "LAND and PARC grant applications for the Saliba property",
+   "where": "text",
+   "quote": "that the board supports signing the land and parc grant applications for the saliba property"
+  },
+  {
+   "name": "Purchase and sale agreement (Saliba property)",
+   "where": "text",
+   "quote": "the sellers are looking for a purchase and sale agreement and we can't apply for the grants"
+  }
+ ],
+ "tags": [
+  "Saliba property",
+  "land acquisition",
+  "PARC grant",
+  "LAND grant",
+  "open space",
+  "executive session",
+  "real property",
+  "grant applications"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. luck referred the board to the letter from brandon kibbe"
+ },
+ "dropped_unquoted_by_field": {}
 }

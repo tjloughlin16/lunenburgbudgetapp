@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2020-04-13",
  "docid": "777",
@@ -12,23 +12,170 @@
  },
  "votes": [
   {
-   "motion": "Accept changes to the Property Tax Assessment Services RFP removing 'may' from item 19 and combining items 19 and 21",
+   "motion": "Accept the changes to the Property Tax Assessment Services Request for Proposal as stated (minor changes on pages 3-5 and the Chapter Land items).",
    "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "julie suggested we make the changes and combine items 19 (nineteen) and 21 (twenty-one) into one line item. all in favor of accepting the changes as stated."
+   "quote": "all in favor of accepting the changes as stated.",
+   "seconded_by": ""
   },
   {
-   "motion": "Accept the grade level assigned to the Principal Assessor position",
+   "motion": "Accept the changes to the Property Tax Assessment Services Request for Proposal as stated (second round, after the Principal Assessor grade discussion).",
    "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "heather explained this grade recommended based on the level of responsibility and comparison analysis with other towns. all in favor of accepting the changes as stated."
+   "quote": "all in favor of accepting the changes as stated.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes; moved_by and seconded_by not stated for either vote; vote counts not specified, only \"All in favor\" recorded",
- "cost_usd": 0.10542750000000001
+ "note": "OCR text from a scan (macOS Vision); some words may be misread (e.g., 'ommunities', 'Christina Purple'). Two pages read; the minutes end with a signature block. No formal motions, movers, seconders or vote counts are printed. The two 'All in favor of accepting the changes as stated' lines are recorded as votes with outcome 'not stated' because the result is not printed. Christina Purple (director of MAAO) is mentioned only as contacted by Rena Swezey, not as an attendee. The meeting was held remotely under the Governor's Order; attendance is as stated in the roll call. Public comment: none recorded (only 'Open Discussion: None.').",
+ "cost_usd": 0.00435122,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: chairman, richard letarte, board members, louis franco, and rena swezey and"
+  },
+  {
+   "name": "Louis Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: chairman, richard letarte, board members, louis franco, and rena swezey and"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: chairman, richard letarte, board members, louis franco, and rena swezey and"
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "administrative assessor, louise paquette, administrative assessor (temporarily appointed) sheila"
+  },
+  {
+   "name": "Sheila Craigen",
+   "role": "Administrative Assessor (Temporarily appointed)",
+   "status": "present",
+   "quote": "administrative assessor (temporarily appointed) sheila craigen."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager, heather lemieux and assistant town manager / hr director, julie belliveau."
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Assistant Town Manager / HR Director",
+   "status": "present",
+   "quote": "also present: town manager, heather lemieux and assistant town manager / hr director, julie belliveau."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Remove the word \"may\" from item 19 of the RFP scope of services and combine items 19 and 21 into one line item.",
+   "quote": "the word \"may\" should be removed from item 19."
+  },
+  {
+   "decision": "Board of Assessors should not vote on Chapter Land applications until a site inspection is done after the completed chapter application is received.",
+   "quote": "she suggest once we have the completed chapter application, the boa should not vote until a site inspection has been done."
+  },
+  {
+   "decision": "Rena Swezey confirmed the RFP can be posted on the MAAO business services section of the website; Louise Paquette said the Principal Assessor position, if approved, would be advertised on the MAAO and MAA websites.",
+   "quote": "confirmed we will be able to post the rfp on the \"business services section\" of the website"
+  },
+  {
+   "decision": "Final drafts of the RFP will be made for the Personnel Board meeting that evening.",
+   "quote": "julie confirmed final drafts will be made for the personnel board meeting tonight."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Principal Assessor position grade level",
+   "what_was_recorded": "The board questioned and discussed the grade level assigned to the Principal Assessor position, which Heather Lemieux explained was based on responsibility and comparison with other towns; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "there was question and some discussion on the grade level assigned to the principal assessor position."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review and approval of Property Tax Assessment Services Request for Proposal",
+   "resolution": "changes accepted as stated; final drafts to be made for Personnel Board",
+   "tags": [
+    "RFP",
+    "property tax assessment services",
+    "procurement"
+   ],
+   "quote": "review and approval of property tax assessment services request for proposal:"
+  },
+  {
+   "topic": "Principal Assessor position grade level",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "Principal Assessor",
+    "salary grade",
+    "personnel"
+   ],
+   "quote": "there was question and some discussion on the grade level assigned to the principal assessor position."
+  },
+  {
+   "topic": "Chairman / Assessor Reports",
+   "resolution": "no action (none)",
+   "tags": [
+    "reports"
+   ],
+   "quote": "chairman / assessor reports: none."
+  },
+  {
+   "topic": "Open Discussion",
+   "resolution": "no action (none)",
+   "tags": [
+    "open discussion"
+   ],
+   "quote": "open discussion: none."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 2:12 pm; no motion recorded",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "adjournment: meeting adjourned at 2:12 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Property Tax Assessment Services Request for Proposal (RFP), final draft",
+   "where": "text",
+   "quote": "they have the final draft for the rfp (request for proposal)"
+  },
+  {
+   "name": "Salary Administration Plan",
+   "where": "text",
+   "quote": "when and if the principal assessor position gets approved under the salary administration plan"
+  }
+ ],
+ "tags": [
+  "Board of Assessors",
+  "Request for Proposal",
+  "property tax assessment services",
+  "Chapter Land",
+  "Principal Assessor",
+  "remote meeting",
+  "COVID-19",
+  "2020"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "louise stated the boa received their copies earlier today"
+ },
+ "dropped_unquoted_by_field": {}
 }

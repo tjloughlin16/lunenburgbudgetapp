@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-06-02",
  "docid": "5201",
@@ -12,31 +12,441 @@
  },
  "votes": [
   {
-   "motion": "Approve the conservation restriction access easement for 994 Northfield Road",
+   "motion": "Approve the conservation restriction access easement as presented, contingent on the execution of the subordination agreement and the conservation restriction access easement (994 Northfield Road).",
    "moved_by": "M. Jeffreys",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2nd: d. mcquaid to approve the conservation restriction access easement as presented contingent on the execution of the subordination agreement and the conservation restriction access easement vote: ms. adams-aye, mr. jeffreys-aye, mr. mcquaid-aye, mr. alonzo-aye"
+   "quote": "motion: m. jeffreys 2nd: d. mcquaid to approve the conservation restriction access easement as presented contingent on the execution of the subordination agreement"
   },
   {
-   "motion": "Approve the awarding of the bid of $35,000 for the 17 & 23 West Street properties",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the awarding of the bid of $35,000 for the 17 & 23 West Street properties.",
    "outcome": "passed 3-1",
    "procedural": false,
    "quote": "to approve the awarding of the bid of $35,000 for the 17 & 23 west street properties vote: mr. mcquaid-aye, ms. adams- nay, mr. jetfreys-aye, mr. alonzo-aye"
   },
   {
-   "motion": "Approve proceeding with a reimbursement request for FY20 CARES Act eligible expenses",
+   "motion": "Approve proceeding with a reimbursement request for FY20 CARES Act eligible expenses.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: d. mcquaid 2'°: m. jeffreys to approve proceeding with a reimbursement request for fy20 cares act eligible expenses vote: mr. mcquaid-aye, ms. adams-aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "to approve proceeding with a reimbursement request for fy20 cares act eligible expenses vote: mr. mcquaid-aye, ms. adams-aye, mr. jeffreys-aye, mr. alonzo-aye"
+  },
+  {
+   "motion": "Adjourn the meeting at 9:21 PM.",
+   "moved_by": "K. Adams",
+   "seconded_by": "D. McQuaid",
+   "outcome": "passed 4-0",
+   "procedural": true,
+   "quote": "motion: k. adams to adjourn the meeting at 9:21 pm vote: mr. mcquaid-aye, ms. adams-aye, mr. jeffreys-aye, mr. alonzo-aye"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR scan; movers and seconders not stated for vote 2 (West Street bid)",
- "cost_usd": 0.1404345
+ "dropped_unquoted": 0,
+ "note": "OCR text from macOS Vision with garbled passages. Between pages 5 and 6 the extraction drops the heading and mover/seconder for item 3, so the $35,000 West Street bid vote has no printed mover or seconder. No vote totals are printed as counts; outcomes are derived from the listed ayes and nays. Dave Passions (safety plan discussion) and Dave Passios (public comment) are likely the same person with different spellings, both recorded as printed. The Pledge and write-in items record discussion without a motion. Elaine M. Peterson is named as author and signer, with no attendance statement.",
+ "cost_usd": 0.012811120000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; damon mcquaid, clerk; katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; damon mcquaid, clerk; katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; damon mcquaid, clerk; katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; damon mcquaid, clerk; katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "not present: phyllis luck, vice chair"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux, police chief marino, fire chief sullivan and town"
+  },
+  {
+   "name": "Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux, police chief marino, fire chief sullivan and town"
+  },
+  {
+   "name": "Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux, police chief marino, fire chief sullivan and town"
+  },
+  {
+   "name": "Tim Murphy",
+   "role": "Town Moderator",
+   "status": "present",
+   "quote": "fire chief sullivan and town moderator tim murphy"
+  },
+  {
+   "name": "Robert Bowen",
+   "role": "Attorney, representing Settlers Solar LLC",
+   "status": "present",
+   "quote": "attorney robert bowen, 686 mass ave., representing settlers solar llc, was here for the bos to sign"
+  },
+  {
+   "name": "Dave Passions",
+   "role": "resident, 56 Whiting Street",
+   "status": "present",
+   "quote": "dave passions, 56 whiting street, asked about how the finance committee members would be seated."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "resident, 56 Whiting Street",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, spoke on the unkempt conditions at the north and south cemeteries over"
+  },
+  {
+   "name": "George Martin",
+   "role": "resident, 522 Burrage Street",
+   "status": "present",
+   "quote": "george martin, 522 burrage street, thanked mr. jeffreys and chief marino for their comments."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "It was suggested to consult Town counsel and provide a general document on the process of running a write-in campaign (no motion recorded).",
+   "quote": "it was suggested to consult with town counsel and provide a general document on the process of running a write-in campaign."
+  },
+  {
+   "decision": "Ms. Lemieux will check in with the Conservation Commission about the Town fuel tanks after their meeting.",
+   "quote": "ms. lemieux will check in with them after their meeting tomorrow night."
+  },
+  {
+   "decision": "The proposed liquor-license premises extension for restaurants was placed on next week's agenda.",
+   "quote": "ms. lemieux stated this would be on next week's agenda."
+  },
+  {
+   "decision": "Ms. Lemieux will check on the status of the legislature's review of the Town charter.",
+   "quote": "ms. lemieux will have to check on that status."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2021 Budget",
+   "what_was_recorded": "Ms. Lemieux reported there were no changes to the FY 2021 budget since the last meeting.",
+   "figures_as_printed": [],
+   "quote": "ms. lemieux reported there were no changes to the budget since the last"
+  },
+  {
+   "topic": "Bid award, 17 & 23 West Street properties",
+   "what_was_recorded": "Motion to award a bid of $35,000 for the 17 & 23 West Street properties.",
+   "figures_as_printed": [
+    "$35,000"
+   ],
+   "quote": "to approve the awarding of the bid of $35,000 for the 17 & 23 west street properties"
+  },
+  {
+   "topic": "FY20 CARES Act reimbursement",
+   "what_was_recorded": "The State's total eligible amount for Lunenburg for FY20 and FY21 is stated; the Finance Director is compiling roughly $140,000 in eligible expenses for the first FY20 submission due June 5th.",
+   "figures_as_printed": [
+    "$1,027,771",
+    "$140,000"
+   ],
+   "quote": "the finance director is compiling all the eligible expenses (roughly in the range of $140,000) that have been expended by all the departments"
+  },
+  {
+   "topic": "CARES Act total eligible amount",
+   "what_was_recorded": "Lunenburg's total eligible CARES Act amount for FY20 and FY21 is stated.",
+   "figures_as_printed": [
+    "$1,027,771"
+   ],
+   "quote": "eligible amount for fy20 and fy21 is $1,027,771"
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Mr. Alonzo reported he signed three warrants the prior week: Accounts Payable, Deductions and Payroll.",
+   "figures_as_printed": [
+    "$2,060,796.58",
+    "$200,879.55",
+    "$837,282.11"
+   ],
+   "quote": "warrant #59 20; accounts payable - 5/26/2020 - $2,060,796.58;"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Michael-Ray Jeffreys",
+   "stated_role": "Member",
+   "topic": "Racial injustice, consortium of area towns",
+   "quote": "i'm calling for a consortium. we need to gather, with the community leaders in our surrounding towns and cities, and talk about race and what we can do"
+  },
+  {
+   "speaker": "Marino",
+   "stated_role": "Police Chief",
+   "topic": "George Floyd death, police statement",
+   "quote": "the lunenburg police department denounces the reprehensible act, or failure to act of those four police officers."
+  },
+  {
+   "speaker": "George Martin",
+   "stated_role": "resident, 522 Burrage Street",
+   "topic": "Trash pickup leaking fluid and broken glass",
+   "quote": "george martin, 522 burrage street, thanked mr. jeffreys and chief marino for their comments."
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "resident, 56 Whiting Street",
+   "topic": "Unkempt North and South cemeteries",
+   "quote": "dave passios, 56 whiting street, spoke on the unkempt conditions at the north and south cemeteries over"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Sign 994 Northfield Road Conservation Restriction",
+   "resolution": "approved, contingent on subordination agreement",
+   "quote": "attorney robert bowen, 686 mass ave., representing settlers solar llc, was here for the bos to sign",
+   "tags": [
+    "conservation restriction",
+    "land"
+   ]
+  },
+  {
+   "topic": "Safety plan for Annual Town Meeting",
+   "resolution": "discussed; changes recapped, no vote",
+   "quote": "ms. lemieux recapped the changes to the plan.",
+   "tags": [
+    "town meeting",
+    "COVID-19",
+    "safety"
+   ]
+  },
+  {
+   "topic": "FY 2021 Budget",
+   "resolution": "no action; no changes reported",
+   "quote": "ms. lemieux reported there were no changes to the budget since the last",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance at Zoom meetings",
+   "resolution": "discussed; no vote",
+   "quote": "mr. alonzo stated he was not a proponent of it at meetings, it is just something else to do.",
+   "tags": [
+    "pledge",
+    "remote meetings"
+   ]
+  },
+  {
+   "topic": "Award of bid, 17 & 23 West Street properties",
+   "resolution": "approved 3-1",
+   "quote": "to approve the awarding of the bid of $35,000 for the 17 & 23 west street properties vote: mr. mcquaid-aye, ms. adams- nay, mr. jetfreys-aye, mr. alonzo-aye",
+   "tags": [
+    "bid",
+    "property"
+   ]
+  },
+  {
+   "topic": "Write-in/sticker campaign advertisement and write-in candidates",
+   "resolution": "discussed; consult Town counsel suggested",
+   "quote": "it was suggested to consult with town counsel and provide a general document on the process of running a write-in campaign.",
+   "tags": [
+    "elections",
+    "write-in"
+   ]
+  },
+  {
+   "topic": "FY20 CARES Act reimbursement request",
+   "resolution": "approved 4-0",
+   "quote": "to approve proceeding with a reimbursement request for fy20 cares act eligible expenses vote: mr. mcquaid-aye, ms. adams-aye, mr. jeffreys-aye, mr. alonzo-aye",
+   "tags": [
+    "CARES Act",
+    "federal funds",
+    "reimbursement"
+   ]
+  },
+  {
+   "topic": "Regional CDBG-CV grant letter of support",
+   "resolution": "letter of support requested; no vote recorded",
+   "quote": "she was requesting a letter of support that could be signed off by the bos chairman.",
+   "tags": [
+    "grants",
+    "CDBG-CV",
+    "regional"
+   ]
+  },
+  {
+   "topic": "Approval of warrants",
+   "resolution": "reported signed; no vote",
+   "quote": "mr. alonzo reported he signed the following warrants last week:",
+   "tags": [
+    "warrants",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Action items (liquor premises, fuel tanks, charter)",
+   "resolution": "discussed; follow-ups assigned to staff",
+   "quote": "ms. lemieux stated this would be on next week's agenda.",
+   "tags": [
+    "alcohol licenses",
+    "restaurants",
+    "charter"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "none",
+   "quote": "committee reports- there were none.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Town Manager COVID-19 and regular report: vacancies and vulnerability grant",
+   "resolution": "informational; listening session proposed June 16",
+   "quote": "the proposed date for the listening session will be the selectmen's meeting on tuesday, june 16th.",
+   "tags": [
+    "vacancies",
+    "grant",
+    "climate resilience"
+   ]
+  },
+  {
+   "topic": "Department reports and announcements",
+   "resolution": "informational",
+   "quote": "dpw director: the dpw director reported he will be receiving the detour for the pleasant street bridge project",
+   "tags": [
+    "DPW",
+    "library",
+    "roads"
+   ]
+  },
+  {
+   "topic": "COVID-19 in Lunenburg and Board of Health notices; reopening of town and school facilities",
+   "resolution": "informational",
+   "quote": "as of may 30th, there are 63 confirmed positive cases in lunenburg and one death.",
+   "tags": [
+    "COVID-19",
+    "reopening",
+    "parks"
+   ]
+  },
+  {
+   "topic": "Updates from State and Federal government",
+   "resolution": "informational",
+   "quote": "as of may 29th there are 95,512 covid-19 cases and 6,718 deaths",
+   "tags": [
+    "COVID-19",
+    "state"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting and events schedule",
+   "resolution": "reviewed",
+   "quote": "annual town meeting june 13, 2020",
+   "tags": [
+    "schedule",
+    "election"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; comments received",
+   "quote": "dave passios, 56 whiting street, spoke on the unkempt conditions at the north and south cemeteries over",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:21 PM",
+   "quote": "to adjourn the meeting at 9:21 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "List of write-in candidates (Board meeting packet)",
+   "where": "text",
+   "quote": "ms. lemieux stated she had compiled a list of candidates that was in the board meeting packet."
+  },
+  {
+   "name": "Conservation restriction easement document, 994 Northfield Road",
+   "where": "text",
+   "quote": "was here for the bos to sign the conservation restriction easement document for 994 northfield road."
+  },
+  {
+   "name": "Subordination agreement",
+   "where": "text",
+   "quote": "contingent on the execution of the subordination agreement"
+  },
+  {
+   "name": "Safety plan for Annual Town Meeting",
+   "where": "text",
+   "quote": "this safety plan includes maintaining social distancing procedures during entry, a seating plan,"
+  },
+  {
+   "name": "Alcoholic Beverages Control Commission advisory on temporary extension of premises",
+   "where": "text",
+   "quote": "asked about the recent alcoholic beverages control commission advisory regarding extension of premises for restaurants"
+  },
+  {
+   "name": "Board of Health weekly update dated May 29th",
+   "where": "text",
+   "quote": "the board of health issued their weekly update dated may 29th"
+  },
+  {
+   "name": "Talent bank forms",
+   "where": "text",
+   "quote": "talent bank forms can be obtained on the town website and forwarded to the board of selectmen's office."
+  },
+  {
+   "name": "Warrants #59 20, #60 20 and #24P20",
+   "where": "text",
+   "quote": "warrant #60 20 - deductions - 5/27/20 - $200,879.55;"
+  }
+ ],
+ "tags": [
+  "town meeting safety plan",
+  "COVID-19",
+  "CARES Act",
+  "conservation restriction",
+  "bid award",
+  "warrants",
+  "write-in candidates",
+  "public comment",
+  "racial justice",
+  "elections",
+  "budget",
+  "remote meetings"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. lemieux stated she had compiled a list of candidates that was in the board meeting packet"
+ },
+ "dropped_unquoted_by_field": {}
 }

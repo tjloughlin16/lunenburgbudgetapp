@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2020-08-20",
  "docid": "3192",
@@ -12,39 +12,215 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from 12/10/2019",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Approve the minutes of 12/10/2019.",
    "moved_by": "",
    "seconded_by": "",
-   "quote": "committee unanimously approved the minutes."
-  },
-  {
-   "motion": "Choose Paula Bertram as Vice-Chair",
    "outcome": "passed",
    "procedural": true,
+   "quote": "review and approve minutes from 12/10/2019 - committee unanimously approved the minutes."
+  },
+  {
+   "motion": "Elect Paula Bertram as Vice-Chair of the Committee.",
    "moved_by": "Karin Menard",
    "seconded_by": "Lynn Mann",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "karin menard nominated paula bertram, lynn mann seconded. passed unanimously."
   },
   {
-   "motion": "Recommend acquisition of the 250 Howard Street parcel to the Board of Selectmen",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Recommend to the Board of Selectmen acquisition of the 250 Howard Street parcel.",
    "moved_by": "Paula Bertram",
    "seconded_by": "Lynn Mann",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "paula bertram made a motion to recommend acquisition of this parcel to the board of selectmen, seconded by lynn mann. passed unanimously."
   },
   {
-   "motion": "Recommend to permit granting authorities an acquisition or easement for connectivity between the Table Rock Saliba South parcel and the Rayno Conservation land",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Recommend to the permit granting authorities that they pursue an acquisition or easement of a small portion of the Bright Farms property to allow connectivity between the Table Rock Saliba South parcel and the Rayno Conservation land.",
    "moved_by": "Paula Bertram",
    "seconded_by": "Sarah Cammer",
-   "quote": "paula bertram made a motion to recommend to the permit granting authorities that they pursue an acquisition or easement of a small portion of the property to allow connectivity between the table rock saliba south parcel and the rayno conservation land. motion seconded by sarah cammer. passed unanimously."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "paula bertram made a motion to recommend to the permit granting authorities that they pursue an acquisition or easement of a small portion of the property"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted from macOS Vision. Four votes recorded: approval of prior minutes, election of Vice-Chair, and two substantive motions on open space acquisitions and easements.",
- "cost_usd": 0.08245649999999999
+ "note": "OCR text (macOS Vision) of a two-page minutes document, dated 2020-08-20, signed by Paula Bertram and stamped received 13 Oct 2020. No roll call or attendance list is printed, so attendance status is inferred only from speaking or voting roles. The mover of the approval of the 12/10/2019 minutes is not stated. The adjournment at 7:19 p.m. records no motion. No public comment section and no dollar figures are recorded. No documents list heading is printed.",
+ "cost_usd": 0.00489482,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brandon Kibbe",
+   "role": "not stated (gave overview of the Committee's charge; led discussion)",
+   "status": "present",
+   "quote": "brandon kibbe provided an overview of the open space committees charge"
+  },
+  {
+   "name": "Lynn Mann",
+   "role": "new member",
+   "status": "present",
+   "quote": "the committee welcomed new members lynn mann and mike toohill."
+  },
+  {
+   "name": "Mike Toohill",
+   "role": "new member",
+   "status": "not stated",
+   "quote": "the committee welcomed new members lynn mann and mike toohill."
+  },
+  {
+   "name": "Karin Menard",
+   "role": "not stated",
+   "status": "present",
+   "quote": "karin menard nominated paula bertram, lynn mann seconded. passed unanimously."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "not stated (nominated Vice-Chair; signed the minutes)",
+   "status": "present",
+   "quote": "paula bertram made a motion to recommend acquisition of this parcel to the board of selectmen"
+  },
+  {
+   "name": "Matt Allison",
+   "role": "Planning Board Chairman",
+   "status": "present",
+   "quote": "matt allison, planning board chairman, outlined the charter of the economic development committee created by the planning board."
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion seconded by sarah cammer. passed unanimously."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee will meet on the 3rd Tuesday of each month from September through December.",
+   "quote": "it was determined that the committee will meet the 3'd tuesday of each month from september-december."
+  },
+  {
+   "decision": "Members will review the list of general municipal land in Appendix 7 of the Open Space Plan for discussion at the next meeting.",
+   "quote": "members will review the list of general municipal land contained in appendix 7 of the plan for discussion at the next meeting."
+  },
+  {
+   "decision": "Each member will reach out to people to find someone interested in serving on the Economic Development Committee; the topic is to be discussed at the next meeting.",
+   "quote": "each member of the open space committee will reach out to people to determine if there is someone interested in serving"
+  },
+  {
+   "decision": "Paula Bertram will talk with Adam Burney about the incorrect link to the Open Space Plan on the Planning Board page.",
+   "quote": "paula will talk with adam burney."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Welcome New Members",
+   "resolution": "no action; Brandon Kibbe gave overview of charge",
+   "quote": "1. welcome new members - the committee welcomed new members lynn mann and mike toohill.",
+   "tags": [
+    "welcome",
+    "charge"
+   ]
+  },
+  {
+   "topic": "Review and Approve Minutes from 12/10/2019",
+   "resolution": "approved",
+   "quote": "review and approve minutes from 12/10/2019 - committee unanimously approved the minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Administration",
+   "resolution": "Vice-Chair elected; meeting schedule set; Planning Board link to be fixed",
+   "quote": "brandon suggested that a vice-chair be chosen to assist with administration of the committee.",
+   "tags": [
+    "vice-chair",
+    "meeting schedule",
+    "open space plan link"
+   ]
+  },
+  {
+   "topic": "General Municipal town-owned property disposition",
+   "resolution": "continued to next meeting for review of Appendix 7 list",
+   "quote": "members will review the list of general municipal land contained in appendix 7 of the plan for discussion at the next meeting.",
+   "tags": [
+    "town-owned land",
+    "disposition",
+    "conservation land"
+   ]
+  },
+  {
+   "topic": "Economic Development Committee representation",
+   "resolution": "continued; members to seek a representative",
+   "quote": "the open space committee needs to recommend someone to serve on the committee.",
+   "tags": [
+    "economic development committee",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "250 Howard Street - potential Chapter 61B release",
+   "resolution": "recommended acquisition to Board of Selectmen",
+   "quote": "paula bertram made a motion to recommend acquisition of this parcel to the board of selectmen, seconded by lynn mann. passed unanimously.",
+   "tags": [
+    "chapter 61b",
+    "right of first refusal",
+    "land acquisition",
+    "howard street"
+   ]
+  },
+  {
+   "topic": "Bright Farms acquisition request",
+   "resolution": "recommended pursuing acquisition or easement for connectivity",
+   "quote": "paula bertram made a motion to recommend to the permit granting authorities that they pursue an acquisition or easement of a small portion of the property",
+   "tags": [
+    "bright farms",
+    "easement",
+    "connectivity",
+    "land acquisition"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "2019-2026 Open Space Plan",
+   "where": "text",
+   "quote": "with the approval of the 2019-2026 open space plan the committee now has an opportunity to support implementation"
+  },
+  {
+   "name": "Appendix 7 of the Open Space Plan (list of general municipal land)",
+   "where": "text",
+   "quote": "members will review the list of general municipal land contained in appendix 7 of the plan for discussion at the next meeting."
+  },
+  {
+   "name": "Map provided by the owner's attorney for 250 Howard Street",
+   "where": "text",
+   "quote": "identified as parcel one on the map provided by the owners attorney"
+  },
+  {
+   "name": "Minutes of 12/10/2019",
+   "where": "text",
+   "quote": "review and approve minutes from 12/10/2019 - committee unanimously approved the minutes."
+  }
+ ],
+ "tags": [
+  "open space",
+  "land acquisition",
+  "conservation land",
+  "chapter 61",
+  "vice-chair",
+  "meeting schedule",
+  "economic development committee",
+  "bright farms",
+  "howard street",
+  "open space plan"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

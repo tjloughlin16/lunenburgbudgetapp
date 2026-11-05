@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2020-02-24",
  "docid": "4072",
@@ -15,15 +15,15 @@
    "motion": "Continue the public hearing on 1325 Massachusetts Avenue to March 9, 2020, 6:35 PM, per the applicant's request.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
-   "quote": "p. bertram made motion to continue the hearing to march 9, 2020, 6:35 pm, per the applicant's request, t. cole seconded, all aye."
+   "quote": "p. bertram made motion to continue the hearing to march 9, 2020, 6:35 pm, per the applicant"
   },
   {
-   "motion": "Approve the de minimis change at 496 Massachusetts Avenue for a proposed change of slope from 3:1 to 4:1.",
+   "motion": "Approve the de minimis change at 496 Massachusetts Avenue for a change of slope from 3:1 to 4:1.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
    "quote": "p. bertram made motion to approve the de minimis change at 496 massachusetts avenue for a proposed change of slope from 3:1 to 4:1, t. cole seconded, all aye."
   },
@@ -31,7 +31,7 @@
    "motion": "Approve the minutes of 02.10.2020.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": true,
    "quote": "02.10.2020- p. bertram made motion to approve, t. cole seconded, all aye."
   },
@@ -39,15 +39,15 @@
    "motion": "Approve the minutes of 02.10.2020, 1325 Massachusetts Avenue.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": true,
    "quote": "02.10.2020, 1325 massachusetts avenue- p. bertram made motion to approve, t. cole seconded, all aye."
   },
   {
-   "motion": "Invite the Select Board to the March 23rd meeting for discussion of master planning.",
+   "motion": "Invite the Select Board to the March 23rd meeting for the master planning discussion.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
    "quote": "t. cole made motion to invite the select board to its march 23rd meeting, p. bertram seconded, all aye."
   },
@@ -55,12 +55,297 @@
    "motion": "Adjourn the meeting.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": true,
    "quote": "t. cole made motion to adjourn, p. bertram seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0891425
+ "note": "Clean extracted text, not a scan. Votes are recorded only as \"all aye\", so no numeric counts are printed. No dollar figures appear in the minutes. Marjorie J. Boggio appears only in the letterhead and is not recorded as taking part. Jean Proctor and Ducharme & Dillis Civil Design Group are named but did not speak.",
+ "cost_usd": 0.007932419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, tanner cole, paula bertram, marisa thompson, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, tanner cole, paula bertram, marisa thompson, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew allison, tanner cole, paula bertram, marisa thompson, adam r. burney"
+  },
+  {
+   "name": "Marisa Thompson",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "matthew allison, tanner cole, paula bertram, marisa thompson, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "matthew allison, tanner cole, paula bertram, marisa thompson, adam r. burney"
+  },
+  {
+   "name": "Hans Wentrup",
+   "role": "public commenter, 418 N W Townsend Road",
+   "status": "present",
+   "quote": "hans wentrup, 418 n w townsend road"
+  },
+  {
+   "name": "Attorney Bowen",
+   "role": "spoke on behalf of the Applicants",
+   "status": "present",
+   "quote": "attorney bowen, 1686 massachusetts avenue"
+  },
+  {
+   "name": "Daniel Proctor",
+   "role": "property owner of 1325 Massachusetts Avenue",
+   "status": "present",
+   "quote": "daniel proctor, property owner of 1325"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Solar bylaw is on hold while the Board focuses on other bylaws.",
+   "quote": "the solar bylaw is currently on hold as the board focuses its attention on other bylaws"
+  },
+  {
+   "decision": "Discussion of the 1325 Massachusetts Avenue waiver request continues at the March 9 meeting, after Building Commissioner correspondence is received.",
+   "quote": "discussion will continue at the board"
+  },
+  {
+   "decision": "Earth removal draft: additional screening language to be added to 5.2; A. Burney to make these and other edits to the draft.",
+   "quote": "a dditional screening language added to 5.2",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "A. Burney to make the edits to the earth removal draft.",
+   "quote": "a. burney will make these and other edits, to the draft."
+  },
+  {
+   "decision": "The Board will hold a public discussion on the earth removal bylaw at its March 9 meeting.",
+   "quote": "the board will plan on having a public discussion on the general bylaw at its march 9th board meeting."
+  },
+  {
+   "decision": "A. Burney to update the stormwater bylaw draft and submit it to the stormwater consultant for comments, expected for the March 9 meeting.",
+   "quote": "a. burney will update the draft and submit to the stormwater consultant for comments."
+  },
+  {
+   "decision": "The Board agreed to hear the Historical Commission Chair at its March 23 meeting.",
+   "quote": "the board was amenable to hearing the historical commission chair at its march 23rd meeting."
+  },
+  {
+   "decision": "Only the Select Board and APDC will be invited to the master planning discussion, not other committees.",
+   "quote": "therefore, only the select board and apdc will be invited."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Hans Wentrup",
+   "stated_role": "418 N W Townsend Road",
+   "topic": "solar bylaw progress and annual town meeting article",
+   "quote": "inquired as to board progress with updating the solar bylaw and"
+  },
+  {
+   "speaker": "Daniel Proctor",
+   "stated_role": "property owner of 1325 Massachusetts Avenue",
+   "topic": "communication between Town Departments and applicants/contractors",
+   "quote": "regarding communication between town departments and applicants/contractors."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "discussed, no action",
+   "quote": "inquired as to board progress with updating the solar bylaw and",
+   "tags": [
+    "public comment",
+    "solar bylaw"
+   ]
+  },
+  {
+   "topic": "Public hearing: 1325 Massachusetts Avenue, continuance request",
+   "resolution": "continued to March 9, 2020",
+   "quote": "p. bertram made motion to continue the hearing to march 9, 2020, 6:35 pm",
+   "tags": [
+    "public hearing",
+    "1325 Massachusetts Avenue",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "1325 Massachusetts Avenue waiver request from site plan approval",
+   "resolution": "continued to March 9 meeting",
+   "quote": "discussion will continue at the board",
+   "tags": [
+    "site plan",
+    "waiver",
+    "earth removal",
+    "1325 Massachusetts Avenue"
+   ]
+  },
+  {
+   "topic": "496 Massachusetts Avenue de minimis change",
+   "resolution": "approved",
+   "quote": "the lunenburg water district is requesting a change in",
+   "tags": [
+    "de minimis change",
+    "slope",
+    "496 Massachusetts Avenue"
+   ]
+  },
+  {
+   "topic": "Earth removal bylaw and rules and regulations",
+   "resolution": "draft reviewed; edits to be made; public discussion March 9",
+   "quote": "board viewed a new draft of earth removal rules and regulations.",
+   "tags": [
+    "earth removal",
+    "bylaw",
+    "draft"
+   ]
+  },
+  {
+   "topic": "Stormwater and storm sewers bylaw",
+   "resolution": "draft edits to be made; consultant comments expected March 9",
+   "quote": "as a result of board discussion and submitted comments from board",
+   "tags": [
+    "stormwater",
+    "bylaw",
+    "draft"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "02.10.2020- p. bertram made motion to approve, t. cole seconded, all aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports noted",
+   "quote": "additional weeks will be added to the duration of the farmers",
+   "tags": [
+    "committee reports",
+    "agricultural commission"
+   ]
+  },
+  {
+   "topic": "Director's items: Community Preservation Act",
+   "resolution": "Board to hear Historical Commission Chair March 23",
+   "quote": "the board was amenable to hearing the historical commission chair at its march 23rd meeting.",
+   "tags": [
+    "community preservation act",
+    "historical commission"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "quote": "1325 massachusetts avenue hearing continuation",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Ongoing items: solar bylaw, off street parking, master plan",
+   "resolution": "Select Board invited to March 23 meeting",
+   "quote": "a joint meeting with the select board for discussion of master planning has not yet",
+   "tags": [
+    "master plan",
+    "select board",
+    "solar bylaw",
+    "off street parking"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:00 PM",
+   "quote": "t. cole made motion to adjourn, p. bertram seconded, all aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "496 Massachusetts Avenue, Request for De Minimis Change",
+   "where": "list",
+   "quote": "496 massachusetts avenue, request for de minimis change"
+  },
+  {
+   "name": "DDCDG Letter Requesting Hearing Continuance",
+   "where": "list",
+   "quote": "ddcdg letter requesting hearing continuance"
+  },
+  {
+   "name": "Minutes: 02.10.2020",
+   "where": "list",
+   "quote": "02.10.2020, 1325 massachusetts avenue"
+  },
+  {
+   "name": "Minutes: 02.10.2020, 1325 Massachusetts Avenue",
+   "where": "list",
+   "quote": "02.10.2020, 1325 massachusetts avenue"
+  },
+  {
+   "name": "Historical Commission Letter",
+   "where": "list",
+   "quote": "historical commission letter"
+  },
+  {
+   "name": "Earth Removal Bylaw & Rules and Regulations – DRAFT",
+   "where": "list",
+   "quote": "earth removal bylaw & rules and regulations"
+  },
+  {
+   "name": "Stormwater Bylaw – DRAFT",
+   "where": "list",
+   "quote": "stormwater bylaw - draft"
+  },
+  {
+   "name": "Stormwater Bylaw Comments, Paula Bertram",
+   "where": "list",
+   "quote": "stormwater bylaw comments, paula bertram"
+  },
+  {
+   "name": "DDCDG letter dated February 20, 2020, subject: Change of Use Site Plan Approval Waiver Request",
+   "where": "text",
+   "quote": "change of use site plan approval waiver request"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "public hearing",
+  "site plan",
+  "waiver",
+  "earth removal",
+  "stormwater bylaw",
+  "solar bylaw",
+  "master planning",
+  "community preservation act",
+  "de minimis change",
+  "minutes approval",
+  "1325 Massachusetts Avenue",
+  "496 Massachusetts Avenue"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,185 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "school-committee",
+ "board": "School Committee",
+ "video_title": "School Committee",
+ "meeting_date": "2020-09-19",
+ "video_id": "BVUjgYzBO3M",
+ "video_url": "https://www.youtube.com/watch?v=BVUjgYzBO3M",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/school-committee/2020-09-19-BVUjgYzBO3M.json",
+  "sha256": "6b8634a44fd4f8378372e82927b111a03f40262f9094f045a46000103ad47746",
+  "caption_lines": 29,
+  "segments": 242
+ },
+ "recording": {
+  "duration_s": 600,
+  "duration": "0:10",
+  "spoken_chars": 6887,
+  "words_approx": 1147
+ },
+ "town_published": [],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-03T17:21:52Z",
+  "cost_usd": 0.0885464
+ },
+ "minutes": {
+  "headline": "School Committee approved permission to post a part-time remote meeting coordinator position, grant-funded through December.",
+  "summary": "A short remote meeting held to re-vote the single agenda item because the revised agenda had not been posted at town hall after the prior Wednesday meeting. The committee discussed a new hourly, unbenefited remote meeting coordinator position serving the schools and town, and approved permission to post it by roll call. The meeting then adjourned.",
+  "attendees": [
+   {
+    "name_as_heard": "Dr Burnham",
+    "role": "superintendent",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Bertrand",
+    "role": "chair",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Archambault (Shambo)",
+    "role": "vice chair",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Kelly",
+    "role": "secretary",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Leighton",
+    "role": "member",
+    "remote": true
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "grants",
+   "hiring",
+   "personnel",
+   "policy",
+   "public-comment"
+  ],
+  "votes": [
+   {
+    "t": 502,
+    "motion": "Permission to post the remote meeting coordinator position",
+    "moved_by": "Ms Kelly",
+    "outcome": "passed 4-0 by roll call",
+    "procedural": false
+   },
+   {
+    "t": 570,
+    "motion": "Adjourn at 10:09 am",
+    "moved_by": "Mr Leighton",
+    "outcome": "passed 4-0 by roll call",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 356,
+    "topic": "Remote meeting coordinator position",
+    "what_was_said": "An hourly, unbenefited evening position serving both school department and town to run remote meetings and train users. Grant funded through the end of December.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 399,
+    "topic": "CARES Act funding then local budget",
+    "what_was_said": "The position is paid from CARES Act funds through December, then from the local budget. Cost from December to June to be shared between town and schools, not fully school-funded.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 295,
+    "decision": "Re-hold the vote on permission to post because the revised agenda was not posted at town hall for the prior meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 251,
+    "topic": "Call to order, roll call, open meeting law and ground rules",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 251,
+    "t_end": 295,
+    "topic": "Public comment on agenda items",
+    "resolution": "none offered",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 295,
+    "t_end": 524,
+    "topic": "Permission to post remote meeting coordinator position",
+    "resolution": "voted, passed",
+    "tags": [
+     "hiring",
+     "grants",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 524,
+    "t_end": 593,
+    "topic": "Final public comment and adjournment",
+    "resolution": "none offered; adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [],
+  "confidence": "high",
+  "contention": [],
+  "concerns_and_conditions": [],
+  "documents_mentioned": [
+   {
+    "t": 295,
+    "name_as_heard": "the revised agenda",
+    "kind": "agenda",
+    "words_as_heard": "the revised agenda was in fact not posted following the conclusion of our meeting wednesday night"
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The School Committee voted 4-0 by roll call to give permission to post a part-time, hourly remote meeting coordinator position.",
+    "t": 502
+   },
+   {
+    "line": "The committee re-held the vote because the revised agenda had not been posted at town hall after the prior meeting.",
+    "t": 295
+   },
+   {
+    "line": "The position is unbenefited, works evenings, serves both the school department and the town, and runs remote meetings and trains users.",
+    "t": 356
+   },
+   {
+    "line": "CARES Act funds pay for the position through December; after that it is paid from the local budget, with the cost shared between town and schools.",
+    "t": 399
+   }
+  ],
+  "why_it_matters": [
+   "From December to June the position moves from federal CARES Act money onto the local budget, mostly taxes, shared between the town and the schools rather than carried by the schools alone.",
+   "The re-vote shows that an agenda not posted at town hall can force a decision to be taken again, which affects whether remote meetings stay open to residents."
+  ],
+  "watch_next": [],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-03T17:21:57Z",
+   "cost_usd": 0.0237351
+  }
+ }
+}

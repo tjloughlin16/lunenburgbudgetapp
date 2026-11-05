@@ -1,0 +1,673 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "finance-committee",
+ "board": "Finance Committee",
+ "video_title": "Finance Committee",
+ "meeting_date": "2020-04-16",
+ "video_id": "b34TBCYajNU",
+ "video_url": "https://www.youtube.com/watch?v=b34TBCYajNU",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2020-04-16-b34TBCYajNU.json",
+  "sha256": "c14daadb71e4951492aa3c84e613a4463f129608c518f2334dcab820f191e620",
+  "caption_lines": 220,
+  "segments": 1426
+ },
+ "recording": {
+  "duration_s": 4779,
+  "duration": "1:19",
+  "spoken_chars": 51515,
+  "words_approx": 8585
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04162020-2140",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2020-04-16-agenda-2140.txt",
+   "path": "sources/meetings/finance-committee/2020-04-16-agenda-2140.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04162020-2140",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2020-04-16-minutes-2140.txt",
+   "path": "sources/meetings/finance-committee/2020-04-16-minutes-2140.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-04T05:49:25Z",
+  "cost_usd": 0.1782984
+ },
+ "minutes": {
+  "headline": "Finance Committee backed deferring capital, new positions and some spending to a fall Special Town Meeting, leaving a surplus.",
+  "summary": "The committee reviewed the revised FY21 plan: the capital plan was cut back and new positions deferred to a fall special town meeting pending revenue. It discussed level-funded local receipts, pavement management and the OPEB deposit, the budget calendar, and Monty Tech and the Student Opportunity Act. The town manager also reported on a COVID-19 emergency spending request. No budget vote was taken; the meeting adjourned by roll call.",
+  "attendees": [
+   {
+    "name_as_heard": "Terry",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Karen",
+    "role": "town accountant"
+   },
+   {
+    "name_as_heard": "Peter",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Dave",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "John",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jay",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Michele",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Scott",
+    "role": "PACC staff"
+   },
+   {
+    "name_as_heard": "Axel",
+    "role": "member"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "budget-fy26",
+   "capital",
+   "chapter-70",
+   "free-cash",
+   "monty-tech",
+   "public-safety",
+   "state-aid",
+   "town-departments",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 4745,
+    "motion": "Adjourn the meeting",
+    "outcome": "passed 5-0 on roll call (members and chair responding aye)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 476,
+    "topic": "Capital plan funded from tax revenue",
+    "what_was_said": "The town manager held off on the capital plan portion funded through tax revenues; projects were re-ranked and deferred to special town meeting.",
+    "figures_as_heard": [
+     "$650,000"
+    ]
+   },
+   {
+    "t": 496,
+    "topic": "Capital appropriation from free cash",
+    "what_was_said": "The revised capital appropriation from free cash for the remaining projects was stated.",
+    "figures_as_heard": [
+     "six hundred and sixty four thousand eight hundred"
+    ]
+   },
+   {
+    "t": 784,
+    "topic": "Police cruiser",
+    "what_was_said": "A member questioned keeping the cruiser in the plan when the added officer was cut.",
+    "figures_as_heard": [
+     "$67,000"
+    ]
+   },
+   {
+    "t": 872,
+    "topic": "Revenue and capital adjustments",
+    "what_was_said": "Less free cash is used for capital and capital expenditure is reduced.",
+    "figures_as_heard": [
+     "fourteen thousand three hundred and thirty three dollars",
+     "six hundred and sixty four thousand three hundred thirty three dollars"
+    ]
+   },
+   {
+    "t": 912,
+    "topic": "School budget recommendation",
+    "what_was_said": "The recommended school budget is a small increase, reduced from the earlier figure.",
+    "figures_as_heard": [
+     "one point five eight percent",
+     "one hundred and ninety two thousand one hundred fifty seven dollars"
+    ]
+   },
+   {
+    "t": 955,
+    "topic": "Projected surplus",
+    "what_was_said": "Level-funding revenues and reducing new growth leaves a surplus cushion until the fall.",
+    "figures_as_heard": [
+     "eight hundred and twelve thousand dollars",
+     "hundred and thirty thousand"
+    ]
+   },
+   {
+    "t": 1146,
+    "topic": "Worst-case revenue loss",
+    "what_was_said": "A member computed the total revenue loss if the surplus were unavailable.",
+    "figures_as_heard": [
+     "one point two four million dollars",
+     "sixty-three thousand",
+     "211,000",
+     "68",
+     "fourteen"
+    ]
+   },
+   {
+    "t": 1560,
+    "topic": "Allowance for abatements",
+    "what_was_said": "The allowance for abatements number was changed.",
+    "figures_as_heard": [
+     "one hundred and twenty thousand"
+    ]
+   },
+   {
+    "t": 1888,
+    "topic": "Pavement management increase",
+    "what_was_said": "Members debated deferring the increase in pavement management since spending is mainly in spring.",
+    "figures_as_heard": [
+     "fifty thousand",
+     "$50,000"
+    ]
+   },
+   {
+    "t": 2232,
+    "topic": "Revenue cushion",
+    "what_was_said": "A member said a five percent drop in state aid and local receipts would use up much of the surplus.",
+    "figures_as_heard": [
+     "six hundred thousand dollars",
+     "five percent"
+    ]
+   },
+   {
+    "t": 2320,
+    "topic": "OPEB deposit",
+    "what_was_said": "A member proposed deferring the OPEB deposit to November; the town manager preferred putting it in the stabilization fund and checking with the financial advisor.",
+    "figures_as_heard": [
+     "hundred thousand",
+     "one hundred ten thousand"
+    ]
+   },
+   {
+    "t": 3692,
+    "topic": "Monty Tech assessment",
+    "what_was_said": "A member said Lunenburg's assessment rises more than the Monty Tech budget increase.",
+    "figures_as_heard": [
+     "sixty thousand dollars",
+     "$58,000",
+     "fourteen thousand"
+    ]
+   },
+   {
+    "t": 4339,
+    "topic": "COVID-19 emergency expenditures",
+    "what_was_said": "Selectmen voted to request approval for emergency COVID-19 spending beyond appropriations, tracked separately for FEMA reimbursement.",
+    "figures_as_heard": [
+     "100,000",
+     "$32,000",
+     "seventy-five percent"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1315,
+    "decision": "The school superintendent will be invited to the April 30 meeting, after the school committee budget meeting."
+   },
+   {
+    "t": 3309,
+    "decision": "April 30 agenda to cover debt, sewer and general government; Green Communities light fixtures next week."
+   },
+   {
+    "t": 3203,
+    "decision": "Town manager to ask the Historical Society (Community Preservation Act) for a brief presentation and tax impact info."
+   },
+   {
+    "t": 4136,
+    "decision": "Consider inviting the Chapter 70 expert to explain the school aid formulas; legislators possibly joint meeting on the 28th."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 227,
+    "topic": "Meeting preamble and remote procedures",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 227,
+    "t_end": 330,
+    "topic": "Warrant article follow-up",
+    "resolution": "informational",
+    "tags": [
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 356,
+    "t_end": 825,
+    "topic": "Revised capital plan",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "free-cash"
+    ]
+   },
+   {
+    "t_start": 825,
+    "t_end": 1474,
+    "topic": "Adjustments worksheet, surplus, school budget, state aid",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "state-aid",
+     "budget-fy26"
+    ]
+   },
+   {
+    "t_start": 1474,
+    "t_end": 1678,
+    "topic": "Revenue and expenditure worksheet",
+    "resolution": "informational",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 1678,
+    "t_end": 2400,
+    "topic": "Local receipts and pavement management",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 2400,
+    "t_end": 2923,
+    "topic": "OPEB deposit and stabilization",
+    "resolution": "no resolution; advisor to be consulted",
+    "tags": [
+     "free-cash",
+     "retirement"
+    ]
+   },
+   {
+    "t_start": 2923,
+    "t_end": 3415,
+    "topic": "Budget calendar and upcoming agendas",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting",
+     "elections"
+    ]
+   },
+   {
+    "t_start": 3415,
+    "t_end": 4136,
+    "topic": "Legislators, Student Opportunity Act and Monty Tech assessment",
+    "resolution": "informational",
+    "tags": [
+     "monty-tech",
+     "chapter-70",
+     "state-aid"
+    ]
+   },
+   {
+    "t_start": 4136,
+    "t_end": 4745,
+    "topic": "Public comment, tax deadline, COVID-19 spending",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "tax-rate",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 4745,
+    "t_end": 4770,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Captions garble parts of the school budget discussion and the exact fiscal years cited.",
+   "The roll call is partly rendered; the count is inferred from the names heard."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 1957,
+    "kind": "condition",
+    "about": "Member wants to defer the pavement management increase in case money is needed elsewhere.",
+    "who": "a member",
+    "words_as_heard": "in my mind I think it would be wise to defer you know any kind of stepped up spending to include pavement management"
+   },
+   {
+    "t": 2457,
+    "kind": "condition",
+    "about": "Town manager wants financial advisor input on bond rating before deciding the OPEB deposit.",
+    "who": "the town manager",
+    "words_as_heard": "I would want to know from our financial advisor what that impact would be potentially on our bond rating"
+   },
+   {
+    "t": 3631,
+    "kind": "condition",
+    "about": "Member wants the Monty Tech formula understood before meeting legislators.",
+    "who": "a member",
+    "words_as_heard": "until that is understood and agreed to there can't be much of a substantive conversation"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 476,
+    "name_as_heard": "capital plan worksheet",
+    "kind": "spreadsheet",
+    "words_as_heard": "this list shows the the item set will be done and then on the first page of the the first page of the worksheet",
+    "shown": true
+   },
+   {
+    "t": 825,
+    "name_as_heard": "adjustments worksheet",
+    "kind": "spreadsheet",
+    "words_as_heard": "let's go to the adjustments worksheet please",
+    "shown": true
+   },
+   {
+    "t": 1474,
+    "name_as_heard": "revenue expenditure worksheet (PDF)",
+    "kind": "spreadsheet",
+    "words_as_heard": "revenue expenditure worksheet is that Excel or PDF it's a PDF",
+    "shown": true
+   },
+   {
+    "t": 1698,
+    "name_as_heard": "local receipts spreadsheet",
+    "kind": "spreadsheet",
+    "words_as_heard": "Karen updated this spreadsheet that she had sent to everyone previously",
+    "shown": true
+   },
+   {
+    "t": 2943,
+    "name_as_heard": "budget calendar",
+    "kind": "other",
+    "words_as_heard": "I wanted to pull up the budget calendar",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "opeb-deposits",
+    "title": "OPEB trust deposits",
+    "question": "Should the town defer its OPEB deposit and what does it do to the bond rating?",
+    "t": 2400,
+    "words_as_heard": "I would want to know from our financial advisor what that impact would be potentially on our bond rating",
+    "data_in_play": [
+     "hundred thousand",
+     "10% of certified free casts"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "monty-tech-assessment-formula",
+    "title": "Monty Tech assessment formula",
+    "question": "Why is Lunenburg's Monty Tech assessment rising faster than enrollment?",
+    "t": 3569,
+    "words_as_heard": "why are our rates going up dis proportional to our enrollment",
+    "data_in_play": [
+     "$58,000",
+     "sixty thousand dollars"
+    ],
+    "existing": "topic:monty-tech-assessment"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Finance Committee reviewed a revised FY21 plan that cuts back the capital plan and defers new positions to a fall special town meeting, pending revenue.",
+    "t": 476
+   },
+   {
+    "line": "Level-funding revenues and reducing new growth leaves a surplus cushion until the fall; no budget vote was taken.",
+    "t": 955
+   },
+   {
+    "line": "Members debated deferring the pavement management increase, and one proposed deferring the OPEB deposit to November; the town manager preferred the stabilization fund, pending advice.",
+    "t": 2320
+   },
+   {
+    "line": "A member said Lunenburg's Monty Tech assessment rises by more than the Monty Tech budget increase.",
+    "t": 3692
+   },
+   {
+    "line": "The superintendent will be invited to the April 30 meeting, and the meeting adjourned by roll call.",
+    "t": 1315
+   }
+  ],
+  "why_it_matters": [
+   "Capital projects and new positions pushed to a fall special town meeting mean residents may be asked to vote on them later, once revenue is clearer.",
+   "The surplus is a cushion against falling state aid and local receipts, so a larger drop than assumed could reduce it and affect next year's tax bill and services."
+  ],
+  "watch_next": [
+   "April 30 meeting: debt, sewer and general government, with the school superintendent invited after the school committee budget meeting.",
+   "The town manager's check with the financial advisor on the OPEB deposit and stabilization fund."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-04T05:49:30Z",
+   "cost_usd": 0.028169100000000002
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04162020-2140",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2020-04-16-minutes-2140.txt",
+   "path": "sources/meetings/finance-committee/2020-04-16-minutes-2140.pdf"
+  },
+  "official_sha256": "18af0901b519f2d86984af5be3a9e50e5f39cbde7db01b8c1900dbc9341d3009",
+  "against": "structured",
+  "coverage": "official minutes are a summary only",
+  "summary": "The records agree on the six members present, the 1.58 percent and $192,157 school figures, and the $100,000 and $32K COVID figures, but ours lists many more items than the official summary. The main thing to know is that the official minutes record no decisions and none of our later agenda items, and give only the tax-deadline action that ours lacks.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 2,
+   "discrepancy": 4,
+   "only_in_ours": 11,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Votes",
+    "ours": "none",
+    "official": "",
+    "note": "Neither record lists a non-procedural Finance Committee vote."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Capital plan / free cash figure",
+    "ours": "Capital appropriation from free cash: six hundred and sixty four thousand eight hundred",
+    "official": "the capital plan has been reduced to $664,800.",
+    "note": "Same $664,800 figure; our captions render it in words and tie it to free cash.",
+    "official_reading": "$664,800",
+    "t": 496
+   },
+   {
+    "kind": "caption_error",
+    "about": "School budget recommendation",
+    "ours": "School budget recommendation: one point five eight percent, one hundred and ninety two thousand one hundred fifty seven dollars",
+    "official": "a revised school budget is forthcoming, which will reflect a 1.58 percent increase, or a $192,157 reduction from the previous budget.",
+    "note": "Same 1.58 percent and $192,157, written out in words by the captions.",
+    "official_reading": "1.58 percent, $192,157",
+    "t": 912
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Projected surplus",
+    "ours": "Projected surplus: eight hundred and twelve thousand dollars, hundred and thirty thousand",
+    "official": "this brings the budget to a $812,913 surplus",
+    "note": "Ours says roughly $812,000 with a garbled second figure; official says $812,913. Check the recording for the exact amount.",
+    "t": 955
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Revenue and capital adjustments",
+    "ours": "Revenue and capital adjustments: fourteen thousand three hundred and thirty three dollars, six hundred and sixty four thousand three hundred thirty three dollars",
+    "official": "free cash and expenditures have been revised to reflect changes in the capital plan.",
+    "note": "Official gives no figure; ours has garbled amounts that may be a $664,8xx capital figure. Check the recording at t=872.",
+    "t": 872
+   },
+   {
+    "kind": "discrepancy",
+    "about": "OPEB contribution",
+    "ours": "OPEB deposit: hundred thousand, one hundred ten thousand",
+    "official": "the town manager outlined that she would review opeb contribution",
+    "note": "Ours gives figures; official gives none and says only that the contribution would be reviewed. Check whether any amount was stated.",
+    "t": 2320
+   },
+   {
+    "kind": "discrepancy",
+    "about": "COVID-19 emergency expenditures",
+    "ours": "COVID-19 emergency expenditures: 100,000, $32,000, seventy-five percent",
+    "official": "the bos voted to request $100,000 in unappropriated expenditures",
+    "note": "$100,000 and $32,000 match the official $100,000 request and approximately $32K spent. The seventy-five percent has no counterpart in the official minutes; check it.",
+    "t": 4339
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Tax payment deadline and penalties",
+    "ours": "",
+    "official": "the bos voted to keep the deadline for tax payments, but defer any penalties and interest until june 29th.",
+    "note": "The BOS action on the tax deadline, with penalties deferred to June 29, is not in our minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Police cruiser",
+    "ours": "Police cruiser: $67,000",
+    "official": "",
+    "note": "The official minutes do not mention a police cruiser figure.",
+    "t": 784
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Worst-case revenue loss",
+    "ours": "Worst-case revenue loss: one point two four million dollars, sixty-three thousand, 211,000, 68, fourteen",
+    "official": "",
+    "note": "The official minutes contain no revenue-loss scenario.",
+    "t": 1146
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Allowance for abatements",
+    "ours": "Allowance for abatements: one hundred and twenty thousand",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 1560
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Pavement management increase",
+    "ours": "Pavement management increase: fifty thousand, $50,000",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 1888
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Revenue cushion",
+    "ours": "Revenue cushion: six hundred thousand dollars, five percent",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 2232
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Monty Tech assessment",
+    "ours": "Monty Tech assessment: sixty thousand dollars, $58,000, fourteen thousand",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3692
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: superintendent invited to April 30 meeting",
+    "ours": "The school superintendent will be invited to the April 30 meeting, after the school committee budget meeting.",
+    "official": "",
+    "note": "The official minutes record no decisions; check the recording.",
+    "t": 1315
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: April 30 agenda",
+    "ours": "April 30 agenda to cover debt, sewer and general government; Green Communities light fixtures next week.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3309
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: Historical Society presentation",
+    "ours": "Town manager to ask the Historical Society (Community Preservation Act) for a brief presentation and tax impact info.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3203
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: Chapter 70 expert",
+    "ours": "Consider inviting the Chapter 70 expert to explain the school aid formulas; legislators possibly joint meeting on the 28th.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 4136
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: six members present",
+    "ours": "Terry (chair), Dave, John, Jay, Michele, Peter",
+    "official": "present: terri burchfield, dave passios, michelle walton, peter beardmore, john henshaw, jay simeone",
+    "note": "The six members match, apart from first-name spellings (Terry/Terri, Michele/Michelle)."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendees: staff and others",
+    "ours": "Heather (town manager), Karen (town accountant), Scott (PACC staff), Axel (member)",
+    "official": "",
+    "note": "The official present list names only the six members. Axel is listed as a member in ours but not in the official list; check."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T05:50:17Z",
+   "cost_usd": 0.0504951
+  }
+ }
+}

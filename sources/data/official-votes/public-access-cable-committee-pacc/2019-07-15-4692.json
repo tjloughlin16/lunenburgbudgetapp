@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2019-07-15",
  "docid": "4692",
@@ -12,31 +12,208 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from June 3, 2019",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Approve the minutes from the Jun 3, 2019 meeting.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "the committee reviewed and approved the minutes from last meeting."
   },
   {
-   "motion": "Re-elect the current officers",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Re-elect the current officers.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "a motion was made to re-elect the current officers. the committee voted to keep the current officer's."
   },
   {
-   "motion": "Authorize Jo to purchase three videographer portable systems up to a maximum of $10,000",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Authorize Jo to buy three videographer portable systems up to a maximum of $10,000.",
    "moved_by": "",
    "seconded_by": "",
-   "quote": "the committee made a motion to authorize jo to buy three videographer portable systems up to a maximum of $10,000. the committee voted and approved the motion."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the committee made a motion to authorize jo to buy three videographer portable systems up to a maximum of $10,000."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1052595
+ "note": "Minutes are readable text, not a scan. No vote counts are printed for any motion, and no mover or seconder is named. The minutes approval and the officer vote are recorded as \"approved\" and \"voted to keep\" without a count. Public comment speakers are not named. The adjournment has no recorded motion, so it is not listed as a vote. The minutes are signed by Jeffrey Bajko, PACC Clerk, dated 9/17/19. No documents or exhibits are named.",
+ "cost_usd": 0.00428512,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, faith beall, and peter lincoln."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, faith beall, and peter lincoln."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, faith beall, and peter lincoln."
+  },
+  {
+   "name": "Peter Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, faith beall, and peter lincoln."
+  },
+  {
+   "name": "Jo Mclaughlin",
+   "role": "Non-member",
+   "status": "present",
+   "quote": "non-members: jo mclaughlin."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Audio options discussion tabled until the next meeting.",
+   "quote": "the committee agreed to table the discussion until next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Ending balance",
+   "what_was_recorded": "The manager reported an ending balance that is not final because of unpaid POs.",
+   "figures_as_printed": [
+    "$449,041.36"
+   ],
+   "quote": "ending balance is $449,041.36. this is not the final number due to unpaid pos"
+  },
+  {
+   "topic": "Program funding increase",
+   "what_was_recorded": "The manager reported a program increase over FY18.",
+   "figures_as_printed": [
+    "16%"
+   ],
+   "quote": "a program increase of 16% over fy18."
+  },
+  {
+   "topic": "Videographer portable systems purchase",
+   "what_was_recorded": "The committee authorized Jo to buy three videographer portable systems up to a maximum of $10,000.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "the committee made a motion to authorize jo to buy three videographer portable systems up to a maximum of $10,000."
+  },
+  {
+   "topic": "Tricaster quotes",
+   "what_was_recorded": "Jo received several quotes for a new tricaster and is still waiting for others; no amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "jo received several quotes for a new tricaster."
+  },
+  {
+   "topic": "Enterprise fund",
+   "what_was_recorded": "Information is still being collected to create an enterprise fund; no amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "enterprise fund information is still being collect to create an enterprise fund."
+  },
+  {
+   "topic": "Franchise fee question (public comment)",
+   "what_was_recorded": "The FCC is questioning the 5% franchise fee for public television, and wants to deduct cable drops from the franchise fee.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "the fcc is questioning the 5% franchise fee for public television. they want to deduct cable drops from the franchise fee."
+  },
+  {
+   "topic": "PAC funding (public comment)",
+   "what_was_recorded": "A finance committee member met with the chairperson to better understand how the PAC is funded; no amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "a new member of the finance committee met with our chairperson to get a better understanding of how the pac is funded."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "PAC funding and finance committee",
+   "quote": "a new member of the finance committee met with our chairperson to get a better understanding of how the pac is funded."
+  },
+  {
+   "topic": "FCC franchise fee for public television",
+   "quote": "the fcc is questioning the 5% franchise fee for public television. they want to deduct cable drops from the franchise fee."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "franchise fee",
+    "funding"
+   ],
+   "quote": "a new member of the finance committee met with our chairperson to get a better understanding of how the pac is funded."
+  },
+  {
+   "topic": "Review and approve minutes of Jun 3, 2019",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "the committee reviewed and approved the minutes from last meeting."
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "current officers kept",
+   "tags": [
+    "officers",
+    "elections"
+   ],
+   "quote": "a motion was made to re-elect the current officers. the committee voted to keep the current officer's."
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "received; authorized videographer equipment purchase up to $10,000",
+   "tags": [
+    "budget",
+    "equipment",
+    "staffing",
+    "broadcasting"
+   ],
+   "quote": "ending balance is $449,041.36. this is not the final number due to unpaid pos"
+  },
+  {
+   "topic": "Discussion of audio options",
+   "resolution": "tabled until next meeting",
+   "tags": [
+    "audio",
+    "equipment"
+   ],
+   "quote": "the committee agreed to table the discussion until next meeting."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:05pm; next meeting Sept. 9th",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting adjourned at 8:05pm"
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "public access cable",
+  "PACC",
+  "budget",
+  "franchise fee",
+  "equipment purchase",
+  "officer elections",
+  "minutes approval",
+  "videographers",
+  "audio options"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

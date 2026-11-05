@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2020-03-12",
  "docid": "2428",
@@ -12,15 +12,203 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting at 7:40 PM.",
    "moved_by": "",
-   "seconded_by": "NS",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion to adjourn, ns scorned- lm- 7:40 pm."
+   "quote": "motion to adjourn, ns scorned- lm- 7:40 pm.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd text. One vote recorded: motion to adjourn. The text shows \"NS scorned\" which is likely an OCR error for \"NS seconded\" (Neal Sullivan). No explicit outcome is stated in the minutes, though the meeting's adjournment at 7:40 PM is implied.",
- "cost_usd": 0.0901315
+ "note": "Text is macOS Vision OCR of handwritten or typed minutes and is garbled in places (e.g. 'scorned' likely means 'seconded', '31, 155' printed with a space). The mover of the adjournment motion is not clearly printed and no result is recorded, so the outcome is 'not stated'. No other votes, public comment, or transfers appear. Page 2 ends mid-sentence ('Need info by') and page 3 resumes ('We will also apply for admin fees'), so some text may be missing. The 'Jill Dicalit, Ladisoll' header and the 'RECEIVED & FILED' stamp are not treated as attendees. Kit, Jack and Heather are named but not recorded as attending.",
+ "cost_usd": 0.0047471200000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "status": "present",
+   "quote": "in attendance were david blatt, neal sullivan, liz murphy, john londa, karen chapman"
+  },
+  {
+   "name": "Neal Sullivan",
+   "status": "present",
+   "quote": "in attendance were david blatt, neal sullivan, liz murphy, john londa, karen chapman"
+  },
+  {
+   "name": "Liz Murphy",
+   "status": "present",
+   "quote": "respectfully submitted, liz murphy"
+  },
+  {
+   "name": "John Londa",
+   "status": "present",
+   "quote": "in attendance were david blatt, neal sullivan, liz murphy, john londa, karen chapman"
+  },
+  {
+   "name": "Karen Chapman",
+   "status": "present",
+   "quote": "in attendance were david blatt, neal sullivan, liz murphy, john londa, karen chapman"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Karen Chapman to review and propose projects for the grant application; she needs John's paperwork to complete it.",
+   "quote": "karen, needs all the paperwork that john has in order to complete the grant application."
+  },
+  {
+   "decision": "John will forward his paperwork to Karen.",
+   "quote": "john will forward paperwork to her."
+  },
+  {
+   "decision": "Kit to obtain a model number for all of the fridges.",
+   "quote": "kit will need to get a model number for all of the fridges."
+  },
+  {
+   "decision": "Obtain installation quotes for the hot water tank replacement.",
+   "quote": "will need to get installation quotes for the hot water tank- energy star will do a rebate."
+  },
+  {
+   "decision": "David to work out the cost savings for the Teen Center.",
+   "quote": "david will try to figure out the cost savings for the teen center."
+  },
+  {
+   "decision": "Any online calculators used are to be screenshotted and attached to the grant.",
+   "quote": "whatever calculators are used online, screenshot it so it can be attached to the grant."
+  },
+  {
+   "decision": "Karen to get the costs for Building Operator certification training.",
+   "quote": "karen will get the costs for training."
+  },
+  {
+   "decision": "Apply for Building Operator certification training for up to two staff members, one from town buildings and one for schools.",
+   "quote": "building operator certification training for up to two staff members- we'd like to apply for this."
+  },
+  {
+   "decision": "Apply for admin fees in grants.",
+   "quote": "we will also apply for admin fees in grants."
+  },
+  {
+   "decision": "Dave to email Kit, Jack and Heather explaining what is needed and why, including that the envelope work cannot proceed without audits.",
+   "quote": "dave will send an email to kit, jack, heather, and explain what we need, and why- and that we"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Animal Control Officer minivan",
+   "what_was_recorded": "A stripped-down van for the Animal Control Officer is priced at $26k; the Ford Expedition will go away and this is not grant funded but will save over existing.",
+   "figures_as_printed": [
+    "$26k"
+   ],
+   "quote": "animal control officer- minivan- stripped down van $26k."
+  },
+  {
+   "topic": "Lunenburg Primary School domestic hot water upgrade",
+   "what_was_recorded": "The project is carried at 9K as cost, including installation, purchase and ventilation; no Energy Star rebates were found for the smaller units considered.",
+   "figures_as_printed": [
+    "9K"
+   ],
+   "quote": "carrying 9k as cost, includes installation, purchase and ventilation"
+  },
+  {
+   "topic": "Schools grant project totals",
+   "what_was_recorded": "Total project costs and total project savings for the school projects are recorded, with the project said to pay for itself over 10 years.",
+   "figures_as_printed": [
+    "31, 155",
+    "$2877"
+   ],
+   "quote": "total project costs 31, 155-total project savings $2877."
+  },
+  {
+   "topic": "PD hybrid SUV interceptors",
+   "what_was_recorded": "Two hybrid SUV interceptors for the PD are to be bought; PD needs a quote, and the remaining funds would come from the capital plan, likely in FY21. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the remaining funds will have to come from the capital plan"
+  },
+  {
+   "topic": "Grant administrative fees",
+   "what_was_recorded": "The group agreed to also apply for admin fees in grants; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "we will also apply for admin fees in grants."
+  },
+  {
+   "topic": "Hot water tank and appliance rebates",
+   "what_was_recorded": "Energy Star will offer a rebate on the hot water tank; installation quotes are needed. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "will need to get installation quotes for the hot water tank- energy star will do a rebate."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and BOS meeting briefing",
+   "resolution": "briefing, no action",
+   "quote": "warrant to either change led or purchase will go to town meeting. it was noted that there was no option",
+   "tags": [
+    "briefing",
+    "town meeting",
+    "LED"
+   ]
+  },
+  {
+   "topic": "Possible projects for grant application",
+   "resolution": "reviewed; Karen to review and propose for grant submission",
+   "quote": "possible projects for karen to review and propose for grant application submission",
+   "tags": [
+    "grants",
+    "energy efficiency",
+    "town buildings"
+   ]
+  },
+  {
+   "topic": "Schools projects",
+   "resolution": "reviewed; paperwork and estimates to be gathered",
+   "quote": "lunenburg primary school, domestic hot water upgrade, 2 60 gallons",
+   "tags": [
+    "schools",
+    "hot water",
+    "LED",
+    "appliances"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "motion to adjourn at 7:40 PM, outcome not recorded",
+   "quote": "motion to adjourn, ns scorned- lm- 7:40 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "List of projects possible for grant application (sent by Kit to Karen)",
+   "where": "text",
+   "quote": "kit sent karen a list of projects possible for grant application, including itemizing appliances at"
+  },
+  {
+   "name": "Paperwork held by John needed to complete the grant application",
+   "where": "text",
+   "quote": "karen, needs all the paperwork that john has in order to complete the grant application."
+  }
+ ],
+ "tags": [
+  "green communities",
+  "energy efficiency",
+  "grant applications",
+  "town buildings",
+  "schools",
+  "hot water",
+  "LED lighting",
+  "appliances",
+  "vehicles",
+  "building operator training"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

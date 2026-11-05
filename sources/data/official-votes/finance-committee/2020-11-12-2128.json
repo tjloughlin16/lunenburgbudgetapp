@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2020-11-12",
  "docid": "2128",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve articles 3, 10, 11, 12, 13 on consent calendar",
+   "motion": "Approve the consent calendar for Articles 3, 10, 11, 12 and 13 of the outstanding STM articles.",
    "moved_by": "Chris",
    "seconded_by": "Dave",
    "outcome": "passed unanimously",
@@ -20,23 +20,23 @@
    "quote": "motion to approve - chris, seconded dave, unanimous"
   },
   {
-   "motion": "Recommend approval of Article 16",
+   "motion": "Recommend approval of Article 16.",
    "moved_by": "Peter",
    "seconded_by": "Jay",
    "outcome": "passed 4-2",
    "procedural": false,
-   "quote": "peter made a motion to recommend approval for article 16. jay seconded. in favor heather, jay, dave and peter. not in favor chris and terri. recommended 4-2"
+   "quote": "peter made a motion to recommend approval for article 16. jay seconded. in favor heather, jay, dave and peter."
   },
   {
-   "motion": "Approve September 24",
+   "motion": "Approve the minutes of September 24.",
    "moved_by": "Chris",
    "seconded_by": "Peter",
    "outcome": "passed unanimously",
-   "procedural": false,
+   "procedural": true,
    "quote": "september 24 - motion to approve chris, seconded by peter unanimous"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chris",
    "seconded_by": "Jay",
    "outcome": "passed unanimously",
@@ -45,6 +45,206 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote (September 24) has unclear subject matter in the text—the motion to approve is stated but the object being approved is not explicitly identified from context.",
- "cost_usd": 0.12682949999999998
+ "note": "OCR text, with errors (e.g. 'Burehfield', garbled page-1 header). Item 6 heading is missing; the Sept 24 minutes approval appears at the top of page 3. The Absent line is blank. Heather Sroka is listed as present, but her role is unclear: the header is garbled and the agenda items say 'Heather L.', so role is left as not stated. Articles 14 and 15 were passed over without a recorded vote. Vote tallies are as printed. Attendance is taken from the Present list; the meeting was held on Zoom.",
+ "cost_usd": 0.00521182,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "terri burehfield, chair, called the meeting to order at 7:00 pm and read the"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "not stated",
+   "status": "present",
+   "quote": "terri burchfield, peter beardmore, dave passios, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "not stated",
+   "status": "present",
+   "quote": "terri burchfield, peter beardmore, dave passios, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "not stated",
+   "status": "present",
+   "quote": "terri burchfield, peter beardmore, dave passios, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "not stated",
+   "status": "present",
+   "quote": "terri burchfield, peter beardmore, dave passios, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "not stated",
+   "status": "present",
+   "quote": "terri burchfield, peter beardmore, dave passios, jay simeone, chris menard, heather sroka"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Articles 14 and 15 were passed over by FinCom, without a recorded vote; the Select Board waived the right of first refusal on these articles.",
+   "quote": "articles 14 and 15 - passed over by fincom questions and discussion around"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Remote learning infrastructure funded by CARES Act",
+   "what_was_recorded": "High-end web cameras, monitors and stylus pads for remote learning will be funded by the CARES Act at a stated cost.",
+   "figures_as_printed": [
+    "$113,000"
+   ],
+   "quote": "the cares act will be used to fund this $113,000."
+  },
+  {
+   "topic": "Capital Plan Policy threshold",
+   "what_was_recorded": "The current capital purchase threshold under the Capital Plan Policy is stated, and FinCom wants to update the policy.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "as it stands threshold is $10,000, one time purchase, life span of the project/purchase."
+  },
+  {
+   "topic": "Marshall Park master plan funding",
+   "what_was_recorded": "Marshall Park master plan work may use Special Revenue Funds and Open Space funding and a grant for part of it; the parks group will seek help from the Open Space Committee Chair on grants.",
+   "figures_as_printed": [],
+   "quote": "open space funding and grant for a portion - going to seek assistance from open"
+  },
+  {
+   "topic": "Youth spring sports field use rate increase",
+   "what_was_recorded": "A rate increase for youth spring sports field use was reported; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "field use youth spring sports rate increase"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Rodgers",
+   "stated_role": "",
+   "topic": "Broadcast audio quality",
+   "quote": "tonight's broadcast was only about 40-50% - very muted and muffled"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and COVID-19 / Zoom advisory",
+   "resolution": "no action",
+   "tags": [
+    "call to order",
+    "zoom"
+   ],
+   "quote": "terri burehfield, chair, called the meeting to order at 7:00 pm and read the"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "2. public comment none"
+  },
+  {
+   "topic": "Town Manager review of outstanding STM articles",
+   "resolution": "consent calendar approved; Articles 14 and 15 passed over; Article 16 recommended 4-2",
+   "tags": [
+    "special town meeting",
+    "articles",
+    "TIF"
+   ],
+   "quote": "consent calendar, articles 3, 10, 11, 12, 13"
+  },
+  {
+   "topic": "Capital Plan",
+   "resolution": "discussed; joint FinCom and Capital Planning meeting proposed; no action",
+   "tags": [
+    "capital plan",
+    "capital policy"
+   ],
+   "quote": "dave believes fincom and capital planning should work together to tackle"
+  },
+  {
+   "topic": "Town Manager and Finance reports",
+   "resolution": "no action",
+   "tags": [
+    "CARES Act",
+    "capital projects",
+    "special town meeting"
+   ],
+   "quote": "remote learning infrastructure - high end web cameras, monitors and stylus"
+  },
+  {
+   "topic": "Minutes of September 24",
+   "resolution": "approved unanimously",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "september 24 - motion to approve chris, seconded by peter unanimous"
+  },
+  {
+   "topic": "Reports from members",
+   "resolution": "no action",
+   "tags": [
+    "school committee",
+    "parks",
+    "TCP"
+   ],
+   "quote": "peter - school committee met on november 4t*"
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "broadcast"
+   ],
+   "quote": "tonight's broadcast was only about 40-50% - very muted and muffled"
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned unanimously",
+   "tags": [
+    "adjourn"
+   ],
+   "quote": "motion to adjourn made by chris, seconded by jay unanimous"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Warrant",
+   "where": "text",
+   "quote": "whether these two articles are reversed in the town warrant. tm says they are"
+  },
+  {
+   "name": "TIF Agreement",
+   "where": "text",
+   "quote": "the sb will be signing the tif agreement on monday after a few language changes."
+  },
+  {
+   "name": "Capital Plan Policy",
+   "where": "text",
+   "quote": "dave believes fincom and capital planning should work together to tackle"
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "special town meeting",
+  "STM articles",
+  "capital plan",
+  "CARES Act",
+  "Zoom meeting",
+  "public comment",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

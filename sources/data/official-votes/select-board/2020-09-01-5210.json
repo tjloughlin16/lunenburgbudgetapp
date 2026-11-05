@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-09-01",
  "docid": "5210",
@@ -12,23 +12,39 @@
  },
  "votes": [
   {
-   "motion": "Appoint Antony Nicastro as ZBA Associate (term to expire June 30, 2022) and to APDC (term to expire June 30, 2023)",
+   "motion": "Appoint Antony Nicastro as ZBA Associate (term to June 30, 2022) and to the APDC (term to June 30, 2023).",
    "moved_by": "K. Adams",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: k. adams 2nd: m. jeffreys to appoint antony nicastro as zba associate with a term to expire june 30, 2022 and the apdc with a term to expire june 30, 2023 vote: ms. adams-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. marino-aye, mr. alonzo-aye"
+   "quote": "motion: k. adams 2nd: m. jeffreys to appoint antony nicastro as zba associate with a term to expire june 30, 2022 and the apdc with a term to expire june 30, 2023"
   },
   {
-   "motion": "Appoint Cullen Dwyer to the APDC with a term to expire June 30, 2023",
+   "motion": "Appoint Cullen Dwyer to the APDC with a term to expire June 30, 2023.",
    "moved_by": "T. Dwyer",
    "seconded_by": "J. Marino",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: t. dwyer 2nd: j. marino to appoint cullen dwyer to the apdc with a term to expire june 30, 2023 vote: ms. adams-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. marino-aye, mr. alonzo-aye"
+   "quote": "motion: t. dwyer 2nd: j. marino to appoint cullen dwyer to the apdc with a term to expire june 30, 2023"
   },
   {
-   "motion": "Appoint Jennifer Sanderson to the Historical Commission with a term to expire June 30, 2023",
+   "motion": "Not to approve payment to Dee Bus Service and Van Pool Transportation; the motion died for lack of a second.",
+   "moved_by": "K. Adams",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "motion: k. adams to not approve payment to the dee bus service and van pool transportation there was no second to the motion."
+  },
+  {
+   "motion": "Approve payment of $94,000 to Dee Bus Company and $41,112 to Van Pool Transportation.",
+   "moved_by": "T. Dwyer",
+   "seconded_by": "J. Marino",
+   "outcome": "passed 3-2",
+   "procedural": false,
+   "quote": "to approve payment of $94,000 to dee bus company and $41,112 to van pool transportation 2nd: j. marino vote: ms. adams-nay, mr. dwyer-aye, mr. marino-aye, mr. jeffreys-nay, mr. alonzo-aye"
+  },
+  {
+   "motion": "Appoint Ms. Sanderson to the Historical Commission with a term to expire June 30, 2023.",
    "moved_by": "K. Adams",
    "seconded_by": "J. Marino",
    "outcome": "not stated",
@@ -36,36 +52,20 @@
    "quote": "motion: k. adams 2nd: j. marino to appoint ms. sanderson to the historical commission with a term to expire june 30, 2023"
   },
   {
-   "motion": "Do not approve payment to the Dee Bus Service and Van Pool Transportation",
-   "moved_by": "K. Adams",
-   "seconded_by": "",
-   "outcome": "failed (no second)",
-   "procedural": false,
-   "quote": "motion: k. adams to not approve payment to the dee bus service and van pool transportation there was no second to the motion."
-  },
-  {
-   "motion": "Approve payment of $94,000 to Dee Bus Company and $41,112 to Van Pool Transportation",
-   "moved_by": "T. Dwyer",
-   "seconded_by": "J. Marino",
-   "outcome": "passed 3-2",
-   "procedural": false,
-   "quote": "motion: t. dwyer to approve payment of $94,000 to dee bus company and $41,112 to van pool transportation 2nd: j. marino vote: ms. adams-nay, mr. dwyer-aye, mr. marino-aye, mr. jeffreys-nay, mr. alonzo-aye"
-  },
-  {
-   "motion": "Accept the proposed schedule for Special Town Meeting and open the warrant for STM on Wednesday September 2nd",
-   "moved_by": "M. Jeffreys",
-   "seconded_by": "T. Dwyer",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "motion: m. jeffreys 2nd: t. dwyer to accept the proposed schedule for special town meeting and to open the warrant for the stm on wednesday september 2nd vote: ms. adams-aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys-aye, mr. alonzo-aye"
-  },
-  {
-   "motion": "Approve the minutes of June 9, June 16, June 23 and July 7, 2020",
+   "motion": "Approve the 2020 minutes of June 9, June 16, June 23 and July 7, 2020 as presented.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
    "outcome": "passed 5-0",
    "procedural": true,
    "quote": "motion: m. jeffreys 2nd: t. dwyer to approve the minutes as presented vote: ms. adams-aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys-aye, mr. alonzo-aye"
+  },
+  {
+   "motion": "Accept the proposed schedule for Special Town Meeting and open the warrant for the STM on Wednesday September 2nd.",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "T. Dwyer",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "to accept the proposed schedule for special town meeting and to open the warrant for the stm on wednesday september 2nd"
   },
   {
    "motion": "Adjourn the meeting at 10:31 p.m.",
@@ -77,6 +77,538 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan of original meeting minutes. Vote for Jennifer Sanderson appointment to Historical Commission (motion present but vote outcome not captured in OCR). No Board vote recorded on Balish Brook naming proposal (item 3)—discussion and Conservation Commission recommendation only.",
- "cost_usd": 0.1504336
+ "note": "OCR of a scanned document; several names are garbled as printed (e.g., \"om Alonzo\", \"Michael-Kay Jettreys\", \"Ms. Alonzo\" where Mr. Alonzo is meant, \"Elaire\" in the signature). Page 10 is partly unreadable, including the topic heading before the Historical Commission item. The Sanderson appointment motion has no vote result printed. The Dee Bus no-second motion died without a vote. No board vote is recorded on the Balish Brook naming. The Ms. Brochu financial report was not heard.",
+ "cost_usd": 0.01718752,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "om Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: om alonzo, chairman; michael-kay jettreys, vice chairman; katey"
+  },
+  {
+   "name": "Michael-Kay Jettreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: om alonzo, chairman; michael-kay jettreys, vice chairman; katey"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "",
+   "status": "present",
+   "quote": "katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux; dr. kate burnham, school superintendent;"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "School Superintendent",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux; dr. kate burnham, school superintendent;"
+  },
+  {
+   "name": "Mike Cassidy",
+   "role": "School Business Manager",
+   "status": "present",
+   "quote": "mike cassidy, school business manager; adam costa, town counsel;"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "attorney costa stated there is no legal obligation or liability."
+  },
+  {
+   "name": "Cor Van Dyke",
+   "role": "Chief Financial Officer",
+   "status": "present",
+   "quote": "cor van dyke, chief financial officer van pool transportation john mccarthy, ceo of nrt/van pool transportation"
+  },
+  {
+   "name": "John McCarthy",
+   "role": "CEO of NRT/Van Pool Transportation",
+   "status": "present",
+   "quote": "john mccarthy, ceo of nrt/van pool transportation"
+  },
+  {
+   "name": "Lisa Alterisio",
+   "role": "Vice President of Van Pool Transportation",
+   "status": "present",
+   "quote": "lisa alterisio, vice president of van pool transportation; sandra martin, owner"
+  },
+  {
+   "name": "Sandra Martin",
+   "role": "Owner of Dee Bus Service",
+   "status": "present",
+   "quote": "sandra martin stated although we are contracted for 180 days we are actually working 365 days"
+  },
+  {
+   "name": "Jennifer Sanderson",
+   "role": "applicant, Historical Commission",
+   "status": "remote",
+   "quote": "ms. sanderson entered the meeting via telephone."
+  },
+  {
+   "name": "Kevin Boussom",
+   "role": "applicant, Historical Commission",
+   "status": "absent",
+   "quote": "mr. boussom was not present for the meeting so this appointment was passed over."
+  },
+  {
+   "name": "Antony Nicastro",
+   "role": "applicant, ZBA Associate",
+   "status": "not stated",
+   "quote": "mr. nicastro thanked the board for the opportunity."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "applicant, APDC Member at Large",
+   "status": "present",
+   "quote": "apdc-member at large, cullen dwyer, 76 main street"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, wanted to know what the dollar amount would be"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Parks Commissioner",
+   "status": "present",
+   "quote": "dave passios, parks commissioner, speaking on behalf of the commission, stated one of their"
+  },
+  {
+   "name": "Ms. Brochu",
+   "role": "Finance Director",
+   "status": "absent",
+   "quote": "ms. brochu contacted her and was unable to connect to the meeting as her computer was running an upgrade."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 1st Quarter FY21 Financial report from Ms. Brochu was tabled until the next meeting due to lack of audio capabilities.",
+   "quote": "will be tabled until the next meeting due to lack of audio capabilities."
+  },
+  {
+   "decision": "Historical Commission applicant Kevin Boussom was not present, so his appointment was passed over.",
+   "quote": "mr. boussom was not present for the meeting so this appointment was passed over."
+  },
+  {
+   "decision": "Ms. Lemieux would contact both legislative offices to ask whether they knew who made the Charter edits.",
+   "quote": "she stated she would contact both offices to see if they were aware of who made the changes."
+  },
+  {
+   "decision": "The FY2021 budget discussion and STM articles amending FY21 appropriations were tabled to the next meeting.",
+   "quote": "ms. lemieux requested to table this until the next meeting."
+  },
+  {
+   "decision": "The safety plan for Special Town Meeting will be modeled on the Annual Town Meeting plan, with a separate room for those not wearing masks.",
+   "quote": "the safety plan for special town meeting (stm) will be modeled off of the plan for annual"
+  },
+  {
+   "decision": "The Interim Police Chief will be advised to inquire about line painting at Electric Avenue and Massachusetts Avenue.",
+   "quote": "the interim police chief will be advised to inquire."
+  },
+  {
+   "decision": "Ms. Lemieux will follow up on the other alcohol license that was requested.",
+   "quote": "ms. lemieux will follow up on the other alcohol license that was requested."
+  },
+  {
+   "decision": "Discussion on the FY2021 budget and appropriations was moved to the next agenda.",
+   "quote": "appropriations will be moved to the next agenda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Retention credit offsetting Van Pool costs (CARES Act)",
+   "what_was_recorded": "Van Dyke said the company earned employee retention credits, part of which is a credit of a stated amount.",
+   "quote": "part is a credit amounting to $18,967.",
+   "figures_as_printed": [
+    "$18,967"
+   ]
+  },
+  {
+   "topic": "Savings from a forbearance agreement on loans",
+   "what_was_recorded": "Van Dyke estimated the savings from a forbearance agreement at roughly a stated figure, and said the loans could not be put in forbearance.",
+   "quote": "mr. van dyke stated it would be roughly around $18,000.",
+   "figures_as_printed": [
+    "$18,000"
+   ]
+  },
+  {
+   "topic": "Cost of replacement school buses",
+   "what_was_recorded": "Van Dyke said the company must buy new buses every five years and was buying several for other districts at a cost stated as over a figure.",
+   "quote": "we are in the process of buying several new buses for some other districts and that was over $30,000.",
+   "figures_as_printed": [
+    "$30,000"
+   ]
+  },
+  {
+   "topic": "Dee Bus and Van Pool payment request",
+   "what_was_recorded": "Motion to approve payments to the two bus companies, which passed 3-2.",
+   "quote": "to approve payment of $94,000 to dee bus company and $41,112 to van pool transportation",
+   "figures_as_printed": [
+    "$94,000",
+    "$41,112"
+   ]
+  },
+  {
+   "topic": "Profit margin of the bus companies",
+   "what_was_recorded": "Company representatives said they generally earn a small profit margin, now eaten up by lost athletics and field trip revenue.",
+   "quote": "we make a 3% profit generally but we lost the athletics and field trips and this eats up our profit.",
+   "figures_as_printed": [
+    "3%",
+    "three or four percent"
+   ]
+  },
+  {
+   "topic": "Savings question raised by public comment",
+   "what_was_recorded": "Dave Rodgers asked the dollar amount of savings had a forbearance agreement been set up for both companies.",
+   "quote": "wanted to know what the dollar amount would be",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Accounts Payable warrant",
+   "what_was_recorded": "Chairman reported signing an Accounts Payable warrant in the stated amount.",
+   "quote": "accounts payable warrant # 9 21, dated 8/18/2020, in the amount of $657,588.86",
+   "figures_as_printed": [
+    "$657,588.86"
+   ]
+  },
+  {
+   "topic": "Payroll Deduction warrant",
+   "what_was_recorded": "Chairman reported signing a Payroll Deduction warrant in the stated amount.",
+   "quote": "payroll deduction warrant # 10 21, dated 8/19/2020, in the amount of $672,284.86",
+   "figures_as_printed": [
+    "$672,284.86"
+   ]
+  },
+  {
+   "topic": "Payroll warrant",
+   "what_was_recorded": "Chairman reported signing a Payroll warrant in the stated amount.",
+   "quote": "payroll warrant # 4p21, dated 8/20/2020, in the amount of $631,887.93",
+   "figures_as_printed": [
+    "$631,887.93"
+   ]
+  },
+  {
+   "topic": "Green Communities Competitive Grant award",
+   "what_was_recorded": "The town was awarded its requested grant amount; the minutes list the approved projects and their amounts.",
+   "quote": "$69,361 for our green communities competitivegrant application.",
+   "figures_as_printed": [
+    "$69,361",
+    "$15,092",
+    "$2,780",
+    "$9,500",
+    "$7,065",
+    "$725",
+    "$725",
+    "$725",
+    "$1,450",
+    "$450",
+    "$1,629",
+    "$3,200",
+    "$2,200",
+    "$10,000",
+    "$4,460",
+    "$4,360",
+    "$5,000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Wishing school teachers, students and parents luck",
+   "speaker": "Ms. Adams",
+   "stated_role": "",
+   "quote": "ms. adams was thinking of all the school teachers, students and parents and wishing them luck"
+  },
+  {
+   "topic": "Savings and electricity question on bus payments",
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "quote": "dave rodgers, 82 highland street, wanted to know what the dollar amount would be"
+  },
+  {
+   "topic": "Parks Commission seats and meeting limits",
+   "speaker": "Dave Passios",
+   "stated_role": "Parks Commissioner",
+   "quote": "dave passios, parks commissioner, speaking on behalf of the commission, stated one of their"
+  },
+  {
+   "topic": "Community group meetings on TC Passios Building space",
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "quote": "dave passios, so whiting street, reminded the public the next two meetings 9/10 and 9l21 at"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "ms. lemieux announced there was an error printed in the sentinel stating the town clerk's",
+   "tags": [
+    "announcements",
+    "charter",
+    "traffic"
+   ]
+  },
+  {
+   "topic": "4th Quarter Financial Report",
+   "resolution": "not heard; Finance Director could not connect",
+   "quote": "ms. lemieux reported ms. brochu contacted her and was unable to connect to the meeting as her",
+   "tags": [
+    "finance"
+   ]
+  },
+  {
+   "topic": "ZBA Associate and APDC appointment, Antony Nicastro",
+   "resolution": "approved 5-0",
+   "quote": "to appoint antony nicastro as zba associate with a term to expire june 30, 2022",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "APDC appointment, Cullen Dwyer",
+   "resolution": "approved 5-0",
+   "quote": "to appoint cullen dwyer to the apdc with a term to expire june 30, 2023",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Historical Commission appointment, Kevin Boussom",
+   "resolution": "passed over; applicant absent",
+   "quote": "mr. boussom was not present for the meeting so this appointment was passed over.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "School transportation payment request (FY 2020)",
+   "resolution": "approved payments 3-2; motion not to pay died for lack of second",
+   "quote": "7:30 pm meeting with school and school transportation companies to discuss fy 2020",
+   "tags": [
+    "school transportation",
+    "bus contracts",
+    "COVID-19",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Historical Commission appointment, Jennifer Sanderson",
+   "resolution": "motion recorded; no result printed",
+   "quote": "ms. sanderson was requesting to be reappointed to the historical commission.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "1st Quarter FY21 Financial Report",
+   "resolution": "tabled",
+   "quote": "will be tabled until the next meeting due to lack of audio capabilities.",
+   "tags": [
+    "finance"
+   ]
+  },
+  {
+   "topic": "Revised Town Charter and Parks Commission",
+   "resolution": "no action; discussion",
+   "quote": "ms. lemieux reported the revised charter now constitutes a five member parks commission.",
+   "tags": [
+    "charter",
+    "parks commission",
+    "legislation"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting schedule and warrant",
+   "resolution": "schedule accepted, warrant opened 5-0",
+   "quote": "ms. lemieux directed the board to a proposed schedule leading up to a special town meeting",
+   "tags": [
+    "special town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "FY2021 budget and STM appropriation articles",
+   "resolution": "tabled",
+   "quote": "ms. lemieux requested to table this until the next meeting.",
+   "tags": [
+    "budget",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Naming tributary off Mulpus Brook as Balish Brook",
+   "resolution": "no board vote recorded; Conservation Commission opposed naming",
+   "quote": "mr. alonzo read the conservation commission's response:",
+   "tags": [
+    "geographic names",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Approval of 2020 minutes",
+   "resolution": "approved 5-0",
+   "quote": "approval of 2020 minutes of june 9, june 16, june 23 and july 7, 2020",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "reported signed; no vote",
+   "quote": "mr. alonzo reported he signed the following warrants last week.",
+   "tags": [
+    "warrants",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Action items: lane painting",
+   "resolution": "Interim Police Chief to be advised",
+   "quote": "the interim police chief will be advised to inquire.",
+   "tags": [
+    "traffic",
+    "public works"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "informational",
+   "quote": "mr. jeffreys reported the library trustees met on august 20th.",
+   "tags": [
+    "library",
+    "MRC"
+   ]
+  },
+  {
+   "topic": "Town Manager report and COVID-19 update",
+   "resolution": "informational; alcohol license follow-up",
+   "quote": "the kick-off meeting for the continuity of operations plan was held today with all department",
+   "tags": [
+    "COVID-19",
+    "grants",
+    "vacancies",
+    "continuity of operations"
+   ]
+  },
+  {
+   "topic": "Public comment and adjournment",
+   "resolution": "adjourned 5-0 at 10:31 p.m.",
+   "quote": "dave passios, so whiting street, reminded the public the next two meetings 9/10 and 9l21 at",
+   "tags": [
+    "public comment",
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Email from Matthew O'Connell, U.S. Board on Geographic Names (BGN)",
+   "where": "text",
+   "quote": "ms. alonzo read the email from matthew o'connell:"
+  },
+  {
+   "name": "BGN Commemorative Names Policy",
+   "where": "text",
+   "quote": "please see the attached bgn commemorative names policy and please consider the proposal in light of the policy."
+  },
+  {
+   "name": "Conservation Commission response",
+   "where": "text",
+   "quote": "mr. alonzo read the conservation commission's response:"
+  },
+  {
+   "name": "Bill S.2754, revising the Town Charter",
+   "where": "text",
+   "quote": "the bill (s.2754)to revise the town charterwas"
+  },
+  {
+   "name": "Executive Order to Increase Child Care Options",
+   "where": "text",
+   "quote": "executive order to increase child care options:"
+  },
+  {
+   "name": "Continuity of Operations Plan",
+   "where": "text",
+   "quote": "this is a document that ensures the primary essential functions of the agency (town"
+  },
+  {
+   "name": "Green Communities Competitive Grant application",
+   "where": "text",
+   "quote": "$69,361 for our green communities competitivegrant application."
+  },
+  {
+   "name": "Proposed schedule for Special Town Meeting",
+   "where": "text",
+   "quote": "ms. lemieux directed the board to a proposed schedule leading up to a special town meeting"
+  },
+  {
+   "name": "Accounts Payable Warrant # 9 21, dated 8/18/2020",
+   "where": "text",
+   "quote": "accounts payable warrant # 9 21, dated 8/18/2020, in the amount of $657,588.86"
+  },
+  {
+   "name": "Payroll Deduction Warrant # 10 21, dated 8/19/2020",
+   "where": "text",
+   "quote": "payroll deduction warrant # 10 21, dated 8/19/2020, in the amount of $672,284.86"
+  },
+  {
+   "name": "Payroll Warrant # 4P21, dated 8/20/2020",
+   "where": "text",
+   "quote": "payroll warrant # 4p21, dated 8/20/2020, in the amount of $631,887.93"
+  },
+  {
+   "name": "Dee Bus and Van Pool contract and accompanying documents",
+   "where": "text",
+   "quote": "he read the contract and all the accompanying documents and stated he was in"
+  },
+  {
+   "name": "Sentinel newspaper article (Town Clerk misprint)",
+   "where": "text",
+   "quote": "ms. lemieux announced there was an error printed in the sentinel stating the town clerk's"
+  }
+ ],
+ "tags": [
+  "school transportation",
+  "bus contracts",
+  "COVID-19",
+  "appointments",
+  "Town Charter",
+  "Parks Commission",
+  "Special Town Meeting",
+  "warrants",
+  "minutes",
+  "Green Communities grant",
+  "library",
+  "geographic names"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,7 +1,8 @@
 ---
-status: open
+status: reference
 updated: 2026-11-04
-next: TJ: refile the OML complaint with the AG, or not -- window 4 Nov to 30 Dec 2026; TJ deferred the decision to Mon 9 Nov 2026
+genlock: G-596EF -- next steps, prohibitions and open questions live there (genlock goal show G-596EF)
+deadlines: decision deferred to Mon 9 Nov 2026; AG refile window closes 30 Dec 2026 (also in genlock, due-dated)
 ---
 
 # TWO FILINGS, READY TO SEND — queued 4 October 2026, TJ sends 5 October

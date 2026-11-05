@@ -1,0 +1,804 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2020-07-07",
+ "video_id": "4BA4GYTd_SY",
+ "video_url": "https://www.youtube.com/watch?v=4BA4GYTd_SY",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2020-07-07-4BA4GYTd_SY.json",
+  "sha256": "29ccaf6d883cc38caea34e16ab72617a78defb56b21236be359277101759c5c4",
+  "caption_lines": 493,
+  "segments": 3864
+ },
+ "recording": {
+  "duration_s": 10401,
+  "duration": "2:53",
+  "spoken_chars": 129831,
+  "words_approx": 21638
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_07072020-5218",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-07-07-agenda-5218.txt",
+   "path": "sources/meetings/select-board/2020-07-07-agenda-5218.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07072020-5218",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-07-07-minutes-5218.txt",
+   "path": "sources/meetings/select-board/2020-07-07-minutes-5218.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-03T19:42:42Z",
+  "cost_usd": 0.377322
+ },
+ "minutes": {
+  "headline": "Select Board tabled paying the two school bus companies for service not rendered, 4-1; also split on committee seats.",
+  "summary": "The board heard the school business manager and superintendent on a request to pay the two bus vendors part of the contract for the spring closure. After long debate over charity, precedent and state-aid risk, the board tabled it for more information. The board also made a statement on Memorial Day cemetery conditions, covered House Bill 4820 on mail voting, made committee appointments (which turned contentious over the TC Passios design committee seat), and heard the town manager's report.",
+  "attendees": [
+   {
+    "name_as_heard": "Miss Adams",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mr DWI",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mr Marino",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mr Jeff",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mr Alonzo",
+    "role": "chair",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Madam Town manager",
+    "role": "town manager",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mr Cassidy",
+    "role": "business manager",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Dr Burnham",
+    "role": "superintendent",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mr pasos",
+    "role": "Finance Committee member / Parks Commission vice chair",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mr beardmore",
+    "role": "Finance Committee member",
+    "remote": true
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 207,
+    "topic": "A board member raised communication about the town beach and the separate myrec parks and rec website not linked from the town site.",
+    "stated_role": "board member"
+   },
+   {
+    "t": 3603,
+    "speaker_as_heard": "Dave pasio 56 Whiting Street",
+    "stated_role": "Finance Committee member",
+    "topic": "Asked about the size of the transportation contract and whether the costs are reimbursable."
+   },
+   {
+    "t": 3898,
+    "speaker_as_heard": "Peter beardmore 282 Pleasant Street",
+    "stated_role": "Finance Committee member and liaison to School Committee",
+    "topic": "Said the board should ask about assurances and financial stability from the bus company and suggested tabling."
+   },
+   {
+    "t": 10146,
+    "speaker_as_heard": "Dave pasio 56 Whiting street",
+    "stated_role": "citizen",
+    "topic": "Praised questioning of the bus payout, urged action on the stalled Town Charter bill, and asked the board to make cemetery and DPW problems a 2021 goal."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "elections",
+   "facilities",
+   "grants",
+   "health-insurance",
+   "hiring",
+   "legal",
+   "personnel",
+   "planning-and-zoning",
+   "public-comment",
+   "public-safety",
+   "staffing",
+   "state-aid",
+   "town-departments",
+   "transportation"
+  ],
+  "votes": [
+   {
+    "t": 800,
+    "motion": "Ratify town manager's appointments of beach coordinator and seasonal lifeguards",
+    "moved_by": "",
+    "outcome": "passed 5-0 by roll call",
+    "procedural": false
+   },
+   {
+    "t": 5054,
+    "motion": "Deny payment to the two bus companies for services not rendered",
+    "moved_by": "Miss Adams",
+    "outcome": "second withdrawn; replaced by motion to table",
+    "procedural": false
+   },
+   {
+    "t": 5301,
+    "motion": "Table the bus company payment request to a later date",
+    "outcome": "passed 4-1",
+    "procedural": false
+   },
+   {
+    "t": 7440,
+    "motion": "Authorize chair to sign letter petitioning the legislature for home rule petitions on library trust fund investment and an additional alcohol license",
+    "outcome": "passed (roll call; one abstention on the liquor license part, no no votes heard)",
+    "procedural": false
+   },
+   {
+    "t": 8420,
+    "motion": "Appoint Mr DWI to the TC Passios building design committee",
+    "outcome": "passed (Miss Adams voted no; others aye)",
+    "procedural": false
+   },
+   {
+    "t": 8695,
+    "motion": "Approve minutes of April 28, 2020",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 10383,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1287,
+    "topic": "FY20 bus payments to the two vendors",
+    "what_was_said": "School committee voted to pay the general-ed bus vendor and the special-ed van vendor capped amounts toward the remaining contract.",
+    "figures_as_heard": [
+     "$94,000",
+     "41 $1,112"
+    ]
+   },
+   {
+    "t": 2596,
+    "topic": "Basis of bus payment percentage",
+    "what_was_said": "Business manager said the figure was about 45% of operating expenses excluding fuel and driver wages, plus a bump for extracurricular services.",
+    "figures_as_heard": [
+     "45%",
+     "5%"
+    ]
+   },
+   {
+    "t": 3748,
+    "topic": "Annual transportation budget",
+    "what_was_said": "The business manager gave the annual transportation budget and said it is about 5% of the operating budget.",
+    "figures_as_heard": [
+     "1 million 166 ,000"
+    ]
+   },
+   {
+    "t": 2176,
+    "topic": "Possible state aid cut",
+    "what_was_said": "A member reasoned that a state aid reduction could force the schools to cut teachers.",
+    "figures_as_heard": [
+     "$9 million",
+     "$3 million",
+     "$1.75 million"
+    ]
+   },
+   {
+    "t": 3494,
+    "topic": "Other districts' payments to bus vendors",
+    "what_was_said": "Neighboring districts settled around half, with the van vendor getting a range from its districts.",
+    "figures_as_heard": [
+     "50%",
+     "between 48 and 78%"
+    ]
+   },
+   {
+    "t": 9391,
+    "topic": "Health insurance premium holiday",
+    "what_was_said": "Town manager reported a 50% July premium holiday, with savings to be reserved for the fall special town meeting.",
+    "figures_as_heard": [
+     "$50,000",
+     "118,000",
+     "25 million"
+    ]
+   },
+   {
+    "t": 9413,
+    "topic": "Chapter 90 apportionment FY21",
+    "what_was_said": "Town manager reported the FY21 Chapter 90 apportionment compared with the prior year.",
+    "figures_as_heard": [
+     "415 929",
+     "$414,000 649",
+     "200 million"
+    ]
+   },
+   {
+    "t": 9245,
+    "topic": "Land and park grant reimbursements",
+    "what_was_said": "Town manager reported submitting reimbursement for the land and park grants for the closed property purchase.",
+    "figures_as_heard": [
+     "$400,000",
+     "$100,000"
+    ]
+   },
+   {
+    "t": 9286,
+    "topic": "Sale of 17 and 23 West Street",
+    "what_was_said": "Funds received will boost certified free cash this fall.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 8786,
+    "topic": "Warrants signed",
+    "what_was_said": "Town manager read the two payroll/bill warrant amounts.",
+    "figures_as_heard": [
+     "$ 29,185",
+     "1, 57,5 $561 60"
+    ]
+   },
+   {
+    "t": 7036,
+    "topic": "Cost of mail-in voting",
+    "what_was_said": "Unclear whether the state will reimburse the town for mailed ballots; Cares Act money may be eligible.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 5345,
+    "decision": "Bus payment request tabled; school staff to bring back more information, and the vendors asked to make their case."
+   },
+   {
+    "t": 6724,
+    "decision": "No board representative named for cemetery stakeholders; the town manager and assistant town manager continue on their own."
+   },
+   {
+    "t": 7740,
+    "decision": "Committee seats assigned by consensus: Capital Planning, Finance Appointing Committee, Regional Planning, Joint Transportation, Metropolitan Planning Organization, Stormwater Task Force; the Mart Advisory Board left open."
+   },
+   {
+    "t": 9650,
+    "decision": "Member asked for resumes and interview questions for the police chief appointment; town manager said process is hers."
+   },
+   {
+    "t": 10358,
+    "decision": "Goals to go on the next meeting agenda or the 21st."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 200,
+    "topic": "Call to order, remote meeting rules, roll call, pledge",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 200,
+    "t_end": 420,
+    "topic": "Public comment on town beach information and website communication",
+    "resolution": "informational; town manager to add link",
+    "tags": [
+     "recreation",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 420,
+    "t_end": 740,
+    "topic": "Announcements, lake treatment notice, resignations from boards",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 740,
+    "t_end": 960,
+    "topic": "Beach appointments ratified",
+    "resolution": "voted",
+    "tags": [
+     "recreation",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 960,
+    "t_end": 5420,
+    "topic": "FY20 school bus payment request for service not rendered",
+    "resolution": "tabled 4-1",
+    "tags": [
+     "transportation",
+     "contracts-and-unions",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 5420,
+    "t_end": 6640,
+    "topic": "Statement on Memorial Day cemetery conditions",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 6640,
+    "t_end": 7400,
+    "topic": "House Bill 4820 mail voting and costs",
+    "resolution": "informational",
+    "tags": [
+     "elections"
+    ]
+   },
+   {
+    "t_start": 7400,
+    "t_end": 7520,
+    "topic": "Home rule petitions letter on library trust funds and liquor license",
+    "resolution": "voted",
+    "tags": [
+     "legal",
+     "library"
+    ]
+   },
+   {
+    "t_start": 7520,
+    "t_end": 8700,
+    "topic": "Committee appointments and dispute over the TC Passios design committee seat",
+    "resolution": "assigned; contentious",
+    "tags": [
+     "personnel",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 8700,
+    "t_end": 8860,
+    "topic": "Minutes and warrants",
+    "resolution": "minutes vote incomplete; warrants read",
+    "tags": []
+   },
+   {
+    "t_start": 8860,
+    "t_end": 9120,
+    "topic": "Action items: staff reports, facility asset management, line-item budget",
+    "resolution": "requests to town manager",
+    "tags": [
+     "facilities",
+     "town-departments",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 9120,
+    "t_end": 10120,
+    "topic": "Town manager report: vacancies, fuel tanks, land grants, insurance relief, Chapter 90, state budget, police chief, COVID",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report",
+     "grants",
+     "state-aid"
+    ]
+   },
+   {
+    "t_start": 10120,
+    "t_end": 10400,
+    "topic": "Public comment, goals, adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Final vote counts on the April 28 minutes and adjournment are cut off or incomplete.",
+   "Several dollar figures in the bus payment and town manager report are garbled by the captions.",
+   "Part of Mr beardmore's remarks were lost to a connection drop around 3939.",
+   "Exact vote on the home rule letter was only partly captured."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 8333,
+    "about": "Dispute over who should fill the TC Passios design committee seat, with a member saying another member's opposition to the project made her unsuitable.",
+    "sides": "One member and others supporting the appointment of the engineer member versus Miss Adams, who said it was a personal attack.",
+    "words_as_heard": "you're on a little bit of a personal attack here",
+    "kind": "members disagree"
+   },
+   {
+    "t": 8613,
+    "about": "Exchange over accusations that a self-nomination was made just to block a colleague; the chair cautioned and warned against bullying.",
+    "sides": "Miss Adams versus Mr Jeff, with the chair intervening",
+    "words_as_heard": "you don't need to bully each other at selectman's meetings on Zoom or otherwise",
+    "kind": "charged language"
+   },
+   {
+    "t": 4000,
+    "about": "A Finance Committee member criticized the board for the questions it asked about the bus payment and called it posturing; the chair pushed back.",
+    "sides": "Finance committee member versus the board",
+    "words_as_heard": "I don't think you're asking the right questions",
+    "kind": "public criticism"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 2218,
+    "kind": "condition",
+    "about": "A member would not approve bus payments if schools cannot absorb a state aid cut without cutting teachers.",
+    "who": "a member",
+    "words_as_heard": "I'm not in favor of approving any money to go to a vendor who's who's having an unfortunate time because of this crisis"
+   },
+   {
+    "t": 2450,
+    "kind": "liability or legal",
+    "about": "If the sole-bid bus company folded, the district would face an emergency bid just before school opens.",
+    "who": "the business manager",
+    "words_as_heard": "if they go under uh it's an emergency bid um and try to scramble to get transportation for kids for the first day of school"
+   },
+   {
+    "t": 5260,
+    "kind": "condition",
+    "about": "A member could be persuaded to pay if the vendors make their case.",
+    "who": "a member",
+    "words_as_heard": "I could see myself a light going on that says yeah that's a good point"
+   },
+   {
+    "t": 8955,
+    "kind": "safety",
+    "about": "No building systems asset management plan or quarterly maintenance logs exist, risking leaks and boiler failures.",
+    "who": "a member",
+    "words_as_heard": "we don't find ourselves in a position where our roof is leaking"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 3300,
+    "name_as_heard": "the special legislation",
+    "kind": "warrant article",
+    "words_as_heard": "the legislation came about because of primarily because of this issue"
+   },
+   {
+    "t": 2029,
+    "name_as_heard": "email from Senator Tran, May 15",
+    "kind": "letter or email",
+    "words_as_heard": "an email that we received from uh Dean Tran Senator Tran back in May 15"
+   },
+   {
+    "t": 6841,
+    "name_as_heard": "House Bill 4820",
+    "kind": "warrant article",
+    "words_as_heard": "Basing a 20page doc legislation"
+   },
+   {
+    "t": 7440,
+    "name_as_heard": "letter drafted by Council on home rule petitions",
+    "kind": "letter or email",
+    "words_as_heard": "letter um drafted by Council and it's sent to our delegation"
+   },
+   {
+    "t": 5429,
+    "name_as_heard": "prepared statement regarding Cemetery preparation",
+    "kind": "memo",
+    "words_as_heard": "I have a prepared statement regarding this issue"
+   },
+   {
+    "t": 8695,
+    "name_as_heard": "April 28 2020 minutes",
+    "kind": "prior minutes",
+    "words_as_heard": "approval of minutes April 28 2020"
+   },
+   {
+    "t": 9102,
+    "name_as_heard": "line item budget",
+    "kind": "budget document",
+    "words_as_heard": "I did ask for a line item budget"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "school-bus-contract",
+    "title": "School bus contract",
+    "question": "What does the bus contract cost and what was proposed to be paid for the spring closure?",
+    "t": 960,
+    "words_as_heard": "the fy20 school bus transportation payment request",
+    "data_in_play": [
+     "$94,000",
+     "41 $1,112",
+     "1 million 166 ,000",
+     "45%"
+    ],
+    "existing": "topic:dee-bus-contract"
+   },
+   {
+    "slug": "facility-asset-management-plan",
+    "title": "Facility asset management",
+    "question": "Does the town track lifespans and replacement schedules for building systems?",
+    "t": 8893,
+    "words_as_heard": "a facility Asset Management report",
+    "data_in_play": [],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted 4-1 to table a request to pay the two school bus companies for service not rendered during the spring closure.",
+    "t": 5301
+   },
+   {
+    "line": "School staff are to bring back more information on the bus payment, and the vendors were asked to make their case.",
+    "t": 5345
+   },
+   {
+    "line": "The board appointed a member to the TC Passios building design committee, with one no vote; the seat had been disputed.",
+    "t": 8420
+   },
+   {
+    "line": "The board ratified the town manager's beach coordinator and seasonal lifeguard appointments, 5-0 by roll call.",
+    "t": 800
+   },
+   {
+    "line": "The town manager reported a health insurance premium holiday, with savings to be reserved for the fall special town meeting.",
+    "t": 9391
+   }
+  ],
+  "why_it_matters": [
+   "The bus payment would pay vendors for service not delivered, and whether it comes from the school budget or elsewhere bears on school spending and, through state aid, on local taxes.",
+   "The reserved insurance savings and the sale proceeds from West Street properties may shape what residents are asked to vote on at the fall special town meeting."
+  ],
+  "watch_next": [
+   "The bus payment request returning to the Select Board after school staff provide more information.",
+   "Goals for the board, which were to go on the next meeting agenda or the 21st."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-03T19:42:48Z",
+   "cost_usd": 0.0301451
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07072020-5218",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-07-07-minutes-5218.txt",
+   "path": "sources/meetings/select-board/2020-07-07-minutes-5218.pdf"
+  },
+  "official_sha256": "899c38e316cf5337652769f6ab0a61975c2944be681b03d142d68db7712cc9b7",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the beach appointment ratification, the 4-1 vote to table the bus payments, and most figures. They differ on the TCP committee appointment, the cemetery representative, and several items only one record has. The main point to check is the TCP Building Design Committee vote, where the appointee (Dwyer or Jeffreys) and the vote split differ.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 3,
+   "discrepancy": 3,
+   "only_in_ours": 6,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Ratify beach coordinator and seasonal lifeguard appointments",
+    "ours": "Ratify town manager's appointments of beach coordinator and seasonal lifeguards — passed 5-0 by roll call",
+    "official": "motion: t. dwyer 2nd: k. adams to ratify the town manager appointments as presented vote: ms. adams-aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys- aye, mr. alonzo-aye",
+    "note": "Both record a 5-0 passage.",
+    "t": 800
+   },
+   {
+    "kind": "agree",
+    "about": "Table bus company payment",
+    "ours": "Table the bus company payment request to a later date — passed 4-1",
+    "official": "motion: j. marino to table this discussion until a later date vote: ms. adams- nay, mr. marino-aye, mr. dwyer- aye, mr. jeffreys-aye, mr. alonzo-aye",
+    "note": "Same 4-1 vote to table.",
+    "t": 5301
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Withdrawn motion to deny bus payment",
+    "ours": "Deny payment to the two bus companies for services not rendered — second withdrawn; replaced by motion to table",
+    "official": "",
+    "note": "The official minutes record no motion to deny or its withdrawal.",
+    "t": 5054
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Home rule/special legislation letter vote",
+    "ours": "Authorize chair to sign letter petitioning the legislature for home rule petitions on library trust fund investment and an additional alcohol license — passed (roll call; one abstention on the liquor license part, no no votes heard)",
+    "official": "vote: ms. adams-aye, mr. dwyer- aye, mr. jeffreys- abstain, mr. marino- aye, mr. alonzo-aye",
+    "note": "Both pass with one abstention. Ours ties the abstention to the liquor license part only; the official records a single 4-0-1 vote with Jeffreys abstaining. Check whether the vote was split.",
+    "t": 7440
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Appointment to TCP Building Design Committee",
+    "ours": "Appoint Mr DWI to the TC Passios building design committee — passed (Miss Adams voted no; others aye)",
+    "official": "vote: ms. adams- nay, mr. marino-aye, mr. jeffreys- aye, mr. dwyer-aye, mr. alonzo- nay",
+    "note": "Appointee differs (ours Dwyer, official Jeffreys after Dwyer withdrew) and the vote differs (ours one no, official Adams and Alonzo no, 3-2). Check the recording.",
+    "t": 8420
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Cemetery stakeholders: board representative",
+    "ours": "No board representative named for cemetery stakeholders; the town manager and assistant town manager continue on their own.",
+    "official": "the town manager and a bos representative will reach out to schedule a meeting with all cemetery stakeholders",
+    "note": "Ours says no board representative was named; the official says a BOS representative will join the Town Manager. Check the recording.",
+    "t": 6724
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY20 bus payments",
+    "ours": "FY20 bus payments to the two vendors: $94,000, 41 $1,112",
+    "official": "the school committee voted to approve that dee bus service would receive a payment not to exceed $90,000 and van",
+    "note": "Garbled captions; the official gives $90,000 and $41,112, so $94,000 is likely a mishearing of $90,000 and $1,112 of $41,112.",
+    "t": 1287,
+    "official_reading": "$90,000 and $41,112"
+   },
+   {
+    "kind": "agree",
+    "about": "Health insurance premium holiday",
+    "ours": "Health insurance premium holiday: $50,000, 118,000, 25 million",
+    "official": "this equates to approximately $50,000 savings on the town side and $118,000 on the school side.",
+    "note": "Same figures.",
+    "t": 9391
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chapter 90 apportionment FY21",
+    "ours": "Chapter 90 apportionment FY21: 415 929, $414,000 649, 200 million",
+    "official": "lunenburg's apportionment for fiscal year 2021 is $415,929.",
+    "note": "Same item with garbled digit grouping; the official gives $415,929 and prior year $414,649.",
+    "t": 9413,
+    "official_reading": "$415,929 and $414,649"
+   },
+   {
+    "kind": "agree",
+    "about": "Land and park grant reimbursements",
+    "ours": "Land and park grant reimbursements: $400,000, $100,000",
+    "official": "reimbursement submission for the $400,000 land grant and the $100,000 parc grant by june 30th",
+    "note": "Same figures.",
+    "t": 9245
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrants signed",
+    "ours": "Warrants signed: $ 29,185, 1, 57,5 $561 60",
+    "official": "#1-21 dated 7/1/20 in the amount of $1,507,561.60 ms. lemieux noted this warrant included the",
+    "note": "The garbled figures appear to be $1,507,561.60; the first figure may be the #67-20 warrant of $259,102.15. Verify against the recording.",
+    "t": 8786,
+    "official_reading": "$1,507,561.60"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "MIIA participation and dividend credits",
+    "ours": "",
+    "official": "we also received participation and dividend credits from miia totaling $16,778 that will go towards reducing our",
+    "note": "Our minutes do not mention the $16,778 MIIA credits."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "State interim budget",
+    "ours": "",
+    "official": "on june 26th governor baker signed a $5.25 billion interim budget for fiscal year 2021",
+    "note": "Our minutes do not record the $5.25 billion interim budget."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Possible state aid cut",
+    "ours": "Possible state aid cut: $9 million, $3 million, $1.75 million",
+    "official": "",
+    "note": "The official minutes have no state aid cut figures.",
+    "t": 2176
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Annual transportation budget and other districts' bus payments",
+    "ours": "Annual transportation budget: 1 million 166 ,000; Other districts' payments to bus vendors: 50%, between 48 and 78%",
+    "official": "",
+    "note": "Figures are not in the official minutes.",
+    "t": 3748
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Letter of thanks to Lantry and Passios",
+    "ours": "",
+    "official": "mr. alonzo requested letter of thanks be sent to both from the board for their years of volunteerism.",
+    "note": "Our minutes do not record this."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Line item budget follow-up",
+    "ours": "",
+    "official": "ms. lemieux will provide that later in the week.",
+    "note": "Our minutes do not record the promise of a line item budget or the website link to Recreation posts."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Committee seat assignments by consensus",
+    "ours": "Committee seats assigned by consensus: Capital Planning, Finance Appointing Committee, Regional Planning, Joint Transportation, Metropolitan Planning Organization, Stormwater Task Force; the Mart Advisory Board left open.",
+    "official": "",
+    "note": "The official minutes record no committee seat assignments.",
+    "t": 7740
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Police chief resumes request",
+    "ours": "Member asked for resumes and interview questions for the police chief appointment; town manager said process is hers.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 9650
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Goals on next agenda",
+    "ours": "Goals to go on the next meeting agenda or the 21st.",
+    "official": "",
+    "note": "The official minutes do not mention this; they record only Adams's request to discuss etiquette.",
+    "t": 10358
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: board members",
+    "ours": "Miss Adams, Mr DWI, Mr Marino, Mr Jeff, Mr Alonzo (chair)",
+    "official": "chairman alonzo called the meeting to order at 7:00 p.m. and announced in accordance with the requirements",
+    "note": "All five members present in both; ours misheard Dwyer as DWI and Jeffreys as Jeff.",
+    "t": 800
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: staff, Passios and Beardmore",
+    "ours": "Madam Town manager, Mr Cassidy, Mr pasos, Mr beardmore",
+    "official": "finance committee members: dave passios, peter beardmore",
+    "note": "Both list Cassidy, Passios, Beardmore and the town manager (Ms. Lemieux). Dr Burnham appears only in ours.",
+    "t": 9391
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-03T19:44:19Z",
+   "cost_usd": 0.1130981
+  }
+ }
+}

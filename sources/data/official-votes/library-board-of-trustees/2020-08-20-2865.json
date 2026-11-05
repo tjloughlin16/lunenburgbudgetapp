@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2020-08-20",
  "docid": "2865",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the July 23rd minutes as amended",
+   "motion": "Accept the July 23rd minutes as amended.",
    "moved_by": "Dick Mailloux",
    "seconded_by": "Maia Wentrup",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "dick made a motion to accept, seconded by maia. passed unanimously."
   },
   {
-   "motion": "Consider Laura Boussom for the temporary appointment to the Board of Trustees",
+   "motion": "Consider Laura Boussom for the temporary appointment to the board.",
    "moved_by": "Kate McCarron",
    "seconded_by": "Dick Mailloux",
    "outcome": "passed unanimously",
@@ -28,15 +28,189 @@
    "quote": "kate read a statement from laura and made a motion to consider laura for the temporary appointment. dick seconded. motion passed unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick Mailloux",
    "seconded_by": "Donna Saiia",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn by dick, seconded by donna. meeting was adjourned at 7:48 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "All votes recorded in readable text format. Names matched to attendee list for full identification: Dick Mailloux, Maia Wentrup, Kate McCarron, Donna Saiia.",
- "cost_usd": 0.0981475
+ "dropped_unquoted": 1,
+ "note": "Text is a typed extraction; pages 3-9 are blank. Votes were taken by roll call but individual roll-call tallies are not printed, so outcomes are as printed ('passed unanimously'). The adjournment motion has no printed result beyond the adjournment time. No public comment speakers are named. Staff named only in passing (Debbie, Lydia, Sherry) are not recorded as attendees.",
+ "cost_usd": 0.00473002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "status": "remote",
+   "quote": "remote meeting via conference call and video link. all votes were done by roll call."
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "remote",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Bob Conroy",
+   "status": "remote",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "remote",
+   "quote": "the lplbt meeting was called to order at 6:47 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "remote",
+   "quote": "dick made a motion to accept, seconded by maia. passed unanimously."
+  },
+  {
+   "name": "Donna Saiia",
+   "status": "remote",
+   "quote": "motion to adjourn by dick, seconded by donna. meeting was adjourned at 7:48 p.m."
+  },
+  {
+   "name": "Maia Wentrup",
+   "status": "remote",
+   "quote": "dick made a motion to accept, seconded by maia. passed unanimously."
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "status": "remote",
+   "quote": "michael-ray said he has been redesignated as the bot liaison for the next year."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board of Trustees will meet with the Selectman on Sept. 8 to process the appointment of the recommended candidate.",
+   "quote": "the bot will meet with the selectman on sept. 8 th to process the appointment."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Director's report: budget lines and electricity",
+   "what_was_recorded": "All budget lines should be expended except for electricity charges, with some invoices and vouchers still pending.",
+   "figures_as_printed": [],
+   "quote": "all budget lines should be expended except for electricity charges. waiting for a few invoices and vouchers"
+  },
+  {
+   "topic": "FY21 early-stage spending",
+   "what_was_recorded": "FY21 is in its early stages with mostly salary expended so far.",
+   "figures_as_printed": [],
+   "quote": "fy21 is still in the early stages. mostly just salary expended at this time."
+  },
+  {
+   "topic": "CWMARS membership and Book Service fees",
+   "what_was_recorded": "CWMARS membership and Book Service fees will come due next month, with no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "cwmars membership and book service fees will be due next month."
+  },
+  {
+   "topic": "Friends of LPL annual meeting budget",
+   "what_was_recorded": "The Friends approved a new budget at their annual meeting; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "a new budget was approved."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of Minutes (July 23)",
+   "resolution": "approved as amended",
+   "quote": "dick made a motion to accept, seconded by maia. passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received, no action",
+   "quote": "all budget lines should be expended except for electricity charges.",
+   "tags": [
+    "director",
+    "reopening",
+    "budget",
+    "staffing",
+    "summer reading",
+    "COVID-19 safety"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "no action",
+   "quote": "dick and harry went to the annual meeting. said it was well attended.",
+   "tags": [
+    "friends of library"
+   ]
+  },
+  {
+   "topic": "Update on Potential Board Candidate",
+   "resolution": "candidate considered for temporary appointment; BOT to meet Selectman Sept. 8",
+   "quote": "kate has a candidate to recommend: laura boussom.",
+   "tags": [
+    "board appointment"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action",
+   "quote": "michael-ray said he has been redesignated as the bot liaison for the next year.",
+   "tags": [
+    "board comments"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 7:48 p.m.",
+   "quote": "meeting was adjourned at 7:48 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "August 20th 2020 Agenda",
+   "where": "list",
+   "quote": "august 20th 2020 agenda"
+  },
+  {
+   "name": "August Director’s Report",
+   "where": "list",
+   "quote": "august director's report"
+  },
+  {
+   "name": "August 2020 Adult Services Report",
+   "where": "list",
+   "quote": "august 2020 adult services report"
+  },
+  {
+   "name": "August 2020 Children’s Area Report",
+   "where": "list",
+   "quote": "august 2020 children's area report"
+  }
+ ],
+ "tags": [
+  "library",
+  "remote meeting",
+  "COVID-19 reopening",
+  "board appointment",
+  "director's report",
+  "budget",
+  "summer reading",
+  "curbside pickup"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

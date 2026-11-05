@@ -1,0 +1,86 @@
+{
+ "board": "Finance Committee",
+ "board_slug": "finance-committee",
+ "meeting_date": "2021-01-21",
+ "source": {
+  "sha256": "827b27414926f0543bcfad3ce70e4f0627f93642a0b6ffd97b88945f047da046",
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2021-01-21-AI853Y5UYSA.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "2 million 547 thousand 312 dollars",
+    "fiscal_year": 2022,
+    "kind": "budget_total",
+    "scope": "town",
+    "statement": "Total of 23 FY22 capital requests.",
+    "status": "announced",
+    "t": 469,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "969 243",
+    "fiscal_year": 2022,
+    "kind": "free_cash",
+    "scope": "town",
+    "statement": "Forecast uses this much certified free cash in FY22, mostly capital, OPEB and stabilization.",
+    "status": "proposed",
+    "t": 3628,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2022,
+    "kind": "state_aid",
+    "scope": "town",
+    "statement": "Forecast level funds state aid for FY22 pending the governor's budget.",
+    "status": "proposed",
+    "t": 3586,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "one million forty four thousand eighty dollars",
+    "fiscal_year": 2022,
+    "kind": "other",
+    "scope": "school",
+    "statement": "School five-year staffing plan adds this in FY22.",
+    "status": "proposed",
+    "t": 4529,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2023,
+    "kind": "deficit",
+    "scope": "both",
+    "statement": "Forecast projects deficits growing in FY23 through 26, largely because free cash is not counted as revenue.",
+    "status": "announced",
+    "t": 4405,
+    "who": "the town manager"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "deferred capital projects",
+    "condition": null,
+    "fiscal_year": 2022,
+    "prediction": "Unfunded FY22 capital projects will compound the amount needed in future years.",
+    "scope": "town",
+    "t": 1862,
+    "who": "the town manager"
+   }
+  ]
+ },
+ "video_id": "AI853Y5UYSA",
+ "video_url": "https://www.youtube.com/watch?v=AI853Y5UYSA",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-11-03T14:50:05Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

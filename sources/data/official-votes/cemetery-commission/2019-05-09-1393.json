@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2019-05-09",
  "docid": "1393",
@@ -12,23 +12,184 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes from April 11, 2019 as written",
+   "motion": "Accept the minutes of the April 11, 2019 meeting as written.",
    "moved_by": "Chairman Tyler",
    "seconded_by": "Vice-Chair Mendoza",
-   "outcome": "approved unanimously",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "upon a motion by chairman tyler - to accept the minutes as written, seconded by vice-chair mendoza, minutes were approved unanimously."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chairman Tyler",
    "seconded_by": "Lorraine Mendoza, Vice-Chair",
-   "outcome": "meeting was adjourned at 8:00 PM",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made to adjourn by chairman tyler, seconded by lorraine mendoza, vice-chair. with no further discussion, meeting was adjourned at 8:00 pm."
+   "quote": "with no further business before the commission, a motion was made to adjourn by chairman tyler, seconded by lorraine mendoza, vice-chair."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0813845
+ "dropped_unquoted": 3,
+ "note": "Text is a clean extraction with no scan issues, but several passages are garbled or ambiguous: 'Commissioner Chairman, Tyler' and 'Chairman Tyler will require into the Lunenburg Alumni Association' are unclear, and 'Further discussions were finalized with the Rules and Regulations' records no vote. Tyler is called both 'Chairman' and 'Commissioner'. Jim Hachey, Dick Demers, Jim Brooks and Jack Rodriquenz are named but were not at this meeting, so they are not listed as attendees. No public comment section is printed, and the minutes record no votes other than the minutes approval and adjournment. The adjournment outcome is recorded as 'passed' because the minutes state the meeting was adjourned at 8:00 PM, with no tally printed.",
+ "cost_usd": 0.006333719999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "William Tyler",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "commissioner tyler started the meeting asking if there had been any new correspondence from anyone."
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "other members present were lorraine mendoza, vice-chair, and nancy foss yasko, clerk."
+  },
+  {
+   "name": "Nancy Foss Yasko",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "other members present were lorraine mendoza, vice-chair, and nancy foss yasko, clerk."
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Cemetery Superintendent",
+   "status": "present",
+   "quote": "also present was todd holman, cemetery superintendent."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commissioner Tyler will apply for the building permit for the Cemetery Building, noting it could take up to 6 months.",
+   "quote": "commissioner tyler will now apply for the building permit, as this could take up to"
+  },
+  {
+   "decision": "Commissioner Nancy Foss Yasko will contact Ramaker for an update on the upcoming CIMS Cloud upgrade.",
+   "quote": "commissioner nancy foss yasko will reach out to ramaker for an update with the upcoming upgrade"
+  },
+  {
+   "decision": "Chairman Tyler will contact Jack Rodriquenz, Director of DPW, about summer help for the Cemetery Superintendent.",
+   "quote": "chairman tyler will be reaching out to jack rodriquenz, director of dpw"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Plaque donation request to Lunenburg Memorial Fund",
+   "what_was_recorded": "Chairman Tyler asked the Lunenburg Memorial Fund to donate for a plaque for the late Commissioner Lance May; the request was declined because the committee has dissolved. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "regarding having them donate for the plaque for late commissioner lance may"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and minutes of April 11, 2019",
+   "resolution": "minutes approved as written",
+   "tags": [
+    "minutes",
+    "approval"
+   ],
+   "quote": "minutes were read from april 11, 2019 meeting."
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "no new correspondence reported",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "commissioner tyler started the meeting asking if there had been any new correspondence from anyone."
+  },
+  {
+   "topic": "Monty Tech cemetery building phases",
+   "resolution": "update only, no action recorded",
+   "tags": [
+    "Monty Tech",
+    "building project",
+    "schedule"
+   ],
+   "quote": "monty tech is very excited to work with the cemetery commission and cemetery superintendent again."
+  },
+  {
+   "topic": "CIMS Cloud upgrade",
+   "resolution": "Commissioner Yasko to contact Ramaker",
+   "tags": [
+    "software",
+    "CIMS Cloud"
+   ],
+   "quote": "commissioner nancy foss yasko will reach out to ramaker for an update with the upcoming upgrade"
+  },
+  {
+   "topic": "Plaque donation for late Commissioner Lance May",
+   "resolution": "request declined by Lunenburg Memorial Fund; no action recorded",
+   "tags": [
+    "donation",
+    "plaque"
+   ],
+   "quote": "regarding having them donate for the plaque for late commissioner lance may"
+  },
+  {
+   "topic": "Rules and regulations for metal signs, North and South Cemeteries",
+   "resolution": "discussed; minutes say discussions were finalized, no vote recorded",
+   "tags": [
+    "rules",
+    "signs"
+   ],
+   "quote": "further discussions were finalized with the rules and regulations for the metal signs in both the north"
+  },
+  {
+   "topic": "Summer help for Cemetery Superintendent",
+   "resolution": "Chairman Tyler to contact DPW Director",
+   "tags": [
+    "staffing",
+    "DPW"
+   ],
+   "quote": "chairman tyler will be reaching out to jack rodriquenz, director of dpw"
+  },
+  {
+   "topic": "Memorial Day plans and prisoner program help",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "Memorial Day",
+    "maintenance",
+    "volunteers"
+   ],
+   "quote": "cemetery superintendent, todd holman spoke about memorial day plans and having the worcester"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:00 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "with no further business before the commission, a motion was made to adjourn by chairman tyler"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Rules and Regulations for the metal signs in both the North and South Cemeteries",
+   "where": "text",
+   "quote": "further discussions were finalized with the rules and regulations for the metal signs in both the north"
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "Monty Tech",
+  "building project",
+  "budget",
+  "ATM article",
+  "Memorial Day",
+  "minutes approval",
+  "DPW"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "budget_items": 1,
+  "topics": 1,
+  "documents_and_exhibits": 1
+ }
 }

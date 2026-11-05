@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-07-09",
  "docid": "5143",
@@ -12,39 +12,327 @@
  },
  "votes": [
   {
-   "motion": "Approve the July 26 and August 17, 2019 special one day beer and wine licenses for Dragonfly Garden Café",
+   "motion": "Approve the July 26 and August 17, 2019 special one day beer and wine licenses for Dragonfly Garden Café.",
    "moved_by": "K. Adams",
    "seconded_by": "D.MeQuaid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: k. adams 2°: d.mequaid to approve the july 26 and august 17, 2019 special one day beer and wine licenses vote: all in favor"
+   "quote": "to approve the july 26 and august 17, 2019 special one day beer and wine licenses vote: all in favor"
   },
   {
-   "motion": "Reappoint John Lynch as town clockwinder with a term to expire June 30, 2020",
+   "motion": "Reappoint John Lynch as town clockwinder with a term to expire June 30, 2020.",
    "moved_by": "K. Adams",
    "seconded_by": "D. MeQuaid",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: k. adams 20c: d. mequaid to reappoint john lynch as town clockwinder with a term to expire june 30, 2020 vote: all in favor"
+   "procedural": false,
+   "quote": "to reappoint john lynch as town clockwinder with a term to expire june 30, 2020 vote: all in favor"
   },
   {
-   "motion": "Amend the term for Barbara Reynolds as Monty Tech School Rep to end June 30, 2023",
+   "motion": "Amend the term for Barbara Reynolds (Monty Tech School Rep) to end June 30, 2023.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: d. mcquaid 2nd.p. luck to amend the term for barbara reynolds to end june 30, 2023 vote: all in favor"
+   "procedural": false,
+   "quote": "to amend the term for barbara reynolds to end june 30, 2023 vote: all in favor"
   },
   {
-   "motion": "Accept the Board of Selectmen goals for FY20 as presented",
+   "motion": "Accept the Board of Selectmen goals for FY20 as presented.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
    "outcome": "passed",
+   "procedural": false,
+   "quote": "to accept the board of selectmen goals for fy20 as presented 2n°: p. luck vote: all in favor"
+  },
+  {
+   "motion": "Enter executive session under the Chair's declaration that discussion concerns the government's litigating position in National Prescription Opiate Litigation Case No. 1:17-MD-2804, and not return to open session.",
+   "moved_by": "D. McQuaid",
+   "seconded_by": "P. Luck",
+   "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: d. mcquaid to accept the board of selectmen goals for fy20 as presented 2n°: p. luck vote: all in favor"
+   "quote": "vote: mr. jeffreys- aye, ms. adams-aye, mr. mcquaid-aye, ms.luck-aye, mr. alonzo- ay",
+   "quote_taken_from_text": true
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR scan via macOS Vision. Text contains OCR artifacts (e.g., '20c', '2n°' for seconder designations).\"",
- "cost_usd": 0.1487235
+ "dropped_unquoted": 0,
+ "note": "Scanned pages read by OCR (macOS Vision) with errors: page 2 begins mid-sentence, the executive session purpose is cut off at the page 8/9 break, and several names are OCR-garbled (printed as 'D.MeQuaid' / 'D. MeQuaid' / 'Michael- Ray Jeffreys'). The opening section headed 'PUBLIC COMMENT:' contains Board and staff announcements rather than public speakers, so only the unnamed senior-citizen remark is recorded as public comment. Most votes are recorded as 'Vote: All in Favor' with no count; only the executive session vote has a printed tally (5 ayes). The adjournment at 9:19 p.m. is recorded without any motion, so it is not listed as a vote. Joslin Schneider's role is not printed. Executive session minutes are stated to be separate and are not in this text. Signed by Elaine M. Peterson, Executive Assistant to the Town Manager (not listed as an attendee).",
+ "cost_usd": 0.010363620000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chair; phyllis luck, vice chair; damon mcquaid, clerk; katey adams, member; michael- ray jeffreys, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chair; phyllis luck, vice chair; damon mcquaid, clerk; katey adams, member; michael- ray jeffreys, member"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chair; phyllis luck, vice chair; damon mcquaid, clerk; katey adams, member; michael- ray jeffreys, member"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chair; phyllis luck, vice chair; damon mcquaid, clerk; katey adams, member; michael- ray jeffreys, member"
+  },
+  {
+   "name": "Michael- Ray Jeffreys",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chair; phyllis luck, vice chair; damon mcquaid, clerk; katey adams, member; michael- ray jeffreys, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; jack rodriquenz, dpw director;"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; jack rodriquenz, dpw director;"
+  },
+  {
+   "name": "Joslin Schneider",
+   "role": "presenter for Dragonfly Garden Café events (role not printed)",
+   "status": "present",
+   "quote": "joslin schneider presented for both events."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board decided to have Town labor counsel check with the Attorney General's office on the statement that individual evaluation forms are not public records.",
+   "quote": "it was decided to have town labor counsel check with the attorney general's office on the statement."
+  },
+  {
+   "decision": "The Town Manager evaluation rating scale will run from 0-4 after discussion.",
+   "quote": "after some discussion the ratings will go from 0-4."
+  },
+  {
+   "decision": "The word 'consensus' in the evaluation process is changed to 'composite'.",
+   "quote": "consensus will be changed to composite."
+  },
+  {
+   "decision": "Board members were asked to come to the next meeting prepared with the bullets (limit of 4) they want under the eight categories; the Town Manager will send out the updated document.",
+   "quote": "mr. alonzo asked for the next meeting to come prepared with what bullets (limit of 4) you would like under the eight categories."
+  },
+  {
+   "decision": "The Chair will ask town counsel the questions raised about the evaluation process.",
+   "quote": "mr. alonzo will ask town counsel all the questions asked this evening about the process."
+  },
+  {
+   "decision": "The Town Manager will post the Planning Board Unitil hearing meeting notice.",
+   "quote": "ms. lemieux will post the meeting."
+  },
+  {
+   "decision": "Town Manager will send out the updated Town Manager evaluation document.",
+   "quote": "town manager will send out the updated document."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Mass Trails Grant award to Conservation Commission",
+   "what_was_recorded": "The Conservation Commission received a state award of $21,267 through the Mass Trails Grant program.",
+   "figures_as_printed": [
+    "$21,267"
+   ],
+   "quote": "i want to congratulate the conservation commission, specifically member bob pease, on receiving an award of $21,267 from the state through the mass trails grant program."
+  },
+  {
+   "topic": "ADA improvements paid by MA Office on Disability grant",
+   "what_was_recorded": "ADA improvements at Lane, Cowdrey and Small Town Forest conservation lands were paid for with a state grant and are completed; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "that were paid for with a ma office on disability project grant are now completed."
+  },
+  {
+   "topic": "FY20 Road Materials bid",
+   "what_was_recorded": "The FY20 Road Materials bid opening took place and the Town Manager is reviewing bids before issuing award letters and contracts; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the fy20 road materials bid opening was yesterday and i am in the process of reviewing"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Seating and hardship for senior citizens at committee meetings",
+   "stated_role": "not stated",
+   "quote": "she stated sitting in those chairs for three hours is a significant hardship for senior citizens."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening, pledge and announcements",
+   "resolution": "no action",
+   "tags": [
+    "opening",
+    "announcements",
+    "volunteer committees"
+   ],
+   "quote": "the meeting opened at 7:00 p.m. with the pledge of allegiance."
+  },
+  {
+   "topic": "Special one day beer and wine licenses, Dragonfly Garden Café",
+   "resolution": "approved",
+   "tags": [
+    "licensing",
+    "beer and wine",
+    "hearing"
+   ],
+   "quote": "joslin schneider presented for both events."
+  },
+  {
+   "topic": "DPW Director update on culverts",
+   "resolution": "no action",
+   "tags": [
+    "DPW",
+    "culverts",
+    "roads"
+   ],
+   "quote": "mr. rodriquenz reported there will be a culvert replaced near the intersection of northfield road and west townsend road."
+  },
+  {
+   "topic": "Reappointment of town clockwinder John Lynch",
+   "resolution": "approved",
+   "tags": [
+    "appointments"
+   ],
+   "quote": "to reappoint john lynch as town clockwinder with a term to expire june 30, 2020 vote: all in favor"
+  },
+  {
+   "topic": "Term correction, Barbara Reynolds, Monty Tech School Rep",
+   "resolution": "approved",
+   "tags": [
+    "appointments",
+    "Monty Tech"
+   ],
+   "quote": "to amend the term for barbara reynolds to end june 30, 2023 vote: all in favor"
+  },
+  {
+   "topic": "Planning Board hearing on Unitil Storm Resiliency Program",
+   "resolution": "discussed; Town Manager to post meeting",
+   "tags": [
+    "Planning Board",
+    "Unitil",
+    "scenic road",
+    "tree warden"
+   ],
+   "quote": "ms. lemieux reported the planning board is holding a hearing on unitil's storm resiliency program"
+  },
+  {
+   "topic": "Committee reports (Storm Water Task Force, Finance Committee vacancy)",
+   "resolution": "no action",
+   "tags": [
+    "stormwater",
+    "MS4",
+    "Finance Committee"
+   ],
+   "quote": "ms. luck reported the storm water task force will be meeting on thursday to interview contractors for year 2 of the ms4 permit."
+  },
+  {
+   "topic": "MRC Walkability and Parking Study public walk dates",
+   "resolution": "discussed; no vote",
+   "tags": [
+    "MRC",
+    "walkability",
+    "parking",
+    "public meetings"
+   ],
+   "quote": "ms. lemieux presented tentative dates of july 15 or july 25 at 5:00 p.m. for the whalom area."
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational",
+   "tags": [
+    "ADA",
+    "grants",
+    "road materials",
+    "MS4",
+    "volunteer appreciation"
+   ],
+   "quote": "the ada improvements at the lane, cowdrey, and small town forest conservation lands that"
+  },
+  {
+   "topic": "Review of Town Manager evaluation form and process",
+   "resolution": "continued",
+   "tags": [
+    "personnel",
+    "Town Manager evaluation",
+    "town counsel"
+   ],
+   "quote": "mr. alonzo referred the board to the document with tracked changes."
+  },
+  {
+   "topic": "Review of Board of Selectmen goals for FY20",
+   "resolution": "approved",
+   "tags": [
+    "goals",
+    "FY20",
+    "policy"
+   ],
+   "quote": "mr. alonzo referred the board to the list following the last meeting's discussion."
+  },
+  {
+   "topic": "Public comment closing",
+   "resolution": "no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment: there was none."
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session, did not return to open session",
+   "tags": [
+    "executive session",
+    "litigation"
+   ],
+   "quote": "vote: mr. jeffreys- aye, ms. adams-aye, mr. mcquaid-aye, ms.luck-aye, mr. alonzo- ay",
+   "quote_taken_from_text": true
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Manager evaluation form (document with tracked changes)",
+   "where": "text",
+   "quote": "mr. alonzo referred the board to the document with tracked changes."
+  },
+  {
+   "name": "Overview document compiling the ratings and comments, prepared by the Chair",
+   "where": "text",
+   "quote": "the only document to be released will be this overview document, compiling the ratings and comments, prepared by the chair."
+  },
+  {
+   "name": "FY2020 Lunenburg Selectboard Goals",
+   "where": "text",
+   "quote": "fy2020 lunenburg selectboard goals"
+  }
+ ],
+ "tags": [
+  "beer and wine licenses",
+  "appointments",
+  "Town Manager evaluation",
+  "Board goals FY20",
+  "culverts",
+  "grants",
+  "MS4 stormwater",
+  "Planning Board",
+  "MRC walkability study",
+  "executive session",
+  "litigation",
+  "volunteer appreciation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

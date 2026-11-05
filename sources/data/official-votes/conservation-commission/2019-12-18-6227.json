@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2019-12-18",
  "docid": "6227",
@@ -12,103 +12,543 @@
  },
  "votes": [
   {
-   "motion": "Approve order of conditions for replacement septic system at 69 Kilburn Street with 4x4 wooden posts every 30 feet at edge of development",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed",
+   "motion": "Approve the Tanner Notice of Intent with an order of conditions requiring 4 by 4 wooden posts every 30 feet at the edge of development.",
+   "moved_by": "BP",
+   "seconded_by": "JR",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "a motion to approve and order of conditions made for 4 by 4 wooden posts to every 30 feet at the edge of development by bp with a second by jr and a unanimous roll call vote to approve the motion."
+   "quote": "by bp with a second by jr and a unanimous roll call vote to approve the motion."
   },
   {
-   "motion": "Approve negative determination for replacement of collapsed retaining wall at 66 Horizon Island Road",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Carl Luck",
-   "outcome": "passed",
+   "motion": "Issue a negative determination for the Peg Gorman retaining wall replacement request.",
+   "moved_by": "KJ",
+   "seconded_by": "CL",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "a motion for a negative determination was made by kj and seconded by cl with a unanimous roll call vote to approve (jr recused himself from the matter)."
+   "quote": "a motion for a negative determination was made by kj and seconded by cl with a unanimous roll call vote to approve"
   },
   {
-   "motion": "Approve order of conditions for common driveway crossing at 41 & 47 Reservoir Road with condition 40 for dewatering and rip rap where slope reaches 6 percent",
-   "moved_by": "Carl Luck",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed",
+   "motion": "Approve the Steven Powell common driveway order of conditions, adding condition 40 on dewatering and rip rap on the driveway where slope reaches 6 percent.",
+   "moved_by": "Cl",
+   "seconded_by": "KJ",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "a motion was made adding condition 40 applicable to the dewatering for the crossing and rip rap added to the driveway wherever a slope reached 6 percent made by cl and a second by kj with a unanimous roll call vote to approve the motion."
+   "quote": "made by cl and a second by kj with a unanimous roll call vote to approve the motion."
   },
   {
-   "motion": "Approve order of conditions for repairing 3 retaining walls and replacement of steps at 72 Hemlock Drive with conditions that face of wall be staked and approved by administrator and sequence of work added",
+   "motion": "Approve an order of conditions for the Myles Jenkin retaining wall work, with the wall face staked and approved by the administrator and the sequence of work added to the order.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed 4-2-1",
    "procedural": false,
-   "quote": "a motion was made for approving an order of conditions with the conditions that the face of the wall was staked and approved by the administrator and the sequence of work be added to the order. the vote was rb ,no, cl ,no. td ,yes, cc ,yes, kj ,yes, jr abstain, bp yes. the motion was approved as a roll call vote totaling 4 yes to 2 no's with one abstention due to recusal."
+   "quote": "the motion was approved as a roll call vote totaling 4 yes to 2 no's with one abstention due to recusal."
   },
   {
-   "motion": "Continue hearing to January 15, 2020 at 7 PM at Bilotta room",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Carl Luck",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Continue the Micke Dutton request for determination to January 15, 2020 at 7 PM at the Bilotta room.",
+   "moved_by": "KJ",
+   "seconded_by": "CL",
+   "outcome": "passed unanimously",
+   "procedural": false,
    "quote": "kj moved to continue to the billotta room on jan 15, 2020 at 7 pm with a second by cl and a unanimous roll call vote to approve the motion."
   },
   {
-   "motion": "Continue hearing to January 15, 2020 at 7 PM at Bilotta room",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "cc moved to continue to the billotta room on jan 15, 2020 at 7 pm with a second by cc and a unanimous roll call vote to approve the motion."
+   "motion": "Continue the DPW Notice of Intent for the Sunset Lane and Northfield Road culverts to January 15, 2020 at 7 PM.",
+   "moved_by": "CC",
+   "seconded_by": "CC",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "cc moved to continue to the billotta room on jan 15, 2020 at 7 pm with a second by cc"
   },
   {
-   "motion": "Continue hearing to January 15, 2020 at 7 PM at Bilotta room",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Carl Luck",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Continue the Nanci Bell Notice of Intent for the 51 Fire Road 19 retaining wall to January 15, 2020 at 7 PM.",
+   "moved_by": "KJ",
+   "seconded_by": "CL",
+   "outcome": "passed unanimously",
+   "procedural": false,
    "quote": "kj moved to continue to the billotta room on jan 15, 2020 at 7 pm with a second by cl and a unanimous roll call vote to approve the motion."
   },
   {
-   "motion": "Issue another $100 fine for EO-164 Page Street violation",
-   "moved_by": "Carl Luck",
+   "motion": "Issue another 100 dollar fine on EO-164 Page Street.",
+   "moved_by": "CL",
    "seconded_by": "JE",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "cl moved to issue another 100 dollar fine je seconded and the commission voted unanimously."
   },
   {
-   "motion": "Require owner to restore perimeter drain, remove trenches and restore to original condition by June 1, 2020 at 228 West Street",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Carl Luck",
-   "outcome": "passed",
+   "motion": "Require the owner at 228 West Street to restore the perimeter drain, remove the trenches and restore all to original condition by June 1, 2020, with notification to the administrator.",
+   "moved_by": "BP",
+   "seconded_by": "CL",
+   "outcome": "passed unanimously, with RB abstaining",
    "procedural": false,
-   "quote": "a motion was made for the owner to restore the perimeter drain, remove the trenchs and restore all to the original condition completed by june 1, 2020 with a notification by the owner to the administrator by bp with a second by cl and a unanimous roll call vote to approve with rb abstaining."
+   "quote": "a motion was made for the owner to restore the perimeter drain, remove the trenchs"
   },
   {
-   "motion": "Approve conservation restriction as draft and allow submission to state for Settler's Crossing",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Bob Pease",
-   "outcome": "passed",
+   "motion": "Approve the Settler's Crossing Conservation Restriction as a draft and allow submission to the state.",
+   "moved_by": "KJ",
+   "seconded_by": "BP",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "kj moved to approve the cr as a draft and allow submission to the state a second by bp with a unanimous vote to approve."
   },
   {
-   "motion": "Approve transfer of $1,735 from trust funds to forestry account for McKann Property",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Bob Pease",
-   "outcome": "passed",
+   "motion": "Approve transferring 1735 dollars from the trust funds to the forestry account.",
+   "moved_by": "KJ",
+   "seconded_by": "BP",
+   "outcome": "passed unanimously by roll call",
    "procedural": false,
-   "quote": "kj moved to approve transferring of 1735 dollars from the trust funds to the forestry account. bp seconded and the commission voted unanimously by a roll call vote"
+   "quote": "kj moved to approve transferring of 1735 dollars"
   },
   {
-   "motion": "Approve minutes of December 4, 2019",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed",
+   "motion": "Approve the minutes of the December 4, 2019 meeting.",
+   "moved_by": "BP",
+   "seconded_by": "CC",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "bp moved to approve the minutes. cc seconded and the commission voted unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two items noted: (1) One vote seconder listed as \"JE\" is not clearly identified in the member roster; this may be a typographical error. (2) Vote on Dutton and Bell continuations are distinct motions with identical language and outcomes.",
- "cost_usd": 0.1243025
+ "note": "Text is typed minutes with readable votes; no scan problems. Votes are recorded as printed, including a DPW continuance where CC is both mover and seconder, and the Jenkin motion where the mover is not named. The closing line prints 'January 15, 2019' while the continuances say January 15, 2020; recorded as printed. Dwyer presided as Chairman while the letterhead lists Richard Bursch as Chair. No documents list heading is printed; documents are recorded from the discussion text only.",
+ "cost_usd": 0.01250032,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair; presided as Chairman Dwyer",
+   "status": "present",
+   "quote": "by chairman dwyer. all in attendance except jv."
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "remote",
+   "quote": "rb is participating remotely and therefore all votes are taken by roll call."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "",
+   "status": "present",
+   "quote": "by chairman dwyer. all in attendance except jv."
+  },
+  {
+   "name": "Catie Childs",
+   "role": "",
+   "status": "present",
+   "quote": "by chairman dwyer. all in attendance except jv."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "",
+   "status": "present",
+   "quote": "by chairman dwyer. all in attendance except jv."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "by chairman dwyer. all in attendance except jv."
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "",
+   "status": "present",
+   "quote": "by chairman dwyer. all in attendance except jv."
+  },
+  {
+   "name": "Jeffrey Vivano",
+   "role": "associate member",
+   "status": "absent",
+   "quote": "all in attendance except jv."
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "mm noted he reviewed the baseline document"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "presenter on the Tanner Notice of Intent",
+   "status": "present",
+   "quote": "dan proctor appeared before the commission and narrated the project."
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "presenter on the Jenkin and Gorman matters",
+   "status": "present",
+   "quote": "brett ramsden reviewed the plan and the changes to it"
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "presenter on the Powell driveway matter",
+   "status": "present",
+   "quote": "brian marchetti reviewed the updated information on the culvert and the culvert foundation"
+  },
+  {
+   "name": "Rob Bowen",
+   "role": "Attorney, representing the Settler's Crossing Conservation Restriction",
+   "status": "present",
+   "quote": "rob bowen reviewed the cr and the plan as well as the baseline documentation."
+  },
+  {
+   "name": "Alan Specht",
+   "role": "appeared on the 228 West Street potential noncompliance hearing",
+   "status": "present",
+   "quote": "alan specht appeared in front of the commission"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The commission decided to schedule a site inspection on May 16, 2020 for the May 20, 2020 meeting, regarding the land clearing violation at 139 Northfield Road.",
+   "quote": "the commission decided to schedule a site inspection on may 16 2020 for the may 20, 2020 meeting."
+  },
+  {
+   "decision": "Bob Pease will reach out to the Dutton applicant and conduct a site inspection the following Sunday afternoon, inviting commission members.",
+   "quote": "bp did reach out to the applicant and will be doing a site inspection sunday afternoon"
+  },
+  {
+   "decision": "The Emerald Place Beach enforcement update was deferred to spring 2020.",
+   "quote": "eo- emerald place beach- update (to be made in the spring of 2020)"
+  },
+  {
+   "decision": "The MM was asked to document to the town that Shirley Conservation has not finalized its order and did not allow modifications of the dates.",
+   "quote": "rb requested mm document to the town that shirley conservation has"
+  },
+  {
+   "decision": "The applicant agreed to add rip rap to both sides of the driveway at the crossing location (Steven Powell matter).",
+   "quote": "the applicant agreed to add rip rap to both sides of the driveway at the crossing location."
+  },
+  {
+   "decision": "A no-hunting requirement was added to the new version of the Settler's Crossing Conservation Restriction provided at the meeting.",
+   "quote": "it was added into the new version provided to the commission at the meeting that adds a requirement of no hunting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "EO-164 Page Street enforcement fine",
+   "what_was_recorded": "The commission voted to issue another fine of 100 dollars after the owner did not appear.",
+   "figures_as_printed": [
+    "100 dollar"
+   ],
+   "quote": "cl moved to issue another 100 dollar fine je seconded and the commission voted unanimously."
+  },
+  {
+   "topic": "Mckann Property forestry account reimbursement",
+   "what_was_recorded": "Forestry account money was used to fund the 21 E study on the Mckann property, and the commission approved a transfer of 1735 dollars from trust funds to the forestry account.",
+   "figures_as_printed": [
+    "1735 dollars"
+   ],
+   "quote": "kj moved to approve transferring of 1735 dollars"
+  },
+  {
+   "topic": "Mckann Property 21 E study funding",
+   "what_was_recorded": "Some forestry account money was used to fund the 21 E study on the Mckann property, which prompted the reimbursement request.",
+   "figures_as_printed": [],
+   "quote": "some of the money was used to fund the 21 e study on the mckann property"
+  },
+  {
+   "topic": "Revolving account interest versus trust funds",
+   "what_was_recorded": "Discussion that the revolving account does not earn interest while the trust funds grow by sitting in place.",
+   "figures_as_printed": [],
+   "quote": "the money in the revolving account is not an interest bearing account and does not grow"
+  },
+  {
+   "topic": "Trails grant kayak dock",
+   "what_was_recorded": "A trails grant was available to purchase a kayak dock; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "there was a trails grant to purchase a kayak dock"
+  },
+  {
+   "topic": "Hollis Road Account pollinator habitat planting",
+   "what_was_recorded": "The pollinator habitat planting expense was confirmed as eligible for payment from the Hollis Road Account; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "kj ensured that the pollinator habitat planting expense is eligible for payment from the hollis road account."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Reimbursement of the forestry account from trust funds for money used to fund the 21 E study on the Mckann property.",
+   "amount_as_printed": "1735 dollars",
+   "outcome": "approved unanimously by roll call",
+   "quote": "kj moved to approve transferring of 1735 dollars"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order and Announcements",
+   "resolution": "noted; JR submitted a Mullins form",
+   "quote": "jr had submitted a mullins form as a result of missing the previous meeting.",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment recorded",
+   "quote": "there was no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Tanner Notice of Intent, 69 Kilburn Street septic replacement",
+   "resolution": "order of conditions approved with posts condition",
+   "quote": "a replacement septic system in the 100 foot buffer zone at 69 kilburn street",
+   "tags": [
+    "wetlands",
+    "septic",
+    "order of conditions"
+   ]
+  },
+  {
+   "topic": "Peg Gorman request for determination, 66 Horizon Island Road retaining wall",
+   "resolution": "negative determination approved; JR recused",
+   "quote": "a motion for a negative determination was made by kj and seconded by cl",
+   "tags": [
+    "wetlands",
+    "retaining wall",
+    "determination"
+   ]
+  },
+  {
+   "topic": "Steven Powell Notice of Intent, common driveway crossing at Reservoir Road",
+   "resolution": "order approved with added conditions",
+   "quote": "steven powell of 155 reservoir road realty trust has filed a notice of intent",
+   "tags": [
+    "wetlands",
+    "driveway",
+    "culvert"
+   ]
+  },
+  {
+   "topic": "Myles Jenkin Notice of Intent, 72 Hemlock Drive retaining walls",
+   "resolution": "order approved 4-2-1 with one abstention",
+   "quote": "myles jenkin has filed a notice of intent for the repairing of 3 retaining walls",
+   "tags": [
+    "wetlands",
+    "retaining wall",
+    "flood plain"
+   ]
+  },
+  {
+   "topic": "Micke Dutton request for determination, 54 Pine Acres Dr brush removal",
+   "resolution": "continued to January 15, 2020",
+   "quote": "a public meeting on a request for a determination by micke dutton",
+   "tags": [
+    "brush",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "DPW Notice of Intent, culverts at Sunset Lane and Northfield Road",
+   "resolution": "continued to January 15, 2020",
+   "quote": "dpw has filed a notice of intent for the replacement of culverts at sunset lane and northfield road",
+   "tags": [
+    "culvert",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Nanci Bell Notice of Intent, 51 Fire Road 19 retaining wall",
+   "resolution": "continued to January 15, 2020",
+   "quote": "a public meeting on a notice of intent by nanci bell for the replacement of an existing retaining",
+   "tags": [
+    "retaining wall",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Enforcement and violations",
+   "resolution": "fine issued on Page Street; 228 West Street restoration ordered; other items updated or scheduled",
+   "quote": "cl moved to issue another 100 dollar fine je seconded and the commission voted unanimously.",
+   "tags": [
+    "enforcement",
+    "fines"
+   ]
+  },
+  {
+   "topic": "228 West Street potential noncompliance hearing",
+   "resolution": "owner ordered to restore drain by June 1, 2020; approved with RB abstaining",
+   "quote": "a motion was made for the owner to restore the perimeter drain, remove the trenchs",
+   "tags": [
+    "enforcement",
+    "drainage",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Northfield Road, 139 Northfield Road land clearing",
+   "resolution": "site inspection scheduled",
+   "quote": "the commission decided to schedule a site inspection on may 16 2020",
+   "tags": [
+    "enforcement",
+    "land clearing"
+   ]
+  },
+  {
+   "topic": "Settler's Crossing Conservation Restriction",
+   "resolution": "approved as draft for state submission",
+   "quote": "kj moved to approve the cr as a draft and allow submission to the state",
+   "tags": [
+    "conservation restriction",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Mckann Property forestry account",
+   "resolution": "transfer of 1735 dollars approved",
+   "quote": "kj moved to approve transferring of 1735 dollars",
+   "tags": [
+    "forestry account",
+    "trust funds",
+    "21E"
+   ]
+  },
+  {
+   "topic": "Trails grant and kayak access",
+   "resolution": "discussed; no action recorded",
+   "quote": "there was a trails grant to purchase a kayak dock",
+   "tags": [
+    "trails grant",
+    "kayak",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Land acquisition proposal, Saliba, Northfield Road",
+   "resolution": "update only; no action recorded",
+   "quote": "bp spoke of the potential parking area.",
+   "tags": [
+    "land acquisition"
+   ]
+  },
+  {
+   "topic": "Certificates of Compliance and Extension Permit",
+   "resolution": "no action recorded",
+   "quote": "extension permit -minutes of previous meetings",
+   "tags": [
+    "certificates of compliance"
+   ]
+  },
+  {
+   "topic": "Minutes of December 4, 2019",
+   "resolution": "approved unanimously",
+   "quote": "bp moved to approve the minutes. cc seconded and the commission voted unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports, Hollis Road Account",
+   "resolution": "eligibility confirmed; no vote",
+   "quote": "kj ensured that the pollinator habitat planting expense is eligible",
+   "tags": [
+    "committee reports",
+    "pollinator"
+   ]
+  },
+  {
+   "topic": "Agent's report and action items",
+   "resolution": "updates only; no action recorded",
+   "quote": "mm noted the lake had done a successful drawdown",
+   "tags": [
+    "Hickory Hills",
+    "Lake Shirley",
+    "drawdown",
+    "signage"
+   ]
+  },
+  {
+   "topic": "Communications, adjournment and meeting schedule",
+   "resolution": "next meeting set; no adjournment vote recorded",
+   "quote": "next meeting is january 15, 2019 at",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent, John and Joanne Tanner, 69 Kilburn Street (replacement septic system)",
+   "where": "text",
+   "quote": "a replacement septic system in the 100 foot buffer zone at 69 kilburn street"
+  },
+  {
+   "name": "Request for Determination by Peg Gorman, 66 Horizon Island Road (retaining wall replacement)",
+   "where": "text",
+   "quote": "a request for a determination by peg gorman of 66 horizon island road"
+  },
+  {
+   "name": "Notice of Intent by Steven Powell, 155 Reservoir Road Realty Trust (common driveway crossing)",
+   "where": "text",
+   "quote": "steven powell of 155 reservoir road realty trust has filed a notice of intent"
+  },
+  {
+   "name": "Notice of Intent by Myles Jenkin, 72 Hemlock Drive (retaining walls and steps)",
+   "where": "text",
+   "quote": "myles jenkin has filed a notice of intent for the repairing of 3 retaining walls"
+  },
+  {
+   "name": "Request for determination by Micke Dutton, 54 Pine Acres Dr (brush trimming)",
+   "where": "text",
+   "quote": "a public meeting on a request for a determination by micke dutton"
+  },
+  {
+   "name": "DPW Notice of Intent, replacement of culverts at Sunset Lane and Northfield Road",
+   "where": "text",
+   "quote": "dpw has filed a notice of intent for the replacement of culverts at sunset lane and northfield road"
+  },
+  {
+   "name": "Notice of Intent by Nanci Bell, 51 Fire Road 19 (retaining wall)",
+   "where": "text",
+   "quote": "a public meeting on a notice of intent by nanci bell for the replacement of an existing retaining"
+  },
+  {
+   "name": "Revised plan by Ducharme and Dillis (Jenkin matter)",
+   "where": "text",
+   "quote": "presented the commission with the revised plan by ducharme and dillis"
+  },
+  {
+   "name": "Printed construction sequence (Jenkin matter)",
+   "where": "text",
+   "quote": "he also provided a printed construction sequence."
+  },
+  {
+   "name": "Settler's Crossing Conservation Restriction, plan and baseline documentation",
+   "where": "text",
+   "quote": "rob bowen reviewed the cr and the plan as well as the baseline documentation."
+  },
+  {
+   "name": "Mullins form submitted by JR",
+   "where": "text",
+   "quote": "jr had submitted a mullins form as a result of missing the previous meeting."
+  },
+  {
+   "name": "Minutes of December 4, 2019",
+   "where": "text",
+   "quote": "review of december 4, 2019 minutes bp moved to approve the minutes."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "order of conditions",
+  "enforcement",
+  "conservation restriction",
+  "forestry account",
+  "trust funds",
+  "continuances",
+  "Hickory Hills",
+  "Lake Shirley",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

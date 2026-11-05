@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2019-04-09",
  "docid": "747",
@@ -12,13 +12,217 @@
  },
  "votes": [
   {
-   "motion": "Meet on Tuesday, May 7, 2019 at 5:00 pm",
-   "outcome": "not stated",
+   "motion": "Board to meet on Tuesday, May 7, 2019 (year printed as 2018) at 5:00 pm.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "board voted to meet on tuesday, may 7, 2019 2018 at 5:00 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10019449999999999
+ "note": "OCR text from macOS Vision of a scanned page set; some characters are garbled (e.g., the year '2018' printed in the meeting-date sentence, the signature line reads 'Lavi Taquette' above 'Louise Paquette', and a stray '•' before 67 West St Terrace). Only one motion is recorded as a vote ('Board voted to meet...'), and it names no mover, seconder or count. The approvals of vouchers/minutes and the 3 ABC applications are described without a recorded motion, so they are listed as decisions. 'Meeting adjourned 7:16 pm' has no motion text and is not listed as a vote. The minutes have no public comment section; Robert Hamel presented as a visitor and is recorded as an attendee only.",
+ "cost_usd": 0.00533642,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, richard letarte, board members, louis franco,"
+  },
+  {
+   "name": "Louis Franco",
+   "role": "Board Members",
+   "status": "present",
+   "quote": "present: chairman, richard letarte, board members, louis franco,"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Board Members",
+   "status": "present",
+   "quote": "rena swezey, regional assessor, harald scheid,"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "harald presented one (1) real estate application to the boa for review and decisions."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "chairman, town manager, heather lemieux attended a portion of the meeting."
+  },
+  {
+   "name": "Robert Hamel",
+   "role": "Visitor; Senior Tax Work-Off President",
+   "status": "present",
+   "quote": "senior tax work-off president robert hamel, presented information regarding"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board approved current expense vouchers, payroll, abatements, warrants, commitments and the March 6, 2019 minutes (no motion or count recorded).",
+   "quote": "board reviewed and approved current expense vouchers, payroll, abatements, warrants, commitments"
+  },
+  {
+   "decision": "Board endorsed Mr. Hamel's proposed Senior Work-Off changes; Mr. Hamel will take the proposal to the BOS for endorsement/approval.",
+   "quote": "after some discussion, the board endorsed the changes as proposed by mr. hamel."
+  },
+  {
+   "decision": "One Real Estate abatement was granted (235 West St, 079-026, $1,240.67).",
+   "quote": "one (1) re abatement was granted as follows:"
+  },
+  {
+   "decision": "Supplemental billing tabled until the next meeting.",
+   "quote": "supplemental billing: tabled until next meeting"
+  },
+  {
+   "decision": "Board reviewed and approved eight 3 ABC Charitable Exemption applications for FY20.",
+   "quote": "the board reviewed and approved the following (8) eight 3 abc charitable exemption applications for fy20."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Senior Tax Work-Off hourly pay and annual earnings cap",
+   "what_was_recorded": "Mr. Hamel asked the Board to support raising the annual salary cap for eligible seniors from $1,000.00 to $1,500.00, with hourly pay rising from $10.00 to $12.00 (about 125 hours a year).",
+   "figures_as_printed": [
+    "$1,500.00",
+    "$1,000.00",
+    "$10.00",
+    "$12.00"
+   ],
+   "quote": "increasing the opportunity for eligible senior citizens to receive up to $1,500.00 in salary per year up from the current $1,000.00."
+  },
+  {
+   "topic": "Senior Tax Work-Off income guideline",
+   "what_was_recorded": "The income guideline for a one-person household would rise from $40,000 to $50,000.",
+   "figures_as_printed": [
+    "$40,000",
+    "$50,000"
+   ],
+   "quote": "the income guidelines also would be increased for a one person household from $40,000 to $50,000."
+  },
+  {
+   "topic": "Real Estate abatement granted",
+   "what_was_recorded": "One RE abatement for 235 West St (079-026) was granted, with the amount abated and the total both printed as $1,240.67.",
+   "figures_as_printed": [
+    "$1,240.67"
+   ],
+   "quote": "amount abated $1,240.67 $1,240.67 total:"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of vouchers, payroll, abatements, warrants, commitments and March 6, 2019 minutes",
+   "resolution": "approved (no motion recorded)",
+   "tags": [
+    "vouchers",
+    "payroll",
+    "minutes"
+   ],
+   "quote": "board reviewed and approved current expense vouchers, payroll, abatements, warrants, commitments"
+  },
+  {
+   "topic": "Senior Tax Work-Off program increase",
+   "resolution": "Board endorsed proposed changes; Hamel to take to BOS",
+   "tags": [
+    "senior work-off",
+    "tax work-off",
+    "income guidelines"
+   ],
+   "quote": "after some discussion, the board endorsed the changes as proposed by mr. hamel."
+  },
+  {
+   "topic": "Abatement applications",
+   "resolution": "one RE abatement granted ($1,240.67)",
+   "tags": [
+    "abatement",
+    "real estate"
+   ],
+   "quote": "one (1) re abatement was granted as follows:"
+  },
+  {
+   "topic": "Supplemental billing",
+   "resolution": "tabled to next meeting",
+   "tags": [
+    "supplemental billing"
+   ],
+   "quote": "supplemental billing: tabled until next meeting"
+  },
+  {
+   "topic": "3 ABC charitable exemption applications FY20",
+   "resolution": "approved (8 applications)",
+   "tags": [
+    "3 ABC",
+    "charitable exemption"
+   ],
+   "quote": "the board reviewed and approved the following (8) eight 3 abc charitable exemption applications for fy20."
+  },
+  {
+   "topic": "Assessment software conversion (iasWorld)",
+   "resolution": "discussed; seeking direction from the Town",
+   "tags": [
+    "CAMA software",
+    "iasWorld",
+    "Tyler Technologies"
+   ],
+   "quote": "the boa discussed the conversion process of upcoming new cama"
+  },
+  {
+   "topic": "Town Meeting and Town Election reminder",
+   "resolution": "no action",
+   "tags": [
+    "town meeting",
+    "town election",
+    "reelection"
+   ],
+   "quote": "rena swezey will be on the ballot for reelection to the board of assessors for a three year"
+  },
+  {
+   "topic": "Assessors report: home inspections",
+   "resolution": "no action; to be discussed later",
+   "tags": [
+    "home inspections",
+    "data collectors"
+   ],
+   "quote": "harald spoke briefly on the difficulty of home inspections."
+  },
+  {
+   "topic": "Next meeting scheduling",
+   "resolution": "meeting set for May 7, 2019 at 5:00 pm",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "board voted to meet on tuesday, may 7, 2019 2018 at 5:00 pm."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "board of assessors",
+  "abatements",
+  "senior tax work-off",
+  "3 ABC exemptions",
+  "CAMA software",
+  "iasWorld",
+  "town meeting",
+  "town election",
+  "home inspections"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

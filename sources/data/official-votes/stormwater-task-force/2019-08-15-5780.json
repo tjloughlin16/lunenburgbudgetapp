@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2019-08-15",
  "docid": "5780",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "authorize Town Manager Lemieux to award the Year 2 Contract to CEI and to proceed with negotiations for additional work that may be required to assist the Town in its MS4 compliance efforts",
+   "motion": "Authorize Town Manager Lemieux to award the Year 2 Contract to CEI and to proceed with negotiations for additional work that may be required to assist the Town in its MS4 compliance efforts.",
    "moved_by": "Matt Allison",
    "seconded_by": "Jack Rabbitt",
    "outcome": "passed",
    "procedural": false,
-   "quote": "matt allison made a motion to authorize town manager lemieux to award the year 2 contract to cei and to proceed with negotiations for additional work that may be required to assist the town in its ms4 compliance efforts. jack rabbitt seconded, all voted in favor."
+   "quote": "matt allison made a motion to authorize town manager lemieux to award the year 2 contract to cei and to proceed with negotiations for additional work"
   },
   {
-   "motion": "accept the minutes of the June 13 meeting",
+   "motion": "Accept the minutes of the June 13 meeting.",
    "moved_by": "Matt Allison",
    "seconded_by": "Jack Rabbitt",
    "outcome": "passed",
@@ -28,15 +28,243 @@
    "quote": "matt allison made a motion to accept the minutes of the june 13 meeting; jack rabbitt seconded; all voted in favor."
   },
   {
-   "motion": "adjourn the meeting at 8:20 pm",
+   "motion": "Adjourn the meeting at 8:20 pm.",
    "moved_by": "Matt Allison",
    "seconded_by": "Jack Rabbitt",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: 2\"': matt allison to adjourn the meeting at 8:20 pm jack rabbitt vote: all in favor"
+   "quote": "to adjourn the meeting at 8:20 pm jack rabbitt vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. All three votes recorded passed with unanimous approval.",
- "cost_usd": 0.0774225
+ "note": "OCR of a scanned page set. Page 1 begins mid-sentence (\"evening.\"), so the opening (call to order, attendance, earlier agenda items) is missing. The motion block at the end is garbled, so the mover is read from the \"Motion:\" line and the seconder from the text beside the motion. The Year 2 contract vote is recorded as \"all voted in favor\" with no count. Page 2 begins with a stray fragment (\"wait.\"). Names of Nick Cristofori and Rebecca Balke are not identified as CEI or SWTF, so roles are left not stated. No public comment is recorded.",
+ "cost_usd": 0.0059297199999999994,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Phyllis Luck",
+   "role": "Chair SWTF",
+   "status": "not stated",
+   "quote": "phyllis luck, chair swtf"
+  },
+  {
+   "name": "Matt Allison",
+   "role": "not stated",
+   "status": "present",
+   "quote": "matt allison started the discussion by pointing out he felt that cei"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jack rabbitt seconded, all voted in favor."
+  },
+  {
+   "name": "Town Manager Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager lemieux passed out copies of the composite of evaluation scores"
+  },
+  {
+   "name": "Nick Cristofori",
+   "role": "not stated",
+   "status": "present",
+   "quote": "nick cristofori and rebecca balke proceeded to review cel's proposal and qualifications"
+  },
+  {
+   "name": "Rebecca Balke",
+   "role": "not stated",
+   "status": "present",
+   "quote": "nick cristofori and rebecca balke proceeded to review cel's proposal and qualifications"
+  },
+  {
+   "name": "Scott Medeiros",
+   "role": "not stated",
+   "status": "present",
+   "quote": "scott medeiros and zachary henderson spoke to a power point presentation (attached)"
+  },
+  {
+   "name": "Zachary Henderson",
+   "role": "not stated",
+   "status": "present",
+   "quote": "scott medeiros and zachary henderson spoke to a power point presentation (attached)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The group authorized Town Manager Lemieux to reach out to CEI to make them aware of the contract award and to obtain pricing for other tasks the Town may decide to take in-house or add to the CEI contract.",
+   "quote": "the group authorized town manager lemieux to reach out to cei to make them aware that they'd been awarded the contract"
+  },
+  {
+   "decision": "The Town Manager agreed to discuss with the DPW Director the request that the DPW Director attend the next SWTF meeting and the first meeting with CEI.",
+   "quote": "the town manager agreed to discuss this with the dpw director and exited the meeting."
+  },
+  {
+   "decision": "The next SWTF meeting was set for Thursday, August 1, at 6 pm, in the Ritter upper conference room.",
+   "quote": "it was determined that the next meeting of the swtf would be on thursday, august 1, at 6 pm, in the"
+  },
+  {
+   "decision": "Third-quarter meeting schedule set as August 1 and September 12; meetings are Thursdays at 6:30 pm in the Ritter Building upper conference room unless noted, with additional meetings on the second or fourth Thursday.",
+   "quote": "meeting schedule for the 3rd quarter: august 1, september 12."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Woodard and Curran price for Year 2 work",
+   "what_was_recorded": "Woodard and Curran's price was about $127,400, substantially higher than CEI's, and the group discussed whether it could be negotiated downward.",
+   "figures_as_printed": [
+    "$127, 400"
+   ],
+   "quote": "woodard and curran came in at $127, 400; cei at $32,400."
+  },
+  {
+   "topic": "CEI price for Year 2 work",
+   "what_was_recorded": "CEI's price was $32,400, and the group chose the lower-priced CEI proposal.",
+   "figures_as_printed": [
+    "$32,400"
+   ],
+   "quote": "woodard and curran came in at $127, 400; cei at $32,400."
+  },
+  {
+   "topic": "DCI cost for Year 2 tasks",
+   "what_was_recorded": "It was noted that DCI, which had initially bid on Year 2 work, had a cost of $98,600 for completing the required Year 2 tasks.",
+   "figures_as_printed": [
+    "$98,600"
+   ],
+   "quote": "had a cost of $98,600 associated with completing the required year 2 tasks"
+  },
+  {
+   "topic": "Possible added costs with CEI",
+   "what_was_recorded": "Town Manager Lemieux said there may be additional costs with CEI as tasks may be added; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "town manager lemieux felt that there may be additional costs associated with working with cei, as tasks may be added"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Composite of Evaluation Scores",
+   "resolution": "reviewed; both firms rated Highly Advantageous overall",
+   "quote": "town manager lemieux passed out copies of the composite of evaluation scores",
+   "tags": [
+    "evaluation",
+    "scores"
+   ]
+  },
+  {
+   "topic": "CEI presentation",
+   "resolution": "presented proposal and answered questions",
+   "quote": "at 5:15, the swtf welcomed cei, thanking them for meeting with us.",
+   "tags": [
+    "CEI",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Woodard and Curran presentation",
+   "resolution": "presented proposal",
+   "quote": "at 6:05, the swtf welcomed woodard and curran, thanking them for coming in tonight.",
+   "tags": [
+    "Woodard and Curran",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Year 2 consultant contract",
+   "resolution": "awarded to CEI; Town Manager authorized to negotiate additional work",
+   "quote": "matt allison made a motion to authorize town manager lemieux to award the year 2 contract to cei",
+   "tags": [
+    "contract award",
+    "MS4",
+    "CEI"
+   ]
+  },
+  {
+   "topic": "CEI Other Recommended Tasks sheet",
+   "resolution": "Town Manager authorized to seek pricing for additional tasks",
+   "quote": "the group then focused on the cei \"other recommended tasks\" sheet.",
+   "tags": [
+    "MS4",
+    "tasks",
+    "pricing"
+   ]
+  },
+  {
+   "topic": "DPW Director attendance",
+   "resolution": "Town Manager agreed to raise with DPW Director",
+   "quote": "matt allison then noted that the absence of the dpw director at swtf meetings inhibits progress",
+   "tags": [
+    "DPW",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Minutes of June 13 meeting",
+   "resolution": "approved",
+   "quote": "matt allison made a motion to accept the minutes of the june 13 meeting",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Next meeting and schedule",
+   "resolution": "next meeting set for August 1; Q3 schedule noted",
+   "quote": "it was determined that the next meeting of the swtf would be on thursday, august 1, at 6 pm",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:20 pm",
+   "quote": "to adjourn the meeting at 8:20 pm jack rabbitt vote: all in favor",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Composite of Evaluation Scores",
+   "where": "list",
+   "quote": "town manager lemieux passed out copies of the composite of evaluation scores"
+  },
+  {
+   "name": "Non-Price Proposal (CEI)",
+   "where": "list",
+   "quote": "swtf members had copies of the non-price proposal, as well as the price proposal (attached)."
+  },
+  {
+   "name": "Price Proposal (attached)",
+   "where": "list",
+   "quote": "swtf members had copies of the non-price proposal, as well as the price proposal (attached)."
+  },
+  {
+   "name": "Power point presentation (Woodard and Curran, attached)",
+   "where": "list",
+   "quote": "scott medeiros and zachary henderson spoke to a power point presentation (attached)"
+  },
+  {
+   "name": "CEI \"Other Recommended Tasks\" sheet",
+   "where": "list",
+   "quote": "the group then focused on the cei \"other recommended tasks\" sheet."
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "MS4 compliance",
+  "consultant selection",
+  "CEI",
+  "Woodard and Curran",
+  "contract award",
+  "DPW",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "swtf members had copies of the non-price proposal"
+ },
+ "dropped_unquoted_by_field": {}
 }

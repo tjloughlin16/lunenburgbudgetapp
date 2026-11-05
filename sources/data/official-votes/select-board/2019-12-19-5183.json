@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-12-19",
  "docid": "5183",
@@ -12,25 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Approve the common victuller license for Dunkin Donuts at 400 Electric Ave.",
+   "motion": "Approve the common victualler license for 400 Electric Ave. (KCM Donuts d/b/a Dunkin Donuts) as presented.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: d. mcquaid 2nd: p. luck to approve the common victualler license for 400 electric ave. as presented vote: all in favo",
-   "quote_taken_from_text": true
+   "quote": "motion: d. mcquaid 2nd: p. luck to approve the common victualler license for 400 electric ave. as presented"
   },
   {
-   "motion": "Approve the common victueller licenses for renewal.",
+   "motion": "Approve the common victualler license renewals for 2020 as presented.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: d. mcquaid 2nd: p. luck to approve the common victualler license for 400 electric ave. as present",
-   "quote_taken_from_text": true
+   "quote": "motion: d. mcquaid to approve the common victualler licenses as presented"
   },
   {
-   "motion": "Approve the miscellaneous licenses as presented.",
+   "motion": "Approve the miscellaneous license renewals as presented.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
    "outcome": "passed",
@@ -38,7 +36,7 @@
    "quote": "motion: d. mcquaid to approve the miscellaneous licenses as presented 2nd: p. luck vote: all in favor"
   },
   {
-   "motion": "Approve the weekday entertainment licenses as presented.",
+   "motion": "Approve the weekday entertainment license renewals as presented.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
    "outcome": "passed",
@@ -46,7 +44,15 @@
    "quote": "motion: d. mcquaid to approve the weekday entertainment licenses as presented 2n: p. luck vote: all in favor"
   },
   {
-   "motion": "Send a letter to Simon Pure Publick House requiring reapplication for all licenses to reopen.",
+   "motion": "Approve the Minutes of October 1, 2019.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "the board approved minutes of october 1, 2019."
+  },
+  {
+   "motion": "Send a letter to Simon Pure Publick House informing them they have to reapply for all licenses in order to reopen.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "P. Luck",
    "outcome": "passed",
@@ -54,16 +60,201 @@
    "quote": "motion: m. jeffreys 2nd: p. luck to send a letter to simon pure publick house informing them they have to reapply for all licenses in order to reopen vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting.",
+   "motion": "Adjourn the meeting at 6:16 p.m.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Jeffreys",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "motion: d. mcquaid to adjourn the meeting at 6:16 p.m. respectfully sub",
-   "quote_taken_from_text": true
+   "quote": "motion: d. mcquaid to adjourn the meeting at 6:16 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR: Some licensing motions appear in non-standard order in the OCR output (vote 2 has 2nd/Vote/Motion sequence). Minutes refer to common victualer licenses with inconsistent spelling (victuller vs victueller). All votes include \"All in Favor\"; no numerical counts provided. Vote 6 (adjourn) has no explicit vote result stated but adjournment occurred at stated time.",
- "cost_usd": 0.1483515
+ "note": "Scanned OCR text with gaps: page 1 starts mid-word (\"ommon victualler license application...\") so the applicant's full introduction is cut off; page 2 begins mid-sentence (\"would have to request that in the future...\") with the preceding context missing. Votes are recorded as \"All in Favor\" with no vote count, so outcomes are recorded as passed without a tally. The KCM Donuts motion and the approval of minutes have no stated mover for minutes. The minutes approval is recorded only as \"The Board approved\", with no motion text. The second and third motion blocks list the 2nd line before the motion line in the OCR, and the weekday entertainment second is printed as \"2n:\". Business names differ between lists (Dunkin vs. Dippin Donuts; Lunenburg Leda's vs. Zeda's). The signature line is OCR-garbled but reads Elaine M. Peterson.",
+ "cost_usd": 0.00692312,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; damon mcquaid, clerk;"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; damon mcquaid, clerk;"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; damon mcquaid, clerk;"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member",
+   "status": "present",
+   "quote": "katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "not present: heather lemieux, town manager"
+  },
+  {
+   "name": "Mr. Nadreau",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. nadreau thanked the board and exited the meeting."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Chair suggested the board discuss jukebox licensing, and whether the state mandates it, at the beginning of 2020.",
+   "quote": "mr. alonzo suggested discussing it at the beginning of 2020."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Payroll and deductions warrants signed",
+   "what_was_recorded": "The Board signed payroll warrants and a deductions warrant in the amounts printed.",
+   "figures_as_printed": [
+    "$170.00",
+    "$888,198.31",
+    "$719,234.54"
+   ],
+   "quote": "the board signed payroll warrants in the amount of $170.00 and $888,198.31 and a deductions warrant in the amount of $719,234.54."
+  },
+  {
+   "topic": "Common victualler license renewal fees",
+   "what_was_recorded": "Four common victualler renewals listed with a fee of $25.00 each.",
+   "figures_as_printed": [
+    "$25.00"
+   ],
+   "quote": "fee $25.00 $25.00 $25.00 $25.00"
+  },
+  {
+   "topic": "Miscellaneous license renewal fees paid",
+   "what_was_recorded": "Jukebox and automatic amusement device renewals with fees paid as printed.",
+   "figures_as_printed": [
+    "$35.00",
+    "$140.00"
+   ],
+   "quote": "fee paid $35.00 $35.00 $140.00 $35.00"
+  },
+  {
+   "topic": "Weekday entertainment license fees paid",
+   "what_was_recorded": "Two weekday entertainment license renewals with fees paid as printed.",
+   "figures_as_printed": [
+    "$100.00"
+   ],
+   "quote": "fee paid $100.00 $100.00"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "quote": "there was none at this time.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcement: Boys and Girls Club fundraiser",
+   "resolution": "no action",
+   "quote": "announcement: mr. alonzo reminded all of the boys and girls club of lunenburg fundraiser.",
+   "tags": [
+    "announcement"
+   ]
+  },
+  {
+   "topic": "Appointment: KCM Donuts common victualler license",
+   "resolution": "approved",
+   "quote": "dunkin donuts located inside the building at 400 electric ave.",
+   "tags": [
+    "liquor licenses",
+    "common victualler",
+    "license application"
+   ]
+  },
+  {
+   "topic": "Annual license renewals (continued)",
+   "resolution": "approved",
+   "quote": "annual license renewals (continued)",
+   "tags": [
+    "license renewals",
+    "common victualler",
+    "entertainment licenses"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "minutes approved; warrants signed",
+   "quote": "the board approved minutes of october 1, 2019.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Simon Pure Publick House licenses",
+   "resolution": "letter approved",
+   "quote": "mr. jeffreys referred to the memo from executive assistant regarding simon pure publick house",
+   "tags": [
+    "delinquent taxes",
+    "license reapplication",
+    "Simon Pure Publick House"
+   ]
+  },
+  {
+   "topic": "Holiday remarks and adjournment",
+   "resolution": "adjourned at 6:16 p.m.",
+   "quote": "the board members wished everyone a merry christmas and happy hanukah and happy holidays.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memo from Executive Assistant regarding Simon Pure Publick House (delinquent taxes and renewal paperwork)",
+   "where": "text",
+   "quote": "mr. jeffreys referred to the memo from executive assistant regarding simon pure publick house"
+  }
+ ],
+ "tags": [
+  "liquor licenses",
+  "common victualler licenses",
+  "license renewals",
+  "entertainment licenses",
+  "jukebox licensing",
+  "delinquent taxes",
+  "Simon Pure Publick House",
+  "payroll warrants",
+  "minutes approval",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

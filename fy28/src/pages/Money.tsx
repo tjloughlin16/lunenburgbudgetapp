@@ -53,7 +53,7 @@ import { AREA_TABS, LABEL } from '../routes'
  *  workbook comment records one line being netted down by expected fee revenue, and nothing
  *  marks which other lines are. What is NOT stated: that any particular source pays for any
  *  particular line. Chapter 70 cannot be traced past the general fund, and no document in
- *  the archive closes that. See notes/HANDOFF-MONEY-IN.md, "Claims NOT established". */
+ *  the archive closes that. See notes/findings/MONEY-IN.md, "Claims NOT established". */
 
 type RefPage = {
   name: string; title: string; about: string; url: string; format: string

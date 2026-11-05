@@ -1,0 +1,56 @@
+{
+ "board": "School Committee",
+ "board_slug": "school-committee",
+ "meeting_date": "2020-05-20",
+ "source": {
+  "sha256": "32700f77820e39fb76c1608edd4c7711133241515f6fca601cf8f8eb2d685ca5",
+  "transcript": "sources/data/youtube-transcripts/school-committee/2020-05-20-5vDkq1991Nc.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "more than a 10 cut",
+    "fiscal_year": 2021,
+    "kind": "state_aid",
+    "scope": "town",
+    "statement": "Town manager prepared for more than a 10 percent cut in state aid; rumors of 20 to 25 percent.",
+    "status": "announced",
+    "t": 7117,
+    "who": "a member reporting for the finance committee"
+   },
+   {
+    "amount_as_heard": "1.58 budget",
+    "fiscal_year": 2021,
+    "kind": "budget_total",
+    "scope": "town",
+    "statement": "Finance committee still backs the town manager's budget; business manager said schools are in a good position.",
+    "status": "announced",
+    "t": 7117,
+    "who": "a member reporting for the finance committee"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "town budget",
+    "condition": "if state aid is cut 20 to 25 percent",
+    "fiscal_year": 2021,
+    "prediction": "Everything would need to be reassessed if state aid is cut sharply.",
+    "scope": "town",
+    "t": 7159,
+    "who": "a member reporting for the finance committee"
+   }
+  ]
+ },
+ "video_id": "5vDkq1991Nc",
+ "video_url": "https://www.youtube.com/watch?v=5vDkq1991Nc",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-11-04T02:18:31Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

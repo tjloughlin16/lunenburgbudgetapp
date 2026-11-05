@@ -5652,6 +5652,18 @@
      "textUrl": "/docs/data/PROVENANCE-staff-rosters.md"
     },
     {
+     "path": "data/scholarship-funds.csv",
+     "title": "Every school scholarship and prize fund, every year, read and proven",
+     "stars": 3,
+     "what": "One row per fund per year, FY2011-FY2025, off each annual report’s trust fund summary: the printed columns, and `paid_out`, the money that left the fund net of what came in. A row is written only when the table’s own identity closes on it, or last year’s proven ending cash plus this year’s activity does; every fund’s ending cash ties to its next beginning balance. Read by two OCR instruments, the second only where the first lost figures. THAT `paid_out` WAS AWARDS IS OUR READING: the table says money left the fund, not why. An earnings-to-principal move is recorded in `reclassified`, never as a payout. See scripts/extract_scholarship_funds.py.",
+     "kind": "Data",
+     "bytes": 39677,
+     "url": "/docs/data/scholarship-funds.csv",
+     "count": 174,
+     "unit": "rows",
+     "textUrl": "/docs/data/scholarship-funds.csv"
+    },
+    {
      "path": "data/enterprise-balance-sheet.csv",
      "title": "The enterprise-funds balance sheet, read from the page",
      "stars": 3,
@@ -5820,6 +5832,18 @@
      "textUrl": "/docs/data/ballot-questions.csv"
     },
     {
+     "path": "data/scholarship-purposes.csv",
+     "title": "What each scholarship is for, quoted from the record that says so",
+     "stars": 3,
+     "what": "One row per fund whose purpose a record states, the words quoted exactly, with the document, the page and the text the quote is re-found in on every build. A purpose heard only in a meeting recording is marked `transcript`: machine captions, a finding aid rather than a record. A fund with no row has no purpose in the annual reports, School Committee or Select Board minutes, or School Committee recordings searched on 4 November 2026.",
+     "kind": "Data",
+     "bytes": 2610,
+     "url": "/docs/data/scholarship-purposes.csv",
+     "count": 7,
+     "unit": "rows",
+     "textUrl": "/docs/data/scholarship-purposes.csv"
+    },
+    {
      "path": "data/placement-counts.csv",
      "title": "Out-of-district placements, by year, FY2011–FY2025",
      "stars": 3,
@@ -5945,9 +5969,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 530578,
+     "bytes": 530198,
      "url": "/docs/data/money-gaps.csv",
-     "count": 659,
+     "count": 658,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -63495,10 +63519,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 5718,
+  "documents": 5720,
   "groups": 32,
-  "bytes": 7342692053,
-  "loadBearing": 218
+  "bytes": 7342733960,
+  "loadBearing": 220
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 24 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

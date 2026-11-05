@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2019-10-17",
  "docid": "2992",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of August 15, 2019 and September 5, 2019 meetings",
+   "motion": "Accept the minutes of the August 15, 2019 and September 5, 2019 meetings.",
    "moved_by": "Karin Menard",
    "seconded_by": "Deborah Christen",
    "outcome": "passed",
@@ -20,39 +20,290 @@
    "quote": "karin menard made a motion to accept both minutes; deborah christen seconded and the minutes were accepted."
   },
   {
-   "motion": "Accept the September financial report",
+   "motion": "Accept the September 30, 2019 financial report.",
    "moved_by": "Karin Menard",
    "seconded_by": "Deborah Christen",
    "outcome": "passed",
    "procedural": false,
-   "quote": "karin menard made a motion to accept the september financial r eport. deborah christen seconded; all were in favor."
+   "quote": "seconded; all were in favor."
   },
   {
-   "motion": "Authorize amendment to the Management Services Agreement with Leominster Housing Authority to increase management fee to $39,204 contingent on DHCD approval",
+   "motion": "Authorize the amendment to the Management Services Agreement with the Leominster Housing Authority to increase the management fee to $39,204, contingent on DHCD approval (Resolution 201917).",
    "moved_by": "Karin Menard",
    "seconded_by": "Ronald Dionne",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion made by karin menard to authorize the amendment to the management services agreement with the leominster housing authority to increase the management fee to $39,204 contingent on dhcd approval."
+   "quote": "seconded, ronald dionne seconded the motion, and the motion was passed by a vote of 3 to 0."
   },
   {
-   "motion": "Write off $409.00 as uncollectible debts effective October 2019",
+   "motion": "Write off $409.00 as uncollectible debts effective October 2019 (Resolution 201918).",
    "moved_by": "Ronald Dionne",
    "seconded_by": "Karin Menard",
-   "outcome": "passed",
+   "outcome": "passed (unanimous vote)",
    "procedural": false,
-   "quote": "motion made by ronald dionne to write off $409.00 as uncollectible debts effective october 2019."
+   "quote": "resolved, motion made by ronald dionne to write off $409.00 as uncollectible debts effective october 2019."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:05 p.m.",
    "moved_by": "Karin Menard",
    "seconded_by": "Ronald Dionne",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": true,
-   "quote": "karin menard made a motion to adjourn the meeting at 7:05 p.m. ronald dionne seconded, all were in favor, and the meeting was adjourned."
+   "quote": "ronald dionne seconded, all were in favor, and the meeting was adjourned."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1111135
+ "note": "Plain-text extraction; page 4 carries only a header. The write-off resolution refers to an 'attached list' that is not in the text. The minutes approval is recorded as accepted with Ronald Dionne abstaining, and no count is printed. Gerson Cintron and Dennis Plante are named only as attending a September tenant meeting, not this one, so they are omitted. Sue Honeycutt is named as coming to the November meeting, so she is omitted.",
+ "cost_usd": 0.007659119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Acting Chair",
+   "status": "present",
+   "quote": "deborah a.h. christen, acting chair"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Member",
+   "status": "present",
+   "quote": "karin menard, member"
+  },
+  {
+   "name": "Ronald Dionne",
+   "role": "member",
+   "status": "present",
+   "quote": "ronald dionne, member"
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "linda mcdonald, vice chair"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, executive director"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "adam gautie, assistant executive director"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Reserves level",
+   "what_was_recorded": "Reserves reported at 70.30% and described as healthy.",
+   "figures_as_printed": [
+    "70.30%"
+   ],
+   "quote": "page f2 - reserves are at 70.30%, healthy."
+  },
+  {
+   "topic": "Extraordinary maintenance budget and spending",
+   "what_was_recorded": "Budgeted amount for extraordinary maintenance was reported alongside the amount spent on vacancies.",
+   "figures_as_printed": [
+    "$20,000",
+    "$4,000"
+   ],
+   "quote": "budgeted $20,000 for extraordinary maintenance, spent $4,000 on vacancies"
+  },
+  {
+   "topic": "Management fee maximum under ANUEL increase",
+   "what_was_recorded": "DHCD increased the FY 2020 ANUEL by 10% and set a maximum management fee.",
+   "figures_as_printed": [
+    "10%",
+    "$42,726"
+   ],
+   "quote": "dhcd has increased the fy 2020 budget anuel by 10% and set a maximum management fee of $42,726."
+  },
+  {
+   "topic": "Management fee amendment with Leominster Housing Authority",
+   "what_was_recorded": "Resolution 201917 sets the management fee at $39,204, contingent on DHCD approval.",
+   "figures_as_printed": [
+    "$39,204"
+   ],
+   "quote": "leominster housing authority to increase the management fee to $39,204"
+  },
+  {
+   "topic": "Write-off of vacated tenant debt",
+   "what_was_recorded": "Resolution 201918 writes off $409.00 owed by a vacated tenant as uncollectible.",
+   "figures_as_printed": [
+    "$409.00"
+   ],
+   "quote": "resolved, motion made by ronald dionne to write off $409.00 as uncollectible debts effective october 2019."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes (August 15 and September 5, 2019)",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "karin menard made a motion to accept both minutes; deborah christen seconded and the minutes were accepted."
+  },
+  {
+   "topic": "Executive Director Report",
+   "resolution": "received, no action",
+   "tags": [
+    "executive director",
+    "tenants",
+    "conference"
+   ],
+   "quote": "ben gold welcomed new board member ronald dionne, a resident of pearl brook."
+  },
+  {
+   "topic": "Financial Report – September 30, 2019",
+   "resolution": "accepted",
+   "tags": [
+    "finance",
+    "reserves"
+   ],
+   "quote": "seconded; all were in favor."
+  },
+  {
+   "topic": "Modernization Report",
+   "resolution": "received, no action",
+   "tags": [
+    "modernization",
+    "work orders"
+   ],
+   "quote": "work order report - six (6) work orders received, five completed."
+  },
+  {
+   "topic": "State-Aided Housing Report",
+   "resolution": "received, no action",
+   "tags": [
+    "occupancy",
+    "applications"
+   ],
+   "quote": "we are currently at 96.08% occupancy."
+  },
+  {
+   "topic": "Unfinished Business",
+   "resolution": "none",
+   "tags": [],
+   "quote": "unfinished business:"
+  },
+  {
+   "topic": "Resolution 201917 – Management Services Agreement amendment with Leominster Housing Authority",
+   "resolution": "approved 3-0",
+   "tags": [
+    "management fee",
+    "DHCD",
+    "Leominster"
+   ],
+   "quote": "seconded, ronald dionne seconded the motion, and the motion was passed by a vote of 3 to 0."
+  },
+  {
+   "topic": "Resolution 201918 – Write-off of quarterly unrecoverable debts",
+   "resolution": "approved unanimously",
+   "tags": [
+    "write-off",
+    "debt"
+   ],
+   "quote": "resolved, motion made by ronald dionne to write off $409.00 as uncollectible debts effective october 2019."
+  },
+  {
+   "topic": "Other Correspondence",
+   "resolution": "received; NOFA interest noted",
+   "tags": [
+    "DHCD notices",
+    "regional housing authorities"
+   ],
+   "quote": "ben gold informed the board he and adam gautie were interested in pursuing the nofa for technical assistance on regional housing authorities."
+  },
+  {
+   "topic": "Resident participation",
+   "resolution": "none requested",
+   "tags": [],
+   "quote": "no resident participation requested."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:05 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "ronald dionne seconded, all were in favor, and the meeting was adjourned."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PHN 2019-19 Executive Director Salary/Qualifications Schedule",
+   "where": "list",
+   "quote": "phn 2019-19 executive director salary/qualifications schedule"
+  },
+  {
+   "name": "PHN 2019-20 Guidelines for DHCD Acceptance of net-new State Public Housing Units",
+   "where": "list",
+   "quote": "phn 2019-20 guidelines for dhcd acceptance of net-new state public housing units"
+  },
+  {
+   "name": "PHN 2019-22 FY2020 Budget Guidelines",
+   "where": "list",
+   "quote": "phn 2019-22 fy2020 budget guidelines"
+  },
+  {
+   "name": "PHN 2019-23 RCAT Advisory Board",
+   "where": "list",
+   "quote": "phn 2019-23 rcat advisory board"
+  },
+  {
+   "name": "PHN 2019-24 NOFA-Technical Assistance for Creation of Regional Housing Authorities",
+   "where": "list",
+   "quote": "phn 2019-24 nofa-technical assistance for creation of regional housing authorities"
+  },
+  {
+   "name": "Financial Report – September 30, 2019",
+   "where": "text",
+   "quote": "financial report - september 30, 2019"
+  },
+  {
+   "name": "DHCD Public Housing Notices 2018-09 and 2018-23",
+   "where": "text",
+   "quote": "dhcd public housing notices 2018-09 and 2018-23 provide guidance on"
+  },
+  {
+   "name": "Resolution 201917 (Management Services Agreement amendment with Leominster Housing Authority)",
+   "where": "text",
+   "quote": "resolution authorizing the amendment to the"
+  },
+  {
+   "name": "Resolution 201918 (write-off of quarterly unrecoverable debts)",
+   "where": "text",
+   "quote": "resolution to write-off quarterly"
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "financial report",
+  "management fee",
+  "DHCD",
+  "write-off",
+  "tenant smoking",
+  "modernization",
+  "occupancy",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "other correspondence"
+ },
+ "dropped_unquoted_by_field": {}
 }

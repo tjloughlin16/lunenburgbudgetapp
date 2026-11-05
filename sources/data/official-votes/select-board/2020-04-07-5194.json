@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-04-07",
  "docid": "5194",
@@ -12,56 +12,487 @@
  },
  "votes": [
   {
-   "motion": "Approve the two stop signs as presented",
+   "motion": "Approve the two stop signs as presented.",
    "moved_by": "",
-   "seconded_by": "",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "to approve the two stops signs as presented vote: ms. adams-aye, mr. mequaid-aye, ms. luck-aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "to approve the two stops signs as presented vote: ms. adams-aye, mr. mequaid-aye, ms. luck-aye, mr. jeffreys-aye, mr.",
+   "seconded_by": ""
   },
   {
-   "motion": "Remove warrant article (DD) regarding the purchase of 635 Mass. Ave. property",
+   "motion": "Remove warrant article (DD) that would approve purchasing the 635 Mass. Ave. property from the Annual Town Meeting warrant.",
    "moved_by": "P. Luck",
-   "seconded_by": "D. McQuaid",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "motion: p. luck 2n: d. mcquaid to remove the warrant article (dd) that would approve purchasing 635 mass. ave. property ms. luck-aye, mr. mequaid-aye, ms. adams-aye, mr. jeffreys- nay, mr. alonzo -aye"
+   "quote": "to remove the warrant article (dd) that would approve purchasing 635 mass. ave. property ms. luck-aye, mr. mequaid-aye, ms. adams-aye, mr. jeffreys- nay, mr. alonzo -aye",
+   "seconded_by": "D. McQuaid"
   },
   {
-   "motion": "Remove warrant articles EE-HH from the Annual Town Meeting warrant",
+   "motion": "Remove the four ROFR articles (EE-HH) from the Annual Town Meeting warrant.",
    "moved_by": "P. Luck",
-   "seconded_by": "D. McQuaid",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: p. luck 2n°:d. mcquaid to remove the four rofr articles (ee-hh) from the annual town meeting warrant vote: ms. luck-aye, mr. mcquaid- aye, ms. adams- aye, mr. jeffreys- aye, mr. alonzo -aye"
+   "quote": "to remove the four rofr articles (ee-hh) from the annual town meeting warrant vote: ms. luck-aye, mr. mcquaid- aye",
+   "seconded_by": "D. McQuaid"
   },
   {
-   "motion": "Approve the minutes from November 19, December 10, 19, and January 7, 14, and 21",
-   "moved_by": "D. McQuaid",
-   "seconded_by": "P. Luck",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: d. mcquaid 2nd: p. luck to approve the minutes as listed vote: ms. luck- aye, mr. mcquaid-aye, ms. adams-aye, mr. jeffreys-aye, mr. alonzo -aye"
-  },
-  {
-   "motion": "Not exercise the Right of First Refusal for four properties",
+   "motion": "Not to exercise the Right of First Refusal for the four properties presented.",
    "moved_by": "M. Jeffreys",
-   "seconded_by": "D. McQuaid",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "motion: m. jeffreys to not exercise the right of first refusal for the four properties presented 2nd: d. mcquaid"
+   "quote": "motion: m. jeffreys to not exercise the right of first refusal for the four properties presented 2nd: d. mcquaid",
+   "seconded_by": "D. McQuaid"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "K. Adams",
-   "seconded_by": "P. Luck",
+   "motion": "Approve the minutes of November 19, 2019, December 10, 2019, December 19, 2019, January 7, 2020, January 14, 2020 and January 21, 2020 as listed.",
+   "moved_by": "D. McQuaid",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: k. adams 2nd: p. luck to adjourn the meeting at 9:07 p.m. vote: mr. jeffreys-aye, mr. mcquaid-aye, ms. luck-aye, ms. adams-aye, mr. alonzo- ay",
-   "quote_taken_from_text": true
+   "quote": "motion: d. mcquaid 2nd: p. luck to approve the minutes as listed vote: ms. luck- aye, mr. mcquaid-aye",
+   "seconded_by": "P. Luck"
+  },
+  {
+   "motion": "Adjourn the meeting at 9:07 p.m.",
+   "moved_by": "K. Adams",
+   "outcome": "passed 5-0",
+   "procedural": true,
+   "quote": "motion: k. adams 2nd: p. luck to adjourn the meeting at 9:07 p.m.",
+   "seconded_by": "P. Luck"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text (macOS Vision). Six votes recorded: five passed, one with no vote result recorded.",
- "cost_usd": 0.1565395
+ "note": "OCR text with gaps and errors. Page 1 begins mid attendance list (the line before 'Clerk;' is missing), so the full attendance and the roles of Mr. Alonzo and the board members are not printed. Page 14-15 break: the heading for the Holman St/Northfield Rd ROFR item and the vote tally on the 'not to exercise ROFR' motion are not in the text (text runs into 'Road parcel. It will be discussed again at another meeling.'), so that outcome is 'not stated'. The stop-signs vote has no named mover or seconder. The agenda numbering after the warrants item is unclear (a second '2.' appears). Names appear inconsistently (McQuaid/MeQuaid, Serreti/Serretti, Luck as 'P. Luck' or 'Ms. Luck'); quotes preserve the printed spelling. Quotes that include OCR errors are copied as printed.",
+ "cost_usd": 0.01836462,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Katey Adams",
+   "status": "present",
+   "quote": "clerk; katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "status": "present",
+   "quote": "clerk; katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Mr. Alonzo",
+   "status": "present",
+   "quote": "mr. alonzo announced this was the april 7h board of selectmen meeting."
+  },
+  {
+   "name": "D. McQuaid",
+   "status": "present",
+   "quote": "motion: d. mcquaid 2nd: p. luck to approve the minutes as listed"
+  },
+  {
+   "name": "P. Luck",
+   "status": "present",
+   "quote": "ms. luck asked if the delay of personal property taxes was the only item on this list"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; karen brochu, finance director; james"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; karen brochu, finance director; james"
+  },
+  {
+   "name": "James Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "chief marino following up on mr. jeffreys' public comment, stated he has noticed discarded"
+  },
+  {
+   "name": "Frank Serreti",
+   "role": "Powers & Sullivan, LLC",
+   "status": "present",
+   "quote": "frank serreti and ben adsit of powers & sullivan, llc"
+  },
+  {
+   "name": "Ben Adsit",
+   "role": "Powers & Sullivan, LLC",
+   "status": "present",
+   "quote": "frank serreti and ben adsit of powers & sullivan, llc"
+  },
+  {
+   "name": "Rebecca Lantry",
+   "role": "Historical Commission Chair",
+   "status": "present",
+   "quote": "ms. lantry stated i am from the lunenburg historical commission and our"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "not stated",
+   "quote": "dave passios, 56 whiting street, was disappointed the bos voted without input from the open space committee on the rofr properties."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Lemieux will follow up on what became of the Conservation Commission hunting requests after the board denied them.",
+   "quote": "ms. adams asked what became of the hunting requests from the conservation commission after this board denied it. ms. lemieux will follow up."
+  },
+  {
+   "decision": "Ms. Lemieux will confer with Town Counsel on whether Town Meeting can be delayed.",
+   "quote": "ms. lemieux stated believed only if the governor's state of emergency was still active but she will confer with town counsel."
+  },
+  {
+   "decision": "The chair will control all mutes for the Zoom meeting to prevent disruption.",
+   "quote": "mr. alonzo announced he would be in control of all the mutes for the zoom meeting to"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed by the chair on behalf of the BOS",
+   "what_was_recorded": "Mr. Alonzo announced he signed payroll and accounts payable warrants and a deductions warrant.",
+   "figures_as_printed": [
+    "$810,649.65",
+    "$263,083.03",
+    "$60,188.65",
+    "$48,397.68"
+   ],
+   "quote": "payroll #20 p 20: $810,649.65 a/p# 50 20: $263,083.03"
+  },
+  {
+   "topic": "FY 2019 year-end budget results",
+   "what_was_recorded": "The auditor said the town ended FY2019 with a surplus against a budgeted decrease; revenues ran over budget and expenses under, with state and county charges the only overexpenditure.",
+   "figures_as_printed": [
+    "$12,000",
+    "$663,000",
+    "$81,000",
+    "$38,000"
+   ],
+   "quote": "you ended the year with a surplus of $12,000 even though you had budgeted a decrease of $663,000."
+  },
+  {
+   "topic": "Stabilization fund balances",
+   "what_was_recorded": "The auditor reported general stabilization of 1.9 million dollars, a zoning stabilization fund and a vehicle equipment stabilization fund.",
+   "figures_as_printed": [
+    "1.9 million dollars",
+    "$229,000",
+    "$644,000"
+   ],
+   "quote": "you have a zoning stabilization fund with $229,000 in it and you also have a vehicle equipment stabilization fund with $644,000."
+  },
+  {
+   "topic": "Short-term debt for school construction",
+   "what_was_recorded": "The town has short-term debt outstanding for the school construction project, to be paid off when the final MSBA payment is received; any remaining need may be long-term debt.",
+   "figures_as_printed": [
+    "2.1 million dollars"
+   ],
+   "quote": "you have 2.1 million dollars in short term debt outstanding and that was for the school construction project."
+  },
+  {
+   "topic": "Federal awards expenditures",
+   "what_was_recorded": "The town expended federal funds above the single audit threshold, mostly on education grants and school lunches.",
+   "figures_as_printed": [
+    "$750,000",
+    "$835,000",
+    "$173,000",
+    "$630,000"
+   ],
+   "quote": "the town expended $835,000; $173,000 was on school lunches and $630,000 was on education grants."
+  },
+  {
+   "topic": "Uncashed vendor checks",
+   "what_was_recorded": "The auditor found outstanding vendor checks more than three months old in the bank reconciliation and recommended a written policy.",
+   "figures_as_printed": [
+    "$125,270"
+   ],
+   "quote": "checks greater than three months old totaling $125,270, some going back to 2010"
+  },
+  {
+   "topic": "Ambulance receivables write-off",
+   "what_was_recorded": "The board voted in 2019 to write off uncollectible ambulance receivables, reducing the balance; most of the remainder is over 180 days old.",
+   "figures_as_printed": [
+    "$16,000",
+    "$760,000",
+    "$567,000",
+    "$476,000 (84%)"
+   ],
+   "quote": "increased by$16,000 in 2018 and totaled $760,000 at year-end."
+  },
+  {
+   "topic": "Unitil U-CARE fund contribution",
+   "what_was_recorded": "Unitil announced it committed money to a customer assistance fund and to other COVID-19 programs.",
+   "figures_as_printed": [
+    "$150,000",
+    "$75,000"
+   ],
+   "quote": "unitil has committed $150,000 to this fund, plus an additional $75,000 to covid-19 related programs at the united way"
+  },
+  {
+   "topic": "Green Communities Competitive Grant",
+   "what_was_recorded": "Projects under consideration for the grant include funds toward hybrid police cruisers; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "funds towards the purchase of hybrid police cruisers"
+  },
+  {
+   "topic": "Saliba property grants (LAND and PARC)",
+   "what_was_recorded": "The town's state grants toward the purchase of the Saliba property will not be extended; closing is expected in May. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the deadlines for the land and parc grants that the town received towards the purchase of the"
+  },
+  {
+   "topic": "Purchase of 635 Mass. Ave. property",
+   "what_was_recorded": "The Town Manager did not believe buying the 635 Mass. Ave. property was fiscally prudent, and the board removed the article. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "she did not believe it was fiscally prudent to purchase the 635 mass. ave. property."
+  },
+  {
+   "topic": "CPA surcharge example",
+   "what_was_recorded": "The Historical Commission gave an example of the CPA surcharge on a home assessed at $380,000 after a $100,000 exemption.",
+   "figures_as_printed": [
+    "$380,000",
+    "$100,000",
+    "$280,000",
+    "18.12/$1000",
+    "$5,074"
+   ],
+   "quote": "$380,000-$100,000 = $280,000 as the value to be surcharged."
+  },
+  {
+   "topic": "FY21 budget revision approach",
+   "what_was_recorded": "The Town Manager outlined reassessing FY21 revenue and expenditure projections, including level funding State Aid and Local Receipts. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "my approach to revamping the fy 2021 budget will be to reassess our revenue projections and fy21 expenditures as follows:"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Jeffreys",
+   "topic": "Roadside trash on Lancaster Avenue and Mass. Ave.",
+   "quote": "mr. jeffreys stated he was driving on lancaster avenue and noticed the large amounts of trash on the side of the road."
+  },
+  {
+   "speaker": "Dave Passios",
+   "topic": "ROFR properties voted without Open Space Committee input",
+   "quote": "dave passios, 56 whiting street, was disappointed the bos voted without input from the open space committee on the rofr properties."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (roadside trash)",
+   "resolution": "no action",
+   "quote": "mr. jeffreys stated he was driving on lancaster avenue and noticed the large amounts of trash on the side of the road.",
+   "tags": [
+    "public comment",
+    "trash"
+   ]
+  },
+  {
+   "topic": "Two stop signs",
+   "resolution": "approved 5-0",
+   "quote": "to approve the two stops signs as presented vote: ms. adams-aye, mr. mequaid-aye, ms. luck-aye, mr. jeffreys-aye, mr.",
+   "tags": [
+    "stop signs",
+    "traffic"
+   ]
+  },
+  {
+   "topic": "Police Chief remarks on COVID-19",
+   "resolution": "no action",
+   "quote": "chief marino following up on mr. jeffreys' public comment, stated he has noticed discarded",
+   "tags": [
+    "COVID-19",
+    "public safety"
+   ]
+  },
+  {
+   "topic": "FY 2019 audit report presentation",
+   "resolution": "presented, no action",
+   "quote": "ms. lemieux introduced frank serreti and ben adsit to present their findings after the audit.",
+   "tags": [
+    "audit",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Town Manager update on COVID-19",
+   "resolution": "no action",
+   "quote": "covid-19 in lunenburg and board of health notices:",
+   "tags": [
+    "COVID-19",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Proposed ballot question on Community Preservation Act",
+   "resolution": "presented, no action",
+   "quote": "proposed ballot question for the annual town election regarding adoption",
+   "tags": [
+    "Community Preservation Act",
+    "ballot question"
+   ]
+  },
+  {
+   "topic": "Review of Annual Town Meeting warrant articles",
+   "resolution": "removed 635 Mass. Ave. article and four ROFR articles",
+   "quote": "ms. lemieux recommended removing the four first right of refusal (rofr) article and the",
+   "tags": [
+    "town meeting",
+    "warrant",
+    "ROFR"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved 5-0",
+   "quote": "to approve the minutes as listed",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants signed",
+   "resolution": "no action",
+   "quote": "mr. alonzo announced he signed the following warrants on behalf of the bos:",
+   "tags": [
+    "warrants",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Action items (hunting requests)",
+   "resolution": "follow-up assigned",
+   "quote": "ms. adams asked what became of the hunting requests from the conservation commission after this board denied it.",
+   "tags": [
+    "conservation",
+    "follow-up"
+   ]
+  },
+  {
+   "topic": "Right of First Refusal on Holman Street and Northfield Road properties",
+   "resolution": "motion to not exercise ROFR; tally not recorded",
+   "quote": "motion: m. jeffreys to not exercise the right of first refusal for the four properties presented",
+   "tags": [
+    "ROFR",
+    "land",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Town Manager performance evaluation process and timeline",
+   "resolution": "discussed",
+   "quote": "ms. lemieux stated she had considered the offer to move her evaluation up and appreciated it",
+   "tags": [
+    "town manager",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Discussion on FY2021 budget, FY21 capital plan, five-year forecast and warrant articles",
+   "resolution": "no discussion",
+   "quote": "no discussion occurred.",
+   "tags": [
+    "FY21 budget",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational",
+   "quote": "announcement on existing vacancies:",
+   "tags": [
+    "vacancies",
+    "COVID-19",
+    "grants",
+    "FY21 budget",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "informational",
+   "quote": "this board meets again on april 14 and april 21.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (ROFR properties)",
+   "resolution": "no action",
+   "quote": "dave passios, 56 whiting street, was disappointed the bos voted without input from the open space committee on the rofr properties.",
+   "tags": [
+    "public comment",
+    "ROFR"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:07 p.m.",
+   "quote": "motion: k. adams 2nd: p. luck to adjourn the meeting at 9:07 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Meeting packet: Community Preservation Act information provided by Ms. Lantry",
+   "where": "text",
+   "quote": "ms. lemieux noted ms. lantry had provided information and it was in their meeting packet."
+  },
+  {
+   "name": "Memo from the Land Use Director, packet page 2, on the Holman St and Northfield Rd property",
+   "where": "text",
+   "quote": "mr. jeffreys referred to part of a memo in their packet, page 2, from the land use director stating"
+  },
+  {
+   "name": "Purchase and Sale agreement for the Holman Street and Northfield Road property",
+   "where": "text",
+   "quote": "there appears to be a significant number of contingencies included in the purchase and sale."
+  },
+  {
+   "name": "Town Counsel opinion by Adam Costa",
+   "where": "text",
+   "quote": "town counsel adam costa had provided an opinion"
+  },
+  {
+   "name": "FY 2019 Audit Report from Powers and Sullivan, LLC",
+   "where": "text",
+   "quote": "fy 2019 audit report from powers and sullivan, llc"
+  },
+  {
+   "name": "Chapter 53 of the Acts of 2020 (Act to Address Challenges Faced by Municipalities and State Authorities Resulting from COVID-19)",
+   "where": "text",
+   "quote": "the act is now known as chapter 53 of the acts of 2020."
+  },
+  {
+   "name": "Board of Health COVID-19 weekly update dated April 3rd",
+   "where": "text",
+   "quote": "the update received today is dated april 3r° and has been put on the covid-19 information center page on"
+  },
+  {
+   "name": "Annual Town Meeting warrant",
+   "where": "text",
+   "quote": "review of annual town meeting warrant articles"
+  }
+ ],
+ "tags": [
+  "COVID-19",
+  "remote meeting",
+  "town meeting warrant",
+  "Community Preservation Act",
+  "Right of First Refusal",
+  "FY2019 audit",
+  "FY21 budget",
+  "warrants signed",
+  "stop signs",
+  "minutes approval",
+  "public comment",
+  "town manager report"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. jeffreys referred to part of a memo in their packet"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2020-12-07",
  "docid": "1037",
@@ -12,47 +12,169 @@
  },
  "votes": [
   {
-   "motion": "Approve septic system variances for 72 Maple Parkway",
+   "motion": "Approve the variances for 72 Maple Parkway (groundwater offset from four feet to two feet; inlet and outlet tees to 6 inches and 2 1/2 inches).",
    "moved_by": "Watters",
    "seconded_by": "Fortin",
-   "outcome": "passed 4-0",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "on motion by watters and second by fortin, the variances were unanimously approved by roll call vote"
+   "quote": "after discussion and on motion by watters and second by fortin, the variances were unanimously approved by roll call vote."
   },
   {
-   "motion": "Approve septic system variances for 112 South Row Road",
+   "motion": "Approve the variances for 112 South Row Road (offset to groundwater reduced to 4 feet).",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by fortin, the board voted to approve the variances. all in favor by roll call vote"
+   "quote": "after discussion and on motion by jewell and second by fortin, the board voted to approve the variances. all in favor by roll call vote."
   },
   {
-   "motion": "Approve septic system variances for 1480 Lancaster Avenue with deed restriction requirement",
+   "motion": "Approve the variances for 1480 Lancaster Avenue (offset to groundwater from 4 feet to 3 feet, sieve analysis, reduced tee separation), with a deed restriction to a 4 bedroom home.",
    "moved_by": "Jewell",
    "seconded_by": "Watters",
    "outcome": "passed 3-0-1",
    "procedural": false,
-   "quote": "on motion by jewell and second by watters, these variances were approved with the requirement of a deed restriction as follows by roll call vote"
+   "quote": "after discussion and on motion by jewell and second by watters, these variances were approved with the requirement of a deed restriction as follows by roll call vote:"
   },
   {
-   "motion": "Approve prior meeting minutes",
+   "motion": "Approve all meeting minutes.",
    "moved_by": "Watters",
    "seconded_by": "Fortin",
-   "outcome": "passed 4-0",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "on motion by watters and second by fortin all minutes were unanimously approved by roll call vote"
+   "quote": "on motion by watters and second by fortin all minutes were unanimously approved by roll call vote."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Watters",
    "seconded_by": "Jewell",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "on motion by watters and seconded by jewell, the meeting was adjourned at 8:30 pm. by roll call vote, all in favor"
+   "quote": "on motion by watters and seconded by jewell, the meeting was adjourned at 8:30 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Board has four members (Jewell, Emond, Fortin, Watters). Votes 1, 2, 4, 5 stated as unanimously approved or all in favor (4-0). Vote 3 explicitly recorded individual votes: 3 yes (Jewell, Fortin, Watters), 1 abstain (Emond).",
- "cost_usd": 0.10862850000000002
+ "note": "Text is a readable extraction, not a scan. The minutes name George Emond as chair in one place (\"Chairman Emond\") and do not record a role for the other members. Roll call was recorded for each vote; the Lancaster vote lists individual positions (Jewell, Fortin, Watters yes; Emond abstain). The 1480 Lancaster quote is a motion with a result recorded as a list. The minutes spell the board member \"Even Watters\" once and \"Evan Watters\" elsewhere; \"Evan Watters\" is used here. No dollar figures, public comment, decisions without a vote, or document lists appear in the minutes.",
+ "cost_usd": 0.0037316199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Perry Jewell",
+   "role": "Vice-Chairman (conducted roll call)",
+   "status": "present",
+   "quote": "roll call conducted by vice-chairman, perry jewell: perry jewell, george emond, paul fortin and evan watters."
+  },
+  {
+   "name": "George Emond",
+   "role": "Chairman (as printed later: \"Chairman Emond\")",
+   "status": "present",
+   "quote": "roll call conducted by vice-chairman, perry jewell: perry jewell, george emond, paul fortin and evan watters."
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "Board member",
+   "status": "present",
+   "quote": "roll call conducted by vice-chairman, perry jewell: perry jewell, george emond, paul fortin and evan watters."
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Board member",
+   "status": "present",
+   "quote": "roll call conducted by vice-chairman, perry jewell: perry jewell, george emond, paul fortin and evan watters."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "present",
+   "quote": "agent, jim garreffi, was also present."
+  },
+  {
+   "name": "Doug Smith",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "doug smith was present to represent the owner."
+  },
+  {
+   "name": "Brian Milisci",
+   "role": "from Whitman and Bingham, representing the owner",
+   "status": "present",
+   "quote": "brian milisci from whitman and bingham met with the board on behalf of the owner."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "72 Maple Parkway septic variances",
+   "resolution": "variances approved by roll call",
+   "quote": "doug smith was present to represent the owner.",
+   "tags": [
+    "septic",
+    "variance",
+    "Title 5"
+   ]
+  },
+  {
+   "topic": "112 South Row Road septic variance",
+   "resolution": "variance approved by roll call",
+   "quote": "doug smith met with the board on behalf of the owner.",
+   "tags": [
+    "septic",
+    "variance",
+    "lake lot"
+   ]
+  },
+  {
+   "topic": "1480 Lancaster Avenue septic variances",
+   "resolution": "approved with deed restriction to 4 bedroom home, 3-0-1",
+   "quote": "brian milisci from whitman and bingham met with the board on behalf of the owner.",
+   "tags": [
+    "septic",
+    "variance",
+    "deed restriction"
+   ]
+  },
+  {
+   "topic": "Meeting minutes",
+   "resolution": "approved",
+   "quote": "on motion by watters and second by fortin all minutes were unanimously approved by roll call vote.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "COVID-19 update",
+   "resolution": "no action",
+   "quote": "jim garreffi stated that there continues to be numerous changes and amendments to covid guideline daily.",
+   "tags": [
+    "Covid-19",
+    "vaccine",
+    "guidance"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:30 pm",
+   "quote": "on motion by watters and seconded by jewell, the meeting was adjourned at 8:30 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "septic variances",
+  "Title 5",
+  "Covid-19",
+  "remote meeting",
+  "minutes",
+  "deed restriction"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

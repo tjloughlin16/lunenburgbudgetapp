@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-07-14",
  "docid": "5205",
@@ -12,23 +12,284 @@
  },
  "votes": [
   {
-   "motion": "Approve the timeline for Town Manager Performance Evaluation as presented",
+   "motion": "Vote recorded with no motion text printed (Board of Health section, after Mr. Fortin's congratulations); tally all aye.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed 9-0",
+   "procedural": false,
+   "quote": "vote: mr. dwyer- aye, ms. adams- aye, mr. marino-aye, mr. jeffreys-aye, mr. alonzo-aye mr. mayhew-aye, mr. emond-aye, mr. watters-aye, mr. jewell-aye"
+  },
+  {
+   "motion": "To approve the Town Manager performance evaluation timeline as presented.",
    "moved_by": "K. Adams",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 4-0-1",
    "procedural": false,
-   "quote": "motion: k. adams 2nd: m. jeffreys to approve the timeline as presented vote: mr. dwyer- abstain, ms. adams- aye, mr. marino-aye, mr. jeffreys- aye, mr. alonzo - aye"
+   "quote": "motion: k. adams 2nd: m. jeffreys to approve the timeline as presented vote: mr. dwyer- abstain, ms. adams- aye, mr. marino-aye, mr. jeffreys- aye"
   },
   {
-   "motion": "Adjourn the meeting at 8:31 p.m.",
+   "motion": "To adjourn the meeting at 8:31 p.m.",
    "moved_by": "T. Dwyer",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: t. dwyer 2nd: m. jeffreys to adjourn the meeting at 8:31 p.m. vote: ms. adams- aye, mr. jeffreys -aye, mr. dwyer-aye, mr. marino-aye, mr. alonzo - aye"
+   "quote": "motion: t. dwyer 2nd: m. jeffreys to adjourn the meeting at 8:31 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR minutes from macOS Vision. An unnamed vote appears on page 3 (vote listing Selectmen and Board of Health members) but no explicit motion statement precedes it, so it is not included per the rules requiring a recorded motion.",
- "cost_usd": 0.1059325
+ "note": "OCR text from a scan. Page 5 begins mid-sentence in the Bright Farms discussion, so the board's discussion of that presentation is only partly recorded. The Board of Health vote on page 3 prints a tally with no motion text, so it is recorded with the motion described as not printed. The header attendance line is garbled. Public comment was taken twice in the minutes; the second section is the closing one.",
+ "cost_usd": 0.010346620000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chairman Alonzo",
+   "status": "present",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Todd Dwyer",
+   "status": "present",
+   "quote": "clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "status": "present",
+   "quote": "as a selectman and police chief i am a municipal employee"
+  },
+  {
+   "name": "Ms. Adams",
+   "status": "present",
+   "quote": "vote: ms. adams- aye, mr. jeffreys -aye, mr. dwyer-aye, mr. marino-aye, mr. alonzo - aye"
+  },
+  {
+   "name": "Mr. Jeffreys",
+   "status": "present",
+   "quote": "mr. jeffreys thought it might be helpful to review changes to the charter once it is approved."
+  },
+  {
+   "name": "Town Manager Heather Lemieux",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux, sean o'neill, paul fortin, adam burney, land use"
+  },
+  {
+   "name": "Sean O'Neill",
+   "status": "present",
+   "quote": "ms. lemieux introduced sean o'neill of bright farms."
+  },
+  {
+   "name": "Paul Fortin",
+   "status": "present",
+   "quote": "mr. alonzo congratulated mr. fortin and thanked him for continuing to serve on the board."
+  },
+  {
+   "name": "Adam Burney",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux, sean o'neill, paul fortin, adam burney, land use"
+  },
+  {
+   "name": "George Emond Jr",
+   "status": "present",
+   "quote": "board of health members: george emond jr, warren mayhew, perry jewell, evan watters"
+  },
+  {
+   "name": "Warren Mayhew",
+   "status": "present",
+   "quote": "board of health members: george emond jr, warren mayhew, perry jewell, evan watters"
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "board of health members: george emond jr, warren mayhew, perry jewell, evan watters"
+  },
+  {
+   "name": "Evan Watters",
+   "status": "present",
+   "quote": "board of health members: george emond jr, warren mayhew, perry jewell, evan watters"
+  },
+  {
+   "name": "Bill Tyler",
+   "status": "present",
+   "quote": "bill tyler, 5 graham street, cemetery commissioner, referring to last week's statement by mr."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "status": "not stated",
+   "quote": "from the desk of dpw director jack rodriquenz"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "status": "not stated",
+   "quote": "executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members' previous year's goals to be sent to all board members, at Mr. Alonzo's request.",
+   "quote": "mr. alonzo requested the previous year's goals be sent to all the board members."
+  },
+  {
+   "decision": "Town Manager to send out the status of her previous year's goals.",
+   "quote": "ms. lemieux will also send out the status of her previous year's goals."
+  },
+  {
+   "decision": "Chair ruled comments out of order once they became personal.",
+   "quote": "everything up to the point when i thought it got personal i intervened and ruled it out of order."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed by the Chair",
+   "what_was_recorded": "Mr. Alonzo reported he signed four warrants, with a dollar amount for each.",
+   "figures_as_printed": [
+    "$79,448.86",
+    "$131,523.57",
+    "$285,273.64",
+    "$688,964.16"
+   ],
+   "quote": "mr. alonzo reported he signed the following warrants:"
+  },
+  {
+   "topic": "Bright Farms public infrastructure and TIF support request",
+   "what_was_recorded": "Bright Farms asked Lunenburg for support through MassWorks-funded infrastructure and a Tax Increment Financing agreement; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "public infrastructure can be funded by massworks"
+  },
+  {
+   "topic": "Principal Assessor and assessing services budget constraint",
+   "what_was_recorded": "The Town Manager said any staffing changes must stay within the budget, including employee costs such as health insurance; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "throughout this process it has been stressed that any changes would need to stay within the confines of the"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jim Marino",
+   "stated_role": "selectman and police chief",
+   "topic": "police chief holding an elected position",
+   "quote": "mr. marino stated some members of the community have posed a question, \"how can a police chief"
+  },
+  {
+   "speaker": "Bill Tyler",
+   "stated_role": "Cemetery Commissioner",
+   "topic": "Memorial Day cemetery preparation and DPW communication",
+   "quote": "bill tyler, 5 graham street, cemetery commissioner, referring to last week's statement by mr."
+  },
+  {
+   "speaker": "Jack Rodriquenz (statement read from the desk)",
+   "stated_role": "DPW Director",
+   "topic": "retirement announcement and DPW staffing",
+   "quote": "from the desk of dpw director jack rodriquenz, \"as i became aware the summer street"
+  },
+  {
+   "speaker": "Ms. Adams",
+   "stated_role": "",
+   "topic": "personal information raised at prior meeting",
+   "quote": "ms. adams stated last week was a difficult meeting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge",
+   "resolution": "no action",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m."
+  },
+  {
+   "topic": "Public comment (first)",
+   "resolution": "no action; statements heard, including DPW Director retirement notice",
+   "quote": "mr. marino stated some members of the community have posed a question"
+  },
+  {
+   "topic": "Board of Health vote and adjournment",
+   "resolution": "vote tallied; Board of Health adjourned",
+   "quote": "mr. alonzo congratulated mr. fortin and thanked him for continuing to serve on the board."
+  },
+  {
+   "topic": "Meeting with Bright Farms re: Major Lettuce Greenhouse",
+   "resolution": "presentation; no action",
+   "quote": "meeting with bright farms re: major lettuce greenhouse"
+  },
+  {
+   "topic": "Review timeline for Town Manager performance evaluation",
+   "resolution": "approved timeline 4-0-1",
+   "quote": "mr. alonzo noted this had been postponed due the pandemic"
+  },
+  {
+   "topic": "Review timeline for FY21 Board and Town Manager goals",
+   "resolution": "schedule reviewed; no vote",
+   "quote": "review timeline for finalizing fy21 board of selectmen and town manager goals"
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed and reported",
+   "quote": "mr. alonzo reported he signed the following warrants:"
+  },
+  {
+   "topic": "Action items",
+   "resolution": "discussed; no action",
+   "quote": "mr. jeffreys thought it might be helpful to review changes to the charter once it is approved."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "none",
+   "quote": "6. committee reports- there were none this evening"
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported; no action",
+   "quote": "town manager report announcement on existing vacancies:"
+  },
+  {
+   "topic": "Public comment (second) and Board schedule",
+   "resolution": "discussed; no action",
+   "quote": "ms. adams stated last week was a difficult meeting."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 8:31 p.m.",
+   "quote": "to adjourn the meeting at 8:31 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Warrants signed by the Chair: Payroll Deduction W #2 21 (7/8/2020); Accounts Payable Warrant #2 WP 20 (6/30/2020); Accounts Payable Warrant #1 WP 20 (6/30/2020); Payroll Warrant #1P21 (7/9/2020)",
+   "where": "text",
+   "quote": "mr. alonzo reported he signed the following warrants:"
+  },
+  {
+   "name": "Statement from DPW Director Jack Rodriquenz on his retirement",
+   "where": "text",
+   "quote": "from the desk of dpw director jack rodriquenz, \"as i became aware the summer street"
+  },
+  {
+   "name": "Request for Proposals for Tax Assessment Services",
+   "where": "text",
+   "quote": "to a request for proposals for tax assessment services"
+  },
+  {
+   "name": "MassWorks Application (scheduled 8/28/20)",
+   "where": "text",
+   "quote": "8/28/20 massworks application"
+  }
+ ],
+ "tags": [
+  "board of selectmen",
+  "town manager evaluation",
+  "goals",
+  "Bright Farms",
+  "greenhouse",
+  "warrants",
+  "DPW retirement",
+  "principal assessor",
+  "Board of Health",
+  "public comment",
+  "budget",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

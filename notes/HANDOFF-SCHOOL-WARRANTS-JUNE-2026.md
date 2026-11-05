@@ -1,7 +1,7 @@
 ---
-status: open
+status: reference
 updated: 2026-11-04
-next: ask the district for the list of batches in the 18-30 June 2026 warrant, or the check register for those dates. The gap is measured and registered (money-gaps.csv; records-requests.csv row 2026-10-26-sc-warrant-june-18-30).
+genlock: G-D2Q4K -- next steps, prohibitions and open questions live there (genlock goal show G-D2Q4K)
 ---
 
 # School warrant batches, 18-30 June 2026: do they add up to the agenda's warrant?

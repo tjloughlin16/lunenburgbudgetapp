@@ -451,5 +451,210 @@
    "at": "2026-11-04T12:42:23Z",
    "cost_usd": 0.0278411
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09172019-5142",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-09-17-minutes-5142.txt",
+   "path": "sources/meetings/select-board/2019-09-17-minutes-5142.pdf"
+  },
+  "official_sha256": "9feb3ef3aa383b038d26b40d34c0e625e21065c449b36e83303f8e3f713f9d77",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on the main votes (Complete Streets 2-3 and 4-1, signs, demolition article 3-2), but ours misses several licence votes and the warrants, and has Butterfly Lane items the official minutes lack. The one thing to check is the town manager evaluation 4-1 vote, which only our minutes record, along with the special town meeting articles vote, whose result we could not hear.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 1,
+   "discrepancy": 9,
+   "only_in_ours": 3,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Complete Streets combined request vote (items 1, 4, 3)",
+    "ours": "Submit round 2 Complete Streets requests for items 1, 4 and 3. — failed 2-3",
+    "official": "to submit the application to complete streets with items #1, #4 and #3 totalling $340,000 vote: 2 in favor, 3 against (luck, mcquaid, alonzo)",
+    "note": "Both say failed 2-3; this is an agreement on outcome, but ours says 'round 2' and gives no total; check only if the round label matters.",
+    "t": 208
+   },
+   {
+    "kind": "agree",
+    "about": "Complete Streets alternative one vote",
+    "ours": "Submit Complete Streets alternative one as described. — passed 4-1",
+    "official": "to submit alternative application #1 to complete streets",
+    "note": "Same motion and same 4-1 result.",
+    "t": 248
+   },
+   {
+    "kind": "agree",
+    "about": "Architectural Preservation District signs funding",
+    "ours": "Approve funding seven architectural preservation district signs. — passed unanimously",
+    "official": "to approve the request to fund the signs for the architectural preservation district",
+    "note": "Same motion, all in favor in both; 'seven' not in official.",
+    "t": 4046
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Town manager evaluation procedure vote",
+    "ours": "Accept the town manager evaluation procedure as documented. — passed 4-1",
+    "official": "",
+    "note": "Our minutes record a 4-1 vote that the official minutes do not; check the video and the official minutes for this item.",
+    "t": 5422
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Liquor license petition vote",
+    "ours": "Apply for two separate liquor license petitions, one named for Lanny's Orchards and one for a business yet to be named. — passed",
+    "official": "to petition for two separate beer and wine off premise licenses; one for lanni orchards and the",
+    "note": "Same motion with name misspelled; official says all in favor, ours gives no tally. Classified as agreement on substance with a name mishearing.",
+    "t": 6372
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Special town meeting placeholder articles vote",
+    "ours": "Include the summarized placeholder articles for the special town meeting. — not audible",
+    "official": "to approve inclusion of the above listed articles presented by town manager for the special town meeting warrant",
+    "note": "Ours could not hear the outcome; official records it as passed (all in favor). Check the recording for the result.",
+    "t": 7432
+   },
+   {
+    "kind": "agree",
+    "about": "Non-binding demolition article vote",
+    "ours": "Add a non-binding article offering demolition of the old primary building. — passed 3-2",
+    "official": "to create a non-binding article for demolition of the old primary school",
+    "note": "Same motion and 3-2 result, Luck and McQuaid against per official.",
+    "t": 7472
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Peddler's license vote, Steve Mongelli/Edward Jones",
+    "ours": "",
+    "official": "to approve the peddler's license to steve mongelli/edward jones investments between the hours",
+    "note": "Vote with a printed 4-1 (Jeffreys against) tally, absent from our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Common victualler license, Smokestack Roasters",
+    "ours": "",
+    "official": "to approve the comon victualler license for smokestack roasters, llc at 39 mass ave.",
+    "note": "Vote not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Tollbooth fundraiser vote, Boys & Girls Club",
+    "ours": "",
+    "official": "to approve the tollbooth fundraiser request on october 12 from 9 am to 1 pm",
+    "note": "Vote not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Complete Streets round 2 request amounts",
+    "ours": "Complete Streets round 2 request: 340 thousand dollars, 220,000 dollars",
+    "official": "the beach project funding request is $220,000 and the main street project is $230,000.",
+    "note": "Official gives $220,000 and $230,000 for the two projects and $340,000 for the combined items; ours has no $230,000. Check the figures in the recording.",
+    "t": 208
+   },
+   {
+    "kind": "agree",
+    "about": "Pleasant Street bridge funding",
+    "ours": "Pleasant Street bridge: 380 thousand",
+    "official": "wereceived$380,000 fortherepair ofthisbridgethrough",
+    "note": "Same figure.",
+    "t": 3358
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Facilities maintenance / funds available",
+    "ours": "Facilities maintenance account: fifty thousand",
+    "official": "$50,000 for projects, unless there are some unforeseen emergencies.",
+    "note": "Same amount, but official describes it as funds available for projects after maintenance; check how the account is described.",
+    "t": 516
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Vac truck for Butterfly Lane drainage",
+    "ours": "Vac truck for Butterfly Lane drainage: 350,000 to $450,000",
+    "official": "",
+    "note": "Official minutes mention no vac truck or Butterfly Lane cost figures.",
+    "t": 3015
+   },
+   {
+    "kind": "discrepancy",
+    "about": "250 Howard Street",
+    "ours": "250 Howard Street: $60,000",
+    "official": "the board will wait for feedback from the other notified boards.",
+    "note": "Official records no $60,000 figure and a wait for other boards; check the recording for the amount.",
+    "t": 4315
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Old primary school cost estimate decision",
+    "ours": "Town manager to get the cost estimate from the structural inspection for the old primary school.",
+    "official": "mr. alonzo suggested finding out how much the vertex inspection of the roof would cost.",
+    "note": "Both involve an inspection cost estimate, but ours assigns it to the town manager and official has Alonzo suggesting it; check who was tasked.",
+    "t": 2294
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Butterfly Lane DPW outsourcing cost and condo association",
+    "ours": "DPW director to provide outsourcing cost for Butterfly Lane storm drain cleaning and check on condo association status.",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 3141
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Butterfly Lane hearing and tabled policies",
+    "ours": "Hearing on Butterfly Lane set for October 15th; public comment and social media policies tabled to October 1.",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 7910
+   },
+   {
+    "kind": "only_in_official",
+    "about": "47-day filing deadline for town meeting articles",
+    "ours": "",
+    "official": "general consensus of the board was 47 days and adjusting board meetings.",
+    "note": "Consensus decision absent from ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Warrants signed",
+    "ours": "",
+    "official": "the board signed an accounts payable warrant in the amount of $311,451.98, a deductions warrant in the amount of $167,816.57, and a payroll warrant in the amount of $811,390.09.",
+    "note": "Warrant amounts not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Selectman name McQuade",
+    "ours": "selectmen McQuade (member)",
+    "official": "damon mcquaid, clerk;",
+    "note": "Misheard surname.",
+    "official_reading": "McQuaid",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees: chair and members",
+    "ours": "mr. chair (chair); selectmen Adams; selectmen McQuade; selectmen Jeffries; mrs. Luck",
+    "official": "members present: tom alonzo, chairman; phyllis luck, vice chairman, damon mcquaid, clerk;",
+    "note": "Same five members; ours lacks Alonzo's name and spells Jeffreys differently, a caption variation.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T12:46:54Z",
+   "cost_usd": 0.060879100000000005
+  }
  }
 }

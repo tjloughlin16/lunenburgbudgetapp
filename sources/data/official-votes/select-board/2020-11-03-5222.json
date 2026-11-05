@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-11-03",
  "docid": "5222",
@@ -12,65 +12,603 @@
  },
  "votes": [
   {
-   "motion": "Set the percentage of local tax levy for fiscal year 2021 tax rates and set Residential Factor at 1.0",
+   "motion": "Set the FY2021 tax rates with the residential factor at 1.0 and a corresponding CIP shift of 1.0, pending DOR approval of the tax recap.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "percentage of local tax levy which will be borne by each class of real and personal property, relative to setting the fiscal year 2021 tax rates and set the residential factor at 1.0, with a corresponding cip shift of 1.0, pending approval of the town's annual tax recap by the massachusetts department of revenue vote: mr. jeffreys- aye, mr. marino- aye, mr. dwyer- aye, ms. adams-aye, mr. alonzo-aye"
+   "quote": "vote: mr. jeffreys- aye, mr. marino- aye, mr. dwyer- aye, ms. adams-aye, mr. alonzo-aye"
   },
   {
-   "motion": "Accept and sign the tripartite agreement for 250 Howard Street",
+   "motion": "To accept and sign the tripartite agreement for 250 Howard Street.",
    "moved_by": "J. Marino",
    "seconded_by": "K. Adams",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: j. marino to vote to accept and sign the tripartite agreement vote: ms. adams-aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "to vote to accept and sign the tripartite agreement vote: ms. adams-aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys-aye, mr. alonzo-aye"
   },
   {
-   "motion": "Waive the Right of First Refusal for the property located at 250 Howard Street",
+   "motion": "To waive the Right of First Refusal for the property located at 250 Howard Street.",
    "moved_by": "K. Adams",
    "seconded_by": "J. Marino",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: k. adams 2nd: j. marino to waive the right of first refusal for the property located at 250 howard street vote: ms. adams-aye, mr. dwyer- aye, mr. marino- aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "to waive the right of first refusal for the property located at 250 howard street"
   },
   {
-   "motion": "Accept the disclosure and agree Mr. Viviano would be impartial in decisions and could vote on issues involving Lake Shirley",
-   "moved_by": "K. Adams",
-   "seconded_by": "J. Marino",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "motion: k. adams 2n°: j. marino to accept the disclosure and agree mr. viviano would be impartial in decisions and could vote on such issues involving lake shirley vote: mr. marino-aye, mr. jeffreys-aye, ms. adams-aye,mr. dwyer-aye, mr. alonzo- aye",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Approve the minutes of September 22 and October 6, 2020",
-   "moved_by": "K. Adams",
-   "seconded_by": "J. Marino",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: k. adams 2nd:j. marino to approve the minutes of september 22 and october 6, 2020 as presented vote: mr. marino-aye, mr. jeffreys-aye, ms. adams-aye ,mr. dwyer-aye, mr. alonzo- ay",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Ratify the appointment of Rob Oliva as DPW Director effective November 13, 2020",
+   "motion": "To ratify the appointment of Rob Oliva as DPW Director effective November 13, 2020.",
    "moved_by": "K. Adams",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: k. adams 2nº: t. dwyer to ratify the appointment of rob oliva as dpw director effective november 13, 2020 vote: mr. marino-aye, ms. adams-aye, mr. jeffreys-aye, mr. dwyer-aye, mr. alonzo-aye"
+   "quote": "to ratify the appointment of rob oliva as dpw director effective november 13, 2020"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To accept the disclosure of Jeff Viviano and agree he would be impartial and could vote on issues involving Lake Shirley.",
+   "moved_by": "K. Adams",
+   "seconded_by": "J. Marino",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to accept the disclosure and agree mr. viviano would be impartial in decisions and could vote on such issues involving lake shirley"
+  },
+  {
+   "motion": "To approve the minutes of September 22 and October 6, 2020 as presented.",
+   "moved_by": "K. Adams",
+   "seconded_by": "J. Marino",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "to approve the minutes of september 22 and october 6, 2020 as presented"
+  },
+  {
+   "motion": "To adjourn the meeting at 9:31 PM.",
    "moved_by": "J. Marino",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: j. marino 2n: t. dwyer to adjourn the meeting at 9:31 pm vote: ms. adams-aye, mr. jeffreys-aye, mr. marino-aye, mr. dwyer-aye, mr. alonzo-aye"
+   "quote": "to adjourn the meeting at 9:31 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR corruption affected legibility of the mover and seconder for the Tax Rate (FY2021) vote on page 7; the motion content and vote result are clear from the legible portions of the minutes.",
- "cost_usd": 0.17259950000000002
+ "note": "Text is macOS Vision OCR with broken lines and garbled words (e.g., 'bidto', 'Vovember', 'M. Lemieux'). Page 2 opens mid-hearing and page 7 shows the classification vote without its motion or mover, so no mover or seconder is recorded for that vote. Some topic headings are cut off across pages (e.g., the Sustainable Materials Recovery Program heading, the vacancies list heading). Warrants were signed and reported, not voted. The Pleasant Street, Senior Center and COVID items are reports without votes.",
+ "cost_usd": 0.014927620000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "not stated",
+   "status": "present",
+   "quote": "katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "not stated",
+   "status": "present",
+   "quote": "katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; susan bryne, principal assessor; brandon"
+  },
+  {
+   "name": "Susan Bryne",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; susan bryne, principal assessor; brandon"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "Open Space Committee Chairman",
+   "status": "present",
+   "quote": "brandon kibbe, open space committee chairman; sean oliva, rob oliva"
+  },
+  {
+   "name": "Sean Oliva",
+   "role": "not stated",
+   "status": "present",
+   "quote": "brandon kibbe, open space committee chairman; sean oliva, rob oliva"
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. oliva introduced himself and thanked ms. lemieux and hr director belliveau"
+  },
+  {
+   "name": "Cesira Newcomb",
+   "role": "buyer",
+   "status": "present",
+   "quote": "interested parties attending the meeting tonight are cesira newcomb and joel normandin (buyers)"
+  },
+  {
+   "name": "Joel Normandin",
+   "role": "buyer",
+   "status": "present",
+   "quote": "interested parties attending the meeting tonight are cesira newcomb and joel normandin (buyers)"
+  },
+  {
+   "name": "Sean O'Neill",
+   "role": "of Bright Farms",
+   "status": "present",
+   "quote": "meeting with sean o'neill of bright farms re: tif agreement at 361 mass ave."
+  },
+  {
+   "name": "Jeff Viviano",
+   "role": "Conservation Commission member",
+   "status": "present",
+   "quote": "mr. viviano stated he filed because he lives on lake shirley"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mike nault, 56 brookview terrace, reported on the success of the lobsters for lunenburg"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dave macdonald, island road, introduced lynnette valentine of the salvation army."
+  },
+  {
+   "name": "Lynnette Valentine",
+   "role": "Salvation Army",
+   "status": "present",
+   "quote": "she stated the need is greater than ever this year."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Bright Farms TIF: the board agreed to limit the reduction of jobs by a percentage; Mr. O'Neill to return with a percentage number and wording for a possible Phase II TIF.",
+   "quote": "it was decided to limit the reduction of jobs by a percentage."
+  },
+  {
+   "decision": "Bright Farms TIF: Chairman directed that Town Counsel review the changes and draft language satisfying both parties.",
+   "quote": "mr. alonzo stated he wanted town counsel to look over the changes and draft something"
+  },
+  {
+   "decision": "Ms. Adams requested the Old Primary School Select Board goal be placed on a future agenda so it can be shared with the public.",
+   "quote": "ms. adams requested the select board goal concerning the old primary school be placed on"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2021 levy and maximum allowable levy",
+   "what_was_recorded": "The printed FY2021 maximum allowable levy and excess levy capacity figures were reported at the classification hearing.",
+   "figures_as_printed": [
+    "$28,896,249.84",
+    "$0.02"
+   ],
+   "quote": "fy2021 maximum allowable levy $28,896,249.84"
+  },
+  {
+   "topic": "FY2021 levy limit",
+   "what_was_recorded": "The printed FY2021 levy limit was reported in the classification hearing.",
+   "figures_as_printed": [
+    "$26,043,470.45"
+   ],
+   "quote": "fy2021 levy limit $26,043,470.45"
+  },
+  {
+   "topic": "Appropriations",
+   "what_was_recorded": "Printed appropriations: June 13, 2020 ATM, Nov 17, 2020 STM (if passes), and the total.",
+   "figures_as_printed": [
+    "$40,960,318.77",
+    "$1,432,611.59",
+    "$42,392,930.36"
+   ],
+   "quote": "$40,960,318.77 $1,432,611.59 $42,392,930.36"
+  },
+  {
+   "topic": "Senior Center front entrance roof bid",
+   "what_was_recorded": "Low bid of seven received; the manager reported the award to The Aulson Company, LLC for the printed amount.",
+   "figures_as_printed": [
+    "$14,850"
+   ],
+   "quote": "the aulson company, llc for $14,850"
+  },
+  {
+   "topic": "925 Mass Ave Phase III brownfields funding request",
+   "what_was_recorded": "The manager said she would attend a Montachusett Brownfields Committee meeting to see whether $6,000 for a Phase III study could be approved.",
+   "figures_as_printed": [
+    "$6, 000"
+   ],
+   "quote": "the committee will approve $6, 000 in"
+  },
+  {
+   "topic": "Surplus police cruisers sold on Municibid",
+   "what_was_recorded": "Ten surplus vehicles sold; the proceeds are a general fund receipt counted as FY21 surplus revenue.",
+   "figures_as_printed": [
+    "$10,411"
+   ],
+   "quote": "10 vehicles were sold foratotalof$10,411"
+  },
+  {
+   "topic": "Lobsters for Lunenburg fundraiser",
+   "what_was_recorded": "Total collected at the fundraiser for the Police and Firefighters Associations was reported.",
+   "figures_as_printed": [
+    "$9807.80"
+   ],
+   "quote": "the total amount collected was $9807.80 and"
+  },
+  {
+   "topic": "Accounts Payable warrant signed",
+   "what_was_recorded": "Chairman reported signing the Accounts Payable Warrant #20 21 for the printed amount.",
+   "figures_as_printed": [
+    "$255,700.01"
+   ],
+   "quote": "accounts payable warrant #20 21, dated 10/27/2020, in the amount of $255,700.01;"
+  },
+  {
+   "topic": "Payroll deduction warrant signed",
+   "what_was_recorded": "Chairman reported signing Warrant #21 21 for the printed amount.",
+   "figures_as_printed": [
+    "$269,720.40"
+   ],
+   "quote": "warrant #21 21, dated 10/28/2020, in the amount of $269,720.40"
+  },
+  {
+   "topic": "Payroll warrant signed",
+   "what_was_recorded": "Chairman reported signing Payroll Warrant #9P21 for the printed amount.",
+   "figures_as_printed": [
+    "$843,237.38"
+   ],
+   "quote": "payroll warrant #9p21, dated 10/29/2020, in the amount of $843,237.38"
+  },
+  {
+   "topic": "Bright Farms TIF base valuation",
+   "what_was_recorded": "The base valuation in the TIF draft was reduced because the company is purchasing only 45 acres.",
+   "figures_as_printed": [
+    "$547,400"
+   ],
+   "quote": "reduced to $547,400, as they are only purchasing 45 acres"
+  },
+  {
+   "topic": "Gathering order fines",
+   "what_was_recorded": "Reported state fine for each person above the gathering limit.",
+   "figures_as_printed": [
+    "$500"
+   ],
+   "quote": "will be $500 for each person above the limit at a particular gathering"
+  },
+  {
+   "topic": "Community Compact IT grant for remote learning",
+   "what_was_recorded": "An IT grant application for remote learning infrastructure at the school was missed because of a misread deadline; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "the it director was going to apply to the community compact it grant"
+  },
+  {
+   "topic": "Sustainable Materials Recovery Program grant",
+   "what_was_recorded": "A recycling grant usable for compost bins, outreach and recycling education; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "this grant can be used for such things as compost bins,"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Adams",
+   "stated_role": "",
+   "topic": "letter from Debra Metcalf Morris on speeding and trucks on W. Townsend Road",
+   "quote": "ms. adams read a letter from debra metcalf morris, 43 w. townsend road, concerning"
+  },
+  {
+   "speaker": "Mike Nault",
+   "stated_role": "56 Brookview Terrace",
+   "topic": "Lobsters for Lunenburg fundraiser results",
+   "quote": "mike nault, 56 brookview terrace, reported on the success of the lobsters for lunenburg"
+  },
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "Island Road",
+   "topic": "Salvation Army Rescue Christmas parade",
+   "quote": "dave macdonald, island road, introduced lynnette valentine of the salvation army."
+  },
+  {
+   "speaker": "Lynnette Valentine",
+   "stated_role": "Salvation Army",
+   "topic": "Rescue Christmas parade and toy drive",
+   "quote": "she stated the need is greater than ever this year."
+  },
+  {
+   "speaker": "Ms. Adams",
+   "stated_role": "",
+   "topic": "quote on elected officials representing everyone",
+   "quote": "ms. adams read a quote by thomas jefferson in regards to the election"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening and public comment",
+   "resolution": "no action",
+   "quote": "ms. adams read a letter from debra metcalf morris, 43 w. townsend road, concerning",
+   "tags": [
+    "public comment",
+    "trucks"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "mr. alonzo announced route 70 is closed due to a four month repair project.",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public hearing on tax classification and FY2021 tax rates",
+   "resolution": "residential factor set at 1.0; FY2021 rates set pending DOR recap approval",
+   "quote": "public hearing each year to consider the tax rate options available to the municipality under",
+   "tags": [
+    "tax rate",
+    "classification",
+    "levy"
+   ]
+  },
+  {
+   "topic": "250 Howard Street right of first refusal and conservation land",
+   "resolution": "tripartite agreement accepted and signed; right of first refusal waived",
+   "quote": "hearing on 250 howard street right of first refusal & vote to accept a portion of the",
+   "tags": [
+    "conservation land",
+    "right of first refusal"
+   ]
+  },
+  {
+   "topic": "Notice of right of first refusal, 360 Flat Hill Road (Chapter 61A)",
+   "resolution": "discussed; postponement suggested pending Open Space Committee input",
+   "quote": "notice of right of first refusal for chapter 61a property located at 360 flat hill road",
+   "tags": [
+    "chapter 61A",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Bright Farms TIF agreement, 361 Mass Ave",
+   "resolution": "discussed; Town Counsel to draft revisions; no vote",
+   "quote": "meeting with sean o'neill of bright farms re: tif agreement at 361 mass ave.",
+   "tags": [
+    "TIF",
+    "economic development",
+    "jobs"
+   ]
+  },
+  {
+   "topic": "Resignation of John Henshaw from Finance Committee",
+   "resolution": "accepted with thanks; board concurred",
+   "quote": "resignation from finance committee- john henshaw",
+   "tags": [
+    "appointments",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Ratification of Town Manager appointments",
+   "resolution": "Rob Oliva ratified as DPW Director effective November 13, 2020",
+   "quote": "ratification of town manager appointments:",
+   "tags": [
+    "appointments",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Disclosure by Conservation Commission member Jeff Viviano (MGL 268A)",
+   "resolution": "disclosure accepted; impartiality agreed",
+   "quote": "disclosure by non-elected municipal employee of financial",
+   "tags": [
+    "conflict of interest",
+    "Lake Shirley"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved September 22 and October 6, 2020 minutes",
+   "quote": "approval of minutes of september 22 and october 6, 2020",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed; reported",
+   "quote": "mr. alonzo reported he signed the following warrants:",
+   "tags": [
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Action items",
+   "resolution": "none",
+   "quote": "action items- none this evening",
+   "tags": []
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "TCP Building Design Committee report to Special Town Meeting; Old Primary School goal requested for agenda",
+   "quote": "mr. jeffreys reported the tcp building design committee has a report to present to special",
+   "tags": [
+    "TCP building",
+    "Special Town Meeting",
+    "Old Primary School"
+   ]
+  },
+  {
+   "topic": "Board and committee vacancies",
+   "resolution": "no action; applications invited",
+   "quote": "parks commission (1 vacancy)",
+   "tags": [
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Pleasant Street bridge replacement",
+   "resolution": "reported; bids due November 18",
+   "quote": "pleasant street over pearl hill brook bridge replacement",
+   "tags": [
+    "bridge",
+    "bids"
+   ]
+  },
+  {
+   "topic": "Senior Center front entrance roof",
+   "resolution": "reported; award to The Aulson Company, LLC",
+   "quote": "senior center front entrance roof project:",
+   "tags": [
+    "senior center",
+    "roof",
+    "bids"
+   ]
+  },
+  {
+   "topic": "925 Mass Ave (TM Goal #1) environmental assessment",
+   "resolution": "reported; Phase III funding being pursued",
+   "quote": "925 mass ave (tm goal #1):",
+   "tags": [
+    "925 Mass Ave",
+    "brownfields",
+    "environment"
+   ]
+  },
+  {
+   "topic": "Remote learning infrastructure grant",
+   "resolution": "reported; missed deadline",
+   "quote": "remote learning infrastructure:",
+   "tags": [
+    "grant",
+    "IT",
+    "school"
+   ]
+  },
+  {
+   "topic": "Sustainable Materials Recovery Program grant",
+   "resolution": "reported",
+   "quote": "sustainable materials recovery program. this grant can be used for such things as compost bins,",
+   "tags": [
+    "grant",
+    "recycling"
+   ]
+  },
+  {
+   "topic": "Sale of surplus police cruisers",
+   "resolution": "reported",
+   "quote": "sale of surplus police cruisers through municibid:",
+   "tags": [
+    "surplus",
+    "revenue"
+   ]
+  },
+  {
+   "topic": "Meetings and announcements",
+   "resolution": "no action",
+   "quote": "meetings, events and other announcements:",
+   "tags": [
+    "meetings",
+    "Veterans Day"
+   ]
+  },
+  {
+   "topic": "COVID-19 update",
+   "resolution": "reported; discussed",
+   "quote": "covid-19 update november 3, 2020",
+   "tags": [
+    "COVID-19"
+   ]
+  },
+  {
+   "topic": "State COVID-19 orders and advisories",
+   "resolution": "discussed; no action",
+   "quote": "governor baker announced new orders & advisories on november 2, 2020:",
+   "tags": [
+    "COVID-19",
+    "state orders"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action",
+   "quote": "ms. adams read a quote by thomas jefferson in regards to the election",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:31 PM",
+   "quote": "to adjourn the meeting at 9:31 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Handout on property tax classification provided by Susan Bryne",
+   "where": "text",
+   "quote": "the following is from a handout she provided to the select board."
+  },
+  {
+   "name": "Draft #4 of the Bright Farms TIF agreement (in the Board's meeting packet)",
+   "where": "text",
+   "quote": "she referred to draft #4 in the board's meeting packet."
+  },
+  {
+   "name": "Bright Farms comments document from Sean O'Neill",
+   "where": "text",
+   "quote": "mr. o'neill has provided a document with their comments."
+  },
+  {
+   "name": "Tripartite agreement for 250 Howard Street drafted by town counsel",
+   "where": "text",
+   "quote": "ms. lemieux reported town counsel had drafted the agreement for all parties to sign"
+  },
+  {
+   "name": "Letter from Debra Metcalf Morris, 43 W. Townsend Road",
+   "where": "text",
+   "quote": "ms. adams read a letter from debra metcalf morris, 43 w. townsend road, concerning"
+  }
+ ],
+ "tags": [
+  "tax classification",
+  "FY2021 tax rate",
+  "levy",
+  "right of first refusal",
+  "conservation land",
+  "TIF",
+  "Bright Farms",
+  "appointments",
+  "DPW",
+  "conflict of interest disclosure",
+  "warrants",
+  "bridge",
+  "senior center roof",
+  "grants",
+  "surplus sales",
+  "COVID-19",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

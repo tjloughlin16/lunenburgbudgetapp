@@ -1,0 +1,425 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2020-02-11",
+ "video_id": "1HkJ8fRmkkY",
+ "video_url": "https://www.youtube.com/watch?v=1HkJ8fRmkkY",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2020-02-11-1HkJ8fRmkkY.json",
+  "sha256": "349c2293cf8443ff895df3c4316fd339247fb54a0e5feed650081cb4f38dadc1",
+  "caption_lines": 361,
+  "segments": 2531
+ },
+ "recording": {
+  "duration_s": 7825,
+  "duration": "2:10",
+  "spoken_chars": 91643,
+  "words_approx": 15273
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02112020-5233",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-02-11-agenda-5233.txt",
+   "path": "sources/meetings/select-board/2020-02-11-agenda-5233.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-04T09:04:45Z",
+  "cost_usd": 0.409823
+ },
+ "minutes": {
+  "headline": "Board heard the FY21 preliminary town budget and ADA transition plan; ratified a reserve officer; went to executive session",
+  "summary": "The board ratified a reserve police officer appointment, heard an ADA rights-of-way transition plan, and received the town manager's FY21 preliminary budget presentation. Residents raised a collective bargaining funding concern, school funding and board conduct. Marijuana ballot questions were put on next week's agenda, and the board entered executive session on collective bargaining.",
+  "attendees": [
+   {
+    "name_as_heard": "chairman Alonzo",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "mrs. Locke",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "mr. McQuade",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "mr. Jeffries",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "mrs. Adams",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "William scarpetti",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "George snow",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 320,
+    "topic": "Concern that passing over the article to fund the first year of the patrolmen's collective bargaining agreement was a mistake, leaving the contract open to modification.",
+    "speaker_as_heard": "Dave Paseos 56 Whiting Street",
+    "stated_role": "resident"
+   },
+   {
+    "t": 506,
+    "topic": "Thanked a retiring member, urged against hasty decisions, criticised a member's conduct, suggested earth removal go through the Planning Board.",
+    "speaker_as_heard": "Steve Weaver 288 home and Street"
+   },
+   {
+    "t": 6690,
+    "topic": "Board and commission minutes not posted online; asked the town manager to look into it.",
+    "speaker_as_heard": "Dave Paseos 56 Whiting Street"
+   },
+   {
+    "t": 6795,
+    "topic": "Summarised the budget, asked about overlay surplus history, and said the debt slide and audio were hard to see and hear.",
+    "speaker_as_heard": "Dave Rogers eighty-two Highland Street"
+   },
+   {
+    "t": 6959,
+    "topic": "Criticised how the board talked about the superintendent's budget and argued for funding needs rather than flat increases.",
+    "speaker_as_heard": "Sara camera 304 Lancaster Ave"
+   }
+  ],
+  "tags": [
+   "budget",
+   "contracts-and-unions",
+   "executive-session",
+   "free-cash",
+   "health-insurance",
+   "personnel",
+   "planning-and-zoning",
+   "public-comment",
+   "public-safety",
+   "roads-and-dpw",
+   "staffing",
+   "state-aid",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 963,
+    "motion": "Ratify the town manager's appointment of Brian Watson as reserve police officer",
+    "moved_by": "a member",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 7767,
+    "motion": "Enter executive session under chapter 30A section 21 reason 3 on collective bargaining strategy, then adjourn without returning",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2028,
+    "topic": "ADA ramp transition plan",
+    "what_was_said": "Consultants recommended a five-year ramp plan and a yearly sidewalk barrier removal amount.",
+    "figures_as_heard": [
+     "165 thousand",
+     "35 thousand",
+     "27 thousand"
+    ]
+   },
+   {
+    "t": 3377,
+    "topic": "FY21 free cash use",
+    "what_was_said": "Free cash goes to capital, OPEB and stabilization, not the operating budget.",
+    "figures_as_heard": [
+     "six hundred and seventy nine thousand one hundred and thirty three dollars",
+     "one hundred and ten thousand",
+     "a hundred thousand"
+    ]
+   },
+   {
+    "t": 3894,
+    "topic": "State aid",
+    "what_was_said": "Governor's proposal increases Chapter 70 and unrestricted aid.",
+    "figures_as_heard": [
+     "one hundred and fifty five thousand one hundred and eighty five dollars",
+     "thirty one thousand four hundred forty two dollars",
+     "nine million five hundred and twenty thousand seven hundred and sixty five dollars"
+    ]
+   },
+   {
+    "t": 4525,
+    "topic": "Operating budget increase",
+    "what_was_said": "Total operating budget projected to rise, schools the largest share.",
+    "figures_as_heard": [
+     "1 million one hundred and sixty four thousand four hundred two dollars",
+     "two point nine percent",
+     "five hundred and nineteen thousand eight hundred ninety seven"
+    ]
+   },
+   {
+    "t": 4973,
+    "topic": "Unallocated balance",
+    "what_was_said": "The preliminary budget leaves an unallocated balance and does not meet the superintendent's request.",
+    "figures_as_heard": [
+     "135,000"
+    ]
+   },
+   {
+    "t": 3015,
+    "topic": "MVP grant",
+    "what_was_said": "Town won a municipal vulnerability planning grant.",
+    "figures_as_heard": [
+     "twenty five thousand and two million"
+    ]
+   },
+   {
+    "t": 5110,
+    "topic": "Tax rate",
+    "what_was_said": "Tax rate projected to rise slightly.",
+    "figures_as_heard": [
+     "18 dollars and 12 cents",
+     "18.16"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 5986,
+    "decision": "Marijuana warrant articles and ballot questions to be put on next week's agenda."
+   },
+   {
+    "t": 6391,
+    "decision": "A member volunteered to serve as the board's representative on the economic development committee."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 320,
+    "topic": "Board public comment: earth removal, retirement announcement",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 320,
+    "t_end": 718,
+    "topic": "Public comment and announcements",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 738,
+    "t_end": 986,
+    "topic": "Reserve police officer ratification",
+    "resolution": "voted",
+    "tags": [
+     "public-safety",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 986,
+    "t_end": 2882,
+    "topic": "ADA public rights-of-way transition plan",
+    "resolution": "informational",
+    "tags": [
+     "roads-and-dpw",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 2906,
+    "t_end": 3268,
+    "topic": "Town manager report",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 3268,
+    "t_end": 5300,
+    "topic": "FY21 preliminary budget presentation",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "state-aid",
+     "free-cash"
+    ]
+   },
+   {
+    "t_start": 5531,
+    "t_end": 6600,
+    "topic": "Warrants, earth removal, marijuana questions, warrant articles, committees",
+    "resolution": "agenda item set",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 6690,
+    "t_end": 7766,
+    "topic": "Public and board comment",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 7767,
+    "t_end": 7811,
+    "topic": "Executive session",
+    "resolution": "motion made",
+    "tags": [
+     "executive-session"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Executive session roll call count is unclear.",
+   "Segment around 5300-5530 is garbled music/noise."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 5858,
+    "about": "Members disagreed over putting marijuana ballot questions back before voters.",
+    "sides": "one member in favor, another not in favor",
+    "words_as_heard": "I will say right now I'm not in favor of it",
+    "kind": "members disagree"
+   },
+   {
+    "t": 7440,
+    "about": "A member doubled down on earlier remarks after another said volunteers were owed an apology.",
+    "sides": "one member against another",
+    "words_as_heard": "stand 100% behind what I said",
+    "kind": "members disagree"
+   },
+   {
+    "t": 6959,
+    "about": "A resident criticised the board's treatment of the superintendent and last week's meeting.",
+    "sides": "a resident against the board",
+    "words_as_heard": "you really went off the rails",
+    "kind": "public criticism"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 382,
+    "kind": "liability or legal",
+    "about": "A resident says not voting to fund the contract may leave it open to modification.",
+    "who": "a resident",
+    "words_as_heard": "we made a mistake we should not have passed over the article"
+   },
+   {
+    "t": 6371,
+    "kind": "condition",
+    "about": "A member wants streetlights reviewed before pursuing replacement.",
+    "who": "a member",
+    "words_as_heard": "before we pursue the streetlights I would like someone to take a look at all of the street lights"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 2092,
+    "name_as_heard": "Appendix C",
+    "kind": "report",
+    "words_as_heard": "starting with the highest priority ramps that's identified in Appendix C"
+   },
+   {
+    "t": 3288,
+    "name_as_heard": "FY 21 preliminary budget presentation",
+    "kind": "presentation",
+    "words_as_heard": "FY 21 preliminary budget presentation by the town"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "ada-transition-plan-costs",
+    "title": "ADA transition plan costs",
+    "question": "What will the ramp and sidewalk accessibility plan cost the town each year?",
+    "t": 2028,
+    "words_as_heard": "the town should allocate thirty five thousand for five years to reconstruct ten to twelve ramps annually",
+    "data_in_play": [
+     "165 thousand",
+     "35 thousand",
+     "27 thousand"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "sidewalk-backlog",
+    "title": "Sidewalk backlog",
+    "question": "How large is the sidewalk repair backlog?",
+    "t": 1916,
+    "words_as_heard": "sidewalk repair backlog to be just about two hundred and seventy thousand dollars",
+    "data_in_play": [
+     "270 thousand"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board heard the town manager's FY21 preliminary budget, which leaves an unallocated balance and does not meet the superintendent's request.",
+    "t": 4973
+   },
+   {
+    "line": "The board ratified the town manager's appointment of a reserve police officer.",
+    "t": 963
+   },
+   {
+    "line": "Consultants presented an ADA rights-of-way transition plan recommending a five-year ramp plan and a yearly amount for removing sidewalk barriers.",
+    "t": 2028
+   },
+   {
+    "line": "The budget presentation said free cash goes to capital, OPEB and stabilization rather than the operating budget, and that the tax rate is projected to rise slightly.",
+    "t": 3377
+   },
+   {
+    "line": "The board put marijuana warrant articles and ballot questions on next week's agenda, then moved to enter executive session on collective bargaining.",
+    "t": 5986
+   }
+  ],
+  "why_it_matters": [
+   "The preliminary FY21 budget points to a slightly higher tax rate and a school budget below what the superintendent asked for, both of which residents may be asked to vote on at Town Meeting.",
+   "The ADA plan would set a multi-year cost for ramps and sidewalks that competes with other capital needs, and the open collective bargaining question for patrol officers could affect future payroll costs."
+  ],
+  "watch_next": [
+   "Next week's Select Board agenda, which is to include the marijuana warrant articles and ballot questions.",
+   "Any warrant article or funding for the first year of the patrolmen's collective bargaining agreement."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-04T09:04:52Z",
+   "cost_usd": 0.0274931
+  }
+ }
+}

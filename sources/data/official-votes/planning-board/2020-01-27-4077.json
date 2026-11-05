@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2020-01-27",
  "docid": "4077",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Endorse the ANR Plan for 871 and 915 Northfield Road",
+   "motion": "Endorse the ANR Plan for 871 and 915 Northfield Road.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed",
@@ -20,15 +20,15 @@
    "quote": "p. bertram made motion to endorse the anr plan for 871 and 915 northfield road, t. cole seconded, all aye."
   },
   {
-   "motion": "Send a letter to the Building Commissioner regarding the prior subdivision into nine lots and request a determination if the creation of the tenth lot triggers the 10% affordability threshold under the Bylaw",
+   "motion": "Send a letter to the Building Commissioner informing him of the prior nine-lot subdivision and requesting a determination whether the tenth lot triggers the 10% affordability threshold.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "p. bertram made motion that a letter be sent to the building commissioner informing him of the prior subdivision into nine lots and requesting a determination if the creation of this tenth lot triggers the 10% affordability threshold under the bylaw, t. cole seconded, all aye."
+   "quote": "requesting a determination if the creation of this tenth lot triggers the 10% affordability threshold under the bylaw, t. cole seconded, all aye."
   },
   {
-   "motion": "Approve the ANR Plan for 41 and 47 Reservoir Road",
+   "motion": "Approve the ANR Plan for 41 and 47 Reservoir Road.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -36,15 +36,15 @@
    "quote": "t. cole made motion to approve the anr plan for 41 and 47 reservoir road, p. bertram seconded, all aye."
   },
   {
-   "motion": "Approve the proposed common driveway for 41 and 47 Reservoir Road with the stipulation that the culvert meet a minimum vehicle weight of 50,000 pounds and be certified",
+   "motion": "Approve the proposed common driveway for 41 and 47 Reservoir Road with the stipulation that the culvert meet a minimum vehicle weight of 50,000 pounds and that it be so certified.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Thompson",
    "outcome": "passed",
    "procedural": false,
-   "quote": "p. bertram made motion to approve the proposed common drivew ay for 41 and 47 reservoir road with the stipulation that the culvert meet a minimum vehicle weight of 50,000 pounds and that it be so certified, m. thompson seconded, all aye."
+   "quote": "with the stipulation that the culvert meet a minimum vehicle weight of 50,000 pounds and that it be so certified, m. thompson seconded, all aye."
   },
   {
-   "motion": "Approve the minutes of 01.13.2020",
+   "motion": "Approve the minutes of 01.13.2020.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed",
@@ -52,7 +52,7 @@
    "quote": "p. bertram made motion to approve, t. cole seconded, all aye."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed",
@@ -61,6 +61,369 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Clear scan, all votes recorded with outcomes.",
- "cost_usd": 0.0907465
+ "note": "Text is a clean extraction with no scans. No dollar figures are printed anywhere in the minutes, so budget items carry empty figure lists. No public comment section is printed; the APDC and Mr. O'Brien appearances are recorded as presentations or reports. The 1325 Massachusetts Avenue public hearing is 'see separate minutes' and its votes are not in this text. Mr. O'Brien's attendance at the meeting is not stated.",
+ "cost_usd": 0.012076120000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, tanner cole, paula bertram, marisa thompson, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, tanner cole, paula bertram, marisa thompson, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew allison, tanner cole, paula bertram, marisa thompson, adam r. burney"
+  },
+  {
+   "name": "Marisa Thompson",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "matthew allison, tanner cole, paula bertram, marisa thompson, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "matthew allison, tanner cole, paula bertram, marisa thompson, adam r. burney"
+  },
+  {
+   "name": "John Harrison",
+   "role": "presenter, 915 Northfield Road",
+   "status": "present",
+   "quote": "plan presented by john harrison, 915 northfield road."
+  },
+  {
+   "name": "Steve Ballard",
+   "role": "presenter, Whitman and Bingham Associates, on behalf of 155 Reservoir Trust",
+   "status": "present",
+   "quote": "plan presented by steve ballard, whitman and bingham associates on behalf of 155 reservoir trust."
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "engineer, McCarty Engineering; presented on behalf of 155 Reservoir Road Trust",
+   "status": "present",
+   "quote": "brian marchetti, mccarty engineering, presented on behalf of 155 reservoir road trust."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "APDC Chair; Historical Commission member",
+   "status": "present",
+   "quote": "apdc chair richard mcgrath, 22 cushing lane"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "APDC Clerk; Historical Commission member",
+   "status": "present",
+   "quote": "apdc clerk cullen dwyer, 76 main street,"
+  },
+  {
+   "name": "Mr. O’Brien",
+   "role": "property owner on Howard Street",
+   "status": "not stated",
+   "quote": "property owner on howard street, contacted a. burney"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Hearing on 1325 Massachusetts Avenue was continued to February 10.",
+   "quote": "hearing was continued to february 10 th."
+  },
+  {
+   "decision": "The Board asked the Land Use Director to send a letter to the Select Board requesting a meeting on the Brooks House, Library, and school buildings.",
+   "quote": "the board asked a. burney to send a letter to the select board requesting a meeting"
+  },
+  {
+   "decision": "The Board felt the APDC and the TCP Building Design Committee should be invited to that Select Board meeting.",
+   "quote": "the board feels it would be beneficial for both the apdc and the tcp building design committee to be invited to that meeting."
+  },
+  {
+   "decision": "The Board was of the opinion that a scenic road general bylaw, including fines, should be created.",
+   "quote": "that a scenic road general bylaw, to include fines, should be created."
+  },
+  {
+   "decision": "Board consensus on the Earth Removal bylaw was a threshold of 1,500 cubic yards to trigger a permit.",
+   "quote": "board consensus was to go with a threshold of 1,500 cubic yards"
+  },
+  {
+   "decision": "Earth Removal discussion to continue at the next Board meeting.",
+   "quote": "discussion will continue at the next board meeting."
+  },
+  {
+   "decision": "The Land Use Director will seek legal input on the Earth Removal bylaw.",
+   "quote": "a. burney will seek legal input."
+  },
+  {
+   "decision": "Rules and Regulations Governing the Subdivision of Land tabled until after the Warrant closes in March.",
+   "quote": "tabled until after warrant closes in march."
+  },
+  {
+   "decision": "The Land Use Director will keep the Board updated on the MGL Ch. 41 Sec. 81D master plan population projection work.",
+   "quote": "a. burney clarified what the board is requesting and will keep the board updated."
+  },
+  {
+   "decision": "Stormwater Bylaw discussion (fees and measurable goals) tabled to February 10.",
+   "quote": "discussion tabled to february 10th."
+  },
+  {
+   "decision": "P. Bertram will send an educational brochure to the Land Use Director for public distribution.",
+   "quote": "which she will send to a. burney for public distribution."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Brooks House demolition",
+   "what_was_recorded": "The APDC anticipates the Brooks House will eventually be demolished at a cost to the Town; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "they anticipate it will eventually be demolished, at a cost to the town."
+  },
+  {
+   "topic": "Stormwater Bylaw fees",
+   "what_was_recorded": "The Board needs to discuss fees for the Stormwater Bylaw; discussion tabled to February 10. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "a. burney pointed out the board needs to discuss fees"
+  },
+  {
+   "topic": "Scenic road fines",
+   "what_was_recorded": "Proposed scenic road general bylaw to include fines, since no penalties can currently be levied; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "to include fines, should be created."
+  },
+  {
+   "topic": "FY 2021 capital recommendation",
+   "what_was_recorded": "Capital Planning Committee recommendation for FY 2021 was forwarded to the Finance Committee; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "capital planning committee- recommendation for fy 2021 forwarded to the finance committee."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR Plans: 871 & 915 Northfield Road; 41 & 47 Reservoir Road",
+   "resolution": "endorsed both plans",
+   "quote": "fifty feet of frontage will be taken from 871",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "Northfield Road",
+    "Reservoir Road"
+   ]
+  },
+  {
+   "topic": "Common Drive Plan: 41 & 47 Reservoir Road",
+   "resolution": "approved with culvert weight stipulation",
+   "quote": "a common drive is being proposed as a perennial stream bisects the property",
+   "tags": [
+    "common drive",
+    "culvert",
+    "fire access",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Public Hearing: 1325 Massachusetts Avenue",
+   "resolution": "continued to February 10",
+   "quote": "hearing was continued to february 10 th.",
+   "tags": [
+    "public hearing",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "APDC Chair: Brooks House discussion",
+   "resolution": "letter to Select Board requested",
+   "quote": "the board asked a. burney to send a letter to the select board requesting a meeting",
+   "tags": [
+    "Brooks House",
+    "APDC",
+    "town buildings"
+   ]
+  },
+  {
+   "topic": "Scenic Road Violation: Holman and Northfield",
+   "resolution": "no action; Board favors scenic road bylaw with fines",
+   "quote": "a. burney noted there are no penalties that can be levied as the town does not have a scenic road bylaw.",
+   "tags": [
+    "scenic road",
+    "stone wall",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Earth Removal Bylaw",
+   "resolution": "continued to next meeting",
+   "quote": "discussion will continue at the next board meeting.",
+   "tags": [
+    "earth removal",
+    "bylaw",
+    "permit threshold"
+   ]
+  },
+  {
+   "topic": "Rules & Regulations Governing the Subdivision of Land",
+   "resolution": "tabled until after March Warrant closes",
+   "quote": "tabled until after warrant closes in march.",
+   "tags": [
+    "subdivision",
+    "rules and regulations"
+   ]
+  },
+  {
+   "topic": "MGL Ch. 41, Sec. 81D, Master Plan",
+   "resolution": "no vote; Land Use Director to update Board",
+   "quote": "a. burney clarified what the board is requesting and will keep the board updated.",
+   "tags": [
+    "master plan",
+    "population projection"
+   ]
+  },
+  {
+   "topic": "Minutes approval: 01.13.2020",
+   "resolution": "approved",
+   "quote": "p. bertram made motion to approve, t. cole seconded, all aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reports received",
+   "quote": "capital planning committee- recommendation for fy 2021 forwarded to the finance committee.",
+   "tags": [
+    "committees",
+    "stormwater",
+    "capital planning",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Director's Items: Stormwater Bylaw and Howard Street proposal",
+   "resolution": "stormwater tabled to February 10; Howard Street proposal discussed",
+   "quote": "discussion tabled to february 10th.",
+   "tags": [
+    "stormwater bylaw",
+    "Howard Street",
+    "senior apartments",
+    "comprehensive permit"
+   ]
+  },
+  {
+   "topic": "Meeting Schedule",
+   "resolution": "noted",
+   "quote": "earth removal, stormwater, 1325 massachusetts avenue continuation",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Ongoing Items",
+   "resolution": "listed; no action",
+   "quote": "lunenburg code, section 250- 4.15., solar energy systems-",
+   "tags": [
+    "zoning",
+    "solar",
+    "parking",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Board Comment: Ashburnham open space residential bylaw",
+   "resolution": "discussion only",
+   "quote": "m. allison noted that ashburnham has an open space residential development by law.",
+   "tags": [
+    "open space residential",
+    "proof plan"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:35 PM",
+   "quote": "p. bertram made motion to adjourn, t. cole seconded, all aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plans: 871 & 915 Northfield Road",
+   "where": "list",
+   "quote": "871 & 915 northfield road-"
+  },
+  {
+   "name": "ANR Plans: 41 & 47 Reservoir Road",
+   "where": "list",
+   "quote": "41 & 47 reservoir road-"
+  },
+  {
+   "name": "Common Drive Plan: 41 & 47 Reservoir Road",
+   "where": "list",
+   "quote": "common drive plan: 41 & 47 reservoir road-"
+  },
+  {
+   "name": "Minutes 01.13.2020",
+   "where": "list",
+   "quote": "minutes 01.13.2020 earth removal bylaw - draft"
+  },
+  {
+   "name": "Earth Removal Bylaw – DRAFT",
+   "where": "list",
+   "quote": "earth removal bylaw - draft"
+  },
+  {
+   "name": "2015 endorsed plan (ANR creating the first nine lots at 155 Reservoir Road)",
+   "where": "text",
+   "quote": "the board viewed the 2015 endorsed plan that created the first nine lots."
+  },
+  {
+   "name": "Order of Conditions from the Conservation Commission (culvert installation)",
+   "where": "text",
+   "quote": "an order of conditions has been received from the conservation commission for the installation of a culvert."
+  },
+  {
+   "name": "Earth Removal Rules and Regulations",
+   "where": "text",
+   "quote": "discussion turned to the earth removal rules and regulations."
+  },
+  {
+   "name": "Rules & Regulations Governing the Subdivision of Land",
+   "where": "text",
+   "quote": "tabled until after warrant closes in march."
+  },
+  {
+   "name": "Stormwater Bylaw",
+   "where": "text",
+   "quote": "a. burney pointed out the board needs to discuss fees"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR",
+  "subdivision",
+  "common drive",
+  "earth removal",
+  "stormwater",
+  "scenic road",
+  "Brooks House",
+  "master plan",
+  "affordability",
+  "zoning",
+  "Reservoir Road",
+  "Northfield Road"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

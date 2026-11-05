@@ -1,0 +1,734 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board Meeting",
+ "meeting_date": "2021-01-19",
+ "video_id": "Ps8dXHtAimY",
+ "video_url": "https://www.youtube.com/watch?v=Ps8dXHtAimY",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2021-01-19-Ps8dXHtAimY.json",
+  "sha256": "ff35d6f123430c3a516ab85cbe62804bdf98b2546df696754bd4b6360843ff4e",
+  "caption_lines": 452,
+  "segments": 4030
+ },
+ "recording": {
+  "duration_s": 9537,
+  "duration": "2:38",
+  "spoken_chars": 115680,
+  "words_approx": 19280
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_01192021-5244",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-01-19-agenda-5244.txt",
+   "path": "sources/meetings/select-board/2021-01-19-agenda-5244.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01192021-5244",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-01-19-minutes-5244.txt",
+   "path": "sources/meetings/select-board/2021-01-19-minutes-5244.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-03T14:58:12Z",
+  "cost_usd": 0.25661839999999997
+ },
+ "minutes": {
+  "headline": "Select Board ratified a police reserve officer, met state legislators, and heard the FY22 capital plan and five-year forecast.",
+  "summary": "The board ratified the town manager's appointment of a police reserve officer, then met the new state senator and representative about priorities including seniors, mental health, and Chapter 70 and 90 aid. The town manager presented the FY22 capital plan and the five-year financial forecast, which shows deficits in later years, and the superintendent answered questions on the school staffing plan. Only the appointment and adjournment were voted. A resident raised debt capacity, TCP and Turkey Hill costs, and the DPW director's truck.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Jeffries",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Ms. Adams",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Moreno",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Dwyer",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Madam Town Manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Chief Gamel",
+    "role": "police chief"
+   },
+   {
+    "name_as_heard": "Esteban Bonilla Perez",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Senator Cronin",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Representative Cena",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Superintendent Burnham",
+    "role": "superintendent"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 52,
+    "topic": "No public comment at the start of the meeting."
+   },
+   {
+    "t": 8799,
+    "speaker_as_heard": "Dave Rogers",
+    "stated_role": "resident, Highland Street",
+    "topic": "Asked for better Zoom quality; asked about debt capacity, TCP and Turkey Hill costs, the Flat Hill drainage engineering, and the DPW director's take-home truck."
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "capital",
+   "chapter-70",
+   "debt",
+   "facilities",
+   "free-cash",
+   "hiring",
+   "personnel",
+   "primary-school",
+   "public-comment",
+   "public-safety",
+   "seniors",
+   "staffing",
+   "state-aid",
+   "superintendent-report",
+   "town-departments",
+   "town-meeting",
+   "turkey-hill",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 572,
+    "motion": "Ratify the town manager's appointment of police reserve officer Esteban Bonilla Perez.",
+    "moved_by": "a member",
+    "outcome": "passed 5-0 by roll call",
+    "procedural": false
+   },
+   {
+    "t": 9475,
+    "motion": "Adjourn the meeting.",
+    "outcome": "passed 5-0 by roll call",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 3099,
+    "topic": "FY22 capital requests",
+    "what_was_said": "23 capital requests were received and the recommended plan funds a smaller set.",
+    "figures_as_heard": [
+     "2 million 547 312",
+     "one million four hundred and ninety nine thousand eight hundred and twenty five dollars"
+    ]
+   },
+   {
+    "t": 3205,
+    "topic": "Flat Hill culvert reconstruction",
+    "what_was_said": "The culvert was rated a critical structural deficiency and is mandated by the state; a small bridge grant is being sought.",
+    "figures_as_heard": [
+     "428 500"
+    ]
+   },
+   {
+    "t": 3351,
+    "topic": "Public safety chiller replacement",
+    "what_was_said": "The 16-year-old chiller is in imminent failure.",
+    "figures_as_heard": [
+     "150 000"
+    ]
+   },
+   {
+    "t": 3640,
+    "topic": "Six wheel dump truck replacement",
+    "what_was_said": "The 2005 truck is at the end of its life and is a safety concern.",
+    "figures_as_heard": [
+     "211 000"
+    ]
+   },
+   {
+    "t": 4376,
+    "topic": "Unfunded primary school air conditioning",
+    "what_was_said": "The request ranked last and was not recommended; total unfunded is stated.",
+    "figures_as_heard": [
+     "290 000",
+     "1 million 47 487"
+    ]
+   },
+   {
+    "t": 4566,
+    "topic": "Ten-year capital funding gap",
+    "what_was_said": "Requests over ten years exceed average funding; the Brooks House and TCP projects drive much of it.",
+    "figures_as_heard": [
+     "1.06 million",
+     "1.44 million",
+     "18.5 million",
+     "4.1 million and 7.9 million"
+    ]
+   },
+   {
+    "t": 6492,
+    "topic": "FY22 free cash use",
+    "what_was_said": "The forecast uses free cash for capital, stabilization and OPEB.",
+    "figures_as_heard": [
+     "969 243 dollars",
+     "100 thousand",
+     "180 418 dollars"
+    ]
+   },
+   {
+    "t": 7475,
+    "topic": "School five-year staffing plan",
+    "what_was_said": "The staffing plan adds cost on top of the base forecast.",
+    "figures_as_heard": [
+     "one million forty four thousand eighty dollars",
+     "555 680",
+     "550 369"
+    ]
+   },
+   {
+    "t": 4713,
+    "topic": "Special purpose stabilization fund",
+    "what_was_said": "The balance is used for costly vehicles.",
+    "figures_as_heard": [
+     "1.2 million"
+    ]
+   },
+   {
+    "t": 9151,
+    "topic": "Flat Hill drainage project",
+    "what_was_said": "A resident asked about a larger drainage project; the town manager said only design is being considered now.",
+    "figures_as_heard": [
+     "428 500"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 5326,
+    "decision": "Town manager to discuss the paving moratorium and street cuts with the DPW director."
+   },
+   {
+    "t": 5348,
+    "decision": "Mr. Jeffries to submit an APDC bylaw change to the town manager for the first February meeting."
+   },
+   {
+    "t": 9454,
+    "decision": "Next meeting set for February 2, 2021; forecast and capital documents to be posted on the website."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 9,
+    "t_end": 260,
+    "topic": "Announcements, public comment, and water district special meeting on Howard Street",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 301,
+    "t_end": 650,
+    "topic": "Ratification of police reserve officer appointment",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 650,
+    "t_end": 2766,
+    "topic": "Meeting with state senator and representative",
+    "resolution": "informational",
+    "tags": [
+     "state-aid",
+     "chapter-70",
+     "seniors"
+    ]
+   },
+   {
+    "t_start": 2766,
+    "t_end": 5012,
+    "topic": "FY22 capital plan presentation",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "facilities",
+     "turkey-hill"
+    ]
+   },
+   {
+    "t_start": 5137,
+    "t_end": 5680,
+    "topic": "Action items and committee reports",
+    "resolution": "informational",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 5680,
+    "t_end": 5950,
+    "topic": "TCP debt exclusion timing and warrant deadline",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting",
+     "debt"
+    ]
+   },
+   {
+    "t_start": 6006,
+    "t_end": 8420,
+    "topic": "Five-year financial forecast and school staffing plan questions",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "staffing",
+     "free-cash"
+    ]
+   },
+   {
+    "t_start": 8420,
+    "t_end": 8736,
+    "topic": "Town manager report and COVID-19 update",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 8736,
+    "t_end": 9454,
+    "topic": "Public comment on debt capacity, costs, and DPW truck",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "debt",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 9454,
+    "t_end": 9515,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Whether the debt capacity figures for FY23 onward were stated; the resident's question was left to the posted documents.",
+   "The exact FY22 new growth figure is garbled in the captions.",
+   "Roll call included Mr. Jeffries on the appointment, but his response is garbled."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 3246,
+    "kind": "safety",
+    "about": "The Flat Hill culvert was rated critical structural deficiency and a lane was closed.",
+    "who": "the town manager",
+    "words_as_heard": "raised deficiencies for the headwall and pipe from severely deficient to a critical structural deficiency with the urgency of repairs raised to immediate"
+   },
+   {
+    "t": 3682,
+    "kind": "safety",
+    "about": "The old dump truck's frame is a safety concern.",
+    "who": "the town manager",
+    "words_as_heard": "the structural integrity of the frame is becoming a safety concern as well"
+   },
+   {
+    "t": 3351,
+    "kind": "safety",
+    "about": "The public safety chiller could fail this summer.",
+    "who": "the town manager",
+    "words_as_heard": "the current chiller which is the unit that provides air conditioning to the entire building is an imminent failure"
+   },
+   {
+    "t": 4021,
+    "kind": "safety",
+    "about": "Concrete sills at Turkey Hill could fall from the building.",
+    "who": "the town manager",
+    "words_as_heard": "ensure that any portion of the concrete sill does not fall from the building"
+   },
+   {
+    "t": 5844,
+    "kind": "condition",
+    "about": "A member opposes rushing the TCP building debt exclusion.",
+    "who": "a member",
+    "words_as_heard": "any type of rushing to me would be a disservice to the town"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 2766,
+    "name_as_heard": "capital plan presentation",
+    "kind": "presentation",
+    "words_as_heard": "town manager presentation of the five-year forecast and capital plan",
+    "shown": true
+   },
+   {
+    "t": 6006,
+    "name_as_heard": "financial forecast",
+    "kind": "presentation",
+    "words_as_heard": "moving on to the financial forecast",
+    "shown": true
+   },
+   {
+    "t": 3455,
+    "name_as_heard": "vertex report",
+    "kind": "report",
+    "words_as_heard": "town hall building envelope repairs and the vertex report",
+    "shown": false
+   },
+   {
+    "t": 8440,
+    "name_as_heard": "the two documents provided to the board",
+    "kind": "other",
+    "words_as_heard": "are these documents that you have presented to us are they on the website",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "ten-year-capital-plan",
+    "title": "Ten-year capital plan",
+    "question": "How large is the gap between ten years of capital requests and what the town typically funds?",
+    "t": 4566,
+    "words_as_heard": "capital project request totaling 18.5 million at this point in time for the next 10 years",
+    "data_in_play": [
+     "18.5 million",
+     "1.06 million",
+     "1.44 million"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "five-year-financial-forecast",
+    "title": "Five-year financial forecast",
+    "question": "What does the five-year forecast show for deficits, with and without the school staffing plan?",
+    "t": 7306,
+    "words_as_heard": "we project deficits that grow each year",
+    "data_in_play": [
+     "one million forty four thousand eighty dollars",
+     "555 680"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "debt-capacity",
+    "title": "Debt capacity",
+    "question": "How much more debt can the town take on under its policy?",
+    "t": 8862,
+    "words_as_heard": "i didn't hear what our debt capacity could be increased by",
+    "data_in_play": [
+     "4 percent",
+     "11",
+     "14 percent"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "turkey-hill-capital-needs",
+    "title": "Turkey Hill capital needs",
+    "question": "What will Turkey Hill repairs cost while its future is undecided?",
+    "t": 4880,
+    "words_as_heard": "it's such an elephant in the room because it either is going to gobble up enormous amounts of capital projects",
+    "data_in_play": [
+     "67 000"
+    ],
+    "existing": "thread:turkey-hill-rebuild"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted 5-0 by roll call to ratify the town manager's appointment of a police reserve officer.",
+    "t": 572
+   },
+   {
+    "line": "The town manager presented the FY22 capital plan: 23 requests were received and the recommended plan funds a smaller set, including the Flat Hill culvert, a public safety chiller and a dump truck.",
+    "t": 3099
+   },
+   {
+    "line": "The five-year financial forecast was presented, showing deficits in later years and a use of free cash for capital, stabilization and OPEB.",
+    "t": 6492
+   },
+   {
+    "line": "The superintendent answered questions on the school five-year staffing plan, which adds cost on top of the base forecast.",
+    "t": 7475
+   },
+   {
+    "line": "The board met the new state senator and representative about priorities including seniors, mental health, and Chapter 70 and 90 aid.",
+    "t": 650
+   }
+  ],
+  "why_it_matters": [
+   "The capital plan and forecast set what the town may ask taxpayers to fund through free cash, borrowing or debt exclusions, and the forecast's later-year deficits and the school staffing plan's added cost bear on future tax bills.",
+   "Unfunded requests, such as primary school air conditioning, and a ten-year gap between requests and average funding mean some projects will compete for money in coming budgets."
+  ],
+  "watch_next": [
+   "The next meeting is February 2, 2021, with the forecast and capital documents to be posted on the website.",
+   "An APDC bylaw change is to be submitted to the town manager for the first February meeting."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-03T14:58:22Z",
+   "cost_usd": 0.0282531
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01192021-5244",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-01-19-minutes-5244.txt",
+   "path": "sources/meetings/select-board/2021-01-19-minutes-5244.pdf"
+  },
+  "official_sha256": "a6b5a0c9c33644b29bb8f965e0c051aca7a85a12bd7983ca3c12f197e0cbd2ec",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the reserve officer ratification and on most of the capital and forecast figures that both cover. The one thing to know is that our $428,500 for the Flat Hill drainage project differs from the official $458,500, and our \"Mr. Moreno\" does not match the official roster, which has Jim Marino.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 2,
+   "discrepancy": 3,
+   "only_in_ours": 1,
+   "only_in_official": 8
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Ratify appointment of reserve officer Esteban Bonilla-Perez",
+    "ours": "Ratify the town manager's appointment of police reserve officer Esteban Bonilla Perez. — passed 5-0 by roll call",
+    "official": "to ratify the appointment of esteban bonilla-perez as reserve officer",
+    "note": "Same appointment and a passing outcome; the official minutes give no count, ours gives 5-0 by roll call.",
+    "t": 572
+   },
+   {
+    "kind": "agree",
+    "about": "FY22 capital requests total",
+    "ours": "FY22 capital requests: 2 million 547 312",
+    "official": "there were 23 capital requests totaling $2,547,312 for fy 2022.",
+    "note": "Same total of $2,547,312.",
+    "t": 3099
+   },
+   {
+    "kind": "agree",
+    "about": "Flat Hill culvert reconstruction cost",
+    "ours": "Flat Hill culvert reconstruction: 428 500",
+    "official": "project title: infra20-01 flat hill culvert reconstruction project cost: $428,500",
+    "note": "Same figure, $428,500.",
+    "t": 3205
+   },
+   {
+    "kind": "agree",
+    "about": "Six-wheel dump truck replacement",
+    "ours": "Six wheel dump truck replacement: 211 000",
+    "official": "project title: dpw17-07 6 wheel dump truck with plow and sander project cost: $211,000",
+    "note": "Same figure, $211,000.",
+    "t": 3640
+   },
+   {
+    "kind": "agree",
+    "about": "Unfunded FY22 capital requests / shortfall",
+    "ours": "Unfunded primary school air conditioning: 290 000, 1 million 47 487",
+    "official": "the total amount that was not funded in fy22 requests is $1,047,487.",
+    "note": "The 1,047,487 matches the unfunded total. Ours ties it to school air conditioning; the $290,000 is not in the official text.",
+    "t": 4376
+   },
+   {
+    "kind": "agree",
+    "about": "Ten-year capital gap and spending averages",
+    "ours": "Ten-year capital funding gap: 1.06 million, 1.44 million, 18.5 million, 4.1 million and 7.9 million",
+    "official": "we will not be funding between $4.1m-$7.9m in capital requests.",
+    "note": "The $1.06M and $1.44M averages, the $18.5M total and the $4.1M-$7.9M gap all match the official figures.",
+    "t": 4566
+   },
+   {
+    "kind": "agree",
+    "about": "FY22 free cash use, stabilization and OPEB deposits",
+    "ours": "FY22 free cash use: 969 243 dollars, 100 thousand, 180 418 dollars",
+    "official": "forecast for fy22 uses $969,243 of our certified free cash.",
+    "note": "Same figures; the $100,000 and $180,418 deposits are in the official text.",
+    "t": 6492
+   },
+   {
+    "kind": "agree",
+    "about": "School five-year staffing plan",
+    "ours": "School five-year staffing plan: one million forty four thousand eighty dollars, 555 680, 550 369",
+    "official": "the proposed five year staffing plan for the school includes an additional $1,044,080 in fy22",
+    "note": "The $1,044,080 FY22 figure matches. The 555,680 and 550,369 figures are not in the official quotes.",
+    "t": 7475
+   },
+   {
+    "kind": "agree",
+    "about": "Special purpose stabilization fund balance",
+    "ours": "Special purpose stabilization fund: 1.2 million",
+    "official": "current balance approx.$1.2m.",
+    "note": "Same figure, about $1.2M.",
+    "t": 4713
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Flat Hill drainage project cost",
+    "ours": "Flat Hill drainage project: 428 500",
+    "official": "asked about the flat hill drainage project cost of $458,500.00",
+    "note": "Ours says 428,500, but the official minutes say Dave Rodgers cited $458,500. The capital request is $428,500, so check the recording to see which figure he said.",
+    "t": 9151
+   },
+   {
+    "kind": "discrepancy",
+    "about": "APDC/APD bylaw change timing and handling",
+    "ours": "Mr. Jeffries to submit an APDC bylaw change to the town manager for the first February meeting.",
+    "official": "he will be prepared at the february 2nd meeting to propose a change.",
+    "note": "Ours has the change submitted to the town manager for the first February meeting. The official minutes say he will propose it at the Feb 2 meeting and that the chair suggested giving it to the Town Manager. Check whether this is a submission or a proposal, and whether it is the APD or APDC by-law.",
+    "t": 5348
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting February 2",
+    "ours": "Next meeting set for February 2, 2021; forecast and capital documents to be posted on the website.",
+    "official": "he will be prepared at the february 2nd meeting to propose a change.",
+    "note": "The official minutes mention a February 2nd meeting in passing but do not record the posting of the documents. Weakly corroborated.",
+    "t": 9454
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Paving moratorium and street cuts discussion with DPW director",
+    "ours": "Town manager to discuss the paving moratorium and street cuts with the DPW director.",
+    "official": "",
+    "note": "The official minutes do not record this decision.",
+    "t": 5326
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Ritter Building envelope estimate",
+    "ours": "",
+    "official": "the total cost including the alternates came in at $200,000.",
+    "note": "Our minutes have no Ritter envelope figures ($120,000 budgeted, $200,000 with alternates).",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Bulletproof vests funding",
+    "ours": "",
+    "official": "there is $5,768 remaining for that capital project that will reduce the total cost of $23,200 for 29 vests to $17,500.",
+    "note": "Our minutes do not record the vest purchase figures.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Fire turnout gear and police cruisers",
+    "ours": "",
+    "official": "project title: pd17-02b hybrid replacement marked police cruiser project cost: $66,950",
+    "note": "Our minutes omit the cruiser ($66,950 each) and turnout gear ($100,000) items.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Forecast new growth, tax title, MSBA funds, stormwater",
+    "ours": "",
+    "official": "and uses an estimate of $280,590",
+    "note": "Our minutes omit the new growth estimate ($280,590) and other forecast items (tax title, overlay, MSBA $535,000, stormwater).",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "State earmark for fire alarms",
+    "ours": "",
+    "official": "we were able to get an earmark of $25,000 for fire alarms for the town.",
+    "note": "Our minutes omit the $25,000 earmark reported by Representative Sena.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Senator Cronin millionaire tax projection",
+    "ours": "",
+    "official": "this is projected to increase c. 70 and 90 funding by 1 billion dollars each.",
+    "note": "Our minutes omit the Chapter 70 and 90 projection.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Ms. Adams future agenda request on firearms and hunting",
+    "ours": "",
+    "official": "requested a future agenda discussion on carrying firearms on town property and hunting on conservation land",
+    "note": "Our minutes do not record this request.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Rep. Kushmerek rescheduling and appointments agenda item",
+    "ours": "",
+    "official": "he will be scheduled for another time in february.",
+    "note": "Our minutes omit Kushmerek's absence and rescheduling, and the decision to put appointments back on the agenda.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees: board membership",
+    "ours": "Mr. Jeffries, Ms. Adams, Mr. Moreno, Mr. Dwyer, Chair",
+    "official": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey",
+    "note": "Ours lists a Mr. Moreno, but the official roster has Jim Marino. Ours also does not name Alonzo, who the official minutes give as chair. Check the roll call; the 5-0 vote suggests five members.",
+    "t": 572
+   },
+   {
+    "kind": "caption_error",
+    "about": "Police chief name",
+    "ours": "Chief Gamel (police chief)",
+    "official": "also present: heather lemieux, town manager; police chief gammel, esteban bonilla-perez",
+    "note": "Same person, with the name spelled differently.",
+    "official_reading": "Police Chief Gammel",
+    "t": 572
+   },
+   {
+    "kind": "caption_error",
+    "about": "Representative name",
+    "ours": "Representative Cena (presenter)",
+    "official": "senator john cronin, representative danillo sena; school supt. burnham",
+    "note": "Same person, with the name misheard.",
+    "official_reading": "Representative Danillo Sena",
+    "t": 3099
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-03T15:00:42Z",
+   "cost_usd": 0.0682191
+  }
+ }
+}

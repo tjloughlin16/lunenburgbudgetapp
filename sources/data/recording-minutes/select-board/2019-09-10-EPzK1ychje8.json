@@ -1,0 +1,456 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2019-09-10",
+ "video_id": "EPzK1ychje8",
+ "video_url": "https://www.youtube.com/watch?v=EPzK1ychje8",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2019-09-10-EPzK1ychje8.json",
+  "sha256": "9e69b36b279a1065b0b12d6b7d7021e40defbc4c5a66d94d64e27eee428cd22f",
+  "caption_lines": 410,
+  "segments": 3080
+ },
+ "recording": {
+  "duration_s": 8906,
+  "duration": "2:28",
+  "spoken_chars": 110004,
+  "words_approx": 18334
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09102019-5173",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-09-10-agenda-5173.txt",
+   "path": "sources/meetings/select-board/2019-09-10-agenda-5173.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09102019-5173",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-09-10-minutes-5173.txt",
+   "path": "sources/meetings/select-board/2019-09-10-minutes-5173.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-04T12:53:11Z",
+  "cost_usd": 0.284383
+ },
+ "minutes": {
+  "headline": "Select Board rejected 2-3 a motion to spend about $10,869 sealing the old primary school",
+  "summary": "The board heard public comment on the old primary school, then discussed letters from the Architectural Preservation District Commission and a facilities estimate for exterior repairs. A motion to fund the repairs if DPW budget money was available failed, mainly because members wanted the source of funds identified first. The board then drafted criteria for judging uses of town buildings and set a school-space symposium and a walk.",
+  "attendees": [
+   {
+    "name_as_heard": "Town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Chairman",
+    "role": "chair"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 63,
+    "topic": "A resident urged keeping the old primary school, said it needs interior work, and suggested capital plan requests over several years."
+   },
+   {
+    "t": 707,
+    "topic": "A resident thanked the board for removing playground equipment and said the old primary property has many possible uses and should be kept as a community asset."
+   }
+  ],
+  "tags": [
+   "capital",
+   "facilities",
+   "legal",
+   "planning-and-zoning",
+   "public-comment",
+   "town-departments",
+   "town-meeting"
+  ],
+  "votes": [
+   {
+    "t": 3982,
+    "motion": "Motion to use available money to repair identified old primary school items for about ten thousand eight hundred sixty nine dollars and 85 cents, restated at 4843 as conditional on DPW budget money being available",
+    "outcome": "failed 2-3",
+    "procedural": false
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 315,
+    "topic": "Old primary school repair estimate",
+    "what_was_said": "The facilities estimate is several exterior repairs, not a roof replacement.",
+    "figures_as_heard": [
+     "ten thousand eight hundred eighty nine dollars"
+    ]
+   },
+   {
+    "t": 3533,
+    "topic": "Hazardous material abatement in capital plan",
+    "what_was_said": "A capital plan line for abatement came from the Vertex report.",
+    "figures_as_heard": [
+     "three hundred and nine thousand dollars"
+    ]
+   },
+   {
+    "t": 1329,
+    "topic": "Accounts payable warrant",
+    "what_was_said": "The accounts payable total was read.",
+    "figures_as_heard": [
+     "three hundred sixteen thousand one hundred twenty two dollars and twenty six cents"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 4889,
+    "decision": "Town manager to speak with the DPW director about whether budget money is available for the repairs."
+   },
+   {
+    "t": 8601,
+    "decision": "Planning-related walk set for September 17 at 5:30, meeting at the Ritter parking lot."
+   },
+   {
+    "t": 8496,
+    "decision": "Symposium on school population and building concerns proposed for October 29 at about 7:00; chair to reply to the Finance Committee chair."
+   },
+   {
+    "t": 8732,
+    "decision": "Chair to type up the building criteria list and circulate it for next week and public input."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 21,
+    "t_end": 806,
+    "topic": "Public comment, mostly old primary school",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 810,
+    "t_end": 1280,
+    "topic": "Town manager report",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report"
+    ]
+   },
+   {
+    "t_start": 1329,
+    "t_end": 1530,
+    "topic": "Warrants, action items, committee reports",
+    "resolution": "informational",
+    "tags": [
+     "capital"
+    ]
+   },
+   {
+    "t_start": 1535,
+    "t_end": 4900,
+    "topic": "Old primary school APDC letters, demolition by neglect bylaw, repair estimate",
+    "resolution": "voted, failed 2-3",
+    "tags": [
+     "facilities",
+     "legal",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 4910,
+    "t_end": 8450,
+    "topic": "Criteria for judging use of town buildings",
+    "resolution": "list drafted, to be circulated",
+    "tags": [
+     "facilities",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 8474,
+    "t_end": 8895,
+    "topic": "Symposium, walk, next week agenda",
+    "resolution": "dates set",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Much of the public comment and middle discussion is garbled.",
+   "Individual votes in the 2-3 count not identified.",
+   "Exact wording of the criteria list is partly garbled."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 2164,
+    "about": "A member felt earlier comments belittled the APDC.",
+    "sides": "a commission member against a board member",
+    "words_as_heard": "some belittling about the functioning of the APEC",
+    "kind": "public criticism"
+   },
+   {
+    "t": 7671,
+    "about": "Dispute over whether Turkey Hill school is near end of life and whether the board should consider it.",
+    "sides": "one member against other members",
+    "words_as_heard": "that's not true at all that's not true",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 4025,
+    "kind": "condition",
+    "about": "Member will not vote to spend until the source of funds is identified.",
+    "who": "a member",
+    "words_as_heard": "I would not vote for anything that says on the hopes that we have the money"
+   },
+   {
+    "t": 3421,
+    "kind": "liability or legal",
+    "about": "Someone could get hurt in the vacant building.",
+    "who": "a member",
+    "words_as_heard": "somebody could get hurt in there and what's the liability of the towns"
+   },
+   {
+    "t": 2289,
+    "kind": "safety",
+    "about": "Loose bricks at the parapets could endanger passers-by.",
+    "who": "APDC member",
+    "words_as_heard": "some loose bricks that could be a danger to anybody walking by"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1535,
+    "name_as_heard": "APDC letters",
+    "kind": "letter or email",
+    "words_as_heard": "the letters from the APD see from August 26th"
+   },
+   {
+    "t": 1580,
+    "name_as_heard": "facilities director cost estimate",
+    "kind": "memo",
+    "words_as_heard": "the cost estimate for the old primary school"
+   },
+   {
+    "t": 3533,
+    "name_as_heard": "Vertex report",
+    "kind": "report",
+    "words_as_heard": "came out of the vertex report"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "old-primary-site-options",
+    "title": "Old primary options",
+    "question": "What would repairing, reusing or demolishing the old primary school cost?",
+    "t": 3320,
+    "words_as_heard": "ten thousand eight hundred and sixty nine dollars is a very small amount of money",
+    "data_in_play": [
+     "ten thousand eight hundred and sixty nine dollars",
+     "three hundred and nine thousand dollars"
+    ],
+    "existing": "thread:brooks-house"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted 2-3 against a motion to spend money on exterior repairs to seal the old primary school.",
+    "t": 3982
+   },
+   {
+    "line": "The motion was restated as conditional on DPW budget money being available; members wanted the source of funds identified first.",
+    "t": 4889
+   },
+   {
+    "line": "The town manager is to ask the DPW director whether budget money is available for the repairs.",
+    "t": 4889
+   },
+   {
+    "line": "The board drafted criteria for judging uses of town buildings; the chair is to type them up and circulate them for next week and public input.",
+    "t": 8732
+   },
+   {
+    "line": "A symposium on school population and building concerns was proposed for October 29, and a planning-related walk was set for September 17.",
+    "t": 8496
+   }
+  ],
+  "why_it_matters": [
+   "The old primary school's exterior stays unrepaired for now, and the question of how the town pays for the repairs, from the DPW budget or the capital plan, is still open.",
+   "The building-use criteria and the symposium are where the board's approach to the town's school buildings is likely to be set, and residents can comment on them."
+  ],
+  "watch_next": [
+   "The town manager's answer from the DPW director on whether budget money is available for the repairs.",
+   "The circulated building-criteria list at next week's meeting, and the October 29 symposium."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-04T12:53:16Z",
+   "cost_usd": 0.0258931
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09102019-5173",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-09-10-minutes-5173.txt",
+   "path": "sources/meetings/select-board/2019-09-10-minutes-5173.pdf"
+  },
+  "official_sha256": "490e9421e71f73ea0cbf76774d8449c18024ad310b7be4f339e8b94442b37f7b",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the one recorded vote (the amended motion to fund old Primary School repairs failed 2-3) and on the main follow-up actions. Ours is much thinner: it omits the many routine items and the full attendee list, and its captions garbled the repair and abatement figures.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 3,
+   "discrepancy": 1,
+   "only_in_ours": 0,
+   "only_in_official": 7
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote on amended motion to fund old Primary School repairs if DPW money available",
+    "ours": "Motion to use available money to repair identified old primary school items for about ten thousand eight hundred sixty nine dollars and 85 cents, restated at 4843 as conditional on DPW budget money being available — failed 2-3",
+    "official": "vote: 2 in favor (luck, adams), 3 against (jeffreys, alonzo, mequaid)",
+    "note": "Same motion, amount ($10,869.85), condition and 2-3 failed outcome match; official adds who voted how.",
+    "t": 3982
+   },
+   {
+    "kind": "caption_error",
+    "about": "Old Primary School repair estimate",
+    "ours": "Old primary school repair estimate: ten thousand eight hundred eighty nine dollars",
+    "official": "the $10,869.85 towards these repairs",
+    "official_reading": "$10,869.85",
+    "note": "Captions heard 'eighty nine' for the same repair figure the motion gives as $10,869.85.",
+    "t": 315
+   },
+   {
+    "kind": "caption_error",
+    "about": "Hazardous material abatement estimate",
+    "ours": "Hazardous material abatement in capital plan: three hundred and nine thousand dollars",
+    "official": "report estimated around $300,000 to abate the hazardous materials in the building",
+    "official_reading": "$300,000",
+    "note": "Same abatement item; 'three hundred and nine thousand' is likely a mishearing of 'around $300,000'. Check the recording.",
+    "t": 3533
+   },
+   {
+    "kind": "caption_error",
+    "about": "Accounts payable warrant amount",
+    "ours": "Accounts payable warrant: three hundred sixteen thousand one hundred twenty two dollars and twenty six cents",
+    "official": "the board signed an accounts payable warrant in the amount of",
+    "official_reading": "$316,122.26",
+    "note": "Same warrant; the official figure is $316,122.26, which matches ours.",
+    "t": 1329
+   },
+   {
+    "kind": "agree",
+    "about": "Town manager to check DPW budget funds",
+    "ours": "Town manager to speak with the DPW director about whether budget money is available for the repairs.",
+    "official": "mr. alonzo asked ms. lemieux to find out if there is funding available within the budget for the next",
+    "note": "Same follow-up task assigned to the town manager.",
+    "t": 4889
+   },
+   {
+    "kind": "agree",
+    "about": "Walk on September 17 at 5:30",
+    "ours": "Planning-related walk set for September 17 at 5:30, meeting at the Ritter parking lot.",
+    "official": "the board will walk the proposed tree route at 5:30 p.m.",
+    "note": "Same walk and time; official says it is the Unitil tree route and meeting at the Ritter Building (ours says parking lot).",
+    "t": 8601
+   },
+   {
+    "kind": "agree",
+    "about": "Symposium on October 29",
+    "ours": "Symposium on school population and building concerns proposed for October 29 at about 7:00; chair to reply to the Finance Committee chair.",
+    "official": "mr. alonzo will reach out to the finance and school committee chairs about that",
+    "note": "Same symposium and chair outreach; official names the School Committee chair too and gives no time.",
+    "t": 8496
+   },
+   {
+    "kind": "agree",
+    "about": "Chair types up criteria list",
+    "ours": "Chair to type up the building criteria list and circulate it for next week and public input.",
+    "official": "mr. alonzo will type up the criteria list for the next meeting.",
+    "note": "Same action by the chair.",
+    "t": 8732
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of August 12, 2019 minutes",
+    "ours": "",
+    "official": "the board approved minutes of august 12, 2019.",
+    "note": "Official records minutes approval; ours does not mention it (no motion recorded)."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Earth removal permit for P.J. Keating",
+    "ours": "",
+    "official": "mr. alonzo signed an earth removal permit with revised conditions for p.j. keating.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Hall chair lift door and hallway motion-sensor lights",
+    "ours": "",
+    "official": "ms. lemieux reported the company came once to repair the door but she will follow up for more",
+    "note": "Follow-up items in official minutes only."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Objective 2 tabled; policy review (Natick, Easton)",
+    "ours": "",
+    "official": "objective 2 was tabled until a future meeting.",
+    "note": "Official records a tabling and a policy-review request that ours lacks."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Ballot question report release timing",
+    "ours": "",
+    "official": "it will be made public at either the next bos meeting or the first october meeting.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Lion's Club pancake breakfast $2.00",
+    "ours": "",
+    "official": "all you can eat for $2.00",
+    "note": "Public-comment reminder with a figure; not in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Old Primary School stabilization estimate of about $11,000",
+    "ours": "",
+    "official": "mr. walker's estimate of about $11,000 for what is needed to keep the building from falling further into",
+    "note": "Ours has no $11,000 figure; may be the same repair estimate as $10,869.85, so check."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees",
+    "ours": "Town manager (town manager); Chairman (chair)",
+    "official": "members present: tom alonzo, chairman; phyllis luck, vice chairman, damon mcquaid, clerk;",
+    "note": "Ours lists only two roles unnamed; official lists five members, the town manager and the police chief, plus APDC members. Check who was present, and whether APDC met jointly."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T12:54:28Z",
+   "cost_usd": 0.051317100000000004
+  }
+ }
+}

@@ -1,0 +1,519 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "finance-committee",
+ "board": "Finance Committee",
+ "video_title": "Finance Committee",
+ "meeting_date": "2020-05-28",
+ "video_id": "2Ue2BrWiSPo",
+ "video_url": "https://www.youtube.com/watch?v=2Ue2BrWiSPo",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2020-05-28-2Ue2BrWiSPo.json",
+  "sha256": "937101192657553e2182729301884d0d162052f3c22c41135a648fb23e55a806",
+  "caption_lines": 221,
+  "segments": 1452
+ },
+ "recording": {
+  "duration_s": 4829,
+  "duration": "1:20",
+  "spoken_chars": 52876,
+  "words_approx": 8812
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05282020-2113",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2020-05-28-agenda-2113.txt",
+   "path": "sources/meetings/finance-committee/2020-05-28-agenda-2113.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05282020-2113",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2020-05-28-minutes-2113.txt",
+   "path": "sources/meetings/finance-committee/2020-05-28-minutes-2113.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-03T22:56:06Z",
+  "cost_usd": 0.2418019
+ },
+ "minutes": {
+  "headline": "Finance Committee held off spending free cash on capital and planned a debt subcommittee; no budget votes",
+  "summary": "The committee discussed COVID-era uncertainty over state aid, school reopening costs, unemployment costs, and whether to defer capital spending and use free cash. It reviewed the debt service spreadsheet and agreed to form a small debt subcommittee, to be charged on June 11. Earlier minutes were taken up and the meeting adjourned.",
+  "attendees": [
+   {
+    "name_as_heard": "Terry",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Karen",
+    "role": "town accountant"
+   },
+   {
+    "name_as_heard": "Peter",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "John",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Dave",
+    "role": "member"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "capital",
+   "chapter-70",
+   "debt",
+   "free-cash",
+   "grants",
+   "layoffs",
+   "monty-tech",
+   "state-aid",
+   "town-meeting"
+  ],
+  "votes": [
+   {
+    "t": 2883,
+    "motion": "Approve the minutes of March 5th",
+    "moved_by": "Peter",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 2905,
+    "motion": "Approve the minutes of March 12th",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 4795,
+    "motion": "Adjourn the meeting",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 509,
+    "topic": "Free cash revenue adjustment",
+    "what_was_said": "A minor worksheet change adds prior-year invoices paid from free cash.",
+    "figures_as_heard": [
+     "$476",
+     "21 cents"
+    ]
+   },
+   {
+    "t": 592,
+    "topic": "Unemployment costs",
+    "what_was_said": "If layoffs occur, unemployment is reimbursable only in part and billed quarterly based on use.",
+    "figures_as_heard": [
+     "50%",
+     "fifty percent"
+    ]
+   },
+   {
+    "t": 841,
+    "topic": "CARES Act funding",
+    "what_was_said": "The school has notice of an allocation, with a larger total eligible amount for unbudgeted COVID costs.",
+    "figures_as_heard": [
+     "198,000",
+     "a million twenty thousand dollars"
+    ]
+   },
+   {
+    "t": 2018,
+    "topic": "Free cash breakdown",
+    "what_was_said": "The town manager listed free cash uses for the capital plan and stabilization and the unappropriated balance.",
+    "figures_as_heard": [
+     "1 million one hundred and seven thousand six hundred ninety four dollars",
+     "$476",
+     "six hundred and sixty four thousand eight hundred",
+     "two hundred and ten thousand",
+     "232"
+    ]
+   },
+   {
+    "t": 2152,
+    "topic": "Stabilization fund",
+    "what_was_said": "Total reserves across three accounts were given as about three million.",
+    "figures_as_heard": [
+     "three three million"
+    ]
+   },
+   {
+    "t": 3008,
+    "topic": "CARES Act and FEMA reimbursement",
+    "what_was_said": "Reimbursement is expected to wipe out the deficit in the COVID emergency expense accounts, with the FEMA match covered by CARES.",
+    "figures_as_heard": [
+     "75%",
+     "25%"
+    ]
+   },
+   {
+    "t": 3391,
+    "topic": "Debt service",
+    "what_was_said": "Debt service is projected to rise in a later year; the committee wants to see borrowing and credit rating scenarios.",
+    "figures_as_heard": [
+     "3 3 3 2 to 5 in 2023",
+     "ten to fourteen million dollars",
+     "twenty million dollars"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 4413,
+    "decision": "The June 11 meeting will review Town Meeting and charge a debt subcommittee."
+   },
+   {
+    "t": 4164,
+    "decision": "A member will draft a slide of target outcomes for the debt work and ask staff how to gather the information."
+   },
+   {
+    "t": 2344,
+    "decision": "The committee will scrub the capital plan again at its next meeting for items that must be spent before mid-November."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 6,
+    "t_end": 160,
+    "topic": "Open Meeting Law remote meeting notice",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 185,
+    "t_end": 500,
+    "topic": "Board of Health and Town Meeting logistics",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 509,
+    "t_end": 740,
+    "topic": "Town manager report and unemployment costs",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy27",
+     "layoffs"
+    ]
+   },
+   {
+    "t_start": 754,
+    "t_end": 2630,
+    "topic": "COVID uncertainty, state aid, free cash and capital plan",
+    "resolution": "no resolution",
+    "tags": [
+     "budget-fy27",
+     "free-cash",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 2685,
+    "t_end": 2860,
+    "topic": "Streetlight purchase",
+    "resolution": "informational",
+    "tags": [
+     "capital"
+    ]
+   },
+   {
+    "t_start": 2861,
+    "t_end": 3000,
+    "topic": "Approval of minutes",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 3008,
+    "t_end": 3300,
+    "topic": "CARES Act reimbursement and Monty Tech",
+    "resolution": "informational",
+    "tags": [
+     "grants",
+     "monty-tech",
+     "chapter-70"
+    ]
+   },
+   {
+    "t_start": 3304,
+    "t_end": 4440,
+    "topic": "Debt service review and subcommittee",
+    "resolution": "referred",
+    "tags": [
+     "debt"
+    ]
+   },
+   {
+    "t_start": 4436,
+    "t_end": 4560,
+    "topic": "Committee reports and TC Passios",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 4565,
+    "t_end": 4816,
+    "topic": "Public comment, next meeting, adjournment",
+    "resolution": "voted",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Results of the votes on minutes and adjournment are not stated.",
+   "Several figures were garbled."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 1642,
+    "kind": "condition",
+    "about": "A member is uncomfortable spending free cash on capital except emergencies.",
+    "who": "a member",
+    "words_as_heard": "I feel less comfortable today than I did two weeks ago and certainly more than three weeks ago about expending free cash on capital"
+   },
+   {
+    "t": 2344,
+    "kind": "condition",
+    "about": "A member wants capital limited to must-spend items before mid-November.",
+    "who": "a member",
+    "words_as_heard": "I think we should plan next week to scrub the capital plan again and say okay this is a absolute no kidding around we got to spend this before mid-november"
+   },
+   {
+    "t": 1236,
+    "kind": "liability or legal",
+    "about": "Unclear town position if employees will not return to work because they feel unsafe.",
+    "who": "a member",
+    "words_as_heard": "there is no guidance on what you do with somebody who does not want to return to work because they don't feel safe"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 509,
+    "name_as_heard": "worksheets",
+    "kind": "spreadsheet",
+    "words_as_heard": "I sent around worksheets not too long ago"
+   },
+   {
+    "t": 3304,
+    "name_as_heard": "debt spreadsheet",
+    "kind": "spreadsheet",
+    "words_as_heard": "the spreadsheet that Karen sent out"
+   },
+   {
+    "t": 2861,
+    "name_as_heard": "minutes of March 5th and 12th",
+    "kind": "prior minutes",
+    "words_as_heard": "a motion to be made on the minute of March 5th"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "debt-capacity",
+    "title": "Debt capacity",
+    "question": "How would new borrowing and a credit rating change affect debt service and the tax rate?",
+    "t": 3391,
+    "words_as_heard": "what effect on a given amount of borrowing does a change in our credit rating cause",
+    "data_in_play": [
+     "ten to fourteen million dollars",
+     "twenty million dollars"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "free-cash-and-stabilization-use",
+    "title": "Free cash use",
+    "question": "How much free cash is unappropriated and what could it fund?",
+    "t": 2018,
+    "words_as_heard": "what is our free cash this year",
+    "data_in_play": [
+     "232",
+     "six hundred and sixty four thousand eight hundred"
+    ],
+    "existing": "topic:free-cash-balance"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Finance Committee took no budget votes and held off committing free cash to capital spending while COVID-era state aid, school and unemployment costs stay uncertain.",
+    "t": 2344
+   },
+   {
+    "line": "The committee agreed to form a small debt subcommittee, to be charged at its June 11 meeting.",
+    "t": 4413
+   },
+   {
+    "line": "After reviewing the debt service spreadsheet, members said they want borrowing and credit rating scenarios, since debt service is projected to rise in a later year.",
+    "t": 3391
+   },
+   {
+    "line": "The committee will scrub the capital plan again at its next meeting for items that must be spent before mid-November.",
+    "t": 2344
+   },
+   {
+    "line": "Staff expect CARES Act and FEMA reimbursement to cover the deficit in the COVID emergency expense accounts.",
+    "t": 3008
+   }
+  ],
+  "why_it_matters": [
+   "Free cash and stabilization reserves are what the town draws on for capital projects and emergencies, so deferring capital spending keeps options open if state aid or tax receipts fall short.",
+   "Rising debt service in a later year would take a larger share of the town budget, mostly taxes, so the debt subcommittee's work bears on future tax bills and borrowing decisions."
+  ],
+  "watch_next": [
+   "June 11 meeting: review of Town Meeting and the charge to the debt subcommittee.",
+   "Next meeting: a second pass through the capital plan for items that must be spent before mid-November."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-03T22:56:11Z",
+   "cost_usd": 0.0311
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05282020-2113",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2020-05-28-minutes-2113.txt",
+   "path": "sources/meetings/finance-committee/2020-05-28-minutes-2113.pdf"
+  },
+  "official_sha256": "3f5c91bcf88f22610c428c1acb7d0a9e7623941b1e29cdae1c4a9424f48d0baf",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "Both records show no votes and agree on the 50% unemployment figure, the 75%/25% FEMA-CARES split, and the core attendees. They differ on the CARES Act ceiling (garbled in ours vs $1,028,000 officially) and on what was decided for June 11 and the capital plan, and ours has free cash and debt figures the official minutes lack.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 1,
+   "discrepancy": 3,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "CARES Act reimbursement amount",
+    "ours": "CARES Act funding: 198,000, a million twenty thousand dollars",
+    "official": "heather l. said under the cares act, the town qualifies for a reimbursement of up to $1,028,000 for expenses the town incurs as a result of covid19.",
+    "note": "Our captions give garbled figures (198,000 / a million twenty thousand) versus $1,028,000 officially; check the recording to confirm the actual amount.",
+    "t": 841
+   },
+   {
+    "kind": "agree",
+    "about": "Unemployment costs 50%",
+    "ours": "Unemployment costs: 50%, fifty percent",
+    "official": "terri b. brought up associated costs of unemployment--50% of salary, health insurance costs?",
+    "note": "Both record the 50% unemployment cost figure.",
+    "t": 592
+   },
+   {
+    "kind": "agree",
+    "about": "FEMA 75% / CARES 25% split",
+    "ours": "CARES Act and FEMA reimbursement: 75%, 25%",
+    "official": "heather l. stated that fema reimburses the town 75% of the cost incurred related to covid 19 and that the cares act will reimburse the town the remaining 25%.",
+    "note": "Same split in both.",
+    "t": 3008
+   },
+   {
+    "kind": "caption_error",
+    "about": "Stabilization fund balance",
+    "ours": "Stabilization fund: three three million",
+    "official": "the most conservative approach 105 stabilization account is about $3 million.",
+    "note": "Captions garbled 'three million'; the official reading is about $3 million.",
+    "official_reading": "$3 million",
+    "t": 2152
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Free cash revenue adjustment and breakdown figures",
+    "ours": "Free cash breakdown: 1 million one hundred and seven thousand six hundred ninety four dollars, $476, six hundred and sixty four thousand eight hundred, two hundred and ten thousand, 232",
+    "official": "",
+    "note": "Official minutes give no free cash dollar figures, only a general discussion of the free cash policy.",
+    "t": 2018
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Debt service figures",
+    "ours": "Debt service: 3 3 3 2 to 5 in 2023, ten to fourteen million dollars, twenty million dollars",
+    "official": "",
+    "note": "Official minutes mention only that debt retirement 2020-2024 is relatively small, with no figures.",
+    "t": 3391
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Next meeting / June 11 agenda",
+    "ours": "The June 11 meeting will review Town Meeting and charge a debt subcommittee.",
+    "official": "dave p. requested that all issues that were discussed at this meeting remain on the agenda for the next finance committee meeting, on june 11 at 7:00.",
+    "note": "Agenda for June 11 is described differently (Town Meeting review and debt subcommittee vs all issues carried over); check the recording.",
+    "t": 4413
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Debt work target outcomes slide",
+    "ours": "A member will draft a slide of target outcomes for the debt work and ask staff how to gather the information.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 4164
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Capital plan postponement",
+    "ours": "The committee will scrub the capital plan again at its next meeting for items that must be spent before mid-November.",
+    "official": "terri suggested that given the uncertainty of future revenues and expenses the town should consider postponing capital expenditures until town meeting in november.",
+    "note": "Ours records a decision to scrub the capital plan; official records only a suggestion to postpone with no action. Check the recording.",
+    "t": 2344
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Streetlight purchase",
+    "ours": "",
+    "official": "dave p. strongly hopes that the town can find its way to purchase the streetlights.",
+    "note": "Discussion item missing from our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "School salary reserve fund",
+    "ours": "",
+    "official": "roughly one-third of the town's savings comes from the school department's salary reserve fund.",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees",
+    "ours": "Terry (chair); Heather (town manager); Karen (town accountant); Peter; John; Dave",
+    "official": "present: terri burchfield, peter beardmore, dave passios, john henshaw, jay simeone",
+    "note": "Core members match with name misspelling (Terry/Terri); Jay Simeone is official only and Karen (accountant) is ours only; Michelle Walton absent.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-03T22:57:06Z",
+   "cost_usd": 0.049904
+  }
+ }
+}

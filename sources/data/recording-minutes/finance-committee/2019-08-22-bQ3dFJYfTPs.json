@@ -1,0 +1,427 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "finance-committee",
+ "board": "Finance Committee",
+ "video_title": "Finance Committee",
+ "meeting_date": "2019-08-22",
+ "video_id": "bQ3dFJYfTPs",
+ "video_url": "https://www.youtube.com/watch?v=bQ3dFJYfTPs",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2019-08-22-bQ3dFJYfTPs.json",
+  "sha256": "634dbaf20fc593a49e9ec853883043d92ef0d5074b0eef3e57e3883a53f755d7",
+  "caption_lines": 155,
+  "segments": 1195
+ },
+ "recording": {
+  "duration_s": 3252,
+  "duration": "0:54",
+  "spoken_chars": 43397,
+  "words_approx": 7232
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08222019-2148",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2019-08-22-agenda-2148.txt",
+   "path": "sources/meetings/finance-committee/2019-08-22-agenda-2148.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08222019-2148",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2019-08-22-minutes-2148.txt",
+   "path": "sources/meetings/finance-committee/2019-08-22-minutes-2148.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-05T04:06:00Z",
+  "cost_usd": 0.18467219999999998
+ },
+ "minutes": {
+  "headline": "Finance Committee appointed a member to the town's Paseos building design committee; no budget votes were taken.",
+  "summary": "The committee heard public comment questioning its school liaison's remarks on student fees, and the liaison responded. It discussed the planned building design committee, a possible service level committee, and how to set goals and agendas before budget season. It appointed a member to the building design committee and approved the August 8 minutes.",
+  "attendees": [
+   {
+    "name_as_heard": "Chair (unnamed)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Dave",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Michelle",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Ashley",
+    "role": "member"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 112,
+    "topic": "A resident of Barton Reservoir Road criticized the Finance Committee liaison to the School Committee for speaking about student user fees, saying it blurred roles and could look like personal financial gain."
+   },
+   {
+    "t": 570,
+    "topic": "A planning board chair (Matt Allison as heard) said economic development, a master planning subcommittee and the master plan would benefit from input from this committee and business."
+   }
+  ],
+  "tags": [
+   "budget",
+   "facilities",
+   "fees",
+   "free-cash",
+   "planning-and-zoning",
+   "policy",
+   "public-comment",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 1804,
+    "motion": "Appoint Dave to the building design committee for the Paseos",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3004,
+    "motion": "Accept the minutes of August 8th",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 3238,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 674,
+    "topic": "Master planning consultant funding",
+    "what_was_said": "A planning board speaker said an appropriation came through capital planning and a matching grant is being sought. It will probably not cover the whole consultant cost.",
+    "figures_as_heard": [
+     "fifty thousand dollar"
+    ]
+   },
+   {
+    "t": 1995,
+    "topic": "Free cash estimate",
+    "what_was_said": "A member relayed from the Board of Selectmen that free cash appears to be about a million dollars, not certified.",
+    "figures_as_heard": [
+     "a million dollars"
+    ]
+   },
+   {
+    "t": 175,
+    "topic": "Student user fees",
+    "what_was_said": "A resident said the liaison projected the family's year-end school cost.",
+    "figures_as_heard": [
+     "$1200"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 884,
+    "decision": "Chair will ask the school superintendent about auditorium availability on Thursdays in October for the joint meeting, and members will send available dates within a week."
+   },
+   {
+    "t": 3026,
+    "decision": "Chair to ask the town manager to give the budget process presentation on September 12; goals discussion to follow; a member to prepare the next agenda."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 112,
+    "topic": "Communications and committee comments",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 112,
+    "t_end": 570,
+    "topic": "Public comment on liaison's remarks about student fees",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 570,
+    "t_end": 714,
+    "topic": "Planning board update on master plan",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 714,
+    "t_end": 952,
+    "topic": "Joint meeting presentation follow-up",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 952,
+    "t_end": 1827,
+    "topic": "Building design committee and service level committee appointments",
+    "resolution": "voted",
+    "tags": [
+     "facilities",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1827,
+    "t_end": 2016,
+    "topic": "Committee updates, school workshop and free cash estimate",
+    "resolution": "informational",
+    "tags": [
+     "free-cash",
+     "superintendent-report"
+    ]
+   },
+   {
+    "t_start": 2016,
+    "t_end": 2984,
+    "topic": "Committee goals and agenda planning",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 2984,
+    "t_end": 3238,
+    "topic": "Minutes, next meetings, budget process presentation, adjournment",
+    "resolution": "voted",
+    "tags": [
+     "budget"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Who moved and seconded the building design appointment is unclear.",
+   "Vote counts were not stated."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 112,
+    "about": "A resident criticized the Finance Committee liaison for speaking on student fees, and the liaison disputed the criticism.",
+    "sides": "a resident against a member",
+    "words_as_heard": "it gives the appearance a position is being used for one's personal financial gain",
+    "kind": "public criticism"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 1722,
+    "kind": "condition",
+    "about": "A member has reservations about the building project and wants to see numbers.",
+    "who": "a member",
+    "words_as_heard": "I still have some reservations I need to see the numbers just like everybody else does"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 3004,
+    "name_as_heard": "minutes of August 8th",
+    "kind": "prior minutes",
+    "words_as_heard": "we accept the minutes Oh August 8th"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "town-office-space",
+    "title": "Town office space",
+    "question": "What would it cost to house town departments in the Paseos building?",
+    "t": 1394,
+    "words_as_heard": "look at what would be required in the Paseos to accommodate all of the departments",
+    "data_in_play": [],
+    "existing": "thread:town-offices"
+   },
+   {
+    "slug": "free-cash-use-policy",
+    "title": "Free cash use",
+    "question": "How is free cash used for capital versus operating budget?",
+    "t": 1995,
+    "words_as_heard": "free cash will be approximately a million dollars",
+    "data_in_play": [
+     "a million dollars"
+    ],
+    "existing": "analysis:free-cash"
+   }
+  ]
+ },
+ "digest": {
+  "watch_next": [
+   "A joint meeting with the school side, with the chair to ask about auditorium availability on Thursdays in October (t=884).",
+   "A budget process presentation by the town manager on September 12, followed by a goals discussion (t=3026)."
+  ],
+  "what_happened": [
+   {
+    "line": "The Finance Committee voted to appoint one of its members to the building design committee for the Paseos; no budget votes were taken.",
+    "t": 1804
+   },
+   {
+    "line": "A resident criticized the committee's school liaison for speaking about student user fees, saying it blurred roles; the liaison responded.",
+    "t": 112
+   },
+   {
+    "line": "The chair will ask the school superintendent about auditorium dates for a joint meeting, and members will send available dates within a week.",
+    "t": 884
+   },
+   {
+    "line": "The chair will ask the town manager to give a budget process presentation on September 12, with a goals discussion to follow.",
+    "t": 3026
+   },
+   {
+    "line": "A member relayed that the Board of Selectmen sees free cash as roughly a million dollars as heard, not yet certified.",
+    "t": 1995
+   }
+  ],
+  "why_it_matters": [
+   "The building design committee shapes the Paseos project, so who sits on it affects the plans and costs that may later come to residents as a funding vote.",
+   "Free cash is not yet certified, so the estimate heard here could change how much is available to offset taxes or fund requests at Town Meeting.",
+   "The goals and budget process sessions set the order in which the committee reviews budgets, which affects when residents can comment before spending is decided."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-05T04:06:06Z",
+   "cost_usd": 0.026805100000000002
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08222019-2148",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2019-08-22-minutes-2148.txt",
+   "path": "sources/meetings/finance-committee/2019-08-22-minutes-2148.pdf"
+  },
+  "official_sha256": "eb57e92f3d566776dcb5378e209a42971c8812d0ea3dbdf4e1ef1ff7fa35f91f",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on the chair's request for October availability and on Michelle and Dave attending. Otherwise they differ a lot. Our minutes record a passed vote appointing Dave to the Paseos building design committee, and the official minutes record no votes at all, so the vote needs checking first.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 0,
+   "discrepancy": 2,
+   "only_in_ours": 4,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote to appoint Dave to building design committee for the Paseos",
+    "ours": "Appoint Dave to the building design committee for the Paseos — passed",
+    "official": "",
+    "note": "Our minutes record a passed vote; the official minutes record no votes. Check the official record and the recording near t=1804 to confirm whether a vote occurred.",
+    "t": 1804
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Master planning consultant funding",
+    "ours": "Master planning consultant funding: fifty thousand dollar",
+    "official": "",
+    "note": "Official minutes print no figure for this; the Planning Board master planning is mentioned only in public comment.",
+    "t": 674
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Free cash estimate",
+    "ours": "Free cash estimate: a million dollars",
+    "official": "",
+    "note": "The official minutes print no free cash figure.",
+    "t": 1995
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Student user fees $1200",
+    "ours": "Student user fees: $1200",
+    "official": "",
+    "note": "Official minutes mention costs to families but print no figures, so the $1200 can't be confirmed.",
+    "t": 175
+   },
+   {
+    "kind": "agree",
+    "about": "Chair seeking members' October availability for joint meeting",
+    "ours": "Chair will ask the school superintendent about auditorium availability on Thursdays in October for the joint meeting, and members will send available dates within a week.",
+    "official": "she asked that members email her specifically to outline their availability during the month of october.",
+    "note": "Both record members sending the chair October availability; our minutes add the superintendent and auditorium detail and a one-week deadline.",
+    "t": 884
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Budget process presentation on September 12 by town manager",
+    "ours": "Chair to ask the town manager to give the budget process presentation on September 12; goals discussion to follow; a member to prepare the next agenda.",
+    "official": "",
+    "note": "The official minutes do not mention this decision.",
+    "t": 3026
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Costs imposed on families of students",
+    "ours": "",
+    "official": "costs imposed on families of students benefiting from a \"free and public education\" was an issue",
+    "note": "The official minutes record this comment, which our minutes lack; it may relate to the student user fees figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Michelle (Walton)",
+    "ours": "Michelle (member)",
+    "official": "walton terri burchfield, dave passios, jay simeone, peter beardmore, michelle",
+    "note": "Michelle Walton, Vice-Chairman, is present in both."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Dave (Passios)",
+    "ours": "Dave (member)",
+    "official": "terri burchfield, dave passios, jay simeone, peter beardmore, michelle",
+    "note": "Dave Passios is present in both."
+   },
+   {
+    "kind": "agree",
+    "about": "Chair attendee",
+    "ours": "Chair (unnamed) (chair)",
+    "official": "terri burchfield, chairman",
+    "note": "Our minutes leave the chair unnamed; the official minutes name her as Terri Burchfield."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee Ashley",
+    "ours": "Ashley (member)",
+    "official": "",
+    "note": "Ashley is not in the official attendee list (Burchfield, Walton, Beardmore, Simeone, Passios; Henshaw absent). Check whether the name was misheard (e.g. Jay or Peter) or whether Ashley is someone else."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees Peter Beardmore and Jay Simeone present, John Henshaw absent, Matthew Allison",
+    "ours": "",
+    "official": "absent: john henshaw",
+    "note": "Our minutes list none of these people; the official minutes list them as present or absent."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-05T04:06:44Z",
+   "cost_usd": 0.0364511
+  }
+ }
+}

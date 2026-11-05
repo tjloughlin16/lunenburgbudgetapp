@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2019-12-12",
  "docid": "2154",
@@ -12,39 +12,305 @@
  },
  "votes": [
   {
-   "motion": "Approve the reserve transfer request for $16,890 for Fire Vehicle/Maintenance",
+   "motion": "Approve the reserve transfer request for $16,890 for the Fire Vehicle/Maintenance line.",
    "moved_by": "Peter Beardmore",
    "seconded_by": "John Henshaw",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "peter beardmore moved to approve the request, john henshaw 2nd, unanimous approval"
   },
   {
-   "motion": "Approve item from October 24 meeting",
+   "motion": "Approve the minutes of October 24.",
    "moved_by": "John Henshaw",
    "seconded_by": "Jay Simeone",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "outcome": "passed",
+   "procedural": true,
    "quote": "october 24 - john henshaw moved to approve, jay simeone 2nd, unanimous approval"
   },
   {
-   "motion": "Approve October 29 symposium item",
+   "motion": "Approve the minutes of October 29 (symposium).",
    "moved_by": "John Henshaw",
    "seconded_by": "Jay Simeone",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "october 29 (symposium) - john henshaw oved to approve, jay simeone 2nd, unanimous approval"
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "john henshaw oved to approve, jay simeone 2nd, unanimous approval"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dave Passios",
    "seconded_by": "Jay Simeone",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "dave passios motioned/ jay simeone seconded; unanimous approval"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from macOS Vision. Two votes (October 24 and October 29) appear under an unnumbered section and lack clear context for what was being approved; recorded as they appear in the minutes with motion language.",
- "cost_usd": 0.1019695
+ "note": "OCR scan of typed minutes with garbled characters in places. Page 2 begins mid-sentence. Agenda item 6 and item 10 headings are missing from the text (minutes approvals appear at the top of page 3 with no item number). The attendance layout is ambiguous; Michelle Walton is listed after the present members with no clear present/absent label, so status is recorded as not stated. The fire memo carries a \"RECEIVED & FILED FEB 13 2020\" stamp, which postdates the meeting. The memo's figures are partly illegible, so only the legible ones are recorded. No time of adjournment is printed.",
+ "cost_usd": 0.00657502,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "terri burchfield, chair called the meeting to order at 6:30 (all expected"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "",
+   "status": "present",
+   "quote": "terri burchfield, chair called the meeting to order at 6:30 (all expected"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "terri burchfield, chair called the meeting to order at 6:30 (all expected"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "terri burchfield, chair called the meeting to order at 6:30 (all expected"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "",
+   "status": "present",
+   "quote": "terri burchfield, chair called the meeting to order at 6:30 (all expected"
+  },
+  {
+   "name": "Michelle Walton",
+   "role": "",
+   "status": "not stated",
+   "quote": "terri burchfield relayed a request from michell walton to specifically"
+  },
+  {
+   "name": "Chief Sullivan",
+   "role": "Chief (Fire Department)",
+   "status": "present",
+   "quote": "chief sullivan presented to the committee the need for the transter"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Library Director",
+   "status": "present",
+   "quote": "4. informal discussion with library director - muir haman"
+  },
+  {
+   "name": "James Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "5. informal discussion with police chief - james marino"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Fire vehicle maintenance reserve transfer",
+   "what_was_recorded": "A reserve transfer of $16,890 was requested for the Fire Vehicle/Maintenance line to cover unprojected ambulance and fire truck pump repairs and scheduled maintenance for the rest of the year.",
+   "figures_as_printed": [
+    "$16,890"
+   ],
+   "quote": "reserve transfer request for $16,890 for fire vehicle/maintenance"
+  },
+  {
+   "topic": "Fire vehicle maintenance overage memo",
+   "what_was_recorded": "The fire department memo estimates the pump invoice leaves about $400 for the rest of FY20, with estimated remaining scheduled maintenance, inspections and miscellaneous supplies totaling $19,890 as printed (OCR garbled in places).",
+   "figures_as_printed": [
+    "approximately $400",
+    "$ 5,000",
+    "$19,890"
+   ],
+   "quote": "paying the invoice for the pump repair leaves us at approximately $400"
+  },
+  {
+   "topic": "Library circulation spending",
+   "what_was_recorded": "Lunenburg's library circulation spending exceeds the state 16% minimum by $17,000.",
+   "figures_as_printed": [
+    "$17,000"
+   ],
+   "quote": "lunenburg currently exceeds this minimum by $17,000."
+  },
+  {
+   "topic": "Library municipal funding",
+   "what_was_recorded": "The library director hopes to appropriate more municipal funding for programs now funded by The Friends of The Library, such as museum passes.",
+   "figures_as_printed": [],
+   "quote": "hopes to appropriate more municipal funding for programs, such as"
+  },
+  {
+   "topic": "CWMars cost increase",
+   "what_was_recorded": "Library costs relating to CWMars are likely to increase because Lunenburg is paying the small library rate despite population above 10,000.",
+   "figures_as_printed": [],
+   "quote": "there is likely to be increases costs relating to cwmars"
+  },
+  {
+   "topic": "Monty Tech assessment",
+   "what_was_recorded": "The Town Manager reported the Monty Tech assessment for FY20 decreased.",
+   "figures_as_printed": [],
+   "quote": "monty tech assessment for fy20 decreased"
+  },
+  {
+   "topic": "Snow removal costs",
+   "what_was_recorded": "Snow removal is likely to run further over than previous years due to contractor use, higher contractor rates and staff coverage.",
+   "figures_as_printed": [],
+   "quote": "snow removal is likely to be further over than previous years due to"
+  },
+  {
+   "topic": "Police hiring savings",
+   "what_was_recorded": "Police contract changes mean new officers will be hired at lower rates, reflecting some savings.",
+   "figures_as_printed": [],
+   "quote": "going forward we will be hiring new officers at lower rates, which will reflect some savings."
+  },
+  {
+   "topic": "Municipal Vulnerability Preparedness grant",
+   "what_was_recorded": "The Town Manager reported the Municipal Vulnerability Preparedness Planning Grant has been submitted; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "municipal vulnerability preparedness planning grant has been submitted."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Reserve transfer to the Fire Vehicle/Maintenance line for unprojected ambulance and fire truck pump repairs and scheduled maintenance.",
+   "outcome": "passed (unanimous approval)",
+   "amount_as_printed": "$16,890",
+   "quote": "reserve transfer request for $16,890 for fire vehicle/maintenance"
+  },
+  {
+   "description": "School department reported a few small line-item transfers at its last meeting; no amounts printed.",
+   "outcome": "reported only, no board action recorded",
+   "amount_as_printed": "",
+   "quote": "there were a few small line-item transfers."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "thanks to the Chief and first responders",
+   "quote": "dave passios publicly thanked the chief and first responders for services"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "public information on the education funding bill",
+   "quote": "dave passios suggested the board make an effort to inform the public"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 6:30",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "terri burchfield, chair called the meeting to order at 6:30 (all expected"
+  },
+  {
+   "topic": "Communications / public comment",
+   "resolution": "no action; no public comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment - none"
+  },
+  {
+   "topic": "Reserve transfer for Fire Vehicle/Maintenance",
+   "resolution": "approved unanimously",
+   "tags": [
+    "fire department",
+    "reserve transfer",
+    "vehicle maintenance"
+   ],
+   "quote": "reserve transfer request for $16,890 for fire vehicle/maintenance"
+  },
+  {
+   "topic": "Informal discussion with Library Director Muir Haman",
+   "resolution": "informal discussion, no action",
+   "tags": [
+    "library",
+    "budget"
+   ],
+   "quote": "4. informal discussion with library director - muir haman"
+  },
+  {
+   "topic": "Informal discussion with Police Chief James Marino",
+   "resolution": "informal discussion, no action",
+   "tags": [
+    "police",
+    "staffing"
+   ],
+   "quote": "5. informal discussion with police chief - james marino"
+  },
+  {
+   "topic": "Approval of prior meeting minutes (item number not printed)",
+   "resolution": "minutes of October 24 and October 29 approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "october 24 - john henshaw moved to approve, jay simeone 2nd,"
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational report, no action",
+   "tags": [
+    "town manager",
+    "budget calendar",
+    "grants"
+   ],
+   "quote": "correction made to november 29 error in lunenburg ledger regarding"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "informational, no action",
+   "tags": [
+    "school budget",
+    "capital planning"
+   ],
+   "quote": "peter beardmore reported that the school department provided a budget"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "suggestion noted, no action",
+   "tags": [
+    "public comment",
+    "education funding"
+   ],
+   "quote": "dave passios suggested the board make an effort to inform the public"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned, unanimous",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "dave passios motioned/ jay simeone seconded; unanimous approval"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Fire Department memorandum, Subject: Vehicle Maintenance Budget Overage, dated November 26, 2019 (Appendix A; the chief referred to it as an email addressed to the committee)",
+   "where": "list",
+   "quote": "subject: vehicle maintenance budget overage"
+  }
+ ],
+ "tags": [
+  "fire department",
+  "reserve transfer",
+  "vehicle maintenance",
+  "library",
+  "police",
+  "town manager report",
+  "FY20 budget",
+  "minutes approval",
+  "Monty Tech",
+  "snow removal",
+  "committee reports"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "appendix a:"
+ },
+ "dropped_unquoted_by_field": {}
 }

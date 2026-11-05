@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2020-01-16",
  "docid": "1405",
@@ -12,23 +12,197 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from November 14, 2019 as written",
+   "motion": "Accept the November 14, 2019 meeting minutes as written.",
    "moved_by": "Commissioner Mendoza",
-   "seconded_by": "Chair Tyler",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made to accept as written by commissioner mendoza, seconded by chair tyler . it was voted unanimously by roll call vote to accept."
+   "quote": "a motion was made to accept as written by commissioner mendoza, seconded by chair tyler . it was voted unanimously by roll call vote to accept.",
+   "seconded_by": "Chair Tyler"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Commissioner Mendoza",
-   "seconded_by": "Chair Tyler",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made by commissioner mendoza to adjourn, seconded by chair tyler . on a roll call vote it was voted unanimously to adjourn at 7:00 pm"
+   "quote": "a motion was made by commissioner mendoza to adjourn, seconded by chair tyler . on a roll call vote it was voted unanimously to adjourn at 7:00 pm",
+   "seconded_by": "Chair Tyler"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09145550000000001
+ "note": "Minutes are clean extracted text, no scan issues. Only two motions are recorded, both unanimous roll-call votes with no tallies printed. The FY 20 figures given to commissioners are not printed in the minutes. The minutes do not list an agenda, so topics are taken from the body text. Selectman Jeffries, Police Chief Marino and the DPW Director are mentioned but did not appear, so they are not listed as attendees.",
+ "cost_usd": 0.00418322,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "William Tyler",
+   "role": "Chair",
+   "status": "present",
+   "quote": "the meeting was called to order by chair tyler at 6:30 pm with commissioners"
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Vice-Chairman; Commissioner",
+   "status": "present",
+   "quote": "with commissioners mendoza and superintendent holman present."
+  },
+  {
+   "name": "Nancy Foss - Yasko",
+   "role": "Clerk; Commissioner",
+   "status": "remote",
+   "quote": "commissioner yasko was participating remotely."
+  },
+  {
+   "name": "Holman",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "with commissioners mendoza and superintendent holman present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair Tyler to draft a response to the question about winter burials, to be discussed at a future meeting.",
+   "quote": "it was decided to have chair tyler draft a response to this question which will be discussed at a future meeting."
+  },
+  {
+   "decision": "Install signage for both cemeteries noting Safety Zone and a 20mph speed limit; Chief Marino to follow up with the DPW Director.",
+   "quote": "it was decided to have signage noting safety zone and speed limit 20mph."
+  },
+  {
+   "decision": "Commission to discuss at the February meeting and reach agreement on the FY 21 appropriation.",
+   "quote": "we will discuss at february meeting to come to an agreement as to what our fy 21 appropriation will be."
+  },
+  {
+   "decision": "Chair Tyler to attend the next CPC meeting to explain the North Cemetery parking lot request in more detail.",
+   "quote": "chair tyler is going to attend the next cpc meeting to explain the request in more detail."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ADA grant proposal, North Cemetery handicap ramp",
+   "what_was_recorded": "The ADA grant proposal for a handicap ramp at North Cemetery was reported as not approved; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the ada grant proposal for the handicap ramp at north cemetery was not approved"
+  },
+  {
+   "topic": "Capital Plan request, North Cemetery parking lot",
+   "what_was_recorded": "The Capital Plan request for redesign and paving of the North Cemetery parking lot was ranked 21 out of 21 requests; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the capital plan request for the redesign and paving of the north cemetery parking lot was ranked number 21 out of 21 requests."
+  },
+  {
+   "topic": "FY 20 annual appropriation and remaining balances",
+   "what_was_recorded": "Commission members were given figures on what remains in the FY 20 appropriation and what remains to be expended; the figures themselves are not printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "commission members were given figures as to what remains in our fy 20 appropriation and what remains to be expended in fy 20."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of November 14, 2019 minutes",
+   "resolution": "approved",
+   "quote": "a motion was made to accept as written by commissioner mendoza, seconded by chair tyler . it was voted unanimously by roll call vote to accept.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Old business: ADA grant and Capital Plan request",
+   "resolution": "no action; noted",
+   "quote": "it was noted that the ada grant proposal for the handicap ramp at north cemetery was not approved",
+   "tags": [
+    "ADA grant",
+    "capital plan",
+    "North Cemetery"
+   ]
+  },
+  {
+   "topic": "Winter burials inquiry from Selectman Jeffries",
+   "resolution": "Chair to draft response",
+   "quote": "it was decided to have chair tyler draft a response to this question which will be discussed at a future meeting.",
+   "tags": [
+    "burials",
+    "winter"
+   ]
+  },
+  {
+   "topic": "Spring ATM and FY 20/FY 21 appropriation",
+   "resolution": "discussed; continued to February",
+   "quote": "we will discuss at february meeting to come to an agreement as to what our fy 21 appropriation will be.",
+   "tags": [
+    "appropriation",
+    "ATM",
+    "budget"
+   ]
+  },
+  {
+   "topic": "ATM warrant dates and Town Report",
+   "resolution": "noted",
+   "quote": "chair tyler noted that the warrant for atm opens on january 14th and closes on march 16th.",
+   "tags": [
+    "warrant",
+    "town report"
+   ]
+  },
+  {
+   "topic": "Speed limit signage at both cemeteries",
+   "resolution": "signage decided; Chief Marino to follow up",
+   "quote": "it was decided to have signage noting safety zone and speed limit 20mph.",
+   "tags": [
+    "signage",
+    "speed limit",
+    "police"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "tentative date set",
+   "quote": "tentative date for next meeting is february 13th 2020",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:00 PM",
+   "quote": "a motion was made by commissioner mendoza to adjourn, seconded by chair tyler . on a roll call vote it was voted unanimously to adjourn at 7:00 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Warrant for ATM",
+   "where": "text",
+   "quote": "chair tyler noted that the warrant for atm opens on january 14th and closes on march 16th."
+  },
+  {
+   "name": "Town Report (Commission submission)",
+   "where": "text",
+   "quote": "the town report was also discussed as the submission from the commission is due on february 15th, 2020."
+  },
+  {
+   "name": "ADA Grant Proposal for the North Cemetery handicap ramp",
+   "where": "text",
+   "quote": "the ada grant proposal for the handicap ramp at north cemetery was not approved"
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "appropriation",
+  "capital plan",
+  "ADA grant",
+  "burials",
+  "signage",
+  "town report",
+  "ATM warrant"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

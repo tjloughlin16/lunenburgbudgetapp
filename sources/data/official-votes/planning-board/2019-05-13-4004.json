@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-05-13",
  "docid": "4004",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "approve waiver request for site plan approval for Lunenburg Veterinary Hospital, 109 Massachusetts Avenue, with stipulation of no change to number of employees or hours of operation",
+   "motion": "Approve the request for waiver from site plan approval for Lunenburg Veterinary Hospital, with the stipulation of no change to employee numbers or hours of operation.",
    "moved_by": "P. Bertram",
    "seconded_by": "K. Chenis",
    "outcome": "passed",
    "procedural": false,
-   "quote": "p. bertram made motion to approve the request for waiver from site plan approval with the stipulation that there is no change to either the number of employees nor the hours of operation, k. chenis seconded, all aye."
+   "quote": "p. bertram made motion to approve the request for waiver from site plan approval"
   },
   {
-   "motion": "approve Modification to Site Plan Approval for Powell Stone & Gravel, 151–181 Leominster Shirley Road",
+   "motion": "Approve the Modification to Site Plan Approval for Powell Stone & Gravel.",
    "moved_by": "K. Chenis",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -28,32 +28,31 @@
    "quote": "k. chenis made motion to approve modification to site plan approval, p. bertram seconded, all aye."
   },
   {
-   "motion": "approve minutes from 04/08/19",
+   "motion": "Approve the 04/08/19 minutes.",
    "moved_by": "K. Chenis",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": true,
-   "quote": "k. chenis made motion to approve, p. bertram seconded, all aye."
+   "quote": "04/08/19- k. chenis made motion to approve, p. bertram seconded, all aye."
   },
   {
-   "motion": "remove Charter Review Committee from future agendas",
+   "motion": "Remove the Charter Review Committee from future agendas.",
    "moved_by": "K. Chenis",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "k. chenis made motion to remove from future agendas, p. bertram seconded, all aye."
+   "procedural": false,
+   "quote": "charter review committee- k. chenis made motion to remove from future agendas, p. bertram seconded, all aye."
   },
   {
-   "motion": "place an item on the agenda to discuss the RFP related to the Master Plan at a future meeting",
+   "motion": "Place an item on a future agenda to discuss the RFP related to the Master Plan.",
    "moved_by": "P. Bertram",
    "seconded_by": "K. Chenis",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "p. bertram made motion to place an item on the agenda to discuss the rfp related to the master plan a t a future meeting, k. chenis seconded, all aye",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "p. bertram made motion to place an item on the agenda to discuss the rfp related to the master plan a t a future meeting"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "K. Chenis",
    "outcome": "passed",
@@ -62,6 +61,213 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "No issues with the text. All votes are clearly recorded with movers, seconders, and outcomes stated as \"all aye\" (unanimous passage).",
- "cost_usd": 0.0906315
+ "note": "Text is extracted with spacing and line-break artifacts; quotes are collapsed to single spaces. The PUBLIC COMMENT heading holds only Board members thanking K. Chenis, so no public speakers are recorded. The minutes print no dollar figures and no transfers. Aro Estates discussion ends without a motion, and the vote-count language is \"all aye\" with no numeric tally. Several minutes items were tabled for lack of quorum without a recorded motion. Attendee roles are taken from the letterhead and the Present/Also Present lines.",
+ "cost_usd": 0.00868132,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: town counsel adam costa"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Member",
+   "status": "absent",
+   "quote": "also present: town counsel adam costa absent: tanner cole"
+  },
+  {
+   "name": "Dr. Carl Flinkstrom",
+   "status": "not stated",
+   "quote": "dr. carl flinkstrom requested the board approve a waiver for site plan approval"
+  },
+  {
+   "name": "Attorney Borenstein",
+   "status": "not stated",
+   "quote": "attorney borenstein requested that attorney costa share the draft decision, once prepared"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No vote was taken on Aro Estates conditions; the conditions are to be prepared for the next Board meeting, on Attorney Costa's advice against voting this evening.",
+   "quote": "he also asked if it was reasonable to ask for a vote from the board members this evening on the conditions that will be prepared for the next board meeting."
+  },
+  {
+   "decision": "Counsels agreed that the 40 foot access strip to Town forest would be conveyed to the Town at issuance of the first building permit for Aro Estates 8, provided the 20 foot gravel drive is constructed.",
+   "quote": "both counsels were in agreement that"
+  },
+  {
+   "decision": "Attorney Costa to share the draft Aro Estates Decision with the Board once prepared, before the June 10 meeting.",
+   "quote": "attorney borenstein requested that attorney costa share the draft decision, once prepared"
+  },
+  {
+   "decision": "Items on the ongoing list (Solar Energy Systems, Off Street Parking, Master Plan) will be addressed once the full Board is seated.",
+   "quote": "below items will be addressed once full board is seated."
+  },
+  {
+   "decision": "Economic Development Committee and Earth Removal Permitting placed on hold until new Board members are elected.",
+   "quote": "economic development committee- on hold awaiting election of new board members"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment: thanks to K. Chenis",
+   "resolution": "recognized outgoing member",
+   "quote": "board members thanked k. chenis for his years serving as a board member.",
+   "tags": [
+    "recognition",
+    "board membership"
+   ]
+  },
+  {
+   "topic": "Waiver request, Lunenburg Veterinary Hospital, 109 Massachusetts Avenue",
+   "resolution": "waiver from site plan approval granted with stipulation",
+   "quote": "p. bertram made motion to approve the request for waiver from site plan approval",
+   "tags": [
+    "site plan",
+    "waiver",
+    "veterinary",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Public hearing (continued): Powell Stone & Gravel, 151-181 Leominster Shirley Road",
+   "resolution": "modification to site plan approval approved",
+   "quote": "k. chenis made motion to approve modification to site plan approval, p. bertram seconded, all aye.",
+   "tags": [
+    "site plan",
+    "gravel",
+    "Leominster Shirley Road"
+   ]
+  },
+  {
+   "topic": "Public hearing (continued): Aro Estates, Howard Street",
+   "resolution": "discussed; conditions to be prepared for next meeting; no vote",
+   "quote": "board discussion ensued regarding the placing of conditions on the project.",
+   "tags": [
+    "subdivision",
+    "age restriction",
+    "conditions",
+    "settlement agreement",
+    "conservation access"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "04/08/19 approved; other minutes tabled for lack of quorum",
+   "quote": "all minutes below tabled due to lack of quorum.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; Charter Review Committee removed from future agendas",
+   "quote": "charter review committee- k. chenis made motion to remove from future agendas",
+   "tags": [
+    "committees",
+    "land acquisition"
+   ]
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "Town Meeting zoning results reported; RFP item placed on future agenda",
+   "quote": "the board was updated on town meeting votes for the zoning articles.",
+   "tags": [
+    "town meeting",
+    "zoning",
+    "master plan",
+    "tree trimming"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "carried to when full Board is seated",
+   "quote": "below items will be addressed once full board is seated.",
+   "tags": [
+    "solar",
+    "parking",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:54 PM",
+   "quote": "p. bertram made motion to adjourn, k. chenis, seconded, all aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 04/08/19",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 04/08/19"
+  },
+  {
+   "name": "Waiver Request, 109 Massachusetts Avenue",
+   "where": "list",
+   "quote": "waiver request, 109 massachusetts avenue"
+  },
+  {
+   "name": "Special Permit issued by the Zoning Board of Appeals, March 2019",
+   "where": "text",
+   "quote": "issued by the zoning board of appeals in march 2019 noted that dr. flinkstrom was interested"
+  },
+  {
+   "name": "Settlement Agreement (Aro Estates)",
+   "where": "text",
+   "quote": "contained within the settlement agreement that were proposed as part of the approval"
+  },
+  {
+   "name": "Draft Decision (Aro Estates)",
+   "where": "text",
+   "quote": "attorney borenstein requested that attorney costa share the draft decision, once prepared"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "site plan waiver",
+  "Aro Estates",
+  "Powell Stone & Gravel",
+  "Town Meeting zoning results",
+  "minutes approval",
+  "committee reports",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-02-02",
  "docid": "5245",
@@ -12,23 +12,316 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of December 15, 2020 as presented",
+   "motion": "Approve the minutes of December 15, 2020 as presented.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "K. Adams",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: m. jeffreys 2nd: k. adams to approve the minutes of december 15, 2020 as presented vote: ms. adams-aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys- aye, mr. alonzo- aye"
+   "quote": "to approve the minutes of december 15, 2020 as presented vote: ms. adams-aye, mr. dwyer-aye, mr. marino-aye"
   },
   {
-   "motion": "Enter into Executive Session to discuss strategy with respect to litigation and collective bargaining, and to adjourn after exiting Executive Session",
+   "motion": "Enter into executive session under MGL c. 30, Section 21, Paragraph 3 for litigation strategy (192 Townsend Harbor Road) and collective bargaining strategy (Municipal Employees Union, Fire Union, and DPW Union), and adjourn after exiting executive session.",
    "moved_by": "K. Adams",
    "seconded_by": "T. Dwyer",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: k. adams 2nd: t. dwyer to enter into executive session: pursuant to mgl c. 30, section 21, paragraph 3, to discuss strategy with respect to litigation if an open meeting may have a detrimental effect on the litigating position of the public body and the chair so declares (192 townsend harbor road) and pursuant to mgl c. 30, section 21, paragraph 3, to discuss strategy with respect to collective bargaining if an open meeting may have a detrimental effect on the bargaining position of the public body and the chair so declares. (municipal employees union, fire union, and dpw union) and to adjourn after exiting executive session vote: ms. adams-aye, mr. marino-aye, mr. jeffreys-aye, mr. dwyer-aye, mr. alonzo- aye"
+   "quote": "to enter into executive session: pursuant to mgl c. 30, section 21, paragraph 3, to discuss strategy with respect to litigation"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-transcribed minutes from macOS Vision. Two procedural votes recorded; warrants listed but no motion recorded.",
- "cost_usd": 0.1261855
+ "note": "OCR text of a scanned page set, with garbled and truncated passages. Page 1 header is cut off, so the roll call result is not stated; board members are shown as present from the vote lines and the pledge/questions. The page 3 lead-in to the Holiday Premium is truncated. No motion is recorded for the adjournment at 8:37 P.M., so it is not listed as a vote. Public comment was \"none at this time\"; the later Ms. Adams question is a board member, not public comment.",
+ "cost_usd": 0.01974555,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m. and announced in accordance with the"
+  },
+  {
+   "name": "Adams",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "the meeting opened with the pledge of allegiance that was recited by ms. adams."
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "mr. dwyer stated he looked forward to and supported the conservation commission updating their land use regulations"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "mr. marino suggested creating or amending a by-law to avoid future challenges such as the town of carlisle did."
+  },
+  {
+   "name": "M. Jeffreys",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "mr. jeffreys asked if there is an emergency response plan in the event of a catastrophic event at"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam costa, town counsel"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam costa, town counsel"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Conservation Commissioner",
+   "status": "present",
+   "quote": "attorney costa and conservation commissioners bob pease and richard bursch were also present for this discussion."
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Conservation Commissioner",
+   "status": "present",
+   "quote": "attorney costa and conservation commissioners bob pease and richard bursch were also present for this discussion."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "respectfully submitted, elaine m. peterson elaine m. peterson executive assistant ",
+   "quote_taken_from_text": true
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Smokestack Roasters LLC appointment to be rescheduled because the owner has no power at home to make the Zoom meeting.",
+   "quote": "mr. alonzo announced their first appointment with smokestack roasters llc, will need to be rescheduled as the owner has no power at their house to make the zoom meeting."
+  },
+  {
+   "decision": "Ms. Lemieux to follow up with the Emergency Mgmt. Director and the DPW Director on the emergency response plan and pump training information requested by Mr. Jeffreys.",
+   "quote": "ms. lemieux will follow up with the emergency mgmt. director and the dpw director for that information."
+  },
+  {
+   "decision": "Conservation Commission to post its proposed land regulations, to be placed on the website.",
+   "quote": "he requested the commission post the proposed land regulations. they will be placed on the website."
+  },
+  {
+   "decision": "Mr. Alonzo asked Ms. Lemieux to look for an earlier version of the Conservation Commission land use regulations to see when the hunting prohibition was added.",
+   "quote": "mr. alonzo requested ms. lemieux to see if an earlier version was available."
+  },
+  {
+   "decision": "Town Counsel to get Mr. Pease an answer on whether hunters must go before the Select Board to hunt on Hunting Hills conservation land.",
+   "quote": "mr. costa did not have an answer for him due to the wording but will get an answer back to him."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Holiday Premium health insurance savings for FY 2022",
+   "what_was_recorded": "The Holiday Premium for one full month in FY 2022 is projected to save school and town health insurance costs, with ranges given for active and retiree plans.",
+   "figures_as_printed": [
+    "$233,000-$240,000",
+    "$59,000-$60,000",
+    "$17,000",
+    "$32,000"
+   ],
+   "quote": "the holiday premium for one full month in fy 2022 will result in the following savings:"
+  },
+  {
+   "topic": "Town Hall (TCP) building renovation cost estimate",
+   "what_was_recorded": "The TCP Building Design Committee's architect estimate rose from an initial figure to a higher figure once contingent items were added.",
+   "figures_as_printed": [
+    "$16 million",
+    "$21 million"
+   ],
+   "quote": "the initial estimate was $16 million, but when you add in the contingent items, it is $21 million."
+  },
+  {
+   "topic": "Revenues and department spending",
+   "what_was_recorded": "Finance Director reported revenues were higher than the prior year quarter and departments are on target with budgets, with snow removal spending looking good.",
+   "figures_as_printed": [
+    "3%"
+   ],
+   "quote": "as of 12/31/20 we were 3% higher in overall revenues compared to the same quarter in fy20."
+  },
+  {
+   "topic": "Culvert projects and DER grant",
+   "what_was_recorded": "DPW Director is looking at culverts that may qualify for a DER grant, which requires an ecological impact.",
+   "figures_as_printed": [],
+   "quote": "under a der grant, which must have an ecological impact."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "none offered",
+   "quote": "there was none at this time.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager report and COVID-19 update",
+   "resolution": "informational, no action",
+   "quote": "town manager report and covid-19 update",
+   "tags": [
+    "COVID-19",
+    "vaccination",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Announcements (marijuana community outreach meeting)",
+   "resolution": "informational",
+   "quote": "ms. lemieux reminded about the community outreach meeting at 7:00 p.m. for a proposed",
+   "tags": [
+    "marijuana",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Appointments (Smokestack Roasters LLC)",
+   "resolution": "rescheduled",
+   "quote": "mr. alonzo announced their first appointment with smokestack roasters llc, will need to be",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Department updates",
+   "resolution": "informational, no action",
+   "quote": "assessors: the 1st motor vehicle excise commitment will be sent out on february 12th.",
+   "tags": [
+    "departments",
+    "assessors",
+    "police",
+    "fire",
+    "IT",
+    "public access"
+   ]
+  },
+  {
+   "topic": "FY2022 budget, capital plan, forecast and ATM warrant articles",
+   "resolution": "discussed, no questions",
+   "quote": "mr. alonzo referred the board to the draft annual town meeting (atm) warrant articles to date.",
+   "tags": [
+    "budget",
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of December 15, 2020",
+   "resolution": "approved 5-0",
+   "quote": "to approve the minutes of december 15, 2020 as presented vote: ms. adams-aye, mr. dwyer-aye, mr. marino-aye",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports (Monty Tech, Library, TCP, Capital Planning)",
+   "resolution": "reports, no action",
+   "quote": "ms. adams reported she met on site at the old primary school with the monty tech students",
+   "tags": [
+    "committees",
+    "library",
+    "TCP building",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Meeting with Town Counsel on carrying firearms on town property and hunting on conservation land",
+   "resolution": "discussed; follow-up requested",
+   "quote": "mr. alonzo referred to town counsel's opinion on the right to possess firearms on town-owned property.",
+   "tags": [
+    "firearms",
+    "conservation",
+    "hunting",
+    "legal opinion"
+   ]
+  },
+  {
+   "topic": "Public comment (cable broadcasting)",
+   "resolution": "discussed, no action",
+   "quote": "ms. adams asked about the live cable broadcasting issues.",
+   "tags": [
+    "cable",
+    "public access"
+   ]
+  },
+  {
+   "topic": "Executive session (litigation and collective bargaining)",
+   "resolution": "entered executive session",
+   "quote": "to enter into executive session: pursuant to mgl c. 30, section 21, paragraph 3, to discuss strategy with respect to litigation",
+   "tags": [
+    "executive session",
+    "litigation",
+    "collective bargaining"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:37 P.M.",
+   "quote": "the meeting adjourned at 8:37 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Annual Town Meeting (ATM) warrant articles",
+   "where": "list",
+   "quote": "mr. alonzo referred the board to the draft annual town meeting (atm) warrant articles to date."
+  },
+  {
+   "name": "Town Counsel's written opinion on the right to possess firearms on town-owned property",
+   "where": "list",
+   "quote": "mr. alonzo referred to town counsel's opinion on the right to possess firearms on town-owned property."
+  },
+  {
+   "name": "General Code, § 145-1 (discharge of firearms)",
+   "where": "text",
+   "quote": "general code, § 145-1, providing that"
+  },
+  {
+   "name": "Town Charter, § 4-2(1)",
+   "where": "text",
+   "quote": "see town charter, § 4-2(1)."
+  },
+  {
+   "name": "Conservation Commission proposed land use regulations",
+   "where": "text",
+   "quote": "he requested the commission post the proposed land regulations. they will be placed on the website."
+  },
+  {
+   "name": "Cleaning Services bid package",
+   "where": "text",
+   "quote": "the assistant town managerrevised the bid package and re-advertised."
+  }
+ ],
+ "tags": [
+  "select board",
+  "COVID-19",
+  "vaccination",
+  "FY2022 budget",
+  "town meeting warrant",
+  "firearms",
+  "hunting",
+  "conservation",
+  "executive session",
+  "remote meeting",
+  "marijuana",
+  "health insurance"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. alonzo referred the board to the draft annual town meeting (atm) warrant articles to date"
+ },
+ "dropped_unquoted_by_field": {}
 }

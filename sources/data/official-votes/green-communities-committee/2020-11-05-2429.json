@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2020-11-05",
  "docid": "2429",
@@ -12,15 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from 2/27/20 and 3/12/20",
+   "motion": "Approve the minutes of 2/27/20.",
    "moved_by": "NS",
    "seconded_by": "LM",
    "outcome": "unanimously approved",
    "procedural": true,
-   "quote": "ns made a motion to approve, lm second 3/12/20- edits fridge \"could could-\" grammar, ns made a motion to approve, lm second, unanimously approved both minutes."
+   "quote": "2/27/20- ns made a motion to approve, lm second"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Approve the minutes of 3/12/20, with a grammar edit.",
+   "moved_by": "NS",
+   "seconded_by": "LM",
+   "outcome": "unanimously approved",
+   "procedural": true,
+   "quote": "ns made a motion to approve, lm second, unanimously approved both minutes."
+  },
+  {
+   "motion": "Warrant article in the town warrant, as reported: select (Board of Selectmen) approved it and finance deferred; the minutes do not record a motion by this board.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "approved 4-1",
+   "procedural": false,
+   "quote": "article is in the town warrant- select approved 4-1 and finance deferred."
+  },
+  {
+   "motion": "Adjourn the meeting at 8:12PM.",
    "moved_by": "NS",
    "seconded_by": "LM",
    "outcome": "not stated",
@@ -29,6 +45,274 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded. The first approves minutes from two prior meetings in a single motion. The second (adjournment) is recorded with a motion and second but no explicit vote outcome stated, though the meeting end time is given.",
- "cost_usd": 0.1054215
+ "note": "Minutes are a short transcription with no roll-call tallies beyond the motions listed. Header reads 'Green Communities Task Force' and was held via Zoom; the board named in this request is 'Green Communities Committee'. Speakers and actors appear mostly as initials (NS, LM, DB, JL, DS) and 'Dave' is ambiguous between Dave Passios and 'DS'; names are used only where printed in full. The adjournment motion records no result. The 4-1 warrant article vote is reported as a select vote, not a motion by this board, and no mover is printed. No public comment speakers are named. Karen Chapman and Heather are mentioned but did not take part, so they are not listed as attendees.",
+ "cost_usd": 0.006764419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Liz Murphy",
+   "status": "present",
+   "quote": "in attendance: liz murphy neil sullivan, david blatt, john londa, dave passios, jay simone"
+  },
+  {
+   "name": "Neil Sullivan",
+   "status": "present",
+   "quote": "in attendance: liz murphy neil sullivan, david blatt, john londa, dave passios, jay simone"
+  },
+  {
+   "name": "David Blatt",
+   "status": "present",
+   "quote": "in attendance: liz murphy neil sullivan, david blatt, john londa, dave passios, jay simone"
+  },
+  {
+   "name": "John Londa",
+   "status": "present",
+   "quote": "in attendance: liz murphy neil sullivan, david blatt, john londa, dave passios, jay simone"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "in attendance: liz murphy neil sullivan, david blatt, john londa, dave passios, jay simone"
+  },
+  {
+   "name": "Jay Simone",
+   "status": "present",
+   "quote": "in attendance: liz murphy neil sullivan, david blatt, john londa, dave passios, jay simone"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The latest grant application for additional energy efficiency projects was approved (no vote recorded).",
+   "quote": "the latest grant application for additional energy efficiency projects was approved"
+  },
+  {
+   "decision": "Work the school energy projects one at a time, starting with the lighting upgrade at Middle High (already ordered, expected done by end of November).",
+   "quote": "first- the lighting upgrade at middle high and have been ordered, anticipate done by end of nov"
+  },
+  {
+   "decision": "Teen Center work to be scheduled for the January break; appliances can be done as the work goes along.",
+   "quote": "teen center will try to schedule work for the jan break- can do the appliances as we go along"
+  },
+  {
+   "decision": "DB will post the letter to Facebook pages, and members will share it a few times on various Lunenburg pages.",
+   "quote": "db will post to facebook pages and we can share a few times on various lunenburg pages"
+  },
+  {
+   "decision": "Dave will send an updated PowerPoint for review (Board of Selectmen presentation).",
+   "quote": "dave will send an updated powerpoint for review."
+  },
+  {
+   "decision": "JL suggested adding a slide before the two options to explain them; the outline was listed (where we are with lighting costs, what is next, detail of options, savings/ROI over time).",
+   "quote": "jl suggests adding a slide in between explaining the two options"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Energy efficiency grant application total",
+   "what_was_recorded": "The final grant application total was given, and it was said to bring the total close to $425,000 over recent years.",
+   "figures_as_printed": [
+    "$69,360.87",
+    "$425,000"
+   ],
+   "quote": "the final number is $69,360.87."
+  },
+  {
+   "topic": "Contractor cold-call estimate for street light replacement",
+   "what_was_recorded": "A contractor estimate that included hiring someone to do the replacement came in at $4500, a little lower than the town's own cost.",
+   "figures_as_printed": [
+    "$4500"
+   ],
+   "quote": "their estimates included hiring someone to do the replacement and their costs were $4500, a little lower than ours."
+  },
+  {
+   "topic": "Light arm cost",
+   "what_was_recorded": "DB researched the cost of a light arm, which was given as $44 from the company XTRALIGHT.",
+   "figures_as_printed": [
+    "$44"
+   ],
+   "quote": "db also researched cost of light arm and cost is $44."
+  },
+  {
+   "topic": "Light fixture cost range",
+   "what_was_recorded": "Light fixtures were said to cost around 100-129 per arm, varying by wattage and height.",
+   "figures_as_printed": [
+    "100- 129"
+   ],
+   "quote": "some of the cost of light fixtures around 100- 129 per arm"
+  },
+  {
+   "topic": "Street light savings horizon (15 vs 20 years)",
+   "what_was_recorded": "Changing the savings projection from 15 years to 20 years was discussed; the result would be over a million.",
+   "figures_as_printed": [
+    "over a million"
+   ],
+   "quote": "additional discussion was had about changing the 15- year savings to 20 years- it would be over a million",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "MAPC street light retrofit grant",
+   "what_was_recorded": "MAPC has a 30% grant for the cost of retrofitting street lights, and Unitil can own the lights.",
+   "figures_as_printed": [
+    "30%"
+   ],
+   "quote": "mapc has a 30% grant for the cost of retrofitting street lights and unitil can own."
+  },
+  {
+   "topic": "Net meter credit on street light account",
+   "what_was_recorded": "There is $40K of net meter credit against the street light account, which would move to another building if lights are bought.",
+   "figures_as_printed": [
+    "$40K"
+   ],
+   "quote": "we have $40k of net meter credit against the street light account"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved 2/27/20 and 3/12/20 minutes",
+   "quote": "unanimously approved both minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comments from the public",
+   "quote": "no comments from the public",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Energy efficiency grant application and school projects",
+   "resolution": "grant application approved; school projects proceeding one at a time",
+   "quote": "the latest grant application for additional energy efficiency projects was approved",
+   "tags": [
+    "grants",
+    "energy efficiency",
+    "school energy projects"
+   ]
+  },
+  {
+   "topic": "Teen Center and incentive paperwork",
+   "resolution": "Teen Center work to be scheduled for January break; incentive paperwork in progress with vendor",
+   "quote": "teen center will try to schedule work for the jan break",
+   "tags": [
+    "Teen Center",
+    "incentives"
+   ]
+  },
+  {
+   "topic": "Board of Selectmen presentation",
+   "resolution": "reviewed; updated PowerPoint to be sent for review",
+   "quote": "the board of selectmen presentation was reviewed",
+   "tags": [
+    "Board of Selectmen",
+    "presentation",
+    "street lights"
+   ]
+  },
+  {
+   "topic": "Letter to the editor and Facebook outreach",
+   "resolution": "DB to post to Facebook; members to share",
+   "quote": "db will post to facebook pages and we can share a few times on various lunenburg pages",
+   "tags": [
+    "public outreach",
+    "letter to the editor"
+   ]
+  },
+  {
+   "topic": "Town Manager concerns and warrant article",
+   "resolution": "warrant article reported as approved 4-1 by select, finance deferred",
+   "quote": "article is in the town warrant- select approved 4-1 and finance deferred.",
+   "tags": [
+    "warrant",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Contractor estimate for street light replacement",
+   "resolution": "contractor estimate shared; no action recorded",
+   "quote": "db shared a doc from a contractor providing a cold call estimate.",
+   "tags": [
+    "street lights",
+    "contractor estimate"
+   ]
+  },
+  {
+   "topic": "Street light conversion slides, costs and savings",
+   "resolution": "discussed; no action recorded beyond slide and PowerPoint follow-ups",
+   "quote": "going back to slides and costs/savings",
+   "tags": [
+    "street lights",
+    "LED conversion",
+    "savings"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "motion to adjourn at 8:12PM",
+   "quote": "motion to adjourn- ns, second, lm 8:12pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Grant spreadsheet for energy efficiency projects (projects, estimated cost, grant allocation per project, total cost and grant funding)",
+   "where": "text",
+   "quote": "db shared his screen showing the spreadsheet noting the projects"
+  },
+  {
+   "name": "Board of Selectmen PowerPoint presentation (prepared by DS)",
+   "where": "text",
+   "quote": "ds prepared a power point slide"
+  },
+  {
+   "name": "Updated PowerPoint to be sent by Dave for review",
+   "where": "text",
+   "quote": "dave will send an updated powerpoint for review."
+  },
+  {
+   "name": "Letter to the editor in the Ledger (David Blatt)",
+   "where": "text",
+   "quote": "david blatt submitted a letter to the editor in ledger about a month ago"
+  },
+  {
+   "name": "Contractor cold-call estimate document",
+   "where": "text",
+   "quote": "db shared a doc from a contractor providing a cold call estimate."
+  },
+  {
+   "name": "Fitchburg's proposal and template (for adaptation to Lunenburg)",
+   "where": "text",
+   "quote": "we could probably use fitchburg's proposal, and a template to adapt for lunenburg's use if that helps."
+  },
+  {
+   "name": "Final lighting report (cited by JL)",
+   "where": "text",
+   "quote": "jl said it's in the report but 2020 is an outlier year."
+  }
+ ],
+ "tags": [
+  "energy efficiency",
+  "grants",
+  "street lights",
+  "LED conversion",
+  "school energy projects",
+  "Board of Selectmen presentation",
+  "public outreach",
+  "minutes approval",
+  "warrant article",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

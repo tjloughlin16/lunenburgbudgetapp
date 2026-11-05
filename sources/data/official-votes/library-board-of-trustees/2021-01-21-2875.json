@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2021-01-21",
  "docid": "2875",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept minutes of December 17 as amended",
+   "motion": "Accept the minutes of December 17 as amended.",
    "moved_by": "Kate",
    "seconded_by": "Laura",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "kate made a motion to accept minutes of december 17 as amended. seconded by laura. motion passed unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Kate",
    "outcome": "passed",
@@ -28,7 +28,253 @@
    "quote": "motion to adjourn by dick, seconded by kate. meeting was adjourned at 7:49 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07485349999999999
+ "dropped_unquoted": 1,
+ "note": "Remote meeting; the minutes say all votes were taken by roll call but print no tallies beyond 'passed unanimously' for the minutes motion. The adjournment outcome is inferred from 'Meeting was adjourned at 7:49 p.m.' Pages 3-8 are blank in the extracted text. Harry Kubetz's role line is from the call to order. Debbie Laffond and Barbara Friedman are mentioned but did not appear as participants in this meeting, so they are not listed as attendees.",
+ "cost_usd": 0.00470422,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy",
+   "role": ""
+  },
+  {
+   "name": "Muir Haman",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy",
+   "role": "Director LPL"
+  },
+  {
+   "name": "Bob Conroy",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy",
+   "role": ""
+  },
+  {
+   "name": "Harry Kubetz",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:45 p.m. by chairperson harry kubetz.",
+   "role": "Chairperson"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy",
+   "role": ""
+  },
+  {
+   "name": "Laura Boussom",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy",
+   "role": ""
+  },
+  {
+   "name": "Maia Wentrup",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy",
+   "role": ""
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy",
+   "role": ""
+  },
+  {
+   "name": "Donna Saia",
+   "status": "absent",
+   "quote": "absent: donna saia",
+   "role": ""
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Muir recommended the trustees re-read and review the Trustee handbook; the board took up the handbook review at the meeting.",
+   "quote": "muir recommended we re-read/review the trustee handbook."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Director's report: budget status",
+   "what_was_recorded": "The director reported the fiscal year was about 58% complete, the budget was on schedule, and salaries were steady, with higher electricity and heating costs ahead.",
+   "figures_as_printed": [
+    "58%"
+   ],
+   "quote": "about 58% of the year is completed. the budget is on schedule, salaries are steady."
+  },
+  {
+   "topic": "CWMARS network membership",
+   "what_was_recorded": "The CWMARS network membership has been paid, and the library has some catching up to do on library materials.",
+   "figures_as_printed": [],
+   "quote": "the cwmars network membership has been paid. have some catching up to do on library materials."
+  },
+  {
+   "topic": "Strategic plan consultant payments",
+   "what_was_recorded": "The library has been paying the strategic plan consultant.",
+   "figures_as_printed": [],
+   "quote": "we have been paying for the strategic plan consultant."
+  },
+  {
+   "topic": "Higher utility costs",
+   "what_was_recorded": "The library is entering the higher cost months for electricity and heating.",
+   "figures_as_printed": [],
+   "quote": "we are entering into the higher cost months for electricity and heating."
+  },
+  {
+   "topic": "Annual membership fees and subscriptions",
+   "what_was_recorded": "Annual membership fees and subscriptions are coming up in the spring.",
+   "figures_as_printed": [],
+   "quote": "annual membership fees and subscriptions are coming up in the spring."
+  },
+  {
+   "topic": "FY22 budget",
+   "what_was_recorded": "The director received the FY22 target budget from the town manager and budget requests were submitted; a meeting on Monday morning was set to discuss them.",
+   "figures_as_printed": [],
+   "quote": "fy22 budget: muir got the target budget from the town mgr. budget requests were submitted."
+  },
+  {
+   "topic": "GoPro camera purchase",
+   "what_was_recorded": "The library bought a GoPro camera to help create content, funded from the library materials budget.",
+   "figures_as_printed": [],
+   "quote": "the library has purchased a gopro camera to help create content. it was funded from the library materials"
+  },
+  {
+   "topic": "State and town revenue",
+   "what_was_recorded": "The town manager and state representatives indicated positive state revenue, and town revenue is on target.",
+   "figures_as_printed": [],
+   "quote": "michael-ray met with the town manager and our state representatives and said the initial indications from the state are positive revenue-wise."
+  },
+  {
+   "topic": "Director's salary increase",
+   "what_was_recorded": "The board thanked a trustee for helping move the director's salary increase up to January.",
+   "figures_as_printed": [],
+   "quote": "harry thanked michael-ray for helping to move up muir's salary increase to january."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved as amended",
+   "quote": "kate made a motion to accept minutes of december 17 as amended. seconded by laura.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received, no action",
+   "quote": "about 58% of the year is completed. the budget is on schedule, salaries are steady.",
+   "tags": [
+    "director report",
+    "budget",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Trustee Handbook Review",
+   "resolution": "reviewed",
+   "quote": "muir recommended we re-read/review the trustee handbook.",
+   "tags": [
+    "trustee handbook",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Strategic Plan Subcommittee Update",
+   "resolution": "no action",
+   "quote": "the selection of barbara friedman as consultant was finalized.",
+   "tags": [
+    "strategic plan",
+    "consultant"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "no action",
+   "quote": "no january meeting. the pop-up book sale is still going on weather permitting.",
+   "tags": [
+    "friends of library"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action",
+   "quote": "michael-ray met with the town manager and our state representatives",
+   "tags": [
+    "board comments",
+    "revenue"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 7:49 p.m.",
+   "quote": "motion to adjourn by dick, seconded by kate.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "January 21st 2021 Agenda",
+   "where": "list",
+   "quote": "attached documents o january 21st 2021 agenda o january 2021 director's report"
+  },
+  {
+   "name": "January 2021 Director's Report",
+   "where": "list",
+   "quote": "attached documents o january 21st 2021 agenda o january 2021 director's report"
+  },
+  {
+   "name": "January 2021 Adult Services Report",
+   "where": "list",
+   "quote": "o january 2021 adult services report"
+  },
+  {
+   "name": "January 2021 Youth Services Report",
+   "where": "list",
+   "quote": "o january 2021 youth services report o january 2021 teen room highlights"
+  },
+  {
+   "name": "January 2021 Teen Room Highlights",
+   "where": "list",
+   "quote": "o january 2021 youth services report o january 2021 teen room highlights"
+  },
+  {
+   "name": "Trustee handbook",
+   "where": "text",
+   "quote": "muir recommended we re-read/review the trustee handbook."
+  },
+  {
+   "name": "new trustee checklist",
+   "where": "text",
+   "quote": "he reviewed the new trustee checklist and some highlights from the trustee handbook"
+  },
+  {
+   "name": "continuity of operations outline plan",
+   "where": "text",
+   "quote": "muir submitted the continuity of operations outline plan."
+  }
+ ],
+ "tags": [
+  "library board",
+  "remote meeting",
+  "budget",
+  "director report",
+  "strategic plan",
+  "trustee handbook",
+  "FY22 budget",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

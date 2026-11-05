@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2019-10-17",
  "docid": "2854",
@@ -12,23 +12,278 @@
  },
  "votes": [
   {
-   "motion": "approve minutes from September 2019",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion to approve minutes was unanimously approved.",
+   "motion": "Approve the minutes for September 2019.",
    "moved_by": "",
+   "outcome": "passed (unanimous)",
+   "procedural": true,
+   "quote": "the minutes for september 2019 were reviewed. motion to approve minutes was unanimously approved.",
    "seconded_by": ""
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Donna",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn by donna, seconded by dick. meeting was adjourned at 8:15pm.",
-   "moved_by": "Donna",
    "seconded_by": "Dick"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0805535
+ "dropped_unquoted": 1,
+ "note": "Text is a partial extraction: pages 3-7 are blank and the five attached documents are listed by title only, with no content. The minutes approval records no mover, seconder or tally beyond 'unanimously'. The adjournment records no tally. Public comment: 'There was no public comment'. Attendance line 'Attending:' is used for those present; the minutes do not record any remote participation.",
+ "cost_usd": 0.0053522199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, donna saiia, muir ha man - director lpl, bob conroy"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, donna saiia, muir ha man - director lpl, bob conroy"
+  },
+  {
+   "name": "Kate McCarron",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, donna saiia, muir ha man - director lpl, bob conroy"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, donna saiia, muir ha man - director lpl, bob conroy"
+  },
+  {
+   "name": "Muir Ha man",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, donna saiia, muir ha man - director lpl, bob conroy"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, donna saiia, muir ha man - director lpl, bob conroy"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:49 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Myleen Mallari",
+   "role": "Town Treasurer",
+   "status": "present",
+   "quote": "myleen mallari - town treasurer, karen brochu - town accountant"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "present",
+   "quote": "myleen mallari - town treasurer, karen brochu - town accountant"
+  },
+  {
+   "name": "Jim Besarkarski",
+   "role": "Chairman of Trust Fund Commission",
+   "status": "present",
+   "quote": "jim besarkarski - chairman of trust fund commission, sarah davis - edward jones representative"
+  },
+  {
+   "name": "Sarah Davis",
+   "role": "Edward Jones Representative",
+   "status": "present",
+   "quote": "sarah davis - edward jones representative, nick davis - edward jones representative"
+  },
+  {
+   "name": "Nick Davis",
+   "role": "Edward Jones Representative",
+   "status": "present",
+   "quote": "sarah davis - edward jones representative, nick davis - edward jones representative"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: lars widstrand"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Myleen Mallari and Muir Ha man volunteered to represent the BOT and work with Edward Jones to help answer trust fund questions.",
+   "quote": "myleen and muir volunteered to represent the bot and work with edward jones to help answer questions."
+  },
+  {
+   "decision": "Nick Davis volunteered to investigate the trust fund questions, requesting account statements and trust fund documents, and gave general guidelines for choosing a financial advisor.",
+   "quote": "nick davis asked for account statements and any available trust fund documents and volunteered to investigate these questions"
+  },
+  {
+   "decision": "Karen Brochu and Jim Besarkarski suggested the board meet with Bartholomew to check all available options (suggestion only; no action recorded).",
+   "quote": "karen and jim suggested we should meet with bartholomew to check all options that might be available."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library trust fund balances",
+   "what_was_recorded": "Harry reported the Bartholomew fund holds about $46k, of which $11k is usable, and the Touchstone fund about $25k; he also noted differing returns between the two.",
+   "figures_as_printed": [
+    "$46k",
+    "$11k",
+    "$25k"
+   ],
+   "quote": "there is approximately $46k in bartholomew of which $11k is usable. the touchstone fund has approximately $25k."
+  },
+  {
+   "topic": "Trust fund ownership and tax ID",
+   "what_was_recorded": "Myleen noted the library trust funds sit under the town tax ID although they are not town funds, and questions remain on what can be done with them.",
+   "figures_as_printed": [],
+   "quote": "the library trust funds are under the town tax id even though they are not town funds."
+  },
+  {
+   "topic": "State aid estimate",
+   "what_was_recorded": "Muir estimated the library's state aid for next year at $16,524.",
+   "figures_as_printed": [
+    "$16,524"
+   ],
+   "quote": "muir estimated our state aid for next year at $16,524."
+  },
+  {
+   "topic": "Friends of LPL book and bake sale",
+   "what_was_recorded": "The book and bake sale generated just under $2600 for the Friends of LPL.",
+   "figures_as_printed": [
+    "$2600"
+   ],
+   "quote": "book and bake sale generated just under $2600 for the friends."
+  },
+  {
+   "topic": "Director's evaluation and raise",
+   "what_was_recorded": "Dick said the Director's spring evaluation and raise should be put into the budget upfront, before the budget is done, so any increase can be built in. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "noted that we should get the evaluation and raise into the budget upfront before the budget is done so we can build any increase into the budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no public comment",
+   "quote": "the lplbt meeting was called to order at 6:49 p.m. by chairperson harry kubetz. public comment  there was no public comme",
+   "tags": [
+    "public comment"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved unanimously",
+   "quote": "motion to approve minutes was unanimously approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Trust Fund Expenditure Guidance/Process/Progress",
+   "resolution": "no action; volunteers named to work with Edward Jones",
+   "quote": "myleen and muir volunteered to represent the bot and work with edward jones to help answer questions.",
+   "tags": [
+    "trust funds",
+    "Edward Jones",
+    "financial advisor"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; no action recorded",
+   "quote": "the library is one third of the way through the year and is on schedule budget-wise.",
+   "tags": [
+    "director",
+    "budget",
+    "state aid",
+    "MBLC report"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "received",
+   "quote": "book and bake sale generated just under $2600 for the friends.",
+   "tags": [
+    "Friends of LPL",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action recorded",
+   "quote": "dick mentioned again that the bot is not listed on the town website under boards and commissions.",
+   "tags": [
+    "town website",
+    "director evaluation"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:15pm",
+   "quote": "motion to adjourn by donna, seconded by dick. meeting was adjourned at 8:15pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "October 17, 2019 Agenda",
+   "where": "list",
+   "quote": "attached documents o october 17, 2019 agenda o october director's report o october 2019 adult services report"
+  },
+  {
+   "name": "October Director’s Report",
+   "where": "list",
+   "quote": "attached documents o october 17, 2019 agenda o october director's report o october 2019 adult services report"
+  },
+  {
+   "name": "October 2019 YA Report",
+   "where": "list",
+   "quote": "o october 2019 ya report o october 2019 children's area report"
+  },
+  {
+   "name": "October 2019 Children’s Area Report",
+   "where": "list",
+   "quote": "o october 2019 ya report o october 2019 children's area report"
+  },
+  {
+   "name": "Trust fund usage spreadsheet",
+   "where": "text",
+   "quote": "donna noted that there is a spreadsheet available which specifies the usage."
+  },
+  {
+   "name": "MBLC annual report spreadsheet",
+   "where": "text",
+   "quote": "muir is working on a spreadsheet for the mblc annual report."
+  }
+ ],
+ "tags": [
+  "library trust funds",
+  "Edward Jones",
+  "trust fund expenditure",
+  "director's report",
+  "state aid",
+  "Friends of LPL",
+  "budget",
+  "director evaluation",
+  "minutes approval",
+  "town website"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {
+  "documents_and_exhibits": 1
+ }
 }

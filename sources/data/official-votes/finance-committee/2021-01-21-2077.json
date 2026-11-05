@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2021-01-21",
  "docid": "2077",
@@ -12,15 +12,271 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
-   "outcome": "unanimous",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chris",
    "seconded_by": "Jay",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "motion - chris seconded - jay unanimous"
+   "quote": "motion - chris seconded - jay unanimous - 9:24"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10271549999999999
+ "dropped_unquoted": 1,
+ "note": "OCR text from macOS Vision, with many errors (e.g., 'Terrri', 'tunded', 'Worcester Country', 'Heather L.' vs 'Heather S.' distinguished by context). Page 4 begins mid-sentence ('necessarily better.'), so some discussion is incomplete. Only one motion is recorded (adjournment, 'Unanimous'); no other votes are printed. Attendance lists Peter Beardmore and Heather Sroka as present; the Absent line is blank. Heather Sroka and Dave Passios are cited by first name only in the text. The role of Mr. Cassidy is not printed (he is referred to in the text as speaking for the School side and is named as the person to whom questions were directed). Dollar figures are as the OCR printed them.",
+ "cost_usd": 0.006580819999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm and read the covid-19 / zoom meeting advisory statement."
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Heather L.",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "presented by town manager heather l."
+  },
+  {
+   "name": "Mr. Cassidy",
+   "role": "",
+   "status": "present",
+   "quote": "mr. cassidy - can you repeat the question."
+  },
+  {
+   "name": "Dr. Burnham",
+   "role": "",
+   "status": "not stated",
+   "quote": "dr. burnham - asked mr. cassidy if it is or is not in the information provided."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair directed members to email her with anything they want on the agenda.",
+   "quote": "terri - email her with anything for the agenda."
+  },
+  {
+   "decision": "The School Department is scheduled to meet with Fin Com on 3/18, and the School Committee will vote on 3/17.",
+   "quote": "school is scheduled for the 3/18 meeting with fin com and the school committee will vote 3/17."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "State-mandated infrastructure bridge repair and Small Bridge Grant",
+   "what_was_recorded": "The Town will apply for a Small Bridge Grant; the state-mandated repair is said to cost $400,000 plus.",
+   "figures_as_printed": [
+    "$400,000"
+   ],
+   "quote": "this repair has been mandated by the state and will cost $400,000 plus."
+  },
+  {
+   "topic": "Ritter Building Envelope Repairs",
+   "what_was_recorded": "The Ritter Building envelope repair estimate rose from $120,000 to $200,000 after a second estimate came back much higher.",
+   "figures_as_printed": [
+    "$120,000",
+    "$200,000"
+   ],
+   "quote": "ritter building envelope repairs $120,000 increase to $200,000 the 2nd estimate came back much higher than original."
+  },
+  {
+   "topic": "School capital requests and THES / LPS projects",
+   "what_was_recorded": "The School Department's capital requests totaled $357,000 and it received $67,000 for the THES Envelope Project, leaving $290,000 for the LPS Air Conditioning Project unfunded.",
+   "figures_as_printed": [
+    "$357,000",
+    "$67,000",
+    "$290,000"
+   ],
+   "quote": "their total request amount was for $357,000 and they only received $67,000 to fund the thes envelope project"
+  },
+  {
+   "topic": "Town salary reserve fund",
+   "what_was_recorded": "The Town side has historically carried a salary reserve fund of $64,000, which the Town Manager said covers the COLA impact in the first year.",
+   "figures_as_printed": [
+    "$64,000"
+   ],
+   "quote": "the town side has historically had a salary reserve fund of $64,000."
+  },
+  {
+   "topic": "School one-year salary reserve",
+   "what_was_recorded": "The one-year School salary reserve presented at the School Committee meeting is $282,000.",
+   "figures_as_printed": [
+    "$282,000"
+   ],
+   "quote": "can only speak to the one-year salary reserve presented at last night's school committee meeting - $282,000."
+  },
+  {
+   "topic": "Five-year forecast staffing plan total (Slide 36)",
+   "what_was_recorded": "A member said the Slide 36 figures are on the order of $46M for the entire Town including the Schools.",
+   "figures_as_printed": [
+    "$46M"
+   ],
+   "quote": "slide 36 the numbers are on the order of $46m that's for the entire town inclusive of the schools."
+  },
+  {
+   "topic": "State aid (Governor's budget)",
+   "what_was_recorded": "The Town Manager said the Governor's budget shows $350M more in aid than the same quarter last year.",
+   "figures_as_printed": [
+    "$350M"
+   ],
+   "quote": "they have $350m more the same quarter last year."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Heather L.",
+   "stated_role": "",
+   "topic": "Water District special meeting announcement",
+   "quote": "8. public comment - heather l. announcement - there is a water district special meeting 1/27 on expansion of the district on the o'brien homes on howard st."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm and read the covid-19 / zoom meeting advisory statement.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Chair Report",
+   "resolution": "no action",
+   "quote": "there will be a community outreach meeting in regard to the adult use marijuana facility at 7:00 p.m. on february 4th.",
+   "tags": [
+    "marijuana facility",
+    "community outreach"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "quote": "3. public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Capital Plan Project Presentation",
+   "resolution": "presented; questions and discussion, no action",
+   "quote": "4. capital plan project presentation (attached) presented by town manager heather l.",
+   "tags": [
+    "capital plan",
+    "infrastructure",
+    "school buildings",
+    "THES",
+    "LPS"
+   ]
+  },
+  {
+   "topic": "Five Year Forecast Presentation",
+   "resolution": "presented; questions on salaries, COLAs and salary reserves; second look requested, no action",
+   "quote": "5. five year forecast presentation (attached) presented by town manager heather l.",
+   "tags": [
+    "five-year forecast",
+    "salaries",
+    "COLA",
+    "school budget",
+    "state aid"
+   ]
+  },
+  {
+   "topic": "Reports",
+   "resolution": "discussion; no action",
+   "quote": "7. reports dave - no meeting since the last week.",
+   "tags": [
+    "capital planning policy",
+    "budget season",
+    "debt exclusion",
+    "ballot",
+    "school department schedule"
+   ]
+  },
+  {
+   "topic": "Public Comment (Water District announcement)",
+   "resolution": "no action",
+   "quote": "8. public comment - heather l. announcement - there is a water district special meeting 1/27 on expansion of the district on the o'brien homes on howard st.",
+   "tags": [
+    "water district",
+    "announcement"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned unanimously at 9:24",
+   "quote": "motion - chris seconded - jay unanimous - 9:24",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Capital Plan Project Presentation (Attached)",
+   "where": "list",
+   "quote": "4. capital plan project presentation (attached) presented by town manager heather l."
+  },
+  {
+   "name": "Five Year Forecast Presentation (Attached)",
+   "where": "list",
+   "quote": "5. five year forecast presentation (attached) presented by town manager heather l."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "capital plan",
+  "five-year forecast",
+  "school budget",
+  "salary reserve",
+  "COLA",
+  "state aid",
+  "debt exclusion",
+  "ballot",
+  "Zoom meeting",
+  "2021"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "capital plan project presentation (attached)"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

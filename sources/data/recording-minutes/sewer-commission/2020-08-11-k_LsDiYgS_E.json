@@ -1,0 +1,576 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "sewer-commission",
+ "board": "Sewer Commission",
+ "video_title": "Sewer Commission",
+ "meeting_date": "2020-08-11",
+ "video_id": "k_LsDiYgS_E",
+ "video_url": "https://www.youtube.com/watch?v=k_LsDiYgS_E",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/sewer-commission/2020-08-11-k_LsDiYgS_E.json",
+  "sha256": "228ac32ab8f01f34951e5f38492b3c0e725819504ee1ad332ae445b943c95434",
+  "caption_lines": 228,
+  "segments": 2099
+ },
+ "recording": {
+  "duration_s": 4796,
+  "duration": "1:19",
+  "spoken_chars": 60061,
+  "words_approx": 10010
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08112020-5671",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2020-08-11-agenda-5671.txt",
+   "path": "sources/meetings/sewer-commission/2020-08-11-agenda-5671.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08112020-5671",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2020-08-11-minutes-5671.txt",
+   "path": "sources/meetings/sewer-commission/2020-08-11-minutes-5671.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-03T18:34:01Z",
+  "cost_usd": 0.173029
+ },
+ "minutes": {
+  "headline": "Sewer Commission backed moving billing to the new meter system first and sent its consultant's report questions to Woodard & Curran.",
+  "summary": "The Sewer Commission met remotely and discussed the draft Woodard & Curran I&I report, the business manager's meter import project, and the pump station operations RFP. It voted to keep a commissioner as liaison to send his list of questions to the consultant, and approved the flow assessment contracts and prior minutes. Pump station jetting findings, wipes clogging pumps and failing manhole covers were raised in public comment by the DPW director.",
+  "attendees": [
+   {
+    "name_as_heard": "dave mcdonald",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "john reynolds",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "brett",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "jack",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "rob",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "mike",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "kyle luck",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "barb",
+    "role": "business manager"
+   },
+   {
+    "name_as_heard": "jane",
+    "role": "note taker"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 250,
+    "topic": "A member reported on pump station jetting, wipes clogging pumps, sand infiltration needing camera work, and shoddy manhole covers needing repair."
+   },
+   {
+    "t": 4284,
+    "topic": "A commissioner asked that the earlier jetting and manhole comments be placed on a future agenda."
+   }
+  ],
+  "tags": [
+   "contracts-and-unions",
+   "fees",
+   "public-comment",
+   "superintendent-report",
+   "technology",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 2532,
+    "motion": "Keep Carl as liaison with the third party, forward his list of questions to Woodard and Curran, and work toward a meeting to discuss answers.",
+    "moved_by": "brett",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3252,
+    "motion": "Accept the flow assessment monitoring contract and the equipment leasing contract.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4002,
+    "motion": "Approve the minutes of 7/28.",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 4750,
+    "motion": "Adjourn.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 166,
+    "topic": "Irrigation meter fee",
+    "what_was_said": "Twelve accounts have not paid the annual fee and will get no irrigation credit on the next sewer invoice.",
+    "figures_as_heard": [
+     "fifty dollar fee"
+    ]
+   },
+   {
+    "t": 1401,
+    "topic": "Meter import project hours",
+    "what_was_said": "Estimate rose from the earlier figure to a larger number of hours; the town manager is aware and budget hours were allocated.",
+    "figures_as_heard": [
+     "150 hours",
+     "40 and 50 hours"
+    ]
+   },
+   {
+    "t": 3012,
+    "topic": "Flow assessment maintenance contract",
+    "what_was_said": "Quarterly maintenance cost is unchanged from past years; approval to sign was sought.",
+    "figures_as_heard": [
+     "99.60"
+    ]
+   },
+   {
+    "t": 3099,
+    "topic": "Flow meter equipment lease",
+    "what_was_said": "Lease covers repair and replacement of obsolete equipment, and is in the budget separate from the main flow contract.",
+    "figures_as_heard": [
+     "5400",
+     "10 000"
+    ]
+   },
+   {
+    "t": 4557,
+    "topic": "Wipes damage cost recovery",
+    "what_was_said": "The chair asked that pump damage costs from COVID wipes be checked for possible reimbursement.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1802,
+    "decision": "Business manager authorized to start converting the billing/meter import project and provide a schedule to the commission, town manager and others."
+   },
+   {
+    "t": 1884,
+    "decision": "Draft report review likely pushed to the 25th meeting with the final report targeted for September 11, if the consultant agrees."
+   },
+   {
+    "t": 3379,
+    "decision": "One or two members to attend the pre-bid conference; a Zoom link to be sent to members."
+   },
+   {
+    "t": 4068,
+    "decision": "New legal counsel policy to be sent next week for approval."
+   },
+   {
+    "t": 4111,
+    "decision": "Irrigation meter policy public hearing to be held at the 25th meeting and again later."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 22,
+    "t_end": 145,
+    "topic": "Call to order, roll call, remote meeting rules",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 145,
+    "t_end": 250,
+    "topic": "Announcements: irrigation meter upgrades and unpaid fees",
+    "resolution": "informational",
+    "tags": [
+     "fees",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 250,
+    "t_end": 747,
+    "topic": "Public comment: jetting, wipes, manhole covers; thanks to retiring member",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 747,
+    "t_end": 2990,
+    "topic": "Woodard & Curran draft I&I report and meter import billing project",
+    "resolution": "voted",
+    "tags": [
+     "water-sewer",
+     "contracts-and-unions",
+     "technology"
+    ]
+   },
+   {
+    "t_start": 2990,
+    "t_end": 3294,
+    "topic": "Flow assessment contracts",
+    "resolution": "voted",
+    "tags": [
+     "contracts-and-unions",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 3294,
+    "t_end": 3879,
+    "topic": "RFP for pump station operation and maintenance",
+    "resolution": "informational",
+    "tags": [
+     "contracts-and-unions",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 3879,
+    "t_end": 4111,
+    "topic": "Bright Farms, grease trap program, FY20 budget, minutes, legal policy",
+    "resolution": "voted",
+    "tags": [
+     "water-sewer",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 4111,
+    "t_end": 4784,
+    "topic": "Business manager report, agenda setting, wipes, schedule, adjournment",
+    "resolution": "voted",
+    "tags": [
+     "water-sewer",
+     "fees"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Roll call is partly garbled and the member count and names are uncertain.",
+   "Vote counts are not stated; only voice 'hi' responses appear.",
+   "Which pump station dollar amounts, if any, were discussed is not stated."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 312,
+    "kind": "safety",
+    "about": "Wipes in pump stations can damage pump impellers.",
+    "who": "a member (DPW director)",
+    "words_as_heard": "once that stuff gets tied up into the impellers it can damage the pump"
+   },
+   {
+    "t": 1151,
+    "kind": "condition",
+    "about": "A member wants the billing system tested before it goes live.",
+    "who": "a member",
+    "words_as_heard": "if we're going to do it let's do it right and test the system before we go live"
+   },
+   {
+    "t": 3566,
+    "kind": "liability or legal",
+    "about": "Staff at the pre-bid conference must not give wrong answers or debate among themselves.",
+    "who": "the chair",
+    "words_as_heard": "it's better to wait and contemplate and get the right answer than it is to obviously to give them the wrong answer"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "name_as_heard": "Woodard and Curran draft report",
+    "kind": "report",
+    "t": 749,
+    "words_as_heard": "both the draft uh woodard and curran report",
+    "shown": true
+   },
+   {
+    "name_as_heard": "Carl's input/notes",
+    "kind": "memo",
+    "t": 749,
+    "words_as_heard": "carl's input towards the draft report",
+    "shown": true
+   },
+   {
+    "name_as_heard": "Flow assessment contract",
+    "kind": "contract or agreement",
+    "t": 3012,
+    "words_as_heard": "we've received the flow assessment contract",
+    "shown": true
+   },
+   {
+    "name_as_heard": "Equipment lease contract",
+    "kind": "contract or agreement",
+    "t": 3099,
+    "words_as_heard": "contract for equipment of the lease equipment",
+    "shown": true
+   },
+   {
+    "name_as_heard": "RFP",
+    "kind": "other",
+    "t": 3315,
+    "words_as_heard": "it was published we've gotten six responses",
+    "shown": false
+   },
+   {
+    "name_as_heard": "FY20 budget",
+    "kind": "budget document",
+    "t": 3961,
+    "words_as_heard": "2020 budget that was in your package is pretty much the final numbers",
+    "shown": true
+   },
+   {
+    "name_as_heard": "Minutes of 7/28",
+    "kind": "prior minutes",
+    "t": 4002,
+    "words_as_heard": "minutes for 728",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "sewer-infiltration-costs",
+    "title": "Sewer infiltration costs",
+    "question": "What would an inflow and infiltration program and expanded line jetting cost the sewer enterprise?",
+    "t": 437,
+    "words_as_heard": "the best bang we have for our buck is getting on a jetting program a more extensive jetting program",
+    "data_in_play": [
+     "150 hours"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "sewer-pump-contract",
+    "title": "Sewer pump contract",
+    "question": "What will the new pump station operations contract cost and who bid?",
+    "t": 3294,
+    "words_as_heard": "we've gotten um six responses",
+    "data_in_play": [
+     "six responses"
+    ],
+    "existing": "thread:sewer-pump-procurement"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Sewer Commission voted to keep a commissioner as liaison with the third party and forward his list of questions on the draft I&I report to Woodard & Curran.",
+    "t": 2532
+   },
+   {
+    "line": "The commission voted to accept the flow assessment monitoring contract and the equipment leasing contract.",
+    "t": 3252
+   },
+   {
+    "line": "The business manager was authorized to start converting the billing meter import project and to give the commission and town manager a schedule.",
+    "t": 1802
+   },
+   {
+    "line": "Review of the draft report is likely to move to the 25th meeting, with a final report targeted for September 11 if the consultant agrees.",
+    "t": 1884
+   },
+   {
+    "line": "The irrigation meter policy public hearing is to be held at the 25th meeting and again later.",
+    "t": 4111
+   }
+  ],
+  "why_it_matters": [
+   "Sewer bills depend on the meter data and billing system now being converted, and the consultant's I&I report will shape what the commission does about groundwater and stormwater entering the sewer.",
+   "The irrigation meter policy hearing and the pump station operations bid affect how irrigation credits are given and who runs and maintains the pump stations, and the town budget, mostly taxes, and sewer rates pay for repairs such as wipes damage."
+  ],
+  "watch_next": [
+   "Public hearing on the irrigation meter policy at the 25th meeting.",
+   "Final Woodard & Curran I&I report, targeted for September 11 if the consultant agrees."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-03T18:34:08Z",
+   "cost_usd": 0.027753100000000003
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08112020-5671",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2020-08-11-minutes-5671.txt",
+   "path": "sources/meetings/sewer-commission/2020-08-11-minutes-5671.pdf"
+  },
+  "official_sha256": "717b662e1dd078189cf4f304d89577a83cd548a88e71a5de2ebbb7970c5109d7",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on the one clear vote (accepting the flow assessment contracts) and the $5,400 lease, but differ on several items. The main difference is that our minutes record a passed vote on Carl as liaison, and the official minutes show only a suggestion with no vote. They also differ on who attends the pre-bid conference, whether the legal policy goes out for approval or discussion, the project hours, and the attendee list.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 0,
+   "discrepancy": 6,
+   "only_in_ours": 3,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to accept flow assessment monitoring contract and equipment leasing contract",
+    "ours": "Accept the flow assessment monitoring contract and the equipment leasing contract. — passed",
+    "official": "motion: john r. second: brett r. to accept the flow assessment monitoring contract and the equipment leasing contract. vote: brett-aye, john-aye and dave-aye.",
+    "note": "Both records show the motion passing; the official minutes give a 3-0 roll call.",
+    "t": 3252
+   },
+   {
+    "kind": "agree",
+    "about": "Flow meter equipment lease amount",
+    "ours": "Flow meter equipment lease: 5400, 10 000",
+    "official": "the agreement is for $5,400 to cover the leasing for the year.",
+    "note": "The $5,400 lease figure matches; the '10 000' in ours is not in the official text.",
+    "t": 3099
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote on Carl as liaison and forwarding questions to Woodard and Curran",
+    "ours": "Keep Carl as liaison with the third party, forward his list of questions to Woodard and Curran, and work toward a meeting to discuss answers. — passed",
+    "official": "dave also suggested that barb contact w&c to let them know what was discussed and ask them what they can offer.",
+    "note": "Ours records a passed vote; the official minutes show only a suggestion by Dave and no vote, and do not mention Carl remaining liaison. Check the recording and the official minutes.",
+    "t": 2532
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who attends the pre-bid conference",
+    "ours": "One or two members to attend the pre-bid conference; a Zoom link to be sent to members.",
+    "official": "barb, jack and brett will be on the call.",
+    "note": "Ours says one or two members; the official minutes name Barb, Jack and Brett. Check who is attending.",
+    "t": 3379
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Legal policy: approval vs discussion",
+    "ours": "New legal counsel policy to be sent next week for approval.",
+    "official": "barb will send it out to the commission for discussion at a future meeting.",
+    "note": "Ours says it is sent for approval next week; the official minutes say it goes out for discussion at a future meeting. Check the recording on timing and purpose.",
+    "t": 4068
+   },
+   {
+    "kind": "agree",
+    "about": "Business manager to provide schedule for meter import project",
+    "ours": "Business manager authorized to start converting the billing/meter import project and provide a schedule to the commission, town manager and others.",
+    "official": "dave asked barb to give the commission and town manager a schedule for completing the project.",
+    "note": "Both have Barb providing a schedule to the commission and town manager.",
+    "t": 1802
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Meter import project hours",
+    "ours": "Meter import project hours: 150 hours, 40 and 50 hours",
+    "official": "the town manager okayed having jane work up to 19 hrs/week, to help barb with the project.",
+    "note": "Ours gives 150, 40 and 50 hours; the official minutes give only up to 19 hrs/week for Jane. Check the recording for the hours discussed.",
+    "t": 1401
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Irrigation meter fee",
+    "ours": "Irrigation meter fee: fifty dollar fee",
+    "official": "",
+    "note": "The official minutes print no dollar figure for the irrigation fees.",
+    "t": 166
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Flow assessment maintenance contract amount",
+    "ours": "Flow assessment maintenance contract: 99.60",
+    "official": "",
+    "note": "The official minutes print no amount for the monitoring contract. The captioned figure may be misheard.",
+    "t": 3012
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Draft report review timing",
+    "ours": "Draft report review likely pushed to the 25th meeting with the final report targeted for September 11, if the consultant agrees.",
+    "official": "",
+    "note": "The official minutes do not give this schedule; they only say 'barb noted that the draft report was'.",
+    "t": 1884
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Irrigation meter policy public hearing",
+    "ours": "Irrigation meter policy public hearing to be held at the 25th meeting and again later.",
+    "official": "the changes are the policy name, fees and repercussions for non-payment.",
+    "note": "The official minutes describe the policy changes but record no public hearing. Check whether a hearing was scheduled.",
+    "t": 4111
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Bright Farms on 8/25 agenda",
+    "ours": "",
+    "official": "they will be on the agenda of 8/25 to discuss the project.",
+    "note": "Our minutes do not mention Bright Farms or the agenda placement."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Jack to calculate clog costs and ask about Safe Act reimbursement",
+    "ours": "",
+    "official": "dave suggested jack calculate the cost due to the clogs and ask heather if they can get reimbursement from the safe act.",
+    "note": "Our minutes omit this action item."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Barb to email Brett and Mike about next flow meter assessment",
+    "ours": "",
+    "official": "barb will email brett and mike when the next assessment is scheduled.",
+    "note": "Our minutes omit this follow-up."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Meter import to be operational before adding to contract",
+    "ours": "",
+    "official": "the commission agreed that they need to proceed with the meter import and get it operational, before adding it to the contract.",
+    "note": "Our minutes omit this agreement."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Brett's request for agenda items on cameraing lines and manhole covers",
+    "ours": "",
+    "official": "brett asked to add discussion of jack's suggestions for cameraing lines and repairing manhole covers.",
+    "note": "Our minutes omit this request."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees",
+    "ours": "dave mcdonald (chair); john reynolds; brett; jack; rob; mike; kyle luck; barb; jane (note taker)",
+    "official": "public comment-jack said he had scheduled jetting of the lines, that had been put off from the last fiscal year.",
+    "note": "The official minutes confirm Dave, Brett, John, Jack and Barb. Our list adds Rob, Mike, Kyle Luck and Jane, and the official roll call has only three voting members, so Rob and Kyle may be misheard. Check the attendance list."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-03T18:35:13Z",
+   "cost_usd": 0.0520911
+  }
+ }
+}

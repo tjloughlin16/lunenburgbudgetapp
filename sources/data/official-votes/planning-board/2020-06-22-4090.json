@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2020-06-22",
  "docid": "4090",
@@ -12,15 +12,106 @@
  },
  "votes": [
   {
-   "motion": "close the Hearing for 190 Electric Avenue, Stormwater Permit",
-   "moved_by": "Tanner Cole",
-   "seconded_by": "Paula Bertram",
+   "motion": "Close the public hearing for 190 Electric Avenue, stormwater permit.",
+   "moved_by": "T. Cole",
+   "seconded_by": "P. Bertram",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "t. cole made motion to close the hearing for 190 electric avenue, stormwater permit , p. bertram seconded, roll call vote - p. bertram, aye; t. cole, aye; m. allison, aye. vote passed 3-0."
+   "quote": "t. cole made motion to close the hearing for 190 electric avenue, stormwater permit , p. bertram seconded, roll call vote - p. bertram, aye; t. cole, aye; m. allison, aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. These are printed minutes of a planning board hearing continuation; the only motion voted on was the procedural motion to close the hearing.",
- "cost_usd": 0.0807035
+ "note": "Remote Zoom meeting under the Governor's COVID-19 order. Minutes record one motion (closing the hearing). No public comment section is recorded. No dollar figures appear in the text.",
+ "cost_usd": 0.00320702,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, la nd use director: matthew allison, present; tanner cole, present; paula bertram, present."
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, la nd use director: matthew allison, present; tanner cole, present; paula bertram, present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, la nd use director: matthew allison, present; tanner cole, present; paula bertram, present."
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, la nd use director"
+  },
+  {
+   "name": "Brandon Smith",
+   "role": "representing the applicant (Borrego Solar Systems, Inc.)",
+   "status": "present",
+   "quote": "the applicant was represented by brandon smith, borrego solar systems, inc."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Continued public hearing: stormwater management special permit, 2.4 MW photovoltaic system at 190 Electric Avenue (Borrego Solar Systems, Inc.)",
+   "resolution": "hearing closed, 3-0 vote",
+   "quote": "the hearing continuation was to hear and discuss a stormwater management special permit under ch. 204 of the code of the town of lunenburg for a 2.4 mw photovoltaic system",
+   "tags": [
+    "stormwater",
+    "special permit",
+    "solar",
+    "public hearing"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "GEI Review Letter dated June 19, 2020",
+   "where": "list",
+   "quote": "documents used at meeting: gei review letter dated june 19, 2020 project site plan revised through june 5, 2020"
+  },
+  {
+   "name": "Project Site Plan revised through June 5, 2020",
+   "where": "list",
+   "quote": "documents used at meeting: gei review letter dated june 19, 2020 project site plan revised through june 5, 2020"
+  },
+  {
+   "name": "Borrego Solar letter dated June 8, 2020",
+   "where": "list",
+   "quote": "borrego solar letter dated june 8, 2020 site inspection protocol, operation & maintenance department"
+  },
+  {
+   "name": "Site Inspection Protocol, Operation & Maintenance Department",
+   "where": "list",
+   "quote": "borrego solar letter dated june 8, 2020 site inspection protocol, operation & maintenance department"
+  },
+  {
+   "name": "Stormwater Pollution Prevention Plan dated June 5, 2020",
+   "where": "list",
+   "quote": "site inspection protocol, operation & maintenance department stormwater pollution prevention plan dated june 5, 2020"
+  }
+ ],
+ "tags": [
+  "stormwater permit",
+  "solar photovoltaic",
+  "190 Electric Avenue",
+  "sediment control",
+  "public hearing",
+  "remote meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2019-09-10",
  "docid": "562",
@@ -12,23 +12,174 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from the meeting on August 13, 2019",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes from the meeting on august 13th were read approved with certain clarifications."
-  },
-  {
-   "motion": "Accept the Certificate of Appropriateness (CTA) application at 909 Massachusetts Avenue for a vinyl sliding door",
+   "motion": "Accept the CTA application for a sliding door at 909 Massachusetts Avenue (the Harley House), vinyl material.",
    "moved_by": "LaVeck",
    "seconded_by": "Corcoran",
    "outcome": "passed",
    "procedural": false,
    "quote": "laveck motioned to accept the application, corcoran seconded and all voted in favor."
+  },
+  {
+   "motion": "Approve the minutes of the August 13th meeting with certain clarifications.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes from the meeting on august 13th were read approved with certain clarifications."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded. The meeting adjourned but no formal vote to adjourn is recorded in the minutes.",
- "cost_usd": 0.08389750000000001
+ "note": "Clean text, no scan. No public comment section and no roll-call vote list. The adjournment (\"APDC adjourned at 8:30PM\") has no recorded motion, so it is not listed as a vote. The minutes approval has no mover or seconder printed, and its result is recorded only as \"read approved\". The spelling of the Select Board member varies within the text (\"M. Jefferies\" once, \"M. Jeffries\" elsewhere); names are kept as each passage prints them. Kypri-anos is hyphenated across a line break in the source.",
+ "cost_usd": 0.00535012,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "status": "present",
+   "quote": "call to order: at 7:00pm with all members present.",
+   "role": "Chairman"
+  },
+  {
+   "name": "Jim LaVeck",
+   "status": "present",
+   "quote": "call to order: at 7:00pm with all members present.",
+   "role": "Vice-Chair"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "status": "present",
+   "quote": "call to order: at 7:00pm with all members present.",
+   "role": "Clerk"
+  },
+  {
+   "name": "Brian Corcoran",
+   "status": "present",
+   "quote": "call to order: at 7:00pm with all members present.",
+   "role": "Member"
+  },
+  {
+   "name": "John Kypri-anos",
+   "status": "present",
+   "quote": "reviewed with the applicant (john",
+   "role": "applicant"
+  },
+  {
+   "name": "T. Alonzo",
+   "status": "present",
+   "quote": "t. alonzo noted that the troubles with the old primary school stemmed",
+   "role": "not stated"
+  },
+  {
+   "name": "M. Jeffries",
+   "status": "present",
+   "quote": "m. jeffries noted the discrepancies between the bylaw passed at town meeting",
+   "role": "not stated"
+  },
+  {
+   "name": "D. McQuaid",
+   "status": "present",
+   "quote": "d. mcquaid saw little value in the building, citing the cost",
+   "role": "not stated"
+  },
+  {
+   "name": "K. Adams",
+   "status": "present",
+   "quote": "k. adams noted that attempts to convey the property had been three times rejected",
+   "role": "not stated"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Next meeting set for Tuesday, October 8th, 7PM.",
+   "quote": "next meeting: tuesday, october 8th, 7pm"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Old Primary School stabilization estimate",
+   "what_was_recorded": "Facilities Manager Kit Walker submitted an estimate to the Select Board for a one-time expenditure to arrest the deterioration of the Old Primary School.",
+   "figures_as_printed": [
+    "almost $11,000"
+   ],
+   "quote": "had submitted an estimate to the select board amounting to a one-time expenditure of almost"
+  },
+  {
+   "topic": "Capital plan funding for demolition of Old Primary School",
+   "what_was_recorded": "LaVeck noted the town's current capital 5-year plan includes funds for demolition of the Old Primary School in 2023-2024; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the town's current capital 5-year plan includes funds for demolition of the old primary school in 2023-2024."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of Minutes",
+   "resolution": "approved with certain clarifications",
+   "quote": "minutes from the meeting on august 13th were read approved with certain clarifications.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "CTA application, 909 Massachusetts Avenue (Harley House)",
+   "resolution": "accepted",
+   "quote": "an application for a cta at 909 massachusetts avenue (the harley house) was reviewed",
+   "tags": [
+    "CTA",
+    "historic preservation",
+    "sliding door"
+   ]
+  },
+  {
+   "topic": "Old Business: Town Properties, Old Primary School",
+   "resolution": "discussed jointly with Select Board; no action",
+   "quote": "in a recent meeting of the select board, the future of the old primary school was discussed.",
+   "tags": [
+    "Old Primary School",
+    "Select Board",
+    "demolition by neglect",
+    "APD bylaw",
+    "town property"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "APD bylaw (as passed at town meeting, and the version submitted to the State)",
+   "where": "text",
+   "quote": "expressed dismay at m. jefferies apparently disrespectful comments toward the apd bylaw."
+  },
+  {
+   "name": "Email notice from LaVeck regarding the bylaw omission, dated November 15th, 2017",
+   "where": "text",
+   "quote": "laveck had noticed the omission and notified the town manager, land use planner, and"
+  },
+  {
+   "name": "Facilities Manager estimate for Old Primary School items (Kit Walker)",
+   "where": "text",
+   "quote": "had submitted an estimate to the select board amounting to a one-time expenditure of almost"
+  },
+  {
+   "name": "Town's current capital 5-year plan",
+   "where": "text",
+   "quote": "the town's current capital 5-year plan includes funds for demolition of the old primary school in 2023-2024."
+  }
+ ],
+ "tags": [
+  "architectural preservation district",
+  "CTA",
+  "Old Primary School",
+  "Select Board",
+  "APD bylaw",
+  "demolition by neglect",
+  "capital plan",
+  "historic preservation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

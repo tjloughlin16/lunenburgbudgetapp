@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2020-11-19",
  "docid": "2868",
@@ -12,31 +12,291 @@
  },
  "votes": [
   {
-   "motion": "approve the director's annual review as submitted",
-   "moved_by": "Kate",
-   "seconded_by": "Donna",
-   "outcome": "approved unanimously",
-   "procedural": true,
+   "motion": "Approve the Director's annual review as submitted.",
+   "moved_by": "Kate McCarron",
+   "seconded_by": "Donna Saiia",
+   "outcome": "passed unanimously",
+   "procedural": false,
    "quote": "kate made a motion to approve review as submitted and donna seconded. it was approved unanimously."
   },
   {
-   "motion": "accept a salary increase of 5% for the director",
-   "moved_by": "Dick",
-   "seconded_by": "Maia",
+   "motion": "Accept a 5% salary increase for the Director as discussed.",
+   "moved_by": "Dick Mailloux",
+   "seconded_by": "Maia Wentrup",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "dick made a motion to accept a salary increase of 5% as discussed. maia seconded. the motion passed unanimously."
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Dick",
-   "seconded_by": "Laura",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Dick Mailloux",
+   "seconded_by": "Laura Boussom",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn by dick, seconded by laura. meeting was adjourned at 8:35 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes state \"The minutes for October 15th were reviewed and accepted as amended\" but do not explicitly record this as a motion with movers/seconders or use language matching the vote patterns (motion, unanimously approved, motion carried, so voted), so it is not included.",
- "cost_usd": 0.0883155
+ "note": "Remote meeting by conference call and video link; the minutes say all votes were by roll call but print only the unanimous results, not individual votes. Attendance mode is marked remote for all listed attendees because the whole meeting was remote; the minutes do not say so per person. The adjournment vote result is not printed. Public comment: the minutes say there was none. Pages 3 to 8 are blank in the extracted text. Money items that print no amount are included because the minutes discuss money.",
+ "cost_usd": 0.00562932,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "role": "",
+   "status": "remote",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom,"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "remote",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom,"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "",
+   "status": "remote",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom,"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "remote",
+   "quote": "the lplbt meeting was called to order at 6:45 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "",
+   "status": "remote",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom,"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "",
+   "status": "remote",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom,"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "",
+   "status": "remote",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom,"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "",
+   "status": "remote",
+   "quote": "maia wentrup, michael-ray jeffreys, susan elbag"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "",
+   "status": "remote",
+   "quote": "maia wentrup, michael-ray jeffreys, susan elbag"
+  },
+  {
+   "name": "Susan Elbag",
+   "role": "new YA librarian",
+   "status": "remote",
+   "quote": "the new ya librarian susan elbag introduced herself to the board."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The October 15th minutes were accepted as amended, with no recorded motion.",
+   "quote": "the minutes for october 15th were reviewed and accepted as amended."
+  },
+  {
+   "decision": "Director Muir Haman will start coordinating the library carpet work with the DPW.",
+   "quote": "muir will start working with the dpw on coordinating."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library carpet capital item",
+   "what_was_recorded": "The special town meeting capital plan included funding for library carpet.",
+   "figures_as_printed": [
+    "$120k"
+   ],
+   "quote": "the capital plan included $120k for the carpet in the library."
+  },
+  {
+   "topic": "Union contract cost of living adjustment",
+   "what_was_recorded": "The clerical union contract was approved with a 2% cost of living adjustment for union members.",
+   "figures_as_printed": [
+    "2%"
+   ],
+   "quote": "the clerical union contract was approved with a 2% cost of living adjustment for union mem bers."
+  },
+  {
+   "topic": "Security camera upgrade quotes",
+   "what_was_recorded": "The Director received quotes from Millennium alarm for upgrading the security cameras; no amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "muir received some quotes from millennium alarm for upgrading the security cameras."
+  },
+  {
+   "topic": "Pop-up book sale proceeds",
+   "what_was_recorded": "The pop-up book sale raised more than $400 in two weeks and may be extended.",
+   "figures_as_printed": [
+    "$400"
+   ],
+   "quote": "the sale has raised more than $400 in two weeks."
+  },
+  {
+   "topic": "Director salary increase",
+   "what_was_recorded": "The board approved a 5% salary increase for the Director.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "dick made a motion to accept a salary increase of 5% as discussed."
+  },
+  {
+   "topic": "Letarte family poetry fund investment",
+   "what_was_recorded": "The Friends discussed changing the investment strategy for the Letarte family poetry fund and giving a representative investment authority; no amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "looking at changing the investment strategy for the fund."
+  },
+  {
+   "topic": "Area library director salary comparisons",
+   "what_was_recorded": "Board thanked Dick for his work on salary comparisons of area library directors; no amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "thanks to dick for his work on salary comparisons of area library directors."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "New YA Librarian",
+   "resolution": "introduced; no action",
+   "quote": "the new ya librarian susan elbag introduced herself to the board.",
+   "tags": [
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "October 15 minutes accepted as amended",
+   "quote": "the minutes for october 15th were reviewed and accepted as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; no action",
+   "quote": "we are five months into fy21. some invoices have come in but we are still a bit behind schedule.",
+   "tags": [
+    "director report",
+    "reopening",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Collection Development Policy Update",
+   "resolution": "posted; no vote",
+   "quote": "has been posted on the library website. included a copy of the ala library bill of rights.",
+   "tags": [
+    "collection development",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Strategic Plan Subcommittee Update",
+   "resolution": "update; no action",
+   "quote": "the subcommittee has met twice. met with mls consultant. receiving proposals from prospective consultants.",
+   "tags": [
+    "strategic plan"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "update; no action",
+   "quote": "letarte family poetry fund has been the main topic lately.",
+   "tags": [
+    "friends",
+    "fund"
+   ]
+  },
+  {
+   "topic": "Director's Evaluation Update",
+   "resolution": "annual review approved; 5% salary increase approved",
+   "quote": "the bot reviewed and finalized the annual review for muir.",
+   "tags": [
+    "personnel",
+    "salary"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action",
+   "quote": "thanks to dick for his work on salary comparisons of area library directors.",
+   "tags": [
+    "board"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:35 p.m.",
+   "quote": "meeting was adjourned at 8:35 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "November 19th 2020 Agenda",
+   "where": "list",
+   "quote": "november 19th 2020 agenda"
+  },
+  {
+   "name": "November 2020 Director's Report",
+   "where": "list",
+   "quote": "november 2020 director's report"
+  },
+  {
+   "name": "November 2020 YA Report",
+   "where": "list",
+   "quote": "november 2020 ya report"
+  },
+  {
+   "name": "November 2020 Teen Room Highlights",
+   "where": "list",
+   "quote": "november 2020 teen room highlights"
+  },
+  {
+   "name": "Collection Development Policy",
+   "where": "text",
+   "quote": "has been posted on the library website. included a copy of the ala library bill of rights."
+  },
+  {
+   "name": "ALA Library Bill of Rights",
+   "where": "text",
+   "quote": "included a copy of the ala library bill of rights."
+  },
+  {
+   "name": "Request for Reconsideration of Library Materials form",
+   "where": "text",
+   "quote": "muir reviewed the 'request for reconsideration of library materials' form used for complaints."
+  }
+ ],
+ "tags": [
+  "library",
+  "remote meeting",
+  "director evaluation",
+  "salary",
+  "collection development",
+  "strategic plan",
+  "friends of the library",
+  "budget",
+  "staffing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

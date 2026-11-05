@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2019-06-17",
  "docid": "1012",
@@ -12,16 +12,136 @@
  },
  "votes": [
   {
-   "motion": "Allow the addition to 32 Pearl Street with the condition that both the seating room and family room have at least six foot cased openings",
+   "motion": "Allow the proposed addition to the house at 32 Pearl Street, with the condition that the 'seating room' and family room have at least six foot cased openings.",
    "moved_by": "Fortin",
    "seconded_by": "Passios",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by fortin and second by passios, the board voted to allow the addit ion to the house with the condition that both the \"s eating room\" and family room have at least six foot cased openings, which removes",
-   "quote_taken_from_text": true
+   "quote": "on motion by fortin and second by passios, the board voted to allow the addit ion to the house with the condition that both the"
   }
  ],
  "dropped_unquoted": 0,
- "note": "No text scanning issues. One procedural matter (Election of Officers) was postponed/continued without a vote being taken.",
- "cost_usd": 0.1328335
+ "note": "Text is a clean extract, no scan issues. Only one motion is recorded (32 Pearl Street). The minutes record no motion for approving the May 20, 2019 minutes or for adjournment (adjourned at 8:15 pm), so no procedural votes are listed. Attendee roles for board members are not printed. The Title 5 list and septic permits list contain addresses only, with no document details. Public comment: none printed; Scott Kirouac appeared before the board as the applicant.",
+ "cost_usd": 0.00260872,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, david passios, paul fortin"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, david passios, paul fortin"
+  },
+  {
+   "name": "David Passios",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, david passios, paul fortin"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, david passios, paul fortin"
+  },
+  {
+   "name": "Scott Kirouac",
+   "role": "owner",
+   "status": "present",
+   "quote": "scott kirouac, owner, met with the board."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Election of officers was continued until a full board is present.",
+   "quote": "continued until a full board is present"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of May 20, 2019",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes approved: may 20, 2019"
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged (eight properties listed)",
+   "tags": [
+    "Title 5",
+    "septic",
+    "inspection"
+   ],
+   "quote": "title 5 inspection reports acknowledged:"
+  },
+  {
+   "topic": "Septic permits",
+   "resolution": "signed (no items listed)",
+   "tags": [
+    "septic",
+    "permits"
+   ],
+   "quote": "septic permits signed:"
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "continued until a full board is present",
+   "tags": [
+    "officers"
+   ],
+   "quote": "continued until a full board is present"
+  },
+  {
+   "topic": "32 Pearl Street addition (septic capacity)",
+   "resolution": "approved with condition on cased openings",
+   "tags": [
+    "septic capacity",
+    "addition",
+    "approval",
+    "bedrooms"
+   ],
+   "quote": "scott kirouac, owner, met with the board."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Assessor's records (house rooms and bedrooms, 32 Pearl Street)",
+   "where": "text",
+   "quote": "since there are no board of health records, it is the board's practice to establish the septic system capacity"
+  },
+  {
+   "name": "Proposal submitted by Scott Kirouac (addition at 32 Pearl Street)",
+   "where": "text",
+   "quote": "based on the proposal submitted, mr. kirouac would like to add a \"seating room\" and family room."
+  },
+  {
+   "name": "Title 5 inspection from 2013 (32 Pearl Street)",
+   "where": "text",
+   "quote": "there is a passing title 5 from 2013."
+  }
+ ],
+ "tags": [
+  "septic",
+  "Title 5",
+  "addition approval",
+  "septic capacity",
+  "officers",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

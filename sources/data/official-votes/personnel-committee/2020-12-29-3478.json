@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2020-12-29",
  "docid": "3478",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept and approve the minutes of the October 29, 2020 meeting as presented",
+   "motion": "Accept and approve the minutes of the October 29, 2020 meeting as presented.",
    "moved_by": "D. MacDonald",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
@@ -20,42 +20,39 @@
    "quote": "motion by d. macdonald to accept and approve the minutes as presented; second d. fortune roll call vote: all in favor"
   },
   {
-   "motion": "Accept the recommendation of the towns H.R. Director to offer the Intermittent Heavy Equipment Operator role at Grade Level 9 step 8",
+   "motion": "Accept the HR Director's recommendation to offer the Intermittent Heavy Equipment Operator role (Michael Roberts) at Grade Level 9 step 8.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by s. andrews to accept the recommendation of the towns h.r. director to offer the role at grade level 9 step 8. second: d. fortune roll call vote: all in favor"
+   "quote": "motion by s. andrews to accept the recommendation of the towns h.r. director to offer the role at grade level 9 step 8."
   },
   {
-   "motion": "Accept the recommendation of the towns H.R. Director to accept the Reserve Police Officer job description with noted changes at Grade Level 10 in the SAP",
+   "motion": "Accept the Reserve Police Officer job description with the minor changes noted, at Grade Level 10 in the SAP, to be submitted to the next appropriate Town Meeting for final approval by the Selectman.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Macdonald",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by: s. andrews to accept the recommendation of the towns h.r. director to accept the job description, with the few minor changes noted, at a grade level 10 in the sap. it will then be submitted at the next appropriate",
-   "quote_taken_from_text": true
+   "quote": "motion by: s. andrews to accept the recommendation of the towns h.r. director to accept the job description, with the few minor changes noted, at a grade level 10 in the sap."
   },
   {
-   "motion": "Accept the recommendation of the towns H.R. Director to accept the Network Administrator job description at Grade Level 13 in the SAP",
+   "motion": "Accept the Network Administrator job description at Grade Level 13 in the SAP, to be submitted to the next appropriate Town Meeting for final approval by the Selectman.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "motion by: s. andrews to accept the recommendation of the towns h.r. director to accept the job description, with the few minor changes noted, at a grade level",
-   "quote_taken_from_text": true
+   "quote": "motion by: s. andrews to accept the recommendation of the towns h.r. director to accept the job description, at a grade level 13 in the sap."
   },
   {
-   "motion": "Accept the recommendation of the towns H.R. Director to amend SAP Section 25, Longevity Pay to reflect payment as a cash value rather than a percentage value",
+   "motion": "Amend SAP Section 25, Longevity Pay, to pay longevity as a cash value rather than a percentage value, to be submitted to the next appropriate Town Meeting for final approval by the Selectman.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by: s. andrews to accept the recommendation of the towns h.r. director to accept the job description, with the few minor changes noted, at a grade level 10 in the sap. it will then be submitted at the next appropriate town meeting for final approval by the selectman. second: d. macdo",
-   "quote_taken_from_text": true
+   "quote": "motion by: s. andrews to accept the recommendation of the towns h.r. director to amend the sap section 25, longevity pay to reflect payment as a cash value"
   },
   {
-   "motion": "Adjourn the meeting at 5:45pm",
+   "motion": "Adjourn the meeting at 5:45pm.",
    "moved_by": "S. Andrews",
    "seconded_by": "Fortune",
    "outcome": "not stated",
@@ -64,6 +61,155 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0916785
+ "note": "Zoom meeting; the minutes say all attendees were online, so attendance is recorded as remote for committee members. No public comment section is printed. The Network Administrator motion and the adjournment motion have no result recorded. The minutes print no document list.",
+ "cost_usd": 0.00467752,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave MacDonald",
+   "role": "Committee member",
+   "status": "remote",
+   "quote": "dave macdonald, sue andrews, donna fortune, and joanna bilotta"
+  },
+  {
+   "name": "Sue Andrews",
+   "role": "Committee member",
+   "status": "remote",
+   "quote": "meeting began at 5:07pm with all attendee's online; joanna bilotta presiding as vice chairman"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "Committee member",
+   "status": "remote",
+   "quote": "dave macdonald, sue andrews, donna fortune, and joanna bilotta"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "Vice Chairman (presiding)",
+   "status": "remote",
+   "quote": "meeting began at 5:07pm with all attendee's online; joanna bilotta presiding as vice chairman"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "J. Belliveau is to continue assessing how to ensure all town employees receive at least the Massachusetts Minimum Wage, and present the topic at the next meeting.",
+   "quote": "j. belliveau will continue to assess that issue and present the topic at our next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Salary for Intermittent Heavy Equipment Operator (Michael Roberts)",
+   "what_was_recorded": "The salary was set at the rate the candidate previously received as a contractor; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the salary was set at a rate that the candidate previously received as a contractor."
+  },
+  {
+   "topic": "Massachusetts minimum wage for town employees",
+   "what_was_recorded": "Several Grade Levels have a starting step below the Massachusetts Minimum Wage; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "several of the grade levels have a starting step that did not meet that wage."
+  },
+  {
+   "topic": "SAP longevity award change",
+   "what_was_recorded": "Longevity award changed from a percentage value to a dollar value; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "changes the longevity award from a percentage value to a dollar value."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of Minutes (October 29, 2020)",
+   "resolution": "approved",
+   "quote": "motion by d. macdonald to accept and approve the minutes as presented; second d. fortune roll call vote: all in favor",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Personnel Action Form, Intermittent Heavy Equipment Operator",
+   "resolution": "approved hiring at Grade Level 9 step 8",
+   "quote": "j. belliveau outlined the need to formally approve the hiring of michael roberts into this role.",
+   "tags": [
+    "hiring",
+    "salary grade",
+    "snowplowing"
+   ]
+  },
+  {
+   "topic": "Position Description Review: Reserve Police Officer",
+   "resolution": "approved at Grade Level 10; goes to Town Meeting",
+   "quote": "motion by: s. andrews to accept the recommendation of the towns h.r. director to accept the job description, with the few minor changes noted, at a grade level 10 in the sap.",
+   "tags": [
+    "job description",
+    "police",
+    "SAP"
+   ]
+  },
+  {
+   "topic": "Position Description Review: Network Administrator",
+   "resolution": "approved at Grade Level 13 (no result recorded); goes to Town Meeting",
+   "quote": "motion by: s. andrews to accept the recommendation of the towns h.r. director to accept the job description, at a grade level 13 in the sap.",
+   "tags": [
+    "job description",
+    "IT",
+    "school department",
+    "SAP"
+   ]
+  },
+  {
+   "topic": "SAP Longevity Amendment",
+   "resolution": "approved; goes to Town Meeting",
+   "quote": "motion by: s. andrews to accept the recommendation of the towns h.r. director to amend the sap section 25, longevity pay to reflect payment as a cash value",
+   "tags": [
+    "longevity",
+    "SAP",
+    "pay"
+   ]
+  },
+  {
+   "topic": "General Discussion: Massachusetts minimum wage",
+   "resolution": "continued to next meeting",
+   "quote": "j. belliveau will continue to assess that issue and present the topic at our next meeting.",
+   "tags": [
+    "minimum wage",
+    "SAP grade chart"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Personnel Action Form for Intermittent Heavy Equipment Operator",
+   "where": "text",
+   "quote": "approval of personnel action form for intermittent heavy equipment operator"
+  },
+  {
+   "name": "SAP Section 25, Longevity Pay",
+   "where": "text",
+   "quote": "amend the sap section 25, longevity pay to reflect payment as a cash value"
+  }
+ ],
+ "tags": [
+  "personnel",
+  "SAP",
+  "job descriptions",
+  "salary grades",
+  "minimum wage",
+  "longevity pay",
+  "Zoom meeting",
+  "town employees"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

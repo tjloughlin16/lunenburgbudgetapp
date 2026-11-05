@@ -1,8 +1,7 @@
 ---
-status: parked
+status: reference
 updated: 2026-11-04
-next: TJ: gross-wages.csv names, DESE FY2025 relabel, the unsent records requests
-waiting_on: TJ
+genlock: G-JWBNZ -- next steps, prohibitions and open questions live there (genlock goal show G-JWBNZ)
 ---
 
 # Handoff: teacher pay, comparison districts, and the 19 October session

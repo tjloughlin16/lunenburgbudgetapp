@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2020-06-08",
  "docid": "4054",
@@ -12,47 +12,47 @@
  },
  "votes": [
   {
-   "motion": "Approve ANR Plan for 71 Wildwood Road",
+   "motion": "Approve the ANR Plan for 71 Wildwood Road.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed 3-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "p. bertram made motion to approve the anr plan, t. cole seconded, roll call vote- p. bertram, aye; t. cole, aye; m. allison, aye. vote passed 3-0."
   },
   {
-   "motion": "Approve ANR Plan for 46 Arbor Street",
+   "motion": "Approve the ANR Plan for 46 Arbor Street (sale of Parcel A-1 to Matthew & Laura Woodward).",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed 3-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "p. bertram made motion to approve the anr plan, t. cole seconded, roll call vote - p. bertram, aye; t. cole, aye; m. allison, aye. vote passed 3-0."
   },
   {
-   "motion": "Approve prior minutes from April 13, 2020",
+   "motion": "Approve the minutes of 04.13.2020.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "p. bertram made motion to approve, t. cole seconded, roll call vote - p. bertram, aye; t. cole, aye; m. allison, aye. vote passed 3-0."
+   "quote": "04.13.2020- p. bertram made motion to approve, t. col e seconded, roll call vote - p. bertram, aye; t. cole, aye; m."
   },
   {
-   "motion": "Approve prior minutes from April 13, 2020 for 1325 Massachusetts Avenue",
+   "motion": "Approve the minutes of 04.13.2020, 1325 Massachusetts Avenue.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "p. bertram made motion to approve, t. cole seconded, roll call vote - p. bertram, aye; t. cole, aye; m. allison, aye. vote passed 3-0."
+   "quote": "avenue - p. bertram made motion to approve, t. cole seconded, roll call vote - p. bertram, aye; t. cole, aye; m."
   },
   {
-   "motion": "Authorize the Land Use Director to work with the Building Commissioner in setting guidelines for safe establishment of outdoor dining",
+   "motion": "Authorize the Land Use Director to work with the Building Commissioner in setting guidelines for safe establishment of outdoor dining.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
    "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "t. cole made motion authorizing the land use director to w ork with the bui lding commissioner in setting guidelines for safe establishment of outdoor dining, p. bertram, seconded, roll call vote- p. bertram, aye; t. cole, aye; m. allison, aye. vote passed 3-0."
+   "procedural": false,
+   "quote": "p. bertram, seconded, roll call vote- p. bertram, aye; t. cole, aye; m. allison, aye. vote passed 3-0."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
    "outcome": "passed 3-0",
@@ -61,6 +61,236 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1199975
+ "note": "Text extraction has split words and stray spacing (e.g., 'Col e', 'Massachus etts'), so some quotes were collapsed to single spaces and trimmed. Two ANR votes and the minutes votes share near-identical wording; quotes were chosen to differ by the plan or minutes date. The 190 Electric Avenue hearing is in separate minutes not included here. Public comment is not recorded in these minutes. The Director's items vote covers only the outdoor seating motion; other Director's items had no recorded vote. Attendance status for the applicants and their representatives is not stated.",
+ "cost_usd": 0.00826472,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: matthew allison, present; tanner cole, present; paula bertram, present"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: matthew allison, present; tanner cole, present; paula bertram, present"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: matthew allison, present; tanner cole, present; paula bertram, present"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: matthew allison, present; tanner cole, present; paula bertram, present"
+  },
+  {
+   "name": "Gerard Croteau",
+   "role": "applicant, 55 Wildwood Road",
+   "status": "not stated",
+   "quote": "the applicant gerard croteau, 55 wildwood road was represented by frank preston, whitman & bingham"
+  },
+  {
+   "name": "Frank Preston",
+   "role": "representing the applicant, Whitman & Bingham Associates",
+   "status": "not stated",
+   "quote": "the applicant gerard croteau, 55 wildwood road was represented by frank preston, whitman & bingham"
+  },
+  {
+   "name": "Claire Courtemanche",
+   "role": "Applicant, 46 Arbor Street",
+   "status": "not stated",
+   "quote": "applicant claire courtemanche submitted a plan for the sale of property from 46 arbor street to 64 arbor street."
+  },
+  {
+   "name": "Nick Cristofori",
+   "role": "consultant to the Stormwater Task Force, Comprehensive Environmental Inc. (CEI)",
+   "status": "present",
+   "quote": "nick cristofori, comprehensive environmental inc. (cei), is the consultant to the stormwater task force"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Stormwater bylaw: the Board decided to eliminate clause D.[5] (municipal, state and federal agencies exemption).",
+   "quote": "it was decided to eliminate d.[5]."
+  },
+  {
+   "decision": "Stormwater bylaw: the Board agreed to leave D. Applicability as is, consistent with EPA requirements and the MS4 Permit.",
+   "quote": "board was in agreement with leaving d. applicability as is, which complied with epa requirements and kept it strictly to the ms4 permit."
+  },
+  {
+   "decision": "CEI will review the language of F.(2) Standards in the stormwater bylaw against the Massachusetts Stormwater Handbook.",
+   "quote": "cei will review as there is no longer a massachusetts stormwater management policy"
+  },
+  {
+   "decision": "A. Burney will prepare paperwork for the State for the Density Bonus Payment for Baker Brook.",
+   "quote": "a. burney will prepare paperwork for the state for the density bonus payment."
+  },
+  {
+   "decision": "A. Burney will approach the Town Manager regarding the status of the spending freeze and the Master Plan concern.",
+   "quote": "a. burney will approach the town manager regarding the status of the spending freeze."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Density Bonus Payment (Baker Brook, Tri Town Senior Living Facility)",
+   "what_was_recorded": "Land Use Director will prepare State paperwork for the Density Bonus Payment; no dollar figure printed.",
+   "quote": "a. burney will prepare paperwork for the state for the density bonus payment."
+  },
+  {
+   "topic": "Town spending freeze due to COVID-19",
+   "what_was_recorded": "Board noted parts of Town spending have been put on hold due to COVID-19 and the Land Use Director will ask the Town Manager about the freeze; no dollar figure printed.",
+   "quote": "this has been amplified as parts of town spending have been put on hold due to covid -19."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order, remote meeting notice and roll call",
+   "resolution": "no action",
+   "quote": "roll call conducted by adam burney, land use director: matthew allison, present; tanner cole, present; paula bertram, present",
+   "tags": [
+    "roll call",
+    "remote meeting",
+    "COVID-19"
+   ]
+  },
+  {
+   "topic": "ANR plans: 71 Wildwood Road and 46 Arbor Street",
+   "resolution": "both approved 3-0",
+   "quote": "p. bertram made motion to approve the anr plan, t. cole seconded, roll call vote- p. bertram, aye; t. cole, aye; m. allison, aye. vote passed 3-0.",
+   "tags": [
+    "ANR",
+    "land division",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Public hearing: 190 Electric Avenue",
+   "resolution": "no action recorded here; see separate minutes",
+   "quote": "public hearing: 190 electric avenue- see separate minutes.",
+   "tags": [
+    "public hearing",
+    "Electric Avenue"
+   ]
+  },
+  {
+   "topic": "Stormwater bylaw update (MS4 Permit compliance)",
+   "resolution": "discussed; clause D.[5] eliminated; applicability left as is; CEI to review F.(2)",
+   "quote": "it was decided to eliminate d.[5].",
+   "tags": [
+    "stormwater",
+    "bylaw",
+    "MS4 Permit",
+    "LID"
+   ]
+  },
+  {
+   "topic": "Minutes approval: 04.13.2020 and 04.13.2020, 1325 Massachusetts Avenue",
+   "resolution": "both approved 3-0",
+   "quote": "04.13.2020- p. bertram made motion to approve, t. col e seconded, roll call vote - p. bertram, aye; t. cole, aye; m.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Director's items: Annual Town Meeting, Baker Brook, remote plan endorsement, 1325 Massachusetts Avenue site plan, restaurant outdoor seating",
+   "resolution": "outdoor seating authorization approved 3-0; other items discussed or updated",
+   "quote": "annual town meeting, update- scheduled for june 13th.",
+   "tags": [
+    "annual town meeting",
+    "Baker Brook",
+    "site plan",
+    "restaurants",
+    "outdoor dining",
+    "plan endorsement"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "quote": "meeting schedule: june 13- annual town meeting",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Board comment and concerns: Master Plan",
+   "resolution": "Land Use Director to approach Town Manager",
+   "quote": "there was board concern with the lack of forward movement on the master plan.",
+   "tags": [
+    "master plan",
+    "spending freeze"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:39 PM, passed 3-0",
+   "quote": "adjournment: t. cole made motion to adjourn, p. bertram seconded, roll call vote- p. bertram, aye; t. cole, aye; m. allison, aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Stormwater and Storm Sewers Bylaw",
+   "where": "list",
+   "quote": "documents used at meeting: stormwater and storm sewers bylaw minutes 04.13.2020 04.13.2020, 1325 massachusetts avenue anr plans 71 wildwood road 46 arbor street"
+  },
+  {
+   "name": "Minutes 04.13.2020",
+   "where": "list",
+   "quote": "documents used at meeting: stormwater and storm sewers bylaw minutes 04.13.2020 04.13.2020, 1325 massachusetts avenue anr plans 71 wildwood road 46 arbor street"
+  },
+  {
+   "name": "Minutes 04.13.2020, 1325 Massachusetts Avenue",
+   "where": "list",
+   "quote": "documents used at meeting: stormwater and storm sewers bylaw minutes 04.13.2020 04.13.2020, 1325 massachusetts avenue anr plans 71 wildwood road 46 arbor street"
+  },
+  {
+   "name": "ANR Plan, 71 Wildwood Road",
+   "where": "list",
+   "quote": "documents used at meeting: stormwater and storm sewers bylaw minutes 04.13.2020 04.13.2020, 1325 massachusetts avenue anr plans 71 wildwood road 46 arbor street"
+  },
+  {
+   "name": "ANR Plan, 46 Arbor Street",
+   "where": "list",
+   "quote": "documents used at meeting: stormwater and storm sewers bylaw minutes 04.13.2020 04.13.2020, 1325 massachusetts avenue anr plans 71 wildwood road 46 arbor street"
+  },
+  {
+   "name": "Endorse Site Plan, 1325 Massachusetts Avenue",
+   "where": "text",
+   "quote": "endorse site plan, 1325 massachusetts avenue - the final plan was revised to include the changes"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plans",
+  "stormwater bylaw",
+  "MS4 Permit",
+  "low impact development",
+  "remote meeting",
+  "COVID-19",
+  "restaurant outdoor dining",
+  "minutes approval",
+  "master plan",
+  "density bonus",
+  "Baker Brook",
+  "spending freeze",
+  "annual town meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

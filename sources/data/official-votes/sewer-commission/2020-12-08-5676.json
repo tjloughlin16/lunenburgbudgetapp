@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2020-12-08",
  "docid": "5676",
@@ -12,31 +12,381 @@
  },
  "votes": [
   {
-   "motion": "To approve the Q2 billing for $291,405.95, dated 11/23/20",
+   "motion": "Approve the Q2 billing for $291,405.95, dated 11/23/20.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: john r. to approve the q2 billing for $291,405.95, dated 11/23/20. roll call vote: mike-aye, carl-aye, john-aye, brett-aye, dave-aye second: brett r."
+   "quote": "motion: john r. to approve the q2 billing for $291,405.95, dated 11/23/20."
   },
   {
-   "motion": "To approve the minutes of 11/16/20",
+   "motion": "Approve the minutes of 11/16/20.",
    "moved_by": "Brett R.",
    "seconded_by": "John R.",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: brett r. to approve the minutes of 11/16/20. second: john r. roll call vote: mike-aye, carl-aye, john-aye, brett-aye, dave- aye"
+   "quote": "motion: brett r. to approve the minutes of 11/16/20."
   },
   {
-   "motion": "To adjourn",
+   "motion": "Approve the Fitchburg Usage invoice for $13,689.36 and the Leominster Usage invoice for $74,265.66, based on flows for 6/26 - 9/25/20.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "commission approved the fitchburg usage invoice for $13,689.36 and leominster usage invoice for $74,265.66,"
+  },
+  {
+   "motion": "Adjourn the meeting at 5:34pm.",
    "moved_by": "Carl L.",
    "seconded_by": "Brett R.",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: carl l. to adjourn: 5:34pm second: brett r. roll call vote: mike-aye, carl-aye, john-aye, brett-aye, dave- aye"
+   "quote": "motion: carl l. to adjourn: 5:34pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is OCR from macOS Vision. Three votes recorded: Q2 billing approval, approval of prior minutes (11/16), and adjournment. All passed unanimously 5-0.",
- "cost_usd": 0.1035915
+ "note": "OCR text (macOS Vision) of a Sewer Commission minutes document; the minutes print no attendance roll, so Commissioner presence is inferred from roll-call votes and their remarks. Mike's, Dave's and Sam's surnames and roles are not printed. The 'Public Comment' heading contains only Commissioner remarks; no members of the public are recorded speaking, so public_comment is empty. The Fitchburg/Leominster invoice approval is recorded as 'Commission approved' with no motion, mover or roll call. Page 3 is an attached email from Carl Luck, not a meeting record. The clerk's signature line has no name.",
+ "cost_usd": 0.010683620000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "roll call vote: mike-aye, carl-aye, john-aye, brett-aye, dave-aye"
+  },
+  {
+   "name": "Carl",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "carl noted that rob had answered most of his concerns,"
+  },
+  {
+   "name": "John R.",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "roll call vote: mike-aye, carl-aye, john-aye, brett-aye, dave-aye"
+  },
+  {
+   "name": "Brett R.",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "brett agreed with carl and mike regarding the fine and thanked rob for contacting the state."
+  },
+  {
+   "name": "Dave",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "dave would like to hear from the state and"
+  },
+  {
+   "name": "Barb",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "barb reported that she received an as-built from john esposito on 11/30"
+  },
+  {
+   "name": "Sam",
+   "role": "DPW Administrative Assistant",
+   "status": "not stated",
+   "quote": "neither barb nor sam (dpw administrative assistant) received a call from him."
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "rob oliva said that he understood that jack gave mr."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "author of attached notification email",
+   "status": "not stated",
+   "quote": "attached: carl luck 12/21/20 email of notification of legal office hour meeting"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Each Commissioner reviews the Maintenance Plan individually and sends questions/comments to Rob; Rob compiles them into one document to be discussed section by section at meetings.",
+   "quote": "the commission discussed rob's suggestion and agreed it was the best use of time."
+  },
+  {
+   "decision": "Barb will contact Town Counsel about the 384 Mass Ave. illegal connection.",
+   "quote": "barb said she will contact town counsel."
+  },
+  {
+   "decision": "Barb asked to contact Jack Rodriquenz about what had been done at 384 Mass Ave.",
+   "quote": "he also asked barb to contact jack in regards to what had been done."
+  },
+  {
+   "decision": "Rob Oliva to start the Mass Highway application process online for the 384 Mass Ave. connection, as Mass Highway requested.",
+   "quote": "mass highway wanted the address in order to check it out and asked rob to start the application process,"
+  },
+  {
+   "decision": "Carl will send his previous Maintenance Plan comments to Rob.",
+   "quote": "carl added that he will send his previous comments to rob."
+  },
+  {
+   "decision": "Barb will send out any updates received on 384 Mass Ave.",
+   "quote": "barb added that she will send out any updates she receives in regard to 384 mass ave."
+  },
+  {
+   "decision": "Barb will check with Heather (Town Manager) on the status of Small Water (SWSS) for 2020.",
+   "quote": "barb replied that swss never pursued anything, but she will check with heather (town manager)."
+  },
+  {
+   "decision": "Barb will obtain the December numbers from Al for pump runs and flows to use with the Woodard & Curran billing tool.",
+   "quote": "when al gives her the december numbers, she will have data for pump runs and flows to use with the woodard & curran billing tool."
+  },
+  {
+   "decision": "Buy the Water Department a pizza lunch instead of sending a plant.",
+   "quote": "dave suggested buying them a pizza lunch instead and all agreed"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Q2 sewer billing commitment",
+   "what_was_recorded": "The Commission voted to approve the Q2 billing commitment dated 11/23/20.",
+   "figures_as_printed": [
+    "$291,405.95"
+   ],
+   "quote": "motion: john r. to approve the q2 billing for $291,405.95, dated 11/23/20."
+  },
+  {
+   "topic": "Fitchburg and Leominster usage invoices",
+   "what_was_recorded": "The Commission approved the Fitchburg and Leominster usage invoices based on flows for 6/26 - 9/25/20; Barb said the Leominster invoice was the truest because it reflects a dry period.",
+   "figures_as_printed": [
+    "$13,689.36",
+    "$74,265.66"
+   ],
+   "quote": "commission approved the fitchburg usage invoice for $13,689.36 and leominster usage invoice for $74,265.66,"
+  },
+  {
+   "topic": "Minimum fine for illegal connection at 384 Mass Ave.",
+   "what_was_recorded": "The Commission discussed the minimum fine of $5,000 and options such as digging up the pipe to determine what was done.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "the commission discussed the minimum fine of $5,000 and options, such as digging it up, to"
+  },
+  {
+   "topic": "Legal costs and survey at 384 Mass Ave.",
+   "what_was_recorded": "Dave suggested keeping track of legal costs to add to the fine; Carl said a proper survey should be done at the owner's expense. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "keep track of legal costs to add to the fine and get input from the state."
+  },
+  {
+   "topic": "Survey at owner's expense",
+   "what_was_recorded": "Carl said the owner should pay for a proper survey to establish where the line is.",
+   "figures_as_printed": [],
+   "quote": "carl added they need to know where the line is and, at the owner's expense, have a proper survey completed."
+  },
+  {
+   "topic": "Year to date budget",
+   "what_was_recorded": "Barb had sent the current budget to Commissioners to review; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "barb had sent the current budget to commissioners to review."
+  },
+  {
+   "topic": "Empey charges",
+   "what_was_recorded": "Carl thanked Barb for moving the Empey charges to outsourcing; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "carl thanked barb for moving the charges for empey to outsourcing where it should be."
+  },
+  {
+   "topic": "Maintenance Plan funding",
+   "what_was_recorded": "A suggestion that the next budget include money to pay for the components of the maintenance plan; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "suggested making sure the next budget has money to pay for the components of the maintenance plan."
+  },
+  {
+   "topic": "Pizza lunch for Water Department",
+   "what_was_recorded": "Dave suggested buying the Water Department a pizza lunch instead of a plant; no price printed.",
+   "figures_as_printed": [],
+   "quote": "dave suggested buying them a pizza lunch instead and all agreed"
+  },
+  {
+   "topic": "Legal counsel cost",
+   "what_was_recorded": "Carl's letter says the Town Counsel office-hour cost is already in the lump sum budgeted payment to the Town for legal support, so no additional legal expense to customers.",
+   "figures_as_printed": [],
+   "quote": "the cost is already included in our lump sum budgeted payment to the town for legal support, so there is no additional legal expense to our customers associated with these meetings."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Illegal Connection 384 Mass Ave",
+   "resolution": "discussed; Barb to contact Town Counsel; no vote",
+   "quote": "illegal connection 384 mass ave- barb reported that she received an as-built from john esposito on 11/30",
+   "tags": [
+    "illegal connection",
+    "384 Mass Ave",
+    "fines",
+    "Mass DOT",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Maintenance Plan overview",
+   "resolution": "discussed; Commissioners to send comments to Rob",
+   "quote": "maintenance plan - overview discussion-rob suggested that each commissioner go through the plan individually,",
+   "tags": [
+    "maintenance plan"
+   ]
+  },
+  {
+   "topic": "Q2 Sewer Billing Commitment",
+   "resolution": "approved 5-0",
+   "quote": "q2 sewer billing commitment - motion: john r.",
+   "tags": [
+    "billing",
+    "commitment"
+   ]
+  },
+  {
+   "topic": "Minutes 11/16",
+   "resolution": "approved 5-0",
+   "quote": "minutes 11/16- motion: brett r.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Invoices",
+   "resolution": "approved",
+   "quote": "commission approved the fitchburg usage invoice for $13,689.36",
+   "tags": [
+    "invoices",
+    "usage",
+    "Fitchburg",
+    "Leominster"
+   ]
+  },
+  {
+   "topic": "Billing to Outflow comparison Q2",
+   "resolution": "discussed; awaiting December numbers",
+   "quote": "billing to outflow comparison q2 - barb noted that when al gives her the",
+   "tags": [
+    "billing",
+    "pump runs",
+    "flows"
+   ]
+  },
+  {
+   "topic": "Year to date budget",
+   "resolution": "reviewed",
+   "quote": "year to date budget- barb had sent the current budget to commissioners to review.",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Grease Trap 1st Tuesday reports",
+   "resolution": "reported; no action",
+   "quote": "grease trap- 1st tuesday reports - barb reported that all permits are current",
+   "tags": [
+    "grease trap",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Member Agenda Inputs for Future Meetings",
+   "resolution": "Barb to check SWSS status",
+   "quote": "member agenda inputs for future meetings - dave suggested starting work on the maintenance plan in january",
+   "tags": [
+    "agenda",
+    "maintenance plan",
+    "SWSS"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "discussed; Barb to send updates; pizza lunch for Water Department",
+   "quote": "public comment - regarding 384 mass ave., carl suggested that we get a written statement from jack rodriquenz",
+   "tags": [
+    "384 Mass Ave",
+    "Water Department"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "listed",
+   "quote": "upcoming scheduled sewer commission activities:",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5:34pm, 5-0",
+   "quote": "motion: carl l. to adjourn: 5:34pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Carl Luck 12/21/20 email of Notification of Legal Office Hour meeting",
+   "where": "list",
+   "quote": "attached: carl luck 12/21/20 email of notification of legal office hour meeting"
+  },
+  {
+   "name": "As-built from John Esposito, received 11/30",
+   "where": "text",
+   "quote": "barb reported that she received an as-built from john esposito on 11/30"
+  },
+  {
+   "name": "Permit to Connect application",
+   "where": "text",
+   "quote": "jack rodriquenz never signed off on the permit to connect application."
+  },
+  {
+   "name": "Maintenance Plan",
+   "where": "text",
+   "quote": "maintenance plan - overview discussion-rob suggested that each commissioner go through the plan individually,"
+  },
+  {
+   "name": "Q2 billing dated 11/23/20",
+   "where": "text",
+   "quote": "to approve the q2 billing for $291,405.95, dated 11/23/20."
+  },
+  {
+   "name": "Fitchburg Usage invoice and Leominster Usage invoice",
+   "where": "text",
+   "quote": "commission approved the fitchburg usage invoice for $13,689.36 and leominster usage invoice for $74,265.66,"
+  },
+  {
+   "name": "Current budget (year to date)",
+   "where": "text",
+   "quote": "barb had sent the current budget to commissioners to review."
+  },
+  {
+   "name": "Legal Counsel Access Policy",
+   "where": "text",
+   "quote": "per the sewer commission's new legal counsel access policy, 1 am notifying the members of the sewer commission of"
+  },
+  {
+   "name": "Woodard & Curran billing tool",
+   "where": "text",
+   "quote": "when al gives her the december numbers, she will have data for pump runs and flows to use with the woodard & curran billing tool."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "illegal connection",
+  "384 Mass Ave",
+  "maintenance plan",
+  "billing",
+  "invoices",
+  "town counsel",
+  "grease trap",
+  "budget",
+  "legal office hours",
+  "fines"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached:"
+ },
+ "dropped_unquoted_by_field": {}
 }

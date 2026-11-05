@@ -1,0 +1,730 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2020-03-24",
+ "video_id": "xPDkWQrdc5s",
+ "video_url": "https://www.youtube.com/watch?v=xPDkWQrdc5s",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2020-03-24-xPDkWQrdc5s.json",
+  "sha256": "04170dced57715077e502c3189ce970bafe44c8bf32aab6ef4d6d8aa49fb5dfd",
+  "caption_lines": 345,
+  "segments": 2503
+ },
+ "recording": {
+  "duration_s": 7339,
+  "duration": "2:02",
+  "spoken_chars": 90401,
+  "words_approx": 15066
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03242020-5239",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-03-24-agenda-5239.txt",
+   "path": "sources/meetings/select-board/2020-03-24-agenda-5239.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03242020-5239",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-03-24-minutes-5239.txt",
+   "path": "sources/meetings/select-board/2020-03-24-minutes-5239.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-04T07:35:12Z",
+  "cost_usd": 0.2298904
+ },
+ "minutes": {
+  "headline": "Select Board declared a local COVID-19 state of emergency 4-0 with one abstention, and set Town Meeting for June 13.",
+  "summary": "First fully remote Select Board meeting, held by Zoom with roll-call votes. The board got the town manager's COVID-19 update, declared a local state of emergency, and adopted a revised budget calendar ending in a June 13 Town Meeting. It also designated a member to sign warrants, granted a restaurant closure, released executive session minutes, and heard counsel on the dangerous dog appeal.",
+  "attendees": [
+   {
+    "name_as_heard": "Tom Alonso",
+    "role": "chair",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mr. McQuade",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mrs. Luck",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mrs. Adams",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mr. Jeffries",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Heather Lemieux",
+    "role": "town manager",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Adam Costa",
+    "role": "town counsel",
+    "remote": true
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 6954,
+    "speaker_as_heard": "Terry Burchfield",
+    "stated_role": "Finance Committee",
+    "topic": "Finance Committee plans to meet next Thursday to review the budget information and schedule, and asked for the schedule to be sent."
+   },
+   {
+    "t": 6996,
+    "speaker_as_heard": "Michele",
+    "stated_role": "Boys and Girls Club",
+    "topic": "Promoted the United Way of North Central Mass COVID-19 fund and the club's virtual programming for kids."
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "capital",
+   "elections",
+   "executive-session",
+   "grants",
+   "legal",
+   "personnel",
+   "public-comment",
+   "public-safety",
+   "town-departments",
+   "town-meeting"
+  ],
+  "votes": [
+   {
+    "t": 465,
+    "motion": "Continue the Smokestack Roasters wine and malt license public hearing to April 14 at 7:05 p.m.",
+    "outcome": "passed (roll call, all four members in favor, chair also aye)",
+    "procedural": false
+   },
+   {
+    "t": 3239,
+    "motion": "Declare a local state of emergency in the town",
+    "moved_by": "Mr. Jeffries",
+    "outcome": "passed 4-0 with one abstention",
+    "procedural": false
+   },
+   {
+    "t": 4128,
+    "motion": "Approve the revised budget calendar ending with annual Town Meeting on June 13, 2020",
+    "moved_by": "Mr. McQuade",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 4494,
+    "motion": "Designate the chair to sign warrants per MGL c.41 s.52, amended to last until the town is no longer in a state of emergency",
+    "moved_by": "Mr. Jeffries",
+    "outcome": "passed (roll call, all members aye)",
+    "procedural": false
+   },
+   {
+    "t": 5816,
+    "motion": "Grant permission to temporarily close Sean Patrick's restaurant as requested",
+    "moved_by": "Mr. McQuaid",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 6122,
+    "motion": "Release the six executive session minutes as read by the chair",
+    "moved_by": "Mr. McQuaid",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 6272,
+    "motion": "Ratify the town manager's appointment of Kathleen Como as animal control officer/inspector",
+    "moved_by": "Mr. McQuade",
+    "outcome": "passed (roll call, all aye)",
+    "procedural": false
+   },
+   {
+    "t": 7308,
+    "motion": "Adjourn",
+    "outcome": "passed (roll call, all aye)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2003,
+    "topic": "Emergency management expenditure line",
+    "what_was_said": "A member asked about benefits of the declaration; the emergency allows spending and transfers within the budget if the emergency management line goes over.",
+    "figures_as_heard": [
+     "a thousand dollars"
+    ]
+   },
+   {
+    "t": 2024,
+    "topic": "FEMA reimbursement",
+    "what_was_said": "Counsel and the town manager said a local declaration may speed federal aid review. Departments are tracking COVID-related expenses, including volunteer hours.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 3807,
+    "topic": "FY21 budget rebuild",
+    "what_was_said": "The town manager said the budget must be rebuilt from scratch, including forecasting, given the new financial situation.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 6357,
+    "topic": "Local aid",
+    "what_was_said": "The town manager said the state confirmed remaining FY20 local aid payments will come; Chapter 70 and local aid for next year are not yet known.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 6418,
+    "topic": "FY20 spending freeze",
+    "what_was_said": "The town manager imposed a spending and hiring freeze for the rest of the fiscal year except essential and public safety items.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 6459,
+    "topic": "TCP design contract",
+    "what_was_said": "The town manager recommended limiting the design firm's scope given fiscal uncertainty.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 6546,
+    "topic": "Employee dental rates",
+    "what_was_said": "A competitive bid came back from Blue Cross Blue Shield, to be reviewed by the public employee committee.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 6566,
+    "topic": "Fuel tank earmark",
+    "what_was_said": "The agency confirmed the earmark will be released in full once the contract is signed.",
+    "figures_as_heard": [
+     "165,000"
+    ]
+   },
+   {
+    "t": 5866,
+    "topic": "Bond anticipation notes",
+    "what_was_said": "The board signed bond anticipation notes for the Saliba property and ladder truck borrowing.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1957,
+    "decision": "Caucus to be rescheduled once the town clerk recommends an annual election date."
+   },
+   {
+    "t": 4381,
+    "decision": "Board will lobby the town clerk to hold the town election after Town Meeting; the election date is left to the clerk and the board."
+   },
+   {
+    "t": 5992,
+    "decision": "Town manager to bring a proposed evaluation timeline to the next meeting."
+   },
+   {
+    "t": 6611,
+    "decision": "Another remote meeting planned for March 31."
+   },
+   {
+    "t": 5722,
+    "decision": "Board will wait for the appeal before seeking confinement of the dogs, pursuing it when the courts return to normal."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 9,
+    "t_end": 440,
+    "topic": "Remote meeting rules and roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 444,
+    "t_end": 520,
+    "topic": "Smokestack Roasters license hearing continued",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 531,
+    "t_end": 1700,
+    "topic": "Town manager COVID-19 update, elections, services",
+    "resolution": "informational",
+    "tags": [
+     "elections",
+     "town-departments",
+     "seniors"
+    ]
+   },
+   {
+    "t_start": 1699,
+    "t_end": 3470,
+    "topic": "Local state of emergency declaration",
+    "resolution": "voted",
+    "tags": [
+     "legal",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 3471,
+    "t_end": 4420,
+    "topic": "Postponement of Town Meeting and budget calendar",
+    "resolution": "voted",
+    "tags": [
+     "town-meeting",
+     "budget",
+     "elections"
+    ]
+   },
+   {
+    "t_start": 4424,
+    "t_end": 4740,
+    "topic": "Designating chair to sign warrants",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 4753,
+    "t_end": 4830,
+    "topic": "Remote participation during office closures",
+    "resolution": "informational",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 4816,
+    "t_end": 5740,
+    "topic": "Dangerous dog hearing outcome and appeal",
+    "resolution": "informational",
+    "tags": [
+     "legal",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 5743,
+    "t_end": 5860,
+    "topic": "Sean Patrick's temporary closure",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 5866,
+    "t_end": 5900,
+    "topic": "Bond anticipation notes signed",
+    "resolution": "informational",
+    "tags": [
+     "debt"
+    ]
+   },
+   {
+    "t_start": 5910,
+    "t_end": 6050,
+    "topic": "Town manager evaluation timeline",
+    "resolution": "referred to next week",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 6055,
+    "t_end": 6170,
+    "topic": "Release of executive session minutes",
+    "resolution": "voted",
+    "tags": [
+     "executive-session",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 6192,
+    "t_end": 6310,
+    "topic": "Old business and animal control appointment",
+    "resolution": "voted",
+    "tags": [
+     "personnel",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 6315,
+    "t_end": 6620,
+    "topic": "Town manager report: FY21 budget, spending freeze, TCP, fuel tank",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy27",
+     "state-aid",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 6634,
+    "t_end": 7330,
+    "topic": "Closing remarks, public comment, adjournment",
+    "resolution": "voted to adjourn",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Fiscal year labelling of the budget (captions say FY21 for next year and garble 'fiscal 24' for FY20).",
+   "Some captions of the early vote results are garbled; the count on the emergency declaration is read from the chair's tally.",
+   "The record of who seconded several motions is unclear."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 2643,
+    "about": "A member hesitated to declare a local emergency now, citing public anxiety, while the chair and others called it a tactical legal step.",
+    "sides": "one member against declaring now; chair and other members for",
+    "words_as_heard": "layering on another thing like this I'd rather put off the local one",
+    "kind": "members disagree"
+   },
+   {
+    "t": 3938,
+    "about": "Members disagreed on whether to move Town Meeting earlier than the town election date.",
+    "sides": "one member favoring waiting for the clerk; town manager and others favoring June 13",
+    "words_as_heard": "I would encourage us to wait another week until we get a recommendation from the town clerk",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 5364,
+    "kind": "safety",
+    "about": "A member worried the dogs found dangerous remain at the same property where they have escaped before.",
+    "who": "a member",
+    "words_as_heard": "they're staying in the same place that they were that they have escaped in the past"
+   },
+   {
+    "t": 5092,
+    "kind": "liability or legal",
+    "about": "A member asked about options if the kennel license is not renewed and the family keeps more dogs than allowed.",
+    "who": "a member",
+    "words_as_heard": "in the event that the their kennel license is not renewed this spring and they have more dogs that are allowed"
+   },
+   {
+    "t": 4665,
+    "kind": "liability or legal",
+    "about": "Counsel warned that the local state of emergency must be lifted separately for the warrant-signing authority to end.",
+    "who": "town counsel",
+    "words_as_heard": "you will need to also lift your local state of emergency"
+   },
+   {
+    "t": 5615,
+    "kind": "liability or legal",
+    "about": "Counsel noted the town would bear impoundment costs if the appeals are lost.",
+    "who": "town counsel",
+    "words_as_heard": "you're then on the hook for the cost of impounding the dog"
+   },
+   {
+    "t": 2663,
+    "kind": "condition",
+    "about": "A member said she wanted more time before voting on the emergency declaration.",
+    "who": "a member",
+    "words_as_heard": "I don't know if I'd be ready to do one locally at this time"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1699,
+    "name_as_heard": "declaration of local state of emergency",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "I have a local state of emergency as well as a list of number of communities",
+    "shown": true
+   },
+   {
+    "t": 3535,
+    "name_as_heard": "proposed schedule / budget calendar revised",
+    "kind": "other",
+    "words_as_heard": "in your packet for tonight was a proposed schedule for tongue meeting and with a date of June 13th",
+    "shown": true
+   },
+   {
+    "t": 4840,
+    "name_as_heard": "opinion letter from attorney Kenefick",
+    "kind": "memo",
+    "words_as_heard": "an opinion letter from Michael kenefick from me telemon Acosta about next steps",
+    "shown": true
+   },
+   {
+    "t": 5743,
+    "name_as_heard": "letter from attorney Flannagan",
+    "kind": "letter or email",
+    "words_as_heard": "a letter from the attorney mr. Flannagan requesting permission to close",
+    "shown": true
+   },
+   {
+    "t": 6035,
+    "name_as_heard": "town manager evaluation procedure and form",
+    "kind": "other",
+    "words_as_heard": "in the Dropbox was the evaluation procedure",
+    "shown": true
+   },
+   {
+    "t": 1037,
+    "name_as_heard": "House bill 4572 and 4974",
+    "kind": "warrant article",
+    "words_as_heard": "the governor filed bill H for 572 on March 16th",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "covid-spending-freeze-and-fema",
+    "title": "COVID costs and FEMA",
+    "question": "What COVID-19 costs is the town tracking, and could FEMA reimburse them?",
+    "t": 2260,
+    "words_as_heard": "do we currently have any associated with this any any do we have any expenditures so far",
+    "data_in_play": [
+     "a thousand dollars"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "tc-passios-costs",
+    "title": "TC Passios costs",
+    "question": "What happens to the TC Passios design contract given the fiscal uncertainty?",
+    "t": 6459,
+    "words_as_heard": "my recommendation is that we because of uncertainty the fiscal arena that we hold off",
+    "data_in_play": [],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board declared a local state of emergency for COVID-19, 4-0 with one abstention, at its first fully remote meeting.",
+    "t": 3239
+   },
+   {
+    "line": "The board adopted a revised budget calendar that ends with annual Town Meeting on June 13, 2020.",
+    "t": 4128
+   },
+   {
+    "line": "The town manager said the FY21 budget must be rebuilt from scratch and announced a spending and hiring freeze for the rest of FY20, except essential and public safety items.",
+    "t": 6418
+   },
+   {
+    "line": "The board named the chair to sign warrants for as long as the emergency lasts, and approved the temporary closure of Sean Patrick's restaurant.",
+    "t": 4494
+   },
+   {
+    "line": "The town manager said remaining FY20 state local aid will be paid, but Chapter 70 and local aid for next year are not yet known.",
+    "t": 6357
+   }
+  ],
+  "why_it_matters": [
+   "The FY21 budget that residents will vote on at Town Meeting is being rebuilt, and state aid for next year is unknown, so the tax rate and local services for FY21 are uncertain.",
+   "The emergency declaration lets the town spend and transfer within the budget if the emergency management line runs over, and may speed federal reimbursement review, which bears on how much of the cost falls on local taxes."
+  ],
+  "watch_next": [
+   "Finance Committee meeting next Thursday to review the budget information and schedule.",
+   "Another remote Select Board meeting planned for March 31, with the town manager's proposed evaluation timeline due."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-04T07:35:19Z",
+   "cost_usd": 0.0303031
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03242020-5239",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-03-24-minutes-5239.txt",
+   "path": "sources/meetings/select-board/2020-03-24-minutes-5239.pdf"
+  },
+  "official_sha256": "3a380c350994615e2d51d24d5f19ee4f379cb7660bafb402f43cef15e7f95c37",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the main votes: emergency declaration, budget calendar, warrant signing, Sean Patrick's closure and executive session release. The official minutes lack the Como animal control ratification vote, and the Smokestack vote is counted differently (four plus chair vs 5-0).",
+  "counts": {
+   "agree": 8,
+   "caption_error": 0,
+   "discrepancy": 3,
+   "only_in_ours": 3,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Smokestack Roasters hearing vote",
+    "ours": "Continue the Smokestack Roasters wine and malt license public hearing to April 14 at 7:05 p.m. — passed (roll call, all four members in favor, chair also aye)",
+    "official": "to open the hearing for smokestack roasters llc for a wine and malt, on-premises",
+    "note": "Both continue to April 14 at 7:05 p.m., but ours says 'all four members in favor, chair also aye' while official says 5-0; check the roll call and whether the motion was to open and continue.",
+    "t": 465
+   },
+   {
+    "kind": "agree",
+    "about": "Local state of emergency vote",
+    "ours": "Declare a local state of emergency in the town — passed 4-0 with one abstention",
+    "official": "vote: mr. mcquaid-aye, ms. luck-aye, mr. jeffreys-aye, ms. adams-abstain, mr. alonzo-aye",
+    "note": "Both record 4 aye and 1 abstention (Adams).",
+    "t": 3239
+   },
+   {
+    "kind": "agree",
+    "about": "Revised budget calendar ending with Town Meeting June 13, 2020",
+    "ours": "Approve the revised budget calendar ending with annual Town Meeting on June 13, 2020 — passed unanimously",
+    "official": "to approve the revised timeline with the budget calendar concluding with annual town meeting on june 13, 2020",
+    "note": "Same motion and unanimous outcome.",
+    "t": 4128
+   },
+   {
+    "kind": "agree",
+    "about": "Chair to sign warrants MGL c.41 s.52",
+    "ours": "Designate the chair to sign warrants per MGL c.41 s.52, amended to last until the town is no longer in a state of emergency — passed (roll call, all members aye)",
+    "official": "mr. mcquaid amended his second as well. vote: mr. mcquaid-aye, ms. luck-aye, mr. jeffreys-aye, ms. adams-aye",
+    "note": "Both show an amended motion passing with all members aye (official 5-0, chair's vote implied).",
+    "t": 4494
+   },
+   {
+    "kind": "agree",
+    "about": "Close Sean Patrick's",
+    "ours": "Grant permission to temporarily close Sean Patrick's restaurant as requested — passed unanimously",
+    "official": "to grant permission to close sean patrick's as requested",
+    "note": "Same motion, unanimous (5-0).",
+    "t": 5816
+   },
+   {
+    "kind": "agree",
+    "about": "Release executive session minutes",
+    "ours": "Release the six executive session minutes as read by the chair — passed unanimously",
+    "official": "to approve and release executive session minutes as listed",
+    "note": "Same release, unanimous.",
+    "t": 6122
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Ratify animal control officer appointment",
+    "ours": "Ratify the town manager's appointment of Kathleen Como as animal control officer/inspector — passed (roll call, all aye)",
+    "official": "",
+    "note": "Official minutes as provided record no vote on this appointment; check the official minutes for this item.",
+    "t": 6272
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Fuel tank earmark figure",
+    "ours": "Fuel tank earmark: 165,000",
+    "official": "i did get confirmation that we would get the full $165,000 earmarked for the fuel tank replacement",
+    "note": "Same figure, $165,000; the captions just omitted the dollar sign. Not a substantive difference.",
+    "t": 6566
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Emergency management expenditure line",
+    "ours": "Emergency management expenditure line: a thousand dollars",
+    "official": "",
+    "note": "Official minutes record no emergency management line amount; check the recording for what was said.",
+    "t": 2003
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Caucus rescheduling and election date",
+    "ours": "Caucus to be rescheduled once the town clerk recommends an annual election date.",
+    "official": "",
+    "note": "Official minutes do not mention the caucus or the board lobbying the clerk on election timing; they only note Adams' comment on consolidated elections.",
+    "t": 1957
+   },
+   {
+    "kind": "agree",
+    "about": "Town manager evaluation timeline",
+    "ours": "Town manager to bring a proposed evaluation timeline to the next meeting.",
+    "official": "requested a timeline by next week from her",
+    "note": "Same decision.",
+    "t": 5992
+   },
+   {
+    "kind": "agree",
+    "about": "Remote meetings",
+    "ours": "Another remote meeting planned for March 31.",
+    "official": "all town board and committee meetings will be held in this medium",
+    "note": "Both indicate continued remote meetings; the official minutes say until further notice and do not name March 31.",
+    "t": 6611
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Dogs appeal and confinement",
+    "ours": "Board will wait for the appeal before seeking confinement of the dogs, pursuing it when the courts return to normal.",
+    "official": "",
+    "note": "Official minutes contain no dog confinement item.",
+    "t": 5722
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY20 spending freeze",
+    "ours": "",
+    "official": "i have notified department heads that there would be a spending freeze for the remainder of fy20",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Bond anticipation notes",
+    "ours": "",
+    "official": "sign the bond anticipation notes for the saliba property purchase loan as well the ladder truck borrowing",
+    "note": "Board signing of notes for Saliba property and ladder truck is not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Special state election deferral",
+    "ours": "",
+    "official": "the special state election is scheduled for june 2nd and could be discussed at next week's meeting",
+    "note": "Deferral is not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "United Way fund comment, $60,000",
+    "ours": "",
+    "official": "they have raised over $60,000 so far.",
+    "note": "Public comment not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees",
+    "ours": "Tom Alonso (chair); Mr. McQuade; Mrs. Luck; Mrs. Adams; Mr. Jeffries; Heather Lemieux; Adam Costa",
+    "official": "members present: tom alonzo, chairman; phyllis luck, vice chairman; damon mcquaid,",
+    "note": "Same people; the official spells the names Alonzo, McQuaid and Jeffreys. Official also lists Burchfield and Belleza.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T07:37:03Z",
+   "cost_usd": 0.052775100000000005
+  }
+ }
+}

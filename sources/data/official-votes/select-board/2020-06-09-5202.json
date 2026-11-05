@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-06-09",
  "docid": "5202",
@@ -12,24 +12,481 @@
  },
  "votes": [
   {
-   "motion": "To recommend passing over Article 4",
+   "motion": "To approve the applications for On the Rocks and Embers Pizzeria, as amended to be contingent on submitting the certification clause paperwork within one week.",
+   "moved_by": "K. Adams",
+   "seconded_by": "M. Jeffreys",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "motion: k. adams 2nd.m. jeffreys to approve the applications for on the rocks and embers pizzeria discussion: ms. luck asked if they should sign the certification clause."
+  },
+  {
+   "motion": "To recommend passing over Article 4.",
    "moved_by": "P. Luck",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: p. luck 2nd: m. jeffreys to recommend passing over article 4 vote: ms. adams-aye, mr. mcquaid-aye, mr. jeffreys-aye, ms. luck-aye, mr. alonzo-aye"
+   "procedural": false,
+   "quote": "motion: p. luck 2nd: m. jeffreys to recommend passing over article 4"
   },
   {
-   "motion": "To adjourn the meeting",
+   "motion": "To adjourn the meeting at 9:30 p.m.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Adams",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: d. mcquaid to adjourn the meeting at 9:30 p.m. vote: mr. mcquaid-aye, ms. adams-aye, mr. jeffreys-aye, ms. luck- aye, mr. alonżo-ay",
-   "quote_taken_from_text": true
+   "quote": "motion: d. mcquaid to adjourn the meeting at 9:30 p.m."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1687725
+ "dropped_unquoted": 0,
+ "note": "OCR text, not a clean transcript. Page breaks cut sentences (start of pages 2, 4 and 6 are mid-sentence), the Article 24 line is garbled, and the CARES Act amount is cut off so no figure is printed. Finance Committee and Board of Selectmen content is intermixed (Chair Burchfield and Chairman Alonzo both appear). The consent calendar articles are recorded as \"decided\" with no vote shown. Board member presence is inferred from voting lines and speaking roles, not a roll call. Ms. Lemieux's role is not stated in the text. Donnelly's Tavern application was not voted on.",
+ "cost_usd": 0.013125520000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Teri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "finance committee members present: teri burchfield, chair, jay simeone, peter beardmore, dave passios, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "finance committee members present: teri burchfield, chair, jay simeone, peter beardmore, dave passios, john henshaw"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "finance committee members present: teri burchfield, chair, jay simeone, peter beardmore, dave passios, john henshaw"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "finance committee members present: teri burchfield, chair, jay simeone, peter beardmore, dave passios, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "finance committee members present: teri burchfield, chair, jay simeone, peter beardmore, dave passios, john henshaw"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Others present",
+   "status": "present",
+   "quote": "others present: todd dwyer, dave blatt"
+  },
+  {
+   "name": "Dave Blatt",
+   "role": "Others present",
+   "status": "present",
+   "quote": "others present: todd dwyer, dave blatt"
+  },
+  {
+   "name": "K. Adams",
+   "role": "Board member",
+   "status": "present",
+   "quote": "the meeting opened with the pledge of allegiance that was recited by ms. adams"
+  },
+  {
+   "name": "McQuaid",
+   "role": "Board member",
+   "status": "present",
+   "quote": "mr. mcquaid asked because it is right on the street if it was possible to rent a jersey barrier to make sure"
+  },
+  {
+   "name": "M. Jeffreys",
+   "role": "Board member",
+   "status": "present",
+   "quote": "mr. jeffreys following up on his earlier request, noted this is not a war on police."
+  },
+  {
+   "name": "Luck",
+   "role": "Board member",
+   "status": "present",
+   "quote": "ms. luck believed the entire warrant should be reviewed tonight"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. lemieux reviewed the deferred articles"
+  },
+  {
+   "name": "Ken Ricker",
+   "role": "owner of Embers Pizzeria and On the Rocks, applicant",
+   "status": "present",
+   "quote": "ken ricker, owner of embers pizzeria and on the rocks, stated both have already had outdoor seating"
+  },
+  {
+   "name": "John Donnelly",
+   "role": "owner of Donnelly's Tavern",
+   "status": "present",
+   "quote": "john donnelly, owner of donnelly's tavern, stated he did not get his paperwork in until friday"
+  },
+  {
+   "name": "Bill Tyler",
+   "role": "Cemetery Commission Chairman, speaking as a citizen",
+   "status": "present",
+   "quote": "bill tyler, 5 graham street, speaking as both a citizen and the cemetery commission chairman, stated the commission has not met formally since february"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "public commenter, 50 Sunset Lane",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane, stated that he fully supported the green community task force"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Consent calendar: after discussion, the board decided on the listed warrant articles (Articles 1, 2, 4, 9, 10, 11, 12, 13, 14, 15 and 16), with the wording recorded for each; no separate vote is recorded.",
+   "quote": "after discussion it was decided on the following:"
+  },
+  {
+   "decision": "Article 24 (citizen petition for an additional liquor license) will remain deferred.",
+   "quote": "this article will remain deferred."
+  },
+  {
+   "decision": "John Donnelly's outdoor seating application will be scheduled for the next meeting.",
+   "quote": "his application will be scheduled for the next meeting."
+  },
+  {
+   "decision": "Ms. Lemieux was asked to coordinate a meeting with community leaders on racial disparities; the request was made and no decision is recorded.",
+   "quote": "he requested ms. lemieux coordinate this meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Article 10 Sewer Enterprise FY21 operating appropriation",
+   "what_was_recorded": "Warrant article 10 would appropriate a total of $943,191.54 to operate the Sewer Enterprise Fund for FY21, with component amounts and $877,011.90 of general fund indirect costs allocated to it.",
+   "figures_as_printed": [
+    "$790,027.63",
+    "$125,650.25",
+    "$20,000",
+    "$7,513.66",
+    "$943,191.54",
+    "$877,011.90"
+   ],
+   "quote": "article 10: that the town vote to appropriate from sewer enterprise revenues the sum of"
+  },
+  {
+   "topic": "Article 11 sewer capital reserve transfer",
+   "what_was_recorded": "Warrant article 11 would transfer $30,000.00 from Sewer Enterprise Retained Earnings into the Sewer Capital Reserve Stabilization Fund.",
+   "figures_as_printed": [
+    "$30,000.00"
+   ],
+   "quote": "article 11: that the town vote to transfer from sewer enterprise retained earnings the sum of"
+  },
+  {
+   "topic": "Article 12 OPEB transfer",
+   "what_was_recorded": "Warrant article 12 would transfer $656 from Sewer Enterprise Retained Earnings to the OPEB Trust Fund.",
+   "figures_as_printed": [
+    "$656"
+   ],
+   "quote": "article 12: that the town vote to transfer $656 from sewer enterprise retained earnings to the opeb trust fund"
+  },
+  {
+   "topic": "Article 13 Solid Waste Disposal appropriation",
+   "what_was_recorded": "Warrant article 13 would appropriate $302,000 from Solid Waste Disposal Enterprise Revenues to operate the Solid Waste Disposal Program.",
+   "figures_as_printed": [
+    "$302,000"
+   ],
+   "quote": "article 13: that the town vote to appropriate from solid waste disposal enterprise revenues the sum of $302,000"
+  },
+  {
+   "topic": "Article 14 Water Department appropriation",
+   "what_was_recorded": "Warrant article 14 would appropriate $25,000 from Water Enterprise Revenues to operate the Water Department.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "article 14: that the town vote to appropriate from water enterprise revenues the sum of $25,000 to operate the water"
+  },
+  {
+   "topic": "Article 15 PEG Access operating budget",
+   "what_was_recorded": "Warrant article 15 would appropriate $143,000.00 for the FY21 PEG Access operating budget and include $48,000 of general fund indirect costs.",
+   "figures_as_printed": [
+    "$143,000.00",
+    "$48,000"
+   ],
+   "quote": "article 15: that the town vote to appropriate from peg access and cable related enterprise fund revenues the sum of"
+  },
+  {
+   "topic": "Street light system purchase versus LED conversion",
+   "what_was_recorded": "The last quote to purchase the street lights was $91,000; the conversion cost is roughly $47,000; Unitil conversion would save $31,600 annually, and the Town converting would save $58,000 annually if a grant supplements the cost.",
+   "figures_as_printed": [
+    "$91,000",
+    "$47,000",
+    "$31,600",
+    "$58,000"
+   ],
+   "quote": "the last quote to purchase the street lights was $91,000. it will never be settled until the day we take over the system;"
+  },
+  {
+   "topic": "CARES Act FY20 expense reimbursement",
+   "what_was_recorded": "A reimbursement request for CARES Act funding was submitted on June 3rd, but the amount is cut off in the minutes and no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "we submitted a reimbursement request for cares act funding in the amount of"
+  },
+  {
+   "topic": "Public comment: cemetery maintenance",
+   "what_was_recorded": "Cemetery Commission chair Bill Tyler described the cemetery maintenance failure but cited no dollar figure.",
+   "figures_as_printed": [],
+   "quote": "the current plan is to share dpw resources to help when there is a need."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Article 10: transfer from Sewer Capital Reserve Stabilization Fund (warrant article, consent calendar)",
+   "outcome": "listed in consent calendar decisions; no separate vote recorded",
+   "amount_as_printed": "$20,000",
+   "quote": "transfer from sewer capital reserve stabilization fund the sum of $20,000;"
+  },
+  {
+   "description": "Article 10: transfer from Sewer Reserve Capacity Stabilization Fund (warrant article, consent calendar)",
+   "outcome": "listed in consent calendar decisions; no separate vote recorded",
+   "amount_as_printed": "$7,513.66",
+   "quote": "transfer from sewer reserve capacity stabilization fund the sum of"
+  },
+  {
+   "description": "Article 11: transfer from Sewer Enterprise Retained Earnings to the Sewer Capital Reserve Stabilization Fund (warrant article, consent calendar)",
+   "outcome": "listed in consent calendar decisions; no separate vote recorded",
+   "amount_as_printed": "$30,000.00",
+   "quote": "article 11: that the town vote to transfer from sewer enterprise retained earnings the sum of"
+  },
+  {
+   "description": "Article 12: transfer from Sewer Enterprise Retained Earnings to the OPEB Trust Fund (warrant article, consent calendar)",
+   "outcome": "listed in consent calendar decisions; no separate vote recorded",
+   "amount_as_printed": "$656",
+   "quote": "article 12: that the town vote to transfer $656 from sewer enterprise retained earnings to the opeb trust fund"
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Warrant review and articles to pass over at Town Meeting",
+   "speaker": "Ms. Luck",
+   "stated_role": "serving on the Board",
+   "quote": "ms. luck believed the entire warrant should be reviewed tonight and any articles that can possibly be passed over"
+  },
+  {
+   "topic": "Cemetery maintenance over Memorial Day weekend",
+   "speaker": "Bill Tyler",
+   "stated_role": "Cemetery Commission Chairman",
+   "quote": "bill tyler, 5 graham street, speaking as both a citizen and the cemetery commission chairman, stated the commission has not met formally since february"
+  },
+  {
+   "topic": "Street light conversion article",
+   "speaker": "Carl Luck",
+   "stated_role": "",
+   "quote": "carl luck, 50 sunset lane, stated that he fully supported the green community task force"
+  },
+  {
+   "topic": "Public safety on streets and Sunday protest",
+   "speaker": "Peter Beardmore",
+   "stated_role": "Finance Committee member",
+   "quote": "peter beardmore noted the protest in the center of town on sunday was a great job by all who participated."
+  },
+  {
+   "topic": "Racial disparities and working with community",
+   "speaker": "Mr. Jeffreys",
+   "stated_role": "",
+   "quote": "mr. jeffreys following up on his earlier request, noted this is not a war on police."
+  },
+  {
+   "topic": "Ms. Luck's departure from Town Meeting",
+   "speaker": "Ms. Adams",
+   "stated_role": "",
+   "quote": "ms. adams stated ms. luck would be missed at town meeting."
+  },
+  {
+   "topic": "Salvation Army Donut Day and demonstration",
+   "speaker": "Mr. Alonzo",
+   "stated_role": "Chairman",
+   "quote": "mr. alonzo thanked the salvation army for observing national donut day last friday in all three communities."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment on warrant and cemetery maintenance",
+   "resolution": "heard; no action",
+   "quote": "ms. luck believed the entire warrant should be reviewed tonight and any articles that can possibly be passed over",
+   "tags": [
+    "public comment",
+    "warrant",
+    "cemetery"
+   ]
+  },
+  {
+   "topic": "Outdoor seating and outdoor liquor sales applications",
+   "resolution": "On the Rocks and Embers Pizzeria approved contingent on certification paperwork; Donnelly's Tavern deferred to next meeting",
+   "quote": "review of possible applications for outdoor seating and outdoor liquor sales from bad larry's (1",
+   "tags": [
+    "liquor licenses",
+    "outdoor seating",
+    "COVID-19"
+   ]
+  },
+  {
+   "topic": "FY 2021 budget and review of deferred Annual Town Meeting articles",
+   "resolution": "Article 4 passed over; Article 24 remains deferred",
+   "quote": "article 4 amends appropriations and sources of funds for fy20 - there are none.",
+   "tags": [
+    "budget",
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Consent calendar for Annual Town Meeting articles",
+   "resolution": "decided on listed articles; no vote recorded",
+   "quote": "after discussion it was decided on the following:",
+   "tags": [
+    "consent calendar",
+    "sewer",
+    "solid waste",
+    "water",
+    "PEG access",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Street light conversion article",
+   "resolution": "discussed; postponement to November town meeting considered; no vote recorded",
+   "quote": "discussion ensued on whether to postpone this to the november town meeting.",
+   "tags": [
+    "street lights",
+    "LED",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Minutes for approval",
+   "resolution": "none this week",
+   "quote": "there were no minutes for approval this week.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants and action items",
+   "resolution": "no action; request for community leaders meeting noted",
+   "quote": "mr. jeffreys requested a meeting with different community leaders at last week's meeting.",
+   "tags": [
+    "racial disparities",
+    "community"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "none",
+   "quote": "4. committee reports- there were none.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Town Manager regular report and COVID-19 updates",
+   "resolution": "informational; no action",
+   "quote": "town manager regular report and covid-19 updates",
+   "tags": [
+    "COVID-19",
+    "CARES Act",
+    "vacancies",
+    "playgrounds",
+    "town beach",
+    "annual town election",
+    "MVP grant"
+   ]
+  },
+  {
+   "topic": "Meetings and events schedule",
+   "resolution": "reviewed; no action",
+   "quote": "mr. alonzo reviewed the upcoming bos meeting schedule: june 16 and june 23",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "heard; no action",
+   "quote": "mr. alonzo thanked the salvation army for observing national donut day last friday in all three communities.",
+   "tags": [
+    "public comment",
+    "public safety"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:30 p.m.",
+   "quote": "motion: d. mcquaid to adjourn the meeting at 9:30 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Application form for temporary outdoor seating (with certification clause)",
+   "where": "text",
+   "quote": "discussion ensued about having a form for application for temporary outdoor seating as well as having a"
+  },
+  {
+   "name": "ABCC advisory on extension of premises to patios and outdoor areas",
+   "where": "text",
+   "quote": "the bos should review the abcc advisory for extension of"
+  },
+  {
+   "name": "Draft Municipal Vulnerability Preparedness plan (final draft report dated 06.04.2020, with appendices)",
+   "where": "text",
+   "quote": "lunenburg_mvp_final draft report 06.04.2020 with_appendices_003.pdf"
+  },
+  {
+   "name": "Town Counsel's opinion on write-in campaigns for vacant seats",
+   "where": "text",
+   "quote": "a copy of town counsel's opinion once received will be provided to the board."
+  },
+  {
+   "name": "Board of Health weekly update dated June 5th",
+   "where": "text",
+   "quote": "the board of health issued their weekly update dated june sth and it will be put on the covid-19 information center page"
+  },
+  {
+   "name": "Annual Town Meeting warrant booklet",
+   "where": "text",
+   "quote": "as printed in the annual town meeting warrant booklet."
+  },
+  {
+   "name": "Talent bank forms",
+   "where": "text",
+   "quote": "talent bank forms can be obtained on the town website and forwarded to the board of selectmen's office."
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "Finance Committee",
+  "Annual Town Meeting",
+  "warrant articles",
+  "consent calendar",
+  "sewer enterprise",
+  "street lights",
+  "outdoor seating",
+  "liquor licenses",
+  "cemetery maintenance",
+  "COVID-19",
+  "CARES Act",
+  "town election",
+  "racial disparities"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

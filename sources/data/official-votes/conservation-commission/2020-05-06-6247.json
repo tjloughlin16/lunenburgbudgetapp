@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2020-05-06",
  "docid": "6247",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve emergency certification for DPW culvert replacement at Chase Road with potential modifications to the bottom",
+   "motion": "Approve the emergency certification for the DPW culvert at Chase Road, with potential modifications to the bottom.",
    "moved_by": "TD",
    "seconded_by": "KJ",
-   "outcome": "passed unanimously",
+   "outcome": "passed, roll call unanimous",
    "procedural": false,
-   "quote": "a motion to approve the emergency certification was made with potential modifications to the bottom was made by td with as second by kj a roll call unanimous vote approved"
+   "quote": "a motion to approve the emergency certification was made with potential modifications to the bottom was"
   },
   {
-   "motion": "Move for negative determination regarding tree removal at 11 Willow Circle",
+   "motion": "Issue a negative determination for the removal of trees without stumping within the 100 foot buffer zone at 11 Willow Circle (Doug Aker).",
    "moved_by": "TD",
    "seconded_by": "KJ",
    "outcome": "passed unanimously",
@@ -28,23 +28,23 @@
    "quote": "td moved for a negative determination. kj second and the commission voted unanimously."
   },
   {
-   "motion": "Continue DPW Notice of Intent meeting regarding culvert replacement at Sunset Lane and Northfield Road to May 20, 2020",
+   "motion": "Continue the Notice of Intent for the replacement of culverts at Sunset Lane and Northfield Road to May 20.",
    "moved_by": "TD",
    "seconded_by": "JR",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "the meeting was continued by a motion of td and second by jr until may 20"
+   "quote": "mm noted he had not received a response to his request for calculations. the meeting was continued by a motion of td and second by jr"
   },
   {
-   "motion": "Approve retaining wall work at 51 Fire Road 19 with work to commence at drawdown and erosion protection prior to wall construction",
+   "motion": "Approve the Notice of Intent for replacement of the retaining wall at 51 Fire Road 19, with work to commence at drawdown and erosion protection placed before wall construction.",
    "moved_by": "KJ",
    "seconded_by": "BB",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "kj made a motion for approval with work to commence at drawdown with the addition of erosion protection placed prior to the wall construction. bb seconded and the commission voted unanimously to approve"
+   "quote": "bb seconded and the commission voted unanimously to approve the motion."
   },
   {
-   "motion": "Approve determination for removal of one small caliper multi-stemmed tree at 175 Peninsula Drive",
+   "motion": "Approve the agent's determination for the removal of one dead multi-stemmed tree at 175 Peninsula Drive.",
    "moved_by": "KJ",
    "seconded_by": "BP",
    "outcome": "passed unanimously",
@@ -52,7 +52,7 @@
    "quote": "the determination was approved by a motion of kj and a second by bp and a unanimous vote to approve the motion."
   },
   {
-   "motion": "Approve determination for planting of 2 Hemlock trees at 50 Sunset Lane",
+   "motion": "Approve the agent's determination for the planting of 2 Hemlock trees at 50 Sunset Lane.",
    "moved_by": "BP",
    "seconded_by": "CC",
    "outcome": "passed unanimously",
@@ -61,6 +61,348 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Note: In vote 4, the seconded_by initials 'BB' do not correspond to any member listed in the meeting header (Richard Bursch, Todd Dwyer, Bob Pease, Catie Childs, Carl Luck, Jack Rabbitt, Kenneth Jones). This appears to be a transcription error in the original minutes; possibly meant to be 'BP' (Bob Pease) or another member's initials.\"",
- "cost_usd": 0.1519835
+ "note": "Clean text extraction, not a scan; all votes are readable. Meeting held remotely under the Governor's Open Meeting Law order. Member attendance is taken from the opening line (\"all members present\"); no individual roll call. Initials CC and BB are not resolved to a full name in the minutes. Names kept as printed where spellings vary (Rodriquenz/Rodriquez, Aker/Acker, O’BRien). Only one motion was recorded as a continuance without a stated result. No public comment speakers recorded. No transfers recorded.",
+ "cost_usd": 0.010728620000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "present",
+   "quote": "all members present- meeting called to order by chairman bursch"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "all members present- meeting called to order by chairman bursch"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "all members present- meeting called to order by chairman bursch"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "all members present- meeting called to order by chairman bursch"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "all members present- meeting called to order by chairman bursch"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "all members present- meeting called to order by chairman bursch"
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "all members present- meeting called to order by chairman bursch"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "mm noted he had not received a response to his request for calculations."
+  },
+  {
+   "name": "Mark Bursch",
+   "role": "applicant (150 Cross Road work)",
+   "status": "present",
+   "quote": "mark bursch noted where the work was proposed."
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "presenter, DPW culvert at Chase Road",
+   "status": "present",
+   "quote": "brian marchetti and jack rodriquenz was present."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "presenter, DPW culvert at Chase Road",
+   "status": "present",
+   "quote": "brian marchetti and jack rodriquenz was present."
+  },
+  {
+   "name": "Wendy Gendron",
+   "role": "presenter, LSIC annual meeting",
+   "status": "present",
+   "quote": "wendy gendron, dominic merengolo and joanna bilotta were present to address the conservation commission."
+  },
+  {
+   "name": "Dominic Merengolo",
+   "role": "presenter, LSIC annual meeting",
+   "status": "present",
+   "quote": "wendy gendron, dominic merengolo and joanna bilotta were present to address the conservation commission."
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "presenter, LSIC annual meeting",
+   "status": "present",
+   "quote": "wendy gendron, dominic merengolo and joanna bilotta were present to address the conservation commission."
+  },
+  {
+   "name": "Doug Aker",
+   "role": "representing himself",
+   "status": "present",
+   "quote": "doug aker was present to represent himself."
+  },
+  {
+   "name": "Seth Donahue",
+   "role": "owner's representative, Island Road",
+   "status": "present",
+   "quote": "seth donahue and joe o'brien."
+  },
+  {
+   "name": "Joe O’BRien",
+   "role": "Island Road enforcement matter",
+   "status": "present",
+   "quote": "seth donahue and joe o'brien."
+  },
+  {
+   "name": "Nanci Bell",
+   "role": "applicant, NOI at 51 Fire Road 19",
+   "status": "not stated",
+   "quote": "a public meeting on a notice of intent by nanci bell for the replacement of an existing retaining wall at 51 fire road 19."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "72 Hemlock map with tree plantings was moved to the next meeting because no plans had been presented.",
+   "quote": "no plans had been presented and it was moved to the next meeting"
+  },
+  {
+   "decision": "The Island Road enforcement matter (EO-179/183) was continued to the next meeting so the owner's representative can overlay the survey plan on the 2019 Ortho Photo.",
+   "quote": "the commission continued this matter to the next meeting to allow the owners representative to overlay the survey plan on the 2019 ortho photo"
+  },
+  {
+   "decision": "Dominic (LSIC) to have the pretreatment survey ready for the June 17 meeting; the commission asked for survey data in advance of review.",
+   "quote": "dominic indicated that he would be able to have the survey ready for the june 17 meeting."
+  },
+  {
+   "decision": "The chair requested that the 1.2 ratio be maintained for the Chase Road culvert regardless of the bottom, and that the commission reconvene if it could not be.",
+   "quote": "rb requested the 1.2 ration should be maintained regardless of the bottom and if it could not, they should reconvene to address it."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "LSIC aquatic weed treatment: choice of method",
+   "what_was_recorded": "Discussion noted that Clipper is more economical than sonar treatment, with no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "clipper is more economical."
+  },
+  {
+   "topic": "Trails grant",
+   "what_was_recorded": "Old Business listed an update on the trails grant and status of contracts; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "update on trails grant - status of contracts"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order; public comment",
+   "resolution": "no public comment",
+   "quote": "all members present- meeting called to order by chairman bursch there was no public",
+   "tags": [
+    "call to order",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Appointment 1: Mark Bursch, 150 Cross Road proposed work",
+   "resolution": "discussed; no vote recorded",
+   "quote": "mark bursch noted where the work was proposed.",
+   "tags": [
+    "RDA",
+    "buffer zone",
+    "tree removal"
+   ]
+  },
+  {
+   "topic": "Appointment 2: 72 Hemlock tree plantings",
+   "resolution": "moved to next meeting",
+   "quote": "no plans had been presented and it was moved to the next meeting",
+   "tags": [
+    "tree planting"
+   ]
+  },
+  {
+   "topic": "Appointment 3: E-Cert DPW culvert at Chase Road",
+   "resolution": "emergency certification approved",
+   "quote": "brian presented pictures and a drawing.",
+   "tags": [
+    "culvert",
+    "emergency certification",
+    "wildlife crossing",
+    "stream crossing"
+   ]
+  },
+  {
+   "topic": "Appointment 4: LSIC annual meeting with the commission",
+   "resolution": "presented; survey data due June 17",
+   "quote": "dominic presented the year end data.",
+   "tags": [
+    "aquatic plants",
+    "herbicide treatment",
+    "Lake pond survey"
+   ]
+  },
+  {
+   "topic": "Continued: 11 Willow Circle tree removal RDA",
+   "resolution": "negative determination",
+   "quote": "doug aker was present to represent himself.",
+   "tags": [
+    "RDA",
+    "buffer zone",
+    "tree removal"
+   ]
+  },
+  {
+   "topic": "Continued: Sunset Lane and Northfield Road culvert replacement NOI (DPW)",
+   "resolution": "continued to May 20",
+   "quote": "dpw has filed a notice of intent for the replacement of culverts at sunset lane and northfield road.",
+   "tags": [
+    "culvert",
+    "NOI",
+    "wetland bylaw"
+   ]
+  },
+  {
+   "topic": "Continued: 51 Fire Road 19 retaining wall NOI (Nanci Bell)",
+   "resolution": "approved with conditions",
+   "quote": "mm noted that the final part of the data was the dimension of the work to the house.",
+   "tags": [
+    "NOI",
+    "retaining wall",
+    "drawdown",
+    "erosion protection"
+   ]
+  },
+  {
+   "topic": "Enforcement: EO-179/183 Island Road",
+   "resolution": "continued to next meeting",
+   "quote": "eo- 179/183 island road- continued discussion and administrative hearing",
+   "tags": [
+    "enforcement",
+    "dock",
+    "shoreline",
+    "wetland line"
+   ]
+  },
+  {
+   "topic": "Enforcement: other EO and notice of non-compliance items",
+   "resolution": "no action recorded",
+   "quote": "mm noted that he has sent a certified mail for an administrative hearing",
+   "tags": [
+    "enforcement",
+    "notice of non-compliance"
+   ]
+  },
+  {
+   "topic": "New Business: open space parcels",
+   "resolution": "no action recorded",
+   "quote": "new business - open space parcels (non conservation) discussion",
+   "tags": [
+    "open space"
+   ]
+  },
+  {
+   "topic": "Old Business: trails grant",
+   "resolution": "no action recorded",
+   "quote": "update on trails grant - status of contracts",
+   "tags": [
+    "trails",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Certificate of compliance, 675 Reservoir Road",
+   "resolution": "no action; awaiting as-built plan",
+   "quote": "675 reservoir road, paul goguen no action: awaiting submittal of",
+   "tags": [
+    "certificate of compliance",
+    "as-built plan"
+   ]
+  },
+  {
+   "topic": "Minutes of April 1 and 15, 2020",
+   "resolution": "no action taken",
+   "quote": "no action was taken on the minutes at this time",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Agent determination: 175 Peninsula Drive",
+   "resolution": "approved",
+   "quote": "the determination was approved by a motion of kj and a second by bp and a unanimous vote to approve the motion.",
+   "tags": [
+    "agent determination",
+    "dead tree"
+   ]
+  },
+  {
+   "topic": "Agent determination: 50 Sunset Lane",
+   "resolution": "approved",
+   "quote": "mm noted the determination was for the planting of 2 hemlock trees",
+   "tags": [
+    "agent determination",
+    "planting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for a determination, Doug Acker, removal of trees within 100 foot buffer at 11 Willow Circle",
+   "where": "text",
+   "quote": "doug acker has filed a request for a determination for the removal of trees without stumping within the"
+  },
+  {
+   "name": "Notice of Intent, DPW, replacement of culverts at Sunset Lane and Northfield Road",
+   "where": "text",
+   "quote": "dpw has filed a notice of intent for the replacement of culverts at sunset lane and northfield road."
+  },
+  {
+   "name": "Notice of Intent, Nanci Bell, replacement of retaining wall at 51 Fire Road 19",
+   "where": "text",
+   "quote": "a public meeting on a notice of intent by nanci bell for the replacement of an existing retaining wall at 51 fire road 19."
+  },
+  {
+   "name": "E-Cert, DPW Culvert at Chase Road, 520 Chase Road",
+   "where": "text",
+   "quote": "e-cert dpw culvert at chase road at dpw facility at 520 chase road"
+  },
+  {
+   "name": "2019 Ortho Photo",
+   "where": "text",
+   "quote": "overlay the survey plan on the 2019 ortho photo"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "culverts",
+  "notice of intent",
+  "determinations",
+  "enforcement",
+  "aquatic weed treatment",
+  "remote meeting",
+  "COVID-19"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-10-07",
  "docid": "4014",
@@ -12,55 +12,297 @@
  },
  "votes": [
   {
-   "motion": "release the bond for Butterfly Lane",
+   "motion": "Release the bond for Butterfly Lane.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
-   "quote": "p. bertram made motion to release the bond for butterfly lan e, t. cole seconded, all aye",
-   "quote_taken_from_text": true
+   "quote": "p. bertram made motion to release the bond"
   },
   {
-   "motion": "authorize A. Burney to furnish the Select Board with a letter stating the Planning Board has closed out the subdivision",
+   "motion": "Direct A. Burney to furnish the Select Board with a letter stating the Planning Board has closed out the Butterfly Lane subdivision and voted to release the bond.",
    "moved_by": "P. Bertram",
+   "seconded_by": "",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "p. bertram made motion for a. burney to furnish the select board with a letter stating the planning board has closed out the subdivision and voted to release the bond."
+   "quote": "p. bertram made motion for a. burney to furnish the select board with a letter stating the planning board has closed out the subdivision"
   },
   {
-   "motion": "approve the minutes from September 23, 2019",
+   "motion": "Approve the minutes of 09.23.19.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
    "quote": "09.23.19- t. cole made motion to approve, p. bertram seconded, all aye."
   },
   {
-   "motion": "approve the minutes from the September 23, 2019 UNITIL Hearing",
+   "motion": "Approve the minutes of 09.23.19, UNITIL Hearing.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
    "quote": "09.23.19, unitil hearing- t. cole made motion to approve, p. bertram seconded, all aye."
   },
   {
-   "motion": "approve the minutes from October 1, 2019",
+   "motion": "Approve the minutes of 10.01.19.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
    "quote": "10.01.19- t. cole made motion to approve, p. bertram seconded, all aye."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
    "quote": "t. cole made motion to adjourn, p. bertram seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1317855
+ "note": "Minutes are a text extraction with some broken words (for example \"Lan e\", \"Desig nation\"); quotes copy them as printed. The motion to have A. Burney send the Select Board letter records no second and no result. No vote was recorded on the Economic Development charge or the earth removal figure. No public comment section is printed.",
+ "cost_usd": 0.006864919999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: gregory bittner, marisa thompson"
+  },
+  {
+   "name": "Marisa Thompson",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: gregory bittner, marisa thompson"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members present would wait until the remaining members are present before voting to adopt the Economic Development Committee Charge.",
+   "quote": "the board members present would like to wait until the remaining members are present before voting to adopt the charge."
+  },
+  {
+   "decision": "A. Burney will notify the Town Manager that the majority of members present prefer 500 cubic yards as the earth removal permit trigger.",
+   "quote": "the majority of members present would prefer 500."
+  },
+  {
+   "decision": "A. Burney directed to provide screening examples from other communities for the solar bylaw; A. Burney also asked to inquire about Unitil's kW limitation on roof-mounted systems.",
+   "quote": "p. bertram asked that a. burney provide screening examples from other communities."
+  },
+  {
+   "decision": "Board to begin review of the solar bylaw at the October 28 Board meeting.",
+   "quote": "board will begin review at october 28th board meeting."
+  },
+  {
+   "decision": "Master plan RFP question continued to the October 28 meeting.",
+   "quote": "discussion will continue at the october 28"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Butterfly Lane subdivision bond",
+   "what_was_recorded": "The Board voted to release the Butterfly Lane bond after the site walk confirmed the outstanding issues were completed; no dollar amount is printed.",
+   "quote": "p. bertram made motion to release the bond"
+  },
+  {
+   "topic": "Stone Farm unfinished item funds",
+   "what_was_recorded": "P. Bertram wanted the Board to move forward with claiming the funds for the unfinished emergency access road shoulder item; no amount is printed and no vote was recorded.",
+   "figures_as_printed": [],
+   "quote": "p. bertram wanted the board to move forward with claiming the funds for the unfinished item."
+  },
+  {
+   "topic": "Master planning grant",
+   "what_was_recorded": "The Town applied for a master planning grant under MGL Ch. 41 Section 81D but did not receive it; A. Burney suggested holding off a year on the RFP in case additional Town capital funds become available. No amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the town applied for, but did not receive a grant for master planning."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Butterfly Lane subdivision closeout and bond release",
+   "resolution": "bond released; letter to Select Board directed",
+   "quote": "the water district has signed off on the project.",
+   "tags": [
+    "subdivision",
+    "bond",
+    "closeout"
+   ]
+  },
+  {
+   "topic": "Earth removal bylaw warrant article",
+   "resolution": "no vote; A. Burney to notify Town Manager of 500-yard preference",
+   "quote": "an article, which updates the earth removal general bylaw has been submitted for november special town meeting.",
+   "tags": [
+    "earth removal",
+    "warrant article",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Economic Development Committee charge",
+   "resolution": "deferred until all members present; no vote",
+   "quote": "the board reviewed the updated draft.",
+   "tags": [
+    "economic development",
+    "committee charge"
+   ]
+  },
+  {
+   "topic": "Solar bylaw",
+   "resolution": "continued; review to begin October 28",
+   "quote": "p. bertram asked a. burney to clarify what concerns board members have",
+   "tags": [
+    "solar bylaw",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 09.23.19, 09.23.19 UNITIL Hearing, and 10.01.19 minutes",
+   "quote": "09.23.19- t. cole made motion to approve, p. bertram seconded, all aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "UNITIL scenic roads notification",
+   "resolution": "endorsed by the Board",
+   "quote": "decision will be filed with the town clerk and then unitil will file with the registry of deeds.",
+   "tags": [
+    "scenic roads",
+    "UNITIL"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; Open Space Ad Hoc meeting Oct 15 and vacancy noted",
+   "quote": "there is currently a committee vacancy; a notice has been published in the lunenburg ledger.",
+   "tags": [
+    "committees",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Director's items: Stone Farm, MJTC, warrant article, Code sections",
+   "resolution": "Stone Farm deadline suggested to end of October; MJTC tabled; warrant article question raised; Code items in process or on hold",
+   "quote": "a. burney suggested the board give the developer until the end of october to complete the outstanding item.",
+   "tags": [
+    "Stone Farm",
+    "subdivision",
+    "MJTC",
+    "warrant article",
+    "zoning code"
+   ]
+  },
+  {
+   "topic": "Meeting schedule and ongoing items",
+   "resolution": "noted; master plan RFP discussion continued to October 28",
+   "quote": "special town meeting, 7:00 pm, ms-hs preceded by 6:30 pm board meeting",
+   "tags": [
+    "schedule",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:30 PM",
+   "quote": "t. cole made motion to adjourn, p. bertram seconded, all aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 09.23.19",
+   "where": "list",
+   "quote": "minutes- 09.23.19 09.23.19, unitil hearing 10.01.19"
+  },
+  {
+   "name": "Minutes 09.23.19, UNITIL Hearing",
+   "where": "list",
+   "quote": "minutes- 09.23.19 09.23.19, unitil hearing 10.01.19"
+  },
+  {
+   "name": "Minutes 10.01.19",
+   "where": "list",
+   "quote": "minutes- 09.23.19 09.23.19, unitil hearing 10.01.19"
+  },
+  {
+   "name": "Butterfly Lane As Built & GEI Review Letter",
+   "where": "list",
+   "quote": "butterfly lane as built & gei review letter"
+  },
+  {
+   "name": "Earth Removal Warrant Article",
+   "where": "list",
+   "quote": "earth removal warrant article"
+  },
+  {
+   "name": "DRAFT Charge for Economic Development Committee",
+   "where": "list",
+   "quote": "draft charge for economic development committee"
+  },
+  {
+   "name": "Graves Engineering, Inc. (GEI) review letter of September 23rd",
+   "where": "text",
+   "quote": "review letter of september 23rd"
+  },
+  {
+   "name": "Graves Engineering Inc. review letter of December 20, 2017",
+   "where": "text",
+   "quote": "graves engineering inc. review letter of december 20, 2017"
+  },
+  {
+   "name": "Notification of Approval for Designation and Improvement of Scenic Roads, dated October 7, 2019",
+   "where": "text",
+   "quote": "notification of approval for desig nation and improvement of scenic roads, dated october 7, 2019"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "subdivision bond",
+  "earth removal",
+  "solar bylaw",
+  "economic development committee",
+  "master plan",
+  "minutes approval",
+  "scenic roads",
+  "Stone Farm",
+  "special town meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

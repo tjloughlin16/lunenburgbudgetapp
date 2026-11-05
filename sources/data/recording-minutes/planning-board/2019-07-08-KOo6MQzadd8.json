@@ -1,0 +1,306 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "planning-board",
+ "board": "Planning Board",
+ "video_title": "Planning Board",
+ "meeting_date": "2019-07-08",
+ "video_id": "KOo6MQzadd8",
+ "video_url": "https://www.youtube.com/watch?v=KOo6MQzadd8",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/planning-board/2019-07-08-KOo6MQzadd8.json",
+  "sha256": "48be12ff17ece3804e63a8556a1b4a704b44992c3767f554165cab8f489712be",
+  "caption_lines": 227,
+  "segments": 1617
+ },
+ "recording": {
+  "duration_s": 4859,
+  "duration": "1:20",
+  "spoken_chars": 58684,
+  "words_approx": 9780
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_07082019-4007",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2019-07-08-agenda-4007.txt",
+   "path": "sources/meetings/planning-board/2019-07-08-agenda-4007.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07082019-4007",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2019-07-08-minutes-4007.txt",
+   "path": "sources/meetings/planning-board/2019-07-08-minutes-4007.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-05T04:41:26Z",
+  "cost_usd": 0.2135742
+ },
+ "minutes": {
+  "headline": "Planning Board reviewed draft parking, solar and earth removal bylaws; only an adjournment motion was made.",
+  "summary": "The board discussed exemptions in the draft earth removal bylaw, walked through a new grid-style off-street parking draft, and began discussing changes to the solar bylaw. It also set agendas for upcoming meetings, covering a Unitil tree notice, the outlying district and a construction bond hearing. No substantive votes were taken.",
+  "attendees": [],
+  "public_comment": [],
+  "tags": [
+   "economic-development",
+   "planning-and-zoning",
+   "policy"
+  ],
+  "votes": [
+   {
+    "t": 4822,
+    "motion": "Motion to adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 360,
+    "decision": "Members asked to send marked-up comments on the earth removal bylaw ahead of the meeting; it will likely be carried to the 22nd."
+   },
+   {
+    "t": 3599,
+    "decision": "Members to read the solar bylaw section and send ideas to the planner; likely a spring effort, with a try for fall."
+   },
+   {
+    "t": 4020,
+    "decision": "July 22nd agenda: Unitil, earth removal and economic development; master plan held for a later meeting."
+   },
+   {
+    "t": 4709,
+    "decision": "Construction bond hearing likely to be scheduled for the 26th."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 1,
+    "t_end": 339,
+    "topic": "Earth removal bylaw exemptions (fill, foundations, septic)",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 339,
+    "t_end": 422,
+    "topic": "Marking up drafts; committee reports",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 422,
+    "t_end": 2193,
+    "topic": "Draft off-street parking and loading requirements",
+    "resolution": "informational; revisions to follow",
+    "tags": [
+     "planning-and-zoning",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 2193,
+    "t_end": 3810,
+    "topic": "Solar bylaw changes, public hearing process for bylaws",
+    "resolution": "no resolution; members to send ideas",
+    "tags": [
+     "planning-and-zoning",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 3810,
+    "t_end": 4042,
+    "topic": "Notices: Unitil tree removal, July 22 schedule",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 4042,
+    "t_end": 4709,
+    "topic": "August agenda: zoning basics, outlying district, use versus activity",
+    "resolution": "no resolution",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 4709,
+    "t_end": 4852,
+    "topic": "Ongoing items, bond hearing, public comment, adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Speakers are not identified; vote result on adjournment not stated.",
+   "Garbled stretches near 3947-3972 and 4822-4852."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 4297,
+    "about": "Whether the outlying district is functionally residential and what problem a change would solve.",
+    "sides": "one member against another member and the planner",
+    "words_as_heard": "I totally disagree that it is a residential zone",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 2928,
+    "kind": "liability or legal",
+    "about": "Requiring underground utilities could lose in Land Court against utility engineering claims.",
+    "who": "the planner",
+    "words_as_heard": "if you found yourself and Land Court fighting with a electrical engineer that says this is electrically impossible and we need to go above ground you're gonna lose"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 422,
+    "name_as_heard": "off street parking and loading draft",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "I did place an off street parking and loading draft at everybody's place",
+    "shown": true
+   },
+   {
+    "t": 3599,
+    "name_as_heard": "the solar bylaw",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "read through that section of the bylaw",
+    "shown": false
+   },
+   {
+    "t": 3810,
+    "name_as_heard": "Unitil email",
+    "kind": "letter or email",
+    "words_as_heard": "unit L which you've all seen that by email",
+    "shown": false
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Planning Board took no substantive votes; the only motion was to adjourn.",
+    "t": 4822
+   },
+   {
+    "line": "Members went through a new grid-style draft of off-street parking and loading requirements, with revisions to follow.",
+    "t": 422
+   },
+   {
+    "line": "The board discussed exemptions in the draft earth removal bylaw, including fill, foundations and septic work, and was asked to send marked-up comments.",
+    "t": 360
+   },
+   {
+    "line": "Members began discussing changes to the solar bylaw and were asked to send ideas to the planner, likely for a spring effort with a try for fall.",
+    "t": 3599
+   },
+   {
+    "line": "The board set the July 22 agenda (Unitil, earth removal, economic development) and said a construction bond hearing would likely be scheduled for the 26th.",
+    "t": 4709
+   }
+  ],
+  "why_it_matters": [
+   "The drafts under review would set rules for parking, solar installations and earth removal on private land, so any of them reaching Town Meeting would change what property owners and developers may build or do.",
+   "Nothing was decided at this meeting, so there is still time for residents to comment before the bylaws go to a public hearing."
+  ],
+  "watch_next": [
+   "July 22 Planning Board meeting: Unitil tree notice, earth removal bylaw (likely carried over) and economic development.",
+   "A construction bond hearing, likely to be scheduled for the 26th."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-05T04:41:31Z",
+   "cost_usd": 0.021795099999999998
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07082019-4007",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2019-07-08-minutes-4007.txt",
+   "path": "sources/meetings/planning-board/2019-07-08-minutes-4007.pdf"
+  },
+  "official_sha256": "c8b97f281e24761cd7f0e5f646342fd711b8619f06d49e075f29039df44547e0",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "Neither record has votes, transfers or budget figures. They agree on the earth removal bylaw comments and the solar bylaw review, but differ on the economic development date, and the next-meeting agenda and bond hearing in ours are not in the official minutes.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 0,
+   "discrepancy": 1,
+   "only_in_ours": 1,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Earth removal bylaw input from members",
+    "ours": "Members asked to send marked-up comments on the earth removal bylaw ahead of the meeting; it will likely be carried to the 22nd.",
+    "official": "board members will provide their input to a. burney and draft #1 will be revised.",
+    "note": "Both say members send input on the earth removal bylaw; the carry-over to the 22nd is only in ours.",
+    "t": 360
+   },
+   {
+    "kind": "agree",
+    "about": "Solar bylaw review by members",
+    "ours": "Members to read the solar bylaw section and send ideas to the planner; likely a spring effort, with a try for fall.",
+    "official": "board members will review the current solar byl aw for discussion purposes/proposed revisions.",
+    "note": "Both have members reviewing the solar bylaw and giving input; the spring/fall timing is only in ours.",
+    "t": 3599
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Economic development discussion timing",
+    "ours": "July 22nd agenda: Unitil, earth removal and economic development; master plan held for a later meeting.",
+    "official": "economic development/economic development committee - discussion to be held on august 12th.",
+    "note": "Ours puts economic development on the July 22 agenda, but the official minutes say August 12. Check the recording and the posted agendas.",
+    "t": 4020
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Construction bond hearing scheduling",
+    "ours": "Construction bond hearing likely to be scheduled for the 26th.",
+    "official": "",
+    "note": "The official minutes do not mention a construction bond hearing date.",
+    "t": 4709
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Parking grid edits (Section 250-6.1)",
+    "ours": "",
+    "official": "edits will be made per board input.",
+    "note": "The official minutes record edits to the off-street parking grid; ours do not mention it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees",
+    "ours": "",
+    "official": "present: matthew allison, tanner cole, gregory bittner, rhonda lisio, adam r. burney",
+    "note": "Our minutes list no attendees. The official minutes list four members and the Land Use Director present, and Paula Bertram absent."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-05T04:42:08Z",
+   "cost_usd": 0.0267791
+  }
+ }
+}

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2020-04-01",
  "docid": "6245",
@@ -12,72 +12,357 @@
  },
  "votes": [
   {
-   "motion": "Approve Drew Tobin's Eagle Scout project for bat houses at Hollis Road pollinator habitat",
+   "motion": "Approve Drew Tobin's proposed Eagle Scout project (bat houses at the Hollis Road pollinator habitat).",
    "moved_by": "KJ",
    "seconded_by": "CC",
-   "outcome": "passed unanimously",
+   "outcome": "passed unanimously by roll call",
    "procedural": false,
-   "quote": "kj moved to approve the project cc seconded and the commission voted unanimously by roll call vote"
+   "quote": "kj moved to approve the project cc seconded and the commission voted unanimously by roll call vote."
   },
   {
-   "motion": "Approve the notification for Hickory Hills Lake Management project as sufficient",
+   "motion": "Approve the Hickory Hills notification as sufficient.",
    "moved_by": "BP",
    "seconded_by": "JR",
-   "outcome": "passed 6-0-1",
+   "outcome": "passed 6 yes, RB abstained",
    "procedural": false,
-   "quote": "bp moved to approve the notification as sufficient. jr seconded. cl noted that he does support the concept and wishes not to ",
-   "quote_taken_from_text": true
+   "quote": "bp moved to approve the notification as sufficient. jr seconded."
   },
   {
-   "motion": "Close out EO Emerald Place Beach enforcement order",
+   "motion": "Close out the Emerald Place Beach enforcement order (EO).",
    "moved_by": "TD",
    "seconded_by": "KJ",
-   "outcome": "passed unanimously",
+   "outcome": "passed unanimously (vote printed as 'nanimusly')",
    "procedural": false,
-   "quote": "td moved to close out the eo. kj seconded and the commission voted nanimusly n the motion"
+   "quote": "td moved to close out the eo. kj seconded and the commission voted nanimusly n the motion."
   },
   {
-   "motion": "Release Chapter 61A restrictions on four properties",
+   "motion": "Release the requested Chapter 61A lots (57 and 63 Cross Road, 322 Flatt Hill Road, 563 Mass Ave, Tract A, corner of Northfield and Holman Streets) by individual motions on each lot.",
    "moved_by": "KJ",
    "seconded_by": "CC",
-   "outcome": "passed unanimously",
+   "outcome": "passed unanimously by roll call",
    "procedural": false,
-   "quote": "the commission released all requested for 61 a releases by individual motions on each lot of kj and a second by cc with unanimous roll call votes"
+   "quote": "the commission released all requested for 61 a releases by individual motions on each lot of kj and a second by cc with unanimous roll call votes to approve the motions."
   },
   {
-   "motion": "Approve 121 Peninsula Drive extension permit for 3 years",
+   "motion": "Approve the 121 Peninsula extension permit for 3 years.",
    "moved_by": "CC",
    "seconded_by": "KJ",
-   "outcome": "passed unanimously",
+   "outcome": "passed unanimously by roll call",
    "procedural": false,
    "quote": "the commission approved 121 peninsula for 3 years by a motion of cc and a second by kj"
   },
   {
-   "motion": "Approve 1-year extension for Lunenburg Water District Mass Ave order of conditions",
+   "motion": "Approve a 1 year extension for the Lunenburg Water District order of conditions.",
    "moved_by": "CC",
    "seconded_by": "KJ",
-   "outcome": "passed unanimously",
+   "outcome": "passed unanimously by roll call",
    "procedural": false,
    "quote": "the commission approved a 1 year extension for the water district order of conditions by a motion of cc and a second by kj"
   },
   {
-   "motion": "Approve minutes of February 19, 2020 meeting",
+   "motion": "Approve the minutes of February 19, 2020.",
    "moved_by": "BP",
    "seconded_by": "CL",
-   "outcome": "passed unanimously",
+   "outcome": "passed unanimously by roll call",
    "procedural": true,
-   "quote": "minutes approved by a motion of bp and a second by cl with a unanimous roll call vote to approve the motion"
+   "quote": "minutes approved by a motion of bp and a second by cl with a unanimous roll call vote to approve the motion."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 10:05 PM.",
    "moved_by": "KJ",
    "seconded_by": "TD",
-   "outcome": "passed unanimously",
+   "outcome": "passed (vote printed as 'numinous')",
    "procedural": true,
    "quote": "the meeting adjourned at 10:05 pm by a motion of kj and a second by td with a numinous vote to approve"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes contain original typos: \"nanimusly\" for unanimously (page 4), \"n\" for \"in\" (page 4), \"numinous\" for \"unanimous\" (page 5), and \"voted\" instead of \"vote\" (page 5). Quotes preserve these as they appear in the original minutes.",
- "cost_usd": 0.1279035
+ "note": "Text extracted without a clean layout: several typos in the source ('nanimusly n' for unanimously, 'numinous' for unanimous, 'Joan Please' and 'Joan Pease' used for the same speaker, 'Mrs. Bertram' vs 'Paula Bertram'). The 61A releases were recorded as individual motions per lot, but the minutes do not itemize each motion or its vote separately; the quote covers the combined record. The Hickory Hills vote is printed as '6 yes and RB abstained'. Several agenda items were not heard because presenters were unable to attend. No dollar figures are printed anywhere in the minutes. The minutes contain no printed document list.",
+ "cost_usd": 0.00894932,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair (RB, presiding)",
+   "status": "present",
+   "quote": "all members were present. staff present."
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "all members were present. staff present."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Member (BP)",
+   "status": "present",
+   "quote": "all members were present. staff present."
+  },
+  {
+   "name": "Catie Childs",
+   "role": "Member (CC)",
+   "status": "present",
+   "quote": "all members were present. staff present."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Member (CL)",
+   "status": "present",
+   "quote": "all members were present. staff present."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Member (JR)",
+   "status": "present",
+   "quote": "all members were present. staff present."
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "Member (KJ)",
+   "status": "present",
+   "quote": "all members were present. staff present."
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator (MM)",
+   "status": "present",
+   "quote": "mm recommended the progress as-built and a remedial plan"
+  },
+  {
+   "name": "Drew Tobin",
+   "role": "Eagle Scout candidate, presenting his proposed project",
+   "status": "present",
+   "quote": "drew tobin presented his proposed project which is a proposed bat house (4) at the hollis road pollinator habitat"
+  },
+  {
+   "name": "John Fortune",
+   "role": "presented on behalf of Hickory Hills",
+   "status": "present",
+   "quote": "john fortune presented on behalf of hickory hills."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "spoke for the Hickory Hills association (no role printed)",
+   "status": "present",
+   "quote": "paula bertram outlined the informational process to the residents and emphasized that there is a time issue"
+  },
+  {
+   "name": "Joan Pease",
+   "role": "spoke to Island Road violation (no role printed)",
+   "status": "present",
+   "quote": "joan pease also expressed the same concerns as mrs. bertram elaborating that there is still a concern for erosion"
+  },
+  {
+   "name": "David Wright",
+   "role": "EPO, Mass Environmental Police (scheduled presenter)",
+   "status": "absent",
+   "quote": "presentation on hunting regulation in massachusetts by epo david wright, mass environmental police."
+  },
+  {
+   "name": "Neil Gorman",
+   "role": "applicant, 238 Fire Road 16 (scheduled)",
+   "status": "absent",
+   "quote": "concerning potential construction at 238 fire road 16"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "All hearings previously advertised will be re-advertised for the April 15, 2020 meeting, because the prior legal advertisements gave a physical address; the April 15 meeting will be remote.",
+   "quote": "all hearings previously advertised will be re-advertised for the april 15, 2020 meeting"
+  },
+  {
+   "decision": "The applicant at 179/183 Island Road is to be contacted and asked for an as-built, with a quantification of allowed activities and violations; documents to be ready for April 15, and an administrative hearing to follow.",
+   "quote": "the applicant is to be advised to have the documents ready for the 15th of april. there will be an administrative hearing."
+  },
+  {
+   "decision": "MM and BP will walk the Gilchrest Street property for trail access with Kevin Hill.",
+   "quote": "mm and bp will walk the area with kevin hill"
+  },
+  {
+   "decision": "MM to check out the reported violation at 9 Valley Road.",
+   "quote": "bp noted and showed photos of a violation at 9 valley road. mm to check out"
+  },
+  {
+   "decision": "BP and MM will meet with Adam Costa for further clarification on the firearm-discharge permission requests (not hunting).",
+   "quote": "they both will be meeting with adam costa for further clarification."
+  },
+  {
+   "decision": "Hickory Hills to provide the Commission an update in mid June; Mr. Fortune agreed.",
+   "quote": "cl requested if they could have an update in mid june."
+  },
+  {
+   "decision": "Next meeting is April 15, 2020 at 7 PM, with remote participation.",
+   "quote": "the april 15, 2020 meeting will be remote participation"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hickory Hills lake management work",
+   "what_was_recorded": "A commissioner said the residents' approval of the work came at a great expense to the landowners; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "jr indicated that an extra meeting of the residents approved of the work to be done by a large majority at a great expense to the landowners."
+  },
+  {
+   "topic": "Eagle Scout project funding",
+   "what_was_recorded": "The Eagle Scout candidate will raise the funds for the bat house project himself; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "he will be fundraising on his own."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "",
+   "topic": "Hickory Hills approval timing",
+   "quote": "paula bertram outlined the informational process to the residents and emphasized that there is a time issue with the application being needed by april 30th."
+  },
+  {
+   "speaker": "Resident of 158 Highland Road",
+   "stated_role": "Resident of 158 Highland Road",
+   "topic": "Hickory Hills support",
+   "quote": "resident of 158 highland road fully supports the efforts and requested the commission act."
+  },
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "",
+   "topic": "Island Road violation",
+   "quote": "paula bertram urged the commission that while she could understand the issues surrounding the pandemic however the violation is egregious"
+  },
+  {
+   "speaker": "Joan Pease",
+   "stated_role": "",
+   "topic": "Island Road violation",
+   "quote": "joan pease also expressed the same concerns as mrs. bertram elaborating that there is still a concern for erosion"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and remote-meeting procedures",
+   "resolution": "no action; RB read Governor's open meeting law modifications",
+   "quote": "meeting called to order with rb presiding. all members were present."
+  },
+  {
+   "topic": "Eagle Scout project, Drew Tobin (bat houses)",
+   "resolution": "approved unanimously",
+   "quote": "drew tobin presented his proposed project which is a proposed bat house (4) at the hollis road pollinator habitat"
+  },
+  {
+   "topic": "Hickory Hills lake management plan (fanwort treatment)",
+   "resolution": "notification approved 6 yes, RB abstained; update requested mid June",
+   "quote": "john fortune presented on behalf of hickory hills."
+  },
+  {
+   "topic": "Hunting regulation presentation, EPO David Wright",
+   "resolution": "not heard, presenter unable to attend",
+   "quote": "presentation on hunting regulation in massachusetts by epo david wright, mass environmental police."
+  },
+  {
+   "topic": "Informal discussion, 238 Fire Road 16 (Neil Gorman)",
+   "resolution": "not heard, applicant unable to attend",
+   "quote": "concerning potential construction at 238 fire road 16"
+  },
+  {
+   "topic": "Field change request, 72 Hemlock",
+   "resolution": "continued",
+   "quote": "request for a field change ( continued)"
+  },
+  {
+   "topic": "Hearing re-advertisement notice",
+   "resolution": "no vote; hearings to be re-advertised for April 15",
+   "quote": "all hearings previously advertised will be re-advertised for the april 15, 2020 meeting"
+  },
+  {
+   "topic": "Enforcement: EO-164 Page Street",
+   "resolution": "continued; to be removed by May 2020",
+   "quote": "to be removed by may 2020"
+  },
+  {
+   "topic": "Enforcement: Emerald Place Beach EO",
+   "resolution": "closed out unanimously",
+   "quote": "bp had submitted a picture and saw the site and noted no sign of erosion."
+  },
+  {
+   "topic": "Enforcement: 179/183 Island Road",
+   "resolution": "as-built and engineered plan requested; administrative hearing; no vote recorded",
+   "quote": "rb proposed that the applicant be contacted that we are requesting an as built be produced as soon as possible"
+  },
+  {
+   "topic": "Site walk, Gilchrest Street property (trail access)",
+   "resolution": "assigned to MM and BP",
+   "quote": "mm and bp will walk the area with kevin hill"
+  },
+  {
+   "topic": "Possible violation, 9 Valley Road",
+   "resolution": "MM to check out",
+   "quote": "bp noted and showed photos of a violation at 9 valley road. mm to check out"
+  },
+  {
+   "topic": "Chapter 61A release requests (five parcels)",
+   "resolution": "all released by individual unanimous roll call votes",
+   "quote": "the commission released all requested for 61 a releases by individual motions on each lot of kj and a second by cc"
+  },
+  {
+   "topic": "Land use policy revisions (firearm discharge requests)",
+   "resolution": "BP and MM to meet with Adam Costa",
+   "quote": "they both will be meeting with adam costa for further clarification."
+  },
+  {
+   "topic": "Open meeting law resolution",
+   "resolution": "no action; one form awaiting, others submitted to AG's office",
+   "quote": "mm noted that there was only one form awaiting and the remaining have been submitted to the ag's office"
+  },
+  {
+   "topic": "Extension permits: 121 Peninsula and Lunenburg Water District",
+   "resolution": "both approved unanimously",
+   "quote": "the commission approved 121 peninsula for 3 years by a motion of cc and a second by kj"
+  },
+  {
+   "topic": "Minutes of February 19, 2020",
+   "resolution": "approved unanimously",
+   "quote": "minutes approved by a motion of bp and a second by cl with a unanimous roll call vote to approve the motion."
+  },
+  {
+   "topic": "Administrator's determination, 329 Sunset Lane",
+   "resolution": "no action; emergency certification issued by MM, photos to follow",
+   "quote": "mm outlined that he had issued an emergency certification"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:05 PM",
+   "quote": "the meeting adjourned at 10:05 pm by a motion of kj and a second by td"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "5 year comprehensive plan (Hickory Hills, forwarded by ESS)",
+   "where": "text",
+   "quote": "paula bertram noted that the 5 year comprehensive plan is going to be forwarded by ess"
+  },
+  {
+   "name": "Amendment to the NOI (notice of intent)",
+   "where": "text",
+   "quote": "without a public hearing and an amendment to the noi"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "remote meeting",
+  "COVID-19",
+  "Hickory Hills",
+  "aquatic vegetation",
+  "enforcement",
+  "Chapter 61A",
+  "extension permit",
+  "Eagle Scout",
+  "trails",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

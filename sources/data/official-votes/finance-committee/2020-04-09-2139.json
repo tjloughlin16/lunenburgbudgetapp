@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2020-04-09",
  "docid": "2139",
@@ -12,15 +12,246 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting.",
    "moved_by": "Dave Passios",
    "seconded_by": "Peter Beardmore",
-   "outcome": "Unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "dave passios motion, peter beardmore 2nd, unanimously approved, 8:40 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0743525
+ "note": "Extracted text, not a scan. Only one motion is recorded (adjournment, unanimously approved); no votes were taken on the budget, warrant, or tax deadline. The Town Manager and Town Finance Director are referred to by title only and are not named, so they are not listed as attendees. Figures are printed as they appear in the minutes, including \"$130, 000\" with a space and the state aid and new growth figures without consistent dollar signs. Rep Haye, Sen Tran and Dee Bus are mentioned but did not attend. The dashboard worksheet and draft warrant are linked by URL, and the minutes do not give them dates or authors. The documents list is recorded as a sentence-form reference, not a headed list.",
+ "cost_usd": 0.00587532,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: terri burchfield, dave passios, michelle walton, peter beardmore, john henshaw"
+  },
+  {
+   "name": "Michelle Walton",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: terri burchfield, dave passios, michelle walton, peter beardmore, john henshaw"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: terri burchfield, dave passios, michelle walton, peter beardmore, john henshaw"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, dave passios, michelle walton, peter beardmore, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, dave passios, michelle walton, peter beardmore, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "present: terri burchfield, dave passios, michelle walton, peter beardmore, john henshaw absent: jay simeone"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Resident",
+   "status": "not stated",
+   "quote": "resident carl luck requested additional information with respect to discount rates associated with opeb"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dave Passios will follow up with the Town Manager on scheduling a meeting with Rep Haye and Sen Tran, with the finance committee or with the Board of Selectmen.",
+   "quote": "he will follow-up with the town manager."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "New growth revision",
+   "what_was_recorded": "New growth was reduced from one figure to a much lower figure, reflecting new guidance from the regional assessor.",
+   "figures_as_printed": [
+    "$193,400",
+    "$130, 000"
+   ],
+   "quote": "a reduction in new growth from $193,400 to $130, 000 reflecting new guidance from the regional assessor"
+  },
+  {
+   "topic": "State aid",
+   "what_was_recorded": "State aid was reduced to level-funded because there is no information from the state.",
+   "figures_as_printed": [
+    "211,836"
+   ],
+   "quote": "state aide was reduced to level-funded. there is no information from the state (211,836 reduction)."
+  },
+  {
+   "topic": "Local receipts",
+   "what_was_recorded": "Local receipts were reduced to level-funded.",
+   "figures_as_printed": [
+    "$68,454.26"
+   ],
+   "quote": "local receipts were reduced to level-funded, ($68,454.26 reduction)."
+  },
+  {
+   "topic": "Expense elimination and abatement allowance",
+   "what_was_recorded": "The Town Manager recommended eliminating expenses including new positions and adjusting the allowance for abatements.",
+   "figures_as_printed": [
+    "$55,000"
+   ],
+   "quote": "town manager is recommending eleminition of expenses including new positions and adjusting $55,000 in allowance for abatements."
+  },
+  {
+   "topic": "Town budget deficit",
+   "what_was_recorded": "The total changes reflect a deficit of approximately $30,000, which does not yet include reductions to the school budget or capital plan.",
+   "figures_as_printed": [
+    "$30,000"
+   ],
+   "quote": "these total changes reflect a deficit of approximately $30,000, which still does not include reductions to school budget or capital plan."
+  },
+  {
+   "topic": "School Dee Bus services agreement",
+   "what_was_recorded": "The school department is negotiating a financial agreement with Dee Bus for services not delivered during the school closure; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "entering into discussions with dee bus to negotiate a financial agreement associated with services not delivered during the school closure"
+  },
+  {
+   "topic": "OPEB discount rates and contribution",
+   "what_was_recorded": "A resident requested information on OPEB discount rates and whether the town has reached a contribution level that benefits from those discounts; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "resident carl luck requested additional information with respect to discount rates associated with opeb"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "",
+   "topic": "Finance committee discussion on delaying property tax deadline",
+   "quote": "peter beardmore recommended a finance committee discussion regarding the upcoming selectmen's vote on delaying the property tax deadline."
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "Resident",
+   "topic": "OPEB discount rates",
+   "quote": "resident carl luck requested additional information with respect to discount rates associated with opeb, and whether the town has achieved a level of contribution that we are benefiting from those discounts."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order; COVID-19 Zoom advisory read",
+   "quote": "terri burchfield, chair called the meeting to order at 7 pm. and read the covid-19 / zoom meeting advisory statement.",
+   "tags": [
+    "procedure",
+    "zoom"
+   ]
+  },
+  {
+   "topic": "Public Comment (Peter Beardmore)",
+   "resolution": "no action",
+   "quote": "peter beardmore recommended a finance committee discussion regarding the upcoming selectmen's vote on delaying the property tax deadline.",
+   "tags": [
+    "property tax deadline",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Review of Updated Town Manager Budget",
+   "resolution": "reviewed; no vote; deficit of approximately $30,000 noted",
+   "quote": "the town manager reviewed recommended adjustments to the town budget, outlined in the linked dashboard worksheet.",
+   "tags": [
+    "town budget",
+    "deficit",
+    "state aid",
+    "local receipts",
+    "new growth"
+   ]
+  },
+  {
+   "topic": "Review of Draft Warrant for Annual Town Meeting",
+   "resolution": "reviewed; no vote",
+   "quote": "the town manager reviewed the draft warrant for the annual town meeting:",
+   "tags": [
+    "warrant",
+    "annual town meeting"
+   ]
+  },
+  {
+   "topic": "Town Manager / Finance Director Report",
+   "resolution": "discussed; no vote",
+   "quote": "peter beardmore expressed reservations with respect to extending the deadline because financial impacts are uncalculated",
+   "tags": [
+    "property tax deadline",
+    "cash flow",
+    "treasurer"
+   ]
+  },
+  {
+   "topic": "Public Comment (Carl Luck)",
+   "resolution": "no action",
+   "quote": "resident carl luck requested additional information with respect to discount rates associated with opeb",
+   "tags": [
+    "OPEB",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reported; Dave Passios to follow up with Town Manager",
+   "quote": "dave passios reported that he has had some contact with rep haye and sen tran",
+   "tags": [
+    "school committee",
+    "legislators",
+    "school closure"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:40 PM, unanimously",
+   "quote": "dave passios motion, peter beardmore 2nd, unanimously approved, 8:40 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Dashboard worksheet (linked, Town Manager's recommended budget adjustments)",
+   "where": "list",
+   "quote": "adjustments to the town budget, outlined in the linked dashboard worksheet."
+  },
+  {
+   "name": "Draft warrant for the annual town meeting (linked)",
+   "where": "list",
+   "quote": "the town manager reviewed the draft warrant for the annual town meeting:"
+  }
+ ],
+ "tags": [
+  "town budget",
+  "FY budget deficit",
+  "state aid",
+  "local receipts",
+  "new growth",
+  "annual town meeting warrant",
+  "property tax deadline",
+  "OPEB",
+  "school budget",
+  "COVID-19",
+  "Zoom meeting",
+  "committee reports"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the town manager reviewed recommended adjustments to the town budget, outlined in the linked dashboard worksheet."
+ },
+ "dropped_unquoted_by_field": {}
 }

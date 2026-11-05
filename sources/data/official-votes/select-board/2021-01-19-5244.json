@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-01-19",
  "docid": "5244",
@@ -12,23 +12,537 @@
  },
  "votes": [
   {
-   "motion": "To ratify the appointment of Esteban Bonilla-Perez as Reserve Officer",
+   "motion": "Ratify the Town Manager's appointment of Esteban Bonilla-Perez as Reserve Police Officer.",
    "moved_by": "K. Adams",
    "seconded_by": "J. Marino",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: k. adams 2nd: j. marino to ratify the appointment of esteban bonilla-perez as reserve officer vote: ms. adams- aye, mr. marino- aye, mr. dwyer- aye, mr. jeffreys- aye, mr. alonzo- aye"
+   "quote": "to ratify the appointment of esteban bonilla-perez as reserve officer"
   },
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Adjourn the meeting at 9:39 p.m.",
    "moved_by": "T. Dwyer",
    "seconded_by": "M. Jeffreys",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. dwyer 2nd: m. jeffreys to adjourn the meeting at 9:39 p.m. vote: mr. marino-aye, mr. jeffreys- aye, mr. dwyer-aye, ms. adams- aye, mr. alonzo-aye"
+   "quote": "to adjourn the meeting at 9:39 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1718715
+ "note": "Text is a readable extraction, not a scan. Two motions are recorded (ratification and adjournment), both with printed aye lists but no printed count, so outcome is \"passed\". Discussion items have no recorded motions and are not treated as votes. Figures are recorded as printed; the minutes give the Flat Hill project as $428,500 in the capital request but a resident cites $458,500.00 in public comment, and both are kept as printed. Some capital-plan and forecast table cells are garbled in the extraction, so figures are quoted only where the text reads cleanly. The minutes name Fire Chief Sullivan only as someone the senator intends to meet, so he is not listed as an attendee.",
+ "cost_usd": 0.01855812,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Member",
+   "status": "present",
+   "quote": "adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Member",
+   "status": "present",
+   "quote": "adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; police chief gammel, esteban bonilla-perez"
+  },
+  {
+   "name": "Police Chief Gammel",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; police chief gammel, esteban bonilla-perez"
+  },
+  {
+   "name": "Esteban Bonilla-Perez",
+   "role": "Police Reserve Officer appointee",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; police chief gammel, esteban bonilla-perez"
+  },
+  {
+   "name": "Senator John Cronin",
+   "role": "Senator",
+   "status": "present",
+   "quote": "senator john cronin, representative danillo sena; school supt. burnham"
+  },
+  {
+   "name": "Representative Danillo Sena",
+   "role": "Representative",
+   "status": "present",
+   "quote": "senator john cronin, representative danillo sena; school supt. burnham"
+  },
+  {
+   "name": "Burnham",
+   "role": "School Supt.",
+   "status": "present",
+   "quote": "senator john cronin, representative danillo sena; school supt. burnham"
+  },
+  {
+   "name": "Rep. Kushmerek",
+   "role": "Representative",
+   "status": "absent",
+   "quote": "rep. kushmerek was still in his council meeting and would be unable to"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "Highland Street, public comment",
+   "status": "present",
+   "quote": "dave rodgers, highland street, requested the public access staff if they could improve the"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Adams requested a future agenda discussion on carrying firearms on town property and hunting on conservation land.",
+   "quote": "requested a future agenda discussion on carrying firearms on town property and hunting on conservation land"
+  },
+  {
+   "decision": "Rep. Kushmerek to be scheduled for another time in February, since he could not attend this meeting.",
+   "quote": "he will be scheduled for another time in february."
+  },
+  {
+   "decision": "The Select Board is to put Appointments/Reappointments back on the agenda for discussion.",
+   "quote": "the select board needs to put appointments/reappointments back on the agenda for discussion"
+  },
+  {
+   "decision": "Mr. Jeffreys will bring a proposed change to the APD by-law as it pertains to town properties to the February 2nd meeting; Mr. Alonzo suggested giving it to the Town Manager for distribution to Board members in advance.",
+   "quote": "he will be prepared at the february 2nd meeting to propose a change."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2022 capital requests total",
+   "what_was_recorded": "Twenty-three FY2022 capital requests were recorded as totaling $2,547,312.",
+   "figures_as_printed": [
+    "$2,547,312"
+   ],
+   "quote": "there were 23 capital requests totaling $2,547,312 for fy 2022."
+  },
+  {
+   "topic": "FY2022 capital funding and shortfall",
+   "what_was_recorded": "The FY2022 surplus/(shortfall) line is shown as (1,047,487), and the forecast draws $688,825 of free cash toward the FY22 Capital Plan.",
+   "figures_as_printed": [
+    "(1,047,487)",
+    "$688,825"
+   ],
+   "quote": "$688,825 of that amount towards the fy22 capital plan,"
+  },
+  {
+   "topic": "FY22 capital requests not funded",
+   "what_was_recorded": "The total amount of FY22 capital requests not funded is recorded as $1,047,487.",
+   "figures_as_printed": [
+    "$1,047,487"
+   ],
+   "quote": "the total amount that was not funded in fy22 requests is $1,047,487."
+  },
+  {
+   "topic": "Flat Hill culvert reconstruction",
+   "what_was_recorded": "The Flat Hill culvert project cost is printed as $428,500 in the capital request.",
+   "figures_as_printed": [
+    "$428,500"
+   ],
+   "quote": "project title: infra20-01 flat hill culvert reconstruction project cost: $428,500"
+  },
+  {
+   "topic": "Flat Hill drainage project cost raised in public comment",
+   "what_was_recorded": "Dave Rodgers asked about the Flat Hill drainage project cost, which he gave as $458,500.00; the figure differs from the $428,500 capital request.",
+   "figures_as_printed": [
+    "$458,500.00"
+   ],
+   "quote": "asked about the flat hill drainage project cost of $458,500.00"
+  },
+  {
+   "topic": "Ritter Building envelope repairs estimate",
+   "what_was_recorded": "The Ritter envelope project is budgeted at $120,000, but a secondary architect estimate including alternates came in at $200,000.",
+   "figures_as_printed": [
+    "$120,000",
+    "$200,000"
+   ],
+   "quote": "the total cost including the alternates came in at $200,000."
+  },
+  {
+   "topic": "Bulletproof vests",
+   "what_was_recorded": "The 29-vest purchase is $17,500 after $5,768 remaining from the FY17 appropriation reduces the $23,200 total cost; a federal grant may cover half.",
+   "figures_as_printed": [
+    "$17,500",
+    "$5,768",
+    "$23,200"
+   ],
+   "quote": "there is $5,768 remaining for that capital project that will reduce the total cost of $23,200 for 29 vests to $17,500."
+  },
+  {
+   "topic": "Six-wheel dump truck replacement",
+   "what_was_recorded": "Replacement of the 2005 International 6 Wheel Dump Truck is budgeted at $211,000; the truck has about 83,000 miles.",
+   "figures_as_printed": [
+    "$211,000"
+   ],
+   "quote": "project title: dpw17-07 6 wheel dump truck with plow and sander project cost: $211,000"
+  },
+  {
+   "topic": "Fire turnout gear",
+   "what_was_recorded": "Turnout gear for 20 sets is budgeted at $100,000; the Fire operating budget for protective equipment is $10,000/year.",
+   "figures_as_printed": [
+    "$100,000",
+    "$10,000/year"
+   ],
+   "quote": "the fire department's operating budget has been historically funded at $10,000/year to replace protective equipment."
+  },
+  {
+   "topic": "Police hybrid cruisers",
+   "what_was_recorded": "Two marked police cruiser replacements are each budgeted at $66,950.",
+   "figures_as_printed": [
+    "$66,950"
+   ],
+   "quote": "project title: pd17-02b hybrid replacement marked police cruiser project cost: $66,950"
+  },
+  {
+   "topic": "Ten-year capital requests and gap",
+   "what_was_recorded": "Ten-year capital requests total $18.5 M, and the town will not fund between $4.1M-$7.9M of them at current funding.",
+   "figures_as_printed": [
+    "$18.5 M",
+    "$4.1M-$7.9M"
+   ],
+   "quote": "we will not be funding between $4.1m-$7.9m in capital requests."
+  },
+  {
+   "topic": "Capital spending averages",
+   "what_was_recorded": "Five-year average capital expenditure is $1.06M and three-year average is $1.44M.",
+   "figures_as_printed": [
+    "$1.06M",
+    "$1.44M"
+   ],
+   "quote": "our five year average expenditure on capital is $1.06m and the three year average is $1.44m."
+  },
+  {
+   "topic": "Special Purpose Stabilization Fund balance",
+   "what_was_recorded": "The current balance of the Special Purpose Stabilization Fund is stated as approximately $1.2M.",
+   "figures_as_printed": [
+    "$1.2M"
+   ],
+   "quote": "current balance approx.$1.2m."
+  },
+  {
+   "topic": "Property tax new growth estimate",
+   "what_was_recorded": "The forecast uses an estimate of $280,590 for new growth in FY22 and $300,000 for FY23-FY26.",
+   "figures_as_printed": [
+    "$280,590",
+    "$300,000"
+   ],
+   "quote": "and uses an estimate of $280,590"
+  },
+  {
+   "topic": "Free cash used in FY22 forecast",
+   "what_was_recorded": "The forecast uses $969,243 of certified free cash for FY22, leaving a remaining balance of $834,942.",
+   "figures_as_printed": [
+    "$969,243",
+    "$834,942"
+   ],
+   "quote": "forecast for fy22 uses $969,243 of our certified free cash."
+  },
+  {
+   "topic": "Stabilization and OPEB deposits from free cash",
+   "what_was_recorded": "Free cash deposits of $100,000 to Stabilization and $180,418 to the OPEB Trust Fund are included for FY22.",
+   "figures_as_printed": [
+    "$100,000",
+    "$180,418"
+   ],
+   "quote": "$100,000 into the stabilization account, and $180,418 into the opeb trust fund"
+  },
+  {
+   "topic": "Tax title and overlay",
+   "what_was_recorded": "Tax Title Cost is level funded at $24,000 for FY22 and the Overlay Account is funded at $120,000.",
+   "figures_as_printed": [
+    "$24,000",
+    "$120,000"
+   ],
+   "quote": "level funds the tax title cost $24,000 for fy22"
+  },
+  {
+   "topic": "Forecast surplus/shortfall before school staffing plan",
+   "what_was_recorded": "The forecast surplus/(shortfall) line without the school staffing plan reads 415,429 in FY23 and deficits thereafter.",
+   "figures_as_printed": [
+    "0",
+    "415,429",
+    "(571,354)",
+    "(559,094)",
+    "(936,658)",
+    "(568,399)"
+   ],
+   "quote": "0 415,429 (571,354) (559,094) (936,658) (568,399)"
+  },
+  {
+   "topic": "School five-year staffing plan cost",
+   "what_was_recorded": "The school staffing plan adds $1,044,080 in FY22, and the surplus/(shortfall) with the plan reads (628,651) in FY22.",
+   "figures_as_printed": [
+    "$1,044,080",
+    "(628,651)"
+   ],
+   "quote": "the proposed five year staffing plan for the school includes an additional $1,044,080 in fy22"
+  },
+  {
+   "topic": "Shortfall with school staffing plan",
+   "what_was_recorded": "Total surplus/(shortfall) with the LPS staffing plan is printed as deficits growing to (3,477,015) by FY26.",
+   "figures_as_printed": [
+    "(628,651)",
+    "(2,197,216)",
+    "(2,522,722)",
+    "(3,237,386)",
+    "(3,477,015)"
+   ],
+   "quote": "total surplus/(shortfall) 0 (628,651) (2,197,216) (2,522,722) (3,237,386) (3,477,015)"
+  },
+  {
+   "topic": "2% COLA impact on General Fund",
+   "what_was_recorded": "The total General Fund financial impact of a 2% COLA is $44,080 in FY22, rising in later years.",
+   "figures_as_printed": [
+    "$44,080",
+    "$91,614",
+    "$95,158",
+    "$97,168",
+    "$99,183"
+   ],
+   "quote": "total gf financial impact of cola $44,080 $91,614 $95,158 $97,168 $99,183"
+  },
+  {
+   "topic": "Surplus/shortfall after COLA",
+   "what_was_recorded": "After the COLA impact, the total surplus/(shortfall) is printed as (608,731) in FY22 and (3,512,198) in FY26.",
+   "figures_as_printed": [
+    "(608,731)",
+    "(3,512,198)"
+   ],
+   "quote": "total surplus/(shortfall) after cola 0 (608,731) (2,224,830) (2,553,880) (3,270,553) (3,512,198)"
+  },
+  {
+   "topic": "MSBA funds reserved for debt service",
+   "what_was_recorded": "Other available funds include MSBA funds reserved for debt service totaling approximately $535,000, which drops off in FY24.",
+   "figures_as_printed": [
+    "$535,000"
+   ],
+   "quote": "$535,000 (drops off in fy24)"
+  },
+  {
+   "topic": "Pavement and stormwater funding",
+   "what_was_recorded": "The forecast provides between $90K and $120K for Stormwater each year and increases Pavement Management by $50K a year.",
+   "figures_as_printed": [
+    "$90K-$120K",
+    "$50K"
+   ],
+   "quote": "provides for between $90k-$120k for stormwater each"
+  },
+  {
+   "topic": "State earmark for fire alarms",
+   "what_was_recorded": "Representative Sena reported an earmark of $25,000 for fire alarms for the town.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "we were able to get an earmark of $25,000 for fire alarms for the town."
+  },
+  {
+   "topic": "Senator's proposed state revenue for Chapter 70 and 90",
+   "what_was_recorded": "Senator Cronin stated a millionaire tax is projected to increase Chapter 70 and 90 funding by 1 billion dollars each.",
+   "figures_as_printed": [
+    "1 billion dollars"
+   ],
+   "quote": "this is projected to increase c. 70 and 90 funding by 1 billion dollars each."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Adams",
+   "stated_role": "",
+   "topic": "Conservation Commission land use review and hunting on conservation land",
+   "quote": "ms. adams in reference to the conservation commission agenda listing that they are reviewing"
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "Highland Street",
+   "topic": "Zoom quality, TCP and Turkey Hill costs, debt capacity, Flat Hill drainage cost",
+   "quote": "dave rodgers, highland street, requested the public access staff if they could improve the"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "heard; future agenda request",
+   "quote": "ms. adams in reference to the conservation commission agenda listing that they are reviewing",
+   "tags": [
+    "public comment",
+    "hunting",
+    "firearms"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "mr. alonzo announced the lunenburg water district is calling a special meeting on",
+   "tags": [
+    "water district",
+    "road moratorium"
+   ]
+  },
+  {
+   "topic": "Ratification of Police Reserve Officer appointment",
+   "resolution": "ratified",
+   "quote": "to ratify the appointment of esteban bonilla-perez as reserve officer",
+   "tags": [
+    "police",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Meeting with State Legislators",
+   "resolution": "discussed; no action",
+   "quote": "present were senator john cronin and representative sena.",
+   "tags": [
+    "state legislators",
+    "local aid",
+    "seniors",
+    "mental health"
+   ]
+  },
+  {
+   "topic": "Town Manager presentation of five year forecast and capital plan",
+   "resolution": "presented; no action",
+   "quote": "ms. lemieux began with the capital plan.",
+   "tags": [
+    "capital plan",
+    "five year forecast",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Current business item 1: Action items",
+   "resolution": "discussed; no action",
+   "quote": "mr. alonzo stated the select board needs to put appointments/reappointments back on the agenda",
+   "tags": [
+    "hunting policy",
+    "APD by-law"
+   ]
+  },
+  {
+   "topic": "Committee reports: TCP Building Design Committee",
+   "resolution": "reported",
+   "quote": "mr. jeffreys reported the tcp building design committee met last week",
+   "tags": [
+    "TCP building",
+    "committee"
+   ]
+  },
+  {
+   "topic": "FY2022 budget, warrant articles and five year financial forecast",
+   "resolution": "discussed; no action",
+   "quote": "ms. lemieux reported so far we will have the standard annual warrant articles",
+   "tags": [
+    "FY2022 budget",
+    "warrant",
+    "forecast",
+    "debt exclusion"
+   ]
+  },
+  {
+   "topic": "Town Manager report and COVID-19 update",
+   "resolution": "reported",
+   "quote": "the board of health issued their weekly update and the cumulative laboratory confirmed number of",
+   "tags": [
+    "covid-19",
+    "vacancies",
+    "fuel tank"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "heard",
+   "quote": "dave rodgers, highland street, requested the public access staff if they could improve the",
+   "tags": [
+    "public comment",
+    "flat hill",
+    "debt"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "announced",
+   "quote": "mr. alonzo stated the board meets again on february 2nd, 9th and 16th.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:39 p.m.",
+   "quote": "to adjourn the meeting at 9:39 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Five Year Financial Forecast (PowerPoint presentation)",
+   "where": "text",
+   "quote": "ms. lemieux presented her forecast to the board via a powerpoint presentation."
+  },
+  {
+   "name": "Fiscal Year 2022 Recommended Capital Plan",
+   "where": "text",
+   "quote": "fiscal year 2022 recommended capital plan"
+  },
+  {
+   "name": "Police Chief Gammel letter of recommendation (for Esteban Bonilla-Perez)",
+   "where": "text",
+   "quote": "police chief gammel read from his letter of recommendation:"
+  },
+  {
+   "name": "Town Policy on Capital Expenditures (Financial Policy Section 3.02)",
+   "where": "text",
+   "quote": "the town's policy on capital expenditures (financial policy section 3.02) defines"
+  },
+  {
+   "name": "Citizen email on general use of town property",
+   "where": "text",
+   "quote": "she also referred to a citizen's email that advocated general use of the town property for all people"
+  }
+ ],
+ "tags": [
+  "select board",
+  "fy2022 budget",
+  "capital plan",
+  "five year forecast",
+  "state legislators",
+  "police reserve officer",
+  "flat hill culvert",
+  "hunting policy",
+  "covid-19",
+  "zoom meeting",
+  "tcp building",
+  "school staffing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. lemieux presented her forecast to the board via a powerpoint presentation."
+ },
+ "dropped_unquoted_by_field": {}
 }

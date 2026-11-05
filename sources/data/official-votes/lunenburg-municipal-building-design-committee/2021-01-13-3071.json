@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2021-01-13",
  "docid": "3071",
@@ -12,31 +12,353 @@
  },
  "votes": [
   {
-   "motion": "Instruct the engineers to move the parking lot to the existing walkway, remove the trees, and make other necessary changes, with intent to plant new trees",
+   "motion": "Instruct the engineers to move the parking lot, remove the trees, and move the parking lot up to the existing walkway, with the intent of planting new trees.",
    "moved_by": "Dave Passios",
-   "seconded_by": "",
    "outcome": "passed 5-1",
    "procedural": false,
-   "quote": "i move that we instruct the engineers to move the parking lot, remove the trees, and move the parking lot up to the existing walkway and any other changes that they see are necessary to accomplish that, with the intent of planting new trees, seconded and roll call vote: brian lehtinen, aye, michael-ray jeffries, no, dave passios, aye, matthew allison, aye, david blatt, aye, greg roy, aye."
+   "quote": "i move that we instruct the engineers to move the parking lot, remove the trees, and move the parking lot up to the existing walkway"
   },
   {
-   "motion": "Approve the minutes as presented for November 30th and December 14th",
+   "motion": "Approve the minutes as presented for November 30th and December 14th.",
    "moved_by": "Dave Passios",
    "seconded_by": "Brian Lehtinen",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "dave passios moved that we approve the minutes as presented for november 30th and december 14th, brian lehtinen seconded. brian lehtinen, aye, matthew allison, aye, dave passios, aye, greg roy, aye."
+   "quote": "dave passios moved that we approve the minutes as presented for november 30th and december 14th, brian lehtinen seconded."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Matthew Allison",
    "seconded_by": "Dave Passios",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion to adjourn made by matthew allison, seconded by dave passios, brian lehtinen, aye, matthew allison, aye, dave passios, aye, greg roy, aye."
+   "quote": "motion to adjourn made by matthew allison, seconded by dave passios, brian lehtinen, aye, matthew allison, aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Vote 1 (parking lot motion) did not record the name of who seconded. Vote 2 and 3 show 4 votes recorded; David Blatt left around 7pm and Michael-Ray Jeffries is not listed as voting on these items.",
- "cost_usd": 0.1320375
+ "note": "Plain-text extraction, not a scan; all votes readable. Roll-call result for the parking motion is 5 ayes (Lehtinen, Passios, Allison, Blatt, Roy) and 1 no (Jeffreys), recorded as passed 5-1. The seconder of that motion is not named. The minutes spell Michael-Ray Jeffreys both ways (Jeffries in two places). The Town Manager is not named in the minutes. Lunenburg Ledger is listed as a community guest and omitted as an organization. The meeting ended on a zoom disconnection at 8:23 PM; no later vote is recorded. Matthew Allison's and Greg Roy's closing remarks follow Karen Menard's comment and are treated as board discussion, not public comment.",
+ "cost_usd": 0.009348819999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Greg Roy",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: greg roy, david passios, brian lehtinen, david blatt, michael-ray jeffreys, matthew allison"
+  },
+  {
+   "name": "David Passios",
+   "role": "Member (listed as Dave Passios in the minutes)",
+   "status": "present",
+   "quote": "members present: greg roy, david passios, brian lehtinen, david blatt, michael-ray jeffreys, matthew allison"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: greg roy, david passios, brian lehtinen, david blatt, michael-ray jeffreys, matthew allison"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Member",
+   "status": "present",
+   "quote": "david blatt stated he has to leave around 7pm."
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member (spelled Jeffries in some passages)",
+   "status": "present",
+   "quote": "members present: greg roy, david passios, brian lehtinen, david blatt, michael-ray jeffreys, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: greg roy, david passios, brian lehtinen, david blatt, michael-ray jeffreys, matthew allison"
+  },
+  {
+   "name": "Ed DiSalvio",
+   "role": "Architect (design team)",
+   "status": "present",
+   "quote": "ed disalvio: right before this meeting we sent out an updated civil site plan"
+  },
+  {
+   "name": "Tom Lam",
+   "role": "Architect (design team)",
+   "status": "present",
+   "quote": "tom lam: i'd like to have ed do some updates first."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "Town Employees; also the chair of the public access cable committee",
+   "status": "present",
+   "quote": "steve walker, 227 pleasant street, also the chair of the public access cable committee"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Employees",
+   "status": "present",
+   "quote": "town employees: steve walker, heather lemieux, john londa"
+  },
+  {
+   "name": "John Londa",
+   "role": "Town Employees",
+   "status": "present",
+   "quote": "john londa: we were looking to retain that for school maintenance."
+  },
+  {
+   "name": "Town Manager",
+   "role": "Town Manager (unnamed in the minutes)",
+   "status": "present",
+   "quote": "i think there is a customer service vantage point that i think a sliding window adds"
+  },
+  {
+   "name": "Karen Menard",
+   "role": "Public commenter",
+   "status": "present",
+   "quote": "karen menard: i have question on your public outreach part"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Tom Lam will reach out to local vendors the town manager uses to price furniture.",
+   "quote": "the budget was discussed in regards to furniture needs and cost estimates. tom would reach out to local vendors the town manager uses."
+  },
+  {
+   "decision": "Consensus that the transaction counters should have a separation barrier, with the town manager preferring a sliding window.",
+   "quote": "we all agree that there should be because of covid there should be some sort of a separation, some sort of a barrier."
+  },
+  {
+   "decision": "Meeting room equipment (cameras and related items) is to be included in the cost estimate for the meeting rooms.",
+   "quote": "it should be included in the cost estimate for the meeting rooms."
+  },
+  {
+   "decision": "Stage is not needed at this time to be included in the cost estimate.",
+   "quote": "discussion took place on stage and that it was not needed at this time to be included in the cost."
+  },
+  {
+   "decision": "Studio equipment is handled by Steve Walker's group and is not included in the soft cost estimate.",
+   "quote": "steve's group is taking care of the studio equipment so i'm not going to be including that in the soft cost."
+  },
+  {
+   "decision": "Dave Passios requested a future agenda item on the historical significance of the Passios building.",
+   "quote": "a request for a future agenda item to discuss amongst the committee members talking about the historical significance of the passios building."
+  },
+  {
+   "decision": "Next meeting set for January 27, 2021 at 5:30pm.",
+   "quote": "future meetings: january 27, 2021 at 5:30pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Kitchen equipment",
+   "what_was_recorded": "Tom Lam estimated the kitchen equipment could cost $250,000 to $300,000 given the size of the space; a generic commercial kitchen is planned.",
+   "figures_as_printed": [
+    "$250,000 to $300,000"
+   ],
+   "quote": "i would say with the size of what you have it may be talking about $250,000 to $300,000."
+  },
+  {
+   "topic": "Furniture and budget",
+   "what_was_recorded": "The budget was discussed for furniture needs and cost estimates; standardized flooring was preferred.",
+   "figures_as_printed": [],
+   "quote": "the budget was discussed in regards to furniture needs and cost estimates."
+  },
+  {
+   "topic": "Construction cost estimate",
+   "what_was_recorded": "The design team has started the construction cost estimate covering hard and soft costs, with escalation a open question; construction duration estimated at 12 months.",
+   "figures_as_printed": [],
+   "quote": "ed disalvio: we have started the construction cost estimate."
+  },
+  {
+   "topic": "Fire-rated card-access doors",
+   "what_was_recorded": "David Blatt said the interior doors needing fire rating and card access are very expensive; Tom Lam said keeping the doors with exit-only hardware is not code-required.",
+   "figures_as_printed": [],
+   "quote": "those are really expensive and it's a single floor."
+  },
+  {
+   "topic": "Loading dock",
+   "what_was_recorded": "Greg Roy said loading docks are expensive and hard to site on this building; the committee did not see the frequency justifying one.",
+   "figures_as_printed": [],
+   "quote": "i think that loading docks are expensive"
+  },
+  {
+   "topic": "Chimney",
+   "what_was_recorded": "Discussion that repairing the chimney or removing it would be very expensive.",
+   "figures_as_printed": [],
+   "quote": "the chimney would be very expensive to repair and to take the chimney out."
+  },
+  {
+   "topic": "Extended day and Community Link swap",
+   "what_was_recorded": "Tom Lam said swapping the extended day and Community Link locations makes no cost difference.",
+   "figures_as_printed": [],
+   "quote": "so cost wise is not going to make any difference."
+  },
+  {
+   "topic": "Meeting room equipment",
+   "what_was_recorded": "Equipment for meeting rooms (cameras, vaults, security cameras, panic devices) to be included in the cost estimate; furnishings also discussed.",
+   "figures_as_printed": [],
+   "quote": "it should be included in the cost estimate for the meeting rooms."
+  },
+  {
+   "topic": "Studio equipment",
+   "what_was_recorded": "Studio equipment is being handled by Steve Walker's group and is excluded from the soft cost estimate.",
+   "figures_as_printed": [],
+   "quote": "i'm not going to be including that in the soft cost."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Steve Walker",
+   "stated_role": "Chair of the public access cable committee (PACC); 227 Pleasant Street",
+   "topic": "PACC door, monitor, and loading dock needs",
+   "quote": "steve walker, 227 pleasant street, also the chair of the public access cable committee stated he sent an email to greg at the end of last year"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Thanks to maintenance for fixing a fallen panel on the Passios building",
+   "quote": "dave passios stated he wanted to bring the attention of the committee and thank mr. londa and his maintenance crew"
+  },
+  {
+   "speaker": "Karen Menard",
+   "stated_role": "",
+   "topic": "Purpose of public outreach timing",
+   "quote": "i have question on your public outreach part and not fully understanding it if your intention is to present to the public and get feedback from them"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and opening public comment",
+   "resolution": "no action; conflicts check and PACC and maintenance comments",
+   "quote": "meeting called to order at 5:33pm.",
+   "tags": [
+    "public comment",
+    "PACC"
+   ]
+  },
+  {
+   "topic": "Design team update: site plan, walkways, doors and parking",
+   "resolution": "motion to move parking and remove trees passed 5-1; otherwise discussed",
+   "quote": "update from design team: a review of updated plans and information from the architects on the design team.",
+   "tags": [
+    "site plan",
+    "parking",
+    "sidewalks",
+    "doors"
+   ]
+  },
+  {
+   "topic": "Construction cost estimate",
+   "resolution": "discussed; no action",
+   "quote": "ed disalvio: we have started the construction cost estimate.",
+   "tags": [
+    "cost estimate",
+    "escalation",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Interior and program design review",
+   "resolution": "discussed; no action",
+   "quote": "tom lam: i'd like to discuss with the committee the loading dock issue.",
+   "tags": [
+    "loading dock",
+    "bathrooms",
+    "kitchen",
+    "PACC",
+    "lead paint",
+    "chimney",
+    "acoustics"
+   ]
+  },
+  {
+   "topic": "Transaction counter sliding windows",
+   "resolution": "consensus for a COVID barrier; no vote",
+   "quote": "we all agree that there should be because of covid there should be some sort of a separation, some sort of a barrier.",
+   "tags": [
+    "security",
+    "COVID",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Review and approval of minutes",
+   "resolution": "approved 4-0",
+   "quote": "dave passios moved that we approve the minutes as presented for november 30th and december 14th, brian lehtinen seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public outreach",
+   "resolution": "discussed; public forum timing for February or March",
+   "quote": "public outreach: discussion took place on when to have a public forum sometime in february or march.",
+   "tags": [
+    "public outreach",
+    "forum"
+   ]
+  },
+  {
+   "topic": "Public comment and board remarks",
+   "resolution": "Karen Menard comment; future agenda item requested",
+   "quote": "a request for a future agenda item to discuss amongst the committee members talking about the historical significance of the passios building.",
+   "tags": [
+    "public comment",
+    "historical significance",
+    "school programming"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 8:23 PM due to zoom disconnection",
+   "quote": "meeting was adjourned due to zoom disconnection at 8:23 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Updated civil site plan (showing new full-depth pavement, overlays, and retained walkways)",
+   "where": "text",
+   "quote": "right before this meeting we sent out an updated civil site plan that showed the parking areas of the new full depth pavement and the overlays."
+  },
+  {
+   "name": "Materials sent out by Tom Lam",
+   "where": "text",
+   "quote": "tom sent out some materials this evening but i'll turn it over to tom and ed."
+  },
+  {
+   "name": "Architectural assessment reports",
+   "where": "text",
+   "quote": "the fact that architectural assessment reports show they are in reasonable conditions"
+  },
+  {
+   "name": "Minutes of November 30th and December 14th",
+   "where": "text",
+   "quote": "approve the minutes as presented for november 30th and december 14th"
+  }
+ ],
+ "tags": [
+  "municipal building design",
+  "design committee",
+  "parking and sidewalks",
+  "doors and security",
+  "loading dock",
+  "cost estimate",
+  "kitchen equipment",
+  "PACC",
+  "public outreach",
+  "COVID barrier",
+  "minutes approval",
+  "zoom disconnect"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "right before this meeting we sent out an updated civil site plan"
+ },
+ "dropped_unquoted_by_field": {}
 }

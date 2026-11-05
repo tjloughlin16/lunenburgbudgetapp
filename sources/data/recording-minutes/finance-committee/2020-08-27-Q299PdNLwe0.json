@@ -1,0 +1,669 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "finance-committee",
+ "board": "Finance Committee",
+ "video_title": "Finance Committee",
+ "meeting_date": "2020-08-27",
+ "video_id": "Q299PdNLwe0",
+ "video_url": "https://www.youtube.com/watch?v=Q299PdNLwe0",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2020-08-27-Q299PdNLwe0.json",
+  "sha256": "436415bf23e273150ea7581fdb46fbb72b56a81ebe8d870a47c4b3edc9e8cdda",
+  "caption_lines": 242,
+  "segments": 2173
+ },
+ "recording": {
+  "duration_s": 5070,
+  "duration": "1:24",
+  "spoken_chars": 62062,
+  "words_approx": 10343
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08272020-2119",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2020-08-27-agenda-2119.txt",
+   "path": "sources/meetings/finance-committee/2020-08-27-agenda-2119.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08272020-2119",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2020-08-27-minutes-2119.txt",
+   "path": "sources/meetings/finance-committee/2020-08-27-minutes-2119.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-03T18:05:22Z",
+  "cost_usd": 0.18378239999999998
+ },
+ "minutes": {
+  "headline": "Finance Committee took no budget votes; it heard FY20 closeout results and agreed to pilot shared file storage.",
+  "summary": "The committee heard public comment and committee reports on COVID effects, parks and the TC Passios building, and asked about building-project evaluation. The finance director reported FY20 revenue and spending closeout results and answered capital-plan and encumbrance questions. Members discussed file-sharing options, and the July 23 minutes were held for later after the motion was withdrawn.",
+  "attendees": [
+   {
+    "name_as_heard": "Terry",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Karen",
+    "role": "finance director"
+   },
+   {
+    "name_as_heard": "Peter",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "John",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Chris",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Dave",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jay",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Carol Archambault",
+    "role": "school committee member"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 99,
+    "topic": "Peter noted the passing of longtime resident Bruce Smith."
+   },
+   {
+    "t": 226,
+    "speaker_as_heard": "carol archambault",
+    "topic": "Statement clarifying the schools' remote learning model, edgenuity-type course cost, registration deadline and switching each quarter."
+   },
+   {
+    "t": 4722,
+    "topic": "Jay urged members to watch the Board of Assessors meeting about assessing software problems and possible late tax bills."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "enrollment",
+   "free-cash",
+   "grants",
+   "policy",
+   "public-safety",
+   "school-choice",
+   "technology",
+   "town-departments",
+   "town-meeting"
+  ],
+  "votes": [
+   {
+    "t": 2483,
+    "motion": "Approve the July 23rd meeting minutes as submitted (motion later withdrawn).",
+    "moved_by": "a member",
+    "outcome": "withdrawn, no vote taken",
+    "procedural": true
+   },
+   {
+    "t": 5026,
+    "motion": "Adjourn the meeting (roll call taken).",
+    "outcome": "passed, all members who answered in favor",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 289,
+    "topic": "Remote high school course via outside provider",
+    "what_was_said": "Upper-level remote courses not otherwise available would be taught through an outside provider at a per-student, per-course cost.",
+    "figures_as_heard": [
+     "200 per student per course"
+    ]
+   },
+   {
+    "t": 672,
+    "topic": "COVID police overtime and PPE reimbursement",
+    "what_was_said": "A member reported the police chief doesn't think overtime is recoverable but PPE costs are covered through CARES and other payments; reimbursement is a cash flow issue.",
+    "figures_as_heard": [
+     "100",
+     "seventy five percent",
+     "25"
+    ]
+   },
+   {
+    "t": 1309,
+    "topic": "FY20 COVID overtime reimbursement",
+    "what_was_said": "The finance director believes COVID payroll costs are eligible for FEMA/CARES reimbursement; the total was small.",
+    "figures_as_heard": [
+     "25",
+     "7 000"
+    ]
+   },
+   {
+    "t": 1390,
+    "topic": "FY20 revenue and expenditure closeout",
+    "what_was_said": "Revenues exceeded estimates and expenditures came in under budget, leaving appropriation closeouts.",
+    "figures_as_heard": [
+     "0.6",
+     "267 291 dollars",
+     "2.8 percent",
+     "one million two hundred and seven thousand two hundred and nineteen dollars"
+    ]
+   },
+   {
+    "t": 1453,
+    "topic": "Free cash certification",
+    "what_was_said": "Undesignated fund balance is higher than the prior year, so free cash is expected to rise roughly dollar for dollar.",
+    "figures_as_heard": [
+     "644 000",
+     "one million one hundred and seven thousand six hundred and ninety four dollars"
+    ]
+   },
+   {
+    "t": 1564,
+    "topic": "Capital plan lump-sum appropriation",
+    "what_was_said": "A member questioned a bylaw allowing capital funds to be moved administratively; the finance director said funds have never been shifted among capital projects.",
+    "figures_as_heard": [
+     "two hundred thousand dollars"
+    ]
+   },
+   {
+    "t": 2999,
+    "topic": "SharePoint file sharing cost",
+    "what_was_said": "SharePoint was described as a small per-user monthly cost, possibly lower if the town and schools joined together.",
+    "figures_as_heard": [
+     "six dollars per user per month",
+     "six gigabytes"
+    ]
+   },
+   {
+    "t": 3975,
+    "topic": "Wallace Park court resurfacing and fence encumbrance",
+    "what_was_said": "Resurfacing matched the capital appropriation; the fence work was covered by encumbering funds from the parks budget.",
+    "figures_as_heard": [
+     "seven thousand dollars"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 3975,
+    "description": "Funds encumbered from the FY20 parks budget to cover fence work alongside the Wallace Park capital project; members questioned whether a transfer should be required",
+    "amount_as_heard": "seven thousand dollars",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 1202,
+    "decision": "Chris will lead a discussion on a rubric for evaluating building projects at the next meeting."
+   },
+   {
+    "t": 2189,
+    "decision": "Peter will email town department heads about body cameras and classroom broadcast infrastructure costs for capital planning."
+   },
+   {
+    "t": 2584,
+    "decision": "July 23rd minutes held over to a later meeting agenda."
+   },
+   {
+    "t": 3827,
+    "decision": "Chris will continue exploring file-sharing options, coordinating with the town IT contact."
+   },
+   {
+    "t": 4970,
+    "decision": "Next meeting set for September 10th, with minutes, budget discussion after the selectmen's meeting, and the rubric on the agenda."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 99,
+    "topic": "Opening, attendance and meeting procedures",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 99,
+    "t_end": 483,
+    "topic": "Public comment: remembrance, remote learning model, school choice and enrollment effects",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "enrollment",
+     "school-choice"
+    ]
+   },
+   {
+    "t_start": 483,
+    "t_end": 990,
+    "topic": "Committee reports: police/fire COVID effects, parks, TC Passios",
+    "resolution": "informational",
+    "tags": [
+     "public-safety",
+     "town-departments",
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 990,
+    "t_end": 1288,
+    "topic": "Rubric for evaluating building project articles",
+    "resolution": "referred to next meeting",
+    "tags": [
+     "capital",
+     "debt"
+    ]
+   },
+   {
+    "t_start": 1288,
+    "t_end": 2416,
+    "topic": "Finance director report: FY20 closeout, free cash, capital plan, FY21 capital needs",
+    "resolution": "informational",
+    "tags": [
+     "free-cash",
+     "capital",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 2416,
+    "t_end": 2646,
+    "topic": "Meeting minutes",
+    "resolution": "motion withdrawn; held over",
+    "tags": []
+   },
+   {
+    "t_start": 2646,
+    "t_end": 2740,
+    "topic": "Budget information dashboard and discussion timing",
+    "resolution": "deferred to next meeting",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 2740,
+    "t_end": 2937,
+    "topic": "Staffing plans and five-year forecast",
+    "resolution": "informational",
+    "tags": [
+     "staffing",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 2937,
+    "t_end": 3910,
+    "topic": "File sharing options",
+    "resolution": "Chris to continue exploring",
+    "tags": [
+     "technology"
+    ]
+   },
+   {
+    "t_start": 3910,
+    "t_end": 4722,
+    "topic": "Board comments: Wallace Park capital/encumbrance, charter, TC Passios timing",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "transfers",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 4722,
+    "t_end": 4970,
+    "topic": "Public comment: assessing software issues",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "technology",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 4970,
+    "t_end": 5060,
+    "topic": "Next meeting agenda and adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "The adjournment roll call was heard but the motion itself and who moved it were not clear.",
+   "Whether the June 11th minutes had been approved was left unclear.",
+   "The exact bylaw wording on moving capital funds was paraphrased, not read."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 1584,
+    "kind": "liability or legal",
+    "about": "A bylaw reportedly allows capital funds to be moved administratively without a town meeting vote.",
+    "who": "a member",
+    "words_as_heard": "because the capital plan was voted as a lump sum money could be administratively moved anywhere within the capital plan without a voter town meeting"
+   },
+   {
+    "t": 4204,
+    "kind": "liability or legal",
+    "about": "Operating funds used on a capital project without a formal transfer may breach regulations.",
+    "who": "a member",
+    "words_as_heard": "sooner or later there might be harm and there might be foul and people are going to do it anyway"
+   },
+   {
+    "t": 4887,
+    "kind": "liability or legal",
+    "about": "Assessing software problems could force preliminary tax bills and threaten the tax rate certification.",
+    "who": "the finance director",
+    "words_as_heard": "we could potentially face um having to do preliminary third and fourth quarter bills if the situation wasn't cleared up"
+   },
+   {
+    "t": 2312,
+    "kind": "condition",
+    "about": "A member wants cost information on classroom broadcast infrastructure before deciding on capital.",
+    "who": "a member",
+    "words_as_heard": "i want to know what the cost is of overcoming that hurdle"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1030,
+    "name_as_heard": "the capital plan",
+    "kind": "report",
+    "words_as_heard": "bring forward the capital plan that was there"
+   },
+   {
+    "t": 2708,
+    "name_as_heard": "the dashboard document",
+    "kind": "spreadsheet",
+    "words_as_heard": "i'm the one that asked for the dashboard document and it's proven to be a very useful document"
+   },
+   {
+    "t": 2772,
+    "name_as_heard": "five-year forecast document",
+    "kind": "report",
+    "words_as_heard": "there's a five-year forecast document that that is published at the beginning of the year"
+   },
+   {
+    "t": 2436,
+    "name_as_heard": "July 23rd meeting minutes",
+    "kind": "prior minutes",
+    "words_as_heard": "we did see the minutes presented for july 23rd"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "assessing-software-conversion",
+    "title": "Assessing software conversion",
+    "question": "What does the assessing software conversion cost, and could it delay tax bills?",
+    "t": 4722,
+    "words_as_heard": "running two systems for getting out the next tax bill which can cause the tax bills to be late",
+    "data_in_play": [
+     "preliminary third and fourth quarter bills"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "capital-plan-transfers",
+    "title": "Capital plan transfers",
+    "question": "How are overages on capital projects covered, and should operating-budget encumbrances require a transfer?",
+    "t": 3975,
+    "words_as_heard": "seven thousand dollars that was encumbered from the park's budget",
+    "data_in_play": [
+     "seven thousand dollars"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "fy20-closeout-free-cash",
+    "title": "FY20 closeout and free cash",
+    "question": "What did FY20 closeout leave unspent, and what will free cash be?",
+    "t": 1390,
+    "words_as_heard": "the revenues for fy20 exceeded estimates",
+    "data_in_play": [
+     "644 000",
+     "one million one hundred and seven thousand six hundred and ninety four dollars"
+    ],
+    "existing": "topic:free-cash-balance"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Finance Committee took no budget votes at this meeting.",
+    "t": 0
+   },
+   {
+    "line": "The finance director reported FY20 closeout: revenues came in above estimates and spending under budget, so free cash is expected to rise.",
+    "t": 1390
+   },
+   {
+    "line": "The finance director said funds have never been shifted among capital projects, after a member questioned a bylaw allowing administrative moves of capital funds.",
+    "t": 1564
+   },
+   {
+    "line": "The July 23 minutes were held to a later agenda after the motion to approve them was withdrawn.",
+    "t": 2584
+   },
+   {
+    "line": "Chris will keep exploring shared file storage with the town IT contact, and will lead a discussion of a building-project evaluation rubric at the next meeting.",
+    "t": 3827
+   }
+  ],
+  "why_it_matters": [
+   "Higher free cash gives Town Meeting more money to work with when setting the next budget and the tax rate, and the capital-plan questions bear on how closely capital funds are tracked.",
+   "A building-project rubric could shape how future building articles are judged before residents are asked to vote on them."
+  ],
+  "watch_next": [
+   "Next meeting set for September 10th: minutes, budget discussion after the selectmen's meeting, and the building-project rubric are on the agenda."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-03T18:05:37Z",
+   "cost_usd": 0.0281651
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08272020-2119",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2020-08-27-minutes-2119.txt",
+   "path": "sources/meetings/finance-committee/2020-08-27-minutes-2119.pdf"
+  },
+  "official_sha256": "883c3f9a7141b14dabb7b12678435602265522ca78cbe235f5f522baaf793f14",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree closely on figures, the lack of votes, and who attended. They differ mainly in how the follow-up actions are described, and the official minutes list several action items ours lack.",
+  "counts": {
+   "agree": 12,
+   "caption_error": 0,
+   "discrepancy": 3,
+   "only_in_ours": 2,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Votes",
+    "ours": "none",
+    "official": "",
+    "note": "Neither record has a non-procedural vote."
+   },
+   {
+    "kind": "agree",
+    "about": "Parks fence $7,000 encumbered, no transfer",
+    "t": 3975,
+    "ours": "Funds encumbered from the FY20 parks budget to cover fence work alongside the Wallace Park capital project; members questioned whether a transfer should be required — seven thousand dollars (discussed only)",
+    "official": "$7,000 incumbered for the fence work from the parks budget.",
+    "note": "Both record $7,000 encumbered from Parks for the fence work with no physical transfer."
+   },
+   {
+    "kind": "agree",
+    "about": "Remote course cost $200 per student per course",
+    "t": 289,
+    "ours": "Remote high school course via outside provider: 200 per student per course",
+    "official": "be taught through educere at a cost of $200 per student per course.",
+    "note": "Same figure; official names the provider (Educere)."
+   },
+   {
+    "kind": "agree",
+    "about": "Covid overtime 25% received, about $7,000",
+    "t": 1309,
+    "ours": "FY20 COVID overtime reimbursement: 25, 7 000",
+    "official": "so far not a huge amount of money for fy20--approximately $7,000.",
+    "note": "Same 25% and $7,000 figures."
+   },
+   {
+    "kind": "agree",
+    "about": "PPE reimbursement 100%",
+    "t": 672,
+    "ours": "COVID police overtime and PPE reimbursement: 100, seventy five percent, 25",
+    "official": "the increase ppe that the town has made has been recovered 100%.",
+    "note": "100% PPE agrees. Our '75 percent' is not in the official quote, but the 25% received figure matches."
+   },
+   {
+    "kind": "agree",
+    "about": "FY20 revenue exceeded estimate by .6%, $267,291",
+    "t": 1390,
+    "ours": "FY20 revenue and expenditure closeout: 0.6, 267 291 dollars, 2.8 percent, one million two hundred and seven thousand two hundred and nineteen dollars",
+    "official": "the revenues of fy20 exceeded estimate of .6% or a total of $267,291.",
+    "note": "Same figures."
+   },
+   {
+    "kind": "agree",
+    "about": "Expenditures 2.8% under budget, $1,207,219",
+    "t": 1390,
+    "ours": "2.8 percent, one million two hundred and seven thousand two hundred and nineteen dollars",
+    "official": "expenditures were 2.8% less than budgeted for a total of $1,207, 219",
+    "note": "Same figures; official has a stray space in the number."
+   },
+   {
+    "kind": "agree",
+    "about": "Undesignated fund balance up $644,000",
+    "t": 1453,
+    "ours": "Free cash certification: 644 000, one million one hundred and seven thousand six hundred and ninety four dollars",
+    "official": "$644,000 higher than at the close of fy19.",
+    "note": "Same figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Prior-year free cash $1,107,694",
+    "t": 1453,
+    "ours": "one million one hundred and seven thousand six hundred and ninety four dollars",
+    "official": "last year's certification of free cash was $1,107, 694",
+    "note": "Same figure."
+   },
+   {
+    "kind": "agree",
+    "about": "SharePoint $6 per user per month",
+    "t": 2999,
+    "ours": "SharePoint file sharing cost: six dollars per user per month, six gigabytes",
+    "official": "share point is $6 per user per month.",
+    "note": "Same figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Capital plan lump-sum appropriation of $200,000",
+    "t": 1564,
+    "ours": "Capital plan lump-sum appropriation: two hundred thousand dollars",
+    "official": "",
+    "note": "The official minutes have no $200,000 capital lump-sum figure."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Rubric for building projects",
+    "t": 1202,
+    "ours": "Chris will lead a discussion on a rubric for evaluating building projects at the next meeting.",
+    "official": "will add rubric to the agenda for discussion and exploration.",
+    "note": "Official does not say Chris leads it or that it is at the next meeting; check the recording for who leads."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Peter's email to department heads",
+    "t": 2189,
+    "ours": "Peter will email town department heads about body cameras and classroom broadcast infrastructure costs for capital planning.",
+    "official": "peter should send an email to town department heads to bring that to the cpc.",
+    "note": "Same action, but the official says the purpose is bringing the capital items to the CPC, and does not mention body cameras or classroom broadcast. Check the recording."
+   },
+   {
+    "kind": "agree",
+    "about": "July 23 minutes held over",
+    "t": 2584,
+    "ours": "July 23rd minutes held over to a later meeting agenda.",
+    "official": "john wants heather to polish them up a little.",
+    "note": "Both hold the minutes over; the official adds the reason (Heather to polish) and says the motion was withdrawn."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "File-sharing follow-up",
+    "t": 3827,
+    "ours": "Chris will continue exploring file-sharing options, coordinating with the town IT contact.",
+    "official": "chris to set-up onedrive and town manager's thumbs up.",
+    "note": "Official has Chris setting up OneDrive with Town Manager approval; ours says he explores options. Check the recording for what was decided."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next meeting on September 10th",
+    "t": 4970,
+    "ours": "Next meeting set for September 10th, with minutes, budget discussion after the selectmen's meeting, and the rubric on the agenda.",
+    "official": "",
+    "note": "The official minutes record no next-meeting date."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Staffing plan follow-up",
+    "ours": "",
+    "official": "terri will attempt to locate the document and forward it with the five-year forecast.",
+    "note": "Our minutes lack this action item."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Close-out reports to the Fin Com",
+    "ours": "",
+    "official": "karen - will provide the fin com the reports.",
+    "note": "Our minutes lack this action item."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Peter to share folders for SharePoint",
+    "ours": "",
+    "official": "peter will share some folders so john can look at sharepoint.",
+    "note": "Our minutes lack this action item."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees",
+    "ours": "Terry (chair), Peter, John, Chris, Dave, Jay, Karen, Carol Archambault",
+    "official": "present: terri burchfield, peter beardmore, dave passios, john henshaw",
+    "note": "Same people present. Names are first names only in ours; 'Terry' is Terri Burchfield and Carol Archambault is spelled Archembault in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Heather Sroka absent",
+    "ours": "",
+    "official": "heather sroka will not be present",
+    "note": "Our attendee list does not note Heather's absence."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-03T18:06:52Z",
+   "cost_usd": 0.053095100000000006
+  }
+ }
+}

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-10-22",
  "docid": "5176",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn the meeting at 9:10 p.m.",
+   "motion": "To adjourn the meeting at 9:10 p.m.",
    "moved_by": "P. Luck",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
@@ -21,6 +21,273 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "===OCR macOS Vision===. One motion by K. Adams to communicate with Planning Board through Town counsel received no second and therefore was not voted on (excluded per rules).",
- "cost_usd": 0.0847405
+ "note": "OCR text of a scanned minutes document with many transcription errors (e.g., 'cashhas', 'Ireceived'); quotes are copied as they appear. Page 3 begins mid-sentence and the text is partly cut off. Only one recorded vote (adjournment). K. Adams's motion on communicating with the Planning Board had no second and no vote was recorded. The meeting date and the minutes' own date line are taken as given.",
+ "cost_usd": 0.00644842,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman, katey adams,"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman, katey adams,"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman, katey adams,"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member",
+   "status": "present",
+   "quote": "katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "member not present: damon mcquaid, clerk"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "executive assistant to the town manager"
+  },
+  {
+   "name": "Greg Burns",
+   "role": "13 Oak Avenue",
+   "status": "present",
+   "quote": "greg burns and yanina fusaro, 13 oak avenue, wanted to thank the community for supporting"
+  },
+  {
+   "name": "Yanina Fusaro",
+   "role": "13 Oak Avenue",
+   "status": "present",
+   "quote": "greg burns and yanina fusaro, 13 oak avenue, wanted to thank the community for supporting"
+  },
+  {
+   "name": "Ron Dionne",
+   "role": "131 White Street",
+   "status": "present",
+   "quote": "ron dionne, 131 white street, thanked the board for approving the in-house repairs"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "After further discussion, the board decided to receive the legal opinion and then send a letter from the BOS asking that the Unitil tree matter be an agenda item.",
+   "quote": "after further discussion, it was decided to receive the legal opinion and then send a letter from the bos asking for this to be an agenda item."
+  },
+  {
+   "decision": "Mr. Alonzo requested a written legal opinion from Town Counsel be sent to the BOS and Planning Board.",
+   "quote": "mr. alonzo requested a written legal opinion from town counsel be sent to the bos and planning board."
+  },
+  {
+   "decision": "Mr. Alonzo suggested DPW provide details about the process for the pavement ring period following new paving.",
+   "quote": "mr. alonzo suggested dpw provide details about the process in the pavement"
+  },
+  {
+   "decision": "The next workshop on the Old Primary School will be held the first week of December.",
+   "quote": "the next workshop on this will be the first week of december."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Certification of free cash",
+   "what_was_recorded": "The Department of Revenue certified free cash at $1,107,694 as of July 1, 2019, and free cash will be a component of the FY21 budget recommended at Annual Town Meeting.",
+   "figures_as_printed": [
+    "$1,107,694"
+   ],
+   "quote": "cashhas been certified at $1,107,694 as of july 1, 2019."
+  },
+  {
+   "topic": "Eagle House HVAC project funding",
+   "what_was_recorded": "The Eagle HVAC project is funded by a FY20 State budget earmark, with bids due November 12th.",
+   "figures_as_printed": [],
+   "quote": "this project is being funded by a fy20 state budget earmark."
+  },
+  {
+   "topic": "Old Primary School studies and costs",
+   "what_was_recorded": "The board reviewed paid studies of the Old Primary School, including attention to applicable costs, with no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "review the various paid studies that were performed that included that building"
+  },
+  {
+   "topic": "State funding to refurbish old schools",
+   "what_was_recorded": "A public commenter reported a newspaper clipping saying MSBA is awarding funding to refurbish old schools; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the massachusetts school building authority (msba) is awarding funding to"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Greg Burns and Yanina Fusaro",
+   "stated_role": "13 Oak Avenue",
+   "topic": "Thanks for Farmers Market support",
+   "quote": "greg burns and yanina fusaro, 13 oak avenue, wanted to thank the community for supporting"
+  },
+  {
+   "speaker": "Ron Dionne",
+   "stated_role": "131 White Street",
+   "topic": "In-house repairs at Old Primary School; MSBA funding clipping",
+   "quote": "ron dionne, 131 white street, thanked the board for approving the in-house repairs"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening and public comment",
+   "resolution": "heard two speakers",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "per policy, public comment is limited to 15 minutes, with no more than 3"
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "informational, no action",
+   "tags": [
+    "announcements",
+    "symposium",
+    "events"
+   ],
+   "quote": "mr. alonzo announced next tuesday from 6:30 - 8:00 p.m. there will be an informational"
+  },
+  {
+   "topic": "Committee vacancies and talent bank",
+   "resolution": "no action; public invited to apply",
+   "tags": [
+    "committees",
+    "vacancies"
+   ],
+   "quote": "talent bank forms can be obtained on the town website and forwarded to the board of"
+  },
+  {
+   "topic": "Certification of free cash",
+   "resolution": "received; no action",
+   "tags": [
+    "free cash",
+    "budget"
+   ],
+   "quote": "the massachusetts department of revenue notified us on friday, october 1 8th that our free"
+  },
+  {
+   "topic": "Firefighters collective bargaining",
+   "resolution": "received; executive session to be scheduled",
+   "tags": [
+    "labor",
+    "firefighters",
+    "contract"
+   ],
+   "quote": "requesting we begin negotiations for a new"
+  },
+  {
+   "topic": "Eagle House HVAC invitation for bids",
+   "resolution": "received; no action",
+   "tags": [
+    "bids",
+    "HVAC",
+    "Eagle House"
+   ],
+   "quote": "the invitation for bids for the eagle hvac project is currently being advertised and bids are due"
+  },
+  {
+   "topic": "Upcoming meetings and events",
+   "resolution": "received; no action",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "town counsel office hours will be october 23rd from noon until 4 p.m."
+  },
+  {
+   "topic": "Committee reports: Stormwater Task Force and Unitil trees",
+   "resolution": "legal opinion to be received; letter to Planning Board; motion died for lack of second",
+   "tags": [
+    "stormwater",
+    "Unitil",
+    "trees",
+    "Planning Board",
+    "liability"
+   ],
+   "quote": "ms. luck reported stormwater task force is meeting this thursday."
+  },
+  {
+   "topic": "Workshop: Selectmen Objective 2, Old Primary School",
+   "resolution": "discussed; next workshop first week of December",
+   "tags": [
+    "Old Primary School",
+    "senior housing",
+    "reuse",
+    "survey",
+    "workshop"
+   ],
+   "quote": "to identify, define and propose at least one project to the 2020 annual town meeting"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:10 p.m.",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "motion: p. luck to adjourn the meeting at 9:10 p.m. 2nd: m. jeffreys vote: all in favor"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Talent bank forms",
+   "where": "text",
+   "quote": "talent bank forms can be obtained on the town website and forwarded to the board of"
+  },
+  {
+   "name": "Letter from the Firefighters Union requesting negotiations",
+   "where": "text",
+   "quote": "requesting we begin negotiations for a new"
+  },
+  {
+   "name": "Invitation for Bids, Eagle HVAC project",
+   "where": "text",
+   "quote": "the invitation for bids for the eagle hvac project is currently being advertised and bids are due"
+  },
+  {
+   "name": "Request for proposals (RFP) posted in 2016 for commercial ventures at the Old Primary School",
+   "where": "text",
+   "quote": "an rfp was posted in 2016 for"
+  },
+  {
+   "name": "Newspaper clipping on MSBA funding to refurbish old schools",
+   "where": "text",
+   "quote": "he left a newspaper clipping with executive assistant peterson this week"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "Old Primary School",
+  "free cash",
+  "Firefighters contract",
+  "Eagle House HVAC",
+  "Unitil storm resiliency",
+  "public comment",
+  "announcements",
+  "Special Town Meeting",
+  "senior housing"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,75 @@
+{
+ "board": "Selectmen Meeting",
+ "board_slug": "select-board",
+ "meeting_date": "2020-07-07",
+ "source": {
+  "sha256": "29ccaf6d883cc38caea34e16ab72617a78defb56b21236be359277101759c5c4",
+  "transcript": "sources/data/youtube-transcripts/select-board/2020-07-07-4BA4GYTd_SY.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "$9 million",
+    "fiscal_year": 2021,
+    "kind": "state_aid",
+    "scope": "both",
+    "statement": "A member cited an anticipated state aid figure and a possible 33% cut, about $3 million.",
+    "status": "announced",
+    "t": 2090,
+    "who": "a member"
+   },
+   {
+    "amount_as_heard": "415 929",
+    "fiscal_year": 2021,
+    "kind": "state_aid",
+    "scope": "town",
+    "statement": "Chapter 90 apportionment for FY21 reported.",
+    "status": "announced",
+    "t": 9434,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2021,
+    "kind": "state_aid",
+    "scope": "both",
+    "statement": "Governor signed an interim budget; July local aid is paid at FY20 levels; no final state budget yet.",
+    "status": "announced",
+    "t": 2111,
+    "who": "the town manager"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "teachers and municipal staff",
+    "condition": "if state aid is cut",
+    "fiscal_year": 2021,
+    "prediction": "Cuts to positions are likely because of state funding reductions.",
+    "scope": "both",
+    "t": 4532,
+    "who": "a member"
+   },
+   {
+    "about": "teacher cuts",
+    "condition": "if state aid falls about a third",
+    "fiscal_year": 2021,
+    "prediction": "Schools cannot absorb a state aid reduction without cutting teachers.",
+    "scope": "school",
+    "t": 2258,
+    "who": "the superintendent and business manager"
+   }
+  ]
+ },
+ "video_id": "4BA4GYTd_SY",
+ "video_url": "https://www.youtube.com/watch?v=4BA4GYTd_SY",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-11-03T19:42:48Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

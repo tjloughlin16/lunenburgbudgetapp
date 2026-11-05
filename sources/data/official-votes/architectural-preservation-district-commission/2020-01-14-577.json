@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2020-01-14",
  "docid": "577",
@@ -12,23 +12,206 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from the meeting on December 17th",
-   "outcome": "approved",
+   "motion": "Approve the minutes of the December 17th meeting.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes from the meeting on december 17th were read and approved."
-  },
-  {
-   "motion": "Adjourn",
-   "outcome": "adjourned",
-   "moved_by": "",
-   "seconded_by": "",
-   "procedural": true,
-   "quote": "with no further business before it, and apdc adjourned at 7:47pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes recorded two votes: approval of prior minutes and adjournment. No mover or seconder identified for either vote. No vote counts provided.",
- "cost_usd": 0.0947525
+ "note": "Text-only minutes, no scan issues. Only one recorded vote: approval of the December 17th minutes, which has no mover, seconder, or vote count. The adjournment has no recorded motion or count. No public comment section is printed. Elaine Peterson's call for the town report is treated as correspondence, not attendance. The Ritter Building and Old Primary School items have no dollar figures printed.",
+ "cost_usd": 0.00455322,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "call to order: at 7:06pm with all members present."
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "call to order: at 7:06pm with all members present."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "call to order: at 7:06pm with all members present."
+  },
+  {
+   "name": "Brian Corcoran",
+   "role": "Member",
+   "status": "present",
+   "quote": "call to order: at 7:06pm with all members present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dwyer will contact the Town Manager to ask what the plan is for using the Select Board's approved funds for the Old Primary School.",
+   "quote": "dwyer will contact the town manager and ask what the plan is to utilize those funds."
+  },
+  {
+   "decision": "McGrath will assemble the responses from the Mass Historic forum, and the committee will prepare an educational presentation on re-use of buildings like the Old Primary School.",
+   "quote": "mcgrath will assemble the responses and the committee will prepare an educational presentation on the possible re-use of buildings like the old primary school"
+  },
+  {
+   "decision": "The APDC will advise the Planning Board to subdivide the Brooks House property and sell the house in place, without deed restrictions, for use as a dwelling or mixed-use building.",
+   "quote": "the apdc will advise the planning board to subdivide the property and sell the house in place, without deed restrictions, for use as a dwelling or mixed-use building."
+  },
+  {
+   "decision": "McGrath will approach the board of library trustees about ceding a parking space from their lot for use at the Brooks House.",
+   "quote": "mcgrath will approach the board of library trustees"
+  },
+  {
+   "decision": "Jack Rodriquenz will order the new APDC signs and install them in the spring.",
+   "quote": "who will order them and install them in the spring."
+  },
+  {
+   "decision": "Dwyer will look in his old files for a list of contributing properties to serve as a check-list for the bi-annual inspection of the APD.",
+   "quote": "dwyer will take a look in his old files and try to find a list of contributing properties"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Old Primary School funds",
+   "what_was_recorded": "The Select Board approved funds to stop the deterioration of the Old Primary School; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "laveck reported that the select board approved funds to stop the deterioration of the old primary school."
+  },
+  {
+   "topic": "Ritter Building capital planning requests",
+   "what_was_recorded": "LaVeck reported that there were some capital planning requests for the interior of the Ritter Building; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "laveck reported that there were some capitol planning requests for the interior of ritter building."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved December 17th minutes",
+   "quote": "minutes from the meeting on december 17th were read and approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence: 2019 town report",
+   "resolution": "noted; report due Feb 15",
+   "quote": "elaine peterson called for report for the 2019 town report.",
+   "tags": [
+    "town report",
+    "deadline"
+   ]
+  },
+  {
+   "topic": "Old Primary School",
+   "resolution": "no action; plan to be followed up with Town Manager and an educational presentation prepared",
+   "quote": "laveck reported that the select board approved funds to stop the deterioration of the old primary school.",
+   "tags": [
+    "Old Primary School",
+    "re-use",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Brooks House",
+   "resolution": "APDC to advise Planning Board to subdivide and sell without deed restrictions",
+   "quote": "monday jan 27th, 6:30 at town hall the apdc is on the planning board's agenda to discuss the future of the brooks house.",
+   "tags": [
+    "Brooks House",
+    "Planning Board",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Ritter Building capital requests",
+   "resolution": "noted",
+   "quote": "laveck reported that there were some capitol planning requests for the interior of ritter building.",
+   "tags": [
+    "Ritter Building",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "APDC signs",
+   "resolution": "signs to be ordered and installed in spring; sign map delivered to DPW and Town Manager",
+   "quote": "mcgrath got the design of the new signs to jack rodriquenz, who will order them and install them in the spring.",
+   "tags": [
+    "signs",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Member term expiration",
+   "resolution": "noted; LaVeck will not re-apply",
+   "quote": "laveck announced that his term of service would expire this year, and that he did not intend to re-apply.",
+   "tags": [
+    "membership",
+    "term"
+   ]
+  },
+  {
+   "topic": "Inventory of contributing properties",
+   "resolution": "Dwyer to search old files for list",
+   "quote": "dwyer will take a look in his old files and try to find a list of contributing properties",
+   "tags": [
+    "inventory",
+    "inspection"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:47PM",
+   "quote": "with no further business before it, and apdc adjourned at 7:47pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Design of the new signs",
+   "where": "text",
+   "quote": "mcgrath got the design of the new signs to jack rodriquenz"
+  },
+  {
+   "name": "Map and description of sign locations",
+   "where": "text",
+   "quote": "was delivered to the dpw and town manager."
+  },
+  {
+   "name": "2019 town Report",
+   "where": "text",
+   "quote": "elaine peterson called for report for the 2019 town report."
+  },
+  {
+   "name": "List of contributing properties",
+   "where": "text",
+   "quote": "try to find a list of contributing properties"
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "Old Primary School",
+  "Brooks House",
+  "APDC signs",
+  "Ritter Building",
+  "minutes approval",
+  "member term",
+  "2019 town report",
+  "contributing properties"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

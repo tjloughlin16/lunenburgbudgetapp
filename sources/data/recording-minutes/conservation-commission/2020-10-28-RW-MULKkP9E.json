@@ -1,0 +1,397 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "conservation-commission",
+ "board": "Conservation Commission",
+ "video_title": "Conservation Commission",
+ "meeting_date": "2020-10-28",
+ "video_id": "RW-MULKkP9E",
+ "video_url": "https://www.youtube.com/watch?v=RW-MULKkP9E",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/conservation-commission/2020-10-28-RW-MULKkP9E.json",
+  "sha256": "56832559e0b16ee406538f86edf4921ecf4c336d90ef9e91b3ef40aafd08d935",
+  "caption_lines": 181,
+  "segments": 1679
+ },
+ "recording": {
+  "duration_s": 3768,
+  "duration": "1:02",
+  "spoken_chars": 47945,
+  "words_approx": 7990
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10282020-6256",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2020-10-28-agenda-6256.txt",
+   "path": "sources/meetings/conservation-commission/2020-10-28-agenda-6256.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10282020-6256",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2020-10-28-minutes-6256.txt",
+   "path": "sources/meetings/conservation-commission/2020-10-28-minutes-6256.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-03T16:31:15Z",
+  "cost_usd": 0.19895660000000004
+ },
+ "minutes": {
+  "headline": "Commission split on Lake Shirley drawdown date change; roll call held on requiring a full amendment, tally unclear",
+  "summary": "The only agenda item was Lake Shirley Improvement Corp's request to extend the drawdown end date in its order of conditions from December 1 to December 31. Members debated whether this could be a field change or needed a full amendment with abutter notice and a legal ad. A roll call followed a motion by Rich Birch, but the captions do not make the tally clear, and the applicant said it would likely pursue other options with Shirley.",
+  "attendees": [
+   {
+    "name_as_heard": "Bob P's",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Ken Jones",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Rich Birch",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Katie Childs",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Carl Luck",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jack Rabbit",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jeff Viviano",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Matt",
+    "role": "conservation staff"
+   },
+   {
+    "name_as_heard": "Wendy Gendron",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Joanna",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 2208,
+    "topic": "A former commissioner and Lake Shirley resident worried that the drought has already drawn the lake very low and that wildlife could be harmed if the drawdown continues past December 1."
+   },
+   {
+    "t": 2439,
+    "topic": "A resident reported measuring the lake at 48 inches down with a laser level that morning."
+   }
+  ],
+  "tags": [
+   "legal",
+   "planning-and-zoning",
+   "public-comment"
+  ],
+  "votes": [
+   {
+    "t": 2974,
+    "motion": "Motion by Rich Birch to send a letter to the Shirley ConCom that the commission will amend the order of conditions to allow annual review and extension to December 31, with proper notification and amendment.",
+    "moved_by": "Rich Birch",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 3742,
+    "motion": "Move to adjourn, roll call.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 3262,
+    "topic": "Abutter notification cost",
+    "what_was_said": "The applicant said notifying all residents for an amendment is quite expensive, and so it may return for an emergency order instead.",
+    "figures_as_heard": [
+     "22 residents"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 3262,
+    "decision": "The applicant said it would likely pursue the matter with Shirley and may return for an emergency order as needed."
+   },
+   {
+    "t": 3619,
+    "decision": "Jack Rabbit asked for a small work session on the next agenda about documenting waivers of bylaws and state law."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 227,
+    "topic": "Remote meeting boilerplate, roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 227,
+    "t_end": 330,
+    "topic": "Member disclosure and conflict question",
+    "resolution": "no resolution",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 330,
+    "t_end": 2208,
+    "topic": "Lake Shirley drawdown extension request: field change versus amendment",
+    "resolution": "discussed",
+    "tags": [
+     "legal",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2208,
+    "t_end": 2500,
+    "topic": "Public comment on lake levels",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 2500,
+    "t_end": 3600,
+    "topic": "Motion, roll call and abutter notice",
+    "resolution": "roll call taken",
+    "tags": [
+     "legal",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 3600,
+    "t_end": 3763,
+    "topic": "Next agenda work session and adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "The roll call tally on the amendment motion is garbled",
+   "Exact depth readings"
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 981,
+    "about": "Disagreement over whether the drawdown depth and fish and wildlife approval were being misstated.",
+    "sides": "two members",
+    "words_as_heard": "stop making it up",
+    "kind": "members disagree"
+   },
+   {
+    "t": 2501,
+    "about": "A member questioned the urgency and why Shirley's needs should change Lunenburg's order.",
+    "sides": "a member against the applicant and other members",
+    "words_as_heard": "have you not been listening it's not about this year",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 1395,
+    "kind": "safety",
+    "about": "Ice forming on the lake edges could make extending the drawdown a safety issue.",
+    "who": "a member",
+    "words_as_heard": "the only thing that would really restrict us to go to the 31st would be if there's ice to form on the edges which would be more of a safety issue"
+   },
+   {
+    "t": 3034,
+    "kind": "liability or legal",
+    "about": "A side letter could expose the commission to legal problems.",
+    "who": "a member",
+    "words_as_heard": "having this kind of side letter is going to open us up for for some potential uh problems"
+   },
+   {
+    "t": 2063,
+    "kind": "condition",
+    "about": "A member supports a field change since they must return annually.",
+    "who": "a member",
+    "words_as_heard": "it gives us still gives us the protection that they're gonna have to come back every year"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 730,
+    "name_as_heard": "order of conditions",
+    "kind": "application or permit",
+    "words_as_heard": "the actual line item in the order conditions that we wanted amended",
+    "shown": false
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Conservation Commission was split on whether Lake Shirley Improvement Corp's request to move its drawdown end date to December 31 could be a field change or needed a full amendment.",
+    "t": 330
+   },
+   {
+    "line": "A roll call followed a motion to tell the Shirley ConCom the commission will amend the order of conditions; the captions do not make the tally clear.",
+    "t": 2974
+   },
+   {
+    "line": "The applicant said it would likely pursue the matter with Shirley and may return for an emergency order, citing the cost of notifying abutters for an amendment.",
+    "t": 3262
+   },
+   {
+    "line": "Residents said the drought has already left the lake very low and raised concern for wildlife if the drawdown runs past December 1.",
+    "t": 2208
+   },
+   {
+    "line": "A member asked for a short work session on the next agenda about documenting waivers of bylaws and state law.",
+    "t": 3619
+   }
+  ],
+  "why_it_matters": [
+   "The outcome decides how long Lake Shirley stays drawn down, which touches lakefront owners and wildlife, and whether changes to a permit need abutter notice and a legal ad, which carry costs for the applicant.",
+   "The unclear vote and the possible emergency order mean the extension could be settled by a different route than a full amendment."
+  ],
+  "watch_next": [
+   "The next Conservation Commission agenda, which a member asked to include a work session on documenting waivers of bylaws and state law.",
+   "Whether the applicant returns for an emergency order or the Shirley ConCom receives the commission's letter."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-03T16:31:26Z",
+   "cost_usd": 0.0261571
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10282020-6256",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2020-10-28-minutes-6256.txt",
+   "path": "sources/meetings/conservation-commission/2020-10-28-minutes-6256.pdf"
+  },
+  "official_sha256": "9e8568897e2e8d5ccb5780836461bba2abf3dfa83331d3e787a5689f962d35a8",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "Both records cover the Shirley letter motion and the same core attendees, but they differ on its terms and result. The main thing to know is that the official minutes record a 5–1 passed vote with a drawdown ending at 6 ft or Dec 1, while ours says the result was not audible and describes extension to Dec 31.",
+  "counts": {
+   "agree": 1,
+   "caption_error": 4,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote on letter to Shirley ConCom about amending order of conditions",
+    "ours": "Motion by Rich Birch to send a letter to the Shirley ConCom that the commission will amend the order of conditions to allow annual review and extension to December 31, with proper notification and amendment. — not audible",
+    "official": "rb made a motion to send a letter to the shirley concom, pending a positive vote, stating that the lcc will amend the order of conditions",
+    "note": "Ours records the vote result as not audible and describes allowing extension to Dec 31; official records it passed (RB, CL, BP, CC, KJ yes, JV no) and ends the drawdown at 6 ft or Dec 1 with Dec 31 only as annual approval. Check the official tally and exact wording against the video.",
+    "t": 2974
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Abutter notification cost / amendment cost figure",
+    "ours": "Abutter notification cost: 22 residents",
+    "official": "the expense to process an amendment in lunenburg would be too expensive",
+    "note": "Ours lists a count of 22 residents as a cost; official prints no dollar figure and discusses the expense of processing an amendment. Check the video near t=3262 to see what 22 refers to.",
+    "t": 3262
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Applicant may pursue matter with Shirley or return for emergency order",
+    "ours": "The applicant said it would likely pursue the matter with Shirley and may return for an emergency order as needed.",
+    "official": "",
+    "note": "Official minutes do not record this statement; it is a stated intention, not a vote."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Jack Rabbit request for work session on documenting waivers",
+    "ours": "Jack Rabbit asked for a small work session on the next agenda about documenting waivers of bylaws and state law.",
+    "official": "",
+    "note": "Official minutes record no such request; check the video near t=3619.",
+    "t": 3619
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment by abutter Joy Derner on drawdown depth",
+    "ours": "",
+    "official": "joy derner abutter noted she had concerns that she had concerns about the effects of the depth of the drought.",
+    "note": "Our minutes do not list Joy Derner or her comment."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Bob P's (chair)",
+    "official": "the meeting was called to order by chairman pease with all in attendance.",
+    "note": "Misheard surname; the official gives Bob Pease.",
+    "official_reading": "Bob Pease"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Rich Birch",
+    "ours": "Rich Birch (member)",
+    "official": "rb made a motion to send a letter to the shirley concom, pending a positive vote, stating that the lcc will amend the order of conditions",
+    "official_reading": "Richard Bursch",
+    "note": "Surname misheard; official lists Richard Bursch."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Katie Childs",
+    "ours": "Katie Childs (member)",
+    "official": "the meeting was called to order by chairman pease with all in attendance.",
+    "official_reading": "Catie Childs",
+    "note": "Spelling difference of first name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Staff Matt",
+    "ours": "Matt (conservation staff)",
+    "official": "mm noted it was the same in writing as what wendy gendron stated earlier and this was for a field change request.",
+    "official_reading": "Matthew S. Marro",
+    "note": "Same person, Conservation Administrator, given in full in official."
+   },
+   {
+    "kind": "agree",
+    "about": "Other attendees (Ken Jones, Carl Luck, Jack Rabbit, Jeff Viviano, Wendy Gendron)",
+    "ours": "Ken Jones, Carl Luck, Jack Rabbit, Jeff Viviano, Wendy Gendron",
+    "official": "wendy gendron appeared before the commission representing the lsic.",
+    "note": "Same people present, with minor name spelling variants (Kenneth, Rabbitt, Jeffrey)."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Joanna listed as presenter",
+    "ours": "Joanna (presenter)",
+    "official": "",
+    "note": "Official attendee list does not include Joanna."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-03T16:32:04Z",
+   "cost_usd": 0.0391391
+  }
+ }
+}

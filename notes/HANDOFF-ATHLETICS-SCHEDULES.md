@@ -1,8 +1,7 @@
 ---
-status: parked
+status: reference
 updated: 2026-11-04
-next: the five bus-sheet findings and the athletics-fincom year mislabel
-waiting_on: TJ's yes
+genlock: G-FER88 -- next steps, prohibitions and open questions live there (genlock goal show G-FER88)
 ---
 
 # Handoff: athletics schedules, the bus model, and the site menu

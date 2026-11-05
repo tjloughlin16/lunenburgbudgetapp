@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2020-09-08",
  "docid": "5673",
@@ -12,39 +12,366 @@
  },
  "votes": [
   {
-   "motion": "Accept proposed changes to the Sewer Use Regs Deduct Meter Policy (Article VII-3D(2) and Appendix K)",
+   "motion": "Accept proposed changes to the Sewer Use Regs Deduct Meter Policy, Article VII-3D(2) and Appendix K, and close the public hearing.",
    "moved_by": "Carl L.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: carl l. second: john r. to accept proposed changes to the sewer use regs deduct meter policy"
+   "quote": "motion: carl l. second: john r. to accept proposed changes to the sewer use regs deduct meter policy-article vii-3d(2) and appendix k."
   },
   {
-   "motion": "Accept the Lunenburg Sewer Commission 2020 Operations & Maintenance Pump Station Contract",
+   "motion": "Accept the Lunenburg Sewer Commission 2020 Operations & Maintenance Pump Station Contract.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
-   "outcome": "passed",
+   "outcome": "passed 5-0",
    "procedural": false,
    "quote": "motion: john r. second: brett r. to accept the lunenburg sewer commission 2020 operations & maintenance pump station contract."
   },
   {
-   "motion": "Accept the policy for access to Town Counsel, changing 'permission' to 'notification'",
+   "motion": "Accept the policy for access to Town Counsel, changing 'permission' to 'notification'.",
    "moved_by": "John R.",
    "seconded_by": "Mike D.",
-   "outcome": "passed",
+   "outcome": "passed 5-0",
    "procedural": false,
    "quote": "motion: john r. second: mike d. to accept the policy for access to town counsel, changing 'permission' to 'notification'."
   },
   {
-   "motion": "Adjourn at 6:24 pm",
+   "motion": "Adjourn the meeting at 6:24pm.",
    "moved_by": "John R.",
    "seconded_by": "Carl L.",
-   "outcome": "passed",
+   "outcome": "passed 5-0",
    "procedural": true,
    "quote": "motion: john r. to adjourn at 6:24pm second: carl l."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text extracted via OCR from scanned meeting minutes. All four votes passed unanimously.",
- "cost_usd": 0.11715249999999999
+ "note": "OCR text of a 3-page set with no printed attendance roll; attendance is inferred from roll-call vote lines. The Chair is not named in the text. The vote tallies print 'Mike' while motions print 'Mike D.'; treated here as one member. 'Carl Luck' in public comment is not explicitly tied to 'Carl L.' (Commissioner). Page 2 opens mid-sentence (Leominster), so some text is missing. Several budget items discuss money without printing figures.",
+ "cost_usd": 0.00752002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave",
+   "role": "",
+   "status": "present",
+   "quote": "vote unanimous: mike-aye, carl-aye, john-aye, brett-aye and dave-aye."
+  },
+  {
+   "name": "Mike D.",
+   "role": "",
+   "status": "present",
+   "quote": "second: mike d."
+  },
+  {
+   "name": "Carl L.",
+   "role": "",
+   "status": "present",
+   "quote": "motion: carl l."
+  },
+  {
+   "name": "John R.",
+   "role": "",
+   "status": "present",
+   "quote": "motion: john r."
+  },
+  {
+   "name": "Brett R.",
+   "role": "",
+   "status": "present",
+   "quote": "second: brett r."
+  },
+  {
+   "name": "Barb",
+   "role": "",
+   "status": "present",
+   "quote": "business manager report - barb reported there are 28 participants in the deduct radio meter program"
+  },
+  {
+   "name": "Jack",
+   "role": "",
+   "status": "present",
+   "quote": "jack noted that many as-builts are missing and they sometimes need to camera the line to find the t."
+  },
+  {
+   "name": "Jane",
+   "role": "",
+   "status": "not stated",
+   "quote": "jane will be starting the meter import on 9/9."
+  },
+  {
+   "name": "Gary Williams",
+   "role": "plumbing inspector",
+   "status": "not stated",
+   "quote": "have their plumber, as well as gary williams (plumbing inspector) sign off on the upgrade."
+  },
+  {
+   "name": "Jennifer Johnson",
+   "role": "5 Richards Way",
+   "status": "present",
+   "quote": "jennifer johnson (5 richards way) said that they have been trying to get the deduct meter"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "",
+   "status": "present",
+   "quote": "carl luck shared a conversation with john esposito in regard to not being able to get information on the location of the"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Barb will send the pump station contract to Empey for their approval, and the Commission will sign thereafter.",
+   "quote": "barb said she will send the contract to empey for their approval and the commission will sign thereafter."
+  },
+  {
+   "decision": "Dave requested that after the contract is executed, Barb invite Empey to a meeting to meet the Commissioners.",
+   "quote": "dave requested that after the contract is executed, barb invite empey to a meeting to meet the commissioners."
+  },
+  {
+   "decision": "Barb will work with Jack on the wording for the connection policy (Town's responsibility for locating connections) for the next meeting.",
+   "quote": "barb will work with jack on the wording for the next meeting."
+  },
+  {
+   "decision": "Carl offered to talk to Woodward & Curran about the format of the pump station runtime data.",
+   "quote": "carl offered to talk to woodward & curran."
+  },
+  {
+   "decision": "Commissioners were asked not to reply to emails from a Commissioner, so as not to violate Open Meeting Law.",
+   "quote": "dave asked commissioners to not reply back on emails from a commissioner, so as not to violate open meeting law."
+  },
+  {
+   "decision": "YTD FY21 budget status to be reported by Barb at the next meeting.",
+   "quote": "ytd fy21 budget status - barb will report at next meeting."
+  },
+  {
+   "decision": "Commissioners asked to send suggestions for future business discussions.",
+   "quote": "dave asked commissioners to send suggestions for business discussions."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Q1 FY21 commitment for quarterly billing",
+   "what_was_recorded": "Barb reported the Q1 commitment for the Q1 billing, which has gone out; the document will be signed later.",
+   "figures_as_printed": [
+    "$212,461.81"
+   ],
+   "quote": "barb reported the q1 commitment was $212,461.81 for the q1 billing, which has gone out."
+  },
+  {
+   "topic": "Invoice from Mead Talerman",
+   "what_was_recorded": "Barb reported an invoice from Mead Talerman for the period end of July to 8/5.",
+   "figures_as_printed": [
+    "$329.62"
+   ],
+   "quote": "invoices- mead talerman for $329.62 (end of july to 8/5)."
+  },
+  {
+   "topic": "Stabilization Fund transfer for Special Town Meeting warrant",
+   "what_was_recorded": "The Special Town Meeting warrant will carry a Stabilization Fund transfer; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "in regard to the special town meeting, the warrant will be for the stabilization fund transfer."
+  },
+  {
+   "topic": "Transfer of money for Bright Farms",
+   "what_was_recorded": "Carl asked about the transfer of money for Bright Farms; Barb needed to talk to Fitchburg about prepayments to save interest. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "carl asked about the transfer of money for bright farms."
+  },
+  {
+   "topic": "Deduct meter annual fee",
+   "what_was_recorded": "A participant said she paid the annual fee; Barb said the annual fee was for FY20. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "she added that she paid the annual fee and barb replied that the annual fee was for fy20."
+  },
+  {
+   "topic": "Deduct Meter Policy fee handling",
+   "what_was_recorded": "The updated policy changed how fees are handled; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "changes to how fees are handled and some clerical"
+  },
+  {
+   "topic": "Pump station O&M contract bids",
+   "what_was_recorded": "Public comment said there was a large difference in the bid rates in the O&M contract awarded at the last meeting; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "there was a large difference in the bid rates and there was little debate by the commission"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Stabilization Fund transfer to be placed in the Special Town Meeting warrant",
+   "outcome": "not stated (proposed for warrant; no amount printed, no vote recorded)",
+   "amount_as_printed": "not printed",
+   "quote": "in regard to the special town meeting, the warrant will be for the stabilization fund transfer."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Jennifer Johnson",
+   "stated_role": "5 Richards Way",
+   "topic": "Deduct meter installation and annual fee",
+   "quote": "jennifer johnson (5 richards way) said that they have been trying to get the deduct meter installed but have not heard back from (their contractor)."
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "",
+   "topic": "Connection location information, O&M contract process, counsel office hours",
+   "quote": "carl luck shared a conversation with john esposito in regard to not being able to get information on the location of the connections in the street for 362 and 384 mass ave."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "heard (Jennifer Johnson; Carl Luck)",
+   "quote": "public comment-jennifer johnson (5 richards way) said that they have been trying to get the deduct meter",
+   "tags": [
+    "public comment",
+    "deduct meter",
+    "connections"
+   ]
+  },
+  {
+   "topic": "Public hearing: Deduct Meter Policy update",
+   "resolution": "approved; hearing closed",
+   "quote": "barb suggested that the commission vote to accept the new policy and the hearing be closed.",
+   "tags": [
+    "public hearing",
+    "deduct meter",
+    "sewer use regulations"
+   ]
+  },
+  {
+   "topic": "Pump station Operations & Maintenance contract acceptance",
+   "resolution": "approved",
+   "quote": "dave asked commissioners if they had any questions/comments on the contract that both town manager and counsel had approved",
+   "tags": [
+    "contract",
+    "pump station",
+    "O&M"
+   ]
+  },
+  {
+   "topic": "Connection policy and process",
+   "resolution": "continued; Barb to draft wording for next meeting",
+   "quote": "policy discussions- connection policy and process - the commission discussed the packet that is given to contractors",
+   "tags": [
+    "connection policy",
+    "tie-ins",
+    "as-builts",
+    "low-pressure system"
+   ]
+  },
+  {
+   "topic": "Counsel access policy",
+   "resolution": "approved with 'permission' changed to 'notification'",
+   "quote": "counsel access - dave explained that since this is a team, if any commissioner wants to go to open legal hours",
+   "tags": [
+    "counsel access",
+    "policy",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Q1 FY21 commitment and warrant",
+   "resolution": "reported; no action",
+   "quote": "q1 fy21 commitment and warrant - barb reported the q1 commitment was $212,461.81 for the q1 billing",
+   "tags": [
+    "commitment",
+    "billing",
+    "special town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "YTD FY21 budget status",
+   "resolution": "deferred to next meeting",
+   "quote": "ytd fy21 budget status - barb will report at next meeting.",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Business discussion",
+   "resolution": "no action (none)",
+   "quote": "business discussion - none",
+   "tags": []
+  },
+  {
+   "topic": "Business manager report",
+   "resolution": "reported; no action",
+   "quote": "business manager report - barb reported there are 28 participants in the deduct radio meter program",
+   "tags": [
+    "deduct meter",
+    "billing tool",
+    "meter import",
+    "invoices"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "no action; Commissioners asked for suggestions",
+   "quote": "member agenda inputs for future meetings - dave asked commissioners to send suggestions for business discussions.",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "no action (none)",
+   "quote": "public comment - none",
+   "tags": []
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "noted",
+   "quote": "september 29 @ 5pm - regular meeting, remote participation",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:24pm, 5-0",
+   "quote": "motion: john r. to adjourn at 6:24pm second: carl l.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Counsel Access Proposed Policy",
+   "where": "list",
+   "quote": "handouts: counsel access proposed policy"
+  },
+  {
+   "name": "Packet given to contractors for tie-ins to sewer",
+   "where": "text",
+   "quote": "the commission discussed the packet that is given to contractors, for tie-ins to sewer."
+  },
+  {
+   "name": "Deduct Meter Policy (updated, posted on website)",
+   "where": "text",
+   "quote": "the updated policy has been posted on the website."
+  },
+  {
+   "name": "Lunenburg Sewer Commission 2020 Operations & Maintenance Pump Station Contract",
+   "where": "text",
+   "quote": "to accept the lunenburg sewer commission 2020 operations & maintenance pump station contract."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "deduct meter",
+  "pump station contract",
+  "connection policy",
+  "counsel access policy",
+  "public hearing",
+  "budget",
+  "warrant",
+  "open meeting law"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {}
 }

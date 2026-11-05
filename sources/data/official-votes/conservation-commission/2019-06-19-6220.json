@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2019-06-19",
  "docid": "6220",
@@ -12,55 +12,348 @@
  },
  "votes": [
   {
-   "motion": "Approve barn and sheds demolition with applicant to return on July 17 with full remediation plan",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed unanimously",
+   "motion": "Approve barn and sheds at 4 Townsend Harbor Road, with the applicant to return on July 17 with a full remediation plan.",
+   "moved_by": "KJ",
+   "seconded_by": "JR",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion to approve barn and sheds with the applicant to return on july 17 with full remediation pla n by kj a second by jr and a unanimous vote to approve the motion."
   },
   {
-   "motion": "Negative determination with erosion control added to plans",
-   "moved_by": "Carl Luck",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Issue a negative determination for 61 Spring Street (Kincaid shed), with erosion control added to the plans.",
+   "moved_by": "CL",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "negative determination with erosion control added to the plans by a motion of cl , a second by cc and a unanimous vote to approve."
   },
   {
-   "motion": "Positive determination for driveway modification",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Carl Luck",
-   "outcome": "passed unanimously",
+   "motion": "Issue a positive determination for 320 Burrage Street (driveway modification).",
+   "moved_by": "CC",
+   "seconded_by": "CL",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "postive determination by cc with a second by cl with a unanimous vote to approve."
   },
   {
-   "motion": "Negative determination for septic system replacement",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Issue a negative determination for 244 Pleasant Street (septic replacement/upgrade).",
+   "moved_by": "KJ",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "kj motioned for a negative determination and cc seconded. unanimous vote to approve."
   },
   {
-   "motion": "Amend with three portions of 6 by 6 granite with 30 foot spacing minimum 15 inches max height",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed unanimously",
+   "motion": "Amend the Reservoir Road remedial work to three portions of 6 by 6 granite with 30 foot spacing minimum, 15 inches maximum height.",
+   "moved_by": "CC",
+   "seconded_by": "KJ",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion to amend with the three portions of 6 by 6 granite with 30 foot spacing minimum 15 inches max height was made by cc with a second by kj with a unanimous vote"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "KJ",
+   "seconded_by": "CC",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "the meeting adjourned at 10:00 pm with a motion of kj and a second by cc."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0954705
+ "note": "Text extraction, not a scan. Members are recorded only by initials in the motions (RB, CC, CL, KJ, JR, MM, TD, BP); attributions to full names rely on the attendance line and the header. Dwyer and Pease were absent per the attendance line. No public comment speakers are recorded under the Public Comment heading. The minutes give no vote count for the Dantonio, Kincaid, Trainque, Lightfoot and Reservoir Road motions beyond \"unanimous\". The adjournment motion has no recorded result. The minutes' statement about the Dantonio and Kincaid matters that the documents were approved is printed under one heading, so it is recorded once in the document list. The minutes contain typos (e.g. \"ENF 2109-13\", \"Postive\", \"Kinkaid\" vs \"Kincaid\") that were kept as printed.",
+ "cost_usd": 0.009520820000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "present",
+   "quote": "call to order- chairman bursch presiding with all present except td and bp"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "call to order- chairman bursch presiding with all present except td and bp"
+  },
+  {
+   "name": "Bob Pease",
+   "status": "absent",
+   "quote": "call to order- chairman bursch presiding with all present except td and bp"
+  },
+  {
+   "name": "Catie Childs",
+   "status": "present",
+   "quote": "call to order- chairman bursch presiding with all present except td and bp"
+  },
+  {
+   "name": "Carl Luck",
+   "status": "present",
+   "quote": "call to order- chairman bursch presiding with all present except td and bp"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "jack rabbitt-appreciative of being reappointed looking forward to making"
+  },
+  {
+   "name": "Kenneth Jones",
+   "status": "present",
+   "quote": "call to order- chairman bursch presiding with all present except td and bp"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "mm noted that the hollis hills stewardship plan was approved by the state forester's office."
+  },
+  {
+   "name": "Alan Dantonio",
+   "status": "not stated",
+   "quote": "alan dantonio has filed a notice of intent for the demolition of sheds and a barn"
+  },
+  {
+   "name": "Peter Bemis",
+   "status": "present",
+   "quote": "peter bemis explained the proposal and the history."
+  },
+  {
+   "name": "Patrick Kincaid",
+   "status": "present",
+   "quote": "mr. kinkaid appeared on his behalf."
+  },
+  {
+   "name": "Kenneth Trainque",
+   "status": "present",
+   "quote": "kenneth trainque represented himself. 320 burrage."
+  },
+  {
+   "name": "Maryann Dipinto",
+   "status": "present",
+   "quote": "with maryann dipinto. mary ann had flagged the wetland resource area."
+  },
+  {
+   "name": "Susan Boggs Lightfoot",
+   "status": "not stated",
+   "quote": "susan boggs lightfoot has filed a request for a determination of applicability"
+  },
+  {
+   "name": "Mike Hughes",
+   "status": "present",
+   "quote": "mike hughes- options 6 boulders or 4 granite makers 15 to 48 max or six dogwood trees"
+  },
+  {
+   "name": "Joanna Bilotta Simeone",
+   "status": "present",
+   "quote": "joanna bilotta simeone noted she had specific questions for td and bp, however they were not present."
+  },
+  {
+   "name": "Greco Alonso",
+   "status": "not stated",
+   "quote": "eo -134 crawford street- greco alonso, fitchburg redevelopment authority and mbta - enf case 2019-3"
+  },
+  {
+   "name": "Representative from GPR",
+   "status": "present",
+   "quote": "representative from gpr outlined the violation."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair RB will allow partial removal of the shed and barn at 4 Townsend Harbor Road.",
+   "quote": "rb will allow partial removal of shed and barn."
+  },
+  {
+   "decision": "Remediation planting at 4 Townsend Harbor Road would need to be put on the engineering plan.",
+   "quote": "would need to be put on the engineering plan."
+  },
+  {
+   "decision": "Chair requested the 61 Spring Street plan be updated to show erosion protection.",
+   "quote": "requested the plan be updated to show erosion protection."
+  },
+  {
+   "decision": "Chair wanted the buffer lines drawn in on the 320 Burrage Street plan, with the turnaround elimination noted.",
+   "quote": "rb expressed the turnaround being eliminated and wanted the buffer lines drawn in."
+  },
+  {
+   "decision": "Commission requested a copy of the maintenance plan be submitted for 244 Pleasant Street.",
+   "quote": "jr requested a maintenance plan copy be submitted."
+  },
+  {
+   "decision": "Town Counsel was to help the commission remediate the open meeting law complaints at the 7/17/19 meeting.",
+   "quote": "town counsel was going to help the commission remediate at the 7/17/19 meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ADA grant",
+   "what_was_recorded": "Agent reported the ADA grant work would be completed by the end of the month; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "ada grant update-e progress of grant - mm reported that the grant work would be completed by the end of"
+  },
+  {
+   "topic": "Enforcement fines at 101 Pleasant Street",
+   "what_was_recorded": "Fine collection status reported: tickets have stopped and the matter is awaiting court action; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "tickets have stopped awaiting court action for fine collection"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action; announcements noted",
+   "quote": "mm noted that the hollis hills stewardship plan was approved by the state forester's office.",
+   "tags": [
+    "announcements",
+    "Hollis Hills"
+   ]
+  },
+  {
+   "topic": "Notice of Intent, 4 Townsend Harbor Road (Dantonio)",
+   "resolution": "approved barn and sheds removal with conditions; applicant to return July 17",
+   "quote": "motion to approve barn and sheds with the applicant to return on july 17 with full remediation pla n by kj a second by jr and a unanimous vote to approve the motion.",
+   "tags": [
+    "notice of intent",
+    "buffer zone",
+    "demolition",
+    "remediation"
+   ]
+  },
+  {
+   "topic": "Determination of applicability, 61 Spring Street (Kincaid)",
+   "resolution": "negative determination with erosion control added to plans",
+   "quote": "negative determination with erosion control added to the plans by a motion of cl , a second by cc and a unanimous vote to approve.",
+   "tags": [
+    "determination of applicability",
+    "shed",
+    "Lake Shirley buffer"
+   ]
+  },
+  {
+   "topic": "Determination of applicability, 320 Burrage Street (Trainque)",
+   "resolution": "positive determination",
+   "quote": "postive determination by cc with a second by cl with a unanimous vote to approve.",
+   "tags": [
+    "determination of applicability",
+    "driveway",
+    "wetland"
+   ]
+  },
+  {
+   "topic": "Determination of applicability, 244 Pleasant Street (Lightfoot)",
+   "resolution": "negative determination",
+   "quote": "kj motioned for a negative determination and cc seconded. unanimous vote to approve.",
+   "tags": [
+    "determination of applicability",
+    "septic",
+    "isolated wetland"
+   ]
+  },
+  {
+   "topic": "Enforcement actions and administrative hearings",
+   "resolution": "status updates on multiple cases; Reservoir Road remedial work amended and approved",
+   "quote": "motion to amend with the three portions of 6 by 6 granite with 30 foot spacing minimum 15 inches max height was made by cc",
+   "tags": [
+    "enforcement",
+    "Reservoir Road",
+    "Crawford Street",
+    "Pleasant Street",
+    "Shady Point"
+   ]
+  },
+  {
+   "topic": "New business: land acquisition proposal and homeowner notification policy",
+   "resolution": "listed on agenda; no discussion or action recorded",
+   "quote": "new business - land acquisition proposal , saliba , northfield road ( # 994)",
+   "tags": [
+    "land acquisition",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Old business: Small Town Forest, Hollis Road stewardship, rules and regulations",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "work at the small town forest-updates ( if any)",
+   "tags": [
+    "forest",
+    "stewardship",
+    "regulations"
+   ]
+  },
+  {
+   "topic": "Minutes approval (May 29 and June 5)",
+   "resolution": "listed on agenda; no vote recorded",
+   "quote": "minutes of previous meetings - review and approval of may 29, june 5",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Agent's report: legal updates, ADA grant, 183 Hemlock",
+   "resolution": "reported; open meeting law complaints to be remediated with Town Counsel at 7/17/19 meeting",
+   "quote": "rb noted that there were open meeting law complaints that town counsel was going to help the commission remediate at the",
+   "tags": [
+    "legal",
+    "open meeting law",
+    "ADA grant",
+    "183 Hemlock"
+   ]
+  },
+  {
+   "topic": "Adjournment and next meeting",
+   "resolution": "adjourned at 10:00 PM; next meeting July 17, 2019",
+   "quote": "the meeting adjourned at 10:00 pm with a motion of kj and a second by cc.",
+   "tags": [
+    "adjournment",
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "WPA Form 1 and a modified sketch plan by applicant, dated May 2019",
+   "where": "list",
+   "quote": "documents approved were a wpa form 1 and a modified sketch plan by applicant date may 2019"
+  },
+  {
+   "name": "Plan by Doug Smith entitled \"Sewage Disposal System DOR 244 Pleasant Street,\" dated May 2019",
+   "where": "list",
+   "quote": "documents approved were a wpa form 1 and a plan by doug smith entitled"
+  },
+  {
+   "name": "Maintenance plan copy (244 Pleasant Street)",
+   "where": "text",
+   "quote": "jr requested a maintenance plan copy be submitted."
+  },
+  {
+   "name": "Dosage pump specs (244 Pleasant Street)",
+   "where": "text",
+   "quote": "dosage pump specs were examined."
+  },
+  {
+   "name": "Open meeting law complaints",
+   "where": "text",
+   "quote": "rb noted that there were open meeting law complaints that town counsel was going to help the commission remediate at the"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "buffer zone",
+  "determinations",
+  "notice of intent",
+  "enforcement",
+  "Reservoir Road",
+  "open meeting law",
+  "ADA grant"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents approved were"
+ },
+ "dropped_unquoted_by_field": {}
 }

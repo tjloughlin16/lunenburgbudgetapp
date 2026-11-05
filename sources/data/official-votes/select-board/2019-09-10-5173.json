@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-09-10",
  "docid": "5173",
@@ -12,29 +12,406 @@
  },
  "votes": [
   {
-   "motion": "Enter executive session under Massachusetts General Law Chapter 30A, Section 21 to consider purchase, exchange or lease of real property at 635 Massachusetts Avenue",
-   "moved_by": "Ms. Luck",
-   "seconded_by": "Mr. McQuaid",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "ms. luck made the motion and mr. mcquaid seconded it. vote: mr. jeffreys-aye, ms. adams- aye, mr. mcquaid-aye, ms. luck, mr. alonzo-ay",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Approve the minutes of the August 12, 2019 Board of Selectmen meeting",
+   "motion": "Motion to enter Executive Session under M.G.L. Chapter 30A, § 21, Reason #6, to consider purchase, exchange, lease or value of real property (635 Massachusetts Avenue), and to enter Open Session after adjourning from Executive Session.",
+   "moved_by": "Phyllis Luck",
+   "seconded_by": "Damon McQuaid",
    "outcome": "passed",
    "procedural": true,
-   "quote": "the board approved minutes of august 12, 2019."
+   "quote": "ms. luck made the motion and mr. mcquaid seconded it. vote: mr. jeffreys-aye, ms. adams-"
   },
   {
-   "motion": "Allocate $10,869.85 from the DPW budget for repairs to the Old Primary School if funding is available",
-   "moved_by": "Ms. Adams",
+   "motion": "Amended motion by Ms. Adams that if there is funding available in the DPW budget, the $10,869.85 be allocated towards the repairs to the old Primary School.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "failed 2-3",
    "procedural": false,
-   "quote": "ms. adams amended her motion that if there is funding available in the dpw budget, we allocate the $10,869.85 towards these repairs. mr. mcquaid stated there is never just $10,000 waiting to be spent. the dpw director has a list of what is needed to be done. further discussion ensued on the list. mr. alonzo asked ms. lemieux to find out if there is funding available within the budget for the next meeting. vote: 2 in favor (luck, adams), 3 against (jeffreys, alonzo, mequaid)"
+   "quote": "vote: 2 in favor (luck, adams), 3 against (jeffreys, alonzo, mequaid)"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text, readable. Vote #1 has minor OCR artifact (Ms. Luck's name listed without \"-aye\" suffix) but context confirms 5-0 unanimous passage. Vote #2 recorded as \"The Board approved Minutes\" with no vote count stated but outcome inferred from \"approved\" language.",
- "cost_usd": 0.1427245
+ "note": "OCR text from a scan (macOS Vision). Page 4 begins mid-sentence and page 7 is a garbled signature block. The executive session motion appears before the 7:03 p.m. start time, so ordering is as the text prints it. The executive session tally lists Ms. Luck without the word \"aye\"; outcome recorded as passed with no count printed. The amended motion's original mover and second are not printed. The text does not print a meeting date beyond the body; the user supplied 2019-09-10. Mr. Martin's affiliation is not stated.",
+ "cost_usd": 0.00982662,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman, damon mcquaid, clerk;"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman, damon mcquaid, clerk;"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman, damon mcquaid, clerk;"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "",
+   "status": "present",
+   "quote": "katey adams, michael- ray jeffreys"
+  },
+  {
+   "name": "Michael- Ray Jeffreys",
+   "role": "",
+   "status": "present",
+   "quote": "katey adams, michael- ray jeffreys"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; jim marino, police chief"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; jim marino, police chief"
+  },
+  {
+   "name": "Ron Dionne",
+   "role": "131 White Street",
+   "status": "present",
+   "quote": "ron dionne, 131 white street, has been reading the vertex property condition report on the old"
+  },
+  {
+   "name": "Dave Tocki",
+   "role": "72 Leominster Road",
+   "status": "present",
+   "quote": "dave tocki, 72 leominster road, thanked the board for having all the old playground equipment"
+  },
+  {
+   "name": "Rebecca Lantry",
+   "role": "251 West St.",
+   "status": "present",
+   "quote": "rebecca lantry, 251 west st., noted none of the municipal building could answer yes to #5 because"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present were richard mcgrath, jim laveck, cullen"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "APDC member",
+   "status": "present",
+   "quote": "members present were richard mcgrath, jim laveck, cullen"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "APDC member",
+   "status": "present",
+   "quote": "members present were richard mcgrath, jim laveck, cullen"
+  },
+  {
+   "name": "Brian Corcoran",
+   "role": "APDC member",
+   "status": "present",
+   "quote": "dwyer and brian corcoran. mr. laveck stated he had noticed this back in 2017"
+  },
+  {
+   "name": "Mr. Martin",
+   "role": "",
+   "status": "not stated",
+   "quote": "mr. martin suggested surveying residents to see what they want to do with the buildings."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board approved the minutes of August 12, 2019 (no motion recorded).",
+   "quote": "the board approved minutes of august 12, 2019."
+  },
+  {
+   "decision": "Mr. Alonzo signed an earth removal permit with revised conditions for P.J. Keating.",
+   "quote": "mr. alonzo signed an earth removal permit with revised conditions for p.j. keating."
+  },
+  {
+   "decision": "The Board signed an accounts payable warrant (no motion recorded).",
+   "quote": "the board signed an accounts payable warrant in the amount of"
+  },
+  {
+   "decision": "Ms. Lemieux will follow up for more information on the chair lift door in Town Hall.",
+   "quote": "ms. lemieux reported the company came once to repair the door but she will follow up for more"
+  },
+  {
+   "decision": "Mr. Alonzo stated hallway lights in Town Hall should be replaced with motion sensor lights.",
+   "quote": "mr. alonzo stated those should be"
+  },
+  {
+   "decision": "The report on the Annual Town Meeting ballot questions will be made public at either the next BOS meeting or the first October meeting.",
+   "quote": "it will be made public at either the next bos meeting or the first october meeting."
+  },
+  {
+   "decision": "Mr. Alonzo asked Ms. Lemieux to find out if there is funding available within the budget for the next meeting.",
+   "quote": "mr. alonzo asked ms. lemieux to find out if there is funding available within the budget for the next"
+  },
+  {
+   "decision": "Mr. Alonzo will type up the criteria list for the next meeting.",
+   "quote": "mr. alonzo will type up the criteria list for the next meeting."
+  },
+  {
+   "decision": "Mr. Alonzo will reach out to the Finance and School Committee Chairs about a symposium date of Tuesday, October 29.",
+   "quote": "mr. alonzo will reach out to the finance and school committee chairs about that"
+  },
+  {
+   "decision": "The Board will walk the proposed Unitil tree route at 5:30 p.m. on September 17, meeting at the Ritter Building.",
+   "quote": "the board will walk the proposed tree route at 5:30 p.m."
+  },
+  {
+   "decision": "Objective 2 was tabled until a future meeting.",
+   "quote": "objective 2 was tabled until a future meeting."
+  },
+  {
+   "decision": "Mr. Alonzo asked the Board to review the Natick School Committee public comment policy and the Town of Easton's social media policy before next week's meeting for discussion.",
+   "quote": "review the natick school committee public comment policy and the"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lion's Club pancake breakfast",
+   "what_was_recorded": "Ms. Luck reminded residents of a pancake breakfast priced at all you can eat for $2.00.",
+   "figures_as_printed": [
+    "$2.00"
+   ],
+   "quote": "all you can eat for $2.00"
+  },
+  {
+   "topic": "Old Primary School roof repair estimate",
+   "what_was_recorded": "Public comment on a $10,000 estimate to repair the roof; Mr. Alonzo noted it was for repair, not replacement; Mr. McQuaid said there is never just $10,000 waiting to be spent.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "regarding the $10,000 estimate for the roof, he thought the roof did not look bad"
+  },
+  {
+   "topic": "Mosquito spraying cost",
+   "what_was_recorded": "Ms. Luck asked whether mosquito spraying was at no charge from the Mosquito Control Project; Ms. Lemieux confirmed.",
+   "figures_as_printed": [],
+   "quote": "ms. luck asked if the mosquito spraying was being done at no charge by mosquito control project."
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "The Board signed an accounts payable warrant in the stated amount.",
+   "figures_as_printed": [
+    "$316,122.26"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of"
+  },
+  {
+   "topic": "Old Primary School hazardous materials abatement",
+   "what_was_recorded": "Mr. McQuaid noted the Vertex report estimated abatement of hazardous materials in the building at around $300,000.",
+   "figures_as_printed": [
+    "$300,000"
+   ],
+   "quote": "report estimated around $300,000 to abate the hazardous materials in the building"
+  },
+  {
+   "topic": "Old Primary School stabilization estimate",
+   "what_was_recorded": "APDC reviewed Mr. Walker's estimate of about $11,000 to keep the building from falling further into disrepair.",
+   "figures_as_printed": [
+    "$11,000"
+   ],
+   "quote": "mr. walker's estimate of about $11,000 for what is needed to keep the building from falling further into"
+  },
+  {
+   "topic": "Old Primary School repairs allocation motion",
+   "what_was_recorded": "Ms. Adams's amended motion to allocate $10,869.85 toward repairs, if DPW budget funds were available, failed 2-3.",
+   "figures_as_printed": [
+    "$10,869.85"
+   ],
+   "quote": "the $10,869.85 towards these repairs"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "Vice Chairman",
+   "topic": "Lion's Club pancake breakfast reminder",
+   "quote": "ms. luck reminded all of the lion's club pancake breakfast at the senior center tomorrow from 8-10"
+  },
+  {
+   "speaker": "Ron Dionne",
+   "stated_role": "131 White Street",
+   "topic": "Old Primary School structure and roof",
+   "quote": "mr. dionne stated the building is structurally sound and the board should not have it demolished."
+  },
+  {
+   "speaker": "Dave Tocki",
+   "stated_role": "72 Leominster Road",
+   "topic": "Old Primary School playground and property use",
+   "quote": "he was here to listen and thanked the board for continuing the dialogue."
+  },
+  {
+   "speaker": "Rebecca Lantry",
+   "stated_role": "251 West St.",
+   "topic": "ADA entry criterion in workshop",
+   "quote": "rebecca lantry, 251 west st., noted none of the municipal building could answer yes to #5 because"
+  },
+  {
+   "speaker": "Dave Tocki",
+   "stated_role": "72 Leominster Road",
+   "topic": "Consolidating town offices in one location",
+   "quote": "dave tocki, 72 leominster road, stated he works from home but still needs time to work face to face"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Executive session entry",
+   "resolution": "entered executive session; minutes separate",
+   "quote": "mr. alonzo stated he would entertain a motion to enter",
+   "tags": [
+    "executive session",
+    "real property",
+    "635 Massachusetts Avenue"
+   ]
+  },
+  {
+   "topic": "Pledge and public comment",
+   "resolution": "heard public comment on Old Primary School and reminders",
+   "quote": "ms. luck reminded all of the lion's club pancake breakfast at the senior center tomorrow from 8-10",
+   "tags": [
+    "public comment",
+    "Old Primary School"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "received; vacancies, road project, mosquito control, HR audit, training, OSHA",
+   "quote": "update on the summer street road reconstruction project:",
+   "tags": [
+    "town manager",
+    "road project",
+    "mosquito control",
+    "HR audit",
+    "training",
+    "OSHA"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants, action items",
+   "resolution": "approved minutes; signed warrant and permit; follow-up actions",
+   "quote": "the board approved minutes of august 12, 2019.",
+   "tags": [
+    "minutes",
+    "warrant",
+    "town hall door",
+    "ballot questions report"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received",
+   "quote": "ms. luck attended the central mass regional stormwater coalition meeting on august 22.",
+   "tags": [
+    "stormwater",
+    "capital planning",
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Workshop: town facilities, Old Primary School",
+   "resolution": "discussed APDC letters and cost estimate; allocation motion failed 2-3",
+   "quote": "discussion re: letters from apdc re: old primary school and cost estimate from facilities",
+   "tags": [
+    "Old Primary School",
+    "APDC",
+    "demolition",
+    "repair cost",
+    "hazardous materials",
+    "town facilities"
+   ]
+  },
+  {
+   "topic": "Selectmen's Objectives 1 and 2 for FY2020",
+   "resolution": "criteria discussed and drafted; Objective 2 tabled",
+   "quote": "objective 2 was tabled until a future meeting.",
+   "tags": [
+    "selectmen objectives",
+    "building criteria",
+    "town facilities",
+    "Unitil storm resiliency",
+    "symposium"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Vertex Property Condition Report on the old Primary School",
+   "where": "text",
+   "quote": "has been reading the vertex property condition report on the old"
+  },
+  {
+   "name": "Letters from APDC re: old Primary School",
+   "where": "text",
+   "quote": "discussion re: letters from apdc re: old primary school and cost estimate from facilities"
+  },
+  {
+   "name": "Cost estimate from Facilities Director",
+   "where": "text",
+   "quote": "discussion re: letters from apdc re: old primary school and cost estimate from facilities"
+  },
+  {
+   "name": "Mr. Walker's estimate (about $11,000)",
+   "where": "text",
+   "quote": "mr. walker's estimate of about $11,000 for what is needed to keep the building from falling further into"
+  },
+  {
+   "name": "Report related to the Annual Town Meeting ballot questions (draft from Town Manager)",
+   "where": "text",
+   "quote": "asked for the status on the report related to the annual town meeting ballot questions"
+  },
+  {
+   "name": "MS4 permit annual report",
+   "where": "text",
+   "quote": "the ms4 permit annual report due on september 30 should be ready for"
+  },
+  {
+   "name": "Accounts payable warrant",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of"
+  },
+  {
+   "name": "Talent bank forms",
+   "where": "text",
+   "quote": "talent bank forms can be obtained on the town website and forwarded to the board of selectmen's office."
+  },
+  {
+   "name": "Natick School Committee public comment policy",
+   "where": "text",
+   "quote": "review the natick school committee public comment policy and the"
+  },
+  {
+   "name": "Town of Easton's social media policy",
+   "where": "text",
+   "quote": "town of easton's social media policy before next week's meeting for discussion."
+  }
+ ],
+ "tags": [
+  "Old Primary School",
+  "town facilities",
+  "APDC",
+  "budget and repair costs",
+  "executive session",
+  "mosquito control",
+  "OSHA",
+  "HR audit",
+  "Selectmen objectives",
+  "public comment",
+  "storm resiliency"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

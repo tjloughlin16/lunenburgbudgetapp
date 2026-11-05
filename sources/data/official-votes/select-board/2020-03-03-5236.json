@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-03-03",
  "docid": "5236",
@@ -12,63 +12,499 @@
  },
  "votes": [
   {
-   "motion": "To approve the peddlers license for Kevin Clem for Vivint Solar",
+   "motion": "Approve the peddlers license for Kevin Clem for Vivint Solar.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Jeffreys",
-   "outcome": "passed 3-0",
+   "outcome": "passed 3-0-1",
    "procedural": false,
    "quote": "motion: d. mcquaid to approve the peddlers license for kevin clem for vivint solar vote: ms. adams- abstain, mr. jeffreys-aye, mr. mcquaid-aye, ms. luck-aye"
   },
   {
-   "motion": "To approve the license to keep, store and sell propane at 160 Mass Ave. as presented",
+   "motion": "Approve the license to keep, store and sell propane at 160 Mass Ave. as presented.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2nd: d. mcquaid to approve the license to keep, store and sell propane at 160 mass ave. as presented vote: ms.adams-aye, aye, mr. jeffreys-aye, mr. mcquaid-aye, ms. luck-aye"
+   "quote": "motion: m. jeffreys 2nd: d. mcquaid to approve the license to keep, store and sell propane at 160 mass ave. as presented"
   },
   {
-   "motion": "To ratify the Town Managers appointments as presented",
+   "motion": "Ratify the Town Manager's appointments as presented.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: d. mcquaid 2n°: m. jeffreys to ratify the town managers appointments as presented vote: ms. adams-aye, mr. jeffreys- aye, mr. mcquaid- aye, ms. luck-aye"
+   "quote": "to ratify the town managers appointments as presented vote: ms. adams-aye, mr. jeffreys- aye, mr. mcquaid- aye, ms. luck-aye"
   },
   {
-   "motion": "To ratify the Town Manager's appointment of Sheila Craigen to Temporary Administrative Assessing Assistant",
+   "motion": "Ratify the Town Manager's appointment of Shelia Craigen to Temporary Administrative Assessing Assistant.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2n: d. mcquaid to ratify the town manager's appointment of shelia craigen to temporary administrative assessing assistant vote: ms. adams-aye, mr. jeffreys- aye, mr. mcquaid-aye, ms. luck-aye"
+   "quote": "to ratify the town manager's appointment of shelia craigen to temporary administrative assessing assistant"
   },
   {
-   "motion": "To appoint Chuck Venezia as town clockwinder with a term to expire June 30, 2020",
+   "motion": "Appoint Chuck Venezia as town clockwinder with a term to expire June 30, 2020.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: d. mcquaid 2nd: m. jeffreys to appoint chuck venezia as town clockwinder with a term to expire june 30, 2020 vote: ms. adams-aye, mr. jeffreys- aye, mr. mcquaid-aye, ms. luck-aye"
+   "quote": "to appoint chuck venezia as town clockwinder with a term to expire june 30, 2020"
   },
   {
-   "motion": "To accept for nominal consideration a deed of a fee interest of Butterfly Lane for municipal purposes",
+   "motion": "Accept for nominal consideration a deed of a fee interest in Butterfly Lane as a public way for municipal purposes.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2nd: d. mcquaid i move that the board accept for nominal consideration a deed of a fee interest of a certain roadway known as butterfly lane, determined to be unique, for municipal purposes consistent with those uses to which other public ways in the town are customarily put vote: ms. adams- aye, mr. jeffreys- aye, mr. mcquaid- aye, ms. luck-aye"
+   "quote": "i move that the board accept for nominal consideration a deed of a fee interest of a certain roadway known as butterfly lane"
   },
   {
-   "motion": "To adjourn the meeting at 8:25 p.m.",
+   "motion": "Adjourn the meeting at 8:25 p.m.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: d. mcquaid to adjourn the meeting at 8:25 p.m. vote: ms. adams-aye, mr. jeffreys- aye, mr. mcquaid-aye, ms. luck-aye 2nd: m. jeffreys"
+   "quote": "to adjourn the meeting at 8:25 p.m. vote: ms. adams-aye, mr. jeffreys- aye, mr. mcquaid-aye, ms. luck-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; one vote tally shows \"Ms.Adams-aye, aye,\" with apparent duplicate, likely OCR artifact.",
- "cost_usd": 0.11566649999999999
+ "note": "Text is macOS Vision OCR with garbled passages (page 5 header, propane vote line, page 3 has no printed heading for the videographer list, page 6 opens mid-sentence). Votes recorded are those with printed results; no vote is printed on closing the propane public hearing or entering any executive session. Named vote counts are as printed; Ms. Adams's propane vote line is garbled but reads aye. No documents list heading is printed.",
+ "cost_usd": 0.014944220000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Phyllis Luck",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: phyllis luck, vice chairman; damon mcquaid, clerk; michael-ray jeffreys"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: phyllis luck, vice chairman; damon mcquaid, clerk; michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "",
+   "status": "present",
+   "quote": "members present: phyllis luck, vice chairman; damon mcquaid, clerk; michael-ray jeffreys"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "",
+   "status": "remote",
+   "quote": "member participating remotely by telephone: katey adams"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "absent",
+   "quote": "members not present: tom alonzo, chairman"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "282 Pleasant St",
+   "status": "present",
+   "quote": "peter beardmore, 282 pleasant st, talked about vacancies on town boards and having the ability to participate remotely."
+  },
+  {
+   "name": "Dana Maki",
+   "role": "representing the applicant (Maki Corp.)",
+   "status": "present",
+   "quote": "dana maki and jim leblanc presented for the propane license."
+  },
+  {
+   "name": "Jim LeBlanc",
+   "role": "representing the applicant (Maki Corp.)",
+   "status": "present",
+   "quote": "dana maki and jim leblanc presented for the propane license."
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Library Director",
+   "status": "present",
+   "quote": "muir haman, library director, stated library trust funds have historically returned low rates."
+  },
+  {
+   "name": "Chuck Venezia",
+   "role": "town clockwinder applicant",
+   "status": "present",
+   "quote": "mr. venezia presented for the request."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Manager to look into whether the Senior Tax Workoff hourly wage automatically follows future increases in the state minimum wage.",
+   "quote": "ms. lemieux will look into that."
+  },
+  {
+   "decision": "Town Manager to inquire whether the Town has been treating Butterfly Lane as a public way.",
+   "quote": "ms. lemieux stated she would have to inquire."
+  },
+  {
+   "decision": "Ms. Luck requested that the Board schedule an executive session as soon as possible on the teachers' union negotiations.",
+   "quote": "she requested scheduling a bos executive session as soon as possible for an update on the progress of the teachers' union negotiations."
+  },
+  {
+   "decision": "An executive session was announced for next week at 6:30 p.m. on 635 Massachusetts Avenue; Mr. Jeffreys will not attend but will call in.",
+   "quote": "we will also have an executive session next week at 6:30 p.m. on 635 massachusetts avenue."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library trust fund investment (warrant article)",
+   "what_was_recorded": "Mr. Jeffreys stated there is roughly $70,000 to invest in the library trust funds; the Library Director said the Town has a large cushion and can avoid touching principal.",
+   "figures_as_printed": [
+    "$70,000"
+   ],
+   "quote": "mr. jeffreys stated there is roughly $70,000 to invest."
+  },
+  {
+   "topic": "Old Primary School hazardous materials abatement",
+   "what_was_recorded": "The final Hazardous Materials survey report identifies a cost to abate the hazardous materials.",
+   "figures_as_printed": [
+    "$37,875.00"
+   ],
+   "quote": "the report identifies a cost of $37,875.00 to abate the identified hazardous materials."
+  },
+  {
+   "topic": "DPW roof project bids",
+   "what_was_recorded": "Twelve bids were received for the DPW roof project, with the low and high bids printed.",
+   "figures_as_printed": [
+    "$84,000",
+    "$137,500"
+   ],
+   "quote": "with the low bid of $84,000 and a high bid of $137,500"
+  },
+  {
+   "topic": "DPW roof project funding gap",
+   "what_was_recorded": "The roof project was in the FY19 Capital Plan at $65,000; the balance of $19,000 will be subsidized from the Facilities budget.",
+   "figures_as_printed": [
+    "$65,000",
+    "$19,000"
+   ],
+   "quote": "this was a project in the fy19 capital plan in the amount of $65,000 and we will need to subsidize the balance of $19,000"
+  },
+  {
+   "topic": "DPW roof funding source (public comment)",
+   "what_was_recorded": "Town Manager said the roof balance would come from earmarked engineering funds not being used for the rest of the year, which are anticipated excess funds of the current fiscal year.",
+   "figures_as_printed": [],
+   "quote": "we had earmarked funds for engineering services to help with projects and that is not going to be used for the remaider of the year."
+  },
+  {
+   "topic": "Recycling Education and Enforcement Coordinator grant",
+   "what_was_recorded": "A part-time MassDEP grant-funded position of $30,000 over 24 months, requiring a 25% match from participating towns.",
+   "figures_as_printed": [
+    "$30,000",
+    "25%"
+   ],
+   "quote": "that would be a $30,000 grant from massdep for a 24 month period and would require a 25% match from the towns participating."
+  },
+  {
+   "topic": "Recycling coordinator match cost by number of sharing towns",
+   "what_was_recorded": "Cost to the Town if shared with one other town is $3,750 total ($1,875 each year); with two other towns $2,500 total ($1,250 each year); both paid from the Recycling Dividends Program grant.",
+   "figures_as_printed": [
+    "$3,750",
+    "$1,875",
+    "$2,500",
+    "$1,250"
+   ],
+   "quote": "if we shared this with one other town it would cost a total of $3,750 ($1,875 each year)."
+  },
+  {
+   "topic": "Nashoba Regional Dispatch Center assessment",
+   "what_was_recorded": "The Finance Sub-Committee set the assessment at $198,530, a decrease from the budgeted estimate.",
+   "figures_as_printed": [
+    "$198,530",
+    "$213,497",
+    "$14,967"
+   ],
+   "quote": "the assessment will be $198,530. the original estimate in the budget was $213,497, so this is a decrease of $14,967."
+  },
+  {
+   "topic": "Pay as You Throw Program (operating budget)",
+   "what_was_recorded": "Amount for operating the Pay as You Throw Program for the Town's portion of trash disposal and recycling pickup, through the operating budget.",
+   "figures_as_printed": [
+    "$206,000"
+   ],
+   "quote": "of $206,000. ms. lemieux stated this is to operate the pay as you throw program for the town's portion of trash disposal and recycling pickup (through the operating budget)."
+  },
+  {
+   "topic": "Public Education Government Enterprise Fund amounts",
+   "what_was_recorded": "Board asked about $191,000 for operating and $120,000 for capital of the enterprise fund; Town Manager said these are enterprise fund collections, not town funds.",
+   "figures_as_printed": [
+    "$191,000",
+    "$120,000"
+   ],
+   "quote": "ms. luck asked about the $191,000 requested for operating the public education government enterprise fund and $120,000 for the capital budget for the same enterprise fund."
+  },
+  {
+   "topic": "Accounts payable, deductions and payroll warrants",
+   "what_was_recorded": "The Board signed three warrants: accounts payable, deductions and payroll.",
+   "figures_as_printed": [
+    "$374,364.44",
+    "$577,377.60",
+    "$828,095.27"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $374,364.44; a deductions warrant in the amount of $577,377.60; a payroll warrant in the amount of $828,095.27."
+  },
+  {
+   "topic": "Senior Tax Workoff Program wage",
+   "what_was_recorded": "The Senior Tax Workoff committee voted to raise the hourly wage to the state minimum wage; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "they did meet recently and voted to increase the hourly wage to be the same as the state minimum wage."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Remote participation on town boards and vacancies",
+   "speaker": "Peter Beardmore",
+   "stated_role": "282 Pleasant St",
+   "quote": "peter beardmore, 282 pleasant st, talked about vacancies on town boards and having the ability to participate remotely."
+  },
+  {
+   "topic": "Thanks to Town Manager; roof project funding source",
+   "speaker": "Peter Beardmore",
+   "stated_role": "282 Pleasant Street",
+   "quote": "peter beardmore, 282 pleasant street, after listening to the town manager' report"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and opening announcements",
+   "resolution": "no action",
+   "quote": "the meeting commenced at 7:00 p.m. with the pledge of allegiance.",
+   "tags": [
+    "procedure",
+    "remote participation"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "discussed; no action",
+   "quote": "public comment: mr. mcquaid announced he would not be running for reelection for selectman this year.",
+   "tags": [
+    "public comment",
+    "vacancies",
+    "remote participation"
+   ]
+  },
+  {
+   "topic": "Peddlers license, Kevin Clem for Vivint Solar",
+   "resolution": "approved 3-0-1",
+   "quote": "to approve the peddlers license for kevin clem for vivint solar",
+   "tags": [
+    "licenses",
+    "peddlers"
+   ]
+  },
+  {
+   "topic": "Public hearing: propane license, 160 Massachusetts Ave (Maki Corp.)",
+   "resolution": "approved 4-0",
+   "quote": "public hearing for license to keep, store and sell propane at 160 massachusetts ave (maki",
+   "tags": [
+    "licenses",
+    "propane",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Library Trust Funds warrant article (meeting with Library Director)",
+   "resolution": "discussed; recommendation sought",
+   "quote": "meeting with library director: annual town meeting article re: library trust funds",
+   "tags": [
+    "library",
+    "warrant article",
+    "trust funds",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Town Manager appointments, including videographers",
+   "resolution": "ratified 4-0",
+   "quote": "ms. luck asked how long the videographers have been working as independent contractors.",
+   "tags": [
+    "appointments",
+    "personnel",
+    "videographers"
+   ]
+  },
+  {
+   "topic": "Temporary Administrative Assessing Assistant appointment",
+   "resolution": "ratified 4-0",
+   "quote": "to ratify the town manager's appointment of shelia craigen to temporary administrative assessing assistant",
+   "tags": [
+    "appointments",
+    "personnel",
+    "assessing"
+   ]
+  },
+  {
+   "topic": "Town clockwinder appointment",
+   "resolution": "appointed 4-0",
+   "quote": "to appoint chuck venezia as town clockwinder with a term to expire june 30, 2020",
+   "tags": [
+    "appointments",
+    "clockwinder"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "received; no action",
+   "quote": "town manager report announcement on existing vacancies:",
+   "tags": [
+    "town manager",
+    "COVID-19",
+    "DPW roof",
+    "recycling",
+    "ADA",
+    "dispatch assessment"
+   ]
+  },
+  {
+   "topic": "Meetings, events and other announcements",
+   "resolution": "announced; no action",
+   "quote": "meetings, events and other announcements:",
+   "tags": [
+    "announcements",
+    "budget FY21",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Old Business 1: acceptance of Butterfly Lane as a public way",
+   "resolution": "accepted 4-0",
+   "quote": "1. vote to accept the interest of stm acceptance of butterfly lane as a public way",
+   "tags": [
+    "roads",
+    "Butterfly Lane",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Warrant articles: Primary School demolition estimates, LED street lights, FY21 enterprise funds",
+   "resolution": "discussed; no action",
+   "quote": "discussion ensued about the warrant article concerning securing estimates for demolition of the old primary school building",
+   "tags": [
+    "warrant articles",
+    "budget FY21",
+    "enterprise funds",
+    "LED",
+    "Primary School"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action items (teachers' union negotiations; Senior Tax Workoff)",
+   "resolution": "warrants signed; action items discussed",
+   "quote": "there were no minutes for approval.",
+   "tags": [
+    "warrants",
+    "union negotiations",
+    "Senior Tax Workoff"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received",
+   "quote": "mr. jeffreys reported the library board of trustees met and they had concerns about the budget.",
+   "tags": [
+    "committees",
+    "library"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "discussed; no action",
+   "quote": "peter beardmore, 282 pleasant street, after listening to the town manager' report",
+   "tags": [
+    "public comment",
+    "DPW roof",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 8:25 p.m.",
+   "quote": "to adjourn the meeting at 8:25 p.m. vote: ms. adams-aye, mr. jeffreys- aye, mr. mcquaid-aye, ms. luck-aye",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Final report for the Hazardous Materials survey (Old Primary School)",
+   "where": "text",
+   "quote": "i received a copy of the final report for the hazardous materials survey that was performed and forwarded to the board on friday, february 28th."
+  },
+  {
+   "name": "PowerPoint presentation (Finance Committee, FY21 budget)",
+   "where": "text",
+   "quote": "the powerpoint presentation was in the hands of the finance committee chair and was distributed to members prior to that meeting."
+  },
+  {
+   "name": "Home Rule Petitions H. 4365 and H. 4366 (additional liquor licenses)",
+   "where": "text",
+   "quote": "assigned bill numbers h. 4365 and h. 4366"
+  },
+  {
+   "name": "Proposed Special Act: AN ACT AUTHORIZING THE INVESTMENT OF TOWN OF LUNENBURG LIBRARY TRUST FUNDS",
+   "where": "text",
+   "quote": "an act authorizing the investment of town of lunenburg library trust funds"
+  },
+  {
+   "name": "November 17, 2018 BOS and School Committee joint meeting minutes",
+   "where": "text",
+   "quote": "ms. luck read the november 17, 2018 minutes regarding the joint meeting"
+  },
+  {
+   "name": "Request for Determination to the Conservation Commission (DPW fuel tanks)",
+   "where": "text",
+   "quote": "submitted a request for determination to the conservation commission"
+  },
+  {
+   "name": "Deed of a fee interest in Butterfly Lane",
+   "where": "text",
+   "quote": "i move that the board accept for nominal consideration a deed of a fee interest of a certain roadway known as butterfly lane"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "remote participation",
+  "town manager report",
+  "COVID-19",
+  "licenses",
+  "propane",
+  "appointments",
+  "warrant articles",
+  "library trust funds",
+  "DPW roof",
+  "recycling grant",
+  "Nashoba dispatch",
+  "Monty Tech",
+  "FY21 budget",
+  "Butterfly Lane",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

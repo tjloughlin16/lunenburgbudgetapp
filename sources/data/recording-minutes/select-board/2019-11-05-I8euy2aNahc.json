@@ -1,0 +1,304 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting Part2",
+ "meeting_date": "2019-11-05",
+ "video_id": "I8euy2aNahc",
+ "video_url": "https://www.youtube.com/watch?v=I8euy2aNahc",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2019-11-05-I8euy2aNahc.json",
+  "sha256": "012781b8b73bfbcc6c2e1f16f54f3c7dda31c359e1f2d547bcc82792ff6bb266",
+  "caption_lines": 9,
+  "segments": 60
+ },
+ "recording": {
+  "duration_s": 188,
+  "duration": "0:03",
+  "spoken_chars": 2129,
+  "words_approx": 354
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11052019-5178",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-11-05-agenda-5178.txt",
+   "path": "sources/meetings/select-board/2019-11-05-agenda-5178.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11052019-5178",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-11-05-minutes-5178.txt",
+   "path": "sources/meetings/select-board/2019-11-05-minutes-5178.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-04T11:12:41Z",
+  "cost_usd": 0.1054838
+ },
+ "minutes": {
+  "headline": "Select Board accepted a three-year police union contract; year one needs no new appropriation.",
+  "summary": "Returning from executive session, the board announced it had voted to accept a three-year police union contract. The town manager described the raises, step and incentive changes, and longevity changes, and said year one is covered by the existing appropriation because of attrition. The board then adjourned, noting next Tuesday's special Town Meeting.",
+  "attendees": [
+   {
+    "name_as_heard": "chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "town manager",
+    "role": "town manager"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "contracts-and-unions",
+   "executive-session",
+   "personnel",
+   "public-safety",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 10,
+    "motion": "Board voted in executive session to accept the police union contract (announced on return)",
+    "outcome": "passed (count not stated)",
+    "procedural": false
+   },
+   {
+    "t": 159,
+    "motion": "Motion to adjourn",
+    "outcome": "passed (aye, none opposed)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 30,
+    "topic": "Police contract cost-of-living increases",
+    "what_was_said": "Raises over three years, with year one highest and years two and three lower.",
+    "figures_as_heard": [
+     "two and a half percent",
+     "two percent",
+     "two percent"
+    ]
+   },
+   {
+    "t": 51,
+    "topic": "Police step gap and educational incentive",
+    "what_was_said": "The gap between patrol officer steps is corrected, and the educational incentive increases over the three years.",
+    "figures_as_heard": [
+     "five percent",
+     "three thousand three hundred fifty dollars"
+    ]
+   },
+   {
+    "t": 74,
+    "topic": "Police longevity pay",
+    "what_was_said": "Longevity moves from a percentage-based system to a flat dollar amount.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 116,
+    "topic": "Year one funding of police contract",
+    "what_was_said": "The May Town Meeting appropriation exceeds the year one cost estimate because of attrition, so the article can be passed over.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 136,
+    "topic": "Police contract years two and three and total cost",
+    "what_was_said": "Estimated costs were given for years two and three and for the overall agreement.",
+    "figures_as_heard": [
+     "around 81,000",
+     "around 74,000",
+     "one hundred and thirty-nine thousand"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 136,
+    "decision": "The Town Meeting article for the police contract will be passed over because year one needs no appropriation."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 10,
+    "t_end": 159,
+    "topic": "Police union contract report from executive session",
+    "resolution": "voted in executive session; informational report",
+    "tags": [
+     "contracts-and-unions",
+     "public-safety",
+     "executive-session"
+    ]
+   },
+   {
+    "t_start": 159,
+    "t_end": 190,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Vote count on the police contract was not stated.",
+   "The captions garble a reference to the fiscal years covered (FY 2010 / FY 22)."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [],
+  "documents_mentioned": [
+   {
+    "t": 136,
+    "name_as_heard": "article at Town Meeting",
+    "kind": "warrant article",
+    "words_as_heard": "we will be able to pass over the article at Town Meeting"
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board announced, on returning from executive session, that it had voted to accept a three-year police union contract; the vote count was not stated.",
+    "t": 10
+   },
+   {
+    "line": "The town manager said year one of the contract is covered by the existing appropriation because of attrition, so no new money is needed for it.",
+    "t": 116
+   },
+   {
+    "line": "The Town Meeting article for the police contract will be passed over because year one needs no appropriation.",
+    "t": 136
+   },
+   {
+    "line": "The contract changes longevity pay from a percentage-based system to a flat dollar amount, and corrects the gap between patrol officer steps.",
+    "t": 74
+   },
+   {
+    "line": "The board adjourned, noting next Tuesday's special Town Meeting.",
+    "t": 159
+   }
+  ],
+  "why_it_matters": [
+   "The contract sets police pay for three years, and years two and three will need to be paid for in later budgets, so it bears on future tax bills even though year one needs no new appropriation.",
+   "Because the article is being passed over, voters at the special Town Meeting will not be asked to vote on money for this contract."
+  ],
+  "watch_next": [
+   "The special Town Meeting next Tuesday, where the police contract article is expected to be passed over.",
+   "The budgets for years two and three of the contract, when its later-year costs will need funding."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-04T11:12:48Z",
+   "cost_usd": 0.0246391
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11052019-5178",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-11-05-minutes-5178.txt",
+   "path": "sources/meetings/select-board/2019-11-05-minutes-5178.pdf"
+  },
+  "official_sha256": "8339f496b9795c882ea9fe3eab3fc1bc10a311f8ea35ab5b0766a3fbccbc3f03",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records overlap only on the police contract's year-two and year-three cost figures ($81,000 and $74,000). Otherwise they cover largely different items. The main point to check is the police contract: our minutes record an executive-session vote to accept it and say its Town Meeting article will be passed over, and the official minutes record neither.",
+  "counts": {
+   "agree": 1,
+   "caption_error": 0,
+   "discrepancy": 2,
+   "only_in_ours": 2,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Collective bargaining agreement year two, year three costs",
+    "ours": "Police contract years two and three and total cost: around 81,000, around 74,000, one hundred and thirty-nine thousand",
+    "official": "year two increases are estimated at $81,000 and year three are estimated at $74,000",
+    "note": "Year two ($81,000) and year three ($74,000) figures match; the total of $139,000 also appears in official figures.",
+    "t": 136
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Executive session vote to accept police union contract",
+    "ours": "Board voted in executive session to accept the police union contract (announced on return) — passed (count not stated)",
+    "official": "",
+    "note": "The official minutes as structured show no vote on accepting the police contract; a person should check whether the vote is recorded elsewhere in them.",
+    "t": 10
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Tollbooth/boot drive permit vote for Salvation Army",
+    "ours": "",
+    "official": "motion: m. jeffreys 2nd: p. luck",
+    "note": "The official minutes record a motion to approve the Dec. 14 Salvation Army tollbooth/boot drive; our minutes have no such vote, so check the recording.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Police contract Town Meeting article decision",
+    "ours": "The Town Meeting article for the police contract will be passed over because year one needs no appropriation.",
+    "official": "after discussion, it was decided ms. adams would present the slide show with mr. jeffreys.",
+    "note": "Our minutes say the article will be passed over, while the official minutes describe Ms. Adams presenting the Article 13 slide show with Mr. Jeffreys; check whether these are the same article and what was decided.",
+    "t": 136
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Police contract COLA and step/incentive figures",
+    "ours": "Police contract cost-of-living increases: two and a half percent, two percent, two percent; step gap and educational incentive: five percent, $3,350",
+    "official": "",
+    "note": "These contract terms are not in the official minutes' printed figures.",
+    "t": 30
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Warrants signed",
+    "ours": "",
+    "official": "the board signed an accounts payable warrant in the amount of $579,454.27",
+    "note": "Warrants and water commitment ($6998.88) are in the official minutes only.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Senior Tax Workoff Program",
+    "ours": "",
+    "official": "qualified seniors can now work up to 125 hours annually at $12 per hour to receive a $1,500",
+    "note": "Program details appear only in the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "MVP Action Grant and Butterfly Lane road acceptance",
+    "ours": "",
+    "official": "mvp action grant funding, which is up to $2 million per project.",
+    "note": "These items, including Butterfly Lane paving cost of $32,000, are not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees",
+    "ours": "chair (chair); town manager (town manager)",
+    "official": "members present: tom alonzo, chairman; phyllis luck, vice chairman; katey adams, michael-..ray",
+    "note": "Our record gives only roles, no names; the official names are the better source, but check the recording for who actually attended.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T11:14:12Z",
+   "cost_usd": 0.0385131
+  }
+ }
+}

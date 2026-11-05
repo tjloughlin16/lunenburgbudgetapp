@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2020-10-27",
  "docid": "5675",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of 10/13/20",
+   "motion": "To accept the minutes of 10/13/20.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike D.",
    "outcome": "passed 4-0-1",
@@ -20,7 +20,7 @@
    "quote": "motion: brett r. second: mike d. to accept the minutes of 10/13/20. roll call vote: mike-aye, carl-aye, brett-aye, dave-aye, john-abstained"
   },
   {
-   "motion": "Adjourn",
+   "motion": "To adjourn at 6:29pm.",
    "moved_by": "John R.",
    "seconded_by": "Carl L.",
    "outcome": "passed 4-0",
@@ -29,6 +29,233 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR from macOS Vision; readable. The Maintenance Plan was discussed extensively but no vote was recorded on its approval or ratification despite discussion of possibly ratifying it.",
- "cost_usd": 0.0886485
+ "note": "OCR text is partial: page 1 begins mid-sentence with the pump-station contractor update, and that agenda heading and the presenter's name/role are not printed in full. Page 2 contains a garbled OCR fragment (\"rams engineer to submit be consola conta poo\") and a line \"Bright Farms met with the planning board on 10/26.\" whose agenda context is unclear, so it is not recorded as a topic. The Maintenance Plan was discussed and Dave suggested ratifying it, but no motion or vote to ratify is recorded. Items under the PUBLIC COMMENT headings were spoken by Commissioners, not members of the public. Roles for Commissioners are not printed; attendance is inferred from roll-call votes.",
+ "cost_usd": 0.00681882,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Al (Empey)",
+   "role": "",
+   "status": "present",
+   "quote": "al replied the stations were in a bit of rough shape at first, but after spending time going through them with"
+  },
+  {
+   "name": "Dave",
+   "role": "",
+   "status": "present",
+   "quote": "dave added that it is a very good document and suggested ratifying it at the meeting"
+  },
+  {
+   "name": "Mike",
+   "role": "",
+   "status": "present",
+   "quote": "roll call vote: mike-aye, carl-aye, brett-aye, dave-aye, john-abstained"
+  },
+  {
+   "name": "John",
+   "role": "",
+   "status": "present",
+   "quote": "john commented that he does not want the maintenance plan review to fall through the cracks."
+  },
+  {
+   "name": "Carl",
+   "role": "",
+   "status": "present",
+   "quote": "carl summarized the goal and the history of the maintenance plan."
+  },
+  {
+   "name": "Brett",
+   "role": "",
+   "status": "present",
+   "quote": "motion: brett r. second: mike d. to accept the minutes of 10/13/20."
+  },
+  {
+   "name": "Barb",
+   "role": "",
+   "status": "present",
+   "quote": "barb announced that this is their last meeting with jack rodriquenz and the dpw will miss him alot."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "jack advised that the commission could go back to discuss the original draft, or take the draft as is"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Maintenance Plan not to be finalized until input is received from the new DPW director (Carl's suggestion; no vote recorded).",
+   "quote": "carl suggested that they do not finalize the plan until they get input from the new dpw director."
+  },
+  {
+   "decision": "Maintenance Plan to be reviewed a piece at a time at future meetings, with a new revision targeted by June 30th.",
+   "quote": "and they could plan to come up with a new revision by june 30th."
+  },
+  {
+   "decision": "Correction proposed to remove the reference to a capital improvement in section 2.6.1 that does not exist.",
+   "quote": "john also suggested one correction to remove reference to capital improvement in section 2.6.1 that"
+  },
+  {
+   "decision": "Carl to send his marked-up copy of the Maintenance Plan to Barb to be entered into the record and distributed to the Commission.",
+   "quote": "he will send his marked up copy to barb to be entered into the record and distributed to the commission."
+  },
+  {
+   "decision": "Barb to obtain a more detailed drawing when the 384 Mass Ave Extension connection goes to the State for approval.",
+   "quote": "the commission discussed and barb will get a more detailed drawing when it goes to the state for approval."
+  },
+  {
+   "decision": "Al to check which pump station equipment needs to be replaced; Al and Barb to keep communicating until the new DPW director arrives.",
+   "quote": "al replied he will be communicating with barb until the new dpw director comes in."
+  },
+  {
+   "decision": "Commission to meet again with Al to discuss the generator maintenance program and parts needed for repairs (Mike's suggestion).",
+   "quote": "mike suggested meeting again to discuss the maintenance program, as well as parts needed for repairs."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Invoices (Fitchburg monthly usage and Mead Talerman)",
+   "what_was_recorded": "Two invoices were reported for payment: Fitchburg monthly usage and a Mead Talerman invoice for 9/21-10/20.",
+   "figures_as_printed": [
+    "$ 14,554.08",
+    "$252.91"
+   ],
+   "quote": "invoices- fitchburg monthly usage-$ 14,554.08 and mead talerman- $252.91 (for 9/21-10/20)"
+  },
+  {
+   "topic": "Grease trap non-compliance fee",
+   "what_was_recorded": "Certified letters were sent with a non-compliance fee to establishments with outstanding annual grease trap renewals; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "sent out certified letters, with the non-compliance fee."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Carl",
+   "stated_role": "",
+   "topic": "Maintenance Plan history and goal",
+   "quote": "carl summarized the goal and the history of the maintenance plan."
+  },
+  {
+   "speaker": "John",
+   "stated_role": "",
+   "topic": "Maintenance Plan review follow-up",
+   "quote": "john commented that he does not want the maintenance plan review to fall through the cracks."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Pump station contractor update (Al Empey)",
+   "resolution": "discussed; no action",
+   "quote": "dave asked them how the sewer system is going and what their biggest challenge will be this year.",
+   "tags": [
+    "pump stations",
+    "maintenance",
+    "contractor"
+   ]
+  },
+  {
+   "topic": "Jack Rodriquenz retirement",
+   "resolution": "recognized; no action",
+   "quote": "barb announced that this is their last meeting with jack rodriquenz and the dpw will miss him alot.",
+   "tags": [
+    "DPW",
+    "retirement"
+   ]
+  },
+  {
+   "topic": "Maintenance Plan draft review and approval",
+   "resolution": "discussed; not ratified; to await new DPW director input",
+   "quote": "maintenance plan - draft review and approval - jack advised that the commission could go back to discuss the original draft",
+   "tags": [
+    "maintenance plan",
+    "sewer system"
+   ]
+  },
+  {
+   "topic": "Minutes of 10/13/20",
+   "resolution": "approved 4-0-1",
+   "quote": "motion: brett r. second: mike d. to accept the minutes of 10/13/20. roll call vote: mike-aye, carl-aye, brett-aye, dave-aye, john-abstained",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager Report",
+   "resolution": "discussed; items reported, no action recorded",
+   "quote": "business manager report - 384 mass ave extension update- barb reported that jack met with john esposito",
+   "tags": [
+    "384 Mass Ave",
+    "generators",
+    "billing",
+    "grease trap",
+    "88 Mass Ave",
+    "meter import",
+    "I/I"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs - Maintenance Plan",
+   "resolution": "discussed; Carl to send marked-up copy",
+   "quote": "member agenda inputs for future meetings- maintenance plan",
+   "tags": [
+    "maintenance plan"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "noted",
+   "quote": "upcoming scheduled sewer commission activities:",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Maintenance Plan (draft, prepared with Wright Pierce)",
+   "where": "text",
+   "quote": "carl asked if al had seen the maintenance plan and he would like"
+  },
+  {
+   "name": "Wright Pierce pump station study",
+   "where": "text",
+   "quote": "carl noted that wright pierce did a pump station study and asked al if there are"
+  },
+  {
+   "name": "Parts list (put together by Al)",
+   "where": "text",
+   "quote": "al noted that he put together a parts list previously and the commission has done a great job keeping the parts stocked."
+  },
+  {
+   "name": "Billing tool agreement (sent to Woodard & Curran)",
+   "where": "text",
+   "quote": "barb sent out the billing tool agreement to woodard & curran and had not yet heard back."
+  },
+  {
+   "name": "Engineered drawing (384 Mass Ave Extension)",
+   "where": "text",
+   "quote": "they will probably require an engineered drawing, so it is on hold currently."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "maintenance plan",
+  "pump stations",
+  "DPW retirement",
+  "billing",
+  "grease trap",
+  "I/I",
+  "384 Mass Ave",
+  "88 Mass Ave",
+  "generators",
+  "meter import"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

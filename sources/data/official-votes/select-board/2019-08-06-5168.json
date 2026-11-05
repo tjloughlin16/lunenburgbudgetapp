@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-08-06",
  "docid": "5168",
@@ -12,7 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Prohibit camping on town property",
+   "motion": "Approve the Town Manager Performance Evaluation form as presented.",
+   "moved_by": "D. McQuaid",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve the town manager performance evaluation form as presented vote: all in favor"
+  },
+  {
+   "motion": "Prohibit camping on town property.",
    "moved_by": "K. Adams",
    "seconded_by": "T. Alonzo",
    "outcome": "passed 3-2",
@@ -28,7 +36,405 @@
    "quote": "motion: d. mcquaid to adjourn the meeting at 9:43 p.m. 2nd. k. adams vote: all in favor"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR text; one procedural action (minutes approval) noted in text but not recorded with a motion vote and therefore not counted.",
- "cost_usd": 0.10490150000000001
+ "dropped_unquoted": 0,
+ "note": "OCR scan (macOS Vision) of typed minutes, several passages garbled: page 5 (start of the Town Manager evaluation discussion) is largely unreadable, page 8 has OCR errors, and page 2 and page 7 have partial lines. The performance evaluation motion's second line reads '2^°' (likely 2nd); the seconder is taken as P. Luck. The minutes approval has no recorded motion or mover, so it is a decision rather than a vote. No vote on the conflict-of-interest request is recorded. Vote counts are printed only for the camping motion; the other two are 'All in Favor'. Page 4 shows 'Mr. Luck' in a statement that appears to refer to Mrs. Luck; recorded as printed. The minutes do not list the documents used at the meeting.",
+ "cost_usd": 0.01081492,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chair; phyllis luck, vice chair; damon mcquaid, clerk; katey adams, member; michael- ray jeffreys, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chair; phyllis luck, vice chair; damon mcquaid, clerk; katey adams, member; michael- ray jeffreys, member"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chair; phyllis luck, vice chair; damon mcquaid, clerk; katey adams, member; michael- ray jeffreys, member"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chair; phyllis luck, vice chair; damon mcquaid, clerk; katey adams, member; michael- ray jeffreys, member"
+  },
+  {
+   "name": "Michael- Ray Jeffreys",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chair; phyllis luck, vice chair; damon mcquaid, clerk; katey adams, member; michael- ray jeffreys, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "not present: heather lemieux, town manager"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "others present: adam burney, land use director"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "resident, 56 Whiting Street",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, attended the lunenburg, vermont old homes day on"
+  },
+  {
+   "name": "Steve Bean",
+   "role": "on the LSIC board, 27 Fire Road 15",
+   "status": "present",
+   "quote": "steve bean, 27 fire road 15, responded to ms. luck's public comment last week regarding the"
+  },
+  {
+   "name": "Cindy Lee Gee",
+   "role": "resident, 143 Flynn Road",
+   "status": "present",
+   "quote": "cindy lee gee, 143 flynn road, had concerns about the lsic and the conservation"
+  },
+  {
+   "name": "Rob Bowen",
+   "role": "legal counsel for LSIC, 1686 Massachusetts Avenue",
+   "status": "present",
+   "quote": "rob bowen, 1686 massachusetts avenue, legal counsel for lsic, stated there are some legal"
+  },
+  {
+   "name": "Steve Weaver",
+   "role": "resident, 288 Holman Street",
+   "status": "present",
+   "quote": "steve weaver, 288 holman street, regarding the special event permit policy, asked to not allow"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Conservation Commission Vice Chair, 361 Mulpus Road",
+   "status": "present",
+   "quote": "todd dwyer, 361 mulpus road, conservation commission vice chair, believed this is a conflict"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board took no action on the request to revisit conflict of interest of Conservation Commission members living on town lakes; general consensus was not to revisit it.",
+   "quote": "the general consensus of the board was to not revisit this issue."
+  },
+  {
+   "decision": "Chair stated the Board would not act on the LSIC conflict-of-interest request, and would abide by any Ethics Commission ruling.",
+   "quote": "he stated the board would not be acting on this request but if the ethics commission rules differently, we will abide by that."
+  },
+  {
+   "decision": "Minutes of May 21, June 4 and 11, 2019 approved; no motion or mover recorded.",
+   "quote": "minutes of may 21, june 4 and 11, 2019 were approved."
+  },
+  {
+   "decision": "Wording in the Alcohol/Drug Use section of the special event policy changed per Ms. Luck's suggestion (BYOB licenses shall not be issued for Special Events).",
+   "quote": "wording in the alcohol/drug use section was changed per ms. luck's suggestions."
+  },
+  {
+   "decision": "Question checklist to be moved out of the special event policy and into the application; Board concurred.",
+   "quote": "mr. burney asked if the board would like to take the question checklist out of the policy and add it to the application. the board concurred."
+  },
+  {
+   "decision": "Music restrictions to be handled on each individual application rather than printed in the policy.",
+   "quote": "the general consensus of the board was to deal with music on each individual application."
+  },
+  {
+   "decision": "Land Use Director to bring back the final version of the special event policy.",
+   "quote": "mr. burney will bring back the final version."
+  },
+  {
+   "decision": "Mr. Jeffreys and Mr. McQuaid asked for stakeholder feedback on the draft earth removal bylaw.",
+   "quote": "mr. jeffreys and mr. mcquaid stated they would like feedback from the stakeholders regarding the draft bylaw."
+  },
+  {
+   "decision": "Land Use Director to place the storm water resident survey on Survey Monkey soon.",
+   "quote": "mr. burney will place it on survey monkey soon."
+  },
+  {
+   "decision": "Board to attend the Planning Board meeting on August 12 for the Unitil public hearing on the Storm Resiliency Program; regular meetings August 13 and 20.",
+   "quote": "the board will attend the planning board meeting on monday, august 12 for the unitil public"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Board signed an accounts payable warrant, a payroll warrant and a deductions warrant.",
+   "figures_as_printed": [
+    "$398,124.18",
+    "$649,911.18",
+    "$32,137.22"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $398,124.18, a payroll warrant in the amount of $649,911.18 and a deductions warrant in the amount of $32,137.22"
+  },
+  {
+   "topic": "Cost to treat Lake Shirley",
+   "what_was_recorded": "Mr. Alonzo said that treating the lake would cost LSIC between the printed range.",
+   "figures_as_printed": [
+    "$30,000",
+    "$50,000"
+   ],
+   "quote": "if you want to treat the lake, lsic has to spend between $30,000 and $50,000."
+  },
+  {
+   "topic": "LSIC spending on the lake and town money",
+   "what_was_recorded": "A resident said it is hard when an agent of the town forces the town to spend money without first talking with the town; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "he found it difficult as a resident, when an agent of the town forces the town to spend money without first coming to the town to have a conversation."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "Lunenburg, Vermont Old Homes Day; cutting board gift",
+   "quote": "dave passios, 56 whiting street, attended the lunenburg, vermont old homes day on"
+  },
+  {
+   "speaker": "Steve Bean",
+   "stated_role": "on the LSIC board, 27 Fire Road 15",
+   "topic": "Lake Shirley weeds, LSIC, town help",
+   "quote": "steve bean, 27 fire road 15, responded to ms. luck's public comment last week regarding the"
+  },
+  {
+   "speaker": "Cindy Lee Gee",
+   "stated_role": "143 Flynn Road",
+   "topic": "LSIC and Conservation Commission cooperation; Open Meeting Law complaint",
+   "quote": "cindy lee gee, 143 flynn road, had concerns about the lsic and the conservation"
+  },
+  {
+   "speaker": "Rob Bowen",
+   "stated_role": "legal counsel for LSIC",
+   "topic": "Open Meeting Law complaint against acting Chair remarks",
+   "quote": "rob bowen, 1686 massachusetts avenue, legal counsel for lsic, stated there are some legal"
+  },
+  {
+   "speaker": "Steve Weaver",
+   "stated_role": "288 Holman Street",
+   "topic": "Special event permit policy: no camping, limit amplified sound",
+   "quote": "steve weaver, 288 holman street, regarding the special event permit policy, asked to not allow"
+  },
+  {
+   "speaker": "Todd Dwyer",
+   "stated_role": "Conservation Commission Vice Chair, 361 Mulpus Road",
+   "topic": "Conflict of interest for Conservation Commission members on lakes",
+   "quote": "todd dwyer, 361 mulpus road, conservation commission vice chair, believed this is a conflict"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Special event policy: circus employees living in trailers",
+   "quote": "mr. passios noted if you have a circus coming into town, the circus employees usually live in"
+  },
+  {
+   "speaker": "Steve Weaver",
+   "stated_role": "",
+   "topic": "Special event policy: restrict music to eight hours per day",
+   "quote": "mr. weaver brought up restricting music to only eight hours per day."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening and public comment on Lake Shirley/LSIC",
+   "resolution": "no action; public comment only",
+   "quote": "the meeting opened at 7:00 p.m. with the pledge of allegiance.",
+   "tags": [
+    "public comment",
+    "Lake Shirley",
+    "LSIC"
+   ]
+  },
+  {
+   "topic": "Lake Shirley: July 17 meeting, weed management, conflict of interest of Conservation Commission members",
+   "resolution": "no action; board declined to revisit conflict issue",
+   "quote": "mr. alonzo stated he did not see a reason to revisit the conflict of interest following tonight's discussion.",
+   "tags": [
+    "Lake Shirley",
+    "conflict of interest",
+    "Conservation Commission",
+    "Ethics Commission"
+   ]
+  },
+  {
+   "topic": "Town Manager Performance Evaluation form",
+   "resolution": "approved",
+   "quote": "to approve the town manager performance evaluation form as presented vote: all in favor",
+   "tags": [
+    "Town Manager",
+    "performance evaluation"
+   ]
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "minutes approved; warrants signed",
+   "quote": "minutes of may 21, june 4 and 11, 2019 were approved.",
+   "tags": [
+    "minutes",
+    "warrants",
+    "accounts payable"
+   ]
+  },
+  {
+   "topic": "Committee reports: Storm Water Task Force and walkability tour",
+   "resolution": "reported; no action",
+   "quote": "ms. luck reported the storm water task force held a workshop and developed a survey for",
+   "tags": [
+    "storm water",
+    "walkability",
+    "sidewalks"
+   ]
+  },
+  {
+   "topic": "Finance Committee correspondence: proposed host panel",
+   "resolution": "presented; no action recorded",
+   "quote": "mr. alonzo presented correspondence from the finance committee chair proposing a host panel",
+   "tags": [
+    "Finance Committee",
+    "demographics",
+    "growth"
+   ]
+  },
+  {
+   "topic": "Special Event Policy review with Land Use Director",
+   "resolution": "camping prohibited 3-2; music to be handled per application; final version to return",
+   "quote": "mr. burney presented the amended policy following the comments and suggestions from the july",
+   "tags": [
+    "special events",
+    "camping",
+    "alcohol",
+    "music",
+    "town property"
+   ]
+  },
+  {
+   "topic": "Workshop: Earth removal permits and draft bylaw",
+   "resolution": "workshop; no action; stakeholder feedback requested",
+   "quote": "mr. burney started with the current earth removal bylaw.",
+   "tags": [
+    "earth removal",
+    "bylaw",
+    "Planning Board",
+    "Special Town Meeting"
+   ]
+  },
+  {
+   "topic": "PJ Keating and Powell permit status",
+   "resolution": "reported; no action",
+   "quote": "mr. burney received the final information related to pj keating's permits today.",
+   "tags": [
+    "earth removal",
+    "permits",
+    "PJ Keating",
+    "Powell"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "announced; no action",
+   "quote": "the board will attend the planning board meeting on monday, august 12 for the unitil public",
+   "tags": [
+    "schedule",
+    "Unitil",
+    "Storm Resiliency Program"
+   ]
+  },
+  {
+   "topic": "Closing public comment on marijuana use",
+   "resolution": "no action",
+   "quote": "ms. adams noted in regards to the earlier conversation about marijuana use; you can use it in",
+   "tags": [
+    "marijuana",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:43 p.m.",
+   "quote": "motion: d. mcquaid to adjourn the meeting at 9:43 p.m. 2nd. k. adams vote: all in favor",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Manager Performance Evaluation form",
+   "where": "text",
+   "quote": "to approve the town manager performance evaluation form as presented vote: all in favor"
+  },
+  {
+   "name": "Correspondence from the Finance Committee Chair proposing a host panel",
+   "where": "text",
+   "quote": "mr. alonzo presented correspondence from the finance committee chair proposing a host panel"
+  },
+  {
+   "name": "Amended Special Event Policy",
+   "where": "text",
+   "quote": "mr. burney presented the amended policy following the comments and suggestions from the july"
+  },
+  {
+   "name": "Proposed earth removal bylaw (draft)",
+   "where": "text",
+   "quote": "he presented a proposed bylaw to expand the definitions to include a"
+  },
+  {
+   "name": "Open Meeting Law complaint presented by LSIC counsel",
+   "where": "text",
+   "quote": "he presented an open meeting law complaint to the board."
+  },
+  {
+   "name": "Police report",
+   "where": "text",
+   "quote": "upon reading the police report and listening to the post meeting discussions"
+  },
+  {
+   "name": "Order of Conditions",
+   "where": "text",
+   "quote": "we discussed the vegetation and algae control, as well as the order of conditions."
+  },
+  {
+   "name": "Memo on PJ Keating renewal applications",
+   "where": "text",
+   "quote": "i will be forwarding a memo on their renewal applications."
+  },
+  {
+   "name": "Storm water resident survey",
+   "where": "text",
+   "quote": "ms. luck reported the storm water task force held a workshop and developed a survey for"
+  }
+ ],
+ "tags": [
+  "Lake Shirley",
+  "LSIC",
+  "Conservation Commission",
+  "conflict of interest",
+  "Ethics Commission",
+  "Open Meeting Law",
+  "Town Manager evaluation",
+  "warrants",
+  "special event policy",
+  "camping",
+  "alcohol",
+  "music",
+  "earth removal",
+  "bylaw",
+  "PJ Keating",
+  "storm water",
+  "Finance Committee",
+  "Unitil",
+  "marijuana"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

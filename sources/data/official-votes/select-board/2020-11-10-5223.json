@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-11-10",
  "docid": "5223",
@@ -12,28 +12,28 @@
  },
  "votes": [
   {
-   "motion": "Approve the Temporary Telework Policy as presented",
+   "motion": "Approve the Temporary Telework Policy as presented.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "to approve the temporary telework policy as presented"
+   "quote": "motion: m. jeffreys 2°: t. dwyer to approve the temporary telework policy as presented vote: mr. marino-aye, mr. jeffreys-aye, mr. dwyer-aye, ms. adams- aye, mr. alonzo-aye"
   },
   {
-   "motion": "Approve the minutes of October 13, 2020 as presented",
+   "motion": "Approve the minutes of October 13, 2020 as presented.",
    "moved_by": "M. Jeffreys",
-   "seconded_by": "T. Dwyer",
+   "seconded_by": "",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "to approve the minutes of october 13, 2020 as presented"
+   "quote": "motion: m. jeffreys to approve the minutes of october 13, 2020 as presented vote: mr. marino-aye, mr. jeffreys-aye, mr. dwyer-aye, ms. adams- aye, mr. alonzo-aye"
   },
   {
-   "motion": "Approve the Consent Calendar as presented",
+   "motion": "Approve the Consent Calendar as presented (Special Town Meeting articles 3, 10, 11, 12, 13 and pass over 14).",
    "moved_by": "J. Marino",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "to approve the consent calendar as presented"
+   "quote": "motion: j. marino 2nd: m. jeffreys to approve the consent calendar as presented vote: ms. adams- aye, mr. marino-aye, mr. jeffreys- aye, mr. dwyer-aye, mr. alonzo-aye"
   },
   {
    "motion": "Adjourn the meeting at 10:04 p.m.",
@@ -41,10 +41,373 @@
    "seconded_by": "J. Marino",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "to adjourn the meeting at 10:04 p.m."
+   "quote": "motion: i. dwyer to adjourn the meeting at 10:04 p.m. vote: ms. adams-aye, mr. marino-aye, mr. jeffreys- aye, mr. dwyer-aye, mr. alonzo -aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted via macOS Vision",
- "cost_usd": 0.1128175
+ "note": "OCR scan with errors (e.g., 'Polotek' vs 'Poholek', 'I. Dwyer' likely T. Dwyer, 'Phase Ill'). Page 1 attendance line is cut off at the top. Board members' attendance is inferred from the roll-call votes; the minutes do not state each member's presence. The minutes' 'Meeting re: Flat Hill Road Drainage Discussion' heading has no matching content, and the start of page 6 (property-use discussion) is cut off. The minutes' '2n: T. Dwyer' line after the minutes vote is ambiguous, so no seconder is recorded for that motion. No executive session was recorded.",
+ "cost_usd": 0.014114320000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman alonzo called the meeting to order at 7:04 p.m."
+  },
+  {
+   "name": "Adams",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: mr. marino-aye, mr. jeffreys-aye, mr. dwyer-aye, ms. adams- aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Jeffreys",
+   "role": "Mr.",
+   "status": "present",
+   "quote": "mr. jeffreys thanked everyone who has served our nation in the military and the law enforcement field."
+  },
+  {
+   "name": "Dwyer",
+   "role": "Mr.",
+   "status": "present",
+   "quote": "mr. alonzo thanked mr. jeffreys and mr. dwyer for their service as veterans of the military."
+  },
+  {
+   "name": "Marino",
+   "role": "Mr.",
+   "status": "present",
+   "quote": "mr. marino expressed that he did not want to hold the company hostage on the number of available jobs."
+  },
+  {
+   "name": "Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. lemieux reported this policy was drafted to have something in place since staff had to work at home"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "mr. alonzo thanked executive assistant elaine peterson for keeping up with their minutes."
+  },
+  {
+   "name": "Mary Bentley",
+   "role": "presenter for Green Leaf Botanicals",
+   "status": "present",
+   "quote": "mary bentley and constant poholek, jr. esq.,green leaf botanicals"
+  },
+  {
+   "name": "Constant S. Poholek, Jr.",
+   "role": "Co-Founder, Green Leaf Botanicals",
+   "status": "present",
+   "quote": "constant s. poholek, jr., co-founder"
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "McCarty Engineering",
+   "status": "not stated",
+   "quote": "brian marchetti, mccarty engineering"
+  },
+  {
+   "name": "Susan Whalen",
+   "role": "Bright Farms",
+   "status": "not stated",
+   "quote": "susan whalen, sean o'neill, bright farms"
+  },
+  {
+   "name": "Sean O'Neill",
+   "role": "Bright Farms",
+   "status": "present",
+   "quote": "mr. o'neill showed some slides regarding site selection, jobs and wages and corporate citizenship."
+  },
+  {
+   "name": "Burney",
+   "role": "Land Use Director",
+   "status": "not stated",
+   "quote": "land use director burney will contact them about a future date for january 2021."
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Island Road",
+   "status": "present",
+   "quote": "dave macdonald, island road, thanked all the military people serving our country."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Land Use Director Burney will contact Green Leaf about a future outreach meeting date in January 2021 (outreach meeting to be held in January to allow advertisement time).",
+   "quote": "land use director burney will contact them about a future date for january 2021."
+  },
+  {
+   "decision": "Chairman Alonzo said the Board would look over the Green Leaf community host agreement and discuss it further.",
+   "quote": "mr. alonzo commended their introduction and stated they would look over the community host agreement and discuss further."
+  },
+  {
+   "decision": "Suggested (not confirmed by vote): a short Board meeting before Special Town Meeting to view the final amended TIF draft, with Ms. Lemieux asking for the Monday before and Mr. O'Neill attending.",
+   "quote": "suggestion was made to hold a short meeting before special town meeting to view the final draft."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Green Leaf host community sales tax option",
+   "what_was_recorded": "The minutes note the Town could receive local sales tax revenue of up to 3% on each retail sale under a host community arrangement.",
+   "figures_as_printed": [
+    "up to 3%"
+   ],
+   "quote": "the town of lunenburg can receive additional tax revenue through the adoption of a local sales tax of up to 3% on each retail sale to consumers."
+  },
+  {
+   "topic": "925 Mass Ave Phase III funding",
+   "what_was_recorded": "Montachusett Brownfields Committee approved an additional $6,000 for a Phase III for 925 Mass Ave.",
+   "figures_as_printed": [
+    "$6,000"
+   ],
+   "quote": "the committee voted to approve an additional $6,000 in funding to conduct a phase ill for 925 mass ave."
+  },
+  {
+   "topic": "Remote learning infrastructure equipment (CARES Act funded)",
+   "what_was_recorded": "Total cost of remote learning equipment, to be charged to the Town's CARES Act funding.",
+   "figures_as_printed": [
+    "$113,488"
+   ],
+   "quote": "overall, the total cost of this equipment will be $113,488."
+  },
+  {
+   "topic": "School chromebooks funding moved to DESE CvRF",
+   "what_was_recorded": "A $95,000 amount previously included for school chromebooks must be amended to go toward the School's DESE CvRF.",
+   "figures_as_printed": [
+    "$95,000"
+   ],
+   "quote": "we had included $95,000 for the school's chromebooks in our last submission but this will have to be amended to go towards the school's dese cvrf"
+  },
+  {
+   "topic": "Special Town Meeting Article 3, prior year expenses",
+   "what_was_recorded": "Article 3 pays prior year expenses and requires a 9/10's vote.",
+   "figures_as_printed": [
+    "$150"
+   ],
+   "quote": "article 3 is the payment of prior year expenses ($150) and requires a 9/10's vote."
+  },
+  {
+   "topic": "Special Town Meeting Article 10, PEG access transfer",
+   "what_was_recorded": "Article 10 is a $120,000 transfer from PEG retained earnings for 2021 PEG Access Capital Expenses.",
+   "figures_as_printed": [
+    "$120,000"
+   ],
+   "quote": "article 10 is the 2021 peg access capital expenses transfer of $120,000 from their retained earnings;"
+  },
+  {
+   "topic": "Special Town Meeting Article 11, sewer reserve transfer",
+   "what_was_recorded": "Article 11 is a $68,097.59 transfer from sewer retained earnings to the Sewer Reserve Capacity Stabilization Fund.",
+   "figures_as_printed": [
+    "$68,097.59"
+   ],
+   "quote": "article 11 is the sewer reserve capacity stabilization fund transfer of $68,097.59 from their retained earnings;"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Article 10: 2021 PEG Access Capital Expenses, transfer from PEG retained earnings",
+   "amount_as_printed": "$120,000",
+   "outcome": "Included in the Consent Calendar, which passed 5-0, for Special Town Meeting",
+   "quote": "article 10 is the 2021 peg access capital expenses transfer of $120,000 from their retained earnings;"
+  },
+  {
+   "description": "Article 11: Sewer Reserve Capacity Stabilization Fund transfer from retained earnings",
+   "amount_as_printed": "$68,097.59",
+   "outcome": "Included in the Consent Calendar, which passed 5-0, for Special Town Meeting",
+   "quote": "article 11 is the sewer reserve capacity stabilization fund transfer of $68,097.59 from their retained earnings;"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Ms. Adams",
+   "stated_role": "",
+   "topic": "Veterans Day greeting",
+   "quote": "ms. adams wished everyone a nice veterans day tomorrow and thanked them for their service."
+  },
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "Island Road",
+   "topic": "Salvation Army holiday parade and toy drop-off",
+   "quote": "dave macdonald, island road, thanked all the military people serving our country."
+  },
+  {
+   "speaker": "Mr. Jeffreys",
+   "stated_role": "",
+   "topic": "Thanks to military and law enforcement",
+   "quote": "mr. jeffreys thanked everyone who has served our nation in the military and the law enforcement field."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening, public comment and Veterans Day proclamation",
+   "resolution": "opened; public comment; proclamation read, no action",
+   "tags": [
+    "public comment",
+    "veterans",
+    "proclamation"
+   ],
+   "quote": "chairman alonzo called the meeting to order at 7:04 p.m. and announced in accordance with the requirements of the open meeting law"
+  },
+  {
+   "topic": "Green Leaf Botanicals marijuana retailer presentation",
+   "resolution": "presented; Board to review host community agreement; outreach meeting to be set for January 2021",
+   "tags": [
+    "marijuana retailer",
+    "Green Leaf Botanicals",
+    "host community agreement",
+    "88 Massachusetts Ave"
+   ],
+   "quote": "green leaf proposes to renovate an existing 1900 square foot unit in a building located at 88 massachusetts avenue for use as a marijuana retailer establishment."
+  },
+  {
+   "topic": "Bright Farms amended TIF agreement discussion",
+   "resolution": "discussed; short meeting before Special Town Meeting suggested",
+   "tags": [
+    "TIF agreement",
+    "Bright Farms",
+    "jobs"
+   ],
+   "quote": "mr. o'neill showed some slides regarding site selection, jobs and wages and corporate citizenship."
+  },
+  {
+   "topic": "Covid-19 Temporary Telework Policy",
+   "resolution": "approved 5-0",
+   "tags": [
+    "telework policy",
+    "Covid-19",
+    "personnel"
+   ],
+   "quote": "ms. lemieux reported this policy was drafted to have something in place since staff had to work at home"
+  },
+  {
+   "topic": "Approval of minutes of October 13, 2020",
+   "resolution": "approved 5-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to approve the minutes of october 13, 2020 as presented"
+  },
+  {
+   "topic": "Warrants and action items",
+   "resolution": "no action",
+   "tags": [
+    "warrants"
+   ],
+   "quote": "3. warrants/action items- there were none this evening"
+  },
+  {
+   "topic": "Committee reports (TCP Building Design Committee, Conservation Commission)",
+   "resolution": "reported; no action",
+   "tags": [
+    "committee reports",
+    "TCP building",
+    "conservation"
+   ],
+   "quote": "mr. jeffreys reported the tcp building design committee met to review the committee report"
+  },
+  {
+   "topic": "Special Town Meeting articles and Consent Calendar",
+   "resolution": "Consent Calendar approved 5-0",
+   "tags": [
+    "Special Town Meeting",
+    "consent calendar",
+    "transfers",
+    "bond premiums"
+   ],
+   "quote": "to approve the consent calendar as presented"
+  },
+  {
+   "topic": "Town Manager Covid-19 update",
+   "resolution": "reported; no action",
+   "tags": [
+    "Covid-19"
+   ],
+   "quote": "there were 108 covid-19 cases in lunenburg and 1 death."
+  },
+  {
+   "topic": "Town Manager report (vacancies, 925 Mass Ave, remote learning, FY2021 capital projects, announcements)",
+   "resolution": "reported; no action",
+   "tags": [
+    "capital projects",
+    "CARES Act",
+    "vacancies",
+    "925 Mass Ave"
+   ],
+   "quote": "on wednesday, november 4th i attended the montachusett brownfields committee meeting and"
+  },
+  {
+   "topic": "Closing public comment and adjournment",
+   "resolution": "public comment; adjourned at 10:04 p.m. 5-0",
+   "tags": [
+    "public comment",
+    "adjournment"
+   ],
+   "quote": "motion: i. dwyer to adjourn the meeting at 10:04 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Temporary Telework Policy",
+   "where": "text",
+   "quote": "to approve the temporary telework policy as presented"
+  },
+  {
+   "name": "Minutes of October 13, 2020",
+   "where": "text",
+   "quote": "to approve the minutes of october 13, 2020 as presented"
+  },
+  {
+   "name": "Green Leaf site plan showing 39 available parking spaces",
+   "where": "text",
+   "quote": "ms. bentley presented a site plan showing the 39 available parking spaces."
+  },
+  {
+   "name": "Draft host community agreement (Green Leaf)",
+   "where": "text",
+   "quote": "attorney polotek noted he had provided a draft host community agreement."
+  },
+  {
+   "name": "Proposed Project Timeline (Green Leaf)",
+   "where": "text",
+   "quote": "proposed project timeline"
+  },
+  {
+   "name": "Special Town Meeting articles (Consent Calendar, Articles 3, 10-14)",
+   "where": "text",
+   "quote": "article 10 is the 2021 peg access capital expenses transfer of $120,000 from their retained earnings;"
+  },
+  {
+   "name": "TCP Building Design Committee report for Special Town Meeting",
+   "where": "text",
+   "quote": "the committee report that is going to be presented at special town meeting"
+  },
+  {
+   "name": "Veterans Day proclamation (Governor Charles D. Baker)",
+   "where": "text",
+   "quote": "whereas, since the commonwealth's colonial days, thousands of men and women have"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "marijuana retailer",
+  "Green Leaf Botanicals",
+  "host community agreement",
+  "Bright Farms TIF",
+  "Special Town Meeting",
+  "consent calendar",
+  "Covid-19",
+  "telework policy",
+  "CARES Act",
+  "capital projects",
+  "veterans"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2019-05-14",
  "docid": "558",
@@ -12,15 +12,152 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the April 9th meeting",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Approve the minutes of the April 9th meeting.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "minutes from the meeting on april 9th were read and approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes record one procedural vote (approval of prior minutes). No vote count is stated. No motion to adjourn was explicitly recorded, though the meeting adjourned at 8:00 PM. Other items discussed (Dawn Marshall's plan, APD road sign design, Old Primary School/Brooks House status, demolition-by-neglect issue) do not record formal votes.",
- "cost_usd": 0.0816485
+ "note": "The minutes record that the April 9th minutes were \"read and approved\" but print no motion, mover, seconder or vote count; the approval is recorded as passed with those fields blank. Adjournment at 8:00PM is stated without a motion or vote, so it is not recorded as a vote. No dollar figures are printed. Public comment is not recorded as such; Dawn Marshall appeared as an applicant.",
+ "cost_usd": 0.00309812,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman mcgrath, corcoran, laveck and dwyer"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: chairman mcgrath, corcoran, laveck and dwyer"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: chairman mcgrath, corcoran, laveck and dwyer"
+  },
+  {
+   "name": "Brian Corcoran",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman mcgrath, corcoran, laveck and dwyer"
+  },
+  {
+   "name": "Dawn Marshall",
+   "status": "present",
+   "quote": "dawn marshall appeared for administrative review of a plan for a second-story apartment in the barn at 42 main street"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission recommended edits to the APD road sign design after reviewing it (no vote recorded).",
+   "quote": "mcgrath presented a design of the apd road sign and an aluminum/polymer laminate material sample."
+  },
+  {
+   "decision": "Next meeting set for June 11th, 7PM.",
+   "quote": "next meeting: june 11th, 7pm"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Demolition by neglect of the Old Primary School",
+   "what_was_recorded": "The commission discussed demolition by neglect of the Old Primary School and how to procure funding for necessary maintenance; no figures were printed.",
+   "quote": "discussed the issue of demolition by neglect of the old primary school",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved minutes of April 9th",
+   "quote": "minutes from the meeting on april 9th were read and approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Administrative review, second-story apartment at 42 Main Street (the Jones House)",
+   "resolution": "no action; questions raised, no serious concerns requiring revisions",
+   "quote": "the apdc had questions regarding her proposal, but no serious concerns that would require revisions.",
+   "tags": [
+    "administrative review",
+    "apartment",
+    "42 Main Street",
+    "Jones House"
+   ]
+  },
+  {
+   "topic": "APD road sign design",
+   "resolution": "reviewed; edits recommended",
+   "quote": "mcgrath presented a design of the apd road sign and an aluminum/polymer laminate material sample.",
+   "tags": [
+    "road sign",
+    "design",
+    "materials"
+   ]
+  },
+  {
+   "topic": "Old Primary School and Brooks House",
+   "resolution": "report from town meeting; no action recorded",
+   "quote": "permission for the select board to sell the old primary school was narrowly defeated.",
+   "tags": [
+    "Old Primary School",
+    "Brooks House",
+    "town meeting",
+    "Select Board"
+   ]
+  },
+  {
+   "topic": "Demolition by neglect of the Old Primary School",
+   "resolution": "discussed; no action recorded",
+   "quote": "discussed the issue of demolition by neglect of the old primary school",
+   "tags": [
+    "demolition by neglect",
+    "maintenance",
+    "funding"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Plan for a second-story apartment in the barn at 42 Main Street (the Jones House), submitted by Dawn Marshall",
+   "where": "text",
+   "quote": "dawn marshall appeared for administrative review of a plan for a second-story apartment in the barn at 42 main street"
+  },
+  {
+   "name": "Design of the APD road sign",
+   "where": "text",
+   "quote": "mcgrath presented a design of the apd road sign and an aluminum/polymer laminate material sample."
+  },
+  {
+   "name": "Aluminum/polymer laminate material sample",
+   "where": "text",
+   "quote": "mcgrath presented a design of the apd road sign and an aluminum/polymer laminate material sample."
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "architectural district",
+  "administrative review",
+  "road sign",
+  "Old Primary School",
+  "Brooks House",
+  "town meeting",
+  "demolition by neglect"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

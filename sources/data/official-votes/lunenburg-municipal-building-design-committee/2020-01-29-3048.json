@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2020-01-29",
  "docid": "3048",
@@ -12,15 +12,242 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Passios",
    "seconded_by": "Maklin",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "passios motion to adjourn / maklin second passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Lunenburg Municipal Building Design Committee minutes, January 29, 2020. One procedural vote recorded: motion to adjourn. No votes were recorded on the architect interviews or other business items discussed.",
- "cost_usd": 0.0832145
+ "note": "Clean text extraction, no scan. Only one motion (adjournment) is recorded with a vote; the tabling and scheduling items have no recorded motion. The Chair is referenced but never named. Spellings vary within the minutes: Mackin/Maklin and Lemeux/Lemieux. Adjournment second is printed as \"Maklin\". No public comment section appears. Attendance for David Blatt is recorded as absent; the other members are recorded as present by listing.",
+ "cost_usd": 0.00505432,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Greg Roy",
+   "role": "Member",
+   "status": "present",
+   "quote": "greg roy, michael mackin, tanner cole, david passios, brian lehtinen, damon mcquaid"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "Member (also printed as \"Maklin\")",
+   "status": "present",
+   "quote": "greg roy, michael mackin, tanner cole, david passios, brian lehtinen, damon mcquaid"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Member",
+   "status": "present",
+   "quote": "greg roy, michael mackin, tanner cole, david passios, brian lehtinen, damon mcquaid"
+  },
+  {
+   "name": "David Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "greg roy, michael mackin, tanner cole, david passios, brian lehtinen, damon mcquaid"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "greg roy, michael mackin, tanner cole, david passios, brian lehtinen, damon mcquaid"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Member",
+   "status": "present",
+   "quote": "greg roy, michael mackin, tanner cole, david passios, brian lehtinen, damon mcquaid"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: david blatt"
+  },
+  {
+   "name": "Heather Lemeux",
+   "role": "Town Staff (also printed as \"Lemieux\")",
+   "status": "present",
+   "quote": "town staff: heather lemeux"
+  },
+  {
+   "name": "Stu Roberts",
+   "role": "Presenter, Johnson Roberts Associates",
+   "status": "present",
+   "quote": "stu roberts, phil o'brien"
+  },
+  {
+   "name": "Phil O’Brien",
+   "role": "Presenter, Johnson Roberts Associates",
+   "status": "present",
+   "quote": "stu roberts, phil o'brien"
+  },
+  {
+   "name": "Tom Lam",
+   "role": "Presenter, DeGeorgio Associates",
+   "status": "present",
+   "quote": "tom lam, ed desavio, chris sullivan, kimberly, todd chase, john inx(?)"
+  },
+  {
+   "name": "Ed DeSavio",
+   "role": "Presenter, DeGeorgio Associates",
+   "status": "present",
+   "quote": "tom lam, ed desavio, chris sullivan, kimberly, todd chase, john inx(?)"
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Presenter, DeGeorgio Associates",
+   "status": "present",
+   "quote": "tom lam, ed desavio, chris sullivan, kimberly, todd chase, john inx(?)"
+  },
+  {
+   "name": "Kimberly",
+   "role": "Presenter, DeGeorgio Associates",
+   "status": "present",
+   "quote": "tom lam, ed desavio, chris sullivan, kimberly, todd chase, john inx(?)"
+  },
+  {
+   "name": "Todd Chase",
+   "role": "Presenter, DeGeorgio Associates",
+   "status": "present",
+   "quote": "tom lam, ed desavio, chris sullivan, kimberly, todd chase, john inx(?)"
+  },
+  {
+   "name": "John Inx(?)",
+   "role": "Presenter, DeGeorgio Associates",
+   "status": "present",
+   "quote": "tom lam, ed desavio, chris sullivan, kimberly, todd chase, john inx(?)"
+  },
+  {
+   "name": "David Eisen",
+   "role": "Presenter, Abacus Architects",
+   "status": "present",
+   "quote": "david eisen, david pollack, annie steele"
+  },
+  {
+   "name": "David Pollack",
+   "role": "Presenter, Abacus Architects",
+   "status": "present",
+   "quote": "david eisen, david pollack, annie steele"
+  },
+  {
+   "name": "Annie Steele",
+   "role": "Presenter, Abacus Architects",
+   "status": "present",
+   "quote": "david eisen, david pollack, annie steele"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Consensus that each member will have a score for each candidate before the next meeting to expedite the process; a decision is to be made at the next meeting.",
+   "quote": "consensus was to have each member have their score for each candidate before the next meeting to expedite the process."
+  },
+  {
+   "decision": "Chair will coordinate the checking of references and present a summary of results at the next meeting.",
+   "quote": "chair will coordinate the checking of the references. present summary of results next meeting."
+  },
+  {
+   "decision": "Agenda item regarding discussing candidates was tabled (no recorded vote).",
+   "quote": "tabled the agenda item regarding discussing candidates"
+  },
+  {
+   "decision": "Next meeting set for Wednesday Feb 5th at 6PM, with follow-up meetings Wednesday Feb 12th at 6PM and Wednesday Feb 26th.",
+   "quote": "follow up meeting on wednesday feb 12th at 6pm"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Architect cost-containment approach (Johnson Roberts Associates)",
+   "what_was_recorded": "JRA said it does its own cost analysis with extensive interviews of individual departments to deliver a cost-effective project.",
+   "figures_as_printed": [],
+   "quote": "do their own cost analysis. extensive interview with individual department"
+  },
+  {
+   "topic": "DeGeorgio percentage of projects coming in under budget",
+   "what_was_recorded": "DeGeorgio said 10-15% of projects come in under budget and estimates are mostly accurate, possibly within +/-5%.",
+   "figures_as_printed": [
+    "10-15%",
+    "+/-5%"
+   ],
+   "quote": "da 10-15%. most are very accurate. might be +/-5%."
+  },
+  {
+   "topic": "Abacus cost line for existing building",
+   "what_was_recorded": "Abacus said a challenge would be testing existing work and creating a cost line for bringing the existing building up to date.",
+   "figures_as_printed": [],
+   "quote": "come up with a cost line for getting the existing building up to date."
+  },
+  {
+   "topic": "Abacus fee analysis for land survey",
+   "what_was_recorded": "Abacus said it has not done a significant fee analysis for including a land survey in civil work but believes it can be done.",
+   "figures_as_printed": [],
+   "quote": "have not done a significant fee analysis"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Interviews of three finalist architects for TC Passios Reuse Project",
+   "resolution": "interviews held (Johnson Roberts Associates, DeGeorgio Associates, Abacus Architects)",
+   "quote": "interview of 3 finalist for architect town will work with for tc passios reuse project",
+   "tags": [
+    "architect selection",
+    "interviews",
+    "reuse project"
+   ]
+  },
+  {
+   "topic": "Discussion of candidates",
+   "resolution": "tabled",
+   "quote": "tabled the agenda item regarding discussing candidates",
+   "tags": [
+    "architect selection"
+   ]
+  },
+  {
+   "topic": "Reference checks",
+   "resolution": "assigned to Chair",
+   "quote": "chair will coordinate the checking of the references. present summary of results next meeting.",
+   "tags": [
+    "references",
+    "architect selection"
+   ]
+  },
+  {
+   "topic": "Future meeting schedule and decision timeline",
+   "resolution": "meetings scheduled; consensus on scoring before next meeting",
+   "quote": "next meeting set for following wednesday feb 5th at 6pm",
+   "tags": [
+    "scheduling",
+    "timeline"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Vertex report on initial assessment",
+   "where": "text",
+   "quote": "relying on vertex report on initial assessment."
+  }
+ ],
+ "tags": [
+  "architect selection",
+  "interviews",
+  "TC Passios reuse project",
+  "hazardous materials",
+  "traffic and site access",
+  "cost containment",
+  "scheduling",
+  "references"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

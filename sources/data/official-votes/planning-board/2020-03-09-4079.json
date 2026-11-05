@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2020-03-09",
  "docid": "4079",
@@ -12,64 +12,442 @@
  },
  "votes": [
   {
-   "motion": "Deny the waiver request from site plan approval for earth removal at 1325 Massachusetts Avenue",
+   "motion": "Deny the waiver request from site plan approval for 1325 Massachusetts Avenue.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "p. bertram made motion to deny the waiver request, t. cole seconded, a ll aye."
   },
   {
-   "motion": "Add the word 'native' to the definition of Earth",
+   "motion": "Add the word \"native\" in front of earth material to the definition of Earth in the earth removal bylaw.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
-   "quote": "p. bertram made motion to add the word \"native\" (in front of earth material) to t he definition of earth, t. cole seconded. discussion- m. allison had concerns that it could still affect the neighbors and the local roads. all aye."
+   "quote": "p. bertram made motion to add the word \"native\" (in front of earth material) to t he definition of earth, t. cole seconded."
   },
   {
-   "motion": "Notify the Board of Selectmen that the Planning Board did not recommend the Town exercise its Right Of First Refusal for 322 Flat Hill Road",
+   "motion": "Notify the Board of Selectmen that the Planning Board did not recommend the Town exercise its Right of First Refusal on 322 Flat Hill Road (minutes also print 'Moti on'/'Sele ctmen').",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
-   "quote": "p. bertram made motion to notify the board of selectmen that the planning board d id not recommend the town exercise its right of first refusal, t. cole seconded, all aye.",
-   "quote_taken_from_text": true
+   "quote": "p. bertram made moti on to notify the board of sele ctmen that the planning board did not recommend the town exercise its right of first refusal, t. cole seconded, all aye."
   },
   {
-   "motion": "Notify the Board of Selectmen that the Planning Board did not recommend the Town exercise its Right Of First Refusal for 57 & 63 Cross Road",
+   "motion": "Notify the Board of Selectmen that the Planning Board did not recommend the Town exercise its Right of First Refusal on 57 & 63 Cross Road.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "p. bertram made motion to notify the board of selectmen that the planning board d id not recommend the town exercise its right of first refusal, t. cole seconded, all aye."
   },
   {
-   "motion": "Send a letter to both the Board of Selectmen and the land owner regarding concerns with the Purchase and Sale Agreement for Tract A, Holman Street & Northfield Road, with involvement of Town Counsel",
+   "motion": "Send a letter to both the Select Board and the land owner noting concerns with the Tract A purchase and sale agreement, with an amendment to involve Town Counsel.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
-   "quote": "p. bertram made motion that such letter be sent to both the select board and the land owner, t. cole seconded th e motion with amendment to involve town counsel, p. bertram accepted and seconded amendment. t. cole wanted feedback from town counsel that this constituted a bona fide offer and p. bertram wanted input from town counsel regarding the possible lot reconfi guration. all aye."
+   "quote": "p. bertram made motion that such letter be sent to both the select board and the land owner, t. cole seconded"
   },
   {
-   "motion": "Approve the minutes of February 24, 2020",
+   "motion": "Approve the minutes of 02.24.2020.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
-   "quote": "p. bertram made motion to approve, t. cole seconded, all aye."
+   "quote": "02.24.2020- p. bertram made motion to approve, t. cole seconded, all aye."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
    "quote": "t. cole made motion to adjourn, p. bertram seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan with visible artifacts (spaced letters like \"a ll\", \"t he\", \"Sele ctmen\", \"d id\", \"th e\", \"reconfi guration\") preserved verbatim in quotes. One motion was withdrawn (Tract A initial ROFR motion) and is not included—only votes actually taken are listed.",
- "cost_usd": 0.12827349999999998
+ "note": "Text is extracted with stray spacing and mid-word breaks, copied as printed. Some discussion items had no vote: the Earth Removal bylaw discussion, the Howard Street & West Townsend Road item and the Stormwater bylaw. A first Tract A motion was withdrawn before a second motion carried. The body text says 322 Flat Hill Road but the document list says 332 Flat Hill Road. Speakers printed as Daniel Proctor, Dan Proctor and D. Proctor may or may not be the same person. Meeting called 6:30 PM and adjourned 10:11 PM. No dollar figures are printed anywhere in the minutes.",
+ "cost_usd": 0.010906220000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Marisa Thompson",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: marisa thompson"
+  },
+  {
+   "name": "Frank McPartlan",
+   "role": "representing the applicant (Ducharme & Dillis Civil Design Group, Inc.)",
+   "status": "present",
+   "quote": "represented by frank mcpartlan,"
+  },
+  {
+   "name": "Attorney Bowen",
+   "role": "attorney for the Applicant",
+   "status": "present",
+   "quote": "attorney bowen, 1686 massachusetts avenue (attorney for the applicant) addressed"
+  },
+  {
+   "name": "Daniel Proctor",
+   "role": "Applicant",
+   "status": "present",
+   "quote": "daniel proctor noted there is typically a porta potty on site"
+  },
+  {
+   "name": "Mark Bursch",
+   "role": "resident, 20 Buttonwood Place",
+   "status": "present",
+   "quote": "opined that the bylaw threshold of 1,500 cubic yards was too low."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "resident, 1529 Massachusetts Avenue",
+   "status": "present",
+   "quote": "requested clarification of the permit renewal process."
+  },
+  {
+   "name": "Bob Proctor",
+   "role": "resident, 99 Pleasant Street",
+   "status": "present",
+   "quote": "questioned the r&r offsets of 100 feet to a public way"
+  },
+  {
+   "name": "John Esposito",
+   "role": "resident, Mulpus Road",
+   "status": "present",
+   "quote": "it is his opinion that the threshold of 1,500 cubic yard was too low; it should be 5,000."
+  },
+  {
+   "name": "Katey Adams",
+   "role": "As a Select Board member",
+   "status": "present",
+   "quote": "she inquired if the threshold was 5,000 cubic yards and the property"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "resident, 284 Lancaster Avenue",
+   "status": "present",
+   "quote": "he suggested that the board keep the bylaw article, but tell the"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board will review the Earth Removal Rules and Regulations so an up-to-date draft is available for citizens at Town Meeting when the bylaw is voted on.",
+   "quote": "the board will plan on reviewing the r&r to ensure an up to date draft will be available for citizens to view at town meeting when the bylaw"
+  },
+  {
+   "decision": "Board was unable to discuss or recommend on Howard Street & West Townsend Road because a member was absent and a member present owns 100 Howard Street.",
+   "quote": "board was unable to discuss and recommend as a member was absent and one of"
+  },
+  {
+   "decision": "Discussion of the Stormwater and Storm Sewers Bylaw is to continue at a later meeting.",
+   "quote": "discussion to continue."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cost of earth removal permit and engineer for residents",
+   "what_was_recorded": "A public speaker said a resident doing work on their property would face a financial impact from the permit cost and hiring an engineer.",
+   "figures_as_printed": [],
+   "quote": "the y would incur a financial impact with the cost of the permit and the hiring of an engineer."
+  },
+  {
+   "topic": "Cost to current permit holders of complying with the R&R",
+   "what_was_recorded": "The Board discussed the cost to current permit holders of complying with the Rules and Regulations.",
+   "figures_as_printed": [],
+   "quote": "there was discussion of the cost entailed by current permit holders to comply with the r&r."
+  },
+  {
+   "topic": "Financial burden of permits on residents",
+   "what_was_recorded": "A public speaker said more permits create a financial burden on residents.",
+   "figures_as_printed": [],
+   "quote": "b. proctor expressed that more and more permits are being put in place in lunenburg, creating a financial burden on the residents."
+  },
+  {
+   "topic": "Culvert replacement funds (MRPC)",
+   "what_was_recorded": "Committee report said funds are available for culvert replacement, with requests due by March 25th; no dollar amount printed.",
+   "figures_as_printed": [],
+   "quote": "there are funds available for culvert replacement."
+  },
+  {
+   "topic": "TCP Middle/High School budget warrant article",
+   "what_was_recorded": "No budget warrant article for the TCP project will be submitted at Annual Town Meeting due to time constraints; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "there will not be a budget warrant article due to time constraints."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Earth removal bylaw threshold",
+   "speaker": "Mark Bursch",
+   "stated_role": "20 Buttonwood Place",
+   "quote": "opined that the bylaw threshold of 1,500 cubic yards was too low."
+  },
+  {
+   "topic": "Permit renewal process and six-foot groundwater offset",
+   "speaker": "Dan Proctor",
+   "stated_role": "1529 Massachusetts Avenue",
+   "quote": "requested clarification of the permit renewal process."
+  },
+  {
+   "topic": "R&R setback offsets",
+   "speaker": "Bob Proctor",
+   "stated_role": "99 Pleasant Street",
+   "quote": "questioned the r&r offsets of 100 feet to a public way"
+  },
+  {
+   "topic": "Earth removal bylaw threshold",
+   "speaker": "John Esposito",
+   "stated_role": "Mulpus Road",
+   "quote": "it is his opinion that the threshold of 1,500 cubic yard was too low; it should be 5,000."
+  },
+  {
+   "topic": "Enforcement of current earth removal bylaw",
+   "speaker": "Katey Adams",
+   "stated_role": "Peninsula Drive; As a Select Board member",
+   "quote": "she inquired if the threshold was 5,000 cubic yards and the property"
+  },
+  {
+   "topic": "Earth removal bylaw and R&R",
+   "speaker": "Tom Alonzo",
+   "stated_role": "284 Lancaster Avenue",
+   "quote": "he suggested that the board keep the bylaw article, but tell the"
+  },
+  {
+   "topic": "Enforcement of current earth removal bylaw if proposed bylaw fails",
+   "speaker": "Katey Adams",
+   "stated_role": "Peninsula Drive",
+   "quote": "in the event the proposed bylaw does not pass at town meeting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "1325 Massachusetts Avenue waiver request from site plan approval",
+   "resolution": "denied waiver (motion passed all aye)",
+   "quote": "p. bertram made motion to deny the waiver request, t. cole seconded, a ll aye.",
+   "tags": [
+    "site plan approval",
+    "waiver",
+    "earth removal",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "1325 Massachusetts Avenue public hearing",
+   "resolution": "referred to separate minutes",
+   "quote": "public hearing- see separate minutes",
+   "tags": [
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Public forum: Earth Removal Bylaw and Rules and Regulations",
+   "resolution": "discussed; 'native' added to definition by vote; R&R review planned",
+   "quote": "a. burney gave a presentation noting the reasons for changing the bylaw",
+   "tags": [
+    "earth removal",
+    "bylaw",
+    "rules and regulations",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Removal from Chapter, Right of First Refusal (ROFR)",
+   "resolution": "no recommendation to exercise ROFR for 322 Flat Hill Road and 57 & 63 Cross Road; letter to Select Board and landowner on Tract A; Howard Street no action",
+   "quote": "removal from chapter, right of first refusal (rofr):",
+   "tags": [
+    "right of first refusal",
+    "chapter 61B",
+    "land"
+   ]
+  },
+  {
+   "topic": "Stormwater and Storm Sewers Bylaw",
+   "resolution": "discussion continued",
+   "quote": "discussion to continue.",
+   "tags": [
+    "stormwater",
+    "bylaw",
+    "low impact development"
+   ]
+  },
+  {
+   "topic": "Minutes approval 02.24.2020",
+   "resolution": "approved (all aye)",
+   "quote": "02.24.2020- p. bertram made motion to approve, t. cole seconded, all aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no report from most committees; MRPC culvert funding noted",
+   "quote": "p. bertram noted she was on the nominating committee.",
+   "tags": [
+    "committee reports",
+    "culvert",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "noted Citizen Party Caucus and TCP land update; no action",
+   "quote": "caucus scheduled for monday march 16th.",
+   "tags": [
+    "caucus",
+    "TCP school land",
+    "care and custody"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted upcoming hearings",
+   "quote": "april 13-1325 massachusetts avenue, site plan approval hearing",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "noted, no action",
+   "quote": "mgl, ch. 41, section 81d, master plan-",
+   "tags": [
+    "solar",
+    "parking",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "Katey Adams request for input on enforcement recorded",
+   "quote": "in the event the proposed bylaw does not pass at town meeting.",
+   "tags": [
+    "public comment",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:11 PM (all aye)",
+   "quote": "t. cole made motion to adjourn, p. bertram seconded, all aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Earth Removal Bylaw",
+   "where": "list",
+   "quote": "documents used at meeting: earth removal bylaw"
+  },
+  {
+   "name": "Earth Removal Rules and Regulations",
+   "where": "list",
+   "quote": "earth removal rules and regulations"
+  },
+  {
+   "name": "Removal from Chapter, 332 Flat Hill Road",
+   "where": "list",
+   "quote": "removal from chapter, 332 flat hill road"
+  },
+  {
+   "name": "Removal from Chapter, 57 & 63 Cross Road",
+   "where": "list",
+   "quote": "removal from chapter, 57 & 63 cross road"
+  },
+  {
+   "name": "Removal from Chapter, Tract A, Holman Street & Northfield Road",
+   "where": "list",
+   "quote": "removal from chapter, tract a, holman street & northfield road"
+  },
+  {
+   "name": "Removal from Chapter, Howard Street & West Townsend Road",
+   "where": "list",
+   "quote": "removal from chapter, howard street & west townsend road"
+  },
+  {
+   "name": "Stormwater Bylaw – DRAFT",
+   "where": "list",
+   "quote": "stormwater bylaw - draft minutes, 02.24.2020"
+  },
+  {
+   "name": "Minutes, 02.24.2020",
+   "where": "list",
+   "quote": "stormwater bylaw - draft minutes, 02.24.2020"
+  },
+  {
+   "name": "TC Passios & Brooks House Conceptual Plan dated 04.05.16",
+   "where": "list",
+   "quote": "tc passios & brooks house conceptual plan dated 04.05.16."
+  },
+  {
+   "name": "Building Commissioner's letter dated March 2, 2020",
+   "where": "text",
+   "quote": "this was then confirmed in the building commissioner's letter dated march 2, 2020."
+  },
+  {
+   "name": "Applicant's detailed letter dated February 20, 2020",
+   "where": "text",
+   "quote": "in a february 20, 2020 detailed letter to the board, requested the requirement"
+  },
+  {
+   "name": "Purchase and Sale Agreement (‘P&S’) for Tract A",
+   "where": "text",
+   "quote": "this purchase and sale agreement ('p&s') contained contingencies."
+  },
+  {
+   "name": "Earth Removal Permit",
+   "where": "text",
+   "quote": "there will be a water truck (specified in the earth removal permit)"
+  }
+ ],
+ "tags": [
+  "earth removal bylaw",
+  "rules and regulations",
+  "planning board",
+  "site plan approval",
+  "waiver",
+  "right of first refusal",
+  "chapter 61B",
+  "stormwater",
+  "public comment",
+  "town meeting",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

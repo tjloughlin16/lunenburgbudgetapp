@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2019-06-13",
  "docid": "2144",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jay Simeone",
    "seconded_by": "Michelle Walton",
    "outcome": "passed 5-0",
@@ -21,6 +21,201 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "These are OCR'd minutes from a macOS Vision scan. One vote recorded: adjournment. Item 3 mentions a reorganization vote will occur at a future meeting (July 11), but no vote occurred at this June 13 meeting itself.",
- "cost_usd": 0.08086549999999999
+ "note": "OCR text is partly garbled on page 2: the liaison list (item 5) is hard to read, and a scheduling item under Committee Comment (the Michelle Walton scheduling line and part of the second suggested topic) is unreadable, so those parts are not recorded. One vote is recorded (adjournment, 5-0). No other motions appear in the text. The minutes were received and filed July 15, 2019.",
+ "cost_usd": 0.00437112,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: peter beardmore, john henshaw, dave passios, jay simeone, michelle walton"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "john henshaw, vice-chair called the meeting to order at 7:00 pm."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: peter beardmore, john henshaw, dave passios, jay simeone, michelle walton"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: peter beardmore, john henshaw, dave passios, jay simeone, michelle walton"
+  },
+  {
+   "name": "Michelle Walton",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: peter beardmore, john henshaw, dave passios, jay simeone, michelle walton"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Committee member",
+   "status": "absent",
+   "quote": "absent: hannah anderson, terri burchfield"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Committee member",
+   "status": "absent",
+   "quote": "absent: hannah anderson, terri burchfield"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Dir. of Town Finances",
+   "status": "present",
+   "quote": "also present: karen brochu, dir. of town finances"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee began its review of the Town's financial policies (especially the borrowing policy) and will continue the review when more members are present, probably at the July 11 meeting.",
+   "quote": "this committee will continue the review when more members are present, probably at the july 11 meeting."
+  },
+  {
+   "decision": "Liaison assignments were listed in the minutes (DPW - John H.; Police and Fire - no liaison; Schools & Monty Tech - Hannah; Green Comm Task Force and Sewer Commission - Jay S.; Land Acquisition Committee - Terri B.). The OCR text is garbled, so the exact assignments are uncertain.",
+   "quote": "dpw - john h. police dept - no liaison fire dept - no liaison"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY21 budget process and Town Manager's budget methodology",
+   "what_was_recorded": "Peter Beardmore suggested asking the Town Manager to present her process and methodology for building the budget proposal before the FY21 budget review; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "ask the town manager to present her process and methodology for building her budget proposal"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "john henshaw, vice-chair called the meeting to order at 7:00 pm."
+  },
+  {
+   "topic": "Communications",
+   "resolution": "informational; Board of Selectmen considering advertising openings",
+   "tags": [
+    "communications",
+    "boards and committees"
+   ],
+   "quote": "dave passios said that the board of selectmen was considering advertising all prospective openings"
+  },
+  {
+   "topic": "Committee Reorganization",
+   "resolution": "noted for July 11 meeting",
+   "tags": [
+    "reorganization",
+    "officers"
+   ],
+   "quote": "at the first meeting of each new fiscal year the finance committee reorganizes. this will be at the july 11 meeting."
+  },
+  {
+   "topic": "Proposed Review of the Town's Financial Policies",
+   "resolution": "review begun; continued to July 11 meeting",
+   "tags": [
+    "financial policies",
+    "borrowing policy"
+   ],
+   "quote": "the committee began this process at this meeting"
+  },
+  {
+   "topic": "Liaison assignments (item 5, garbled in OCR)",
+   "resolution": "listed; exact entries unclear",
+   "tags": [
+    "liaisons",
+    "committees"
+   ],
+   "quote": "dpw - john h. police dept - no liaison fire dept - no liaison"
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "no action; no minutes to review",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes: there were no minutes to review."
+  },
+  {
+   "topic": "Town Manager/Financial Officer Report",
+   "resolution": "no report",
+   "tags": [
+    "town manager",
+    "reports"
+   ],
+   "quote": "town manager/financial officer report: none."
+  },
+  {
+   "topic": "Committee Comment",
+   "resolution": "two topics suggested for upcoming meetings before FY21 budget review",
+   "tags": [
+    "demographics",
+    "budget process",
+    "joint meeting"
+   ],
+   "quote": "peter beardmore suggested two topics to be scheduled for upcoming meetings, prior to the fy21 budget review process:"
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "none",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "9. public comment: none"
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "scheduled July 11 and July 25, 2019",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "july 11, 2019 & july 25, 2019"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:55 pm, 5-0",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "jay simeone moved to adjourn and michelle walton seconded the motion. the committee voted 5-0 in favor."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town's financial policies (printed copies)",
+   "where": "list",
+   "quote": "at the meeting we all got printed copies of these policies to review."
+  },
+  {
+   "name": "Financial policies links on the Board of Selectmen page of the Town's website",
+   "where": "text",
+   "quote": "links to the policies are on the board of selectmen page on the town's website."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "financial policies",
+  "borrowing policy",
+  "reorganization",
+  "liaison assignments",
+  "FY21 budget",
+  "town finances"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "at the meeting we all got printed copies of these policies to review"
+ },
+ "dropped_unquoted_by_field": {}
 }

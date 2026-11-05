@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2019-12-19",
  "docid": "2856",
@@ -12,23 +12,263 @@
  },
  "votes": [
   {
-   "motion": "Approve November 2019 minutes",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion to approve minutes was unanimously approved",
+   "motion": "Approve the minutes for November 2019 with a number of edits.",
    "moved_by": "",
-   "seconded_by": ""
-  },
-  {
-   "motion": "Adjourn the meeting",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn by lars, seconded by kate. meeting was adjourned",
+   "quote": "motion to approve minutes was unanimously approved with a number of edits."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "Lars",
-   "seconded_by": "Kate"
+   "seconded_by": "Kate",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion to adjourn by lars, seconded by kate. meeting was adjourned at 7:42 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08071350000000001
+ "note": "Minutes text is readable. Pages 3 through 10 are blank. Votes recorded as unanimous or as motion-and-second without a tally, so no counts are printed. The adjournment has no printed result beyond the adjournment time. Donna Saiia is listed as absent but is quoted asking a question in the Director's Report; she is recorded as absent per the attendance line.",
+ "cost_usd": 0.00495572,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, lars widstrand, maia wentrup"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, lars widstrand, maia wentrup"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, lars widstrand, maia wentrup"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:48 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, lars widstrand, maia wentrup"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, lars widstrand, maia wentrup"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: dick mailloux, donna saiia"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: dick mailloux, donna saiia"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Fine-Free discussion deferred to the January 16, 2020 meeting.",
+   "quote": "deferred to our january 16, 2020 meeting."
+  },
+  {
+   "decision": "Friends of LPL update deferred.",
+   "quote": "friends of lpl update - o deferred."
+  },
+  {
+   "decision": "Chair scheduled a special BOT meeting for December 29 to compile the Director annual review from BOT member comments.",
+   "quote": "harry has scheduled a special bot meeting for december 29 th to compile the director annual review"
+  },
+  {
+   "decision": "Chair to send out the BOT contact list.",
+   "quote": "kate asked about the bot contact list. harry will send out."
+  },
+  {
+   "decision": "Director to meet with FinCom on 2/20/2020.",
+   "quote": "muir will meet with fincom on 2/20/2020."
+  },
+  {
+   "decision": "Director to research energy projections for next year.",
+   "quote": "muir will do some research on energy projections for next year."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town target budget for the library",
+   "what_was_recorded": "Director received the target budget from the town manager, down .19% from last year; library budget requests are due to the Town Manager on 1/2/2020.",
+   "figures_as_printed": [
+    ".19%"
+   ],
+   "quote": "muir has received the target budget from the town manager. it is down .19% from last year."
+  },
+  {
+   "topic": "Hannaford grant",
+   "what_was_recorded": "A Hannaford grant of $3500 has been submitted.",
+   "figures_as_printed": [
+    "$3500"
+   ],
+   "quote": "the hannaford grant for $3500 has been submitted."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Harry",
+   "stated_role": "",
+   "topic": "snow day with walkways not cleared",
+   "quote": "harry inquired about a snow day when the library was closed and the walkways had not been cleared. muir said that either the dpw or kit will normally clear the walkways."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action; discussed snow-day walkway clearing",
+   "tags": [
+    "snow removal",
+    "facilities"
+   ],
+   "quote": "harry inquired about a snow day when the library was closed and the walkways had not been cleared."
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved with edits",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "the minutes for november 2019 were reviewed. motion to approve minutes was unanimously approved with a number of edits."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "informational; no action",
+   "tags": [
+    "budget",
+    "grants",
+    "FinCom"
+   ],
+   "quote": "muir has received the target budget from the town manager. it is down .19% from last year."
+  },
+  {
+   "topic": "Fine-Free Discussion",
+   "resolution": "deferred to January 16, 2020",
+   "tags": [
+    "fines",
+    "policy"
+   ],
+   "quote": "deferred to our january 16, 2020 meeting."
+  },
+  {
+   "topic": "Trust Funds – Next Steps",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "trust funds",
+    "town meeting",
+    "warrant article"
+   ],
+   "quote": "the town meeting article must be submitted by the middle of march to be included in the upcoming may town meeting."
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "deferred",
+   "tags": [
+    "Friends group"
+   ],
+   "quote": "friends of lpl update - o deferred."
+  },
+  {
+   "topic": "Director Evaluation",
+   "resolution": "special BOT meeting scheduled for December 29",
+   "tags": [
+    "director evaluation",
+    "personnel"
+   ],
+   "quote": "harry has scheduled a special bot meeting for december 29 th to compile the director annual review from comments submitted by bot members."
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "Chair to send BOT contact list",
+   "tags": [
+    "board administration"
+   ],
+   "quote": "kate asked about the bot contact list. harry will send out."
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 7:42 pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion to adjourn by lars, seconded by kate. meeting was adjourned at 7:42 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "December 19, 2019 Agenda",
+   "where": "list",
+   "quote": "o december 19, 2019 agenda"
+  },
+  {
+   "name": "December Director’s Report",
+   "where": "list",
+   "quote": "o december director's report"
+  },
+  {
+   "name": "FY2021 Budget document",
+   "where": "list",
+   "quote": "o fy2021 budget document"
+  },
+  {
+   "name": "December 2019 Adult Services Report",
+   "where": "list",
+   "quote": "o december 2019 adult services report"
+  },
+  {
+   "name": "December 2019 YA Report",
+   "where": "list",
+   "quote": "o december 2019 ya report"
+  },
+  {
+   "name": "December 2019 Children’s Area Report",
+   "where": "list",
+   "quote": "december 2019 children's area report"
+  },
+  {
+   "name": "Sample language for a potential town meeting warrant article",
+   "where": "text",
+   "quote": "the bot has been given sample language for a potential town meeting warrant article and subsequent special legislation."
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "target budget",
+  "trust funds",
+  "town meeting warrant article",
+  "director evaluation",
+  "fine-free",
+  "Friends of LPL",
+  "public comment",
+  "grants"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

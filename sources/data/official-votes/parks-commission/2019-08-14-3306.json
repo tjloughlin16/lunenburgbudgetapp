@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2019-08-14",
  "docid": "3306",
@@ -10,15 +10,211 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08142019-3306",
   "doc_url": "/docs/meetings/parks-commission/2019-08-14-minutes-3306.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "No motions or votes are recorded in these minutes, so the votes list is empty; the adjournment has no recorded motion. The 'unanimous in opinion' cinder track item is a consensus, not a motion vote. Several attendees are listed without a printed role. Minutes text is extracted from two pages; no attachments or document list appear.",
+ "cost_usd": 0.00435112,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "to bring the walking track back into usable condition",
-   "outcome": "unanimous",
-   "procedural": false,
-   "quote": "it was unanimous in opinion that the walking track be brought back into usable condition"
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "karin called the meeting to order at 5pm. attendance: karin menard, susanna jewell, john palumbo and"
+  },
+  {
+   "name": "Susanna Jewell",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "karin called the meeting to order at 5pm. attendance: karin menard, susanna jewell, john palumbo and"
+  },
+  {
+   "name": "John Palumbo",
+   "role": "",
+   "status": "present",
+   "quote": "karin called the meeting to order at 5pm. attendance: karin menard, susanna jewell, john palumbo and"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendance: karin menard, susanna jewell, john palumbo and dpw director jack rodriquenz"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "",
+   "status": "present",
+   "quote": "participants included the park commission and dpw director as well as ana lockwood,"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "",
+   "status": "present",
+   "quote": "participants included the park commission and dpw director as well as ana lockwood,"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "participants included the park commission and dpw director as well as ana lockwood,"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "",
+   "status": "present",
+   "quote": "participants included the park commission and dpw director as well as ana lockwood,"
+  },
+  {
+   "name": "Deb Christin",
+   "role": "",
+   "status": "present",
+   "quote": "participants included the park commission and dpw director as well as ana lockwood,"
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes are clear scans with readable text. One vote recorded via consensus language (\"unanimous in opinion\"). No moved-by or seconded-by names provided in the minutes for this vote.",
- "cost_usd": 0.0827154
+ "decisions": [
+  {
+   "decision": "Minutes not ready; to be brought to the next meeting.",
+   "quote": "karin advised the commission that the minutes were not ready and would bring to the next meeting."
+  },
+  {
+   "decision": "Jack Rodriquenz would meet with Recreation Director applicants September 3-13 and bring the top candidates to the Commission on September 18th.",
+   "quote": "decided that jack would meet with applicants september 3-13 and bring them to the commission on september 18th."
+  },
+  {
+   "decision": "Susanna Jewell will forward the Recreation Director applications she received to the process.",
+   "quote": "susanna said she would forward the applications that she received from jack."
+  },
+  {
+   "decision": "Commission consensus that the cinder walking track should be brought back into usable condition.",
+   "quote": "it was unanimous in opinion that the walking track be brought back into usable condition."
+  },
+  {
+   "decision": "Majority agreed that more research should be done on changing use of the 90' diamond to a rectangular field.",
+   "quote": "the majority agreed but thought more research should be done."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Bathhouse replacement grant",
+   "what_was_recorded": "Dave Passios said the Board of Health may help obtain a grant for a new bathhouse; no dollar figure was given.",
+   "quote": "dave passios mentioned that the board of health may be able to assist with some sort of grant to bring a new bathhouse to the property.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Earmarked money and grants for Parks projects",
+   "what_was_recorded": "Public comment that a state contact would come to explain how to get money earmarked or granted for Parks projects; no figure given.",
+   "quote": "explain the process of getting money earmarked or grants for parks projects.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Senator Tran meet and greet; grants and earmarked money",
+   "quote": "public comment from dave passios that he had attended the meet and greet with senator tran at lanni orchard"
+  },
+  {
+   "speaker": "Matt Allison",
+   "stated_role": "",
+   "topic": "Picnic table donation by Maki's",
+   "quote": "matt allison also made a public comment that maki's graciously donated a picnic table for use at the farmers market"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "no action",
+   "quote": "karin called the meeting to order at 5pm. attendance: karin menard, susanna jewell, john palumbo and",
+   "tags": [
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "deferred to next meeting",
+   "quote": "karin advised the commission that the minutes were not ready and would bring to the next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Manager / DPW Director updates",
+   "resolution": "no action",
+   "quote": "jack quickly updated the commission that the summer activities were starting to close down for the season.",
+   "tags": [
+    "Town Beach",
+    "lifeguards"
+   ]
+  },
+  {
+   "topic": "Recreation Director applicants",
+   "resolution": "schedule set: applicant meetings Sept 3-13, candidates to commission Sept 18",
+   "quote": "decided that jack would meet with applicants september 3-13 and bring them to the commission on september 18th.",
+   "tags": [
+    "recreation director",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Marshall Park round table discussion",
+   "resolution": "discussion; ideas gathered, no action",
+   "quote": "marshall park - karin gave a brief overview of the property at marshall park and opened a round table discussion.",
+   "tags": [
+    "Marshall Park",
+    "trails",
+    "picnic area",
+    "ice skating",
+    "boardwalk",
+    "parking",
+    "cinder track",
+    "ball fields",
+    "bathhouse"
+   ]
+  },
+  {
+   "topic": "Other business and public comment",
+   "resolution": "no action",
+   "quote": "a. other business matters that may legally come before the board not known at the time of posting - none",
+   "tags": [
+    "public comment",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for September 18, 2019 6pm",
+   "quote": "next meeting date - september 18, 2019 6pm.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:58pm (no motion recorded)",
+   "quote": "meeting adjourned at 6:58pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "parks commission",
+  "Marshall Park",
+  "recreation director hiring",
+  "cinder track",
+  "ball fields",
+  "bathhouse",
+  "Town Beach",
+  "grants",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

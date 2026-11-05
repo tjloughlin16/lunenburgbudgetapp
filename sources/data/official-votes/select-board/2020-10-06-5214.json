@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-10-06",
  "docid": "5214",
@@ -12,48 +12,604 @@
  },
  "votes": [
   {
-   "motion": "Approve the wine & malt license application for Lanni Orchards, 294 Chase Road",
+   "motion": "Approve the wine & malt license application for Lanni Orchards, 294 Chase Road.",
    "moved_by": "K. Adams",
    "seconded_by": "T. Dwyer",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: k. adams 2n°: t. dwyer to approve the wine & malt license application for lanni orchards, 294 chase road"
+   "quote": "to approve the wine & malt license application for lanni orchards, 294 chase road"
   },
   {
-   "motion": "Appoint Chris Sullivan to the Parks Commission until the next annual election",
+   "motion": "Appoint Chris Sullivan to the Parks Commission until the next annual election.",
    "moved_by": "D. Passios",
    "seconded_by": "K. Adams",
    "outcome": "passed 8-0",
    "procedural": false,
-   "quote": "motion: d. passios 2nd: k. adams to appoint chris sullivan to the parks commission until the next annual election"
+   "quote": "to appoint chris sullivan to the parks commission until the next annual election"
   },
   {
-   "motion": "Reconsider and approve the amended transfer application for Embers Pizzeria",
+   "motion": "Reconsider and approve the amended transfer application for Embers Pizzeria.",
    "moved_by": "J. Marino",
    "seconded_by": "K. Adams",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "motion: j. marino 2°°: k. adams to reconsider and approve the amended transfer application for embers pizzeria"
+   "quote": "to reconsider and approve the amended transfer application for embers pizzeria"
   },
   {
-   "motion": "Sign the November 3, 2020 Election Warrant",
+   "motion": "Sign the November 3, 2020 Election Warrant (vote tally illegible in the scanned text).",
    "moved_by": "J. Marino",
    "seconded_by": "T. Dwyer",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "sign november 3, 2020 election warrant motion: j. marino aye 2\"°:t. d",
-   "quote_taken_from_text": true
+   "quote": "sign november 3, 2020 election warrant motion: j. marino"
   },
   {
-   "motion": "Enter Executive Session and adjourn after exiting",
+   "motion": "Enter into Executive Session under M.G.L. c. 30, Section 21, paragraphs 3 and 2, and adjourn after exiting Executive Session.",
    "moved_by": "J. Marino",
    "seconded_by": "K. Adams",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion: j. marino 2n: k. adams to enter into executive session and to adjourn after exiting executive session"
+   "quote": "to enter into executive session and to adjourn after exiting executive session:"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR-extracted text with some corruptions in voting records, particularly the election warrant vote line where the result is illegible. The BAN renewal vote heading is present but lacks a formal motion statement and clear vote results, so it is not included.",
- "cost_usd": 0.1443245
+ "dropped_unquoted": 1,
+ "note": "OCR text with gaps: page 1 has a garbled line in the attendance list (Joel Normandin is recovered from the partial line); the start of the Lanni hearing notice and the start of the 250 Howard Street discussion are cut off; the heading for the 78 Pratt Street topic is missing; the TIF projection table is garbled, so figures are as legible; the BAN ladder-truck figures are partly blank; the Election Warrant vote tally is illegible (outcome not stated); the Executive Session motion records no vote tally; no closing adjournment is recorded. Unnamed department heads gave reports and are not listed as attendees. The signature block (Claire M. Peterson / Elaine M. Peterson) is not treated as attendance.",
+ "cost_usd": 0.01661442,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey"
+  },
+  {
+   "name": "Todd Dwyer",
+   "status": "present",
+   "quote": "adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "status": "present",
+   "quote": "adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; brandon kibbe, open space committee chair;"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "Open Space Committee Chair",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; brandon kibbe, open space committee chair;"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Conservation Commission Chair",
+   "status": "present",
+   "quote": "bob pease, conservation commission chair; adam costa, town counsel; joel normandin,"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "bob pease, conservation commission chair; adam costa, town counsel; joel normandin,"
+  },
+  {
+   "name": "Joel Normandin",
+   "status": "present",
+   "quote": "bob pease, conservation commission chair; adam costa, town counsel; joel normandin,"
+  },
+  {
+   "name": "Cesira Newcomb",
+   "status": "present",
+   "quote": "cesira newcomb, james xarras, margot xarras, sean o'neill"
+  },
+  {
+   "name": "James Xarras",
+   "status": "present",
+   "quote": "cesira newcomb, james xarras, margot xarras, sean o'neill"
+  },
+  {
+   "name": "Margot Xarras",
+   "status": "present",
+   "quote": "cesira newcomb, james xarras, margot xarras, sean o'neill"
+  },
+  {
+   "name": "Sean O'Neill",
+   "role": "Bright Farms representative",
+   "status": "present",
+   "quote": "bright farms representative sean o'neill joined the meeting."
+  },
+  {
+   "name": "Susanna Jewell",
+   "role": "Park Commissioner",
+   "status": "present",
+   "quote": "park commissioners present: susanna jewell, dave passios, karin menard"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Park Commissioner",
+   "status": "present",
+   "quote": "park commissioners present: susanna jewell, dave passios, karin menard"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Park Commissioner",
+   "status": "present",
+   "quote": "park commissioners present: susanna jewell, dave passios, karin menard"
+  },
+  {
+   "name": "Jerry Lanni",
+   "role": "Applicant and proposed manager",
+   "status": "present",
+   "quote": "applicant and proposed manager jerry lanni presented for this request."
+  },
+  {
+   "name": "Christopher Sullivan",
+   "status": "present",
+   "quote": "mr. sullivan stated he has been a resident for over 15 years and had children in various"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "status": "present",
+   "quote": "rhonda lisio, 181 reservoir road, expressed dissatisfaction with town departments about"
+  },
+  {
+   "name": "Dave Rodgers",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, suggested town manager speak with attorney rob"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Attorney Costa will draft the agreement for the 250 Howard Street donation in lieu of the Town exercising its First Right of Refusal and contact all concerned; members agreed on this method by straw poll.",
+   "quote": "a straw poll was taken from the members on this method. all members supported it."
+  },
+  {
+   "decision": "Further discussion on the town-owned properties (111 Mulpus Road Rear, 970 NW Townsend Road Rear, 671 West Street) to be held at another meeting.",
+   "quote": "there will be more discussion about these properties at another meeting."
+  },
+  {
+   "decision": "Chair Alonzo directed that Ms. Lemieux provide both an eight-year and a ten-year TIF agreement for Bright Farms.",
+   "quote": "mr. alonzo suggested ms. lemieux provide an eight and a ten year tif agreement."
+  },
+  {
+   "decision": "The Board decided to keep the 6-8 p.m. Halloween trick-or-treat hours and strongly recommend that people follow federal and state health guidelines.",
+   "quote": "it was decided to keep the 6-8 p.m. hours and strongly recommend that"
+  },
+  {
+   "decision": "Chair Alonzo will work with the Town Manager to schedule an agenda item on the old Primary School, as requested by Ms. Adams.",
+   "quote": "ms. adams would like to put articles on a future agenda; such as the old primary school."
+  },
+  {
+   "decision": "Three Board members will go to the office the next morning to sign the Bond Anticipation Note renewal document.",
+   "quote": "three board members will need to come into the office tomorrow morning to sign the document."
+  },
+  {
+   "decision": "Town Manager to prepare the Pratt Street abutter sale question for the board; the Board discussed offering the town land to other abutters, with no decision recorded.",
+   "quote": "abutter who wants to purchase the approximately 100 x 150 foot area lives at 78 pratt street"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Bond Anticipation Note renewal - Purchase of Saliba Property",
+   "what_was_recorded": "The Finance Director summarized the Saliba property BAN renewal: amount authorized, state grants, FY21 pay down, and the resulting renewal amount.",
+   "figures_as_printed": [
+    "$ 782,000.00",
+    "$ (500,000.00)",
+    "$(56,400.00)",
+    "$ 225,600.00"
+   ],
+   "quote": "amount authorized $ 782,000.00 grants received from state $ (500,000.00)"
+  },
+  {
+   "topic": "Bond Anticipation Note renewal - Ladder Truck and total renewal",
+   "what_was_recorded": "The BAN summary gave the ladder truck renewal figures, the total BAN renewal, and the interest rate and term.",
+   "figures_as_printed": [
+    "$ 480,495.00",
+    "$(96,099.00)",
+    "$ 384,396.00",
+    "$ 609,996.00",
+    "$ 3,588.98"
+   ],
+   "quote": "total ban renewal dated 10/15/2020, due 10/14/2021 interest @ .59% for 359 days"
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Chair reported signing three warrants the prior week: accounts payable, payroll deduction, and payroll.",
+   "figures_as_printed": [
+    "$970,902.40",
+    "$30,057.19",
+    "$842,978.23"
+   ],
+   "quote": "accounts payable warrant #15 21, dated 9/29/2020, in the amount of $970,902.40"
+  },
+  {
+   "topic": "FY20 free cash projection",
+   "what_was_recorded": "The Finance Director reported the projected FY20 free cash amount after the balance sheet went to DLS.",
+   "figures_as_printed": [
+    "$1.6 to $1.7 M"
+   ],
+   "quote": "the projected free cash amount is anticipated to be $1.6 to $1.7 m."
+  },
+  {
+   "topic": "New Growth certified",
+   "what_was_recorded": "The Principal Assessor reported New Growth certified at a figure that is above the amount reported at ATM.",
+   "figures_as_printed": [
+    "$308,732",
+    "$135, 332"
+   ],
+   "quote": "it was certified on october 15 at $308,732. this is $135, 332 more than"
+  },
+  {
+   "topic": "Bright Farms TIF - project investment",
+   "what_was_recorded": "The first phase of the Bright Farms project was estimated at a ten million dollar investment under a proposed ten-year TIF.",
+   "figures_as_printed": [
+    "ten million dollar"
+   ],
+   "quote": "estimated value of a ten million dollar investment."
+  },
+  {
+   "topic": "Bright Farms TIF - projection table",
+   "what_was_recorded": "A projection table showed estimated base property tax, incremental assessed value, property tax, and TIF savings to the company over the period.",
+   "figures_as_printed": [
+    "$ 16,036",
+    "$ 160,360",
+    "$ 10,000,000",
+    "$ 181,200",
+    "$ 996,600.00",
+    "$ 815,400.00"
+   ],
+   "quote": "$ 996,600.00 $ 815,400.00"
+  },
+  {
+   "topic": "Reimbursing school bus companies",
+   "what_was_recorded": "A resident objected to the Select Board's action to reimburse school bus companies for services during the Covid-19 school shutdown.",
+   "figures_as_printed": [],
+   "quote": "reimbursing school bus companies for services due to the shutdown of school due to covid-19."
+  },
+  {
+   "topic": "Lobsters for Lunenburg fundraiser",
+   "what_was_recorded": "The Chair announced a fundraiser whose profits go to the Lunenburg Police & Fire Association.",
+   "figures_as_printed": [],
+   "quote": "all profits will go to"
+  },
+  {
+   "topic": "CARES Act and FEMA reimbursement requests",
+   "what_was_recorded": "The Finance Director was working with Public Safety coordinators on a FEMA reimbursement request to MEMA due October 15th; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "coordinators to submit a fema reimbursement request to mema by october 15th."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Adams",
+   "topic": "well wishes for teachers, students and parents",
+   "quote": "ms. adams' thoughts went out to the school teachers, students and parents during these"
+  },
+  {
+   "speaker": "Ms. Lemieux",
+   "topic": "voter registration deadline and early voting hours",
+   "quote": "ms. lemieux announced from the town clerk office: the last day to register to vote is saturday,"
+  },
+  {
+   "speaker": "Rhonda Lisio",
+   "topic": "garage on her property and school bus reimbursements",
+   "quote": "rhonda lisio, 181 reservoir road, expressed dissatisfaction with town departments about"
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "topic": "Lobsters for Lunenburg fundraiser",
+   "quote": "mr. alonzo reminded all about the fundraiser \"lobsters for lunenburg.\""
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "topic": "671 West Street property sales and Bright Farms TIF projections",
+   "quote": "dave rodgers, 82 highland street, suggested town manager speak with attorney rob"
+  },
+  {
+   "speaker": "Mr. Jeffreys",
+   "topic": "gym purposes as a town priority for the TCP building",
+   "quote": "mr. jeffreys clarified that all gym purposes are considered a high priority for the town and"
+  },
+  {
+   "speaker": "Ms. Adams",
+   "topic": "story about kindergarten children",
+   "quote": "ms. adams related a story told to her by a teacher about kindergarten children who hadn't met before reaching out to each other."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order, announcements and public comment",
+   "resolution": "no action",
+   "quote": "chairman alonzo called the meeting to order at 7:01 p.m.",
+   "tags": [
+    "public comment",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public hearing - Wine & Malt Package Store License, Lanni Orchards, 294 Chase Road",
+   "resolution": "approved 5-0",
+   "quote": "applicant and proposed manager jerry lanni presented for this request.",
+   "tags": [
+    "liquor license",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Joint meeting - appointment of Christopher Sullivan to Parks Commission",
+   "resolution": "appointed 8-0",
+   "quote": "joint meeting of the select board and park commission for appointment of christopher",
+   "tags": [
+    "appointment",
+    "Parks Commission"
+   ]
+  },
+  {
+   "topic": "Notice of First Right of Refusal, 250 Howard Street (Chapter 61)",
+   "resolution": "agreement to be drafted by counsel; no vote recorded",
+   "quote": "notice of first right of refusal for chapter 61 property located at 250 howard street",
+   "tags": [
+    "town land",
+    "right of first refusal",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Town-owned properties: 111 Mulpus Road Rear, 970 NW Townsend Road Rear, 671 West Street",
+   "resolution": "continued to another meeting",
+   "quote": "discussion on town-owned properties including 111 mulpus road rear, 970 nw",
+   "tags": [
+    "town land",
+    "warrant articles",
+    "Conservation Commission"
+   ]
+  },
+  {
+   "topic": "Amended liquor license transfer, Embers Lounge & Restaurant LLC d/b/a Embers Pizzeria",
+   "resolution": "approved 4-1 on reconsideration",
+   "quote": "amended liquor license application to transfer an all alcohol on premise license to",
+   "tags": [
+    "liquor license",
+    "ABCC"
+   ]
+  },
+  {
+   "topic": "Meeting with Bright Farms on Tax Increment Financing Agreement",
+   "resolution": "Town Manager to provide eight- and ten-year TIF options",
+   "quote": "meeting with bright farms to discuss tax increment financing agreement",
+   "tags": [
+    "TIF",
+    "economic development",
+    "Bright Farms"
+   ]
+  },
+  {
+   "topic": "Sale of town land at 78 Pratt Street abutter (heading cut off in scan)",
+   "resolution": "discussed; no action recorded",
+   "quote": "abutter who wants to purchase the approximately 100 x 150 foot area lives at 78 pratt street",
+   "tags": [
+    "town land",
+    "abutters"
+   ]
+  },
+  {
+   "topic": "Resignations: Todd Dwyer, Laura Brzozoski, Tanner Cole",
+   "resolution": "acknowledged; letters of thanks to be sent",
+   "quote": "letters of thanks will be sent to all.",
+   "tags": [
+    "resignations",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Halloween trick-or-treat hours",
+   "resolution": "kept 6-8 p.m. hours; health guidance recommended",
+   "quote": "it was decided to keep the 6-8 p.m. hours and strongly recommend that",
+   "tags": [
+    "Halloween",
+    "COVID-19"
+   ]
+  },
+  {
+   "topic": "Bond Anticipation Note renewal signing",
+   "resolution": "three members to sign",
+   "quote": "vote to sign bond anticipation note (ban) renewal",
+   "tags": [
+    "BAN",
+    "borrowing"
+   ]
+  },
+  {
+   "topic": "Warrants signed by the Chair",
+   "resolution": "reported",
+   "quote": "mr. alonzo reported he signed the following warrants last week:",
+   "tags": [
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Sign November 3, 2020 Election Warrant",
+   "resolution": "motion recorded; result not stated",
+   "quote": "sign november 3, 2020 election warrant",
+   "tags": [
+    "election"
+   ]
+  },
+  {
+   "topic": "Action items - future agenda request (old Primary School)",
+   "resolution": "Chair to schedule with Town Manager",
+   "quote": "ms. adams would like to put articles on a future agenda; such as the old primary school.",
+   "tags": [
+    "agenda",
+    "old Primary School"
+   ]
+  },
+  {
+   "topic": "Committee reports - TCP Building Design Committee",
+   "resolution": "reported; no action",
+   "quote": "mr. jeffreys reported the tcp building design committee (tcpbdc) met and their focus has",
+   "tags": [
+    "TCP building",
+    "committee report"
+   ]
+  },
+  {
+   "topic": "Announcement on existing vacancies",
+   "resolution": "announced",
+   "quote": "announcement on existing vacancies:",
+   "tags": [
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Meetings, events and other announcements",
+   "resolution": "announced",
+   "quote": "meetings, events and other announcements",
+   "tags": [
+    "meetings",
+    "flu clinic"
+   ]
+  },
+  {
+   "topic": "COVID-19 update",
+   "resolution": "reported",
+   "quote": "covid-19 in lunenburg and board of health notices:",
+   "tags": [
+    "COVID-19",
+    "reopening"
+   ]
+  },
+  {
+   "topic": "Public comment (second session)",
+   "resolution": "no action",
+   "quote": "dave rodgers, 82 highland street, suggested town manager speak with attorney rob",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session; motion recorded, result not stated",
+   "quote": "mr. alonzo announced the board would be entering executive session.",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Ms. Lemieux's memo dated July 14th (TIF)",
+   "where": "list",
+   "quote": "from ms. lemieux's memo dated july 14th."
+  },
+  {
+   "name": "Bond Anticipation Note Renewal dated 10/15/2020, due 10/14/2021",
+   "where": "text",
+   "quote": "below is a summary of the bond anticipation note renewal dated 10/15/2020, due 10/14/2021:"
+  },
+  {
+   "name": "Public hearing notice, Lunenburg Licensing Authority (Lanni Orchards Inc.)",
+   "where": "text",
+   "quote": "the lunenburg licensing authority will hold a public hearing on tuesday, october 6, 2020 at 7:05"
+  },
+  {
+   "name": "Lanni Orchards Inc. wine & malt license application",
+   "where": "text",
+   "quote": "on the application submitted by lanni orchards inc., d/b/a lanni"
+  },
+  {
+   "name": "Amended transfer application, Embers Pizzeria (84 Lakefront St.)",
+   "where": "text",
+   "quote": "the application has been amended to show margot xarras having 100% interest in the alcohol license"
+  },
+  {
+   "name": "Notice of First Right of Refusal, 250 Howard Street (Chapter 61)",
+   "where": "text",
+   "quote": "notice of first right of refusal for chapter 61 property located at 250 howard street"
+  },
+  {
+   "name": "Warrant articles for Special Town Meeting (two, on 671 West Street and town parcels)",
+   "where": "text",
+   "quote": "there are two warrant articles submitted to accomplish that at special town meeting."
+  },
+  {
+   "name": "Accounts Payable Warrant #15 21, dated 9/29/2020",
+   "where": "text",
+   "quote": "accounts payable warrant #15 21, dated 9/29/2020, in the amount of $970,902.40"
+  },
+  {
+   "name": "Payroll Deduction Warrant #16 21, dated 9/30/2020",
+   "where": "text",
+   "quote": "payroll deduction warrant #16 21, dated 9/30/2020, in the amount of $30,057.19"
+  },
+  {
+   "name": "Bright Farms TIF projection table",
+   "where": "text",
+   "quote": "*projected assessed values shown are estimated, actual assessed values to be determined by the assessor."
+  },
+  {
+   "name": "Detailed report to the Division of Local Services (CARES Act)",
+   "where": "text",
+   "quote": "had to submit a detailed report to the division of local services"
+  },
+  {
+   "name": "Governor's Executive Order #51",
+   "where": "text",
+   "quote": "the governor announced on september 29th through executive order #51 that effective monday,"
+  },
+  {
+   "name": "Governor's Executive Order #52 (revised gatherings order)",
+   "where": "text",
+   "quote": "the governor issued a revised gatherings order through executive order #52 on september 29 that"
+  }
+ ],
+ "tags": [
+  "select board",
+  "liquor license",
+  "Lanni Orchards",
+  "Embers Pizzeria",
+  "Parks Commission appointment",
+  "right of first refusal",
+  "town land",
+  "Bright Farms",
+  "tax increment financing",
+  "bond anticipation note",
+  "warrants",
+  "election",
+  "Halloween",
+  "COVID-19",
+  "public comment",
+  "executive session",
+  "budget",
+  "free cash",
+  "new growth",
+  "school bus reimbursement"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "from ms. lemieux's memo dated july 14th."
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

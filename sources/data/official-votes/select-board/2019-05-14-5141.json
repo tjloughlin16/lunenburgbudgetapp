@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-05-14",
  "docid": "5141",
@@ -12,74 +12,474 @@
  },
  "votes": [
   {
-   "motion": "Enter executive session pursuant to M.G.L. c. 30 § 21, Reason #6, to consider purchase, exchange, taking, lease, or value of real property (Northfield Road, Howard Street, New West Townsend Road)",
-   "moved_by": "McQuaid",
-   "seconded_by": "Luck",
+   "motion": "Enter executive session under M.G.L. c. 30 § 21, Reason #6, to discuss purchase, exchange, taking, lease or value of real property (Northfield Road, Howard Street, New West Townsend Road) and reenter open session afterwards.",
+   "moved_by": "Mr. MeQuaid",
+   "seconded_by": "Ms. Luck",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "mr. mequaid made the motion and ms. luck seconded it. vote: ms. luck- aye, mr. mcquaid-aye, mr. toale-aye"
   },
   {
-   "motion": "Approve the entertainment license for the Lunenburg Arts Festival from 10 a.m. to 3 p.m. on June 8 with rain date June 9, including setup/breakdown times and waiving license fees",
-   "moved_by": "McQuaid",
-   "seconded_by": "Luck",
+   "motion": "Approve the entertainment license for the Lunenburg Arts Festival (June 8, rain date June 9, 10 a.m. to 3 p.m.), as amended to allow setup/breakdown and to waive the license fees.",
+   "moved_by": "D. MeQuaid",
+   "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
    "quote": "mr. mequaid amended his motion to allow for setup/breakdown and to waive the license fees. ms. luck seconded the amendment. vote: all in favor"
   },
   {
-   "motion": "Remain the Town Manager's self-evaluation in the performance review composite document",
-   "moved_by": "Luck",
-   "seconded_by": "Adams",
-   "outcome": "failed 2-2 with 2 abstentions",
-   "procedural": true,
-   "quote": "ms. luck stated she would like to change the motion to say that the town manager's self- evaluation remain included in the document. ms. adams seconded the motion",
-   "quote_taken_from_text": true
+   "motion": "That the Town Manager's self-evaluation be removed from the Town Manager review document so that it is a consensus (Ms. Luck then proposed changing it to say the self-evaluation remain included).",
+   "moved_by": "P. Luck",
+   "seconded_by": "K. Adams",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "that the town manager's self-evaluation be removed from this document so that it is a consensus"
   },
   {
-   "motion": "Include the numerical compilation of the Town Manager evaluation with the tabulation of 80% as part of the composite document",
-   "moved_by": "Adams",
-   "seconded_by": "Luck",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: k. adams 2nd: p. luck to include the numerical compilation of the town manager evaluation with the tabulation of 80% as part of the review document di",
-   "quote_taken_from_text": true
+   "motion": "To include the numerical compilation of the Town Manager evaluation with the tabulation of 80% as part of the review document (motion later withdrawn).",
+   "moved_by": "K. Adams",
+   "seconded_by": "P. Luck",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "to include the numerical compilation of the town manager evaluation with the tabulation of 80% as part of the review document"
   },
   {
-   "motion": "Board signs and submits to the Town Manager the composite with sources identified that did not come from the four members evaluations",
-   "moved_by": "Adams",
-   "seconded_by": "Luck",
-   "outcome": "failed 2-2",
-   "procedural": true,
-   "quote": "that the board signs and submits to the town manager the composite with sources identified that did not come from the four members evaluations"
-  },
-  {
-   "motion": "Endorse the amended Town Manager performance evaluation with the statement and italicized sections",
-   "moved_by": "McQuaid",
-   "seconded_by": "Luck",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: d. mcquaid to endorse the amended town manager performance evaluation with the statement and italicized sections 2nd: p. luck vote: all in favor"
-  },
-  {
-   "motion": "Authorize Town Manager to sign a Memorandum of Understanding to have MRPC apply for the Regional Assistance Grant",
-   "moved_by": "McQuaid",
-   "seconded_by": "Luck",
+   "motion": "To include the numerical compilation of the Town Manager evaluation with the tabulation of 80% as part of the composite document.",
+   "moved_by": "K. Adams",
+   "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: d. mcquaid 2nd: p. luck to authorize town manager to sign a memorandum of understanding to have mrpc apply for the regional assistance grant vote: all in favor"
+   "quote": "discussion ensued again about the process. vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "McQuaid",
-   "seconded_by": "Luck",
+   "motion": "That the Board signs and submits to the Town Manager the composite with sources identified that did not come from the four members evaluations.",
+   "moved_by": "K. Adams",
+   "seconded_by": "P. Luck",
+   "outcome": "failed",
+   "procedural": false,
+   "quote": "vote: 2 in favor, 2 opposed the motion fails."
+  },
+  {
+   "motion": "Endorse the amended Town Manager performance evaluation with the statement and italicized sections.",
+   "moved_by": "D. McQuaid",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to endorse the amended town manager performance evaluation with the statement and italicized sections 2nd: p. luck vote: all in favor"
+  },
+  {
+   "motion": "Authorize the Town Manager to sign a Memorandum of Understanding to have MRPC apply for the Regional Assistance Grant (Regional Energy Planning Assistance Grant).",
+   "moved_by": "D. McQuaid",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to authorize town manager to sign a memorandum of understanding to have mrpc apply for the regional assistance grant vote: all in favor"
+  },
+  {
+   "motion": "Adjourn the meeting at 11:06 p.m.",
+   "moved_by": "D. McQuaid",
+   "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: d. mcquaid to adjourn the meeting at 11:06 p.m. 2nd. p. luck vote: all in favor",
-   "quote_taken_from_text": true
+   "quote": "to adjourn the meeting at 11:06 p.m. 2nd. p. luck vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan with minor artifacts. Vote on motion 3 shows \"Motion tails\" which appears to be OCR error for \"Motion fails.\" Minutes noted as received and filed July 24, 2019. Town election announced for May 18, 2019.",
- "cost_usd": 0.17703249999999998
+ "note": "OCR from macOS Vision, several garbled passages. Chairman is printed as 'Jamie loale' in the attendance line and 'Mr. Toale' in the text; names are kept as printed. Page 3 speaker for the Representative Benson statement is garbled ('Douallan') and is not recorded as a speaker. Page 6 is largely garbled. The first motion on the removal of the self-evaluation has no recorded result. The 'Vote: 2 Nay, 2 Abstain' line on page 7 is garbled and tied to a motion that was then withdrawn, so its outcome is 'not stated'. The minutes say the Board's first motion on the composite includes an 'Motion tails' OCR artifact. Minutes received-filed stamp dated JUL 24 2019. No documents list is printed.",
+ "cost_usd": 0.013065120000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie loale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen present: jamie loale, chairman, damon mcquala, vice chairman,"
+  },
+  {
+   "name": "Damon Mcquala",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen present: jamie loale, chairman, damon mcquala, vice chairman,"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "phyllis luck, clerk; katey adams, member"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "phyllis luck, clerk; katey adams, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others present: town manager heather lemieux"
+  },
+  {
+   "name": "Laura Bizozoski",
+   "role": "Cultural Council member",
+   "status": "present",
+   "quote": "cultural council member laura bizozoski, 21 francis avenue, presented for the june 8 request."
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "quarterly financial report - finance director karen brochu"
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "tom alonzo, 284 lancaster avenue, addressing mr. toale, stated six years ago before you ran"
+  },
+  {
+   "name": "Paul Luria",
+   "status": "present",
+   "quote": "paul luria, 63 pratt street, expressed concern about rocks in the road at pleasant street and"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Council on Aging Director",
+   "status": "present",
+   "quote": "sue doherty, council on aging director, thanked mr. toale for being a great role model and"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "COA member",
+   "status": "present",
+   "quote": "jane rabbitt, 314 townsend harbor road, coa member, thanked him for his service and stated"
+  },
+  {
+   "name": "Benson",
+   "role": "Representative",
+   "status": "absent",
+   "quote": "expressed representative's benson's regrets at not being able to attend tonight"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board approved the minutes of March 19, 2019 (no motion recorded in the minutes).",
+   "quote": "minutes of march 19, 2019 were approved."
+  },
+  {
+   "decision": "The Board signed the accounts payable, payroll and payroll deductions warrants.",
+   "quote": "the board signed an accounts payable warrant in the amount of $671,480.18, a payroll warrant in the amount of $784,878.50 and a payroll deductions warrant in the amount of $28,221.30."
+  },
+  {
+   "decision": "The Board signed the fiscal year 2019 4th Quarter Water Billing Commitment.",
+   "quote": "the board signed the fiscal year 2019 4' quarter water billing commitment in the amount of $7908.50."
+  },
+  {
+   "decision": "Town Manager Lemieux will speak to the DPW Director about the rocks in the road complaint.",
+   "quote": "ms. lemieux will be speaking to the dp w director."
+  },
+  {
+   "decision": "Town Manager Lemieux will follow up with Police Chief Marino about making the Massachusetts Avenue and Electric Avenue intersection less dangerous.",
+   "quote": "ms. lemieux will follow up with police chief marino."
+  },
+  {
+   "decision": "The Board will sign the amended Town Manager performance evaluation in the office and sign a clean copy once printed.",
+   "quote": "the board signed the amended version and will sign a clean copy once printed."
+  },
+  {
+   "decision": "Mr. Toale announced the new salary for Town Manager Lemieux as a result of the performance review.",
+   "quote": "the new salary for ms. lemieux will be $129,765.00."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Manager warrants signed",
+   "what_was_recorded": "The Board signed three warrants: accounts payable, payroll and payroll deductions.",
+   "figures_as_printed": [
+    "$671,480.18",
+    "$784,878.50",
+    "$28,221.30"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $671,480.18, a payroll warrant in the amount of $784,878.50 and a payroll deductions warrant in the amount of $28,221.30."
+  },
+  {
+   "topic": "Water billing commitment",
+   "what_was_recorded": "The Board signed the FY2019 4th Quarter Water Billing Commitment.",
+   "figures_as_printed": [
+    "$7908.50"
+   ],
+   "quote": "the board signed the fiscal year 2019 4' quarter water billing commitment in the amount of $7908.50."
+  },
+  {
+   "topic": "Quarterly revenue collections",
+   "what_was_recorded": "Total revenue collections through 3/31/19 were reported as a share of FY19 estimates.",
+   "figures_as_printed": [
+    "$31,202,799.72",
+    "76.76%"
+   ],
+   "quote": "total collections to date are $31,202,799.72, or 76.76% of fy 19 estimates"
+  },
+  {
+   "topic": "Local receipts",
+   "what_was_recorded": "Local receipts collected were reported as a share of FY19 Local Receipt estimates.",
+   "figures_as_printed": [
+    "$2,438,144.46",
+    "81%"
+   ],
+   "quote": "we have collected $2,438,144.46 or 81%"
+  },
+  {
+   "topic": "Elections account overage",
+   "what_was_recorded": "The Elections account showed an overage as of 3/31/19, since eliminated by state funds.",
+   "figures_as_printed": [
+    "$2,053.44"
+   ],
+   "quote": "this account shows an overage of $2,053.44."
+  },
+  {
+   "topic": "Snow removal deficit",
+   "what_was_recorded": "Snow Removal showed a deficit as of 3/31/19, to be eliminated by a budget adjustment article at Annual Town Meeting.",
+   "figures_as_printed": [
+    "$53,777.44"
+   ],
+   "quote": "there is a deficit in this account in the amount of $53,777.44."
+  },
+  {
+   "topic": "Vehicle Maintenance - Fire",
+   "what_was_recorded": "Costly repairs to Engine 4 left the Fire vehicle maintenance appropriation short; a budget adjustment is expected at Town Meeting. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "due to costly repairs to engine 4, there is an insufficient amount in this appropriation"
+  },
+  {
+   "topic": "Year-end free cash outlook",
+   "what_was_recorded": "Finance Director anticipated free cash similar to last year's certified amount. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "have free cash somewhat similar to what was certified last year."
+  },
+  {
+   "topic": "Green Communities competitive grant closeout",
+   "what_was_recorded": "Closeout of the competitive grant the Town received, totaling approximately $198,000.",
+   "figures_as_printed": [
+    "$198,000"
+   ],
+   "quote": "competitive grant the town received totaling approximately $198,000."
+  },
+  {
+   "topic": "Education and Enforcement Coordinator grant",
+   "what_was_recorded": "A MassDEP grant of $30,000 for a part-time coordinator shared with Townsend, requiring a 25% match of $3,750 split between communities, possibly from Casella educational contractual amount.",
+   "figures_as_printed": [
+    "$30,000",
+    "25%",
+    "$3,750"
+   ],
+   "quote": "we could apply with the town of townsend to split a part-time position with a grant amount of $30,000."
+  },
+  {
+   "topic": "Town Manager salary",
+   "what_was_recorded": "The new salary for the Town Manager following the performance review.",
+   "figures_as_printed": [
+    "$129,765.00"
+   ],
+   "quote": "the new salary for ms. lemieux will be $129,765.00."
+  },
+  {
+   "topic": "Road rocks at taxpayers' expense",
+   "what_was_recorded": "Public comment noted DPW cleaned up rocks in the road at the taxpayers' expense. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "they have gone out and cleaned it up at the taxpayers' expense."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "",
+   "topic": "farewell to Chairman Toale; Lane Collection presentation; Election Day",
+   "quote": "tom alonzo, 284 lancaster avenue, addressing mr. toale, stated six years ago before you ran"
+  },
+  {
+   "speaker": "Paul Luria",
+   "stated_role": "",
+   "topic": "rocks in road at Pleasant Street and Massachusetts Avenue",
+   "quote": "paul luria, 63 pratt street, expressed concern about rocks in the road at pleasant street and"
+  },
+  {
+   "speaker": "Sue Doherty",
+   "stated_role": "Council on Aging Director",
+   "topic": "thanks to Mr. Toale for service and Memorial Day ceremonies",
+   "quote": "sue doherty, council on aging director, thanked mr. toale for being a great role model and"
+  },
+  {
+   "speaker": "Jane Rabbitt",
+   "stated_role": "COA member",
+   "topic": "thanks to Mr. Toale for service; Action Team",
+   "quote": "jane rabbitt, 314 townsend harbor road, coa member, thanked him for his service and stated"
+  },
+  {
+   "speaker": "Sue Doherty",
+   "stated_role": "COA Director",
+   "topic": "praise for Town Manager and department heads during review",
+   "quote": "sue doherty, coa director, stated she did not mean to stay this late but as the discussion went"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session at 6:00 PM",
+   "quote": "mr. toale opened the meeting at 6:00 pm and asked for a motion to enter into executive",
+   "tags": [
+    "executive session",
+    "real estate"
+   ]
+  },
+  {
+   "topic": "Public comment and farewell to Chairman Toale",
+   "resolution": "no action",
+   "quote": "ms. adams thanked mr. toale for his service as selectman.",
+   "tags": [
+    "public comment",
+    "farewell"
+   ]
+  },
+  {
+   "topic": "Entertainment license, Lunenburg Arts Festival",
+   "resolution": "approved as amended; setup/breakdown allowed and fees waived",
+   "quote": "ms. adams suggested allowing for the set up and breakdown times.",
+   "tags": [
+    "entertainment license",
+    "events"
+   ]
+  },
+  {
+   "topic": "Quarterly financial report, third quarter FY19",
+   "resolution": "received; no action",
+   "quote": "ms. brochu stated this is the report for the end of the third quarter of the fiscal year, ending",
+   "tags": [
+    "finance",
+    "quarterly report"
+   ]
+  },
+  {
+   "topic": "Town Manager performance review and annual increase",
+   "resolution": "amended evaluation endorsed; new salary announced",
+   "quote": "the board signed the amended version and will sign a clean copy once printed.",
+   "tags": [
+    "town manager review",
+    "salary"
+   ]
+  },
+  {
+   "topic": "Walkability focus-area walk-through",
+   "resolution": "announced; no action",
+   "quote": "the public meeting to perform a walk through of the two focus areas (whalom and",
+   "tags": [
+    "planning",
+    "walkability"
+   ]
+  },
+  {
+   "topic": "Green Communities update and MOU",
+   "resolution": "MOU authorized",
+   "quote": "to authorize town manager to sign a memorandum of understanding to have mrpc",
+   "tags": [
+    "green communities",
+    "energy grant"
+   ]
+  },
+  {
+   "topic": "Education and Enforcement Coordinator grant",
+   "resolution": "discussed; Board of Health to act; no vote",
+   "quote": "i reached out to the board of health and they have a meeting scheduled",
+   "tags": [
+    "recycling",
+    "grant",
+    "hauler regulations"
+   ]
+  },
+  {
+   "topic": "Town Manager's report: upcoming meetings",
+   "resolution": "no action",
+   "quote": "i will be attending a dispatch administration board meeting on wednesday,",
+   "tags": [
+    "town manager report"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "minutes approved; warrants signed",
+   "quote": "minutes of march 19, 2019 were approved.",
+   "tags": [
+    "minutes",
+    "warrants",
+    "action items"
+   ]
+  },
+  {
+   "topic": "Second public comment and farewells",
+   "resolution": "no action",
+   "quote": "sue doherty, coa director, stated she did not mean to stay this late but as the discussion went",
+   "tags": [
+    "public comment",
+    "farewell"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:06 p.m.",
+   "quote": "to adjourn the meeting at 11:06 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Manager's self-evaluation",
+   "where": "text",
+   "quote": "she feels the town manager's self-evaluation should not be inserted into the final bos consensus document."
+  },
+  {
+   "name": "Draft composite (BOS consensus document) for Town Manager performance review",
+   "where": "text",
+   "quote": "the board reviewed a draft composite at their last meeting"
+  },
+  {
+   "name": "Quarterly Financial Report, third quarter FY19",
+   "where": "text",
+   "quote": "quarterly financial report - finance director karen brochu"
+  },
+  {
+   "name": "Memorandum of Understanding with MRPC for Regional Energy Planning Assistance Grant",
+   "where": "text",
+   "quote": "requesting the selectmen authorize me to sign a memorandum of understanding to have mrpc"
+  },
+  {
+   "name": "Budget adjustment article at Annual Town Meeting (snow removal)",
+   "where": "text",
+   "quote": "there will be a budget adjustment article at the annual town meeting to eliminate this deficit."
+  },
+  {
+   "name": "Town Charter",
+   "where": "text",
+   "quote": "the town charter states the administration of all the fiscal, prudential and municipal"
+  }
+ ],
+ "tags": [
+  "town manager review",
+  "executive session",
+  "entertainment license",
+  "quarterly financials",
+  "green communities grant",
+  "recycling grant",
+  "warrants",
+  "farewell",
+  "public comment",
+  "roads",
+  "budget"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

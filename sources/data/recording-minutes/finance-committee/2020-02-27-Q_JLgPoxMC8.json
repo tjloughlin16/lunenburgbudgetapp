@@ -1,0 +1,484 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "finance-committee",
+ "board": "Finance Committee",
+ "video_title": "Finance Committee",
+ "meeting_date": "2020-02-27",
+ "video_id": "Q_JLgPoxMC8",
+ "video_url": "https://www.youtube.com/watch?v=Q_JLgPoxMC8",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2020-02-27-Q_JLgPoxMC8.json",
+  "sha256": "4938c91ccde0a1281bca43ec0708e7062d6fe10ffa3ccb2e69f7e34b2f51ad95",
+  "caption_lines": 362,
+  "segments": 2695
+ },
+ "recording": {
+  "duration_s": 7814,
+  "duration": "2:10",
+  "spoken_chars": 96860,
+  "words_approx": 16143
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02272020-2127",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2020-02-27-agenda-2127.txt",
+   "path": "sources/meetings/finance-committee/2020-02-27-agenda-2127.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02272020-2127",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2020-02-27-minutes-2127.txt",
+   "path": "sources/meetings/finance-committee/2020-02-27-minutes-2127.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-04T07:56:46Z",
+  "cost_usd": 0.3443716
+ },
+ "minutes": {
+  "headline": "Finance Committee heard fire and police FY21 budget presentations; its only vote was a small training transfer.",
+  "summary": "The committee approved a small line-item transfer to cover more members attending trainings, by roll call with one member participating remotely. It then heard the fire chief's budget and paramedic plan and the retiring police chief's budget and ten-year plan. The town manager updated the committee on a lower new growth estimate, health insurance and dispatch assessment.",
+  "attendees": [
+   {
+    "name_as_heard": "Peter Beardmore",
+    "role": "member, secretary (remote)",
+    "remote": true
+   },
+   {
+    "name_as_heard": "chief Sullivan",
+    "role": "fire chief, presenter"
+   },
+   {
+    "name_as_heard": "chief Moreno",
+    "role": "police chief, presenter"
+   },
+   {
+    "name_as_heard": "Tom",
+    "role": "police lieutenant, presenter"
+   },
+   {
+    "name_as_heard": "Karen",
+    "role": "town accountant (as evident)"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "health-insurance",
+   "personnel",
+   "public-safety",
+   "staffing",
+   "tax-rate",
+   "town-departments",
+   "transfers"
+  ],
+  "votes": [
+   {
+    "t": 111,
+    "motion": "Transfer from the advertising line and the dues/membership line to the meetings line to cover more members attending trainings",
+    "outcome": "passed",
+    "procedural": false
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 111,
+    "topic": "Committee line transfer: advertising and dues to meetings",
+    "what_was_said": "Small amounts moved from advertising and dues to the meetings line.",
+    "figures_as_heard": [
+     "sixty dollars",
+     "$20"
+    ]
+   },
+   {
+    "t": 866,
+    "topic": "Fire call firefighter overnight two-hour minimum",
+    "what_was_said": "An above-target request for a two-hour call-back minimum was not funded by the town manager.",
+    "figures_as_heard": [
+     "ten thousand dollars"
+    ]
+   },
+   {
+    "t": 7095,
+    "topic": "New growth estimate",
+    "what_was_said": "A delayed solar project lowers the new growth estimate, and the revenue side has been adjusted.",
+    "figures_as_heard": [
+     "forty thousand six hundred dollars",
+     "193 400"
+    ]
+   },
+   {
+    "t": 7178,
+    "topic": "Health insurance rate",
+    "what_was_said": "A favorable active health insurance rate saved money for the town and the schools.",
+    "figures_as_heard": [
+     "0.66%",
+     "$45,000"
+    ]
+   },
+   {
+    "t": 7223,
+    "topic": "Regional dispatch assessment",
+    "what_was_said": "The dispatch board voted a budget below the estimate used.",
+    "figures_as_heard": [
+     "198,000 534",
+     "$15,000"
+    ]
+   },
+   {
+    "t": 7296,
+    "topic": "Overlay account",
+    "what_was_said": "The overlay may be reduced once the accountant reviews it.",
+    "figures_as_heard": [
+     "175,000"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 111,
+    "description": "From advertising line (534500) and dues/membership line (573000) to meetings line (573100)",
+    "amount_as_heard": "sixty dollars and $20",
+    "outcome": "voted"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 193,
+    "decision": "A member agreed to take notes of the meeting in case the recording failed."
+   },
+   {
+    "t": 3091,
+    "decision": "The assessing consultants' new growth presentation and the debt project will be added to the agenda for the next week."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 4,
+    "t_end": 234,
+    "topic": "Call to order, remote participation, line transfer",
+    "resolution": "voted",
+    "tags": [
+     "transfers"
+    ]
+   },
+   {
+    "t_start": 234,
+    "t_end": 398,
+    "topic": "Member comment on remote participation support",
+    "resolution": "informational",
+    "tags": [
+     "technology"
+    ]
+   },
+   {
+    "t_start": 398,
+    "t_end": 3019,
+    "topic": "Fire department FY21 budget, paramedic plan, capital",
+    "resolution": "informational",
+    "tags": [
+     "public-safety",
+     "budget",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 3019,
+    "t_end": 6990,
+    "topic": "Police department budget and ten-year plan",
+    "resolution": "informational",
+    "tags": [
+     "public-safety",
+     "budget",
+     "staffing"
+    ]
+   },
+   {
+    "t_start": 7095,
+    "t_end": 7690,
+    "topic": "Town manager update: new growth, health insurance, dispatch",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "tax-rate",
+     "health-insurance"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Stretches around 2580-2633 and 6667-6900 are garbled.",
+   "Exact vote tally was voiced member by member."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 1136,
+    "kind": "safety",
+    "about": "Fire staffing is at the minimum; two people are needed to go out the door.",
+    "who": "the fire chief",
+    "words_as_heard": "we need two people to do pretty much anything and that so it's really not thought option"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 173,
+    "name_as_heard": "PowerPoint presentations",
+    "kind": "presentation",
+    "words_as_heard": "PowerPoint presentations will be given to the packs"
+   },
+   {
+    "t": 3282,
+    "name_as_heard": "two documents with an error",
+    "kind": "budget document",
+    "words_as_heard": "there was an arrow made in the two documents"
+   },
+   {
+    "t": 6619,
+    "name_as_heard": "ten-year plan summary",
+    "kind": "report",
+    "words_as_heard": "this document will show everything that's included in the ten-year plan"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "fire-paramedic-staffing-plan",
+    "title": "Fire staffing plan",
+    "question": "What will the paramedic transition and added firefighters cost over the next several years?",
+    "t": 845,
+    "words_as_heard": "paramedic training in the event that we can't hire a paramedic",
+    "data_in_play": [
+     "fifteen thousand dollars a year",
+     "sixteen thousand dollars a year"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "police-staffing-plan",
+    "title": "Police staffing plan",
+    "question": "What does the police ten-year plan add each year?",
+    "t": 4253,
+    "words_as_heard": "this is what it should look like in ten years",
+    "data_in_play": [
+     "forty dollars over the target budget"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Finance Committee approved a small transfer from the advertising and dues lines to the meetings line to cover more members attending trainings.",
+    "t": 111
+   },
+   {
+    "line": "The fire chief presented the FY21 budget, a paramedic plan and capital requests; an above-target call-back minimum request was not funded by the town manager.",
+    "t": 866
+   },
+   {
+    "line": "The retiring police chief presented the department's FY21 budget and a ten-year plan; no vote was taken.",
+    "t": 3019
+   },
+   {
+    "line": "The town manager reported a lower new growth estimate because a solar project was delayed, and the revenue side has been adjusted.",
+    "t": 7095
+   },
+   {
+    "line": "The town manager also reported a favorable health insurance rate and a dispatch assessment voted below the estimate used.",
+    "t": 7178
+   }
+  ],
+  "why_it_matters": [
+   "A lower new growth estimate means less added tax revenue for FY21, while the health insurance and dispatch savings ease some cost pressure on the town and school budgets.",
+   "The fire paramedic plan and the police ten-year plan point to service and staffing commitments that will come back as budget lines at Town Meeting."
+  ],
+  "watch_next": [
+   "The assessing consultants' new growth presentation and the debt project are to be added to the committee's agenda for the following week."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-04T07:56:52Z",
+   "cost_usd": 0.025455099999999998
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02272020-2127",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2020-02-27-minutes-2127.txt",
+   "path": "sources/meetings/finance-committee/2020-02-27-minutes-2127.pdf"
+  },
+  "official_sha256": "31612c2e5ab13896017092c917b1b1d88556517c01a5b511059e818e26fb7071",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the $60 and $20 transfer to the meetings line and on the $40,600 new growth and $15K dispatch figures. Ours lacks the roll call and most members, and the official minutes omit many figures we heard (health insurance, overlay, fire call). The dues line number differs (573000 vs 53700), and the police chief's name was misheard (Moreno vs Marino).",
+  "counts": {
+   "agree": 4,
+   "caption_error": 2,
+   "discrepancy": 2,
+   "only_in_ours": 5,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Transfer of $60 and $20 from advertising and dues lines to meetings line",
+    "ours": "From advertising line (534500) and dues/membership line (573000) to meetings line (573100) — sixty dollars and $20 (voted)",
+    "official": "transfer from line item 534500, advertising ($60); and from 53700, dues membership ($20) to 573100, meetings and schools for finance committee.",
+    "note": "Same transfer and amounts and passed in both; the dues line number differs (573000 vs 53700), probably a caption or typo issue.",
+    "t": 111
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Dues/membership line number",
+    "ours": "dues/membership line (573000)",
+    "official": "transfer from line item 534500, advertising ($60); and from 53700, dues membership ($20) to 573100, meetings and schools for finance committee.",
+    "note": "Our minutes give 573000 and the official minutes give 53700; check the budget for the actual dues/membership line number.",
+    "t": 111
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Roll call vote on the transfer",
+    "ours": "",
+    "official": "john henshaw moved, jay simeone 2nd. roll call vote: peter beardmore - yes, jay simeone - yes, john henshaw - yes",
+    "note": "The official minutes record mover, seconder and a 3-0 roll call; ours only says passed.",
+    "t": 111
+   },
+   {
+    "kind": "caption_error",
+    "about": "Police chief name",
+    "ours": "chief Moreno (police chief, presenter)",
+    "official": "chief marino presented his proposed budget and a review of police department operations",
+    "note": "Same police chief; captions misheard Marino as Moreno.",
+    "official_reading": "Marino"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Police lieutenant name",
+    "ours": "Tom (police lieutenant, presenter)",
+    "official": "lieutenant thomas gammel outlined the departments in-service training",
+    "note": "Same person; first name only in ours.",
+    "official_reading": "Thomas Gammel"
+   },
+   {
+    "kind": "agree",
+    "about": "Fire chief Sullivan presented",
+    "ours": "chief Sullivan (fire chief, presenter)",
+    "official": "chief sullivan presented his proposed budget and a review of fire department operations",
+    "note": "Both record Chief Sullivan presenting.",
+    "t": 866
+   },
+   {
+    "kind": "agree",
+    "about": "Peter Beardmore attended remotely as secretary",
+    "ours": "Peter Beardmore (member, secretary (remote))",
+    "official": "peter beardmore commented that he was disappointed with support from the town technology department to help facilitate remote participation",
+    "note": "Both show him remote.",
+    "t": 193
+   },
+   {
+    "kind": "agree",
+    "about": "New growth solar delay figures",
+    "ours": "New growth estimate: forty thousand six hundred dollars, 193 400",
+    "official": "the town manager reported that a delay in a solar project will have a $40,600 negative effect on new growth.",
+    "note": "$40,600 matches; 193,400 appears in the official structured figures too.",
+    "t": 7095
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Regional dispatch assessment",
+    "ours": "Regional dispatch assessment: 198,000 534, $15,000",
+    "official": "the assessment for regional dispatch will reduce by approximately $15k.",
+    "note": "$15,000 matches the $15k reduction, but our other figures (198,000 534) are unexplained and not in the official minutes; check the recording.",
+    "t": 7223
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fire call overnight two-hour minimum",
+    "ours": "Fire call firefighter overnight two-hour minimum: ten thousand dollars",
+    "official": "",
+    "note": "Official minutes print no fire budget figures.",
+    "t": 866
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Health insurance rate",
+    "ours": "Health insurance rate: 0.66%, $45,000",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 7178
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Overlay account",
+    "ours": "Overlay account: 175,000",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 7296
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Member to take notes in case recording failed",
+    "ours": "A member agreed to take notes of the meeting in case the recording failed.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 193
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Agenda items for next week",
+    "ours": "The assessing consultants' new growth presentation and the debt project will be added to the agenda for the next week.",
+    "official": "",
+    "note": "Official minutes list no decisions.",
+    "t": 3091
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendance of other members",
+    "ours": "",
+    "official": "present: terri burchfield, john henshaw, dave passios, michelle walton, jay simeone, dave passios",
+    "note": "Our attendees list omits Burchfield, Henshaw, Passios, Walton, Simeone.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Dave Passios arrived late and did not vote",
+    "ours": "",
+    "official": "dave passios arrived later and did not vote.",
+    "note": "Not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Architecture firm contract",
+    "ours": "",
+    "official": "dave passios reported that the contract with the architecture firm was in negotiation.",
+    "note": "Not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Karen town accountant attendee",
+    "ours": "Karen (town accountant (as evident))",
+    "official": "",
+    "note": "Karen appears only in ours; official minutes do not list her.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T07:57:44Z",
+   "cost_usd": 0.045813099999999995
+  }
+ }
+}

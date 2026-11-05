@@ -329,58 +329,12 @@ generator that emits a payload, and the shared components that render it. If a p
 furniture `report.tsx` does not have, add it there, where every report gets it.
 
 
-## 7e. Label what KIND of statement you are making, when it is not obvious
+## 7e. Statement labels: genlock holds them
 
-TJ, 21 September 2026, after a day in which findings, status changes and finished work
-all arrived in the same register and had to be read closely to tell apart:
-
-> *"can you LABEL your statements when your commentary is changing? Can you mark
-> [TASK-COMPLETE] when you think something is done? and [STATUS-UPDATE] when something
-> has drastically changed status? BUT, also [TECH-REPORT] When you are just commenting on
-> issues. But you dont need to label literally everything you say. Just when it seems
-> necessary."*
-
-Three labels, used in replies to him — not in commits, documents or anything published.
-
-**These three are now GLOBAL** — `~/.claude/CLAUDE.md` carries them for every repo, along
-with `[GRILLED]` and `[ASSUMING]`, which grill a claim before it reaches him. This section
-stays because the worked examples below are this project's own. If the two ever disagree,
-the global file is the one every other repo reads.
-
-| label | answers | for |
-|---|---|---|
-| `[TASK-COMPLETE]` | *is it done?* | a thing he asked for is finished and VERIFIED — the check passed, the count moved, the page renders. Not "I have finished typing" |
-| `[STATUS-UPDATE]` | *what moved?* | the work itself advanced or failed, by an amount. Ten pages ingested. Two years still refusing. A claim withdrawn. Progress **or** regress, and both carry a number |
-| `[TECH-REPORT]` | *why?* | a defect, a cause, a limitation. An explanation of something, however interesting, is not a change in what is done |
-
-**The line between the last two is where this goes wrong, and it did.** TJ, 21 September
-2026: *"[STATUS-UPDATE] should only be used if you are saying something was iteratively
-accomplished… You are blurring status-update with tech-report."*
-
-He was right. "The town changed the table format after FY2023" was labelled a status
-update and is nothing of the kind — it explains why a count did not move. The count
-moving is the status.
-
-**The test: can you put a number and a direction in it?**
-
-    [STATUS-UPDATE]  422 financial pages -> 474. FY2025's budget pages now classify.
-    [TECH-REPORT]    they did not before because the money pattern required cents,
-                     and the warrant prints round dollars.
-
-Same work, two sentences, two different labels. If the sentence has no count in it and
-nothing finished, it is a `[TECH-REPORT]` — or it needs no label at all.
-
-**The discipline is in NOT labelling everything.** A label on every paragraph is a label
-on nothing, and the point is that the eye can skip to the ones that matter. Ordinary
-answers, questions and working notes carry no label.
-
-**`[TASK-COMPLETE]` is the one with a bar.** It means measured, not felt — rule: a thing
-is done when a script says so. "Nine of nine funds have a balance for every year they
-existed" is a completion; "I have written the extractor" is not, and while the difference
-is invisible in prose it is the whole difference in practice.
-
-And a withdrawal gets `[STATUS-UPDATE]` as loudly as an advance. A claim quietly dropped
-is worse than one never made.
+`[TASK-COMPLETE]`, `[STATUS-UPDATE]`, `[TECH-REPORT]`, `[GRILLED]` and `[ASSUMING]`, and the
+five grill questions, are in the genlock `labels` block of `~/.claude/CLAUDE.md`, the one copy
+every repo reads. TJ asked for them here on 21 September 2026; the worked example there
+(`422 financial pages -> 474`) is this project's. Do not restate them in this file.
 
 ---
 
@@ -579,13 +533,16 @@ nobody checked.
 
 ## Push holds -- read before ANY `git push`
 
-**None at present.** (The hold of 19 October 2026, unmasked journal names in history, ended
-26 October 2026 with the rewrite: `notes/handoffs-done/HANDOFF-HISTORY-REWRITE.md`.)
+**A hold is a genlock prohibition.** Before any push run `genlock orient`, which prints every
+live `forbid`. Record a hold with `genlock forbid G "..." --lifted-by "..."`, lift it with
+`genlock unforbid`. None at present. (The hold of 19 October 2026, unmasked journal names in
+history, ended 26 October 2026 with the rewrite: `notes/handoffs-done/HANDOFF-HISTORY-REWRITE.md`.)
 
 A hold recorded only in one session's memory is invisible to every other session, which is how
-those names reached GitHub on 19 October. So a hold is written HERE, with its reason and what
-lifts it, and removed here when it lifts. Local branches still on the pre-rewrite history --
-`wip-snapshot-2026-10-19`, `gen/town-office-space` -- are never pushed.
+those names reached GitHub on 19 October. genlock records are PRIVATE to this machine (every
+worktree here shares them; a cloud session or another machine does not see them), so a hold
+that must reach those too is also written here. Local branches still on the pre-rewrite
+history -- `wip-snapshot-2026-10-19`, `gen/town-office-space` -- are never pushed.
 
 ## 10. Nothing deploys without being asked
 
@@ -1318,23 +1275,34 @@ the feed and its season files; nothing in them is a rule for the rest of the sit
 
 ## Picking up mid-stream
 
-**A handoff's state is in its first lines, not in its prose.** Every `notes/HANDOFF-*.md`
-opens with a status block -- `status: open | parked | reference`, `updated:`, `next:`, and for
-`parked` a `waiting_on:`. List what is live with:
+**Live state is in genlock, not in `notes/`.** What is next, what is due, what must not be
+done, what waits on TJ, and the decisions behind them are genlock records (the rules are in
+the genlock block at the end of this file). Start with `genlock orient`; carry on with
+`genlock continue`. Records are PRIVATE to this machine (`--private`, 4 November 2026): every
+worktree here shares them, nothing else does, and they are not in git.
+
+**`notes/` keeps what is still true when the work is finished** -- findings, measurements,
+reference, how-to -- and a goal points at it with `genlock ref`. Do not write a new
+`notes/HANDOFF-*.md`; that is `genlock checkpoint`.
+
+**The handoffs are being ported one at a time, not in bulk.** A handoff whose next steps are
+in genlock carries `status: reference` and a line naming its goal; its `next:` is gone. One
+still `open` or `parked` has NOT been ported, and its status block is still its state:
 
     grep -A3 '^status:' notes/HANDOFF-*.md notes/PLAN-*.md
 
-**A finished handoff leaves `notes/`.** It moves to `notes/handoffs-done/` with `status: done`
-or `superseded` (and `superseded_by:`), `retired:`, and `left_open:` naming any section whose
-open decisions were NOT re-verified when it was retired -- residue, not a to-do list. Move it
-with `git mv` and rewrite every `notes/HANDOFF-…` path that pointed at it, EXCEPT inside a
-document the archive manifest hashes (page reads, published analyses): a path there is
-history, and changing it breaks the sha256. The first pass, 4 November 2026, retired 23 of
-31: most of `notes/` was describing finished work as current.
+`scripts/check_handoffs.py --check` still enforces those blocks, and still fails on any path
+to a handoff that no longer exists. It cannot see a BARE filename (`HANDOFF-X.md` with no
+`notes/`), which `notes/MASTER-PLAN.md` uses; grep for those before moving a file.
 
-**When you finish the work a handoff describes, retire it in the same commit.** When you
-touch an open one, update its `updated:` and `next:`. The stale handoff is the failure:
-it reads exactly like a current one.
+**A finished handoff leaves `notes/`** for `notes/handoffs-done/` with `status: done` or
+`superseded`, `retired:` and `left_open:`, by `git mv`, rewriting every path that pointed at
+it EXCEPT inside a document the archive manifest hashes -- a path there is history, and
+changing it breaks the sha256. That is why `notes/HANDOFF-FILINGS.md` stays where it is.
+
+**Real deadlines are written twice on purpose.** Until a blind session has answered them from
+genlock alone, a date that costs something if missed (the OML refile window, 4 Nov-30 Dec
+2026) also stays in its handoff and in `notes/MASTER-PLAN.md`.
 
 Two retired ones are still worth knowing: `notes/handoffs-done/HANDOFF.md` carries the list
 of claims that are NOT established, and `notes/handoffs-done/HANDOFF-WAYFINDING.md` the
@@ -1513,12 +1481,10 @@ This has now happened twice here. The guidance above -- check the slot before bu
 is what puts the pattern in an agent's hands, so it does not get to be stated without the
 trap beside it.
 
-**`git checkout <file>` destroys another agent's uncommitted work.** It cost five
-`money-gaps.csv` rows written by two other agents, and only three were recoverable from a
-grep somebody happened to have taken. The owning agents rewrote theirs from their own
-findings, which is the right repair -- reconstructing another agent's row from its title
-would be inventing content and calling it recovery. The same family as the standing rule
-against `git stash`: **never discard working-tree state you did not create.**
+**Never discard working-tree state you did not create** -- the genlock coordination rules list
+the commands; here `git checkout <file>` once cost five `money-gaps.csv` rows from two other
+agents. Reconstructing another agent's row from its title is inventing content, not recovery.
+The site-build slot is a genlock resource: `genlock claim ID --resource site-build`.
 
 **A generated file with several authors gets clobbered, not merged.** `money-gaps.csv` was
 rewritten whole twice in one day, once with the line endings changed. Append, re-read
@@ -1674,3 +1640,104 @@ consistently use. Neither was hard to get once anybody looked.
   rising because the district grew. This one is load-bearing: the in-district special
   education escalator is built on a paraprofessional line, and it cannot currently be
   distinguished from grant money unwinding.
+
+<!-- BEGIN genlock (managed by `genlock install`; edits inside are overwritten) -->
+
+## Tickets: done is proved, not asserted
+
+`genlock` holds a definition of done written *before* the work, and refuses completion until each part has evidence.
+
+**Open a ticket before any work** that spans more than a couple of tool calls, touches several files, changes visible behaviour, or could be half-done. Not for questions, reads, explanations or one-liners.
+
+    genlock new "TITLE" -r "REQUIREMENT" -c "CHECK" [-r .. -c ..] [--goal G]
+    genlock start ID
+    genlock update ID "what just happened, and where it stands"
+    genlock met ID N --evidence "WHAT YOU OBSERVED"
+    genlock assume ID "WHAT" --breaks "WHAT IF WRONG"
+    genlock decide ID "WHAT WAS DECIDED" [--user-said ".."]
+    genlock grill ID --observed .. --cause .. --absence .. --assumption .. --falsify ..
+    genlock done ID      # exits non-zero and names the gap if anything is unproved
+
+- **A requirement is TRUE or FALSE once the work is finished**, with a check written up front: a command, or `manual:` / `file:` / `eye:`. `make search better` is refused. Three to six per ticket, covering the whole ask.
+- **`--evidence` is what you OBSERVED.** `ran the tests` is not evidence; `test/search.mjs budgets -> 12 hits` is.
+- **Keep `latest` current as work moves.** It is what the next session reads, and the only account of this work if this session dies.
+- **A waiver is not a proof.** It needs a reason, and the user's agreement if it drops something they asked for.
+- **`genlock done` exiting zero is the only thing licensing the words "done", "complete", "finished", "working" or "ready".** Relay the lines it prints. Never edit `.genlock/` by hand.
+- **Tickets are invisible to the user.** Do not narrate the mechanics, show JSON or ask them to review a board. Requirements surface in one line if the ask was ambiguous, and at completion.
+
+## Goals: what the work is for, and what is next
+
+Goals are the one layer the user sees, because only the user can say what they are.
+
+    genlock goal list                       # also what to run when asked "what are the goals?"
+    genlock goal add "TITLE" --user-said ".."
+    genlock goal propose "TITLE" --why ".."
+    genlock goal accept G --user-said ".."  |  genlock goal reject G --user-said ".."
+    genlock goal next G "NEXT THING"  |  genlock goal next G --done N  |  genlock goal next G --still-right
+    genlock goal next G "THING" --due YYYY-MM-DD  |  genlock goal next G --move N --to M
+    genlock goal park G --waiting-on ".."  |  genlock goal unpark G
+    genlock goal update G "WHAT MOVED"
+    genlock ask user "QUESTION" --about G  |  genlock answer Q "ANSWER" --user-said ".."
+    genlock link TICKET G
+    genlock goal done G --evidence ".." --user-said ".."
+
+- **No known goals: ask.** If `genlock orient` says none are known and the work is more than a question, ask what the user is trying to get done, record it in their words, and carry on. If they would rather not, `genlock goal none --user-said ".."`.
+- **The user owns goals.** You may propose; only their words make one active or close it.
+- **Noticed a new goal in the work?** `goal propose`, then ask in one line. Do not create it on your own judgement, and do not ask more than once.
+- **Keep next things current.** They are the first thing a fresh session reads, so when work finishes or the plan changes, change them.
+- **A decision that is the user's goes on their list** with `genlock ask user`, one question each. It surfaces at every session start until answered. Do not decide it yourself.
+- **Anything with a date gets `--due`.** A date in prose is one nobody is reminded of.
+- **Link every ticket to a goal** when one fits.
+- **Status questions are answered from the records**, not from memory: `goal list`, `goal show G`. Progress is counted from tickets, never typed.
+
+## Continuity: stop and pick back up with nothing lost
+
+There is no handoff document. Goals say what is next, tickets say what just happened, and everything live is read when asked for.
+
+    genlock orient                          # at the start of a session
+    genlock checkpoint [--uncommitted ".."] # before context is cleared
+    genlock continue [GOAL|TICKET]          # to carry on
+
+- **"Start a handoff" means run `genlock checkpoint`.** Also "wrap up", or "I'm going to clear context". It refuses and names what a fresh session would be missing. Fill each gap with what is actually true, then tell the user it is safe to clear.
+- **"Let's continue the goal we were working on" means run `genlock continue`.** If it says more than one goal could be meant, ask which. Then take a ticket with `genlock start ID`.
+- **Say what must not be done** with `genlock forbid ID "..." --lifted-by ".."`, and what a later agent must check with `genlock hazard TICKET "..." --verify ".."`. Both are printed until lifted or cleared. Restarting a blocked ticket needs `--because`. A stop or a block means stop: do not retry it under another name or hand it to another agent.
+- **Findings do not go in records.** What the work established stays in files; `genlock ref ID PATH --why ".."` points at them. `latest` is limited to 600 characters, on purpose. Withdraw a decision with `genlock decide ID ".." --supersedes N`; it stays visible so nobody re-adds it.
+- **Records are claims about the repository, not sources.** Check anything load-bearing before acting on it.
+- **Do not write a separate handoff file.** Put it on the goal or the ticket. A second copy goes stale and still reads as current.
+- **Commit `.genlock/` with the work when the user asks for a commit,** or with `genlock sync`. `.genlock/` must not be discarded by a git cleanup: uncommitted records exist nowhere else.
+
+## Coordination: several agents, one repository
+
+Declare what you are touching, stay out of what others hold, and never make anyone wait.
+
+    genlock claim ID --path src/search --resource site-build
+    genlock claims                          # who holds what
+    genlock check --path P                  # ask without taking
+    genlock release ID
+    genlock ask TICKET|any "QUESTION"  |  genlock answer Q "ANSWER"  |  genlock inbox
+
+- **Claim before editing** when other sessions may be working here. A resource is any shared thing that is not a file: a build slot, a port, a database. Ending a ticket releases its claim.
+- **A refused claim means pick other work.** Do not wait for it and do not work around it. A claim is a lease that lapses if its session stops working, so a dead agent cannot hold anything for long.
+- **Ask, then carry on.** A question reaches its target at their next tool call, and the answer reaches you the same way. Nobody blocks. For status, read the records instead of asking.
+- **Answer questions briefly** at your next stopping point.
+- **In a shared tree, stage and commit by path.** Never `git stash`, `checkout`, `switch`, `restore`, `clean`, `reset --hard`, `add -A` or `commit -a` while another session is working: they destroy or sweep up its uncommitted work.
+- **Never release another session's claim** unless that session is gone, and say why with `--reason`.
+
+## Spin-offs: move a tangent into its own session
+
+When new work comes up mid-thread, do not start it here. It muddles the thread. Offer to move it.
+
+**Before finishing each response, ask whether a tangent came up that deserves its own session:** real work, separate from the current goal's next step, more than a quick fix. Do not manufacture one. Most responses have none.
+
+    genlock claim PARENT --path WHAT_THIS_SESSION_IS_TOUCHING
+    genlock spinoff propose "THE OUTCOME" --parent PARENT --why ".." --context "WHAT THE NEW AGENT NEEDS TO KNOW" \
+      --path WHAT_IT_WILL_TOUCH --needs none --blocks none
+
+Then follow the verdict, which is the tool's and not yours:
+
+- **SAFE:** offer it in one line: *"I can kick off a spinoff so you can work from there: THE OUTCOME."* Wait. On a yes: `genlock spinoff launch ID --user-said "THEIR WORDS"`. On a no: `genlock spinoff park ID "why"`.
+- **NOT SAFE:** do not offer a launch. Say the ticket is recorded and why it must wait, in one line. It overlaps this work, needs this work's unfinished result, or would leave this session waiting for it.
+
+**Never launch without the user's yes.** It opens a window and spends their usage in parallel. `--needs` is what it needs from this session's unfinished work; `--blocks` is what this session needs from it. Answer both honestly, because the check is only as good as these declarations and the paths.
+
+<!-- END genlock -->

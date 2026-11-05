@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2021-01-13",
  "docid": "6287",
@@ -12,15 +12,240 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "RB",
    "seconded_by": "JR",
-   "outcome": "passed by unanimous roll call vote",
+   "outcome": "passed unanimous roll call vote",
    "procedural": true,
    "quote": "rb moved to adjourn, jr seconded and the commission approved the motion by unanimous roll call vote."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Item 2 on the agenda lists \"Vote on scheduling an advertised public hearing for January 20th on draft land use rules\" but the minutes do not record the outcome of this vote. The discussion proceeds through the draft rules and concludes with BP indicating he \"will schedule a public hearing for the second meeting in February,\" but no formal motion and vote result is stated for item 2. Only the adjournment motion at the end is recorded with a clear vote outcome.",
- "cost_usd": 0.0869215
+ "note": "Text is clean and readable; votes are recorded only for adjournment. Agenda item 2 (vote on scheduling a hearing) has no recorded vote; straw polls are not treated as votes. Initials are ambiguous: \"CL\"/\"Cl\" appear to be Carl Luck and \"CC\" appears to be Catie Childs, but the minutes do not spell this out. Marion Larson (DCR) and Town Counsel are mentioned but did not take part, so they are not listed as attendees. No public comment section is recorded.",
+ "cost_usd": 0.006683219999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "present",
+   "quote": "all members associates and staff were in attendance."
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "all members associates and staff were in attendance."
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "member",
+   "status": "present",
+   "quote": "all members associates and staff were in attendance."
+  },
+  {
+   "name": "Catie Childs",
+   "role": "member",
+   "status": "present",
+   "quote": "all members associates and staff were in attendance."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "member",
+   "status": "present",
+   "quote": "all members associates and staff were in attendance."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "member",
+   "status": "present",
+   "quote": "all members associates and staff were in attendance."
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "member",
+   "status": "present",
+   "quote": "all members associates and staff were in attendance."
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Associate",
+   "status": "present",
+   "quote": "all members associates and staff were in attendance."
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "all members associates and staff were in attendance."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The commission decided to add GEO caching into section 1.2 to clearly identify it as an allowed activity.",
+   "quote": "bp reviewed geo caching and the commission decided to add it into section 1.2 to clearly identify it as an allowed activity."
+  },
+  {
+   "decision": "Geocaching and letterboxing to be inserted in section 2.2.",
+   "quote": "after examining section 2.2 , geo caching and letter boxing would be inserted in section 2.2."
+  },
+  {
+   "decision": "Section 2.5 to state that any organized activity must appear before the commission.",
+   "quote": "the commission agreed to add into section 2.5 that any organized activity must appear before the commission."
+  },
+  {
+   "decision": "The invasive plant list to be kept as a general reference to the state list, not specified.",
+   "quote": "the commission agreed to keep the invasive plant list as a general reference to the state list and not specify."
+  },
+  {
+   "decision": "Bow hunting to be stated as allowed on all conservation lands by right, in conformance with state regulations; commission agreed.",
+   "quote": "bp asked to include a statement that bow hunting is allowed on all conservation lands by right according to conformance with state regulations."
+  },
+  {
+   "decision": "Snowmobiles to be prohibited after review of the Conservation restriction; section 2.3 to be modified to account for the cite clause in the CR.",
+   "quote": "after review of the conservation restriction (cr), snow mobiles would be prohibited."
+  },
+  {
+   "decision": "BP to pass the liability question to Town Counsel.",
+   "quote": "cl asked about liability protection. bp stated that he would pass it by town counsel."
+  },
+  {
+   "decision": "The Commission will propose language under section 5 to provide some guidance on changing regulations.",
+   "quote": "the commission will propose language under section 5 to provide some"
+  },
+  {
+   "decision": "BP will issue the revised draft discussed at the meeting and will schedule a public hearing for the second meeting in February.",
+   "quote": "bp will issue the vised draft discussed at the meeting this evening and will schedule a public hearing for the ===page 5=== second meeting",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Discussion tabled until the next regular meeting, with the hearing published for the second February meeting as part of a larger hearing scope including public participation.",
+   "quote": "this discussion was table until the next regular meeting with the hearing published for the second february meeting for part of a larger hearing scope including participation of the public."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Enforcement fine for land use rule violations",
+   "what_was_recorded": "The $100-a-day enforcement amount was recommended by legal and could be referenced under MGL ch 40 sec 8 C.",
+   "figures_as_printed": [
+    "100 dollars a day"
+   ],
+   "quote": "rb noted under enforcement the 100 dollars a day was recommended by legal and could be referenced under mgl ch 40 sec 8 c."
+  },
+  {
+   "topic": "Liability insurance amount for organized uses",
+   "what_was_recorded": "The legal opinion left the liability amount to commission discretion, and the commission could set it at zero.",
+   "figures_as_printed": [
+    "a sum of zero"
+   ],
+   "quote": "cl noted in the legal opinion that it was commission discretion for the amounts of liability and the commission can set a sum of zero."
+  },
+  {
+   "topic": "Fees charged for activities on conservation land",
+   "what_was_recorded": "KJ noted that goat walks charge a fee on town conservation land; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "kj noted the goat walks that charge a fee on our land."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Process and procedures for revising land use rules",
+   "resolution": "discussed; workshop continued",
+   "quote": "discussion about the process and procedures for revising conservation commission land use rules.",
+   "tags": [
+    "land use rules",
+    "process"
+   ]
+  },
+  {
+   "topic": "Scheduling public hearing on draft land use rules",
+   "resolution": "no vote recorded; hearing to be scheduled for February",
+   "quote": "vote on scheduling an advertised public hearing for january 20th on draft land use rules",
+   "tags": [
+    "public hearing",
+    "land use rules"
+   ]
+  },
+  {
+   "topic": "Workshop to develop draft land use rules",
+   "resolution": "discussed line by line; tabled to next regular meeting",
+   "quote": "workshop to develop draft land use rules to be considered after the january 20th public hearing.",
+   "tags": [
+    "land use rules",
+    "hunting",
+    "firearms",
+    "dogs",
+    "trails",
+    "fundraising",
+    "enforcement"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft with comments from the town attorney (Town Counsel)",
+   "where": "list",
+   "quote": "bp noted that he wanted to use the draft and the draft with comments from the town attorney."
+  },
+  {
+   "name": "Draft land use rules (to be posted on the LCC website)",
+   "where": "text",
+   "quote": "vote on scheduling an advertised public hearing for january 20th on draft land use rules (draft to be posted on the lcc website)."
+  },
+  {
+   "name": "First version with tracked changes",
+   "where": "text",
+   "quote": "bp initiated the review with the first version posted with tracked changes and reviewed the document with the commission."
+  },
+  {
+   "name": "RB’s land use rules document",
+   "where": "text",
+   "quote": "cl stated that rb's document was a good document for stating what can and cannot be done on the property"
+  },
+  {
+   "name": "CL’s document (Town Counsel draft with his comment inserted)",
+   "where": "text",
+   "quote": "cl noted the document he has submitted with the same one as town counsel only with his comment inserted in."
+  },
+  {
+   "name": "Conservation restriction (CR), Hunting Hill",
+   "where": "text",
+   "quote": "bp and rb discussed the hunting hill conservation restriction and an interpretation by adam costa."
+  },
+  {
+   "name": "Marion Larson’s response to MM’s email",
+   "where": "text",
+   "quote": "kj noted that marion larson's response to mm's email provided sufficient information."
+  },
+  {
+   "name": "MGL ch 40 sec 8 C",
+   "where": "text",
+   "quote": "rb noted under enforcement the 100 dollars a day was recommended by legal and could be referenced under mgl ch 40 sec 8 c."
+  },
+  {
+   "name": "Formal written opinion from Town Counsel on firearms on town lands (requested by Board of Selectmen)",
+   "where": "text",
+   "quote": "the board of selectmen asked town counsel for a formal written opinion concerning the towns ability to regulate or prohibit firearms on town lands."
+  }
+ ],
+ "tags": [
+  "land use rules",
+  "hunting and firearms",
+  "public hearing",
+  "trails",
+  "dogs",
+  "fundraising events",
+  "enforcement",
+  "Article 97",
+  "remote Zoom meeting",
+  "COVID-19 remote"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "bp noted that he wanted to use the draft and the draft with comments from the town attorney."
+ },
+ "dropped_unquoted_by_field": {}
 }

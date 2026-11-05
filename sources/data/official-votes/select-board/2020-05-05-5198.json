@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-05-05",
  "docid": "5198",
@@ -12,39 +12,572 @@
  },
  "votes": [
   {
-   "motion": "To approve the transfer of the all alcohol restaurant license from Sean Flan Inc. to II Forno at 494 Electric Avenue",
+   "motion": "Approve the transfer of the all alcohol license from SE-Flan Inc. (printed as Sean Flan Inc.) to Il Forno Lunenburg Bar, Inc. at 494 Electric Avenue.",
    "moved_by": "K. Adams",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: k. adams 2nd: m. jeffreys to approve the transfer of the all alcohol license from sean flan inc. to ii forno for the 494 electric avenue vote: ms. adams-aye, mr. jeffreys-aye, ms. luck-aye, mr. alonzo-aye"
+   "quote": "to approve the transfer of the all alcohol license from sean flan inc. to ii forno for the 494 electric avenue"
   },
   {
-   "motion": "To transfer the alcohol license from Randy and Lena Grosser back to Embers Pizzeria",
+   "motion": "Transfer the alcohol license from Randy and Lena Grosser back to Embers Pizzeria.",
    "moved_by": "K. Adams",
-   "seconded_by": "",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: k. adams to transfer the alcohol license from randy and lena grosser back to embers pizzeria vote: ms. adams-aye, mr. jeffreys- aye, ms. luck-aye, mr. alonzo-aye"
+   "quote": "to transfer the alcohol license from randy and lena grosser back to embers pizzeria"
   },
   {
-   "motion": "To remove articles H and I from the warrant",
+   "motion": "Approve the minutes of February 18 and March 3, 2020 as presented.",
+   "moved_by": "P. Luck",
+   "seconded_by": "M. Jeffreys",
+   "outcome": "passed 4-0",
+   "procedural": true,
+   "quote": "to approve the minutes of february 18 and march 3, 2020 as presented"
+  },
+  {
+   "motion": "Remove warrant articles \"H\" and \"I\" from the Annual Town Meeting warrant.",
    "moved_by": "K. Adams",
    "seconded_by": "P. Luck",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: k. adams to remove articles \"h\" and \"i\" from the warrant ms. adams-aye, ms. luck- aye, mr. jeffreys-aye, mr. alonzo-aye 2nd: p. luck"
+   "quote": "to remove articles \"h\" and \"i\" from the warrant"
   },
   {
-   "motion": "To remove article K from the warrant",
+   "motion": "Remove warrant article \"K\" from the Annual Town Meeting warrant.",
    "moved_by": "P. Luck",
    "seconded_by": "K. Adams",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: p. luck 2\"d: k. adams to remove article \"k\" from the warrant ms. adams-aye, ms. luck- aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "to remove article \"k\" from the warrant"
+  },
+  {
+   "motion": "Motion text not printed in the minutes; the next line says articles D, F, G, J, L, U, X, Y, Z, AA, BB, CC and II will be discussed at the next meeting.",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "P. Luck",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "motion: m. jeffreys 2n; p. luck ms. adams-aye, ms. luck-aye, mr. jeffreys-aye, mr. alonzo-aye"
+  },
+  {
+   "motion": "Motion text not printed in the minutes; no vote result recorded.",
+   "moved_by": "K. Adams",
+   "seconded_by": "P. Luck",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "motion: k. adams 2n°: p. luck"
   }
  ],
- "dropped_unquoted": 1,
- "note": "One motion by M. Jeffreys with a second by P. Luck appears at the end of the minutes without stated motion text, and therefore is not included. All recorded votes passed unanimously.",
- "cost_usd": 0.1453635
+ "dropped_unquoted": 0,
+ "note": "OCR text from scanned pages (macOS Vision) with many garbled passages. Page 3 begins mid-sentence and page 5 begins mid-item. The FY21 budget worksheet paragraphs and the Route 2A/13 and fuel-tank passages are partly unreadable, so the figures tied to them may not reflect their true context. Vote 6 and vote 7 have no printed motion text; vote 7 has no recorded result, so its outcome is 'not stated'. The alcohol transfer motion names the seller as 'Sean Flan Inc.' while the hearing notice says 'SE-Flan, Inc.'; both are recorded as printed. Several names appear in two forms (e.g. 'Jeff' vs 'Jett' Aveni, 'K. Adams' vs 'Ms. Adams'). The minutes name the Board members by surname only, so their roles are recorded as 'Board member'.",
+ "cost_usd": 0.019331819999999996,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Alonzo",
+   "status": "present",
+   "quote": "chairman alonzo called the meeting to order at 7:02 p.m."
+  },
+  {
+   "name": "Ms. Adams",
+   "status": "present",
+   "quote": "vote: ms. adams-aye, mr. jeffreys-aye, ms. luck-aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Mr. Jeffreys",
+   "status": "present",
+   "quote": "vote: ms. adams-aye, mr. jeffreys-aye, ms. luck-aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Ms. Luck",
+   "status": "present",
+   "quote": "vote: ms. luck-aye, ms. adams- aye, mr. jeffreys- aye, mr. alonzo -aye"
+  },
+  {
+   "name": "Heather Lemieux",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager;"
+  },
+  {
+   "name": "Patrick Sullivan",
+   "status": "present",
+   "quote": "fire chiet patrick sullivan,"
+  },
+  {
+   "name": "Jeff Aveni",
+   "status": "present",
+   "quote": "attorney jeff aveni was representing his client, mohammed \"mike\" a. mohammed."
+  },
+  {
+   "name": "Mohammed \"Mike\" A. Mohammed",
+   "status": "present",
+   "quote": "attorney jeff aveni was representing his client, mohammed \"mike\" a. mohammed."
+  },
+  {
+   "name": "Randy Grosser",
+   "status": "present",
+   "quote": "randy grosser, lena grosser, ken ricker, dpw director jack rodriquenz, police chief jim marino"
+  },
+  {
+   "name": "Lena Grosser",
+   "status": "present",
+   "quote": "randy grosser, lena grosser, ken ricker, dpw director jack rodriquenz, police chief jim marino"
+  },
+  {
+   "name": "Ken Ricker",
+   "status": "present",
+   "quote": "randy grosser, lena grosser, ken ricker, dpw director jack rodriquenz, police chief jim marino"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "status": "present",
+   "quote": "dpw director jack rodriquenz"
+  },
+  {
+   "name": "Jim Marino",
+   "status": "present",
+   "quote": "police chief jim marino, amanda moore, brian marchetti"
+  },
+  {
+   "name": "Amanda Moore",
+   "status": "present",
+   "quote": "police chief jim marino, amanda moore, brian marchetti"
+  },
+  {
+   "name": "Brian Marchetti",
+   "status": "present",
+   "quote": "mr. marchetti from mccarty engineering was contacted by the dpw to file the notice of intent."
+  },
+  {
+   "name": "Richard Bursch",
+   "status": "present",
+   "quote": "conservation commission members: richard bursch, bob pease, ken jones, jack rabbitt, carl luck"
+  },
+  {
+   "name": "Bob Pease",
+   "status": "present",
+   "quote": "conservation commission members: richard bursch, bob pease, ken jones, jack rabbitt, carl luck"
+  },
+  {
+   "name": "Ken Jones",
+   "status": "present",
+   "quote": "conservation commission members: richard bursch, bob pease, ken jones, jack rabbitt, carl luck"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "conservation commission members: richard bursch, bob pease, ken jones, jack rabbitt, carl luck"
+  },
+  {
+   "name": "Carl Luck",
+   "status": "present",
+   "quote": "conservation commission members: richard bursch, bob pease, ken jones, jack rabbitt, carl luck"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Town Manager formed a Re-opening Task Force (Board of Health agent, Police and Fire Chiefs, DPW Director, Facilities Director, Town Clerk, Council on Aging Director, Library Director and the Town Manager) with a first meeting on May 6.",
+   "quote": "i have put together a re-opening task force that consists of our board of health agent from nashoba associated boards of"
+  },
+  {
+   "decision": "The Recycling Education and Enforcement Coordinator position was put on hold due to Covid-19, and the related Board of Health trash hauler regulation update was also put on hold.",
+   "quote": "the recycling education and enforcement coordinator position has been put on hold due to covid-19."
+  },
+  {
+   "decision": "The Town Manager said she would recommend deferring the OPEB liability article to the fall Town Meeting, with that amount placed in the Stabilization Fund.",
+   "quote": "i am going to recommend that this article be deferred to the fall town meeting"
+  },
+  {
+   "decision": "Articles D, F, G, J, L, U, X, Y, Z, AA, BB, CC and II were left for discussion at the next meeting.",
+   "quote": "articles d, f, g, j, l, u, x, y, z, aa, bb, cc and ii will be discussed at the next meeting."
+  },
+  {
+   "decision": "The Town Manager's evaluation was postponed until after the election, at her request, taking up the Board's earlier offer.",
+   "quote": "she would like to take the bos' offer to do it after the election."
+  },
+  {
+   "decision": "The Town Manager will report back to the Board after talking with Town counsel on whether Mr. Wernick would be willing to try again at the fall Town Meeting.",
+   "quote": "ms. lemieux will report back after talking to town counsel."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Prior year bills and FY21 surplus",
+   "what_was_recorded": "Two prior year bills must be approved at town meeting, and the FY21 surplus (deficit) amount is stated.",
+   "figures_as_printed": [
+    "$476.21",
+    "$998,492.11"
+   ],
+   "quote": "we also have two prior year bills totaling $476.21 that will have"
+  },
+  {
+   "topic": "Debt exclusions for Middle/High school and Pavement Management",
+   "what_was_recorded": "Estimated cost of the debt-excluded projects is shown on the FY21 worksheet.",
+   "figures_as_printed": [
+    "$2,864,738.45"
+   ],
+   "quote": "debt exclusions for the estimated cost for the middle/high school project and pavement management ($2,864,738.45)"
+  },
+  {
+   "topic": "Garbled FY21 budget figure",
+   "what_was_recorded": "A figure appears in an OCR-garbled passage on the FY21 budget worksheet; the surrounding words are unreadable.",
+   "figures_as_printed": [
+    "$3,229,642.07"
+   ],
+   "quote": "sh 9221042017, interest costs on the in the he unt or lisa reneral or enemie of $3,229,642.07"
+  },
+  {
+   "topic": "Debt service amount including Middle/High School and Pavement Management",
+   "what_was_recorded": "An amount inclusive of estimated Middle/High School debt and Pavement Management is stated, with final figures expected the following week.",
+   "figures_as_printed": [
+    "$1,590,980.65"
+   ],
+   "quote": "amount of $1,590,980.65, which are inclusive of the estimated middle/high school debt and pavement"
+  },
+  {
+   "topic": "Enterprise funds and Sewer budget",
+   "what_was_recorded": "Sewer retained earnings (including OPEB contribution), Solid Waste and Water enterprise amounts, and total Sewer budget are listed.",
+   "figures_as_printed": [
+    "$230,656.00",
+    "$302,000",
+    "$25,000",
+    "$1,820,203.44"
+   ],
+   "quote": "enterprise funds for solid waste ($302,000),"
+  },
+  {
+   "topic": "Technology Dept. software budget reduction",
+   "what_was_recorded": "General Government budget reflects a reduction from the Technology Dept. budget.",
+   "figures_as_printed": [
+    "$18,063"
+   ],
+   "quote": "general government reflects the reduction from the technology dept. budget of $18,063."
+  },
+  {
+   "topic": "Sewer capital reserve, OPEB, prior-year expense and enterprise budgets",
+   "what_was_recorded": "Sewer Capital Reserve and Sewer OPEB Liability transfers, the prior year expense, and the Solid Waste, Water and Sewer enterprise budgets are listed as lower in the worksheet.",
+   "figures_as_printed": [
+    "$30,000",
+    "$656.00",
+    "$476.21",
+    "$302,000",
+    "$25,000",
+    "$943,191.54"
+   ],
+   "quote": "further down reflects the sewer capital reserve transfer ($30,000) as well as the sewer opeb liability transfer ($656.00)"
+  },
+  {
+   "topic": "OPEB Liability transfer deferred to Stabilization",
+   "what_was_recorded": "A $110,000 transfer to the OPEB Liability differs from last week; the Town Manager proposed deferring it to fall Town Meeting with the amount placed in Stabilization.",
+   "figures_as_printed": [
+    "$110,000"
+   ],
+   "quote": "from last week is $110,000 transferred to the opeb liability."
+  },
+  {
+   "topic": "Town Hall handicapped ramp contract",
+   "what_was_recorded": "Project awarded to Cornerstone Builders of Holyoke; part paid by a State earmark and the rest from the Facilities budget.",
+   "figures_as_printed": [
+    "$46,619",
+    "Twenty-seven thousand dollars"
+   ],
+   "quote": "awarded to cornerstone builders of holyoke for a total of $46,619."
+  },
+  {
+   "topic": "DPW Roof Project final cost",
+   "what_was_recorded": "Project completed with final cost $7,200 under the allotted total.",
+   "figures_as_printed": [
+    "$7,200",
+    "$84,000"
+   ],
+   "quote": "final cost came in $7,200 less than the allotted total of $84,000"
+  },
+  {
+   "topic": "Public Safety Building energy/retro-commissioning item (garbled)",
+   "what_was_recorded": "A figure appears in an OCR-garbled passage next to retro-commissioning repairs and energy-efficient appliance replacement at the Public Safety Building; the context is only partly readable.",
+   "figures_as_printed": [
+    "$108,962.75"
+   ],
+   "quote": "retro-commissioning repairs at the public safety building, replacement of appliances with energy efficient"
+  },
+  {
+   "topic": "Community Compact Grant awards",
+   "what_was_recorded": "Two best-practice grant applications (Continuity of Operations Plan and Financial Trend Monitoring System) were approved by the Department of Revenue.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "both applications were approved, totaling a $50,000 grant award."
+  },
+  {
+   "topic": "Fine under Governor's face covering order",
+   "what_was_recorded": "Violations of the face covering order may result in a civil fine.",
+   "figures_as_printed": [
+    "$300"
+   ],
+   "quote": "may result in a civil fine of up to $300 per violation."
+  },
+  {
+   "topic": "Federal stimulus and relief bill",
+   "what_was_recorded": "Congress and the President signed a stimulus bill; the PPP and related amounts are stated.",
+   "figures_as_printed": [
+    "$484B",
+    "$310B",
+    "$60B"
+   ],
+   "quote": "the paycheck protection program will receive an additional $310b to offer relief to small businesses."
+  },
+  {
+   "topic": "Town fuel tanks mitigation cost",
+   "what_was_recorded": "Discussion that mitigation for the fuel tank project costs money and that alternate sites were not further investigated.",
+   "figures_as_printed": [],
+   "quote": "mitigation costs money."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Sewer Capital Reserve transfer in the FY21 budget worksheet",
+   "amount_as_printed": "($30,000)",
+   "outcome": "not stated; shown in the FY21 worksheet discussion, no vote recorded",
+   "quote": "further down reflects the sewer capital reserve transfer ($30,000) as well as the sewer opeb liability transfer ($656.00)"
+  },
+  {
+   "description": "Sewer OPEB Liability transfer in the FY21 budget worksheet",
+   "amount_as_printed": "($656.00)",
+   "outcome": "not stated; shown in the FY21 worksheet discussion, no vote recorded",
+   "quote": "further down reflects the sewer capital reserve transfer ($30,000) as well as the sewer opeb liability transfer ($656.00)"
+  },
+  {
+   "description": "$110,000 transfer to the OPEB Liability",
+   "amount_as_printed": "$110,000",
+   "outcome": "deferred to fall Town Meeting, with the amount placed in the Stabilization Fund (Town Manager's recommendation)",
+   "quote": "from last week is $110,000 transferred to the opeb liability."
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Pandemic and the Class of 2020",
+   "speaker": "Ms. Adams",
+   "stated_role": "not stated",
+   "quote": "ms. adams stated she was thinking of everyone during the pandemic, particularly students and teachers and the class of 2020."
+  },
+  {
+   "topic": "Absentee ballots for 2020 elections",
+   "speaker": "Ms. Luck",
+   "stated_role": "not stated",
+   "quote": "ms. luck wanted to make sure voters were aware they could apply for absentee ballots for any of the 2020 elections due to the pandemic."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "heard two comments; no action",
+   "tags": [
+    "public comment",
+    "pandemic",
+    "absentee ballots"
+   ],
+   "quote": "ms. adams stated she was thinking of everyone during the pandemic, particularly students and teachers and the"
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "reported; Town caucus canceled, nomination papers received",
+   "tags": [
+    "election",
+    "caucus",
+    "nomination papers"
+   ],
+   "quote": "mr. alonzo stated due to the governor's order being extended to may 17', the town caucus has been canceled."
+  },
+  {
+   "topic": "Public hearing: transfer of all alcohol restaurant license, SE-Flan to Il Forno",
+   "resolution": "hearing closed; transfer approved 4-0; pledge of license to bank noted",
+   "tags": [
+    "alcohol license",
+    "public hearing",
+    "Il Forno",
+    "license transfer"
+   ],
+   "quote": "public hearing for transfer of all alcohol restaurant license from se-flan inc. to il forno lunenburg"
+  },
+  {
+   "topic": "Alcohol license transfer back to Embers Pizzeria",
+   "resolution": "approved 4-0",
+   "tags": [
+    "alcohol license",
+    "Embers Pizzeria"
+   ],
+   "quote": "to transfer the alcohol license from randy and lena grosser back to embers pizzeria"
+  },
+  {
+   "topic": "Meeting on Town fuel tanks location",
+   "resolution": "discussed with DPW Director, Police and Fire Chiefs; no vote; Conservation Commission met concurrently",
+   "tags": [
+    "fuel tanks",
+    "Conservation Commission",
+    "Notice of Intent",
+    "public safety"
+   ],
+   "quote": "meeting with dpw director, police chief, and fire chief regarding town fuel tanks"
+  },
+  {
+   "topic": "Town Manager COVID-19 report",
+   "resolution": "reported; no action",
+   "tags": [
+    "COVID-19",
+    "town facilities",
+    "re-opening",
+    "businesses",
+    "face coverings"
+   ],
+   "quote": "1. town manager covid-19 report"
+  },
+  {
+   "topic": "Minutes of February 18 and March 3, 2020",
+   "resolution": "approved 4-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "2. minutes of february 18, 2020 and march 3, 2020"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "none this evening",
+   "tags": [
+    "committee reports"
+   ],
+   "quote": "5. committee reports-there were none this evening."
+  },
+  {
+   "topic": "Fiscal Year 2021 Budget",
+   "resolution": "discussed; OPEB article recommended for deferral to fall Town Meeting",
+   "tags": [
+    "FY21 budget",
+    "enterprise funds",
+    "OPEB",
+    "Stabilization",
+    "surplus"
+   ],
+   "quote": "1. fiscal year 2021 budget"
+  },
+  {
+   "topic": "Review of Annual Town Meeting warrant articles",
+   "resolution": "reviewed; articles H, I and K removed; others deferred to next meeting",
+   "tags": [
+    "warrant articles",
+    "Annual Town Meeting"
+   ],
+   "quote": "2. review of annual town meeting warrant articles"
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported; no action",
+   "tags": [
+    "vacancies",
+    "Town Hall ramp",
+    "DPW roof",
+    "MassDOT",
+    "grants",
+    "upcoming events"
+   ],
+   "quote": "the following is a list of vacancies on the following committees:"
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "listed",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "upcoming meeting/events schedule"
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "none from the public",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment: there was none by the public."
+  },
+  {
+   "topic": "Closing remarks and final motion",
+   "resolution": "final motion made; result not printed",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion: k. adams 2n°: p. luck"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Public hearing notice, transfer of All Alcohol Restaurant license (Lunenburg Licensing Authority)",
+   "where": "text",
+   "quote": "mr. alonzo read aloud the hearing notice:"
+  },
+  {
+   "name": "Application by Il Forno Lunenburg Bar, Inc. for transfer of All Alcohol Restaurant license (812) from SE-Flan, Inc.",
+   "where": "text",
+   "quote": "on the application submitted by il forno lunenburg bar, inc., for a transfer of an all alcohol"
+  },
+  {
+   "name": "Draft Annual Town Meeting warrant articles",
+   "where": "text",
+   "quote": "the board reviewed the draft warrant articles and discussed."
+  },
+  {
+   "name": "Revenues/Expenditures FY21 Budget Worksheet",
+   "where": "text",
+   "quote": "she moved on to the revenues/ expenditures fy21 budget worksheet"
+  },
+  {
+   "name": "Board of Health weekly update dated May 2nd",
+   "where": "text",
+   "quote": "the board of health issued their weekly update dated may 2nd"
+  },
+  {
+   "name": "Notice of Intent filed with the Conservation Commission (fuel tanks)",
+   "where": "text",
+   "quote": "we provided a notice of intent to the conservation commission."
+  },
+  {
+   "name": "Governor Baker COVID-19 Order No. 31 (face coverings)",
+   "where": "text",
+   "quote": "issued covid-19 order no. 31 requiring any person over age two"
+  },
+  {
+   "name": "Chapter 45 of the Acts of 2020",
+   "where": "text",
+   "quote": "chapter 45 of the acts of 2020, the special legislation that allowed the town to postpone the"
+  },
+  {
+   "name": "Video of last year's Annual Town Meeting",
+   "where": "text",
+   "quote": "mr. jeffreys watched the video of last year's annual town meeting (atm)"
+  },
+  {
+   "name": "Talent bank forms",
+   "where": "text",
+   "quote": "talent bank forms can be obtained on the town website and forwarded to the board of selectmen's office."
+  },
+  {
+   "name": "List of businesses currently open in Lunenburg (Lunenburg Business Association)",
+   "where": "text",
+   "quote": "a new list on the local businesses that are currently open that is being updated by the lunenburg business"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "alcohol license transfer",
+  "COVID-19",
+  "town fuel tanks",
+  "Conservation Commission",
+  "FY2021 budget",
+  "OPEB",
+  "Annual Town Meeting warrant",
+  "Town Manager report",
+  "public hearing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the board reviewed the draft warrant articles and discussed."
+ },
+ "dropped_unquoted_by_field": {}
 }

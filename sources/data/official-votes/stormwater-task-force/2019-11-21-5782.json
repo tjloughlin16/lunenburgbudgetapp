@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2019-11-21",
  "docid": "5782",
@@ -12,15 +12,279 @@
  },
  "votes": [
   {
-   "motion": "adjourn the meeting at 6:55 pm",
+   "motion": "To adjourn the meeting at 6:55 pm.",
    "moved_by": "Jack Rabbitt",
    "seconded_by": "Matt Allison",
-   "outcome": "passed",
+   "outcome": "passed (vote recorded as All in Favor)",
    "procedural": true,
    "quote": "motion: jack rabbitt to adjourn the meeting at 6:55 pm 2nd: matt allison vote: all in favor"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0781085
+ "dropped_unquoted": 1,
+ "note": "OCR text of a scanned, multi-page set. The first page begins mid-sentence (\"second, all vul l tart.\"), so any opening matters (call to order, roll call, prior minutes) are not in the text. Only one vote is recorded (adjournment). The budget table's OCR columns are scrambled, so figures are listed as printed and their year alignment is not reliable. Some OCR errors appear (e.g., \"CEl\" for CEI, \"CET\"). No public comment is recorded. The minutes show \"RECEIVED & FILED JAN 27 2020\".",
+ "cost_usd": 0.00774532,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Phyllis Luck",
+   "role": "Chair SWTF",
+   "status": "present",
+   "quote": "phyllis luck asked for clarification that all of the above tasks need to be completed in year two."
+  },
+  {
+   "name": "Nick Cristofori",
+   "role": "presenter for CEI (role not printed)",
+   "status": "present",
+   "quote": "nick cristofori passed out an agenda (attached) he'd created to step us through cet's progress in providing"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: jack rabbitt to adjourn the meeting at 6:55 pm"
+  },
+  {
+   "name": "Matt Allison",
+   "role": "not stated",
+   "status": "present",
+   "quote": "2nd: matt allison vote: all in favor"
+  },
+  {
+   "name": "Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "land use director burney exited the meeting at the beginning of the mvp planning grant discussion."
+  },
+  {
+   "name": "Lemieux",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "town manager lemieux agreed to use the $75,000 as a budget number."
+  },
+  {
+   "name": "Adam",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "nick and adam will get together next week to review, discuss, and then adam will set up a meeting"
+  },
+  {
+   "name": "Rodriquenz",
+   "role": "DPW Director",
+   "status": "not stated",
+   "quote": "task 13 - catch basin (cb) optimization plan: nick has sent a draft to dpw director rodriquenz for"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "SWTF put the Stormwater Utility initiative (Task 7) on hold, to be discussed at length at the next meeting.",
+   "quote": "the swtf decided to put this initiative on hold and discuss at length at the next meeting."
+  },
+  {
+   "decision": "Nick Cristofori and Adam to meet the following week; Adam to then set up a meeting with the Conservation Commission Agent, Building Commissioner, Adam, and Nick on regulatory mechanism assistance (Task 8), with the goal of getting it going in December.",
+   "quote": "nick and adam will get together next week to review, discuss, and then adam will set up a meeting"
+  },
+  {
+   "decision": "Town Manager Lemieux agreed to use $75,000 as the budget number for the CEI services (FY-2020).",
+   "quote": "town manager lemieux agreed to use the $75,000 as a budget number."
+  },
+  {
+   "decision": "Nick Cristofori to send a copy of the O&M facility list/plan to the SWTF when completed, for input.",
+   "quote": "nick will send a copy to the swtf when completed, for input."
+  },
+  {
+   "decision": "Meeting schedule for the first quarter set: January 23, February 27, March 26; meetings on Thursdays at 6:30 pm in the Ritter Building, upper conference room.",
+   "quote": "meeting schedule for the 1st quarter: january 23, february 27, march 26."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Year 3 recommended budget for CEI services (FY-2019 and FY-2020)",
+   "what_was_recorded": "The FY-2019 budget was $75,000; CEI recommended the Town budget between $60,000 and $75,000 for FY-2020, suggesting $75,000, which the Town Manager agreed to use.",
+   "figures_as_printed": [
+    "$75,000",
+    "$60,000",
+    "$75,000"
+   ],
+   "quote": "fy-2019 budget is $75,000; cel is recommending that the town budget between $60,000 and $75,000"
+  },
+  {
+   "topic": "Year 3 recommended budget table",
+   "what_was_recorded": "The attached table lists per-task figures for FY-2019 and FY-2020 with a $60,000 minimum and $75,000 recommended total; OCR column alignment is unreliable.",
+   "figures_as_printed": [
+    "$4,500",
+    "$2,800",
+    "$16,300",
+    "$0",
+    "$1,000",
+    "$7,500",
+    "$11,000",
+    "$2,500",
+    "$3,600",
+    "$8,000",
+    "$17,800",
+    "75,000",
+    "$4,000",
+    "$3,000",
+    "$35,000",
+    "$3,000",
+    "$2,000",
+    "$3,000",
+    "$50,000",
+    "$60,000",
+    "$75,000"
+   ],
+   "quote": "$60,000 _ minimum $75,000 recommended"
+  },
+  {
+   "topic": "Task 6 Public Participation allocation",
+   "what_was_recorded": "$1,000 has been allocated should the Town want CEI to proceed on this task.",
+   "figures_as_printed": [
+    "$1,000"
+   ],
+   "quote": "there has been $1,000 allocated should the town want cel to proceed on"
+  },
+  {
+   "topic": "MVP Planning Grant",
+   "what_was_recorded": "The Town is applying for a $15,000 Planning Process grant under the MVP program.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "the town is in the process of applying for the $15,000 planning process grant."
+  },
+  {
+   "topic": "Stormwater Utility funding",
+   "what_was_recorded": "Discussion of separate funding through a Stormwater Utility versus moving costs out of the budget and charging residents a separate fee; no figures printed and the item was put on hold.",
+   "figures_as_printed": [],
+   "quote": "moving these costs out of the budget and charging residents a separate fee to fund these expenses."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Project/Task Status Update",
+   "resolution": "reported; no action",
+   "quote": "nick cristofori passed out an agenda (attached) he'd created to step us through cet's progress in providing",
+   "tags": [
+    "NPDES",
+    "MS4",
+    "status report",
+    "IDDE",
+    "consultant"
+   ]
+  },
+  {
+   "topic": "Task 7 Stormwater Utility",
+   "resolution": "put on hold",
+   "quote": "the swtf decided to put this initiative on hold and discuss at length at the next meeting.",
+   "tags": [
+    "stormwater utility",
+    "fees",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Task 8 Regulatory Mechanism Assistance",
+   "resolution": "kickoff planned; goal December",
+   "quote": "task 8 - regulatory mechanism assistance: this is an important issue that needs to be dealt with now.",
+   "tags": [
+    "bylaw",
+    "regulations",
+    "MS4",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Year 3 Recommended Budget",
+   "resolution": "$75,000 used as budget number",
+   "quote": "4. year 3 recommended budget (attached)",
+   "tags": [
+    "budget",
+    "FY-2020",
+    "CEI"
+   ]
+  },
+  {
+   "topic": "MVP Planning Grant",
+   "resolution": "discussed; application in progress",
+   "quote": "5. mvp planning grant - municipal vulnerability preparedness program grant (mvp) provides",
+   "tags": [
+    "MVP",
+    "climate resiliency",
+    "grant",
+    "flooding"
+   ]
+  },
+  {
+   "topic": "Meeting schedule and adjournment",
+   "resolution": "Q1 schedule set; adjourned 6:55 pm",
+   "quote": "swtf members discussed the meeting schedule, then adjourned.",
+   "tags": [
+    "schedule",
+    "adjourn"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Agenda (Town of Lunenburg - Professional Engineering Services for NPDES Phase II MS4 Permit Compliance, Stormwater Coalition Meeting, November 21, 2019)",
+   "where": "list",
+   "quote": "nick cristofori passed out an agenda (attached) he'd created to step us through cet's progress in providing"
+  },
+  {
+   "name": "Year 3 Recommended Budget (attached)",
+   "where": "list",
+   "quote": "4. year 3 recommended budget (attached)"
+  },
+  {
+   "name": "IDDE Plan",
+   "where": "text",
+   "quote": "there are ~ 250 \"outfalls\" in the idde plan, ~ 380 in gis"
+  },
+  {
+   "name": "Operation and Maintenance (O & M) Plan",
+   "where": "text",
+   "quote": "task 4 - operation and maintenance (o & m) plan; there needs to be a listing of all facilities (schools,"
+  },
+  {
+   "name": "Catch Basin (CB) Optimization Plan draft",
+   "where": "text",
+   "quote": "task 13 - catch basin (cb) optimization plan: nick has sent a draft to dpw director rodriquenz for"
+  },
+  {
+   "name": "Street Sweeping Plan map",
+   "where": "text",
+   "quote": "it is basically a map of town, indicating which roads need to be swept annually, which more often."
+  },
+  {
+   "name": "Winter Road Maintenance Plan draft",
+   "where": "text",
+   "quote": "the dpw director has the draft of this plan; nick needs to"
+  },
+  {
+   "name": "MVP Planning Process grant application",
+   "where": "text",
+   "quote": "the town is in the process of applying for the $15,000 planning process grant."
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "MS4 permit",
+  "NPDES Phase II",
+  "IDDE",
+  "CEI consultant",
+  "FY2020 budget",
+  "stormwater utility",
+  "MVP grant",
+  "bylaw",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "nick cristofori passed out an agenda (attached)"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

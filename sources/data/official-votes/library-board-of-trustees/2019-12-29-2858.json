@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2019-12-29",
  "docid": "2858",
@@ -12,6 +12,84 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No formal votes are recorded in these minutes. The minutes note that the meeting was \"adjourned at 11:28 am\" but do not show any recorded motions, seconds, or voting language for adjournment or any other matter. The document is sparse and documents discussion of a performance review and agenda items, but without recorded formal votes.",
- "cost_usd": 0.0792095
+ "note": "No motions or votes are recorded; the adjournment at 11:28 am is stated without a motion or vote. Only Harry Kubetz is given a role (Chairperson); the other two trustees are listed without a printed role. The minutes contain no dollar figures and no public comment speakers ('No public comment'). The director's review ratings themselves are not printed in the text.",
+ "cost_usd": 0.00215762,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Conroy",
+   "role": "",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, donna saiia"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt special meeting was called to order at 10 am. by chairperson harry kubetz."
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "",
+   "status": "present",
+   "quote": "attending: bob conroy, harry kubetz, donna saiia"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Harry Kubetz will consolidate the individual comments submitted by board members into the single director's review document.",
+   "quote": "harry will consolidate individual comments submitted by bot members into the single review document."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Director's Annual Review",
+   "resolution": "discussed; ratings compiled by Harry, who will consolidate comments into one review document",
+   "quote": "performance review ratings submitted by each bot member were discussed and ratings compiled by harry.",
+   "tags": [
+    "director review",
+    "personnel",
+    "performance"
+   ]
+  },
+  {
+   "topic": "Sub-Committee Comments",
+   "resolution": "no board comments",
+   "quote": "sub-committee comments o no board comments",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 11:28 am (no motion recorded)",
+   "quote": "meeting adjourned at 11:28 am.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "December 29, 2019 Agenda",
+   "where": "list",
+   "quote": "attached documents o december 29, 2019 agenda"
+  }
+ ],
+ "tags": [
+  "library trustees",
+  "director annual review",
+  "special meeting",
+  "performance review",
+  "no votes recorded"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

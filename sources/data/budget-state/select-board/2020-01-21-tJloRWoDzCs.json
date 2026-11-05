@@ -1,0 +1,115 @@
+{
+ "board": "Selectmen Meeting",
+ "board_slug": "select-board",
+ "meeting_date": "2020-01-21",
+ "source": {
+  "sha256": "2da7377c763123fedac24891b25602a3c213cfda6b387cdabff71dd870bf8b54",
+  "transcript": "sources/data/youtube-transcripts/select-board/2020-01-21-tJloRWoDzCs.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "350,000",
+    "fiscal_year": 2021,
+    "kind": "budget_total",
+    "scope": "both",
+    "statement": "Forecast uses an estimated new growth for FY21 and a lower amount for later years.",
+    "status": "announced",
+    "t": 8568,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2021,
+    "kind": "state_aid",
+    "scope": "both",
+    "statement": "Forecast level funds state aid for FY21 pending the governor's budget, then assumes growth.",
+    "status": "announced",
+    "t": 8722,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "889 thousand one hundred and thirty three dollars",
+    "fiscal_year": 2021,
+    "kind": "free_cash",
+    "scope": "town",
+    "statement": "Certified free cash used for FY21 mostly for the capital plan, plus stabilization and OPEB.",
+    "status": "announced",
+    "t": 9376,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "four million dollars",
+    "fiscal_year": 2025,
+    "kind": "deficit",
+    "scope": "both",
+    "statement": "A member read forecast pages as showing a multi-million deficit in FY25 under the school staffing plan.",
+    "status": "announced",
+    "t": 9896,
+    "who": "a member"
+   },
+   {
+    "amount_as_heard": "three million five hundred and ninety-four thousand three hundred and twenty-six",
+    "fiscal_year": 2025,
+    "kind": "other",
+    "scope": "school",
+    "statement": "School staffing plan adds this extra amount in FY25 on top of projected increases.",
+    "status": "proposed",
+    "t": 9661,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": null,
+    "kind": "override",
+    "scope": "both",
+    "statement": "Town manager said existing revenues could not cover the school plan and an override would be required.",
+    "status": "announced",
+    "t": 9960,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "1 million three hundred and twenty nine thousand one hundred and thirty three dollars",
+    "fiscal_year": 2021,
+    "kind": "budget_total",
+    "scope": "town",
+    "statement": "Recommended FY21 capital plan, funded by tax revenue and free cash.",
+    "status": "proposed",
+    "t": 12429,
+    "who": "the town manager"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "school programs",
+    "condition": "if two and a half percent is all the school budget gets each year",
+    "fiscal_year": null,
+    "prediction": "Hard decisions on programs and nice-to-have offerings at the high school if only 2.5 percent increases continue.",
+    "scope": "school",
+    "t": 11376,
+    "who": "the superintendent"
+   },
+   {
+    "about": "future debt",
+    "condition": "once a building plan exists",
+    "fiscal_year": null,
+    "prediction": "Taxes will go up when new debt for building needs arrives.",
+    "scope": "town",
+    "t": 12071,
+    "who": "a Finance Committee member"
+   }
+  ]
+ },
+ "video_id": "tJloRWoDzCs",
+ "video_url": "https://www.youtube.com/watch?v=tJloRWoDzCs",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-11-04T09:25:13Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

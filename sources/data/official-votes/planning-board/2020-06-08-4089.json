@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2020-06-08",
  "docid": "4089",
@@ -12,15 +12,117 @@
  },
  "votes": [
   {
-   "motion": "Continue the stormwater permit hearing for 190 Electric Avenue to June 22, 2020, 6:35 PM",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Tanner Cole",
+   "motion": "Continue the stormwater permit hearing for 190 Electric Avenue to June 22, 2020, 6:35 PM.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "T. Cole",
    "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "p. bertram made motion to continue the stormwater permit hearing for 190 electric avenue to june 22, 2020, 6:35 pm, t. cole seconded, roll call vote- t. cole, aye; p. bertram, aye; m. allison, aye. vote passed 3-0."
+   "procedural": false,
+   "quote": "p. bertram made motion to continue the stormwater permit hearing for 190 electric avenue to june 22, 2020, 6:35 pm, t. cole seconded, roll call vote- t. cole, aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0799745
+ "note": "The minutes record a continuance vote but no decision on the permit itself; the hearing was recessed at 7:42 PM. No dollar figures or public comment are recorded.",
+ "cost_usd": 0.004543800000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present; paula bertram, present."
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present; paula bertram, present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present; paula bertram, present."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "a. burney prefaced the hearing with the following reading."
+  },
+  {
+   "name": "Brandon Smith",
+   "role": "representing the applicant (Borrego Solar Systems, Inc.)",
+   "status": "present",
+   "quote": "the applicant was represented by brandon smith, borrego solar systems, inc."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The applicant's plan is to be updated to show erosion control measures around the vehicle washing and refueling area, and the updated plan is to be re-reviewed by GEI.",
+   "quote": "the plan will be updated to indicate same and re-reviewed by gei."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Stormwater management special permit, 190 Electric Avenue (public hearing)",
+   "resolution": "continued to June 22, 2020, 6:35 PM",
+   "quote": "the hearing was to hear and discuss a stormwater management special permit under ch. 204 of the code of the town of lunenburg",
+   "tags": [
+    "stormwater",
+    "special permit",
+    "solar",
+    "public hearing",
+    "190 Electric Avenue"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Project Site Plan dated March 10, 2020",
+   "where": "list",
+   "quote": "project site plan dated march 10, 2020"
+  },
+  {
+   "name": "Stormwater Permit Executive Summary and Project Sequencing",
+   "where": "list",
+   "quote": "stormwater permit executive summary and project sequencing"
+  },
+  {
+   "name": "Stormwater Report dated April 2, 2020",
+   "where": "list",
+   "quote": "stormwater report dated april 2, 2020"
+  },
+  {
+   "name": "Graves Engineering, Inc. (GEI) review letter dated June 3, 2020",
+   "where": "text",
+   "quote": "reviewed by graves engineering, inc. (gei) in letter dated june 3, 2020"
+  },
+  {
+   "name": "Borrego Solar response letter dated June 8, 2020",
+   "where": "text",
+   "quote": "borrego responded to that review in letter dated june 8, 2020 received in the planning office"
+  },
+  {
+   "name": "Stormwater Handbook",
+   "where": "text",
+   "quote": "what type of stormwater structure this would be classified as under the stormwater handbook"
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "solar photovoltaic",
+  "special permit",
+  "public hearing",
+  "continued hearing",
+  "remote meeting COVID-19"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

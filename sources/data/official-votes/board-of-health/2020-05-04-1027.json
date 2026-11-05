@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2020-05-04",
  "docid": "1027",
@@ -12,40 +12,154 @@
  },
  "votes": [
   {
-   "motion": "Approve the February 20, 2020 Board of Health meeting minutes",
+   "motion": "Approve the February 20, 2020 minutes.",
    "moved_by": "Passios",
    "seconded_by": "Mayhew",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion made by passios and second by mayhew to approve. ro ll call vote: fortin: yes mayhew - yes passios: yes emond - yes jewell - ye",
-   "quote_taken_from_text": true
+   "quote": "february 20, 2020 minutes motion made by passios and second by mayhew to approve."
   },
   {
-   "motion": "Approve variances for the septic system at 73 Hollis Road, reducing soil requirement to less than 4 feet using Presby System and allowing sieve analysis in lieu of testing",
+   "motion": "Approve the variances for 73 Hollis Road (reduction of soil to less than 4 feet with a Presby system by adding 2 feet of soil, and use of a sieve analysis in lieu of testing).",
    "moved_by": "Emond",
    "seconded_by": "Passios",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by emond and second by passios, the board voted to approve the variances as follows by roll call vote: fortin: yes mayhew: yes passios: yes emond: yes jewell: yes"
+   "quote": "on motion by emond and second by passios, the board voted to approve the variances as follows by roll call"
   },
   {
-   "motion": "Allow Administrative Assistant Andrea Schnepf to sign septic permits and act on behalf of the Board with the permission of the Board Chairman",
+   "motion": "Allow Administrative Assistant Andrea Schnepf to sign septic permits on behalf of the board with the permission of the Board Chairman.",
    "moved_by": "Emond",
    "seconded_by": "Fortin",
-   "outcome": "passed 4-0-1",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "upon motion by emond and second by fortin, the board voted to allow administrative assistant, andrea schnepf, to sign septic permits on their as well act on their behalf with the permission of the board chairman as follows: mayhew: yes fortin: yes emond: yes perry: yes passios: abstain"
+   "quote": "upon motion by emond and second by fortin, the board voted to allow administrative assistant, andrea schnepf, to sign septic permits"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:30 pm.",
    "moved_by": "Emond",
    "seconded_by": "Mayhew",
-   "outcome": "not stated",
+   "outcome": "passed",
    "procedural": true,
    "quote": "on motion by emond and second by mayhew, meeting was adjourned at 8:30 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1338895
+ "note": "Text is a readable extract with no scan issues. Roll-call votes are recorded by name with Yes/Abstain entries but no printed totals, so outcomes are given as 'passed' rather than a count. The septic permit vote recorded one abstention (Passios). The minutes say public comment would feature but no public comment section is recorded. No dollar figures appear in the minutes. Andrea Schnepf and Mr. Woodrow are mentioned but not recorded as attending.",
+ "cost_usd": 0.00428352,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Perry Jewell",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "perry jewell, george emond, paul fortin david passios, and warren mayhew pre sent."
+  },
+  {
+   "name": "George Emond",
+   "status": "present",
+   "quote": "perry jewell, george emond, paul fortin david passios, and warren mayhew pre sent."
+  },
+  {
+   "name": "Paul Fortin",
+   "status": "present",
+   "quote": "perry jewell, george emond, paul fortin david passios, and warren mayhew pre sent."
+  },
+  {
+   "name": "David Passios",
+   "status": "present",
+   "quote": "perry jewell, george emond, paul fortin david passios, and warren mayhew pre sent."
+  },
+  {
+   "name": "Warren Mayhew",
+   "status": "present",
+   "quote": "perry jewell, george emond, paul fortin david passios, and warren mayhew pre sent."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Board of Health Agent, Nashoba Associated Board of Health",
+   "status": "present",
+   "quote": "also present, jim garreffi, board of health agent, nashoba associated board of health."
+  },
+  {
+   "name": "Bob Proctor",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "bob proctor met with the board on behalf of the owner."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Agent Garreffi will review the wording of the White Street property visitor advisory per the board's wishes and provide a document to the Leominster Housing Authority.",
+   "quote": "agent garreffi will look at the wording and provide a document in accordance with board's wishes and provide same to the housing authority."
+  },
+  {
+   "decision": "Further discussion of changing the Lunenburg rubbish regulations is placed on hold until a later date.",
+   "quote": "any further discussion of changing the rubbish regulations for lunenburg are on hold until a later date."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (February 20, 2020)",
+   "resolution": "approved",
+   "quote": "february 20, 2020 minutes motion made by passios and second by mayhew to approve."
+  },
+  {
+   "topic": "73 Hollis Road variances and septic permit signing",
+   "resolution": "variances approved; Schnepf authorized to sign septic permits (Passios abstained)",
+   "quote": "the variances were approved."
+  },
+  {
+   "topic": "COVID-19 update",
+   "resolution": "update received; no action recorded",
+   "quote": "agent jim garreffi was present at the meeting to give an update."
+  },
+  {
+   "topic": "White Street Property visitor restriction",
+   "resolution": "agent to draft advisory for Housing Authority; no Order adopted",
+   "quote": "leominster housing authority has requested an order restricting visitors to the property."
+  },
+  {
+   "topic": "Rubbish regulations",
+   "resolution": "on hold",
+   "quote": "any further discussion of changing the rubbish regulations for lunenburg are on hold until a later date."
+  },
+  {
+   "topic": "64 Arbor Street septic tank permit",
+   "resolution": "status noted; no action recorded",
+   "quote": "this permit has not been applied for."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:30 pm",
+   "quote": "on motion by emond and second by mayhew, meeting was adjourned at 8:30 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Sample Order restricting visitors to the White Street property (Leominster Housing Authority request)",
+   "where": "text",
+   "quote": "a sample of the order has been provided stating no visitors are allowed."
+  }
+ ],
+ "tags": [
+  "board of health",
+  "COVID-19",
+  "variances",
+  "septic",
+  "Presby system",
+  "White Street",
+  "rubbish regulations",
+  "remote meeting",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

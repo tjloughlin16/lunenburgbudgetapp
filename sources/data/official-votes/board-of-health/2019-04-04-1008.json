@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2019-04-04",
  "docid": "1008",
@@ -12,24 +12,222 @@
  },
  "votes": [
   {
-   "motion": "Approve variances for 210 Chase Road septic system, contingent on service contract for FAST system being in place prior to certificate of compliance",
+   "motion": "Approve variances for 210 Chase Road (less than 100 feet to a well and use of a sieve analysis), provided a service contract for the FAST system is in place before the COC is issued.",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by fortin, the board voted to approved the variances provided that a service contract for the fast s ystem is in place prior to the coc being issued. all in favor",
-   "quote_taken_from_text": true
+   "quote": "on motion by jewell and second by fortin, the board voted to approved the variances"
   },
   {
-   "motion": "Allow deed restriction of 4 bedrooms and a total of 10 rooms for 9 Winter Hill Road",
+   "motion": "Allow a deed restriction of 4 bedrooms and a total of 10 rooms at 9 Winter Hill Road.",
    "moved_by": "Jewell",
    "seconded_by": "Mayhew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by mayhew the board voted to allow a deed restriction of 4 bedrooms and a total of 10 rooms."
+   "quote": "on motion by jewell and second by mayhew the board voted to allow a deed restriction of 4 bedrooms and a total of 10 rooms"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10185150000000001
+ "note": "Text is a rough extraction with typos and odd spacing. No dollar figures, public comment section, or executive session appear. The minutes approval has no motion or tally recorded, so it is listed as a decision. The 210 Chase Road vote shows 'All in favor' with no count; the 9 Winter Hill Road vote gives no tally. The meeting adjournment at 8:30 pm has no recorded motion. Darren Massey and the Select Board are referenced but not shown as attending.",
+ "cost_usd": 0.00463402,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, david passios, paul fortin, warren mayhew"
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, david passios, paul fortin, warren mayhew"
+  },
+  {
+   "name": "David Passios",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, david passios, paul fortin, warren mayhew"
+  },
+  {
+   "name": "Paul Fortin",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, david passios, paul fortin, warren mayhew"
+  },
+  {
+   "name": "Warren Mayhew",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, david passios, paul fortin, warren mayhew"
+  },
+  {
+   "name": "Summit Engineering",
+   "status": "present",
+   "quote": "summit engineering met with the board of behalf of the owner."
+  },
+  {
+   "name": "Mark Horrigan",
+   "status": "present",
+   "quote": "mark horrigan met with the board."
+  },
+  {
+   "name": "Mike Tully",
+   "status": "present",
+   "quote": "the owner of the property, mike tully, met with the board."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of March 18, 2019 recorded as approved (no motion or tally printed).",
+   "quote": "minutes approved: march 18, 2019"
+  },
+  {
+   "decision": "Extensions for the expired septic permits at 211/219 W. Townsend Road would not be given, because work has not begun.",
+   "quote": "because work has not begun, extensions would not be given."
+  },
+  {
+   "decision": "At 113 Sandy Cove Road the well may remain as an agricultural well if disconnected from the residence (proof to the board) and a deed restriction notification is placed on the property.",
+   "quote": "the well can remain provided it be disconnected from the residence"
+  },
+  {
+   "decision": "Anyone applying for an Event Permit must meet all Board of Health Regulations and provide their proposal directly to the Board of Health.",
+   "quote": "the board is requiring that anyone applying for an event permit meet all board of health regulations"
+  },
+  {
+   "decision": "Darren Massey's event permit applications (Holman Street) must meet Board of Health regulations.",
+   "quote": "all events held in town have to meeting board of health regulations."
+  },
+  {
+   "decision": "The system at 25 Pearl Street is in failure and the matter will be marked up for hearing in Housing Court.",
+   "quote": "this matter will be marked up for hearing in housing court."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved March 18, 2019 minutes",
+   "quote": "minutes approved: march 18, 2019",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged four reports",
+   "quote": "title 5 inspection reports acknowledged: 1570 mass avenue 305 pleasant street 23 esterbrook road 380 nw townsend",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "210 Chase Road septic variances",
+   "resolution": "approved with service contract condition",
+   "quote": "on motion by jewell and second by fortin, the board voted to approved the variances",
+   "tags": [
+    "septic",
+    "variance",
+    "well"
+   ]
+  },
+  {
+   "topic": "211/219 W. Townsend Road septic permit extensions",
+   "resolution": "extensions denied; no work begun",
+   "quote": "because work has not begun, extensions would not be given.",
+   "tags": [
+    "septic",
+    "permits"
+   ]
+  },
+  {
+   "topic": "113 Sandy Cove Road replacement system and well",
+   "resolution": "well may remain as agricultural well with conditions",
+   "quote": "the well can remain provided it be disconnected from the residence",
+   "tags": [
+    "septic",
+    "well",
+    "deed restriction"
+   ]
+  },
+  {
+   "topic": "9 Winter Hill Road basement finish",
+   "resolution": "approved deed restriction of 4 bedrooms and 10 rooms",
+   "quote": "on motion by jewell and second by mayhew the board voted to allow a deed restriction of 4 bedrooms and a total of 10 rooms",
+   "tags": [
+    "septic",
+    "deed restriction"
+   ]
+  },
+  {
+   "topic": "New events application process",
+   "resolution": "applicants must meet BOH regulations",
+   "quote": "the board is requiring that anyone applying for an event permit meet all board of health regulations",
+   "tags": [
+    "events",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Darren Massey event applications",
+   "resolution": "no action; events must meet BOH regulations",
+   "quote": "all events held in town have to meeting board of health regulations.",
+   "tags": [
+    "events"
+   ]
+  },
+  {
+   "topic": "25 Pearl Street septic failure",
+   "resolution": "referred to Housing Court",
+   "quote": "this matter will be marked up for hearing in housing court.",
+   "tags": [
+    "septic",
+    "housing court",
+    "enforcement"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report, 1570 Mass Avenue",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 1570 mass avenue 305 pleasant street 23 esterbrook road 380 nw townsend"
+  },
+  {
+   "name": "Title 5 inspection report, 305 Pleasant Street",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 1570 mass avenue 305 pleasant street 23 esterbrook road 380 nw townsend"
+  },
+  {
+   "name": "Title 5 inspection report, 23 Esterbrook Road",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 1570 mass avenue 305 pleasant street 23 esterbrook road 380 nw townsend"
+  },
+  {
+   "name": "Title 5 inspection report, 380 NW Townsend",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 1570 mass avenue 305 pleasant street 23 esterbrook road 380 nw townsend"
+  },
+  {
+   "name": "Proposed Select Board event permitting language",
+   "where": "text",
+   "quote": "the select board is in the process of creating a new permitting process. the proposed language has"
+  }
+ ],
+ "tags": [
+  "board of health",
+  "septic",
+  "Title 5",
+  "variances",
+  "deed restriction",
+  "well",
+  "event permits",
+  "housing court"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports acknowledged:"
+ },
+ "dropped_unquoted_by_field": {}
 }

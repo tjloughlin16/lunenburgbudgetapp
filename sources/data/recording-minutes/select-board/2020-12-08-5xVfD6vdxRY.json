@@ -1,0 +1,558 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectboard",
+ "meeting_date": "2020-12-08",
+ "video_id": "5xVfD6vdxRY",
+ "video_url": "https://www.youtube.com/watch?v=5xVfD6vdxRY",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2020-12-08-5xVfD6vdxRY.json",
+  "sha256": "9afe481b4595b1c4be58e6cebc8dbd62f80910f09f9effca3cbc47475e458b0d",
+  "caption_lines": 536,
+  "segments": 5017
+ },
+ "recording": {
+  "duration_s": 11207,
+  "duration": "3:06",
+  "spoken_chars": 146261,
+  "words_approx": 24376
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_12082020-5226",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-12-08-agenda-5226.txt",
+   "path": "sources/meetings/select-board/2020-12-08-agenda-5226.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-03T15:47:20Z",
+  "cost_usd": 0.30013239999999997
+ },
+ "minutes": {
+  "headline": "Select Board approved all 2021 license renewals, ratified four police appointments, and began FY22 budget priorities.",
+  "summary": "The board waived the town's right of first refusal on a Chapter 61A parcel, reviewed a draft host community agreement with a cannabis retailer, and ratified four police appointments. It approved annual license renewals, with alcohol renewals contingent on safety inspections and state tax good-standing certificates, on a split vote. It discussed FY22 budget priorities and the appointment process for boards, which ended without agreement, with members asked to submit their own proposals.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Chair (Tom)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Ms. Adams",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Jefferies",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Dwyer",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mr. Moreno/Mourinho",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Madam Town Manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Chief Gamel",
+    "role": "police chief"
+   },
+   {
+    "name_as_heard": "Mr. Bernie",
+    "role": "assistant town manager"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 195,
+    "speaker_as_heard": "Dave Pacios, 56 Whiting Street",
+    "stated_role": "resident",
+    "topic": "Trash bags are repeatedly out of stock at stores; asks the town manager and DPW director to add an option to order bags online."
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy28",
+   "contracts-and-unions",
+   "economic-development",
+   "facilities",
+   "free-cash",
+   "health-insurance",
+   "hiring",
+   "legal",
+   "personnel",
+   "policy",
+   "public-comment",
+   "public-safety",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 461,
+    "motion": "Waive the town's right of first refusal for 360 Flat Hill Road (Chapter 61A)",
+    "moved_by": "a member",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3358,
+    "motion": "Ratify town manager's appointment of Jeffrey Thibodeau as lieutenant",
+    "moved_by": "Ms. Adams",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3860,
+    "motion": "Appoint Joshua Matthew as sergeant",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4213,
+    "motion": "Appoint Jeffrey Hill as full-time police officer",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4627,
+    "motion": "Ratify appointment of Nicholas Moreno as full-time police officer",
+    "moved_by": "Ms. Adams",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5805,
+    "motion": "Approve 2021 alcohol license renewals including Lonnie's Orchard, contingent on 304 CMR 110 safety inspections and DOR certificates of good standing",
+    "outcome": "passed 3-2",
+    "procedural": false
+   },
+   {
+    "t": 6040,
+    "motion": "Approve 2021 auto dealer and limousine license renewals",
+    "moved_by": "a member",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 6300,
+    "motion": "Approve 2021 common victualler license renewals",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 6427,
+    "motion": "Approve 2021 miscellaneous license renewals",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 6490,
+    "motion": "Approve 2021 weekday entertainment license renewals",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 11173,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1291,
+    "topic": "Host community agreement revenue",
+    "what_was_said": "A member noted the draft pays a percentage of gross sales in a way that reads as based only on first-year sales; the board agreed it should apply to each year and sent it to town counsel.",
+    "figures_as_heard": [
+     "three percent"
+    ]
+   },
+   {
+    "t": 2064,
+    "topic": "Projected cannabis gross sales",
+    "what_was_said": "The applicant's low-side projection of gross sales was given in answer to a member's question.",
+    "figures_as_heard": [
+     "1.2 million",
+     "three percent"
+    ]
+   },
+   {
+    "t": 1025,
+    "topic": "Reimbursement of town costs under host agreement",
+    "what_was_said": "A draft clause would have the company reimburse the town's costs for public meetings and consulting; the board will ask counsel to clarify it.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 6757,
+    "topic": "Free cash going into annual town meeting",
+    "what_was_said": "The town manager said reserves were built up so that free cash can fall back on if FY22 state aid is below FY21.",
+    "figures_as_heard": [
+     "1.8 million"
+    ]
+   },
+   {
+    "t": 6862,
+    "topic": "Health insurance FY22",
+    "what_was_said": "Active health insurance cost is expected to rise no more than a set percentage because retirees are moving to Medicare plans.",
+    "figures_as_heard": [
+     "three percent"
+    ]
+   },
+   {
+    "t": 6862,
+    "topic": "Trash and recycling contract",
+    "what_was_said": "The pay-as-you-throw contract expires at the end of the fiscal year and is expected to increase significantly when bid.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 7385,
+    "topic": "FY21 tax rate",
+    "what_was_said": "The state certified the FY21 tax rate, compared with the FY20 rate.",
+    "figures_as_heard": [
+     "17.74 cents per thousand",
+     "eighteen dollars and twelve cents per thousand"
+    ]
+   },
+   {
+    "t": 7406,
+    "topic": "Street light purchase from Unitil",
+    "what_was_said": "Letter of intent submitted to Unitil requesting a cost estimate, which can take up to three months.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 7510,
+    "topic": "Microenterprise assistance grants",
+    "what_was_said": "Regional CDBG grants are available to small businesses with up to five employees.",
+    "figures_as_heard": [
+     "ten thousand"
+    ]
+   },
+   {
+    "t": 3942,
+    "topic": "Added police officer",
+    "what_was_said": "A special town meeting approved adding an officer, and the new hires fill that and a retirement backfill.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2447,
+    "decision": "Board will collect all questions on the draft cannabis host agreement, wait a couple of days for the applicant's input, then send them to town counsel; the community outreach meeting is aimed for mid-January with 14 days' newspaper notice."
+   },
+   {
+    "t": 1189,
+    "decision": "Town manager to ask counsel to clarify section 2.8 on cost reimbursement, the first-year-only revenue wording, and the assignment clause."
+   },
+   {
+    "t": 5678,
+    "decision": "Lonnie's Orchard added to the alcohol renewal list after the town manager confirmed it had paid."
+   },
+   {
+    "t": 10321,
+    "decision": "Each board member will submit a proposed appointment process to the town manager, who will distribute them to all five at once; the topic returns at a later workshop."
+   },
+   {
+    "t": 10763,
+    "decision": "Town manager to ask town counsel whether the Conservation Commission has authority to ban possession of firearms on land it controls."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 3,
+    "t_end": 195,
+    "topic": "Opening, remote meeting notices, pledge",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 195,
+    "t_end": 340,
+    "topic": "Public comment on trash bag availability",
+    "resolution": "referred to town manager and DPW director",
+    "tags": [
+     "public-comment",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 340,
+    "t_end": 500,
+    "topic": "Right of first refusal, 360 Flat Hill Road",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 500,
+    "t_end": 2741,
+    "topic": "Draft host community agreement, Green Leaf Botanicals",
+    "resolution": "no vote; sent to town counsel",
+    "tags": [
+     "legal",
+     "economic-development",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2741,
+    "t_end": 4688,
+    "topic": "Police appointments: lieutenant, sergeant, two officers",
+    "resolution": "voted",
+    "tags": [
+     "personnel",
+     "public-safety",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 4688,
+    "t_end": 6531,
+    "topic": "2021 annual license renewals",
+    "resolution": "voted",
+    "tags": [
+     "policy",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 6531,
+    "t_end": 6700,
+    "topic": "Committee reports",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 6696,
+    "t_end": 7300,
+    "topic": "FY22 budget priorities",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "facilities",
+     "staffing"
+    ]
+   },
+   {
+    "t_start": 7300,
+    "t_end": 7864,
+    "topic": "Town manager report and COVID update",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 7864,
+    "t_end": 10466,
+    "topic": "Board and committee appointment process workshop",
+    "resolution": "homework assigned",
+    "tags": [
+     "policy",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 10466,
+    "t_end": 11193,
+    "topic": "Board comments: conservation land firearms, holiday wishes, adjournment",
+    "resolution": "informational",
+    "tags": [
+     "legal",
+     "policy"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Result of the adjournment vote is not stated.",
+   "Section of the draft agreement discussed around 960 was partly garbled.",
+   "Individual votes on the common victualler, miscellaneous and entertainment renewals are partly captured; the alcohol vote count of three to two is stated but names are unclear except Mr. Jefferies opposed."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 5013,
+    "about": "Whether to approve alcohol renewals contingent on missing safety inspections and tax certificates, or delay a week.",
+    "sides": "One member opposed contingent approval; three members and the chair favored it.",
+    "words_as_heard": "i will not support the motion",
+    "kind": "members disagree"
+   },
+   {
+    "t": 9342,
+    "about": "Disagreement over whether the board appointment process shuts out newcomers and should be made competitive.",
+    "sides": "Two members favored open advertising of expiring terms; the chair and other members saw a solution looking for a problem.",
+    "words_as_heard": "this is a solution looking for a problem",
+    "kind": "members disagree"
+   },
+   {
+    "t": 9443,
+    "about": "A member said she had struggled to be heard in town government, after the chair said he had never heard of disenfranchisement.",
+    "sides": "A member against the chair's view of the process.",
+    "words_as_heard": "i was yelled at during public comment um i was laughed at a lot",
+    "kind": "charged language"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 5284,
+    "kind": "condition",
+    "about": "A member's condition for supporting contingent license approval.",
+    "who": "a member",
+    "words_as_heard": "at least they respond to this board with uh uh you know a brief email that states you know what what's outstanding and when they'll have it completed"
+   },
+   {
+    "t": 1603,
+    "kind": "liability or legal",
+    "about": "Host agreement revenue clause could be read as first-year sales only.",
+    "who": "a member",
+    "words_as_heard": "essentially you're only getting three percent on the first year's votes"
+   },
+   {
+    "t": 2169,
+    "kind": "condition",
+    "about": "Member wants the assignment clause to clearly carry over if the business is sold.",
+    "who": "a member",
+    "words_as_heard": "just confirm if it's ironclad in terms of transferability"
+   },
+   {
+    "t": 10532,
+    "kind": "liability or legal",
+    "about": "A member says the Conservation Commission may be exceeding its authority on firearm possession on public land.",
+    "who": "a member",
+    "words_as_heard": "it's the purview of the select board to regulate that"
+   },
+   {
+    "t": 6989,
+    "kind": "safety",
+    "about": "Buildings are under-managed with one staff member and no tracking of building systems.",
+    "who": "a member",
+    "words_as_heard": "we invest tens of millions of dollars into buildings and then we have one person in town who can go around and maintain them"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 589,
+    "name_as_heard": "draft host community agreement",
+    "kind": "contract or agreement",
+    "words_as_heard": "our council has reviewed the draft agreement that green leaf botanicals provided",
+    "shown": true
+   },
+   {
+    "t": 6716,
+    "name_as_heard": "FY22 budget priorities memo (PDF)",
+    "kind": "memo",
+    "words_as_heard": "it was a pdf provided by the town manager outlining the framework",
+    "shown": true
+   },
+   {
+    "t": 7884,
+    "name_as_heard": "current reappointment mechanism in the Google Drive",
+    "kind": "other",
+    "words_as_heard": "in the google drive there should be the current mechanism",
+    "shown": true
+   },
+   {
+    "t": 2951,
+    "name_as_heard": "Chief's letter regarding lieutenant",
+    "kind": "letter or email",
+    "words_as_heard": "the letter to myself from chief gamo regarding the lieutenant's position dated november 24th",
+    "shown": true
+   },
+   {
+    "t": 2293,
+    "name_as_heard": "House bill 4398",
+    "kind": "warrant article",
+    "words_as_heard": "4398 rather",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "town-building-management-staffing",
+    "title": "Building management staffing",
+    "question": "How much does the town spend on buildings, and how many staff maintain them?",
+    "t": 6947,
+    "words_as_heard": "how many people do we have on the town side dedicated to buildings one staff member",
+    "data_in_play": [
+     "one staff member",
+     "tens of millions of dollars"
+    ],
+    "existing": "topic:town-facilities-grounds"
+   },
+   {
+    "slug": "solid-waste-recycling-contract",
+    "title": "Trash contract rebid",
+    "question": "What will the new pay-as-you-throw trash and recycling contract cost?",
+    "t": 6862,
+    "words_as_heard": "this 10-year contract is expiring at the end of this fiscal year",
+    "data_in_play": [
+     "10-year contract"
+    ],
+    "existing": "topic:town-solid-waste"
+   },
+   {
+    "slug": "street-light-led-conversion",
+    "title": "Street light LED conversion",
+    "question": "What will buying the street lights from Unitil and converting them to LED cost?",
+    "t": 7406,
+    "words_as_heard": "purchase street lights from unitil",
+    "data_in_play": [
+     "three months"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board approved 2021 alcohol license renewals 3-2, contingent on safety inspections and state tax good-standing certificates.",
+    "t": 5805
+   },
+   {
+    "line": "The board approved the auto dealer, limousine, common victualler, miscellaneous and weekday entertainment license renewals.",
+    "t": 6490
+   },
+   {
+    "line": "The board ratified or made four police appointments: a lieutenant, a sergeant and two full-time officers.",
+    "t": 4627
+   },
+   {
+    "line": "The board reviewed a draft cannabis host community agreement, took no vote, and will send its questions to town counsel.",
+    "t": 2447
+   },
+   {
+    "line": "The board waived the town's right of first refusal on a Chapter 61A parcel at 360 Flat Hill Road.",
+    "t": 461
+   }
+  ],
+  "why_it_matters": [
+   "The cannabis host agreement sets what the company pays the town and what costs it reimburses, so the wording counsel returns affects town revenue in every year of the agreement.",
+   "The town manager's FY22 notes point to a pay-as-you-throw trash contract expected to rise when bid and to free cash held as a cushion against lower state aid, both of which bear on residents' bills and the town budget, mostly taxes."
+  ],
+  "watch_next": [
+   "Town counsel's answers on the draft host agreement, and the community outreach meeting aimed for mid-January with 14 days' newspaper notice.",
+   "Each board member's proposed appointment process, to be circulated by the town manager and taken up at a later workshop."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-03T15:47:30Z",
+   "cost_usd": 0.0305051
+  }
+ }
+}

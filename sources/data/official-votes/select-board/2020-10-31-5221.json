@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-10-31",
  "docid": "5221",
@@ -12,6 +12,102 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes from macOS Vision. This is a site-walk meeting; no motions voted on are recorded. The minutes state the Board \"concurred\" on next steps but do not record a formal motion, seconder, or vote outcome.",
- "cost_usd": 0.0774035
+ "note": "Single-page OCR text; readable. No motions or votes are printed, including the 10:21 a.m. adjournment, so no votes are recorded. The text refers to 'Mr. Jeffreys' while the roster prints 'Michael-kay Jettreys'; the roster form is used. Peterson's attendance is not stated; he is named only as providing the plot plan and GIS information. Roles for Dwyer and Marino are not printed.",
+ "cost_usd": 0.00309312,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-kay jettreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Michael-kay Jettreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-kay jettreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-kay jettreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-kay jettreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-kay jettreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Peterson",
+   "role": "Executive Assistant",
+   "status": "not stated",
+   "quote": "all members reviewed the plot plan and gis information provided by executive assistant peterson."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Select Board concurred that next steps would be communicating with other boards and working on warrant articles for the 2021 annual town meeting to seek funds for initial planning.",
+   "quote": "the select board concurred that next steps involved communicating with other boards and working on warrant articles for the 2021 annual town meeting to seek funds for initial planning."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrant articles for initial planning funds (old Primary School lot)",
+   "what_was_recorded": "The board concurred on working on 2021 annual town meeting warrant articles to seek funds for initial planning; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "working on warrant articles for the 2021 annual town meeting to seek funds for initial planning"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Site walk of old Primary School lot and parking",
+   "resolution": "site walk held; no vote; next steps agreed by concurrence",
+   "quote": "chairman alonzo called the meeting to order at 9:35 a.m. in the parking lot of the old primary school.",
+   "tags": [
+    "site visit",
+    "Primary School lot",
+    "parking",
+    "town center",
+    "park"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Plot plan",
+   "where": "text",
+   "quote": "all members reviewed the plot plan and gis information provided by executive assistant peterson."
+  },
+  {
+   "name": "GIS information",
+   "where": "text",
+   "quote": "all members reviewed the plot plan and gis information provided by executive assistant peterson."
+  }
+ ],
+ "tags": [
+  "site walk",
+  "Primary School lot",
+  "parking",
+  "town park",
+  "warrant article",
+  "APDC",
+  "historical society easement"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "all members reviewed the plot plan and gis information provided by executive assistant peterson."
+ },
+ "dropped_unquoted_by_field": {}
 }

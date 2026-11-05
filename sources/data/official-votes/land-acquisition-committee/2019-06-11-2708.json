@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "land-acquisition-committee",
  "meeting_date": "2019-06-11",
  "docid": "2708",
@@ -12,23 +12,180 @@
  },
  "votes": [
   {
-   "motion": "come out of executive session",
+   "motion": "Come out of executive session.",
    "moved_by": "Terri Burchfield",
-   "seconded_by": "Ken Jones",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "terri burchfield made a motion to come out of executive session, ken jones seconded. all present voted by roll call to approve."
+   "quote": "terri burchfield made a motion to come out of executive session, ken jones seconded. all present voted by roll call to approve.",
+   "seconded_by": "Ken Jones"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Greg Bittner",
-   "seconded_by": "Ken Jones",
-   "outcome": "approved unanimously",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "greg bittner motioned to adjourn the meeting, ken jones seconded. approved unanimously."
+   "quote": "greg bittner motioned to adjourn the meeting, ken jones seconded. approved unanimously.",
+   "seconded_by": "Ken Jones"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0801405
+ "note": "Text is macOS Vision OCR of a 2019 minutes document. No roles or attendance status are printed for most attendees; status is inferred as present from their participation. No vote was recorded on the purchase, the applications, or any money. Public comment is not recorded. The minutes do not state the executive session entry motion or the approval of prior minutes.",
+ "cost_usd": 0.00334922,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brandon Kibbe",
+   "role": "",
+   "status": "present",
+   "quote": "brandon kibbe provided newest member, greg bittner, with an overview of the property located at 994 northfield road"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "newest member",
+   "status": "present",
+   "quote": "greg bittner motioned to adjourn the meeting, ken jones seconded. approved unanimously."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "",
+   "status": "present",
+   "quote": "phyllis luck had to leave for another meeting at 6:55."
+  },
+  {
+   "name": "Ken Jones",
+   "role": "",
+   "status": "present",
+   "quote": "ken jones seconded. all present voted by roll call to approve."
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "",
+   "status": "present",
+   "quote": "terri burchfield made a motion to come out of executive session, ken jones seconded."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Tasks assigned for compiling the land grant applications: Brandon Kibbe to complete the Land Grant Application; Phyllis Luck to write the cover letter for the Select Board Chair's signature; Ken Jones to ensure a quorum of Conservation Commissioners signs the application; Greg Bittner to compile recent residential and housing permits and subdivision plans; Ken Jones to provide Conservation Commission stewardship plans and rules and regulations; Brandon Kibbe to take Item #4, Project Description; Terri Burchfield to take Attachment D, Sample Municipal Vote.",
+   "quote": "brandon kibbe will complete the land grant application"
+  },
+  {
+   "decision": "The LAC will put the application package together at the next meeting, scheduled for Monday, June 24, at 5:30 pm.",
+   "quote": "the lac will put the package together at the next meeting, which has been scheduled for monday, june 24, at 5:30 pm."
+  },
+  {
+   "decision": "Brandon Kibbe will approach the Parks Commission about a project description for the PARC grant.",
+   "quote": "brandon kibbe will approach the parks commission about doing a project description for the parc grant."
+  },
+  {
+   "decision": "Letters of support from committees and the MRPC will be sought after the applications are completed, as they do not have to be submitted with the packet.",
+   "quote": "letters of support from committees and the mrpc will be sought after the applications are completed as they do not have to be submitted with the packet."
+  },
+  {
+   "decision": "Brandon Kibbe will walk the property with the Seller's representative and the appraiser on June 12; the appraisal has a delivery date of June 28.",
+   "quote": "brandon advised that he was planning to walk the property with the seller's representative and the appraiser on june 12"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grant applications timing for the purchase",
+   "what_was_recorded": "The purchase and sale must be signed by both parties by July 1 so grant applications can be submitted the week of July 4; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "in order that the grant applications may be submitted the week of july 4."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Overview of 994 Northfield Road and the parcel to the south",
+   "resolution": "discussed; no action",
+   "tags": [
+    "land acquisition",
+    "open space",
+    "994 Northfield Road"
+   ],
+   "quote": "brandon kibbe provided newest member, greg bittner, with an overview of the property located at 994 northfield road"
+  },
+  {
+   "topic": "Purchase and sale timeline and appraisal",
+   "resolution": "discussed; no action",
+   "tags": [
+    "purchase and sale",
+    "appraisal",
+    "timeline"
+   ],
+   "quote": "he articulated that this needs to be signed by both parties by july 1, latest"
+  },
+  {
+   "topic": "Land grant application tasks",
+   "resolution": "tasks assigned",
+   "tags": [
+    "grant applications",
+    "task assignment"
+   ],
+   "quote": "tasks were assigned for compiling the applications as follows:"
+  },
+  {
+   "topic": "Return from executive session and adjournment",
+   "resolution": "approved",
+   "tags": [
+    "executive session",
+    "adjournment"
+   ],
+   "quote": "terri burchfield made a motion to come out of executive session, ken jones seconded."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Purchase and Sale",
+   "where": "text",
+   "quote": "the seller has yet to be contacted by town counsel regarding the purchase and sale."
+  },
+  {
+   "name": "Land Grant Application",
+   "where": "text",
+   "quote": "brandon kibbe will complete the land grant application"
+  },
+  {
+   "name": "Cover letter for the Select Board Chair's signature",
+   "where": "text",
+   "quote": "phyllis luck will write the cover letter that needs to be signed by the chair of the select board."
+  },
+  {
+   "name": "Attachment D: Sample Municipal Vote",
+   "where": "text",
+   "quote": "terri burchfield will assume responsibility for attachment d: sample municipal vote"
+  },
+  {
+   "name": "Conservation Commission Stewardship plans",
+   "where": "text",
+   "quote": "ken jones will provide conservation commission stewardship plans as well as conservation commission rules"
+  },
+  {
+   "name": "Conservation Commission Rules and Regulations",
+   "where": "text",
+   "quote": "ken jones will provide conservation commission stewardship plans as well as conservation commission rules"
+  },
+  {
+   "name": "Open Space Plan",
+   "where": "text",
+   "quote": "they meet numerous criteria of the open space plan making"
+  }
+ ],
+ "tags": [
+  "land acquisition",
+  "open space",
+  "grant applications",
+  "994 Northfield Road",
+  "PARC grant",
+  "conservation commission",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

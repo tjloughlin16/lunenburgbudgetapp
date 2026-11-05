@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2020-10-15",
  "docid": "2126",
@@ -12,31 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Recommend STM Article 1",
+   "motion": "Recommend Article 1.",
    "moved_by": "Peter",
    "seconded_by": "Dave",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "article 1 - vote to recommend - peter motion, dave seconded, unanimous"
   },
   {
-   "motion": "Defer STM Article 2 to Special Town Meeting",
+   "motion": "Defer Article 2 to STM.",
    "moved_by": "Dave",
    "seconded_by": "John",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "article 2 - vote to defer to stm - dave motion, john seconded, unanimous"
   },
   {
-   "motion": "Recommend STM Article 3",
+   "motion": "Recommend Article 3.",
    "moved_by": "Peter",
    "seconded_by": "Heather",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "article 3 - vote to recommend - peter motion, heather seconded, unanimous"
   },
   {
-   "motion": "Recommend STM Articles 5 and 6",
+   "motion": "Recommend an article whose number is not printed in the minutes (the 6-1 vote).",
    "moved_by": "Peter",
    "seconded_by": "Chris",
    "outcome": "passed 6-1",
@@ -44,87 +44,340 @@
    "quote": "vote to recommend - peter motion, chris seconded, 6-1 - dave no."
   },
   {
-   "motion": "Recommend STM Article 9",
+   "motion": "Defer Articles 7, 8, 13, 14 and 20 to STM.",
+   "moved_by": "Chris",
+   "seconded_by": "Peter",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "defer to stm, chris motion, peter seconded, unanimous"
+  },
+  {
+   "motion": "Recommend Article 9.",
    "moved_by": "Dave",
    "seconded_by": "Chris",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "article 9 - vote to recommend - dave motion, chris seconded, unanimous"
   },
   {
-   "motion": "Recommend STM Article 10",
+   "motion": "Recommend Article 10.",
    "moved_by": "Peter",
    "seconded_by": "Dave",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "article 10 - vote to recommend - peter motion, dave seconded, unanimous"
   },
   {
-   "motion": "Recommend STM Article 11",
+   "motion": "Recommend Article 11.",
    "moved_by": "Peter",
    "seconded_by": "Chris",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "article 11 - vote to recommend - peter motion, chris seconded, unanimous"
   },
   {
-   "motion": "Recommend STM Article 12 - Amendment of Salary Administration Bylaw",
+   "motion": "Recommend Article 12.",
    "moved_by": "Peter",
    "seconded_by": "Jay",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "article 12 - vote to recommend - peter motion, jay seconded, unanimous"
   },
   {
-   "motion": "Defer STM Article 15 - Tax Increment Financing with Greenhouse LLC to Special Town Meeting",
+   "motion": "Defer Article 15 to STM.",
    "moved_by": "Peter",
    "seconded_by": "Dave",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "article 15 - defer to stm - peter motion, dave seconded, unanimous"
   },
   {
-   "motion": "Recommend STM Article 16 - Presentation from TCP Building Design Committee",
+   "motion": "Recommend Article 16.",
    "moved_by": "Chris",
    "seconded_by": "Peter",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "article 16 - vote to recommend - chris motion, peter seconded, unanimous"
   },
   {
-   "motion": "Note no financial impact for STM Articles 17 and 18",
+   "motion": "Articles 17 and 18 recorded as having no financial impact.",
    "moved_by": "Peter",
    "seconded_by": "Jay",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "articles 17 and 18 - motion - no financial impact - peter motion, jay seconded, unanimous"
   },
   {
-   "motion": "Defer STM Article 19 - Streetlights LED Lights to Special Town Meeting",
+   "motion": "Defer Article 19 to STM.",
    "moved_by": "Jay",
    "seconded_by": "Dave",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "article 19 - defer to stm - jay motion, dave seconded, unanimous"
   },
   {
-   "motion": "Move next week's meeting to October 29 if Chair deems necessary",
+   "motion": "Move next week's meeting to 10/29 if the Chair deems necessary.",
    "moved_by": "Dave",
    "seconded_by": "Jay",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "dave motion to move next week's meeting to 10/29 if chair deems necessary. jay seconded. unanimous."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 9:10 p.m.",
    "moved_by": "Dave",
    "seconded_by": "Jay",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "motion to adjourn - dave, jay seconded, unanimous"
+   "quote": "9:10 p.m. motion to adjourn - dave, jay seconded, unanimous"
   }
  ],
- "dropped_unquoted": 1,
- "note": "Minutes extracted via OCR from macOS Vision. Article 4 was noted as unable to proceed due to missing figures and had no vote recorded. The 6-1 vote for Articles 5 and 6 is inferred from the article numbering sequence.",
- "cost_usd": 0.1300735
+ "dropped_unquoted": 0,
+ "note": "Minutes are fragmentary OCR text. The vote recording a 6-1 result has no article number printed, so it is recorded without one. Article 4 has no vote, only a note that no action can be taken. Several names are shortened (Dave, Peter, Chris, Jay, Heather); the Present line spells the chair \"Terrri\" but the body says \"Terri\". \"Heather L.\" in public comment is assumed to be Heather Sroka but is not confirmed. Dave Blatt, Michele Walton and Julie are named but did not take part, so they are not listed as attendees. No roles are printed for members other than the Chair. Motions are printed with first names only. No dollar figures are printed anywhere; \"$\" appears without amounts. No transfers recorded. No documents list heading is printed.",
+ "cost_usd": 0.008994019999999998,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm and read the"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore, dave passios, john henshaw, jay"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore, dave passios, john henshaw, jay"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore, dave passios, john henshaw, jay"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore, dave passios, john henshaw, jay"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "",
+   "status": "present",
+   "quote": "simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "",
+   "status": "present",
+   "quote": "simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "",
+   "status": "not stated",
+   "quote": "dave rodgers, 82 highland street, clarification provided by heather l."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Comeback to Article 1 with a total dollar figure, since the slide had various figures for different articles.",
+   "quote": "comeback to article 1 with total $ figure: slide had various figures for different articles."
+  },
+  {
+   "decision": "No action on Article 4 because the board does not have a figure.",
+   "quote": "article 4 - cannot take action do not have a figure"
+  },
+  {
+   "decision": "Dave to contact Dave Blatt to present to FinCom prior to STM.",
+   "quote": "dave to contact dave blatt to present to fincom prior to stm"
+  },
+  {
+   "decision": "Dave Blatt to present the LED presentation on 10/29, at Chris's request to see it.",
+   "quote": "chris would like to see the led presentation. dave blatt to present on the 10/29."
+  },
+  {
+   "decision": "No meeting next week; the next meeting is 10/29, to be played by ear.",
+   "quote": "no meeting next week. meeting on 10/29. play by ear."
+  },
+  {
+   "decision": "Parks item noted for Monday 10/19 and TCP Building Design meeting postponed to next week because of an agenda posting issue; cap planning to bring criteria for capital projects to the next meeting.",
+   "quote": "cap planning - criteria for capital projects for next meeting - adjust the $"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Article 1 total dollar figure",
+   "what_was_recorded": "The board asked for a comeback on Article 1 with a total dollar figure because the slide had various figures for different articles.",
+   "figures_as_printed": [],
+   "quote": "comeback to article 1 with total $ figure: slide had various figures for different articles."
+  },
+  {
+   "topic": "Article 4 funding",
+   "what_was_recorded": "No action on Article 4 because the board did not have a dollar figure for it.",
+   "figures_as_printed": [],
+   "quote": "article 4 - cannot take action do not have a figure"
+  },
+  {
+   "topic": "Articles 17 and 18 financial impact",
+   "what_was_recorded": "Articles 17 and 18 were recorded as having no financial impact.",
+   "figures_as_printed": [],
+   "quote": "articles 17 and 18 - motion - no financial impact"
+  },
+  {
+   "topic": "Trackless purchase",
+   "what_was_recorded": "Peter Beardmore re-raised his disapproval of the purchase of the Trackless by the Town Manager and the DPW.",
+   "figures_as_printed": [],
+   "quote": "peter beardmore would like to briefly reraise the issue of the purchase of"
+  },
+  {
+   "topic": "Stabilization fund votes",
+   "what_was_recorded": "Public comment clarified the vote needed to take money from stabilization and to put money into stabilization funds.",
+   "figures_as_printed": [
+    "2/3 vote"
+   ],
+   "quote": "in order to take money from stabilization requires a 2/3 vote and majority vote to put money in stabilization funds."
+  },
+  {
+   "topic": "TIF policy",
+   "what_was_recorded": "Discussion that selling the TIF would be easier with hard numbers, and that a TIF policy should be made.",
+   "figures_as_printed": [],
+   "quote": "do this and selling the tif would be easier with hard numbers."
+  },
+  {
+   "topic": "Cap planning",
+   "what_was_recorded": "Cap planning to bring criteria for capital projects to the next meeting and adjust the dollar threshold.",
+   "figures_as_printed": [],
+   "quote": "cap planning - criteria for capital projects for next meeting - adjust the $"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "",
+   "topic": "Trackless purchase by Town Manager and DPW",
+   "quote": "peter beardmore would like to briefly reraise the issue of the purchase of the trackless by the town manager and the dpw."
+  },
+  {
+   "speaker": "Terri Burchfield",
+   "stated_role": "",
+   "topic": "Off-book transactions and fiscal policy",
+   "quote": "terri burchfield- one of the issues that michele walton brought up a lot - off book transactions."
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "topic": "Stabilization fund vote requirements",
+   "quote": "dave rodgers, 82 highland street, clarification provided by heather l. - in order to take money from stabilization requires a 2/3 vote"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:00 PM",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm and read the",
+   "tags": [
+    "procedure",
+    "zoom"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard; Peter Beardmore and Terri Burchfield raised the Trackless and off-book transaction issues",
+   "quote": "peter beardmore would like to briefly reraise the issue of the purchase of",
+   "tags": [
+    "public comment",
+    "trackless"
+   ]
+  },
+  {
+   "topic": "Public hearing on STM warrant articles and recommendations",
+   "resolution": "recommendations voted per article; Articles 2, 7, 8, 13, 14, 15, 19, 20 deferred to STM",
+   "quote": "recommendations tonight - comeback to article 1 with total $ figure",
+   "tags": [
+    "STM warrant articles",
+    "recommendations",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Next meeting schedule",
+   "resolution": "no meeting next week; meeting moved to 10/29 if Chair deems necessary",
+   "quote": "no meeting next week. meeting on 10/29. play by ear.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Public comment (stabilization vote)",
+   "resolution": "heard; clarification provided by Heather L.",
+   "quote": "dave rodgers, 82 highland street, clarification provided by heather l.",
+   "tags": [
+    "public comment",
+    "stabilization"
+   ]
+  },
+  {
+   "topic": "Committee updates and discussion",
+   "resolution": "discussed, no action; TIF policy, minutes, TCP Building Design, cap planning, parks, open space",
+   "quote": "terri - a very good way to kick off the economic development committee to make policy around tifs.",
+   "tags": [
+    "TIF",
+    "TCP building",
+    "cap planning",
+    "open space",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:10 p.m., unanimous",
+   "quote": "9:10 p.m. motion to adjourn - dave, jay seconded, unanimous",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Slide with figures for different warrant articles",
+   "where": "text",
+   "quote": "slide had various figures for different articles."
+  },
+  {
+   "name": "LED presentation",
+   "where": "text",
+   "quote": "chris would like to see the led presentation."
+  },
+  {
+   "name": "Statement addressed to the Select Board on the trackless purchase",
+   "where": "text",
+   "quote": "reading a statement addressed to the select board expressing his disapproval of the trackless purchase."
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "STM warrant articles",
+  "public hearing",
+  "recommendations",
+  "TIF",
+  "Trackless purchase",
+  "stabilization",
+  "Zoom",
+  "2020"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2019-10-03",
  "docid": "2157",
@@ -12,15 +12,168 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "David Passios",
    "seconded_by": "Peter Beardmore",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "david passios motioned/ peter beardmore seconded; unanimous approval"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. Only one vote recorded: adjournment. Section 3 states the committee took no action on warrant articles pending a public hearing on October 10.",
- "cost_usd": 0.09121749999999999
+ "note": "OCR text from a scanned page set (two pages). Page 1 ends mid-sentence (\"during\") and page 2 resumes the next item, so the Mass Ave. discussion is incomplete. The adjournment vote is recorded as \"unanimous approval\" with no numeric tally. The town manager presented the warrant items but is not named. The minutes print no dollar figures. The minutes carry a \"RECEIVED & FILED FEB 13 2020\" stamp.",
+ "cost_usd": 0.00404582,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "terri burchfield, chair called the meeting to order at 6pm."
+  },
+  {
+   "name": "Michelle Walton",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "terri burchfield, dave passios, jay simeone, peter beardmore, michelle walton"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "terri burchfield, dave passios, jay simeone, peter beardmore, michelle walton"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, dave passios, jay simeone, peter beardmore, michelle walton"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, dave passios, jay simeone, peter beardmore, michelle walton"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "absent: john henshaw"
+  },
+  {
+   "name": "David Rodgers",
+   "role": "Resident",
+   "status": "present",
+   "quote": "resident david rodgers commented, with respect to finance committee goal setting, that the committee should look to the role of the finance committee as set forth in the town charter"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee took no action on any warrant articles for the special town meeting, pending the public hearing on October 10, 2019.",
+   "quote": "the committee took no action on any articles, pending the public hearing scheduled for october 10, 2019."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Saliba Brothers property acquisition (Northfield Road) warrant article - financing method",
+   "what_was_recorded": "Dave Passios raised whether the town should seek a one-time capital exclusion rather than servicing the debt over time with non-excluded, capped funds; no figures were printed and no decision was made.",
+   "figures_as_printed": [],
+   "quote": "dave passios opened a discussion as to whether it would be beneficial for the town to seek a one-time capital exclusion"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Rodgers",
+   "stated_role": "Resident",
+   "topic": "Finance Committee goal setting and School Department funding policies",
+   "quote": "resident david rodgers commented, with respect to finance committee goal setting, that the committee should look to the role of the finance committee as set forth in the town charter"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "tags": [
+    "call to order"
+   ],
+   "quote": "terri burchfield, chair called the meeting to order at 6pm."
+  },
+  {
+   "topic": "Communication",
+   "resolution": "no action; no public comment",
+   "tags": [
+    "communication"
+   ],
+   "quote": "public comment: none"
+  },
+  {
+   "topic": "Review Warrant Items for Special Town Meeting",
+   "resolution": "no action; continued to October 10, 2019 public hearing",
+   "tags": [
+    "warrant articles",
+    "special town meeting",
+    "public safety building",
+    "Saliba Brothers property",
+    "capital exclusion"
+   ],
+   "quote": "the committee took no action on any articles, pending the public hearing scheduled for october 10, 2019."
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "heard resident comment",
+   "tags": [
+    "public comment",
+    "Town Charter",
+    "goal setting"
+   ],
+   "quote": "resident david rodgers commented, with respect to finance committee goal setting, that the committee should look to the role of the finance committee as set forth in the town charter"
+  },
+  {
+   "topic": "Next Meeting",
+   "resolution": "scheduled October 10, 2019 public hearing",
+   "tags": [
+    "next meeting",
+    "public hearing"
+   ],
+   "quote": "october 10, 2019 (public hearing for warrant articles)"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned unanimously",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "david passios motioned/ peter beardmore seconded; unanimous approval"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft warrant items for the special town meeting",
+   "where": "text",
+   "quote": "the town manager presented the draft warrant items for the special town meeting and provided a brief synopsis for each article."
+  },
+  {
+   "name": "Town Charter",
+   "where": "text",
+   "quote": "the role of the finance committee as set forth in the town charter, which is limited"
+  }
+ ],
+ "tags": [
+  "special town meeting",
+  "warrant articles",
+  "public safety building",
+  "Saliba Brothers property",
+  "capital exclusion",
+  "debt financing",
+  "public comment",
+  "Finance Committee goal setting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

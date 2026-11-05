@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2021-01-14",
  "docid": "2426",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "NS",
    "seconded_by": "LM",
    "outcome": "not stated",
@@ -20,7 +20,269 @@
    "quote": "motion to adjourn -ns- lm second. 7:24pm."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Only one vote recorded. Minutes show a motion to adjourn but do not explicitly state a vote outcome (passed/failed/count). The meeting end time is noted as 7:24PM. The identifiers \"NS\" and \"LM\" are printed in the minutes but full names cannot be resolved with certainty from the attendee list provided.",
- "cost_usd": 0.1014435
+ "dropped_unquoted": 1,
+ "note": "The minutes record no votes except a motion to adjourn with no result printed. Mover and seconder appear only as initials (NS, LM). No public comment. Several people are referred to by first name only (John, Rob, Dave) and may be members listed in the attendance line; I did not assign them to members. Minutes also say 'Meeting in February' but no approval of prior minutes is recorded ('No minutes to review').",
+ "cost_usd": 0.00464712,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jon Londa",
+   "status": "present",
+   "quote": "present: jon londa, karen chapman, david blatt, neil sullivan, robert oliva, david passios, jay simeone"
+  },
+  {
+   "name": "Karen Chapman",
+   "status": "present",
+   "quote": "present: jon londa, karen chapman, david blatt, neil sullivan, robert oliva, david passios, jay simeone"
+  },
+  {
+   "name": "David Blatt",
+   "status": "present",
+   "quote": "present: jon londa, karen chapman, david blatt, neil sullivan, robert oliva, david passios, jay simeone"
+  },
+  {
+   "name": "Neil Sullivan",
+   "status": "present",
+   "quote": "present: jon londa, karen chapman, david blatt, neil sullivan, robert oliva, david passios, jay simeone"
+  },
+  {
+   "name": "Robert Oliva",
+   "status": "present",
+   "quote": "present: jon londa, karen chapman, david blatt, neil sullivan, robert oliva, david passios, jay simeone"
+  },
+  {
+   "name": "David Passios",
+   "status": "present",
+   "quote": "present: jon londa, karen chapman, david blatt, neil sullivan, robert oliva, david passios, jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "present: jon londa, karen chapman, david blatt, neil sullivan, robert oliva, david passios, jay simeone"
+  },
+  {
+   "name": "Heather",
+   "status": "not stated",
+   "quote": "heather asked- if a project ran under estimate- can we reappropriate/reallocate?"
+  },
+  {
+   "name": "Liz",
+   "status": "not stated",
+   "quote": "liz suggested minimizing the time we own lights before the grant is approved for the retrofit."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Primary School hot water tank replacement should be cancelled from this grant round, as the cost (30K) is prohibitive and cannot be done with these funds.",
+   "quote": "this potential project should get cancelled from this grant round."
+  },
+  {
+   "decision": "Chair asked members to review the MAPC documents on converting street lights and to put together an RFP.",
+   "quote": "chair asks that we look over the documents sent from mapc about converting street lights and putting together an rfp."
+  },
+  {
+   "decision": "Dave is to reach out to MAPC, which now does consulting on light procurement.",
+   "quote": "dave is going to reach out to mapc who now does consulting about light procurement."
+  },
+  {
+   "decision": "Rob will provide the Gardner retrofit contract to the committee.",
+   "quote": "rob has a copy of the contract from gardner for retrofit and will get that to us."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Streetlight purchase price from Unitil",
+   "what_was_recorded": "The town received a letter from Unitil giving a cost for the purchase of streetlights.",
+   "figures_as_printed": [
+    "$89,161.56"
+   ],
+   "quote": "the town received a letter from unitil with the cost of $89,161.56 for purchase of streetlights."
+  },
+  {
+   "topic": "Unitil monthly streetlight bill breakdown",
+   "what_was_recorded": "The December Unitil bill was $6000 for the month, of which $4327 is maintenance and the rest is electricity.",
+   "figures_as_printed": [
+    "$6000",
+    "$4327"
+   ],
+   "quote": "out of the $6000 bill for the month, $4327 is maintenance 2021 is for the actual electricity."
+  },
+  {
+   "topic": "Primary School hot water tank replacement",
+   "what_was_recorded": "The hot water tank replacement at the Primary School was judged prohibitive at its cost and dropped from the grant round.",
+   "figures_as_printed": [
+    "30K"
+   ],
+   "quote": "the cost, at 30k, was prohibitive. we won't be able to do this with these funds."
+  },
+  {
+   "topic": "Gardner streetlight retrofit contract",
+   "what_was_recorded": "A member reported the Gardner retrofit contract cost per light replacement.",
+   "figures_as_printed": [
+    "$580"
+   ],
+   "quote": "the contract there was $580 per light replacement."
+  },
+  {
+   "topic": "Maintenance savings after Unitil transfer",
+   "what_was_recorded": "Savings in Unitil maintenance charges were expected once the town owns the lights.",
+   "figures_as_printed": [
+    "4000"
+   ],
+   "quote": "we will also have savings in maintenance charges of 4000 per month by until."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Streetlight purchase from Unitil",
+   "resolution": "discussed; no action recorded",
+   "quote": "the town received a letter from unitil with the cost of $89,161.56 for purchase of streetlights.",
+   "tags": [
+    "streetlights",
+    "Unitil",
+    "purchase"
+   ]
+  },
+  {
+   "topic": "Grant round timing (April 9 / October 8)",
+   "resolution": "discussed; no action recorded",
+   "quote": "karen reported april 9 is the next round of grant funding and we'd have to have all work done, paid and reported by february12th.",
+   "tags": [
+    "grant",
+    "deadlines"
+   ]
+  },
+  {
+   "topic": "Building Operator Certification course",
+   "resolution": "discussed; John to follow up",
+   "quote": "john described the building operator certification course that he went through 3-4 years ago.",
+   "tags": [
+    "training",
+    "buildings"
+   ]
+  },
+  {
+   "topic": "Teen Center activities",
+   "resolution": "discussed; no action recorded",
+   "quote": "at the teen center david is working on activities there but would be hard pressed to complete by february.",
+   "tags": [
+    "Teen Center",
+    "grant"
+   ]
+  },
+  {
+   "topic": "LED retrofit at schools",
+   "resolution": "discussed; no action recorded",
+   "quote": "john is working on an led retrofitting project at schools.",
+   "tags": [
+    "LED",
+    "schools",
+    "energy"
+   ]
+  },
+  {
+   "topic": "School kitchen equipment purchases",
+   "resolution": "discussed; no action recorded",
+   "quote": "also, at the schools, a double convection oven and new reach-in cooler is in.",
+   "tags": [
+    "schools",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Primary School hot water tank project",
+   "resolution": "cancelled from this grant round",
+   "quote": "this potential project should get cancelled from this grant round.",
+   "tags": [
+    "Primary School",
+    "grant",
+    "water heating"
+   ]
+  },
+  {
+   "topic": "Reallocating funds from under-estimate projects",
+   "resolution": "discussed; to check with Kelly",
+   "quote": "heather asked- if a project ran under estimate- can we reappropriate/reallocate?",
+   "tags": [
+    "grant",
+    "funds"
+   ]
+  },
+  {
+   "topic": "Streetlight purchase timing and RFP",
+   "resolution": "discussed; RFP and MAPC outreach assigned",
+   "quote": "karen- suggests we rfp first to have the costs of retrofitting then apply for grant",
+   "tags": [
+    "streetlights",
+    "RFP",
+    "MAPC"
+   ]
+  },
+  {
+   "topic": "Net metering credits",
+   "resolution": "discussed; no action recorded",
+   "quote": "john wants to remind all, we have net metering credit going against this.",
+   "tags": [
+    "net metering",
+    "electricity"
+   ]
+  },
+  {
+   "topic": "Upcoming tasks and next meeting",
+   "resolution": "Chair assigned document review and RFP; meeting in February",
+   "quote": "chair asks that we look over the documents sent from mapc about converting street lights and putting together an rfp.",
+   "tags": [
+    "RFP",
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Unitil letter with cost for purchase of streetlights",
+   "where": "text",
+   "quote": "the town received a letter from unitil with the cost of $89,161.56 for purchase of streetlights."
+  },
+  {
+   "name": "Unitil December bill with all of the lights",
+   "where": "text",
+   "quote": "unitil gave us a copy of the december bill with all of the lights."
+  },
+  {
+   "name": "MAPC booklet on development of scope of work for retrofitting streetlights",
+   "where": "text",
+   "quote": "sent a booklet on development of scope of work for retrofitting streetlights."
+  },
+  {
+   "name": "Gardner contract for streetlight retrofit",
+   "where": "text",
+   "quote": "rob has a copy of the contract from gardner for retrofit and will get that to us."
+  },
+  {
+   "name": "Email from Jane on shifting funds within projects",
+   "where": "text",
+   "quote": "heather reports she has an email from jane that we can shift funds around within our projects."
+  }
+ ],
+ "tags": [
+  "streetlights",
+  "Unitil",
+  "green communities",
+  "grant funding",
+  "energy efficiency",
+  "LED",
+  "schools",
+  "RFP",
+  "net metering"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "decisions": 1
+ }
 }

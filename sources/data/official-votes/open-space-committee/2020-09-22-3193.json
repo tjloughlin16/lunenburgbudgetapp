@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2020-09-22",
  "docid": "3193",
@@ -12,65 +12,253 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from August 20, 2020 meeting with correction to spelling of Lynne Man's name",
-   "outcome": "passed",
+   "motion": "Approve the minutes of the 8/20/2020 meeting, with the spelling of Lynne Man's name corrected.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "the minutes were unanimously accepted by roll call vote with the condition that the spelling of lynne man's name be corrected."
   },
   {
-   "motion": "Recommend to Selectmen to enter into agreement with prospective buyers to acquire by gift a portion of 250 Howard Street property extending 200 feet beyond Mulpus Brook",
-   "outcome": "passed",
+   "motion": "Recommend the Selectmen enter into an agreement with the prospective buyers to acquire by gift a portion of 250 Howard Street extending 200 feet beyond the Mulpus Brook.",
    "moved_by": "Bob Pease",
    "seconded_by": "Paula Bertram",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "bob pease made a motion to recommend to the selectmen that they enter into an agreement with the prospective buyers to acquire by gift a portion of the property extending 200 feet beyond the mulpus brook. paula bertram seconded. passed unanimously by roll call vote."
+   "quote": "bob pease made a motion to recommend to the selectmen that they enter into an agreement with the prospective buyers"
   },
   {
-   "motion": "Recommend to Board of Selectmen to convey 111 Mulpus Road Rear and 970 NW Townsend Road Rear to Conservation Commission",
-   "outcome": "passed",
+   "motion": "Recommend the Board of Selectmen convey the Mulpus Road Rear and NW Townsend Road Rear parcels to the Conservation Commission.",
    "moved_by": "Bob Pease",
    "seconded_by": "Lynne Man",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "bob pease made a motion to recommend that the board of selectmen convey said parcels, lynne man seconded. motion passed unanimously by roll call vote."
+   "quote": "bob pease made a motion to recommend that the board of selectmen convey said parcels, lynne man seconded."
   },
   {
-   "motion": "Recommend to Board of Selectmen to convey 100 x 150 foot portion of 671 West Street parcel to abutter and defer action on other requests",
-   "outcome": "passed",
+   "motion": "Recommend the Board of Selectmen convey the 100 x 150 foot portion of 671 West Street to the abutter and defer action on the other requests.",
    "moved_by": "Bob Pease",
    "seconded_by": "Karin Menard",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "bob pease made a motion to recommend to the selectmen that they enter into an agreement with the prospective buyers to acquire by gift a portion of the property extending 200 feet beyond the mulpus brook. paula bertram seconded. passed ",
-   "quote_taken_from_text": true
+   "quote": "bob pease made a motion to recommend to the board of selectmen to convey the 100 x 150 foot portion of the parcel to"
   },
   {
-   "motion": "Recommend to Board of Selectmen and Planning Board to empower Open Space Committee to examine all undesignated municipal lands and make recommendations on their use or conveyance",
-   "outcome": "passed",
+   "motion": "Recommend to the Board of Selectmen and the Planning Board that they empower the Open Space Committee to examine undesignated municipal lands and make recommendations on use or conveyance.",
    "moved_by": "Bob Pease",
    "seconded_by": "Paula Bertram",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "bob pease made a motion to recommend to the selectmen that they enter into an agreement with the prospective buyers to acquire by gift a portion of the property extending 200 feet beyond the mulpus brook. paula bertram seconded. passed unanimously by roll call vote. the warrant for the special town meeting closes next week, therefore, a placeholder articl",
-   "quote_taken_from_text": true
+   "quote": "bob pease made a motion to recommend to the board of selectmen and the planning board that they empower the open space committee"
   },
   {
-   "motion": "Motion that Town Boards see acquisition of northeast corner of Bright Farms land by gift to provide connectivity between Raino and Saliba conservation parcels",
-   "outcome": "passed",
+   "motion": "That the Town Boards see acquisition of the northeast corner of the Bright Farms land by gift to provide connectivity between the Raino and Saliba parcels.",
    "moved_by": "Karin Menard",
-   "seconded_by": "Paula Bertram",
+   "seconded_by": "Paula",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "karin menard made a motion that the town boards see acquisition of the northeast corner of the land by gift to provide connectivity between the raino and saliba parcels. paula seconded. motion passed unanimously by roll call vote."
+   "quote": "karin menard made a motion that the town boards see acquisition of the northeast corner of the land by gift to provide connectivity"
   },
   {
-   "motion": "Adjourn",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Karin Menard",
    "seconded_by": "Paula Bertram",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "at 7:32 p.m. karin menard made a motion to adjourn. paula bertram seconded. motion passed unanimously by roll call vote."
+   "quote": "at 7:32 p.m. karin menard made a motion to adjourn."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0906095
+ "note": "Text is extracted from a PDF with spacing artifacts (e.g., 'w ill', 'var ious', 'a nd'); quotes were chosen to avoid those artifacts. Votes were recorded by roll call; the minutes give no per-vote roll. Bob Pease left at 7:00 p.m.; the minutes do not say whether he was present for later votes. Mover/second names are as printed, including 'Paula' for the Bright Farms second. Lynne Man and Lynn appear as spellings in the text.",
+ "cost_usd": 0.00709892,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present: karin menard, paula bertram, brandon kibbe, mike toohill, sarah cammer, lynne man, bob pease."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present: karin menard, paula bertram, brandon kibbe, mike toohill, sarah cammer, lynne man, bob pease."
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present: karin menard, paula bertram, brandon kibbe, mike toohill, sarah cammer, lynne man, bob pease."
+  },
+  {
+   "name": "Mike Toohill",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present: karin menard, paula bertram, brandon kibbe, mike toohill, sarah cammer, lynne man, bob pease."
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present: karin menard, paula bertram, brandon kibbe, mike toohill, sarah cammer, lynne man, bob pease."
+  },
+  {
+   "name": "Lynne Man",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present: karin menard, paula bertram, brandon kibbe, mike toohill, sarah cammer, lynne man, bob pease."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present: karin menard, paula bertram, brandon kibbe, mike toohill, sarah cammer, lynne man, bob pease."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dave passios informed the committee that over the fall/winter the parks commission will be working on development of a master plan for marshall park."
+  },
+  {
+   "name": "Joe Normandin",
+   "role": "prospective owner (250 Howard Street)",
+   "status": "not stated",
+   "quote": "joe normandin informed the committee that they will have three of the bounds verified"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed that it needs a comprehensive look at General Municipal Land and a process to decide what to retain and what to convey, and deferred action on the other abutter requests until that process exists.",
+   "quote": "the general consensus of the committee was that we need to take a comprehensive look at land"
+  },
+  {
+   "decision": "Bob Pease will reach out to the Town Manager and Town Counsel about an agreement for 250 Howard Street.",
+   "quote": "bob pease will reach out to the town manager and town counsel."
+  },
+  {
+   "decision": "Lynne Man will reach out to a possible volunteer for the Economic Development Committee; Karin Menard may participate if no other volunteer is found.",
+   "quote": "lynne man indicated she may have someone who would be interested in serving, she will reach out to them."
+  },
+  {
+   "decision": "Paula Bertram will visit the various undesignated parcels, which other members agreed to.",
+   "quote": "paula bertram commented that she would l ike to visit the various parcels, other members agreed ."
+  },
+  {
+   "decision": "At the October meeting the committee will review the list of undesignated municipal land and then extend an invitation to other Boards to discuss.",
+   "quote": "then extend an invitation to other boards to discuss."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grant opportunities for park and recreation projects",
+   "what_was_recorded": "Brandon noted grant opportunities for the Marshall Park and fields work, including a two-year PARC Grant and the Fields Pond Grant; members offered help with applications.",
+   "figures_as_printed": [],
+   "quote": "brandon noted a couple of grant opportunities that may be of interested the parc grant, a 2 year grant"
+  },
+  {
+   "topic": "Grant opportunities for sidewalks",
+   "what_was_recorded": "Sarah Cammer suggested the Town look at grant opportunities for sidewalks, and Paula Bertram noted possible MRPC assistance.",
+   "figures_as_printed": [],
+   "quote": "sarah cammer suggested the town investigate grant opportunities for sidewalks."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "not stated",
+   "topic": "Marshall Park master plan and community gardens",
+   "quote": "dave passios informed the committee that over the fall/winter the parks commission will be working on development of a master plan for marshall park."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "meeting called to order by the chairman at 6:03 p.m."
+  },
+  {
+   "topic": "Review and approve minutes of 8/20/2020 meeting",
+   "resolution": "approved with spelling correction",
+   "quote": "the minutes were unanimously accepted by roll call vote with the condition that the spelling of lynne man's name be corrected."
+  },
+  {
+   "topic": "250 Howard Street update and alternatives with prospective buyers",
+   "resolution": "recommended agreement to acquire land by gift; Bob Pease to contact Town Manager and Counsel",
+   "quote": "bob pease made a motion to recommend to the selectmen that they enter into an agreement with the prospective buyers"
+  },
+  {
+   "topic": "671 West Street parcel and other General Municipal Land requests",
+   "resolution": "recommended conveyances of two parcels and 671 West Street portion; deferred other requests; empowered committee to review undesignated land",
+   "quote": "the general consensus of the committee was that we need to take a comprehensive look at land"
+  },
+  {
+   "topic": "Bright Farms connection update",
+   "resolution": "recommended acquisition of northeast corner by gift",
+   "quote": "brandon informed the committee that he had walked the property with the developers representative"
+  },
+  {
+   "topic": "Call for Economic Development Committee nominations",
+   "resolution": "no action; members to reach out to possible volunteers",
+   "quote": "lynne man indicated she may have someone who would be interested in serving, she will reach out to them."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; grant and park information shared",
+   "quote": "dave passios informed the committee that over the fall/winter the parks commission will be working on development of a master plan for marshall park."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:32 p.m.",
+   "quote": "at 7:32 p.m. karin menard made a motion to adjourn."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Correspondence from the Town Manager regarding several parcels that abutters are interested in acquiring",
+   "where": "list",
+   "quote": "committee received correspondence from the town manager regarding several parcels that abutters are interested in"
+  },
+  {
+   "name": "Map of possible property line delineations for 250 Howard Street (shared by Brandon Kibbe)",
+   "where": "list",
+   "quote": "br andon shared a map with the committee that included several possible property line delineations.",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Article voted several years ago allowing the Selectmen to convey portions of 671 West Street",
+   "where": "text",
+   "quote": "brandon informed the committee that there is an article that was voted several years ago to allow the selectmen to convey"
+  },
+  {
+   "name": "Open Space Plan (teal colored parcels)",
+   "where": "text",
+   "quote": "general municipal land (teal colored parcels in the open space plan)"
+  },
+  {
+   "name": "Placeholder article for acquisition of 250 Howard Street on the special town meeting warrant",
+   "where": "text",
+   "quote": "a placeholder article for acquisition of this property has been placed on the warrant."
+  }
+ ],
+ "tags": [
+  "open space",
+  "land conveyance",
+  "General Municipal Land",
+  "conservation",
+  "250 Howard Street",
+  "671 West Street",
+  "Bright Farms",
+  "grants",
+  "parks",
+  "Economic Development Committee nominations"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "committee received correspondence from the town manager"
+ },
+ "dropped_unquoted_by_field": {}
 }

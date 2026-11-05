@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-07-22",
  "docid": "4025",
@@ -12,15 +12,23 @@
  },
  "votes": [
   {
-   "motion": "P. Bertram be appointed to the Open Space Committee as an At-Large member",
+   "motion": "Approve the minutes of 07/08/19.",
+   "moved_by": "G. Bittner",
+   "seconded_by": "T. Cole",
+   "outcome": "passed 4 -0 (P. Bertram abstained)",
+   "procedural": true,
+   "quote": "g. bittner made motion to app rove, t. cole seconded, vote passed 4 -0, p. bertram abstained."
+  },
+  {
+   "motion": "Appoint P. Bertram to the Open Space Committee as an At-Large member.",
    "moved_by": "G. Bittner",
    "seconded_by": "R. Lisio",
    "outcome": "passed",
    "procedural": false,
-   "quote": "g. bittner made motion for p. bertram to be appointed to the open space committee as an at-large member, r. lisio seconded, all aye."
+   "quote": "to be appointed to the open space committee as an at-large member, r. lisio seconded, all aye."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "G. Bittner",
    "seconded_by": "T. Cole",
    "outcome": "passed",
@@ -28,7 +36,233 @@
    "quote": "g. bittner made motion to adjourn, t. cole seconded, all aye."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0850255
+ "dropped_unquoted": 0,
+ "note": "Text extraction has broken spacing and line breaks; quotes are copied as printed. Three motions are recorded with votes. The Earth Removal and Master Plan items have discussion but no motion. No public comment section is printed. Bittner arrived at 6:40 PM, and the Open Space item was tabled until then.",
+ "cost_usd": 0.006056519999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, gregory bittner (arrived 6:40 pm), paula bertram, rhonda lisio, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, gregory bittner (arrived 6:40 pm), paula bertram, rhonda lisio, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "gregory bittner (arrived 6:40 pm), paula bertram, rhonda lisio, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, gregory bittner (arrived 6:40 pm), paula bertram, rhonda lisio, adam r. burney"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, gregory bittner (arrived 6:40 pm), paula bertram, rhonda lisio, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, gregory bittner (arrived 6:40 pm), paula bertram, rhonda lisio, adam r. burney"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Revisions will be made to Draft #1 of the earth removal bylaw after continued discussion.",
+   "quote": "continued discussion took place and revisions will be made to draft #1."
+  },
+  {
+   "decision": "Chair requested that both the Earth Removal Bylaw and the Rules and Regulations be reviewed by the Board of Health.",
+   "quote": "the bylaw and the rules and regulations be reviewed by the board of health"
+  },
+  {
+   "decision": "Open Space Ad Hoc Committee vacancy discussion tabled until G. Bittner arrived.",
+   "quote": "discussion tabled awaiting the arrival of g. bittner."
+  },
+  {
+   "decision": "Board members to review the existing Solar Energy Systems bylaw and give individual input to A. Burney; the Board will discuss the bylaw at its August 26 meeting.",
+   "quote": "board members to review existing bylaw and provide individual input to a. burney."
+  },
+  {
+   "decision": "M. Allison, as Planning Board Chair, will contact the Land Acquisition Committee Chair about updating the Planning Board.",
+   "quote": "m. allison, as planning board chair, will reach out to the committee chair about updating the planning board."
+  },
+  {
+   "decision": "Off Street Parking & Loading Areas bylaw review placed on hold.",
+   "quote": "lunenburg code, section 250- 6.1., off street parking & loading areas- on hold"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Master Plan grant and RFP",
+   "what_was_recorded": "T. Cole felt the RFP should not be finalized until the Board knows whether it will receive a $50,000 grant.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "the board knows if it will receive the $50,000 grant"
+  },
+  {
+   "topic": "Master Plan RFP budget",
+   "what_was_recorded": "P. Bertram felt the RFP should be prepared with the expectation of having the full $100,000 available, followed by a workshop to review it.",
+   "figures_as_printed": [
+    "$100 ,000"
+   ],
+   "quote": "with the expectation of having the full $100 ,000"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointment to Open Space Ad Hoc Committee",
+   "resolution": "Bertram appointed as At-Large member; vacancy discussion tabled until Bittner arrived",
+   "quote": "discussion tabled awaiting the arrival of g. bittner.",
+   "tags": [
+    "appointment",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Earth Removal",
+   "resolution": "continued; revisions to Draft #1 to follow; Board of Health review requested",
+   "quote": "members were in receipt of draft #1.",
+   "tags": [
+    "earth removal",
+    "bylaw",
+    "Board of Health"
+   ]
+  },
+  {
+   "topic": "Master Plan",
+   "resolution": "discussed, no action; possible master plan committee proposed",
+   "quote": "board members viewed goals of the 2002 master plan.",
+   "tags": [
+    "master plan",
+    "visioning",
+    "open space and recreation plan"
+   ]
+  },
+  {
+   "topic": "Master Plan, Request for Proposal",
+   "resolution": "discussed under Master Plan; no separate action",
+   "quote": "master plan, request for proposal- see",
+   "tags": [
+    "master plan",
+    "RFP",
+    "consultant"
+   ]
+  },
+  {
+   "topic": "Minutes approval 07/08/19",
+   "resolution": "approved 4-0, P. Bertram abstaining",
+   "quote": "vote passed 4 -0, p. bertram abstained.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; no action",
+   "quote": "capital planning committee- no meetings currently being held.",
+   "tags": [
+    "committees",
+    "storm water",
+    "agriculture",
+    "land acquisition",
+    "MJTC"
+   ]
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "Solar bylaw review assigned to members; parking bylaw on hold",
+   "quote": "board members to review existing bylaw and provide individual input to a. burney.",
+   "tags": [
+    "solar energy",
+    "parking",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Meeting schedule and ongoing items",
+   "resolution": "no action; schedule noted",
+   "quote": "august 26- stone farm hearing solar bylaw discussion",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:25 PM",
+   "quote": "g. bittner made motion to adjourn, t. cole seconded, all aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes- 07/08/19",
+   "where": "list",
+   "quote": "documents used at meeting: minutes- 07/08/19"
+  },
+  {
+   "name": "DRAFT Rules and Regulations, Earth Removal and Placement of Fill",
+   "where": "list",
+   "quote": "draft rules and regulations, earth removal and placement of fill"
+  },
+  {
+   "name": "DRAFT Bylaw, Earth Removal and Placement of Fill",
+   "where": "list",
+   "quote": "draft bylaw, earth removal and placement of fill"
+  },
+  {
+   "name": "Talent Bank Form",
+   "where": "list",
+   "quote": "talent bank form 2002 master plan"
+  },
+  {
+   "name": "2002 Master Plan",
+   "where": "list",
+   "quote": "talent bank form 2002 master plan"
+  },
+  {
+   "name": "Draft #1",
+   "where": "text",
+   "quote": "members were in receipt of draft #1."
+  },
+  {
+   "name": "Economic Development Element prepared by MRPC in 2013",
+   "where": "text",
+   "quote": "p. bertram questioned if the economic development element prepared by mrpc in 2013 should be updated."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "earth removal",
+  "master plan",
+  "open space committee",
+  "solar energy bylaw",
+  "parking bylaw",
+  "appointment",
+  "minutes approval",
+  "committee reports"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

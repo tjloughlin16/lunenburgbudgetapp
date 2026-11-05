@@ -1,0 +1,56 @@
+{
+ "board": "Finance Committee",
+ "board_slug": "finance-committee",
+ "meeting_date": "2020-04-23",
+ "source": {
+  "sha256": "8a7af94e04d6366b1b14b659b6420787f36f9690003db29c2d174b21cb89eb67",
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2020-04-23-Cxq5yPxe6rA.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "nine hundred thousand dollars",
+    "fiscal_year": 2021,
+    "kind": "deficit",
+    "scope": "town",
+    "statement": "A member referred to a nine hundred thousand dollar gap in the budget.",
+    "status": "announced",
+    "t": 199,
+    "who": "a member"
+   },
+   {
+    "amount_as_heard": "ten percent",
+    "fiscal_year": 2021,
+    "kind": "state_aid",
+    "scope": "town",
+    "statement": "The gap was described as about a ten percent state aid cut.",
+    "status": "announced",
+    "t": 2284,
+    "who": "a resident"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "state aid and local receipts",
+    "condition": "if state aid is cut ten percent",
+    "fiscal_year": 2021,
+    "prediction": "Without the cushion, a state aid or local receipts cut would erase the margin.",
+    "scope": "town",
+    "t": 2284,
+    "who": "a resident"
+   }
+  ]
+ },
+ "video_id": "Cxq5yPxe6rA",
+ "video_url": "https://www.youtube.com/watch?v=Cxq5yPxe6rA",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-11-04T05:42:27Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

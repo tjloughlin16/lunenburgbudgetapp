@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2020-04-02",
  "docid": "2138",
@@ -12,15 +12,189 @@
  },
  "votes": [
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "John Henshaw",
    "seconded_by": "Peter Beardmore",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "john henshaw motion, peter beardmore 2nd, unanimously approved, 7:49pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded: adjournment. The minutes mention the School Committee voted on a motion (to continue paying cafeteria and extended day staff), but that is a report of another body's vote, not a Finance Committee vote.",
- "cost_usd": 0.0730725
+ "note": "The minutes record one motion, the adjournment; no vote was recorded on approving prior minutes or on any budget matter. No dollar transfers were recorded. Public comment was 'none'. Senator Tran and Rep. Hay were mentioned but did not attend, so they are not listed as attendees. The town manager is referenced only by title, so is not listed by name.",
+ "cost_usd": 0.0043655199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, dave passios, michelle walton, jay simeone, peter beardmore"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, dave passios, michelle walton, jay simeone, peter beardmore"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, dave passios, michelle walton, jay simeone, peter beardmore"
+  },
+  {
+   "name": "Michelle Walton",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, dave passios, michelle walton, jay simeone, peter beardmore"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, dave passios, michelle walton, jay simeone, peter beardmore"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, dave passios, michelle walton, jay simeone, peter beardmore"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Departments that have already presented will not be brought back; those not yet presented, and changes to the proposed budget, will be reviewed before the public hearing.",
+   "quote": "those that have not presented already, as well as changes to the proposed budget will be reviewed prior to the public hearing."
+  },
+  {
+   "decision": "The town manager will budget using Fiscal 20 revenue projections.",
+   "quote": "her approach for will be to budget with fiscal 20 revenue projections."
+  },
+  {
+   "decision": "New position postings and additional hours for employees are postponed in favor of expected increases in operating expenses.",
+   "quote": "new positions postings and additional hours for employees will all be postponed in favor of expected increases in operating expenses."
+  },
+  {
+   "decision": "Peter Beardmore agreed to write a description of the information the committee is requesting, to share with the legislators' offices.",
+   "quote": "peter beardmore agreed to write a description of the information we are requesting"
+  },
+  {
+   "decision": "The town manager directed a spending and hiring freeze to all departments.",
+   "quote": "the town manager has directed a spending and hiring freeze to all departments."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School Committee cafeteria and extended day staff cost",
+   "what_was_recorded": "The projected cost to carry cafeteria and extended day staff through May 7 is approximately $138,000, with revolving funds and cost savings said to be able to cover it.",
+   "figures_as_printed": [
+    "$138,000"
+   ],
+   "quote": "the projected cost to carry the staff through may 7 is approximately $138,000."
+  },
+  {
+   "topic": "Local receipts and tax collections projections",
+   "what_was_recorded": "Local receipts and tax collections projections are likely to be reduced; no amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "local receipts will likely be reduced, as will tax collections projections."
+  },
+  {
+   "topic": "Pandemic-related expenses",
+   "what_was_recorded": "Pandemic-related expenses are being tracked for possible future reimbursement; no amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "pandemic-related expenses are being tracked for future reimbursement."
+  },
+  {
+   "topic": "HB4580 free cash and stabilization flexibility",
+   "what_was_recorded": "Pending bill HB4580 would allow 1/12 budgets and give flexibility in accessing free cash and stabilization funds; no dollar amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "hb4580 is pending which would allow 1/12 budgets and gives flexibility in accessing free cash and stabilization funds."
+  },
+  {
+   "topic": "Busing and heating cost savings",
+   "what_was_recorded": "John Henshaw asked about cost savings for busing and heating; the committee did not have the information, and the busing contract is subject to negotiation.",
+   "figures_as_printed": [],
+   "quote": "john henshaw inquired of costs savings relating to busing and heating."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7 PM; COVID-19 Zoom advisory read",
+   "tags": [
+    "call to order",
+    "covid-19"
+   ],
+   "quote": "terri burchfield, chair called the meeting to order at 7 pm. and read the covid-19 / zoom meeting advisory statement."
+  },
+  {
+   "topic": "Review Budget Calendar",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "budget calendar",
+    "state aid",
+    "hiring freeze"
+   ],
+   "quote": "town manager does not anticipate bringing back departments that have already presented."
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "School Committee report received; no action recorded",
+   "tags": [
+    "school committee",
+    "staffing costs"
+   ],
+   "quote": "peter beardmore reported that the school committee met on 3/25."
+  },
+  {
+   "topic": "Calendar / Upcoming Meetings",
+   "resolution": "next meeting noted for April 9, 7PM",
+   "tags": [
+    "calendar"
+   ],
+   "quote": "4. calendar / upcoming meetings o april 9, 7pm"
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "5. public comment o none"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned unanimously at 7:49PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "john henshaw motion, peter beardmore 2nd, unanimously approved, 7:49pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Updated budget schedule (distributed by email, linked online)",
+   "where": "text",
+   "quote": "an updated schedule was distributed by email which can be found here:"
+  }
+ ],
+ "tags": [
+  "budget",
+  "FY21 budget",
+  "COVID-19",
+  "state aid",
+  "hiring freeze",
+  "school committee",
+  "Zoom meeting",
+  "pandemic costs"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "an updated schedule was distributed by email"
+ },
+ "dropped_unquoted_by_field": {}
 }

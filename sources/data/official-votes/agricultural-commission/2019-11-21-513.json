@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2019-11-21",
  "docid": "513",
@@ -12,23 +12,135 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of August 15",
+   "motion": "Approve the minutes of August 15 (2019 meeting).",
    "moved_by": "R. Stober",
-   "seconded_by": "G. Burns",
    "outcome": "passed",
    "procedural": true,
-   "quote": "r. stober moved to approve minutes of august 15, g. burns 2nd, all aye."
+   "quote": "r. stober moved to approve minutes of august 15, g. burns 2nd, all aye.",
+   "seconded_by": "G. Burns"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "R. Stober",
-   "seconded_by": "G. Burns",
    "outcome": "passed",
    "procedural": true,
-   "quote": "r. stober moved to adjourn, g. burns second, adjourned at 7:35pm."
+   "quote": "r. stober moved to adjourn, g. burns second, adjourned at 7:35pm.",
+   "seconded_by": "G. Burns"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07820049999999999
+ "note": "Text is a clean extraction of a short set of minutes. Minutes approval is recorded as 'all aye' with no numeric count. No public comment is recorded. Jorge Marzuca is listed in the signature block only, so his attendance is not stated. The charge of the Economic Development Committee was distributed but the minutes print no documents list.",
+ "cost_usd": 0.00305392,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns"
+  },
+  {
+   "name": "R. Stober",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns"
+  },
+  {
+   "name": "G. Burns",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns"
+  },
+  {
+   "name": "Jorge Marzuca",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "jorge marzuca, member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Members were asked to seek candidates to be recommended for appointment by the AgCom to the newly created Economic Development Committee.",
+   "quote": "all were asked to seek candidates to be recommended for appointment by the agcom."
+  },
+  {
+   "decision": "The next meeting was set for December 20.",
+   "quote": "next meeting set for december 20."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and general discussion",
+   "resolution": "no action",
+   "quote": "no general discussion.",
+   "tags": [
+    "general discussion"
+   ]
+  },
+  {
+   "topic": "Approval of August 15 minutes",
+   "resolution": "approved",
+   "quote": "r. stober moved to approve minutes of august 15, g. burns 2nd, all aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Economic Development Committee announcement",
+   "resolution": "no action; members asked to seek candidates",
+   "quote": "m. allison announced that the planning board had officially created the economic development committee",
+   "tags": [
+    "economic development committee",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Possible warrant articles review",
+   "resolution": "no action",
+   "quote": "there was a short review of the items discussed previously by agcom for possible warrant articles.",
+   "tags": [
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for December 20",
+   "quote": "next meeting set for december 20.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:35pm",
+   "quote": "r. stober moved to adjourn, g. burns second, adjourned at 7:35pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Charge of the Economic Development Committee (copies distributed)",
+   "where": "text",
+   "quote": "distributed copies of the charge."
+  }
+ ],
+ "tags": [
+  "agricultural commission",
+  "minutes",
+  "economic development committee",
+  "warrant articles",
+  "appointments",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

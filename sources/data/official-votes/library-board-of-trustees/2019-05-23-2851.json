@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2019-05-23",
  "docid": "2851",
@@ -12,39 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from April 18, 2019 as amended",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the minutes of April 18, 2019 as amended.",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion to approve minutes as amended was unanimously approved by roll call."
   },
   {
-   "motion": "Elect Harry Kubetz as chair of the Library Board of Trustees",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Elect Harry Kubetz as chair of the board.",
    "outcome": "passed 4-3",
-   "procedural": true,
+   "procedural": false,
    "quote": "harry kubetz was elected chair by a roll call vote."
   },
   {
-   "motion": "Elect Kate McCarron as vice-chair",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Elect Kate McCarron as vice chair.",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "kate mccarron was nominated for vice chair by harry and was unanimously approved."
   },
   {
-   "motion": "Elect Bob Conroy as secretary",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Elect Bob Conroy as secretary.",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "bob conroy was nominated for secretary by kate and was unanimously approved."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Lars",
    "seconded_by": "Donna",
    "outcome": "passed",
@@ -53,6 +45,251 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1150205
+ "note": "Pages 3 through 7 contain only running headers and page numbers with no content. The attendance line lists eight people; the minutes give no separate absent or remote statuses. Subcommittee appointments and the signature form are recorded without a vote count or motion. The minutes print the meeting room as both 'Sudolnik Meeting Room' (page 1) and 'Sudolnik Conference Room' (pages 2 onward). The Director's Report, Friends update, and Board Comments were recorded without motions.",
+ "cost_usd": 0.0056516199999999996,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson (at call to order)",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, donna saiia, muir haman - director lpl, bob conroy, lars widstrand, harry kubetz."
+  },
+  {
+   "name": "Maia Wentrup",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, donna saiia, muir haman - director lpl, bob conroy, lars widstrand, harry kubetz."
+  },
+  {
+   "name": "Kate McCarron",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, donna saiia, muir haman - director lpl, bob conroy, lars widstrand, harry kubetz."
+  },
+  {
+   "name": "Donna Saiia",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, donna saiia, muir haman - director lpl, bob conroy, lars widstrand, harry kubetz."
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, donna saiia, muir haman - director lpl, bob conroy, lars widstrand, harry kubetz."
+  },
+  {
+   "name": "Bob Conroy",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, donna saiia, muir haman - director lpl, bob conroy, lars widstrand, harry kubetz."
+  },
+  {
+   "name": "Lars Widstrand",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, donna saiia, muir haman - director lpl, bob conroy, lars widstrand, harry kubetz."
+  },
+  {
+   "name": "Harry Kubetz",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, donna saiia, muir haman - director lpl, bob conroy, lars widstrand, harry kubetz."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Subcommittees appointed: Policy (Donna, Dick, Maia, Bob, Kate); Personnel (Donna, Kate, Harry); Budget (Dick and Donna); Friends' Endowment (Harry, Bob, Kate). No vote recorded.",
+   "quote": "the policy subcommittee was re-established with donna, dick, maia, bob and kate as members."
+  },
+  {
+   "decision": "Board signed and submitted a new signature authorization form giving Muir Haman authority to pay bills.",
+   "quote": "bot signed and submitted a new form to allow muir, as the new director, the authority to pay bills."
+  },
+  {
+   "decision": "Director's evaluation timing moved to coincide with the Town's budget planning cycle.",
+   "quote": "muir holds a 15-month contract so the timing of his evaluation will be changed to coincide with the town's budget planning cycle."
+  },
+  {
+   "decision": "Director evaluation forms to go out after the Sept. 2019 meeting, around Oct. 21, and be returned by Nov. 7.",
+   "quote": "the board determined that the evaluation forms should go out after the sept. 2019 meeting"
+  },
+  {
+   "decision": "Director evaluation and salary recommendation to be completed for the December BOT meeting.",
+   "quote": "the evaluation and salary recommendation should be completed for the dec bot meeting."
+  },
+  {
+   "decision": "Muir Haman to provide the BOT with an org chart at a future meeting.",
+   "quote": "muir will provide the bot with an org chart at a future meeting."
+  },
+  {
+   "decision": "Group size policy question to be revisited at the BOT Sept. 2019 meeting.",
+   "quote": "this will be revisited in the bot sept. 2019 meeting, in time for any possible group visits."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY19 budget status",
+   "what_was_recorded": "FY19 was reported as 91.6% complete and 82% spent, with virtually the entire budget expected to be spent by year end.",
+   "figures_as_printed": [
+    "91.6%",
+    "82%"
+   ],
+   "quote": "fy19 is 91.6% complete. at the moment we are 82% spent. by the end of fy19, virtually our entire budget will be spent."
+  },
+  {
+   "topic": "FY20 library budget",
+   "what_was_recorded": "The Director presented an update on the FY20 budget; LPL is flat-funded for FY20. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "muir presented an update to the fy20 budget. lpl is flat-funded for fy20."
+  },
+  {
+   "topic": "Supplemental Funds Report",
+   "what_was_recorded": "Dick submitted a report on funds the library holds outside the town budget; no dollar figures printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "these are funds the library holds outside of the town budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved as amended",
+   "quote": "the minutes for april 18, 2019 were reviewed. some amendments were suggested.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "BOT Reorganization/Election of Officers",
+   "resolution": "Harry Kubetz elected chair; Kate McCarron vice chair; Bob Conroy secretary; subcommittees appointed",
+   "quote": "harry kubetz was elected chair by a roll call vote.",
+   "tags": [
+    "officers",
+    "subcommittees",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; org chart requested",
+   "quote": "fy19 is 91.6% complete. at the moment we are 82% spent.",
+   "tags": [
+    "budget",
+    "staffing",
+    "director report"
+   ]
+  },
+  {
+   "topic": "Signature Authorization Form",
+   "resolution": "signed and submitted",
+   "quote": "bot signed and submitted a new form to allow muir, as the new director, the authority to pay bills.",
+   "tags": [
+    "signature authority",
+    "bills"
+   ]
+  },
+  {
+   "topic": "Supplemental Funds Report",
+   "resolution": "received",
+   "quote": "supplemental funds report - submitted by dick.",
+   "tags": [
+    "supplemental funds",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Director Evaluation",
+   "resolution": "timing set; to be completed for Dec BOT meeting",
+   "quote": "the evaluation and salary recommendation should be completed for the dec bot meeting.",
+   "tags": [
+    "director evaluation",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "THES Reading Program Update",
+   "resolution": "discussed; revisit at Sept. 2019 meeting",
+   "quote": "this will be revisited in the bot sept. 2019 meeting, in time for any possible group visits.",
+   "tags": [
+    "schools",
+    "group policy"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "noted",
+   "quote": "it was noted that the friends meet the first monday of the month",
+   "tags": [
+    "friends of library"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action; staff org chart to be provided",
+   "quote": "muir will provide an org chart.",
+   "tags": [
+    "org chart",
+    "board roles"
+   ]
+  },
+  {
+   "topic": "Agenda Items for upcoming meetings",
+   "resolution": "listed for future meetings",
+   "quote": "trustees' pocket guide",
+   "tags": [
+    "agenda planning"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 9:25 p.m.",
+   "quote": "the meeting was adjourned at 9:25 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "2019 04 18 Library Director’s Report",
+   "where": "list",
+   "quote": "2019 04 18 library director's report"
+  },
+  {
+   "name": "Children's Room Trustee's Report for March 2019",
+   "where": "list",
+   "quote": "children's room trustee's report for march 2019"
+  },
+  {
+   "name": "YA April 2019 Trustee Report",
+   "where": "list",
+   "quote": "ya april 2019 trustee report"
+  },
+  {
+   "name": "Supplemental Funds Report",
+   "where": "list",
+   "quote": "supplemental funds report"
+  },
+  {
+   "name": "Signature Authorization Form",
+   "where": "text",
+   "quote": "bot signed and submitted a new form to allow muir, as the new director, the authority to pay bills."
+  }
+ ],
+ "tags": [
+  "library board",
+  "officer election",
+  "director evaluation",
+  "FY19 budget",
+  "FY20 flat funding",
+  "staffing",
+  "subcommittees",
+  "schools reading program",
+  "friends of library",
+  "signature authority",
+  "supplemental funds"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

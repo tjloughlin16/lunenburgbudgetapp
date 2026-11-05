@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2020-09-02",
  "docid": "6253",
@@ -12,64 +12,426 @@
  },
  "votes": [
   {
-   "motion": "Approve the dam maintenance and remediation with slow drawdown starting as early as possible",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed",
+   "motion": "Approve the Hickory Hills dam drawdown request, to drawdown as slowly as possible starting as early as possible.",
+   "moved_by": "RB",
+   "seconded_by": "JR",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "rb moved to approve the request and to do a slow as possible starting as early as possible to allow for depth. jr seconded . kj asked for a revised schedule of drawdown and would this require a new board vote. mr. fortune noted that it would require a drawdown. paula bertram noted concerns with the boat extraction with the moved up drawdown dates. she felt there were many potential negative impacts with, logistics. rb felt that the extensive communication network with the residents of the association should help to mitigate the commission voted unanimously by roll call to approve the motion."
+   "quote": "rb moved to approve the request and to do a slow as possible starting as early as possible to allow for depth."
   },
   {
-   "motion": "Continue the public hearing for 99 Ruth Street to September 16",
-   "moved_by": "Carl Luck",
-   "seconded_by": "Todd Dwyer",
-   "outcome": "passed",
+   "motion": "Continue the Gary Williams Request for Determination of Applicability hearing for 99 Ruth Street to the September 16 meeting.",
+   "moved_by": "CL",
+   "seconded_by": "TD",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "the meeting was continued to the september 16 meeting by a motion of cl and a second by td with a unanimous roll call vote to approve."
   },
   {
-   "motion": "Continue the public hearing for 362 Townsend Harbor Road to September 16, 2020 at 7 PM",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed",
+   "motion": "Continue the Andrew Leblanc hearing for 362 Townsend Harbor Road to the September 16, 2020 meeting.",
+   "moved_by": "RB",
+   "seconded_by": "KJ",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "the motion was made to continue by rb and a second by kj with a unanimous vote to approve the motion by roll call."
   },
   {
-   "motion": "Approve the plan with the condition that backwash and drainage of the pool be directed to the trench, with cleanup by end of September 2020",
-   "moved_by": "Carl Luck",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed",
+   "motion": "Approve the Jamie and Merrill Blood Notice of Intent for 1387 Mass Ave with the added condition that the pool back wash and drainage be directed to the trench and clean-up completed by end of September 2020.",
+   "moved_by": "CL",
+   "seconded_by": "JR",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "cl moved to approve the plan with the added condition that the back wash and drainage of the pool be directed to the trench. bp asked for suggestions of a date for the clean-up work. jamie blood noted that it would be completed by the end of september 2020. that was added to the motion by cl. jr seconded and the commission approved unanimously."
+   "quote": "cl moved to approve the plan with the added condition that the back wash and drainage of the pool be directed to"
   },
   {
-   "motion": "Continue the public hearing for 238 Fire Road 16",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Carl Luck",
-   "outcome": "passed",
+   "motion": "Continue the Joanne Magurn Notice of Intent hearing for 238 Fire Road 16.",
+   "moved_by": "JR",
+   "seconded_by": "CL",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "jr moved to continue with a second by cl and a unanimous roll call vote to approv e the motion",
-   "quote_taken_from_text": true
+   "quote": "jr moved to continue with a second by cl and a unanimous roll call vote"
   },
   {
-   "motion": "Authorize BP to work with town counsel to arrange volunteer help for cleanup work at the Stage coach entrance",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Kenneth Jones",
+   "motion": "Authorize BP to work with town counsel to have a volunteer help the commission with labor for cleanup work at the Stage coach entrance.",
+   "moved_by": "RB",
+   "seconded_by": "KJ",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "a motion was made by rb and a second by kj to authorize bp to work with town counsel to have a volunteer help the commission with labor to perform some cleanup work on the entrance at stage coach."
+   "quote": "a motion was made by rb and a second by kj to authorize bp to work with town counsel to have a volunteer help the commission with labor to perform some cleanup work"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Kenneth Jones",
+   "motion": "Adjourn the meeting at 10:30.",
+   "moved_by": "KJ",
    "seconded_by": "TB",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "meeting adjourned at 10:30 by a motion of kj and a second by tb with a unanimous roll call vote to approve the motion."
   }
  ],
  "dropped_unquoted": 0,
- "note": "TB in the adjournment vote is unclear; the roster does not list anyone with initials TB. This may be a typographical error for TD (Todd Dwyer). The stage coach cleanup authorization vote (vote 6) has no recorded outcome in the minutes.\"",
- "cost_usd": 0.1556365
+ "note": "Text is OCR-like and garbled in places (e.g. 'Bill Hanna gan', 'note d', 'approv e'); quotes were taken from clean spans. Roll-call votes are recorded as unanimous with no tally. Member initials (CL, TD, TB) are ambiguous between Carl Luck/Catie Childs and Todd Dwyer. The header lists members in two columns, so Todd Dwyer's role is unclear. Attendance is not recorded in the minutes. The 'Bill Hanna' NOI reference was skipped as unclear. The 'Application and supporting documents are available' sentences are generic notices, not a list of documents used.",
+ "cost_usd": 0.010562320000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "not stated",
+   "quote": "bob pease, chair tel: (978) 582-4146"
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "Vice-Chair",
+   "status": "not stated",
+   "quote": "kenneth jones, vice-chair 960 massachusetts ave."
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "member",
+   "status": "not stated",
+   "quote": "richard bursch lunenburg, ma 01462"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "member",
+   "status": "not stated",
+   "quote": "richard bursch lunenburg, ma 01462 catie childs"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "member",
+   "status": "not stated",
+   "quote": "catie childs carl luck"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "member",
+   "status": "not stated",
+   "quote": "carl luck jack rabbitt matthew s. marro,"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "member (header column layout makes this unclear)",
+   "status": "not stated",
+   "quote": "todd dwyer conservation administrator"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "not stated",
+   "quote": "carl luck jack rabbitt matthew s. marro,"
+  },
+  {
+   "name": "John Fortune",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john fortune appeared and reviewed the repairs both needed and required by the commonwealth."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "of Hickory Hills Landowners",
+   "status": "present",
+   "quote": "paula bertram of hickory hills landowners presented the commission with annual updates"
+  },
+  {
+   "name": "Gary Williams",
+   "role": "applicant",
+   "status": "not stated",
+   "quote": "request for determination of applicability by gary williams for 99 ruth street"
+  },
+  {
+   "name": "Andrew Leblanc",
+   "role": "applicant",
+   "status": "not stated",
+   "quote": "request for a determination by andrew leblanc for work at 362 townsend harbor road"
+  },
+  {
+   "name": "Jamie Blood",
+   "role": "applicant",
+   "status": "present",
+   "quote": "jamie blood noted that it would be completed by the end of september 2020."
+  },
+  {
+   "name": "Merrill Blood",
+   "role": "applicant",
+   "status": "not stated",
+   "quote": "notice of intent by jamie and merrill blood for work at 1387 mass ave"
+  },
+  {
+   "name": "Brandon Ducharme",
+   "role": "not stated",
+   "status": "present",
+   "quote": "brandon ducharme appeared before the commission to present the changes"
+  },
+  {
+   "name": "Joanne Magurn",
+   "role": "applicant",
+   "status": "present",
+   "quote": "neil gorman, butch and joanne magurn appeared before the commission"
+  },
+  {
+   "name": "Neil Gorman",
+   "role": "not stated",
+   "status": "present",
+   "quote": "neil gorman, butch and joanne magurn appeared before the commission"
+  },
+  {
+   "name": "Butch Magurn",
+   "role": "not stated",
+   "status": "present",
+   "quote": "neil gorman, butch and joanne magurn appeared before the commission"
+  },
+  {
+   "name": "Brian Butler",
+   "role": "not stated",
+   "status": "present",
+   "quote": "brian butler presented the commission with an area of 2.3 acres at the leather leaf bog"
+  },
+  {
+   "name": "Robert Marchetti",
+   "role": "of 7 Oakes Landing in Shirley (public)",
+   "status": "present",
+   "quote": "robert marchetti of 7 oakes landing in shirley voiced support for the proposal"
+  },
+  {
+   "name": "Joe Obrien",
+   "role": "not stated",
+   "status": "present",
+   "quote": "joe obrien noted that the restriction was completed"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission deferred action on the minutes of July 15, 2020 and August 19, 2020 until members complete their review.",
+   "quote": "the commission deferred action until they have completed the review of the minutes"
+  },
+  {
+   "decision": "No action on the Certificates of Compliance for 675 Reservoir Road, pending the completed as-built plan.",
+   "quote": "no action due to the commission awaiting the completed"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hickory Hills / Magurn driveway alternatives: bridge crossing",
+   "what_was_recorded": "Applicant's representative said a bridge crossing was cost prohibitive given the size of the expanse, so the driveway was proposed as a standard crossing instead.",
+   "figures_as_printed": [],
+   "quote": "that the size of the expanse was cost prohibitive"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "of Hickory Hills Landowners",
+   "topic": "Boat extraction concerns with earlier drawdown",
+   "quote": "paula bertram noted concerns with the boat extraction with the moved up drawdown dates."
+  },
+  {
+   "speaker": "Robert Marchetti",
+   "stated_role": "of 7 Oakes Landing in Shirley",
+   "topic": "Support for Magurn driveway proposal",
+   "quote": "robert marchetti of 7 oakes landing in shirley voiced support for the proposal"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Hickory Hills dam maintenance and drawdown",
+   "resolution": "approved drawdown request by roll call, unanimous",
+   "quote": "john fortune appeared and reviewed the repairs both needed and required by the commonwealth.",
+   "tags": [
+    "dam",
+    "drawdown",
+    "Hickory Hills"
+   ]
+  },
+  {
+   "topic": "Hickory Hills lake management update",
+   "resolution": "presented; no action recorded",
+   "quote": "paula bertram of hickory hills landowners presented the commission with annual updates",
+   "tags": [
+    "lake management",
+    "Hickory Hills",
+    "water quality"
+   ]
+  },
+  {
+   "topic": "RDA hearing, Gary Williams, 99 Ruth Street",
+   "resolution": "continued to September 16, unanimous",
+   "quote": "public hearing on a request for determination of applicability by gary williams for 99 ruth street will be held.",
+   "tags": [
+    "RDA",
+    "hearing",
+    "vegetation removal",
+    "dock"
+   ]
+  },
+  {
+   "topic": "Hearing, Andrew Leblanc, 362 Townsend Harbor Road",
+   "resolution": "continued to September 16, 2020, unanimous",
+   "quote": "public hearing on a request for a determination by andrew leblanc for work at 362 townsend harbor road will be held.",
+   "tags": [
+    "hearing",
+    "dock"
+   ]
+  },
+  {
+   "topic": "Notice of Intent, Jamie and Merrill Blood, 1387 Mass Ave",
+   "resolution": "approved with conditions, unanimous",
+   "quote": "public hearing on a notice of intent by jamie and merrill blood for work at 1387 mass ave. will be held",
+   "tags": [
+    "NOI",
+    "pool",
+    "discharge",
+    "hearing"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Notice of Intent, Joanne Magurn, 238 Fire Road 16",
+   "resolution": "continued, unanimous roll call",
+   "quote": "neil gorman, butch and joanne magurn appeared before the commission",
+   "tags": [
+    "NOI",
+    "single family home",
+    "wetlands",
+    "driveway"
+   ]
+  },
+  {
+   "topic": "Enforcement and violations",
+   "resolution": "updates received; no votes recorded",
+   "quote": "violations (enforcement actions and administrative hearings).",
+   "tags": [
+    "enforcement",
+    "violations",
+    "orders"
+   ]
+  },
+  {
+   "topic": "61A release request, 250 Howard Street",
+   "resolution": "Open space recommended exercising right to purchase, unanimous (as reported)",
+   "quote": "61 a release request 250 howard street",
+   "tags": [
+    "61A",
+    "open space",
+    "right to purchase"
+   ]
+  },
+  {
+   "topic": "Old business: trails grant, Certificates of Compliance, extension permit",
+   "resolution": "no action on Reservoir Road certificate; no extension permit to present",
+   "quote": "no action due to the commission awaiting the completed",
+   "tags": [
+    "trails grant",
+    "certificate of compliance",
+    "Reservoir Road"
+   ]
+  },
+  {
+   "topic": "Minutes of previous meetings",
+   "resolution": "deferred",
+   "quote": "minutes of previous meetings - july 15 2020, august 19, 2020",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Administrator's reports: emergency certifications",
+   "resolution": "reviewed; no action recorded",
+   "quote": "emergency certifications for sandy cove road and peninsula drive mm reviewed the issuance with the commission.",
+   "tags": [
+    "emergency certification",
+    "Sandy Cove Road",
+    "Peninsula Drive"
+   ]
+  },
+  {
+   "topic": "Open space and trail use: Stage coach entrance cleanup",
+   "resolution": "authorized BP to work with town counsel on volunteer cleanup; outcome not recorded",
+   "quote": "a motion was made by rb and a second by kj to authorize bp to work with town counsel",
+   "tags": [
+    "open space",
+    "volunteer labor",
+    "Stage coach"
+   ]
+  },
+  {
+   "topic": "Communications, public comment and adjournment",
+   "resolution": "adjourned at 10:30; next meeting September 16, 2020",
+   "quote": "meeting adjourned at 10:30 by a motion of kj and a second by tb with a unanimous roll call vote to approve the motion.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for Determination of Applicability by Gary Williams, 99 Ruth Street",
+   "where": "text",
+   "quote": "public hearing on a request for determination of applicability by gary williams for 99 ruth street will be held."
+  },
+  {
+   "name": "Request for a determination by Andrew Leblanc, 362 Townsend Harbor Road",
+   "where": "text",
+   "quote": "public hearing on a request for a determination by andrew leblanc for work at 362 townsend harbor road will be held."
+  },
+  {
+   "name": "Notice of Intent by Jamie and Merrill Blood, 1387 Mass Ave",
+   "where": "text",
+   "quote": "public hearing on a notice of intent by jamie and merrill blood for work at 1387 mass ave. will be held",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Notice of Intent by Joanne Magurn, 238 Fire Road 16",
+   "where": "text",
+   "quote": "public hearing on a notice of intent by joanne magurn for work at 238 fire road 16 will be held."
+  },
+  {
+   "name": "61 A release request, 250 Howard Street",
+   "where": "text",
+   "quote": "61 a release request 250 howard street"
+  },
+  {
+   "name": "Certificates of Compliance, 675 Reservoir Road",
+   "where": "text",
+   "quote": "certificates of compliance - 675 reservoir road"
+  },
+  {
+   "name": "Emergency Certifications for Sandy Cove Road and Peninsula Drive",
+   "where": "text",
+   "quote": "emergency certifications for sandy cove road and peninsula drive mm reviewed the issuance with the commission."
+  },
+  {
+   "name": "Minutes of July 15, 2020 and August 19, 2020",
+   "where": "text",
+   "quote": "minutes of previous meetings - july 15 2020, august 19, 2020"
+  },
+  {
+   "name": "Order of Conditions (Hickory Hills lake annual updates)",
+   "where": "text",
+   "quote": "annual updates as required by the order of conditions."
+  },
+  {
+   "name": "ESS survey report from August (compared to Aug 2018 survey)",
+   "where": "text",
+   "quote": "es will be generating a report from an august survey and that it could be compared to the aug 2018 survey."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "hearings",
+  "Hickory Hills",
+  "dam drawdown",
+  "enforcement",
+  "open space",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

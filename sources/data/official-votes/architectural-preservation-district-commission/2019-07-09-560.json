@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2019-07-09",
  "docid": "560",
@@ -10,17 +10,155 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07092019-560",
   "doc_url": "/docs/meetings/architectural-preservation-district-commission/2019-07-09-minutes-560.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "Plain extracted text, no scan issues. No motions, seconds or votes are recorded anywhere in the minutes, so the votes list is empty; the minutes approval and the adjournment at 8:07PM (\"With no further business before it, and APDC adjourned at 8:07PM\") are stated without a motion. Adams, McQuaid and Burney are named only as speakers at a January 15 joint workshop with the BoS, not as attendees of this meeting, so they are excluded. No public comment section is printed. The bylaw review sentence is recorded as discussion, not as a printed document list.",
+ "cost_usd": 0.004103020000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Approve minutes from the meeting on June 11th",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "minutes from the meeting on june 11th were read and approved with certain clarifications."
+   "name": "Richard McGrath",
+   "status": "present",
+   "role": "Chairman",
+   "quote": "present: chairman mcgrath, corcoran, laveck and dwyer"
+  },
+  {
+   "name": "Brian Corcoran",
+   "status": "present",
+   "role": "Member",
+   "quote": "present: chairman mcgrath, corcoran, laveck and dwyer"
+  },
+  {
+   "name": "Jim LaVeck",
+   "status": "present",
+   "role": "Vice-Chair",
+   "quote": "present: chairman mcgrath, corcoran, laveck and dwyer"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "status": "present",
+   "role": "Clerk",
+   "quote": "present: chairman mcgrath, corcoran, laveck and dwyer"
+  },
+  {
+   "name": "Matthew Stewart",
+   "status": "present",
+   "role": "Lunenburg Ledger reporter",
+   "quote": "partly for the benefit of lunenburg ledger reporter matthew stewart (who attended the meeting)"
   }
  ],
- "dropped_unquoted": 0,
- "note": "One vote recorded. The minutes approve prior meeting minutes. No other motions were formally voted on; discussions concluded with consensus language (e.g., \"it was agreed\") but no recorded votes.",
- "cost_usd": 0.0816855
+ "decisions": [
+  {
+   "decision": "The Commission approved the minutes of the June 11th meeting with certain clarifications (no motion or vote recorded).",
+   "quote": "minutes from the meeting on june 11th were read and approved with certain clarifications."
+  },
+  {
+   "decision": "The clerk will contact the planning board to pursue next steps on the Brooks House.",
+   "quote": "the clerk will contact the planning board to pursue the next steps."
+  },
+  {
+   "decision": "The APDC will first seek advice from the Town Manager before any letter on funding maintenance of historic town properties.",
+   "quote": "after some discussion, it was agreed that the apdc would first seek advise from the town manager."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Brooks House demolition and moving costs (Tappe study)",
+   "what_was_recorded": "Adams cited the Tappe study's estimates for demolishing the Brooks House and for moving it; McQuaid said the study was for restoring buildings to current use and did not really apply.",
+   "figures_as_printed": [
+    "$30-40K",
+    "$30K"
+   ],
+   "quote": "adams mentioned that the tappe study estimated the cost of demolition would be $30-40k, and moving the house would be about $30k."
+  },
+  {
+   "topic": "Funding for future maintenance of historic town properties",
+   "what_was_recorded": "LaVeck suggested asking the Town Manager to allocate funds for future maintenance of historic town properties; no amount was stated.",
+   "figures_as_printed": [],
+   "quote": "laveck suggested approaching the town manager to allocate funds for future maintenance of historic town properties."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of Minutes (June 11th meeting)",
+   "resolution": "approved with clarifications",
+   "quote": "minutes from the meeting on june 11th were read and approved with certain clarifications.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Old Business: Town Properties - Old Primary School",
+   "resolution": "discussed; no action recorded",
+   "quote": "laveck reported on discussion and public comment from recent select board meetings.",
+   "tags": [
+    "Old Primary School",
+    "Select Board",
+    "town properties"
+   ]
+  },
+  {
+   "topic": "Old Business: Demolition by neglect review (APD bylaw)",
+   "resolution": "reviewed; no action recorded",
+   "quote": "mcgrath and dwyer reviewed the apd bylaw and guidelines regarding demolition by neglect and enforcement measures.",
+   "tags": [
+    "demolition by neglect",
+    "APD bylaw"
+   ]
+  },
+  {
+   "topic": "Old Business: Brooks House",
+   "resolution": "discussed; clerk to contact planning board",
+   "quote": "the clerk will contact the planning board to pursue the next steps.",
+   "tags": [
+    "Brooks House",
+    "single family reuse",
+    "village district"
+   ]
+  },
+  {
+   "topic": "Funding for maintenance of historic town properties",
+   "resolution": "APDC to seek advice from Town Manager first",
+   "quote": "after some discussion, it was agreed that the apdc would first seek advise from the town manager.",
+   "tags": [
+    "maintenance funding",
+    "Town Manager"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "APD bylaw and guidelines (demolition by neglect and enforcement measures)",
+   "where": "text",
+   "quote": "mcgrath and dwyer reviewed the apd bylaw and guidelines regarding demolition by neglect and enforcement measures."
+  },
+  {
+   "name": "Notes from the APDC's joint workshop with the BoS on January 15th",
+   "where": "text",
+   "quote": "dwyer reviewed notes taken from the apdc's joint workshop with the bos on january 15th."
+  },
+  {
+   "name": "Tappe study",
+   "where": "text",
+   "quote": "adams mentioned that the tappe study estimated the cost of demolition would be $30-40k, and moving the house would be about $30k."
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "Brooks House",
+  "Old Primary School",
+  "demolition by neglect",
+  "town properties",
+  "Select Board",
+  "maintenance funding",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

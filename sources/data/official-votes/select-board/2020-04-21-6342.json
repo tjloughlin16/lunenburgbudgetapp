@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-04-21",
  "docid": "6342",
@@ -12,15 +12,141 @@
  },
  "votes": [
   {
-   "motion": "Communicate through Town Counsel with Attorney Cohen about the Board's intent to impound the dangerous dogs and enforce the kennel license violations.",
+   "motion": "Through Town Counsel, communicate formally with Attorney Cohen about the Board's intent to impound the dogs and seek to enforce the kennel license issue.",
    "moved_by": "K. Adams",
    "seconded_by": "P. Luck",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: k. adams 2nd: p. luck through town counsel we communicate formally with attorney cohen about the bos intent to impound the dogs and seek to enforce the kennel license issue"
+   "quote": "through town counsel we communicate formally with attorney cohen about the bos intent to impound the dogs and seek to enforce the kennel license issue"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text; one vote recorded on a substantive motion regarding dangerous dog impoundment and kennel license enforcement.",
- "cost_usd": 0.0648988
+ "note": "Scanned text (OCR). The text breaks mid-sentence between pages 1 and 2 (\"This situation\" is followed by \"permission from a NH court\"), so part of the discussion is missing. Some names are garbled by OCR (Gugglietti/Guglietti, \"Mi. Alonzo\", \"Mr:\" Jeffreys, \"Claim. Peterson\" signature). The meeting was held remotely under the Governor's Order; attendance is listed as present without saying how each member joined. No public comment section and no vote on adjournment are recorded. Executive Session II minutes are separate and not included.",
+ "cost_usd": 0.0028895400000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chairman; phyllis luck, vice chairman; katey adams and"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chairman; phyllis luck, vice chairman; katey adams and"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Board of Selectmen member",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chairman; phyllis luck, vice chairman; katey adams and"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Board of Selectmen member",
+   "status": "present",
+   "quote": "katey adams and michael-ray jeffreys"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "not present: damon mcquaid, clerk"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux; adam costa, town counsel"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux; adam costa, town counsel"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Counsel will send correspondence to Attorney Cohen stating the town will attempt to impound the dogs during the dangerous dog appeal process and intends to enforce the kennel license non-compliance, as a settlement, and asking him to contact the town.",
+   "quote": "attorney costa stated they will send correspondence to attorney cohen that they will attempt to impound the dogs"
+  },
+  {
+   "decision": "The Board moved on to Executive Session II without a recorded motion; those minutes are separate.",
+   "quote": "the board moved on to executive session ii. those minutes are separate."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cost of seeking interim impoundment through district court",
+   "what_was_recorded": "Town Counsel said going to district court for intermediate relief involves cost, but only for the interim period.",
+   "figures_as_printed": [],
+   "quote": "there is cost involved and it would only be for the interim."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Dangerous dog appeal and impoundment of Guglietti dogs",
+   "resolution": "discussed; no action by itself, see correspondence motion",
+   "tags": [
+    "dangerous dog",
+    "impoundment",
+    "appeal",
+    "town counsel"
+   ],
+   "quote": "mr. alonzo asked everyone if they had read attorney kennefick's opinion regarding the impoundment of the"
+  },
+  {
+   "topic": "Kennel license denial and enforcement",
+   "resolution": "discussed; counsel to enforce non-compliance",
+   "tags": [
+    "kennel license",
+    "zoning enforcement",
+    "animal control"
+   ],
+   "quote": "ms. adams asked about the denied kennel license; don't they have to downsize the number of dogs now?"
+  },
+  {
+   "topic": "Correspondence to Attorney Cohen",
+   "resolution": "passed 4-0",
+   "tags": [
+    "town counsel",
+    "settlement",
+    "impoundment"
+   ],
+   "quote": "through town counsel we communicate formally with attorney cohen about the bos intent to impound the dogs and seek to enforce the kennel license issue"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Attorney Kennefick's opinion regarding the impoundment of the two dangerous dogs",
+   "where": "text",
+   "quote": "mr. alonzo asked everyone if they had read attorney kennefick's opinion regarding the impoundment of the"
+  },
+  {
+   "name": "Email from Mrs. Terhune",
+   "where": "text",
+   "quote": "believed the dangerous dog determination and the email from mrs. terhune was of a more critical"
+  }
+ ],
+ "tags": [
+  "dangerous dogs",
+  "impoundment",
+  "kennel license",
+  "animal control",
+  "town counsel",
+  "appeal",
+  "executive session",
+  "remote meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

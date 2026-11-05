@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2020-12-14",
  "docid": "4065",
@@ -12,57 +12,382 @@
  },
  "votes": [
   {
-   "motion": "Approve the ANR Plan for 318 & 384 Howard Street",
+   "motion": "Approve the ANR Plan for 318 & 384 Howard Street.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Brenner",
-   "outcome": "passed 3-0-1",
+   "outcome": "passed, 3 in favor and 1 abstention (T. Cole abstained)",
    "procedural": false,
-   "quote": "p. bertram made motion to approve the anr plan, m. brenner seconded, t. cole commented that when the subdivision went through final site plan approval k. o'brien did not own the land curr ently being subdivided under this anr. the subdivision plans that the board previously signed depicted property that k. ===page 2=== minutes 12.14.2020 page 2 o'brien did not own. k. o'brien responded that when the subdivision was approved, he did n",
-   "quote_taken_from_text": true
+   "quote": "p. bertram made motion to approve the anr plan, m. brenner seconded"
   },
   {
-   "motion": "Approve the ANR Plan for 250 Howard Street",
+   "motion": "Approve the ANR Plan for 250 Howard Street.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "p. bertram made motion to approve the anr plan, t. cole seconded, roll call vote - t. cole, aye; p. bertram, aye; m. brenner, aye; m. allison, aye. vote passed 4-0."
+   "quote": "p. bertram made motion to approve the anr plan, t. cole seconded, roll call vote - t. cole, aye"
   },
   {
-   "motion": "Approve the Stormwater Permit and Site Plan Approval for 361 Massachusetts Avenue with the eleven Conditions as distributed and the four Conditions added this evening by the Board",
+   "motion": "Approve the Stormwater Permit and Site Plan Approval for 361 Massachusetts Avenue with the eleven Conditions as distributed and the four Conditions added this evening.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "p. bertram made motion to approve the stormwater permit and site plan approval for 3 61 massachusetts avenue with the eleven conditions as distributed and the four conditions added this evening by the board, t. cole seconded, roll call vote- t. cole, aye; p. bertram, aye; m. brenner, aye; m. allison, aye. vote passed 4 -0",
-   "quote_taken_from_text": true
+   "quote": "p. bertram made motion to approve the stormwater permit and site plan approval"
   },
   {
-   "motion": "Approve the minutes from 11/23/2020",
+   "motion": "Approve the minutes of 11/23/2020.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Brenner",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "p. bertram made motion to approve, m. brenner seconded, roll call vote - t. cole, aye; p. bertram, aye; m. brenner, aye; m. allison, aye. vote passed 4-0."
+   "quote": "11/23/2020- p. bertram made motion to approve, m. brenner seconded, roll call vote"
   },
   {
-   "motion": "Approve the minutes from 11/23/2020, BrightFarms",
+   "motion": "Approve the 11/23/2020 BrightFarms minutes.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Brenner",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "p. bertram made motion to approve , m. brenner seconded, roll call vote - t. cole, aye; p. bertram, aye; m. brenner, aye; m. allison, aye. vote passed 4-0."
+   "quote": "11/23/2020, brightfarms - p. bertram made motion to approve"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Brenner",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "p. bertram made motion to adjourn, m. brenner seconded, roll call vote- t. cole, aye; p. bertram, aye; m. brenner, aye; m. allison, aye. vote passed 4-0."
+   "quote": "p. bertram made motion to adjourn, m. brenner seconded, roll call vote- t. cole, aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded with roll-call results. Vote 1 (318 & 384 Howard Street ANR) passed 3-0 with T. Cole abstaining.",
- "cost_usd": 0.1485605
+ "note": "Text is a clean extraction. The 361 Massachusetts Avenue public hearing is in separate minutes not included here. The 88 Massachusetts Avenue waiver discussion records no motion. The name 'Stac i' is printed with a space and may be a typo for Stacy. The 318 & 384 Howard Street vote is printed as 3 in favor with 1 abstention. The minutes record no public speakers beyond a staff notice. Meeting opened 6:30 PM and adjourned 9:00 PM.",
+ "cost_usd": 0.012077120000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present;"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present;"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "paula bertram, present; matthew brenner, present."
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "paula bertram, present; matthew brenner, present."
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director:"
+  },
+  {
+   "name": "Kevin O’Brien",
+   "role": "applicant (O’Brien Homes Inc.)",
+   "status": "present",
+   "quote": "the applicant, kevin o'brien, o'brien homes inc. presented the anr plan"
+  },
+  {
+   "name": "Cesira Newcomb",
+   "role": "applicant",
+   "status": "not stated",
+   "quote": "applicants cesira newcomb and joel normandin purchased the property"
+  },
+  {
+   "name": "Joel Normandin",
+   "role": "applicant",
+   "status": "not stated",
+   "quote": "applicants cesira newcomb and joel normandin purchased the property"
+  },
+  {
+   "name": "Stac i Halkiadakis",
+   "role": "applicant",
+   "status": "present",
+   "quote": "the applicants informed the board that"
+  },
+  {
+   "name": "Bill Halkiadakis",
+   "role": "applicant",
+   "status": "present",
+   "quote": "the applicants informed the board that"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Applicants for 88 Massachusetts Avenue (waiver from site plan approval) to return to the Board with an engineered plan and defined uses; no vote recorded.",
+   "quote": "board members would like the applicants to return to the board"
+  },
+  {
+   "decision": "Four conditions added to the draft Decision for 361 Massachusetts Avenue: third-party monitor, Graves Engineering letter, one foot of freeboard from the 100-year storm, and no use of Pope Road as a construction entrance.",
+   "quote": "in addition to the conditions already contained in the draft decision, the following would be added:"
+  },
+  {
+   "decision": "Construction hours for 361 Massachusetts Avenue set at 7 AM - 5 PM Monday through Friday, 8 AM - 4 PM Saturday, no construction on Sundays and federal or state holidays.",
+   "quote": "the board determined construction hours would be"
+  },
+  {
+   "decision": "Discussion on whether to allow full-size plan copies for Board review deferred to a future meeting; the Land Use Director noted the Board rules codify 11x17 and a hearing would be needed to change them.",
+   "quote": "board discussion to be held at a future meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "State funding for small projects (MJTC report)",
+   "what_was_recorded": "The MJTC report noted the State has funding for small, meaningful projects such as outdoor dining, available through May 2021.",
+   "figures_as_printed": [
+    "10M"
+   ],
+   "quote": "the state has 10m in funding for small, meaningful projects"
+  },
+  {
+   "topic": "Shared winter streets and spaces grant (MJTC report)",
+   "what_was_recorded": "The MJTC report noted an upcoming shared winter streets and spaces grant with a January 5th due date.",
+   "figures_as_printed": [],
+   "quote": "upcoming shared winter streets and spaces grant was noted; january 5th due date."
+  },
+  {
+   "topic": "Trail grants (MJTC report)",
+   "what_was_recorded": "The MJTC report noted trail grants are available for 2021 with a February 1, 2021 application deadline.",
+   "figures_as_printed": [],
+   "quote": "trail grants are available for 2021 with a"
+  },
+  {
+   "topic": "TCP Building Design Committee costs",
+   "what_was_recorded": "The TCP Building Design Committee held a discussion with the architectural firm regarding costs and finishings; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "discussion with the architectural firm regarding costs and finishings."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "A. Burney",
+   "stated_role": "Land Use Director",
+   "topic": "Town office closure notice",
+   "quote": "a. burney reiterated that town offices are once again closed to the public; open by appointment only."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and remote meeting notice",
+   "resolution": "no action",
+   "quote": "roll call conducted by adam burney, land use director:",
+   "tags": [
+    "remote meeting",
+    "COVID-19",
+    "roll call"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; staff notice only",
+   "quote": "a. burney reiterated that town offices are once again closed to the public; open by appointment only.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "ANR plan, 318 & 384 Howard Street",
+   "resolution": "approved, 3 in favor and 1 abstention",
+   "quote": "the applicant, kevin o'brien, o'brien homes inc. presented the anr plan",
+   "tags": [
+    "ANR plans",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "ANR plan, 250 Howard Street",
+   "resolution": "approved 4-0",
+   "quote": "250 howard street - applicants cesira newcomb and joel normandin purchased the property",
+   "tags": [
+    "ANR plans",
+    "land donation"
+   ]
+  },
+  {
+   "topic": "Waiver request from site plan approval, 88 Massachusetts Avenue",
+   "resolution": "continued; applicants to return with engineered plan and defined uses; no vote",
+   "quote": "applicants stac i and bill halkiadakis purchased the property",
+   "tags": [
+    "site plan approval",
+    "waiver",
+    "parking",
+    "retail cannabis"
+   ]
+  },
+  {
+   "topic": "Public hearing, 361 Massachusetts Avenue, BrightFarms",
+   "resolution": "referred to separate minutes",
+   "quote": "361 massachusetts avenue, brightfarms- see separate minutes",
+   "tags": [
+    "public hearing",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Review/vote on Board decision, 361 Massachusetts Avenue, BrightFarms",
+   "resolution": "approved stormwater permit and site plan approval with conditions, 4-0",
+   "quote": "361 massachusetts avenue, brightfarms - review/vote on board decision",
+   "tags": [
+    "stormwater permit",
+    "site plan approval",
+    "construction hours"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 11/23/2020 and 11/23/2020 BrightFarms minutes, 4-0 each",
+   "quote": "11/23/2020- p. bertram made motion to approve",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; no action",
+   "quote": "storm water task force- no report",
+   "tags": [
+    "committee reports",
+    "open space",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "received; no action",
+   "quote": "master planning- population projections received",
+   "tags": [
+    "master planning",
+    "host community agreement"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "quote": "december 28- workshop on subdivision rules and regulations.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Board comment and concerns",
+   "resolution": "deferred to a future meeting",
+   "quote": "t. cole asked if it would be possible to get full size copies of plans",
+   "tags": [
+    "board rules",
+    "plan sizes"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:00 PM, 4-0",
+   "quote": "p. bertram made motion to adjourn, m. brenner seconded",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 11/23/2020",
+   "where": "list",
+   "quote": "11/23/2020- p. bertram made motion to approve"
+  },
+  {
+   "name": "Minutes 11/23/2020, BrightFarms",
+   "where": "list",
+   "quote": "11/23/2020, brightfarms"
+  },
+  {
+   "name": "ANR Plan, 318 & 384 Howard Street",
+   "where": "list",
+   "quote": "anr plans: 318 & 384 howard street"
+  },
+  {
+   "name": "ANR Plan, 250 Howard Street",
+   "where": "list",
+   "quote": "250 howard street - applicants cesira newcomb and joel normandin purchased the property"
+  },
+  {
+   "name": "Waiver Request, 88 Massachusetts Avenue",
+   "where": "list",
+   "quote": "waiver request, 88 massachusetts avenue"
+  },
+  {
+   "name": "Board Decision, DRAFT, 361 Massachusetts Avenue",
+   "where": "list",
+   "quote": "board decision, draft, 361 massachusetts avenue"
+  },
+  {
+   "name": "Deed from 2008 and letter/agreement with the Haley’s",
+   "where": "text",
+   "quote": "both that letter and the deed from 2008 were furnished to the board"
+  },
+  {
+   "name": "Zoning Board of Appeals special permit, 88 Massachusetts Avenue",
+   "where": "text",
+   "quote": "the zoning board of appeals had granted a special permit for the use."
+  },
+  {
+   "name": "Population projections from Donahue Institute",
+   "where": "text",
+   "quote": "master planning- population projections"
+  },
+  {
+   "name": "Draft Host Community Agreement, Green Leaf Botanicals",
+   "where": "text",
+   "quote": "green leaf botanicals - draft host community agreement submitted to the town."
+  },
+  {
+   "name": "Letter from Graves Engineering, Inc.",
+   "where": "text",
+   "quote": "letter from graves engineering, inc. that all outstanding requirements had been met."
+  },
+  {
+   "name": "Board Rules and Regulations for Site Plan Approval & Special Permits",
+   "where": "text",
+   "quote": "board rules and regulations for site plan approval & special permits"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plans",
+  "site plan approval",
+  "waiver request",
+  "stormwater permit",
+  "public hearing",
+  "minutes approval",
+  "remote meeting",
+  "COVID-19",
+  "parking",
+  "retail cannabis",
+  "grants",
+  "host community agreement"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

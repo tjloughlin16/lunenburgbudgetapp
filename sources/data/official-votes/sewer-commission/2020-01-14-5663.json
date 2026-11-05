@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2020-01-14",
  "docid": "5663",
@@ -12,55 +12,421 @@
  },
  "votes": [
   {
-   "motion": "Buy the seals for Leominster Road and Dana Street, not to exceed $2,200",
+   "motion": "Buy the seals for Leominster Road and Dana Street, not to exceed $2,200.",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed unanimously",
+   "outcome": "passed (vote: Unanimous)",
    "procedural": false,
-   "quote": "motion: carl l. to buy the seals for leominster road and dana street to not exceed $2,200. second: ryan s. vote: unanimous"
+   "quote": "to buy the seals for leominster road and dana street to not exceed $2,200."
   },
   {
-   "motion": "Have Barb assist Jack in working with Adam (Town Counsel) on the SWSS contract",
+   "motion": "Have Barb assist Jack in working with Adam (Town Counsel) in the definition of the SWSS contract.",
    "moved_by": "Dave M.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed unanimously",
+   "outcome": "passed (vote: Unanimous)",
    "procedural": false,
-   "quote": "motion: dave m. second: ryan s. to have barb assist jack in working with adam (town counsel) in the definition of the swss contract. vote: unanimous"
+   "quote": "to have barb assist jack in working with adam (town counsel) in the definition of the swss contract."
   },
   {
-   "motion": "Deny the request from Lunenburg Middle & High School for the exception to the Irrigation Policy",
+   "motion": "Deny the request from the Lunenburg Middle & High School for the exception to the Irrigation Policy.",
    "moved_by": "Dave M.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed unanimously",
+   "outcome": "passed (vote: Unanimous)",
    "procedural": false,
-   "quote": "motion: dave m. second: ryan s. to deny the request from the lunenburg middle & high school for the exception to the irrigation policy. vote: unanimous"
+   "quote": "to deny the request from the lunenburg middle & high school for the exception to the irrigation policy."
   },
   {
-   "motion": "Assess 10 Whiting Street for a betterment of $11,551.47",
+   "motion": "Assess 10 Whiting Street for a betterment of $11,551.47.",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed unanimously",
+   "outcome": "passed (vote: Unanimous)",
    "procedural": false,
-   "quote": "motion: carl l. to assess 10 whiting street for a betterment of $11,551.47. second: ryan s. vote: unanimous"
+   "quote": "to assess 10 whiting street for a betterment of $11,551.47."
   },
   {
-   "motion": "Approve the minutes from 12/10/19",
+   "motion": "Approve the minutes from 12/10/19.",
    "moved_by": "Dave M.",
    "seconded_by": "Carl L.",
-   "outcome": "passed unanimously",
+   "outcome": "passed (vote: Unanimous)",
    "procedural": true,
-   "quote": "motion: dave m. to approve the minutes from 12/10/19. second: carl l. vote: unanimous"
+   "quote": "to approve the minutes from 12/10/19."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 9:08pm.",
    "moved_by": "Dave M.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed unanimously",
+   "outcome": "passed (vote: Unanimous)",
    "procedural": true,
-   "quote": "motion: dave m. to adjourn: 9:08pm second: ryan s. vote: unanimous"
+   "quote": "to adjourn: 9:08pm second: ryan s. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes, clearly legible for vote recording.",
- "cost_usd": 0.12758150000000001
+ "note": "OCR of a scanned page set: text is garbled in places (e.g. page 2 opens mid-sentence, a line reads 'B of los as die bring dada', 'hey will review', 'Woodard', 'I/1', 'I/l' for I/I). No roll call is printed, so members are marked present only because they speak or move in the text. Under the 'Public Comment' heading the speakers are Commission members, not public speakers. The Whiting Street motion says 'betterment' while the text calls it a 'privilege fee'; both are recorded as printed. The Jeffreys property is 1176 Mass Ave in the heading and 1170 Mass Ave in the handouts list, both as printed. The votes are recorded as 'Unanimous' without a numeric count. Some agenda dates and the Leominster bi-weekly update line are partly garbled, so their wording is paraphrased.",
+ "cost_usd": 0.010503320000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "status": "present",
+   "quote": "carl asked if he would like to connect to sewer if he could and he replied he would"
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb has talked to town counsel and they are investigating it."
+  },
+  {
+   "name": "Joan",
+   "status": "present",
+   "quote": "joan asked barb to check with legal as to whether they can pay off the betterment"
+  },
+  {
+   "name": "Dave",
+   "status": "present",
+   "quote": "dave suggested looking at the accuracy of the billing data."
+  },
+  {
+   "name": "Ryan",
+   "status": "present",
+   "quote": "ryan asked about the solar for the pump stations and barb will check for an update."
+  },
+  {
+   "name": "Mike",
+   "status": "present",
+   "quote": "mike asked why they were not brought to the commission first and dave had questions with the invoices."
+  },
+  {
+   "name": "Michael Ray Jeffreys",
+   "status": "present",
+   "quote": "michael ray jeffreys-1176 mass ave- sewer connection discussion - michael passed out a map of his property"
+  },
+  {
+   "name": "Lauren Hertel",
+   "role": "representing Woodward & Curran",
+   "status": "present",
+   "quote": "lauren hertel, david moering, kelly messer, pete jandrisevits and scott mederios-- woodward & curran -"
+  },
+  {
+   "name": "David Moering",
+   "role": "representing Woodward & Curran",
+   "status": "present",
+   "quote": "lauren hertel, david moering, kelly messer, pete jandrisevits and scott mederios-- woodward & curran -"
+  },
+  {
+   "name": "Kelly Messer",
+   "role": "representing Woodward & Curran",
+   "status": "present",
+   "quote": "kelly passed out a list of data requests needed for the project and the group reviewed the list."
+  },
+  {
+   "name": "Pete Jandrisevits",
+   "role": "representing Woodward & Curran",
+   "status": "present",
+   "quote": "pete added that they will also look at the meter data from the pump stations."
+  },
+  {
+   "name": "Scott Mederios",
+   "role": "representing Woodward & Curran",
+   "status": "present",
+   "quote": "scott said their job is to recommend what to do and where to go next."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Barb to check with town counsel whether the Commission can pay off the Jeffreys betterment; Michael Jeffreys to return to a future meeting; Commission to wait for a legal opinion.",
+   "quote": "joan asked barb to check with legal as to whether they can pay off the betterment and told michael the commission will have him come back to a future meeting."
+  },
+  {
+   "decision": "Tablet purchase deferred; Commission to talk with SWSS first.",
+   "quote": "joan asked for a motion to purchase a tablet, but carl suggested talking to swss first."
+  },
+  {
+   "decision": "Decision on ordering a new Meadowwoods pump deferred until SWSS attends the 2/11 meeting.",
+   "quote": "the commission decided to talk to swss when they come to the 2/11 meeting."
+  },
+  {
+   "decision": "Dave volunteered to be the Commission's liaison to Jack (DPW).",
+   "quote": "dave volunteered to be the liaison."
+  },
+  {
+   "decision": "Commission asked Barb to attend the meeting with Jack and Town Counsel on the SWSS contract.",
+   "quote": "commission asked barb to attend also."
+  },
+  {
+   "decision": "Barb to check whether the 2011 meter data is available in electronic format.",
+   "quote": "barb will check if we have the 2011 meter data in electronic format."
+  },
+  {
+   "decision": "Woodward & Curran to send Barb a list of items still needed to complete the data analysis.",
+   "quote": "woodward & curran will send barb a list of items that they still need to complete the data analysis."
+  },
+  {
+   "decision": "Joan suggested Barb email Flow Assessment, Wright Pierce, Weston & Sampson and SWSS, granting Woodward & Curran permission to contact them.",
+   "quote": "joan suggested barb send an email to flow assessment, wright pierce, weston & sampson and swss, granting woodward & curran permission to contact them for information."
+  },
+  {
+   "decision": "Woodward & Curran to provide a bi-weekly update and a monthly written progress report.",
+   "quote": "and will give a monthly written progress report."
+  },
+  {
+   "decision": "Barb to work with Munis to get the Irrigation Fee onto the Q3 billing after it failed on Q2.",
+   "quote": "she will work with them to get it on the q3 billing."
+  },
+  {
+   "decision": "Barb to check for an update on solar for the pump stations.",
+   "quote": "ryan asked about the solar for the pump stations and barb will check for an update."
+  },
+  {
+   "decision": "Meeting tentatively rescheduled to 1/21 and Carl to serve as temporary chair; Carl to attend BOS budget review on 1/28.",
+   "quote": "the commission tentatively reschedule to 1/21 and carl will be the temporary chair."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Jeffreys sewer betterment",
+   "what_was_recorded": "Michael Jeffreys has been charged a sewer betterment that will be paid off in 2028; the Commission discussed whether it could pay the balance.",
+   "figures_as_printed": [],
+   "quote": "he has been charged a sewer betterment which will be paid off in 2028 and is asking what can be"
+  },
+  {
+   "topic": "I/I work after 2011 study",
+   "what_was_recorded": "The Commission spent $100,000 to correct a problem area identified in a 2011 Weston & Sampson study, but is unsure how much I/I was reduced.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "spent $100,000 to correct the problem but they are not sure how much they lessened"
+  },
+  {
+   "topic": "Leominster sewer billing and rate",
+   "what_was_recorded": "The rate figure includes $30K of debt service plus the increase for Leominster's use of flows versus water billing data.",
+   "figures_as_printed": [
+    "$30K"
+   ],
+   "quote": "replied that the figure includes the $30k debt service and the increase for leominster's use of flows vs water billing data."
+  },
+  {
+   "topic": "I/I budget increase",
+   "what_was_recorded": "Carl pointed out the I/I budget needs to increase from $10K to $60K, with a decision needed before the Town Meeting budget is complete.",
+   "figures_as_printed": [
+    "$10K",
+    "$60K"
+   ],
+   "quote": "carl pointed out that they need to increase i/l budget from $10k to $60k"
+  },
+  {
+   "topic": "Leominster additional billing",
+   "what_was_recorded": "Additional billing for Leominster will be $120,000 for the year; FinCom presentation set for March 5th or 19th.",
+   "figures_as_printed": [
+    "$120,000"
+   ],
+   "quote": "the additional billing for leominster will be $120,000 for the year."
+  },
+  {
+   "topic": "Leominster Road and Dana St. seals",
+   "what_was_recorded": "The Leominster Road seal will cost $2,200 and the Dana St. seal about that or less; the Commission voted to purchase them not to exceed $2,200.",
+   "figures_as_printed": [
+    "$2,200"
+   ],
+   "quote": "the leominster road seal will cost $2,200 and the seal for dana st. will be about that or less."
+  },
+  {
+   "topic": "SWSS / generator invoices",
+   "what_was_recorded": "FY20 infrastructure costs are over budget; invoices were reviewed and overcharges discussed.",
+   "figures_as_printed": [],
+   "quote": "infrastructure costs for fy20 are over budget."
+  },
+  {
+   "topic": "Invoices paid",
+   "what_was_recorded": "Invoices from Fitchburg and Wright Pierce were reported.",
+   "figures_as_printed": [
+    "$13,003.92",
+    "$4,721.32"
+   ],
+   "quote": "invoices- fitchburg $13,003.92 and wright pierce $4,721.32."
+  },
+  {
+   "topic": "Wright Pierce purchase order balance",
+   "what_was_recorded": "The remaining balance on the Wright Pierce purchase order is approximately $2,000.",
+   "figures_as_printed": [
+    "$2,000"
+   ],
+   "quote": "the balance on the wright pierce purchase order is approximately $2,000."
+  },
+  {
+   "topic": "Meadowwoods grant and pump",
+   "what_was_recorded": "Barb verified no money is left over from the Meadowwoods grant; the new Meadowwoods pump has not arrived and ordering is deferred.",
+   "figures_as_printed": [],
+   "quote": "barb added that she verified that no money is left over from the meadowwoods grant."
+  },
+  {
+   "topic": "Whiting Street privilege fee / betterment",
+   "what_was_recorded": "10 Whiting Street assessed a betterment (described in the text as a privilege fee) of $11,551.47.",
+   "figures_as_printed": [
+    "$11,551.47"
+   ],
+   "quote": "to assess 10 whiting street for a betterment of $11,551.47."
+  },
+  {
+   "topic": "Irrigation Fee billing",
+   "what_was_recorded": "Irrigation Fee was to be added to Q2 bills but failed in Munis; it will be moved to Q3 billing. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "barb worked with munis to add the irrigation fee to the q2 bills, but it did not work."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Michael Ray Jeffreys",
+   "stated_role": "",
+   "topic": "sewer connection and betterment for 1176 Mass Ave",
+   "quote": "michael added that he is not looking for past reimbursement but would just like betterment charges to stop."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Michael Ray Jeffreys sewer connection discussion (1176 Mass Ave)",
+   "resolution": "continued; Barb to check with legal; applicant to return to a future meeting",
+   "quote": "the commission discussed possible options but will need to wait for an opinion from legal.",
+   "tags": [
+    "sewer connection",
+    "betterment",
+    "legal"
+   ]
+  },
+  {
+   "topic": "Woodward & Curran I/I 3rd Party Review kickoff",
+   "resolution": "presentation and kickoff; schedule and data requests set; no vote",
+   "quote": "lauren outlined the project schedule: an interim meeting in march, a draft report, a draft review meeting, a final report and then training for barb.",
+   "tags": [
+    "inflow and infiltration",
+    "consultant",
+    "pump stations"
+   ]
+  },
+  {
+   "topic": "FY20 budget and spare parts status",
+   "resolution": "pump station seals approved; Meadowwoods pump deferred to 2/11 meeting",
+   "quote": "joan encouraged the commission to continue to purchase spare parts for the pump stations.",
+   "tags": [
+    "FY20 budget",
+    "spare parts",
+    "pump stations"
+   ]
+  },
+  {
+   "topic": "Review SWSS invoices",
+   "resolution": "reviewed; Barb to assist Jack with SWSS contract; Dave named liaison",
+   "quote": "commission reviewed the invoices and discussed the overcharges.",
+   "tags": [
+    "SWSS",
+    "invoices",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Lunenburg Middle & High School irrigation policy exception",
+   "resolution": "denied",
+   "quote": "the commission discussed the request and decided that they could not approve the exception.",
+   "tags": [
+    "irrigation policy",
+    "meters"
+   ]
+  },
+  {
+   "topic": "Privilege fee assessment, 10 Whiting Street",
+   "resolution": "assessed $11,551.47",
+   "quote": "now that they are ready to sell the property, they wanted to connect to sewer and have made the necessary connections to the sewer",
+   "tags": [
+    "betterment",
+    "privilege fee"
+   ]
+  },
+  {
+   "topic": "Minutes of 12/10/19",
+   "resolution": "approved",
+   "quote": "to approve the minutes from 12/10/19.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager Report, Leominster IMA",
+   "resolution": "reported; no action",
+   "quote": "barb reported that the meter billing will start in july and the debt service will be billed at beginning of the fiscal year.",
+   "tags": [
+    "Leominster",
+    "billing",
+    "debt service"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "noted for a future agenda",
+   "quote": "sewer policy change for pro-rating of fees.",
+   "tags": [
+    "sewer policy",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Public comment: Cross Road extension and meeting reschedule",
+   "resolution": "discussed; next meeting tentatively moved to 1/21",
+   "quote": "carl said he is concerned that no engineered plan has been submitted.",
+   "tags": [
+    "Cross Road",
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Property map 1170 Mass Ave.",
+   "where": "list",
+   "quote": "property map 1170 mass ave."
+  },
+  {
+   "name": "Woodward & Curran list of data requirements for the I/1 3'd party review",
+   "where": "list",
+   "quote": "woodward & curran list of data requirements for the i/1 3'd party review"
+  },
+  {
+   "name": "FY21 Budget Review worksheet",
+   "where": "list",
+   "quote": "fy21 budget review worksheet"
+  },
+  {
+   "name": "2011 study done by Weston & Sampson",
+   "where": "text",
+   "quote": "the commission found an area that contributed 70% -80% of the l/l during a 2011 study"
+  },
+  {
+   "name": "November pump station report",
+   "where": "text",
+   "quote": "the november pump station report is on the shared drive."
+  },
+  {
+   "name": "I/l annual state report (Plan)",
+   "where": "text",
+   "quote": "the commission does not need to do the i/l annual state report noted in the plan"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "inflow and infiltration",
+  "Woodward & Curran",
+  "SWSS",
+  "Leominster",
+  "betterment",
+  "irrigation policy",
+  "FY20 budget",
+  "pump stations",
+  "Whiting Street",
+  "Jeffreys sewer connection"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts--"
+ },
+ "dropped_unquoted_by_field": {}
 }

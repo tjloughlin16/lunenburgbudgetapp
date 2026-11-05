@@ -222,9 +222,13 @@ def guard(now=None):
     # REPEATING: the same step paid for the same meeting twice inside the hour. Every step
     # is skipped once done, so a second paid call means the save did not take and the run
     # is going round -- the shape of the 6 October runaway, which spun on refused calls.
+    # A MEETING step has a date. Streams that are not about a meeting share this ledger --
+    # sort_catalogue.py logs every batch of `--recheck-prose` as (catalogue-sort,
+    # recheck-prose, '') -- so three different batches looked like one step paid three
+    # times and stopped the pacer at 08:25 on 4 November 2026. Count only dated rows.
     seen = {}
     for r in rows:
-        if r.get('result', 'ok') != 'ok':
+        if r.get('result', 'ok') != 'ok' or not r.get('date'):
             continue
         k = (r['stream'], r['board'], r['date'])
         seen[k] = seen.get(k, 0) + 1

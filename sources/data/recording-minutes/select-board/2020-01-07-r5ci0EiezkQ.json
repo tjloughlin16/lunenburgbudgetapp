@@ -1,0 +1,373 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2020-01-07",
+ "video_id": "r5ci0EiezkQ",
+ "video_url": "https://www.youtube.com/watch?v=r5ci0EiezkQ",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2020-01-07-r5ci0EiezkQ.json",
+  "sha256": "ebbceb189ca0a8d4e7c989738274cd5ee727ca4a2a60d6d0820972107c6ca8ea",
+  "caption_lines": 94,
+  "segments": 721
+ },
+ "recording": {
+  "duration_s": 2010,
+  "duration": "0:33",
+  "spoken_chars": 26083,
+  "words_approx": 4347
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_01072020-5228",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-01-07-agenda-5228.txt",
+   "path": "sources/meetings/select-board/2020-01-07-agenda-5228.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01072020-5228",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-01-07-minutes-5228.txt",
+   "path": "sources/meetings/select-board/2020-01-07-minutes-5228.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-04T09:41:13Z",
+  "cost_usd": 0.2313122
+ },
+ "minutes": {
+  "headline": "Board opened the Town Meeting warrant and pressed for a hazardous-materials assessment of the old primary school.",
+  "summary": "The board heard announcements and the town manager's report, approved a change of manager on the Hannaford alcohol license, and opened the annual Town Meeting warrant. A member pressed for a hazardous-materials assessment of the town-owned old primary school. A resident criticised the delay in certifying the Charter.",
+  "attendees": [
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 174,
+    "topic": "Frustration that the Charter approved at May Town Meeting has not been certified, which could keep added Parks Commission seats from being filled at the May election."
+   },
+   {
+    "t": 1155,
+    "topic": "Recalled the earlier demolition article for the old primary and urged getting an estimate for a hazardous-materials walkthrough."
+   }
+  ],
+  "tags": [
+   "facilities",
+   "legal",
+   "public-comment",
+   "roads-and-dpw",
+   "seniors",
+   "town-departments",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 472,
+    "motion": "Change of manager for the alcohol license at Hannaford supermarket and pharmacy, 333 Mass Ave.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 1240,
+    "motion": "Open the annual Town Meeting warrant on January 14th and close it on March 16th at 4 p.m.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 2002,
+    "motion": "Adjourn.",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 48,
+    "topic": "Senior tax work-off program",
+    "what_was_said": "The abatement cap and hourly wage were announced as increased; a member asked whether it keeps pace with minimum wage.",
+    "figures_as_heard": [
+     "$1,500",
+     "12"
+    ]
+   },
+   {
+    "t": 637,
+    "topic": "Chapter 90 supplemental budget",
+    "what_was_said": "The town will receive additional Chapter 90 money for road projects, raising its fiscal 20 apportionment.",
+    "figures_as_heard": [
+     "forty one thousand four hundred sixty five dollars",
+     "four hundred and fifty six thousand one hundred and fourteen dollars"
+    ]
+   },
+   {
+    "t": 1051,
+    "topic": "Old primary hazardous materials assessment",
+    "what_was_said": "A member suggested spending a few thousand dollars now rather than waiting for the fiscal 21 budget; estimates of cost were uncertain.",
+    "figures_as_heard": [
+     "five to ten thousand dollars",
+     "$3,000",
+     "ten thousand dollars"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1219,
+    "decision": "The town manager said she would get an estimate for a hazardous-materials assessment of the old primary building."
+   },
+   {
+    "t": 1663,
+    "decision": "Upcoming meetings were set for the 7th, 21st and 28th, with the 28th reserved for a public budget-questions meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 174,
+    "topic": "Announcements and board comments",
+    "resolution": "informational",
+    "tags": [
+     "seniors",
+     "elections"
+    ]
+   },
+   {
+    "t_start": 174,
+    "t_end": 259,
+    "topic": "Public comment on Charter certification",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 259,
+    "t_end": 512,
+    "topic": "Hannaford alcohol license change of manager",
+    "resolution": "motion made; outcome not captioned",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 513,
+    "t_end": 1240,
+    "topic": "Town manager report and old primary hazard assessment",
+    "resolution": "estimate to be obtained",
+    "tags": [
+     "facilities",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 1240,
+    "t_end": 1347,
+    "topic": "Open Town Meeting warrant and accounts",
+    "resolution": "motion made; outcome not captioned",
+    "tags": [
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 1347,
+    "t_end": 2002,
+    "topic": "Committee reports and member comments",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Results of the three motions were not captioned beyond 'all in favor aye' lines."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [],
+  "documents_mentioned": [
+   {
+    "t": 1274,
+    "name_as_heard": "minutes from the October 8th meeting",
+    "kind": "prior minutes",
+    "words_as_heard": "there are the minutes from the October 8th meeting"
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted to open the annual Town Meeting warrant on January 14th and close it on March 16th at 4 p.m.; the outcome was not captioned.",
+    "t": 1240
+   },
+   {
+    "line": "The town manager said she would get an estimate for a hazardous-materials assessment of the old primary building, which the town owns.",
+    "t": 1219
+   },
+   {
+    "line": "A member suggested paying for the assessment now rather than waiting for the fiscal 21 budget; the cost was uncertain.",
+    "t": 1051
+   },
+   {
+    "line": "The board was told of additional Chapter 90 road money for the town's fiscal 20 apportionment.",
+    "t": 637
+   },
+   {
+    "line": "A resident said the Charter approved at May Town Meeting has not been certified, which could keep added Parks Commission seats from being filled in May.",
+    "t": 174
+   }
+  ],
+  "why_it_matters": [
+   "The old primary school is town property, and the assessment estimate will show whether its hazard cleanup is paid from this year's funds or waits for the fiscal 21 budget and a Town Meeting vote.",
+   "The warrant lists the articles voters will decide at Town Meeting, so the open window from January 14th to March 16th is when items can be added.",
+   "If the Charter is not certified in time, new Parks Commission seats may not appear on the May ballot."
+  ],
+  "watch_next": [
+   "The town manager's cost estimate for the old primary hazardous-materials assessment.",
+   "The warrant closes March 16th at 4 p.m.; a public budget-questions meeting is set for the 28th."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-04T09:41:19Z",
+   "cost_usd": 0.026733100000000003
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01072020-5228",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-01-07-minutes-5228.txt",
+   "path": "sources/meetings/select-board/2020-01-07-minutes-5228.pdf"
+  },
+  "official_sha256": "07f25fd1f7888d8227af11aa7b8164fa768f424ac54a0f562d2b02e34b8de07a",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on the topics covered (Hannaford manager change, warrant dates, Chapter 90, senior work-off), but ours has thin detail. The key difference is that both votes show as \"not audible\" in ours while the official minutes record them passing unanimously, and the hazardous assessment dollar estimates appear only in ours.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 1,
+   "discrepancy": 3,
+   "only_in_ours": 1,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote: change of manager, Hannaford alcohol license",
+    "ours": "Change of manager for the alcohol license at Hannaford supermarket and pharmacy, 333 Mass Ave. — not audible",
+    "official": "motion: k. adams to approve the change of manager to deigo comesana at hannaford's supermarket and pharmacy #8388 2nd: d.mcquaid vote: all in favor",
+    "note": "Same item, but ours records no audible outcome while official shows it passed unanimously; check the recording for the vote.",
+    "t": 472
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: open/close Town Meeting warrant",
+    "ours": "Open the annual Town Meeting warrant on January 14th and close it on March 16th at 4 p.m. — not audible",
+    "official": "motion: d. mcquaid 2nd. m. jeffreys to open the annual town meeting warrant on january 14, 2020 and close the warrant at 4:00 p.m. on monday, march 16, 2020 vote: all in favor",
+    "note": "Same motion, but ours has no audible outcome while official records it passing unanimously; verify the vote on the recording.",
+    "t": 1240
+   },
+   {
+    "kind": "agree",
+    "about": "Senior tax work-off figure",
+    "ours": "Senior tax work-off program: $1,500, 12",
+    "official": "to reduce your property tax bill by up to $1500.00 annually.",
+    "note": "$1,500 matches; the trailing '12' in ours is a stray caption fragment.",
+    "t": 48
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chapter 90 supplemental figures",
+    "ours": "Chapter 90 supplemental budget: forty one thousand four hundred sixty five dollars, four hundred and fifty six thousand one hundred and fourteen dollars",
+    "official": "this brings our fy20 apportionment to $456,114.",
+    "note": "Spoken figures match $41,465 supplemental and $456,114 total, just in words.",
+    "official_reading": "$456,114",
+    "t": 637
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Old primary hazardous materials assessment amount",
+    "ours": "Old primary hazardous materials assessment: five to ten thousand dollars, $3,000, ten thousand dollars",
+    "official": "discussion ensued on the logistics of funding the assessment.",
+    "note": "Ours has dollar estimates but official prints none; check the recording for what amounts were actually discussed.",
+    "t": 1051
+   },
+   {
+    "kind": "agree",
+    "about": "Hazardous assessment estimate for old Primary School",
+    "ours": "The town manager said she would get an estimate for a hazardous-materials assessment of the old primary building.",
+    "official": "discussion ensued on the logistics of funding the assessment.",
+    "note": "Both record discussion of funding the assessment; official is less specific about who gets the estimate.",
+    "t": 1219
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Corrected liquor license reprint",
+    "ours": "",
+    "official": "a corrected license will be reprinted for bos signatures later.",
+    "note": "Official records a corrected license to be reprinted; ours does not mention it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Comesana ID check follow-up",
+    "ours": "",
+    "official": "mr. comesana will follow-up on the checking of identifications for purchases.",
+    "note": "Follow-up on ID checks is only in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Remainder of ADA planning piece under DLTA funding",
+    "ours": "",
+    "official": "she planned on submitting the remainder of the planning piece under that",
+    "note": "Grant/planning decision not in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Brownfields Phase II nomination",
+    "ours": "",
+    "official": "apply for funding for phase ii site assessmentcosts.",
+    "note": "Brownfields funding application appears only in official."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Upcoming meeting dates",
+    "ours": "Upcoming meetings were set for the 7th, 21st and 28th, with the 28th reserved for a public budget-questions meeting.",
+    "official": "",
+    "note": "Meeting schedule is not in the official minutes provided."
+   },
+   {
+    "kind": "agree",
+    "about": "Town manager attendance",
+    "ours": "Heather (town manager)",
+    "official": "also present: heather lemieux, town manager",
+    "note": "Same person; ours has first name only."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent chairman",
+    "ours": "",
+    "official": "member not present: tom alonzo, chairman",
+    "note": "Official lists Chairman Alonzo absent; ours lists no board attendees."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T09:42:18Z",
+   "cost_usd": 0.044589100000000007
+  }
+ }
+}

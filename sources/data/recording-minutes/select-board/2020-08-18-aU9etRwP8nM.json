@@ -1,0 +1,703 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2020-08-18",
+ "video_id": "aU9etRwP8nM",
+ "video_url": "https://www.youtube.com/watch?v=aU9etRwP8nM",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2020-08-18-aU9etRwP8nM.json",
+  "sha256": "c4bb2da149c751cb819619bae83d5634f01a0ff7de83b782de69595804787454",
+  "caption_lines": 343,
+  "segments": 3225
+ },
+ "recording": {
+  "duration_s": 7185,
+  "duration": "1:59",
+  "spoken_chars": 93227,
+  "words_approx": 15537
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08182020-5209",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-08-18-agenda-5209.txt",
+   "path": "sources/meetings/select-board/2020-08-18-agenda-5209.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08182020-5209",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-08-18-minutes-5209.txt",
+   "path": "sources/meetings/select-board/2020-08-18-minutes-5209.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-03T18:25:58Z",
+  "cost_usd": 0.3037244
+ },
+ "minutes": {
+  "headline": "Select Board voted 3-2 against directing the town manager to look for a more accessible meeting space.",
+  "summary": "The board transferred the Embers Pizzeria liquor licenses, renewed seven earth removal permits over a split on how the motion was framed, and debated moving meetings out of Town Hall for ADA reasons. The state primary warrant was approved and board liaisons were assigned. The town manager reported on DPW staffing shortages and COVID, and the board went into executive session on litigation.",
+  "attendees": [
+   {
+    "name_as_heard": "Ms Adams",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Marino",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Jeffries",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Dwyer",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Tom Malazar",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Madame town manager (Heather)",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Casey Burlingame",
+    "role": "building commissioner"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 196,
+    "topic": "Complimented the town manager's presentation to the Chamber of Commerce on handling COVID.",
+    "stated_role": "member of chamber of commerce"
+   },
+   {
+    "t": 246,
+    "topic": "Announced TCP building design committee meetings on Aug 31, Sept 10 and Sept 21 and invited public input.",
+    "speaker_as_heard": "Roy",
+    "stated_role": "representing the TCP building design committee"
+   },
+   {
+    "t": 1631,
+    "topic": "Legal observation for the Proctor earth removal permit that the permit is already subject to other boards' conditions.",
+    "stated_role": "representing Mr Proctor"
+   },
+   {
+    "t": 1675,
+    "topic": "Abutter asked whether the left side of the berm would be raised to the agreed height.",
+    "stated_role": "abutter"
+   },
+   {
+    "t": 1783,
+    "topic": "Abutter disputed the agreed berm height, saying six feet to the telephone pole was agreed and four feet does nothing.",
+    "speaker_as_heard": "Clifford Smith"
+   }
+  ],
+  "tags": [
+   "elections",
+   "executive-session",
+   "facilities",
+   "legal",
+   "personnel",
+   "planning-and-zoning",
+   "public-comment",
+   "staffing",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 770,
+    "motion": "Support transfers of the all-alcohol on-premise license, common victualler license and temporary extension of premises for Embers",
+    "moved_by": "unclear",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 1953,
+    "motion": "Approve earth removal permits 15, 16, 17, 27, 30, 57 (PJ Keating) and 60 (Proctor), with the rear berm of permit 60 completed by end of November 2020",
+    "moved_by": "Mr Jeffries",
+    "outcome": "passed 4-1",
+    "procedural": false
+   },
+   {
+    "t": 3473,
+    "motion": "When returning to in-person meetings, meet at the community room in the Eagle House to improve accessibility",
+    "moved_by": "Ms Adams",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 3666,
+    "motion": "Through the town manager, find a more accessible meeting space for the board's meetings",
+    "moved_by": "Ms Adams",
+    "outcome": "failed 2-3",
+    "procedural": false
+   },
+   {
+    "t": 4226,
+    "motion": "Approve the 2020 state primary election warrant with the correction of the time to 7 am to 8 pm",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 7140,
+    "motion": "Enter executive session on litigation strategy and adjourn afterward without returning to open session",
+    "outcome": "passed 5-0",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 3181,
+    "topic": "Town hall renovation / TCP cost",
+    "what_was_said": "A member cited an estimate for the town hall at TCP; another member said no cost estimates have been presented to the design committee.",
+    "figures_as_heard": [
+     "15 to 20 million dollars"
+    ]
+   },
+   {
+    "t": 3874,
+    "topic": "FY22 budget",
+    "what_was_said": "A member said the fiscal year 22 budget will be abysmal and demand the town manager's attention.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 6246,
+    "topic": "DPW staffing and pay",
+    "what_was_said": "The town manager said the DPW cannot fill three equipment operator vacancies because of the low rate of pay and a lack of qualified candidates.",
+    "figures_as_heard": [
+     "down 50"
+    ]
+   },
+   {
+    "t": 6540,
+    "topic": "Travel order fine",
+    "what_was_said": "State travel order failure to comply may bring a fine per day.",
+    "figures_as_heard": [
+     "500 dollar fine per day"
+    ]
+   },
+   {
+    "t": 5120,
+    "topic": "Tri-centennial committee funds",
+    "what_was_said": "A member noted that the earlier 275th committee received some money for parades and fireworks.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1191,
+    "decision": "The Proctor permit renewal will carry a stipulation that the rear berm is completed by the end of November, with the building commissioner to follow up."
+   },
+   {
+    "t": 2211,
+    "decision": "Fence viewer appointment of the applicant was postponed so the applicant can appear and the board can ask questions."
+   },
+   {
+    "t": 4330,
+    "decision": "The June 9 minutes were deferred to the next meeting because they were only just received."
+   },
+   {
+    "t": 5308,
+    "decision": "The tri-centennial committee will not be formed now; the board agreed it is too early, to revisit in about five years, and no motion was needed."
+   },
+   {
+    "t": 5891,
+    "decision": "Liaisons assigned informally: Mr Jeffries to library and council on aging, Mr Dwyer to planning board, Mr Marino to finance committee, the chair to school committee."
+   },
+   {
+    "t": 6953,
+    "decision": "No meeting next week; the next meeting is September 1."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 6,
+    "t_end": 196,
+    "topic": "Opening, remote meeting notice, roll call and pledge",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 196,
+    "t_end": 365,
+    "topic": "Public comment: compliment to town manager; TCP design committee meetings",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 365,
+    "t_end": 832,
+    "topic": "Public hearing: transfer of Embers Pizzeria liquor licenses",
+    "resolution": "voted",
+    "tags": [
+     "legal",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 832,
+    "t_end": 2167,
+    "topic": "Earth removal permit renewals (PJ Keating and Proctor)",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 2167,
+    "t_end": 2254,
+    "topic": "Fence viewer appointment and animal control report",
+    "resolution": "postponed / accepted",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 2254,
+    "t_end": 4083,
+    "topic": "Holding public meetings in more accessible buildings",
+    "resolution": "motion failed 2-3",
+    "tags": [
+     "facilities",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 4083,
+    "t_end": 4330,
+    "topic": "2020 state primary election warrant",
+    "resolution": "voted",
+    "tags": [
+     "elections",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 4330,
+    "t_end": 4833,
+    "topic": "Committee reports: senior services and TCP design committee",
+    "resolution": "informational",
+    "tags": [
+     "facilities",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 4833,
+    "t_end": 5328,
+    "topic": "Tri-centennial committee",
+    "resolution": "no resolution; revisit in years",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 5328,
+    "t_end": 5911,
+    "topic": "Reinstating board liaisons",
+    "resolution": "agreed informally",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 5911,
+    "t_end": 6973,
+    "topic": "Town manager report and COVID-19 update, including DPW staffing and enforcement questions",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "roads-and-dpw",
+     "staffing"
+    ]
+   },
+   {
+    "t_start": 6973,
+    "t_end": 7180,
+    "topic": "Board comments and executive session on litigation",
+    "resolution": "voted into executive session",
+    "tags": [
+     "executive-session",
+     "legal"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Who moved the license transfer motion is unclear.",
+   "Vote on the original Eagle House motion was not reached before it was withdrawn and replaced.",
+   "Captions garble some speaker attributions."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 1445,
+    "about": "A member challenged the building commissioner's finding that the Proctor site meets its conditions, and another member objected.",
+    "sides": "One member against the building commissioner's inspection conclusion; another member objecting",
+    "words_as_heard": "now you're questioning his inspection",
+    "kind": "members disagree"
+   },
+   {
+    "t": 1804,
+    "about": "An abutter said the agreed six-foot berm was not what is being built.",
+    "sides": "an abutter against the applicant",
+    "words_as_heard": "a four-foot berm does absolutely nothing tear it down and don't bother",
+    "kind": "public criticism"
+   },
+   {
+    "t": 2021,
+    "about": "A member objected to approving all permits in one motion and cast a no vote.",
+    "sides": "one member against the chair and other members",
+    "words_as_heard": "it's just a very messy way to make a motion",
+    "kind": "procedural fight"
+   },
+   {
+    "t": 3037,
+    "about": "A member said the opposition to moving meetings reflected agendas and negativity about town buildings.",
+    "sides": "a member against other members",
+    "words_as_heard": "because we have agendas we won't think outside of the box",
+    "kind": "members disagree"
+   },
+   {
+    "t": 7014,
+    "about": "A member apologised for frustration with the negativity on the board.",
+    "sides": "a member about the board",
+    "words_as_heard": "overwhelming amount of negativity and it's it's exhausting",
+    "kind": "charged language"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 2342,
+    "kind": "safety",
+    "about": "Town Hall's second floor staircase, lift and extension cords are tripping hazards and access problems.",
+    "who": "a member",
+    "words_as_heard": "extension cords run across the floor um that you know are tripping hazards to just about anybody"
+   },
+   {
+    "t": 2952,
+    "kind": "liability or legal",
+    "about": "A member asked about legal ADA obligations and complaint exposure.",
+    "who": "a member",
+    "words_as_heard": "the you know legal obligation to look for solutions and improvement"
+   },
+   {
+    "t": 3601,
+    "kind": "safety",
+    "about": "Bringing the public into the Eagle House could expose seniors to the virus.",
+    "who": "the town manager",
+    "words_as_heard": "bringing the general public into a building where seniors are dying of this virus at an alarming rate"
+   },
+   {
+    "t": 3516,
+    "kind": "condition",
+    "about": "The town manager wanted the council on aging's input before any use of the Eagle House.",
+    "who": "the town manager",
+    "words_as_heard": "this hasn't been discussed with the council on aging so it would you know would like their input"
+   },
+   {
+    "t": 4791,
+    "kind": "safety",
+    "about": "A member noted the Town Hall second floor was condemned once and the building is old.",
+    "who": "a member",
+    "words_as_heard": "that second floor was has already been condemned once"
+   },
+   {
+    "t": 4454,
+    "kind": "liability or legal",
+    "about": "The extent of TCP renovation triggers higher code levels with wind and seismic compliance and cost.",
+    "who": "a member reporting for the TCP committee",
+    "words_as_heard": "it hits a level three coding requirement and that comes with a little bit more stuff"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 536,
+    "name_as_heard": "license transfer packet",
+    "kind": "application or permit",
+    "words_as_heard": "we have the purchase and sale agreement we have the licensing authority certification form lease agreement",
+    "shown": true
+   },
+   {
+    "t": 893,
+    "name_as_heard": "earth removal documentation and reports",
+    "kind": "report",
+    "words_as_heard": "we also have uh reports from mr bernie on on them we have the applications themselves",
+    "shown": true
+   },
+   {
+    "t": 4124,
+    "name_as_heard": "state primary warrant",
+    "kind": "warrant article",
+    "words_as_heard": "we have from the town clerk or a warrant the warrant for the 2020 state primary",
+    "shown": true
+   },
+   {
+    "t": 4516,
+    "name_as_heard": "environmental report on TC Passios site",
+    "kind": "report",
+    "words_as_heard": "there is an environmental report that was presented on the site um it's 276 pages long",
+    "shown": false
+   },
+   {
+    "t": 4309,
+    "name_as_heard": "minutes from June 9th",
+    "kind": "prior minutes",
+    "words_as_heard": "we had uh minutes from june 9th to approve",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "town-office-space",
+    "title": "Town office space",
+    "question": "What are the town's options and likely costs for a usable town hall and public meeting space?",
+    "t": 2254,
+    "words_as_heard": "it's one of my spinning wheels but i don't understand why we don't um take action",
+    "data_in_play": [
+     "15 to 20 million dollars"
+    ],
+    "existing": "thread:town-offices"
+   },
+   {
+    "slug": "tc-passios-building-costs",
+    "title": "TC Passios building costs",
+    "question": "What would the TC Passios town hall conversion cost given code requirements?",
+    "t": 4414,
+    "words_as_heard": "it hits a level three coding requirement and that comes with a little bit more stuff",
+    "data_in_play": [
+     "33 percent of the brick exterior",
+     "276 pages"
+    ],
+    "existing": "thread:tc-passios-site"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted 3-2 against directing the town manager to find a more accessible meeting space for board meetings.",
+    "t": 3666
+   },
+   {
+    "line": "The board approved renewals of seven earth removal permits 4-1, with the rear berm on one permit to be completed by the end of November 2020.",
+    "t": 1953
+   },
+   {
+    "line": "The board voted 5-0 to support transfers of the Embers liquor, common victualler and temporary extension of premises licenses.",
+    "t": 770
+   },
+   {
+    "line": "The board approved the 2020 state primary warrant 5-0 after correcting the poll hours to 7 am to 8 pm.",
+    "t": 4226
+   },
+   {
+    "line": "The town manager said the DPW cannot fill three equipment operator vacancies because of low pay and a lack of qualified candidates.",
+    "t": 6246
+   }
+  ],
+  "why_it_matters": [
+   "Where the board meets decides how easily residents with mobility needs can attend and speak, and the 3-2 vote leaves that question unsettled.",
+   "Unfilled DPW positions and a budget a member described as difficult for FY22 point to pressure on road and public works services and on future tax-supported pay decisions."
+  ],
+  "watch_next": [
+   "The next Select Board meeting, September 1, 2020, and the deferred June 9 minutes and postponed fence viewer appointment.",
+   "TCP building design committee meetings on Aug 31, Sept 10 and Sept 21, open to public input."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-03T18:26:05Z",
+   "cost_usd": 0.029459100000000002
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08182020-5209",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-08-18-minutes-5209.txt",
+   "path": "sources/meetings/select-board/2020-08-18-minutes-5209.pdf"
+  },
+  "official_sha256": "f2698d8e21aa7e624d0baa780741c9a4cf6894fbd150e8657c9c43a0efe1f572",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on the Embers transfers, the primary warrant, the $500 travel fine and most attendees. They differ on the earth removal vote record, the accessibility motions, the fence viewer reason, the Proctor deadline and the DPW figure, and the official omits the TCP cost, the tri-centennial item and the next meeting date. The key point is that the earth removal vote is only partially printed in the official minutes (four ayes, no result), and the permit-60 berm condition is not recorded there, so the 4-1 tally and the November deadline should be checked against the recording.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 3,
+   "discrepancy": 7,
+   "only_in_ours": 4,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Embers license transfers vote",
+    "ours": "Support transfers of the all-alcohol on-premise license, common victualler license and temporary extension of premises for Embers — passed 5-0",
+    "official": "motion: j. marino 2nd: t. dwyer to approve the transfer of the all alcohol onpremise license",
+    "note": "Same item and same 5-0 result in both records.",
+    "t": 770
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Earth removal permits vote",
+    "ours": "Approve earth removal permits 15, 16, 17, 27, 30, 57 (PJ Keating) and 60 (Proctor), with the rear berm of permit 60 completed by end of November 2020 — passed 4-1",
+    "official": "vote: mr. marino-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. alonzo-aye",
+    "note": "Official prints only four aye votes, no motion text and no stated result, and the berm condition is not in it; check the recording for the full roll call, the 4-1 tally and the stipulation.",
+    "t": 1953
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Eagle House community room accessibility motion",
+    "ours": "When returning to in-person meetings, meet at the community room in the Eagle House to improve accessibility — not audible",
+    "official": "motion: k. adams 2\"°: j. marino once the select board starts meeting again that we meet in the eagle house community meeting room",
+    "note": "Our record could not hear the outcome; official shows it failed 2-3. Our separate t=3666 'find a more accessible space through the town manager' vote also failed 2-3, so check whether these are one motion or two.",
+    "t": 3473
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Motion to find more accessible meeting space via town manager",
+    "ours": "Through the town manager, find a more accessible meeting space for the board's meetings — failed 2-3",
+    "official": "",
+    "note": "The official minutes show only one failed 2-3 accessibility motion (Eagle House); check the recording to see whether this was a separate vote and what failed.",
+    "t": 3666
+   },
+   {
+    "kind": "agree",
+    "about": "State primary election warrant",
+    "ours": "Approve the 2020 state primary election warrant with the correction of the time to 7 am to 8 pm — passed 5-0",
+    "official": "motion: m. jeffreys 2n°: t. dwyer to approve the september election primary with the time amended to 7 a.m. to 8 p.m.",
+    "note": "Same motion, amended hours and result.",
+    "t": 4226
+   },
+   {
+    "kind": "agree",
+    "about": "Travel order fine",
+    "ours": "Travel order fine: 500 dollar fine per day",
+    "official": "failure to comply may result in a $500 fine per day.",
+    "note": "Same figure.",
+    "t": 6540
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town hall renovation / TCP cost",
+    "ours": "Town hall renovation / TCP cost: 15 to 20 million dollars",
+    "official": "",
+    "note": "Official minutes print no cost figure for the TCP building.",
+    "t": 3181
+   },
+   {
+    "kind": "discrepancy",
+    "about": "DPW staffing",
+    "ours": "DPW staffing and pay: down 50",
+    "official": "primarily due to the lack of qualified candidates and the low rate of pay",
+    "note": "Official gives three unfilled Equipment Operator/Laborer vacancies and no 'down 50' figure; check the recording for what 50 refers to.",
+    "t": 6246
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Fence viewer appointment postponement",
+    "ours": "Fence viewer appointment of the applicant was postponed so the applicant can appear and the board can ask questions.",
+    "official": "ms. lemieux requested tabling until she consulted town counsel about the responsibilities of this appointment.",
+    "note": "Both postponed, but the reasons differ (applicant absence vs. town manager consulting counsel); check the recording.",
+    "t": 2211
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Liaison assignments",
+    "ours": "Mr Jeffries to library and council on aging, Mr Dwyer to planning board, Mr Marino to finance committee, the chair to school committee.",
+    "official": "mr. marino volunteered for the finance committee, mr. jeffreys wanted to remain with coa and the library. mr. dwyer will cover planning board.",
+    "note": "Assignments match, but the official names Mr. Alonzo for School Committee and says 'revisit if another board comes up'; the chair's name differs (ours Tom Malazar, official Tom Alonzo), a caption error.",
+    "t": 5891
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Tom Malazar (chair)",
+    "official": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey",
+    "note": "Misheard surname for the chair.",
+    "official_reading": "Tom Alonzo"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town manager name",
+    "ours": "Madame town manager (Heather) (town manager)",
+    "official": "also present: town manager heather lemieux, casey burlingame, building commissioner;",
+    "note": "Town manager is Heather Lemieux.",
+    "official_reading": "Heather Lemieux"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chair name spelling",
+    "ours": "Mr Jeffries (member)",
+    "official": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey",
+    "note": "Spelling variant.",
+    "official_reading": "Michael-Ray Jeffreys"
+   },
+   {
+    "kind": "agree",
+    "about": "Other attendees",
+    "ours": "Ms Adams, Mr Marino, Mr Dwyer, Casey Burlingame",
+    "official": "adams, clerk; todd dwyer, jim marino",
+    "note": "Same members and building commissioner present."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Proctor permit stipulation",
+    "ours": "The Proctor permit renewal will carry a stipulation that the rear berm is completed by the end of November, with the building commissioner to follow up.",
+    "official": "mr. proctor stated the seeding will be done before the end of september.",
+    "note": "Official mentions seeding by end of September, not a November berm deadline; check the recording.",
+    "t": 1191
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "June 9 minutes deferred",
+    "ours": "The June 9 minutes were deferred to the next meeting because they were only just received.",
+    "official": "",
+    "note": "Not in the official text provided.",
+    "t": 4330
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Tri-centennial committee",
+    "ours": "The tri-centennial committee will not be formed now; the board agreed it is too early, to revisit in about five years, and no motion was needed.",
+    "official": "",
+    "note": "Not in the official text provided.",
+    "t": 5308
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next meeting September 1",
+    "ours": "No meeting next week; the next meeting is September 1.",
+    "official": "",
+    "note": "Not in the official text provided.",
+    "t": 6953
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public commenters and others",
+    "ours": "",
+    "official": "greg roy, 105 chestnut street, representing the tcp building design committee, announced",
+    "note": "Official lists Xarras, Ricker, Proctor, Bowen, Roy, Anzaldi, Smith, Willsmer, Burney and public comments; none appear in our record."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-03T18:27:29Z",
+   "cost_usd": 0.0570511
+  }
+ }
+}

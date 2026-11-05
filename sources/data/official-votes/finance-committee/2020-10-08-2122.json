@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2020-10-08",
  "docid": "2122",
@@ -12,31 +12,394 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of June 11th",
-   "moved_by": "John",
-   "seconded_by": "Jay",
-   "outcome": "passed 4-0-2",
+   "motion": "Approve the minutes of June 11 (as printed in the minutes).",
+   "moved_by": "John Henshaw",
+   "seconded_by": "Jay Simeone",
+   "outcome": "passed; Chris Menard and Heather Sroka abstained",
    "procedural": true,
-   "quote": "john motion to approve the minutes jay seconded, peter, jay, john and terri yes, chris and heather abstained."
+   "quote": "june 11th - john motion to approve the minutes jay seconded, peter, jay, john and terri yes, chris and heather abstained."
   },
   {
-   "motion": "Approve the minutes of August 27th",
-   "moved_by": "Chris",
-   "seconded_by": "Peter",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of August 27.",
+   "moved_by": "Chris Menard",
+   "seconded_by": "Peter Beardmore",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "chris motion to approve the minutes peter seconded - all in favor"
+   "quote": "august 27th - chris motion to approve the minutes peter seconded - all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "John",
-   "seconded_by": "Peter",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting at 10 p.m.",
+   "moved_by": "John Henshaw",
+   "seconded_by": "Peter Beardmore",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "john motion to adjourn. peter seconded. all in favor."
+   "quote": "john motion to adjourn. peter seconded. all in favor. 10 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes. The Finance Committee discussed several substantive topics (Chapter 90 funds, the trackless system, TIF agreement, warrant articles, deferred capital planning) but voted only on approval of prior minutes and adjournment.",
- "cost_usd": 0.0928445
+ "note": "OCR text of a Zoom meeting, with garbled lines, some duplicated text and missing page-break context. Names printed inconsistently: the attendance line says 'Heather Sroka' while the Town Manager item says 'Heather Screen'; both are recorded as printed. Figures printed as '$170,0000' and '400M' are kept as printed. The June 11 and August 27 minutes votes show yes/abstain counts but no formal tally; the August 27 vote shows only 'All in favor'. No roll-call votes were printed for any other motion. Adjournment reads 10 p.m. after a 7:00 PM start, as printed.",
+ "cost_usd": 0.009917720000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore, dave passios, john henshaw, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Peter Beardmore",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore, dave passios, john henshaw, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore, dave passios, john henshaw, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "John Henshaw",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore, dave passios, john henshaw, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore, dave passios, john henshaw, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Chris Menard",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore, dave passios, john henshaw, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore, dave passios, john henshaw, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Heather Screen",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "heather screen shared her document"
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "status": "present",
+   "quote": "dr. kate burnham and michael cassidy present a powerpoint presentation that is attached to these minutes."
+  },
+  {
+   "name": "Michael Cassidy",
+   "status": "present",
+   "quote": "dr. kate burnham and michael cassidy present a powerpoint presentation that is attached to these minutes."
+  },
+  {
+   "name": "Karen Brochu",
+   "status": "not stated",
+   "quote": "karen brochu - chapter 90 funds are seen as grant funds - they are not part of the operating budget at all."
+  },
+  {
+   "name": "Jim Marino",
+   "status": "not stated",
+   "quote": "jim marino - chapter 90 funds grant money and can be used for this type of equipment."
+  },
+  {
+   "name": "Senator Tran",
+   "status": "not stated",
+   "quote": "senator tran - grant funds could have been used on the trackless."
+  },
+  {
+   "name": "Dave Rogers",
+   "status": "not stated",
+   "quote": "dave rogers - 82 highland street- chapter 90 - 400m bond for the roads because we used the chapter 90 monies"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Town Manager's list of items to be funded from available money",
+   "what_was_recorded": "Heather Screen's document listed amounts for the Town, School, police and fire positions, and other items.",
+   "figures_as_printed": [
+    "$57,871",
+    "$115,544",
+    "$30,161",
+    "$38,928"
+   ],
+   "quote": "town $57,871 school $115,544 police officer $30,161 fire fighter $38,928"
+  },
+  {
+   "topic": "BOH administrative assistant paid from COVID Cares funds",
+   "what_was_recorded": "The BOH Administrative Assistant cost is noted as being paid for by Covid Cares funds.",
+   "figures_as_printed": [
+    "$3,616"
+   ],
+   "quote": "boh administrative assistant $3,616 (being paid for by covid cares funds)"
+  },
+  {
+   "topic": "PPE, cleaning and IT costs",
+   "what_was_recorded": "Listed costs for additional PPE, cleaning, and second-half-of-year IT, which Peter Beardmore questioned; the IT cost was explained as the Remote Meeting Coordinator.",
+   "figures_as_printed": [
+    "$9,000",
+    "$24,000",
+    "$11,745"
+   ],
+   "quote": "cost of additional ppe $9,000 cleaning cost $24,000"
+  },
+  {
+   "topic": "Total deferred capital planning and trackless project",
+   "what_was_recorded": "Total deferred capital planning was stated, with the trackless project excluded because Chapter 90 funds pay for it.",
+   "figures_as_printed": [
+    "$494,333",
+    "$170,0000"
+   ],
+   "quote": "total of deferred capital planning $494,333 - this does not include the $170,0000 trackless project."
+  },
+  {
+   "topic": "ADA PROW improvements and OPEB trust",
+   "what_was_recorded": "Listed amounts for ADA PROW improvements and the OPEB Trust fund.",
+   "figures_as_printed": [
+    "$27,000",
+    "$110,000"
+   ],
+   "quote": "ada prow improvements $27,000 opeb trust fund $110,000"
+  },
+  {
+   "topic": "State assessments",
+   "what_was_recorded": "State assessments were recorded as higher by the stated amount than the prior figure.",
+   "figures_as_printed": [
+    "45,931.00"
+   ],
+   "quote": "state assessments 45,931.00 more than it actually was."
+  },
+  {
+   "topic": "Amount left to appropriate and recommended deposit to stabilization",
+   "what_was_recorded": "After the listed items, $546,576.41 was left to appropriate; Heather's recommendation was to deposit it into the regular and Special Purpose Stabilization Accounts.",
+   "figures_as_printed": [
+    "$546,576.41"
+   ],
+   "quote": "that leaves $546,576.41 to be appropriated - heather's recommendation is to"
+  },
+  {
+   "topic": "Special town meeting articles with costs",
+   "what_was_recorded": "Green Community project costs and a Right of First Refusal property purchase price were listed as STM article costs.",
+   "figures_as_printed": [
+    "$92,000",
+    "$50,000"
+   ],
+   "quote": "green community project costs $92,000 right of first refusal for property - purchase price is $50,000"
+  },
+  {
+   "topic": "Chapter 90 allocation and rollover",
+   "what_was_recorded": "Chapter 90 allocation for the year was approximately $490,000, and rollover could be in the $300-400 range.",
+   "figures_as_printed": [
+    "$490,000",
+    "$300-400"
+   ],
+   "quote": "chapter 90 allocation for this year was approximately $490,000."
+  },
+  {
+   "topic": "Chapter 90 rollover amounts",
+   "what_was_recorded": "Funds roll over, typically in a range that would need historical review.",
+   "figures_as_printed": [
+    "$300-400"
+   ],
+   "quote": "the funds roll over - but they would have to look back historically. typically it could be in the $300-400 range."
+  },
+  {
+   "topic": "Debt exclusion dedicated to roads",
+   "what_was_recorded": "The $4M debt exclusion is already dedicated to roads.",
+   "figures_as_printed": [
+    "$4M"
+   ],
+   "quote": "the $4m debt exclusion is already dedicated to the roads."
+  },
+  {
+   "topic": "Question about purchases over $100,000 without approval",
+   "what_was_recorded": "Peter asked whether anything over $100,000 had been purchased without ATM or finance committee approval; Jim could not recall.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "do you recall ever purchasing anything over $100,000 without atm or finance committee approval?"
+  },
+  {
+   "topic": "Ritter Kitchen remodel project",
+   "what_was_recorded": "Discussion of whether the $12,000 Ritter Kitchen Remodel Project should follow the TCP timeline.",
+   "figures_as_printed": [
+    "$12,000"
+   ],
+   "quote": "some discussion around the $12,000 ritter kitchen remodel project - if it should be done with the tcp timeline."
+  },
+  {
+   "topic": "Use of COVID Cares money for Chromebooks",
+   "what_was_recorded": "Question whether COVID Cares money could pay for Chromebooks for schools; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "chromebooks for schools - could covid cares money be used for this purchase."
+  },
+  {
+   "topic": "Public comment on Chapter 90 bond for roads",
+   "what_was_recorded": "Dave Rogers referred to a 400M bond for roads tied to Chapter 90 monies being used for other things.",
+   "figures_as_printed": [
+    "400M"
+   ],
+   "quote": "chapter 90 - 400m bond for the roads because we used the chapter 90 monies"
+  },
+  {
+   "topic": "TIF agreement investment",
+   "what_was_recorded": "Bright Farms' initial investment in the building under the proposed 10-year TIF agreement is stated as $10M.",
+   "figures_as_printed": [
+    "$10M"
+   ],
+   "quote": "initial investment will be $10m in the building"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rogers",
+   "stated_role": "",
+   "topic": "Chapter 90 funds, roads, COVID Cares for Chromebooks",
+   "quote": "dave rogers - 82 highland street- chapter 90 - 400m bond for the roads because we used the chapter 90 monies"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action; meeting called to order at 7:00 PM",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comment from Committee or public",
+   "quote": "none from the committee. none from the public.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "School Department report",
+   "resolution": "presented; no action recorded",
+   "quote": "dr. kate burnham and michael cassidy present a powerpoint presentation that is attached to these minutes.",
+   "tags": [
+    "school budget",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Town Manager budget items and stabilization",
+   "resolution": "discussed; recommendation to deposit remainder into stabilization accounts; no vote",
+   "quote": "heather's recommendation is to deposit it into the two different stabilization accounts.",
+   "tags": [
+    "budget",
+    "stabilization",
+    "COVID funds"
+   ]
+  },
+  {
+   "topic": "Chapter 90 funds and trackless purchase",
+   "resolution": "discussed; no action recorded",
+   "quote": "jay - why is the money for the trackless coming out of the chapter 90 funds?",
+   "tags": [
+    "Chapter 90",
+    "trackless",
+    "roads"
+   ]
+  },
+  {
+   "topic": "Deferred capital planning update",
+   "resolution": "reviewed; no action recorded",
+   "quote": "heather provided a review of the capital projects that were deferred from last year's atm.",
+   "tags": [
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Warrant articles - TIF agreement",
+   "resolution": "discussed; no vote; Chris interested in going over TIF Agreement",
+   "quote": "chris - interested in going over the tif agreement",
+   "tags": [
+    "TIF",
+    "warrant articles",
+    "Bright Farms"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "TCP, School Committee and debt study reports given",
+   "quote": "dave - tcp committee report. extremely productive prioritized usage of the",
+   "tags": [
+    "committee reports",
+    "TCP",
+    "debt study"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "June 11 and August 27 minutes approved",
+   "quote": "june 11th - john motion to approve the minutes jay seconded, peter, jay, john and terri yes, chris and heather abstained.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comment (Dave Rogers) and closing remarks",
+   "resolution": "comments received; public forum on warrant articles announced for next week",
+   "quote": "terri - next week public forum on the warrant articles.",
+   "tags": [
+    "public comment",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10 p.m.",
+   "quote": "john motion to adjourn. peter seconded. all in favor. 10 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PowerPoint presentation (School Department report)",
+   "where": "text",
+   "quote": "dr. kate burnham and michael cassidy present a powerpoint presentation that is attached to these minutes."
+  },
+  {
+   "name": "Town Manager's document (Heather Screen)",
+   "where": "text",
+   "quote": "heather screen shared her document"
+  },
+  {
+   "name": "Historical accounting spreadsheet",
+   "where": "text",
+   "quote": "heather provided a historical accounting on the spreadsheet."
+  },
+  {
+   "name": "10 Year Tax Increment Funding Agreement (Bright Farms)",
+   "where": "text",
+   "quote": "10 year tax increment funding agreement"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "school budget",
+  "Chapter 90",
+  "trackless purchase",
+  "deferred capital",
+  "TIF agreement",
+  "warrant articles",
+  "COVID funds",
+  "stabilization",
+  "chromebooks",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "dr. kate burnham and michael cassidy present a powerpoint presentation that is attached to these minutes."
+ },
+ "dropped_unquoted_by_field": {}
 }

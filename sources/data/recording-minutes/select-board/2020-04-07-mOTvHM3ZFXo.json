@@ -1,0 +1,763 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Board of Selectmen",
+ "meeting_date": "2020-04-07",
+ "video_id": "mOTvHM3ZFXo",
+ "video_url": "https://www.youtube.com/watch?v=mOTvHM3ZFXo",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2020-04-07-mOTvHM3ZFXo.json",
+  "sha256": "472f56d82ecfde66e7e27902102ea43f30183ae45d52afeb1bccd3bbaa4e7c69",
+  "caption_lines": 355,
+  "segments": 2593
+ },
+ "recording": {
+  "duration_s": 7598,
+  "duration": "2:06",
+  "spoken_chars": 94122,
+  "words_approx": 15687
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04072020-5194",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-04-07-agenda-5194.txt",
+   "path": "sources/meetings/select-board/2020-04-07-agenda-5194.pdf"
+  },
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04072020-5241",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-04-07-agenda-5241.txt",
+   "path": "sources/meetings/select-board/2020-04-07-agenda-5241.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04072020-5194",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-04-07-minutes-5194.txt",
+   "path": "sources/meetings/select-board/2020-04-07-minutes-5194.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-04T07:26:52Z",
+  "cost_usd": 0.2283524
+ },
+ "minutes": {
+  "headline": "Board removed the Mass Ave land purchase and ROFR placeholders from the warrant and waived first refusal on three parcels.",
+  "summary": "Remote Select Board meeting during COVID-19. Board approved two stop signs, heard the FY2019 audit (clean opinion), and heard a Community Preservation Act presentation for the ballot with no vote. It removed several placeholder articles from the town meeting warrant, waived first refusal on three Chapter 61 parcels, kept one open, and the town manager outlined plans to rework the FY21 budget.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Jeffries",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mrs. Adams",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. McQuade",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mrs. Luck",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Tom",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "the police chief",
+    "role": "police chief"
+   },
+   {
+    "name_as_heard": "Frank Sarette / Ben Adsit (Powers and Sullivan)",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Becky Lantry",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 7462,
+    "topic": "Dismayed the board voted on first refusal properties without input from the open space committee, contrary to an earlier commitment.",
+    "speaker_as_heard": "Dave Paseos",
+    "stated_role": "resident, 56 Whiting Street"
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "capital",
+   "debt",
+   "elections",
+   "free-cash",
+   "grants",
+   "health-insurance",
+   "housing",
+   "legal",
+   "personnel",
+   "planning-and-zoning",
+   "public-safety",
+   "retirement",
+   "tax-rate",
+   "town-departments",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 538,
+    "motion": "Approve two additional stop signs (Thomas C. Passios access road at Memorial Drive; Joslin and Bourke Street) in traffic rules and orders",
+    "moved_by": "Michael Rea",
+    "outcome": "passed unanimously by roll call",
+    "procedural": false
+   },
+   {
+    "t": 5328,
+    "motion": "Remove warrant article DD (purchase of 635 Mass Ave) from the warrant",
+    "moved_by": "Mrs. Luck",
+    "outcome": "passed (Jeffries voted no)",
+    "procedural": false
+   },
+   {
+    "t": 5610,
+    "motion": "Remove the right of first refusal placeholder articles (EE, FF, GG, HH) from the warrant",
+    "moved_by": "Mrs. Luck",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5883,
+    "motion": "Approve minutes of Nov 19, Dec 10, Dec 19 2019, Jan 7, 14, 21 2020",
+    "moved_by": "Mr. McQuade",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 6425,
+    "motion": "Not exercise right of first refusal on three Chapter 61 properties, excluding the eight acres on Holman Street/Northfield Road",
+    "moved_by": "Mr. Jeffries",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 7525,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1039,
+    "topic": "FY2019 audit reserves",
+    "what_was_said": "Auditors reported unassigned fund balance and stabilization funds growing, with a AA+ credit rating.",
+    "figures_as_heard": [
+     "4.4 million dollars",
+     "eleven percent",
+     "1.9 million dollars",
+     "$400,000"
+    ]
+   },
+   {
+    "t": 1142,
+    "topic": "FY2019 budgetary results",
+    "what_was_said": "Town ended with a small surplus as revenues and expenditures came in under budget.",
+    "figures_as_heard": [
+     "$12,000",
+     "eighty one thousand dollars",
+     "eight hundred thirty eight thousand dollars"
+    ]
+   },
+   {
+    "t": 1204,
+    "topic": "Enterprise funds",
+    "what_was_said": "Sewer and solid waste funds had healthy balances.",
+    "figures_as_heard": [
+     "1.4 million",
+     "eight hundred sixty five thousand dollars"
+    ]
+   },
+   {
+    "t": 1265,
+    "topic": "OPEB and pension liabilities",
+    "what_was_said": "OPEB liability rose partly due to a lower discount rate; net pension liability also rose.",
+    "figures_as_heard": [
+     "fifty two point five million dollars",
+     "nineteen point nine million dollars"
+    ]
+   },
+   {
+    "t": 1396,
+    "topic": "Debt",
+    "what_was_said": "Short-term school project debt outstanding and debt service ratio described as healthy.",
+    "figures_as_heard": [
+     "2.1 million dollars",
+     "forty point eight million",
+     "nine point four percent"
+    ]
+   },
+   {
+    "t": 1481,
+    "topic": "Federal awards",
+    "what_was_said": "Federal expenditures were tested with no findings.",
+    "figures_as_heard": [
+     "$835,000"
+    ]
+   },
+   {
+    "t": 1647,
+    "topic": "Old outstanding checks and ambulance receivables",
+    "what_was_said": "Auditors flagged old checks and aged ambulance receivables to address.",
+    "figures_as_heard": [
+     "125,000",
+     "four hundred seventy six thousand"
+    ]
+   },
+   {
+    "t": 3892,
+    "topic": "CPA surcharge example",
+    "what_was_said": "Example of a surcharge on a house with a $100,000 exemption, with state match.",
+    "figures_as_heard": [
+     "380,000",
+     "eighteen point twelve",
+     "a hundred and fifty-two dollars and 22 cents"
+    ]
+   },
+   {
+    "t": 5949,
+    "topic": "Warrants signed",
+    "what_was_said": "Chair announced payroll and payables warrants signed.",
+    "figures_as_heard": [
+     "eight hundred ten thousand six hundred forty nine dollars and sixty-five cents",
+     "263,000 eighty three dollars and three cents"
+    ]
+   },
+   {
+    "t": 7249,
+    "topic": "FY21 abatements and exemptions allowance",
+    "what_was_said": "Town manager said the allowance could be reduced to free money for the operating budget.",
+    "figures_as_heard": [
+     "55,000"
+    ]
+   },
+   {
+    "t": 6970,
+    "topic": "Employee dental insurance",
+    "what_was_said": "Switching dental plan to a lower increase locked for two years; employee funded.",
+    "figures_as_heard": [
+     "7 percent",
+     "five percent"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 5011,
+    "decision": "No CPA vote tonight; vote to come sometime in April to meet the ballot deadline, with requested documents posted online."
+   },
+   {
+    "t": 6742,
+    "decision": "The Holman Street/Northfield Road parcel stays open pending more information and attorney clarification."
+   },
+   {
+    "t": 6784,
+    "decision": "Town manager evaluation proceeds on last week's timeline."
+   },
+   {
+    "t": 2524,
+    "decision": "Board to act next week on local option to delay property tax payments to June 1."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 22,
+    "t_end": 386,
+    "topic": "Opening, remote meeting rules, roadside trash comment",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 407,
+    "t_end": 716,
+    "topic": "Stop signs and police update",
+    "resolution": "voted",
+    "tags": [
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 716,
+    "t_end": 2015,
+    "topic": "FY2019 audit report",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "retirement",
+     "debt"
+    ]
+   },
+   {
+    "t_start": 2045,
+    "t_end": 3158,
+    "topic": "Town manager COVID-19 update, municipal relief bill",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting",
+     "elections",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 3158,
+    "t_end": 5138,
+    "topic": "Community Preservation Act ballot question",
+    "resolution": "informational; vote later in April",
+    "tags": [
+     "housing",
+     "town-meeting",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 5138,
+    "t_end": 5883,
+    "topic": "Town meeting warrant articles review",
+    "resolution": "voted",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 5883,
+    "t_end": 6075,
+    "topic": "Minutes, warrants, action items",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 6075,
+    "t_end": 6742,
+    "topic": "Right of first refusal on Chapter 61 parcels",
+    "resolution": "voted for three; one deferred",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 6742,
+    "t_end": 6825,
+    "topic": "Town manager evaluation and FY21 budget documents",
+    "resolution": "informational",
+    "tags": [
+     "personnel",
+     "budget-fy27"
+    ]
+   },
+   {
+    "t_start": 6825,
+    "t_end": 7438,
+    "topic": "Town manager report including FY21 budget approach",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "grants",
+     "health-insurance"
+    ]
+   },
+   {
+    "t_start": 7462,
+    "t_end": 7589,
+    "topic": "Public comment and adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Roll call counts for the first vote on article DD are partly garbled; the Jeffries no vote appears clear.",
+   "Audio from the CPA presenter dropped briefly around 3265-3330."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 5373,
+    "about": "One member voted against removing the 635 Mass Ave purchase article from the warrant.",
+    "sides": "one member against, four members for",
+    "words_as_heard": "mr. Jeffries no",
+    "kind": "members disagree"
+   },
+   {
+    "t": 7462,
+    "about": "A resident criticised the board for voting on first refusal parcels without open space committee review.",
+    "sides": "a resident against the board",
+    "words_as_heard": "quite disappointed that you took the votes on those properties this evening without any input from the open space committee",
+    "kind": "public criticism"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 4582,
+    "kind": "condition",
+    "about": "A member is not yet sold on the CPA and wants data on past qualifying spending against the per-household cost.",
+    "who": "a member",
+    "words_as_heard": "I broadly support the concept I'm not sold yet"
+   },
+   {
+    "t": 5054,
+    "kind": "condition",
+    "about": "A member wants information on how many communities are at 3% before voting on the CPA.",
+    "who": "a member",
+    "words_as_heard": "I would would like that information before we vote"
+   },
+   {
+    "t": 6697,
+    "kind": "liability or legal",
+    "about": "Whether the Holman Street offer is a valid bona fide offer; wants attorney clarification.",
+    "who": "a member",
+    "words_as_heard": "the Planning Board is questioning whether it's a valid bona fide offer"
+   },
+   {
+    "t": 448,
+    "kind": "safety",
+    "about": "Blind spot at the access road and Memorial Drive creating a potential hazard.",
+    "who": "the police chief",
+    "words_as_heard": "the library building itself had created a blind spot"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 3158,
+    "name_as_heard": "Historical Commission CPA presentation and ballot documents",
+    "kind": "presentation",
+    "words_as_heard": "there's information in your Google Drive with the documents related to the ballot question",
+    "shown": true
+   },
+   {
+    "t": 5859,
+    "name_as_heard": "budget calendar revised",
+    "kind": "other",
+    "words_as_heard": "there's a budget calendar revised and in yellow or all the revised dates",
+    "shown": true
+   },
+   {
+    "t": 6324,
+    "name_as_heard": "memo ROFR properties",
+    "kind": "memo",
+    "words_as_heard": "a document titled memo ar-ar-ar e ROFR properties",
+    "shown": true
+   },
+   {
+    "t": 6384,
+    "name_as_heard": "legal opinion on Holman Street",
+    "kind": "letter or email",
+    "words_as_heard": "legal opinion on doramin Holman Street",
+    "shown": true
+   },
+   {
+    "t": 5883,
+    "name_as_heard": "minutes of Nov 19 2019 through Jan 21 2020",
+    "kind": "prior minutes",
+    "words_as_heard": "approval of minutes of November 19th 2019",
+    "shown": false
+   },
+   {
+    "t": 716,
+    "name_as_heard": "FY2019 audit report and management letter",
+    "kind": "report",
+    "words_as_heard": "the FY 2019 audit report from powers in Sullivan",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "community-preservation-act",
+    "title": "Community Preservation Act",
+    "question": "What would a CPA surcharge cost households and what past spending would it have matched?",
+    "t": 3892,
+    "words_as_heard": "if we had some numbers or data on what has already been spent in the last several years",
+    "data_in_play": [
+     "three percent surcharge",
+     "a hundred and fifty-two dollars and 22 cents",
+     "$150 a household"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "fy21-budget-revision",
+    "title": "FY21 budget revision",
+    "question": "How will revenue and spending be reworked for FY21 after COVID-19?",
+    "t": 7208,
+    "words_as_heard": "my approach to revamping the fiscal 21 budget will be to reassess our revenue projections",
+    "data_in_play": [
+     "55,000"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board removed the warrant article for purchasing 635 Mass Ave; the vote passed with one no vote.",
+    "t": 5328
+   },
+   {
+    "line": "The board removed four right-of-first-refusal placeholder articles from the town meeting warrant.",
+    "t": 5610
+   },
+   {
+    "line": "The board chose not to exercise first refusal on three Chapter 61 properties, and kept the Holman Street/Northfield Road parcel open pending attorney clarification.",
+    "t": 6425
+   },
+   {
+    "line": "Auditors presented the FY2019 audit with a clean opinion, flagging old outstanding checks and aged ambulance receivables to address.",
+    "t": 1647
+   },
+   {
+    "line": "The board approved two additional stop signs by unanimous roll call, and heard a Community Preservation Act presentation with no vote taken.",
+    "t": 538
+   }
+  ],
+  "why_it_matters": [
+   "Waiving first refusal on Chapter 61 land lets those parcels move to private sale without the town buying them, and removing the Mass Ave article means voters will not be asked to fund that purchase at town meeting.",
+   "A Community Preservation Act surcharge would be a new charge on property tax bills if voters approve it on the ballot, and the board's vote on whether to put it there is still to come.",
+   "The town manager said the FY21 budget may be reworked and the abatements and exemptions allowance could be reduced to free money for operations, which bears on next year's services and tax bill."
+  ],
+  "watch_next": [
+   "Board action next week on the local option to delay property tax payments to June 1.",
+   "A Community Preservation Act ballot vote sometime in April, ahead of the ballot deadline."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-04T07:27:04Z",
+   "cost_usd": 0.0293951
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04072020-5194",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-04-07-minutes-5194.txt",
+   "path": "sources/meetings/select-board/2020-04-07-minutes-5194.pdf"
+  },
+  "official_sha256": "696a57607c3f15f758090d9fe08c194bdab1da0d851d1ed2fc7a539c41a3a63c",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the stop signs, the removal of Article DD (4-1) and the removal of the ROFR articles, and on several audit and warrant figures. They differ most on the right of first refusal vote: ours says three Chapter 61 properties, the official minutes say four properties and give no recorded outcome.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 4,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Two additional stop signs vote",
+    "ours": "Approve two additional stop signs (Thomas C. Passios access road at Memorial Drive; Joslin and Bourke Street) in traffic rules and orders — passed unanimously by roll call",
+    "official": "to approve the two stops signs as presented vote: ms. adams-aye, mr. mequaid-aye, ms. luck-aye, mr. jeffreys-aye, mr.",
+    "note": "Both record approval; the official roll call is 5-0 and ours says unanimous.",
+    "t": 538
+   },
+   {
+    "kind": "agree",
+    "about": "Remove warrant article DD (635 Mass Ave)",
+    "ours": "Remove warrant article DD (purchase of 635 Mass Ave) from the warrant — passed (Jeffries voted no)",
+    "official": "to remove the warrant article (dd) that would approve purchasing 635 mass. ave. property ms. luck-aye, mr. mequaid-aye, ms. adams-aye, mr. jeffreys- nay, mr. alonzo -aye",
+    "note": "Both record passage 4-1 with Jeffreys opposed.",
+    "t": 5328
+   },
+   {
+    "kind": "agree",
+    "about": "Remove ROFR placeholder articles EE-HH",
+    "ours": "Remove the right of first refusal placeholder articles (EE, FF, GG, HH) from the warrant — passed",
+    "official": "to remove the four rofr articles (ee-hh) from the annual town meeting warrant vote: ms. luck-aye, mr. mcquaid- aye",
+    "note": "Same four articles removed; both say it passed.",
+    "t": 5610
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Right of first refusal not exercised on Chapter 61 properties",
+    "ours": "Not exercise right of first refusal on three Chapter 61 properties, excluding the eight acres on Holman Street/Northfield Road — passed",
+    "official": "motion: m. jeffreys to not exercise the right of first refusal for the four properties presented 2nd: d. mcquaid",
+    "note": "Ours says three properties with the Holman Street parcel excluded and left open; the official minutes say four properties and show no recorded vote result. Check the recording and the packet for the number of properties and the outcome.",
+    "t": 6425
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Holman Street/Northfield Road parcel",
+    "ours": "The Holman Street/Northfield Road parcel stays open pending more information and attorney clarification.",
+    "official": "to not exercise the right of first refusal for the four properties presented",
+    "note": "Ours holds one parcel back, while the official motion covers all four properties. Check whether the Holman Street parcel was actually included in the vote.",
+    "t": 6742
+   },
+   {
+    "kind": "agree",
+    "about": "FY2019 surplus of $12,000",
+    "ours": "FY2019 budgetary results: $12,000, eighty one thousand dollars, eight hundred thirty eight thousand dollars",
+    "official": "you ended the year with a surplus of $12,000 even though you had budgeted a decrease of $663,000.",
+    "note": "The $12,000 figure matches; the other captioned figures are not clearly matched in the official text.",
+    "t": 1142
+   },
+   {
+    "kind": "agree",
+    "about": "Short-term debt for school construction",
+    "ours": "Debt: 2.1 million dollars, forty point eight million, nine point four percent",
+    "official": "you have 2.1 million dollars in short term debt outstanding and that was for the school construction project.",
+    "note": "The $2.1 million figure matches.",
+    "t": 1396
+   },
+   {
+    "kind": "agree",
+    "about": "Federal awards expenditures",
+    "ours": "Federal awards: $835,000",
+    "official": "the town expended $835,000; $173,000 was on school lunches and $630,000 was on education grants.",
+    "note": "The figure matches.",
+    "t": 1481
+   },
+   {
+    "kind": "agree",
+    "about": "Warrants signed",
+    "ours": "Warrants signed: eight hundred ten thousand six hundred forty nine dollars and sixty-five cents, 263,000 eighty three dollars and three cents",
+    "official": "payroll #20 p 20: $810,649.65 a/p# 50 20: $263,083.03",
+    "note": "Both give $810,649.65 and $263,083.03; ours is garbled by the captions.",
+    "t": 5949
+   },
+   {
+    "kind": "agree",
+    "about": "CPA surcharge example",
+    "ours": "CPA surcharge example: 380,000, eighteen point twelve, a hundred and fifty-two dollars and 22 cents",
+    "official": "$380,000-$100,000 = $280,000 as the value to be surcharged.",
+    "note": "The $380,000 assessment and the 18.12 rate match. Our $152.22 differs from the official $5,074, but the official figure may be a different total, so check that item.",
+    "t": 3892
+   },
+   {
+    "kind": "caption_error",
+    "about": "Uncashed old checks",
+    "ours": "Old outstanding checks and ambulance receivables: 125,000, four hundred seventy six thousand",
+    "official": "checks greater than three months old totaling $125,270, some going back to 2010",
+    "note": "Ours gives the checks total as a rounded 125,000, while the official minutes give $125,270.",
+    "official_reading": "$125,270",
+    "t": 1647
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Stabilization fund balances",
+    "ours": "",
+    "official": "you have a zoning stabilization fund with $229,000 in it and you also have a vehicle equipment stabilization fund with $644,000.",
+    "note": "Our minutes do not record the zoning and vehicle stabilization balances.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Unitil U-CARE contribution",
+    "ours": "",
+    "official": "unitil has committed $150,000 to this fund, plus an additional $75,000 to covid-19 related programs at the united way",
+    "note": "Our minutes do not mention the Unitil announcement.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Delay of property tax payments to June 1",
+    "ours": "Board to act next week on local option to delay property tax payments to June 1.",
+    "official": "",
+    "note": "The official minutes mention a delay of personal property taxes only in passing; they do not record this decision. Check the recording.",
+    "t": 2524
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Employee dental insurance and FY21 abatements allowance",
+    "ours": "Employee dental insurance: 7 percent, five percent; FY21 abatements and exemptions allowance: 55,000",
+    "official": "",
+    "note": "These figures do not appear in the official minutes provided.",
+    "t": 6970
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Conservation Commission hunting requests follow-up",
+    "ours": "",
+    "official": "ms. adams asked what became of the hunting requests from the conservation commission after this board denied it. ms. lemieux will follow up.",
+    "note": "Our minutes do not record this follow-up.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Meeting delay question",
+    "ours": "",
+    "official": "ms. lemieux stated believed only if the governor's state of emergency was still active but she will confer with town counsel.",
+    "note": "Our minutes do not record this decision about delaying Town Meeting.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "CPA vote timing",
+    "ours": "No CPA vote tonight; vote to come sometime in April to meet the ballot deadline, with requested documents posted online.",
+    "official": "",
+    "note": "The official minutes do not record this decision.",
+    "t": 5011
+   },
+   {
+    "kind": "caption_error",
+    "about": "Police chief name",
+    "ours": "the police chief (police chief)",
+    "official": "chief marino following up on mr. jeffreys' public comment, stated he has noticed discarded",
+    "note": "Ours names no one; the official minutes name the chief.",
+    "official_reading": "James Marino",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter name",
+    "ours": "Frank Sarette / Ben Adsit (Powers and Sullivan) (presenter)",
+    "official": "frank serreti and ben adsit of powers & sullivan, llc",
+    "note": "The caption misheard the surname.",
+    "official_reading": "Frank Serreti",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair identity",
+    "ours": "Tom (chair)",
+    "official": "mr. alonzo announced this was the april 7h board of selectmen meeting.",
+    "note": "The official minutes name the chair Mr. Alonzo, not Tom.",
+    "official_reading": "Mr. Alonzo",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Historical Commission presenter",
+    "ours": "Becky Lantry (presenter)",
+    "official": "ms. lantry stated i am from the lunenburg historical commission and our",
+    "note": "The same person, listed as Rebecca Lantry.",
+    "t": 3892
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T07:29:35Z",
+   "cost_usd": 0.06437509999999999
+  }
+ }
+}

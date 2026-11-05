@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2019-10-15",
  "docid": "5626",
@@ -12,31 +12,312 @@
  },
  "votes": [
   {
-   "motion": "Approve the change of use for 21 Main Street from use code 325 to 340",
+   "motion": "Approve the change of use for 21 Main Street from 325 to 340 (use code).",
    "moved_by": "Ryan S.",
    "seconded_by": "Mike N.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "motion: ryan s. to approve the change of use to 21 main street from 325 to 340 (use code). discussion: commission discussed the expected water usage for the property which is minimal. vote: unanimous second: mike n."
+   "quote": "motion: ryan s. to approve the change of use to 21 main street from 325 to 340 (use code)."
   },
   {
-   "motion": "Approve the minutes from the September 24 meeting",
+   "motion": "Approve the minutes for 9/24.",
    "moved_by": "Ryan S.",
    "seconded_by": "Mike N.",
-   "outcome": "passed 3-0-1",
+   "outcome": "passed, 3 aye (Mike, Joan, Ryan), 1 abstain (Carl)",
    "procedural": true,
    "quote": "motion: ryan s. second: mike n. to approve the minutes for 9/24 vote - mike, joan, ryan-aye, carl-abstain"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:55pm.",
    "moved_by": "Carl L.",
    "seconded_by": "Mike N.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion: carl l. to adjourn: at 7:55pm second: mike n. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1007655
+ "note": "Text is OCR of the minutes; the first page begins mid-sentence (\"office (code 340)\") so the opening of the meeting (call to order, roll call, any earlier items) is not in the text. No attendance roll is printed; attendance is inferred from the names in motions, votes and discussion. The 9/24 minutes vote gives no numeric count, only names (Mike, Joan, Ryan aye; Carl abstain). The Woodward & Curran contract discussion ended without a motion. The second 'Public Comment- none' is recorded with no speaker.",
+ "cost_usd": 0.00704112,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ryan S.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: ryan s. to approve the change of use to 21 main street from 325 to 340 (use code)."
+  },
+  {
+   "name": "Mike N.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mike noted that he likes the part where they will narrow down the pump stations"
+  },
+  {
+   "name": "Carl L.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: carl l. to adjourn: at 7:55pm"
+  },
+  {
+   "name": "Joan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "joan read an email from dave macdonald since he cannot attend"
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barb passed out copies of the contract."
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "joan read an email from dave macdonald since he cannot attend"
+  },
+  {
+   "name": "Deb Trumbull",
+   "role": "SWSS",
+   "status": "absent",
+   "quote": "deb trumbull, swss - o & m contract & invoice discussion - did not attend."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed that the first step is to notify the homeowners and bring them in to a meeting.",
+   "quote": "the commission agreed that the first step is to notify the homeowners and bring them in to a meeting."
+  },
+  {
+   "decision": "Commission agreed to invite the 2 homeowners to the next meeting to discuss the leak and to ask Jack about SWSS doing the dye test.",
+   "quote": "commission agreed to invite the 2 homeowners to the next meeting to discuss the leak and to ask jack about swss doing the dye test."
+  },
+  {
+   "decision": "Joan asked Barb to send invitations to both homeowners to discuss the issue at the next meeting.",
+   "quote": "joan asked barb to send invitation to both homeowners to discuss issue at the next meeting."
+  },
+  {
+   "decision": "The Commission asked Barb to invite Woodward & Curran to the 10/29 meeting to discuss how they will do bullet #4.",
+   "quote": "the commission asked barb to invite woodward & curran to the 10/29 meeting to discuss how they will do bullet #4"
+  },
+  {
+   "decision": "Commission agreed to have Barb ask counsel about adding a percentage holdback until the report is received to the Woodward & Curran contract.",
+   "quote": "commission agreed to have barb ask counsel about adding it to the woodward & curran contract."
+  },
+  {
+   "decision": "Carl and Ryan will do the fog audits.",
+   "quote": "fog audits- carl stated that he and ryan will be doing these."
+  },
+  {
+   "decision": "SWSS will be asked to attend the first November meeting.",
+   "quote": "swss will be asked to attend the first november meeting."
+  },
+  {
+   "decision": "Barb will notify the homeowner that the subdivision/SSA extension will be discussed at the next meeting and ask that they provide better engineering plans.",
+   "quote": "barb will notify the homeowner that the extension will be discussed at the next meeting and"
+  },
+  {
+   "decision": "Commission will meet on 11/19 at DPW, with an optional meeting on 11/5 if needed; the Commission wants Jack to attend the 11/19 meeting.",
+   "quote": "commission will meet on 11/19 at dpw, with optional meeting on 11/5 if needed."
+  },
+  {
+   "decision": "Mike will talk to Jack (DPW) and look at the pump station data.",
+   "quote": "mike will talk to jack (dpw) and look at the pump station data."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Woodward & Curran third-party I/I contract cost",
+   "what_was_recorded": "Commission discussed whether the results would be worth spending $40,000 on the contract; Mike was concerned whether it is worth that amount.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "commission discussed if the results would be worth spending the $40,000 and discussed the legal issue"
+  },
+  {
+   "topic": "Inflow and infiltration (I/I) annual cost",
+   "what_was_recorded": "Carl noted the I/I cost is $3500 per year.",
+   "figures_as_printed": [
+    "$3500/year"
+   ],
+   "quote": "carl noted that the 1/l cost is $3500/year."
+  },
+  {
+   "topic": "Wright Pierce invoice on maintenance plan",
+   "what_was_recorded": "An invoice from Wright Pierce on the maintenance plan was approved (no motion recorded).",
+   "figures_as_printed": [
+    "$1,796.00"
+   ],
+   "quote": "invoice of $1,796.00 from wright pierce on the maintenance plan was approved."
+  },
+  {
+   "topic": "Contested invoices",
+   "what_was_recorded": "In public comment, Carl suggested not paying the contested invoices until the SWSS issue is resolved; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "carl suggested not paying the contested invoices until this is resolved."
+  },
+  {
+   "topic": "Grease trap non-compliance fees",
+   "what_was_recorded": "Sean Patricks and Simon Pure paid non-compliance fees; A&D Crossroads is expected to contest its fee. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "three renewals were late-sean patricks and simon pure paid the non-compliance fees but she expects a&d crossroads to contest it."
+  },
+  {
+   "topic": "Contract payment holdback",
+   "what_was_recorded": "Barb suggested future contracts reserve a percentage of the contract until the report is received; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "barb suggested that future contracts could reserve a percentage of the contract"
+  },
+  {
+   "topic": "YTD FY20 budget",
+   "what_was_recorded": "Commissioners had been sent the YTD FY20 Budget for review; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "commissioners had been sent the ytd fy20 budget for their review."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "SWSS absence and invoices",
+   "speaker": "Joan",
+   "stated_role": "not stated",
+   "quote": "public comment-joan was disappointed that small water (swss) was not coming to the meeting since they"
+  },
+  {
+   "topic": "Contested invoices",
+   "speaker": "Carl",
+   "stated_role": "not stated",
+   "quote": "carl suggested not paying the contested invoices until this is resolved."
+  },
+  {
+   "topic": "Pump station gates",
+   "speaker": "Ryan",
+   "stated_role": "not stated",
+   "quote": "ryan made note that the gates at the pump station are being shut now."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Change of use, 21 Main Street (325 to 340)",
+   "resolution": "approved unanimously",
+   "quote": "motion: ryan s. to approve the change of use to 21 main street from 325 to 340 (use code).",
+   "tags": [
+    "change of use",
+    "sewer",
+    "vote"
+   ]
+  },
+  {
+   "topic": "SWSS O&M contract and invoice discussion",
+   "resolution": "no action; SWSS did not attend",
+   "quote": "deb trumbull, swss - o & m contract & invoice discussion - did not attend.",
+   "tags": [
+    "SWSS",
+    "O&M contract",
+    "invoices"
+   ]
+  },
+  {
+   "topic": "Public comment on SWSS absence and invoices",
+   "resolution": "no action",
+   "quote": "public comment-joan was disappointed that small water (swss) was not coming to the meeting since they",
+   "tags": [
+    "public comment",
+    "SWSS"
+   ]
+  },
+  {
+   "topic": "Woodward & Curran third-party I/I contract review",
+   "resolution": "continued; W&C invited to 10/29 meeting; homeowners invited",
+   "quote": "woodward & curran i// 3ra party contract review",
+   "tags": [
+    "Woodward & Curran",
+    "I/I",
+    "contract",
+    "Elizabeth Street leak"
+   ]
+  },
+  {
+   "topic": "Approve minutes of 9/24",
+   "resolution": "approved 3 aye, 1 abstain",
+   "quote": "motion: ryan s. second: mike n. to approve the minutes for 9/24 vote - mike, joan, ryan-aye, carl-abstain",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report: grease trap/interceptor program",
+   "resolution": "received; Wright Pierce invoice approved; fog audits assigned",
+   "quote": "business manager report - grease trap/interceptor program - barb reported that all the annual permit",
+   "tags": [
+    "grease trap",
+    "fog audits",
+    "Wright Pierce",
+    "counsel presentation"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "listed for 10/29 and 11/19 meetings",
+   "quote": "member agenda inputs for future meetings - oct. 29 meeting- woodward & curran- bullet #4 discussion,",
+   "tags": [
+    "agenda",
+    "Town Meeting",
+    "SSA extension",
+    "Cross Road"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "none",
+   "quote": "public comment- none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:55pm, unanimous",
+   "quote": "motion: carl l. to adjourn: at 7:55pm second: mike n. vote: unanimous",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Dave MacDonald email of 10/15/19",
+   "where": "list",
+   "quote": "exhibits: dave macdonald email of 10/15/19"
+  },
+  {
+   "name": "Woodward & Curran I/l 3rd party contract handout",
+   "where": "list",
+   "quote": "woodward & curran i/l 3rd party contracthandout)"
+  },
+  {
+   "name": "YTD FY20 Budget",
+   "where": "text",
+   "quote": "commissioners had been sent the ytd fy20 budget for their review."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "inflow and infiltration",
+  "Woodward & Curran",
+  "SWSS",
+  "grease trap",
+  "Elizabeth Street leak",
+  "change of use",
+  "minutes",
+  "public comment",
+  "Town Meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "exhibits:"
+ },
+ "dropped_unquoted_by_field": {}
 }

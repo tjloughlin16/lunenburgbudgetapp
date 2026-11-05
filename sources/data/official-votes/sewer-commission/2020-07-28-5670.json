@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2020-07-28",
  "docid": "5670",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the Deduct Meter policy and credit program as updated on 7/28/20",
+   "motion": "Accept the Deduct Meter policy and credit program as updated on 7/28/20.",
    "moved_by": "John R.",
    "seconded_by": "Mike D.",
    "outcome": "passed 4-0",
@@ -20,7 +20,7 @@
    "quote": "motion: john r. second: mike d. to accept the deduct meter policy and credit program as updated on 7/28/20. vote: john-aye, brett-aye, mike-aye and dave-aye"
   },
   {
-   "motion": "Approve the minutes for 7/14/20",
+   "motion": "Approve the minutes for 7/14/20.",
    "moved_by": "Mike D.",
    "seconded_by": "Brett R.",
    "outcome": "passed 3-0-1",
@@ -28,7 +28,7 @@
    "quote": "motion: mike d. second: brett r. to approve the minutes for 7/14/20. vote: brett, mike, dave- aye. john - abstain."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 6:08pm.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
    "outcome": "passed 4-0",
@@ -37,6 +37,328 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text; three votes recorded with full vote counts.",
- "cost_usd": 0.0907355
+ "note": "Text is OCR of a scan. The first line of page 1 is unreadable. Page 1 ends mid-sentence and page 2 begins mid-sentence. No roll call or attendance list is printed; members are shown as present only from the votes they cast. Dave's role, Barb's role and Heather's role are not printed. The clerk's name at the close is garbled and was not recorded. Three motions are recorded with votes; no other motions appear.",
+ "cost_usd": 0.00784412,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave",
+   "role": "",
+   "status": "present",
+   "quote": "vote: john-aye, brett-aye, mike-aye and dave-aye"
+  },
+  {
+   "name": "John R.",
+   "role": "",
+   "status": "present",
+   "quote": "motion: john r. to adjourn: 6:08pm second: brett r. vote: vote: brett, mike, dave- aye. john-aye."
+  },
+  {
+   "name": "Brett R.",
+   "role": "",
+   "status": "present",
+   "quote": "motion: mike d. second: brett r. to approve the minutes for 7/14/20. vote: brett, mike, dave- aye. john - abstain."
+  },
+  {
+   "name": "Mike D.",
+   "role": "",
+   "status": "present",
+   "quote": "motion: john r. second: mike d. to accept the deduct meter policy and credit program as updated on 7/28/20."
+  },
+  {
+   "name": "Barb",
+   "role": "",
+   "status": "present",
+   "quote": "barb had received the final rfp and has emailed it to the"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commissioners were all in agreement with the final RFP for Pumping Station Operations & Maintenance; Barb to send it to the Central Register and Ledger, and Julie (Assistant Town Manager) to send it to CommBuys.",
+   "quote": "the commissioners were all in agreement with the rfp. barb stated the schedule: 8/12 - pre-proposal conference, 8",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "RFP schedule stated: pre-proposal conference 8/12, proposals due 8/21, contract awarded 9/1, with interviews of responders to follow.",
+   "quote": "barb stated the schedule: 8/12 - pre-proposal conference, 8/21- proposals due, and 9/1- contract awarded."
+  },
+  {
+   "decision": "Barb to put the Deduct Meter policy on the agenda and post the change in the Lunenburg Ledger before the two public hearings.",
+   "quote": "barb added that she will put it on the agenda and post the change in the lunenburg ledger in advance of the"
+  },
+  {
+   "decision": "The Commission agreed to support Barb on entering meter IDs but said it should assess whether that work needs to be done now.",
+   "quote": "the commission discussed and agreed to support barb, but they should assess if it needs to be done now."
+  },
+  {
+   "decision": "Commission asked Barb to send the scope and project for the meter-ID work out to the Commissioners.",
+   "quote": "asked barb to send the scope and project out to the commissioners"
+  },
+  {
+   "decision": "Barb to add the maintenance plan discussion to an upcoming agenda.",
+   "quote": "barb added that they will to add the discussion to an upcoming agenda."
+  },
+  {
+   "decision": "Barb to be the point person for Town Counsel hours; Commission discussed how to use the counsel hours.",
+   "quote": "dave added that barb should be the point person and the commission discussed how to use the counsel hours."
+  },
+  {
+   "decision": "Next Commission meetings set for August 11 and August 25, via remote participation.",
+   "quote": "next meetings: august 11t and 25th, via remote participation."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fitchburg invoice",
+   "what_was_recorded": "Invoice from Fitchburg listed for the period end of May to end of June.",
+   "figures_as_printed": [
+    "$10,717"
+   ],
+   "quote": "invoices - fitchburg - $10,717 (end of may -end of june)"
+  },
+  {
+   "topic": "Mead, Talerman & Costa invoice",
+   "what_was_recorded": "Invoice from Mead, Talerman & Costa for Highfield Village and Bright Farms change of ownership through 7/20.",
+   "figures_as_printed": [
+    "$689"
+   ],
+   "quote": "mead, talerman & costa - $689 (highfield village & bright farms-change of ownership through 7/20)"
+  },
+  {
+   "topic": "Meter ID entry estimate (Woodward & Curran scope)",
+   "what_was_recorded": "Barb estimated 40-50 hours to enter meter IDs into the system at an estimated cost.",
+   "figures_as_printed": [
+    "40-50 hours",
+    "$700-900"
+   ],
+   "quote": "barb estimated 40-50 hours to get meter ids into the system, at a cost of $700-900."
+  },
+  {
+   "topic": "Woodward & Curran contract payments",
+   "what_was_recorded": "The town has paid W&C 90% of the contract amount; Dave said the contract would not be paid until complete.",
+   "figures_as_printed": [
+    "90%"
+   ],
+   "quote": "barb noted that they have paid w&c 90% of the contract amount"
+  },
+  {
+   "topic": "FY20 budget status",
+   "what_was_recorded": "FY20 budget not final because staff were asked not to process invoices for encumbered purchase orders.",
+   "figures_as_printed": [],
+   "quote": "ytd fy20 budget- barb reported that the fy20 budget is still not final"
+  },
+  {
+   "topic": "Covid effect on town invoices",
+   "what_was_recorded": "Dave asked whether the town budget was affected by Covid; Barb said invoices have mostly been paid as normal.",
+   "figures_as_printed": [],
+   "quote": "barb replied that mostly the invoices have been paid as normal."
+  },
+  {
+   "topic": "Grease trap renewal fees",
+   "what_was_recorded": "The Commission had agreed to waive the grease trap renewal fees; the renewal application still needs to be sent in.",
+   "figures_as_printed": [],
+   "quote": "the commission had agreed to waive the fees, but the renewal application still needs to be sent in."
+  },
+  {
+   "topic": "Counsel hours billing",
+   "what_was_recorded": "Town Counsel open hours are a 20-minute monthly sign-up; anything outside counsel hours is billable.",
+   "figures_as_printed": [],
+   "quote": "anything outside of the counsel hours is billable."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "Retirement of DPW Manager Jack Rodriquenz",
+   "quote": "public comment-dave announced that jack rodriquenz, dpw manager, will be retiring and he thanked jack for"
+  },
+  {
+   "speaker": "",
+   "stated_role": "",
+   "topic": "Public comment on agenda",
+   "quote": "public comment - none"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: retirement announcement",
+   "resolution": "no action",
+   "tags": [
+    "retirement",
+    "DPW"
+   ],
+   "quote": "public comment-dave announced that jack rodriquenz, dpw manager, will be retiring and he thanked jack for"
+  },
+  {
+   "topic": "RFP: Pumping Station Operations & Maintenance",
+   "resolution": "commissioners agreed; schedule set; interviews next",
+   "tags": [
+    "RFP",
+    "pumping station",
+    "procurement"
+   ],
+   "quote": "rfp- pumping station operations & maintenance-barb had received the final rfp and has emailed it to the"
+  },
+  {
+   "topic": "Deduct (Irrigation) Meter Policy revision",
+   "resolution": "approved; two public hearings to follow",
+   "tags": [
+    "deduct meter",
+    "policy",
+    "water billing"
+   ],
+   "quote": "irrigation (deduct) meter policy revision- barb noted that they are changing the name to deduct meter policy in"
+  },
+  {
+   "topic": "Bright Farms project discussion",
+   "resolution": "no action",
+   "tags": [
+    "Bright Farms",
+    "Highfield Village",
+    "development"
+   ],
+   "quote": "bright farms project discussion- barb reported that it is still in the planning stage and reviewed the project."
+  },
+  {
+   "topic": "Grease trap annual renewal",
+   "resolution": "no action; renewal application still to be sent",
+   "tags": [
+    "grease trap"
+   ],
+   "quote": "grease trap annual renewal- barb mailed out the annual renewal letters."
+  },
+  {
+   "topic": "YTD FY20 budget",
+   "resolution": "no action",
+   "tags": [
+    "FY20 budget",
+    "encumbrances",
+    "Covid"
+   ],
+   "quote": "ytd fy20 budget- barb reported that the fy20 budget is still not final"
+  },
+  {
+   "topic": "Minutes of 7/14/20",
+   "resolution": "approved 3-0-1",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to approve the minutes for 7/14/20. vote: brett, mike, dave- aye. john - abstain."
+  },
+  {
+   "topic": "Town Counsel hours",
+   "resolution": "discussed; Barb named point person",
+   "tags": [
+    "town counsel",
+    "legal",
+    "billing"
+   ],
+   "quote": "business discussion- counsel hours - barb explained that the town appointed mead, talerman and costa as"
+  },
+  {
+   "topic": "Maintenance plan",
+   "resolution": "deferred to an upcoming agenda",
+   "tags": [
+    "maintenance plan"
+   ],
+   "quote": "maintenance plan barb reported that heather and jack have been reviewing"
+  },
+  {
+   "topic": "Invoices",
+   "resolution": "no action",
+   "tags": [
+    "invoices",
+    "Fitchburg",
+    "legal"
+   ],
+   "quote": "invoices - fitchburg - $10,717 (end of may -end of june)"
+  },
+  {
+   "topic": "Grease trap program logs",
+   "resolution": "no action",
+   "tags": [
+    "grease trap"
+   ],
+   "quote": "grease trap program-barb is just missing 1 log for the 1st tuesday report and has sent a reminder."
+  },
+  {
+   "topic": "Communication with department heads",
+   "resolution": "no action",
+   "tags": [
+    "communication"
+   ],
+   "quote": "communication - barb reported that she has sent agendas and minutes out to the department heads, as"
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "no action",
+   "tags": [
+    "agenda"
+   ],
+   "quote": "member agenda inputs for future meetings- dave encouraged all members to give their suggestions for future"
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "noted: August 11 and 25, remote",
+   "tags": [
+    "schedule",
+    "remote participation"
+   ],
+   "quote": "next meetings: august 11t and 25th, via remote participation."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:08pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion: john r. to adjourn: 6:08pm second: brett r. vote: vote: brett, mike, dave- aye. john-aye."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Final RFP (Pumping Station Operations & Maintenance)",
+   "where": "list",
+   "quote": "handouts: final rfp carl's email of 7/28/20 re: v/1 3rd party review"
+  },
+  {
+   "name": "Carl's email of 7/28/20 re: V/1 3rd Party Review",
+   "where": "list",
+   "quote": "handouts: final rfp carl's email of 7/28/20 re: v/1 3rd party review"
+  },
+  {
+   "name": "Deduct Meter policy and credit program as updated on 7/28/20",
+   "where": "text",
+   "quote": "to accept the deduct meter policy and credit program as updated on 7/28/20."
+  },
+  {
+   "name": "Maintenance plan",
+   "where": "text",
+   "quote": "maintenance plan barb reported that heather and jack have been reviewing"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "RFP",
+  "pumping station",
+  "deduct meter policy",
+  "Bright Farms",
+  "grease trap",
+  "FY20 budget",
+  "town counsel",
+  "invoices",
+  "Woodward & Curran",
+  "meter IDs",
+  "Covid",
+  "retirement",
+  "remote meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {}
 }

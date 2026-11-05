@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2019-08-12",
  "docid": "5630",
@@ -15,28 +15,166 @@
    "motion": "Approve the change of use for 39 Mass. Ave.",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: carl l. to approve the change of use for 39 mass. ave. second: ryan s. vote: unanimous"
   },
   {
-   "motion": "Assess 146 Lancaster Avenue for $6,998.74 as a sewer extension assessment.",
+   "motion": "Assess 146 Lancaster Avenue for $ 6,998.74 for its sewer extension connection.",
    "moved_by": "Ryan S.",
    "seconded_by": "Carl L.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: ryan s. to assess 146 lancaster avenue for $ 6,998.74. second: carl l. vote: unanimous"
   },
   {
-   "motion": "Approve the SWSS contract Revision 3 for $102,520.28.",
+   "motion": "Motion on the SWSS contract discussion (text of motion not printed).",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
    "outcome": "not stated",
    "procedural": false,
    "quote": "motion: carl l. second: ryan s."
+  },
+  {
+   "motion": "Adjourn the meeting at 4:00pm.",
+   "moved_by": "Ryan S.",
+   "seconded_by": "Carl L.",
+   "outcome": "passed, unanimous",
+   "procedural": true,
+   "quote": "motion: ryan s. to adjourn: 4:00pm respectively submitted, tant one, second: carl l. vote: unanimous"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR scan from macOS Vision. Motion 3 (contract approval) has no stated outcome in the minutes; vote result is missing. The signature line \"Respectively submitted, Tant one,\" appears to contain an OCR error in the name.",
- "cost_usd": 0.11206050000000001
+ "dropped_unquoted": 0,
+ "note": "OCR text from a scan (macOS Vision). Page 1 begins mid-discussion, so earlier items are missing. The motion on the SWSS O&M contract has no text and no recorded result. Some words are garbled (e.g., 'Tant one,' in the signature area). No public comment is recorded. Attendance is inferred from speaking and moving roles; the minutes do not print an attendance roll.",
+ "cost_usd": 0.00485812,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl L.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: carl l. to approve the change of use for 39 mass. ave. second: ryan s."
+  },
+  {
+   "name": "Ryan S.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: ryan s. to assess 146 lancaster avenue for $ 6,998.74. second: carl l."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barb noted that this property has connected to sewer via a sewer extension."
+  },
+  {
+   "name": "John",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john said that his goal is to sign the fy20 contract and to review invoices."
+  },
+  {
+   "name": "Heather",
+   "role": "not stated",
+   "status": "present",
+   "quote": "(heather and jack joined the meeting.)"
+  },
+  {
+   "name": "Jack",
+   "role": "DPW",
+   "status": "present",
+   "quote": "(heather and jack joined the meeting.)"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "146 Lancaster Avenue sewer assessment",
+   "what_was_recorded": "The Commission was asked to assess 146 Lancaster Avenue for a sewer extension, set at 50% of the most recent betterment; the assessment was voted.",
+   "figures_as_printed": [
+    "$ 6,998.74"
+   ],
+   "quote": "commission to vote to assess $ 6,998.74, as a sewer extension is assessed at 50% of the most recent betterment."
+  },
+  {
+   "topic": "SWSS contract Revision 3",
+   "what_was_recorded": "The Commission discussed the Revision 3 figures for the SWSS contract, with the generators and without the irrigation meter readings.",
+   "figures_as_printed": [
+    "$102,520.28"
+   ],
+   "quote": "commission discussed the revision 3 figures for the swss contract of $102,520.28 with the generators and without the irrigation meter readings."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Change of use, 39 Mass. Ave.",
+   "resolution": "approved",
+   "tags": [
+    "change of use",
+    "grab and go food",
+    "reserve capacity"
+   ],
+   "quote": "to approve the change of use for 39 mass. ave."
+  },
+  {
+   "topic": "146 Lancaster Avenue sewer assessment",
+   "resolution": "approved assessment",
+   "tags": [
+    "sewer assessment",
+    "sewer extension"
+   ],
+   "quote": "commission to vote to assess $ 6,998.74, as a sewer extension is assessed at 50% of the most recent betterment."
+  },
+  {
+   "topic": "O&M contract and invoice issues (SWSS)",
+   "resolution": "discussed; no vote recorded",
+   "tags": [
+    "O&M contract",
+    "SWSS",
+    "invoices",
+    "contract Rev. 3"
+   ],
+   "quote": "john said that his goal is to sign the fy20 contract and to review invoices."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY20 Contract (SWSS O&M contract)",
+   "where": "text",
+   "quote": "john said that his goal is to sign the fy20 contract and to review invoices."
+  },
+  {
+   "name": "SWSS contract Revision 3 (Rev. 3)",
+   "where": "text",
+   "quote": "the commission discussed the current contract proposed by swss which is rev. 3."
+  },
+  {
+   "name": "RFP",
+   "where": "text",
+   "quote": "barb noted that the rfp was the basis for the scope, and they would need to redo if we make substantial changes."
+  },
+  {
+   "name": "Monthly reports (SWSS)",
+   "where": "text",
+   "quote": "he added that the monthly reports do not show all the callouts and that the system is"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "change of use",
+  "sewer assessment",
+  "O&M contract",
+  "SWSS",
+  "invoices",
+  "contract",
+  "DPW"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

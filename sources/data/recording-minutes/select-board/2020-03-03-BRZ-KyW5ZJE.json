@@ -1,0 +1,756 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2020-03-03",
+ "video_id": "BRZ-KyW5ZJE",
+ "video_url": "https://www.youtube.com/watch?v=BRZ-KyW5ZJE",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2020-03-03-BRZ-KyW5ZJE.json",
+  "sha256": "3b5e7c24ac9fef5062bcc16237b30edccfbf625f7162d67c3bdb934552a6d532",
+  "caption_lines": 241,
+  "segments": 1730
+ },
+ "recording": {
+  "duration_s": 5106,
+  "duration": "1:25",
+  "spoken_chars": 62255,
+  "words_approx": 10375
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03032020-5236",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-03-03-agenda-5236.txt",
+   "path": "sources/meetings/select-board/2020-03-03-agenda-5236.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03032020-5236",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-03-03-minutes-5236.txt",
+   "path": "sources/meetings/select-board/2020-03-03-minutes-5236.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-04T07:51:38Z",
+  "cost_usd": 0.18808439999999998
+ },
+ "minutes": {
+  "headline": "Select Board accepted Butterfly Lane as a public way and ratified videographer and assessing appointments.",
+  "summary": "The board heard a resident request for remote participation by board members, held two licensing hearings, and heard the library about moving trust funds into higher-return investments. It ratified several town manager appointments, accepted Butterfly Lane, and reviewed Town Meeting warrant articles without making recommendations. A member asked for an executive session on teacher union negotiations.",
+  "attendees": [
+   {
+    "name_as_heard": "Katie Adams",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mr. Jeffries",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. McQuade",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Damon",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Tom",
+    "role": "town counsel or moderator (addressed)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 273,
+    "speaker_as_heard": "Peter Beardmore",
+    "stated_role": "Finance Committee member, 282 Pleasant Street",
+    "topic": "Asked the board to support remote and video participation for working volunteers on town boards."
+   },
+   {
+    "t": 5017,
+    "speaker_as_heard": "Peter Beardmore",
+    "stated_role": "resident, 282 Pleasant Street",
+    "topic": "Asked whether the DPW roof bid shortfall would be covered from current-year funds and need a transfer."
+   }
+  ],
+  "tags": [
+   "contracts-and-unions",
+   "facilities",
+   "fees",
+   "grants",
+   "library",
+   "personnel",
+   "planning-and-zoning",
+   "policy",
+   "public-comment",
+   "town-departments",
+   "town-meeting",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 1159,
+    "motion": "Approve peddlers license for Kevin Clem / Vivint Solar as submitted",
+    "moved_by": "a member",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 1507,
+    "motion": "Accept application to store and sell propane at 160 Mass Ave (Mackay Corp) as presented",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 2332,
+    "motion": "Ratify town manager's appointments of videographers and dietary aide",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 2527,
+    "motion": "Ratify appointment of Sheila Cragen as temporary administrative assessing assistant",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 2655,
+    "motion": "Appoint Chuck Visia as clock winder",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 3870,
+    "motion": "Accept Butterfly Lane as a public way for nominal consideration",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 5080,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1589,
+    "topic": "Library trust funds investment",
+    "what_was_said": "Library trustee explained a warrant article to let trustees invest trust funds under prudent investor rules for higher returns than the town stabilization fund.",
+    "figures_as_heard": [
+     "3.93",
+     "$70,000",
+     "thirty four thousand"
+    ]
+   },
+   {
+    "t": 2291,
+    "topic": "Videographers as employees",
+    "what_was_said": "Videographers become employees paid through the cable enterprise account, which covers indirect costs including retirement.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 2923,
+    "topic": "Old primary school hazardous material abatement",
+    "what_was_said": "Final survey report identifies an abatement cost.",
+    "figures_as_heard": [
+     "thirty seven thousand eight hundred and seventy five dollars"
+    ]
+   },
+   {
+    "t": 3069,
+    "topic": "DPW roof project bids",
+    "what_was_said": "Twelve bids received; the low bid exceeds the capital plan amount and the balance will come from the facilities budget.",
+    "figures_as_heard": [
+     "84,000",
+     "130 7500",
+     "65,000",
+     "19 thousand"
+    ]
+   },
+   {
+    "t": 3206,
+    "topic": "Recycling coordinator grant",
+    "what_was_said": "A part-time grant-funded position with a local match paid from the recycling dividends program grant.",
+    "figures_as_heard": [
+     "30,000",
+     "25%",
+     "three thousand seven hundred and fifty dollars",
+     "a thousand eight hundred and seventy-five dollars",
+     "two thousand five hundred dollars",
+     "1250"
+    ]
+   },
+   {
+    "t": 3332,
+    "topic": "FY21 new growth",
+    "what_was_said": "Estimated new growth falls further due to a delayed solar project.",
+    "figures_as_heard": [
+     "forty thousand six hundred dollars"
+    ]
+   },
+   {
+    "t": 3392,
+    "topic": "Regional dispatch assessment",
+    "what_was_said": "Assessment voted lower than the original estimate.",
+    "figures_as_heard": [
+     "one hundred ninety eight thousand five hundred and thirty dollars",
+     "five percent",
+     "thirteen percent",
+     "two hundred and thirteen four hundred ninety seven dollars",
+     "fourteen thousand nine hundred and sixty-seven dollars"
+    ]
+   },
+   {
+    "t": 4105,
+    "topic": "Solid waste and cable enterprise articles",
+    "what_was_said": "Recycling is paid from the operating budget while trash and cable run through enterprise funds paid by users.",
+    "figures_as_heard": [
+     "206 thousand dollars",
+     "101 191,000",
+     "120 thousand"
+    ]
+   },
+   {
+    "t": 4476,
+    "topic": "Warrants",
+    "what_was_said": "Water billing, payroll and accounts payable warrants read.",
+    "figures_as_heard": [
+     "7200 $11.24",
+     "eight hundred twenty eight thousand ninety five dollars and twenty seven cents",
+     "three hundred seventy four thousand three hundred sixty four dollars and forty four cents"
+    ]
+   },
+   {
+    "t": 4783,
+    "topic": "Senior tax work-off hourly rate",
+    "what_was_said": "Rate reportedly raised to the state minimum wage.",
+    "figures_as_heard": [
+     "1275"
+    ]
+   },
+   {
+    "t": 5038,
+    "topic": "DPW roof shortfall funding",
+    "what_was_said": "Resident asked about covering the shortfall; manager said it comes from unused engineering services funds this year.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [
+   {
+    "t": 3069,
+    "description": "Roof project shortfall to be covered from the facilities budget",
+    "amount_as_heard": "19 thousand",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 4020,
+    "decision": "Board will wait until March 17 to vote on warrant article recommendations so a full board is present."
+   },
+   {
+    "t": 4405,
+    "decision": "An executive session to be scheduled before next week's meeting, around 6:30."
+   },
+   {
+    "t": 734,
+    "decision": "Staff to look into video options for remote participation."
+   },
+   {
+    "t": 4699,
+    "decision": "A member requested an executive session on teachers union negotiations."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 260,
+    "topic": "Opening and board member comments",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 273,
+    "t_end": 950,
+    "topic": "Public comment on remote participation",
+    "resolution": "referred",
+    "tags": [
+     "public-comment",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 950,
+    "t_end": 1229,
+    "topic": "Peddlers license hearing, Vivint Solar",
+    "resolution": "motion made, result not audible",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 1229,
+    "t_end": 1550,
+    "topic": "Propane license hearing, Mackay Corp",
+    "resolution": "motion made, result not audible",
+    "tags": [
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 1547,
+    "t_end": 2100,
+    "topic": "Library trust funds warrant article",
+    "resolution": "informational",
+    "tags": [
+     "library",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 2100,
+    "t_end": 2700,
+    "topic": "Appointments: videographers, assessing assistant, clock winder",
+    "resolution": "motions made, results not audible",
+    "tags": [
+     "personnel",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 2695,
+    "t_end": 3570,
+    "topic": "Town manager report",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report",
+     "grants",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 3575,
+    "t_end": 3960,
+    "topic": "Butterfly Lane acceptance and stormwater policy",
+    "resolution": "motion made, result not audible",
+    "tags": [
+     "roads-and-dpw",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 3979,
+    "t_end": 4470,
+    "topic": "FY21 budget and warrant articles review",
+    "resolution": "informational",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 4476,
+    "t_end": 4590,
+    "topic": "Warrants",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 4596,
+    "t_end": 5000,
+    "topic": "Action items and committee reports",
+    "resolution": "informational",
+    "tags": [
+     "contracts-and-unions",
+     "seniors"
+    ]
+   },
+   {
+    "t_start": 5017,
+    "t_end": 5103,
+    "topic": "Public comment and adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Roll call vote results were not stated explicitly for most motions.",
+   "Section on air-out discussion at 4080-4105 partly garbled."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 4719,
+    "about": "A member opposed the board involvement in teacher union negotiations that another member asked to be briefed on.",
+    "sides": "one member against; another member requesting executive session",
+    "words_as_heard": "I am very opposed to us having anything to do with the school teacher's union negotiation",
+    "kind": "members disagree"
+   },
+   {
+    "t": 2159,
+    "about": "A member questioned why videographers were being reclassified from contractors to employees.",
+    "sides": "a member questioning; the town manager explaining",
+    "words_as_heard": "why is this change necessary now",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 1844,
+    "kind": "liability or legal",
+    "about": "Risk to the town if library trust investments lose value.",
+    "who": "a member",
+    "words_as_heard": "what happens if it becomes too risky and you lose it all you know does the town suffer any consequences"
+   },
+   {
+    "t": 2208,
+    "kind": "liability or legal",
+    "about": "Possible labor-relations suit over classifying videographers as contractors.",
+    "who": "the town manager",
+    "words_as_heard": "potential filing of a suit with the appropriate division of labor relations"
+   },
+   {
+    "t": 2460,
+    "kind": "liability or legal",
+    "about": "A member questioned whether a vote could be taken on an item not on the posted agenda.",
+    "who": "a member",
+    "words_as_heard": "I don't know if we can vote on this because it's not posted on the agenda"
+   },
+   {
+    "t": 4040,
+    "kind": "condition",
+    "about": "Member will make no warrant article recommendations until a full board is present.",
+    "who": "a member",
+    "words_as_heard": "we not make any recommendations until that time"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 2923,
+    "name_as_heard": "hazardous material survey final report",
+    "kind": "report",
+    "words_as_heard": "I received a copy of the final report for the hazardous material survey"
+   },
+   {
+    "t": 1567,
+    "name_as_heard": "library trust funds warrant article",
+    "kind": "warrant article",
+    "words_as_heard": "article library trust funds"
+   },
+   {
+    "t": 3891,
+    "name_as_heard": "motion for acceptance of Butterfly Lane / deed",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "accept for nominal consideration a deed of a fee interest in that certain roadway"
+   },
+   {
+    "t": 4616,
+    "name_as_heard": "minutes of the November 17th 2018 joint meeting",
+    "kind": "prior minutes",
+    "words_as_heard": "reread the minutes from the joint meeting held between the school committee in the BOS"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "library-trust-fund-investments",
+    "title": "Library trust investments",
+    "question": "How are the library trust funds invested and what would prudent investor rules change?",
+    "t": 1589,
+    "words_as_heard": "Lottery trust funds have historically returned low rates 3.93 for FY FY 2019",
+    "data_in_play": [
+     "3.93",
+     "$70,000",
+     "thirty four thousand"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "cable-videographer-employees",
+    "title": "Videographer employee costs",
+    "question": "What does reclassifying the cable videographers as employees cost the enterprise fund?",
+    "t": 2159,
+    "words_as_heard": "how long have the videographers been working as independent contractors",
+    "data_in_play": [],
+    "existing": ""
+   },
+   {
+    "slug": "stormwater-ms4-costs",
+    "title": "Stormwater permit costs",
+    "question": "What does accepting new roads into the MS4 system cost the town?",
+    "t": 3597,
+    "words_as_heard": "storm drains entering the ms4 boundaries",
+    "data_in_play": [],
+    "existing": "thread:stormwater-fee"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board moved to accept Butterfly Lane as a public way for nominal consideration; the vote result was not audible in the recording.",
+    "t": 3870
+   },
+   {
+    "line": "The board moved to ratify town manager appointments, including videographers as employees and a temporary assessing assistant; results were not audible.",
+    "t": 2332
+   },
+   {
+    "line": "A library trustee described a warrant article letting trustees invest library trust funds under prudent investor rules instead of the town stabilization fund.",
+    "t": 1589
+   },
+   {
+    "line": "The board will wait until March 17 to vote on warrant article recommendations so a full board is present.",
+    "t": 4020
+   },
+   {
+    "line": "After a resident asked for remote participation, staff were to look into video options; a member also requested an executive session on teacher union negotiations.",
+    "t": 734
+   }
+  ],
+  "why_it_matters": [
+   "Warrant article recommendations, including the library trust fund investment change, go to Town Meeting, where residents vote on them.",
+   "The DPW roof low bid exceeded the capital plan amount, and the balance is to come from the facilities budget and unused engineering services funds, so the project touches town spending."
+  ],
+  "watch_next": [
+   "March 17 Select Board meeting, when warrant article recommendations are scheduled for a vote.",
+   "An executive session to be scheduled before next week's meeting, around 6:30."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-04T07:51:43Z",
+   "cost_usd": 0.0284991
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03032020-5236",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-03-03-minutes-5236.txt",
+   "path": "sources/meetings/select-board/2020-03-03-minutes-5236.pdf"
+  },
+  "official_sha256": "0772c7873a079187d820399b84cb8b680dd17b14d2290e4d8d6cf5d6b20fb86f",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the main agenda items and most figures. Ours lacks vote results, which the official minutes give, and the captions garble several names and figures. The main gaps are the March 17 warrant-article deferral, which the official minutes omit, and the unclear source and form of the roof funding.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 4,
+   "discrepancy": 8,
+   "only_in_ours": 2,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Peddlers license vote (Kevin Clem / Vivint Solar)",
+    "ours": "Approve peddlers license for Kevin Clem / Vivint Solar as submitted — not audible",
+    "official": "motion: d. mcquaid to approve the peddlers license for kevin clem for vivint solar vote: ms. adams- abstain, mr. jeffreys-aye, mr. mcquaid-aye, ms. luck-aye",
+    "note": "Ours records no audible result; official shows 3-0-1 with Adams abstaining. Check the recording for the tally.",
+    "t": 1159
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Propane license vote at 160 Mass Ave",
+    "ours": "Accept application to store and sell propane at 160 Mass Ave (Mackay Corp) as presented — not audible",
+    "official": "motion: m. jeffreys 2nd: d. mcquaid to approve the license to keep, store and sell propane at 160 mass ave. as presented",
+    "note": "Both record the vote, but ours has no audible result; official shows it passed 4-0. The applicant is 'Mackay Corp' in ours and 'Maki Corp.' in the official minutes; check the spelling.",
+    "t": 1507
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Ratification of town manager appointments",
+    "ours": "Ratify town manager's appointments of videographers and dietary aide — not audible",
+    "official": "to ratify the town managers appointments as presented vote: ms. adams-aye, mr. jeffreys- aye, mr. mcquaid- aye, ms. luck-aye",
+    "note": "Same vote, but ours names videographers and dietary aide while the official minutes say only 'as presented'. Ours has no result; the official shows 4-0. Check the positions in the recording.",
+    "t": 2332
+   },
+   {
+    "kind": "caption_error",
+    "about": "Temporary administrative assessing assistant appointment",
+    "ours": "Ratify appointment of Sheila Cragen as temporary administrative assessing assistant — not audible",
+    "official": "to ratify the town manager's appointment of shelia craigen to temporary administrative assessing assistant",
+    "note": "Same appointment; the name is spelled differently.",
+    "official_reading": "Shelia Craigen",
+    "t": 2527
+   },
+   {
+    "kind": "caption_error",
+    "about": "Clock winder appointment",
+    "ours": "Appoint Chuck Visia as clock winder — not audible",
+    "official": "to appoint chuck venezia as town clockwinder with a term to expire june 30, 2020",
+    "note": "Same appointment; the captions misheard the surname. The official minutes add the term ending June 30, 2020.",
+    "official_reading": "Chuck Venezia",
+    "t": 2655
+   },
+   {
+    "kind": "agree",
+    "about": "Butterfly Lane accepted as public way",
+    "ours": "Accept Butterfly Lane as a public way for nominal consideration — not audible",
+    "official": "i move that the board accept for nominal consideration a deed of a fee interest of a certain roadway known as butterfly lane",
+    "note": "Same action in both. The official minutes show it passed 4-0; ours has no audible result.",
+    "t": 3870
+   },
+   {
+    "kind": "discrepancy",
+    "about": "DPW roof shortfall transfer",
+    "ours": "Roof project shortfall to be covered from the facilities budget — 19 thousand (discussed only)",
+    "official": "this was a project in the fy19 capital plan in the amount of $65,000 and we will need to subsidize the balance of $19,000",
+    "note": "The official minutes list no transfers and say the balance comes from the Facilities budget, with earmarked engineering funds named in public comment. Check whether a transfer was voted and which source funds it.",
+    "t": 3069
+   },
+   {
+    "kind": "agree",
+    "about": "Library trust funds investment amount",
+    "ours": "Library trust funds investment: 3.93, $70,000, thirty four thousand",
+    "official": "mr. jeffreys stated there is roughly $70,000 to invest.",
+    "note": "The $70,000 figure matches. The 3.93 and thirty-four thousand figures do not appear in the official minutes.",
+    "t": 1589
+   },
+   {
+    "kind": "agree",
+    "about": "Old primary school hazardous material abatement",
+    "ours": "thirty seven thousand eight hundred and seventy five dollars",
+    "official": "the report identifies a cost of $37,875.00 to abate the identified hazardous materials.",
+    "note": "Same figure.",
+    "t": 2923
+   },
+   {
+    "kind": "caption_error",
+    "about": "DPW roof bid high amount",
+    "ours": "84,000, 130 7500, 65,000, 19 thousand",
+    "official": "with the low bid of $84,000 and a high bid of $137,500",
+    "note": "The captions garbled the high bid.",
+    "official_reading": "$137,500",
+    "t": 3069
+   },
+   {
+    "kind": "agree",
+    "about": "Recycling coordinator grant and match",
+    "ours": "30,000, 25%, three thousand seven hundred and fifty dollars, a thousand eight hundred and seventy-five dollars, two thousand five hundred dollars, 1250",
+    "official": "that would be a $30,000 grant from massdep for a 24 month period and would require a 25% match from the towns participating.",
+    "note": "All figures match the official $30,000, 25%, $3,750, $1,875, $2,500 and $1,250.",
+    "t": 3206
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY21 new growth",
+    "ours": "FY21 new growth: forty thousand six hundred dollars",
+    "official": "",
+    "note": "The official minutes do not mention this figure.",
+    "t": 3332
+   },
+   {
+    "kind": "agree",
+    "about": "Regional dispatch assessment",
+    "ours": "one hundred ninety eight thousand five hundred and thirty dollars, five percent, thirteen percent, two hundred and thirteen four hundred ninety seven dollars, fourteen thousand nine hundred and sixty-seven dollars",
+    "official": "the assessment will be $198,530. the original estimate in the budget was $213,497, so this is a decrease of $14,967.",
+    "note": "The main figures match. The official minutes do not give the percentages.",
+    "t": 3392
+   },
+   {
+    "kind": "agree",
+    "about": "Solid waste and cable enterprise articles",
+    "ours": "206 thousand dollars, 101 191,000, 120 thousand",
+    "official": "ms. luck asked about the $191,000 requested for operating the public education government enterprise fund and $120,000 for the capital budget for the same enterprise fund.",
+    "note": "The $206,000, $191,000 and $120,000 figures match.",
+    "t": 4105
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Warrant totals",
+    "ours": "7200 $11.24, eight hundred twenty eight thousand ninety five dollars and twenty seven cents, three hundred seventy four thousand three hundred sixty four dollars and forty four cents",
+    "official": "the board signed an accounts payable warrant in the amount of $374,364.44; a deductions warrant in the amount of $577,377.60; a payroll warrant in the amount of $828,095.27.",
+    "note": "The payroll and accounts payable figures match. Ours has a garbled deductions figure, '7200 $11.24', against the official $577,377.60. Check the recording.",
+    "t": 4476
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Senior tax work-off hourly rate",
+    "ours": "Senior tax work-off hourly rate: 1275",
+    "official": "they did meet recently and voted to increase the hourly wage to be the same as the state minimum wage.",
+    "note": "Ours gives a figure of 1275, probably $12.75; the official minutes print no dollar amount and say only that the rate matches the state minimum wage. Check the recording.",
+    "t": 4783
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Timing of warrant article recommendations",
+    "ours": "Board will wait until March 17 to vote on warrant article recommendations so a full board is present.",
+    "official": "",
+    "note": "The official minutes do not record this decision. Check whether it was a decision and whether it is recorded elsewhere.",
+    "t": 4020
+   },
+   {
+    "kind": "agree",
+    "about": "Executive session next week",
+    "ours": "An executive session to be scheduled before next week's meeting, around 6:30.",
+    "official": "we will also have an executive session next week at 6:30 p.m. on 635 massachusetts avenue.",
+    "note": "Same session. The official minutes add the location and say Mr. Jeffreys will call in.",
+    "t": 4405
+   },
+   {
+    "kind": "agree",
+    "about": "Executive session request on teachers union negotiations",
+    "ours": "A member requested an executive session on teachers union negotiations.",
+    "official": "she requested scheduling a bos executive session as soon as possible for an update on the progress of the teachers' union negotiations.",
+    "note": "Same request. The official minutes name Ms. Luck as the member.",
+    "t": 4699
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Video options for remote participation",
+    "ours": "Staff to look into video options for remote participation.",
+    "official": "",
+    "note": "The official minutes record Peter Beardmore's remote-participation comment but no staff action to look into video options.",
+    "t": 734
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Manager follow-up items",
+    "ours": "",
+    "official": "ms. lemieux will look into that.",
+    "note": "The official minutes record that the Town Manager would check whether the Senior Tax Workoff wage follows the state minimum wage. Ours has no such item.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees: Tom and Chairman absence",
+    "ours": "Tom (town counsel or moderator (addressed))",
+    "official": "members not present: tom alonzo, chairman",
+    "note": "Ours lists Tom as being addressed. The official minutes list Tom Alonzo, the Chairman, as absent. Check who was addressed.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board member names",
+    "ours": "Katie Adams (member); Mr. Jeffries (member); Mr. McQuade (member)",
+    "official": "members present: phyllis luck, vice chairman; damon mcquaid, clerk; michael-ray jeffreys",
+    "note": "Same members with different spellings. Phyllis Luck, who presided as Vice Chairman, does not appear in ours. Katey Adams attended remotely.",
+    "official_reading": "Katey Adams, Michael-Ray Jeffreys, Damon McQuaid",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T07:53:33Z",
+   "cost_usd": 0.06997709999999999
+  }
+ }
+}

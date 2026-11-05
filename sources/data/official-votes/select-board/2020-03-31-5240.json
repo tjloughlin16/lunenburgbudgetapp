@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-03-31",
  "docid": "5240",
@@ -12,15 +12,212 @@
  },
  "votes": [
   {
-   "motion": "To hold the Town election on June 20, 2020",
+   "motion": "To hold the Town election on June 20, 2020.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 3-2",
-   "procedural": true,
-   "quote": "motion: d. mcquaid 2n: m. jeffreys to hold the town election on june 20, 2020 mr. mcquaid-aye, ms. adams- nay, mr. jeffreys-aye, ms. luck- nay, mr. alonzo -aye"
+   "procedural": false,
+   "quote": "to hold the town election on june 20, 2020 mr. mcquaid-aye, ms. adams- nay, mr. jeffreys-aye, ms. luck- nay, mr. alonzo -aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd minutes. One recorded vote found. Other items (awards program, school negotiations, budget discussions) were discussed but no formal votes with outcomes were recorded.",
- "cost_usd": 0.0971905
+ "note": "OCR of a remote Zoom meeting with no adjournment or closing vote in the text. Pages 6, 7 and 8 begin mid-sentence, and the heading for the Town Manager contract item on page 7 (\"WAA:\") is cut off. Page 10 is blank. Attendance is marked \"remote\" because the minutes say all meetings were conducted remotely and members answered a Zoom roll call. Only one motion (the election date) is recorded with a result. Public comment: the minutes say \"There was no public comment at this time.\"",
+ "cost_usd": 0.007473619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair, Board of Selectmen",
+   "status": "remote",
+   "quote": "he stated, \"i am tom alonzo, chair of the board of selectmen. i will do a roll call to confirm that all persons"
+  },
+  {
+   "name": "Mr. Jeffreys",
+   "role": "Board member",
+   "status": "remote",
+   "quote": "mr. jeffreys - \"yes, i am here,\""
+  },
+  {
+   "name": "Mr. McQuaid",
+   "role": "Board member",
+   "status": "remote",
+   "quote": "mr. mcquaid- \"yes, i am here\""
+  },
+  {
+   "name": "Ms. Adams",
+   "role": "Board member",
+   "status": "remote",
+   "quote": "ms. adams-\"yes, i am here,\""
+  },
+  {
+   "name": "Ms. Luck",
+   "role": "Board member",
+   "status": "remote",
+   "quote": "ms. luck: \"yes, i am here,\""
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "remote",
+   "quote": "also present: heather lemieux, town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Manager Lemieux will notify the Town Clerk and Attorney Costa of the election date.",
+   "quote": "ms. lemieux will notify the town clerk and attorney costa of the date."
+  },
+  {
+   "decision": "Town Manager will check with Labor Counsel on the terms of her contract and report back to the Board.",
+   "quote": "she will check with labor counsel on the terms of her contract and report back to the board"
+  },
+  {
+   "decision": "Town Manager will recommend at the next meeting that a number of financial warrant articles be removed, including the 635 Mass. Ave. acquisition.",
+   "quote": "a number of the financial warrant articles be removed, including the acquisition of the 635 mass. ave. property."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School payroll and school budget share",
+   "what_was_recorded": "Ms. Luck said the school budget is 70% of the Town's total budget and that a past contract added a $1 million increase over three years for payroll.",
+   "figures_as_printed": [
+    "70%",
+    "$1 million"
+   ],
+   "quote": "ms. luck stated the school budget is 70% of the town's total budget and last time they negotiated a $1 million increase"
+  },
+  {
+   "topic": "Town Hall handicap ramp funding",
+   "what_was_recorded": "The Town Hall handicap ramp project is funded by an earmark in this year's state budget; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "thisprojectis being paid for with an earmark that was in this year's state budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements and COVID-19 updates",
+   "resolution": "no action; reported",
+   "tags": [
+    "COVID-19",
+    "announcements",
+    "remote meeting"
+   ],
+   "quote": "mr. alonzo announced hannaford's supermarket, massachusetts avenue, has announced new store hours"
+  },
+  {
+   "topic": "Distinguished citizen awards program proposal",
+   "resolution": "discussed; no action",
+   "tags": [
+    "awards",
+    "recognition"
+   ],
+   "quote": "mr. jeffreys stated this was to start the conversation."
+  },
+  {
+   "topic": "School contract negotiations (Ms. Luck request)",
+   "resolution": "discussed; no vote; Mr. Jeffreys opposed the request",
+   "tags": [
+    "school budget",
+    "negotiations",
+    "executive session"
+   ],
+   "quote": "i would like for you to find out what is going on and then hold an executive session and be briefed on it."
+  },
+  {
+   "topic": "Old Business 1: Postponement of the Annual Town Election",
+   "resolution": "voted 3-2 to hold the election on June 20, 2020",
+   "tags": [
+    "town election",
+    "elections",
+    "COVID-19"
+   ],
+   "quote": "to hold the town election on june 20, 2020"
+  },
+  {
+   "topic": "Town Manager contract and evaluation timing (heading cut off in OCR)",
+   "resolution": "Town Manager to check with Labor Counsel and report back",
+   "tags": [
+    "town manager",
+    "contract",
+    "evaluation"
+   ],
+   "quote": "she will check with labor counsel on the terms of her contract and report back to the board"
+  },
+  {
+   "topic": "Item 3: FY21 budget, FY21 capital plan, five year forecast and ATM warrant articles",
+   "resolution": "discussed; warrant article removals to be recommended at next meeting",
+   "tags": [
+    "FY21 budget",
+    "capital plan",
+    "warrant articles",
+    "town meeting"
+   ],
+   "quote": "she added the atm warrant has a number of articles that could be removed, such as the four right of first"
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported; no action",
+   "tags": [
+    "vacancies",
+    "capital projects",
+    "grants",
+    "hiring freeze",
+    "departments"
+   ],
+   "quote": "announcement on existing vacancies:"
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "noted next meeting date",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "the board will meet again on april 7ih"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "House Bill 4580",
+   "where": "text",
+   "quote": "house bill 4580 has been ordered to a third reading in the house"
+  },
+  {
+   "name": "Governor's Order Suspending Certain Provisions of the Open Meeting Law, G. L. c. 30A, §20",
+   "where": "text",
+   "quote": "in accordance with the governor's order suspending certain provisions of the open meeting law, g. l. c. 30a,"
+  },
+  {
+   "name": "Talent bank forms",
+   "where": "text",
+   "quote": "talent bank forms can be obtained on the town website and forwarded to the board of selectmen's office."
+  },
+  {
+   "name": "Board of Health update of March 27",
+   "where": "text",
+   "quote": "the board of health issued an update on march 27 and can be found on the town website."
+  },
+  {
+   "name": "Annual Town Meeting warrant (ATM warrant)",
+   "where": "text",
+   "quote": "she added the atm warrant has a number of articles that could be removed, such as the four right of first"
+  }
+ ],
+ "tags": [
+  "COVID-19",
+  "town election date",
+  "FY21 budget",
+  "town manager",
+  "school budget",
+  "warrant articles",
+  "remote meeting",
+  "Select Board"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

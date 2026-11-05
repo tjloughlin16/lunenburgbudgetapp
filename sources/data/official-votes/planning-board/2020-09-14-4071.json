@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2020-09-14",
  "docid": "4071",
@@ -12,16 +12,118 @@
  },
  "votes": [
   {
-   "motion": "Motion to continue the hearing to September 28th at 6:35 PM",
+   "motion": "Continue the public hearing on BrightFarms to September 28, 2020 at 6:35 PM.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "t. cole made motion to continue the hearing to september 28th, 6:35 pm, p. b ertram seconded, roll call vote- t. cole, aye; p. bertram, aye; m. brenner, aye; e. torgersen, aye; m. allison, aye. vote passed 5-",
-   "quote_taken_from_text": true
+   "quote": "t. cole made motion to continue the hearing to september 28th, 6:35 pm, p. b ertram seconded, roll call vote- t. cole, aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is scanned but readable. Only one vote recorded: motion to continue the hearing.",
- "cost_usd": 0.1031215
+ "note": "Text is a complete extracted minutes document with no scan gaps. One motion is recorded (continuance, 5-0). The minutes record no vote on the application itself, and no public comment section. Documents list is printed. The Marjorie J. Boggio header entry is not counted as an attendee because the minutes do not show her taking part.",
+ "cost_usd": 0.00402472,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "paula bertram, present"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew brenner, present; erik torgersen, present"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew brenner, present; erik torgersen, present"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director"
+  },
+  {
+   "name": "Sean O’Neill",
+   "role": "on behalf of BrightFarms LLC",
+   "status": "present",
+   "quote": "presentation given by sean o'neill on behalf of brightfarms llc"
+  },
+  {
+   "name": "Jeffrey Walsh",
+   "role": "Graves Engineering, Inc. (GEI), project review",
+   "status": "not stated",
+   "quote": "a project review was in process by jeffrey walsh, graves engineering, inc. (gei)."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: BrightFarms site plan approval and stormwater permit, 361 Massachusetts Avenue",
+   "resolution": "continued to September 28, 2020",
+   "quote": "the hearing , via zoom video conference, was to hear and review applications for site plan approval and stormwater",
+   "tags": [
+    "public hearing",
+    "site plan",
+    "stormwater",
+    "greenhouse",
+    "continued"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Site Plan dated 08.24.2020",
+   "where": "list",
+   "quote": "documents used at meeting: site plan dated 08.24.2020"
+  },
+  {
+   "name": "MA Stormwater Handbook",
+   "where": "text",
+   "quote": "where the specifications are in the ma stormwater handbook for bf's specific detention pond design"
+  },
+  {
+   "name": "Impact Report for traffic",
+   "where": "text",
+   "quote": "m. allison brought up that the impact report for traffic noted a one -hour shift overlap"
+  }
+ ],
+ "tags": [
+  "BrightFarms",
+  "greenhouse",
+  "site plan",
+  "stormwater",
+  "public hearing",
+  "361 Massachusetts Avenue",
+  "fire access",
+  "traffic",
+  "continued hearing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

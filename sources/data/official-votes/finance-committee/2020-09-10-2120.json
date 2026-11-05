@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2020-09-10",
  "docid": "2120",
@@ -12,15 +12,260 @@
  },
  "votes": [
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Motion to adjourn the meeting.",
    "moved_by": "John",
    "seconded_by": "Chris",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion to adjourn moved by john and seconded by chris. unanimous vote."
   }
  ],
  "dropped_unquoted": 0,
- "note": "This OCR extract from a Zoom meeting recording contains only one recorded vote: an adjournment motion at the end. The minutes describe extensive committee discussion of topics including OneDrive file sharing, a capital project rubric, free cash estimates, CARES Act funding, COVID-related school IT needs, and the Turkey Hill Elementary School project, but no formal votes on any of these items are recorded.",
- "cost_usd": 0.0774905
+ "note": "Text is OCR of a scan. Only one recorded vote (adjournment). The attendance block is scrambled: 'Dave Passios, Heather Sroka' follows the Absent label, so their status is not stated. Item 4 has no printed heading and is labelled here by its content. Karen Brochu is named as speaking but her attendance status is not stated. The minutes say Peter's one-pager is to be attached to these minutes, but the attachment is not in the text.",
+ "cost_usd": 0.005057519999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, jay simeone, chris menard,"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, jay simeone, chris menard,"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, jay simeone, chris menard,"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, jay simeone, chris menard,"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "",
+   "status": "present",
+   "quote": "peter beardmore arrived at 21:13"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "not stated",
+   "quote": "dave passios, heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "",
+   "status": "not stated",
+   "quote": "dave passios, heather sroka"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "",
+   "status": "not stated",
+   "quote": "karen brochu about that. karen is unsure of the time frame"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee will not go over the rubric until the entire committee is present; Terri and Chris to review the rubric together.",
+   "quote": "terri will take a look at rubric with chris."
+  },
+  {
+   "decision": "Rubric and file-sharing/data management to be discussed at the next meeting with Heather L. present.",
+   "quote": "terri - would like to talk about it at the next meeting with heather l."
+  },
+  {
+   "decision": "Chris and John to have a discussion when Chris helps John with his OneDrive.",
+   "quote": "terri - chris and john can have a discussion when chris helps john with"
+  },
+  {
+   "decision": "Peter will circulate his Turkey Hill (THES) one-page document.",
+   "quote": "peter - will circulate document either tonight or tomorrow."
+  },
+  {
+   "decision": "Committee to pursue the Debt Policy project to a close before other work.",
+   "quote": "inclination is to stick to the debt policy project. peter would like to bring"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Close-out of expenditures",
+   "what_was_recorded": "Expenditures close-out figure was reported.",
+   "figures_as_printed": [
+    "$1,182,589"
+   ],
+   "quote": "close out on the expenditures side of $1,182,589"
+  },
+  {
+   "topic": "State assessments",
+   "what_was_recorded": "State assessments came in lower than estimated by the amount printed.",
+   "figures_as_printed": [
+    "$36,759"
+   ],
+   "quote": "state assessments came in a little lower by $36,759"
+  },
+  {
+   "topic": "Free cash estimate",
+   "what_was_recorded": "Free cash estimate range was given, with the increase over last year at the low end.",
+   "figures_as_printed": [
+    "$1.6M",
+    "$1.7M",
+    "$492,000"
+   ],
+   "quote": "estimate for free cash range between $1.6m and $1.7m"
+  },
+  {
+   "topic": "CARES Act funds",
+   "what_was_recorded": "Covid funding was backed out of the general fund and CARES/FEMA funds pending reimbursement; $1M allotted and $147,000 submitted for reimbursement through June 30.",
+   "figures_as_printed": [
+    "$1M",
+    "$147,000"
+   ],
+   "quote": "$147,000 submitted for reimbursement estimated through june 30th"
+  },
+  {
+   "topic": "Schools CARES grant funds",
+   "what_was_recorded": "Schools received grant funds; Department of Revenue said schools should use their money first.",
+   "figures_as_printed": [
+    "$198,000"
+   ],
+   "quote": "schools received $198,000 in grant funds."
+  },
+  {
+   "topic": "Fire Department defibrillator",
+   "what_was_recorded": "A CARES-eligible expense for a Fire Department defibrillator was noted.",
+   "figures_as_printed": [
+    "$32,000"
+   ],
+   "quote": "$32,000 for fire department defibrillator."
+  },
+  {
+   "topic": "Turkey Hill (THES) project cost projection",
+   "what_was_recorded": "Projected replacement or renovation cost, inflated to 2026, before MSBA reimbursement; MSBA assumed about 50% conservatively.",
+   "figures_as_printed": [
+    "$30.5",
+    "3%",
+    "$33M",
+    "50%"
+   ],
+   "quote": "he believes that thes replacement or renovation about $30.5 projected out 6 years - 2026 with 3% inflation puts us up a little over $33m before msba reimbursement."
+  },
+  {
+   "topic": "Capital project size threshold",
+   "what_was_recorded": "Capital Plan packet covers big-ticket items with a $1M ticket, not small items.",
+   "figures_as_printed": [
+    "$1M"
+   ],
+   "quote": "big ticket items with $1m ticket. not small items like scuba diving gear."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Public comment",
+   "speaker": "",
+   "stated_role": "",
+   "quote": "none from the committee or public"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "tags": [
+    "procedure",
+    "zoom"
+   ],
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm and read"
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "none from the committee or public"
+  },
+  {
+   "topic": "OneDrive/Rubric",
+   "resolution": "discussed; rubric deferred to next meeting; special Town Meeting calendar shared",
+   "tags": [
+    "rubric",
+    "OneDrive",
+    "data management",
+    "special town meeting"
+   ],
+   "quote": "terri doesn't want to go over the rubric without the entire committee."
+  },
+  {
+   "topic": "Free cash, CARES Act and school IT (untitled item 4 in the text)",
+   "resolution": "discussed; no action",
+   "tags": [
+    "free cash",
+    "CARES Act",
+    "school budget",
+    "IT"
+   ],
+   "quote": "close out on the expenditures side of $1,182,589"
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "discussed; no action",
+   "tags": [
+    "school committee",
+    "bus fees",
+    "outsourcing",
+    "Turkey Hill project"
+   ],
+   "quote": "5. committee reports:"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Packet on Capital Plan",
+   "where": "text",
+   "quote": "every capital project we go through. packet on capital plan."
+  },
+  {
+   "name": "One-page document on the Turkey Hill (THES) project, by Peter",
+   "where": "text",
+   "quote": "has a one pager with info - has not heard back from superintendent, mr. cassidy or mr. londa and attach to"
+  },
+  {
+   "name": "FinCom Rubric",
+   "where": "text",
+   "quote": "committee thoughts and discussion for fincom rubric."
+  },
+  {
+   "name": "Calendar for Special Town Meeting",
+   "where": "text",
+   "quote": "sharing the calendar for special town meeting. october 8th to review, october 15th for recommendations."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "rubric",
+  "capital projects",
+  "free cash",
+  "CARES Act",
+  "school budget",
+  "Turkey Hill project",
+  "special town meeting",
+  "zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

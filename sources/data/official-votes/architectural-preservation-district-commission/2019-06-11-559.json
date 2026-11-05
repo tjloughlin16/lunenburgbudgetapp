@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2019-06-11",
  "docid": "559",
@@ -12,19 +12,201 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from May 14th",
-   "outcome": "approved",
+   "motion": "Approve the minutes of the May 14th meeting.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes from the meeting on may 14th were read and approved."
   },
   {
-   "motion": "Elect Richard McGrath as Chair, James LaVeck as Vice-Chair, and Cullen Dwyer as recording clerk",
+   "motion": "Elect officers for the year: Richard McGrath as Chair, James LaVeck as Vice-Chair, and Cullen Dwyer as recording clerk.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "by unanimous vote, richard mcgrath will remain chair, james laveck vice-chair, and cullen dwyer recording clerk."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1014005
+ "dropped_unquoted": 1,
+ "note": "Readable text, no scan. Only two recorded votes: approval of the May 14 minutes (no mover or seconder printed) and the unanimous officer election (no mover printed). No motion or vote is recorded for adjournment or for the Brooks House stipulations. No public comment section appears. Attendance lists four members as present; LeMieux has no status stated.",
+ "cost_usd": 0.00462512,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman mcgrath, corcoran, laveck and dwyer"
+  },
+  {
+   "name": "Brian Corcoran",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman mcgrath, corcoran, laveck and dwyer"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: chairman mcgrath, corcoran, laveck and dwyer"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: chairman mcgrath, corcoran, laveck and dwyer"
+  },
+  {
+   "name": "LeMieux",
+   "role": "town manager",
+   "status": "not stated",
+   "quote": "town manager lemieux said she intended to draw up a bid package to sell the house."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The APDC agreed to inform the town manager that removal of the Brooks House would not be allowed without stipulations: it stays under APDC CTA jurisdiction, stays in the town, and reverts to the town if conditions are not met in time.",
+   "quote": "the apdc agreed to inform lemieux that removal of the building would not be allowed without stipulations"
+  },
+  {
+   "decision": "The APDC concluded it had better explore other options to preserve historic properties owned by the town.",
+   "quote": "the apdc concluded that it had better explore other options to preserve historic properties owned by the town."
+  },
+  {
+   "decision": "Corcoran suggested a contractor's estimate for the roof, parapet and downspouts of the Old Primary School; McGrath agreed to seek DPW permission for a contractor inspection and for volunteers to clear vegetation.",
+   "quote": "mcgrath agreed, and will get permission from the dpw for the contractor to inspect"
+  },
+  {
+   "decision": "LaVeck will speak with Town Counsel about the APDC charter and whether getting a contractor estimate would overreach its authority.",
+   "quote": "laveck intended to speak with town counsel."
+  },
+  {
+   "decision": "Dwyer will present various fonts for the APD road signs at the next meeting.",
+   "quote": "dwyer proposed to present various fonts to choose from for the next meeting."
+  },
+  {
+   "decision": "Dwyer agreed to review the video from the joint workshop with the Select Board and record details on selling the Brooks House for use as a private residence.",
+   "quote": "he agreed to review the video from the joint workshop with the select board"
+  },
+  {
+   "decision": "McGrath agreed to talk to Mr. Burney about the Brooks House.",
+   "quote": "mcgrath agreed to talk to mr. burney regarding the same."
+  },
+  {
+   "decision": "LaVeck will learn more about the Capital Planning Committee funding process in the coming months.",
+   "quote": "he will learn more about the process in the coming months."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Old Primary School funding",
+   "what_was_recorded": "The DPW said he had no funds or resources allocated for preserving the Old Primary School, and LaVeck believed all available funds were spoken for this year, with maintenance funds possibly allocated from the general fund in 2020.",
+   "figures_as_printed": [],
+   "quote": "he had no funds or resources allocated for the preservation of the building."
+  },
+  {
+   "topic": "Old Primary School repair cost estimate",
+   "what_was_recorded": "LaVeck intended to ask Town Counsel about whether getting a contractor to estimate repair and upkeep costs would overreach the APDC's authority.",
+   "figures_as_printed": [],
+   "quote": "by getting a contractor to estimate the costs of repair and upkeep of the old primary school."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved minutes of May 14th",
+   "quote": "minutes from the meeting on may 14th were read and approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence: Old Primary School demolition by neglect",
+   "resolution": "no action; APDC to explore other options",
+   "quote": "mcgrath had stopped at the town manager's office to inquire if there was any plan of action",
+   "tags": [
+    "Old Primary School",
+    "demolition by neglect"
+   ]
+  },
+  {
+   "topic": "Officer elections",
+   "resolution": "officers re-elected unanimously",
+   "quote": "by unanimous vote, richard mcgrath will remain chair, james laveck vice-chair, and cullen dwyer recording clerk.",
+   "tags": [
+    "officers"
+   ]
+  },
+  {
+   "topic": "Ritter Building sign",
+   "resolution": "noted missing; no action recorded",
+   "quote": "laveck noted that the ritter building sign was missing.",
+   "tags": [
+    "Ritter Building",
+    "signage"
+   ]
+  },
+  {
+   "topic": "APD road signs design",
+   "resolution": "continued; fonts to be presented next meeting",
+   "quote": "dwyer proposed to present various fonts to choose from for the next meeting.",
+   "tags": [
+    "APD signs",
+    "design"
+   ]
+  },
+  {
+   "topic": "Brooks House sale conditions",
+   "resolution": "APDC conditions for removal agreed; no vote recorded",
+   "quote": "the apdc agreed to inform lemieux that removal of the building would not be allowed without stipulations",
+   "tags": [
+    "Brooks House",
+    "bid package",
+    "CTA"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "APD bylaw regarding Demolition by Neglect",
+   "where": "text",
+   "quote": "to bring the town into compliance with the apd bylaw regarding demolition by neglect of the old primary school"
+  },
+  {
+   "name": "APDC charter",
+   "where": "text",
+   "quote": "he wanted to review the apdc charter, and get advice on the extent of its charge"
+  },
+  {
+   "name": "Video from the joint workshop with the Select Board",
+   "where": "text",
+   "quote": "he agreed to review the video from the joint workshop with the select board"
+  },
+  {
+   "name": "CTA application process",
+   "where": "text",
+   "quote": "that the house would remain under the jurisdiction of the apdc's cta application process"
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "APD",
+  "Old Primary School",
+  "Brooks House",
+  "demolition by neglect",
+  "officers",
+  "signage",
+  "town property funding"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

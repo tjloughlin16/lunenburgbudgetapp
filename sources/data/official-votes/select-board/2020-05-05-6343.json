@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-05-05",
  "docid": "6343",
@@ -12,6 +12,115 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "The minutes describe discussions (kennel license denial, dangerous dog order and appeal process) but explicitly state \"The Board took all under advisement but took no action at this time.\" No motions or votes are recorded. The meeting adjournment is not recorded as a vote.",
- "cost_usd": 0.0768855
+ "note": "OCR text of a single page (page 1 only); the minutes appear incomplete. No motions, votes, or roll-call results are recorded, including on adjournment at 10:30 p.m. The signature and some words are OCR-garbled (e.g., 'Clairem. Pelerson', 'issued discussed'); quotes were copied as printed.",
+ "cost_usd": 0.0027059199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "not present: damon mcquaid, clerk"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "respectfully submitted, clairem. pelerson elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board took the Guglietti kennel license and dangerous dog matters under advisement and took no action at this time.",
+   "quote": "the board took all under advisement but took no action at this time."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cost to house and feed impounded dogs (Guglietti dangerous dog appeal)",
+   "what_was_recorded": "Town Counsel's letter noted that housing and feeding the dogs during impoundment could be costly if the appeal lasted two or three years, and the Town would bear those costs until the appeal ended, with no reimbursement from owners if the order is stayed.",
+   "figures_as_printed": [],
+   "quote": "another thing to consider is the cost to house and feed the dogs during the impoundment"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Kennel license denial for Elizabeth Guglietti",
+   "resolution": "discussed; no action",
+   "quote": "the board discussed the april 14\" letter sent to ms. elizabeth guglietti from animal control officer",
+   "tags": [
+    "animal control",
+    "kennel license"
+   ]
+  },
+  {
+   "topic": "Town Counsel letter on dangerous dog order (Janice and Slingshot)",
+   "resolution": "taken under advisement; no action",
+   "quote": "the board issued discussed the letter from town counsel attorney kennefick regarding the dangerous",
+   "tags": [
+    "dangerous dog",
+    "euthanization order",
+    "appeal",
+    "town counsel"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "April 14 letter from Animal Control Officer (ACO) Comeau to Ms. Elizabeth Guglietti denying kennel license application",
+   "where": "text",
+   "quote": "the board discussed the april 14\" letter sent to ms. elizabeth guglietti from animal control officer"
+  },
+  {
+   "name": "Letter from Town Counsel Attorney Kennefick regarding the dangerous dog order",
+   "where": "text",
+   "quote": "the board issued discussed the letter from town counsel attorney kennefick regarding the dangerous"
+  }
+ ],
+ "tags": [
+  "animal control",
+  "dangerous dog",
+  "kennel license",
+  "euthanization appeal",
+  "town counsel",
+  "impoundment costs"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

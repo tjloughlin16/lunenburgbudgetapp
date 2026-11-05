@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2020-08-20",
  "docid": "3002",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "nominate Linda McDonald as Chair",
+   "motion": "Nominate Linda McDonald as Chair.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Jon Hogue",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "deborah christen made a motion to nominate linda mcdonald as chair; jon hogue seconded; all three members said aye in favor."
   },
   {
-   "motion": "nominate Karin Menard as Vice Chair",
+   "motion": "Nominate Karin Menard as Vice Chair.",
    "moved_by": "Linda McDonald",
    "seconded_by": "Deborah Christen",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "linda mcdonald nominated karin menar d as vice chair; deborah christen seconded, all three members said aye in favor."
   },
   {
-   "motion": "approve the minutes of the June 18, 2020 meeting",
+   "motion": "Approve the minutes of the June 18, 2020 meeting.",
    "moved_by": "Karin Menard",
    "seconded_by": "Deborah Christen",
    "outcome": "passed",
@@ -36,15 +36,15 @@
    "quote": "karin menard made a motion to approve the minutes; deborah christen seconded and all were in favor."
   },
   {
-   "motion": "accept the June and July 2020 financial reports",
+   "motion": "Accept the June and July 2020 financial reports.",
    "moved_by": "Karin Menard",
    "seconded_by": "Deborah Christen",
    "outcome": "passed",
    "procedural": false,
-   "quote": "karin menard made a motion to accept the june and july 2020 financial reports. deborah christen seconded; all were in favor."
+   "quote": "motion to accept the june and july 2020 financial reports. deborah christen seconded; all were in favor."
   },
   {
-   "motion": "accept and approve the low bid from Elm Electrical for Underground Fire Alarm Wiring Replacement at $30,103",
+   "motion": "Accept and approve the low bid of Elm Electrical ($30,103) for Underground Fire Alarm Wiring Replacement (Resolution 20200 7).",
    "moved_by": "Karin Menard",
    "seconded_by": "Deborah Christen",
    "outcome": "passed",
@@ -52,39 +52,367 @@
    "quote": "motion made by karin menard to accept and approve the low bid. deborah christen seconded the motion; all were in favor."
   },
   {
-   "motion": "adopt Grievance Procedures",
+   "motion": "Adopt the Grievance Procedures (Resolution 20200 8).",
    "moved_by": "Deborah Christen",
    "seconded_by": "Karin Menard",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion made by deborah christen to adopt the grievance procedures. karin menard seconded the motion ; vote by roll call was karin menard - aye, deborah christen - aye, linda mcdonald - aye, with jon hogue having been dropped off from the call and unable to vote on this resolution. motion passed with a 3 to 0 vote."
+   "quote": "motion made by deborah christen to adopt the grievance procedures."
   },
   {
-   "motion": "adopt Tenant Personal Property Policy",
+   "motion": "Adopt the Tenant Personal Property Policy (Resolution 202009).",
    "moved_by": "Karin Menard",
    "seconded_by": "Deborah Christen",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion made by karin menard to adopt the tenant personal property policy. deborah christen seconded the motion ; vote by roll call was karin menard - yes, deborah christen - aye, linda mcdonald - aye, jon hogue - aye. motion passed with a 4 to 0 vote."
+   "quote": "motion made by karin menard to adopt the tenant personal property policy."
   },
   {
-   "motion": "adopt Revised CORI Policy (Resolution 202010)",
+   "motion": "Adopt Resolution 202010, the revised CORI Policy.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Linda McDonald",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion made by deborah christen to adopt resolution 202010. linda mcdonald s econded the motion; vote by roll cal l was karin menard - yes, jon hogue - yes, deborah christen - yes, linda mcdonald - yes. motion passed with a 4 to 0 vote."
+   "quote": "motion made by deborah christen to adopt resolution 202010."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:20 p.m.",
    "moved_by": "Karin Menard",
    "seconded_by": "Jon Hogue",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "karin menard made a motion to adjourn the meeting at 7:20 p.m. jon hogue seconded, roll call karin menard - yes, deborah christen - aye, jon hogue - aye, linda mcdonald - aye and the meeting was adjourned with a 4 to 0 vote."
+   "quote": "karin menard made a motion to adjourn the meeting at 7:20 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1426505
+ "note": "Minutes are a text extraction with no signature or certification. Linda McDonald is called \"Vice Chair\" in item 1a and \"Chair\" in the header and afterward. The grievance vote was a 3-0 roll call because Jon Hogue had been dropped from the call. Karin Menard's remarks on committee agendas and board terms are recorded as on-record statements, not public comment. No public comment speakers are named; the minutes say no one called in.",
+ "cost_usd": 0.009746420000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Linda McDonald",
+   "role": "Chair",
+   "status": "present",
+   "quote": "deborah christen - present, karin menard - present, jon hogue - present, linda mcdonald - present."
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "deborah christen - present, karin menard - present, jon hogue - present, linda mcdonald - present."
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "deborah christen - present, karin menard - present, jon hogue - present, linda mcdonald - present."
+  },
+  {
+   "name": "Jon Hogue",
+   "role": "Member",
+   "status": "present",
+   "quote": "deborah christen - present, karin menard - present, jon hogue - present, linda mcdonald - present."
+  },
+  {
+   "name": "Carol Hatch",
+   "role": "Member",
+   "status": "absent",
+   "quote": "carol hatch was absent."
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, executive director ; adam gautie, assistant executive director"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, executive director ; adam gautie, assistant executive director"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The AUP Report was tabled until the next month.",
+   "quote": "aup report - tabled until next month."
+  },
+  {
+   "decision": "Karin Menard would reach out to Carol Hatch again to confirm whether she can serve on the Board.",
+   "quote": "she would reach out to carol again to confirm."
+  },
+  {
+   "decision": "Karin Menard would provide Lunenburg's Green Community Task Force contact information to Adam Gautie and follow up on it.",
+   "quote": "and said she would follow up on that."
+  },
+  {
+   "decision": "Staff would meet the following week to see how much the housing authority has accumulated in COVID-related expenses before submitting to the State.",
+   "quote": "meeting next week to see how much we've accumulated as a housing authority and submitting it."
+  },
+  {
+   "decision": "The housing authority will arrange a building tour at Pearl Brook for Jon Hogue.",
+   "quote": "the housing authority will arrange a tour for him."
+  },
+  {
+   "decision": "Board consensus, with no motion recorded, that a standby gas-fed generator at the Community Room was more important now than moving the deck replacement, and the board was in favor of purchasing it.",
+   "quote": "the board felt a generator in the community room was important for the residents when power goes out; they were in favor of purchasing."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Underground Fire Alarm Wiring Replacement low bid",
+   "what_was_recorded": "Elm Electrical of Westfield, MA was the low bid for the fire alarm wiring replacement, accepted by the board.",
+   "figures_as_printed": [
+    "$30,103"
+   ],
+   "quote": "elm electrical from westfield, ma was low bid in the amount of $30,103."
+  },
+  {
+   "topic": "Generator estimate",
+   "what_was_recorded": "The estimated cost of a concrete pad with a gas-fed standby generator was given as a range.",
+   "figures_as_printed": [
+    "$20,00-$30,000"
+   ],
+   "quote": "estimated cost around $20,00-$30,000."
+  },
+  {
+   "topic": "Rents budgeted versus received",
+   "what_was_recorded": "Seven months into the fiscal year, rents were budgeted at one figure and received at a higher figure.",
+   "figures_as_printed": [
+    "$ 136,638",
+    "$153,169"
+   ],
+   "quote": "rents budgeted $ 136,638; received"
+  },
+  {
+   "topic": "Maintenance labor variance",
+   "what_was_recorded": "Maintenance labor was behind budget, expected to even out next month; weekend COVID sanitizing was added to this.",
+   "figures_as_printed": [
+    "$6,779"
+   ],
+   "quote": "maintenance labor behind $6,779, should even out by next month"
+  },
+  {
+   "topic": "Operating surplus",
+   "what_was_recorded": "The operating surplus for the period was reported.",
+   "figures_as_printed": [
+    "$14,315"
+   ],
+   "quote": "operating surplus $14,315"
+  },
+  {
+   "topic": "Reserves",
+   "what_was_recorded": "The healthy reserve was reported at 74.35%, with DHCD preferring 35% or over; the board will look at what reserves can be spent on.",
+   "figures_as_printed": [
+    "74.35%"
+   ],
+   "quote": "healthy reserve at 74.35%."
+  },
+  {
+   "topic": "State COVID funding",
+   "what_was_recorded": "The State has money for the housing authority's COVID-related expenses; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "the state has some money for our covid related expenses"
+  },
+  {
+   "topic": "Capital funding sources",
+   "what_was_recorded": "Staff explained capital projects are funded by State Formula Funding, with smaller projects sometimes paid from reserves; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "receive formula funding through the state for capital improvement projects"
+  },
+  {
+   "topic": "Moving deck replacement to fund generator",
+   "what_was_recorded": "Discussion of moving the deck replacement planned for next year to fund the generator installation; no amount beyond the generator estimate.",
+   "figures_as_printed": [],
+   "quote": "discuss moving replacement of deck next year to fund the installation of a generator"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "quorum declared; meeting opened 6:31 p.m.",
+   "quote": "the vice chair declared a quorum present and opened the meeting at 6:31 p.m.",
+   "tags": [
+    "roll call",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "Linda McDonald elected Chair; Karin Menard elected Vice Chair",
+   "quote": "deborah christen made a motion to nominate linda mcdonald as chair; jon hogue seconded",
+   "tags": [
+    "officers",
+    "election"
+   ]
+  },
+  {
+   "topic": "Minutes of June 18, 2020",
+   "resolution": "approved",
+   "quote": "the minutes of the june 18, 2020 meeting were presented.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "no action; COVID update, virtual resident town hall, MassNAHRO conference",
+   "quote": "the executive director report - ben gold",
+   "tags": [
+    "COVID-19",
+    "staff report"
+   ]
+  },
+  {
+   "topic": "Financial report June and July 2020",
+   "resolution": "accepted",
+   "quote": "financial report - june and july 2020 - ben gold",
+   "tags": [
+    "finance",
+    "reserves"
+   ]
+  },
+  {
+   "topic": "AUP report",
+   "resolution": "tabled to next month",
+   "quote": "aup report - tabled until next month.",
+   "tags": [
+    "AUP"
+   ]
+  },
+  {
+   "topic": "Modernization and work order report",
+   "resolution": "received; no action",
+   "quote": "modernization/work order report - adam gautie:",
+   "tags": [
+    "capital projects",
+    "work orders"
+   ]
+  },
+  {
+   "topic": "State-aided housing report",
+   "resolution": "received; no action",
+   "quote": "state-aided housing report - ben gold:",
+   "tags": [
+    "waiting list",
+    "occupancy"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "none",
+   "quote": "unfinished business - none.",
+   "tags": []
+  },
+  {
+   "topic": "New business resolutions",
+   "resolution": "Resolutions 20200 7, 20200 8, 202009 and 202010 approved; generator discussion, no vote",
+   "quote": "the chair presented the following resolutions:",
+   "tags": [
+    "bid",
+    "grievance procedure",
+    "tenant policy",
+    "CORI policy",
+    "generator"
+   ]
+  },
+  {
+   "topic": "Other correspondence",
+   "resolution": "received; no action",
+   "quote": "rcat advisory board quarterly meeting notice (virtual)",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Resident participation",
+   "resolution": "none requested; member statements placed on record",
+   "quote": "resident participation: none requested",
+   "tags": [
+    "open meeting law",
+    "board terms"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:20 p.m., 4-0",
+   "quote": "karin menard made a motion to adjourn the meeting at 7:20 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "RCAT Advisory Board Quarterly Meeting Notice (Virtual)",
+   "where": "list",
+   "quote": "rcat advisory board quarterly meeting notice (virtual)"
+  },
+  {
+   "name": "DHCD PHNs 2020-23 through 202028",
+   "where": "list",
+   "quote": "dhcd phns 2020-23 through 202028"
+  },
+  {
+   "name": "Financial Report – June and July 2020",
+   "where": "text",
+   "quote": "financial report - june and july 2020 - ben gold"
+  },
+  {
+   "name": "Modernization/Work Order Report",
+   "where": "text",
+   "quote": "modernization/work order report - adam gautie:"
+  },
+  {
+   "name": "Resolution 20200 7, Acceptance and Approval of Low Bid for Underground Fire Alarm Wiring Replacement",
+   "where": "text",
+   "quote": "resolution 20200 7 acceptance and approval of low bid for underground fire alarm wiring replacement."
+  },
+  {
+   "name": "Resolution 20200 8, Approval to Adopt Grievance Procedures",
+   "where": "text",
+   "quote": "resolution 20200 8 approval to adopt grievance procedures."
+  },
+  {
+   "name": "Resolution 202009, Approval to Adopt Tenant Personal Property Policy",
+   "where": "text",
+   "quote": "resolution 202009 approval to adopt tenant personal property policy."
+  },
+  {
+   "name": "Resolution 202010, Approval to Adopt Revised CORI Policy",
+   "where": "text",
+   "quote": "resolution 202010 approval to adopt revised cori policy."
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "annual meeting",
+  "virtual meeting",
+  "election of officers",
+  "COVID-19",
+  "capital projects",
+  "fire alarm",
+  "generator",
+  "grievance procedure",
+  "CORI policy",
+  "tenant policy",
+  "financial report",
+  "reserves",
+  "waiting list",
+  "open meeting law"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "other correspondence"
+ },
+ "dropped_unquoted_by_field": {}
 }

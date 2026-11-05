@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2019-04-09",
  "docid": "5636",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the amended order of assessment for 380-390 Electric Ave., taking 400 Electric Avenue off of the assessment",
+   "motion": "Approve the amended order of assessment for 380-390 Electric Ave., taking 400 Electric Avenue off the assessment.",
    "moved_by": "Joan P.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: joan p. second: john r. to approve the amended order of assessment for 380-390 electric ave., taking 400 electric avenue off of the assessment. vote: unanimous"
   },
   {
-   "motion": "Add the new wording to the Sewer Commission agenda",
+   "motion": "Add the new wording to the Sewer Commission agenda (proposed agenda statement).",
    "moved_by": "John R.",
    "seconded_by": "Carl L.",
    "outcome": "failed",
@@ -28,23 +28,304 @@
    "quote": "motion: john r. second: carl l. to add the new wording to the sewer commission agenda. vote: john-yes, carl-yes, joan abstain. motion did not pass."
   },
   {
-   "motion": "Accept the contract, pending review by John Londa and/or Town Counsel",
+   "motion": "Accept the contract, pending review by John Londa and/or Town Counsel (subject cut off in the text; the item appears to be a program contract).",
    "moved_by": "Joan P.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: joan p. second: john r. to accept the contract, pending review by john londa and/or town counsel. vote: unanimous"
   },
   {
-   "motion": "Adjourn at 8:54 pm",
+   "motion": "Adjourn the meeting at 8:54pm.",
    "moved_by": "Joan P.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion: joan p. second: john r. to adjourn at 8:54pm vote: unanimous"
   }
  ],
- "dropped_unquoted": 0,
- "note": "Text is OCR from macOS Vision with page markers. All votes recorded with explicit outcomes. Executive session discussed but no vote on entering it is recorded in the minutes.",
- "cost_usd": 0.08769750000000001
+ "dropped_unquoted": 1,
+ "note": "OCR text (macOS Vision) of two pages. Page 1 ends mid-sentence (\"per\") and page 2 begins mid-sentence, so the subject of the program contract vote and the Grease Trap/heading lines are partly lost; the contract is described only as \"the contract\". No attendance roll is printed; commissioners' presence is inferred from their recorded motions and statements. The executive session is mentioned but no motion to enter is recorded. The irrigation fee motion was passed by the Water Commission, not this board, so it is not recorded as a Sewer Commission vote. The \"Motion did not pass\" vote shows John-yes, Carl-yes, Joan abstain as printed.",
+ "cost_usd": 0.0065342199999999994,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joan P.",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "motion: joan p. second: john r. to adjourn at 8:54pm vote: unanimous"
+  },
+  {
+   "name": "John R.",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "motion: john r. second: carl l. to add the new wording to the sewer commission agenda."
+  },
+  {
+   "name": "Carl L.",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "carl added that not everyone will be on the new system right away, but they should be after 2 years."
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb reported that peter dulchinos, the receivor for the meadowwoods trailer park had passed away."
+  },
+  {
+   "name": "Matt Corbin",
+   "role": "Wright Pierce",
+   "status": "not stated",
+   "quote": "wright pierce - matt corbin, kevin olson - maintenance plan - barb communicated with matt and he"
+  },
+  {
+   "name": "Kevin Olson",
+   "role": "Wright Pierce",
+   "status": "not stated",
+   "quote": "wright pierce - matt corbin, kevin olson - maintenance plan - barb communicated with matt and he"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission signed the amended order of assessment for 380-390 Electric Ave.",
+   "quote": "the commission signed the amended order of assessment."
+  },
+  {
+   "decision": "The Commission reviewed and signed the Wright Pierce maintenance plan contract, which had been approved by Town Counsel and Wright Pierce.",
+   "quote": "the commission reviewed and signed the contract approved by both town counsel and wright pierce."
+  },
+  {
+   "decision": "Barb will coordinate a date for the Wright Pierce maintenance plan kick-off meeting with Wright Pierce, SWSS and Jack; the Commission wants it scheduled when members return from travel so a quorum is more likely.",
+   "quote": "will coordinate a date with wright pierce, swss and jack."
+  },
+  {
+   "decision": "The Commission did not reach agreement on the proposed Charter changes and will continue discussion of the charter wording.",
+   "quote": "commission did not reach agreement on proposed changes and will continue discussion regarding the charter wording"
+  },
+  {
+   "decision": "Barb will put together a list of topics for the irrigation meter discussion, and the irrigation process and policy will be added to the agenda for the first meeting in May.",
+   "quote": "the discussion of the process and policy will be added to the agenda for the first meeting in may."
+  },
+  {
+   "decision": "The Commission agreed to have Barb provide quarterly budget status reports reflecting account line item amounts.",
+   "quote": "commission discussed and agreed to have barb provide quarterly budget status reports, reflecting account line item amounts."
+  },
+  {
+   "decision": "Minutes of 3/12 and 3/26 were held over to the next meeting due to the late hour.",
+   "quote": "minutes-3/12 and minutes- 3/26 will be held to next meeting due to the late hour."
+  },
+  {
+   "decision": "The Commission agreed to keep the Town Meeting presentation simple.",
+   "quote": "the commission agreed to keep the presentation simple."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Irrigation meter readings charge from Water District",
+   "what_was_recorded": "The Water Commission voted to charge the Sewer Commission a yearly fee for irrigation meter readings: a lower rate for the first two years and a higher rate thereafter.",
+   "figures_as_printed": [
+    "$ 500/year",
+    "$ 750/year"
+   ],
+   "quote": "charge the sewer commission $ 500/year for the first 2 years and $ 750/year thereafter, for irrigation meter readings."
+  },
+  {
+   "topic": "Irrigation meter up-front costs",
+   "what_was_recorded": "The Water District did not expect up-front costs, but said the Sewer Commission would pay any that arise.",
+   "figures_as_printed": [],
+   "quote": "the water district didn't think there will be any up-front costs but if there are, the sewer commission would pay them."
+  },
+  {
+   "topic": "Connection fees and permit to connect",
+   "what_was_recorded": "Barb reported the permit to connect and connection fees for the Title V matter are all set.",
+   "figures_as_printed": [],
+   "quote": "barb added that the permit to connect and connection fees are all set."
+  },
+  {
+   "topic": "Privilege fee assessment for 380-390 Electric Ave.",
+   "what_was_recorded": "The amended assessment corrected the parcel ID on the privilege fee assessed to 380-390 Electric Ave. and removed 400 Electric Ave.",
+   "figures_as_printed": [],
+   "quote": "correcting the parcel id on the privilege fee assessed to 380-390 electric ave..."
+  },
+  {
+   "topic": "Maintenance plan budget issues and quarterly reporting",
+   "what_was_recorded": "The Commission discussed budget issues for maintenance plan activities, including invoice review and approvals, and agreed to quarterly budget status reports.",
+   "figures_as_printed": [],
+   "quote": "commission also discussed maintenance plan activities and budget issues including invoice review/approvals and line item transfers."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Amended order of assessment, 380-390 Electric Ave.",
+   "resolution": "approved amendment; order signed",
+   "quote": "to approve the amended order of assessment for 380-390 electric ave., taking 400 electric avenue off of the assessment.",
+   "tags": [
+    "assessment",
+    "sewer connection"
+   ]
+  },
+  {
+   "topic": "Wright Pierce maintenance plan",
+   "resolution": "contract reviewed and signed; kick-off date to be coordinated",
+   "quote": "the commission reviewed and signed the contract approved by both town counsel and wright pierce.",
+   "tags": [
+    "maintenance plan",
+    "consultant"
+   ]
+  },
+  {
+   "topic": "Public comment (first)",
+   "resolution": "no comment",
+   "quote": "public comment- none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Charter discussion, paragraph 4-2(i)",
+   "resolution": "continued; no agreement",
+   "quote": "commission did not reach agreement on proposed changes and will continue discussion regarding the charter wording",
+   "tags": [
+    "charter",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Proposed agenda statement",
+   "resolution": "motion failed",
+   "quote": "motion did not pass.",
+   "tags": [
+    "open meeting law",
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Irrigation meter discussion with Water District",
+   "resolution": "discussed; process and policy to May agenda",
+   "quote": "the discussion of the process and policy will be added to the agenda for the first meeting in may.",
+   "tags": [
+    "irrigation meter",
+    "water district"
+   ]
+  },
+  {
+   "topic": "DPW tasks discussion",
+   "resolution": "draft task list reviewed; no action recorded",
+   "quote": "commission reviewed and discussed carl's draft task list for the town manager's responsibilities.",
+   "tags": [
+    "DPW",
+    "pump station"
+   ]
+  },
+  {
+   "topic": "Program contract (heading cut off in text)",
+   "resolution": "accepted pending review by John Londa and/or Town Counsel",
+   "quote": "to accept the contract, pending review by john londa and/or town counsel.",
+   "tags": [
+    "contract",
+    "program"
+   ]
+  },
+  {
+   "topic": "Grease Trap Program update and correspondence",
+   "resolution": "letters completed; no action recorded",
+   "quote": "barb has completed the letters to be sent to the grease trap customers.",
+   "tags": [
+    "grease trap"
+   ]
+  },
+  {
+   "topic": "Minutes of 3/12 and 3/26",
+   "resolution": "held to next meeting",
+   "quote": "minutes-3/12 and minutes- 3/26 will be held to next meeting due to the late hour.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager Report",
+   "resolution": "reported; no action recorded",
+   "quote": "business manager report - prospect st. extension request has been withdrawn.",
+   "tags": [
+    "business manager",
+    "town meeting",
+    "O&M RFP"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "discussed; no motion to enter recorded",
+   "quote": "executive session - barb",
+   "tags": [
+    "executive session",
+    "legal"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "listed for future agendas",
+   "quote": "member agenda inputs for future meetings - irrigation policy & process, dpw task list",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:54pm",
+   "quote": "to adjourn at 8:54pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Wright Pierce Scope of Services",
+   "where": "list",
+   "quote": "wright pierce scope of services"
+  },
+  {
+   "name": "Counsel's April 9, 2019 input regarding the Charter verbiage",
+   "where": "list",
+   "quote": "counsel's april 9, 2019 input regarding the charter verbiage"
+  },
+  {
+   "name": "Counsel input on the adding the BOS statement to the Agenda",
+   "where": "list",
+   "quote": "counsel input on the adding the bos statement to the agenda"
+  },
+  {
+   "name": "Carl's draft of DPW task list",
+   "where": "list",
+   "quote": "carl's draft of dpw task list"
+  },
+  {
+   "name": "Nexamp Community Solar Summary for Pump Stations and Contract",
+   "where": "list",
+   "quote": "nexamp community solar summary for pump stations and contract"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "assessment",
+  "maintenance plan",
+  "charter",
+  "irrigation meter",
+  "water district",
+  "DPW",
+  "grease trap",
+  "budget",
+  "town meeting",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

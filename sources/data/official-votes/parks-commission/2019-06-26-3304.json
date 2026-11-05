@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2019-06-26",
  "docid": "3304",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve May 2019 minutes",
+   "motion": "Approve the May 2019 minutes.",
    "moved_by": "John Palumbo",
    "seconded_by": "Susanna Jewell",
    "outcome": "passed 3-0",
@@ -20,7 +20,7 @@
    "quote": "john motioned and susanna seconded to approve may 2019 minutes. approved 3-0."
   },
   {
-   "motion": "Recess and move to Marshall Park at 7pm",
+   "motion": "Recess and move to Marshall Park, 835 Massachusetts Ave, at 7pm.",
    "moved_by": "Karin Menard",
    "seconded_by": "Susanna Jewell",
    "outcome": "not stated",
@@ -28,7 +28,7 @@
    "quote": "karin motioned and susanna seconded to recess and move to marshall park - 835 massachusetts ave at 7pm."
   },
   {
-   "motion": "Adjourn at 8:10pm",
+   "motion": "Adjourn the meeting at 8:10pm.",
    "moved_by": "Karin Menard",
    "seconded_by": "John Palumbo",
    "outcome": "passed 3-0",
@@ -37,6 +37,152 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0623834
+ "note": "Text covers two pages with inconsistent running headers (\"Page of 21\" and \"Page of 22\"). Votes are recorded in text for the May minutes approval and the adjournment; the recess motion has no recorded result. No documents list is printed. Dollar figures are not printed; budget items reflect money discussed without amounts.",
+ "cost_usd": 0.00383292,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "karin called meeting to order at 6:02pm attendance: karin menard, susanna jewell, john palumbo"
+  },
+  {
+   "name": "Susanna Jewell",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "karin called meeting to order at 6:02pm attendance: karin menard, susanna jewell, john palumbo"
+  },
+  {
+   "name": "John Palumbo",
+   "role": "",
+   "status": "present",
+   "quote": "karin called meeting to order at 6:02pm attendance: karin menard, susanna jewell, john palumbo"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "dave passios made a public comment that if changes were made to the court that it would feed into the complaint he has had for years"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair to send an email to Jack about the lifeguard chairs suggested for the beach.",
+   "quote": "karin and susanna thought that was a good idea. karin will send an email to jack."
+  },
+  {
+   "decision": "Chair to put the Wallis Park court question on an upcoming agenda.",
+   "quote": "she said she would put wallis onto an upcoming agenda."
+  },
+  {
+   "decision": "Commission to clarify with the Town Manager whether a change to the basketball courts can be made, since the work was appropriated at Town Meeting as part of the Capital Plan.",
+   "quote": "she would like the commission to clarify with town manager if a change to these courts could even be made"
+  },
+  {
+   "decision": "Chair to request an inspection of the Wallis Park snack shack from the Nashoba Board of Health; once complete, Chris Letarte can open it to sell prepackaged foods.",
+   "quote": "would be requesting an inspection from the nashoba board of health. once that is complete chris letarte will be able to open it to sell prepackaged foods."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Beach technology and credit card fees on online passes",
+   "what_was_recorded": "Residents' complaints about the additional technology fee and credit card fee on online beach passes; the technology fee is added by the town and Parks cannot waive it.",
+   "figures_as_printed": [],
+   "quote": "the additional technology fee and credit card fee"
+  },
+  {
+   "topic": "Remaining DPW money for beach equipment before fiscal year end",
+   "what_was_recorded": "The DPW director has a little money that could be spent before the end of the fiscal year; lifeguard chairs were recommended for the beach.",
+   "figures_as_printed": [],
+   "quote": "the dpw director has a little money that could be spent before the end of the fiscal year"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "topic": "Proposed changes to basketball courts",
+   "quote": "dave passios made a public comment that if changes were made to the court that it would feed into the complaint he has had for years that we would continue to cater to organized sports and kids"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of May 2019 minutes",
+   "resolution": "approved 3-0",
+   "quote": "john motioned and susanna seconded to approve may 2019 minutes. approved 3-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Manager / DPW Director Updates",
+   "resolution": "no updates",
+   "quote": "town manager / dpw director updates - no updates",
+   "tags": [
+    "DPW"
+   ]
+  },
+  {
+   "topic": "2019 Beach Season",
+   "resolution": "discussed; lifeguard chairs suggested, Chair to email Jack",
+   "quote": "2019 beach season - updates, pass sales, technology, general policy",
+   "tags": [
+    "beach",
+    "passes",
+    "fees",
+    "lifeguard chairs"
+   ]
+  },
+  {
+   "topic": "Public / Board Comment on Whalom-area courts and Wallis Park snack shack",
+   "resolution": "discussed; Town Manager to be asked, item to upcoming agenda",
+   "quote": "public / board comment - karin said that the dpw director had received emails from residents",
+   "tags": [
+    "courts",
+    "Wallis Park",
+    "snack shack",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Site walk at Marshall Park",
+   "resolution": "no action; group toured park facilities",
+   "quote": "reconvened at marshall park @ 7:10pm. with the help of dave passios the group checked out the basketball",
+   "tags": [
+    "Marshall Park",
+    "site visit"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "May 2019 minutes",
+   "where": "text",
+   "quote": "john motioned and susanna seconded to approve may 2019 minutes. approved 3-0."
+  },
+  {
+   "name": "Capital Plan (appropriation made at Town Meeting)",
+   "where": "text",
+   "quote": "it was an appropriation made at town meeting as part of the capital plan"
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "beach season",
+  "beach passes",
+  "fees",
+  "basketball courts",
+  "Wallis Park",
+  "Marshall Park",
+  "snack shack",
+  "lifeguard chairs",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,941 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2020-05-12",
+ "video_id": "WKKFdCR-Gds",
+ "video_url": "https://www.youtube.com/watch?v=WKKFdCR-Gds",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2020-05-12-WKKFdCR-Gds.json",
+  "sha256": "96ee48c41fa353625fd08db0fb76b284b948165ee5148cf5fdfe2049bf49a5d1",
+  "caption_lines": 534,
+  "segments": 4111
+ },
+ "recording": {
+  "duration_s": 11337,
+  "duration": "3:08",
+  "spoken_chars": 136423,
+  "words_approx": 22737
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05122020-5199",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-05-12-agenda-5199.txt",
+   "path": "sources/meetings/select-board/2020-05-12-agenda-5199.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05122020-5199",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-05-12-minutes-5199.txt",
+   "path": "sources/meetings/select-board/2020-05-12-minutes-5199.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-04T02:30:24Z",
+  "cost_usd": 0.37608359999999996
+ },
+ "minutes": {
+  "headline": "Board recommended six warrant articles, deferred five, and removed the old primary school and Community Preservation articles.",
+  "summary": "The board voted to sign a final bond for pavement management and the middle/high school project. It then took recommendation votes on the remaining annual Town Meeting warrant articles and approved the FY2021 budget recommendation. The streetlight purchase drew the longest debate and was deferred to Town Meeting. The board also discussed the town manager's role in school bargaining, hunting near conservation land, and Town Meeting COVID planning.",
+  "attendees": [
+   {
+    "name_as_heard": "Mrs. Adams",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. McQuade",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Jeffries",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mrs. Luck",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Tom Alonso",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Karen Lambie",
+    "role": "finance director"
+   },
+   {
+    "name_as_heard": "Chief Moreno",
+    "role": "police chief"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 376,
+    "speaker_as_heard": "Dave Paseos, 56 Whiting Street",
+    "stated_role": "Finance Committee member speaking as a citizen",
+    "topic": "Streetlight article: the Finance Committee was comfortable with unappropriated 2020 free cash as the funding source."
+   },
+   {
+    "t": 5875,
+    "speaker_as_heard": "Paseos, 56 Whiting Street",
+    "stated_role": "member of the public",
+    "topic": "Urged streetlight purchase; asked to verify the annual savings figure; said ownership is needed to apply for the grant."
+   },
+   {
+    "t": 6364,
+    "speaker_as_heard": "Peter Beardmore, 282 Pleasant Street",
+    "stated_role": "citizen",
+    "topic": "Supported the streetlight article on return on investment; urged deferral rather than disapproval."
+   },
+   {
+    "t": 10951,
+    "topic": "Police chief said the town charter may bar the town manager from negotiating with school staff, and praised labor counsel."
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "capital",
+   "contracts-and-unions",
+   "debt",
+   "elections",
+   "free-cash",
+   "grants",
+   "high-school",
+   "legal",
+   "middle-school",
+   "msba",
+   "personnel",
+   "public-comment",
+   "public-safety",
+   "roads-and-dpw",
+   "town-departments",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 1295,
+    "motion": "Read and adopt the bond vote for the $1.695M general obligation bonds (pavement management and middle/high school) sold to the winning bidder",
+    "outcome": "passed 4-0 on roll call (the captions give four ayes)",
+    "procedural": false
+   },
+   {
+    "t": 2000,
+    "motion": "Defer recommendation on prior year budget adjustments article to Town Meeting",
+    "outcome": "passed (roll call, ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 2189,
+    "motion": "Defer recommendation on the capital plan article to Town Meeting",
+    "outcome": "failed",
+    "procedural": false
+   },
+   {
+    "t": 2234,
+    "motion": "Recommend approval of the capital plan article as presented",
+    "outcome": "passed 3-1 with one abstention",
+    "procedural": false
+   },
+   {
+    "t": 2318,
+    "motion": "Recommend approval of the budget as presented",
+    "outcome": "passed (the member who opposed was Mrs. Luck, who said she would not support; roll call count not clearly audible)",
+    "procedural": false
+   },
+   {
+    "t": 2386,
+    "motion": "Recommend approval of the stabilization fund article",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 2449,
+    "motion": "Defer the sewer enterprise fund article to Town Meeting",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3526,
+    "motion": "Remove the old primary school article from the warrant",
+    "outcome": "passed 3-2",
+    "procedural": false
+   },
+   {
+    "t": 3594,
+    "motion": "Recommend approval of article X (kennel bylaw)",
+    "outcome": "passed (roll call, ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 3655,
+    "motion": "Recommend approval of article Y (animal control fines)",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 4140,
+    "motion": "Remove the Community Preservation Act article from the warrant",
+    "outcome": "passed (roll call, ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 4446,
+    "motion": "Recommend approval of article CC (earth removal permits moved to Planning Board)",
+    "outcome": "passed 4-1",
+    "procedural": false
+   },
+   {
+    "t": 4768,
+    "motion": "Defer recommendation on article BB (Planning Board earth removal changes) to Town Meeting",
+    "outcome": "passed (roll call, ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 4975,
+    "motion": "Defer the liquor license citizen petition article to Town Meeting",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 6950,
+    "motion": "Defer recommendation on the streetlight purchase article to Town Meeting",
+    "outcome": "passed (roll call, ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 7034,
+    "motion": "Sign the annual Town Meeting and annual election warrant",
+    "outcome": "passed (roll call, ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 8084,
+    "motion": "Approve minutes of March 10, 2020",
+    "outcome": "passed (ayes heard)",
+    "procedural": true
+   },
+   {
+    "t": 11317,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 862,
+    "topic": "Final bond for pavement management and middle/high school project",
+    "what_was_said": "The finance director presented the final borrowing, premiums received and the project's closeout figures.",
+    "figures_as_heard": [
+     "1 million six hundred ninety five thousand dollars",
+     "1 million twenty thousand dollars",
+     "six hundred and seventy five thousand dollars",
+     "one point nine nine percent"
+    ]
+   },
+   {
+    "t": 1779,
+    "topic": "FY2021 budget updates",
+    "what_was_said": "Updated debt schedule, ladder truck and cable access enterprise figures were reflected in the budget; a surplus remains in the budget.",
+    "figures_as_heard": [
+     "1 million fifty five thousand nine hundred and forty nine dollars and twenty cents",
+     "191,000",
+     "a hundred and forty three thousand"
+    ]
+   },
+   {
+    "t": 2364,
+    "topic": "Stabilization fund article",
+    "what_was_said": "The article would move money into stabilization after deferring the OPEB deposit.",
+    "figures_as_heard": [
+     "210,000",
+     "two hundred and ten thousand dollars"
+    ]
+   },
+   {
+    "t": 2065,
+    "topic": "Capital plan funded by free cash",
+    "what_was_said": "The capital plan was cut in half to eleven projects, funded fully by free cash.",
+    "figures_as_heard": [
+     "11 projects"
+    ]
+   },
+   {
+    "t": 5062,
+    "topic": "Unappropriated free cash and streetlights",
+    "what_was_said": "The town manager explained the free cash left after the capital plan and that streetlight purchase would draw on it.",
+    "figures_as_heard": [
+     "six hundred and sixty four thousand eight hundred",
+     "two hundred and thirty two thousand eight hundred ninety four",
+     "232 894"
+    ]
+   },
+   {
+    "t": 5585,
+    "topic": "Streetlight purchase and LED conversion costs and savings",
+    "what_was_said": "Purchase cost from Unitil, conversion estimate, and maintenance savings were debated, with differing savings figures cited.",
+    "figures_as_heard": [
+     "ninety thousand seven hundred ninety three",
+     "one hundred fifty seven thousand",
+     "fifty eight thousand dollars a year",
+     "twenty four thousand",
+     "26500",
+     "24 3 15",
+     "thirty thousand dollars"
+    ]
+   },
+   {
+    "t": 10468,
+    "topic": "Federal and state COVID relief funds",
+    "what_was_said": "The town received relief funds and the schools were notified of an emergency relief grant.",
+    "figures_as_heard": [
+     "seven thousand thirty-five dollars",
+     "198,000"
+    ]
+   },
+   {
+    "t": 10782,
+    "topic": "Assessor services and OPEB cost",
+    "what_was_said": "A member argued OPEB costs should be counted when comparing an in-house assessor to outsourced services.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 4809,
+    "decision": "Article BB will be listed as deferred, with the recommendation to be made at Town Meeting after the presentation."
+   },
+   {
+    "t": 7433,
+    "decision": "The town manager will email the school superintendent and school committee asking to be copied on all collective bargaining meetings and will update the board."
+   },
+   {
+    "t": 9091,
+    "decision": "The pledge of allegiance will be put on next week's agenda."
+   },
+   {
+    "t": 9873,
+    "decision": "Next week's agenda will include planning for conducting Town Meeting safely during the pandemic."
+   },
+   {
+    "t": 4163,
+    "decision": "The town manager will email the Community Preservation contact about the removal vote."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 376,
+    "topic": "Roll call and board public comments, including anonymous letter",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 376,
+    "t_end": 527,
+    "topic": "Public comment on streetlight funding",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "free-cash"
+    ]
+   },
+   {
+    "t_start": 548,
+    "t_end": 840,
+    "topic": "Planning Board resignation and vacancies",
+    "resolution": "informational",
+    "tags": [
+     "personnel",
+     "elections"
+    ]
+   },
+   {
+    "t_start": 840,
+    "t_end": 1747,
+    "topic": "Bond sale vote for pavement management and middle/high school",
+    "resolution": "voted",
+    "tags": [
+     "debt",
+     "msba"
+    ]
+   },
+   {
+    "t_start": 1747,
+    "t_end": 1976,
+    "topic": "FY2021 budget updates",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "budget-fy27"
+    ]
+   },
+   {
+    "t_start": 1976,
+    "t_end": 4185,
+    "topic": "Warrant article recommendations: budget, capital plan, stabilization, old primary, kennel, CPA",
+    "resolution": "voted",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 4185,
+    "t_end": 4849,
+    "topic": "Earth removal articles",
+    "resolution": "voted and deferred",
+    "tags": [
+     "warrant-article",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 4849,
+    "t_end": 4996,
+    "topic": "Liquor license citizen petition",
+    "resolution": "deferred",
+    "tags": [
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 4996,
+    "t_end": 6993,
+    "topic": "Streetlight purchase article",
+    "resolution": "deferred",
+    "tags": [
+     "warrant-article",
+     "free-cash",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 7013,
+    "t_end": 8084,
+    "topic": "Town manager role in school bargaining",
+    "resolution": "no vote",
+    "tags": [
+     "contracts-and-unions",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 8084,
+    "t_end": 8124,
+    "topic": "Minutes of March 10",
+    "resolution": "approved",
+    "tags": []
+   },
+   {
+    "t_start": 8124,
+    "t_end": 9111,
+    "topic": "Action items: agenda timing, hunting near conservation land, pledge",
+    "resolution": "informational",
+    "tags": [
+     "public-safety",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 9111,
+    "t_end": 10950,
+    "topic": "Town manager COVID and regular report, Town Meeting planning, assessor services",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report",
+     "town-meeting",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 10951,
+    "t_end": 11317,
+    "topic": "Public comment, announcements and adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Several roll-call votes give only some ayes in the captions.",
+   "The final adjournment vote result.",
+   "Exact vote counts on several deferrals."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 2996,
+    "about": "Members disagreed over keeping the old primary school article on the warrant.",
+    "sides": "A member against removal criticised the board; the chair and another member argued the article accomplished nothing.",
+    "words_as_heard": "shame on us for making an article with no purpose and shame on us for having abilities to work on this site",
+    "kind": "members disagree"
+   },
+   {
+    "t": 7098,
+    "about": "A member pushed to change labor counsel and have the town manager join school bargaining; others disagreed.",
+    "sides": "One member against two or three others",
+    "words_as_heard": "we should change Labor Council",
+    "kind": "members disagree"
+   },
+   {
+    "t": 10782,
+    "about": "Disagreement over counting OPEB costs when comparing an in-house assessor to outsourced services.",
+    "sides": "A member against the town manager and chair",
+    "words_as_heard": "I think it's a laughing matter I don't think it's funny personally",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 2597,
+    "kind": "safety",
+    "about": "The old primary school building is a hazard.",
+    "who": "a member",
+    "words_as_heard": "this building is a hazard and we're trying to figure out how to apply money to its safety"
+   },
+   {
+    "t": 8858,
+    "kind": "safety",
+    "about": "Hunters carrying guns in the Lane conservation parking lot.",
+    "who": "a member",
+    "words_as_heard": "it's disturbing to have hunters in the lanes parking lot"
+   },
+   {
+    "t": 6697,
+    "kind": "condition",
+    "about": "A member would support the streetlight article only if the funding avoided the capital plan.",
+    "who": "a member",
+    "words_as_heard": "if we replace something on the capital plan there are several things that could easily be replaced in my opinion I would be in favor of it"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1779,
+    "name_as_heard": "the budget presentation in the Google Drive",
+    "kind": "presentation",
+    "words_as_heard": "reflected in the budget presentation that's in the Google Drive",
+    "shown": true
+   },
+   {
+    "t": 1295,
+    "name_as_heard": "the bond vote document",
+    "kind": "contract or agreement",
+    "words_as_heard": "it's so voted as described in the document before the board",
+    "shown": true
+   },
+   {
+    "t": 5016,
+    "name_as_heard": "the Green Communities presentation",
+    "kind": "presentation",
+    "words_as_heard": "the presentation that was given to us",
+    "shown": true
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "street-light-led-conversion",
+    "title": "Street light LED conversion",
+    "question": "What would buying the streetlights from Unitil and converting to LED cost and save?",
+    "t": 5127,
+    "words_as_heard": "the town could still purchase a street lights and the conversion then would would depend on the grant funds",
+    "data_in_play": [
+     "ninety thousand seven hundred ninety three",
+     "one hundred fifty seven thousand",
+     "24 3 15"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted 4-0 on roll call to adopt the bond vote for the final borrowing for pavement management and the middle/high school project.",
+    "t": 1295
+   },
+   {
+    "line": "The board recommended the capital plan as presented (3-1, one abstention) and recommended the FY2021 budget as presented, with one member opposed.",
+    "t": 2234
+   },
+   {
+    "line": "The board removed the old primary school article from the warrant 3-2, and later removed the Community Preservation Act article.",
+    "t": 3526
+   },
+   {
+    "line": "The board deferred the streetlight purchase, the sewer enterprise fund, earth removal changes and liquor license petition articles to Town Meeting.",
+    "t": 6950
+   },
+   {
+    "line": "The board signed the annual Town Meeting and election warrant, and asked that Town Meeting pandemic planning go on next week's agenda.",
+    "t": 7034
+   }
+  ],
+  "why_it_matters": [
+   "The capital plan is funded fully by free cash, so the recommended projects and the streetlight purchase compete for the same unappropriated money rather than new taxes, and residents will vote on them at Town Meeting.",
+   "Articles that were deferred have no board recommendation yet, and the removed old primary school and Community Preservation articles will not be on the Town Meeting warrant."
+  ],
+  "watch_next": [
+   "Next week's Select Board agenda: planning for holding Town Meeting safely during the pandemic, and the pledge of allegiance.",
+   "Board recommendations at Town Meeting on the deferred articles, including streetlights and earth removal article BB after its presentation."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-04T02:30:30Z",
+   "cost_usd": 0.031853099999999995
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05122020-5199",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-05-12-minutes-5199.txt",
+   "path": "sources/meetings/select-board/2020-05-12-minutes-5199.pdf"
+  },
+  "official_sha256": "9bd756383965f551acabc609bf3cb0a17d116c0f1725eb0013def56e435d61c2",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on most article votes and key figures (bond amounts, 1.99%, $1,055,949.20, $210,000, $198,000), though article labels differ. Our capital plan 3-1 and budget votes (with Mrs. Luck opposed) have no counterpart in the official minutes, and the bond tally is 4-0 versus 5-0.",
+  "counts": {
+   "agree": 19,
+   "caption_error": 7,
+   "discrepancy": 8,
+   "only_in_ours": 2,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Bond sale vote ($1.695M)",
+    "ours": "Read and adopt the bond vote for the $1.695M general obligation bonds (pavement management and middle/high school) sold to the winning bidder — passed 4-0 on roll call (the captions give four ayes)",
+    "official": "ms. luck seconded the motion vote: ms. adams-aye, mr. mcquaid-aye, mr. jeffreys-aye, ms. luck- aye, mr. alonzo- aye",
+    "note": "Same vote passed; ours counts four ayes from captions but official records 5-0, so the tally differs slightly.",
+    "t": 1295
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Bond vote tally 4-0 vs 5-0",
+    "ours": "passed 4-0 on roll call (the captions give four ayes)",
+    "official": "ms. luck seconded the motion vote: ms. adams-aye, mr. mcquaid-aye, mr. jeffreys-aye, ms. luck- aye, mr. alonzo- aye",
+    "note": "Count differs (4-0 vs 5-0); likely a caption miss of one aye, but check the recording for the fifth vote.",
+    "t": 1295
+   },
+   {
+    "kind": "agree",
+    "about": "Bond amounts and split",
+    "ours": "1 million six hundred ninety five thousand dollars, 1 million twenty thousand dollars, six hundred and seventy five thousand dollars",
+    "official": "of that, $1,020,000 is for pavement management and $675,000 is for the final borrowing for the middle/high school project.",
+    "note": "Same figures.",
+    "t": 862
+   },
+   {
+    "kind": "agree",
+    "about": "True interest cost",
+    "ours": "one point nine nine percent",
+    "official": "the true interest cost for this 15 year bond issue is 1.99%.",
+    "note": "Same figure.",
+    "t": 862
+   },
+   {
+    "kind": "agree",
+    "about": "FY2021 surplus figure",
+    "ours": "1 million fifty five thousand nine hundred and forty nine dollars and twenty cents",
+    "official": "surplus now is at $1,055,949.20.",
+    "note": "Same figure.",
+    "t": 1779
+   },
+   {
+    "kind": "agree",
+    "about": "Defer recommendation on prior-year/Article D",
+    "ours": "Defer recommendation on prior year budget adjustments article to Town Meeting — passed (roll call, ayes heard)",
+    "official": "to defer making a recommendation on article d until town meeting vote: ms. adams- aye, mr. jeffreys-aye, mr. mcquaid-aye, ms. luck- aye, mr. alonzo -aye",
+    "note": "Both record it passing; article letter D presumably matches.",
+    "t": 2000
+   },
+   {
+    "kind": "agree",
+    "about": "Defer capital plan article failed",
+    "ours": "Defer recommendation on the capital plan article to Town Meeting — failed",
+    "official": "to defer making a recommendation on article d until town meeting vote: ms. adams- aye, mr. jeffreys-aye, mr. mcquaid-aye, ms. luck- aye, mr. alonzo -aye",
+    "note": "Both say failed in summary, but the official quote shows all five aye and is labeled article d (likely a typo for F); check the official outcome.",
+    "t": 2189
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Capital plan article recommendation",
+    "ours": "Recommend approval of the capital plan article as presented — passed 3-1 with one abstention",
+    "official": "",
+    "note": "The official minutes record no recommendation vote on the capital plan; the only Article J vote is on stabilization, passed 5-0. Check the recording and the warrant article letters.",
+    "t": 2234
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Budget recommendation with Mrs. Luck opposed",
+    "ours": "Recommend approval of the budget as presented — passed (the member who opposed was Mrs. Luck, who said she would not support; roll call count not clearly audible)",
+    "official": "",
+    "note": "The official minutes have no budget recommendation vote and show Ms. Luck voting aye on every recorded vote; check the recording.",
+    "t": 2318
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Stabilization article vote",
+    "ours": "Recommend approval of the stabilization fund article — passed unanimously",
+    "official": "to recommend approval of article j as presented vote: ms. adams-aye, mr. jeffreys-aye, mr. mcquaid-aye, ms. luck-aye, mr. alonzo -aye",
+    "note": "Substantively the same (5-0 for Article J); marked agree-like but listed for the article identification. Low concern.",
+    "t": 2386
+   },
+   {
+    "kind": "agree",
+    "about": "Stabilization transfer $210,000",
+    "ours": "210,000, two hundred and ten thousand dollars",
+    "official": "article j transfers $210,000 to stabilization",
+    "note": "Same amount.",
+    "t": 2364
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Defer sewer enterprise fund article",
+    "ours": "Defer the sewer enterprise fund article to Town Meeting — passed",
+    "official": "to defer making a recommendation on article l until town meeting vote: ms. adams- aye, mr. jeffreys-aye, mr. mcquaid-aye, ms. luck -aye, mr. alonzo -aye",
+    "note": "Probably the same vote (Article L), but the official minutes do not name the sewer fund; confirm the article.",
+    "t": 2449
+   },
+   {
+    "kind": "agree",
+    "about": "Remove old primary school article 3-2",
+    "ours": "Remove the old primary school article from the warrant — passed 3-2",
+    "official": "vote: ms. adams- nay, mr. mcquaid-aye, ms. luck- nay, mr. jeffreys-aye, mr. alonzo-aye",
+    "note": "Same 3-2 outcome; official labels it Article U.",
+    "t": 3526
+   },
+   {
+    "kind": "agree",
+    "about": "Article X kennel bylaw",
+    "ours": "Recommend approval of article X (kennel bylaw) — passed (roll call, ayes heard)",
+    "official": "to recommend approval of article x vote: ms. adams-aye, mr. jeffreys-aye, ms. luck-aye, mr. mcquaid-aye, mr. alonzo - aye",
+    "note": "Both passed.",
+    "t": 3594
+   },
+   {
+    "kind": "agree",
+    "about": "Article Y animal control fines",
+    "ours": "Recommend approval of article Y (animal control fines) — passed unanimously",
+    "official": "to recommend approval of article y vote: ms. adams-aye, mr. mcquaid- aye, mr. jeffreys- aye, ms. luck-aye, mr. alonzo-aye",
+    "note": "Both unanimous.",
+    "t": 3655
+   },
+   {
+    "kind": "agree",
+    "about": "Remove Community Preservation Act article",
+    "ours": "Remove the Community Preservation Act article from the warrant — passed (roll call, ayes heard)",
+    "official": "vote: ms. adams- aye, mr. mcquaid-aye, mr. jeffreys-aye, ms. luck-aye, mr. alonzo - aye",
+    "note": "Official labels it Article Z, 5-0.",
+    "t": 4140
+   },
+   {
+    "kind": "agree",
+    "about": "Article CC 4-1",
+    "ours": "Recommend approval of article CC (earth removal permits moved to Planning Board) — passed 4-1",
+    "official": "to recommend approval of article cc vote: ms. adams-aye, mr. mcquaid-aye, mr. jeffreys-nay, ms. luck - aye, mr. alonzo -aye",
+    "note": "Same 4-1 outcome.",
+    "t": 4446
+   },
+   {
+    "kind": "agree",
+    "about": "Defer Article BB",
+    "ours": "Defer recommendation on article BB (Planning Board earth removal changes) to Town Meeting — passed (roll call, ayes heard)",
+    "official": "to defer making a recommendation until town meeting vote: ms. adams- aye, mr. mequaid-aye, mr. jeffreys- aye, ms. luck-aye, mr. alonzo - aye",
+    "note": "Both passed.",
+    "t": 4768
+   },
+   {
+    "kind": "agree",
+    "about": "Defer liquor license petition article (AA)",
+    "ours": "Defer the liquor license citizen petition article to Town Meeting — passed 5-0",
+    "official": "to defer recommendation on article aa until town meeting vote: ms. adams- aye, mr. mcquaid-aye, mr. jeffreys- aye, ms. luck-aye, mr. alonzo - aye",
+    "note": "Official article AA is described elsewhere as the street light article; the topic labeling differs, so verify.",
+    "t": 4975
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Streetlight article deferral",
+    "ours": "Defer recommendation on the streetlight purchase article to Town Meeting — passed (roll call, ayes heard)",
+    "official": "to defer recommendation on article aa until town meeting vote: ms. adams- aye, mr. mcquaid-aye, mr. jeffreys- aye, ms. luck-aye, mr. alonzo - aye",
+    "note": "Official calls AA the street light article, ours calls AA-type vote the liquor license; one of the two deferrals may be mislabeled or the official lacks one vote. Check the recording.",
+    "t": 6950
+   },
+   {
+    "kind": "agree",
+    "about": "Sign warrants",
+    "ours": "Sign the annual Town Meeting and annual election warrant — passed (roll call, ayes heard)",
+    "official": "to sign the annual town meeting and annual election warrants vote: ms. adams-aye, mr. mcquaid- aye, mr. jeffreys-aye, ms. luck-aye, mr. alonzo - aye",
+    "note": "Both passed.",
+    "t": 7034
+   },
+   {
+    "kind": "caption_error",
+    "about": "Streetlight savings figure",
+    "ours": "24 3 15",
+    "official": "$24,315",
+    "note": "Captions split the number.",
+    "official_reading": "$24,315",
+    "t": 5585
+   },
+   {
+    "kind": "agree",
+    "about": "Streetlight maintenance savings",
+    "ours": "26500",
+    "official": "an annual savings of $26,500 for maintenance",
+    "note": "Same figure.",
+    "t": 5585
+   },
+   {
+    "kind": "caption_error",
+    "about": "COVID relief receipt",
+    "ours": "seven thousand thirty-five dollars",
+    "official": "we received $7,035.89 from the department ofhealth and human services emergency relieffund.",
+    "note": "Cents dropped in captions.",
+    "official_reading": "$7,035.89",
+    "t": 10468
+   },
+   {
+    "kind": "agree",
+    "about": "ESSER grant",
+    "ours": "198,000",
+    "official": "emergency relief funds for schooldistricts(esser fund under caresact) willbeprovided in the formofa grant totaling$198,000.",
+    "note": "Same figure.",
+    "t": 10468
+   },
+   {
+    "kind": "agree",
+    "about": "Pledge on next agenda",
+    "ours": "The pledge of allegiance will be put on next week's agenda.",
+    "official": "mr. alonzo offered to place it on the next agenda.",
+    "note": "Same.",
+    "t": 9091
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Superintendent contact",
+    "ours": "The town manager will email the school superintendent and school committee asking to be copied on all collective bargaining meetings and will update the board.",
+    "official": "mr. alonzo requested ms. lemieux contact the superintendent office and request to be informed of any upcoming negotiation meeting dates.",
+    "note": "Similar, but ours adds school committee and being copied; official asks only to be informed of dates. Check recording.",
+    "t": 7433
+   },
+   {
+    "kind": "agree",
+    "about": "Town Meeting planning on agenda",
+    "ours": "Next week's agenda will include planning for conducting Town Meeting safely during the pandemic.",
+    "official": "discussion about being prepared for town meeting ensued and will be an upcoming agenda item.",
+    "note": "Same.",
+    "t": 9873
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Email to CPA contact about removal",
+    "ours": "The town manager will email the Community Preservation contact about the removal vote.",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 4163
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Assessor interviews and RRG quote",
+    "ours": "",
+    "official": "the hr director, the chairman of the board of assessors and i will proceed with interviewing the applicants in the next couple of weeks",
+    "note": "Decision not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "MS/HS project accounting",
+    "ours": "",
+    "official": "the total authorization for the school was $72,975,321; actual expenditures were $68,106,474.",
+    "note": "Our figures omit these totals.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Unappropriated free cash figures",
+    "ours": "six hundred and sixty four thousand eight hundred, two hundred and thirty two thousand eight hundred ninety four, 232 894",
+    "official": "",
+    "note": "Official has no such figures.",
+    "t": 5062
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name McQuade",
+    "ours": "Mr. McQuade (member)",
+    "official": "Mr. McQuaid",
+    "note": "Spelling.",
+    "official_reading": "Mr. McQuaid",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Tom Alonso (chair)",
+    "official": "chairman alonzo called the meeting to order at 7:00 p.m. and announced in accordance with the requirements of",
+    "note": "Spelling.",
+    "official_reading": "Alonzo",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Jeffries",
+    "ours": "Mr. Jeffries (member)",
+    "official": "vote: ms. adams-aye, mr. mcquaid-aye, mr. jeffreys-aye, ms. luck- aye, mr. alonzo- aye",
+    "note": "Spelling.",
+    "official_reading": "Jeffreys",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town manager name",
+    "ours": "Heather (town manager)",
+    "official": "also present: heather lemieux, town manager; karen brochu, finance director: jim marino, police chief",
+    "note": "Full name Heather Lemieux.",
+    "official_reading": "Heather Lemieux",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Finance director name",
+    "ours": "Karen Lambie (finance director)",
+    "official": "also present: heather lemieux, town manager; karen brochu, finance director: jim marino, police chief",
+    "note": "Surname differs (Lambie vs Brochu), likely misheard.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Police chief name",
+    "ours": "Chief Moreno (police chief)",
+    "official": "also present: heather lemieux, town manager; karen brochu, finance director: jim marino, police chief",
+    "note": "Misheard.",
+    "official_reading": "Jim Marino",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T02:32:36Z",
+   "cost_usd": 0.0910091
+  }
+ }
+}

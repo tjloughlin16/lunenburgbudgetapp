@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-01-07",
  "docid": "5228",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the change of manager to Deigo Comesana at Hannaford's Supermarket and Pharmacy #8388",
+   "motion": "Approve the change of manager to Diego Comesana at Hannaford's Supermarket and Pharmacy #8388 (Alcohol License 0016-PK-0636).",
    "moved_by": "K. Adams",
    "seconded_by": "D.McQuaid",
    "outcome": "passed",
@@ -20,15 +20,15 @@
    "quote": "motion: k. adams to approve the change of manager to deigo comesana at hannaford's supermarket and pharmacy #8388 2nd: d.mcquaid vote: all in favor"
   },
   {
-   "motion": "Open the Annual Town Meeting warrant on January 14, 2020 and close the warrant at 4:00 p.m. on Monday, March 16, 2020",
+   "motion": "Open the Annual Town Meeting warrant on January 14, 2020 and close it at 4:00 p.m. on Monday, March 16, 2020.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: d. mcquaid 2nd. m. jeffreys to open the annual town meeting warrant on january 14, 2020 and close the warrant at 4:00 p.m. on monday, march 16, 2020 vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:34 p.m.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Adams",
    "outcome": "passed",
@@ -37,6 +37,262 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes. All three votes recorded with outcomes stated as \"All in Favor\".",
- "cost_usd": 0.09447749999999999
+ "note": "Text is an OCR (macOS Vision) extraction with garbled words (e.g., 'Deigo', 'Distribitors', 'resdients', 'willnot'), so quotes reproduce the printed text. The minutes give no full roll call; only the Chairman's absence is stated, and attendance for other members is inferred from their speaking or moving. Votes are recorded only as 'All in Favor' with no count. The Elaine M. Peterson signature block is OCR-garbled as 'Elaire'.",
+ "cost_usd": 0.007662019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "absent",
+   "quote": "member not present: tom alonzo, chairman"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Ms. Luck",
+   "role": "",
+   "status": "present",
+   "quote": "ms. luck announced in accordance with the requirements of the open meeting law"
+  },
+  {
+   "name": "Mr. Jeffreys",
+   "role": "",
+   "status": "present",
+   "quote": "mr. jeffreys stated he would miss ms. moore, the outgoing manager and will miss her."
+  },
+  {
+   "name": "K. Adams",
+   "role": "",
+   "status": "present",
+   "quote": "motion: k. adams to approve the change of manager to deigo comesana at hannaford's supermarket and pharmacy #8388"
+  },
+  {
+   "name": "D. McQuaid",
+   "role": "",
+   "status": "present",
+   "quote": "motion: d. mcquaid to adjourn the meeting at 7:34 p.m. 2nd: k. adams vote: all in favor"
+  },
+  {
+   "name": "Diego Comesana",
+   "role": "",
+   "status": "present",
+   "quote": "mr. comesana was present for the hearing."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "56 Whiting St.",
+   "status": "present",
+   "quote": "dave passios, 56 whiting st., expressed frustration regarding the process to certify the town charter"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "respectfully submitted, elaire m. peterson elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A corrected liquor license will be reprinted for Board of Selectmen signatures later, correcting the spelling of the new manager's last name.",
+   "quote": "a corrected license will be reprinted for bos signatures later."
+  },
+  {
+   "decision": "Mr. Comesana will follow up on how identifications are checked for alcohol purchases at the self-checkout.",
+   "quote": "mr. comesana will follow-up on the checking of identifications for purchases."
+  },
+  {
+   "decision": "The Town Manager planned to submit the remainder of the planning piece (ADA Self Evaluation and Transition Plan) under the next round of DLTA funding through MRPC.",
+   "quote": "she planned on submitting the remainder of the planning piece under that"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Senior Tax Workoff Program",
+   "what_was_recorded": "Ms. Luck reminded income-eligible seniors they can reduce their property tax bill under the Senior Tax Workoff Program by up to a stated annual amount.",
+   "figures_as_printed": [
+    "$1500.00"
+   ],
+   "quote": "to reduce your property tax bill by up to $1500.00 annually."
+  },
+  {
+   "topic": "Chapter 90 supplemental apportionment",
+   "what_was_recorded": "The town will receive an additional Chapter 90 road funding amount from a supplemental FY20 state budget, bringing the FY20 apportionment to a stated total.",
+   "figures_as_printed": [
+    "$41,465",
+    "$456,114"
+   ],
+   "quote": "this brings our fy20 apportionment to $456,114."
+  },
+  {
+   "topic": "Brownfields Phase II site assessment funding",
+   "what_was_recorded": "The town submitted a Brownfields Nomination Form to MRPC to apply for funding for Phase II site assessment costs; the Brownfields Group would decide on funding. No dollar amount was printed.",
+   "figures_as_printed": [],
+   "quote": "apply for funding for phase ii site assessmentcosts."
+  },
+  {
+   "topic": "MA Office on Disability planning and project grants",
+   "what_was_recorded": "The town did not receive the Planning or Project grant requests to finalize its ADA Self Evaluation and Transition Plan or North Cemetery accessibility improvements; no dollar amount was printed.",
+   "figures_as_printed": [],
+   "quote": "we did not receive the planning or project grant requests submitted to"
+  },
+  {
+   "topic": "Hazardous assessment of old Primary School building",
+   "what_was_recorded": "Board discussed the logistics of funding a hazardous assessment on the old Primary School building; a cost estimate was suggested. No dollar amount was printed.",
+   "figures_as_printed": [],
+   "quote": "discussion ensued on the logistics of funding the assessment."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "",
+   "topic": "Lions Club breakfast and Senior Tax Workoff reminder",
+   "quote": "ms. luck reminded all of the lions club pancake breakfast tomorrow morning at eagle house senior"
+  },
+  {
+   "speaker": "Ms. Lemieux",
+   "stated_role": "Town Manager",
+   "topic": "2020 census, voter registration, and dog license announcements",
+   "quote": "ms. lemieux announced the town clerk office has informed that the 2020 census forms have been"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting St.",
+   "topic": "Town Charter certification and Parks Commission vacancies",
+   "quote": "dave passios, 56 whiting st., expressed frustration regarding the process to certify the town charter"
+  },
+  {
+   "speaker": "Mr. Jeffreys",
+   "stated_role": "",
+   "topic": "Dangerous dogs hearing status",
+   "quote": "mr. jeffreys asked about the status of the dangerous dogs hearing."
+  },
+  {
+   "speaker": "Mr. Jeffreys",
+   "stated_role": "",
+   "topic": "Traffic backup from Route 70 onto Leominster-Shirley Road",
+   "quote": "mr. jeffreys noted the traffic was backed up coming off route 70 onto leominster-shirley road."
+  },
+  {
+   "speaker": "Ms. Adams",
+   "stated_role": "",
+   "topic": "State news on Mass Ave and Electric Ave intersection; tree and power outages",
+   "quote": "ms. adams asked about any news from the state about the intersection of mass ave and electric ave."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and opening announcements",
+   "resolution": "no action",
+   "quote": "the meeting commenced at 7:00 p.m. with the pledge of allegiance.",
+   "tags": [
+    "announcements",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Appointments: change of manager, Hannaford's liquor license",
+   "resolution": "approved",
+   "quote": "change of manager to diego comesana for alcohol license 0016-pk-0636, victory distribitors,",
+   "tags": [
+    "liquor license",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no action",
+   "quote": "the following is a list of vacancies on the following committees:",
+   "tags": [
+    "town manager",
+    "vacancies",
+    "grants",
+    "brownfields",
+    "chapter 90"
+   ]
+  },
+  {
+   "topic": "Current business: open Annual Town Meeting warrant",
+   "resolution": "approved",
+   "quote": "vote to open the annual town meeting warrant on january 14thh and close the warrant on",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and board member updates",
+   "resolution": "no action",
+   "quote": "the board meets again on january 14 and 21 this month.",
+   "tags": [
+    "meetings",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public comment (board members)",
+   "resolution": "no action",
+   "quote": "mr. jeffreys asked about the status of the dangerous dogs hearing.",
+   "tags": [
+    "public comment",
+    "traffic",
+    "power outages"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:34 p.m.",
+   "quote": "to adjourn the meeting at 7:34 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Brownfields Nomination Form (submitted to Montachusett Regional Planning Commission)",
+   "where": "text",
+   "quote": "we submitted a brownfields nomination form to montachusett regional planning commission to"
+  },
+  {
+   "name": "Planning and Project Grant requests to MA Office on Disability",
+   "where": "text",
+   "quote": "we did not receive the planning or project grant requests submitted to"
+  },
+  {
+   "name": "Talent bank forms",
+   "where": "text",
+   "quote": "talent bank forms can be obtained on the town website and forwarded to the board of selectmen's office."
+  },
+  {
+   "name": "Corrected liquor license for Alcohol License 0016-PK-0636",
+   "where": "text",
+   "quote": "a corrected license will be reprinted for bos signatures later."
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "liquor license",
+  "change of manager",
+  "annual town meeting warrant",
+  "Chapter 90",
+  "brownfields",
+  "ADA grants",
+  "town charter",
+  "parks commission vacancies",
+  "town manager report",
+  "public announcements"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

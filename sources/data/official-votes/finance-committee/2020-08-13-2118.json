@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2020-08-13",
  "docid": "2118",
@@ -12,31 +12,329 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of 4/28, 5/7, 5/14, and 5/28 with amendment removing Michelle Walton as an attendee from 5/28",
+   "motion": "Approve the minutes of 4/28, 5/7, 5/14 and 5/28, with the amendment removing Michelle Walton as an attendee on 5/28.",
    "moved_by": "John",
    "seconded_by": "Jay",
-   "outcome": "passed 5-0-2",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "john amended motion to approve 4/28, 5/7, 5/14 and 5/28 with amendment jay seconds • vote to approve block john - aye, heather - abstain, jay - aye, chris - abstain, dave - aye, peter - aye, terr - aye"
+   "quote": "john amended motion to approve 4/28, 5/7, 5/14 and 5/28 with amendment jay seconds"
   },
   {
-   "motion": "Appoint Dave Passios to a three-year term on the Finance Committee",
+   "motion": "Appoint Dave Passisos (as printed) to a three-year term on the Finance Committee.",
    "moved_by": "Peter Beardmore",
    "seconded_by": "Jay Simeone",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion to appoint dave passisos to a three year term made by peter beardmore, seconded by jay simeone. all in tavor roll call vote."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "John",
    "seconded_by": "Chris",
    "outcome": "passed",
    "procedural": true,
-   "quote": "john makes motion to adjourn, chrisseconds. all in favor roll call vote."
+   "quote": "john makes motion to adjourn, chrisseconds. all in favor roll call vote. 8:34"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1416935
+ "note": "OCR text with gaps: item 7 has no printed heading; text appears to skip between pages 4 and 5 (TCP discussion ends mid-sentence) and page 6 begins mid-sentence in the Capital Planning discussion. Roll-call tallies are printed only for the minutes vote (aye/abstain by name); the appointment and adjournment votes record 'All in favor' with no count. Some OCR errors (e.g., 'Burch field', 'Passisos', 'tavor', 'Chrisseconds'). Quotes reproduce the printed text as OCR'd.",
+ "cost_usd": 0.00838432,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm and read the covid-19 / zoom meeting advisory statement."
+  },
+  {
+   "name": "Peter Beardmore",
+   "status": "present",
+   "quote": "terri burch field, peter beardmore, dave passios, john henshaw, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "terri burch field, peter beardmore, dave passios, john henshaw, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "John Henshaw",
+   "status": "present",
+   "quote": "terri burch field, peter beardmore, dave passios, john henshaw, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "terri burch field, peter beardmore, dave passios, john henshaw, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Chris Menard",
+   "status": "present",
+   "quote": "terri burch field, peter beardmore, dave passios, john henshaw, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "status": "present",
+   "quote": "terri burch field, peter beardmore, dave passios, john henshaw, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "heather lemieux to provide the same report provided at the last selectman's meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chris to work with Steve M. to set up a Google Drive for the Finance Committee that records who accessed it and when.",
+   "quote": "chris is going to work with steve m. to get a google drive for fincom with a record of who accessed it and when."
+  },
+  {
+   "decision": "Terri asked to be made aware of any inconsistencies between practices and the Bylaws.",
+   "quote": "please make terri aware of any inconsistencies in practices and bylaws."
+  },
+  {
+   "decision": "Peter to redistribute the 6/11 minutes; the 6/11 minutes were not yet approved.",
+   "quote": "peter to redistribute 6/11"
+  },
+  {
+   "decision": "The 7/23 minutes tabled to the next meeting.",
+   "quote": "7/23 table to next meeting"
+  },
+  {
+   "decision": "John to contact Heather Sroka about meeting minutes.",
+   "quote": "john wants to contact heather sroka about meeting minutes"
+  },
+  {
+   "decision": "Next meeting set for August 27.",
+   "quote": "next meeting august 27"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Squad 3 mid-life overhaul (Town Manager report)",
+   "what_was_recorded": "The pump on Squad 3 may need repair or replacement sooner, at a cost within the total project.",
+   "figures_as_printed": [
+    "$15,000",
+    "$65,000"
+   ],
+   "quote": "at a cost of $15,000 of the $65,000 total project."
+  },
+  {
+   "topic": "Portable radios (Town Manager report)",
+   "what_was_recorded": "Some portable radios have been purchased for new officers, out of a total line.",
+   "figures_as_printed": [
+    "$2,000",
+    "$45,000"
+   ],
+   "quote": "portable radios some have been purchased for new officers - $2,000 of the $45,000"
+  },
+  {
+   "topic": "State infrastructure bond bill projects for Lunenburg",
+   "what_was_recorded": "Two of four Lunenburg projects were chosen in the bond bill: turnout gear for the LFD and fire alarm upgrades at the Primary School.",
+   "figures_as_printed": [
+    "$150,000",
+    "$100,000"
+   ],
+   "quote": "projects chosen - $150,000 turn out gear for the lfd and $100,000 fire alarm upgrades at the primary school"
+  },
+  {
+   "topic": "Regional Coronavirus Community Block Grant",
+   "what_was_recorded": "A regional block grant application, approved, will provide funds for microloans for small businesses and to support local food banks.",
+   "figures_as_printed": [
+    "$296,100"
+   ],
+   "quote": "$296,100 for microloans for small businesses and to support local food banks."
+  },
+  {
+   "topic": "Microloan eligibility",
+   "what_was_recorded": "Eligibility for the microloans was described as businesses with five or fewer employees and no more than a stated amount; documents had not been issued.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "businesses with 5 or less employees and no more than $10,000."
+  },
+  {
+   "topic": "Capital Planning projects total",
+   "what_was_recorded": "Capital Planning projects were said to be starting to add up to over a stated total.",
+   "figures_as_printed": [
+    "$6M"
+   ],
+   "quote": "starting to add up to over $6m in capital planning projects."
+  },
+  {
+   "topic": "DESE COVID-related grants to the school department",
+   "what_was_recorded": "The school department received two COVID-related grants from DESE, to fund stipends, PPE, custodial overtime, substitutes, and related costs.",
+   "figures_as_printed": [
+    "$377,550",
+    "$198,073"
+   ],
+   "quote": "$377,550 - cvrf school reopening grant"
+  },
+  {
+   "topic": "Teacher contract financial impact",
+   "what_was_recorded": "A one-year teacher contract with minor language change and some financial impact: no COLA, with a 0.5% increase after 90 days for top-step teachers (85 teachers); cost associated.",
+   "figures_as_printed": [
+    ".5%"
+   ],
+   "quote": "with some financial impact - no cola increase a .5% increase after 90 days"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Condolences on death of Douglas MacMillan",
+   "speaker": "Dave Passios",
+   "quote": "dave passios, 56 whiting street sends his condolences personally and for this committee to the family of douglas macmillan."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action; meeting opened by Chair",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm and read the covid-19 / zoom meeting advisory statement.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; condolences expressed",
+   "quote": "dave passios, 56 whiting street sends his condolences personally and for this committee to the family of douglas macmillan.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "report received; board questions answered",
+   "quote": "heather lemieux to provide the same report provided at the last selectman's meeting.",
+   "tags": [
+    "state aid",
+    "capital plan",
+    "grants",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Meeting minutes",
+   "resolution": "approved 4/28, 5/7, 5/14 and 5/28 as amended; 6/11 to be redistributed; 7/23 tabled",
+   "quote": "john amended motion to approve 4/28, 5/7, 5/14 and 5/28 with amendment jay seconds",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review of by-laws and committee appointment",
+   "resolution": "Dave Passisos appointed to a three-year term",
+   "quote": "terri - email from chris town bylaws list capital planning as a 3 year appointment.",
+   "tags": [
+    "bylaws",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "discussed; Google Drive for documents to be set up; TCP access discussed; no vote",
+   "quote": "heather has a meeting scheduled with council on aging on monday the 17th",
+   "tags": [
+    "committee reports",
+    "TCP",
+    "Boys and Girls Club"
+   ]
+  },
+  {
+   "topic": "School Committee report (heading not printed)",
+   "resolution": "no action; hybrid reopening, grants and transportation reported",
+   "quote": "peter - school committee - sc approved new school calendar around",
+   "tags": [
+    "schools",
+    "covid",
+    "grants",
+    "transportation"
+   ]
+  },
+  {
+   "topic": "Capital planning projects (heading not printed)",
+   "resolution": "no action; committee discussed timing and ranges",
+   "quote": "starting to add up to over $6m in capital planning projects.",
+   "tags": [
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Public comment and next meeting",
+   "resolution": "no public comment; next meeting set for August 27",
+   "quote": "8. public comment: none",
+   "tags": [
+    "public comment",
+    "next meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:34 PM by roll call",
+   "quote": "john makes motion to adjourn, chrisseconds. all in favor roll call vote. 8:34",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Email from Chris regarding Town Bylaws list of Capital Planning appointment term",
+   "where": "text",
+   "quote": "email from chris town bylaws list capital planning as a 3 year appointment."
+  },
+  {
+   "name": "Spreadsheet of committee appointments made by TM",
+   "where": "text",
+   "quote": "tm made a spreadsheet of appointments and terri screen shared"
+  },
+  {
+   "name": "Letter from the Department of Revenue with state aid numbers",
+   "where": "text",
+   "quote": "the town received a letter from the dep. of revenue with numbers."
+  },
+  {
+   "name": "Legislature Infrastructure Bond Bill",
+   "where": "text",
+   "quote": "legislature passed an infrastructure bond bill"
+  },
+  {
+   "name": "Regional Coronavirus Community Block Grant Application",
+   "where": "text",
+   "quote": "regional coronavirus community block grant application"
+  },
+  {
+   "name": "Cherry Sheet",
+   "where": "text",
+   "quote": "chapter 70 funding and the cherry sheet"
+  },
+  {
+   "name": "Article 24 of 2019 ATM",
+   "where": "text",
+   "quote": "article 24 of 2019 atm and their interpretation of charge"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "zoom meeting",
+  "town manager report",
+  "state aid",
+  "capital planning",
+  "school committee",
+  "covid grants",
+  "bylaws",
+  "appointments",
+  "minutes approval",
+  "TCP",
+  "google drive"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

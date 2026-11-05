@@ -1,0 +1,146 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "historical-commission",
+ "board": "Historical Commission",
+ "video_title": "Historical Commission",
+ "meeting_date": "2020-09-17",
+ "video_id": "v_1IGpd3rqw",
+ "video_url": "https://www.youtube.com/watch?v=v_1IGpd3rqw",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/historical-commission/2020-09-17-v_1IGpd3rqw.json",
+  "sha256": "d48192b4260bc2d783b8d542f49fe463d08a4e27ebd3bf760c1d546fbba4000e",
+  "caption_lines": 20,
+  "segments": 130
+ },
+ "recording": {
+  "duration_s": 464,
+  "duration": "0:07",
+  "spoken_chars": 3468,
+  "words_approx": 578
+ },
+ "town_published": [],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-03T17:22:34Z",
+  "cost_usd": 0.081325
+ },
+ "minutes": {
+  "headline": "Historical Commission voted unanimously to impose a demolition delay on 400 Howard Street as a significant building.",
+  "summary": "The Lunenburg Historical Commission met remotely by Zoom for a single item: the vote on a demolition delay for 400 Howard Street, taken up at the prior meeting. The delay was moved, seconded and approved unanimously. The chair also welcomed new member Kevin and adjourned.",
+  "attendees": [
+   {
+    "name_as_heard": "Richard McGrath",
+    "role": "chair",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Jennifer Sanderson",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Bill Axo (Laxo)",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Kevin Bussom",
+    "role": "member",
+    "remote": true
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "legal",
+   "planning-and-zoning"
+  ],
+  "votes": [
+   {
+    "t": 304,
+    "motion": "Impose a demolition delay on the property at 400 Howard Street, found to be a significant building under one or two of the significant building criteria.",
+    "moved_by": "Bill Laxo",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 401,
+    "motion": "Adjourn the meeting.",
+    "moved_by": "Bill",
+    "outcome": "seconded; meeting declared adjourned",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 422,
+    "decision": "The chair will advise members within the next week of the next regular meeting date."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 18,
+    "t_end": 260,
+    "topic": "Call to order, roll call and remote meeting/open meeting law notices",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 260,
+    "t_end": 378,
+    "topic": "Vote on demolition delay for 400 Howard Street",
+    "resolution": "voted, unanimous",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 378,
+    "t_end": 453,
+    "topic": "Welcome of new member, adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "The address is rendered inconsistently (400 Howard Street, then 800 Howard Street in the roll-call vote line); the motion text says 400.",
+   "Individual vote responses were not separately captioned; only the chair's statement of a unanimous vote."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [],
+  "documents_mentioned": [],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Historical Commission voted unanimously to impose a demolition delay on 400 Howard Street, finding it a significant building.",
+    "t": 304
+   },
+   {
+    "line": "The vote had been taken up from the prior meeting; the motion was moved, seconded and approved with no opposition.",
+    "t": 304
+   },
+   {
+    "line": "The chair said members would be told within the next week when the next regular meeting will be held.",
+    "t": 422
+   }
+  ],
+  "why_it_matters": [
+   "A demolition delay gives the town a set period to look at alternatives before a building the commission has found significant can be torn down, so it bears on what may happen to this property."
+  ],
+  "watch_next": [
+   "The chair's notice to members of the next regular meeting date, due within about a week of this meeting."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-03T17:22:42Z",
+   "cost_usd": 0.0223451
+  }
+ }
+}

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-03-24",
  "docid": "5239",
@@ -12,48 +12,419 @@
  },
  "votes": [
   {
-   "motion": "To open the hearing for Smokestack Roasters LLC for a wine and malt on-premises license and continue it to April 14, 2020 at 7:05 p.m.",
+   "motion": "Open the public hearing for Smokestack Roasters LLC for a wine and malt, on-premises license and continue it to April 14, 2020 at 7:05 p.m.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "to open the hearing for smokestack roasters llc for a wine and malt, on-premises license and continue it to april 14, 2020 at 7:05 p.m. vote: mr. mcquaid-aye, ms. luck-aye, ms. adams-aye, mr. jeffreys-aye, mir. alonzo- aye"
+   "procedural": false,
+   "quote": "to open the hearing for smokestack roasters llc for a wine and malt, on-premises"
   },
   {
-   "motion": "To approve the revised timeline with the budget calendar concluding with annual town meeting on June 13, 2020",
-   "moved_by": "D. McQuaid",
-   "seconded_by": "M. Jeffreys",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "to approve the revised timeline with the budget calendar concluding with annual town meeting on june 13, 2020 discussion: mr. alonzo stated he would like to see further discussion with the town c",
-   "quote_taken_from_text": true
+   "motion": "Vote on the declaration of a local state of emergency (motion wording is cut off in the scan).",
+   "outcome": "passed 4-0-1",
+   "procedural": false,
+   "quote": "vote: mr. mcquaid-aye, ms. luck-aye, mr. jeffreys-aye, ms. adams-abstain, mr. alonzo-aye"
   },
   {
-   "motion": "To grant permission to close Sean Patrick's as requested",
+   "motion": "Approve the revised timeline with the budget calendar concluding with annual town meeting on June 13, 2020.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "to grant permission to close sean patrick's as requested vote: mr. mcquaid-aye, ms. luck-aye, mr. jeffreys-aye, ms. adams-aye, mr. alonzo- ay",
-   "quote_taken_from_text": true
+   "quote": "to approve the revised timeline with the budget calendar concluding with annual town meeting on june 13, 2020"
   },
   {
-   "motion": "To approve and release executive session minutes as listed",
+   "motion": "Vote on the designation of the Chairman to sign warrants per MGL 41 § 52 (motion wording is cut off in the scan; attribution to this item is inferred from placement).",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "mr. mcquaid amended his second as well. vote: mr. mcquaid-aye, ms. luck-aye, mr. jeffreys-aye, ms. adams-aye"
+  },
+  {
+   "motion": "Grant permission to close Sean Patrick's as requested.",
+   "moved_by": "D. McQuaid",
+   "seconded_by": "M. Jeffreys",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "to grant permission to close sean patrick's as requested"
+  },
+  {
+   "motion": "Approve and release executive session minutes as listed (O'Brien Homes).",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "to approve and release executive session minutes as listed vote: mr. mcquaid-aye, ms. luck-aye, mr. jeffreys-aye, ms. adams-aye, mr. alonzo- ay",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "to approve and release executive session minutes as listed"
   },
   {
-   "motion": "To adjourn the meeting at 9:05 p.m.",
+   "motion": "Adjourn the meeting at 9:0s p.m. (time is garbled in the scan).",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "to adjourn the meeting at 9:0s p.m. vote: mr. mcquaid-aye, ms. luck-aye, mr. jeffreys-aye, ms. adams-aye, mr. alonzo- aye"
+   "quote": "to adjourn the meeting at 9:0s p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan with corruption. Item 2 (Declaration of Local State of Emergency) records a vote outcome (4 aye, 1 abstain by Ms. Adams) but the motion statement is not legible due to text corruption in the OCR; this vote was not transcribed. Item 5 (Designation of Chairman to Sign Warrants) records a heading but no motion or vote text is clearly legible. Five votes with readable motion statements are reported above.",
- "cost_usd": 0.16777350000000002
+ "note": "Scanned OCR text with damage. Motion wording is missing for the local emergency declaration vote and for the designation of Chairman to sign warrants vote; the latter is attributed to item 5 by placement, which is inferred. The adjournment time reads '9:0s p.m.' and the Smokestack motion line is garbled. Votes are recorded as printed; the OCR shows 'Mir. Alonzo' in one vote line, read as Mr. Alonzo. Several passages are cut off mid-sentence.",
+ "cost_usd": 0.015046720000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; damon mcquaid,"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; damon mcquaid,"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; damon mcquaid,"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "",
+   "status": "present",
+   "quote": "clerk; katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "",
+   "status": "present",
+   "quote": "clerk; katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam costa, town counsel"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam costa, town counsel"
+  },
+  {
+   "name": "Teri Burchfield",
+   "role": "Finance Committee Chair",
+   "status": "present",
+   "quote": "teri burchfield, finance committee chair, stated they are going to try to organize a meeting"
+  },
+  {
+   "name": "Michelle Belleza",
+   "role": "Boys and Girls Club Executive Director",
+   "status": "present",
+   "quote": "michelle belleza, boys and girls club executive director, thanked the bos for doing this,"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The special state election court-order item was deferred to next week's meeting.",
+   "quote": "the special state election is scheduled for june 2nd and could be discussed at next week's meeting"
+  },
+  {
+   "decision": "The Chair asked the Town Manager for a timeline for the Town Manager performance evaluation by next week; the Town Manager said she could have a proposal by the next meeting.",
+   "quote": "requested a timeline by next week from her"
+  },
+  {
+   "decision": "All town board and committee meetings will be held by remote participation until further notice.",
+   "quote": "all town board and committee meetings will be held in this medium"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fuel tank replacement funding",
+   "what_was_recorded": "The Town Manager confirmed the town would receive the full amount earmarked for the fuel tank replacement, with work to begin in a couple of weeks.",
+   "quote": "i did get confirmation that we would get the full $165,000 earmarked for the fuel tank replacement",
+   "figures_as_printed": [
+    "$165,000"
+   ]
+  },
+  {
+   "topic": "FY20 spending freeze",
+   "what_was_recorded": "The Town Manager said department heads were notified of a spending freeze for the rest of FY20 on non-essential items and hiring, excluding grant funds.",
+   "quote": "i have notified department heads that there would be a spending freeze for the remainder of fy20",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Local aid and revenue projections",
+   "what_was_recorded": "The Finance Director is preparing revenue projections for the rest of this year and next fiscal year; the town will receive its local aid payments for the remainder of the year.",
+   "quote": "receive our local aid payments for the remainder of the year",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY21 budget restart",
+   "what_was_recorded": "The FY21 budget process is being started from scratch because of the pandemic, and the financial impact still needs research.",
+   "quote": "we are going to have to start the budget process from scratch due to this event",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Passios Building design work",
+   "what_was_recorded": "Due to fiscal uncertainty, the Town Manager suggested holding off or doing a very limited scope with the design firm.",
+   "quote": "i suggested due to uncertainty in the current fiscal arena that we hold off or do a very limited scope with the design firm",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Bond anticipation notes",
+   "what_was_recorded": "The Board signed bond anticipation notes for the Saliba property purchase loan and the ladder truck borrowing.",
+   "quote": "sign the bond anticipation notes for the saliba property purchase loan as well the ladder truck borrowing",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Election consolidation cost",
+   "what_was_recorded": "Ms. Adams noted that one date for both elections was better and saved money.",
+   "quote": "one date for both elections was better for less gatherings of that many people and saved money",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Emergency expense reimbursement",
+   "what_was_recorded": "Expenses such as IT equipment are being tracked, and volunteer meals-on-wheels hours are reimbursable under the emergency declaration.",
+   "quote": "those types of hours are reimbursable",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "COVID-19 community fund (public comment)",
+   "what_was_recorded": "A public commenter said the United Way's Covid-19 Stand United Fund had raised over $60,000 so far; it is not a town fund.",
+   "quote": "they have raised over $60,000 so far.",
+   "figures_as_printed": [
+    "$60,000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Teri Burchfield",
+   "stated_role": "Finance Committee Chair",
+   "topic": "Finance Committee meeting plans for budget and town meeting",
+   "quote": "teri burchfield, finance committee chair, stated they are going to try to organize a meeting for next thursday night."
+  },
+  {
+   "speaker": "Michelle Belleza",
+   "stated_role": "Boys and Girls Club Executive Director",
+   "topic": "United Way Covid-19 Stand United Fund",
+   "quote": "michelle belleza, boys and girls club executive director, thanked the bos for doing this, everything looks good."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing, Smokestack Roasters wine and malt license",
+   "resolution": "hearing opened and continued to April 14, 2020",
+   "quote": "mr. alonzo stated the intent is to open the hearing and continue it to april 14th at 7:05 p.m.",
+   "tags": [
+    "liquor license",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Town Manager update on COVID-19",
+   "resolution": "update received, no vote",
+   "quote": "after two weeks of governor baker issuing a state of emergency, each day still brings new",
+   "tags": [
+    "COVID-19",
+    "town operations"
+   ]
+  },
+  {
+   "topic": "Declaration of local state of emergency",
+   "resolution": "voted, passed 4-0-1 (Adams abstained)",
+   "quote": "ms. lemieux directed the board to a local declaration of emergency as well as a list of local",
+   "tags": [
+    "COVID-19",
+    "emergency declaration"
+   ]
+  },
+  {
+   "topic": "Court order to delay Special State Election",
+   "resolution": "deferred to next week",
+   "quote": "discussion on issuance of court order to delay special state election",
+   "tags": [
+    "election"
+   ]
+  },
+  {
+   "topic": "Postponement of Annual Town Meeting and Annual Town Election",
+   "resolution": "revised timeline approved, town meeting set for June 13, 2020",
+   "quote": "discussion on postponement of the annual town meeting and annual town election",
+   "tags": [
+    "town meeting",
+    "election",
+    "budget calendar"
+   ]
+  },
+  {
+   "topic": "Designation of Chairman to sign warrants (MGL 41 § 52)",
+   "resolution": "voted, passed 5-0 (motion wording partly illegible)",
+   "quote": "5. designation of chairman to sign warrants per mgl 41 § 52",
+   "tags": [
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Remote participation during town office closures",
+   "resolution": "meetings held remotely until further notice",
+   "quote": "we would be holding our meetings by remote participation until further notice",
+   "tags": [
+    "remote meetings",
+    "COVID-19"
+   ]
+  },
+  {
+   "topic": "Guglietti dangerous dog hearing outcome",
+   "resolution": "discussed, no vote; appeal pending, courts frozen until April 21",
+   "quote": "discussion on guglietti dangerous dog hearing outcome",
+   "tags": [
+    "dangerous dog",
+    "legal"
+   ]
+  },
+  {
+   "topic": "Request to close Sean Patrick's",
+   "resolution": "approved, passed 5-0",
+   "quote": "to grant permission to close sean patrick's as requested",
+   "tags": [
+    "liquor license"
+   ]
+  },
+  {
+   "topic": "Bond anticipation notes for Saliba property and ladder truck",
+   "resolution": "notes signed, public notice",
+   "quote": "bond anticipation notes (ban) for saliba property and ladder truck",
+   "tags": [
+    "borrowing",
+    "bonds"
+   ]
+  },
+  {
+   "topic": "Town Manager performance evaluation process and timeline",
+   "resolution": "discussed; timeline requested by next week",
+   "quote": "discussion on the town manager performance evaluation process and timeline",
+   "tags": [
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Executive session minutes for release (O'Brien Homes)",
+   "resolution": "approved for release, passed 5-0",
+   "quote": "executive session minutes for release (o'brien homes)",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "FY21 budget, capital plan, five-year forecast and warrant articles",
+   "resolution": "discussed; Town Manager report given",
+   "quote": "discussion on fiscal year 2021 budget, fy21 capital plan, five year financial",
+   "tags": [
+    "budget FY21",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "received, no vote",
+   "quote": "ms. lemieux stated we will be starting from scratch for the fy21 budget.",
+   "tags": [
+    "budget FY21",
+    "COVID-19",
+    "fuel tank"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "received, no vote",
+   "quote": "teri burchfield, finance committee chair, stated they are going to try to organize a meeting",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned, passed 5-0",
+   "quote": "to adjourn the meeting at 9:0s p.m.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft local declaration of emergency",
+   "where": "text",
+   "quote": "all board members stated they had reviewed the draft"
+  },
+  {
+   "name": "List of local communities that have declared local states of emergencies",
+   "where": "text",
+   "quote": "a list of local communities that have declared local states of emergencies"
+  },
+  {
+   "name": "Opinion letter from Mead, Talerman and Costa (Attorney Kennefick) on impoundment of dangerous dogs",
+   "where": "text",
+   "quote": "directed the board to an opinion letter from mead, talerman and costa"
+  },
+  {
+   "name": "Revised schedule for Town Meeting",
+   "where": "text",
+   "quote": "referred the board to the revised schedule for town meeting"
+  },
+  {
+   "name": "Annual Town Meeting warrant",
+   "where": "text",
+   "quote": "since the warrant had not been posted for the annual town meeting"
+  },
+  {
+   "name": "Board packet (procedure for Town Manager performance evaluation)",
+   "where": "text",
+   "quote": "familiarize themselves in advance of the procedure detailed in their packet"
+  },
+  {
+   "name": "H.4582 (special state election delay legislation)",
+   "where": "text",
+   "quote": "until june 2nd (h.4582)"
+  },
+  {
+   "name": "S.2608 (municipal election delay legislation)",
+   "where": "text",
+   "quote": "delay of municipal elections (s.2608)"
+  },
+  {
+   "name": "H.4572 (Governor's bill for COVID-19 municipal flexibility, filed March 16)",
+   "where": "text",
+   "quote": "the governor filed a bill (h.4572) on march 16th"
+  },
+  {
+   "name": "An Act to Further Address Challenges Faced by Municipalities and School Districts Resulting from COVID-19 (H.4974)",
+   "where": "text",
+   "quote": "an act to further address challenges faced by municipalities and school"
+  },
+  {
+   "name": "Executive Session Minutes for Release (O'Brien Homes)",
+   "where": "text",
+   "quote": "executive session minutes for release (o'brien homes)"
+  }
+ ],
+ "tags": [
+  "COVID-19",
+  "remote meeting",
+  "town meeting postponement",
+  "annual town election",
+  "FY21 budget",
+  "liquor license",
+  "dangerous dog",
+  "bond anticipation notes",
+  "executive session minutes",
+  "emergency declaration"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. lemieux directed the board to a local declaration of emergency"
+ },
+ "dropped_unquoted_by_field": {}
 }

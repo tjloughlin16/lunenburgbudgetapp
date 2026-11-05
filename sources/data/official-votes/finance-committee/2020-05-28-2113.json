@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2020-05-28",
  "docid": "2113",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the March 5 minutes",
+   "motion": "Approve the March 5 minutes.",
    "moved_by": "John H.",
    "seconded_by": "Jay",
    "outcome": "passed 5-0",
@@ -20,7 +20,7 @@
    "quote": "john h. moved to approve the minutes, jay seconded the motion. the committee approved the minutes by a roll-call vote of 5 - 0."
   },
   {
-   "motion": "Approve the March 12 minutes as amended",
+   "motion": "Approve the March 12 minutes as amended.",
    "moved_by": "John H.",
    "seconded_by": "Dave",
    "outcome": "passed 5-0",
@@ -28,15 +28,281 @@
    "quote": "john h. moved to approve the march 12 minutes as amended and dave seconded the motion. the committee approved the minutes by a roll-call vote of 5 - 0."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Peter B.",
    "seconded_by": "John H.",
-   "outcome": "passed 5-0",
+   "outcome": "passed, five in favor, none opposed",
    "procedural": true,
    "quote": "peter b. moved to adjourn the meeting. john h. seconded his motion. by roll call the committee voted five in favor, none opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09299950000000001
+ "note": "Text-only minutes, readable; votes recorded by roll call. Section numbering is irregular (two items numbered 9, and 'Next Meeting' is numbered 10 with '8.' inside it). Section 4 (Warrant Articles) breaks off mid-sentence and the streetlight discussion is incomplete. Section 3 has many timestamped bullets with no recorded motions. Heather Lemieux is not in the Present roll, so her attendance status is marked not stated. No dollar transfers recorded. Michelle Walton was absent.",
+ "cost_usd": 0.0078907,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm and read"
+  },
+  {
+   "name": "Michelle Walton",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "absent: michelle walton,"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore, dave passios, john henshaw, jay simeone"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore, dave passios, john henshaw, jay simeone"
+  },
+  {
+   "name": "John Henshaw",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore, dave passios, john henshaw, jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore, dave passios, john henshaw, jay simeone"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "town manager heather lemieux reported that a group that included the town moderator"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The next Finance Committee meeting is set for Thursday, June 11 at 7:00.",
+   "quote": "the next finance committee meeting is on thursday, june 11 at 7:00."
+  },
+  {
+   "decision": "Dave P. requested that all issues discussed at this meeting remain on the agenda for the June 11 meeting; no board action is recorded on the request.",
+   "quote": "dave p. requested that all issues that were discussed at this meeting remain on the agenda for the next finance committee meeting, on june 11 at 7:00."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Unemployment costs",
+   "what_was_recorded": "Terri B. raised the associated costs of unemployment, noting a figure of 50% of salary plus health insurance costs; Heather had not heard about it.",
+   "figures_as_printed": [
+    "50% of salary"
+   ],
+   "quote": "terri b. brought up associated costs of unemployment--50% of salary, health insurance costs?"
+  },
+  {
+   "topic": "CARES Act reimbursement",
+   "what_was_recorded": "Heather L. said the Town qualifies under the CARES Act for reimbursement of up to a stated amount for COVID-19 expenses.",
+   "figures_as_printed": [
+    "$1,028,000"
+   ],
+   "quote": "heather l. said under the cares act, the town qualifies for a reimbursement of up to $1,028,000 for expenses the town incurs as a result of covid19."
+  },
+  {
+   "topic": "FEMA and CARES cost-share for COVID-19 expenditures",
+   "what_was_recorded": "Heather L. said FEMA reimburses 75% of COVID-19 costs and the CARES Act reimburses the remaining 25%.",
+   "figures_as_printed": [
+    "75%",
+    "25%"
+   ],
+   "quote": "heather l. stated that fema reimburses the town 75% of the cost incurred related to covid 19 and that the cares act will reimburse the town the remaining 25%."
+  },
+  {
+   "topic": "Uncalculated pandemic costs",
+   "what_was_recorded": "Uncalculated pandemic costs were noted, including employees who do not return to work; Heather said the Town is not obligated to hold positions for those who decline.",
+   "figures_as_printed": [],
+   "quote": "uncalculated costs with respect to pandemic."
+  },
+  {
+   "topic": "Free cash use",
+   "what_was_recorded": "Dave P. asked at what point the Town might set aside its free cash policy to preserve jobs; John H. said using free cash to mitigate longer-term costs seemed a good use.",
+   "figures_as_printed": [],
+   "quote": "free cash is money available to the town… at what point might we decide to throw that policy out the window"
+  },
+  {
+   "topic": "Capital expenditures",
+   "what_was_recorded": "Terri suggested postponing capital expenditures until Town Meeting in November; Peter said he is less comfortable funding capital projects except in emergencies such as the Flat Hill culvert.",
+   "figures_as_printed": [],
+   "quote": "terri suggested that given the uncertainty of future revenues and expenses the town should consider postponing capital expenditures until town meeting in november."
+  },
+  {
+   "topic": "Flat Hill culvert",
+   "what_was_recorded": "Peter cited replacing the Flat Hill culvert as an example of an emergency capital project that could still be funded.",
+   "figures_as_printed": [],
+   "quote": "except in the case of emergency circumstances--e.g. replacing the flat hill culvert."
+  },
+  {
+   "topic": "School salary reserve fund",
+   "what_was_recorded": "Peter stated that roughly one-third of the Town's savings comes from the school department's salary reserve fund, and the teacher's contract expires in about a month.",
+   "figures_as_printed": [
+    "one-third"
+   ],
+   "quote": "roughly one-third of the town's savings comes from the school department's salary reserve fund."
+  },
+  {
+   "topic": "Stabilization account",
+   "what_was_recorded": "Terri noted the stabilization account is about $3 million and suggested looking at how comparable towns are handling this.",
+   "figures_as_printed": [
+    "$3 million"
+   ],
+   "quote": "the most conservative approach 105 stabilization account is about $3 million."
+  },
+  {
+   "topic": "Debt retirement and debt costs",
+   "what_was_recorded": "Peter B. observed that debt retirement between 2020 and 2024 is relatively small; Dave P. asked what a credit rating decline would cost in increased debt costs.",
+   "figures_as_printed": [],
+   "quote": "peter b's observation is how relatively small the retirement of debt between 2020 and 2024 is."
+  },
+  {
+   "topic": "Streetlight purchase",
+   "what_was_recorded": "Dave P. hopes the Town can purchase the streetlights, since LED streetlights would reduce operating costs.",
+   "figures_as_printed": [],
+   "quote": "dave p. strongly hopes that the town can find its way to purchase the streetlights."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Peter B.",
+   "topic": "praise for Town employees during the pandemic",
+   "quote": "peter b. praised the great effort town employees have made during these trying times."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action; COVID-19/Zoom advisory read",
+   "tags": [
+    "zoom",
+    "covid-19"
+   ],
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm and read"
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action; poll on attending Annual Town Meeting in person",
+   "tags": [
+    "town meeting",
+    "debt"
+   ],
+   "quote": "terri b. polled committee regarding each member's willingness to attend the annual town meeting at the middle-high school auditorium in june."
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "covid-19",
+    "free cash",
+    "capital spending",
+    "cares act"
+   ],
+   "quote": "town manager heather lemieux reported that a group that included the town moderator"
+  },
+  {
+   "topic": "Review of Warrant Articles",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "warrant articles",
+    "streetlights"
+   ],
+   "quote": "dave p. strongly hopes that the town can find its way to purchase the streetlights."
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved March 5 and March 12 minutes, 5-0 each",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "john h. moved to approve the minutes, jay seconded the motion. the committee approved the minutes by a roll-call vote of 5 - 0."
+  },
+  {
+   "topic": "COVID-19 expenditures",
+   "resolution": "no action; reimbursement request in progress",
+   "tags": [
+    "covid-19",
+    "fema",
+    "cares act"
+   ],
+   "quote": "karen b. is working on a request for this re-imbursement."
+  },
+  {
+   "topic": "Debt group",
+   "resolution": "no action; debt sub-committee suggested, no formal charge voted",
+   "tags": [
+    "debt",
+    "credit rating"
+   ],
+   "quote": "terri suggests establishing a debt sub-committee to look at the issue."
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reported; TC Passios meeting rescheduled to June 8",
+   "tags": [
+    "committee reports"
+   ],
+   "quote": "the meeting has been rescheduled to monday june 8."
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "peter b. praised the great effort town employees have made during these trying times."
+  },
+  {
+   "topic": "Next Meeting",
+   "resolution": "scheduled June 11 at 7:00",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "the next finance committee meeting is on thursday, june 11 at 7:00."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:20 PM, passed 5-0",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "peter b. moved to adjourn the meeting. john h. seconded his motion. by roll call the committee voted five in favor, none opposed."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Debt service spreadsheet (provided by Karen Brochu)",
+   "where": "text",
+   "quote": "terri burchfield thanked karen brochu for quickly providing the committee her debt service spreadsheet to the committee."
+  }
+ ],
+ "tags": [
+  "covid-19",
+  "cares act",
+  "fema reimbursement",
+  "free cash",
+  "debt",
+  "capital spending",
+  "stabilization",
+  "salary reserve",
+  "warrant articles",
+  "streetlights",
+  "annual town meeting",
+  "zoom meeting",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

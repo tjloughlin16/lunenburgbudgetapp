@@ -53,7 +53,7 @@ import { TraceLadder, type Trace } from '../components/TraceLadder'
  *
  *  RULE 7 GOVERNS EVERY SENTENCE ON IT. What is stated is what the records do or do not
  *  contain. Nothing here says why a document is missing, and nothing here treats a gap as
- *  a finding about anybody — see notes/HANDOFF-MONEY-IN.md, "Claims NOT established".
+ *  a finding about anybody — see notes/findings/MONEY-IN.md, "Claims NOT established".
  *
  *  A FILTER THAT MATCHES NOTHING LOOKS EXACTLY LIKE DATA THAT IS ABSENT, so every list on
  *  this page says so out loud rather than rendering as empty space. On a page about gaps

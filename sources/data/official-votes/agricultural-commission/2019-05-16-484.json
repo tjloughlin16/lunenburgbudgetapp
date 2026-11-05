@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2019-05-16",
  "docid": "484",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve $200 for 20 new market signs",
+   "motion": "Approve $200 for 20 new market signs.",
    "moved_by": "R. Stober",
    "seconded_by": "G. Burns",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "r. stober moved to approve $200 for 20 new market signs, g. burns 2nd, all aye."
   },
   {
-   "motion": "approve application for the farmers market grant",
+   "motion": "Approve the application for the farmers market grant of up to $1,000.",
    "moved_by": "G. Burns",
    "seconded_by": "R. Stober",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "g. burns moved to approve application for the grant, r. stober 2nd, all aye."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "R. Stober",
    "seconded_by": "A. Snow",
    "outcome": "passed",
@@ -37,6 +37,224 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0906155
+ "note": "Minutes are readable text, not a scan. Votes were recorded as \"all aye\" with no numeric count, so outcome is \"passed\" for those. The adjournment outcome is inferred from \"adjourned at 9:38pm\". The Jerry Lanni letter is reproduced in full in the minutes and was read to the commission, but no public comment section is printed, so public_comment is empty. The letter's chair/member signature block lists Jorge Marzuca, who is not recorded as attending. Attendance for guests J. Chabot and W. Newcomb is inferred from the guest listing.",
+ "cost_usd": 0.00430032,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: m. allison, a. snow, r. stober, g. burns"
+  },
+  {
+   "name": "A. Snow",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: m. allison, a. snow, r. stober, g. burns"
+  },
+  {
+   "name": "R. Stober",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: m. allison, a. snow, r. stober, g. burns"
+  },
+  {
+   "name": "G. Burns",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: m. allison, a. snow, r. stober, g. burns"
+  },
+  {
+   "name": "M. Fontaine",
+   "role": "Guest; Farmers Market Manager per letterhead",
+   "status": "present",
+   "quote": "m. fontaine presented new market sign design, the group liked it."
+  },
+  {
+   "name": "Y. Fusaro",
+   "role": "Guest; Farmers Market Manager per letterhead",
+   "status": "present",
+   "quote": "y. fusaro reported that the scale we had was \"not for trade\""
+  },
+  {
+   "name": "J. Chabot",
+   "role": "Guest",
+   "status": "present",
+   "quote": "guests: m. fontaine, y. fusaro, j. chabot, w. newcomb"
+  },
+  {
+   "name": "W. Newcomb",
+   "role": "Guest",
+   "status": "present",
+   "quote": "guests: m. fontaine, y. fusaro, j. chabot, w. newcomb"
+  },
+  {
+   "name": "Jerry Lanni",
+   "role": "Lanni Orchards; submitted letter read to the commission",
+   "status": "absent",
+   "quote": "jerry lanni of lanni orchards was not able to attend, but did submit a letter, which was read to"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Managers to draft a letter to vendors and rules for the next meeting, following discussion of a raffle basket and tickets given for purchases at vendor booths.",
+   "quote": "managers to draft letter to vendors and rules for next meeting."
+  },
+  {
+   "decision": "Remaining agenda items tabled to the next meeting.",
+   "quote": "remaining agenda items tabled to next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "New market signs",
+   "what_was_recorded": "The commission approved $200 for 20 new market signs after M. Fontaine presented a new sign design.",
+   "figures_as_printed": [
+    "$200"
+   ],
+   "quote": "r. stober moved to approve $200 for 20 new market signs, g. burns 2nd, all aye."
+  },
+  {
+   "topic": "Farmers market grant",
+   "what_was_recorded": "Mike reported finding a grant for up to $1,000 for farmers markets, and the commission approved the application for it.",
+   "figures_as_printed": [
+    "$1,000"
+   ],
+   "quote": "mike also reported finding a grant for up to $1,000 for farmers markets."
+  },
+  {
+   "topic": "Scale certification for meat sales",
+   "what_was_recorded": "Y. Fusaro reported the existing scale was not for trade and another will be needed and certified for Cherry Hill to sell meat; no cost was printed.",
+   "figures_as_printed": [],
+   "quote": "another will be needed and certified for cherry hill to sell meat."
+  },
+  {
+   "topic": "Travel and tourism tax revenue in the Jerry Lanni letter",
+   "what_was_recorded": "The letter cites 2017 local tax revenue from travel and tourism for Fitchburg and Gardner.",
+   "figures_as_printed": [
+    "$935,444.39",
+    "$240,228.05"
+   ],
+   "quote": "fitchburg 2017-$935,444.39 in tax revenue from travel and tourism"
+  },
+  {
+   "topic": "Travel and tourism industry size in the Jerry Lanni letter",
+   "what_was_recorded": "The letter states Massachusetts travel and tourism is a 23 billion dollar industry, citing a MOTT representative at a Visit North Central Massachusetts breakfast.",
+   "figures_as_printed": [
+    "23 Billion dollar"
+   ],
+   "quote": "it's a 23 billion dollar industry."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "LCFM (farmers market) update",
+   "resolution": "no action",
+   "quote": "lcfm update was over 10 vendors were signed up, with over 30 no or no response.",
+   "tags": [
+    "farmers market",
+    "vendors"
+   ]
+  },
+  {
+   "topic": "Letter from Jerry Lanni",
+   "resolution": "read to commission; no action recorded",
+   "quote": "jerry lanni of lanni orchards was not able to attend, but did submit a letter, which was read to",
+   "tags": [
+    "Lanni Orchards",
+    "public utilities",
+    "Chase Road",
+    "travel and tourism"
+   ]
+  },
+  {
+   "topic": "New market sign design and purchase",
+   "resolution": "approved $200 for 20 signs",
+   "quote": "r. stober moved to approve $200 for 20 new market signs, g. burns 2nd, all aye.",
+   "tags": [
+    "signage",
+    "farmers market",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Farmers market grant application",
+   "resolution": "approved",
+   "quote": "g. burns moved to approve application for the grant, r. stober 2nd, all aye.",
+   "tags": [
+    "grants",
+    "farmers market"
+   ]
+  },
+  {
+   "topic": "Scale certification",
+   "resolution": "no action; another scale needed",
+   "quote": "y. fusaro reported that the scale we had was \"not for trade\"",
+   "tags": [
+    "scale",
+    "meat sales",
+    "Cherry Hill"
+   ]
+  },
+  {
+   "topic": "Raffle basket and vendor tickets",
+   "resolution": "managers to draft letter and rules for next meeting",
+   "quote": "discussion of raffle basket, tickets given for purchases at vendor booths.",
+   "tags": [
+    "raffle",
+    "vendors"
+   ]
+  },
+  {
+   "topic": "Remaining agenda items",
+   "resolution": "tabled to next meeting",
+   "quote": "remaining agenda items tabled to next meeting.",
+   "tags": [
+    "agenda"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from Jerry Lanni (Lanni Orchards), undated",
+   "where": "list",
+   "quote": "letter from jerry lanni:"
+  },
+  {
+   "name": "New market sign design",
+   "where": "text",
+   "quote": "m. fontaine presented new market sign design, the group liked it."
+  },
+  {
+   "name": "Farmers market grant",
+   "where": "text",
+   "quote": "mike also reported finding a grant for up to $1,000 for farmers markets."
+  },
+  {
+   "name": "MOTT travel and tourism figures (presented at Visit North Central Massachusetts Travel and Tourism Breakfast)",
+   "where": "text",
+   "quote": "a representative from mott has spoken every year we have gone and has great"
+  }
+ ],
+ "tags": [
+  "farmers market",
+  "Lanni Orchards",
+  "public utilities",
+  "Chase Road",
+  "travel and tourism",
+  "grants",
+  "signage",
+  "vendors",
+  "scale certification",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "letter from jerry lanni:"
+ },
+ "dropped_unquoted_by_field": {}
 }

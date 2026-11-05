@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2019-09-05",
  "docid": "2990",
@@ -12,32 +12,163 @@
  },
  "votes": [
   {
-   "motion": "Accept the low bid withdrawal from E5 Builders LLC for the Pearl Brook roof replacement",
+   "motion": "Accept the low bid withdrawal from E5 Builders LLC for the 705 roof replacement at Pearl Brook (Resolution 201915).",
    "moved_by": "Linda McDonald",
-   "seconded_by": "Karin Menard",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion made by linda mcdonald to accept the low bid withdrawal from e5 builders llc, 45 granite street, leominster, ma 01453 for the 705- roof replacement at pearl brook. seconded, karin menard seconded the motion, and the motion was passed by a unanimous vote",
-   "quote_taken_from_text": true
+   "quote": "resolved, motion made by linda mcdonald to accept the low bid withdrawal from",
+   "seconded_by": "Karin Menard"
   },
   {
-   "motion": "Award the roof replacement contract at Pearl Brook (705) to JJS Universal Construction Company for $26,640.00",
+   "motion": "Award the Pearl Brook (705) roof replacement contract to the second lowest eligible and responsive bidder, JJS Universal Construction Company, with a bid of $26,640.00, and authorize the Chair or designee to sign (Resolution 201916).",
    "moved_by": "Deborah Christen",
-   "seconded_by": "Linda McDonald",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion made by deborah christen to award the contract for roof replacement at the pearl brook (705) development to the second lowest eligible and responsive bidder jjs universal construction com pany, 63 airport road, dudley, ma 01571 with a bid of $26,640.00 and further authorizes the signing of the contract and/or any other documents necessary by the chair or their designee. seconded, linda mcdonald seconded the motion, and the motion was passe d by a unanimous vote."
+   "quote": "resolved, motion made by deborah christen to award the contract for roof",
+   "seconded_by": "Linda McDonald"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the special meeting at 5:37 p.m.",
    "moved_by": "Deborah Christen",
-   "seconded_by": "Linda McDonald",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "deborah christen made a motion to adjourn the meeting at 5:37 p.m. linda mcdonald seconded, all were in favor, and the meeting was adjourned."
+   "quote": "all were in favor, and the meeting was adjourned.",
+   "seconded_by": "Linda McDonald"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.12413750000000001
+ "note": "Text extract has OCR-style spacing splits (e.g., 'withdraw al', 'passe d', 'Com pany') and broken hyphens (705-roof); quotes avoid those spots. Chair is not named in the minutes; Vice Chair Linda McDonald is the only officer identified. The adjournment and both resolutions record only 'unanimous' or 'all were in favor' with no numeric count. Attached memo and bid results are referenced but not included in this text.",
+ "cost_usd": 0.00458372,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Linda McDonald",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "linda mcdonald, vice chair"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "deborah a.h. christen, member"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Member",
+   "status": "present",
+   "quote": "karin menard, member"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, executive director"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Withdrawn low bid from E5 Builders LLC",
+   "what_was_recorded": "E5 Builders LLC withdrew its bid for the Pearl Brook (705) roof replacement at the printed amount.",
+   "figures_as_printed": [
+    "$24,900.00"
+   ],
+   "quote": "e5 builders llc has withdrawn their bid of $24,900.00"
+  },
+  {
+   "topic": "Award of roof replacement contract to JJS Universal Construction Company",
+   "what_was_recorded": "The second lowest eligible and responsive bidder, JJS Universal Construction Company, was approved for the contract at the printed bid.",
+   "figures_as_printed": [
+    "$26,640.00"
+   ],
+   "quote": "with a bid of $26,640.00 and further authorizes the chair or their designee to sign said"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Special meeting purpose and call to order",
+   "resolution": "quorum declared, meeting opened 5:33 p.m.",
+   "quote": "the purpose of the special meeting was to approve two resolutions on the 705 -roof replacement",
+   "tags": [
+    "special meeting",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Resolution 201915: accept low bid withdrawal from E5 Builders LLC",
+   "resolution": "approved unanimously",
+   "quote": "resolution accepting low bid withdrawal from e5 builders llc",
+   "tags": [
+    "bid withdrawal",
+    "roof replacement",
+    "Pearl Brook"
+   ]
+  },
+  {
+   "topic": "Resolution 201916: award to second lowest bidder JJS Universal Construction Company",
+   "resolution": "approved unanimously",
+   "quote": "resolution authorizing the acceptance and",
+   "tags": [
+    "bid award",
+    "roof replacement",
+    "contract",
+    "DHCD"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5:37 p.m.",
+   "quote": "all were in favor, and the meeting was adjourned.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Resolution 201915 (DHCD Project # 162032) accepting low bid withdrawal from E5 Builders LLC",
+   "where": "text",
+   "quote": "dhcd project # 162032 resolution 201915"
+  },
+  {
+   "name": "Resolution 201916 (DHCD Project # 162032) approving second lowest bid, JJS Universal Construction Company",
+   "where": "text",
+   "quote": "dhcd project # 162032 resolution 201916"
+  },
+  {
+   "name": "Attached memo regarding E5 Builders LLC bid withdrawal (undated)",
+   "where": "text",
+   "quote": "has withdrawn their bid of $24,900.00 for the roof replacement at the pearl brook (705) development (see attached memo)"
+  },
+  {
+   "name": "Attached bid results for Pearl Brook (705) roof replacement (undated)",
+   "where": "text",
+   "quote": "six (6) bids were received (see attached bid results)"
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "roof replacement",
+  "Pearl Brook",
+  "705 development",
+  "bid award",
+  "bid withdrawal",
+  "DHCD",
+  "special meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

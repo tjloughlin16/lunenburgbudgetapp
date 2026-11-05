@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2021-01-14",
  "docid": "2076",
@@ -12,15 +12,344 @@
  },
  "votes": [
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting",
    "moved_by": "Dave",
    "seconded_by": "Peter",
-   "outcome": "passed",
+   "outcome": "passed unanimous",
    "procedural": true,
-   "quote": "motion made by dave, seconded by peter unanimous"
+   "quote": "motion to adjourn - motion made by dave, seconded by peter unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. One vote recorded: motion to adjourn at end of meeting. Note at page 7-8 mentions \"Abstain - Jay and Even\" but no complete motion is stated for this abstention, so it cannot be extracted as a full vote record.",
- "cost_usd": 0.12121
+ "note": "Text is OCR of scanned pages and is partly garbled. Only one recorded vote (adjournment). The line 'Abstain - Jay and Even (because he wasn't present)' appears on page 8 with no motion text, so it is not recorded as a vote. The header lists 'Heather Sroka' but the finance report and discussion are by 'Heather L.'; the minutes do not state whether these are the same person or whether Heather Sroka attended. Public comment includes an unattributed paragraph ('Practical Politics - revolving funds...') that is not recorded as a speaker. No transfers appear in the text.",
+ "cost_usd": 0.00953592,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm and read the covid-19 / zoom meeting advisory statement."
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "not stated",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "not stated",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "not stated",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "not stated",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "not stated",
+   "status": "present",
+   "quote": "terrri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters"
+  },
+  {
+   "name": "Heather L.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "heather l. - updates since december 10th -"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "menard, evan watters heather sroka"
+  },
+  {
+   "name": "Karen",
+   "role": "not stated",
+   "status": "present",
+   "quote": "karen - will work on this for the fincom."
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "Highland Street",
+   "status": "present",
+   "quote": "dave rodgers, highland street"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Karen will work on a presentation of the revolving and special revenue funds for the FinCom, showing what each fund is, who controls it, and how it is funded.",
+   "quote": "karen - will work on this for the fincom."
+  },
+  {
+   "decision": "Heather L. will make the 48-hour advance submission requirement known to departments.",
+   "quote": "heather - will make that known to departments."
+  },
+  {
+   "decision": "The committee left a possible meeting on the 28th on the calendar and deferred the decision to the following week.",
+   "quote": "going to meet on the 28th? leave it on the calendar and decide next week."
+  },
+  {
+   "decision": "Heather L. will report back at a future meeting on the DPW Fuel Tank Project.",
+   "quote": "it at a future meeting heather l. could report back on that project."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Health insurance renewal rates for active employees",
+   "what_was_recorded": "Health renewal rates for active employees were reported as a 3% increase, described as good news.",
+   "figures_as_printed": [
+    "3%"
+   ],
+   "quote": "couple of pieces of good news - health renewal rates for active employees is 3%."
+  },
+  {
+   "topic": "CARES Act money remaining",
+   "what_was_recorded": "About $500,000 to $600,000 of CARES Act money is left, usable only for unbudgeted expenses.",
+   "figures_as_printed": [
+    "$500,000 - 600,000"
+   ],
+   "quote": "between $500,000 - 600,000 is left. it can only be used for unbudgeted expenses."
+  },
+  {
+   "topic": "DPW Fuel Tank Project unspent capital",
+   "what_was_recorded": "The Town Manager reported about $80,000 of unspent capital remaining on the nearly complete Fuel Tank Project.",
+   "figures_as_printed": [
+    "$80,000"
+   ],
+   "quote": "nearing completion - $80,000 of unspent capital on that project."
+  },
+  {
+   "topic": "Flat Hill Culvert / DPW earmark and original budget",
+   "what_was_recorded": "The earmark was $165,000 and the original budgeted amount was $110,000 for first capital and $220,000 for second capital, with part of the increase from permitting and design work.",
+   "figures_as_printed": [
+    "$165,000",
+    "$110,000",
+    "$220,000"
+   ],
+   "quote": "the earmark was $165,000 and the original budgeted amount was $110,000 first capital and $220,000 for the seconded capital."
+  },
+  {
+   "topic": "Marshall Park capital request",
+   "what_was_recorded": "A $50,000 Capital Plan Request for Marshall Park was discussed and described as low on the priority list.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "marshall park discussion - $50,000 capital plan request - which is low on the priority list."
+  },
+  {
+   "topic": "Senior Center parking lot project withdrawn from DPW",
+   "what_was_recorded": "A parking lot project for the senior center was withdrawn at $125,000 for the area between the building and playground, pulled for a more comprehensive plan.",
+   "figures_as_printed": [
+    "$125,000"
+   ],
+   "quote": "parking lot for the senior center - $125,000 between the building and playground."
+  },
+  {
+   "topic": "Demolition article defeated at Town Meeting",
+   "what_was_recorded": "A $400,000 demolition article brought to Town Meeting was voted down.",
+   "figures_as_printed": [
+    "$400,000"
+   ],
+   "quote": "an article was brought to town meeting for $400,000 demolition that was voted down."
+  },
+  {
+   "topic": "Debt limits as a percentage of town expenditures",
+   "what_was_recorded": "Town debt policy caps net regular debt at 4% and excludable debt at 11%, with the aggregate no more than 14%; FY21 figures were given as shares of each cap.",
+   "figures_as_printed": [
+    "4%",
+    "11%",
+    "14%",
+    "1.56% of 4%",
+    "9.7% of 11%",
+    "11.27% of 14%"
+   ],
+   "quote": "heather l - 4% for net regular debt 11% for excludable"
+  },
+  {
+   "topic": "Debt exclusion versus operating budget for the TCP project",
+   "what_was_recorded": "Members discussed whether the TCP project would be financed by debt exclusion or the operating budget, describing it as a sizable sum, without a figure.",
+   "figures_as_printed": [],
+   "quote": "are we seriously considering that this project would come out of the operating budget and not a debt exclusion?"
+  },
+  {
+   "topic": "Licensing fee refunds for bars and restaurants",
+   "what_was_recorded": "A member suggested the Town consider refunding licensing fees for bars and restaurants, as Methuen had, if funds were available; no amount was given.",
+   "figures_as_printed": [],
+   "quote": "the licensing fees for bars and restaurants for the coming year."
+  },
+  {
+   "topic": "Debt cost for a TCP-type project",
+   "what_was_recorded": "A public speaker asked what a realistic debt figure would be if $20 million were borrowed today, and the interest rate for 30 years.",
+   "figures_as_printed": [
+    "20M"
+   ],
+   "quote": "if we borrowed 20m today the market is"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "Highland Street",
+   "topic": "debt and interest rates for a project like TCP",
+   "quote": "mr. rodgers asked heather l. - what is a realistic number for debt for a project like this?"
+  },
+  {
+   "speaker": "Dave Passios",
+   "topic": "Marshall Park survey",
+   "quote": "dave passios - with regard to marshall park - please ensure that we use money to survey the park."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:00 PM",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm and read the covid-19 / zoom meeting advisory statement.",
+   "tags": [
+    "procedure",
+    "zoom"
+   ]
+  },
+  {
+   "topic": "Chair Report",
+   "resolution": "no action",
+   "quote": "email received from elaine regarding the write up for the town warrant. all set.",
+   "tags": [
+    "town warrant"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no comment",
+   "quote": "3. public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Presentation Regarding FinCom Project Recommendations",
+   "resolution": "discussed; no recommendation taken",
+   "quote": "4. presentation regarding fincom project recommendations",
+   "tags": [
+    "TCP building",
+    "capital projects",
+    "town meeting",
+    "debt"
+   ]
+  },
+  {
+   "topic": "Revolving Accounts and Special Revenue Funds",
+   "resolution": "Karen to prepare a presentation for the FinCom",
+   "quote": "5. revolving accounts and special revenue funds",
+   "tags": [
+    "revolving funds",
+    "special revenue",
+    "transparency"
+   ]
+  },
+  {
+   "topic": "Town Manager/Finance Report",
+   "resolution": "reported; no action",
+   "quote": "6. town manager/finance report",
+   "tags": [
+    "CARES Act",
+    "health insurance",
+    "culvert",
+    "licenses",
+    "legislators"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reports given",
+   "quote": "8. committee reports -",
+   "tags": [
+    "school committee",
+    "parks",
+    "capital planning",
+    "green communities",
+    "skate park"
+   ]
+  },
+  {
+   "topic": "Fiscal Policies",
+   "resolution": "discussed 48-hour submission deadline; decision deferred to next week",
+   "quote": "terri - if fincom doesn't receive something 48 hours in advance we can't post the materials for the budget season",
+   "tags": [
+    "fiscal policy",
+    "warrant",
+    "deadlines",
+    "budget season"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "two speakers",
+   "quote": "public comment - chris calling dave who couldn't speak",
+   "tags": [
+    "public comment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Presentation provided to FinCom by Chris Menard",
+   "where": "list",
+   "quote": "attached is the presentation provided to fincom by chris menard."
+  },
+  {
+   "name": "DLS chart / DLS form (Department of Revenue sheet)",
+   "where": "text",
+   "quote": "karen - on the dls chart you're looking at now"
+  },
+  {
+   "name": "DLS form",
+   "where": "text",
+   "quote": "where is the dls form?"
+  },
+  {
+   "name": "Email from Elaine regarding the write up for the Town Warrant",
+   "where": "text",
+   "quote": "email received from elaine regarding the write up for the town warrant."
+  },
+  {
+   "name": "Letter from the Board of Selectman 10/10/2018",
+   "where": "text",
+   "quote": "has the letter from the board of selectman 10/10/2018"
+  },
+  {
+   "name": "Five-year forecast",
+   "where": "text",
+   "quote": "the tm will be presenting a five -year forecast at the next meeting."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "TCP building project",
+  "debt exclusion",
+  "revolving funds",
+  "CARES Act",
+  "fiscal policy",
+  "town meeting",
+  "budget timeline",
+  "capital projects",
+  "2021"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached is the presentation provided to fincom by chris menard."
+ },
+ "dropped_unquoted_by_field": {}
 }

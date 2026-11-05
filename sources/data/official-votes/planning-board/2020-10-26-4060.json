@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2020-10-26",
  "docid": "4060",
@@ -12,71 +12,333 @@
  },
  "votes": [
   {
-   "motion": "Approve the ANR Plan as submitted for 361 Massachusetts Avenue",
+   "motion": "Approve the ANR Plan as submitted for 361 Massachusetts Avenue.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Brenner",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "p. bertram made motion to approve the anr plan as submitted for 361 massachusetts avenue, m. brenner seconded, roll call vote - m. brenner, aye; e. torgersen, aye; p. bertram, aye; m. allison, aye. vote passed 4-0."
+   "quote": "p. bertram made motion to approve the anr plan as submitted for 361 massachusetts avenue, m. brenner seconded, roll call vote"
   },
   {
-   "motion": "Amend the Rules and Regulations Governing the Subdivision of Land as proposed",
+   "motion": "Amend the Rules and Regulations Governing the Subdivision of Land (Section 325-3.2) as proposed.",
    "moved_by": "M. Brenner",
    "seconded_by": "P. Bertram",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "m. brenner made motion to amend the rules and regulations governing the subdivision of land as proposed, p. bertram seconded, roll call vote- p. bertram, aye; m. brenner, aye; e. torgersen, aye; m. allison, aye. vote passed 4 -0."
+   "quote": "m. brenner made motion to amend the rules and regulations governing the subdivision of land as proposed, p. bertram seconded"
   },
   {
-   "motion": "Appoint Matthew Allison to the TCP Building Design Committee",
+   "motion": "Appoint Matthew Allison to the TCP Building Design Committee.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Brenner",
    "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "p. bertram made motion to appoint matthew allison to the tcp building design committee, m. brenner seconded, roll call vote - p. bertram, aye; m. brenner, aye; e. torgersen, aye; m. allison, aye. vote passed 4-0."
+   "procedural": false,
+   "quote": "p. bertram made motion to appoint matthew allison to the tcp building design committee, m. brenner seconded, roll call vote"
   },
   {
-   "motion": "Appoint Paula Bertram to the Capital Planning Committee",
+   "motion": "Appoint Paula Bertram to the Capital Planning Committee.",
    "moved_by": "M. Brenner",
    "seconded_by": "E. Torgersen",
    "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "m. brenner made motion to appoint paula bertram to the capital planning committee, e. torgersen seconded, roll call vote - p. bertram, aye; m. brenner, aye; e. torgersen, aye; m. allison, aye. vote passed 4-0."
+   "procedural": false,
+   "quote": "m. brenner made motion to appoint paula bertram to the capital planning committee, e. torgersen seconded"
   },
   {
-   "motion": "Approve minutes from 9/28/2020",
-   "moved_by": "P. Bertram",
-   "seconded_by": "M. Brenner",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "p. bertram made motion to approve, m. brenner seconded, roll call vote - p. bertram, aye; m. brenner, aye; e. torgersen, aye; m. allison, aye. vote passed 4-0."
-  },
-  {
-   "motion": "Approve minutes from 9/28/2020, BrightFarms, 361 Massachusetts Avenue",
-   "moved_by": "P. Bertram",
-   "seconded_by": "M. Brenner",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "p. bertram made motion to approve, m. brenner seconded, roll call vote- p. bertram, aye; m. brenner, aye; e. torgersen, aye; m. allison, aye. vote passed 4 -0."
-  },
-  {
-   "motion": "The Select Board hold off on taking action regarding 360 Flat Hill Road at this time",
+   "motion": "Ask the Select Board to hold off on taking action on the 360 Flat Hill Road right of first refusal at this time (M. Allison recused).",
    "moved_by": "E. Torgersen",
    "seconded_by": "M. Brenner",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "e. torgersen made motion that the select board hold off on taking action at this time, m. brenner seconded, roll call vote - m. brenner, aye; e. torgersen, aye; p. bertram, aye. vote passed 3-0."
+   "quote": "e. torgersen made motion that the select board hold off on taking action at this time, m. brenner seconded, roll call vote"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Approve the minutes of 9/28/2020.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Brenner",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "p. bertram made motion to adjourn, m. brenner seconded, roll call vote- p. bertram, aye; m. brenner, aye; e. torgersen, aye; m. allison, aye. vote passed 4-0."
+   "quote": "p. bertram made motion to approve, m. brenner seconded, roll call vote - p. bertram, aye; m. brenner, aye; e. torgersen, aye; m. allison, aye."
+  },
+  {
+   "motion": "Approve the minutes of 9/28/2020, BrightFarms, 361 Massachusetts Avenue.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Brenner",
+   "outcome": "passed 4-0",
+   "procedural": true,
+   "quote": "motion to approve, m. brenner seconded, roll call vote- p. bertram, aye; m. brenner, aye; e. torgersen, aye; m. allison, aye."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Brenner",
+   "outcome": "passed 4-0",
+   "procedural": true,
+   "quote": "p. bertram made motion to adjourn, m. brenner seconded, roll call vote- p. bertram, aye;"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11791650000000001
+ "note": "Text extraction of a remotely held (Zoom) meeting; the BrightFarms public hearing is in separate minutes and is not included here. No public comment speakers are recorded. The 233 Lancaster Avenue item had no motion. Votes are roll calls as printed; M. Allison recused from the 360 Flat Hill Road item. Some line breaks split words in the source (for example \"Torgerse n\"), which I read as artifacts.",
+ "cost_usd": 0.00978882,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, present; paula bertram, present;"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent: tanner cole"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "matthew allison, present; paula bertram, present;"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew brenner, present; erik torgersen, present."
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew brenner, present; erik torgersen, present."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director:"
+  },
+  {
+   "name": "Joe White",
+   "role": "property owner",
+   "status": "present",
+   "quote": "presentation given by joe white, property owner."
+  },
+  {
+   "name": "Sean O’Neill",
+   "role": "Applicant",
+   "status": "present",
+   "quote": "plan presented by sean o'neill, applicant."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board discussion of the amended Stormwater Bylaw for Special Town Meeting continues at the next meeting.",
+   "quote": "board discussion to continue at the next meeting."
+  },
+  {
+   "decision": "Land Use Director to revise the Economic Development Committee Charge (membership) for Board review and vote at its next meeting.",
+   "quote": "a. burney would revise the charge for board review and vote at its next meeting."
+  },
+  {
+   "decision": "BrightFarms hearing continuation placed on the schedule for November 9.",
+   "quote": "brightfarms hearing continuation"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Marshall Park grant",
+   "what_was_recorded": "A park grant funding article could be pursued at annual town meeting, reimbursing the Town up to 64%, with a $100,000 cap unless the area has public transportation access and/or parking for 100 cars.",
+   "figures_as_printed": [
+    "64%",
+    "$100,000",
+    "100 cars"
+   ],
+   "quote": "the grant had a $100,000 cap unless the area was accessible via public transportation and/or had parking for 100 cars."
+  },
+  {
+   "topic": "MRPC small business assistance grants",
+   "what_was_recorded": "MRPC received an Attorney General's office grant for small business assistance grants of $1,000, with applications accepted through December 31, 2020.",
+   "figures_as_printed": [
+    "$1,000"
+   ],
+   "quote": "received a grant from the attorney general's office to allow for the distribution of small ($1,000) business assistance program grants."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "233 Lancaster Avenue, potential common driveway",
+   "resolution": "presented; Board feedback given, no vote",
+   "quote": "233 lancaster avenue, potential common drive- presentation given by joe white, property owner.",
+   "tags": [
+    "driveway",
+    "frontage",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "ANR Plan, 361 Massachusetts Avenue",
+   "resolution": "approved 4-0",
+   "quote": "p. bertram made motion to approve the anr plan as submitted for 361 massachusetts avenue, m. brenner seconded, roll call vote",
+   "tags": [
+    "ANR plan",
+    "lot"
+   ]
+  },
+  {
+   "topic": "Public hearing, 361 Massachusetts Avenue, BrightFarms",
+   "resolution": "referred to separate minutes",
+   "quote": "361 massachusetts avenue, brightfarms-",
+   "tags": [
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Public hearing, Subdivision Rules Section 325-3.2",
+   "resolution": "amended 4-0",
+   "quote": "m. brenner made motion to amend the rules and regulations governing the subdivision of land as proposed",
+   "tags": [
+    "subdivision rules",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Board representation, TCP Building Design Committee and Capital Planning Committee",
+   "resolution": "appointments approved 4-0",
+   "quote": "p. bertram made motion to appoint matthew allison to the tcp building design committee",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting, Stormwater Bylaw warrant article",
+   "resolution": "continued to next meeting",
+   "quote": "board discussion to continue at the next meeting.",
+   "tags": [
+    "stormwater bylaw",
+    "special town meeting",
+    "DEP"
+   ]
+  },
+  {
+   "topic": "Economic Development Committee, reassess membership",
+   "resolution": "Charge to be revised for next meeting",
+   "quote": "a. burney would revise the charge for board review and vote at its next meeting.",
+   "tags": [
+    "economic development committee",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Minutes approval, 9/28/2020",
+   "resolution": "approved 4-0 (two sets of minutes)",
+   "quote": "p. bertram made motion to approve, m. brenner seconded, roll call vote - p. bertram, aye; m. brenner, aye; e. torgersen, aye; m. allison, aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports received",
+   "quote": "the committee was working with town counsel regarding town access to table rock conservation area",
+   "tags": [
+    "open space",
+    "Marshall Park",
+    "250 Howard Street",
+    "360 Flat Hill Road",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Director's items, 360 Flat Hill Road right of first refusal",
+   "resolution": "Select Board asked to hold off; passed 3-0",
+   "quote": "e. torgersen made motion that the select board hold off on taking action at this time, m. brenner seconded, roll call vote",
+   "tags": [
+    "right of first refusal",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Master planning",
+   "resolution": "no action; work continuing",
+   "quote": "work continuing with the donahue institute on the population projection.",
+   "tags": [
+    "master planning"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted; no action",
+   "quote": "november 17, stm, 7:00 pm, mshs- board meeting will be posted for 6:35 pm",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:07 PM, passed 4-0",
+   "quote": "p. bertram made motion to adjourn, m. brenner seconded, roll call vote- p. bertram, aye;",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "233 Lancaster Avenue, Proposed Driveway documents",
+   "where": "list",
+   "quote": "documents used at meeting: 233 lancaster avenue, proposed driveway documents"
+  },
+  {
+   "name": "Stormwater Bylaw",
+   "where": "list",
+   "quote": "233 lancaster avenue, proposed driveway documents stormwater bylaw"
+  },
+  {
+   "name": "Minutes 09.28.2020",
+   "where": "list",
+   "quote": "stormwater bylaw minutes: 09.28.2020"
+  },
+  {
+   "name": "Minutes 09.28.2020, BrightFarms, 361 Massachusetts Avenue",
+   "where": "list",
+   "quote": "09.28.2020, brightfarms, 361 massachusetts avenue 360 flat hill road, notice of intent to sell"
+  },
+  {
+   "name": "360 Flat Hill Road, Notice of Intent To Sell",
+   "where": "list",
+   "quote": "360 flat hill road, notice of intent to sell"
+  },
+  {
+   "name": "Topographical plan of 233 Lancaster Avenue (proposed two lots and common driveway)",
+   "where": "text",
+   "quote": "he presented a topographical plan showing the proposed two lots"
+  },
+  {
+   "name": "Stormwater Handbook (DEP)",
+   "where": "text",
+   "quote": "changes to the stormwater handbook would be out in 2021."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "remote meeting",
+  "ANR plan",
+  "driveway",
+  "subdivision rules",
+  "stormwater bylaw",
+  "special town meeting",
+  "appointments",
+  "right of first refusal",
+  "economic development committee",
+  "open space",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

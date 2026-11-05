@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2020-04-21",
  "docid": "5677",
@@ -12,47 +12,454 @@
  },
  "votes": [
   {
-   "motion": "Postpone the discussion of the Generator Maintenance RFP to the next meeting",
+   "motion": "To postpone the discussion of the Generator RFP to next meeting.",
    "moved_by": "John R.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: john r. second-mike n. to postpone the discussion of the generator rfp to next meeting. roll call vote- mike-aye, john-aye, carl-aye, and dave-aye."
+   "quote": "to postpone the discussion of the generator rfp to next meeting."
   },
   {
-   "motion": "Accept the FY21 budget with a 10% rate increase",
+   "motion": "To accept the budget with a 10% increase.",
    "moved_by": "John R",
    "seconded_by": "Mike N.",
    "outcome": "passed 3-1",
    "procedural": false,
-   "quote": "motion: john r second: mike n. to accept the budget with a 10% increase. roll call vote: mike-aye, carl-nay, john- aye and dave-aye"
+   "quote": "to accept the budget with a 10% increase."
   },
   {
-   "motion": "Accept the minutes of 3/10/20 with noted changes",
+   "motion": "To accept the minutes for 3/10/20 with changes noted.",
    "moved_by": "John R.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: john r. second: mike n. to accept the minutes for 3/10/20 with changes noted. roll call vote: mike-aye, carl-aye, john-aye, dave-aye."
+   "quote": "to accept the minutes for 3/10/20 with changes noted."
   },
   {
-   "motion": "Accept the minutes of 4/14/20 with noted changes",
+   "motion": "To accept the minutes for 4/14 with change noted.",
    "moved_by": "Carl L.",
    "seconded_by": "John R.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: carl l. second: john r. to accept the minutes for 4/14 with change noted. roll call vote: mike- aye, carl-aye, john-aye, dave-aye."
+   "quote": "to accept the minutes for 4/14 with change noted."
   },
   {
-   "motion": "Adjourn at 6:17pm",
+   "motion": "To adjourn at 6:17pm",
    "moved_by": "John R.",
    "seconded_by": "Carl L.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: john r. to adjourn at 6:17pm second: carl l. vote: mike-aye, carl-aye, john-aye, and dave-aye."
+   "quote": "to adjourn at 6:17pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text from scanned minutes. All votes recorded with roll call votes.",
- "cost_usd": 0.10521849999999999
+ "note": "OCR text from scanned pages with no readable call to order, attendance list, or quorum statement; attendance is inferred from roll-call votes and from who spoke. Page breaks cut sentences (page 1 to 2 and 2 to 3), so some discussion is partly lost. Heather, Adam, Brian Winners, Michael Ray, and Kim Packard are named but are not recorded as taking part, so they are not listed as attendees. The Woodward & Curran and Fitchburg invoices are recorded as approved without a motion or vote, so they are decisions, not votes. The budget vote roll call shows Carl voting nay.",
+ "cost_usd": 0.00890142,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dave told barb and jack they did a great job and the rfp is a great document."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barb screen-shared the draft fy21 budget."
+  },
+  {
+   "name": "Jack",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jack asked if the commission agrees with the outsourcing figure of $154k"
+  },
+  {
+   "name": "John",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john said he'd rather start with a 10% increase for now, so they are not taking"
+  },
+  {
+   "name": "Carl",
+   "role": "not stated",
+   "status": "present",
+   "quote": "carl said he is comfortable with the phrase"
+  },
+  {
+   "name": "Mike",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mike said he is against a big increase considering the state of the economy"
+  },
+  {
+   "name": "Jane L. Ranley",
+   "role": "Minutes Clerk",
+   "status": "not stated",
+   "quote": "jane l. ranley minutes clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission agreed the Michael Ray (1170 Mass Ave) betterment abatement applies from Q4 onward; Barb to confirm with Michael Ray.",
+   "quote": "the commissioners all agreed, and barb will confirm this with"
+  },
+  {
+   "decision": "Barb to ask counsel to remove the section stating the connection fee would be reduced by the betterment already paid; the document then goes to Michael Ray, then back to the Commission for vote and signature.",
+   "quote": "barb stated that she will request that counsel remove that section."
+  },
+  {
+   "decision": "Commission agreed to postpone the irrigation meter changeover date by 2 or 3 months given the quarantine.",
+   "quote": "the commission discussed this and agreed to postpone the date for 2 or 3 months, given the quarantine."
+  },
+  {
+   "decision": "Commission agreed Barb may send a separate invoice for the FY20 Irrigation Meter fee.",
+   "quote": "to make sure the revenue is received for fy20. the commission agreed"
+  },
+  {
+   "decision": "Commission agreed large ticket items would be bought by the town rather than through contractor markup.",
+   "quote": "and agreed that large ticket items would be bought by the town."
+  },
+  {
+   "decision": "Barb to send the O&M RFP draft to Heather and Town counsel for review, specifically asking for input on markups.",
+   "quote": "barb will send the draft to heather and town counsel for their review and specifically ask for input regarding markups."
+  },
+  {
+   "decision": "Dave directed Barb to email Heather and Adam (Counsel) asking for the next action on the SWSS contract termination.",
+   "quote": "dave asked barb to send an email to heather and adam (counsel) requesting what the next action is."
+  },
+  {
+   "decision": "Dave suggested discussing the SWSS contract termination with Heather and Counsel in executive session.",
+   "quote": "dave suggested talking to heather and counsel and discuss this in executive session."
+  },
+  {
+   "decision": "Barb to speak with Heather to review the FY21 budget and send any changes to the Commission.",
+   "quote": "barb will speak with heather to go over the budget, to see if heather has any"
+  },
+  {
+   "decision": "Commission agreed the next meeting will be 5/12 at 4pm via Zoom.",
+   "quote": "the commission agreed that the next meeting will be 5/12 @4pm. and will be via zoom."
+  },
+  {
+   "decision": "Invoices to Woodward & Curran and Fitchburg usage were approved (no motion recorded).",
+   "quote": "invoices- woodward & curran - $4,014.80 ($24k left on the contract) and fitchburg usage - $10,865.00 were approved."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY21 outsourcing figure",
+   "what_was_recorded": "Jack asked whether the Commission agreed with a $154k outsourcing figure made up of several contract lines, plus $50k for Infrastructure.",
+   "figures_as_printed": [
+    "$154k",
+    "$138k",
+    "$11k",
+    "$4k",
+    "$1k",
+    "$50k"
+   ],
+   "quote": "jack asked if the commission agrees with the outsourcing figure of $154k, consisting of $138k pump station contract, $11k generator maintenance, $4k for billing support and $1k pump station grounds, plus infrastructure for $50k."
+  },
+  {
+   "topic": "FY21 budget rate increase",
+   "what_was_recorded": "The Commission discussed budget scenarios with a 10% rate increase and with no increase; the budget was accepted with a 10% increase, with transfers from Retained Earnings discussed; Carl suggested a 15% increase if deferred to November.",
+   "figures_as_printed": [
+    "10%",
+    "15%"
+   ],
+   "quote": "the commission discussed the budget summary with a 10% increase and without an increase, with transfers from retained earnings."
+  },
+  {
+   "topic": "Rate increase timing",
+   "what_was_recorded": "Barb said a rate increase voted now would not be billed until Q2 bills, leaving three quarters of FY21; waiting until November would push the revenue out further.",
+   "figures_as_printed": [
+    "15%"
+   ],
+   "quote": "barb added that if the commission voted on rate increase now, it will not be billed until the q2 bills"
+  },
+  {
+   "topic": "Irrigation Meter FY20 fee",
+   "what_was_recorded": "Barb proposed a separate invoice for the FY20 Irrigation Meter annual fee because it could not be added to the online Q2 and Q3 invoices.",
+   "figures_as_printed": [
+    "$50"
+   ],
+   "quote": "send out a separate invoice for the $50 fy20 fee to make sure the revenue is received for fy20"
+  },
+  {
+   "topic": "Woodward & Curran invoice",
+   "what_was_recorded": "Invoice approved, with a note on remaining contract balance.",
+   "figures_as_printed": [
+    "$4,014.80",
+    "$24k"
+   ],
+   "quote": "invoices- woodward & curran - $4,014.80 ($24k left on the contract)"
+  },
+  {
+   "topic": "Fitchburg usage invoice",
+   "what_was_recorded": "Fitchburg usage invoice approved.",
+   "figures_as_printed": [
+    "$10,865.00"
+   ],
+   "quote": "fitchburg usage - $10,865.00 were approved."
+  },
+  {
+   "topic": "Purchase approval threshold and markups",
+   "what_was_recorded": "RFP states purchases over $1k need Jack's approval; Commission discussed markup percentages for items under and over $1k.",
+   "figures_as_printed": [
+    "$1k"
+   ],
+   "quote": "barb noted that the rfp states that purchases over $1k would need to be approved by jack."
+  },
+  {
+   "topic": "Leominster increases",
+   "what_was_recorded": "Carl asked how Dave would present the Leominster increases in the budget presentation; no new information since 3/15.",
+   "figures_as_printed": [],
+   "quote": "carl asked dave how he plans to present the difficult situation regarding leominster during the budget presentation."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "Opening comment on the shutdown and weekend",
+   "quote": "public comment- dave said that he hopes everyone who has been shut in can get outside to enjoy the beautiful"
+  },
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "Praise for RFP and budget work",
+   "quote": "public comment - dave said he is proud to work with everyone and that the commission has done a great job"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "tags": [
+    "state closures",
+    "irrigation meters"
+   ],
+   "quote": "dave also announced that the state closures will be extended to 5/18 and more"
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment- dave said that he hopes everyone who has been shut in can get outside to enjoy the beautiful"
+  },
+  {
+   "topic": "RFP finalization - Pump Station Operation & Maintenance",
+   "resolution": "discussed; draft to go to Heather and Town counsel",
+   "tags": [
+    "RFP",
+    "pump stations",
+    "contractor",
+    "markups"
+   ],
+   "quote": "the commission discussed the finalized copy of the o&m rfp"
+  },
+  {
+   "topic": "RFP for Generator Maintenance",
+   "resolution": "postponed to next meeting",
+   "tags": [
+    "RFP",
+    "generators"
+   ],
+   "quote": "to postpone the discussion of the generator rfp to next meeting."
+  },
+  {
+   "topic": "SWSS Contract Termination",
+   "resolution": "discussed; counsel to be asked for next action; executive session suggested",
+   "tags": [
+    "SWSS",
+    "contract",
+    "breach",
+    "legal"
+   ],
+   "quote": "dave suggested talking to heather and counsel and discuss this in executive session."
+  },
+  {
+   "topic": "FY21 Budget finalization and approval",
+   "resolution": "approved with a 10% increase (3-1)",
+   "tags": [
+    "FY21 budget",
+    "rate increase",
+    "retained earnings"
+   ],
+   "quote": "to accept the budget with a 10% increase."
+  },
+  {
+   "topic": "Leominster budget presentation",
+   "resolution": "discussed; no action",
+   "tags": [
+    "Leominster",
+    "FinCom presentation"
+   ],
+   "quote": "carl asked dave how he plans to present the difficult situation regarding leominster during the budget presentation."
+  },
+  {
+   "topic": "1170 Mass Ave Betterment document",
+   "resolution": "abatement confirmed from Q4; counsel to remove section and correct document",
+   "tags": [
+    "betterment",
+    "sewer service area",
+    "1170 Mass Ave"
+   ],
+   "quote": "barb received the documents back from counsel and forwarded"
+  },
+  {
+   "topic": "FY20 Invoices for Irrigation Meter Policy",
+   "resolution": "separate $50 invoice agreed",
+   "tags": [
+    "irrigation meter",
+    "invoicing"
+   ],
+   "quote": "barb noted she was unable to add the irrigation meter annual fee to the online q2 and q3 invoices"
+  },
+  {
+   "topic": "Irrigation Meter changeover implementation date",
+   "resolution": "postponed 2 or 3 months",
+   "tags": [
+    "irrigation meter",
+    "quarantine",
+    "meter reading"
+   ],
+   "quote": "the commission discussed this and agreed to postpone the date for 2 or 3 months, given the quarantine."
+  },
+  {
+   "topic": "Inflow/Infiltration (I/I) 3rd party review",
+   "resolution": "discussed; push for schedule",
+   "tags": [
+    "I/I",
+    "Woodward & Curran",
+    "billing"
+   ],
+   "quote": "barb reported that the billing files woodward & curran (w&c) requested"
+  },
+  {
+   "topic": "Minutes 3/10/20",
+   "resolution": "approved with changes",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to accept the minutes for 3/10/20 with changes noted."
+  },
+  {
+   "topic": "Minutes 4/14",
+   "resolution": "approved with change",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to accept the minutes for 4/14 with change noted."
+  },
+  {
+   "topic": "FY21 Budget follow-up",
+   "resolution": "Barb to review with Heather",
+   "tags": [
+    "FY21 budget"
+   ],
+   "quote": "barb will speak with heather to go over the budget, to see if heather has any"
+  },
+  {
+   "topic": "Business Manager Report",
+   "resolution": "invoices approved; next meeting set for 5/12 via Zoom",
+   "tags": [
+    "invoices",
+    "closures",
+    "grease trap",
+    "meeting schedule"
+   ],
+   "quote": "barb reported that the governor extended the closures to 5/18."
+  },
+  {
+   "topic": "Town Caucus",
+   "resolution": "no action; likely cancelled",
+   "tags": [
+    "town caucus",
+    "election"
+   ],
+   "quote": "town caucus - is scheduled for 5/13."
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "thanks"
+   ],
+   "quote": "public comment - dave said he is proud to work with everyone and that the commission has done a great job"
+  },
+  {
+   "topic": "Member Agenda Inputs for Future Meetings",
+   "resolution": "Generator Maintenance RFP noted for future agenda",
+   "tags": [
+    "agenda",
+    "generators"
+   ],
+   "quote": "member agenda inputs for future meetings - generator maintenance rfp"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:17pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "to adjourn at 6:17pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Clean Scope of Stations RFP for 4/28/20 meeting draft 4/24",
+   "where": "list",
+   "quote": "clean scope of stations rfp for 4/28/20 meeting draft 4/24"
+  },
+  {
+   "name": "Draft FY21 Budget to SC for 4/28/20 discussion",
+   "where": "list",
+   "quote": "draft fy21 budget to sc for 4/28/20 discussion"
+  },
+  {
+   "name": "Memorandum of Agreement v2 with counsel comments -1170 Mass Ave",
+   "where": "list",
+   "quote": "memorandum of agreement v2 with counsel comments -1170 mass ave"
+  },
+  {
+   "name": "O&M RFP (pump station operation and maintenance)",
+   "where": "text",
+   "quote": "the commission discussed the finalized copy of the o&m rfp"
+  },
+  {
+   "name": "Wright Pierce comprehensive checklist",
+   "where": "text",
+   "quote": "jack said it is important to have the comprehensive checklist from wright pierce, which can be added to the rfp."
+  },
+  {
+   "name": "Letters to Irrigation Meter participants",
+   "where": "text",
+   "quote": "she had sent out letters to the participants"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "pump station O&M RFP",
+  "FY21 budget",
+  "rate increase",
+  "COVID-19 closures",
+  "irrigation meters",
+  "1170 Mass Ave betterment",
+  "SWSS contract",
+  "Woodward & Curran I/I review",
+  "Leominster",
+  "invoices",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts-"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2019-12-19",
  "docid": "2158",
@@ -12,31 +12,204 @@
  },
  "votes": [
   {
-   "motion": "to approve the November 7 minutes",
+   "motion": "Approve the minutes of November 7.",
    "moved_by": "Dave Passios",
    "seconded_by": "Jon Henshaw",
-   "outcome": "passed",
+   "outcome": "passed (unanimous approval)",
    "procedural": true,
-   "quote": "dave passios moved to approve, jon henshaw 2nd, unanimous approval"
+   "quote": "november 7 - dave passios moved to approve, jon henshaw 2nd, unanimous approval"
   },
   {
-   "motion": "to approve the November 14 minutes",
+   "motion": "Approve the minutes of November 14.",
    "moved_by": "Dave Passios",
    "seconded_by": "Jon Henshaw",
-   "outcome": "passed",
+   "outcome": "passed (unanimous approval)",
    "procedural": true,
-   "quote": "dave passios moved to approve, jon henshaw 2nd, unanimous approval"
+   "quote": "november 14 - dave passios moved to approve, jon henshaw 2nd, unanimous approval"
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dave Passios",
    "seconded_by": "John Henshaw",
-   "outcome": "passed",
+   "outcome": "passed (unanimous approval)",
    "procedural": true,
    "quote": "dave passios motioned/ john henshaw seconded; unanimous approval"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted; text is clear and votes are unambiguous",
- "cost_usd": 0.0869625
+ "note": "Text is OCR of the minutes; no scan-level vote problems, but vote counts are not printed (only 'unanimous approval'). Names vary within the minutes: 'Jon Henshaw' and 'John Henshaw', 'Dave Passios' and 'David Passios'; the DPW Director heading is printed alongside body text 'DPD Director'. The Next meeting line is garbled ('January 9 -' and ', January 23-'). The Town Manager report names no town official. Received stamp: March 12 2020.",
+ "cost_usd": 0.005374519999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, dave passios, peter beardmore, michelle walton"
+  },
+  {
+   "name": "Michelle Walton",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, dave passios, peter beardmore, michelle walton"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, dave passios, peter beardmore, michelle walton"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, dave passios, peter beardmore, michelle walton"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, dave passios, peter beardmore, michelle walton"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "absent",
+   "quote": "jay simeone 1. call to order"
+  },
+  {
+   "name": "Chief Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "the board held an informal discussion with chief sullivan to discuss the operations of the fire department"
+  },
+  {
+   "name": "Mr. Rodriquenz",
+   "role": "DPD Director",
+   "status": "present",
+   "quote": "the board held an informal discussion with mr. rodriquenz, dpd director to discuss operations of the dpd"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Fire Department operations and budget expectations",
+   "what_was_recorded": "Discussion with the Fire Chief covered overtime, its effects from expanding full-time staff, and costs of training, with no figures printed.",
+   "figures_as_printed": [],
+   "quote": "topics discussed include overtime, and effects of overtime from expanding full-time staff"
+  },
+  {
+   "topic": "DPW budget expectations and stormwater funding",
+   "what_was_recorded": "Discussion with the DPD Director covered an expected level-funded budget excluding pavement management, and the lack of resolution on stormwater mandate funding, with no figures printed.",
+   "figures_as_printed": [],
+   "quote": "topics included expectation for level-funded budget (excluding pavement management)"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "meeting called to order at 6:30",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "terri burchfield, chair called the meeting to order at 6:30 (all expected members were in attendance)."
+  },
+  {
+   "topic": "Communications and public comment",
+   "resolution": "no public comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment - none"
+  },
+  {
+   "topic": "Informal discussion with Fire Chief",
+   "resolution": "discussed, no action recorded",
+   "tags": [
+    "fire department",
+    "overtime",
+    "budget"
+   ],
+   "quote": "the board held an informal discussion with chief sullivan to discuss the operations of the fire department"
+  },
+  {
+   "topic": "Informal discussion with DPW Director",
+   "resolution": "discussed, no action recorded",
+   "tags": [
+    "DPW",
+    "level-funded budget",
+    "stormwater",
+    "pavement management",
+    "snow removal"
+   ],
+   "quote": "the board held an informal discussion with mr. rodriquenz, dpd director to discuss operations of the dpd"
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved November 7 and November 14 minutes",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "november 7 - dave passios moved to approve, jon henshaw 2nd, unanimous approval"
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational, no action",
+   "tags": [
+    "budgeting software"
+   ],
+   "quote": "the town finance director explained that the committee will be given access to our online budgeting software."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received reports, no action",
+   "tags": [
+    "TCP redesign",
+    "capital planning"
+   ],
+   "quote": "dave passios reported that the tcp redesign rfq is out and there have been requests for 30 packets."
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "dates listed, no action",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "january 9 - , january 23-"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "dave passios motioned/ john henshaw seconded; unanimous approval"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "TCP redesign RFQ",
+   "where": "text",
+   "quote": "dave passios reported that the tcp redesign rfq is out and there have been requests for 30 packets."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "fire department",
+  "DPW",
+  "budget expectations",
+  "stormwater",
+  "pavement management",
+  "minutes approval",
+  "TCP redesign RFQ",
+  "budgeting software"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

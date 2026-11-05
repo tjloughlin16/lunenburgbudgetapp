@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2019-04-13",
  "docid": "6238",
@@ -12,15 +12,167 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "TD",
    "seconded_by": "KJ",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "the commission adjourned at 11 am with a motion by td and a second by kj with a unanimous vote."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0781935
+ "note": "Text extract of a typed minutes document, not a scan; it contains typos (e.g., \"Chariman\", \"9m\", \"disc ussion\"). Only one vote is recorded: adjournment, moved by TD and seconded by KJ, unanimous. No vote count is printed beyond \"unanimous\", and no motion approving prior minutes is recorded. Attendance is inferred from \"all present except BP and CC\", which I read as Bob Pease and Catie Childs absent; the other members are marked present on that basis. Matthew S. Marro appears only in the letterhead and is not recorded as taking part, so he is omitted from attendees. \"KJ\" is read as Kenneth Jones, which the minutes do not state outright; \"Jon Jones\" is listed separately as a member of the public. No dollar figures are printed.",
+ "cost_usd": 0.0038652200000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chariman bursch called to order at 9m with all present except bp and cc"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "chariman bursch called to order at 9m with all present except bp and cc"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Commission member",
+   "status": "absent",
+   "quote": "chariman bursch called to order at 9m with all present except bp and cc"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "Commission member",
+   "status": "absent",
+   "quote": "chariman bursch called to order at 9m with all present except bp and cc"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "chariman bursch called to order at 9m with all present except bp and cc"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "chariman bursch called to order at 9m with all present except bp and cc"
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "Commission member (referred to as KJ)",
+   "status": "present",
+   "quote": "chariman bursch called to order at 9m with all present except bp and cc"
+  },
+  {
+   "name": "Gary Gouldrup",
+   "role": "not printed; plan submitted by New England Forestry Consultants",
+   "status": "present",
+   "quote": "gary gouldrup toured the commission and the public through each area specified in the stewardship plan."
+  },
+  {
+   "name": "Ginni Albertson",
+   "role": "member of the public",
+   "status": "present",
+   "quote": "ginni and norbert albertson raised concerns relevant to the continued protection of the pollinator habitat."
+  },
+  {
+   "name": "Norbert Albertson",
+   "role": "member of the public",
+   "status": "present",
+   "quote": "norbert albertson examined any potential revenue generation with the commission."
+  },
+  {
+   "name": "Jon Jones",
+   "role": "member of the public",
+   "status": "present",
+   "quote": "jon jones spoke of other conservation parcels that have bird habitat cultivated and how well they work."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Revenue generation from the conservation land",
+   "what_was_recorded": "A member of the public examined potential revenue generation with the commission, and KJ said revenue generation is part of the equation to keep bird-protection work affordable, but not the primary driver; no figures were printed.",
+   "figures_as_printed": [],
+   "quote": "kj noted that revenue generation is part of the equation to ensure the work towards bird protection can be affordable to execute"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ginni Albertson",
+   "stated_role": "not stated",
+   "topic": "pollinator habitat protection concerns",
+   "quote": "ginni and norbert albertson raised concerns relevant to the continued protection of the pollinator habitat."
+  },
+  {
+   "speaker": "Norbert Albertson",
+   "stated_role": "not stated",
+   "topic": "potential revenue generation",
+   "quote": "norbert albertson examined any potential revenue generation with the commission."
+  },
+  {
+   "speaker": "Jon Jones",
+   "stated_role": "not stated",
+   "topic": "other conservation parcels with bird habitat",
+   "quote": "jon jones spoke of other conservation parcels that have bird habitat cultivated and how well they work."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 9 AM; no action",
+   "quote": "chariman bursch called to order at 9m with all present except bp and cc",
+   "tags": [
+    "call to order",
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Site Walk of Conservation Land (Forest Stewardship Plan review)",
+   "resolution": "site walk and public input; no action recorded; public discussion scheduled for April 17, 2019",
+   "quote": "review of proposed forest stewardship plan submitted by new england forestry consultants.",
+   "tags": [
+    "forest stewardship plan",
+    "site walk",
+    "conservation land",
+    "public input"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned unanimously at 11 am",
+   "quote": "the commission adjourned at 11 am with a motion by td and a second by kj with a unanimous vote.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "proposed Forest Stewardship Plan (submitted by New England Forestry Consultants)",
+   "where": "text",
+   "quote": "review of proposed forest stewardship plan submitted by new england forestry consultants."
+  }
+ ],
+ "tags": [
+  "Conservation Commission",
+  "Hollis Road",
+  "forest stewardship plan",
+  "site walk",
+  "pollinator habitat",
+  "bird habitat",
+  "public input",
+  "revenue generation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

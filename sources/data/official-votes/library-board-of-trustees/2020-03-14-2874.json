@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2020-03-14",
  "docid": "2874",
@@ -12,6 +12,134 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe a special meeting held to discuss the library's coronavirus response and closure plans, including discussions of services, staff safety, cleaning, and book quarantine procedures. However, no formal motions with recorded movers, seconders, and outcomes are documented. The meeting was called to order and adjourned, but these procedural actions are not stated as voted motions with recorded results.",
- "cost_usd": 0.0792075
+ "note": "The minutes are a summary, not a verbatim transcript. No votes or motions are recorded, including for adjournment. Some words are split by spacing artifacts (e.g., \"addit ional\", \"e xtend\"). Staff named in the text (Nicole Piermarini, Lydia, Debbie, Heather) are not recorded as attendees. No documents list is printed.",
+ "cost_usd": 0.0036227200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt special meeting was called to order at 11:04 am. by chairperson harry kubetz."
+  },
+  {
+   "name": "Kate McCarron",
+   "role": "",
+   "status": "present",
+   "quote": "attending: in person: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz,"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: in person: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz,"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "",
+   "status": "present",
+   "quote": "attending: in person: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz,"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "",
+   "status": "remote",
+   "quote": "via conference call: dick mailloux, maia wentrup, donna saiia, lars widstrand, michael-ray jeffreys - bos"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "",
+   "status": "remote",
+   "quote": "via conference call: dick mailloux, maia wentrup, donna saiia, lars widstrand, michael-ray jeffreys - bos"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "",
+   "status": "remote",
+   "quote": "via conference call: dick mailloux, maia wentrup, donna saiia, lars widstrand, michael-ray jeffreys - bos"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "",
+   "status": "remote",
+   "quote": "via conference call: dick mailloux, maia wentrup, donna saiia, lars widstrand, michael-ray jeffreys - bos"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "BOS",
+   "status": "remote",
+   "quote": "via conference call: dick mailloux, maia wentrup, donna saiia, lars widstrand, michael-ray jeffreys - bos"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Library closed until Friday March 27th; staff continue reporting for regular hours.",
+   "quote": "the library will be closed until friday march 27th. staff will still be reporting for regular hours."
+  },
+  {
+   "decision": "Returned books to be quarantined for a week unless more specific info on surface-contact risk is received; quarantined books accrue no fines.",
+   "quote": "muir said that they will quarantine returned books for a week unless we receive more specific info about the risks from surface contact."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Staff pay during closure",
+   "what_was_recorded": "Chair asked that staff not have to worry about getting paid during the closure; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "harry asked about staff getting paid, we should make sure that they don't have to worry about getting paid during the closure."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Discussion of Coronavirus Response",
+   "resolution": "discussed, no action; library closed through March 27",
+   "quote": "discussion of coronavirus response",
+   "tags": [
+    "coronavirus",
+    "library closure",
+    "public health",
+    "services"
+   ]
+  },
+  {
+   "topic": "Staff departure announcement (Assistant Director)",
+   "resolution": "announced, no action",
+   "quote": "muir announced that nicole piermarini has accepted the position of assistant director at the leominster public library and her last day will be 3/19.",
+   "tags": [
+    "staffing",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 11:57 am; no motion recorded",
+   "quote": "meeting was adjourned at 11:57 am.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Manager statement on virus information",
+   "where": "text",
+   "quote": "muir read a statement from the town manager on virus info."
+  }
+ ],
+ "tags": [
+  "coronavirus",
+  "library closure",
+  "special meeting",
+  "staffing",
+  "remote participation",
+  "patron services"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

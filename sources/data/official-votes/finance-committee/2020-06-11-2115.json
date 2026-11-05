@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2020-06-11",
  "docid": "2115",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the April 2, 2020 minutes",
+   "motion": "Approve the April 2, 2020 minutes.",
    "moved_by": "John Henshaw",
    "seconded_by": "Jay Simeone",
    "outcome": "passed 4-0-1",
@@ -20,39 +20,281 @@
    "quote": "april 2, 2020, john henshaw moved to approve, jay simeone 2nd (4-0-1, michelle walton abstained)"
   },
   {
-   "motion": "not make a recommendation on Article 4",
+   "motion": "Make no recommendation on FY21 Article 4 (passed over).",
    "moved_by": "Peter Beardmore",
    "seconded_by": "Jay Simeone",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "article 4 (passed over) - peter beardmore moved to not make a recommendation, jay simeone 2nd (unanimous approval)"
   },
   {
-   "motion": "not make a recommendation on Article 9",
+   "motion": "Make no recommendation on FY21 Article 9 (passed over).",
    "moved_by": "Peter Beardmore",
    "seconded_by": "Jay Simeone",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "article 9 (passed over) - peter beardmore moved to not make a recommendation, jay simeone 2nd (unanimous approval)"
   },
   {
-   "motion": "recommend against approving Article 21 (streetlights)",
+   "motion": "Recommend against approving Article 21 (streetlights).",
    "moved_by": "Peter Beardmore",
    "seconded_by": "Michelle Walton",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "peter beardmore moved to recommend against approving article 21 (streetlights), michelle walton 2nd. (unanimous approval)"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jay Simeone",
    "seconded_by": "Peter Beardmore",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "jay simeone motion, peter beardmore 2nd, unanimous approval"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is OCR-scanned from macOS Vision. All 5 votes clearly recorded with outcomes.",
- "cost_usd": 0.0818735
+ "note": "OCR-extracted text, partly garbled: page 2 opens mid-sentence; the item 7 heading is missing (only 'None' is printed before item 8), so it is not recorded as a topic. The top block reads 'David Passios' while the attendance line reads 'Dave Passios'; the attendee is recorded as 'Dave Passios'. The header names a joint meeting with the Lunenburg Board of Selectmen. Attendance lists no absentees. Articles 4, 9 and 21 are recorded as motions with no dollar figures printed. Votes are recorded with results; the Article 4 and 9 motions are shown as 'passed, unanimous' from '(unanimous approval)'.",
+ "cost_usd": 0.007434519999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "terri burchfield, michelle walton, peter beardmore, john henshaw, jay simeone"
+  },
+  {
+   "name": "Michelle Walton",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, michelle walton, peter beardmore, john henshaw, jay simeone"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, michelle walton, peter beardmore, john henshaw, jay simeone"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, michelle walton, peter beardmore, john henshaw, jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, michelle walton, peter beardmore, john henshaw, jay simeone"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "jay simeone dave passios"
+  },
+  {
+   "name": "Chief Marino",
+   "role": "Chief",
+   "status": "present",
+   "quote": "chief marino clarified that the cruiser remaining on the capital plan is not a replacement vehicle"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Resident",
+   "status": "present",
+   "quote": "resident carl luck commented that the debt project is a great idea"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee agreed to defer all capital items except the cruiser and the Flat Hill culvert design, and to appropriate the funds to free cash.",
+   "quote": "peter beardmore floated the idea of deferring all capital items except the cruiser and the flat hill culvert design and appropriating the funds to free cash. generally the committee agreed."
+  },
+  {
+   "decision": "Committee took no action on the FY21 capital items discussed.",
+   "quote": "the committee took no action."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "CARES Act funding",
+   "what_was_recorded": "Town Manager and Finance Director reported that CARES Act funding of approximately $147K has been received.",
+   "figures_as_printed": [
+    "$147K"
+   ],
+   "quote": "cares act funding for approximately $147k has been received."
+  },
+  {
+   "topic": "Deferring capital items and appropriating free cash to reserve",
+   "what_was_recorded": "Members generally supported deferring capital plan items and appropriating remaining free cash to the reserve fund for flexibility; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "generally, the members supported the idea of deferring items on the capital plan and appropriating the remaining free cash to the reserve fund"
+  },
+  {
+   "topic": "Critical capital projects",
+   "what_was_recorded": "Town manager identified five capital projects as critical; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "the town manager identified the following capital projects as critical: culvert, police cruiser, scba, aco vehicle, asbestos abatement"
+  },
+  {
+   "topic": "School opening costs and reserve account",
+   "what_was_recorded": "A member said the reserve account would give flexibility if school opening costs ran significantly above estimates; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "the reserve account would give us the greatest possible flexibility in the event the school opening costs turned out to be significantly greater than anticipated"
+  },
+  {
+   "topic": "Debt group charge and cost review",
+   "what_was_recorded": "Proposed debt group charge to study cost and timeline of borrowing projects and their effect on the operating budget and property taxes; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "cost and timeline for anticipated projects that will require borrowing (tcp, thes, 635 mass ave., old primary school, etc.)"
+  },
+  {
+   "topic": "Streetlight replacement funding",
+   "what_was_recorded": "A resident raised concern about funding sources for streetlight replacement; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "he is also concerned with funding sources for streetlight replacement, citing a 2017 green communities report."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Recent town events",
+   "speaker": "Peter Beardmore",
+   "stated_role": "",
+   "quote": "peter beardmore noted the recent events in town including the senior class motorcade and the demonstration that was held on the previous sunday."
+  },
+  {
+   "topic": "Debt project and open meeting law",
+   "speaker": "Carl Luck",
+   "stated_role": "Resident",
+   "quote": "resident carl luck commented that the debt project is a great idea, but recommended opening membership to the public and check with town counsel on open meeting law."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "Chair opened meeting and read Open Meeting and COVID-19 statement",
+   "quote": "terri burchfield, chair called the finance committee to and read the open meeting and covid-19 statement.",
+   "tags": [
+    "call to order",
+    "covid-19"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "none offered",
+   "quote": "2. public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager and Finance Director Report",
+   "resolution": "received report; CARES Act funds received",
+   "quote": "cares act funding for approximately $147k has been received.",
+   "tags": [
+    "cares act",
+    "town manager report"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved 4-0-1",
+   "quote": "april 2, 2020, john henshaw moved to approve, jay simeone 2nd (4-0-1, michelle walton abstained)",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "FY21 Budget review",
+   "resolution": "deferred articles 4 and 9 with no recommendation; recommended against Article 21; no action on capital items",
+   "quote": "recommendations for deferred items",
+   "tags": [
+    "fy21 budget",
+    "capital plan",
+    "free cash",
+    "streetlights",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Formation of Debt Group",
+   "resolution": "charge outlined; no action recorded",
+   "quote": "peter beardmore outlined a proposed charge debt project including:",
+   "tags": [
+    "debt",
+    "borrowing"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "two speakers heard",
+   "quote": "peter beardmore noted the recent events in town including the senior class motorcade and the demonstration that was held on the previous sunday.",
+   "tags": [
+    "public comment",
+    "debt group"
+   ]
+  },
+  {
+   "topic": "Next Meeting",
+   "resolution": "noted town meeting June 13 and a June 25 meeting",
+   "quote": "town meeting on sat, june 13",
+   "tags": [
+    "next meeting",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned unanimously",
+   "quote": "jay simeone motion, peter beardmore 2nd, unanimous approval",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Article 4 (Passed over)",
+   "where": "text",
+   "quote": "article 4 (passed over) - peter beardmore moved to not make a recommendation, jay simeone 2nd (unanimous approval)"
+  },
+  {
+   "name": "Article 9 (Passed over)",
+   "where": "text",
+   "quote": "article 9 (passed over) - peter beardmore moved to not make a recommendation, jay simeone 2nd (unanimous approval)"
+  },
+  {
+   "name": "Article 21 (streetlights)",
+   "where": "text",
+   "quote": "peter beardmore moved to recommend against approving article 21 (streetlights), michelle walton 2nd. (unanimous approval)"
+  },
+  {
+   "name": "2017 green communities report",
+   "where": "text",
+   "quote": "citing a 2017 green communities report."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "FY21 budget",
+  "capital plan",
+  "free cash",
+  "reserve fund",
+  "stabilization",
+  "debt group",
+  "streetlights",
+  "CARES Act",
+  "COVID-19",
+  "town meeting",
+  "joint meeting with selectmen",
+  "Zoom"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

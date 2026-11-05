@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-01-12",
  "docid": "5288",
@@ -12,25 +12,375 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager appointments of DPW Intermittent Heavy Equipment Operator Mike Roberts and Heavy Equipment Operator William (Sal) Napoli",
+   "motion": "Ratify the Town Manager appointments of Mike Roberts as DPW Intermittent Heavy Equipment Operator and William (Sal) Napoli as Heavy Equipment Operator.",
    "moved_by": "K. Adams",
    "seconded_by": "J. Marino",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: k. adams 2nd: j. marino to ratify the town manager appointments of dpw intermittent heavy equipment operator to mike roberts and heavy equipment operator william (sal) napoli vote: mr. dwyer-aye, mr. marino-aye, ms. adams-aye, mr. jeffreys-aye, mr. alonzo- ay",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: k. adams 2nd: j. marino to ratify the town manager appointments of dpw intermittent heavy equipment operator to mike roberts"
   },
   {
-   "motion": "Approve the Minutes of December 1 and December 8, 2020 as presented",
+   "motion": "Approve the Minutes of December 1 and December 8, 2020 as presented.",
    "moved_by": "T. Dwyer",
    "seconded_by": "M. Jeffreys",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. dwyer 2nd. m. jeffreys to approve the minutes of december 1 and december 8, 2020 as presented vote: mr. dwyer-aye, mr. marino-aye, ms. adams-aye, mir. jeffreys-aye, mr. alonzo- ay",
-   "quote_taken_from_text": true
+   "quote": "motion: t. dwyer 2nd. m. jeffreys to approve the minutes of december 1 and december 8, 2020 as presented"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, macOS Vision. The document appears incomplete at the end (final line is OCR gibberish). No motion was voted on regarding the Old Primary School—that section was a workshop/discussion only.",
- "cost_usd": 0.1111385
+ "note": "OCR text with garbling: the upcoming meetings schedule is unreadable (OCR shows 'Jot Mical Come the Mening meetinar'), the page 7 footer is garbled, and page 3 opens mid-sentence on the bridge item. Quotes are copied as printed, including misspellings such as 'Jetfreys', 'GOVERNEMENT' and '88Massachusetts'. The APDC and Historical Commission 'voted to adjourn their meetings', but those are other bodies' votes with no motion or tally, so they are not recorded as votes here. The board's own adjournment is not printed. Richard McGrath is listed as Chairman of the Historical Commission but later speaks for the APDC, so his affiliation is ambiguous. Remarks by board members under the PUBLIC COMMENT headings are not recorded as public comment; only Dave Rodgers is recorded as a public speaker. Vote tallies are not printed as counts; the minutes list five 'aye' votes, but outcomes are recorded as 'passed'.",
+ "cost_usd": 0.010968820000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jetfreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Michael-Ray Jetfreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jetfreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jetfreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jetfreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jetfreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; rob oliva, dpw director"
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; rob oliva, dpw director"
+  },
+  {
+   "name": "Ms. St. Pierre",
+   "role": "",
+   "status": "present",
+   "quote": "ms. st. pierre thanked the board and exited the meeting."
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "82 Highland Street",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, regarding the old primary building, stated the reason developers are not interested in the building"
+  },
+  {
+   "name": "Chuck Venezia",
+   "role": "Chairman of the Historical Society",
+   "status": "present",
+   "quote": "chuck venezia, chairman of the historical society was also present."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman richard mcgrath, bill lakso, jennifer sanderson and kevin boussom of the historical commission were present."
+  },
+  {
+   "name": "Bill Lakso",
+   "role": "Historical Commission",
+   "status": "present",
+   "quote": "chairman richard mcgrath, bill lakso, jennifer sanderson and kevin boussom of the historical commission were present."
+  },
+  {
+   "name": "Jennifer Sanderson",
+   "role": "Historical Commission",
+   "status": "present",
+   "quote": "chairman richard mcgrath, bill lakso, jennifer sanderson and kevin boussom of the historical commission were present."
+  },
+  {
+   "name": "Kevin Boussom",
+   "role": "Historical Commission",
+   "status": "present",
+   "quote": "chairman richard mcgrath, bill lakso, jennifer sanderson and kevin boussom of the historical commission were present."
+  },
+  {
+   "name": "Brian Corcoran",
+   "role": "APDC member",
+   "status": "present",
+   "quote": "apdc members present were brian corcoran, cullen dwyer, vice chair and anthony nicastro."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "apdc members present were brian corcoran, cullen dwyer, vice chair and anthony nicastro."
+  },
+  {
+   "name": "Anthony Nicastro",
+   "role": "APDC member",
+   "status": "present",
+   "quote": "apdc members present were brian corcoran, cullen dwyer, vice chair and anthony nicastro."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board, through the Town Manager, is arranging a date to meet with the newly elected legislative delegation (Senator John Cronin, Representatives Michael Kushmereck and Danillo Sena).",
+   "quote": "through town manager, is arranging a date for meeting with our newly elected legislative delegation."
+  },
+  {
+   "decision": "The Board stated its intention to place a warrant article on the Annual Town Meeting to fund a design for a green space at the old Primary School property.",
+   "quote": "our intention is to place a warrant article on the annual town meeting to fund a design for a green space for the property as described earlier."
+  },
+  {
+   "decision": "Town Manager Heather Lemieux will discuss with Mr. Marino further on specifics of CARES Act funding for technology to help people join Zoom meetings.",
+   "quote": "ms. lemieux stated she would discuss with him further on specifics."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts Payable Warrant #31 21",
+   "what_was_recorded": "Mr. Alonzo reported he signed the Accounts Payable Warrant dated 1/5/21.",
+   "figures_as_printed": [
+    "$507,536.75"
+   ],
+   "quote": "accounts payable warrant #31 21, dated 1/5/21, $507,536.75"
+  },
+  {
+   "topic": "Payroll Deduction Warrant #32 21",
+   "what_was_recorded": "Mr. Alonzo reported he signed the Payroll Deduction Warrant dated 1/6/21.",
+   "figures_as_printed": [
+    "$41,286.36"
+   ],
+   "quote": "payroll deduction warrant #32 21, dated 1/6/21, $41,286.36"
+  },
+  {
+   "topic": "Payroll Warrant #14P21",
+   "what_was_recorded": "Mr. Alonzo reported he signed the Payroll Warrant dated 1/7/21.",
+   "figures_as_printed": [
+    "$825,165.95"
+   ],
+   "quote": "payroll warrant #14p21, dated 1/7/21, $825,165.95"
+  },
+  {
+   "topic": "DPW fuel tank project",
+   "what_was_recorded": "Town Manager estimated about $80,000 will remain in unexpended capital for the fuel tank project on completion, barring unforeseen changes.",
+   "figures_as_printed": [
+    "$80,000"
+   ],
+   "quote": "i am estimating that we will have approximately $80,000 remaining in unexpended capital dedicated for this project upon completion"
+  },
+  {
+   "topic": "State business relief grant program",
+   "what_was_recorded": "Announced a new state business relief program offering grants up to $75,000, not more than three months' operating expenses, with applications closing January 15 and awards expected in February.",
+   "figures_as_printed": [
+    "$75,000"
+   ],
+   "quote": "this new business relief program will offer grants up to $75,000, but not more than"
+  },
+  {
+   "topic": "Small Bridge Program application (bridge/culvert)",
+   "what_was_recorded": "Town to submit a Small Bridge Program application for the bridge although the program has not yet received funding; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "recommended that we submit a small bridge program application, even though the program hasn't received the funding yet."
+  },
+  {
+   "topic": "Old Primary School green space cost and funding",
+   "what_was_recorded": "Mr. Alonzo said the cost of a green space versus renovating the building are not in the same ballpark; APDC asked whether funding had been procured for the green space proposal. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "mr. alonzo stated the cost to build a green space versus renovating the building are not even"
+  },
+  {
+   "topic": "925 Mass Avenue funding",
+   "what_was_recorded": "Town Manager to meet with MassDevelopment and the environmental consultant about future funding options for 925 Mass Avenue. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "discuss future funding options through massdevelopment for 925 mass avenue."
+  },
+  {
+   "topic": "CARES Act funding for technology for Zoom participation",
+   "what_was_recorded": "Mr. Marino asked whether CARES Act funding was available to help people with technology to join Zoom meetings; Town Manager to follow up. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "mr. marino requested if there was any cares act funding to assist people with technology in"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "82 Highland Street",
+   "topic": "old Primary building demolition",
+   "quote": "dave rodgers, 82 highland street, regarding the old primary building, stated the reason developers are not interested in the building because they don't get the land."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order, Pledge and public comment opening",
+   "resolution": "no action",
+   "tags": [
+    "opening",
+    "public comment"
+   ],
+   "quote": "the meeting opened with the pledge of allegiance that was recited by ms. adams."
+  },
+  {
+   "topic": "Announcements: marijuana Community Outreach Meeting",
+   "resolution": "announced, no action",
+   "tags": [
+    "marijuana",
+    "community outreach"
+   ],
+   "quote": "ms. lemieux read the community outreach meeting information for the proposed marijuana establishment located at 88massachusetts avenue."
+  },
+  {
+   "topic": "Ratify Town Manager appointments (DPW)",
+   "resolution": "ratified",
+   "tags": [
+    "appointments",
+    "DPW"
+   ],
+   "quote": "motion: k. adams 2nd: j. marino to ratify the town manager appointments of dpw intermittent heavy equipment operator to mike roberts"
+  },
+  {
+   "topic": "Approval of minutes (Dec 1 and Dec 8, 2020)",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "motion: t. dwyer 2nd. m. jeffreys to approve the minutes of december 1 and december 8, 2020 as presented"
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed warrants reported, no vote",
+   "tags": [
+    "warrants",
+    "payments"
+   ],
+   "quote": "mr. alonzo reported he signed the following warrants last week:"
+  },
+  {
+   "topic": "Action items and committee reports",
+   "resolution": "none",
+   "tags": [
+    "action items",
+    "committees"
+   ],
+   "quote": "3. action items-none 4. committee reports-none"
+  },
+  {
+   "topic": "Town Manager report and COVID-19 update",
+   "resolution": "reported, no action",
+   "tags": [
+    "town manager",
+    "vacancies",
+    "bridge",
+    "fuel tanks",
+    "COVID-19"
+   ],
+   "quote": "town manager report and covid-19 update"
+  },
+  {
+   "topic": "Updates from the state and federal government",
+   "resolution": "reported, no action",
+   "tags": [
+    "state",
+    "federal",
+    "COVID-19",
+    "business relief"
+   ],
+   "quote": "updates received from the state and federal governement"
+  },
+  {
+   "topic": "Joint workshop with APDC and Historical Commission on the old Primary School",
+   "resolution": "discussed, no action; other bodies voted to adjourn",
+   "tags": [
+    "old Primary School",
+    "APDC",
+    "Historical Commission",
+    "demolition",
+    "workshop"
+   ],
+   "quote": "joint meeting with architectural preservation district commission (apdc) and historical commission re: old primary school"
+  },
+  {
+   "topic": "Upcoming meeting/events schedule",
+   "resolution": "noted; text unreadable in OCR",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "upcoming meeting/events schedule"
+  },
+  {
+   "topic": "Public comment on APD by-law and old Primary building",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "APD by-law",
+    "CARES Act",
+    "old Primary School"
+   ],
+   "quote": "mr. jeffreys suggested reviewing the apd by-law at as it pertains to town buildings at a future"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Accounts Payable Warrant #31 21, dated 1/5/21",
+   "where": "list",
+   "quote": "accounts payable warrant #31 21, dated 1/5/21, $507,536.75"
+  },
+  {
+   "name": "Payroll Deduction Warrant #32 21, dated 1/6/21",
+   "where": "list",
+   "quote": "payroll deduction warrant #32 21, dated 1/6/21, $41,286.36"
+  },
+  {
+   "name": "Payroll Warrant #14P21, dated 1/7/21",
+   "where": "list",
+   "quote": "payroll warrant #14p21, dated 1/7/21, $825,165.95"
+  },
+  {
+   "name": "APD by-law",
+   "where": "text",
+   "quote": "mr. jeffreys suggested reviewing the apd by-law at as it pertains to town buildings at a future"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "appointments",
+  "DPW",
+  "minutes approval",
+  "warrants",
+  "town manager report",
+  "COVID-19",
+  "state and federal updates",
+  "business relief",
+  "old Primary School",
+  "APDC",
+  "Historical Commission",
+  "demolition",
+  "fuel tanks",
+  "bridge",
+  "marijuana",
+  "CARES Act",
+  "public comment",
+  "workshop"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. alonzo reported he signed the following warrants last week"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-02-18",
  "docid": "5234",
@@ -12,31 +12,507 @@
  },
  "votes": [
   {
-   "motion": "Appoint Brett Ramsden to the Sewer Commission until the next election",
+   "motion": "Appoint Brett Ramsden to the Sewer Commission until the next election (joint meeting with the Sewer Commission).",
    "moved_by": "M. Jeffreys",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 8-0",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2nd: d. mcquaid to appoint brett ramsden to the sewer commission until the next election vote: mr. jeffreys-aye, ms. adams-aye, mr. mcquaid-aye, ms. luck- aye, mr. alonzo-aye, mr. macdonald- aye, mr. reynolds-aye, mr. luck-aye"
+   "quote": "to appoint brett ramsden to the sewer commission until the next election"
   },
   {
-   "motion": "Authorize asking questions of the Land Use Director and Building Commissioner at earth removal permit meetings",
+   "motion": "Have the ability to ask questions of the Land Use Director and Building Commissioner at Board meetings for earth removal permit applications.",
    "moved_by": "K. Adams",
    "seconded_by": "P. Luck",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "motion: k. adams 2n°: p. luck to have the ability to ask questions of our land use director and building commissioner at our meetings for earth removal permit applications discussion: mr. mcquaid shared mr. jeffreys' concerns about asking employees to another night-time meeting but if that makes the process better than i can get on board with it. mr. alonzo agreed and will push for the bylaw change in the permit issuing authority so this becomes a moot point. vote: 4 in favor, 1 nay (jeffreys)"
+   "quote": "to have the ability to ask questions of our land use director and building commissioner at our meetings for earth removal permit applications"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 9:12 p.m.",
    "moved_by": "P. Luck",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": true,
-   "quote": "motion: p. luck to adjourn the meeting at 9:12 p.m. 2nd: d. mcquaid vote: all in favor"
+   "quote": "to adjourn the meeting at 9:12 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR-extracted from a scanned document. Three votes found: Sewer Commission appointment (8-0), Land Use Director/Building Commissioner questions motion (4-1), and adjournment (all in favor).",
- "cost_usd": 0.1372135
+ "note": "OCR text with errors; quotes were copied from the OCR as printed. Minutes say the arts festival was for June 13th in the heading and June 18 in the motion. The Lions Club paragraph follows Josh Bedarian's remarks, so the speaker is inferred and not named in the minutes. Brett Ramsden's attendance is not stated. The Kimball appointment has no discussion or vote. The marijuana item records discussion with no motion. The minutes are signed Elaine M. Peterson, but her attendance is not stated. Vote tallies are as printed; the Sewer appointment is a joint-meeting vote of eight ayes.",
+ "cost_usd": 0.012657820000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; damon mcquaid, clerk;"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; damon mcquaid, clerk;"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; damon mcquaid, clerk;"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Board member",
+   "status": "present",
+   "quote": "katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Board member",
+   "status": "present",
+   "quote": "katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "not present: heather lemieux, town manager"
+  },
+  {
+   "name": "Jen Benson",
+   "role": "outgoing State Representative",
+   "status": "present",
+   "quote": "chairman alonzo recognized lunenburg resident and outgoing state representative jen benson."
+  },
+  {
+   "name": "Josh Bedarian",
+   "role": "aide to Representative Benson",
+   "status": "present",
+   "quote": "josh bedarian, aide to representative benson, stated it has been a privilege to serve the town of"
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Cultural Council Chair",
+   "status": "present",
+   "quote": "laura brzozoski, 21 francis ave, cultural council chair, presented for the request."
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "resident",
+   "status": "present",
+   "quote": "john rabbitt, 314 townsend harbor road, came before the board regarding the earth removal project at"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, noted there used to be a zucchini festival in town."
+  },
+  {
+   "name": "Pam Anzaldi",
+   "role": "abutter to the 1325 Massachusetts Ave. earth removal project",
+   "status": "present",
+   "quote": "pam anzaldi, 70 townsend harbor road, an abutter to the 1325 massachusetts ave. earth removal"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "ms. brochu gave her mid-year report; some of the highlights are below."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam burney, land use director, stated the planning board will be having a public discussion on the 9t of march at"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "presided over the Sewer Commission meeting",
+   "status": "present",
+   "quote": "carl luck called the sewer commission meeting to order. members present were dave macdonald,"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Sewer Commission member",
+   "status": "present",
+   "quote": "members present were dave macdonald, john reynolds and mr. luck."
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Sewer Commission member",
+   "status": "present",
+   "quote": "members present were dave macdonald, john reynolds and mr. luck."
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "appointee to the Sewer Commission vacancy",
+   "status": "not stated",
+   "quote": "the boards congratulated mr. ramsden on his appointment."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "After discussion, the Board agreed to request state earmarks #4, #1, #2 and #7 from the FY2021 list, in that order.",
+   "quote": "after discussion, it was decided to request #4, #1, #2 and #7, in that order."
+  },
+  {
+   "decision": "Chairman Alonzo will send the earmark request to Representative Hay.",
+   "quote": "mr. alonzo will send the request along to representative hay."
+  },
+  {
+   "decision": "The Board verbally supported the Lunenburg Cultural Council arts festival without a motion; the applicant was asked to fill out the paperwork and apply for the license.",
+   "quote": "mr. alonzo stated we can verbally support the event and not make a motion to do so."
+  },
+  {
+   "decision": "Chairman Alonzo agreed to push for a bylaw change in the earth removal permit issuing authority.",
+   "quote": "mr. alonzo agreed and will push for the bylaw change in the permit issuing authority so this becomes a moot point."
+  },
+  {
+   "decision": "Mr. Jeffreys requested that a citizen's award discussion be placed on a future agenda.",
+   "quote": "mr. jeffreys requested a discussion of a citizen's award on a future agenda."
+  },
+  {
+   "decision": "The Board signed the accounts payable, real estate refunds, deductions and payroll warrants.",
+   "quote": "the board signed an accounts payable warrant in the amount of $393,549.15; a real estate refunds warrant in the amount of $13, 360.23; a deductions warrant in the amount of $181,197.39; a payroll warrant in the amount of 805,640.38."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2020 second quarter total revenue collections",
+   "what_was_recorded": "Total collections to date were reported as a share of FY20 estimates through 12/31/19.",
+   "figures_as_printed": [
+    "$22,304,174.88",
+    "52.09%"
+   ],
+   "quote": "total collections to date are $22,304,174.88 or 52.09% of fy20 estimates through"
+  },
+  {
+   "topic": "FY2020 taxes collected",
+   "what_was_recorded": "Tax collections were reported against the levy.",
+   "figures_as_printed": [
+    "$13,792,597.99",
+    "49.47%"
+   ],
+   "quote": "taxes: at this time we have collected $13,792,597.99(49.47%) of the levy."
+  },
+  {
+   "topic": "FY2020 state aid collected",
+   "what_was_recorded": "State aid collected was reported against the state aid estimate.",
+   "figures_as_printed": [
+    "$4,517,141.96",
+    "49.59%"
+   ],
+   "quote": "state aid: we have collected $4,517,141.96 (49.59%) of our state aid estimate."
+  },
+  {
+   "topic": "FY2020 expenditures encumbered",
+   "what_was_recorded": "Expenditures and encumbrances were reported against budgeted expenditures as of 12/31/19.",
+   "figures_as_printed": [
+    "$19,504,504.09",
+    "51.5%"
+   ],
+   "quote": "we have expended/encumbered $19,504,504.09 (51.5%) of budgeted expenditures as of 12/31/19."
+  },
+  {
+   "topic": "FY2021 state budget earmark priorities",
+   "what_was_recorded": "Finance Director recommended FY2021 earmark requests with dollar figures; Ms. Luck asked about a monetary number, and the Chairman said it was unknown; the Board chose requests #4, #1, #2 and #7.",
+   "figures_as_printed": [
+    "$127,000",
+    "$180,000",
+    "$125,000",
+    "$355,000",
+    "$40,000",
+    "$770,000",
+    "$175,000"
+   ],
+   "quote": "1. $127,000 for fire alarm upgrade at the lunenburg primary school.(see attached information"
+  },
+  {
+   "topic": "Prior year (FY20) earmark request list",
+   "what_was_recorded": "The list submitted last year is restated with dollar figures for each project.",
+   "figures_as_printed": [
+    "$45,000",
+    "$27,000",
+    "$40,000",
+    "$50,000",
+    "$755,000",
+    "$220,000"
+   ],
+   "quote": "the list that was submitted last year included the following:"
+  },
+  {
+   "topic": "Earth removal hearing cost discussion",
+   "what_was_recorded": "A Board member asked whether an applicant would spend a sum to develop a plan that might be rejected; no decision.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "mr. jeffreys asked would you spend $100,000 to develop a plan that is going to be shot down."
+  },
+  {
+   "topic": "Police union bargaining agreement funding",
+   "what_was_recorded": "Town meeting article funding the first year of the police union agreement was reported as not properly passed over; the Chairman said the remedy was being looked into. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "confirmation was received that the town should not have passed over the town meeting article funding the first year of the agreement."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Board signed accounts payable, real estate refunds, deductions and payroll warrants. The payroll figure is printed without a dollar sign.",
+   "figures_as_printed": [
+    "$393,549.15",
+    "$13, 360.23",
+    "$181,197.39",
+    "805,640.38"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $393,549.15; a real estate refunds warrant in the amount of $13, 360.23; a deductions warrant in the amount of $181,197.39; a payroll warrant in the amount of 805,640.38."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "open government and questions at a hearing",
+   "speaker": "Ms. Adams",
+   "quote": "ms. adams, in response to a citizen's question as to why she had so many questions at a recent hearing,"
+  },
+  {
+   "topic": "Black History Month, James Baldwin",
+   "speaker": "Mr. Jeffreys",
+   "quote": "mr. jeffreys in regards to black history month, spoke about james baldwin who lived from 1924 to"
+  },
+  {
+   "topic": "earth removal project at 1325 Massachusetts Avenue",
+   "speaker": "John Rabbitt",
+   "stated_role": "resident",
+   "quote": "john rabbitt, 314 townsend harbor road, came before the board regarding the earth removal project at"
+  },
+  {
+   "topic": "thanks to Representative Benson's office; Lions Club potato festival request",
+   "speaker": "Josh Bedarian",
+   "stated_role": "aide to Representative Benson",
+   "quote": "josh bedarian, aide to representative benson, stated it has been a privilege to serve the town of"
+  },
+  {
+   "topic": "police union bargaining agreement; zucchini festival",
+   "speaker": "Dave Passios",
+   "quote": "dave passios, 56 whiting street, noted there used to be a zucchini festival in town."
+  },
+  {
+   "topic": "earth removal hearing; abutters not heard",
+   "speaker": "Pam Anzaldi",
+   "stated_role": "abutter to the 1325 Massachusetts Ave. earth removal project",
+   "quote": "pam anzaldi, 70 townsend harbor road, an abutter to the 1325 massachusetts ave. earth removal"
+  },
+  {
+   "topic": "earth removal denial reasons and enforcement",
+   "speaker": "Pam Anzaldi",
+   "stated_role": "abutter",
+   "quote": "pam anzaldi, an abutter, asked the board if they did not see the reasons for denial"
+  },
+  {
+   "topic": "scam phone calls allegedly from the IRS",
+   "speaker": "Mr. Jeffreys",
+   "quote": "mr. jeffreys warned about scam phone calls allegedly from the irs stating your social security number"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Recognition of outgoing Representative Jen Benson",
+   "resolution": "recognized; proclamation read; no vote",
+   "quote": "before opening up the floor for public comment, chairman alonzo recognized lunenburg resident and",
+   "tags": [
+    "recognition",
+    "state representative"
+   ]
+  },
+  {
+   "topic": "Public comment (first)",
+   "resolution": "heard",
+   "quote": "ms. adams, in response to a citizen's question as to why she had so many questions at a recent hearing,",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Lunenburg Cultural Council Arts Festival approval",
+   "resolution": "verbal support; paperwork requested; no vote",
+   "quote": "lunenburg cultural council arts festival approval for june 13th",
+   "tags": [
+    "arts festival",
+    "events",
+    "Memorial Drive"
+   ]
+  },
+  {
+   "topic": "Cultural Council appointment - Kerry Ann Kimball",
+   "resolution": "listed; no action recorded",
+   "quote": "cultural council - kerry ann kimball- 778 page street-term to expire june 30, 2023",
+   "tags": [
+    "appointment",
+    "cultural council"
+   ]
+  },
+  {
+   "topic": "Joint meeting with Sewer Commission - Brett Ramsden appointment",
+   "resolution": "appointed 8-0",
+   "quote": "joint meeting with the sewer commission to mutually appoint to the sewer commission vacancy",
+   "tags": [
+    "appointment",
+    "sewer commission"
+   ]
+  },
+  {
+   "topic": "FY2020 second quarter financial report",
+   "resolution": "received",
+   "quote": "fiscal year 2020 2nd quarter financial report from finance director karen brochu",
+   "tags": [
+    "finance",
+    "revenue",
+    "expenditures"
+   ]
+  },
+  {
+   "topic": "FY2021 state budget earmark priorities",
+   "resolution": "four requests ranked and sent to Representative Hay",
+   "quote": "after discussion, it was decided to request #4, #1, #2 and #7, in that order.",
+   "tags": [
+    "state budget",
+    "earmarks",
+    "capital projects"
+   ]
+  },
+  {
+   "topic": "Earth removal permitting draft bylaw",
+   "resolution": "discussed; no action",
+   "quote": "mr. alonzo noted we did get a draft from the planning board (pb) on a proposed bylaw.",
+   "tags": [
+    "earth removal",
+    "planning board",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Earth removal hearing process review",
+   "resolution": "motion passed 4-1 on questions at permit hearings",
+   "quote": "discussion about the last earth removal permit hearing process ensued.",
+   "tags": [
+    "earth removal",
+    "abutters",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Recreational marijuana prohibition articles",
+   "resolution": "discussed; no action",
+   "quote": "discussion about placing articles on the annual town meeting warrant and town election ballot",
+   "tags": [
+    "marijuana",
+    "town meeting",
+    "ballot"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "no minutes; warrants signed; citizen's award to future agenda",
+   "quote": "there were no minutes for approval.",
+   "tags": [
+    "warrants",
+    "animal control",
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "none",
+   "quote": "there were no committee reports this evening.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "heard",
+   "quote": "mr. jeffreys warned about scam phone calls allegedly from the irs stating your social security number",
+   "tags": [
+    "public comment",
+    "scams"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:12 p.m.",
+   "quote": "to adjourn the meeting at 9:12 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Quarterly Animal Control report (in board packet)",
+   "where": "text",
+   "quote": "mr. alonzo noted the quarterly animal control report was in the board packet for review."
+  },
+  {
+   "name": "Draft proposed earth removal bylaw from the Planning Board",
+   "where": "text",
+   "quote": "mr. alonzo noted we did get a draft from the planning board (pb) on a proposed bylaw."
+  },
+  {
+   "name": "Memorandum to the Board from the Finance Director (prior year)",
+   "where": "text",
+   "quote": "as stated in my memorandum to the board last year, the list i submitted for fy20"
+  },
+  {
+   "name": "Information from School Facilities Director on fire alarm upgrade",
+   "where": "text",
+   "quote": "$127,000 for fire alarm upgrade at the lunenburg primary school.(see attached information"
+  },
+  {
+   "name": "2018 Capital Facilities Bond Bill",
+   "where": "text",
+   "quote": "after review of the projects that are in the 2018 capital facilities bond bill, 2018 economic development"
+  },
+  {
+   "name": "2018 Economic Development Bond Bill",
+   "where": "text",
+   "quote": "after review of the projects that are in the 2018 capital facilities bond bill, 2018 economic development"
+  },
+  {
+   "name": "Vertex 2018 report",
+   "where": "text",
+   "quote": "2% inflation from vertex figure in 2018 report"
+  },
+  {
+   "name": "Application and letter from the Land Use Director (earth removal hearing)",
+   "where": "text",
+   "quote": "we had an application and a letter from the land use director."
+  },
+  {
+   "name": "Application paperwork for the arts festival",
+   "where": "text",
+   "quote": "the other board members voiced their support of the event but requested the application paperwork as a"
+  }
+ ],
+ "tags": [
+  "select board",
+  "earth removal",
+  "state earmarks",
+  "sewer commission appointment",
+  "financial report",
+  "arts festival",
+  "recreational marijuana",
+  "police union",
+  "animal control",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. alonzo noted the quarterly animal control report was in the board packet for review."
+ },
+ "dropped_unquoted_by_field": {}
 }

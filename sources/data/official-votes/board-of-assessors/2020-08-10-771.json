@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2020-08-10",
  "docid": "771",
@@ -12,23 +12,132 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes for July 13, 2020",
-   "moved_by": "Louis Franco",
-   "seconded_by": "Rena Swezey",
+   "motion": "Approve the minutes of July 13, 2020.",
+   "moved_by": "Lou",
+   "seconded_by": "Rena",
    "outcome": "passed",
    "procedural": true,
    "quote": "lou motioned to approve the minutes for july 13, 2020. rena seconded the motion. all in favor."
   },
   {
-   "motion": "Enter into Executive Session",
-   "moved_by": "Rena Swezey",
-   "seconded_by": "Louis Franco",
+   "motion": "Enter into Executive Session.",
+   "moved_by": "Rena",
+   "seconded_by": "Lou",
    "outcome": "passed",
    "procedural": true,
    "quote": "rena made a motion to enter into executive session. lou seconded the motion. all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR of a scanned remote meeting. Two procedural votes recorded; both passed unanimously.",
- "cost_usd": 0.0932255
+ "note": "OCR scan with garbled and clipped text. The first lines of the attendance block are cut off (\"lembers present\", \"rincipal Assessor\"), and the roll-call name reads \"sheila uraige\"; the signature block gives \"Sheila Craigen\", which is used here. The minutes say all meetings were conducted remotely, but attendees are recorded as \"present\" because the text says \"Members present\". Votes are recorded only as \"All in favor\" with no tally. No motion to adjourn is recorded; the chair only says he closed the open meeting and members entered executive session. Dollar figures and public comment: none.",
+ "cost_usd": 0.00322382,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman, richard letarte, board members, louis. franco, and rena swezey an"
+  },
+  {
+   "name": "Louis Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board members, louis. franco, and rena swezey an"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "louis. franco, and rena swezey an"
+  },
+  {
+   "name": "Susan Byrne",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "rincipal assessor, susan byrne and administrative assessor (1 emporarily appointed)"
+  },
+  {
+   "name": "Sheila Craigen",
+   "role": "Administrative Assessor (Temporarily appointed)",
+   "status": "present",
+   "quote": "sheila craigen administrative assessor (temporarily appointed)"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager, heather lemieux and assistant town manager/hr director, julie"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Assistant Town Manager/HR Director",
+   "status": "present",
+   "quote": "assistant town manager/hr director, julie belliveau"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Executive Session minutes will not be released.",
+   "quote": "executive session minutes will not be released."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and remote meeting rules",
+   "resolution": "opened 1:00 pm; no action",
+   "quote": "rich opened the meeting at 1:00 pm with roll call and the recital of the rules for this remote and recorded",
+   "tags": [
+    "call to order",
+    "remote meeting"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of July 13, 2020",
+   "resolution": "approved",
+   "quote": "lou motioned to approve the minutes for july 13, 2020. rena seconded the motion. all in favor.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Session",
+   "resolution": "entered executive session",
+   "quote": "rena made a motion to enter into executive session. lou seconded the motion. all in favor.",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Open discussion",
+   "resolution": "no action; none raised",
+   "quote": "open discussion: none.",
+   "tags": [
+    "open discussion"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes of July 13, 2020",
+   "where": "text",
+   "quote": "lou motioned to approve the minutes for july 13, 2020."
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "remote meeting",
+  "COVID-19",
+  "executive session",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

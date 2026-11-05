@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2020-04-13",
  "docid": "4068",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve ANR Plan for 176 Elmwood Road",
+   "motion": "Approve the ANR Plan for 176 Elmwood Road (two-lot division).",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed 4-0",
@@ -20,23 +20,23 @@
    "quote": "p. bertram made motion to approve the anr plan for 176 elm wood road, t. cole seconded, roll call vote: t. cole, aye; m. thompson, aye; p. bertram, aye; m. allison, aye. vote passed 4-0."
   },
   {
-   "motion": "Approve Stormwater Permit for 1325 Massachusetts Avenue with conditions regarding sediment forebay maintenance and monitoring well removal",
+   "motion": "Approve the Stormwater Permit for 1325 Massachusetts Avenue, with the condition that sediment forebay maintenance be incorporated into the Stormwater Operation and Maintenance Manual and the installed monitoring well be removed.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "t. cole made motion to approve the stormwater permit for 1325 massachusetts avenue, p. bertram seconded for discussion with the requirement that maintenance for the sediment forebay be incorporated within the stormwater operation and maintenance manual and that the monito ring well that has been installed should be removed. t. cole amended his motion to state same, p. bertram amended second to state same, roll call vote: m. thompson, aye; t. cole, aye; p. bertram, aye; m. allison, aye. vote passed 4-0."
+   "quote": "t. cole made motion to approve the stormwater permit for 1325 massachusetts avenue, p. bertram seconded for discussion"
   },
   {
-   "motion": "Approve Site Plan for 1325 Massachusetts Avenue with seeded earthen berm along northern property line",
+   "motion": "Approve the Site Plan for 1325 Massachusetts Avenue as proposed, with a seeded four to six foot high earthen berm from the eastern property line along the northern property line in lieu of the plantings.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "p. bertram made motion to approve the site plan as proposed with the condition that a four (4) to six (6) foot high earthen berm be installed from the eastern property line along the northern property line in lieu of the plantings as originally proposed, t. cole seconded, p. bertram amended her motion to specify a seeded berm, t. cole amended his second to state same, roll call vote: m. thompson, aye; t. cole, aye; p. bertram, aye; m. allison, aye. vote passed 4 -0."
+   "quote": "p. bertram made motion to approve the site plan as proposed with the condition that a four (4) to six (6) foot high earthen berm"
   },
   {
-   "motion": "Approve minutes from March 9, 2020",
+   "motion": "Approve the minutes of 03.09.2020.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed 4-0",
@@ -44,23 +44,227 @@
    "quote": "03.09.2020- p. bertram made motion to approve, t. cole seconded, roll call vote: m. thompson, aye; t. cole, aye; p. bertram, aye; m. allison, aye. vote passed 4-0."
   },
   {
-   "motion": "Approve minutes from March 9, 2020 regarding 1325 Massachusetts Avenue",
+   "motion": "Approve the minutes of 03.09.2020, 1325 Massachusetts Avenue.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "03.09.2020, 1325 massachusetts avenue - p. bertram made motion to approve, t. cole seconded, roll call vote: m. thompson, aye; t. cole, aye; p. bertram, aye; m. allison, aye. vote passed 4 -0."
+   "quote": "03.09.2020, 1325 massachusetts avenue - p. bertram made motion to approve, t. cole seconded"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "p. bertram made motion to a djourn, t. cole seconded, all aye. roll call vote: m. thompson, aye; t. cole, aye; p. bertram, aye; m. allison, aye. vote passed 4-0."
+   "quote": "p. bertram made motion to a djourn, t. cole seconded, all aye. roll call vote: m. thompson, aye; t. cole, aye; p. bertram, aye; m. allison, aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.15334750000000003
+ "note": "Text is a typed minutes extract, not a scan; all six votes are readable. The meeting was held remotely (Zoom and Facebook Live) under the Governor's COVID-19 order. No public comment is recorded. No dollar figures are printed; the CPA item is included as a money-related discussion with no figures. The 1325 Massachusetts Avenue hearing minutes are referred to as 'separate minutes' and were not included. Marjorie J. Boggio appears only on the letterhead, not as a participant, so she is omitted from attendees. Appointment item was put on hold, not voted.",
+ "cost_usd": 0.00745402,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: matthew allison, present; tanner cole, present; paula bertram, present: marisa thompson, present."
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: matthew allison, present; tanner cole, present; paula bertram, present: marisa thompson, present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: matthew allison, present; tanner cole, present; paula bertram, present: marisa thompson, present."
+  },
+  {
+   "name": "Marisa Thompson",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: matthew allison, present; tanner cole, present; paula bertram, present: marisa thompson, present."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: matthew allison, present; tanner cole, present; paula bertram, present: marisa thompson, present."
+  },
+  {
+   "name": "Jason Goyette",
+   "role": "representing the applicant (Mr. and Mrs. LaPointe, 176 Elmwood Road ANR)",
+   "status": "not stated",
+   "quote": "the applicants mr. and mrs. lapointe, were represented by jason goyette, david e. ro ss associates."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Appointment for the Historical Commission was put on hold at the request of the Historical Commission Chair, to a time closer to town meeting.",
+   "quote": "appointment: historical commission - appointment put on hold per request of the historical commission chair to a time closer to town meeting."
+  },
+  {
+   "decision": "Board consensus was to table the Stormwater and Storm Sewers Bylaw discussion until a more conducive setting (fall town meeting).",
+   "quote": "as this will be an item for fall town meeting, board consensus wa s to table this evening"
+  },
+  {
+   "decision": "P. Bertram requested that A. Burney consult with the CEI consultant on aspects of the Stormwater Handbook the Board may not wish to adopt, and on standard engineering practices used in lieu of the stormwater regulations.",
+   "quote": "p. bertram requested a. burney consult with the cei consultant as to aspects of the stormwater handbo ok"
+  },
+  {
+   "decision": "Board consensus was to not hold a Board meeting on April 27 and the next Board meeting would be scheduled for May 11.",
+   "quote": "board consensus was to not hold a board meeting on april 27th. the next board meeting will be scheduled for may 11 th."
+  },
+  {
+   "decision": "Items listed for the May 11 meeting: public hearing on Borrego Solar, 190 Electric Avenue, and stormwater and storm sewers bylaw discussion with the CEI consultant.",
+   "quote": "may 11- public hearing, borrego solar, 190 electric avenue"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Community Preservation Act (CPA) support requested by Historical Commission",
+   "what_was_recorded": "The Board discussed its response to the Historical Commission's request for support of the CPA at Annual Town Meeting; not all members favored supporting it. No dollar figure was printed and no decision was recorded.",
+   "figures_as_printed": [],
+   "quote": "support that the historical commission was seeking for the community preservation act (cpa). not all board members were in favor of supporting the cpa at annual town meeting."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointment: Historical Commission",
+   "resolution": "held to a later date (no vote)",
+   "tags": [
+    "appointment",
+    "historical commission"
+   ],
+   "quote": "appointment: historical commission - appointment put on hold per request of the historical commission chair to a time closer to town meeting."
+  },
+  {
+   "topic": "ANR Plan, 176 Elmwood Road",
+   "resolution": "approved 4-0",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "Elmwood Road"
+   ],
+   "quote": "p. bertram made motion to approve the anr plan for 176 elm wood road, t. cole seconded, roll call vote"
+  },
+  {
+   "topic": "1325 Massachusetts Avenue public hearings: Stormwater Permit and Site Plan Approval",
+   "resolution": "stormwater permit approved 4-0 with conditions; site plan approved 4-0 with conditions",
+   "tags": [
+    "public hearing",
+    "stormwater permit",
+    "site plan",
+    "Massachusetts Avenue"
+   ],
+   "quote": "1325 massachusetts avenue: public hearings, stormwater permit and site plan approval: see separate minutes."
+  },
+  {
+   "topic": "Stormwater and Storm Sewers Bylaw",
+   "resolution": "tabled to fall town meeting",
+   "tags": [
+    "stormwater",
+    "bylaw",
+    "town meeting"
+   ],
+   "quote": "as this will be an item for fall town meeting, board consensus wa s to table this evening"
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 4-0 (03.09.2020 and 03.09.2020, 1325 Massachusetts Avenue)",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "03.09.2020- p. bertram made motion to approve, t. cole seconded, roll call vote"
+  },
+  {
+   "topic": "Director's items: Annual Town Meeting update",
+   "resolution": "no action; noted scheduled for June 13, 2020",
+   "tags": [
+    "annual town meeting",
+    "schedule"
+   ],
+   "quote": "director's items: annual town meeting, update- currently scheduled for june 13, 2020."
+  },
+  {
+   "topic": "Meeting schedule during COVID-19",
+   "resolution": "consensus to cancel April 27 meeting; next meeting May 11",
+   "tags": [
+    "covid-19",
+    "meeting schedule",
+    "virtual meetings",
+    "community preservation act"
+   ],
+   "quote": "board consensus was to not hold a board meeting on april 27th. the next board meeting will be scheduled for may 11 th."
+  },
+  {
+   "topic": "Board comment: Removal from Chapter requests",
+   "resolution": "update given; no action",
+   "tags": [
+    "removal from chapter",
+    "right of first refusal",
+    "select board"
+   ],
+   "quote": "a. burney responded that the select board chose to not act on its right of first refusal for three of the properties"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:00 PM, 4-0",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "p. bertram made motion to a djourn, t. cole seconded, all aye."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 03.09.2020",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 03.09.2020"
+  },
+  {
+   "name": "Minutes 03.09.2020, 1325 Massachusetts Avenue",
+   "where": "list",
+   "quote": "03.09.2020, 1325 massachusetts avenue"
+  },
+  {
+   "name": "ANR Plan, 176 Elmwood Road",
+   "where": "list",
+   "quote": "anr plan, 176 elmwood road"
+  },
+  {
+   "name": "Separate minutes for 1325 Massachusetts Avenue public hearings (Stormwater Permit and Site Plan Approval)",
+   "where": "text",
+   "quote": "1325 massachusetts avenue: public hearings, stormwater permit and site plan approval: see separate minutes."
+  },
+  {
+   "name": "Stormwater Handbook (DEP)",
+   "where": "text",
+   "quote": "dep has formed a working group to look at the current stormwater handbook with the goal of updating the handbook."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plan",
+  "stormwater permit",
+  "site plan",
+  "1325 Massachusetts Avenue",
+  "stormwater bylaw",
+  "COVID-19 remote meeting",
+  "Community Preservation Act",
+  "minutes approval",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

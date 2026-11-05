@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2020-03-10",
  "docid": "1907",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the February 10, 2020 COA meeting",
+   "motion": "Approve the minutes of the February 10, 2020 COA meeting.",
    "moved_by": "Ms. DiGiacomo",
    "seconded_by": "Mr. Lincoln",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "ms. digiacomo moved to approve the minutes of the february 10, 2020 coa meeting, mr. lincoln seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 10:45 a.m.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Ms. DiGiacomo",
    "outcome": "passed unanimously",
@@ -29,6 +29,319 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0818445
+ "note": "Text is a clean, readable extraction with no scan issues. Only two motions were recorded at this meeting (minutes approval and adjournment), both carried unanimously. A line on page 1 (\"Unanimously approved by COA at 6/9/2020 meeting via Zoom\") records a later board vote on these minutes, not a vote at this meeting, so it is not recorded as a vote. Pete Lincoln is referred to as \"Mr. Lincoln\" in the body; the attendance list gives him as Pete Lincoln. Names mentioned only in passing (for example Rebecca Lantry, Marie Burchfield, Lori-Ann Tessier) are not listed as attendees.",
+ "cost_usd": 0.00684642,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, director sue doherty, betty digiacomo, diane nowd, pete lincoln, judy tarbell, barbara brown, sarah grant, susan o'sullivan"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, director sue doherty, betty digiacomo, diane nowd, pete lincoln, judy tarbell, barbara brown, sarah grant, susan o'sullivan"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, director sue doherty, betty digiacomo, diane nowd, pete lincoln, judy tarbell, barbara brown, sarah grant, susan o'sullivan"
+  },
+  {
+   "name": "Diane Nowd",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, director sue doherty, betty digiacomo, diane nowd, pete lincoln, judy tarbell, barbara brown, sarah grant, susan o'sullivan"
+  },
+  {
+   "name": "Pete Lincoln",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, director sue doherty, betty digiacomo, diane nowd, pete lincoln, judy tarbell, barbara brown, sarah grant, susan o'sullivan"
+  },
+  {
+   "name": "Judy Tarbell",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, director sue doherty, betty digiacomo, diane nowd, pete lincoln, judy tarbell, barbara brown, sarah grant, susan o'sullivan"
+  },
+  {
+   "name": "Barbara Brown",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, director sue doherty, betty digiacomo, diane nowd, pete lincoln, judy tarbell, barbara brown, sarah grant, susan o'sullivan"
+  },
+  {
+   "name": "Sarah Grant",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, director sue doherty, betty digiacomo, diane nowd, pete lincoln, judy tarbell, barbara brown, sarah grant, susan o'sullivan"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "status": "present",
+   "quote": "present: chairperson deb lincoln, director sue doherty, betty digiacomo, diane nowd, pete lincoln, judy tarbell, barbara brown, sarah grant, susan o'sullivan"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "status": "absent",
+   "quote": "absent: cheryl moisan, jane rabbitt, john pesenti"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "status": "absent",
+   "quote": "absent: cheryl moisan, jane rabbitt, john pesenti"
+  },
+  {
+   "name": "John Pesenti",
+   "status": "absent",
+   "quote": "absent: cheryl moisan, jane rabbitt, john pesenti"
+  },
+  {
+   "name": "Michael Ray Jeffreys",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "guests: selectman michael ray jeffreys, council on aging liaison to the eagle house supporters pat kennedy"
+  },
+  {
+   "name": "Pat Kennedy",
+   "role": "Council on Aging Liaison to the Eagle House Supporters",
+   "status": "present",
+   "quote": "guests: selectman michael ray jeffreys, council on aging liaison to the eagle house supporters pat kennedy"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board is to read and review the van driver policies and the draft guidelines for Eagle House Participation before the next meeting.",
+   "quote": "ms. doherty handed out the van driver policies and a draft of guidelines for eagle house participation, which the board is to read and review for the next meeting."
+  },
+  {
+   "decision": "Ms. Doherty would submit the Eagle House participation guidelines to Town Council for review.",
+   "quote": "ms. doherty added that she would also like to submit the guidelines to town council to review."
+  },
+  {
+   "decision": "Mr. Lincoln volunteered to write a letter, to be read at the next meeting, addressing the small boulders on Memorial Drive.",
+   "quote": "mr. lincoln volunteered to write a letter to be read at the next meeting addressing the small boulders on memorial drive."
+  },
+  {
+   "decision": "The Senior Tax Work-Off committee decided to raise the hourly wage of property tax work-off participants to minimum wage, with the annual maximum earnings unchanged.",
+   "quote": "ms. doherty reported the committee has decided to raise the hourly wage of property tax work-off participants to minimum wage; however the maximum amount of money they can earn remains the same at $1,500 per year."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Senior Tax Work-Off maximum earnings",
+   "what_was_recorded": "The hourly wage for property tax work-off participants was raised to minimum wage, but the maximum they can earn per year stayed the same.",
+   "figures_as_printed": [
+    "$1,500 per year"
+   ],
+   "quote": "the maximum amount of money they can earn remains the same at $1,500 per year."
+  },
+  {
+   "topic": "Newer kitchen renovation funding",
+   "what_was_recorded": "The renovation of the newer kitchen is being funded by the FY21 Capital Plan.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty reported that she recently learned the renovation of the newer kitchen is being funded by the fy21 capital plan."
+  },
+  {
+   "topic": "Eagle Scout project surplus money",
+   "what_was_recorded": "Eagle Scout candidate Alex Powers raised money by making and selling dog biscuits and donated the surplus to the Eagle House Supporters.",
+   "figures_as_printed": [],
+   "quote": "donated the surplus money he raised to the eagle house supporters."
+  },
+  {
+   "topic": "Monetary donations in memory of Lawrence (Lawrie) Montuori",
+   "what_was_recorded": "Many monetary donations have been received in Lawrence (Lawrie) Montuori’s memory.",
+   "figures_as_printed": [],
+   "quote": "many monetary donations have been received in lawrence (lawrie) montuori's memory."
+  },
+  {
+   "topic": "Drainage grant money",
+   "what_was_recorded": "Grant money may be available to address storm water drainage for a possible new parking lot.",
+   "figures_as_printed": [],
+   "quote": "it's possible that grant money is available to take care of drainage"
+  },
+  {
+   "topic": "Community solar and revenue",
+   "what_was_recorded": "Mr. Jeffreys said his long-term goal is increasing town revenues, citing community solar on the old town dump as an example.",
+   "figures_as_printed": [],
+   "quote": "mr. jeffreys is aiming to increase revenues, and provided using the old town dump for community solar as an example."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Thanks to Selectman Jeffreys",
+   "speaker": "Ms. Lincoln",
+   "stated_role": "",
+   "quote": "ms. lincoln thanked mr. jeffreys for standing up for the town's seniors at board of selectmen meetings."
+  },
+  {
+   "topic": "Selectman's short and long-term goals",
+   "speaker": "Mr. Jeffreys",
+   "stated_role": "",
+   "quote": "mr. jeffreys commented that he has short and long-term goals."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action; Eagle House selected as a Discovery Site pilot; Pat Kennedy named liaison",
+   "tags": [
+    "Eagle House",
+    "volunteers"
+   ],
+   "quote": "ms. lincoln announced that the eagle house was chosen as a pilot site by the massachusetts council on aging"
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved the February 10, 2020 minutes",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "ms. digiacomo moved to approve the minutes of the february 10, 2020 coa meeting, mr. lincoln seconded."
+  },
+  {
+   "topic": "Rebecca Lantry, Community Preservation Law",
+   "resolution": "not discussed; no one from the Historical Commission attended",
+   "tags": [
+    "historical commission"
+   ],
+   "quote": "topic was not discussed as no one from the historical commission was in attendance."
+  },
+  {
+   "topic": "New COA Board Member Orientation",
+   "resolution": "not discussed due to lack of attendance",
+   "tags": [
+    "orientation"
+   ],
+   "quote": "topic not discussed due to lack of attendance."
+  },
+  {
+   "topic": "COA Bylaws vs. Policies and Procedures",
+   "resolution": "continued; van driver policies and Eagle House guidelines to be reviewed next meeting",
+   "tags": [
+    "bylaws",
+    "policies",
+    "van driver",
+    "Eagle House"
+   ],
+   "quote": "mr. lincoln found some grammatical errors in the updated policies."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "informational; kitchen aide hired, Eagle Scout picnic tables reported",
+   "tags": [
+    "staffing",
+    "tax work-off",
+    "Eagle Scout"
+   ],
+   "quote": "ms. doherty informed the board she has hired property tax work-off participant"
+  },
+  {
+   "topic": "Building Report",
+   "resolution": "informational; AC, porch decking, shed, boulders, parking lot drainage, Parks and Recreation discussed",
+   "tags": [
+    "building",
+    "porch",
+    "AC",
+    "Memorial Drive",
+    "drainage"
+   ],
+   "quote": "the former ac units in the old section of the building have been replaced with new units"
+  },
+  {
+   "topic": "Senior Tax Work-Off",
+   "resolution": "informational; committee raised wage to minimum wage",
+   "tags": [
+    "tax work-off",
+    "wages"
+   ],
+   "quote": "ms. doherty reported the committee has decided to raise the hourly wage of property tax work-off participants to minimum wage"
+  },
+  {
+   "topic": "Upcoming Events",
+   "resolution": "informational; Bridges Together program canceled",
+   "tags": [
+    "events",
+    "volunteers"
+   ],
+   "quote": "the bridges together program was canceled because there weren't enough volunteers."
+  },
+  {
+   "topic": "Eagle House Supporters Report",
+   "resolution": "informational; cabinets cleared, donations, sunshine letters",
+   "tags": [
+    "Eagle House Supporters",
+    "donations"
+   ],
+   "quote": "the supporters have cleared the cabinets of all outdated material in the old kitchen"
+  },
+  {
+   "topic": "Notices and Communications",
+   "resolution": "no action; none",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "notices and communications: none"
+  },
+  {
+   "topic": "Board Comment",
+   "resolution": "Lincoln to write boulder letter; Boston Post Cane preparations noted",
+   "tags": [
+    "Boston Post Cane",
+    "Memorial Drive"
+   ],
+   "quote": "mr. lincoln volunteered to write a letter to be read at the next meeting addressing the small boulders on memorial drive."
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no action; comments from Ms. Lincoln and Mr. Jeffreys",
+   "tags": [
+    "selectmen",
+    "citizens award",
+    "civic"
+   ],
+   "quote": "mr. jeffreys commented that he has short and long-term goals."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:45 a.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "at 10:45 a.m., mr. lincoln motioned to adjourn the meeting."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Van driver policies",
+   "where": "list",
+   "quote": "ms. doherty handed out the van driver policies and a draft of guidelines for eagle house participation"
+  },
+  {
+   "name": "Draft guidelines for Eagle House Participation",
+   "where": "list",
+   "quote": "a draft of guidelines for eagle house participation, which the board is to read and review for the next meeting."
+  },
+  {
+   "name": "Updated COA policies",
+   "where": "text",
+   "quote": "mr. lincoln found some grammatical errors in the updated policies."
+  }
+ ],
+ "tags": [
+  "Council on Aging",
+  "Eagle House",
+  "Senior Tax Work-Off",
+  "building repairs",
+  "Memorial Drive boulders",
+  "bylaws and policies",
+  "volunteers",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. doherty handed out the van driver policies"
+ },
+ "dropped_unquoted_by_field": {}
 }

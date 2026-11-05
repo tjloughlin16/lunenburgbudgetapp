@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2020-03-10",
  "docid": "5666",
@@ -12,79 +12,532 @@
  },
  "votes": [
   {
-   "motion": "To have Jack reach out to as many suppliers as he can and document findings",
+   "motion": "Amended motion for Jack to reach out to as many suppliers as he can and document findings (original motion by Dave M. to have Jack R. (DPW) put a call out to find a supplier).",
    "moved_by": "Dave M.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed unanimous",
    "procedural": false,
-   "quote": "motion amended: to have jack reach out to as many suppliers as he can and document findings. vote: unanimous"
+   "quote": "motion amended: to have jack reach out to as many suppliers as he can and document findings."
   },
   {
-   "motion": "To elect Dave M. as Chairman",
+   "motion": "Elect Dave M. as Chairman.",
    "moved_by": "Mike N.",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: mike n. to elect dave m. as chairman. unanimous"
+   "outcome": "passed unanimous",
+   "procedural": false,
+   "quote": "election of officers- motion: mike n. to elect dave m. as chairman. unanimous"
   },
   {
-   "motion": "To elect John R. as Vice-chairman",
+   "motion": "Elect John R. as Vice-chairman.",
    "moved_by": "Dave M.",
-   "seconded_by": "",
    "outcome": "not stated",
-   "procedural": true,
-   "quote": "motion: dave m. to elect john r. as vice-chairman. discussion: john said he will commit to at least may"
+   "procedural": false,
+   "quote": "motion: dave m. to elect john r. as vice-chairman."
   },
   {
-   "motion": "To elect Brett R. as Clerk",
+   "motion": "Elect Brett R. as Clerk.",
    "moved_by": "Mike N.",
    "seconded_by": "Brett R.",
-   "outcome": "passed",
-   "procedural": true,
+   "outcome": "passed unanimous",
+   "procedural": false,
    "quote": "motion: mike n. to elect brett r. as clerk. second: brett r. vote: second: mike n. vote: unanimous"
   },
   {
-   "motion": "To present issue to Town Counsel to see if it is a unique situation, due to lack of frontage and the easement",
+   "motion": "Amend the motion to advise Town Counsel that Michael-Ray's issue was the easement restriction.",
    "moved_by": "Mike N.",
    "seconded_by": "John R.",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "motion: mike n. second: john r. to present issue to town counsel to see if it is a unique situation, due to lack of frontage and the easement"
+   "quote": "to amend the motion, to advise town counsel that michael-ray's issue was the easement restriction."
   },
   {
-   "motion": "To amend the motion, to advise Town Counsel that Michael-Ray's issue was the easement restriction",
-   "moved_by": "Mike N.",
-   "seconded_by": "John R.",
-   "outcome": "not stated",
-   "procedural": false,
-   "quote": "motion: mike n. second: john r. to amend the motion, to advise town counsel that michael-ray's issue was the easement restriction"
-  },
-  {
-   "motion": "To approve the 3 articles as presented and modified",
+   "motion": "Approve the 3 Town Meeting articles (FY21 budget, $29,000 Stabilization transfer, $656 OPEB transfer) as presented and modified.",
    "moved_by": "Carl L.",
    "seconded_by": "Mike N.",
-   "outcome": "passed",
+   "outcome": "passed unanimous",
    "procedural": false,
    "quote": "motion: carl l. to approve the 3 articles as presented and modified. second: mike n. vote: unanimous"
   },
   {
-   "motion": "To approve minutes for 2/25",
-   "moved_by": "",
+   "motion": "Approve minutes for 2/25.",
    "seconded_by": "Jonn K.",
-   "outcome": "passed",
+   "outcome": "passed unanimous",
    "procedural": true,
    "quote": "to approve minutes for 2/25. secona. jonn k. vote: unanimous"
   },
   {
-   "motion": "To adjourn",
+   "motion": "Adjourn the meeting at 9:39pm.",
    "moved_by": "John R.",
    "seconded_by": "Mike N.",
-   "outcome": "passed",
+   "outcome": "passed unanimous",
    "procedural": true,
    "quote": "motion: john r. to adjourn: 9:39pm second: mike n. vote: unanimous"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan with some formatting and accuracy issues; votes 3, 4, 5, and 5b have unclear or missing vote results in the original text.",
- "cost_usd": 0.1631995
+ "dropped_unquoted": 1,
+ "note": "OCR text, not a scan. Attendance is not printed as a roll; statuses are inferred from who spoke or moved. The officer-election votes are garbled: the Vice-chairman motion has no printed result, and the Clerk motion lists Brett R. as seconder with the vote lines out of order. The amended supplier motion has no printed mover. \"Jonn K.\" is printed as the seconder of the 2/25 minutes, probably an OCR error. No public comment section is printed. Dollar figures are as printed (e.g., \"I/l\" stays as printed).",
+ "cost_usd": 0.015363820000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave M.",
+   "role": "Chair (elected Chairman)",
+   "status": "present",
+   "quote": "to elect dave m. as chairman."
+  },
+  {
+   "name": "John R.",
+   "role": "Vice-chairman (elected)",
+   "status": "present",
+   "quote": "to elect john r. as vice-chairman."
+  },
+  {
+   "name": "Mike N.",
+   "status": "present",
+   "quote": "mike suggested consulting town counsel."
+  },
+  {
+   "name": "Brett R.",
+   "role": "Clerk (elected)",
+   "status": "present",
+   "quote": "to elect brett r. as clerk."
+  },
+  {
+   "name": "Carl",
+   "status": "present",
+   "quote": "carl turned the meeting over to dave as the new chair."
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb said the document was signed at the last meeting."
+  },
+  {
+   "name": "JaneL. Ranley",
+   "role": "Minutes Clerk",
+   "status": "not stated",
+   "quote": "janel. ranley minutes clerk"
+  },
+  {
+   "name": "Michael Ray",
+   "role": "applicant (1170 Mass Ave betterment)",
+   "status": "absent",
+   "quote": "since michael ray could not attend"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission agreed to assign Brett to the 3 yr caucus term, John to the 2 yr term, and Dave to the 1 yr term.",
+   "quote": "the commission discussed the openings and agreed to assign brett to the 3 yr term, john to the 2 yr term, and dave to the 1 yr term."
+  },
+  {
+   "decision": "Dave, Carl and John will attend the caucus; Carl will do John Reynolds' nomination.",
+   "quote": "dave, carl and john will attend the caucus. carl will do john reynolds' nomination."
+  },
+  {
+   "decision": "Commission agreed to add $35,838 into capital in the FY21 budget.",
+   "quote": "commission agreed to add $35,838 into capital."
+  },
+  {
+   "decision": "Commission agreed to an extra meeting on 3/17 to discuss the budget presentation to FinCom and the O&M contract.",
+   "quote": "commission agreed to an extra meeting on 3/17 to talk about the budget presentation to fincom and the o&m contract."
+  },
+  {
+   "decision": "Barb will send out the revised budget.",
+   "quote": "barb will send out the revised budget"
+  },
+  {
+   "decision": "Dave confirmed that Barb will attend the FinCom presentation on 3/19.",
+   "quote": "dave confirmed that barb will come to fincom presentation on 3/19."
+  },
+  {
+   "decision": "Commission agreed to read the W&C reports at the televised meeting to let users know what is being done to find I/I.",
+   "quote": "the commission discussed and agreed to read the w&c reports at the televised meeting to let users know what they are doing to find i/l."
+  },
+  {
+   "decision": "Barb will take a closer look at whether 57 & 63 Cross Rd. should be in the Sewer Service Area at all.",
+   "quote": "barb said that she would take a closer look at whether they should be in the ssa at all"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY20 budget status and revenue vs expenses",
+   "what_was_recorded": "Barb reported FY20 revenues exceed expenses by $56k; the Commission was told unspent funds go to retained earnings.",
+   "figures_as_printed": [
+    "$56k"
+   ],
+   "quote": "at present, revenues exceed expenses by $56k."
+  },
+  {
+   "topic": "Capital Reserve Stabilization Fund for FY21 deficit",
+   "what_was_recorded": "Town Treasurer Karen recommended adding $35k from the Capital Reserve Stabilization Fund into the FY21 budget to help with the deficit.",
+   "figures_as_printed": [
+    "$35k"
+   ],
+   "quote": "karen recommended adding the $35k from the capital reserve stabilization fund into the fy21 budget to help with the deficit."
+  },
+  {
+   "topic": "Capital expense threshold",
+   "what_was_recorded": "Invoices over $5,000 would be considered a capital expense.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "as discussed, invoices over $5,000 would be considered a capital expense."
+  },
+  {
+   "topic": "General infrastructure line",
+   "what_was_recorded": "FY21 budget carries $20K for general infrastructure and a suggested pump station evaluation.",
+   "figures_as_printed": [
+    "$20K"
+   ],
+   "quote": "barb noted that there is $20k for general infrastructure and jack's suggestion for a pump station evaluation."
+  },
+  {
+   "topic": "Pump station evaluation cost history",
+   "what_was_recorded": "The last pump station evaluation was done in 2011 and cost $9k.",
+   "figures_as_printed": [
+    "$9k"
+   ],
+   "quote": "the last one was done in 2011and cost was $9k."
+  },
+  {
+   "topic": "Capital addition",
+   "what_was_recorded": "Commission agreed to add $35,838 into capital.",
+   "figures_as_printed": [
+    "$35,838"
+   ],
+   "quote": "commission agreed to add $35,838 into capital."
+  },
+  {
+   "topic": "Flow meters estimate",
+   "what_was_recorded": "Flow Assessment may require purchase or lease of new meters, estimated at $4k.",
+   "figures_as_printed": [
+    "$4k"
+   ],
+   "quote": "barb anticipates flow assessment will require the commission to purchase or lease new meters, for an estimate of $4k."
+  },
+  {
+   "topic": "I/I remediation",
+   "what_was_recorded": "I/I remediation was raised to $60k at past meetings; in FY20 $10k was spent plus $40k encumbered from FY19.",
+   "figures_as_printed": [
+    "$60k",
+    "$10k",
+    "$40k"
+   ],
+   "quote": "barb said i/l remediation was bumped up to $60k at past meetings and in fy20, they spent $10k plus $40k that was"
+  },
+  {
+   "topic": "Outsourcing figures",
+   "what_was_recorded": "The Commission discussed the outsourcing figures, legal and engineering.",
+   "figures_as_printed": [
+    "$166k"
+   ],
+   "quote": "the commission discussed the figures for outsourcing ($166k), legal and engineering."
+  },
+  {
+   "topic": "Revenue shortage",
+   "what_was_recorded": "The Commission discussed the revenue figures and the current shortage.",
+   "figures_as_printed": [
+    "$311,891"
+   ],
+   "quote": "they also discussed the revenue figures and the current shortage of $311,891."
+  },
+  {
+   "topic": "Leominster budget",
+   "what_was_recorded": "Leominster budget of $542K would include a 4% increase and meter-based bills.",
+   "figures_as_printed": [
+    "$542K"
+   ],
+   "quote": "leominster budget of $542k would include 4% increase and meter-based bills."
+  },
+  {
+   "topic": "Stabilization Fund article",
+   "what_was_recorded": "Town Meeting article to transfer $29,000 into the Stabilization Fund.",
+   "figures_as_printed": [
+    "$29,000"
+   ],
+   "quote": "#2- commission the transfer $29,000 into stabilization fund."
+  },
+  {
+   "topic": "OPEB transfer article",
+   "what_was_recorded": "Town Meeting article for an OPEB transfer of $656.",
+   "figures_as_printed": [
+    "$656"
+   ],
+   "quote": "#3- opeb transfer of $656."
+  },
+  {
+   "topic": "Mead Talerman & Costa legal invoices",
+   "what_was_recorded": "Legal invoices from Mead Talerman & Costa totaled $2,279.76.",
+   "figures_as_printed": [
+    "$2,279.76"
+   ],
+   "quote": "invoices for legal services from mead talerman & costa for $2,279.76."
+  },
+  {
+   "topic": "Legal spending against FY20 budget",
+   "what_was_recorded": "Legal spending is getting close to the $5k budgeted for FY20.",
+   "figures_as_printed": [
+    "$5k"
+   ],
+   "quote": "getting close to the $5k budgeted for fy20."
+  },
+  {
+   "topic": "10 Whiting lien and recording fee",
+   "what_was_recorded": "Schedule A was revised to remove a $105 recording fee; the lien remains at $11,551.47.",
+   "figures_as_printed": [
+    "$105",
+    "$11,551.47"
+   ],
+   "quote": "remove the recording fee of $105 subsequently received, still liening the $11,551.47"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Addition of money into capital in the FY21 budget (no source fund named in the minutes).",
+   "amount_as_printed": "$35,838",
+   "outcome": "agreed; no recorded vote",
+   "quote": "commission agreed to add $35,838 into capital."
+  },
+  {
+   "description": "Town Meeting article to transfer funds into the Stabilization Fund.",
+   "amount_as_printed": "$29,000",
+   "outcome": "included in 3-article motion approved unanimously for Town Meeting",
+   "quote": "#2- commission the transfer $29,000 into stabilization fund."
+  },
+  {
+   "description": "Town Meeting article for an OPEB transfer.",
+   "amount_as_printed": "$656",
+   "outcome": "included in 3-article motion approved unanimously for Town Meeting",
+   "quote": "#3- opeb transfer of $656."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Outsourcing / O&M contract bid",
+   "resolution": "motion amended; Jack to contact suppliers and document findings",
+   "tags": [
+    "O&M contract",
+    "RFP",
+    "suppliers"
+   ],
+   "quote": "commission discussed updating the statement of work and options for going out to bid."
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "Dave M. elected Chairman, John R. Vice-chairman, Brett R. Clerk",
+   "tags": [
+    "officers",
+    "elections"
+   ],
+   "quote": "election of officers- motion: mike n. to elect dave m. as chairman. unanimous"
+  },
+  {
+   "topic": "Caucus openings",
+   "resolution": "terms assigned (Brett 3 yr, John 2 yr, Dave 1 yr); attendance set",
+   "tags": [
+    "caucus",
+    "term openings"
+   ],
+   "quote": "the commission discussed the openings and agreed to assign brett to the 3 yr term, john to the 2 yr term, and dave to the 1 yr term."
+  },
+  {
+   "topic": "1170 Mass Ave betterment",
+   "resolution": "motions to present to Town Counsel and amend; no outcome recorded",
+   "tags": [
+    "betterments",
+    "Town Counsel",
+    "easement",
+    "frontage"
+   ],
+   "quote": "1170 mass ave betterment- discussion of possible impacts of 2/11/20 vote and possible motion to rescind-"
+  },
+  {
+   "topic": "FY20 budget and Capital Reserve Stabilization Fund",
+   "resolution": "discussed; agreed to add $35,838 into capital",
+   "tags": [
+    "FY20 budget",
+    "stabilization fund",
+    "revenues"
+   ],
+   "quote": "fy20 budget and said she had spoken to karen (town treasurer) about pulling from the capital reserve stabilization fund."
+  },
+  {
+   "topic": "FY21 budget",
+   "resolution": "discussed; revised budget to follow; extra meeting set for 3/17",
+   "tags": [
+    "FY21 budget",
+    "rates",
+    "infrastructure",
+    "pump stations"
+   ],
+   "quote": "fy21 budget-barb passed out updated copies of the fy21 budget."
+  },
+  {
+   "topic": "Town Meeting articles",
+   "resolution": "3 articles approved as presented and modified",
+   "tags": [
+    "Town Meeting",
+    "articles",
+    "stabilization"
+   ],
+   "quote": "articles for town meeting approval-fy21 budget, stabilization articles"
+  },
+  {
+   "topic": "Leominster IMA billing changeover",
+   "resolution": "discussed already; no separate action",
+   "tags": [
+    "Leominster",
+    "IMA",
+    "flow meters"
+   ],
+   "quote": "leominster ima billing changeover to flow meters- discussed already."
+  },
+  {
+   "topic": "Inflow/Infiltration third-party review",
+   "resolution": "status reported; agreed to read W&C reports at televised meeting",
+   "tags": [
+    "I/I",
+    "Woodward & Curran",
+    "manholes",
+    "CCTV"
+   ],
+   "quote": "inflow/infiltration (/i) 3rd party review status- carl reported that woodward & curran picked a dry week"
+  },
+  {
+   "topic": "Approve minutes for 2/25",
+   "resolution": "approved unanimously",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to approve minutes for 2/25. secona. jonn k. vote: unanimous"
+  },
+  {
+   "topic": "Business Manager report",
+   "resolution": "reported; no Commission action needed on lien",
+   "tags": [
+    "liens",
+    "legal fees",
+    "billing",
+    "properties"
+   ],
+   "quote": "business manager report -privilege fee 10 whiting-- barb said the document was signed at the last meeting."
+  },
+  {
+   "topic": "Maintenance plan and roles and responsibilities",
+   "resolution": "discussed; written input from Heather to be sought",
+   "tags": [
+    "maintenance plan",
+    "roles"
+   ],
+   "quote": "maintenance plan and roles & responsibilities -heather can't attend the 3/31 meeting."
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "listed 3/31 and 3/17 agenda items",
+   "tags": [
+    "agenda"
+   ],
+   "quote": "member agenda inputs for future meetings- 3/31- maintenance plan discussion, 3/17 rate increase discussion."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:39pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion: john r. to adjourn: 9:39pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "List of term openings for the caucus",
+   "where": "list",
+   "quote": "list of term openings for the caucus"
+  },
+  {
+   "name": "Email from Deb Trumball (SWSS) with termination notice",
+   "where": "list",
+   "quote": "email from deb trumball (swss) with termination notice"
+  },
+  {
+   "name": "Carl's data on other betterment properties near 1170 Mass. Ave.",
+   "where": "list",
+   "quote": "carl's data on other betterment properties near 1170 mass. ave."
+  },
+  {
+   "name": "Barb's updated FY20 budget",
+   "where": "list",
+   "quote": "barb's updated fy20 budget"
+  },
+  {
+   "name": "Flow to Meter comparison chart for 7/2016 to 10/2019",
+   "where": "list",
+   "quote": "flow to meter comparison chart for 7/2016 to 10/2019"
+  },
+  {
+   "name": "Draft of sewer articles for Annual Town Meeting on 5/2/20",
+   "where": "list",
+   "quote": "draft of sewer articles for annual town meeting on 5/2/20"
+  },
+  {
+   "name": "Invoice from Mead, Talerman & Costa for $2279.76",
+   "where": "list",
+   "quote": "invoice from mead, talerman & costa for $2279.76"
+  },
+  {
+   "name": "Wright Pierce maintenance plan",
+   "where": "text",
+   "quote": "carl suggested looking at recommendations from the wright pierce maintenance plan."
+  },
+  {
+   "name": "2011 evaluations (pump station)",
+   "where": "text",
+   "quote": "mike suggested looking at recommendations from the 2011 evaluations."
+  },
+  {
+   "name": "Schedule A (10 Whiting privilege fee document)",
+   "where": "text",
+   "quote": "barb had revised the schedule a remove the recording fee of $105"
+  },
+  {
+   "name": "W&C reports (Woodward & Curran)",
+   "where": "text",
+   "quote": "agreed to read the w&c reports at the televised meeting"
+  },
+  {
+   "name": "CCTV video (Weston & Sampson)",
+   "where": "text",
+   "quote": "he cannot find the cctv video"
+  },
+  {
+   "name": "Statement of work (sewer O&M contract)",
+   "where": "text",
+   "quote": "commission discussed updating the statement of work"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "officer elections",
+  "caucus",
+  "betterments",
+  "1170 Mass Ave",
+  "FY20 budget",
+  "FY21 budget",
+  "town meeting articles",
+  "stabilization fund",
+  "inflow infiltration",
+  "O&M contract",
+  "Leominster IMA",
+  "legal invoices",
+  "liens"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {
+  "votes": 1
+ }
 }

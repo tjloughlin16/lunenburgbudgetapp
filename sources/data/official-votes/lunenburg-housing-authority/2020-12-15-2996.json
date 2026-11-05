@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2020-12-15",
  "docid": "2996",
@@ -12,39 +12,368 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the November 19, 2020 meeting",
+   "motion": "Approve the minutes of the November 19, 2020 meeting.",
    "moved_by": "Jon Hogue",
    "seconded_by": "Deborah Christen",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "jon hogue made a motion to approve the minutes; deborah christen seconded. deborah christen -aye, jon hogue -aye, linda mcdonald-aye; all were in favor and minutes were accepted."
   },
   {
-   "motion": "Approve the FY2021 Budget as presented for submittal to DHCD",
+   "motion": "Approve the November 2020 financial report.",
+   "moved_by": "Linda McDonald",
+   "seconded_by": "Deborah Christen",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the november 2020 financial report made by linda mcdonald; deborah christen seconded."
+  },
+  {
+   "motion": "Approve the FY2021 Budget (Resolution 202015) as presented for submittal to DHCD.",
    "moved_by": "Linda McDonald",
    "seconded_by": "Deborah Christen",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "linda mcdonald moved to approve the fy2021 budget as presented for submittal to dhcd. deborah christen seconded. deborah christen-aye, jon hogue-aye, linda mcdonald-aye 3 in favor 0 opposed"
+   "quote": "linda mcdonald moved to approve the fy2021 budget as presented for submittal to dhcd."
   },
   {
-   "motion": "Approve Resolution 202016 for Contract for 2020/2021 Snow Services",
+   "motion": "Approve Resolution 202016, a contract for 2020/2021 snow and ice removal services with two options to renew.",
    "moved_by": "Linda McDonald",
    "seconded_by": "Jon Hogue",
-   "outcome": "passed 2-0 with 1 abstaining",
+   "outcome": "passed 2-0-1",
    "procedural": false,
-   "quote": "motion made by linda mcdonald to approve resolution 202016; jon hogue seconded. linda mcdonald-aye, jon hogue-aye, deborah christen-abstained. motion passed with a 2 to 0 vote and one abstaining."
+   "quote": "motion made by linda mcdonald to approve resolution 202016; jon hogue seconded."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Jon Hogue",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "deborah christen made a motion to adjourn the meeting at 5:56 p.m.; jon hogue seconded. jon hogue-aye, deborah christen-aye, linda mcdonald-aye with all in favor the meeting adjourned."
+   "quote": "deborah christen made a motion to adjourn the meeting at 5:56 p.m.; jon hogue seconded."
   }
  ],
  "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0873965
+ "note": "Text extract, not a scan; all votes are recorded in text. Virtual meeting per header. Public comment: no callers, no speakers. The Denise Ivaldi role differs between the header (Recording Secretary) and item 1a (Administrative Assistant); header used. The $20,117.42 snow bid was a bid, not a board-adopted price. Budget figures are as the minutes print them.",
+ "cost_usd": 0.01139412,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Linda McDonald",
+   "role": "Chair",
+   "status": "present",
+   "quote": "linda mcdonald, chair"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "deborah a.h. christen, member"
+  },
+  {
+   "name": "Jon Hogue",
+   "role": "Member",
+   "status": "present",
+   "quote": "deborah a.h. christen, member jon hogue, member"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, executive director"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "adam gautie, assistant executive director"
+  },
+  {
+   "name": "Kathleen Fortier",
+   "role": "Director of Finance",
+   "status": "present",
+   "quote": "kathleen fortier, director of finance"
+  },
+  {
+   "name": "Sue Honeycutt",
+   "role": "Fenton & Ewald",
+   "status": "present",
+   "quote": "sue honeycutt, fenton & ewald"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board recommended that Deborah Christen contact the Ethics Commission about a possible conflict from her son's work with Lakeview Nurseries; she said she would abstain from the snow contract vote.",
+   "quote": "brief discussion with recommendation that she contact the ethics commission; she said she would abstain from the vote just in case."
+  },
+  {
+   "decision": "Reported plan: do not bid out snow plowing next year so that Scott can do the plowing.",
+   "quote": "plan is to not bid out snow plowing next year. this would allow scott to do the plowing."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY24 formula funding award from DHCD",
+   "what_was_recorded": "DHCD letter announced the FY24 formula funding amount, based on the number of units.",
+   "figures_as_printed": [
+    "$63,069.00"
+   ],
+   "quote": "letter from dhcd announcing our fy24 formula funding of $63,069.00."
+  },
+  {
+   "topic": "November 2020 financials",
+   "what_was_recorded": "Income was reported above budget, and the bottom line was a surplus; COVID money must be spent by December 31.",
+   "figures_as_printed": [
+    "$25,793",
+    "$17,316",
+    "December 31"
+   ],
+   "quote": "income is up a little from what was budgeted by $25,793."
+  },
+  {
+   "topic": "FY2021 budget subsidy",
+   "what_was_recorded": "The subsidy is down 4 percent for the year.",
+   "figures_as_printed": [
+    "4%",
+    "$8,321"
+   ],
+   "quote": "this year there is a 4% decrease in our subsidy of $8,321."
+  },
+  {
+   "topic": "FY2021 budget administrative and fee lines",
+   "what_was_recorded": "Admin Other was reduced, the management fee rose 3 percent, and accounting fees rose 3 percent; maintenance contract costs rose.",
+   "figures_as_printed": [
+    "$4700",
+    "3%",
+    "$1176",
+    "$214",
+    "$6,000"
+   ],
+   "quote": "4190 admin other were able to bring that down from previous year by $4700."
+  },
+  {
+   "topic": "Property insurance in FY2021 budget",
+   "what_was_recorded": "Property insurance per-unit cost rose considerably.",
+   "figures_as_printed": [
+    "$126/unit",
+    "$170/unit"
+   ],
+   "quote": "property insurance went up considerably from $126/unit to $170/unit."
+  },
+  {
+   "topic": "Projected subsidy and operating income, FY2021",
+   "what_was_recorded": "Projected subsidy earnings and operating income; reserves after the truck purchase.",
+   "figures_as_printed": [
+    "$30,272",
+    "$1,705",
+    "$20,000",
+    "$18,295",
+    "67%"
+   ],
+   "quote": "projected to have an income of $1,705 for operations; with the $20,000 truck purchase reserves will be at $18,295"
+  },
+  {
+   "topic": "Used truck with plow from Leominster H.A.",
+   "what_was_recorded": "Non-routine used truck with plow being sold by Leominster H.A. to Lunenburg H.A.; not yet purchased, and staff plan to do snow plowing in-house.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "used truck with plow for $20,000 being sold by leominster h.a. to lune nburg h.a."
+  },
+  {
+   "topic": "Snow and ice removal contract bid",
+   "what_was_recorded": "Two responses received; lowest bid from Lakeview Nurseries recommended.",
+   "figures_as_printed": [
+    "$20,117.42"
+   ],
+   "quote": "we received two responses with the lowest bid of $20,117.42 from lakeview nurseries out of lunenburg."
+  },
+  {
+   "topic": "Septic system replacement emergency funding",
+   "what_was_recorded": "DHCD awarded emergency funding, outside capital funding, to replace the elderly-side septic system.",
+   "figures_as_printed": [
+    "$250,000"
+   ],
+   "quote": "dhcd awarding us $250,000 in emergency funding, outside of our capital funding, to replace the septic system on the elderly side."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and quorum",
+   "resolution": "meeting opened at 5:30 p.m.",
+   "quote": "the chair declared a quorum present and opened the meeting at 5:30 p.m.",
+   "tags": [
+    "quorum",
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Minutes of November 19, 2020",
+   "resolution": "approved",
+   "quote": "jon hogue made a motion to approve the minutes; deborah christen seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Opportunity for Public Comment",
+   "resolution": "no action",
+   "quote": "for the record there were no individuals calling in.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "The Executive Director Report – Ben Gold",
+   "resolution": "no action",
+   "quote": "things remain the same, getting worse, we've had some cases around us.",
+   "tags": [
+    "COVID-19",
+    "DHCD funding"
+   ]
+  },
+  {
+   "topic": "November 2020 financial report",
+   "resolution": "approved",
+   "quote": "the november 2020 financial report made by linda mcdonald; deborah christen seconded.",
+   "tags": [
+    "financials",
+    "reserves"
+   ]
+  },
+  {
+   "topic": "Resolution 202015 FY2021 Budget for submittal to DHCD",
+   "resolution": "approved 3-0",
+   "quote": "linda mcdonald moved to approve the fy2021 budget as presented for submittal to dhcd.",
+   "tags": [
+    "budget",
+    "DHCD",
+    "subsidy"
+   ]
+  },
+  {
+   "topic": "Administration: modernization and work order report",
+   "resolution": "no action",
+   "quote": "septic system replacement (fish #162031) - everything approved; waiting to bid out so work can begin in the spring.",
+   "tags": [
+    "septic",
+    "work orders",
+    "truck"
+   ]
+  },
+  {
+   "topic": "State-aided housing report",
+   "resolution": "no action",
+   "quote": "we received five standard applications in november; four elderly and one family.",
+   "tags": [
+    "waiting list",
+    "occupancy"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "none",
+   "quote": "unfinished business - none.",
+   "tags": []
+  },
+  {
+   "topic": "Resolution 202016 snow services contract 2020/2021",
+   "resolution": "approved 2-0-1, Christen abstained",
+   "quote": "motion made by linda mcdonald to approve resolution 202016; jon hogue seconded.",
+   "tags": [
+    "snow removal",
+    "contract",
+    "conflict of interest"
+   ]
+  },
+  {
+   "topic": "Other correspondence: DHCD Public Housing Notices",
+   "resolution": "reviewed",
+   "quote": "dhcd public housing notices were reviewed:",
+   "tags": [
+    "DHCD",
+    "notices"
+   ]
+  },
+  {
+   "topic": "Resident participation",
+   "resolution": "none requested",
+   "quote": "resident participation: none requested",
+   "tags": [
+    "resident participation"
+   ]
+  },
+  {
+   "topic": "Board Commissioners’ Comments",
+   "resolution": "none",
+   "quote": "board commissioners' comments: none",
+   "tags": []
+  },
+  {
+   "topic": "Motion to adjourn",
+   "resolution": "adjourned 5:56 p.m.",
+   "quote": "deborah christen made a motion to adjourn the meeting at 5:56 p.m.; jon hogue seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PHN 2020-38 – CHAMP PMR Planning Year Criteria",
+   "where": "list",
+   "quote": "phn 2020-38 - champ pmr planning year criteria"
+  },
+  {
+   "name": "PHN 2020 -39 – LHA Responsibilities to Tenants and Applicants who are Victims of Domestic Violence and Sexual Assault",
+   "where": "list",
+   "quote": "phn 2020 -39 - lha responsibilities to tenants and applicants who are victims of domestic violence and sexual assault"
+  },
+  {
+   "name": "DHCD letter announcing FY24 formula funding",
+   "where": "text",
+   "quote": "letter from dhcd announcing our fy24 formula funding of $63,069.00."
+  },
+  {
+   "name": "November 30, 2020 financials",
+   "where": "text",
+   "quote": "the november 30, 2020 financials were reviewed by sue honeycutt."
+  },
+  {
+   "name": "FY2021 Budget",
+   "where": "text",
+   "quote": "sue honeycutt presented the fy2021 budget."
+  },
+  {
+   "name": "DHCD emergency funding notice (septic)",
+   "where": "text",
+   "quote": "we also received notice today from dhcd awarding us $250,000 in emergency funding"
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "FY2021 budget",
+  "DHCD",
+  "financials",
+  "snow contract",
+  "conflict of interest",
+  "COVID-19",
+  "septic",
+  "virtual meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "other correspondence - dhcd public housing notices were reviewed:"
+ },
+ "dropped_unquoted_by_field": {
+  "documents_and_exhibits": 1
+ }
 }

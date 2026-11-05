@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2019-11-14",
  "docid": "2153",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from October 10",
+   "motion": "Accept the minutes of October 10, 2019 as presented.",
    "moved_by": "John Henshaw",
    "seconded_by": "Dave Passios",
    "outcome": "passed",
@@ -20,16 +20,214 @@
    "quote": "john henshaw motioned to accept minutes from october 10, 2nd by dave passios. unanimously approved."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Peter Beardmore",
    "seconded_by": "Dave Passios",
    "outcome": "passed",
    "procedural": true,
-   "quote": "peter beardmore moved to adjourn. dave passios 2nd 1. unanimous approval at approximately 8:30 p",
-   "quote_taken_from_text": true
+   "quote": "peter beardmore moved to adjourn. dave passios 2nd 1. unanimous approval at approximately 8:30 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision. Two procedural votes recorded: minutes approval and adjournment, both passed unanimously.",
- "cost_usd": 0.1063575
+ "note": "OCR of a scanned page set (macOS Vision). Page 2 begins mid-sentence and page 3 begins mid-sentence, so parts of items 3 and 4 are missing from the text. Item 2 is headed Public Comment but its speakers are committee members, so they are recorded as public_comment with no stated role. Only two motions are recorded (minutes approval and adjournment), both passed unanimously. No dollar figures are printed. Quotes with line breaks are collapsed to single spaces.",
+ "cost_usd": 0.00574392,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "status": "present",
+   "quote": "terri burchfield, chair called the meeting to order at 7pm."
+  },
+  {
+   "name": "John Henshaw",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, jay simeone, michelle walton, peter beardmore, dave passios"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, jay simeone, michelle walton, peter beardmore, dave passios"
+  },
+  {
+   "name": "Michelle Walton",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, jay simeone, michelle walton, peter beardmore, dave passios"
+  },
+  {
+   "name": "Peter Beardmore",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, jay simeone, michelle walton, peter beardmore, dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, jay simeone, michelle walton, peter beardmore, dave passios"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Michelle Walton and Peter Beardmore agreed to meet to discuss the timing and level of coordination required from the Town Manager and School Department.",
+   "quote": "michelle walton and peter beardmore agreed to meet to discuss the timing and level of coordination required from both the town manager and school department."
+  },
+  {
+   "decision": "John Henshaw volunteered to draft a checklist for determining what constitutes financial impact, for the committee's consideration.",
+   "quote": "john henshaw volunteered to draft a checklist as described for consideration by the committee."
+  },
+  {
+   "decision": "The committee agreed it needs a meeting with the Town Manager to clarify the budget-process terms and meanings.",
+   "quote": "we need a meeting with the town manager to clarify the terms and meanings."
+  },
+  {
+   "decision": "The committee asked for a multi-year synopsis of free cash, showing where the money originated year to year.",
+   "quote": "we'd like a multi-year synopsis of free cash, and where the money originated from year-to-year."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Free cash history",
+   "what_was_recorded": "The committee requested a multi-year synopsis of free cash and its sources; the Town Manager was reported to attribute year-to-year fluctuations to unique circumstances such as tax title programs.",
+   "figures_as_printed": [],
+   "quote": "we'd like a multi-year synopsis of free cash, and where the money originated from year-to-year."
+  },
+  {
+   "topic": "Non-municipal funding",
+   "what_was_recorded": "The committee still wants a list from the Town Manager on non-municipal funding.",
+   "figures_as_printed": [],
+   "quote": "the committee would still like a list from the town manager on non-"
+  },
+  {
+   "topic": "Storm water costs for new developments",
+   "what_was_recorded": "A member said he does not understand how storm water planning relates to requirements for new developments and additional costs to the town.",
+   "figures_as_printed": [],
+   "quote": "relating to requirements for new developments and new additional costs to the town."
+  },
+  {
+   "topic": "Fire apparatus repair costs",
+   "what_was_recorded": "The Fire Chief reported repair cost is the biggest current challenge, as trucks are not lasting as long.",
+   "figures_as_printed": [],
+   "quote": "their biggest challenge currently is repair cost. trucks aren't lasting as long as they previous did."
+  },
+  {
+   "topic": "Butterfly Lane annual maintenance costs",
+   "what_was_recorded": "A member said costs of annual maintenance on Butterfly Lane were difficult to obtain before town meeting.",
+   "figures_as_printed": [],
+   "quote": "michelle walton commented that the costs associated with annual maintenance on butterfly lane were difficult to obtain prior to town meeting."
+  },
+  {
+   "topic": "Police cruiser and fire truck acquisition timing",
+   "what_was_recorded": "The Capital Planning Committee discussed the police cruiser replacement cycle and the timing of acquiring a new fire truck.",
+   "figures_as_printed": [],
+   "quote": "discussing the police cruiser replacement cycle the timing of the acquisition of the new fire truck."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Capital Planning Committee and Fire Chief",
+   "quote": "dave passios attended the capital planning committee meeting and chatted with the fire chief. their biggest challenge currently is repair cost."
+  },
+  {
+   "speaker": "John Henshaw",
+   "stated_role": "",
+   "topic": "Police Chief and squad car damage",
+   "quote": "john henshaw spoke with the police chief. there has been recent damage to squad cars by apprehended suspects."
+  },
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "",
+   "topic": "Storm water planning and new development costs",
+   "quote": "peter beardmore commented that he watched the special town meeting on youtube, and feels that he does not understand what is happening with storm water planning"
+  },
+  {
+   "speaker": "Michelle Walton",
+   "stated_role": "",
+   "topic": "Butterfly Lane maintenance costs",
+   "quote": "michelle walton commented that the costs associated with annual maintenance on butterfly lane were difficult to obtain prior to town meeting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7pm; no action",
+   "quote": "terri burchfield, chair called the meeting to order at 7pm.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "discussion only; no action",
+   "quote": "peter beardmore commented that he watched the special town meeting on youtube",
+   "tags": [
+    "public comment",
+    "storm water"
+   ]
+  },
+  {
+   "topic": "Review of Special Town Meeting and Symposium",
+   "resolution": "discussed; Henshaw to draft a checklist; Walton and Beardmore to meet",
+   "quote": "john henshaw volunteered to draft a checklist as described for consideration by the committee.",
+   "tags": [
+    "special town meeting",
+    "symposium",
+    "finance committee recommendations"
+   ]
+  },
+  {
+   "topic": "Open items, goals, definitions, committee assignments",
+   "resolution": "discussed; committee to meet Town Manager on terms; reports from members",
+   "quote": "discussion on terms for budget process. there hasn't been progress on identifying these definitions.",
+   "tags": [
+    "budget terms",
+    "free cash",
+    "non-municipal funding",
+    "capital planning",
+    "school committee"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved October 10 minutes",
+   "quote": "john henshaw motioned to accept minutes from october 10, 2nd by dave passios. unanimously approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "listed December 5 and December 12, 2019",
+   "quote": "7. next meetings: december 5, 2019 december 12, 2019",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned approximately 8:30 PM",
+   "quote": "peter beardmore moved to adjourn. dave passios 2nd 1. unanimous approval at approximately 8:30 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "finance committee",
+  "special town meeting review",
+  "budget process",
+  "free cash",
+  "capital planning",
+  "storm water",
+  "minutes approval",
+  "town manager",
+  "public safety"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

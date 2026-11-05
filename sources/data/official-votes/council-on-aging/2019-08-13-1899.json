@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2019-08-13",
  "docid": "1899",
@@ -12,23 +12,263 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the July 2, 2019 meeting",
+   "motion": "Approve the minutes of the July 2, 2019 meeting.",
    "moved_by": "Ms. DiGiacomo",
    "seconded_by": "Mr. Lincoln",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "ms. digiacomo motioned to approve the minutes of the july 2, 2019 meeting. mr. lincoln seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting (at 10:36 a.m.).",
    "moved_by": "Ms. DiGiacomo",
    "seconded_by": "Mr. Lincoln",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "ms. digiacomo motioned to adjourn the meeting, mr. lincoln seconded. on vote, motion carried unanimously."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0958825
+ "dropped_unquoted": 2,
+ "note": "The minutes carry an approval annotation (\"Unanimously approved as amended by COA at September 17, 2019 meeting\") that is not a motion made at this meeting, so it is not recorded as a vote. The minutes print \"Mr. Lincoln\" for the seconder and mover-adjacent actions without a first name; Pete Lincoln is the only male Lincoln listed as present, but the text does not say so. Public comment is recorded as \"none\". No dollar figures appear in the text.",
+ "cost_usd": 0.005240519999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sue Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "director sue doherty, chairperson deb lincoln, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt, pete lincoln, judy tarbell, barbara brown, sarah grant, john pesenti"
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "director sue doherty, chairperson deb lincoln, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt, pete lincoln, judy tarbell, barbara brown, sarah grant, john pesenti"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "member",
+   "status": "present",
+   "quote": "director sue doherty, chairperson deb lincoln, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt, pete lincoln, judy tarbell, barbara brown, sarah grant, john pesenti"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "member",
+   "status": "present",
+   "quote": "director sue doherty, chairperson deb lincoln, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt, pete lincoln, judy tarbell, barbara brown, sarah grant, john pesenti"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "member",
+   "status": "present",
+   "quote": "director sue doherty, chairperson deb lincoln, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt, pete lincoln, judy tarbell, barbara brown, sarah grant, john pesenti"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "member",
+   "status": "present",
+   "quote": "director sue doherty, chairperson deb lincoln, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt, pete lincoln, judy tarbell, barbara brown, sarah grant, john pesenti"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "member",
+   "status": "present",
+   "quote": "director sue doherty, chairperson deb lincoln, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt, pete lincoln, judy tarbell, barbara brown, sarah grant, john pesenti"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "member",
+   "status": "present",
+   "quote": "director sue doherty, chairperson deb lincoln, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt, pete lincoln, judy tarbell, barbara brown, sarah grant, john pesenti"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "member",
+   "status": "present",
+   "quote": "director sue doherty, chairperson deb lincoln, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt, pete lincoln, judy tarbell, barbara brown, sarah grant, john pesenti"
+  },
+  {
+   "name": "Sarah Grant",
+   "role": "member",
+   "status": "present",
+   "quote": "director sue doherty, chairperson deb lincoln, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt, pete lincoln, judy tarbell, barbara brown, sarah grant, john pesenti"
+  },
+  {
+   "name": "John Pesenti",
+   "role": "member",
+   "status": "present",
+   "quote": "director sue doherty, chairperson deb lincoln, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt, pete lincoln, judy tarbell, barbara brown, sarah grant, john pesenti"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "role": "member",
+   "status": "absent",
+   "quote": "absent: susan o'sullivan"
+  },
+  {
+   "name": "Marie Burchfield",
+   "role": "Council on Aging Liaison to the Eagle House Supporters",
+   "status": "present",
+   "quote": "guests: council on aging liaison to the eagle house supporters marie burchfield"
+  },
+  {
+   "name": "Amanda Koeck",
+   "role": "recording secretary (minutes submitted by)",
+   "status": "not stated",
+   "quote": "respectfully submitted, amanda koeck"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Pesenti and Ms. Rabbitt took on reviewing and revising the new board member orientation packets with Ms. Lincoln and Ms. Doherty.",
+   "quote": "mr. pesenti and ms. rabbitt volunteered to review and revise the packets with ms. lincoln and ms. doherty."
+  },
+  {
+   "decision": "A Boston Post Cane ceremony is to be scheduled for some time in November.",
+   "quote": "a ceremony is to be scheduled for some time in november."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Director's year-end presentation: Memory Café funding",
+   "what_was_recorded": "The year-end presentation included a breakdown of money spent on the Memory Café, funded by grants and donations; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "a breakdown of the money spent on the memory café, which has been funded by grants and donations"
+  },
+  {
+   "topic": "Director's year-end presentation: Eagle House Supporters contribution",
+   "what_was_recorded": "The presentation included slides on the Eagle House Supporters contribution; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty also included slides on the eagle house supporters contribution"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (July 2, 2019 meeting)",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "ms. digiacomo motioned to approve the minutes of the july 2, 2019 meeting."
+  },
+  {
+   "topic": "Director's report: year-end PowerPoint presentation",
+   "resolution": "no action (presented)",
+   "tags": [
+    "director report",
+    "statistics",
+    "volunteers"
+   ],
+   "quote": "ms. doherty presented her end of year report to the board, and is on the board of selectmen agenda for august 13, 2019."
+  },
+  {
+   "topic": "New board member orientation packets",
+   "resolution": "members volunteered to revise packets",
+   "tags": [
+    "orientation",
+    "board"
+   ],
+   "quote": "ms. lincoln opined the orientation packets are \"horribly out of date.\""
+  },
+  {
+   "topic": "Boston Post Cane",
+   "resolution": "ceremony to be scheduled for November",
+   "tags": [
+    "Boston Post Cane",
+    "ceremony"
+   ],
+   "quote": "a ceremony is to be scheduled for some time in november."
+  },
+  {
+   "topic": "Director grade/step increase (Salary Admin Plan)",
+   "resolution": "no action (update received)",
+   "tags": [
+    "personnel",
+    "salary"
+   ],
+   "quote": "ms. doherty said she's received communication from the town manager that the personnel committee is looking favorably toward advancing the step for the director position."
+  },
+  {
+   "topic": "Shuffleboard court",
+   "resolution": "no action (reported complete)",
+   "tags": [
+    "facilities",
+    "shuffleboard"
+   ],
+   "quote": "ms. lincoln reported the shuffleboard court is complete, and it will be showcased at the volunteer appreciation cookout."
+  },
+  {
+   "topic": "Building report",
+   "resolution": "no action (reported)",
+   "tags": [
+    "building",
+    "DPW",
+    "Eagle House"
+   ],
+   "quote": "ms. doherty reported the dpw has found a painter to take care of the ramp coming down to the eagle house"
+  },
+  {
+   "topic": "Upcoming events",
+   "resolution": "no action (reported)",
+   "tags": [
+    "events",
+    "senior center"
+   ],
+   "quote": "ms. doherty talked about upcoming events at the senior center"
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "no action (reported)",
+   "tags": [
+    "Eagle House Supporters",
+    "volunteers"
+   ],
+   "quote": "ms. lincoln reported that she attended the supporters meeting on july 12, 2019."
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "no action (none)",
+   "tags": [
+    "notices"
+   ],
+   "quote": "notices and communications: none"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:36 a.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "ms. digiacomo motioned to adjourn the meeting, mr. lincoln seconded. on vote, motion carried unanimously."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Year End Power Point Presentation (director's end-of-year report, FY 19)",
+   "where": "text",
+   "quote": "year end power point presentation: ms. doherty presented her end of year report to the board"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "Eagle House",
+  "senior center",
+  "director report",
+  "volunteers",
+  "minutes",
+  "events",
+  "building",
+  "Memory Café",
+  "Boston Post Cane"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 2
+ }
 }

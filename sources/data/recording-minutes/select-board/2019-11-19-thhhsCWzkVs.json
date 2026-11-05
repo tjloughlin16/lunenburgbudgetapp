@@ -1,0 +1,584 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2019-11-19",
+ "video_id": "thhhsCWzkVs",
+ "video_url": "https://www.youtube.com/watch?v=thhhsCWzkVs",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2019-11-19-thhhsCWzkVs.json",
+  "sha256": "07419a4b3711bf42740bd7da405a63a992302d761182eb9fb43f894377876707",
+  "caption_lines": 458,
+  "segments": 3509
+ },
+ "recording": {
+  "duration_s": 9739,
+  "duration": "2:42",
+  "spoken_chars": 127985,
+  "words_approx": 21330
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11192019-5180",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-11-19-agenda-5180.txt",
+   "path": "sources/meetings/select-board/2019-11-19-agenda-5180.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11192019-5180",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-11-19-minutes-5180.txt",
+   "path": "sources/meetings/select-board/2019-11-19-minutes-5180.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-04T11:01:14Z",
+  "cost_usd": 0.2825753
+ },
+ "minutes": {
+  "headline": "Select Board adopted a single tax rate and approved the Electric Avenue solar PILOT agreement.",
+  "summary": "The board held its annual tax classification hearing and adopted a single tax rate for all classes. It approved a solar PILOT agreement for 190 Electric Avenue after debate over the pilot versus the depreciation model, and issued a common victualler license to a new gas station and market. It also reviewed the special town meeting, the old primary school survey, FY21 budget priorities and a public Q&A before the budget, and a draft public comment policy.",
+  "attendees": [
+   {
+    "name_as_heard": "Mrs. Luck",
+    "role": "vice chair"
+   },
+   {
+    "name_as_heard": "Mr. Jeffries",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Rogers",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Josh Gendron",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Karen Brochu",
+    "role": "finance director"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 377,
+    "topic": "Lions Club meat raffle; asked for a follow-up symposium on financial impacts; criticized the earth removal article; asked that salary schedule changes be quantified; suggested asking departments to budget at a 2.5 percent increase; senior center facility; public safety."
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "capital",
+   "economic-development",
+   "personnel",
+   "planning-and-zoning",
+   "policy",
+   "public-comment",
+   "seniors",
+   "tax-rate",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 1872,
+    "motion": "Adopt a single tax rate for all classes with residential factor 1.0 for FY2020, pending DOR approval",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 3433,
+    "motion": "Accept the pilot agreement in final form for 190 Electric Avenue",
+    "outcome": "passed with one abstention",
+    "procedural": false
+   },
+   {
+    "t": 3972,
+    "motion": "Issue the common victualler license to the gas and market at 400 Electric Avenue",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 9104,
+    "motion": "Accept the social media policy as presented with the change from town administrator to town manager",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 9705,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1043,
+    "topic": "FY2020 tax levy and new growth",
+    "what_was_said": "Assessors' representative described the amount to be raised, the increase over last year, and new growth close to the estimate.",
+    "figures_as_heard": [
+     "twenty eight million fifty four thousand four hundred and seven dollars",
+     "three point one three percent",
+     "three hundred and sixty six thousand two hundred and thirty one dollars"
+    ]
+   },
+   {
+    "t": 1258,
+    "topic": "Proposed FY2020 tax rate",
+    "what_was_said": "The rate is proposed lower than last year and is tentative pending DOR review.",
+    "figures_as_heard": [
+     "$18 and 12 cent tax rate",
+     "18 dollars and 68 cents"
+    ]
+   },
+   {
+    "t": 2543,
+    "topic": "Solar PILOT versus depreciation model",
+    "what_was_said": "Board compared ten-year depreciation payments with twenty-year PILOT payments; the PILOT yields more over time.",
+    "figures_as_heard": [
+     "ninety six thousand dollars",
+     "three hundred and fifty two thousand dollars",
+     "four hundred and forty eight"
+    ]
+   },
+   {
+    "t": 3297,
+    "topic": "PILOT legal review fee",
+    "what_was_said": "Developer provided a check to cover the town's legal review.",
+    "figures_as_heard": [
+     "$1,500"
+    ]
+   },
+   {
+    "t": 4258,
+    "topic": "Eagle House HVAC contract",
+    "what_was_said": "Project awarded within the state grant appropriation.",
+    "figures_as_heard": [
+     "thirty three thousand seven hundred and eighty eight dollars",
+     "forty thousand"
+    ]
+   },
+   {
+    "t": 8554,
+    "topic": "Accounts payable warrant",
+    "what_was_said": "The warrant was light.",
+    "figures_as_heard": [
+     "one hundred seventy seven thousand one hundred thirty nine dollars and ninety three cents"
+    ]
+   },
+   {
+    "t": 8958,
+    "topic": "School capital requests",
+    "what_was_said": "Three school capital requests: Turkey Hill asbestos work, engineering for primary school air conditioning, and admin AC.",
+    "figures_as_heard": [
+     "ten thousand dollars",
+     "$290,000",
+     "twenty eight thousand dollars"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 9488,
+    "decision": "Next meeting December 3rd will be a workshop on the old primary school and will take up the public comment policy; no meeting Thanksgiving week."
+   },
+   {
+    "t": 8135,
+    "decision": "Board agreed to hold a public question session after the town manager's January budget presentation, date to be set by chair and town manager."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 33,
+    "t_end": 855,
+    "topic": "Announcements and public comment",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 855,
+    "t_end": 2133,
+    "topic": "Tax classification hearing",
+    "resolution": "voted single tax rate",
+    "tags": [
+     "tax-rate",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 2133,
+    "t_end": 2406,
+    "topic": "First quarter FY2020 financial report",
+    "resolution": "informational",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 2434,
+    "t_end": 3677,
+    "topic": "Solar PILOT for 190 Electric Avenue",
+    "resolution": "voted",
+    "tags": [
+     "economic-development",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 3697,
+    "t_end": 4013,
+    "topic": "Common victualler license, 400 Electric Avenue",
+    "resolution": "motion made and seconded",
+    "tags": [
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 4044,
+    "t_end": 4363,
+    "topic": "Town manager report",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 4363,
+    "t_end": 5430,
+    "topic": "Special Town Meeting follow-up",
+    "resolution": "discussion",
+    "tags": [
+     "town-meeting",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 5430,
+    "t_end": 6253,
+    "topic": "Old primary school survey results",
+    "resolution": "discussion",
+    "tags": [
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 6253,
+    "t_end": 6722,
+    "topic": "Mid-year goals update",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 6722,
+    "t_end": 8554,
+    "topic": "FY21 budget priorities",
+    "resolution": "discussion",
+    "tags": [
+     "budget",
+     "budget-fy27",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 8554,
+    "t_end": 9041,
+    "topic": "Minutes, warrants, committee reports",
+    "resolution": "informational",
+    "tags": [
+     "capital"
+    ]
+   },
+   {
+    "t_start": 9041,
+    "t_end": 9705,
+    "topic": "Social media policy and public comment policy",
+    "resolution": "social media policy voted",
+    "tags": [
+     "policy"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Vote on the common victualler license is not stated.",
+   "Pilot vote count garbled, described as four to one with one abstention."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 1639,
+    "about": "Tax increase burden on seniors versus board's spending choices",
+    "sides": "One member against the size of increases; another member challenging colleagues to name cuts",
+    "words_as_heard": "I would challenge my colleagues who vote to go beyond raises that are recommended a town meeting for employees on one hand and then want to cut the tax rate on the other hand",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 7369,
+    "kind": "condition",
+    "about": "Members want total cost and need for any new position before supporting it.",
+    "who": "a member",
+    "words_as_heard": "we need to know why they are needed and I think we need to know what it's going to cost"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 958,
+    "name_as_heard": "classification hearing packet",
+    "kind": "presentation",
+    "words_as_heard": "do you all receive copies of the V we do of the packet",
+    "shown": true
+   },
+   {
+    "t": 3344,
+    "name_as_heard": "pilot agreement draft number four",
+    "kind": "contract or agreement",
+    "words_as_heard": "draft number four sounds like it has the changes on it",
+    "shown": true
+   },
+   {
+    "t": 5430,
+    "name_as_heard": "old primary school survey results PDF",
+    "kind": "report",
+    "words_as_heard": "we have a PDF of that",
+    "shown": true
+   },
+   {
+    "t": 6722,
+    "name_as_heard": "FY21 budget priorities memo",
+    "kind": "memo",
+    "words_as_heard": "I put together a short little memo about what I first see as budget priorities",
+    "shown": true
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "solar-pilot-agreement",
+    "title": "Solar PILOT agreement",
+    "question": "How do PILOT payments compare with depreciation-based taxes over time?",
+    "t": 2543,
+    "words_as_heard": "they would actually be paying ninety six thousand dollars less than they would on the 20-year pilot",
+    "data_in_play": [
+     "ninety six thousand dollars",
+     "three hundred and fifty two thousand dollars",
+     "four hundred and forty eight"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "minutes-clerk-cost",
+    "title": "Minutes clerk cost",
+    "question": "What would a professional minutes clerk cost the town?",
+    "t": 6804,
+    "words_as_heard": "a minutes clerk this position could support the Conservation Commission",
+    "data_in_play": [],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board adopted a single tax rate for all classes for FY2020, pending state Department of Revenue approval; the vote was unanimous.",
+    "t": 1872
+   },
+   {
+    "line": "The board accepted the solar PILOT agreement for 190 Electric Avenue in final form, with one abstention, after comparing it with a depreciation model.",
+    "t": 3433
+   },
+   {
+    "line": "The board compared ten years of depreciation payments with twenty years of PILOT payments and heard that the PILOT yields more over time.",
+    "t": 2543
+   },
+   {
+    "line": "A motion on the common victualler license for a gas station and market at 400 Electric Avenue was made, but the recording does not make the outcome audible.",
+    "t": 3972
+   },
+   {
+    "line": "The board accepted the social media policy with the change to \"town manager\", and agreed to hold a public question session after the January budget presentation.",
+    "t": 9104
+   }
+  ],
+  "why_it_matters": [
+   "A single tax rate means homes and businesses are taxed at the same rate per thousand dollars of value, so the commercial and industrial classes do not carry a higher rate than residential property.",
+   "The PILOT sets fixed payments from a solar facility over twenty years in place of taxes on its equipment as it depreciates, which changes how much that property contributes to the tax base.",
+   "The January budget presentation and the planned public question session are where residents can ask about FY21 spending before the budget goes to Town Meeting."
+  ],
+  "watch_next": [
+   "December 3rd workshop on the old primary school, which is also to take up the public comment policy; no meeting Thanksgiving week.",
+   "The date of the public question session after the town manager's January budget presentation, to be set by the chair and town manager."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-04T11:01:21Z",
+   "cost_usd": 0.0286971
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11192019-5180",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-11-19-minutes-5180.txt",
+   "path": "sources/meetings/select-board/2019-11-19-minutes-5180.pdf"
+  },
+  "official_sha256": "4ace67758f5391f99f8e464cfc1abda17610baf793f5e541c12c3cd828cb7bc2",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records barely overlap. The official text reads like a different meeting: it mentions MLK Day, a January 15 forum, FY2021 capital requests, and members Alonzo, McQuaid and Adams, while ours is dated 2019-11-19. Check that the right official minutes were matched to this date before relying on any comparison here.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 1,
+   "discrepancy": 6,
+   "only_in_ours": 5,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Accounts payable warrant amount",
+    "t": 8554,
+    "ours": "Accounts payable warrant: one hundred seventy seven thousand one hundred thirty nine dollars and ninety three cents",
+    "official": "the board signed an accounts payable warrant in the amount of $173,457.38",
+    "note": "$177,139.93 vs $173,457.38 is more than misheard digits explain, and it may be a different meeting's warrant; check the warrant itself and the meeting date.",
+    "official_reading": ""
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Tax rate / single tax rate vote",
+    "t": 1872,
+    "ours": "Adopt a single tax rate for all classes with residential factor 1.0 for FY2020, pending DOR approval — passed unanimously",
+    "official": "",
+    "note": "The official minutes have no tax rate vote; check whether the official minutes cover this meeting."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Pilot agreement vote for 190 Electric Avenue",
+    "t": 3433,
+    "ours": "Accept the pilot agreement in final form for 190 Electric Avenue — passed with one abstention",
+    "official": "",
+    "note": "The official minutes record no PILOT vote; their only abstention is Adams on the ZBA appointment. Check the official minutes for this date."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Common victualler license, 400 Electric Avenue",
+    "t": 3972,
+    "ours": "Issue the common victualler license to the gas and market at 400 Electric Avenue — not audible",
+    "official": "",
+    "note": "The official minutes have no victualler license vote; the only license vote is a Class II auto dealer license. Check the official minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Social media policy vote",
+    "t": 9104,
+    "ours": "Accept the social media policy as presented with the change from town administrator to town manager — passed",
+    "official": "",
+    "note": "The official minutes have no social media policy vote; check the official minutes for this date."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Official votes absent from ours (hunting, auto dealer license, earth removal, appointments, charter letters)",
+    "ours": "",
+    "official": "to not permit firearm hunting on the these parcels of lunenburg conservation land",
+    "note": "The official minutes list nine votes (hunting ban 3-2, ZBA appointment, earth removal permit, others) that our minutes lack; this suggests mismatched meetings, so check which meeting the official text covers."
+   },
+   {
+    "kind": "agree",
+    "about": "Eagle House HVAC $40,000",
+    "t": 4258,
+    "ours": "Eagle House HVAC contract: thirty three thousand seven hundred and eighty eight dollars, forty thousand",
+    "official": "we will not need contingency funds for the eagle house hvac project outside of the $40,000 earmark",
+    "note": "Both mention the Eagle House HVAC project and a $40,000 figure; ours also has $33,788, which the official does not mention."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY2020 tax levy, new growth, and tax rate figures",
+    "t": 1043,
+    "ours": "FY2020 tax levy and new growth: twenty eight million fifty four thousand four hundred and seven dollars, three point one three percent, three hundred and sixty six thousand two hundred and thirty one dollars",
+    "official": "",
+    "note": "The official minutes give new growth estimates only for FY21-FY25 ($350,000, $300,000), not these FY2020 figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School capital requests",
+    "t": 8958,
+    "ours": "School capital requests: ten thousand dollars, $290,000, twenty eight thousand dollars",
+    "official": "",
+    "note": "The official minutes give a $4,239,438 total for 28 FY2021 capital requests, not these items."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next meeting / workshop decision",
+    "t": 9488,
+    "ours": "Next meeting December 3rd will be a workshop on the old primary school and will take up the public comment policy; no meeting Thanksgiving week.",
+    "official": "",
+    "note": "The official minutes record no scheduling decision about December 3rd."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Public question session after January budget presentation",
+    "t": 8135,
+    "ours": "Board agreed to hold a public question session after the town manager's January budget presentation, date to be set by chair and town manager.",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Mrs. Luck, vice chair",
+    "ours": "Mrs. Luck (vice chair)",
+    "official": "members present: tom alonzo, chairman; damon mcquaid, clerk; phyllis luck, vice chairman;",
+    "note": "Both records show Luck present as vice chair."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Mr. Jeffries (member)",
+    "ours": "Mr. Jeffries (member)",
+    "official": "katey adams, michael-ray jeffreys",
+    "note": "Same member, spelled differently in the captions.",
+    "official_reading": "Michael-Ray Jeffreys"
+   },
+   {
+    "kind": "agree",
+    "about": "Town manager Heather",
+    "ours": "Heather (town manager)",
+    "official": "also present: heather lemieux, town manager",
+    "note": "Same person; the official minutes add the surname Lemieux."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendees Mr. Rogers, Josh Gendron, Karen Brochu",
+    "ours": "Mr. Rogers (member)",
+    "official": "",
+    "note": "Rogers does not appear in the official roster, which lists Alonzo, McQuaid, Luck, Adams and Jeffreys. Gendron and Brochu are also absent. Check whether the meetings match."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees Alonzo, McQuaid, Adams and the many applicants and abutters",
+    "ours": "",
+    "official": "members present: tom alonzo, chairman; damon mcquaid, clerk; phyllis luck, vice chairman;",
+    "note": "Our attendee list lacks Alonzo, McQuaid and Adams, who are all on the official roster."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-04T11:03:29Z",
+   "cost_usd": 0.0644311
+  }
+ }
+}

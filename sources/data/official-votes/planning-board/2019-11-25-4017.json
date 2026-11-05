@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-11-25",
  "docid": "4017",
@@ -12,64 +12,369 @@
  },
  "votes": [
   {
-   "motion": "release the remaining surety amount for Stone Farm, less $1,800",
+   "motion": "Release the remaining surety amount for Stone Farm, less $1,800, after punch list completion.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Thompson",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "p. bertram made motion to release the remaining surety amount, less the $1,800, m. thompson seconded, all aye."
   },
   {
-   "motion": "approve the minutes from October 7, 2019",
+   "motion": "Approve the minutes of 10.07.19.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
-   "quote": "p. bertram made motion to approve, t. cole seconded, all aye."
+   "quote": "10.07.19- p. bertram made motion to approve, t. cole seconded, all aye."
   },
   {
-   "motion": "approve the minutes from October 28, 2019",
+   "motion": "Approve the minutes of 10.28.19.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
-   "quote": "p. bertram made motion to approve, t. cole seconded, all aye."
+   "quote": "10.28.19- p. bertram made motion to approve, t. cole seconded, all aye."
   },
   {
-   "motion": "nominate Marisa Thompson as the Board Clerk",
+   "motion": "Nominate Marisa Thompson as Board Clerk.",
    "moved_by": "T. Cole",
-   "seconded_by": "P. Bertr am",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "t. cole made motion to nominate marisa thompson as the board clerk, p. bertr am seconded, all aye."
-  },
-  {
-   "motion": "have P. Bertram resign from the At Large position and become the Board representative",
-   "moved_by": "M. Thompson",
-   "seconded_by": "T. Cole",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "m. thompson made motion for p. bertram to res ign the at large position and to become the board representative, t. cole seconded, all aye",
+   "seconded_by": "P. Bertram",
+   "outcome": "passed (all aye)",
+   "procedural": false,
+   "quote": "t. cole made motion to nominate marisa thompson as the board clerk, p. bertr am seconded, all aye",
    "quote_taken_from_text": true
   },
   {
-   "motion": "nominate Paula Bertram to the Economic Development Committee",
+   "motion": "Paula Bertram to resign the At Large position on the Open Space Committee and become the Board representative.",
+   "moved_by": "M. Thompson",
+   "seconded_by": "T. Cole",
+   "outcome": "passed (all aye)",
+   "procedural": false,
+   "quote": "m. thompson made motion for p. bertram to res ign the at large position and to become the board representative, t. cole seconded, all aye."
+  },
+  {
+   "motion": "Nominate Paula Bertram to the Economic Development Committee.",
    "moved_by": "M. Allison",
    "seconded_by": "M. Thompson",
-   "outcome": "passed",
-   "procedural": true,
+   "outcome": "passed (all aye)",
+   "procedural": false,
    "quote": "m. allison made motion to nominate paula bertram to the committee, m. thompson seconded, all aye."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
-   "quote": "t. cole made motion to adjourn, p. bertram seconded, all aye."
+   "quote": "t. cole made motion to adjourn, p. bertram seconded, all aye. adjourned 8:50 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Apparent OCR error: 'P. Bertr am' (name split with space, should be 'P. Bertram') in Board Clerk vote. Date discrepancy: October 28, 2019 appears in the MINUTES APPROVAL votes but October 23, 2019 is listed in the Documents used section.",
- "cost_usd": 0.15971950000000001
+ "note": "Text is a clean extraction with no missing pages. Paula Bertram arrived at 6:36 pm, after the meeting opened. The documents list says \"Minutes 10.07.19, 10.23.19\" but the approval motions name 10.28.19 instead of 10.23.19; recorded as printed. Town Counsel is mentioned without a name. Votes are recorded as \"all aye\" with no numeric count.",
+ "cost_usd": 0.006795719999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram (arrived 6:36 pm), marisa thompson, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram (arrived 6:36 pm), marisa thompson, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "paula bertram (arrived 6:36 pm)"
+  },
+  {
+   "name": "Marisa Thompson",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram (arrived 6:36 pm), marisa thompson, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram (arrived 6:36 pm), marisa thompson, adam r. burney"
+  },
+  {
+   "name": "Larry Sabean",
+   "role": "representing the applicant (Hannigan Engineering)",
+   "status": "present",
+   "quote": "the applicant was represented by larry sabean, hannigan engineering."
+  },
+  {
+   "name": "John Whalen",
+   "role": "",
+   "status": "present",
+   "quote": "john whalen, 526 west townsend road- objected to the board's voicing that the setbacks in the solar bylaw were excessive."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Discussion of the Emerald Place at Lake Whalom surety release continued to the Board's December 9 meeting.",
+   "quote": "discussion will continue at the board's december 9th meeting."
+  },
+  {
+   "decision": "The 335 Chase Road common driveway plan and application to be submitted for the December 9 meeting, with the ANR Plan included for endorsement.",
+   "quote": "a driveway plan and application will be submitted for the december 9 th board meeting, at which time the anr plan will also be included for board endorsement."
+  },
+  {
+   "decision": "A. Burney to prepare a draft survey for public input on the solar bylaw for Board review.",
+   "quote": "a. burney will prepare a draft survey for board review."
+  },
+  {
+   "decision": "Board consensus to no longer have a Green Communities Task Force liaison.",
+   "quote": "board consensus was to no longer have a liaison."
+  },
+  {
+   "decision": "MJTC Board representative item tabled.",
+   "quote": "mjtc, board representative- tabled."
+  },
+  {
+   "decision": "A. Burney to provide the Board with the State model for the Open Space Residential Design Bylaw.",
+   "quote": "a. burney will provide the board with the state model."
+  },
+  {
+   "decision": "No Board meeting on December 23.",
+   "quote": "december 23- no meeting will be held this date."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Emerald Place at Lake Whalom surety",
+   "what_was_recorded": "About $40,000 remains held in surety for a completed project; release discussion continued.",
+   "quote": "approximately $40,000 is still being held in surety for this completed project.",
+   "figures_as_printed": [
+    "$40,000"
+   ]
+  },
+  {
+   "topic": "Stone Farm surety write down",
+   "what_was_recorded": "Remaining surety released less $1,800 the peer reviewer advised retaining for seed mixture establishment.",
+   "quote": "p. bertram made motion to release the remaining surety amount, less the $1,800",
+   "figures_as_printed": [
+    "$1,800"
+   ]
+  },
+  {
+   "topic": "Master Plan RFP funding",
+   "what_was_recorded": "Board members prioritized Master Plan elements because of funding limits; no dollar figure printed.",
+   "quote": "due to funding, members were asked to prioritize the elements they wanted to work on.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Whalen",
+   "stated_role": "",
+   "topic": "Solar bylaw setbacks",
+   "quote": "objected to the board's voicing that the setbacks in the solar bylaw were excessive."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "ANR Plans: 335 Chase Road",
+   "resolution": "continued to December 9 meeting; no endorsement vote",
+   "quote": "a driveway plan and application will be submitted for the december 9 th board meeting, at which time the anr plan will also be included for board endorsement.",
+   "tags": [
+    "ANR",
+    "common driveway",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Emerald Place at Lake Whalom surety release",
+   "resolution": "continued to December 9 meeting",
+   "quote": "discussion will continue at the board's december 9th meeting.",
+   "tags": [
+    "surety",
+    "release",
+    "punch list"
+   ]
+  },
+  {
+   "topic": "Stone Farm surety write down",
+   "resolution": "approved release of surety less $1,800",
+   "quote": "all punch list items have been completed by the developer.",
+   "tags": [
+    "surety",
+    "seed mixture"
+   ]
+  },
+  {
+   "topic": "Economic Development Committee",
+   "resolution": "informational; at-large Talent Bank form received",
+   "quote": "a. burney has received a talent bank form for an at-large position.",
+   "tags": [
+    "committee",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Solar bylaw",
+   "resolution": "draft survey to be prepared for Board review",
+   "quote": "a. burney will prepare a draft survey for board review.",
+   "tags": [
+    "solar bylaw",
+    "buffer zones",
+    "pollinators",
+    "public input"
+   ]
+  },
+  {
+   "topic": "Master Plan",
+   "resolution": "priority elements discussed; no vote",
+   "quote": "p. bertram inquired if population density could be incorporated into the rfp.",
+   "tags": [
+    "master plan",
+    "RFP",
+    "population"
+   ]
+  },
+  {
+   "topic": "Public comment: solar bylaw setbacks",
+   "resolution": "no action",
+   "quote": "objected to the board's voicing that the setbacks in the solar bylaw were excessive.",
+   "tags": [
+    "public comment",
+    "solar bylaw"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 10.07.19 and 10.28.19",
+   "quote": "10.07.19- p. bertram made motion to approve, t. cole seconded, all aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "storm water task force- discussed year 2 requirements.",
+   "tags": [
+    "committees",
+    "storm water",
+    "agricultural commission",
+    "TCP building design"
+   ]
+  },
+  {
+   "topic": "Director's items: vacancy and reorganization",
+   "resolution": "Board Clerk and committee appointments made; MJTC tabled; liaison removed",
+   "quote": "economic development committee: a board member needs to be appointed annually.",
+   "tags": [
+    "reorganization",
+    "appointments",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting and bylaw follow-ups",
+   "resolution": "no action; materials to be made available",
+   "quote": "the excavation and earth removal general bylaw did not pass at stm.",
+   "tags": [
+    "excavation bylaw",
+    "open space residential design",
+    "tree clearing",
+    "population"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "December 23 meeting cancelled",
+   "quote": "december 23- no meeting will be held this date.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "status noted; no action",
+   "quote": "lunenburg code, section 250- 6.1., off street parking & loading areas- on hold",
+   "tags": [
+    "zoning",
+    "solar energy",
+    "parking",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:50 PM",
+   "quote": "t. cole made motion to adjourn, p. bertram seconded, all aye. adjourned 8:50 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plan 335 Chase Road",
+   "where": "list",
+   "quote": "documents used at meeting: anr plan 335 chase road minutes 10.07.19, 10.23.19 solar energy system bylaw sample master plan rfps"
+  },
+  {
+   "name": "Minutes 10.07.19, 10.23.19",
+   "where": "list",
+   "quote": "documents used at meeting: anr plan 335 chase road minutes 10.07.19, 10.23.19 solar energy system bylaw sample master plan rfps"
+  },
+  {
+   "name": "Solar Energy System Bylaw",
+   "where": "list",
+   "quote": "documents used at meeting: anr plan 335 chase road minutes 10.07.19, 10.23.19 solar energy system bylaw sample master plan rfps"
+  },
+  {
+   "name": "Sample Master Plan RFPs",
+   "where": "list",
+   "quote": "documents used at meeting: anr plan 335 chase road minutes 10.07.19, 10.23.19 solar energy system bylaw sample master plan rfps"
+  },
+  {
+   "name": "Draft standard for buffer zones (A. Burney)",
+   "where": "text",
+   "quote": "a. burney presented a draft standard for buffer zones."
+  },
+  {
+   "name": "Talent Bank form (at-large position)",
+   "where": "text",
+   "quote": "a. burney has received a talent bank form for an at-large position."
+  },
+  {
+   "name": "State model (Open Space Residential Design)",
+   "where": "text",
+   "quote": "a. burney will provide the board with the state model."
+  },
+  {
+   "name": "Excavation and Earth Removal General Bylaw",
+   "where": "text",
+   "quote": "the excavation and earth removal general bylaw did not pass at stm."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plan",
+  "common driveway",
+  "surety release",
+  "solar bylaw",
+  "master plan",
+  "appointments",
+  "minutes approval",
+  "special town meeting",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2019-11-20",
  "docid": "3302",
@@ -12,15 +12,223 @@
  },
  "votes": [
   {
-   "motion": "Adjourn",
-   "moved_by": "John",
-   "seconded_by": "Karin",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting at 8:15pm.",
+   "moved_by": "John Palumbo",
+   "seconded_by": "Karin Menard",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "john motioned and karin seconded to adjourn at 8:15pm."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Only one vote recorded in these minutes. The procedural vote to adjourn is the only motion brought to a vote. Other items (skate park, beach season, capital plan) were discussed but no formal motions or votes were recorded.",
- "cost_usd": 0.0643214
+ "dropped_unquoted": 1,
+ "note": "No votes are recorded except the adjournment motion, which has no stated result. The text has OCR-style noise, with some doubled words and stray punctuation. The skate park discussion has no dollar figures; only square footage (5k/5,000 and 10k/10,000 square feet) is printed. The minutes contain no list of documents.",
+ "cost_usd": 0.00521602,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "karin called the meeting to order at 6:30pm. attendance: karin menard, john palumbo, kayla wright (recreation director), jack rodriquenz (dpw director)."
+  },
+  {
+   "name": "John Palumbo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "karin called the meeting to order at 6:30pm. attendance: karin menard, john palumbo, kayla wright (recreation director), jack rodriquenz (dpw director)."
+  },
+  {
+   "name": "Kayla Wright",
+   "role": "Recreation Director",
+   "status": "present",
+   "quote": "attendance: karin menard, john palumbo, kayla wright (recreation director), jack rodriquenz (dpw director)."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "kayla wright (recreation director), jack rodriquenz (dpw director). absent: susanna jewell."
+  },
+  {
+   "name": "Susanna Jewell",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent: susanna jewell."
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "role": "representing the 01462 Skate Park group",
+   "status": "present",
+   "quote": "anthony caiozzo and phil moore were both present on behalf of 01462 skate park group."
+  },
+  {
+   "name": "Phil Moore",
+   "role": "representing the 01462 Skate Park group",
+   "status": "present",
+   "quote": "anthony caiozzo and phil moore were both present on behalf of 01462 skate park group."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "dave passios made a public comment that he agreed with the commission and said we may want to considering working it into the repurposing of marshall park."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The chair will talk with the Board of Selectmen Chair about the skate park, since the BOS must give the go-ahead to start the building process.",
+   "quote": "karin said that since the bos would be the ones to give the go ahead to start the building process that she would talk with the bos chair."
+  },
+  {
+   "decision": "Karin and John agreed the proposed 2020 beach staff hiring timeline (advertise over winter break, mid-February deadline, interviews in mid to late March) was a solid plan.",
+   "quote": "karin and john both thought that was a solid plan."
+  },
+  {
+   "decision": "Kayla Wright will work on reopening hiring to add a second round of lifeguards after lifeguard training.",
+   "quote": "kayla said that yes, she could work on doing that."
+  },
+  {
+   "decision": "Jack Rodriquenz will work with Kayla Wright on what the commission can submit to the Capital Planning Committee.",
+   "quote": "jack said he would work with kayla and see what he could come up with."
+  },
+  {
+   "decision": "Jack Rodriquenz recommended that Kayla Wright work with Julie in HR on the beach season hiring process.",
+   "quote": "jack recommended that kayla work with julie in hr to get it done."
+  },
+  {
+   "decision": "The October minutes were not complete and will be ready for the next meeting.",
+   "quote": "karin advised that the october minutes were not complete and she would have them ready for the next"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Skate park long-term maintenance cost",
+   "what_was_recorded": "Karin said the commission does not have a good idea of the long-term cost of maintaining a skate park, a concern because funds are not endless; no figure was given.",
+   "quote": "that she felt the park commission still does not have a good idea of what the long term cost of maintaining a facility",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Skate park revenue to offset costs",
+   "what_was_recorded": "Phil Moore said camps and lessons at the park would bring in revenue to defray long-term costs; no figure was given.",
+   "quote": "holding camps and lessons would yield some revenue to defray those long term costs",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Finance update",
+   "what_was_recorded": "Kayla did not have the financials for the finance update, and the item was not covered because the group was short on time.",
+   "quote": "karin said that was fine as we were tight on time anyway.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Skate park and Marshall Park repurposing",
+   "quote": "dave passios made a public comment that he agreed with the commission and said we may want to considering working it into the repurposing of marshall park."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes (October)",
+   "resolution": "deferred to next meeting; October minutes not complete",
+   "quote": "karin advised that the october minutes were not complete and she would have them ready for the next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Recreation Director and DPW Director updates",
+   "resolution": "no action; fence replacement at Wallis Park in progress",
+   "quote": "jack said he is working on the fence replacement at wallis park.",
+   "tags": [
+    "fence",
+    "Wallis Park",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Lunenburg Skate Park updates and discussion",
+   "resolution": "discussion only; chair to talk with BOS Chair",
+   "quote": "karin explained that she put this topic on the agenda after seeing some of the recent advertisements by the 01462 skate park group.",
+   "tags": [
+    "skate park",
+    "Board of Selectmen",
+    "long-term cost",
+    "location"
+   ]
+  },
+  {
+   "topic": "2020 Beach Season hiring",
+   "resolution": "plan discussed; lifeguard second-round hiring to be explored",
+   "quote": "karin said that last years beach hiring was done late and that she had spoken to kayla about starting the process earlier.",
+   "tags": [
+    "beach season",
+    "hiring",
+    "lifeguards"
+   ]
+  },
+  {
+   "topic": "Capital Plan",
+   "resolution": "no action; Jack to work with Kayla on possible requests",
+   "quote": "jack updated the group that the capital planning process has started and that he would be making a presentation to the capital planning committee.",
+   "tags": [
+    "capital plan",
+    "Marshall Park"
+   ]
+  },
+  {
+   "topic": "Finance updates",
+   "resolution": "no action; financials not available",
+   "quote": "kayla said she didn't have an opportunity to get the financials.",
+   "tags": [
+    "finance"
+   ]
+  },
+  {
+   "topic": "Other business",
+   "resolution": "no action; none",
+   "quote": "a. other business matters that may legally come before the board not known at the time of posting - none",
+   "tags": [
+    "other business"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for January 13, 2020",
+   "quote": "next meeting date - january 13, 2020.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:15pm",
+   "quote": "john motioned and karin seconded to adjourn at 8:15pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "skate park",
+  "beach season",
+  "lifeguards hiring",
+  "capital plan",
+  "Marshall Park",
+  "Wallis Park fence",
+  "Park Commission",
+  "Board of Selectmen",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

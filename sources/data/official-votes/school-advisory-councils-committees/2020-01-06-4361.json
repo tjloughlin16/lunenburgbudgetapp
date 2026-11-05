@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2020-01-06",
  "docid": "4361",
@@ -12,23 +12,275 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes of November 4, 2019",
+   "motion": "Approve the minutes of November 4, 2019.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "review of minutes november 4, 2019, approved unanimously"
+   "quote": "3. minutes: review of minutes november 4, 2019, approved unanimously"
   },
   {
-   "motion": "to approve the Cross Country and Track and Field fundraiser at Chipotle on February 1st, with 33% of proceeds going to Cross Country and Track and Field",
+   "motion": "Approve the Cross Country and Track and Field fundraiser at Chipotle on February 1st, with 33% of proceeds going to Cross Country and Track and Field.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "cross country and track and field fundraiser at chipotle on february 1st, 33% of proceeds go to cross country and track and field. approved unanimously."
+   "quote": "fundraising requests: cross country and track and field fundraiser at chipotle on february 1st, 33% of proceeds go to cross country and track and field. approved unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes do not name who moved or seconded the motions. The Snapraise fundraiser request is mentioned as \"initially approved but later denied by School Committee policy 1303,\" but the minutes do not clearly state whether a vote was taken in this specific meeting versus at a prior meeting, so it is not included.",
- "cost_usd": 0.1275545
+ "note": "Board field reads 'School Advisory Councils Committees'; the minutes are of the Lunenburg Schools Athletic Advisory Council (LHS AAC). Page 2 holds only the adjournment line; no adjournment motion or vote is recorded. Votes record no mover or seconder. The Snapraise denial was a School Committee action described in passing, not a vote here. The athletic director appears as 'Jim Bunnell' in the header and 'James Bunnell' in the attendance list. Kim Hedlund is listed twice in the absent names. No documents list is printed.",
+ "cost_usd": 0.00573092,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kim Mannone",
+   "status": "present",
+   "quote": "present: kim mannone, jo weigold, james bunnell,lou bettencourt, brian lehtinen, jean proctor, robin bursch, jane gallagher, ernie friend"
+  },
+  {
+   "name": "Jo Weigold",
+   "status": "present",
+   "quote": "present: kim mannone, jo weigold, james bunnell,lou bettencourt, brian lehtinen, jean proctor, robin bursch, jane gallagher, ernie friend"
+  },
+  {
+   "name": "James Bunnell",
+   "role": "Lunenburg Schools Athletic Director (header says Jim Bunnell)",
+   "status": "present",
+   "quote": "jim bunnell: lunenburg schools athletic director"
+  },
+  {
+   "name": "Lou Bettencourt",
+   "status": "present",
+   "quote": "present: kim mannone, jo weigold, james bunnell,lou bettencourt, brian lehtinen, jean proctor, robin bursch, jane gallagher, ernie friend"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Lunenburg School Committee, member, LHS AAC Chair",
+   "status": "present",
+   "quote": "brian lehtinen: lunenburg school committee, member, lhs aac chair"
+  },
+  {
+   "name": "Jean Proctor",
+   "status": "present",
+   "quote": "present: kim mannone, jo weigold, james bunnell,lou bettencourt, brian lehtinen, jean proctor, robin bursch, jane gallagher, ernie friend"
+  },
+  {
+   "name": "Robin Bursch",
+   "status": "present",
+   "quote": "present: kim mannone, jo weigold, james bunnell,lou bettencourt, brian lehtinen, jean proctor, robin bursch, jane gallagher, ernie friend"
+  },
+  {
+   "name": "Jane Gallagher",
+   "status": "present",
+   "quote": "present: kim mannone, jo weigold, james bunnell,lou bettencourt, brian lehtinen, jean proctor, robin bursch, jane gallagher, ernie friend"
+  },
+  {
+   "name": "Ernie Friend",
+   "status": "present",
+   "quote": "present: kim mannone, jo weigold, james bunnell,lou bettencourt, brian lehtinen, jean proctor, robin bursch, jane gallagher, ernie friend"
+  },
+  {
+   "name": "Amanda Waltz",
+   "status": "absent",
+   "quote": "absent: amanda waltz, brenda pajari, mary jean davis, rhonda jardini-yeates, kim hedlund,"
+  },
+  {
+   "name": "Brenda Pajari",
+   "status": "absent",
+   "quote": "absent: amanda waltz, brenda pajari, mary jean davis, rhonda jardini-yeates, kim hedlund,"
+  },
+  {
+   "name": "Mary Jean Davis",
+   "status": "absent",
+   "quote": "absent: amanda waltz, brenda pajari, mary jean davis, rhonda jardini-yeates, kim hedlund,"
+  },
+  {
+   "name": "Rhonda Jardini-Yeates",
+   "status": "absent",
+   "quote": "absent: amanda waltz, brenda pajari, mary jean davis, rhonda jardini-yeates, kim hedlund,"
+  },
+  {
+   "name": "Kim Hedlund",
+   "status": "absent",
+   "quote": "absent: amanda waltz, brenda pajari, mary jean davis, rhonda jardini-yeates, kim hedlund,"
+  },
+  {
+   "name": "Nicole Bourdelais",
+   "status": "absent",
+   "quote": "nicole bourdelais, tammy york, kim hedlund, kathleen jones, kelley laine."
+  },
+  {
+   "name": "Tammy York",
+   "status": "absent",
+   "quote": "nicole bourdelais, tammy york, kim hedlund, kathleen jones, kelley laine."
+  },
+  {
+   "name": "Kathleen Jones",
+   "status": "absent",
+   "quote": "nicole bourdelais, tammy york, kim hedlund, kathleen jones, kelley laine."
+  },
+  {
+   "name": "Kelley Laine",
+   "status": "absent",
+   "quote": "nicole bourdelais, tammy york, kim hedlund, kathleen jones, kelley laine."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The vote for a new secretary was tabled to the next meeting because no one was nominated or volunteered.",
+   "quote": "vote for a new secretary- none one nominated or volunteered was tabled for next meeting."
+  },
+  {
+   "decision": "Jean Proctor and Robin Bursch will lead a subcommittee to explore increasing community service opportunities for athletes outside NHS requirements.",
+   "quote": "jean proctor and robin bursch will take the leads in a subcommittee to explore this."
+  },
+  {
+   "decision": "Jean Proctor will contact James Bunnell about the baseball cage and its location as the idea progresses.",
+   "quote": "she will be in contact with james bunnell as this progresses and on the details of the location of the baseball cages."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Chipotle fundraiser proceeds split",
+   "what_was_recorded": "A Chipotle fundraiser on February 1st was approved with 33% of proceeds going to Cross Country and Track and Field.",
+   "figures_as_printed": [
+    "33%"
+   ],
+   "quote": "fundraising requests: cross country and track and field fundraiser at chipotle on february 1st, 33% of proceeds go to cross country and track and field. approved unanimously."
+  },
+  {
+   "topic": "Indoor Track and Field Snapraise fundraiser",
+   "what_was_recorded": "A Snapraise fundraising request was first approved, then denied under School Committee policy 1303 because of its crowdfunding nature.",
+   "figures_as_printed": [],
+   "quote": "fundraising request of indoor track and field to do a snapraise fundraiser. initially was approved but later denied by school committee policy 1303"
+  },
+  {
+   "topic": "Indoor baseball equipment fundraising",
+   "what_was_recorded": "Jean Proctor inquired about a baseball cage and about fundraising for indoor baseball equipment; no dollar amount was printed.",
+   "figures_as_printed": [],
+   "quote": "jean proctor inquired about a baseball cage and fundraising for indoor baseball equipment."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 6:31 pm",
+   "quote": "1. call to order: 6:31 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "2. public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Minutes of November 4, 2019",
+   "resolution": "approved unanimously",
+   "quote": "3. minutes: review of minutes november 4, 2019, approved unanimously",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Election of new secretary",
+   "resolution": "tabled to next meeting; no nominee",
+   "quote": "vote for a new secretary- none one nominated or volunteered was tabled for next meeting.",
+   "tags": [
+    "officers"
+   ]
+  },
+  {
+   "topic": "Updated members",
+   "resolution": "no comments",
+   "quote": "updated members- no comments.",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Athletic Director update",
+   "resolution": "no action; winter season summary, co-op swim cancelled, track underway",
+   "quote": "athletic director update: summary of the winter season briefly, coop swim with leominster is not happening",
+   "tags": [
+    "athletics",
+    "co-op sports",
+    "winter season"
+   ]
+  },
+  {
+   "topic": "Priorities for 2019-20",
+   "resolution": "subcommittee formed on community service; baseball cage follow-up assigned",
+   "quote": "jean proctor and robin bursch will take the leads in a subcommittee to explore this.",
+   "tags": [
+    "community service",
+    "baseball",
+    "priorities"
+   ]
+  },
+  {
+   "topic": "Old business: fundraising requests",
+   "resolution": "Chipotle fundraiser approved; Snapraise previously denied under policy",
+   "quote": "old business: fundraising requests: cross country and track and field fundraiser at chipotle on february 1st",
+   "tags": [
+    "fundraising",
+    "policy 1303"
+   ]
+  },
+  {
+   "topic": "Future topics",
+   "resolution": "listed for future meetings; no action",
+   "quote": "community service opportunities for athletes. one booster to support teams and other boosters in need.",
+   "tags": [
+    "future agenda"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "next meeting set for March 2, 2020, 6:30 pm",
+   "quote": "next meeting is planned for march 2nd 2020, 6:30 pm",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:30 pm; no motion recorded",
+   "quote": "adjournment ● 7:30 pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "School Committee policy 1303",
+   "where": "text",
+   "quote": "later denied by school committee policy 1303 due to its \"crowdfunding\" nature."
+  }
+ ],
+ "tags": [
+  "athletics",
+  "athletic advisory council",
+  "fundraising",
+  "community service",
+  "co-op sports",
+  "school committee policy",
+  "winter season",
+  "baseball",
+  "Lunenburg Schools"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

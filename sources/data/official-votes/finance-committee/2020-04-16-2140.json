@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2020-04-16",
  "docid": "2140",
@@ -12,15 +12,241 @@
  },
  "votes": [
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dave Passios",
    "seconded_by": "Peter Beardmore",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "dave passios motion, peter beardmore 2nd, unanimously approved"
+   "quote": "dave passios motion, peter beardmore 2nd, unanimously approved, 8:19 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded: the adjournment. No other motions recorded with outcomes in these minutes.",
- "cost_usd": 0.0730365
+ "note": "Zoom virtual meeting; the minutes list all six members as Present, with no absences. Only one vote by this committee is recorded (adjournment). The two BOS votes in the Town Manager report (tax deadline/penalties and the $100,000 COVID-19 request) were taken by the Board of Selectmen and are reported second-hand, so they are recorded as budget items rather than votes of this board. The Town Manager is referred to but not named. Rebecca Landry is named only as presenting to the BOS, not as attending. The linked capital plan and annual budget outlines are referenced by sentence, not set out as a list. The public comment and committee reports sections say \"None\".",
+ "cost_usd": 0.00495662,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman (Chair)",
+   "status": "present",
+   "quote": "present: terri burchfield, dave passios, michelle walton, peter beardmore, john henshaw, jay simeone"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, dave passios, michelle walton, peter beardmore, john henshaw, jay simeone"
+  },
+  {
+   "name": "Michelle Walton",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: terri burchfield, dave passios, michelle walton, peter beardmore, john henshaw, jay simeone"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: terri burchfield, dave passios, michelle walton, peter beardmore, john henshaw, jay simeone"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, dave passios, michelle walton, peter beardmore, john henshaw, jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, dave passios, michelle walton, peter beardmore, john henshaw, jay simeone"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Capital plan total",
+   "what_was_recorded": "The Town Manager reported the capital plan was reduced, with the lower-priority half of the prior plan removed.",
+   "figures_as_printed": [
+    "$664,800"
+   ],
+   "quote": "the capital plan has been reduced to $664,800."
+  },
+  {
+   "topic": "Free cash and expenditures",
+   "what_was_recorded": "Free cash and expenditures were revised to reflect changes in the capital plan.",
+   "figures_as_printed": [],
+   "quote": "free cash and expenditures have been revised to reflect changes in the capital plan."
+  },
+  {
+   "topic": "School budget",
+   "what_was_recorded": "A revised school budget was forthcoming, reflecting a 1.58 percent increase, or a reduction from the previous budget.",
+   "figures_as_printed": [
+    "1.58 percent",
+    "$192,157"
+   ],
+   "quote": "a revised school budget is forthcoming, which will reflect a 1.58 percent increase, or a $192,157 reduction from the previous budget."
+  },
+  {
+   "topic": "Overall budget surplus",
+   "what_was_recorded": "The budget was brought to a surplus, assuming state aid is level-funded though it is anticipated to be reduced.",
+   "figures_as_printed": [
+    "$812,913"
+   ],
+   "quote": "this brings the budget to a $812,913 surplus"
+  },
+  {
+   "topic": "OPEB contribution",
+   "what_was_recorded": "The Town Manager would review an OPEB contribution reduction with the town financial advisor; an extended discussion on effects of not following the annual OPEB contribution policy followed.",
+   "figures_as_printed": [],
+   "quote": "the town manager outlined that she would review opeb contribution"
+  },
+  {
+   "topic": "Tax payment deadline and penalties",
+   "what_was_recorded": "The BOS kept the tax payment deadline but deferred any penalties and interest until June 29th (reported by the Town Manager).",
+   "figures_as_printed": [
+    "June 29th"
+   ],
+   "quote": "the bos voted to keep the deadline for tax payments, but defer any penalties and interest until june 29th."
+  },
+  {
+   "topic": "COVID-19 unappropriated expenditure request",
+   "what_was_recorded": "The BOS voted to request unappropriated expenditures related to Covid-19 costs from the Director of Accounts of the Department of Local Services (reported by the Town Manager).",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "the bos voted to request $100,000 in unappropriated expenditures"
+  },
+  {
+   "topic": "COVID-19 expenditures to date",
+   "what_was_recorded": "Approximately $32K in Covid-related expenditures had been incurred so far.",
+   "figures_as_printed": [
+    "$32K"
+   ],
+   "quote": "currently there have been approximately $32k in related expenditures."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order 7 PM; COVID-19/Zoom advisory read",
+   "quote": "terri burchfield, chair called the meeting to order at 7 pm.",
+   "tags": [
+    "procedure",
+    "zoom"
+   ]
+  },
+  {
+   "topic": "ATM Warrant Discussion",
+   "resolution": "discussed; no action",
+   "quote": "terri burchfield outlined that the rebecca landry presented the cpa overview to the bos earlier in the week.",
+   "tags": [
+    "annual town meeting",
+    "CPA"
+   ]
+  },
+  {
+   "topic": "Capital Plan Review",
+   "resolution": "reviewed; no action recorded",
+   "quote": "the capital plan has been reduced to $664,800.",
+   "tags": [
+    "capital plan",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Annual Budget Adjustments",
+   "resolution": "reviewed; OPEB contribution discussed",
+   "quote": "the town manager reviewed updates to the annual budget plan, outlined here.",
+   "tags": [
+    "budget",
+    "OPEB",
+    "school budget",
+    "free cash"
+   ]
+  },
+  {
+   "topic": "Budget calendar",
+   "resolution": "dates noted; CPA legislator and commission talks pending",
+   "quote": "discussions with legislators and historical commission (to discuss cpa) are still pending",
+   "tags": [
+    "budget calendar",
+    "CH 70",
+    "CPA"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "none",
+   "quote": "6. public comment o none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "none",
+   "quote": "7. committee reports o none",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "reported; BOS actions on tax deadline and COVID-19 funding noted",
+   "quote": "the bos voted to request $100,000 in unappropriated expenditures",
+   "tags": [
+    "town manager",
+    "tax deadline",
+    "COVID-19"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:19 PM",
+   "quote": "dave passios motion, peter beardmore 2nd, unanimously approved, 8:19 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Recommended updates to the capital plan (online outline, linked)",
+   "where": "text",
+   "quote": "the town manager reviewed recommended updates to the capital plan, outlined here."
+  },
+  {
+   "name": "Updates to the annual budget plan (online outline, linked)",
+   "where": "text",
+   "quote": "the town manager reviewed updates to the annual budget plan, outlined here."
+  },
+  {
+   "name": "CPA overview",
+   "where": "text",
+   "quote": "the rebecca landry presented the cpa overview to the bos earlier in the week."
+  }
+ ],
+ "tags": [
+  "budget",
+  "capital plan",
+  "annual budget",
+  "school budget",
+  "OPEB",
+  "free cash",
+  "CPA",
+  "COVID-19",
+  "tax deadline",
+  "zoom meeting",
+  "ATM warrant",
+  "budget calendar"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-04-21",
  "docid": "6344",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Communicate formally through Town Counsel with Attorney Cohen about the BOS intent to impound the dogs and seek to enforce the kennel license issue",
+   "motion": "Through Town Counsel, communicate formally with Attorney Cohen about the BOS intent to impound the dogs and seek to enforce the kennel license issue.",
    "moved_by": "K. Adams",
    "seconded_by": "P. Luck",
    "outcome": "passed 4-0",
@@ -21,6 +21,115 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. One vote recorded: all four members present (Adams, Jeffreys, Luck, Alonzo) voted aye.",
- "cost_usd": 0.0964955
+ "note": "OCR scan (macOS Vision) with garbled passages and names (e.g., 'Gugglietti', 'Mi.', 'Mr:'). A passage is missing between the end of page 1 ('This situation') and the start of page 2 ('permission from a NH court'), so the record of that discussion is incomplete. No public comment section is printed. No adjournment vote or vote to enter Executive Session II is recorded; the minutes only say the Board 'moved on' to it. Attendance of the recording clerk is not stated beyond her signature. Only one motion is recorded and it is the only vote captured.",
+ "cost_usd": 0.0057690599999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chairman; phyllis luck, vice chairman; katey adams and michael-ray jeffreys"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chairman; phyllis luck, vice chairman; katey adams and michael-ray jeffreys"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Board member",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chairman; phyllis luck, vice chairman; katey adams and michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Board member",
+   "status": "present",
+   "quote": "board of selectmen present: tom alonzo, chairman; phyllis luck, vice chairman; katey adams and michael-ray jeffreys"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "not present: damon mcquaid, clerk"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux; adam costa, town counsel"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux; adam costa, town counsel"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Court intermediate relief for impounding the dogs",
+   "what_was_recorded": "Town Counsel said pursuing intermediate relief in district court during the appeal involves cost, and would be for the interim only; no figure was printed.",
+   "quote": "there is cost involved and it would only be for the interim.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Owners' fence and legal fundraising",
+   "what_was_recorded": "Mr. Jeffreys said the Gugliettis have tapped their savings to pay for a new fence and are raising money for legal assistance; no figure was printed.",
+   "quote": "they have tapped into their savings to pay for the new fence.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Dangerous dog appeal and kennel license enforcement (Guglietti dogs)",
+   "resolution": "motion passed 4-0 to have Town Counsel write to Attorney Cohen about impoundment and kennel license enforcement; then moved to Executive Session II",
+   "tags": [
+    "dangerous dogs",
+    "kennel license",
+    "town counsel",
+    "litigation",
+    "impoundment"
+   ],
+   "quote": "mr. alonzo asked everyone if they had read attorney kennefick's opinion regarding the impoundment of the two dangerous dogs owned by ms. guglietti"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Attorney Kennefick's opinion regarding the impoundment of the two dangerous dogs",
+   "where": "text",
+   "quote": "mr. alonzo asked everyone if they had read attorney kennefick's opinion regarding the impoundment of the"
+  },
+  {
+   "name": "Email from Mrs. Terhune",
+   "where": "text",
+   "quote": "the email from mrs. terhune was of a more critical"
+  }
+ ],
+ "tags": [
+  "dangerous dogs",
+  "kennel license",
+  "town counsel",
+  "litigation",
+  "executive session",
+  "remote meeting",
+  "COVID-19 Open Meeting Law suspension"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

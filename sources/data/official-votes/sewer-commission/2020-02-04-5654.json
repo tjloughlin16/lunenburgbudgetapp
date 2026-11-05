@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2020-02-04",
  "docid": "5654",
@@ -12,15 +12,339 @@
  },
  "votes": [
   {
-   "motion": "To adjourn at 9:59pm",
+   "motion": "To adjourn the meeting at 9:59pm.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "motion: dave m. to adjourn at 9:59pm second: mike n. vote: unanimous"
+   "quote": "to adjourn at 9:59pm second: mike n. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. Discussions of budget, officers, and spare parts are noted as \"discussed and agreed\" but no formal motions or votes were recorded for those items on this date.",
- "cost_usd": 0.0997425
+ "note": "OCR text of a scanned page with some garbled header text (\"LUVINILUU\") and a signature that reads \"Carle\". No attendance roll is printed, so attendance is inferred from who spoke or moved; no roles are printed (first names only). Only one vote is recorded (adjournment). The seal purchase vote mentioned was taken at a prior meeting and is not a vote at this one. Several items are recorded as agreed or discussed without a motion, so they are listed as decisions or topics, not votes.",
+ "cost_usd": 0.00809922,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "status": "present",
+   "quote": "carl noted that joan pease and ryan stober had resigned and added that they are missed already."
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb stated that there will be 4 openings on the town election ballot."
+  },
+  {
+   "name": "Dave",
+   "status": "present",
+   "quote": "dave said that they all know they need to raise rates, but asked if they would need to do it now or after town meeting?"
+  },
+  {
+   "name": "John",
+   "status": "present",
+   "quote": "john added that as a rate payer, he would be concerned if he only heard about an increase at the town meeting."
+  },
+  {
+   "name": "Mike",
+   "status": "present",
+   "quote": "mike suggested getting all the facts first before going to the town meeting."
+  },
+  {
+   "name": "Dave M.",
+   "status": "present",
+   "quote": "motion: dave m. to adjourn at 9:59pm"
+  },
+  {
+   "name": "Mike N.",
+   "status": "present",
+   "quote": "second: mike n. vote: unanimous"
+  },
+  {
+   "name": "Brett",
+   "status": "present",
+   "quote": "public comment- brett thanked the commission for letting him attend."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed to elect new officers at the next meeting.",
+   "quote": "the commission discussed and agreed to elect new officers at the next meeting."
+  },
+  {
+   "decision": "The Commission agreed to order only 1 seal for each station (Dana St and Leominster Rd) rather than the 2 requested for Dana St.",
+   "quote": "after discussion, the commission agreed to only order 1 seal for each station."
+  },
+  {
+   "decision": "The Commission agreed no action was needed at present on the 5 Chestnut St. and 711 Mass Ave. properties in the Annual Town Meeting Warrant Articles discussion.",
+   "quote": "commission discussed 5 chestnut st. and 711 mass ave. properties and agreed no action was needed at present."
+  },
+  {
+   "decision": "All agreed that major parts should be treated as a capital expense.",
+   "quote": "all agreed that major parts should be a capital expense."
+  },
+  {
+   "decision": "The Commission requested that Barb ask Heather whether the pump stations are adequately covered by liability insurance.",
+   "quote": "the commission requested that barb ask heather if the pump stations are adequately covered."
+  },
+  {
+   "decision": "The Commission will discuss the SWSS contract with Town Counsel, who will attend the 2/11 meeting; SWSS will attend the 2/25 meeting.",
+   "quote": "barb said that town counsel will come to the meeting on 2/11 to discuss the swss contract and swss will come to the 2/25 meeting."
+  },
+  {
+   "decision": "FinCom presentation set for March 19, with Dave to give the presentation to FinCom and the Board of Selectmen.",
+   "quote": "fincom presentation will be march 19. dave will give the presentation to fincom and board of selectmen."
+  },
+  {
+   "decision": "Barb will obtain an answer from Town Counsel at the 2/11 meeting on Michael-Ray Jeffrey's betterment request.",
+   "quote": "barb will have an answer from town counsel at the 2/11 meeting regarding michael-ray jeffrey's betterment request."
+  },
+  {
+   "decision": "The Commission will let users know what has been done to keep costs down and that it is working to find sources of I/I.",
+   "quote": "commission also will let users know what has been done to keep costs down."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Minimum charge billing",
+   "what_was_recorded": "Barb reported that 29% of the customer base is billed the minimum charge.",
+   "figures_as_printed": [
+    "29%",
+    "$97.20"
+   ],
+   "quote": "last quarter 29% of the customer base is billed the minimum charge of $97.20."
+  },
+  {
+   "topic": "Rate increase timing and FY21 budget shortfalls",
+   "what_was_recorded": "Dave said the Commission knows rates must rise and asked whether to raise them now or after town meeting; the Commission also discussed a potential rate increase and increasing the minimum charge.",
+   "figures_as_printed": [],
+   "quote": "dave said that they all know they need to raise rates, but asked if they would need to do it now or after town meeting?"
+  },
+  {
+   "topic": "Leominster IMA costs",
+   "what_was_recorded": "The Commission reviewed Leominster usage figures and the increase in projected costs under the IMA, which charges per cubic foot of flow to Leominster.",
+   "figures_as_printed": [],
+   "quote": "the commission reviewed the figures for leominster usage and the increase in projected costs due to the ima."
+  },
+  {
+   "topic": "Fitchburg rate increase",
+   "what_was_recorded": "Barb said the Fitchburg rate will increase 8% each year.",
+   "figures_as_printed": [
+    "8%"
+   ],
+   "quote": "barb added that the fitchburg rate will increase 8% each year."
+  },
+  {
+   "topic": "FY21 Small Water Services contract increase",
+   "what_was_recorded": "The Commission discussed a large increase in costs for the FY21 SWSS contract, attributed to a new billing system and staff loss.",
+   "figures_as_printed": [],
+   "quote": "the commission discussed the large increase in costs for the fy21 small water services contract."
+  },
+  {
+   "topic": "Generator maintenance costs",
+   "what_was_recorded": "The Commission discussed the increase in costs for generator maintenance and working directly with Weld.",
+   "figures_as_printed": [],
+   "quote": "the commission discussed the increase in costs for generator maintenance."
+  },
+  {
+   "topic": "Capital expenditures and pump station repair costs",
+   "what_was_recorded": "The Commission discussed a separate budget line for capital expenditures and infrastructure cost figures for pump station repairs.",
+   "figures_as_printed": [],
+   "quote": "they also discussed having a separate line for capital expenditures and figures for infrastructure costs for the pump station repairs."
+  },
+  {
+   "topic": "Reserve Capacity Fund transfers",
+   "what_was_recorded": "Revenue lines were discussed, including Reserve Capacity Fund transfers to be used for payments to Fitchburg for increased capacity.",
+   "figures_as_printed": [],
+   "quote": "including the reserve capacity fund transfers, which will be used towards payments to fitchburg for increased capacity."
+  },
+  {
+   "topic": "Pump station liability insurance",
+   "what_was_recorded": "Carl questioned whether liability insurance for the pump stations is adequate given their stated value.",
+   "figures_as_printed": [
+    "$2.8 million"
+   ],
+   "quote": "carl questioned if the liability insurance for pump stations is adequate as they are valued at $2.8 million."
+  },
+  {
+   "topic": "Flow meter telemetry upgrade",
+   "what_was_recorded": "Barb said discussion with Flow Assessment on meter telemetry indicated there may be a cost to upgrade the flow meters.",
+   "figures_as_printed": [],
+   "quote": "there may be a cost in upgrading the flow meters."
+  },
+  {
+   "topic": "Purchase of service amounts",
+   "what_was_recorded": "The Commission discussed other purchase of service amounts, including legal costs, engineering and the flow metering contract.",
+   "figures_as_printed": [],
+   "quote": "amounts, including legal costs, engineering and the flow metering contract."
+  },
+  {
+   "topic": "Solar credits",
+   "what_was_recorded": "Barb said results from the solar credits should start appearing in April.",
+   "figures_as_printed": [],
+   "quote": "barb added that they should start seeing results from the solar credits in april."
+  },
+  {
+   "topic": "Postage in FY20 budget",
+   "what_was_recorded": "Postage was reduced in the FY20 budget in anticipation of outsourced bill printing, which is on hold until the meter import project is complete.",
+   "figures_as_printed": [],
+   "quote": "in the fy20 budget, postage was reduced in anticipation of outsourced bill printing"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Brett",
+   "stated_role": "",
+   "topic": "thanks for attending the meeting",
+   "quote": "public comment- brett thanked the commission for letting him attend."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Resignation of 2 Commissioners",
+   "resolution": "discussed; 4 openings noted for the town election ballot",
+   "quote": "carl noted that joan pease and ryan stober had resigned and added that they are missed already.",
+   "tags": [
+    "commissioners",
+    "election"
+   ]
+  },
+  {
+   "topic": "Election of Officers",
+   "resolution": "deferred to next meeting",
+   "quote": "the commission discussed and agreed to elect new officers at the next meeting.",
+   "tags": [
+    "officers"
+   ]
+  },
+  {
+   "topic": "FY21 Budget discussion and approval",
+   "resolution": "discussed; no approval recorded",
+   "quote": "fy21 budget discussion and approval- the commission reviewed barb's updated draft budget.",
+   "tags": [
+    "budget",
+    "FY21",
+    "rates",
+    "Leominster IMA",
+    "Fitchburg",
+    "SWSS"
+   ]
+  },
+  {
+   "topic": "FinCom presentation",
+   "resolution": "scheduled for March 19",
+   "quote": "fincom presentation will be march 19. dave will give the presentation to fincom and board of selectmen.",
+   "tags": [
+    "FinCom",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Small Water Systems Services (SWSS) spare parts",
+   "resolution": "agreed to order 1 seal per station",
+   "quote": "after discussion, the commission agreed to only order 1 seal for each station.",
+   "tags": [
+    "SWSS",
+    "parts"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting Warrant Articles",
+   "resolution": "no action needed at present",
+   "quote": "annual town meeting warrant articles discussion -commission discussed 5 chestnut st. and 711 mass ave.",
+   "tags": [
+    "town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "FY19 Annual Town Report",
+   "resolution": "continued to 2/11 meeting",
+   "quote": "fy19 annual town report - will discuss at 2/11 meeting.",
+   "tags": [
+    "annual report"
+   ]
+  },
+  {
+   "topic": "Follow-up items (I/I letter, betterment request, SWSS monthly report)",
+   "resolution": "assigned to later meetings",
+   "quote": "barb will have an answer from town counsel at the 2/11 meeting regarding michael-ray jeffrey's betterment request.",
+   "tags": [
+    "I/I",
+    "betterment",
+    "follow-up"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "none",
+   "quote": "member agenda inputs for future meetings - none",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; Dave suggested separate commercial and residential rates",
+   "quote": "public comment- brett thanked the commission for letting him attend.",
+   "tags": [
+    "public comment",
+    "rates"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:59pm, unanimous",
+   "quote": "to adjourn at 9:59pm second: mike n. vote: unanimous",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Barb's updated draft budget (FY21)",
+   "where": "text",
+   "quote": "the commission reviewed barb's updated draft budget."
+  },
+  {
+   "name": "December SWSS monthly report",
+   "where": "text",
+   "quote": "the december swss monthly report is on the google drive."
+  },
+  {
+   "name": "FY19 Annual Town Report",
+   "where": "text",
+   "quote": "fy19 annual town report - will discuss at 2/11 meeting."
+  },
+  {
+   "name": "Leominster IMA (intermunicipal agreement)",
+   "where": "text",
+   "quote": "the commission discussed the leominster rates and the ima, which states that lunenburg pays per the cubic foot for what flows to leominster."
+  },
+  {
+   "name": "Annual Town Meeting Warrant Articles",
+   "where": "text",
+   "quote": "annual town meeting warrant articles discussion -commission discussed 5 chestnut st. and 711 mass ave."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "FY21 budget",
+  "rates",
+  "Leominster IMA",
+  "Fitchburg capacity",
+  "SWSS contract",
+  "pump stations",
+  "town meeting",
+  "commission officers",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

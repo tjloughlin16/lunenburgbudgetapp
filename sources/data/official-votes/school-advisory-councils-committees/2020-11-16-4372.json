@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2020-11-16",
  "docid": "4372",
@@ -12,23 +12,225 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from August 31, 2020 meeting",
+   "motion": "Approve the minutes of the August 31, 2020 meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "minutes approved unanimously.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "review of minutes from august 31, 2020 meeting. minutes approved unanimously."
   },
   {
-   "motion": "Approve basketball calendar fundraiser with COVID safety precautions",
+   "motion": "Approve the Basketball calendar fundraiser with covid safety pre-cautions.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "basketball calendar fundraiser with covid safety pre-cautions was approved unanimously.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "basketball calendar fundraiser with covid safety pre-cautions was approved unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded. Neither identifies individuals who moved or seconded; both approved unanimously. No other motions are recorded.",
- "cost_usd": 0.0715435
+ "note": "The header names the board as \"School Advisory Councils Committees\", but the minutes themselves are headed \"Athletic Advisory Council\". Recorded as printed. The minutes approving the August 31, 2020 minutes and the basketball fundraiser give no mover or seconder. The adjournment at 6:42pm has no recorded vote, so none is listed. The minutes print no dollar figures. No documents or exhibits are named.",
+ "cost_usd": 0.00449192,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "",
+   "status": "present",
+   "quote": "attendees: brian lehtinen, robin bursch, jane gallagher, kim smith, colleen shapiro, eric short, kathleen jones, tammy yourk, brenda pajari"
+  },
+  {
+   "name": "Robin Bursch",
+   "role": "",
+   "status": "present",
+   "quote": "attendees: brian lehtinen, robin bursch, jane gallagher, kim smith, colleen shapiro, eric short, kathleen jones, tammy yourk, brenda pajari"
+  },
+  {
+   "name": "Jane Gallagher",
+   "role": "",
+   "status": "present",
+   "quote": "attendees: brian lehtinen, robin bursch, jane gallagher, kim smith, colleen shapiro, eric short, kathleen jones, tammy yourk, brenda pajari"
+  },
+  {
+   "name": "Kim Smith",
+   "role": "",
+   "status": "present",
+   "quote": "attendees: brian lehtinen, robin bursch, jane gallagher, kim smith, colleen shapiro, eric short, kathleen jones, tammy yourk, brenda pajari"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "",
+   "status": "present",
+   "quote": "attendees: brian lehtinen, robin bursch, jane gallagher, kim smith, colleen shapiro, eric short, kathleen jones, tammy yourk, brenda pajari"
+  },
+  {
+   "name": "Eric Short",
+   "role": "",
+   "status": "present",
+   "quote": "attendees: brian lehtinen, robin bursch, jane gallagher, kim smith, colleen shapiro, eric short, kathleen jones, tammy yourk, brenda pajari"
+  },
+  {
+   "name": "Kathleen Jones",
+   "role": "",
+   "status": "present",
+   "quote": "attendees: brian lehtinen, robin bursch, jane gallagher, kim smith, colleen shapiro, eric short, kathleen jones, tammy yourk, brenda pajari"
+  },
+  {
+   "name": "Tammy Yourk",
+   "role": "",
+   "status": "present",
+   "quote": "attendees: brian lehtinen, robin bursch, jane gallagher, kim smith, colleen shapiro, eric short, kathleen jones, tammy yourk, brenda pajari"
+  },
+  {
+   "name": "Brenda Pajari",
+   "role": "",
+   "status": "present",
+   "quote": "attendees: brian lehtinen, robin bursch, jane gallagher, kim smith, colleen shapiro, eric short, kathleen jones, tammy yourk, brenda pajari"
+  },
+  {
+   "name": "Ernie Friend",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: ernie friend, james bunnell, jo weigold, nichole bourdelais, jean proctor, audra sprague, jennifer gendron, mj davis"
+  },
+  {
+   "name": "James Bunnell",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: ernie friend, james bunnell, jo weigold, nichole bourdelais, jean proctor, audra sprague, jennifer gendron, mj davis"
+  },
+  {
+   "name": "Jo Weigold",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: ernie friend, james bunnell, jo weigold, nichole bourdelais, jean proctor, audra sprague, jennifer gendron, mj davis"
+  },
+  {
+   "name": "Nichole Bourdelais",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: ernie friend, james bunnell, jo weigold, nichole bourdelais, jean proctor, audra sprague, jennifer gendron, mj davis"
+  },
+  {
+   "name": "Jean Proctor",
+   "role": "",
+   "status": "not stated",
+   "quote": "brian lehtinen stated that jean proctor reached out stating she would like a replacement as she longer has a child active for baseball."
+  },
+  {
+   "name": "Audra Sprague",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: ernie friend, james bunnell, jo weigold, nichole bourdelais, jean proctor, audra sprague, jennifer gendron, mj davis"
+  },
+  {
+   "name": "Jennifer Gendron",
+   "role": "",
+   "status": "absent",
+   "quote": "brian mentioned jennifer gendron was not able to be on the zoom but could call in if we needed her."
+  },
+  {
+   "name": "MJ Davis",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: ernie friend, james bunnell, jo weigold, nichole bourdelais, jean proctor, audra sprague, jennifer gendron, mj davis"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Brian and James will reach out to baseball contacts regarding Jean Proctor's requested replacement.",
+   "quote": "brian and james will reach out to baseball contacts."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Brian Lehtinen",
+   "stated_role": "",
+   "topic": "baseball replacement for Jean Proctor",
+   "quote": "brian lehtinen stated that jean proctor reached out stating she would like a replacement as she longer has a child active for baseball."
+  },
+  {
+   "speaker": "",
+   "stated_role": "",
+   "topic": "season length, special spring season, playoff format",
+   "quote": "there was comments on length of season changes, special spring season sports and dates, and spring season dates, as well as pod playoffs instead of miaa state tournaments."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment on baseball replacement",
+   "resolution": "no action; Brian and James to reach out to baseball contacts",
+   "tags": [
+    "baseball",
+    "membership",
+    "public comment"
+   ],
+   "quote": "brian lehtinen stated that jean proctor reached out stating she would like a replacement as she longer has a child active for baseball."
+  },
+  {
+   "topic": "Review of minutes of August 31, 2020",
+   "resolution": "approved unanimously",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "review of minutes from august 31, 2020 meeting. minutes approved unanimously."
+  },
+  {
+   "topic": "Athletic Director update",
+   "resolution": "no action; update on fall and winter sports",
+   "tags": [
+    "fall sports",
+    "winter sports",
+    "covid-19"
+   ],
+   "quote": "unable to attend due to sports medicine committee meeting."
+  },
+  {
+   "topic": "Fundraising requests",
+   "resolution": "basketball calendar fundraiser approved; ice hockey had none",
+   "tags": [
+    "fundraising",
+    "basketball",
+    "ice hockey"
+   ],
+   "quote": "basketball calendar fundraiser with covid safety pre-cautions was approved unanimously."
+  },
+  {
+   "topic": "Future meeting dates",
+   "resolution": "dates set: February 1, 2021 and April 5, 2021",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "future meetings: monday, february 1, 2021, 6:30pm, prior to special spring season which would include competitive cheer and football."
+  },
+  {
+   "topic": "Public comment on season changes and playoffs",
+   "resolution": "no action; comments received",
+   "tags": [
+    "season schedule",
+    "playoffs",
+    "public comment"
+   ],
+   "quote": "there was comments on length of season changes, special spring season sports and dates, and spring season dates, as well as pod playoffs instead of miaa state tournaments."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "athletics",
+  "youth sports",
+  "covid-19",
+  "fall and winter seasons",
+  "spring season",
+  "fundraising",
+  "baseball membership",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

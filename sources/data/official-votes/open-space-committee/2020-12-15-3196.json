@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2020-12-15",
  "docid": "3196",
@@ -12,21 +12,286 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from November 24, 2020",
+   "motion": "Approve the 11/24/2020 minutes, with Brandon's minor change to item #3 accepted by amendment.",
    "moved_by": "Bob Pease",
    "seconded_by": "Mike Toohill",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "bob pease made a motion to approve the minutes, mike toohill seconded. brandon suggested a minor change in #3 (discussion with nashua river watershed associated regarding usda forest legacy program, possible regional application, ways lunenburg can be involved) in minutes; striking a non-profit trust to conservation restriction with a governmental agency. bob pease amended his motion, mike toohill accepted amendment. voted unanimously (paula did not vote as she had not yet joined)"
+   "quote": "bob pease made a motion to approve the minutes, mike toohill seconded."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "meeting adjourned at 8:00 p.m. by unanimous roll call vote."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1168195
+ "note": "Text extract, not a scan; all votes readable. Two procedural votes recorded (minutes approval, adjournment); no motion mover is printed for adjournment. The minutes spell the member Lynne in the roll call and Lynn elsewhere; recorded as Lynne Man. Meeting held via Zoom; attendance is taken from the members-present line, and no roles for members are printed. Al Futterman, Myleen Mallari, Rich Bursch and Liz Murphy are mentioned but are not recorded as taking part, so they are excluded from attendees. No dollar figures are printed anywhere in the minutes.",
+ "cost_usd": 0.00761612,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "member",
+   "status": "present",
+   "quote": "karin menard, bob pease,"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "member",
+   "status": "present",
+   "quote": "karin menard, bob pease,"
+  },
+  {
+   "name": "Lynne Man",
+   "role": "member",
+   "status": "present",
+   "quote": "lynne man, mike toohill (mike left the meeting at 7:00 p.m.), brandon kibbe and paula bertram (paula joined"
+  },
+  {
+   "name": "Mike Toohill",
+   "role": "member",
+   "status": "present",
+   "quote": "mike toohill (mike left the meeting at 7:00 p.m.)"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "member",
+   "status": "present",
+   "quote": "brandon kibbe and paula bertram (paula joined"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "member; recording secretary per minutes signature",
+   "status": "present",
+   "quote": "paula joined the meeting at 6:34 p.m."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee agreed it has no identified projects to include in the Forest Legacy aggregation application; Brandon will inform Al Futterman.",
+   "quote": "it was the consensus of the committee that at this point in time we do not have any identified projects"
+  },
+  {
+   "decision": "Paula Bertram will reach out to Tax Collector Myleen Mallari to see if she will give an overview of the tax title process.",
+   "quote": "paula said she will reach out to the tax collector, myleen mallari, and see if she would be willing to provide an overview."
+  },
+  {
+   "decision": "Members are to prioritize their parcels of interest before the next meeting.",
+   "quote": "for the next meeting, people should prioritize their parcels of interest."
+  },
+  {
+   "decision": "Bob Pease will contact the Assessors about inconsistent owner naming for owner-unknown parcels and whether taking status differs.",
+   "quote": "he will be reaching out the assessors to determine why and if there is a difference"
+  },
+  {
+   "decision": "Brandon Kibbe will give Paula Bertram contact information for the Office of Fishing and Boating Access.",
+   "quote": "brandon will provide contact information to paula so that she can reach out."
+  },
+  {
+   "decision": "Karin Menard was directed to contact the PARC Grant Coordinator for advice and networking on Marshall Park.",
+   "quote": "brandon recommended that karin get in touch with parc grant coordinator for advice and networking."
+  },
+  {
+   "decision": "If the Committee pursues a public area on Fire Road 12 / 0 Flynn Road, it will first check with Town Counsel on road maintenance.",
+   "quote": "if we decide to pursue, we will need to check with town counsel."
+  },
+  {
+   "decision": "Committee will verify that the taking process for 860 Reservoir has been completed.",
+   "quote": "need to verify that the taking process for this parcel has been completed."
+  },
+  {
+   "decision": "Committee will seek further clarification from Town Counsel on whether the Conservation Commission can adopt regulations.",
+   "quote": "further clarification from town counsel will be sought."
+  },
+  {
+   "decision": "Committee will meet on the third Tuesday of the month at 6:30 p.m. for the next four months.",
+   "quote": "for the next four months we will be meeting the third tuesday of the month"
+  },
+  {
+   "decision": "Town Manager will investigate a possible funding source for land acquisition.",
+   "quote": "town manager is going to investigate further."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Marshall Park master planning funding",
+   "what_was_recorded": "Planning funding for Marshall Park design was requested from the Capital Plan; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "planning funding was requested from the capital plan to begin the design process."
+  },
+  {
+   "topic": "Forest Legacy Program funding",
+   "what_was_recorded": "Brandon said the Forest Legacy Program is a funding source for Conservation Land; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "brandon responded that the forest legacy program is a funding source for conservation land."
+  },
+  {
+   "topic": "Office of Fishing and Boating Access funding for access sites",
+   "what_was_recorded": "The state office has a dedicated funding source and would fund development such as parking for a town-managed access point; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "they have a dedicated funding source."
+  },
+  {
+   "topic": "Land acquisition funding source",
+   "what_was_recorded": "A community comment proposed a funding source for land acquisition; the Committee had questions on funding mechanism and the need for Town Meeting action. No amount is printed.",
+   "figures_as_printed": [],
+   "quote": "paula informed the committee that at the last capital planning committee she had relayed the comment from chris menard about creating a funding source for land acquisition."
+  },
+  {
+   "topic": "Community Preservation Act as a funding route",
+   "what_was_recorded": "Brandon mentioned that participating in the Community Preservation Act would be ideal; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "brandon mentioned that participated in the community preservation act"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Chris Menard",
+   "stated_role": "",
+   "topic": "funding source for land acquisition",
+   "quote": "paula informed the committee that at the last capital planning committee she had relayed the comment from chris menard about creating a funding source for land acquisition."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "opened meeting; pandemic notice read",
+   "quote": "chairman opened the meeting at 6:04 p.m.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Review and approve 11/24/2020 minutes",
+   "resolution": "approved as amended",
+   "quote": "bob pease made a motion to approve the minutes, mike toohill seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Member recommendations for landowner outreach, Forest Legacy aggregation application",
+   "resolution": "no identified projects; no outreach letter",
+   "quote": "it was the consensus of the committee that at this point in time we do not have any identified projects",
+   "tags": [
+    "forest legacy",
+    "landowner outreach"
+   ]
+  },
+  {
+   "topic": "General Municipal Land parcels of interest",
+   "resolution": "continued; members to prioritize parcels",
+   "quote": "for the next meeting, people should prioritize their parcels of interest.",
+   "tags": [
+    "town land",
+    "parcels",
+    "tax title"
+   ]
+  },
+  {
+   "topic": "Questions about the Assessor's database",
+   "resolution": "Bob Pease to contact Assessors",
+   "quote": "he will be reaching out the assessors to determine why and if there is a difference",
+   "tags": [
+    "assessors",
+    "ownership records"
+   ]
+  },
+  {
+   "topic": "Parks update on Marshall Park master planning",
+   "resolution": "informational update, no action",
+   "quote": "planning funding was requested from the capital plan to begin the design process.",
+   "tags": [
+    "parks",
+    "marshall park",
+    "skate park"
+   ]
+  },
+  {
+   "topic": "Conservation update on rules revisions",
+   "resolution": "informational update; Town Counsel clarification to be sought",
+   "quote": "town counsel had indicated the commission does not have the ability to make regulations",
+   "tags": [
+    "conservation commission",
+    "rules",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Set next meeting date",
+   "resolution": "meetings set third Tuesday at 6:30 p.m. for four months",
+   "quote": "for the next four months we will be meeting the third tuesday of the month",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Public comment on land acquisition funding",
+   "resolution": "Town Manager to investigate",
+   "quote": "town manager is going to investigate further.",
+   "tags": [
+    "land acquisition",
+    "funding",
+    "community preservation act"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:00 p.m. by unanimous roll call vote",
+   "quote": "meeting adjourned at 8:00 p.m. by unanimous roll call vote.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Land inventory overview map",
+   "where": "list",
+   "quote": "committee reviewed the land inventory overview map and discussed properties that are in chapter"
+  },
+  {
+   "name": "Open Space Plan (developed by Brandon)",
+   "where": "text",
+   "quote": "brandon reviewed the original list within the open space plan"
+  },
+  {
+   "name": "Assessors list for 2020",
+   "where": "text",
+   "quote": "the information we received in the list from the assessors for 2020 to determine"
+  },
+  {
+   "name": "Bob Pease's list of properties of interest",
+   "where": "text",
+   "quote": "bob pease had developed a list of properties that might be of interest"
+  },
+  {
+   "name": "Email from Al Futterman with additional information about the Forest Legacy program",
+   "where": "text",
+   "quote": "al had emailed additional information about the program"
+  }
+ ],
+ "tags": [
+  "open space",
+  "conservation land",
+  "forest legacy",
+  "tax title",
+  "town-owned parcels",
+  "parks",
+  "marshall park",
+  "public access",
+  "land acquisition funding",
+  "zoom meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "committee reviewed the land inventory overview map"
+ },
+ "dropped_unquoted_by_field": {}
 }

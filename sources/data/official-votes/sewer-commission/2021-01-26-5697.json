@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2021-01-26",
  "docid": "5697",
@@ -12,7 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes for 1/12/21",
+   "motion": "Motion to change the Access to Town Counsel Policy wording from notification to permission; withdrawn by John R. before a vote, to be discussed at the next meeting with a full commission.",
+   "moved_by": "John R.",
+   "seconded_by": "Brett R.",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "motion: john r. second: brett r. to change the wording in the access to town counsel policy from notification to permission."
+  },
+  {
+   "motion": "Approve the minutes of 1/12/21.",
    "moved_by": "Brett R.",
    "seconded_by": "John R.",
    "outcome": "passed 4-0",
@@ -20,7 +28,7 @@
    "quote": "motion: brett r. to approve the minutes for 1/12/21. second: john r. roll call vote: brett-aye, carl-aye, john-aye and dave-aye."
   },
   {
-   "motion": "Adjourn at 6:46pm",
+   "motion": "Adjourn the meeting at 6:46pm.",
    "moved_by": "John R.",
    "seconded_by": "Carl L.",
    "outcome": "passed 4-0",
@@ -29,6 +37,311 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "The motion by John R. to change the Access to Town Counsel Policy wording was withdrawn before a vote was taken, so it is not included. The text was extracted via OCR; all votes are legible.",
- "cost_usd": 0.0913755
+ "note": "Scanned minutes read by OCR across three pages; no roll-call attendance list, so attendance is inferred from speaking and roll-call votes. The Chair is not named and Dave's role is not printed. Carl's amendment to the Access to Town Counsel motion was proposed but not voted on. The 1/26/21 public comment handout is listed but not included in the text. The 384 Mass Ave and Esposito participation is ambiguous in the OCR text. No vote is recorded on the 3% Capital Reserve transfer.",
+ "cost_usd": 0.00721692,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "status": "present",
+   "quote": "public comment-carl asked to address some claims made by the chair at the 1/12/21 meeting."
+  },
+  {
+   "name": "Dave",
+   "status": "present",
+   "quote": "dave said he would like a motion to change the policy wording from notification to permission."
+  },
+  {
+   "name": "Brett R.",
+   "status": "present",
+   "quote": "brett asked if carl could make a list of his comments to discuss."
+  },
+  {
+   "name": "John R.",
+   "status": "present",
+   "quote": "john r. agreed with having a special budget meeting."
+  },
+  {
+   "name": "Barb",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "business manager report - barb reported that she has received all the 1st tuesday reports for grease traps"
+  },
+  {
+   "name": "Rob O.",
+   "status": "present",
+   "quote": "rob o. agreed with barb and noted the next reading should reflect normal use."
+  },
+  {
+   "name": "John Londa",
+   "role": "Facilities Director for LMHS",
+   "status": "present",
+   "quote": "john londa, facilities director for lmhs -54 oak ave."
+  },
+  {
+   "name": "John Esposito",
+   "status": "present",
+   "quote": "barb asked john e. if the little house at 386 mass ave was involved and he replied the only one involved was the big house"
+  },
+  {
+   "name": "Jane L. Ranley",
+   "role": "Minutes Clerk",
+   "status": "not stated",
+   "quote": "jane l. ranley minutes clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Barb will again ask the water district to read the irrigation and water meters for the schools on the same day; the LMHS invoice is paid and the usage is to be checked after the next cycle.",
+   "quote": "barb replied that she understands john's concern and will again ask the water district to read both meters for the schools at the same time."
+  },
+  {
+   "decision": "John L. agreed the school will pay the existing invoice and return after the next billing cycle.",
+   "quote": "john l. agreed they will pay the existing invoice and come back after the next cycle."
+  },
+  {
+   "decision": "All agreed to hold a budget workshop on 2/2 and finalize the budget at the 2/9 meeting.",
+   "quote": "all agreed to plan on a workshop on 2/2 and finalize the budget at 2/9 meeting."
+  },
+  {
+   "decision": "Barb will send the preliminary figures to Heather at the end of the meeting.",
+   "quote": "barb will send the preliminary figures to heather at the end of the meeting."
+  },
+  {
+   "decision": "John and Brett volunteered to review the Fitchburg Sewer Use Ordinance if they get an extension to late February; Barb will ask counsel Adam Costa to request the extension from Fitchburg.",
+   "quote": "barb will ask adam costa (counsel) to send a request to fitchburg for an extension."
+  },
+  {
+   "decision": "Carl will go through the budget and send a list of comments to Barb.",
+   "quote": "carl said he will go through the budget and send a list to barb."
+  },
+  {
+   "decision": "Carl will send a copy of his public comments to Barb for the minutes.",
+   "quote": "he noted that he will send a copy of his comments to barb for the minutes."
+  },
+  {
+   "decision": "Barb will have a draft of the Annual Report at the next meeting.",
+   "quote": "she will have a draft for the annual report at the next meeting."
+  },
+  {
+   "decision": "Dave asked Carl for an answer as soon as possible on his decision; Carl said he will let Barb know his intentions.",
+   "quote": "dave told carl he wanted an answer as soon as possible as to what his decision is going to be."
+  },
+  {
+   "decision": "Brett and Dave agreed to look at the LMHS irrigation usage again after another cycle.",
+   "quote": "brett and dave agreed to look at it after another cycle."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "LMHS irrigation meter invoice (54 Oak Ave appeal)",
+   "what_was_recorded": "John Londa said the school would pay the existing invoice, which was based on 12,436 cu.ft. of usage for the period ending 9/30/20, and asked that usage from 4/1 to 12/31 be reviewed.",
+   "figures_as_printed": [
+    "$1,573.16",
+    "12,436 cu.ft."
+   ],
+   "quote": "john l. said they would pay the existing invoice for $1,573.16 and recommends that the usage from 4/1 - 12/31 be reviewed"
+  },
+  {
+   "topic": "FY22 legal costs",
+   "what_was_recorded": "Legal costs in the draft FY22 budget are noted at $10,000, the figure from the past 2 years.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "legal costs are noted as $10,000 which is the figure from the past 2 years."
+  },
+  {
+   "topic": "FY22 Leominster purchase of service",
+   "what_was_recorded": "Barb increased the Leominster amount to $400K because the charge went up for the last quarter.",
+   "figures_as_printed": [
+    "$400K"
+   ],
+   "quote": "she increased the amount for leominster to $400k."
+  },
+  {
+   "topic": "Capital Reserve transfer and OPEB Trust",
+   "what_was_recorded": "The 3% Capital Reserve transfer and the OPEB Trust amount were noted in the FY22 budget discussion.",
+   "figures_as_printed": [
+    "$30,929.43",
+    "$ 656"
+   ],
+   "quote": "the 3% capital reserve transfer of $30,929.43 and the $ 656 opeb trust were noted."
+  },
+  {
+   "topic": "Retained earnings in FY22 draft",
+   "what_was_recorded": "With this draft budget the Commission has $ 7,800 for retained earnings and seems to be doing well for FY21.",
+   "figures_as_printed": [
+    "$ 7,800"
+   ],
+   "quote": "they have $ 7,800 for retained earnings and seem to be doing well for fy21."
+  },
+  {
+   "topic": "Betterment relief request (public comment)",
+   "what_was_recorded": "Carl Luck said he opposed forgiving $4,000 of a betterment because it would add to the debt paid by remaining users and could lead to requests costing users over a hundred thousand dollars.",
+   "figures_as_printed": [
+    "$4,000",
+    "a hundred thousand dollars"
+   ],
+   "quote": "he was against approving the request to forgive $4,000 of the betterment"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "3% Capital Reserve transfer noted in the FY22 budget discussion",
+   "amount_as_printed": "$30,929.43",
+   "outcome": "noted; no transfer vote recorded",
+   "quote": "the 3% capital reserve transfer of $30,929.43 and the $ 656 opeb trust were noted."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "",
+   "topic": "response to Chair's claims; betterment relief; Cross Rd. extension; not running again",
+   "quote": "public comment-carl asked to address some claims made by the chair at the 1/12/21 meeting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "announcements - none",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public comment from Carl",
+   "resolution": "heard; Carl will send comments to Barb; announced he will not run again",
+   "quote": "carl announced that he will not run again and hoped that a sewer user would consider running for this office.",
+   "tags": [
+    "public comment",
+    "betterment",
+    "Cross Rd. extension",
+    "term"
+   ]
+  },
+  {
+   "topic": "Business Manager Report",
+   "resolution": "received; Annual Report draft due next meeting",
+   "quote": "she will have a draft for the annual report at the next meeting.",
+   "tags": [
+    "business manager",
+    "grease traps",
+    "annual report"
+   ]
+  },
+  {
+   "topic": "Appointment: John Londa, LMHS appeal of reconsideration request (54 Oak Ave)",
+   "resolution": "invoice paid; usage to be rechecked after next cycle",
+   "quote": "john l. agreed they will pay the existing invoice and come back after the next cycle.",
+   "tags": [
+    "appeal",
+    "irrigation meter",
+    "LMHS",
+    "water billing"
+   ]
+  },
+  {
+   "topic": "384 Mass Ave connection discussion",
+   "resolution": "discussed; no action recorded",
+   "quote": "384 mass ave connection discussion - john esposito - rob reported he talked to john about the work done",
+   "tags": [
+    "sewer connection",
+    "384 Mass Ave",
+    "Aro Farms"
+   ]
+  },
+  {
+   "topic": "FY22 budget discussion",
+   "resolution": "workshop set for 2/2; finalize at 2/9 meeting",
+   "quote": "all agreed to plan on a workshop on 2/2 and finalize the budget at 2/9 meeting.",
+   "tags": [
+    "FY22 budget",
+    "legal costs",
+    "Leominster",
+    "retained earnings",
+    "assistant position"
+   ]
+  },
+  {
+   "topic": "Fitchburg Sewer Use Ordinance updates",
+   "resolution": "volunteers to review; extension to be requested",
+   "quote": "john and brett said they would volunteer if they can get an extension until late february.",
+   "tags": [
+    "ordinance",
+    "Fitchburg",
+    "IMA"
+   ]
+  },
+  {
+   "topic": "Access to Town Counsel Policy",
+   "resolution": "motion withdrawn; to next meeting with full commission",
+   "quote": "john withdrew his motion in order discuss at next meeting with a full commission.",
+   "tags": [
+    "policy",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Minutes of 1/12/21",
+   "resolution": "approved 4-0",
+   "quote": "motion: brett r. to approve the minutes for 1/12/21. second: john r. roll call vote: brett-aye, carl-aye, john-aye and dave-aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:46pm",
+   "quote": "motion: john r. to adjourn at 6:46pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Public Comment from Carl Luck, read at 1/26/21 meeting",
+   "where": "list",
+   "quote": "handouts: public comment from carl luck, read at 1/26/21 meeting."
+  },
+  {
+   "name": "Notice from Fitchburg regarding updated Sewer Use Ordinance",
+   "where": "text",
+   "quote": "barb received a notice from fitchburg that they have updated their"
+  },
+  {
+   "name": "Draft budget provided by Barb (FY22)",
+   "where": "text",
+   "quote": "the commission discussed the figures in the draft budget provided by barb."
+  },
+  {
+   "name": "Comprehensive Wastewater Management Plan (CWMP)",
+   "where": "text",
+   "quote": "implement the comprehensive wastewater management plan (cwmp), even if in the minority."
+  },
+  {
+   "name": "Access to Town Counsel Policy",
+   "where": "text",
+   "quote": "access to town counsel policy - dave said he would like a motion to change the policy wording from notification to permission."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "FY22 budget",
+  "betterment relief",
+  "LMHS irrigation invoice",
+  "Fitchburg ordinance",
+  "access to town counsel policy",
+  "public comment",
+  "commissioner term",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts"
+ },
+ "dropped_unquoted_by_field": {}
 }

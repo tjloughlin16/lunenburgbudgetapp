@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-06-24",
  "docid": "4006",
@@ -12,31 +12,389 @@
  },
  "votes": [
   {
-   "motion": "Grant waiver request for site plan approval at 493 Massachusetts Avenue (Gatsby Grounds sign)",
+   "motion": "Grant the waiver request from site plan approval for 493 Massachusetts Avenue (Gatsby Grounds sign).",
    "moved_by": "R. Lisio",
    "seconded_by": "G. Bittner",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "r. lisio made motion to grant the waiver request for 493 massachusetts avenue, g. bittner seconded, all aye."
   },
   {
-   "motion": "Approve minutes from April 22, 2019 through June 10, 2019, including the Scrivener's Error in the April 22, 2019 minutes",
+   "motion": "Approve all minutes between 04/22/19 and 06/10/19, including the Scrivener's Error in the 4/22/19 minutes.",
    "moved_by": "G. Bittner",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
-   "quote": "g. bittner made motion to approve all minutes between 04/22/19 and 06/10/19 , including the scrivener's error in the 4/22/19 minutes, t. cole seconded, all aye."
+   "quote": "g. bittner made motion to approve all minutes between 04/22/19 and 06/10/19"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Nominate P. Bertram as the Board's representative to MRPC.",
+   "moved_by": "T. Cole",
+   "seconded_by": "G. Bittner",
+   "outcome": "passed (all aye)",
+   "procedural": false,
+   "quote": "t. cole made moti on to nominate p. bertram"
+  },
+  {
+   "motion": "Adjourn the meeting (adjourned 8:44 PM).",
    "moved_by": "G. Bittner",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
-   "quote": "g. bittner made motion to adjourn, t. cole seconded, all aye. adjourned 8:44 pm"
+   "quote": "g. bittner made motion to adjourn, t. cole seconded, all aye."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0846245
+ "dropped_unquoted": 0,
+ "note": "Text is extracted with irregular spacing and some split words (e.g. \"Moti on\", \"Bon d\"); quotes are collapsed to single spaces. Votes are recorded as \"all aye\" with no numeric count. T. Cole recused from the 493 Massachusetts Avenue waiver, but the minutes do not record a separate count for that item. Paula Bertram arrived at 6:58 PM. The Stone Farm bond item discusses a bond but prints no dollar figure.",
+ "cost_usd": 0.01036162,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, gregory bittner, paula bertram (arrived 6:58 pm), rhonda lisio, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, gregory bittner, paula bertram (arrived 6:58 pm), rhonda lisio, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, gregory bittner, paula bertram (arrived 6:58 pm), rhonda lisio, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "paula bertram (arrived 6:58 pm), rhonda lisio, adam r. burney"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, gregory bittner, paula bertram (arrived 6:58 pm), rhonda lisio, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, gregory bittner, paula bertram (arrived 6:58 pm), rhonda lisio, adam r. burney"
+  },
+  {
+   "name": "Kim Cole",
+   "role": "presenter",
+   "status": "present",
+   "quote": "presentation by kim cole, 563 massachusetts avenue."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board will work on creating a charge for a proposed Economic Development committee; discussion to continue at the August 12th meeting.",
+   "quote": "the board will work on creating a charge for the committee."
+  },
+  {
+   "decision": "A. Burney will advertise the Open Space Ad Hoc Committee vacancies, hoping they are filled at the Committee's July 22nd meeting.",
+   "quote": "a. burney will work on advertising the vacancies with the hope of those vacancies being filled"
+  },
+  {
+   "decision": "Master Plan discussion to continue at the Board's July 22nd meeting; the Board was in favor of viewing RFPs from other communities.",
+   "quote": "the board was in favor of viewing rfps from other communities."
+  },
+  {
+   "decision": "A public hearing will be held by the Planning Board on the Stone Farm Adult Community construction bond claim.",
+   "quote": "a public hearing will have to be held by the planning board."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Master Plan funding",
+   "what_was_recorded": "The Capital Plan provides $50,000 for master planning, and the Board has also applied for a grant in the same amount.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "the capital plan provides for $50,000 for master planning and the board has also applied for a grant in the same amount."
+  },
+  {
+   "topic": "Master Plan consultant",
+   "what_was_recorded": "With the beginning of FY 2020, a consultant can be hired using the $50,000 provided by the Capital Plan.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "with the beginning of fy 2020, a consultant can be hired with the $50,000 provided by the capital plan."
+  },
+  {
+   "topic": "Stone Farm Adult Community construction bond",
+   "what_was_recorded": "The homeowners' association asked the Planning Board to claim the construction bond to complete outstanding site work; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "has requested the planning board claim the bond for completion of the outstanding items"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "R. Lisio",
+   "topic": "open communication between boards; Open Space Committee appointments",
+   "quote": "r. lisio stressed that she supports open communication between boards/commissions/committees."
+  },
+  {
+   "speaker": "T. Cole",
+   "topic": "marijuana prohibition articles not voted at May Town Meeting",
+   "quote": "t. cole voiced his disappointment that due to an oversight, the votes on the marijuana prohibition articles did not take place at may town meeting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "discussion only, no action",
+   "quote": "public comment: r. lisio stressed that she supports open communication",
+   "tags": [
+    "public comment",
+    "open space",
+    "marijuana"
+   ]
+  },
+  {
+   "topic": "493 Massachusetts Avenue waiver request",
+   "resolution": "waiver granted; T. Cole recused",
+   "quote": "r. lisio made motion to grant the waiver request for 493 massachusetts avenue",
+   "tags": [
+    "waiver",
+    "site plan",
+    "sign",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "g. bittner made motion to approve all minutes between 04/22/19 and 06/10/19",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "capital planning committee- no report",
+   "tags": [
+    "committees",
+    "reports"
+   ]
+  },
+  {
+   "topic": "Master Plan RFP",
+   "resolution": "continued to July 22 meeting",
+   "quote": "master plan, request for proposal (rfp) - the capital plan provides for $50,000",
+   "tags": [
+    "master plan",
+    "RFP",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Economic Development committee",
+   "resolution": "Board to draft charge; continued to August 12",
+   "quote": "economic development/economic development committee - the board expressed interest",
+   "tags": [
+    "economic development",
+    "committee"
+   ]
+  },
+  {
+   "topic": "Open Space Ad Hoc Committee vacancies",
+   "resolution": "staff to advertise; no vote",
+   "quote": "open space ad hoc committee, vacancies - there is currently one vacancy",
+   "tags": [
+    "open space",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "MRPC board representative",
+   "resolution": "P. Bertram nominated and approved",
+   "quote": "t. cole made moti on to nominate p. bertram",
+   "tags": [
+    "MRPC",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Town Meeting follow-up",
+   "resolution": "informational, no action",
+   "quote": "all zoning bylaw articles put forth by the planning board were certified by the attorney general.",
+   "tags": [
+    "town meeting",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Stone Farm Adult Community construction bond",
+   "resolution": "public hearing to be held",
+   "quote": "a public hearing will have to be held by the planning board.",
+   "tags": [
+    "bond",
+    "Stone Farm",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "july 8- p. bertram not available.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "listed, no action",
+   "quote": "lunenburg code, section 250- 4.15., solar energy systems",
+   "tags": [
+    "solar",
+    "off-street parking",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:44 PM",
+   "quote": "g. bittner made motion to adjourn, t. cole seconded, all aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 04/22/19",
+   "where": "list",
+   "quote": "minutes- 04/22/19 04/22/19, zoning articles"
+  },
+  {
+   "name": "04/22/19, Zoning Articles",
+   "where": "list",
+   "quote": "04/22/19, zoning articles"
+  },
+  {
+   "name": "04/22/19, Zoning Article – Non-Medical Marijuana",
+   "where": "list",
+   "quote": "04/22/19, zoning article - non-medical marijuana"
+  },
+  {
+   "name": "Minutes 04/29/19",
+   "where": "list",
+   "quote": "04/29/19 04/29/19, aro estates, howard street"
+  },
+  {
+   "name": "04/29/19, Aro Estates, Howard Street",
+   "where": "list",
+   "quote": "04/29/19, aro estates, howard street"
+  },
+  {
+   "name": "04/29/19, Citizen Petition, Zoning Article",
+   "where": "list",
+   "quote": "04/29/19, citizen petition, zoning article"
+  },
+  {
+   "name": "Minutes 05/13/19",
+   "where": "list",
+   "quote": "05/13/19 05/13/19, aro estates, howard street"
+  },
+  {
+   "name": "05/13/19, Aro Estates, Howard Street",
+   "where": "list",
+   "quote": "05/13/19, aro estates, howard street"
+  },
+  {
+   "name": "05/13/19, PS&G, 151-181 Leominster Shirley Road",
+   "where": "list",
+   "quote": "05/13/19, ps&g, 151-181 leominster shirley road"
+  },
+  {
+   "name": "Minutes 06/10/19",
+   "where": "list",
+   "quote": "06/10/19 master plan economic development element"
+  },
+  {
+   "name": "Master Plan Economic Development Element",
+   "where": "list",
+   "quote": "master plan economic development element"
+  },
+  {
+   "name": "MGL Ch 41 Section 81D",
+   "where": "list",
+   "quote": "mgl ch 41 section 81d"
+  },
+  {
+   "name": "Lunenburg Code, Section 250-4.15, Solar Energy Systems",
+   "where": "text",
+   "quote": "lunenburg code, section 250- 4.15., solar energy systems"
+  },
+  {
+   "name": "Lunenburg Code, Section 250-6.1, Off Street Parking & Loading Areas",
+   "where": "text",
+   "quote": "lunenburg code, section 250- 6.1., off street parking & loading areas"
+  },
+  {
+   "name": "Graves Engineering, Inc. review letter dated December 20, 2017",
+   "where": "text",
+   "quote": "graves engineering, inc. review letter dated december 20, 2017"
+  },
+  {
+   "name": "2002 Master Plan",
+   "where": "text",
+   "quote": "the os&rp should also be looked at in conjunction with the 2002 master plan"
+  },
+  {
+   "name": "Open Space and Recreation Plan (OS&RP)",
+   "where": "text",
+   "quote": "open space and recreation plan (os&rp)"
+  },
+  {
+   "name": "Housing Production Plan",
+   "where": "text",
+   "quote": "m. allison inquired if the housing production plan could be converted into the housing element."
+  },
+  {
+   "name": "Storm Water Task Force Request for Proposals",
+   "where": "text",
+   "quote": "putting out request for proposals."
+  },
+  {
+   "name": "Master Plan Request for Proposal (RFP)",
+   "where": "text",
+   "quote": "master plan, request for proposal (rfp)"
+  },
+  {
+   "name": "Capital Plan",
+   "where": "text",
+   "quote": "the capital plan provides for $50,000 for master planning"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "master plan",
+  "zoning waiver",
+  "sign",
+  "minutes",
+  "open space",
+  "economic development",
+  "MRPC",
+  "stone farm bond",
+  "marijuana articles",
+  "solar",
+  "off-street parking",
+  "RFP"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

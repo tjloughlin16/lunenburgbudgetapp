@@ -1,0 +1,722 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "conservation-commission",
+ "board": "Conservation Commission",
+ "video_title": "Conservation Commission",
+ "meeting_date": "2020-10-07",
+ "video_id": "i8iFYz0V9Xg",
+ "video_url": "https://www.youtube.com/watch?v=i8iFYz0V9Xg",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/conservation-commission/2020-10-07-i8iFYz0V9Xg.json",
+  "sha256": "fbcbe1379b331f8ef65b58da1393ec1a5a37c413913706fac51c777d9b5a624c",
+  "caption_lines": 583,
+  "segments": 4931
+ },
+ "recording": {
+  "duration_s": 12531,
+  "duration": "3:28",
+  "spoken_chars": 139366,
+  "words_approx": 23227
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10072020-6262",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2020-10-07-agenda-6262.txt",
+   "path": "sources/meetings/conservation-commission/2020-10-07-agenda-6262.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10072020-6262",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2020-10-07-minutes-6262.txt",
+   "path": "sources/meetings/conservation-commission/2020-10-07-minutes-6262.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-03T17:00:13Z",
+  "cost_usd": 0.28519500000000003
+ },
+ "minutes": {
+  "headline": "Commission ordered Hickory Hills to clear its boat ramp; 3-2 vote on 238 Fire Road 16 house failed, so no action.",
+  "summary": "Remote meeting with ten hearings. Commission ordered Hickory Hills Landowners to remove gravel at the boat ramp, approved several filings, and continued others. Todd Dwyer's last meeting was marked, and the 238 Fire Road 16 application got three votes for and two against, short of the four needed.",
+  "attendees": [
+   {
+    "name_as_heard": "Bob Pease",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Rich Burch",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Carl Luck",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jack Rabbit",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Todd Dwyer",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Matt Morrow",
+    "role": "conservation agent",
+    "remote": true
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 544,
+    "speaker_as_heard": "John Fortune",
+    "stated_role": "Hickory Hills Landowners representative",
+    "topic": "Boat ramp unusable at drawdown; asked for an emergency order to remove gravel hump."
+   }
+  ],
+  "tags": [
+   "legal",
+   "personnel",
+   "planning-and-zoning",
+   "public-comment"
+  ],
+  "votes": [
+   {
+    "t": 3065,
+    "motion": "Enforcement order directing Hickory Hills Landowners to remove gravel at boat ramp within 30 days",
+    "moved_by": "Jack Rabbit",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 3470,
+    "motion": "Approve notice of intent and issue standard order of conditions, 130 Flynn Road garage",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 4834,
+    "motion": "Continue 200 Island Road hearing to October 21",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 5632,
+    "motion": "Positive determination for shed at 181 Peninsula Drive",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 6154,
+    "motion": "Negative determination for Keolis vegetation management",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 6954,
+    "motion": "Continue 1672 Mass Ave hearing to November 4",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 7513,
+    "motion": "Approve Bright Farms 361 Mass Ave with condition that non-surviving plants be replaced in kind",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 7990,
+    "motion": "Positive determination on RDA for vegetation restoration at 99 Rue Street",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 8032,
+    "motion": "Positive determination on RDA for dock and stairs at 99 Rue Street",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 8289,
+    "motion": "Negative determination for dock at 362 Townsend Harbor Road",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 10467,
+    "motion": "Approve 238 Fire Road 16 application as submitted",
+    "moved_by": "Rich Burch",
+    "outcome": "failed 2-3 (lack of action)",
+    "procedural": false
+   },
+   {
+    "t": 11406,
+    "motion": "Approve 422 Mopus Road plan and issue standard order of conditions",
+    "outcome": "passed 4-0",
+    "procedural": false
+   },
+   {
+    "t": 12196,
+    "motion": "Not interested in exercising Chapter 61A right of first refusal at 360 Flat Hill Road",
+    "outcome": "passed 4-0",
+    "procedural": false
+   },
+   {
+    "t": 12238,
+    "motion": "Reaffirm vote for warrant article moving 111 Mopus Road rear and 970 New West Townsend Road rear to conservation commission care and control",
+    "outcome": "passed 4-0",
+    "procedural": false
+   },
+   {
+    "t": 12402,
+    "motion": "Adjourn",
+    "outcome": "passed 4-0",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 12174,
+    "topic": "360 Flat Hill Road price",
+    "what_was_said": "Members said the price was unknown and likely beyond the commission's budget.",
+    "figures_as_heard": [
+     "three thousand dollars an acre",
+     "seventy thousand dollars"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1773,
+    "decision": "Lake Shirley (LSIC) request to extend drawdown date to December 31 continued two weeks."
+   },
+   {
+    "t": 2309,
+    "decision": "Chair said Selectmen expected to appoint Todd Dwyer's replacement the following Tuesday."
+   },
+   {
+    "t": 4525,
+    "decision": "200 Island Road applicant asked for a revised plan reducing driveway in the 50-foot zone and showing limit of work."
+   },
+   {
+    "t": 10181,
+    "decision": "238 Fire Road 16 left with no approval or denial."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 36,
+    "t_end": 480,
+    "topic": "Technical setup, opening statement, roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 544,
+    "t_end": 3087,
+    "topic": "Hickory Hills boat ramp gravel removal order",
+    "resolution": "voted",
+    "tags": [
+     "public-comment",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 922,
+    "t_end": 1142,
+    "topic": "183 Island Road deed restriction",
+    "resolution": "informational",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 1142,
+    "t_end": 1773,
+    "topic": "Lake Shirley drawdown date change",
+    "resolution": "continued",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1773,
+    "t_end": 2662,
+    "topic": "Todd Dwyer farewell and associate member Jeff Viviano",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3087,
+    "t_end": 3491,
+    "topic": "130 Flynn Road garage",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 3491,
+    "t_end": 4876,
+    "topic": "200 Island Road rebuild",
+    "resolution": "continued",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 4876,
+    "t_end": 5755,
+    "topic": "181 Peninsula Drive shed",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 5807,
+    "t_end": 6220,
+    "topic": "Keolis vegetation management",
+    "resolution": "voted",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 6242,
+    "t_end": 6975,
+    "topic": "1672 Mass Ave",
+    "resolution": "continued",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 6995,
+    "t_end": 7616,
+    "topic": "Bright Farms 361 Mass Ave greenhouse",
+    "resolution": "voted",
+    "tags": [
+     "economic-development",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 7821,
+    "t_end": 8332,
+    "topic": "99 Rue Street and 362 Townsend Harbor Road",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 8332,
+    "t_end": 10614,
+    "topic": "238 Fire Road 16 house, driveway and crossing",
+    "resolution": "voted, failed, lack of action",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 10634,
+    "t_end": 11447,
+    "topic": "422 Mopus Road driveway",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 11447,
+    "t_end": 12238,
+    "topic": "360 Flat Hill Road Chapter 61A",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 12238,
+    "t_end": 12529,
+    "topic": "Warrant article reaffirmation and adjournment",
+    "resolution": "voted",
+    "tags": [
+     "town-meeting",
+     "warrant-article"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Whether the Hickory Hills motion was seconded is unclear in the captions; the roll call outcome shown.",
+   "Rich Burch's vote on some roll calls is garbled.",
+   "Carl Luck's vote at the 12196 and 12402 roll calls is unclear."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 841,
+    "about": "Whether an order to remove gravel at the boat ramp should be framed as a safety enforcement order.",
+    "sides": "One member against framing it as safety; the chair for the enforcement order",
+    "words_as_heard": "i have a problem ordering them to do it for safety",
+    "kind": "members disagree"
+   },
+   {
+    "t": 10242,
+    "about": "Vote count and effect of a 3-2 vote on Fire Road 16.",
+    "sides": "Chair and applicant's representatives disagreeing on interpretation",
+    "words_as_heard": "i would just offer that i don't quite agree with that interpretation myself",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 694,
+    "kind": "safety",
+    "about": "Boat ramp too shallow to remove boats safely.",
+    "who": "the chair",
+    "words_as_heard": "for reasons of safety uh to uh you know remove the soil uh at the boat ramp so that boats could be safely removed from the water"
+   },
+   {
+    "t": 5340,
+    "kind": "liability or legal",
+    "about": "Shed in the buffer zone had no record of being legal.",
+    "who": "a member",
+    "words_as_heard": "there was nothing recorded there was nothing so essentially it's it's not really legal to start with"
+   },
+   {
+    "t": 7492,
+    "kind": "condition",
+    "about": "Condition on Bright Farms approval about replacing plants.",
+    "who": "a member",
+    "words_as_heard": "the population of plants remains constant if they don't survive they should be replacing like kind"
+   },
+   {
+    "t": 9387,
+    "kind": "liability or legal",
+    "about": "Septic within 100 feet of wetlands and board of health waiver.",
+    "who": "a member",
+    "words_as_heard": "i'd like to see a copy of the waiver because the board of health is required for that waiver to justify"
+   },
+   {
+    "t": 758,
+    "kind": "condition",
+    "about": "Wants the scope of the work in writing before work begins.",
+    "who": "a member",
+    "words_as_heard": "i would just like to make sure that we do have uh the scope in writing prior to the commencement of the work"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 945,
+    "name_as_heard": "signed deed restriction",
+    "kind": "contract or agreement",
+    "words_as_heard": "i see a signed copy of the deed restriction",
+    "shown": true
+   },
+   {
+    "t": 2662,
+    "name_as_heard": "email from John Fortune",
+    "kind": "letter or email",
+    "words_as_heard": "received an email from john fortune i'm going to read it over the air",
+    "shown": false
+   },
+   {
+    "t": 3152,
+    "name_as_heard": "PowerPoint for 130 Flynn Road",
+    "kind": "presentation",
+    "words_as_heard": "is this the entire powerpoint here",
+    "shown": true
+   },
+   {
+    "t": 8456,
+    "name_as_heard": "revised plans for 238 Fire Road 16",
+    "kind": "plan or drawing",
+    "words_as_heard": "i had submitted some revised plans pdf copies to matt",
+    "shown": true
+   },
+   {
+    "t": 11885,
+    "name_as_heard": "open space plan",
+    "kind": "plan or drawing",
+    "words_as_heard": "i'm going to call it the open space plan",
+    "shown": true
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Commission voted 5-0 to order Hickory Hills Landowners to remove gravel from the boat ramp within 30 days.",
+    "t": 3065
+   },
+   {
+    "line": "A motion to approve the 238 Fire Road 16 application as submitted failed 2-3, so the house, driveway and crossing were neither approved nor denied.",
+    "t": 10467
+   },
+   {
+    "line": "The Commission approved or issued determinations on several filings, including a garage on Flynn Road, a Bright Farms greenhouse and a Mopus Road driveway.",
+    "t": 7513
+   },
+   {
+    "line": "Hearings on 200 Island Road and 1672 Mass Ave were continued, and the Lake Shirley drawdown date request was continued two weeks.",
+    "t": 4834
+   },
+   {
+    "line": "The Commission declined the Chapter 61A right of first refusal at 360 Flat Hill Road, and members said the price was unknown and likely beyond its budget.",
+    "t": 12196
+   }
+  ],
+  "why_it_matters": [
+   "The boat ramp order bears on public access to Hickory Hills' ramp when the water is drawn down.",
+   "The 238 Fire Road 16 project is still undecided, so the application will have to come back to the Commission.",
+   "Passing on the Flat Hill Road land means that parcel is not likely to be bought for conservation."
+  ],
+  "watch_next": [
+   "200 Island Road hearing continued to October 21, with a revised plan reducing the driveway in the 50-foot zone and showing the limit of work.",
+   "1672 Mass Ave hearing continued to November 4."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-03T17:00:19Z",
+   "cost_usd": 0.0295491
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10072020-6262",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2020-10-07-minutes-6262.txt",
+   "path": "sources/meetings/conservation-commission/2020-10-07-minutes-6262.pdf"
+  },
+  "official_sha256": "586038a464928c02b2c15b986c019f80922e2cf9097b0e4fbb39540df2ea9bc9",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on nearly all votes and outcomes, mostly unanimous, with only street and name spellings differing. The main difference is attendance: our minutes list the conservation agent as present, but the official minutes say staff was absent due to a power outage. Our 5-0 and 4-0 tallies, the 2-3 on Fire Road 16, the Lake Shirley request, and the Flat Hill price do not appear in the official text.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 5,
+   "discrepancy": 3,
+   "only_in_ours": 3,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Hickory Hills enforcement order to remove gravel within 30 days",
+    "ours": "Enforcement order directing Hickory Hills Landowners to remove gravel at boat ramp within 30 days — passed 5-0",
+    "official": "jr moved to issue an enforcement order that the hickory hills lake association use any method available to remove the gravel noted specifically in the email request",
+    "note": "Same enforcement order, passed unanimously; only the group's name and the tally wording differ.",
+    "t": 3065
+   },
+   {
+    "kind": "agree",
+    "about": "200 Island Road continued to October 21",
+    "ours": "Continue 200 Island Road hearing to October 21 — passed 5-0",
+    "official": "jr made a motion to continue to the date and time prior specified rb seconded and the commission voted unanimously to approve the motion.",
+    "note": "Same continuance, unanimous.",
+    "t": 4834
+   },
+   {
+    "kind": "agree",
+    "about": "181 Peninsula Drive positive determination",
+    "ours": "Positive determination for shed at 181 Peninsula Drive — passed 5-0",
+    "official": "the motion for a positive determination was passed by a unanimous roll call vote.",
+    "note": "Same outcome.",
+    "t": 5632
+   },
+   {
+    "kind": "agree",
+    "about": "Keolis negative determination",
+    "ours": "Negative determination for Keolis vegetation management — passed 5-0",
+    "official": "jr withdrew the motion and moved to issue a negative determination rb seconded and the commission voted unanimously to approve the motion.",
+    "note": "Same outcome.",
+    "t": 6154
+   },
+   {
+    "kind": "agree",
+    "about": "1672 Mass Ave continued to November 4",
+    "ours": "Continue 1672 Mass Ave hearing to November 4 — passed 5-0",
+    "official": "rb amended his motion to change the date to nov 4. jr seconded the amendment. the commission passed the motion by unanimous roll call vote.",
+    "note": "Same date and outcome.",
+    "t": 6954
+   },
+   {
+    "kind": "agree",
+    "about": "Bright Farm replace failed plants in kind",
+    "ours": "Approve Bright Farms 361 Mass Ave with condition that non-surviving plants be replaced in kind — passed 5-0",
+    "official": "he put that in the form of a motion, jr seconded and the commission voted unanimously to approve the motion in a roll call vote.",
+    "note": "Same condition, unanimous.",
+    "t": 7513
+   },
+   {
+    "kind": "caption_error",
+    "about": "99 Rue/Ruth Street vegetation restoration positive determination",
+    "ours": "Positive determination on RDA for vegetation restoration at 99 Rue Street — passed 5-0",
+    "official": "a motion of cl second by td and a unanimous vote by the commission roll call to approve the motion.",
+    "note": "Street misheard; the official minutes give Ruth Street. Same vote.",
+    "official_reading": "99 Ruth Street",
+    "t": 7990
+   },
+   {
+    "kind": "caption_error",
+    "about": "99 Rue/Ruth Street dock and stairs positive determination",
+    "ours": "Positive determination on RDA for dock and stairs at 99 Rue Street — passed 5-0",
+    "official": "for the placement of the dock and the stairs by a motion of cl second by td",
+    "note": "Street name misheard; same vote.",
+    "official_reading": "99 Ruth Street",
+    "t": 8032
+   },
+   {
+    "kind": "agree",
+    "about": "362 Townsend Harbor Road dock negative determination",
+    "ours": "Negative determination for dock at 362 Townsend Harbor Road — passed 5-0",
+    "official": "jr moved for a negative determination. cl seconded and the commission voted unanimously to approve",
+    "note": "Same outcome.",
+    "t": 8289
+   },
+   {
+    "kind": "discrepancy",
+    "about": "238 Fire Road 16 motion to approve as submitted",
+    "ours": "Approve 238 Fire Road 16 application as submitted — failed 2-3 (lack of action)",
+    "official": "rb made a motion to approve the application as submitted td seconded.",
+    "note": "Both say it failed, but the official minutes give no tally. Check the recording for the 2-3 count and whether the motion failed or was left undecided.",
+    "t": 10467
+   },
+   {
+    "kind": "caption_error",
+    "about": "422 Mopus/Mulpus Road approval",
+    "ours": "Approve 422 Mopus Road plan and issue standard order of conditions — passed 4-0",
+    "official": "td moved to approve the plan as presented with a standard order of conditions. jr seconded and the commission voted unanimously.",
+    "note": "Road name differs in spelling; same vote. Our 4-0 may reflect members leaving.",
+    "official_reading": "422 Mulpus Road",
+    "t": 11406
+   },
+   {
+    "kind": "discrepancy",
+    "about": "360 Flat Hill Road Chapter 61A",
+    "ours": "Not interested in exercising Chapter 61A right of first refusal at 360 Flat Hill Road — passed 4-0",
+    "official": "rb moved to allow the sale to proceed. td seconded and the commission voted unanimously.",
+    "note": "Wording differs, but the substance is the same: the Commission does not exercise its right. Check the motion wording and the street name spelling (Flat/Flatt).",
+    "t": 12196
+   },
+   {
+    "kind": "agree",
+    "about": "Reaffirm warrant articles for 111 Mopus/Mulpus Road Rear and 970 New West Townsend Road",
+    "ours": "Reaffirm vote for warrant article moving 111 Mopus Road rear and 970 New West Townsend Road rear to conservation commission care and control — passed 4-0",
+    "official": "td seconded and the commission vote unanimously to approve the motion by a roll call vote.",
+    "note": "Same reaffirmation, unanimous.",
+    "t": 12238
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "360 Flat Hill Road price",
+    "ours": "three thousand dollars an acre, seventy thousand dollars",
+    "official": "",
+    "note": "The official minutes give no price figures.",
+    "t": 12174
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Lake Shirley drawdown extension request",
+    "ours": "Lake Shirley (LSIC) request to extend drawdown date to December 31 continued two weeks.",
+    "official": "",
+    "note": "The official minutes mention Wendy Gendron representing the Lake Shirley Improvement Corporation but do not record this request or its continuance.",
+    "t": 1773
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Selectmen to appoint Todd Dwyer's replacement",
+    "ours": "Chair said Selectmen expected to appoint Todd Dwyer's replacement the following Tuesday.",
+    "official": "",
+    "note": "The official minutes list Todd Dwyer as present and say nothing of a replacement.",
+    "t": 2309
+   },
+   {
+    "kind": "agree",
+    "about": "200 Island Road revised plan requested",
+    "ours": "200 Island Road applicant asked for a revised plan reducing driveway in the 50-foot zone and showing limit of work.",
+    "official": "after straw polling the commission it was indicated the commission would like to see a reconfiguration of the plan.",
+    "note": "Same decision; ours gives more detail.",
+    "t": 4525
+   },
+   {
+    "kind": "agree",
+    "about": "238 Fire Road 16 left without approval or denial",
+    "ours": "238 Fire Road 16 left with no approval or denial.",
+    "official": "rb made a motion to approve the application as submitted td seconded.",
+    "note": "Both show the motion failing without a denial; the official minutes are thin here.",
+    "t": 10181
+   },
+   {
+    "kind": "only_in_official",
+    "about": "183 Island Road deed restriction",
+    "ours": "",
+    "official": "it was agreed by the commission and applicant to change no \"grading\" to no \"alteration\" in the restriction",
+    "note": "Our minutes have no 183 Island Road item. Check the recording for it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Hickory Hills: wait for John Fortune email",
+    "ours": "",
+    "official": "bp noted that we would wait for the email before taking the issue up again.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Arnstein applicant directed to find alternative location",
+    "ours": "",
+    "official": "the chairman instructed the applicant to work with the conservation administrator on a potential location.",
+    "note": "Our minutes record the 181 Peninsula Drive vote as a positive determination but not this instruction."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "LaPierre continuance if plans not ready",
+    "ours": "",
+    "official": "it was agreed that if it was not ready, he would request a continuance.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendance: staff and absent members",
+    "ours": "Todd Dwyer (member); Matt Morrow (conservation agent); Rich Burch, Carl Luck, Jack Rabbit, Bob Pease present",
+    "official": "meeting was called to order with bp presiding and all member present except kj and cc. mm, staff absent due to power outage.",
+    "note": "Our minutes list the conservation agent (Matt Morrow) as attending, but the official minutes say staff was absent due to a power outage. Check the recording for who attended and whether staff took part. Our vote counts of 5-0 also depend on who was present."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Jack Rabbit",
+    "ours": "Jack Rabbit (member)",
+    "official": "jr totally supported the emergency measure.",
+    "note": "The official minutes spell the name Jack Rabbitt.",
+    "official_reading": "Jack Rabbitt"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Rich Burch",
+    "ours": "Rich Burch (member)",
+    "official": "rb seconded the motion and the commission voted unanimously to approve",
+    "note": "The official minutes give Richard Bursch.",
+    "official_reading": "Richard Bursch"
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-03T17:02:04Z",
+   "cost_usd": 0.0689891
+  }
+ }
+}

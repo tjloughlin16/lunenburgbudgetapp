@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2021-01-21",
  "docid": "494",
@@ -12,15 +12,136 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "M. Holman",
    "seconded_by": "K. McClellan",
    "outcome": "passed",
    "procedural": true,
-   "quote": "m. holman moved to adjourn, k. mcclellan 2nd. roll call, all aye."
+   "quote": "m. holman moved to adjourn, k. mcclellan 2nd. roll call, all aye. adjourned at 7:28pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0772785
+ "note": "Clean text extraction with no scan issues. Only one recorded motion (adjournment, roll call all aye). The second 'Public Comment/Open Discussion' entry is a board member speaking under that heading and is recorded as public comment. No dollar figures appear. No documents list is printed; the draft flyer is mentioned in passing only.",
+ "cost_usd": 0.00331782,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: m. allison, m. holman, k. mcclellan"
+  },
+  {
+   "name": "M. Holman",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: m. allison, m. holman, k. mcclellan"
+  },
+  {
+   "name": "K. McClellan",
+   "role": "Alternate",
+   "status": "present",
+   "quote": "present: m. allison, m. holman, k. mcclellan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "M. Holman will reach out to the other members about the Economic Development Committee appointment, after expressing interest in being appointed.",
+   "quote": "m. holman expressed interest in being appointed and will reach out to the other members."
+  },
+  {
+   "decision": "M. Holman will invite a graphic artist to an upcoming meeting for further discussion of the draft flyer.",
+   "quote": "m. holman will invite a graphic artist to an upcoming meeting for further discussion."
+  },
+  {
+   "decision": "The next meeting was set for February 18, 2021.",
+   "quote": "next meeting set for february 18, 2021."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "M. Allison",
+   "topic": "Lunenburg Ledger front-page coverage of Lanni Orchards and Highland Farm",
+   "quote": "m. allison stated that the lunenburg ledger had run front page stories on lanni orchards and highland farm in the past 2 months."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order; public comment",
+   "resolution": "no action; public comment none",
+   "quote": "chair called the meeting to order at 7:05pm.",
+   "tags": [
+    "call to order",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Economic Development Committee appointment update",
+   "resolution": "discussed; Holman to reach out to other members",
+   "quote": "m. holman expressed interest in being appointed and will reach out to the other members.",
+   "tags": [
+    "appointment",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Public market update",
+   "resolution": "discussed; no action",
+   "quote": "the town clerk said there are just over 8,000 registered, which would require over 450 signatures.",
+   "tags": [
+    "public market",
+    "petition",
+    "signatures"
+   ]
+  },
+  {
+   "topic": "Draft flyer discussion",
+   "resolution": "discussed; Holman to invite graphic artist to a future meeting",
+   "quote": "m. holman will invite a graphic artist to an upcoming meeting for further discussion.",
+   "tags": [
+    "flyer",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Open discussion: Lunenburg Ledger coverage",
+   "resolution": "no action",
+   "quote": "m. allison stated that the lunenburg ledger had run front page stories on lanni orchards and highland farm in the past 2 months.",
+   "tags": [
+    "press",
+    "local farms"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:28pm, roll call all aye",
+   "quote": "m. holman moved to adjourn, k. mcclellan 2nd. roll call, all aye. adjourned at 7:28pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft flyer",
+   "where": "text",
+   "quote": "draft flyer discussion: m. holman suggested enlisting professional services, and also found 3 other towns that had done something similar as examples."
+  }
+ ],
+ "tags": [
+  "agricultural commission",
+  "farmers market",
+  "public market",
+  "economic development appointment",
+  "flyer",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

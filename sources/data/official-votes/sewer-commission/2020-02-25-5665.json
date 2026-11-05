@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2020-02-25",
  "docid": "5665",
@@ -12,39 +12,432 @@
  },
  "votes": [
   {
-   "motion": "To authorize Mike and Dave to talk to the mayor of Leominster",
+   "motion": "To authorize Mike and Dave to talk to the mayor of Leominster.",
    "moved_by": "John R.",
    "seconded_by": "Carl L.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: john r. second: carl l. to authorize mike and dave to talk to mayor of leominster. vote: unanimous"
   },
   {
-   "motion": "To approve the minutes for 2/4/20",
+   "motion": "To approve the minutes for 2/4/20.",
    "moved_by": "Dave M.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion: dave m. to approve the minutes for 2/4/20. second john r. vote: unanimous"
   },
   {
-   "motion": "To approve the minutes for 2/11/20",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
+   "motion": "To approve the minutes for 2/11/20.",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "to approve the minutes for 2/11/20. vote: unanimous"
   },
   {
-   "motion": "To adjourn at 9:20pm",
+   "motion": "To adjourn at 9:20pm.",
    "moved_by": "John R.",
    "seconded_by": "Dave M.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion: john r. to adjourn at 9:20pm second: dave m. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan quality issue at the top of the document (line 1 contains Cyrillic characters and obvious OCR corruption, rendering an apparent motion about postponing election unreadable for reliable extraction). This has been excluded.",
- "cost_usd": 0.0956385
+ "note": "Scanned OCR text (macOS Vision) with errors; the first line is garbled (\"to postpone election от omicers to tne next meetng\") and may describe a motion to postpone officer elections, but it is unreadable, so no vote was recorded from it. Text jumps from \"why they were billed\" at the end of page 1 to \"the spare parts list\" at the start of page 2, so some discussion is missing. No chair is named and no roll call is printed. Public comment was \"none\" both times. Votes on the minutes of 2/11/20 and the adjournment are recorded as unanimous with no mover named for 2/11/20.",
+ "cost_usd": 0.00995412,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "role": "",
+   "status": "present",
+   "quote": "carl welcomed brett as a newly appointed commissioner."
+  },
+  {
+   "name": "Dave",
+   "role": "",
+   "status": "present",
+   "quote": "dave noted that the contract states swss is supposed to go to the stations daily."
+  },
+  {
+   "name": "John",
+   "role": "",
+   "status": "present",
+   "quote": "john added that he is concerned that there hasn't been enough communication between"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "new appointee",
+   "status": "present",
+   "quote": "dave, brett and john confirmed they will run on the ballot."
+  },
+  {
+   "name": "Deb Trumbull",
+   "role": "SWSS",
+   "status": "present",
+   "quote": "appointments- deb trumbull, swss - dave began by stating that the sewer commission set up the contract"
+  },
+  {
+   "name": "Albe",
+   "role": "",
+   "status": "present",
+   "quote": "albe replied he has not and apologized."
+  },
+  {
+   "name": "Jack",
+   "role": "",
+   "status": "present",
+   "quote": "jack added that weekly updates are necessary and if he hears nothing, he assumes everything is ok."
+  },
+  {
+   "name": "Barb",
+   "role": "",
+   "status": "present",
+   "quote": "barb said there are 885 rate payers and about 25% paid the minimum charge of $97.20/quarter"
+  },
+  {
+   "name": "Heather",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "carl reported that heather (town manager) asked to reschedule to march 31st."
+  },
+  {
+   "name": "Mike",
+   "role": "",
+   "status": "not stated",
+   "quote": "dave offered to go with mike to talk to the leominster mayor about spreading out the"
+  },
+  {
+   "name": "Jane L. Ranley",
+   "role": "Minutes Clerk",
+   "status": "not stated",
+   "quote": "jane l. ranley minutes clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "SWSS is to sit down face to face with Jack to update issues, and Albe agreed to do that weekly.",
+   "quote": "they agreed that swss needs to sit down face to face with jack to update issues and albe agreed to do that weekly."
+  },
+  {
+   "decision": "Major repairs after hours would be paid.",
+   "quote": "the group discussed meetings they had to talk about the 24/7 coverage and agreed that major repairs would be paid."
+  },
+  {
+   "decision": "Jack is to be notified if stations need shoveling.",
+   "quote": "the group discussed bills for snow shoveling and agreed that jack should be notified if stations need shoveling."
+  },
+  {
+   "decision": "Keep the SWSS figure around $150,000 in the budget.",
+   "quote": "the commission agreed to keep the swss figure around $150,000 and discussed figures for outsourcing in the budget."
+  },
+  {
+   "decision": "Go direct for Generator Maintenance for FY21 and budget at $12,000.",
+   "quote": "the commission agreed to go direct for generator maintenance for fy21 and budget at $12,000."
+  },
+  {
+   "decision": "Look at the minimum rate change versus the increase to the rest of the rate payers and discuss the rate increase on 3/10.",
+   "quote": "the commission will look at the minimum rate change vs increase to the rest of the rate payers and discuss the rate increase on 3/10."
+  },
+  {
+   "decision": "Carl asked Barb to find the actual number of minimum rate payers.",
+   "quote": "carl asked barb to find the actual number of minimum rate payers."
+  },
+  {
+   "decision": "Commissioners signed the Privilege Fee Lien document for 10 Whiting St to have it recorded; it will be added to the homeowner's tax bill.",
+   "quote": "commissioners signed the document to have it recorded and will be added to the homeowners' tax bill."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "SWSS contract extra billing",
+   "what_was_recorded": "The Commission set up the SWSS contract to a budget but received extra billing exceeding the budgeted amount; no dollar figure is printed for the excess.",
+   "figures_as_printed": [],
+   "quote": "according to their budget but have received extra billing that exceeds the budgeted amount."
+  },
+  {
+   "topic": "Generator contract extra cost",
+   "what_was_recorded": "Carl inquired about the generator contract for major and minor maintenance, which is an extra amount per year.",
+   "figures_as_printed": [
+    "$9,500"
+   ],
+   "quote": "carl inquired about the generator contract, for major and minor maintenance on each generator, which is an extra $9,500 a year"
+  },
+  {
+   "topic": "Billing for 1/23/20 station check",
+   "what_was_recorded": "Carl asked why SWSS billed for checking all 10 stations and cleaning road salt off locks on 1/23/20; Deb agreed it should not have been billable. No amount is printed.",
+   "figures_as_printed": [],
+   "quote": "carl asked why they were billed on 1/23/20 for checking all 10 stations and cleaning road salt off locks."
+  },
+  {
+   "topic": "Generator maintenance price quote",
+   "what_was_recorded": "Carl reported a price from F&M for minor and major generator maintenance.",
+   "figures_as_printed": [
+    "$6,000"
+   ],
+   "quote": "carl said that he called f&m and got a price for less than $6,000 for minor and major generator maintenance."
+  },
+  {
+   "topic": "Generator maintenance FY21 budget",
+   "what_was_recorded": "The Commission agreed to go direct for generator maintenance for FY21 and budget at this figure.",
+   "figures_as_printed": [
+    "$12,000"
+   ],
+   "quote": "the commission agreed to go direct for generator maintenance for fy21 and budget at $12,000."
+  },
+  {
+   "topic": "SWSS budget figure",
+   "what_was_recorded": "The Commission agreed to keep the SWSS figure around this amount.",
+   "figures_as_printed": [
+    "$150,000"
+   ],
+   "quote": "the commission agreed to keep the swss figure around $150,000 and discussed figures for outsourcing in the budget."
+  },
+  {
+   "topic": "Leominster usage and rate increase",
+   "what_was_recorded": "The Commission discussed Leominster usage figures based on meter readings and a 4% rate increase.",
+   "figures_as_printed": [
+    "4%"
+   ],
+   "quote": "the commission discussed the figures for leominster usage, based on meter readings and the 4% rate increase."
+  },
+  {
+   "topic": "Rate increase to cover estimated deficit",
+   "what_was_recorded": "A rate increase based on an estimated deficit was discussed, about $353 per rate payer per year.",
+   "figures_as_printed": [
+    "$310,000",
+    "$353"
+   ],
+   "quote": "they also discussed a figure for the rate increase based on an estimated deficit of $310,000, which would be about $353/rate payer per year."
+  },
+  {
+   "topic": "Minimum charge and rate payers",
+   "what_was_recorded": "Barb said there are 885 rate payers and about 25% paid the quarterly minimum charge in the last billing.",
+   "figures_as_printed": [
+    "885",
+    "25%",
+    "$97.20/quarter"
+   ],
+   "quote": "barb said there are 885 rate payers and about 25% paid the minimum charge of $97.20/quarter in the last billing."
+  },
+  {
+   "topic": "Monthly and quarterly invoices",
+   "what_was_recorded": "Business Manager reported invoices from Fitchburg, Leominster and Wright Pierce.",
+   "figures_as_printed": [
+    "$15,643.38",
+    "$91,825.05",
+    "$782.26"
+   ],
+   "quote": "fitchburg monthly -$15,643.38, leominster quarterly - $91,825.05 and wright pierce- $782.26."
+  },
+  {
+   "topic": "Wright Pierce contract balance",
+   "what_was_recorded": "Barb noted the remaining balance on the Wright Pierce contract.",
+   "figures_as_printed": [
+    "$897.33"
+   ],
+   "quote": "barb noted that there is $897.33 left on the wright pierce contract."
+  },
+  {
+   "topic": "Retained earnings and stabilization",
+   "what_was_recorded": "The Commission discussed the retained earnings transfer and stabilization figures; no amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "the commission discussed the retained earnings transfer and stabilization figures."
+  },
+  {
+   "topic": "Irrigation fee",
+   "what_was_recorded": "The irrigation fee will be placed on the Q3 billing.",
+   "figures_as_printed": [],
+   "quote": "irrigation fee-will be on q3 billing."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "welcomed new commissioner Brett Ramsden; no action",
+   "quote": "announcements - brett ramsden- new appointee- carl welcomed brett as a newly appointed commissioner.",
+   "tags": [
+    "announcement",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Appointment: Deb Trumbull, SWSS, contract and billing",
+   "resolution": "discussed at length; no vote; Deb to review billing; SWSS to report weekly and meet Jack",
+   "quote": "appointments- deb trumbull, swss - dave began by stating that the sewer commission set up the contract",
+   "tags": [
+    "SWSS contract",
+    "billing",
+    "sewer operations",
+    "callouts"
+   ]
+  },
+  {
+   "topic": "3rd party review project status",
+   "resolution": "discussed; no action",
+   "quote": "carl said woodward & curran(w&c) is working on the project and",
+   "tags": [
+    "third-party review",
+    "Woodward & Curran"
+   ]
+  },
+  {
+   "topic": "Maintenance Plan status",
+   "resolution": "rescheduled to March 31",
+   "quote": "maintenance plan status- carl reported that heather (town manager) asked to reschedule to march 31st.",
+   "tags": [
+    "maintenance plan"
+   ]
+  },
+  {
+   "topic": "Definition of roles, Town Manager and Charter",
+   "resolution": "deferred to March 31 meeting with Town Manager",
+   "quote": "definition of roles town manager regarding sewer commission and charter- also to be discussed with",
+   "tags": [
+    "governance",
+    "charter"
+   ]
+  },
+  {
+   "topic": "FY21 budget review and rate increase",
+   "resolution": "discussed; Leominster authorization passed unanimously; generator maintenance budgeted; rate decision deferred to 3/10",
+   "quote": "the commission will look at the minimum rate change vs increase to the rest of the rate payers and discuss the rate increase on 3/10.",
+   "tags": [
+    "FY21 budget",
+    "rate increase",
+    "generator maintenance",
+    "Leominster",
+    "SWSS"
+   ]
+  },
+  {
+   "topic": "1170 Mass Ave betterment",
+   "resolution": "Carl to propose rescinding hold vote at a later meeting",
+   "quote": "carl would like to revisit the discussion and will propose to rescind it based on other information he has.",
+   "tags": [
+    "1170 Mass Ave",
+    "betterment"
+   ]
+  },
+  {
+   "topic": "Articles for Town Meeting Warrant",
+   "resolution": "deferred to 3/10 meeting for approval",
+   "quote": "barb said they will need to approve articles at the 3/10 meeting.",
+   "tags": [
+    "town meeting",
+    "warrant",
+    "stabilization"
+   ]
+  },
+  {
+   "topic": "Irrigation meter changes",
+   "resolution": "reminder only",
+   "quote": "irrigation meter changes required by 7/1/20 was on the agenda just as a reminder.",
+   "tags": [
+    "irrigation"
+   ]
+  },
+  {
+   "topic": "Privilege Fee Lien, 10 Whiting St",
+   "resolution": "documents signed for recording",
+   "quote": "commissioners signed the document to have it recorded and will be added to the homeowners' tax bill.",
+   "tags": [
+    "lien",
+    "tax bill"
+   ]
+  },
+  {
+   "topic": "Minutes approval, 2/4/20 and 2/11/20",
+   "resolution": "approved",
+   "quote": "minutes for 2/4/20 motion: dave m. to approve the minutes for 2/4/20.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report, commission openings and invoices",
+   "resolution": "reported; no action",
+   "quote": "barb noted that there are 4 openings on the ballot.",
+   "tags": [
+    "elections",
+    "invoices",
+    "grease trap"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "listed; no action",
+   "quote": "member agenda inputs for future meetings- wrapping up budget and rate increase, 1170 mass ave.",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Sean Patricks restaurant transfer to Il Forno",
+   "resolution": "discussed; no action",
+   "quote": "the commission discussed the transfer of sean patricks restaurant to il forno.",
+   "tags": [
+    "property transfer"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:20pm",
+   "quote": "motion: john r. to adjourn at 9:20pm second: dave m. vote: unanimous",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "SWSS contract (Scope of Services)",
+   "where": "text",
+   "quote": "discussed what is included in swss's responsibilities under the scope of services."
+  },
+  {
+   "name": "Spare parts list",
+   "where": "text",
+   "quote": "jack suggested revisiting the spare parts list after the meadowwoods pump is received."
+  },
+  {
+   "name": "Articles for Town Meeting Warrant",
+   "where": "text",
+   "quote": "barb said they will need to approve articles at the 3/10 meeting."
+  },
+  {
+   "name": "Privilege Fee Lien document, 10 Whiting St",
+   "where": "text",
+   "quote": "commissioners signed the document to have it recorded and will be added to the homeowners' tax bill."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "SWSS contract",
+  "billing dispute",
+  "generator maintenance",
+  "FY21 budget",
+  "rate increase",
+  "Leominster",
+  "1170 Mass Ave",
+  "Town Meeting warrant",
+  "elections",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,66 @@
+{
+ "board": "School Committee Meeting",
+ "board_slug": "school-committee",
+ "meeting_date": "2020-06-03",
+ "source": {
+  "sha256": "67e5c18b2fe96776f8b1232525b77b44d53d9263652c1f591a0046edd81f8e5a",
+  "transcript": "sources/data/youtube-transcripts/school-committee/2020-06-03-GwMhvKGgsn0.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2021,
+    "kind": "other",
+    "scope": "school",
+    "statement": "The town manager gave the schools a reduced budget; salary reserve funding was eliminated to meet it.",
+    "status": "announced",
+    "t": 4972,
+    "who": "a Finance Committee member (public comment)"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2021,
+    "kind": "free_cash",
+    "scope": "town",
+    "statement": "Town manager said the current budget plus free cash and stabilization could cover the fall, though she prefers not to use them.",
+    "status": "announced",
+    "t": 4779,
+    "who": "a member reporting for the Finance Committee"
+   },
+   {
+    "amount_as_heard": "three million dollars",
+    "fiscal_year": null,
+    "kind": "other",
+    "scope": "town",
+    "statement": "Stabilization funds hold about this amount, which the town does not want to use.",
+    "status": "announced",
+    "t": 4779,
+    "who": "a member reporting for the Finance Committee"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "FY21 school budget, no salary reserve, unsettled teachers contract",
+    "condition": "unsettled teacher contract and added substitute costs",
+    "fiscal_year": 2021,
+    "prediction": "There may not be money to cover deficits in November, so the Finance Committee suggests holding off appropriating reserves until then.",
+    "scope": "school",
+    "t": 5160,
+    "who": "a Finance Committee member"
+   }
+  ]
+ },
+ "video_id": "GwMhvKGgsn0",
+ "video_url": "https://www.youtube.com/watch?v=GwMhvKGgsn0",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-11-03T21:19:04Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

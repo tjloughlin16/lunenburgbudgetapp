@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2019-10-29",
  "docid": "5633",
@@ -12,49 +12,393 @@
  },
  "votes": [
   {
-   "motion": "Send town counsel's letter to SWSS with the correction of days to hours.",
+   "motion": "Send town counsel's letter to SWSS with the correction of 'days' changed to 'hours'.",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "motion: carl l. second: ryan s. to send town counsel's letter to swss with the correction of days to hours. vote: unanimous"
+   "quote": "to send town counsel's letter to swss with the correction of days to hours. vote: unanimous"
   },
   {
-   "motion": "Sign the I/I 3rd Party contract with Woodward & Curran.",
+   "motion": "Sign the I/I 3rd party review contract with Woodward & Curran.",
    "moved_by": "Ryan S.",
    "seconded_by": "Carl L.",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "motion: ryan s. second: carl l. to sign the i/l 3ra party contract with woodward & curran vote: carl l., joan p., ryan s. and mike n.- aye. dave m.- nay.",
-   "quote_taken_from_text": true
+   "quote": "vote: carl l., joan p., ryan s. and mike n.- aye. dave m.- nay."
   },
   {
-   "motion": "Approve the plan submitted by Bill Hannigan to discuss the lot formation of 3 lots, with discussion at town meeting.",
+   "motion": "Approve the plan submitted by Bill Hannigan, with the discussion at town meeting, to discuss the lot formation of 3 lots presented tonight.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "motion: dave m. second: mike n. to approve the plan submitted by bill hannigan, with the discussion at town meeting, to discuss the lot formation of 3 lots presented tonight. discussion: carl said that he cannot support anything beyon",
-   "quote_taken_from_text": true
+   "quote": "vote: joan p., dave m., mike n. and ryan s.-aye. carl- nay."
   },
   {
    "motion": "Adopt the partial release for 101 Pleasant St. and authorize the chair or other member to sign on behalf of the Commission.",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "motion: carl l. to adopt the partial release for 101 pleasant st. and authorize the chair or other member to sign on behalf of the commission. second: ryan s. vote: unanimous"
+   "quote": "to adopt the partial release for 101 pleasant st. and authorize the chair or other member to sign on behalf of the commission. second: ryan s. vote: unanimous"
   },
   {
-   "motion": "Adjourn.",
+   "motion": "Adjourn at 9:05pm.",
    "moved_by": "Ryan S.",
    "seconded_by": "Mike N.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion: ryan s. to adjourn: 9:05pm second: mike n. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0897365
+ "note": "OCR of a scanned minutes page. Page 2 begins mid-sentence and the topic heading for the Millette/189 Cross Road discussion is missing from the text. Page 3 is partly garbled ('ee be an a been a can agree...') so the start of the Business Manager section and the next-meeting line are only partly readable. No roll-call attendance list is printed; attendance is inferred from votes and speaking. Barb's role, Jack's surname and the Commission members' titles are not printed. Votes are recorded with results; the Woodward & Curran signing is also recorded as done.",
+ "cost_usd": 0.00984422,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl L.",
+   "status": "present",
+   "quote": "carl added that woodward & curran will be taking the data from the pump stations"
+  },
+  {
+   "name": "Ryan S.",
+   "status": "present",
+   "quote": "ryan added that the property has huge amount of environmental fines"
+  },
+  {
+   "name": "Joan P.",
+   "status": "present",
+   "quote": "joan added that at a previous meeting, the commission discussed adding this"
+  },
+  {
+   "name": "Mike N.",
+   "status": "present",
+   "quote": "mike pointed out that they have paid a lot of money in the past for investigations"
+  },
+  {
+   "name": "Dave M.",
+   "status": "present",
+   "quote": "dave announced that nov 13th will be a celebration for all veterans at devens commons center."
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb reported that the final agreement was approved, and payments should start in mid-november"
+  },
+  {
+   "name": "Jack",
+   "status": "present",
+   "quote": "jack said that he did not think dye would be appropriate in this case"
+  },
+  {
+   "name": "Scott Medeiros",
+   "role": "representing Woodward & Curran",
+   "status": "present",
+   "quote": "scott medeiros and lauren hertel, woodward & curran"
+  },
+  {
+   "name": "Lauren Hertel",
+   "role": "representing Woodward & Curran",
+   "status": "present",
+   "quote": "lauren replied that they will look at the catchment areas"
+  },
+  {
+   "name": "Bruce Millette",
+   "role": "applicant (Millette parcel)",
+   "status": "present",
+   "quote": "bruce millette explained the implications of extending sewer to only their home"
+  },
+  {
+   "name": "Bill Hannigan",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "bill added that any land division will go through as an an and will meet zoning bylaws."
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "not stated",
+   "quote": "joan met with adam (town counsel) to discuss swss's adherence to contract."
+  },
+  {
+   "name": "Pat",
+   "role": "Weston & Sampson",
+   "status": "not stated",
+   "quote": "barb noted that pat (weston & sampson) had said that a special camera would be needed"
+  },
+  {
+   "name": "Greg Cucchiara",
+   "status": "not stated",
+   "quote": "letter from greg cucchiara - re. pro-rating of sewer charges."
+  },
+  {
+   "name": "Jane L. Ranley",
+   "role": "Minutes Clerk",
+   "status": "not stated",
+   "quote": "*jane l. ranley minutes clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Barb to have counsel send the letter to SWSS; the intention is to get SWSS to come in for a discussion (agreed after confirming counsel recommended it).",
+   "quote": "they agreed, after confirming that it was recommended by counsel, to have barb instruct counsel to send the letter"
+  },
+  {
+   "decision": "Commission will present the Town Meeting article on expanding the SSA to the full parcel; Ryan and Joan will present it at Town Meeting.",
+   "quote": "ryan and joan will present the article at town meeting."
+  },
+  {
+   "decision": "Dave asked that Bill make the presentation at Town Meeting; Bill will try to attend as he has another obligation that evening.",
+   "quote": "dave would like bill to make the presentation at town meeting."
+  },
+  {
+   "decision": "Wright Pierce to be invited to the first December meeting rather than 11/19, and asked to provide a copy of the draft proposal ahead of time.",
+   "quote": "the commission asked barb to invite them to the first meeting in december instead and to request a copy of the draft ahead of time."
+  },
+  {
+   "decision": "Barb to ask Town Counsel's opinion on having further discussions regarding the Leominster IMA in Executive Session.",
+   "quote": "she will ask adam's opinion regarding having further discussions in executive session."
+  },
+  {
+   "decision": "Joan to sign the 101 Pleasant St. release and have it notarized at Town Hall.",
+   "quote": "joan will sign the release and have it notarized at town hall."
+  },
+  {
+   "decision": "Dave to review the regulation on pro-rating of sewer charges; Commission to discuss the Cucchiara letter at the first December meeting.",
+   "quote": "the commission will discuss it at the first december meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fitchburg usage invoice",
+   "what_was_recorded": "The Business Manager report listed a Fitchburg usage invoice.",
+   "figures_as_printed": [
+    "$15,494.12"
+   ],
+   "quote": "fitchburg usage invoice for $15,494.12."
+  },
+  {
+   "topic": "Reserve Capacity transfer correction (Article 3)",
+   "what_was_recorded": "Article 3 corrects the Annual Town Meeting motion so it shows the Reserve Capacity transfer.",
+   "figures_as_printed": [
+    "$9,993"
+   ],
+   "quote": "article 3-correction to the motion from the annual town meeting that shows the reserve capacity transfer of $9,993."
+  },
+  {
+   "topic": "Woodward & Curran I/I review contract cost",
+   "what_was_recorded": "Commission discussed the project budget, its cost effectiveness and past spending on investigations; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the commission discussed the budget for the project, its cost effectiveness and what they will gain from the i/l review contract."
+  },
+  {
+   "topic": "Highfield Village sewer payments",
+   "what_was_recorded": "Final agreement approved; payments start mid-November and include interest; full total due if property is sold. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "payments should start in mid-november, which include interest. if the property is sold, they must pay the total in tull."
+  },
+  {
+   "topic": "101 Pleasant St environmental fines and betterment lien",
+   "what_was_recorded": "Property has a large amount of environmental fines; discussion of withholding signatures; partial betterment lien release adopted. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "ryan added that the property has huge amount of environmental fines and discussion followed whether they could withhold their signatures"
+  },
+  {
+   "topic": "Pro-rating of sewer charges",
+   "what_was_recorded": "Letter from Greg Cucchiara on pro-rating of sewer charges; to be discussed at first December meeting. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "letter from greg cucchiara - re. pro-rating of sewer charges."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Article 3 correction showing the Reserve Capacity transfer from the Annual Town Meeting motion.",
+   "outcome": "Presented as a Special Town Meeting article for 11/12; not voted by the Commission at this meeting.",
+   "amount_as_printed": "$9,993",
+   "quote": "article 3-correction to the motion from the annual town meeting that shows the reserve capacity transfer of $9,993."
+  },
+  {
+   "description": "Article 4 moves Reserve Capacity funds to the Stabilization Fund.",
+   "outcome": "Presented as a Special Town Meeting article for 11/12; not voted by the Commission at this meeting.",
+   "amount_as_printed": "not printed",
+   "quote": "article 4-moves reserve capacity funds to the stabilization fund."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "Veterans celebration announcement",
+   "quote": "dave announced that nov 13th will be a celebration for all veterans at devens commons center."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Appointment: residents of 33 & 34 Elizabeth St. on I/I remediation",
+   "resolution": "discussed; Jack to talk to residents; no action recorded",
+   "tags": [
+    "I/I",
+    "Elizabeth St",
+    "dye test",
+    "camera"
+   ],
+   "quote": "residents of 33 & 34 elizabeth st. - i/i remediation - letters were sent on 10/21 to residents at 33 & 34 elizabeth"
+  },
+  {
+   "topic": "Small Water Services (SWSS) and adherence to contract",
+   "resolution": "letter from Town Counsel approved to send",
+   "tags": [
+    "SWSS",
+    "contract",
+    "Town Counsel"
+   ],
+   "quote": "joan met with adam (town counsel) to discuss swss's adherence to contract."
+  },
+  {
+   "topic": "Woodward & Curran I/I 3rd party review contract",
+   "resolution": "contract signed (4-1)",
+   "tags": [
+    "I/I",
+    "Woodward & Curran",
+    "contract"
+   ],
+   "quote": "scott medeiros and lauren hertel, woodward & curran - i/i 3rd party review contract"
+  },
+  {
+   "topic": "Millette sewer extension and lot formation (189 Cross Road / SSA)",
+   "resolution": "plan approved 4-1; to be discussed at Town Meeting",
+   "tags": [
+    "sewer service area",
+    "land division",
+    "Millette",
+    "189 Cross Road"
+   ],
+   "quote": "bruce millette explained the implications of extending sewer to only their home"
+  },
+  {
+   "topic": "Special Town Meeting 11/12 articles",
+   "resolution": "discussed; no vote",
+   "tags": [
+    "Town Meeting",
+    "articles",
+    "Reserve Capacity"
+   ],
+   "quote": "special town meeting - 11/12 - articles-barb summarized the 3 articles to be presented by the commission."
+  },
+  {
+   "topic": "Highfield Village final sewer allotment and payment agreement",
+   "resolution": "reported; no action",
+   "tags": [
+    "Highfield Village",
+    "sewer allotment"
+   ],
+   "quote": "highfield village- final sewer allotment and payment agreement - barb reported that the final agreement was approved"
+  },
+  {
+   "topic": "Leominster IMA",
+   "resolution": "Town Counsel to review; no action",
+   "tags": [
+    "Leominster",
+    "IMA",
+    "Executive Session"
+   ],
+   "quote": "leominster ima discussion- barb noted that adam (town counsel) will review this"
+  },
+  {
+   "topic": "101 Pleasant St partial betterment lien release",
+   "resolution": "approved unanimously",
+   "tags": [
+    "101 Pleasant St",
+    "betterment lien",
+    "title"
+   ],
+   "quote": "101 pleasant st- barb reported that the property was divided off the twin city baptist lot"
+  },
+  {
+   "topic": "Business Manager report (Fitchburg invoice, Wright Pierce, Cucchiara letter)",
+   "resolution": "reported; some items deferred to December",
+   "tags": [
+    "invoice",
+    "Wright Pierce",
+    "sewer charges"
+   ],
+   "quote": "business manager report - fitchburg usage invoice for $15,494.12."
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "no items recorded",
+   "tags": [
+    "agenda"
+   ],
+   "quote": "member agenda inputs for future meetings -"
+  },
+  {
+   "topic": "Public comment (member announcement)",
+   "resolution": "announcement only",
+   "tags": [
+    "veterans",
+    "announcement"
+   ],
+   "quote": "dave announced that nov 13th will be a celebration for all veterans at devens commons center."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter by Town Counsel regarding Small Water Systems Services",
+   "where": "list",
+   "quote": "letter by town counsel regarding small water systems services"
+  },
+  {
+   "name": "Updated engineering drawing for 189 Cross Road, provided by Bill Hannigan",
+   "where": "list",
+   "quote": "updated engineering drawing for 189 cross road, provided by bill hannigan"
+  },
+  {
+   "name": "Letters to residents at 33 & 34 Elizabeth St. (sent 10/21)",
+   "where": "text",
+   "quote": "letters were sent on 10/21 to residents at 33 & 34 elizabeth"
+  },
+  {
+   "name": "Letter from Greg Cucchiara re. pro-rating of sewer charges",
+   "where": "text",
+   "quote": "letter from greg cucchiara - re. pro-rating of sewer charges."
+  },
+  {
+   "name": "Maintenance Plan draft proposal (Wright Pierce)",
+   "where": "text",
+   "quote": "maintenance plan - wright pierce asked to come to the 11/19 meeting to discuss the draft proposal"
+  },
+  {
+   "name": "I/I 3rd party review contract (Woodward & Curran)",
+   "where": "text",
+   "quote": "to sign the i/l 3ra party contract with woodward & curran"
+  },
+  {
+   "name": "Special Town Meeting warrant articles (Article 8, 189 Cross Road SSA)",
+   "where": "text",
+   "quote": "article 8-to add 189 cross road to the sewer service area."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "inflow and infiltration",
+  "Woodward & Curran",
+  "small water systems",
+  "special town meeting",
+  "sewer service area",
+  "Highfield Village",
+  "Leominster IMA",
+  "101 Pleasant St",
+  "Millette",
+  "189 Cross Road",
+  "reserve capacity"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {}
 }

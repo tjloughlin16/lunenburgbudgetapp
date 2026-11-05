@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-05-19",
  "docid": "5200",
@@ -12,31 +12,355 @@
  },
  "votes": [
   {
-   "motion": "To authorize the change of date of the Skateboard Park Tollbooth fundraiser to September 26th",
+   "motion": "Authorize change of date of the Skate park tollbooth fundraiser to September 26th.",
    "moved_by": "K. Adams",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "to authorize the change of date to september 26th vote: ms. adams- aye, mr. mcquaid-aye, ms. luck- aye, mr. alonzo-aye"
+   "quote": "motion: k. adams 2\": d. mcquaid to authorize the change of date to september 26th vote: ms. adams- aye, mr. mcquaid-aye, ms. luck- aye, mr. alonzo-aye"
   },
   {
-   "motion": "To declare the purchase of 994 Northfield Road a unique acquisition",
-   "moved_by": "D. MeQuaid",
+   "motion": "Declare the purchase of 994 Northfield Road (Saliba property) a unique acquisition.",
+   "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
    "quote": "vote: ms. adams- aye, mr. mcquaid-aye, ms. luck-aye, mr. alonzo- aye"
   },
   {
-   "motion": "To proceed with the execution of the purchase of the Saliba property at 994 Northfield Road and authorize Chairman Tom Alonzo to sign the necessary documents on behalf of the Town",
+   "motion": "Proceed with execution of the purchase of the Saliba property at 994 Northfield Road as voted at the November 12, 2019 Special Town Meeting, and authorize Chairman Tom Alonzo to sign the necessary documents.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "authorize chairman tom alonzo to sign the necessary documents on behalf of the town. vote: ms. adams- aye, mr. mcquaid-aye, ms. luck- aye, mr. alonzo-aye"
+   "quote": "i move to proceed with the execution of the purchase of the saliba property at 994 northfield road as voted at the november 12, 2019 special town meeting"
+  },
+  {
+   "motion": "Adjourn the meeting at 9:00 p.m.",
+   "moved_by": "D. McQuaid",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "to adjourn the meeting at 9:00 p.m. 2nd: p. luck vote: ms. adams-aye, mr. mcquaid-aye, ms. luck-aye, mr. alonzo-aye"
   }
  ],
- "dropped_unquoted": 1,
- "note": "Scanned document; OCR by macOS Vision. Minor OCR artifacts present (e.g., \"MeQuaid\" in one line appears to be \"McQuaid\"; \"2\":\" appears to be \"2nd:\"). All four votes recorded passed unanimously 4-0.",
- "cost_usd": 0.1510505
+ "dropped_unquoted": 0,
+ "note": "OCR text from a scan. Several names and words are garbled (e.g., 'D. MeQuaid' for McQuaid; 'Carl Tuck an Sunset Lane'; 'Memorial Dav'); recorded as best read and flagged here. Vote tallies are printed as individual aye names, not as counts, so outcomes are recorded as 'passed'. The first Saliba motion's heading is on page 1 and its vote line is on page 2. Some quote characters (e.g., ordinal '2\"') are OCR artifacts copied as printed. No transfers are recorded; the $476.20 free-cash payment is recorded as a budget item only.",
+ "cost_usd": 0.011567920000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "K. Adams",
+   "role": "Board member (recorded as Ms. Adams)",
+   "status": "present",
+   "quote": "vote: ms. adams- aye, mr. mcquaid-aye, ms. luck- aye, mr. alonzo-aye"
+  },
+  {
+   "name": "D. McQuaid",
+   "role": "Board member (recorded as Mr. McQuaid; OCR also reads 'D. MeQuaid')",
+   "status": "present",
+   "quote": "vote: ms. adams- aye, mr. mcquaid-aye, ms. luck- aye, mr. alonzo-aye"
+  },
+  {
+   "name": "P. Luck",
+   "role": "Board member (recorded as Ms. Luck)",
+   "status": "present",
+   "quote": "vote: ms. adams- aye, mr. mcquaid-aye, ms. luck- aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Board member",
+   "status": "absent",
+   "quote": "member not present: michael-ray jeffreys"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; tim murphy, town moderator; adam costa, town counsel;"
+  },
+  {
+   "name": "Tim Murphy",
+   "role": "Town Moderator",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; tim murphy, town moderator; adam costa, town counsel;"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; tim murphy, town moderator; adam costa, town counsel;"
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "patrick sullivan, fire chief; jim marino, police chief, jim garreffi, nashoba district sanitarian"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "patrick sullivan, fire chief; jim marino, police chief, jim garreffi, nashoba district sanitarian"
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Nashoba District Sanitarian",
+   "status": "present",
+   "quote": "patrick sullivan, fire chief; jim marino, police chief, jim garreffi, nashoba district sanitarian"
+  },
+  {
+   "name": "Carl Tuck",
+   "role": "resident, public comment (OCR garbled; address 'Sunset Lane')",
+   "status": "present",
+   "quote": "carl tuck an sunset lane, hoped the board would on."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Luck asked the Town Manager to ensure all town tires are free of water to prevent mosquito breeding (a request; no vote recorded).",
+   "quote": "ms. luck asked town manager to ensure all town tires are free of water to prevent mosquito breeding."
+  },
+  {
+   "decision": "Dave MacDonald took on the State Gold Star lighting effort; the Town Gazebo will be lit in gold from Friday evening until Tuesday morning for Memorial Day (no vote recorded).",
+   "quote": "dave macdonald has graciously taken this on and the town gazebo will be lit from friday"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2021 budget change: prior year's bill paid from free cash",
+   "what_was_recorded": "Town Manager reported one change to the FY 2021 budget: a prior year's bill paid out of free cash, increasing the surplus.",
+   "figures_as_printed": [
+    "$476.20",
+    "$1,066,425"
+   ],
+   "quote": "a prior year's bill of $476.20 to be paid out of free cash, increasing our surplus to $1,066,425."
+  },
+  {
+   "topic": "Saliba property purchase price and funding",
+   "what_was_recorded": "The 994 Northfield Road purchase is priced at $775,000, funded $500,000 by state PARC and LAND grants and $275,000 by the Town as previously authorized.",
+   "figures_as_printed": [
+    "$775,000",
+    "$500,000",
+    "$275,000"
+   ],
+   "quote": "the property will be purchased for $775,000, with $500,000 coming from state parc and land grant funds and the remaining $275,000 from the town of"
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Chairman announced he had signed A/P, A/P deduction and payroll warrants.",
+   "figures_as_printed": [
+    "$2,373,539.94",
+    "$563,255.75",
+    "$11,810.88",
+    "$810,224.45"
+   ],
+   "quote": "a/p warrant #57 20 $2,373,539.94"
+  },
+  {
+   "topic": "CARES Act funds received",
+   "what_was_recorded": "The Town has received $7,035.89 in relief funds from the Department of Health and Human Services Emergency Relief Fund.",
+   "figures_as_printed": [
+    "$7,035.89"
+   ],
+   "quote": "we received $7,035.89 from the department of health and human services"
+  },
+  {
+   "topic": "CARES Act funds for Schools",
+   "what_was_recorded": "The Department of Secondary and Elementary Education told the Superintendent the Schools would receive $198,000.",
+   "figures_as_printed": [
+    "$198,000"
+   ],
+   "quote": "receive $198,000 specifically for the schools."
+  },
+  {
+   "topic": "CARES Act eligible total and spending",
+   "what_was_recorded": "Lunenburg's total CARES Act eligible amount for FY20 and FY21 is $1,027,771; the Town is discussing spending against the $7,000 already received.",
+   "figures_as_printed": [
+    "$1,027,771",
+    "$7,000"
+   ],
+   "quote": "eligible amount for fy20 and fy21 is $1,027,771."
+  },
+  {
+   "topic": "West Street property sale bids",
+   "what_was_recorded": "Three bids were received for 17 & 23 West Street; the high bid is $35,000 and the Town Manager seeks Board agreement to award to the highest bidder.",
+   "figures_as_printed": [
+    "$35,000"
+   ],
+   "quote": "with a high bid of $35,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Carl Tuck",
+   "stated_role": "Sunset Lane (OCR garbled)",
+   "topic": "postponing Town Meeting and a 1/12 budget",
+   "quote": "postponing town meeting and implementing a 1/12 budget until the town understands better the ramifications of"
+  },
+  {
+   "speaker": "Chief Marino",
+   "stated_role": "Police Chief",
+   "topic": "department contingency plans for reopening",
+   "quote": "chief marino stated he was sure the town manager would be consulting with the department heads for a plan"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "heard",
+   "quote": "postponing town meeting and implementing a 1/12 budget until the town understands better the ramifications of",
+   "tags": [
+    "public comment",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "mr. alonzo reminded all of the virtual memorial day ceremony on monday",
+   "tags": [
+    "announcements",
+    "Memorial Day"
+   ]
+  },
+  {
+   "topic": "Old business: Skateboard Park tollbooth request",
+   "resolution": "approved date change to September 26th",
+   "quote": "the lunenburg skate park group would like to move their tollbooth fundraiser out to september 26th.",
+   "tags": [
+    "skate park",
+    "fundraiser"
+   ]
+  },
+  {
+   "topic": "Old business: FY 2021 budget",
+   "resolution": "discussed; surplus change reported",
+   "quote": "ms. lemieux reported one change to the budget",
+   "tags": [
+    "FY2021 budget",
+    "free cash",
+    "hiring freeze"
+   ]
+  },
+  {
+   "topic": "Current business: Saliba property, 994 Northfield Road",
+   "resolution": "approved unique acquisition and execution of purchase",
+   "quote": "saliba property: vote to declare purchase of 994 northfield road a unique acquisition,",
+   "tags": [
+    "land acquisition",
+    "open space",
+    "PARC and LAND grants"
+   ]
+  },
+  {
+   "topic": "Plan for safety precautions for Annual Town Meeting",
+   "resolution": "discussed; continued to later meeting",
+   "quote": "discussion on plan for safety precautions for the annual town meeting",
+   "tags": [
+    "Town Meeting",
+    "COVID-19",
+    "safety"
+   ]
+  },
+  {
+   "topic": "Warrants, minutes, action items, committee reports",
+   "resolution": "warrants signed; reports and talent bank noted",
+   "quote": "mr. alonzo announced he had signed the following warrants:",
+   "tags": [
+    "warrants",
+    "committee vacancies"
+   ]
+  },
+  {
+   "topic": "Town Manager report: CARES Act, West Street, Memorial Day, Farmers Market",
+   "resolution": "reported; West Street award sought",
+   "quote": "cares act funding: as i reported last week, the town has begun to receive some relief funds from the cares",
+   "tags": [
+    "CARES Act",
+    "West Street property",
+    "Farmers Market",
+    "Memorial Day"
+   ]
+  },
+  {
+   "topic": "COVID-19 update and state reopening guidance",
+   "resolution": "reported",
+   "quote": "effective may 18th, the department of public health also updated the stay at home advisory",
+   "tags": [
+    "COVID-19",
+    "reopening",
+    "state guidance"
+   ]
+  },
+  {
+   "topic": "Draft safety plan for Town Meeting and Annual Election",
+   "resolution": "discussed; next meeting June 2",
+   "quote": "discussion ensued about a draft safety plan for town meeting as well as the annual election.",
+   "tags": [
+    "Town Meeting",
+    "Annual Election"
+   ]
+  },
+  {
+   "topic": "Public comment (closing) and adjournment",
+   "resolution": "adjourned at 9:00 p.m.",
+   "quote": "to adjourn the meeting at 9:00 p.m. 2nd: p. luck vote: ms. adams-aye, mr. mcquaid-aye, ms. luck-aye, mr. alonzo-aye",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Reopening Massachusetts (Reopening Advisory Board report)",
+   "where": "text",
+   "quote": "the baker-polito administration released reopening massachusetts"
+  },
+  {
+   "name": "Safer at Home Advisory",
+   "where": "text",
+   "quote": "effective may 18th, the department of public health also updated the stay at home advisory"
+  },
+  {
+   "name": "Request for Proposals for the West Street property",
+   "where": "text",
+   "quote": "we received three bids in response to the request for proposals for the west street"
+  },
+  {
+   "name": "Talent bank forms",
+   "where": "text",
+   "quote": "talent bank forms can be obtained on the town website"
+  },
+  {
+   "name": "Board of Health weekly COVID-19 update dated May 15",
+   "where": "text",
+   "quote": "the board of health issued their weekly update dated may 15"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "COVID-19",
+  "Town Meeting",
+  "CARES Act",
+  "Saliba property",
+  "FY2021 budget",
+  "skate park",
+  "West Street property",
+  "Memorial Day",
+  "reopening"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

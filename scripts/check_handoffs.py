@@ -125,8 +125,14 @@ def check_live(root, path, block, today):
     elif status == 'open' and (today - updated).days > STALE_DAYS:
         out.append(f'{name}: open, and `updated: {updated}` is {(today - updated).days} '
                    f'days old (limit {STALE_DAYS}) -- update it, park it or retire it')
-    if not block.get('next'):
-        out.append(f'{name}: `next:` missing')
+    # A handoff PORTED to genlock keeps its findings here and its next steps there: it says
+    # `genlock: G-…` instead of `next:`, and must be `reference` (CLAUDE.md, Picking up).
+    if block.get('genlock'):
+        if status != 'reference':
+            out.append(f'{name}: ported to genlock ({block["genlock"][:12]}) but `status: {status}`'
+                       ' -- a ported handoff is `reference`; its state lives in genlock')
+    elif not block.get('next'):
+        out.append(f'{name}: `next:` missing (or `genlock: G-…` if its next steps were ported)')
     if status == 'parked' and not block.get('waiting_on'):
         out.append(f'{name}: parked without `waiting_on:`')
     return out
@@ -193,7 +199,7 @@ def index(root, today):
     for _, name, block, age in rows:
         age_s = f'{age}d' if age is not None else '?d'
         line = (f'{block.get("status", "NO-BLOCK"):<9} {age_s:>4}  {name}  '
-                f'next: {block.get("next", "-")}')
+                f'next: {block.get("next") or ("genlock " + block["genlock"][:7] if block.get("genlock") else "-")}')
         if block.get('waiting_on'):
             line += f'  waiting_on: {block["waiting_on"]}'
         print(line)

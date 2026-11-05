@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2021-01-28",
  "docid": "2078",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the meeting minutes for November 12th",
+   "motion": "Approve the meeting minutes for November 12th.",
    "moved_by": "Chris",
    "seconded_by": "Peter",
    "outcome": "passed 6-0",
@@ -21,6 +21,297 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0948985
+ "note": "OCR text from a macOS Vision scan; some words are garbled (e.g., 'Lunenburg Fina 6, Committee', 'Pire Department', 'Governers Budget'), and page 6 has no text. Only one vote is recorded (the minutes approval, 6-0; Jay Simeone was not yet present for it). Items such as the Chair's and the Policies discussion have no recorded motions. Heather L. and Karen B. are named only by initial, with no role printed.",
+ "cost_usd": 0.007336219999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm and read the"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "",
+   "status": "present",
+   "quote": "terri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "terri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "jay - arrived to the meeting at 7:34"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "",
+   "status": "present",
+   "quote": "terri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "",
+   "status": "present",
+   "quote": "terri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "",
+   "status": "present",
+   "quote": "terri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Heather L.",
+   "role": "",
+   "status": "present",
+   "quote": "heather l. - montytech has fy21 $12,086 to reappropriate."
+  },
+  {
+   "name": "Karen B.",
+   "role": "",
+   "status": "not stated",
+   "quote": "karen b. - will reach out to the fin advisor and the actuary to set up a date to"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Capital Planning Committee will review its portion of the Fiscal Policies and come back to FinCom with recommendations.",
+   "quote": "fincom agrees that capital planning committee will review their portion of the fiscal policies and come to fincom with recommendations."
+  },
+  {
+   "decision": "Policy review to be taken up in April after the budget season.",
+   "quote": "terri - we'll look at policy in april after the budget season."
+  },
+  {
+   "decision": "Karen B. will reach out to the Fin Advisor and the Actuary to set up a meeting date with FinCom.",
+   "quote": "karen b. - will reach out to the fin advisor and the actuary to set up a date to"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MontyTech FY21 funds",
+   "what_was_recorded": "MontyTech has FY21 funds available to reappropriate.",
+   "figures_as_printed": [
+    "$12,086"
+   ],
+   "quote": "heather l. - montytech has fy21 $12,086 to reappropriate."
+  },
+  {
+   "topic": "MIIA renewal rate range",
+   "what_was_recorded": "The MIIA renewal rate range was given as low, average and high percentages.",
+   "figures_as_printed": [
+    "6%",
+    "2.9%",
+    "6.8%"
+   ],
+   "quote": "6% low - 2.9% average - 6.8% high"
+  },
+  {
+   "topic": "MIIA renewal budgeting",
+   "what_was_recorded": "The budget assumed a 3% increase with the renewal in mid-February.",
+   "figures_as_printed": [
+    "3%"
+   ],
+   "quote": "budgeted a 3% increase with the renewal in mid-february."
+  },
+  {
+   "topic": "Governor's budget Chapter 70 aid",
+   "what_was_recorded": "The Governor's proposed budget released 3.5% unrestricted Chapter 70, down from November but slightly above Spring Town Meeting estimates.",
+   "figures_as_printed": [
+    "3.5%"
+   ],
+   "quote": "the governor's proposed budget released 3.5% unrestricted chapter 70 which"
+  },
+  {
+   "topic": "Education Reform Bill funding and Chapter 70 comparison",
+   "what_was_recorded": "Peter said the Governor's budget fully funds the Education Reform Bill, a 7-8% increase for nearby towns, while Lunenburg is under 1% in Chapter 70 funds.",
+   "figures_as_printed": [
+    "7-8%",
+    "1%"
+   ],
+   "quote": "which is 7-8% increase for the towns around us while we are less than 1% in chapter 70 funds."
+  },
+  {
+   "topic": "TCP project cost",
+   "what_was_recorded": "Chris said the $21M TCP project figure was much higher than the around $15M he expected.",
+   "figures_as_printed": [
+    "$21M",
+    "$15M"
+   ],
+   "quote": "chris - $21m is a very high figure and not what he expected."
+  },
+  {
+   "topic": "Fire truck rotation",
+   "what_was_recorded": "Fire Department has a fire truck rotation coming up, noted at $1m+.",
+   "figures_as_printed": [
+    "$1m+"
+   ],
+   "quote": "department has some heavy hitters coming down the pike - rotation of the fire truck - $1m+."
+  },
+  {
+   "topic": "Contract increase scenarios",
+   "what_was_recorded": "Heather S. asked what a 2% and a 2.5% increase in each contract negotiation would look like financially.",
+   "figures_as_printed": [
+    "2%",
+    "2.5%"
+   ],
+   "quote": "what a 2% and 2.5% increase in each contract negotiation would look like financially?"
+  },
+  {
+   "topic": "TCP rebuild versus renovation cost",
+   "what_was_recorded": "Members discussed the cost of levelling and rebuilding versus renovating TCP, with prevailing wage raising the renovation figure; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "dave - a lot of $ figures were thrown around at last night's meeting."
+  },
+  {
+   "topic": "TCP interest rates",
+   "what_was_recorded": "Peter asked what interest rates would be for the TCP project; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "peter - wondered how the interest rates will be."
+  },
+  {
+   "topic": "TCP impact on Town Budget",
+   "what_was_recorded": "Dave asked how the TCP project would affect the Town Budget; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "dave - wondered how the tcp project impacted the town budget."
+  },
+  {
+   "topic": "THES project costs",
+   "what_was_recorded": "Peter asked what the costs of the THES project are and said the community should be made aware of them; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "thes project - what are the costs associated with that project"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Heather S.",
+   "stated_role": "",
+   "topic": "Department staffing and union steps data request",
+   "quote": "would like to ask the committee for permission to request information from both the town and the schools regarding department staffing and union steps."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:00 PM, COVID-19 / Zoom advisory read",
+   "tags": [
+    "call to order",
+    "zoom"
+   ],
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm and read the"
+  },
+  {
+   "topic": "Chair Report",
+   "resolution": "no report",
+   "tags": [
+    "chair report"
+   ],
+   "quote": "2. chair report none."
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "Heather S. asked permission to request town and school staffing and step data",
+   "tags": [
+    "public comment",
+    "staffing",
+    "union steps"
+   ],
+   "quote": "would like to ask the committee for permission to request information from both the town and the schools regarding department staffing and union steps."
+  },
+  {
+   "topic": "FinCom Report / Town Meeting Warrant",
+   "resolution": "timeline and warrant dates reviewed, no action",
+   "tags": [
+    "town meeting warrant",
+    "budget timeline"
+   ],
+   "quote": "it director and the schools will present their budgets on march 18th."
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved 6-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "chris motion, peter seconded, yes votes - chris, peter, terri, dave, evan and heather."
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reports from Parks, Capital Planning, TCP, Building Improvements; discussion, no action",
+   "tags": [
+    "committee reports",
+    "capital planning",
+    "TCP project",
+    "state aid",
+    "insurance renewal"
+   ],
+   "quote": "parks - skate park presentation was given at the last meeting."
+  },
+  {
+   "topic": "Policies",
+   "resolution": "Capital Planning to review fiscal policy portion; policy review set for April",
+   "tags": [
+    "fiscal policies",
+    "capital planning"
+   ],
+   "quote": "fincom agrees that capital planning committee will review their portion of the fiscal policies and come to fincom with recommendations."
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "none",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "8. public comment none."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Last year's warrant (Town Website; to be added to OneDrive documents)",
+   "where": "text",
+   "quote": "last year's warrant can be found on the town website - but it will be added to"
+  },
+  {
+   "name": "Department Schedule (OneDrive documents)",
+   "where": "text",
+   "quote": "the department schedule can be found in the onedrive documents."
+  },
+  {
+   "name": "Fiscal policies (dropped in the OneDrive)",
+   "where": "text",
+   "quote": "no real chance to review the policies since they were dropped in the onedrive."
+  },
+  {
+   "name": "Governor's proposed budget",
+   "where": "text",
+   "quote": "the governor's proposed budget released 3.5% unrestricted chapter 70 which"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "town meeting warrant",
+  "minutes approval",
+  "capital planning",
+  "TCP building project",
+  "state aid Chapter 70",
+  "MIIA renewal",
+  "fiscal policies",
+  "public comment",
+  "staffing and union steps",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

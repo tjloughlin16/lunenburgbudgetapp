@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2019-10-29",
  "docid": "761",
@@ -12,47 +12,281 @@
  },
  "votes": [
   {
-   "motion": "Grant nineteen exemption applications totaling $10,032.00",
+   "motion": "Grant nineteen (19) statutory exemption applications totaling $10,032.00 (twenty reviewed; one denied for lack of legal ownership).",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "board voted to grant nineteen (19) applications totaling $10,032.00."
+   "quote": "board voted to grant nineteen (19) applications totaling $10,032.00"
   },
   {
-   "motion": "Approve four Forest Management Plans for a ten-year period",
+   "motion": "Deny the Chapter 61A application of Woodward, Matthew for FY2021 for lack of productive farming as seen on GPS maps.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "four (4) forest management plans for a ten (10) year period were submitted, reviewed and approved by the boa."
-  },
-  {
-   "motion": "Table reviewing remaining Chapter 61A applications until the next meeting",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "and voted to table reviewing the remaining applications until the next meeting."
-  },
-  {
-   "motion": "Deny Chapter 61A application for FY2021 (Woodward, Matthew)",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "boa voted to deny chapter 61a application for fy2021 due to lack of productive farming as seen on gps maps."
   },
   {
-   "motion": "Meet on December 3, 2019 at 5:00pm",
+   "motion": "Table review of the remaining Chapter 61A applications until the next meeting.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "voted to table reviewing the remaining applications until the next meeting"
+  },
+  {
+   "motion": "Meet on December 3, 2019 at 5:00pm.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "board voted to meet on december 3, 2019 at 5:00pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision.",
- "cost_usd": 0.058754299999999995
+ "note": "OCR text from macOS Vision, with errors. Page 2 opens with a garbled fragment (\"while dao taylor work station.\"). The Chapter 61A list is partly garbled, and one sentence (\"BOA recommended that a certified letter be\") is cut off. No mover, seconder or vote tally is printed for any motion, so outcomes are \"not stated\" except where the text gives no count. No vote is recorded for adjournment (the minutes say only \"Meeting adjourned at 7:10 pm.\"). The minutes give the Special Town Meeting as November 20, 2019 but the article vote date as 11/12/2019; both are reproduced as printed. The signature block reads \"Lauri Pageith\" above Louise Paquette, and I did not list Pageith as an attendee. The documents-list judgment is mine: the \"Calendar was presented to the BOA\" sentence is treated as the documents list.",
+ "cost_usd": 0.005220139999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman, richard letarte, board"
+  },
+  {
+   "name": "Louis Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board members, louis franco and rena swezey"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board members, louis franco and rena swezey"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "regional assessor harald scheid"
+  },
+  {
+   "name": "Joshua Gendron",
+   "role": "Regional Associate Assessor",
+   "status": "present",
+   "quote": "regional associate assessor, joshua gendron"
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "louise paquette, administrative assessor"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Four (4) Forest Management Plans for a ten-year period were submitted, reviewed and approved by the BOA (no separate vote recorded).",
+   "quote": "four (4) forest management plans for a ten (10) year period were submitted, reviewed and approved by the boa."
+  },
+  {
+   "decision": "The Chapter Lien Release for the Dellicarpini property (Map 110 Parcel 12) was reviewed and signed by the BOA.",
+   "quote": "chapter lien release: reviewed & signed by boa"
+  },
+  {
+   "decision": "Recommended a certified letter in the Woodward Chapter 61A matter (the sentence is cut off in the text).",
+   "quote": "boa recommended that a certified letter be"
+  },
+  {
+   "decision": "The BOA reviewed and signed the reports for the DOR.",
+   "quote": "boa reviewed and signed the reports the dor."
+  },
+  {
+   "decision": "Field Inspector Dale Erskine has retired and has not been replaced; Harald will schedule a meeting with his Associates on cyclical / periodic inspections, look into pictometry imaging technology, and plans a full town canvas inspection before the next revaluation.",
+   "quote": "he informed the board that he will be scheduling a meeting with his associates to discuss cyclical / periodic"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Statutory exemption applications",
+   "what_was_recorded": "The BOA granted nineteen of twenty exemption applications for a stated total amount.",
+   "figures_as_printed": [
+    "$10,032.00"
+   ],
+   "quote": "board voted to grant nineteen (19) applications totaling $10,032.00"
+  },
+  {
+   "topic": "FY20 Budget Adjustment, Line #28 Assessor's Administration",
+   "what_was_recorded": "An amount voted at the 5/4/2019 Town Meeting is to be adjusted by $12,000 for CAMA software costs, leaving an appropriation to amend of $177,720.90, to be voted at the 11/12/2019 Special Town Meeting.",
+   "figures_as_printed": [
+    "$189,720.90",
+    "$12,000",
+    "$177,720.90"
+   ],
+   "quote": "voted at the 5/4/2019 town meeting, the adjustment of $12,000 (related to adjustment in costs for cama software)"
+  },
+  {
+   "topic": "Appropriation to amend, Line #28",
+   "what_was_recorded": "The appropriation to amend the FY20 Assessor's Administration line is stated as $177,720.90.",
+   "figures_as_printed": [
+    "$177,720.90"
+   ],
+   "quote": "the appropriation to amend is $177,720.90."
+  },
+  {
+   "topic": "FY20 LA-4 assessment and classification values as of 1/1/2019",
+   "what_was_recorded": "The BOA reviewed the DOR LA-4 report values by class, with exempt parcels and personal property totals.",
+   "figures_as_printed": [
+    "$1,404,142,854",
+    "$73,850,345",
+    "$25, 130,800",
+    "$44,400,550",
+    "$1,547,564,549",
+    "$82,636,200"
+   ],
+   "quote": "class 1 residential total: $1,404,142,854"
+  },
+  {
+   "topic": "Tax levy growth",
+   "what_was_recorded": "Tax levy growth for FY20 is reported as $366,231.",
+   "figures_as_printed": [
+    "$366,231"
+   ],
+   "quote": "tax levy growth: $366,231"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Statutory exemption applications",
+   "resolution": "19 granted, 1 denied",
+   "quote": "board voted to grant nineteen (19) applications totaling $10,032.00",
+   "tags": [
+    "exemptions",
+    "statutory"
+   ]
+  },
+  {
+   "topic": "FY21 Chapter applications outstanding",
+   "resolution": "reported; second reminder mailed",
+   "quote": "she stated a second mailing reminder for approximately 30 accounts were sent on 9/24/2019.",
+   "tags": [
+    "chapter 61",
+    "chapter applications"
+   ]
+  },
+  {
+   "topic": "Forest Management Plans (Chapter 61)",
+   "resolution": "four plans approved",
+   "quote": "four (4) forest management plans for a ten (10) year period were submitted, reviewed and approved by the boa.",
+   "tags": [
+    "chapter 61",
+    "forest management"
+   ]
+  },
+  {
+   "topic": "Chapter 61A applications",
+   "resolution": "Woodward denied; remaining tabled",
+   "quote": "voted to table reviewing the remaining applications until the next meeting",
+   "tags": [
+    "chapter 61A",
+    "farmland"
+   ]
+  },
+  {
+   "topic": "Chapter Lien Release",
+   "resolution": "reviewed and signed",
+   "quote": "chapter lien release: reviewed & signed by boa",
+   "tags": [
+    "lien release"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting and FY20 budget adjustment",
+   "resolution": "reported",
+   "quote": "the appropriation to amend is $177,720.90.",
+   "tags": [
+    "special town meeting",
+    "budget",
+    "CAMA software"
+   ]
+  },
+  {
+   "topic": "Report by Assessor: DOR reports and LA-4 values",
+   "resolution": "reports reviewed and signed; values reported",
+   "quote": "boa reviewed and signed the reports the dor.",
+   "tags": [
+    "DOR",
+    "LA-4",
+    "valuation"
+   ]
+  },
+  {
+   "topic": "Tax rate setting schedule, LA-15 interim adjustment, field inspector",
+   "resolution": "reported; no action",
+   "quote": "he informed the board that he will be scheduling a meeting with his associates to discuss cyclical / periodic",
+   "tags": [
+    "tax rate",
+    "LA-15",
+    "field inspector",
+    "revaluation"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "December 3, 2019 at 5:00pm set; adjourned 7:10 pm",
+   "quote": "board voted to meet on december 3, 2019 at 5:00pm.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Tax Rate Setting Schedule calendar",
+   "where": "list",
+   "quote": "calendar was presented to the boa regarding the process and dates associated to setting the tax rate."
+  },
+  {
+   "name": "FY 20 LA-4 Assessment/Classification Report, as of 1/1/2019 (5140 parcels)",
+   "where": "list",
+   "quote": "fy 20 : la-4 assessment /classification report : as of 1/1/2019 ( 5140 parcels)"
+  },
+  {
+   "name": "LA-15 Interim Year Adjustment",
+   "where": "text",
+   "quote": "la-15 interim year adjustment: josh reports an average increase of 7.8% in"
+  },
+  {
+   "name": "Letter to Woodward dated Sept. 5, 2019 requesting inspection under Chapter 61A",
+   "where": "text",
+   "quote": "a letter was sent on sept. 5, 2019 requesting an inspection to view the productive land under chapter 61a."
+  },
+  {
+   "name": "Chapter Lien Release for Thomas L. Dellicarpini property (Map 110 Parcel 12, Deed Book 1188 Page 582)",
+   "where": "text",
+   "quote": "released from classification is a 5.8-acre parcel of land situated on 1 lot"
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "exemptions",
+  "Chapter 61",
+  "Chapter 61A",
+  "lien release",
+  "tax rate",
+  "FY20 budget adjustment",
+  "special town meeting",
+  "LA-4 values",
+  "field inspector"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "calendar was presented to the boa"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,778 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2020-06-02",
+ "video_id": "WUrxcH0dKdQ",
+ "video_url": "https://www.youtube.com/watch?v=WUrxcH0dKdQ",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2020-06-02-WUrxcH0dKdQ.json",
+  "sha256": "6532087bcfacd7ceea25d722cacb53323fd17f2e9e4c10709cd1908273885a8a",
+  "caption_lines": 407,
+  "segments": 3794
+ },
+ "recording": {
+  "duration_s": 8461,
+  "duration": "2:21",
+  "spoken_chars": 106652,
+  "words_approx": 17775
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06022020-5201",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-06-02-agenda-5201.txt",
+   "path": "sources/meetings/select-board/2020-06-02-agenda-5201.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06022020-5201",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-06-02-minutes-5201.txt",
+   "path": "sources/meetings/select-board/2020-06-02-minutes-5201.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-03T21:21:19Z",
+  "cost_usd": 0.2462984
+ },
+ "minutes": {
+  "headline": "Select Board reviewed town meeting COVID safety plan, awarded West Street lots bid 3-1, and approved CARES Act request.",
+  "summary": "The board reviewed the safety plan for the June 13 annual town meeting section by section and asked for changes on seating, masks and signage. It also awarded the bid for the 17 and 23 West Street properties over one member's objection, and approved a CARES Act reimbursement submission and a grant support letter. Board members and the police chief spoke about racial injustice and the Minneapolis killing, and a resident raised a trash truck leaking fluid.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Alonzo",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mr. McQuaid",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Ms. Adams",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Jeffries",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Ms. Lemieux",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Chief Moreno",
+    "role": "police chief"
+   },
+   {
+    "name_as_heard": "Chief Sullivan",
+    "role": "fire chief"
+   },
+   {
+    "name_as_heard": "Tim Murphy",
+    "role": "town moderator"
+   },
+   {
+    "name_as_heard": "Attorney Bowen",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Ethan Giles",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 1393,
+    "speaker_as_heard": "George Martin",
+    "topic": "Trash truck leaking fluids and broken glass on Bird Street and nearby; asks the town to get the vendor to fix it."
+   },
+   {
+    "t": 3792,
+    "topic": "Mr. Beardmore asked about a health and safety arbiter at town meeting, written announcements, and masks for those who forget."
+   },
+   {
+    "t": 5057,
+    "speaker_as_heard": "Dave Pacios, 56 Whiting Street",
+    "topic": "Town meeting air handling, and how the finance committee and board will be seated."
+   },
+   {
+    "t": 8040,
+    "speaker_as_heard": "Steve Pacios, 56 Whiting Street",
+    "topic": "Poor cemetery mowing before Memorial Day; urges the board to make an investigation or outside audit of the DPW a goal."
+   }
+  ],
+  "tags": [
+   "elections",
+   "grants",
+   "legal",
+   "personnel",
+   "planning-and-zoning",
+   "public-comment",
+   "public-safety",
+   "town-departments",
+   "town-meeting"
+  ],
+  "votes": [
+   {
+    "motion": "Approve the 994 Northfield Road conservation restriction contingent on execution of the access easement and subordination agreement",
+    "outcome": "passed 4-0 by roll call",
+    "procedural": false,
+    "t": 2320
+   },
+   {
+    "motion": "Return to starting meetings with the Pledge of Allegiance",
+    "moved_by": "Ms. Adams",
+    "outcome": "passed with the chair abstaining (three ayes)",
+    "procedural": false,
+    "t": 5638
+   },
+   {
+    "motion": "Award the bid for 17 and 23 West Street",
+    "outcome": "passed 3-1",
+    "procedural": false,
+    "t": 6137
+   },
+   {
+    "motion": "Approve town manager's request to submit CARES Act reimbursement requests",
+    "outcome": "passed 4-0 by roll call",
+    "procedural": false,
+    "t": 6784
+   },
+   {
+    "motion": "Approve letter of support for the regional CDBG application",
+    "outcome": "passed 4-0 by roll call",
+    "procedural": false,
+    "t": 6962
+   },
+   {
+    "motion": "Approve minutes of March 24 through April 21",
+    "outcome": "passed 4-0 by roll call",
+    "procedural": true,
+    "t": 7022
+   },
+   {
+    "motion": "Adjourn",
+    "outcome": "passed 4-0 by roll call",
+    "procedural": true,
+    "t": 8429
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 5700,
+    "topic": "17 and 23 West Street sale",
+    "what_was_said": "Three bids were received, with the high bid accepted; appraised value was much higher, and a member said the price seemed too low.",
+    "figures_as_heard": [
+     "35 000",
+     "180 000 190 000",
+     "$35 thousand dollars"
+    ]
+   },
+   {
+    "t": 6701,
+    "topic": "CARES Act reimbursement",
+    "what_was_said": "The town is eligible for a stated total for FY20 and FY21; the first FY20 submission is due June 5, with an estimate in the stated range.",
+    "figures_as_heard": [
+     "one million twenty seven thousand seven hundred and seventy one dollars",
+     "a hundred and forty thousand dollars"
+    ]
+   },
+   {
+    "t": 6830,
+    "topic": "Regional CDBG grant",
+    "what_was_said": "Regional CARES-funded block grant for micro-enterprise help and food assistance, with small business grants up to a stated amount.",
+    "figures_as_heard": [
+     "10 000"
+    ]
+   },
+   {
+    "t": 7042,
+    "topic": "Warrants",
+    "what_was_said": "Accounts payable, payroll deduction and payroll warrants were reported as signed the prior week.",
+    "figures_as_heard": [
+     "two million sixty thousand seven hundred ninety six dollars and fifty eight cents",
+     "200 879 and 55 cents",
+     "837 282 dollars and 11 cents"
+    ]
+   },
+   {
+    "t": 5946,
+    "topic": "Property sale procurement",
+    "what_was_said": "The town manager said the RFP process may deter bidders compared with a regular listing; the earlier round drew no bids.",
+    "figures_as_heard": [
+     "45 000"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 5431,
+    "decision": "Town meeting safety plan to be amended: speakers sit near aisle ends, families may sit together, masks encouraged not mandated with a separate unmasked area, and the revised plan goes to the public by email review without a board vote."
+   },
+   {
+    "t": 1746,
+    "decision": "Town manager to follow up with Casella and get back to the resident about the leaking trash truck."
+   },
+   {
+    "t": 7168,
+    "decision": "Outdoor restaurant seating guidance will be an agenda item next week, with four restaurants meeting the board June 9."
+   },
+   {
+    "t": 7499,
+    "decision": "MVP listening session proposed for the June 16 meeting."
+   },
+   {
+    "t": 6681,
+    "decision": "Write-in candidate announcements: the board will seek town counsel's opinion and have the clerk supply how-to information without promoting names."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 12,
+    "t_end": 305,
+    "topic": "Opening, roll call, board comments and town manager answers",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 305,
+    "t_end": 1393,
+    "topic": "Statements on racial injustice and police conduct, announcements and obituaries",
+    "resolution": "informational",
+    "tags": [
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 1393,
+    "t_end": 1767,
+    "topic": "Public comment on trash truck leaks",
+    "resolution": "referred to Casella via town manager",
+    "tags": [
+     "public-comment",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 1767,
+    "t_end": 1974,
+    "topic": "Senior motorcade and COA van driver resignation",
+    "resolution": "informational",
+    "tags": [
+     "personnel",
+     "seniors"
+    ]
+   },
+   {
+    "t_start": 1974,
+    "t_end": 2441,
+    "topic": "994 Northfield Road conservation restriction",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 2441,
+    "t_end": 5473,
+    "topic": "Annual town meeting COVID safety plan",
+    "resolution": "informational with amendments agreed",
+    "tags": [
+     "town-meeting",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 5473,
+    "t_end": 5494,
+    "topic": "FY2021 budget update",
+    "resolution": "no update",
+    "tags": [
+     "budget-fy27"
+    ]
+   },
+   {
+    "t_start": 5494,
+    "t_end": 5659,
+    "topic": "Pledge of Allegiance at Zoom meetings",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 5659,
+    "t_end": 6179,
+    "topic": "Award bid for 17 and 23 West Street",
+    "resolution": "voted",
+    "tags": [
+     "town-departments",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 6179,
+    "t_end": 6701,
+    "topic": "Write-in and sticker campaign information",
+    "resolution": "no resolution",
+    "tags": [
+     "elections",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 6701,
+    "t_end": 6809,
+    "topic": "FY20 CARES Act reimbursement request",
+    "resolution": "voted",
+    "tags": [
+     "grants",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 6809,
+    "t_end": 7002,
+    "topic": "Regional CDBG application support letter",
+    "resolution": "voted",
+    "tags": [
+     "grants",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 7002,
+    "t_end": 7082,
+    "topic": "Minutes and warrants",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 7082,
+    "t_end": 7397,
+    "topic": "Action items: outdoor dining, fuel tanks, charter",
+    "resolution": "informational",
+    "tags": [
+     "economic-development",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 7397,
+    "t_end": 7937,
+    "topic": "Town manager report and COVID updates",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 7937,
+    "t_end": 8040,
+    "topic": "Upcoming schedule",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting",
+     "elections"
+    ]
+   },
+   {
+    "t_start": 8040,
+    "t_end": 8162,
+    "topic": "Public comment on cemetery mowing and DPW",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 8162,
+    "t_end": 8452,
+    "topic": "Closing board comments and adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Some speakers at the safety plan discussion are unidentified.",
+   "Roll-call votes after the first (e.g., pledge, West Street) are partly garbled; the West Street vote is given as 3 to 1.",
+   "Exact quorum, seating capacity, and several figures are unreliable."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 5866,
+    "about": "A member argued the West Street sale price was too low and the property should have been listed more widely; others favored the sale.",
+    "sides": "one member against the sale price versus the chair, two members and the town manager in favor",
+    "words_as_heard": "this doesn't seem like enough money i feel like it's an opportunity to make more money",
+    "kind": "members disagree"
+   },
+   {
+    "t": 8040,
+    "about": "A resident criticised the DPW and called for an investigation or outside audit after cemetery conditions.",
+    "sides": "a resident against DPW management",
+    "words_as_heard": "the condition of the both north and south cemetery going into memorial day weekend was horrendous",
+    "kind": "public criticism"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 1518,
+    "kind": "safety",
+    "about": "Unknown fluids and broken glass left on the street by trash truck where children and dog walkers go.",
+    "who": "a resident",
+    "words_as_heard": "there's many people walking their dogs around this loop all day long and almost the point where it gets dark you got little kids on bikes"
+   },
+   {
+    "t": 3812,
+    "kind": "safety",
+    "about": "Need for an arbiter on health and safety questions at town meeting.",
+    "who": "a resident",
+    "words_as_heard": "there needs to be an arbiter that says this is the way we're going to do it with with a with a health or safety concern in mind"
+   },
+   {
+    "t": 4249,
+    "kind": "liability or legal",
+    "about": "Asking about medical conditions for mask exemptions crosses a privacy line.",
+    "who": "a member",
+    "words_as_heard": "i don't think there's any procedure where we'd be allowed to seek medical or condition based information"
+   },
+   {
+    "t": 6549,
+    "kind": "liability or legal",
+    "about": "Possible liability if the town promotes write-in candidates not on the ballot.",
+    "who": "a member",
+    "words_as_heard": "we should ask town council if there's any liability for the town promoting again pitching names that are not on the ballot"
+   },
+   {
+    "t": 4724,
+    "kind": "safety",
+    "about": "Air recirculation in the auditorium during town meeting.",
+    "who": "a member",
+    "words_as_heard": "have we confirmed that the air is not being recycled in the room"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1994,
+    "name_as_heard": "conservation restriction documents in the Google Drive",
+    "kind": "contract or agreement",
+    "words_as_heard": "in your google drive there are a number of documents",
+    "shown": true
+   },
+   {
+    "t": 2441,
+    "name_as_heard": "safety precautions plan for annual town meeting",
+    "kind": "report",
+    "words_as_heard": "we all should have received a document that was prepared by a all the people involved with town meeting",
+    "shown": true
+   },
+   {
+    "t": 5680,
+    "name_as_heard": "town manager report",
+    "kind": "report",
+    "words_as_heard": "this is also um written out in my town manager report",
+    "shown": true
+   },
+   {
+    "t": 6220,
+    "name_as_heard": "list of write-in candidates",
+    "kind": "other",
+    "words_as_heard": "i put together a list of the candidates that have expressed they would like to be write-in candidates",
+    "shown": true
+   },
+   {
+    "t": 6962,
+    "name_as_heard": "letter of support for the block grant application",
+    "kind": "letter or email",
+    "words_as_heard": "approve the letter of support for the regional proposal of the block grant application",
+    "shown": false
+   },
+   {
+    "t": 7002,
+    "name_as_heard": "minutes of March 24 through April 21",
+    "kind": "prior minutes",
+    "words_as_heard": "minutes of march 24th 28th 31st april 7 april 14th and april 21st",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "cares-fema-reimbursement",
+    "title": "CARES FEMA reimbursement",
+    "question": "How much CARES Act money can the town claim for FY20 and FY21 and what has it spent?",
+    "t": 6701,
+    "words_as_heard": "the total amount that lunenburg is eligible for fy20 and fy21 for karazak money",
+    "data_in_play": [
+     "one million twenty seven thousand seven hundred and seventy one dollars",
+     "a hundred and forty thousand dollars"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "town-owned-land-inventory",
+    "title": "Town-owned land parcels",
+    "question": "Why were the West Street lots sold well below appraised value and how are town parcels sold?",
+    "t": 5700,
+    "words_as_heard": "both properties together according to the sheets provided are valued at a belt 180 000 190 000",
+    "data_in_play": [
+     "35 000",
+     "180 000 190 000"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board awarded the bid for the 17 and 23 West Street properties on a 3-1 vote, after a member said the price seemed too low against appraised value.",
+    "t": 6137
+   },
+   {
+    "line": "The board reviewed the June 13 town meeting COVID safety plan and agreed to amend it on seating and masks, with the revised plan going out by email review without a board vote.",
+    "t": 5431
+   },
+   {
+    "line": "The board approved, 4-0 by roll call, the town manager's request to submit CARES Act reimbursement requests, with the first FY20 submission due June 5.",
+    "t": 6784
+   },
+   {
+    "line": "The board approved, 4-0 by roll call, a letter of support for a regional CDBG application covering micro-enterprise help and food assistance.",
+    "t": 6962
+   },
+   {
+    "line": "The board approved the 994 Northfield Road conservation restriction 4-0, contingent on the access easement and subordination agreement being executed.",
+    "t": 2320
+   }
+  ],
+  "why_it_matters": [
+   "The West Street sale sets what the town receives for two town-owned properties, and the town manager said the RFP process may deter bidders compared with a regular listing.",
+   "CARES Act reimbursement and the regional grant are outside funds that can offset COVID costs and support local small businesses and food assistance, and the safety plan shapes how residents attend and vote at the June 13 town meeting."
+  ],
+  "watch_next": [
+   "The revised town meeting safety plan, to be sent to the public for email review before the June 13 annual town meeting.",
+   "Outdoor restaurant seating guidance on next week's agenda, with four restaurants meeting the board June 9, and a proposed MVP listening session on June 16."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-03T21:21:25Z",
+   "cost_usd": 0.030555099999999998
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06022020-5201",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2020-06-02-minutes-5201.txt",
+   "path": "sources/meetings/select-board/2020-06-02-minutes-5201.pdf"
+  },
+  "official_sha256": "33c8f129b02a80c9b235369e7f17a20fa3a17f47f8da4b89e6203a95eda04a7a",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the main votes (994 Northfield Road easement 4-0, West Street bid 3-1, CARES Act reimbursement 4-0) and on the $35,000, $1,027,771, $140,000 and warrant figures. The Pledge vote, the CDBG letter of support vote, and the town meeting safety plan decision appear only in our minutes, so check the recording against the official record for those three.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 2,
+   "discrepancy": 1,
+   "only_in_ours": 7,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "994 Northfield Road conservation restriction access easement vote",
+    "ours": "Approve the 994 Northfield Road conservation restriction contingent on execution of the access easement and subordination agreement — passed 4-0 by roll call",
+    "official": "motion: m. jeffreys 2nd: d. mcquaid to approve the conservation restriction access easement as presented contingent on the execution of the subordination agreement",
+    "note": "Both record a 4-0 approval contingent on the subordination agreement; wording on what was approved differs slightly but is the same item.",
+    "t": 2320
+   },
+   {
+    "kind": "agree",
+    "about": "17 and 23 West Street bid award vote",
+    "ours": "Award the bid for 17 and 23 West Street — passed 3-1",
+    "official": "to approve the awarding of the bid of $35,000 for the 17 & 23 west street properties vote: mr. mcquaid-aye, ms. adams- nay, mr. jetfreys-aye, mr. alonzo-aye",
+    "note": "Both record 3-1; official shows Ms. Adams voting nay.",
+    "t": 6137
+   },
+   {
+    "kind": "agree",
+    "about": "17 and 23 West Street bid amount",
+    "ours": "17 and 23 West Street sale: 35 000, 180 000 190 000, $35 thousand dollars",
+    "official": "to approve the awarding of the bid of $35,000 for the 17 & 23 west street properties",
+    "note": "The $35,000 bid matches; the other captioned figures (180,000, 190,000) are not in the official minutes.",
+    "t": 5700
+   },
+   {
+    "kind": "agree",
+    "about": "CARES Act reimbursement vote",
+    "ours": "Approve town manager's request to submit CARES Act reimbursement requests — passed 4-0 by roll call",
+    "official": "to approve proceeding with a reimbursement request for fy20 cares act eligible expenses vote: mr. mcquaid-aye, ms. adams-aye, mr. jeffreys-aye, mr. alonzo-aye",
+    "note": "Same vote, 4-0.",
+    "t": 6784
+   },
+   {
+    "kind": "agree",
+    "about": "CARES Act figures",
+    "ours": "one million twenty seven thousand seven hundred and seventy one dollars, a hundred and forty thousand dollars",
+    "official": "eligible amount for fy20 and fy21 is $1,027,771",
+    "note": "Both give $1,027,771 and roughly $140,000.",
+    "t": 6701
+   },
+   {
+    "kind": "agree",
+    "about": "Warrants total",
+    "ours": "two million sixty thousand seven hundred ninety six dollars and fifty eight cents, 200 879 and 55 cents, 837 282 dollars and 11 cents",
+    "official": "warrant #59 20; accounts payable - 5/26/2020 - $2,060,796.58;",
+    "note": "Figures match the official $2,060,796.58, $200,879.55 and $837,282.11.",
+    "t": 7042
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Pledge of Allegiance vote (passed with chair abstaining)",
+    "ours": "Return to starting meetings with the Pledge of Allegiance — passed with the chair abstaining (three ayes)",
+    "official": "",
+    "note": "This vote is not in the official minutes' vote list; check the official minutes and recording to see whether it was taken.",
+    "t": 5638
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "CDBG letter of support vote",
+    "ours": "Approve letter of support for the regional CDBG application — passed 4-0 by roll call",
+    "official": "",
+    "note": "Official minutes record no vote on a regional CDBG letter of support; check the recording and the minutes.",
+    "t": 6962
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Regional CDBG grant figure",
+    "ours": "Regional CDBG grant: 10 000",
+    "official": "",
+    "note": "No CDBG figure appears in the official minutes.",
+    "t": 6830
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Property sale procurement figure",
+    "ours": "Property sale procurement: 45 000",
+    "official": "",
+    "note": "No $45,000 figure appears in the official minutes.",
+    "t": 5946
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Town meeting safety plan decision",
+    "ours": "Town meeting safety plan to be amended: speakers sit near aisle ends, families may sit together, masks encouraged not mandated with a separate unmasked area, and the revised plan goes to the public by email review without a board vote.",
+    "official": "dave passions, 56 whiting street, asked about how the finance committee members would be seated.",
+    "note": "The official minutes record only a resident's seating question and no amendment decision; check the recording for what was decided.",
+    "t": 5431
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Leaking trash truck follow-up with Casella",
+    "ours": "Town manager to follow up with Casella and get back to the resident about the leaking trash truck.",
+    "official": "",
+    "note": "The official minutes list the leaking trash pickup as public comment from George Martin, but record no follow-up with Casella.",
+    "t": 1746
+   },
+   {
+    "kind": "agree",
+    "about": "Outdoor restaurant seating / liquor license extension on next week's agenda",
+    "ours": "Outdoor restaurant seating guidance will be an agenda item next week, with four restaurants meeting the board June 9.",
+    "official": "ms. lemieux stated this would be on next week's agenda.",
+    "note": "Both put the restaurant item on next week's agenda; the June 9 meeting with four restaurants is only in ours.",
+    "t": 7168
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "MVP listening session proposed for June 16",
+    "ours": "MVP listening session proposed for the June 16 meeting.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 7499
+   },
+   {
+    "kind": "agree",
+    "about": "Write-in candidate information decision",
+    "ours": "Write-in candidate announcements: the board will seek town counsel's opinion and have the clerk supply how-to information without promoting names.",
+    "official": "it was suggested to consult with town counsel and provide a general document on the process of running a write-in campaign.",
+    "note": "Both describe consulting town counsel and providing general process information.",
+    "t": 6681
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Conservation Commission and Town fuel tanks",
+    "ours": "",
+    "official": "ms. lemieux will check in with them after their meeting tomorrow night.",
+    "note": "Follow-up on Town fuel tanks is only in the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town charter legislative review status",
+    "ours": "",
+    "official": "ms. lemieux will have to check on that status.",
+    "note": "Only the official minutes record this follow-up.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Police chief name",
+    "ours": "Chief Moreno (police chief)",
+    "official": "police chief marino",
+    "note": "Captions misheard the name Marino.",
+    "official_reading": "Marino",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board member name Jeffries",
+    "ours": "Mr. Jeffries (member)",
+    "official": "katey adams, michael-ray jeffreys",
+    "note": "Spelling differs; the official minutes give Jeffreys.",
+    "official_reading": "Jeffreys",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Board members and officials present",
+    "ours": "Mr. Alonzo (chair); Mr. McQuaid; Ms. Adams; Ms. Lemieux; Chief Sullivan; Tim Murphy",
+    "official": "members present: tom alonzo, chairman; damon mcquaid, clerk; katey adams, michael-ray jeffreys",
+    "note": "Same attendees. The official minutes also list Phyllis Luck as absent and residents who spoke.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attorney Bowen",
+    "ours": "Attorney Bowen (presenter)",
+    "official": "attorney robert bowen, 686 mass ave., representing settlers solar llc, was here for the bos to sign",
+    "note": "Same presenter.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Ethan Giles as presenter",
+    "ours": "Ethan Giles (presenter)",
+    "official": "",
+    "note": "Ethan Giles does not appear in the official minutes.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-03T21:22:58Z",
+   "cost_usd": 0.059865100000000004
+  }
+ }
+}

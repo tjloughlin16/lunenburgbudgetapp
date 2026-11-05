@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2020-04-21",
  "docid": "5196",
@@ -12,23 +12,408 @@
  },
  "votes": [
   {
-   "motion": "Approve the August 22nd Bicycles Battling Cancer Ride as long as the state of emergency has been lifted and there are no further health and safety concerns",
+   "motion": "Approve the August 22nd Bicycles Battling Cancer Ride as long as the state of emergency has been lifted and there are no further health and safety concerns.",
    "moved_by": "K. Adams",
    "seconded_by": "P. Luck",
    "outcome": "passed 3-0-1",
    "procedural": false,
-   "quote": "motion: k. adams 2n°: p. luck to approve the august 22nd bicycles battling cancer ride as long as the state of emergency has been lifted and there are no further health and safety concerns discussion: mr. jeffreys stated they are already advertising this and asked what kind of support they are looking for from the town. mr. alonzo stated he did not think were even asking for a police detail, they are marking the route ahead of time for the riders. mr. jeffreys asked if the saturday date might be a problem as the event usually was held on a sunday. mr. alonzo did not believe so as the route in town is only a couple of miles. vote: ms. luck-aye, ms. adams-aye, mr. jeffreys- abstain, mr. alonzo - aye"
+   "quote": "to approve the august 22nd bicycles battling cancer ride as long as the state of emergency has been lifted"
   },
   {
-   "motion": "Enter Executive Session to discuss strategy with respect to pending litigation and collective bargaining, and to adjourn the meeting after exiting Executive Session",
+   "motion": "Enter executive session under M.G.L. c. 30A, § 21, Reason #3, on pending litigation and collective bargaining, and adjourn after exiting executive session.",
    "moved_by": "K. Adams",
    "seconded_by": "P. Luck",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: k. adams 2nd: p. luck to enter executive session pursuant to m.g.l. c. 30a, § 21, reason #3, to discuss strategy with respect to pending litigation and the chair so declares that an open meeting may have a detrimental effect on the negotiating position of the governmental body (elizabeth guglietti, dangerous dogs) and to enter executive session pursuant to m.g.l. c. 30a, § 21, reason #3, to discuss strategy with respect to collective bargaining and the chair so declares that an open meeting may have a detrimental effect on the negotiating position of the governmental body and to adjourn the meeting after exiting executive session (clerical, fire, and teacher unions) vote: ms. luck-aye, ms. adams- aye, mr. jeffreys- aye, mr. alonzo -aye"
+   "quote": "to enter executive session pursuant to m.g.l. c. 30a, § 21, reason #3, to discuss strategy with"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan from macOS Vision. Two votes recorded: one on the charity bike ride (passed with one abstention), one procedural motion to enter executive session and adjourn (unanimous). No votes recorded on CPA discussion, budget discussion, or other agenda items that were debated but not voted on.",
- "cost_usd": 0.1240925
+ "note": "Remote Zoom meeting; text is OCR of scanned minutes. The first public comment speaker on page 2 is not named in the extracted text. Several OCR errors: the Town Manager is called 'Mr. Lemieux' once (likely Ms.), and the signature block is garbled. The minutes do not print a separate adjournment vote; the executive session motion includes adjourning after exiting. Mr. McQuaid is listed present but says he is joining only for public comment, and he does not appear in any recorded vote tally. Votes are recorded as printed; no totals beyond the individual tallies.",
+ "cost_usd": 0.012891220000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; damon mcquaid,"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; phyllis luck, vice chairman; damon mcquaid,"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "damon mcquaid, clerk; katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Katey Adams",
+   "status": "present",
+   "quote": "damon mcquaid, clerk; katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "status": "present",
+   "quote": "damon mcquaid, clerk; katey adams, michael-ray jeffreys"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux; rebecca lantry, historical commission chair"
+  },
+  {
+   "name": "Rebecca Lantry",
+   "role": "Historical Commission Chair",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux; rebecca lantry, historical commission chair"
+  },
+  {
+   "name": "Teri Burchfield",
+   "role": "Finance Committee Chair",
+   "status": "remote",
+   "quote": "teri burchfield, finance committee chair, via telephone, stated she is confused by what"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "not stated",
+   "quote": "dave passios, 56 whiting street, in regards to a vote that the bos took at their last meeting,"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "current member of the Conservation Commission",
+   "status": "not stated",
+   "quote": "carl luck, 50 sunset lane, thanked mr. jeffreys for bringing up concerns about the proposed"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The CPA ballot question for the Annual Town Election was passed over, as it could not be done under state deadlines.",
+   "quote": "this was passed over as not being done due to state deadlines"
+  },
+  {
+   "decision": "Ms. Luck's request to put the fuel tank location discussion on a future agenda with the pertinent parties was not placed on the next week's agenda; Mr. Alonzo will confer with Ms. Lemieux.",
+   "quote": "mr. alonzo stated he would confer with ms. lemieux but it will not be on next weeks' agenda."
+  },
+  {
+   "decision": "Ms. Luck, Ms. Adams and Mr. Jeffreys indicated they wanted a budget with no 2.5% increases, capital purchases put on hold, and budgets reduced short of letting staff go.",
+   "quote": "wanted to see a budget consisting of the following: no 2.5% increases, capital purchases put on hold"
+  },
+  {
+   "decision": "Ms. Lantry will try to get information on the value of the CPA to homeowners to Mr. Jeffreys via email.",
+   "quote": "will try to get that information to him via email."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY21 excess levy capacity in Town Manager recommendation",
+   "what_was_recorded": "Ms. Lemieux said her recommendation carries excess levy capacity that would not be raised at Annual Town Meeting.",
+   "figures_as_printed": [
+    "$812,000"
+   ],
+   "quote": "there is $812,000 excess levy capacity in that recommendation, which means"
+  },
+  {
+   "topic": "New Growth estimate",
+   "what_was_recorded": "Town Manager awaits a confirmed New Growth estimate of $173,000, an increase of $43,000 from her adjusted estimate of $130,000.",
+   "figures_as_printed": [
+    "$173,000",
+    "$43,000",
+    "$130,000"
+   ],
+   "quote": "i am awaiting a confirmed new growth estimate of $173,000 from our regional assessing firm"
+  },
+  {
+   "topic": "School budget increase",
+   "what_was_recorded": "The Town Manager's recommendation includes a School budget reflecting a 1.58% increase.",
+   "figures_as_printed": [
+    "1.58%"
+   ],
+   "quote": "as well as a school budget reflecting a 1.58% increase."
+  },
+  {
+   "topic": "CPA surcharge cost impact on homeowners",
+   "what_was_recorded": "Ms. Luck's question on the CPA surcharge cost impact was answered with the surcharge for an average home and for homes at half, twice and three times the average value.",
+   "figures_as_printed": [
+    "$332,447",
+    "$100k",
+    "3%",
+    "$126.35",
+    "$166,223",
+    "$35.99",
+    "$664,894",
+    "$307.07",
+    "$997,341",
+    "$487.79",
+    "18.12"
+   ],
+   "quote": "the average residential home value in lunenburg is $332,447 and with $100k exemption and 3%"
+  },
+  {
+   "topic": "CPA surcharge rate options",
+   "what_was_recorded": "Ms. Lantry said the surcharge could be set as low as .5% and noted the 3% maximum.",
+   "figures_as_printed": [
+    ".5%",
+    "3%"
+   ],
+   "quote": "we could go to as little as .5% just to get on board and raise the limit later."
+  },
+  {
+   "topic": "CPA state reimbursement match",
+   "what_was_recorded": "Ms. Lantry said smaller towns would receive a 100% state match if they adopt the maximum 3% surcharge; the minutes note this is a guideline with no guaranteed allotment.",
+   "figures_as_printed": [
+    "100%",
+    "3%"
+   ],
+   "quote": "smaller towns would receive 100% match if they go for"
+  },
+  {
+   "topic": "Late fees and interest on tax bills",
+   "what_was_recorded": "Public comment asked the board to change the tax due date rather than waive late fees and interest; Ms. Lemieux said the waiver runs through June 29th under Department of Revenue guidelines.",
+   "figures_as_printed": [],
+   "quote": "waiving late fees and interest on tax bills due on may 1."
+  },
+  {
+   "topic": "DPW fueling station cost and schedule",
+   "what_was_recorded": "Public comment said the fueling station location would affect the project's schedule and cost.",
+   "figures_as_printed": [],
+   "quote": "the impact on the schedule and cost of this project due to this choice of location."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "not stated",
+   "topic": "town values and the pandemic",
+   "quote": "i certainly do not get that vibe. i want to remind that all of us need to be vigilant"
+  },
+  {
+   "speaker": "Mr. McQuaid",
+   "topic": "family COVID-19 case",
+   "quote": "as his wife tested positive for the covid -19 virus on saturday."
+  },
+  {
+   "speaker": "Dave Passios",
+   "topic": "waiving late fees and interest on tax bills",
+   "quote": "dave passios, 56 whiting street, in regards to a vote that the bos took at their last meeting,"
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "current member of the Conservation Commission",
+   "topic": "DPW fueling station location in the Mulpus Brook riverfront",
+   "quote": "carl luck, 50 sunset lane, thanked mr. jeffreys for bringing up concerns about the proposed"
+  },
+  {
+   "speaker": "Ms. Adams",
+   "topic": "best wishes to families dealing with coronavirus",
+   "quote": "ms. adams expressed best of luck to mr. mcquaid and other families dealing with the coronavirus."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (first session)",
+   "resolution": "heard",
+   "quote": "mr. mcquaid stated he would only be joining the meeting for the public comment this evening.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "none",
+   "quote": "there were no announcements at this time.",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Appointment: American Cancer Society Bicycles Battling Cancer Ride, August 22, 2020",
+   "resolution": "approved 3-0-1, Jeffreys abstaining",
+   "quote": "to approve the august 22nd bicycles battling cancer ride as long as the state of emergency has been lifted",
+   "tags": [
+    "event approval",
+    "road use"
+   ]
+  },
+  {
+   "topic": "Meeting with Rebecca Lantry on CPA warrant article and ballot question",
+   "resolution": "discussed; ballot question passed over",
+   "quote": "mr. alonzo informed ms. lantry that there were questions from the bos members last week",
+   "tags": [
+    "Community Preservation Act",
+    "ballot question",
+    "timing"
+   ]
+  },
+  {
+   "topic": "Interviews, appointments, re-appointments, resignations",
+   "resolution": "none",
+   "quote": "there were none this evening.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Town Manager COVID-19 update",
+   "resolution": "informational",
+   "quote": "ms. lemieux highlighted the updates since last week.",
+   "tags": [
+    "COVID-19",
+    "town facilities",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Action file: fuel tank location",
+   "resolution": "no action; to confer on future agenda",
+   "quote": "ms. luck wanted to put the location of the fuel tanks discussion on a future agenda",
+   "tags": [
+    "DPW fueling station",
+    "action file"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "none",
+   "quote": "committee reports- there were none this evening.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Old business 1: proposed CPA ballot question for Annual Town Election",
+   "resolution": "passed over",
+   "quote": "this was passed over as not being done due to state deadlines",
+   "tags": [
+    "Community Preservation Act",
+    "ballot question"
+   ]
+  },
+  {
+   "topic": "Old business 2: review of Annual Town Meeting warrant articles",
+   "resolution": "deferred to April 28 meeting",
+   "quote": "this will be discussed at the april 28 meeting.",
+   "tags": [
+    "warrant articles",
+    "annual town meeting"
+   ]
+  },
+  {
+   "topic": "Old business 3: FY21 budget, capital plan, five-year forecast",
+   "resolution": "discussed; no vote; budget direction stated",
+   "quote": "discussion on fiscal year 2021 budget, fy21 capital plan, and five year financial forecast-",
+   "tags": [
+    "FY21 budget",
+    "capital plan",
+    "levy",
+    "Finance Committee"
+   ]
+  },
+  {
+   "topic": "Town Manager report: vacancies, fuel tank, FY21 updates, other departments",
+   "resolution": "informational",
+   "quote": "talent bank forms can be obtained on the town website and forwarded to the board of selectmen's",
+   "tags": [
+    "talent bank",
+    "fuel tank",
+    "FY21",
+    "Sewer Commission"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "noted; next meeting April 28",
+   "quote": "mr. alonzo stated this board will meet again on april 28",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (second session)",
+   "resolution": "heard",
+   "quote": "ms. adams expressed best of luck to mr. mcquaid and other families dealing with the coronavirus.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive session and adjournment",
+   "resolution": "entered executive session; meeting adjourned 7:48 p.m.",
+   "quote": "the meeting adjourned at 7:48 p.m.",
+   "tags": [
+    "executive session",
+    "litigation",
+    "collective bargaining"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Informational guideline release from the Division of Local Services (CPA timeline for town meeting and ballot vote)",
+   "where": "text",
+   "quote": "ms. lemieux directed the bos to an informational guideline release from the division of local services outlining the timeline"
+  },
+  {
+   "name": "Request letter from Mark Walter for the Bicycles Battling Cancer ride",
+   "where": "text",
+   "quote": "he read aloud the request from mark walter:"
+  },
+  {
+   "name": "Map of Lunenburg roads used by the Bicycles Battling Cancer ride",
+   "where": "text",
+   "quote": "for convenience | have attached a map that shows just the"
+  },
+  {
+   "name": "Ms. Luck's four questions on the CPA surcharge",
+   "where": "text",
+   "quote": "ms. luck had submitted four questions and mr. alonzo read them aloud for the meeting viewers:"
+  },
+  {
+   "name": "Governor's Order Suspending Certain Provisions of the Open Meeting Law, G. L. c. 30A, § 20",
+   "where": "text",
+   "quote": "in accordance with the governor's order suspending certain provisions of the open meeting"
+  },
+  {
+   "name": "Request for Determination of Applicability for the DPW fuel tank project",
+   "where": "text",
+   "quote": "participated in last week's hearing on the request for determination for this work"
+  },
+  {
+   "name": "DPW Director email to the Conservation Commission",
+   "where": "text",
+   "quote": "after the conservation hearing, the dpw director sent an email to the commission."
+  },
+  {
+   "name": "Revenue Expense worksheet with adjustments for the Annual Town Meeting",
+   "where": "text",
+   "quote": "revenue expense worksheet that reflects adjustments that include revised revenue estimates"
+  },
+  {
+   "name": "Talent bank forms",
+   "where": "text",
+   "quote": "talent bank forms can be obtained on the town website and forwarded to the board of selectmen's"
+  }
+ ],
+ "tags": [
+  "COVID-19",
+  "Community Preservation Act",
+  "FY21 budget",
+  "DPW fuel tank",
+  "tax bills",
+  "public comment",
+  "executive session",
+  "event approval",
+  "remote meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

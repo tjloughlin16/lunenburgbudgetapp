@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2020-09-28",
  "docid": "4088",
@@ -12,15 +12,127 @@
  },
  "votes": [
   {
-   "motion": "Continue the Hearing to October 26, 2020 at 6:35 PM",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Brenner",
+   "motion": "Continue the BrightFarms public hearing to October 26, 2020, 6:35 PM.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Brenner",
    "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "p. bertram made motion to continue the hearing to october 26, 2020, 6:35 pm, m. brenner seconded, roll call vote - t. cole, aye; p. bertram, aye; m. brenner, aye. vote passed 3-0."
+   "procedural": false,
+   "quote": "p. bertram made motion to continue the hearing to october 26, 2020, 6:35 pm, m. brenner seconded"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Scanned minutes, readable text. One procedural vote to continue a public hearing recorded with roll call votes.",
- "cost_usd": 0.0917625
+ "note": "No dollar figures or money discussed in the minutes. No decision on the application was recorded; the only vote was the continuation. Text is extracted from a PDF with some split words and stray spacing, copied as printed where possible.",
+ "cost_usd": 0.0037624200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present; paula bertram, present; matthew brenner, present."
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present; paula bertram, present; matthew brenner, present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present; paula bertram, present; matthew brenner, present."
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present; paula bertram, present; matthew brenner, present."
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "matthew brenner, present. absent: erik torgersen"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director"
+  },
+  {
+   "name": "Sean O'Neill",
+   "role": "presenter on behalf of BrightFarms LLC (representing the applicant)",
+   "status": "present",
+   "quote": "presentation given by sean o'neill on behalf of brightfarms llc"
+  },
+  {
+   "name": "Pat Kelly",
+   "role": "member of the public, 117 Chase Road",
+   "status": "present",
+   "quote": "pat kelly, 117 chase road - inquired about hours for shipping/receiving and the loading dock on the rear of the building."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Pat Kelly",
+   "stated_role": "117 Chase Road",
+   "topic": "shipping/receiving hours, loading dock, outside lighting",
+   "quote": "pat kelly, 117 chase road - inquired about hours for shipping/receiving and the loading dock on the rear of the building."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: BrightFarms, 361 Massachusetts Avenue (site plan approval and stormwater permit)",
+   "resolution": "continued to October 26, 2020",
+   "quote": "the hearing continuation, via zoom video conference, was to hear and review a pplications for site plan approval",
+   "tags": [
+    "public hearing",
+    "site plan",
+    "stormwater",
+    "greenhouse",
+    "BrightFarms"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Proposed Conditions Exhibit dated 09.28.2020",
+   "where": "list",
+   "quote": "documents used at meeting: proposed conditions exhibit dated 09.28.2020"
+  },
+  {
+   "name": "Proposed Site Profile Exhibit dated 09.28.2020",
+   "where": "list",
+   "quote": "proposed site profile exhibit dated 09.28.2020"
+  },
+  {
+   "name": "Draft MEPA filing for pre-review",
+   "where": "text",
+   "quote": "bf submitted to mepa (massachusetts environmental policy act) a draft filing for pre -review"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "public hearing",
+  "site plan approval",
+  "stormwater permit",
+  "greenhouse",
+  "BrightFarms",
+  "361 Massachusetts Avenue",
+  "wetlands",
+  "MEPA",
+  "parking",
+  "Zoom"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

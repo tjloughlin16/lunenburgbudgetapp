@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2020-07-14",
  "docid": "770",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from April 8, 2020 and April 13, 2020",
+   "motion": "Approve the minutes of April 8, 2020 and April 13, 2020.",
    "moved_by": "Lou Franco",
    "seconded_by": "Rich",
    "outcome": "passed",
@@ -20,15 +20,15 @@
    "quote": "lou franco motioned to approve the minutes for both april 8, 2020 and april 13, 2020. rich seconded the motion. all in favor."
   },
   {
-   "motion": "Approve the appointment of Susan Byrne as Principal Assessor",
+   "motion": "Approve the appointment of Susan Byrne as the Principal Assessor.",
    "moved_by": "Rich Letarte",
    "seconded_by": "Lou",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "rich letarte motioned to approve the appointment of susan byrne as the principal assessor. lou seconded the motion. all in"
+   "quote": "rich letarte motioned to approve the appointment of susan byrne as the principal assessor. lou seconded the motion."
   },
   {
-   "motion": "Ratify the response letter to the Open Meeting Law complaint filed by Carl Luck dated 6/29/20",
+   "motion": "Ratify the response letter to the Open Meeting Law complaint filed by Carl Luck, for filing with the Attorney General.",
    "moved_by": "Lou",
    "seconded_by": "Rena",
    "outcome": "passed",
@@ -37,6 +37,149 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0807045
+ "note": "OCR text (macOS Vision). Page 1 ends mid-motion: the vote on ratifying Susan Byrne as Principal Assessor is cut off at 'All in' so its result is not stated. Page 2 begins mid-sentence and the heading of the Tyler/RRG discussion item is not in the text. Signature line is garbled by OCR. No public comment section is recorded. The adjournment has no recorded motion. No dollar figures appear in the text.",
+ "cost_usd": 0.00401242,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: chairman, richard letarte, board members, louis franco, and rena swezey and"
+  },
+  {
+   "name": "Louis Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: chairman, richard letarte, board members, louis franco, and rena swezey and"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: chairman, richard letarte, board members, louis franco, and rena swezey and"
+  },
+  {
+   "name": "Sheila Craigen",
+   "role": "Administrative Assessor (Temporarily appointed)",
+   "status": "present",
+   "quote": "administrative assessor (temporarily appointed), sheila craigen, town manager, heather lemieux."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "administrative assessor (temporarily appointed), sheila craigen, town manager, heather lemieux."
+  },
+  {
+   "name": "Susan Byrne",
+   "role": "Also present",
+   "status": "present",
+   "quote": "also present: susan byrne"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Manager to notify Town Council that it can send the Open Meeting Law response letter to the Attorney General's office.",
+   "quote": "heather stated she will notify town council they can send the letter to the attorney general office."
+  },
+  {
+   "decision": "Board agreed to further discuss the Tyler system conversion and vendor question once Susan Byrne starts her position.",
+   "quote": "rich stated he agrees with the suggestion and we should further discuss once susan starts her position."
+  },
+  {
+   "decision": "Rena Swezey offered to contact possible alternate vendors to inquire.",
+   "quote": "rena offered to make some calls to inquire."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "opened meeting, roll call, remote-meeting rules recited",
+   "quote": "rich opened the meeting at 10:00 am with roll call and the recital of the rules for this remote and recorded",
+   "tags": [
+    "remote meeting",
+    "roll call"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved minutes of April 8 and April 13, 2020",
+   "quote": "lou franco motioned to approve the minutes for both april 8, 2020 and april 13, 2020. rich seconded the motion. all in favor.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Ratification of Town Manager's appointment of Principal Assessor",
+   "resolution": "motion made to approve Susan Byrne; result not stated in text",
+   "quote": "rich letarte motioned to approve the appointment of susan byrne as the principal assessor. lou seconded the motion.",
+   "tags": [
+    "appointment",
+    "principal assessor",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Response to Open Meeting Law complaint filed by Carl Luck",
+   "resolution": "response letter ratified; Town Manager to notify Town Council to send to AG",
+   "quote": "review, consider and vote on response to open meeting law complaint filed by carl luck",
+   "tags": [
+    "open meeting law",
+    "complaint",
+    "attorney general"
+   ]
+  },
+  {
+   "topic": "Tyler system conversion and RRG contract",
+   "resolution": "discussed; consider alternate vendor; defer until Susan Byrne starts",
+   "quote": "discussion ensued on the tyler system and the obligation of rrg (regional resource group) to see the conversion through despite their contract coming to an end.",
+   "tags": [
+    "software",
+    "Tyler Technologies",
+    "vendor",
+    "RRG"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:25am",
+   "quote": "meeting adjourned at 10:25am.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Response letter to Open Meeting Law complaint (filed with the Attorney General)",
+   "where": "list",
+   "quote": "boa members agreed they were all given copies of the response letter and all had reviewed prior to the meeting."
+  },
+  {
+   "name": "Open Meeting Law Complaint filed by Carl Luck dated 6/29/20 (on file with the Town Clerk)",
+   "where": "text",
+   "quote": "review, consider and vote on response to open meeting law complaint filed by carl luck"
+  }
+ ],
+ "tags": [
+  "Board of Assessors",
+  "remote meeting",
+  "COVID-19",
+  "principal assessor",
+  "open meeting law",
+  "Tyler Technologies",
+  "software conversion",
+  "vendor",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "boa members agreed they were all given copies of the response letter"
+ },
+ "dropped_unquoted_by_field": {}
 }

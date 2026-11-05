@@ -1,0 +1,56 @@
+{
+ "board": "Finance Committee",
+ "board_slug": "finance-committee",
+ "meeting_date": "2020-05-28",
+ "source": {
+  "sha256": "937101192657553e2182729301884d0d162052f3c22c41135a648fb23e55a806",
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2020-05-28-2Ue2BrWiSPo.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "232",
+    "fiscal_year": 2021,
+    "kind": "free_cash",
+    "scope": "town",
+    "statement": "Unappropriated free cash balance after capital and stabilization allocations.",
+    "status": "announced",
+    "t": 2060,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "10%",
+    "fiscal_year": 2021,
+    "kind": "state_aid",
+    "scope": "town",
+    "statement": "Town manager confident the budget can absorb a ten percent state aid drop.",
+    "status": "announced",
+    "t": 2131,
+    "who": "the town manager"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "capital plan",
+    "condition": "if state aid is cut",
+    "fiscal_year": 2021,
+    "prediction": "Capital spending may need to be deferred to November if revenue falls",
+    "scope": "town",
+    "t": 985,
+    "who": "a member"
+   }
+  ]
+ },
+ "video_id": "2Ue2BrWiSPo",
+ "video_url": "https://www.youtube.com/watch?v=2Ue2BrWiSPo",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-11-03T22:56:11Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2020-09-15",
  "docid": "3476",
@@ -12,55 +12,178 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of July 15, 2020 as presented",
+   "motion": "Accept the July 15, 2020 minutes as presented.",
    "moved_by": "D. MacDonald",
    "seconded_by": "E. Arnold",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by d. macdonald to accept the minutes as presented; second e. arnold roll call vote: all in favor"
+   "quote": "motion by d. macdonald to accept the minutes as presented; second e. arnold"
   },
   {
-   "motion": "Nominate E. Arnold as the committee Chairman",
+   "motion": "Nominate E. Arnold as committee Chairman.",
    "moved_by": "D. MacDonald",
    "seconded_by": "J. Bilotta",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion by d. macdonald to nominate e. arnold as the committee chairman; second: j. bilotta roll call vote: all in favor"
+   "procedural": false,
+   "quote": "motion by d. macdonald to nominate e. arnold as the committee chairman; second: j. bilotta"
   },
   {
-   "motion": "Nominate J. Bilotta as Vice Chairman",
+   "motion": "Nominate J. Bilotta as Vice Chairman.",
    "moved_by": "D. MacDonald",
    "seconded_by": "E. Arnold",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion by d. macdonald to nominate j. bilotta as vice chairman; second: e. arnold roll call vote: all in favor"
+   "procedural": false,
+   "quote": "motion by d. macdonald to nominate j. bilotta as vice chairman; second: e. arnold"
   },
   {
-   "motion": "Nominate S. Andrews as Clerk",
+   "motion": "Nominate S. Andrews as Clerk.",
    "moved_by": "D. MacDonald",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion by d. macdonald to nominate s. andrews as clerk; second: d. fortune roll call vote: all in favor"
+   "procedural": false,
+   "quote": "motion by d. macdonald to nominate s. andrews as clerk"
   },
   {
-   "motion": "Approve the recommendation with amendment to clarify tree work for the Intermittent Heavy Equipment Operator, to be placed as Grade 9 in the Salary Administration Plan",
+   "motion": "Approve the recommendation, with amendment to clarify tree work, to place the Intermittent Heavy Equipment Operator at Grade 9 in the SAP, for submission to the Special Town Meeting.",
    "moved_by": "J. Bilotta",
    "seconded_by": "E. Arnold",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by j. bilotta to approve the recommendation with amendment to clarify tree work for the intermittent heavy equipment operator, to be placed as a grade 9 in the sap. it will be submitted to the special town meeting for final approval by the board of selectman. second: e. arnold roll call vote: all in favor"
+   "quote": "motion by j. bilotta to approve the recommendation with amendment to clarify tree work for the intermittent heavy equipment operator, to be placed as a grade 9 in the sap."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 5:35pm.",
    "moved_by": "J. Bilotta",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: j. bilotta: adjourn meeting at 5:35pm second: s. andrews roll call vote to adjourn: all in favor"
+   "quote": "adjourn meeting at 5:35pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0861495
+ "note": "Zoom meeting; the minutes say all attendees were online, so attendance is recorded as remote. Roll call votes are recorded only as \"All in Favor\" with no vote count. No dollar figures, transfers, or public comment appear in the text. The Principal Assessor position was approved at an earlier meeting and is only referenced here. Minutes do not list documents used.",
+ "cost_usd": 0.00450012,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave MacDonald",
+   "status": "remote",
+   "quote": "meeting began at 5:00pm with all attendee's online; eric arnold presiding as chairman"
+  },
+  {
+   "name": "Eric Arnold",
+   "role": "Chairman",
+   "status": "remote",
+   "quote": "meeting began at 5:00pm with all attendee's online; eric arnold presiding as chairman"
+  },
+  {
+   "name": "Sue Andrews",
+   "status": "remote",
+   "quote": "attendees: dave macdonald, eric arnold, sue andrews, donna fortune, joanna bilotta"
+  },
+  {
+   "name": "Donna Fortune",
+   "status": "remote",
+   "quote": "attendees: dave macdonald, eric arnold, sue andrews, donna fortune, joanna bilotta"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "status": "remote",
+   "quote": "attendees: dave macdonald, eric arnold, sue andrews, donna fortune, joanna bilotta"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "remote",
+   "quote": "also present: heather lemieux, town manager, julie belliveau, asst. town manager/hr director"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "remote",
+   "quote": "also present: heather lemieux, town manager, julie belliveau, asst. town manager/hr director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board determined that the Intermittent Heavy Equipment Operator job description allows flexibility in directing public works assignments by the Director of Public Works.",
+   "quote": "it was determined that the job description allowed for flexibility in the direction of various public works assignments by the director of public works."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved July 15, 2020 minutes",
+   "quote": "minutes of the july 15, 2020 meeting reviewed",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New members",
+   "resolution": "no action; new members introduced",
+   "quote": "e. arnold introduced two new members to the personnel committee, joanna bilotta and donna fortune.",
+   "tags": [
+    "committee membership"
+   ]
+  },
+  {
+   "topic": "Reorganization of committee",
+   "resolution": "elected Chairman, Vice Chairman and Clerk",
+   "quote": "the group discussed how it would be organized during the next appointment period.",
+   "tags": [
+    "officers",
+    "committee reorganization"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting article: Salary Administration Plan",
+   "resolution": "recommended with amendment; Grade 9 for Intermittent Heavy Equipment Operator",
+   "quote": "h. lemieux presented the proposed article to the special town meeting that would recommend the updating of the salary administration plan",
+   "tags": [
+    "salary administration plan",
+    "special town meeting",
+    "job grading",
+    "public works"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 5:35pm",
+   "quote": "adjourn meeting at 5:35pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Job description for the Intermittent Heavy Equipment Operator",
+   "where": "text",
+   "quote": "the job description for the intermittent heavy equipment operator was presented"
+  },
+  {
+   "name": "Principal Assessor job description and grade level assignment at Grade 15",
+   "where": "text",
+   "quote": "the principal assessor's job description and grade level assignment at grade 15, were reviewed and"
+  }
+ ],
+ "tags": [
+  "personnel",
+  "salary administration plan",
+  "committee reorganization",
+  "special town meeting",
+  "job descriptions",
+  "grading",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

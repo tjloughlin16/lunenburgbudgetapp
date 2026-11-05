@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-08-12",
  "docid": "4028",
@@ -12,23 +12,254 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from July 22, 2019",
-   "moved_by": "Gregory Bittner",
-   "seconded_by": "Tanner Cole",
+   "motion": "Approve the minutes of 07/22/19.",
+   "moved_by": "G. Bittner",
+   "seconded_by": "T. Cole",
    "outcome": "passed",
    "procedural": true,
    "quote": "g. bittner made motion to approve, t. cole seconded, all aye."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Gregory Bittner",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "G. Bittner",
    "outcome": "passed",
    "procedural": true,
    "quote": "p. bertram made motion to adjourn, g. bittner seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two procedural votes recorded. Discussions of earth removal bylaw, master plan, and economic development committee were noted as continuing at future meetings, but no votes were taken on those items.",
- "cost_usd": 0.0805255
+ "note": "Text extraction of a typed minutes document; no scan issues. Only two motions are recorded, both by voice with 'all aye' and no numeric count printed. Rhonda Lisio's resignation is announced but she is not listed as taking part. Marjorie J. Boggio appears only in the letterhead, so she is not listed as an attendee. The minutes give no dollar figures. The UNITIL hearing minutes are described as separate and are not in this text.",
+ "cost_usd": 0.005302619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, gregory bittner, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, gregory bittner, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, gregory bittner, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, gregory bittner, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, gregory bittner, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "public commenter",
+   "status": "not stated",
+   "quote": "katey adams- noted one of the select board's goals is to focus on the old primary school lot."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Master Plan item tabled, awaiting grant approval.",
+   "quote": "tabled awaiting grant approval"
+  },
+  {
+   "decision": "Earth Removal discussion (draft Bylaw and draft Rules and Regulations) to continue at the September 9 meeting.",
+   "quote": "discussion will continue at the september 9th meeting."
+  },
+  {
+   "decision": "Economic development committee discussion to continue at the August 26 Board meeting.",
+   "quote": "discussion will continue at the august 26th board meeting."
+  },
+  {
+   "decision": "Solar Energy Systems bylaw tentatively scheduled for discussion at the August 26 meeting.",
+   "quote": "tentatively to be discussed at the august 26th meeting."
+  },
+  {
+   "decision": "Off Street Parking & Loading Areas bylaw item placed on hold.",
+   "quote": "lunenburg code, section 250- 6.1., off street parking & loading areas- on hold"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Katey Adams",
+   "topic": "old primary school lot",
+   "quote": "katey adams- noted one of the select board's goals is to focus on the old primary school lot."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approval 07/22/19",
+   "resolution": "approved",
+   "quote": "g. bittner made motion to approve, t. cole seconded, all aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "storm water task force- working on public outreach",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Public hearing: UNITIL",
+   "resolution": "see separate minutes; hearing continued to September 23",
+   "quote": "public hearing: unitil- see separate minutes",
+   "tags": [
+    "UNITIL",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Earth Removal draft Bylaw and Rules and Regulations",
+   "resolution": "continued to September 9",
+   "quote": "discussion will continue at the september 9th meeting.",
+   "tags": [
+    "earth removal",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Master Plan",
+   "resolution": "tabled awaiting grant approval",
+   "quote": "tabled awaiting grant approval",
+   "tags": [
+    "master plan",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Economic Development Committee",
+   "resolution": "continued to August 26",
+   "quote": "discussion will continue at the august 26th board meeting.",
+   "tags": [
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Director's items: Solar Energy Systems and Off Street Parking bylaws",
+   "resolution": "Solar tentatively August 26; Off Street Parking on hold",
+   "quote": "tentatively to be discussed at the august 26th meeting.",
+   "tags": [
+    "solar bylaw",
+    "parking bylaw"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "september 9- earth removal- continued discussion",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "noted; see above",
+   "quote": "mgl, ch. 41, section 81d, master plan- see above",
+   "tags": [
+    "ongoing items"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "katey adams- noted one of the select board's goals is to focus on the old primary school lot.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Board comments and concerns",
+   "resolution": "discussed; no action",
+   "quote": "process for appointment to board vacancy was discussed.",
+   "tags": [
+    "board vacancy",
+    "joint meetings"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "passed",
+   "quote": "p. bertram made motion to adjourn, g. bittner seconded, all aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes- 07/22/19",
+   "where": "list",
+   "quote": "documents used at meeting: minutes- 07/22/19 draft rules and regulations, earth removal and placement of fill"
+  },
+  {
+   "name": "DRAFT Rules and Regulations, Earth Removal and Placement of Fill",
+   "where": "list",
+   "quote": "documents used at meeting: minutes- 07/22/19 draft rules and regulations, earth removal and placement of fill"
+  },
+  {
+   "name": "DRAFT Bylaw, Earth Removal and Placement of Fill",
+   "where": "list",
+   "quote": "draft bylaw, earth removal and placement of fill select board's charge for economic development committee"
+  },
+  {
+   "name": "Select Board’s Charge for Economic Development Committee",
+   "where": "list",
+   "quote": "draft bylaw, earth removal and placement of fill select board's charge for economic development committee"
+  },
+  {
+   "name": "UNITIL public hearing minutes (separate)",
+   "where": "text",
+   "quote": "public hearing: unitil- see separate minutes"
+  },
+  {
+   "name": "Lunenburg Code, Section 250- 4.15., Solar Energy Systems",
+   "where": "text",
+   "quote": "lunenburg code, section 250- 4.15., solar energy systems-"
+  },
+  {
+   "name": "Lunenburg Code, Section 250- 6.1., Off Street Parking & Loading Areas",
+   "where": "text",
+   "quote": "lunenburg code, section 250- 6.1., off street parking & loading areas- on hold"
+  },
+  {
+   "name": "MGL, Ch. 41, Section 81D, Master Plan",
+   "where": "text",
+   "quote": "mgl, ch. 41, section 81d, master plan- see above"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "earth removal",
+  "economic development",
+  "master plan",
+  "solar bylaw",
+  "UNITIL hearing",
+  "board vacancy",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }
