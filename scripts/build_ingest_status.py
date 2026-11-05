@@ -2899,20 +2899,35 @@ def _pacing_state(pid, catch_at):
         if busy:
             what = ('meeting %s of ~%s: %s, %s' % meet[-1]) if meet else 'a meeting'
             return 'go', 'RUNNING', 'Writing %s.' % esc(what)
-        at, note = gov[-1] if gov else ('', '')
+        # The DECISION, not the readout. The governor also logs periodic readings -- `5h 19%  7d
+        # 85% (reading 40s old) week line ... resets Thu 10:00` and `projection: ...` -- which
+        # say nothing about why it is idle, and `resets` used to read as the 5-hour window.
+        readout = re.compile(r'^(\d+h \d+%\s+\d+d \d+%\s+\(reading|projection:)')
+        decisions = [g for g in gov if not readout.match(g[1])]
+        at, note = decisions[-1] if decisions else (gov[-1] if gov else ('', ''))
         n = note.lower()
-        if 'waiting for it' in n or 'weekly line' in n:
+        # Matched against every phrasing the governor has logged (5 Nov 2026). `ahead by N --
+        # pausing` is the current wording of the ahead-of-the-line pause; it fell through to
+        # the catch-all below, which is how a deliberate pause came to read as unexplained.
+        if 'ahead by' in n or 'waiting for it' in n or 'weekly line' in n:
             return 'warn', 'PAUSED &middot; AHEAD OF THE LINE', (
                 'Spent faster than the weekly line allows, so it starts nothing until the line '
                 'catches up%s. Nothing is wrong.' % (' &mdash; around <b>%s</b>' % catch_at if catch_at else ''))
         if 'stale' in n:
             return 'warn', 'PAUSED &middot; USAGE UNREAD', (
                 'It cannot read the usage bars, so it will not start a meeting blind (since %s).' % at)
-        if 'yield' in n or 'lock' in n:
+        if 'yielding' in n:
             return 'warn', 'PAUSED &middot; LOCK HELD', 'Another batch holds the lock; it resumes when that finishes.'
-        if 'window' in n or 'cap' in n or 'reset' in n:
+        if 'window done' in n or 'session cap' in n:
             return 'warn', 'PAUSED &middot; 5-HOUR WINDOW', 'At the session cap: %s (since %s).' % (esc(note.split('  ')[-2] if '  ' in note else note), at)
-        return 'warn', 'BETWEEN MEETINGS', esc(note) or 'Alive, about to start the next meeting.'
+        # Checked LAST: `session cap 80% reached (82% + 1 in flight)` must stay a pause.
+        if 'resuming' in n or 'on the line' in n or 'behind by' in n or 'in flight' in n:
+            return 'warn', 'BETWEEN MEETINGS', (
+                'Alive and allowed to run; starting the next meeting. Last governor note (%s): %s'
+                % (at, esc(note)))
+        return 'warn', 'IDLE &middot; REASON UNRECOGNISED', (
+            'Alive but not writing a meeting, and this page does not recognise the governor&rsquo;s '
+            'last note (%s): %s' % (at, esc(note) or 'none in the log'))
     stopped = os.path.join(ROOT, 'build', 'minutes-pacing.STOPPED')
     kill = os.path.join(ROOT, 'build', 'STOP-METERED')
     first = lambda f: open(f, encoding='utf-8', errors='replace').read().strip().splitlines()[0:1] or ['']
