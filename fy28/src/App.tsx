@@ -164,6 +164,12 @@ export default function App() {
    *  breadcrumb clothes. This exists only so that going up can pop the stack instead of
    *  growing it. */
   const [from, setFrom] = useState<Tab | null>(null)
+  // THE ADDRESS IS STATE TOO, not only the tab. Several tabs pick their page from the path
+  // at render -- /boards and /boards/<slug> are both the `boards` tab -- so a move between two
+  // addresses of ONE tab changed the URL and left the old page drawn: setTab to the same tab
+  // is a no-op and nothing re-rendered (TJ, 5 November 2026, the Boards breadcrumb on a
+  // board's page). Every navigation records the path it landed on, so a new path re-renders.
+  const [, setPath] = useState(() => window.location.pathname)
   // The commercial build rate is the same decision on two pages, so it lives here rather
   // than being duplicated. Housing is modeled on Development only.
   const [newValue, setNewValue] = useState(MODEL.taxBase.currentNewGrowthValue)
@@ -200,7 +206,7 @@ export default function App() {
   // The back button has to work, or a shared link is a trap: follow one, look around,
   // and there is no way back to where you came from.
   useEffect(() => {
-    const onPop = () => { setFrom(null); setTab(tabFromPath(window.location.pathname)) }
+    const onPop = () => { setFrom(null); setTab(tabFromPath(window.location.pathname)); setPath(window.location.pathname) }
     window.addEventListener('popstate', onPop)
     return () => window.removeEventListener('popstate', onPop)
   }, [])
@@ -236,6 +242,7 @@ export default function App() {
     const url = pathFor(t) + (anchor ? `#${anchor}` : '')
     if (url !== window.location.pathname + window.location.hash)
       window.history.pushState(null, '', url)
+    setPath(window.location.pathname)
   }
 
   const jump = useCallback((anchor: string) => {
@@ -284,6 +291,7 @@ export default function App() {
     const url = pathFor(t)
     if (url !== window.location.pathname + window.location.hash)
       window.history.replaceState(null, '', url)
+    setPath(window.location.pathname)
     window.scrollTo({ top: 0 })
   }
 
