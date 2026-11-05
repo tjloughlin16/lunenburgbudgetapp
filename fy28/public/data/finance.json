@@ -652,8 +652,8 @@
   },
   {
    "side": "money_in",
-   "what": "Which fund and account each field-rental receipt from Lunenburg Youth Soccer was posted to, and whether the $15,000 turf contribution is inside or beside them",
-   "why": "The district’s records-request answer lists seven receipts, FY2024–FY2026, $39,073.50 in all, with one MUNIS reference; the town’s FY26 special-revenue report carries fund 1306 School Facilities Use Revolving and fund 1545 Artificial Turf Revolving as balances only — closes: the journal detail export for funds 1306 and 1545, FY2024–FY2026, the same report the archive holds for fund 1301"
+   "what": "Who paid the School Facilities Use receipts that name no group, whether four more could be Lunenburg Youth Soccer’s, and whether its $15,000 turf contribution still reaches the turf fund",
+   "why": "The school journal now places all seven listed receipts in fund 1306, but its descriptions are cut off at about thirty characters and many name no payer; fund 1545 is not in the school journal at all — closes: the MUNIS cash receipt detail for fund 1306 by payer, and the journal detail for fund 1545, FY2024–FY2026"
   },
   {
    "side": "money_in",
@@ -664,16 +664,6 @@
    "side": "money_out",
    "what": "What each of the town’s 500-odd accounting measures did before FY2026, line by line — the appropriation history of every department and the year-by-year activity of every fund",
    "why": "The registry (fund-owners.csv) lists every measure the FY26 reports print, but only the special-revenue funds have a read, tied history (FY2011–FY2023); the appropriation lines’ history sits in the annual reports where the extract cannot yet say which printed column is which, and FY2024–FY2025 fund activity was never printed — closes: the year-to-date budget reports and special-revenue reports for FY2023–FY2025 from the Town Accountant."
-  },
-  {
-   "side": "money_out",
-   "what": "Whether the schools’ stated field and grounds costs match the books — about $126,000 of grounds work in FY2024 and $38,100 of outsourced mowing and field repair, paid, the Superintendent says, from the same revolving fund the field rent goes into",
-   "why": "The figures are the district’s own, read back from FY24 budget requests in an email of September 2026, and nothing in the archive tests them: fund 1306’s FY2024 expenditure is not published and the fund’s journal is not held — closes: the journal detail for fund 1306, FY2024–FY2026, and the FY2024 and FY2025 special-revenue reports."
-  },
-  {
-   "side": "money_in",
-   "what": "What put $62,231 into the School Facilities Use fund (1306) in FY2025 — the balance went from $3,010.67 at 30 June 2024 to $65,241.82 at 30 June 2025, more than the fund has taken in in any of the thirteen years the annual reports print",
-   "why": "Rent alone cannot produce the rise: the best receipts year on record is $39,944. Either revenue arrived that is not field rent — a transfer, a reimbursement, an insurance recovery — or something that had been charged to the fund stopped being charged to it, and the two balances cannot tell those apart. FY2025 is the one year no special-revenue schedule is published for. THE TEST WHEN THE DATA ARRIVES: read FY2025 line by line, total the receipts that are field or building rent, and see whether the remainder is a transfer in or an expenditure that moved elsewhere — closes: the journal detail for fund 1306, FY2024–FY2026, and the FY2025 special-revenue report."
   },
   {
    "side": "money_in",
@@ -1004,6 +994,16 @@
    "side": "money_in",
    "what": "How is the Town's preschool tuition receipt reported to the state, if at all: on the End of Year Report's Schedule 1 line 30 (Tuition From Individuals), line 100 (Other Revenue), or nowhere?",
    "why": "DESE's documents name no preschool tuition anywhere. Its Chart of Accounts (sources/state-dese/dese-chart-of-accounts-2022-07.docx) lists general fund tuition receipts without naming preschool, and the End of Year Report instructions (FY2023 printing version p10; FY2025 eoy25!D241) say lines 30-50 are revenue earned as tuition payments for pupils tuitioned in, while the revolving tuition line 640 (FY2023 p12) names adult education, community school, summer school and out-of-district tuition, not preschool. What the documents do settle: a municipality's general fund tuition receipts reduce net school spending (FY2023 printing version p103, citing 603 CMR 10.06), so where the tuition lands matters to the state's measure. The district's FY2023 working copy reports $43,058 on line 30 and its FY2024 copy $0 (sources/data/eoyr-schedule1.csv, cells J17), against Town receipt 431900 PRE-SCHOOL TUITION of $70,247.48 in FY2025; whether the FY2023 figure is preschool tuition is not established, and the working copies are not the reports as filed. — closes: the district's filed FY2023-FY2025 End of Year Reports with the worksheet mapping each Town general fund receipt to a Schedule 1 line, or written DESE school finance guidance on reporting municipal preschool tuition."
+  },
+  {
+   "side": "money_out",
+   "what": "Who received each school scholarship and prize award, and how much was each award?",
+   "why": "The trust fund summaries, read for FY2011-FY2025 (scholarship-funds.csv), print what left each fund each year, net of what came in -- not how many awards that was or what each one was; the school ledger shows only two of the funds. The amounts may be published without naming students -- closes: a list of awards by fund and year, with the amount and the number of recipients and no names."
+  },
+  {
+   "side": "money_in",
+   "what": "Who pays into the Park Revolving fund (1500), and what it spends on",
+   "why": "The archive holds fund 1500 only as totals: revenue, spending and balance in the FY26 fund report, and year-end balances in the annual reports. The school journal does not cover town funds, so no receipt or payment can be read by payer. Parks Commission minutes of 17 November 2016 name a Little League per-player fee that no ledger we hold shows — closes: the MUNIS journal detail for fund 1500, FY2023–FY2026, the same report the archive holds for the school funds"
   },
   {
    "side": "extraction",
@@ -4304,6 +4304,7 @@
    "notes": [],
    "owner": "parks-commission",
    "owner_basis": "the department the ledger files it under",
+   "page": "/boards/parks-commission/reports/parks-budget",
    "purpose": "",
    "relates_to": "",
    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.txt",
@@ -10609,6 +10610,7 @@
    "notes": [],
    "owner": "school-committee",
    "owner_basis": "department code 300 in the unlabelled column of the town’s special-revenue report",
+   "page": "/school-all-funds/school-facilities-fund",
    "purpose": "rent from outside groups using school buildings and fields",
    "relates_to": "",
    "report": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
@@ -11926,6 +11928,7 @@
    "notes": [],
    "owner": "parks-commission",
    "owner_basis": "department code 650 in the unlabelled column of the town’s special-revenue report",
+   "page": "/boards/parks-commission/reports/park-revolving-fund",
    "purpose": "programme and beach fees, spent on the parks that raise them",
    "relates_to": "",
    "report": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
@@ -13806,6 +13809,7 @@
    "notes": [],
    "owner": "dpw",
    "owner_basis": "department code 400 in the unlabelled column of the town’s special-revenue report",
+   "page": "/school-all-funds/artificial-turf-fund",
    "purpose": "payments toward the artificial turf field",
    "relates_to": "school-committee",
    "report": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",

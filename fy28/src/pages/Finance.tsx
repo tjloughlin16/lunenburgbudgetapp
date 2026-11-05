@@ -33,7 +33,7 @@ type Snap = { fy: number; period: number; original: number; revised: number; exp
 type Current = Partial<Snap> & { grade: 'evidence' | 'transcribed'; as_of?: string; opening?: number; revenue?: number; spent?: number; salaries?: number; closing?: number; foots?: boolean
   estimate?: number; collected?: number; expense_budget?: number; revenue_estimate?: number; report?: string; reports?: string[] }
 type Hist = { fy: number; grade: 'read' | 'transcribed'; opening?: number | null; revenue?: number | null; spent?: number | null; closing?: number | null; chains?: boolean; report: string }
-type Measure = { id: string; kind: string; subkind: string; code: string; name: string; owner: string; owner_basis: string; relates_to: string
+type Measure = { page?: string; id: string; kind: string; subkind: string; code: string; name: string; owner: string; owner_basis: string; relates_to: string
   purpose: string; authority: string; trend_label: string; report: string; current: Current | null; history: Hist[]; notes: string[]; snapshots?: Snap[]
   // DESE's own name for a school grant fund, from the allocation pages (dese-fund-codes.csv) --
   // the town's ledger name (`FY25 #240`) stays beside it, because that is what a resident asks for.
@@ -336,6 +336,7 @@ function NameToggle({ m, open, onToggle }: { m: Measure; open: boolean; onToggle
         <span aria-hidden="true" className="inline-block w-3 text-[10px]" style={{ color: 'var(--text-muted)' }}>{open ? '\u25BE' : '\u25B8'}</span>{label(m)}
       </button>
       {m.dese && <span className="block text-[11.5px]" style={{ color: 'var(--text-muted)' }}>the town’s ledger calls it “{ledgerName(m)}” · <a className="underline" href={m.dese.source_url}>DESE allocation page</a></span>}
+      {m.page && <span className="block text-[11.5px]"><a className="underline" href={m.page}>Where the money comes from and goes &rarr;</a></span>}
       {(m.purpose || m.authority) && <span className="block text-[11.5px]" style={{ color: 'var(--text-muted)' }}>{m.purpose}{m.purpose && m.authority ? ' · ' : ''}{m.authority}</span>}
     </>
   )

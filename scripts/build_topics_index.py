@@ -34,6 +34,8 @@ OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics.json')
 # read synchronously, before any fetch), and only categories whose hub payload exists -- so a
 # category routes the day its hub is built and not before.
 ROUTES_OUT = os.path.join(ROOT, 'fy28', 'src', 'data', 'topic-categories.json')
+# Board slug -> the shelf that lives at /boards/<slug>/reports, read by routes.ts.
+BOARDS_OUT = os.path.join(ROOT, 'fy28', 'src', 'data', 'board-shelves.json')
 
 
 def words(p):
@@ -57,7 +59,13 @@ def app_routes():
     """Every first path segment the app routes, read off fy28/src/routes.ts's string values."""
     import re
     src = open(os.path.join(ROOT, 'fy28', 'src', 'routes.ts'), encoding='utf-8').read()
-    return {m.split('/')[0] for m in re.findall(r":\s*'([a-z0-9][a-z0-9/-]*)'", src)}
+    # The per-item pages route by pattern, not by a slug in a table (resolvePath in routes.ts).
+    return {m.split('/')[0] for m in re.findall(r":\s*'([a-z0-9][a-z0-9/-]*)'", src)} | {
+        'school-lines', 'school-funds', 'school-groups', 'school-functions'}
+
+
+def boards_json():
+    return json.dumps(REG.board_shelves(), indent=1, sort_keys=True) + '\n'
 
 
 def related():
@@ -141,6 +149,7 @@ def build(strict):
         h = pays.get(c['id'])
         cats.append(dict(
             id=c['id'], shelf=c['shelf'], title=c['title'], path=REG.path(c['id']),
+            **({'board': REG.board_of(c)} if REG.board_of(c) else {}),
             answer=h['answer']['text'] if h else None,
             minutes=max(1, math.ceil(words(h) / 200)) if h else None, ready=bool(h),
             groups=[dict(title=g, topics=list(ids), section=c.get('sections', {}).get(g))
@@ -226,13 +235,13 @@ def main():
         return 1
     text, routes, bad = build(strict=a.check)
     if a.check:
-        for path, want in ((OUT, text), (ROUTES_OUT, routes)):
+        for path, want in ((OUT, text), (ROUTES_OUT, routes), (BOARDS_OUT, boards_json())):
             cur = open(path, encoding='utf-8').read() if os.path.exists(path) else None
             if cur != want:
                 bad.append('%s is stale' % os.path.relpath(path, ROOT))
         print('\n'.join(bad) or 'topics.json current')
         return 1 if bad else 0
-    for path, body in ((OUT, text), (ROUTES_OUT, routes)):
+    for path, body in ((OUT, text), (ROUTES_OUT, routes), (BOARDS_OUT, boards_json())):
         with open(path, 'w', encoding='utf-8', newline='\n') as fh:
             fh.write(body)
     print('wrote %s%s' % (os.path.relpath(OUT, ROOT), ('; ' + '; '.join(bad)) if bad else ''))

@@ -37,6 +37,7 @@ sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 import merge_recording_minutes as MRG  # noqa: E402
 from budget_cycles import fy_of as cycle_fy_of   # noqa: E402
 import meeting_records as MR   # noqa: E402
+import topics as REG   # noqa: E402
 # THE LIKELY NEXT MEETING -- a rhythm read off the register's dates, backtested, and shown
 # only where the backtest clears OUR threshold. An estimate, labelled as one on the page.
 import meeting_cadence as MC   # noqa: E402
@@ -777,6 +778,7 @@ def nav(data):
         boards=[dict(slug=b['slug'], name=b['name'],
                      votes=len(b['votes']), time=len(b['time_by_tag']) > 0,
                      schedule=len(b['calendar']) > 0, finance=bool(b.get('finance')),
+                     reports=b['slug'] in {REG.board_of(c) for c in REG.CATEGORIES},
                      about=bool(b.get('page') or b.get('about_itself') or b.get('annual_report')))
                 for b in data['boards']])
 

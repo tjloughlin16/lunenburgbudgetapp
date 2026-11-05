@@ -188,6 +188,7 @@ CHECKS = [
     # that shares their reader, and Monty Tech's history (which the Monty Tech hub reads).
     ('build_town_general_fund.py', ['--check']),
     ('build_school_receipts_to_town.py', ['--check']),
+    ('build_school_fields_topics.py', ['--check']),
     ('build_town_payroll.py', ['--check']),
     ('build_school_scholarships.py', ['--check']),
     ('build_preschool.py', ['--check']),

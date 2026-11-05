@@ -17,6 +17,7 @@ import { createElement, useEffect, useState } from 'react'
 import { abs } from '../lib/abs'
 import { pageTitle, setShareMeta } from '../lib/title'
 import { topicIdFromPath } from '../routes'
+import { BoardNav } from '../components/BoardNav'
 import {
   FigureTable, Ladder, ReportShell,
   type FigureTableData, type LadderData, type LadderEvidence, type LadderFact, type LadderUnit,
@@ -36,7 +37,7 @@ type IndexTopic = {
   finding: string | null; minutes: number | null; ready: boolean
   related?: Related[]
 }
-type IndexCategory = {
+type IndexCategory = { board?: string;
   id: string; shelf: string; title: string; path: string; answer: string | null
   /** `section`: the part of the hub a group sits in (scripts/topics.py `sections`), e.g. The
    *  problem / Solutions on the crisis hub. Null on a hub with one part. */
@@ -439,6 +440,7 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
       dataUrl={`/data/topics/${id}.json`}>
       {p && ix && p.kind === 'hub' ? (
         <>
+          {cat?.board && cat.path === `/boards/${cat.board}/reports` ? <BoardNav slug={cat.board} current="reports" /> : null}
           <Blocks blocks={p.blocks} place="top" />
           {p.lead_quote ? <LeadQuoteBlock q={p.lead_quote} /> : null}
           <p className="text-[19px] leading-snug font-semibold mt-6 max-w-3xl">{p.answer.text}</p>

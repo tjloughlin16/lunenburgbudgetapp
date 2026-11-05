@@ -726,7 +726,7 @@ ABSORBED_INTO = {
     'growth': 'crisis',
     'insurance': 'health-insurance',
     'boardcompare': 'board-records',
-    'parks': 'parks', 'youthsports': 'parks',
+    'parks': 'parks', 'youthsports': 'school-all-funds',
     'sportsmoney': 'athletics',
     # Budget options was folded into the crisis hub's Solutions part, 2 November 2026.
     'override': 'crisis', 'feelever': 'crisis',

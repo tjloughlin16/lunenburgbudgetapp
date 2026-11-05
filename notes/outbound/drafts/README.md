@@ -13,6 +13,9 @@ what the recipient holds.
 | file | to | status |
 |---|---|---|
 | `RECORDS-REQUEST-SUPERINTENDENT.pdf` | Superintendent | send-ready |
+| `RECORDS-REQUEST-ONE-LIST-2026-11-05.txt` | Town Manager | for TJ to send; four items |
+| `RECORDS-REQUEST-LATER-LIST-2026-11-05.txt` | Town Manager | the longer list, held back |
+| `RECORDS-REQUEST-PARKS-FUNDS.md` | Town Manager | longer wording, merged into the one list |
 | `REQUEST-EMAIL-SUPERINTENDENT-DRAFT.md` | — | the working copy, with the reasoning |
 | `REQUEST-EMAIL-DRAFT.md` | — | the working copy of the Town request |
 | `CONNECTING-THE-BUDGET.pdf` | — | the report the Town request refers to |

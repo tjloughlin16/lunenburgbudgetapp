@@ -79,11 +79,34 @@ def category(cid):
     return next(c for c in CATEGORIES if c['id'] == cid)
 
 
+# WHICH BOARD A SHELF'S REPORTS BELONG TO. TJ, 5 November 2026: "i need to be able to find these
+# reports from the board page". A category may name `board`; every school shelf is the School
+# Committee's. The board's page then carries a Reports tab listing them.
+AREA_BOARD = {'school': 'school-committee'}
+
+
+def board_of(c):
+    return c.get('board') or AREA_BOARD.get(c['area'])
+
+
+def base(c):
+    """Where a shelf lives. A shelf that IS one board's reports sets `under_board` and lives at
+    /boards/<slug>/reports; its old /<id> addresses still route, and Topic.tsx moves the address
+    bar. routes.ts reads the same mapping from src/data/board-shelves.json."""
+    return '/boards/%s/reports' % c['board'] if c.get('under_board') else '/' + c['id']
+
+
+def board_shelves():
+    """{board slug: category id} for the shelves that live under a board."""
+    return {c['board']: c['id'] for c in CATEGORIES if c.get('under_board')}
+
+
 def path(tid):
     """The one address of a topic, or of a hub when given a category id."""
-    if any(c['id'] == tid for c in CATEGORIES):
-        return '/' + tid
-    return '/%s/%s' % (TOPICS[tid][1], tid)
+    for c in CATEGORIES:
+        if c['id'] == tid:
+            return base(c)
+    return '%s/%s' % (base(category(TOPICS[tid][1])), tid)
 
 
 def shelves_of(tid):

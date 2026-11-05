@@ -124,4 +124,11 @@ RELATED = [
     [('monty-tech-revenue', 'Monty Tech and Lunenburg schools, revenue by source'),
      ('monty-tech-funding', 'What pays Monty Tech’s operating budget'),
      ('monty-tech-per-pupil', 'What Monty Tech spends a pupil')],
+    # The schools' rental money: the fund, one league's part of it, and the fund's own page. TJ, 5
+    # November 2026, moving these from the Parks shelf.
+    [('school-facilities-fund', 'All the rent, every receipt and every bill'),
+     ('youth-league-payments', 'One league’s receipts, list against journal'),
+     ('school-field-upkeep', 'What the district says rent pays for'),
+     ('/school-funds/school-facilities-use-revolv', 'The fund, line by line',
+      'Which budget lines it paid, year by year')],
 ]

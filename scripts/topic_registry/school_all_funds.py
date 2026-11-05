@@ -33,6 +33,10 @@ CATEGORY = dict(
         ('Gifts and scholarships', ['school-scholarships']),
         # TJ, 24 October 2026: "for all the grants.... have we broken down how that money is
         # spent? I want to have reports on that." Every post read alike; none singled out.
+        # TJ, 5 November 2026: "clearly this money goes to the schools, not to parks". Moved from
+        # the Parks shelf, with the fund's money in and out (build_school_fields_topics.py).
+        ('School buildings and fields', ['school-facilities-fund', 'school-field-upkeep',
+                                         'youth-league-payments', 'artificial-turf-fund']),
         ('Who grants and fees pay for', ['salaries-from-grants-and-fees', 'pay-moved-between-funds',
                                          'positions-and-their-funds', 'activities-fund']),
     ])
@@ -55,7 +59,11 @@ TOPIC_GENERATORS = {'school-scholarships': 'build_school_scholarships.py',
                     'pay-moved-between-funds': 'build_pay_by_fund_topics.py',
                     'positions-and-their-funds': 'build_pay_by_fund_topics.py',
                     # TJ, 28 October 2026: "people always ask me 'what is the activities fee for'"
-                    'activities-fund': 'build_activities_fund_topics.py'}
+                    'activities-fund': 'build_activities_fund_topics.py',
+                    'school-facilities-fund': 'build_school_fields_topics.py',
+                    'school-field-upkeep': 'build_school_fields_topics.py',
+                    'youth-league-payments': 'build_school_fields_topics.py',
+                    'artificial-turf-fund': 'build_school_fields_topics.py'}
 TOPICS = {
     'school-scholarships': 'School scholarships',
     'budget-against-actual': 'School lines against budget',
@@ -74,4 +82,8 @@ TOPICS = {
     'activities-fund': 'After-school activities fund',
     'preschool': 'Preschool',
     'school-receipts-to-town': 'School receipts to the Town',
+    'school-facilities-fund': 'School facilities fund',
+    'school-field-upkeep': 'School field upkeep',
+    'youth-league-payments': 'Youth league payments',
+    'artificial-turf-fund': 'Artificial turf fund',
 }

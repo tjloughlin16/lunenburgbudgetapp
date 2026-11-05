@@ -1,33 +1,54 @@
 {
- "category": "parks",
+ "category": "school-all-funds",
  "chart": {
-  "basis": "stated",
   "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
   "note": {
    "figures": {},
    "literals": [
+    "1306",
     "FY2024"
    ],
-   "text": "The Superintendent’s approximate FY2024 figures, by email. The second part is the stated total less the first, our subtraction."
+   "text": "The Superintendent’s approximate figures, by email, against fund 1306’s journal, FY2024."
   },
-  "parts": [
+  "reference": null,
+  "series": [
    {
-    "label": "Vehicles and equipment, which also plough",
-    "share": "23%",
-    "text": "$29,500",
-    "value": 29500.0
+    "basis": "stated",
+    "mark": "bar",
+    "name": "The district’s email",
+    "texts": [
+     "$18,700",
+     "$19,400"
+    ],
+    "values": [
+     18700.0,
+     19400.0
+    ]
    },
    {
-    "label": "Everything else in the stated total",
-    "share": "77%",
-    "text": "$96,500",
-    "value": 96500.0
+    "basis": "published",
+    "mark": "bar",
+    "name": "Fund bills in the journal",
+    "texts": [
+     "$0",
+     "$19,400"
+    ],
+    "values": [
+     0,
+     19400.0
+    ]
    }
   ],
-  "title": "Fields and grounds work",
-  "total": "$126,000",
-  "type": "parts",
-  "unit": "$"
+  "stacked": false,
+  "title": "Stated cost against the books",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "Mowing",
+   "Summer repair"
+  ]
  },
  "conclusions": [
   {
@@ -42,11 +63,58 @@
     "FY2024",
     "1306"
    ],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "$9,520",
+       "unit": "",
+       "value": 9520.0
+      },
+      "b": {
+       "text": "$9,500",
+       "unit": "",
+       "value": 9500.0
+      }
+     },
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "The email’s year may differ from the ledger’s: this fund shows cutting bills a year before. Or the general fund paid: the same landscaper’s $9,520 bill there is near the $9,500 stated for autumn. Nothing links them."
+    }
+   ],
    "rests_on": [
     "mow",
-    "ledger"
+    "bill",
+    "gf"
    ],
-   "text": "The district puts mowing at $18,700 for the autumn and spring of FY2024, paid from fund 1306."
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "The stated source of the mowing money and the ledger do not line up for that year."
+   },
+   "text": "The district puts FY2024 mowing at $18,700, from fund 1306; that fund’s journal has no mowing bill."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$19,400",
+     "unit": "",
+     "value": 19400.0
+    }
+   },
+   "literals": [
+    "FY2024"
+   ],
+   "rests_on": [
+    "repair",
+    "bill"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "That figure matches the books; the mowing figure does not appear in this fund for that year."
+   },
+   "text": "The fund’s one FY2024 grounds bill, $19,400, equals the district’s summer repair figure."
   },
   {
    "figures": {
@@ -59,23 +127,17 @@
    "literals": [
     "FY2024"
    ],
-   "notes": [
-    {
-     "closes": "fund 1306’s expenditure detail and the grounds accounts, FY2024",
-     "figures": {},
-     "kind": "gap",
-     "literals": [
-      "1306",
-      "FY2024"
-     ],
-     "text": "These are the district’s figures in an email, not a printout from the books."
-    }
-   ],
    "rests_on": [
     "all",
-    "veh",
-    "repair"
+    "veh"
    ],
+   "so": {
+    "figures": {},
+    "literals": [
+     "FY2024"
+    ],
+    "text": "The fund paid out far less than that in all of FY2024, so most of it came from elsewhere."
+   },
    "text": "It puts all fields and grounds work at about $126,000 for FY2024, vehicles included."
   }
  ],
@@ -113,6 +175,54 @@
    }
   },
   {
+   "id": "bill",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2024"
+    ],
+    "text": "the one grounds bill in the fund’s journal, FY2024"
+   },
+   "value": {
+    "text": "$19,400",
+    "unit": "",
+    "value": 19400.0
+   }
+  },
+  {
+   "id": "gf",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2024"
+    ],
+    "text": "same landscaper, general fund grounds line, FY2024"
+   },
+   "value": {
+    "text": "$9,520",
+    "unit": "",
+    "value": 9520.0
+   }
+  },
+  {
+   "id": "cut",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2023"
+    ],
+    "text": "field cutting bills in the fund’s journal, FY2023"
+   },
+   "value": {
+    "text": "$22,385",
+    "unit": "",
+    "value": 22385.0
+   }
+  },
+  {
    "id": "all",
    "kind": "published",
    "label": {
@@ -141,25 +251,21 @@
     "unit": "",
     "value": 29500.0
    }
-  },
-  {
-   "closes": "fund 1306’s FY2024 expenditure detail",
-   "id": "ledger",
-   "kind": "gap",
-   "label": {
-    "figures": {},
-    "literals": [
-     "1306"
-    ],
-    "text": "what fund 1306 actually paid for grounds"
-   },
-   "value": null
   }
  ],
  "finding": {
-  "figures": {},
-  "literals": [],
-  "text": "The district says it pays to mow its grass fields from the fund the field rent goes into."
+  "figures": {
+   "a": {
+    "text": "$19,400",
+    "unit": "",
+    "value": 19400.0
+   }
+  },
+  "literals": [
+   "1306",
+   "FY2024"
+  ],
+  "text": "The district says rent pays for mowing; fund 1306 shows one FY2024 grounds bill, $19,400."
  },
  "flow": [
   {
@@ -188,19 +294,26 @@
  },
  "id": "school-field-upkeep",
  "kind": "topic",
- "path": "/parks/school-field-upkeep",
+ "path": "/school-all-funds/school-field-upkeep",
  "said": [],
  "shelves": [
-  "parks"
+  "school-all-funds"
  ],
  "sources": [
   {
    "href": "/docs/correspondence/2026-09-18-school-field-maintenance-superintendent.txt",
+   "key": "email",
    "label": "Lunenburg Public Schools — the Superintendent, by email — 2026-09-18-school-field-maintenance-superintendent.txt"
   },
   {
    "href": "/docs/data/school-field-maintenance.csv",
+   "key": "d-maint",
    "label": "Lunenburg Budget Project — school-field-maintenance.csv (the email’s figures, all stated)"
+  },
+  {
+   "href": "/docs/data/munis-school-journal.csv",
+   "key": "journal",
+   "label": "Lunenburg Budget Project — munis-school-journal.csv (the school MUNIS journal, one row a posting)"
   }
  ],
  "table": null,

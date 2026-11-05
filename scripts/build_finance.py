@@ -33,6 +33,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 import conclusions as C                                           # noqa: E402
+import topics as TOPIC_REG                                        # noqa: E402
 from conclusions import conclusion, emit, figure                  # noqa: E402
 from build_fund_owners import (REG, DEPTS, BOARDS, LEDGER, SPECIAL, TRUST,  # noqa: E402
                                owners as owner_table, read as read_registry)
@@ -56,6 +57,10 @@ LUNENBURG_DESE = '0162'
 _CODE_PATTERNS = (re.compile(r'#\s*(\d{3})\b'),
                   re.compile(r'\bFUND CODE\s+(\d{3})\b', re.I),
                   re.compile(r'^FY\s?\d{2}\s+(\d{3})\b', re.I))
+
+
+MEASURE_PAGE = {'gf-650': 'parks-budget', 'sr-1500': 'park-revolving-fund',
+                'sr-1306': 'school-facilities-fund', 'sr-1545': 'artificial-turf-fund'}
 
 
 def dese_names():
@@ -344,6 +349,10 @@ def build():
         m['current'] = cur
         m['history'] = hist
         m['notes'] = notes
+        # The report page for this measure, where one exists. TJ, 5 November 2026: the finance page
+        # and the reports must point at each other.
+        if r['id'] in MEASURE_PAGE:
+            m['page'] = TOPIC_REG.path(MEASURE_PAGE[r['id']])
         measures[r['id']] = m
 
     # Who owns what, and the roll-ups a page leads with.

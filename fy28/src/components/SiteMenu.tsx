@@ -108,8 +108,8 @@ export const GROUPS: Group[] = [
     { href: '/homes-and-taxes/commercial-share', label: 'Commercial base', sub: 'The base, and what was built' },
     { href: '/free-cash', label: 'Free cash', sub: 'The balance, and where it goes' },
     { href: '/town-reserves', label: 'Stabilization funds', sub: 'What is saved, who may spend it' },
-    { href: '/parks', label: 'Parks & Recreation', sub: 'A department, whole' },
-    { href: '/parks/youth-league-payments', label: 'Youth sports and fields', sub: 'What the leagues pay' },
+    { href: '/boards/parks-commission/reports', label: 'Parks & Recreation', sub: 'A department, whole' },
+    { href: '/school-all-funds/youth-league-payments', label: 'Youth sports and fields', sub: 'What the leagues pay the schools' },
   ] },
   { title: 'Check it', under: null, items: [
     { to: 'sources', label: 'Sources', sub: 'Every document this rests on' },

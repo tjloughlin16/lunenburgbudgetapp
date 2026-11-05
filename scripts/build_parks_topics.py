@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""Parks and recreation, split into topic pages: ten pages and the parks hub.
+"""Parks and recreation, split into topic pages: six pages and the parks hub.
 
     python3 scripts/build_parks_topics.py           # write fy28/public/data/topics/*.json
     python3 scripts/build_parks_topics.py --check   # fail if any output would change
 
 WHY THIS EXISTS. scripts/topics.py has the model: one question per page, under five minutes,
-facts first, one to four conclusions resting on them. This shelf absorbs /parks-and-recreation
-and /youth-sports.
+facts first, one to four conclusions resting on them. This shelf absorbs /parks-and-recreation.
+The pages about the leagues' field rent went to build_school_fields_topics.py on 5 November 2026:
+that money goes to the schools' fund 1306, not to Parks.
 
 IT COMPUTES NOTHING NEW THAT IT CAN READ INSTEAD, and it keeps four kinds of document apart:
 
@@ -441,6 +442,16 @@ def build():
                                                     cell(r['carried'])]))
         else:
             prow.append(dict(label=C.fy(fy), cells=[None, None, C.usd(pbal[fy])]))
+    # TJ, 5 November 2026: "i can see there are things missing that they get revenue from". The
+    # ledgers name no payer; the Commission's minutes name one, so the figure is read from them.
+    MIN = 'parks-commission/2024-11-06-minutes-6858.txt'
+    mtext = open(os.path.join(ROOT, 'sources', 'meetings', 'text', MIN), encoding='utf-8').read()
+    mm = re.search(r'Youth baseball paid \$([\d,]+) for (\d+) players', mtext)
+    if not mm:
+        fail('the 6 November 2024 minutes no longer print the youth baseball payment')
+    yb, ybn = float(mm.group(1).replace(',', '')), int(mm.group(2))
+    src_min = dict(label='Town of Lunenburg — Parks Commission minutes, 6 November 2024',
+                   href='/docs/minutes/text/' + MIN)
     out['park-revolving-fund'] = TP.page(
         'park-revolving-fund',
         'The parks’ fee fund held %s at 31 March 2026; it ended FY2015 and FY2016 at zero.'
@@ -461,9 +472,12 @@ def build():
            allow=('FY2011', 'FY2023')),
          f('peak', U(pser[peak]['receipts']), 'taken in during %s, the most FY2011–FY2023'
            % C.fy(peak), 'published', allow=(C.fy(peak), 'FY2011', 'FY2023')),
+         f('yb', U(yb), 'youth baseball’s user fees, as minuted (stated)', 'published'),
          f('flows', None, 'receipts and spending, FY2024 and FY2025', 'gap',
            allow=('FY2024', 'FY2025'),
-           closes='the FY2024 and FY2025 special-revenue reports for fund 1500')],
+           closes='the FY2024 and FY2025 special-revenue reports for fund 1500'),
+         f('payers', None, 'who pays into this fund, payer by payer', 'gap',
+           closes='the journal detail for fund 1500')],
         [con('The fund ended %s and %s at zero, and held %s by 30 June 2025.'
              % ('FY2015', 'FY2016', C.usd(pbal[2025])), ['zero', 'close25', 'close11'],
              {'a': U(pbal[2025])}, allow=('FY2015', 'FY2016', '30', '2025')),
@@ -478,7 +492,12 @@ def build():
              allow=('30', '2025', 'FY2026'),
              notes=[step('An audit adjustment, an encumbrance or a misprint all fit; nothing '
                          'here tests which.', 'gap', allow=('FY2025', '1500'),
-                         closes='the FY2025 special-revenue report and fund 1500’s journal')])],
+                         closes='the FY2025 special-revenue report and fund 1500’s journal')]),
+         con('Minutes record youth baseball paying %s for %s players; no ledger we hold names a payer.'
+             % (C.usd(yb), C.num(ybn)), ['yb', 'payers'], {'a': U(yb), 'n': N(ybn)},
+             notes=[step('The minutes do not say which account took it.', 'gap', allow=('1500',),
+                         closes='the journal detail for fund 1500')],
+             so='League fees are real revenue that the fund totals on this page cannot show.')],
         table=dict(caption='The Park Revolving Fund by year', views=[dict(
             key='fund', label='Annual town reports', total_col=2, kinds=['ledger'] * 3,
             columns=['Taken in', 'Spent', 'Balance'], rows=prow,
@@ -486,7 +505,7 @@ def build():
                  '− disbursements = carried. FY2024 and FY2025 print a balance only.')]),
         chart=fund_chart,
         sources=[src['sr26'], src['ar11'], src['ar23'], src['ar24'], src['ar25'],
-                 src['d-read'], src['d-funds']],
+                 src['d-read'], src['d-funds'], src_min],
         finding_figures={'a': U(f26['closing'])},
         finding_allow=('31', '2026', 'FY2015', 'FY2016'))
 
@@ -661,218 +680,6 @@ def build():
         sources=[src['bid'], src['glwb'], src['d-gl']],
         finding_figures={'a': U(bid_total)}, finding_allow=('1', '2024', 'six'))
 
-    # ================================================================ School facilities fund
-    sser = read_series('School Facilities Use')
-    sbal = balances('1306')
-    s26 = funds[1306]
-    if abs(sbal[2025] - s26['opening']) > 0.005:
-        fail('fund 1306: the FY2025 annual-report balance no longer equals the FY26 opening')
-    jump = round(sbal[2025] - sbal[2024], 2)
-    best_fy = max(sser, key=lambda y: sser[y]['receipts'] or 0)
-    best = sser[best_fy]['receipts']
-    if not jump > best:
-        fail('fund 1306’s FY2025 rise no longer exceeds its best year of receipts')
-    srow = []
-    for fy in range(2025, 2010, -1):
-        if fy in sser:
-            r = sser[fy]
-            srow.append(dict(label=C.fy(fy), cells=[cell(r['receipts']), cell(r['disbursed']),
-                                                    cell(r['carried'])]))
-        else:
-            srow.append(dict(label=C.fy(fy), cells=[None, None, C.usd(sbal[fy])]))
-    syrs = list(range(2011, 2026))
-    rental_chart = TP.series(
-        'School Facilities Use balance', [C.fy(y) for y in syrs],
-        [TP.track('Balance at year end',
-                  [sser[y]['carried'] if y in sser else sbal[y] for y in syrs], 'published',
-                  'bar')],
-        '$', kind='bar',
-        note='Fund %s, the annual town reports. %s and %s print a balance only.'
-             % ('1306', C.fy(2024), C.fy(2025)), note_allow=('1306', C.fy(2024), C.fy(2025)))
-    out['school-facilities-fund'] = TP.page(
-        'school-facilities-fund',
-        'The schools’ rental fund rose %s in FY2025, more than its receipts in any year '
-        'FY2011–FY2023.' % C.usd(jump),
-        [f('in26', U(s26['revenue']), 'into fund 1306, July–March FY2026', 'published',
-           allow=('1306', 'FY2026')),
-         f('out26', U(s26['expenditure']), 'spent from it, July–March FY2026', 'published',
-           allow=('FY2026',)),
-         f('held26', U(s26['available']), 'held, 31 March 2026', 'published',
-           allow=('31', '2026')),
-         f('b24', U2(sbal[2024]), 'balance at 30 June 2024, annual report', 'published',
-           allow=('30', '2024')),
-         f('b25', U2(sbal[2025]), 'balance at 30 June 2025, annual report', 'published',
-           allow=('30', '2025')),
-         f('jump', U(jump), 'the rise in FY2025 (our subtraction)', 'estimate',
-           allow=('FY2025',)),
-         f('best', U(best), 'taken in during %s, the most FY2011–FY2023' % C.fy(best_fy),
-           'published', allow=(C.fy(best_fy), 'FY2011', 'FY2023')),
-         f('flows25', None, 'what went in and out in FY2025', 'gap', allow=('FY2025',),
-           closes='the FY2025 special-revenue report, or fund 1306’s journal')],
-        [con('Groups renting school buildings and fields pay into fund 1306; it held %s at 31 '
-             'March 2026.' % C.usd(s26['available']), ['in26', 'out26', 'held26'],
-             {'a': U(s26['available'])}, allow=('1306', '31', '2026'),
-             notes=[step('Who paid, and for what, is not in a balance report.', 'gap',
-                         allow=('1306',),
-                         closes='fund 1306’s receipt detail, by payer')]),
-         con('It went from %s to %s in FY2025, a rise of %s.'
-             % (usd2(sbal[2024]), usd2(sbal[2025]), C.usd(jump)), ['b24', 'b25', 'jump'],
-             {'a': U2(sbal[2024]), 'b': U2(sbal[2025]), 'c': U(jump)}, allow=('FY2025',)),
-         con('No year from FY2011 to FY2023 took in more than %s.' % C.usd(best),
-             ['best', 'jump', 'flows25'], {'a': U(best)}, allow=('FY2011', 'FY2023'),
-             notes=[step('A transfer in, less charged to the fund, or a year of high rent all '
-                         'fit the two balances; nothing here tests which.', 'hypothesis')])],
-        table=dict(caption='School Facilities Use, fund 1306, by year', views=[dict(
-            key='fund', label='Annual town reports', total_col=2, kinds=['ledger'] * 3,
-            columns=['Taken in', 'Spent', 'Balance'], rows=srow,
-            note='FY2011–FY2023 each row ties forward + receipts − disbursements = carried; '
-                 'FY2018 closed in deficit. FY2024 and FY2025 print a balance only.')]),
-        chart=rental_chart,
-        sources=[src['sr26'], src['email'], src['ar11'], src['ar23'], src['ar24'], src['ar25'],
-                 src['d-read'], src['d-funds']],
-        finding_figures={'a': U(jump)}, finding_allow=('FY2025', 'FY2011', 'FY2023'))
-
-    # ================================================================ School field upkeep
-    mt = {r['item']: r for r in Y['maintenance']}
-    for r in Y['maintenance']:
-        if r['basis'] != 'stated':
-            fail('a field-maintenance figure is no longer marked stated')
-    autumn = float(mt['Landscaper, mowing the athletic grass fields, autumn']['amount'])
-    spring = float(mt['Landscaper, mowing the athletic grass fields, spring']['amount'])
-    repair = float(mt['Landscaper, summer field repair']['amount'])
-    allg = float(mt['All fields and grounds maintenance']['amount'])
-    veh = float(mt['Of that: vehicle and equipment maintenance and repair']['amount'])
-    out['school-field-upkeep'] = TP.page(
-        'school-field-upkeep',
-        'The district says it pays to mow its grass fields from the fund the field rent goes '
-        'into.',
-        [f('mow', U(autumn + spring), 'mowing, autumn and spring, FY2024 (stated)', 'published',
-           allow=('FY2024',)),
-         f('repair', U(repair), 'summer field repair, 2023 (stated)', 'published',
-           allow=('2023',)),
-         f('all', U(allg), 'all fields and grounds work, FY2024, approximate (stated)',
-           'published', allow=('FY2024',)),
-         f('veh', U(veh), 'of that, vehicles and equipment, which also plough', 'published'),
-         f('ledger', None, 'what fund 1306 actually paid for grounds', 'gap', allow=('1306',),
-           closes='fund 1306’s FY2024 expenditure detail')],
-        [con('The district puts mowing at %s for the autumn and spring of FY2024, paid from '
-             'fund 1306.' % C.usd(autumn + spring), ['mow', 'ledger'],
-             {'a': U(autumn + spring)}, allow=('FY2024', '1306')),
-         con('It puts all fields and grounds work at about %s for FY2024, vehicles included.'
-             % C.usd(allg), ['all', 'veh', 'repair'], {'a': U(allg)}, allow=('FY2024',),
-             notes=[step('These are the district’s figures in an email, not a printout from '
-                         'the books.', 'gap', allow=('1306', 'FY2024'),
-                         closes='fund 1306’s expenditure detail and the grounds accounts, '
-                                'FY2024')])],
-        chart=TP.parts('Fields and grounds work',
-                       [('Vehicles and equipment, which also plough', veh),
-                        ('Everything else in the stated total', round(allg - veh, 2))], '$',
-                       basis='stated',
-                       note='The Superintendent’s approximate %s figures, by email. The second '
-                            'part is the stated total less the first, our subtraction.'
-                            % C.fy(2024), note_allow=(C.fy(2024),)),
-        sources=[src['email'], src['d-maint']])
-
-    # ================================================================ Youth league payments
-    rec = Y['receipts']
-    rtot = round(sum(r['amount'] for r in rec), 2)
-    if abs(rtot - Y['receipts_total']) > 0.005:
-        fail('the receipts no longer sum to youth-sports.json’s total')
-    byfy = defaultdict(float)
-    for r in rec:
-        byfy[r['fy']] += r['amount']
-    leagues = Y['leagues']
-    payer = 'Lunenburg Youth Soccer Association'
-    if payer not in leagues:
-        fail('the contact list no longer names %s' % payer)
-    out['youth-league-payments'] = TP.page(
-        'youth-league-payments',
-        'One league’s field payments are on record: %s across %s receipts, FY2024 to FY2026.'
-        % (usd2(rtot), C.num(len(rec))),
-        [f('rtot', U2(rtot), 'paid by %s (stated)' % payer, 'published', allow=(payer,)),
-         f('rn', N(len(rec), 'receipts'), 'receipts in the district’s workbook, FY2024–FY2026',
-           'published', allow=('FY2024', 'FY2026')),
-         f('r25', U(byfy['FY2025']), 'of it listed under FY2025', 'published',
-           allow=('FY2025',)),
-         f('clubs', N(len(leagues), 'organisations'), 'sports organisations the Parks page '
-           'lists as contacts', 'published'),
-         f('others', None, 'what any other group pays for a field', 'gap',
-           closes='the receipt detail for fund 1306 and fund 1500, by payer')],
-        [con('The district’s workbook lists %s receipts from %s, %s in all.'
-             % (C.num(len(rec)), payer, usd2(rtot)), ['rtot', 'rn', 'r25'],
-             {'n': N(len(rec)), 'a': U2(rtot)}, allow=(payer,),
-             notes=[step('It is the group a records request asked about first; nothing here '
-                         'compares it with any other.', 'gap', allow=('1306',),
-                         closes='every field-use receipt, by payer, from fund 1306’s journal')]),
-         con('The town’s Parks page lists %s sports organisations as contacts it does not run.'
-             % C.num(len(leagues)), ['clubs', 'others'], {'n': N(len(leagues))})],
-        table=dict(caption='Receipts from the one league on record', views=[dict(
-            key='receipts', label='The district’s workbook', total_col=1,
-            kinds=['stated', 'stated'], columns=['Fiscal year as listed', 'Amount'],
-            rows=[dict(label=r['date'], cells=[r['fy'], usd2(r['amount'])]) for r in rec],
-            note='Typed into a workbook by the district’s business office. The fiscal year is '
-                 'as the workbook lists it; one receipt dated July 2024 is listed under FY2024.'
-                 )]),
-        chart=TP.series('Field payments by year', sorted(byfy),
-                        [TP.track('Paid by the soccer association',
-                                  [round(byfy[k], 2) for k in sorted(byfy)], 'stated', 'bar')],
-                        '$', kind='bar',
-                        note='The district’s receipts workbook, by fiscal year as it lists them.'),
-        sources=[src['receipts'], src['d-receipts'], src['parkspage']],
-        finding_figures={'a': U2(rtot), 'n': N(len(rec))},
-        finding_allow=('FY2024', 'FY2026'))
-    if not any(r['date'] == '2024-07-08' and r['fy'] == 'FY2024' for r in rec):
-        fail('the July 2024 receipt is no longer listed under FY2024; fix the table note')
-
-    # ================================================================ Artificial turf fund
-    t26 = funds[1545]
-    tbal = balances('1545')
-    if abs(tbal[2025] - t26['opening']) > 0.005:
-        fail('fund 1545: the FY2025 annual-report balance no longer equals the FY26 opening')
-    plan = Y['said'][0]
-    if plan['date'] != '2016-05-03':
-        fail('the 2016 turf plan is no longer the first record in youth-sports.json')
-    amts = [float(x.replace(',', '')) for x in re.findall(r'\$([\d,]+)', plan['what'])]
-    if len(amts) < 2 or abs(amts[0] + amts[1] - t26['revenue']) > 0.005:
-        fail('the 2016 plan’s first two sums no longer add to the turf fund’s FY2026 revenue')
-    out['artificial-turf-fund'] = TP.page(
-        'artificial-turf-fund',
-        'The Artificial Turf fund took in %s in FY2026 and held %s at 31 March 2026.'
-        % (C.usd(t26['revenue']), C.usd(t26['available'])),
-        [f('in', U(t26['revenue']), 'into fund 1545, July–March FY2026', 'published',
-           allow=('1545', 'FY2026')),
-         f('out', U(t26['expenditure']), 'spent from it, July–March FY2026', 'published',
-           allow=('FY2026',)),
-         f('held', U(t26['available']), 'held, 31 March 2026', 'published',
-           allow=('31', '2026')),
-         f('b24', U(tbal[2024]), 'balance at 30 June 2024, annual report', 'published',
-           allow=('30', '2024')),
-         f('b25', U(tbal[2025]), 'balance at 30 June 2025, annual report', 'published',
-           allow=('30', '2025')),
-         f('split', None, 'who paid the FY2026 receipts', 'gap', allow=('FY2026',),
-           closes='the receipt detail for fund 1545')],
-        [con('The fund took in %s and spent %s from July to March FY2026.'
-             % (C.usd(t26['revenue']), C.usd(t26['expenditure'])), ['in', 'out', 'held'],
-             {'a': U(t26['revenue']), 'b': U(t26['expenditure'])}, allow=('FY2026',),
-             notes=[step('Machine captions of the Select Board on 3 May 2016 describe %s a year '
-                         'from a cell tower and %s from a youth league; the two add to this '
-                         'year’s receipts. No ledger splits them.'
-                         % (C.usd(amts[0]), C.usd(amts[1])), 'hypothesis',
-                         {'a': U(amts[0]), 'b': U(amts[1])}, allow=('3', '2016'))]),
-         con('Its balance rose from %s at 30 June 2024 to %s at 31 March 2026.'
-             % (C.usd(tbal[2024]), C.usd(t26['available'])), ['b24', 'b25', 'held', 'split'],
-             {'a': U(tbal[2024]), 'b': U(t26['available'])},
-             allow=('30', '2024', '31', '2026'))],
-        chart=TP.series('Artificial Turf fund balance',
-                        [day('2024-06-30'), day('2025-06-30'), day(f26['as_of'])],
-                        [TP.track('Balance', [tbal[2024], tbal[2025], t26['available']],
-                                  'published', 'bar')], '$', kind='bar',
-                        note='Fund %s: the annual town reports, then the MUNIS fund report.'
-                             % '1545', note_allow=('1545',)),
-        sources=[src['sr26'], src['ar24'], src['ar25'], src['d-funds']],
-        finding_figures={'a': U(t26['revenue']), 'b': U(t26['available'])},
-        finding_allow=('FY2026', '31', '2026'))
-
     # ================================================================ the hub
     tiers = [
         LD.tier('What the town votes', [
@@ -885,18 +692,12 @@ def build():
             f('h-park', U(f26['closing']), 'in the parks fee fund, 31 March 2026', 'published',
               allow=('31', '2026')),
             f('h-myrec', U(tot), 'recorded by the registration system, FY2025', 'published',
-              allow=('FY2025',)),
-            f('h-1306', U(s26['available']), 'in the schools’ rental fund, 31 March 2026',
-              'published', allow=('31', '2026')),
-            f('h-1545', U(t26['available']), 'in the turf fund, 31 March 2026', 'published',
-              allow=('31', '2026'))]),
+              allow=('FY2025',))]),
         LD.tier('What is not settled', [
-            f('h-jump', U(jump), 'the rental fund’s unexplained FY2025 rise', 'estimate',
-              allow=('FY2025',)),
             f('h-books', None, 'how much of the registration money reached the books', 'gap',
               closes='the FY2025 special-revenue report and fund 1500’s journal'),
-            f('h-payers', None, 'who pays to use the fields', 'gap',
-              closes='the receipt detail for funds 1306, 1500 and 1545, by payer')]),
+            f('h-payers', None, 'who pays to use the parks’ fields', 'gap',
+              closes='the receipt detail for fund 1500, by payer')]),
     ]
     hub_ladder = LD.ladder(tiers, [
         LD.conclusion('Town Meeting voted Parks %s for FY2026; its budget grew %s a year since '
@@ -905,21 +706,13 @@ def build():
         LD.conclusion('The parks’ own fee fund held %s at 31 March 2026, outside the vote.'
                       % C.usd(f26['closing']), ['h-park', 'h-myrec'], {'a': U(f26['closing'])},
                       allow=('31', '2026')),
-        LD.conclusion('The schools’ rental fund held %s and the turf fund %s at 31 March 2026.'
-                      % (C.usd(s26['available']), C.usd(t26['available'])),
-                      ['h-1306', 'h-1545', 'h-payers'],
-                      {'a': U(s26['available']), 'b': U(t26['available'])},
-                      allow=('31', '2026')),
-        LD.conclusion('The schools’ rental fund rose %s in FY2025, and no schedule shows why.'
-                      % C.usd(jump), ['h-jump'], {'a': U(jump)}, allow=('FY2025',)),
         LD.conclusion('What the registration money became on the town’s books is not published.',
-                      ['h-myrec', 'h-books']),
+                      ['h-myrec', 'h-books', 'h-payers']),
     ])
     out[CID] = TP.hub(
         CID,
         'Town Meeting voted the Parks department %s for FY2026. Beside it, a fee fund held %s '
-        'at 31 March 2026, and rent for school fields goes to a school fund. Neither fund is '
-        'part of the vote.' % (C.usd(v26), C.usd(f26['closing'])),
+        'at 31 March 2026, outside the vote.' % (C.usd(v26), C.usd(f26['closing'])),
         hub_ladder, chart=vote_chart,
         answer_figures={'a': U(v26), 'b': U(f26['closing'])},
         answer_allow=('FY2026', '31', '2026'))

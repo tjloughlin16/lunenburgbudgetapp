@@ -109,7 +109,7 @@ def existing():
     import topics as T
     out = {}
     for tid, (title, home, _gen) in sorted(T.TOPICS.items()):
-        out['topic:' + tid] = {'title': title, 'url': '/%s/%s' % (home, tid)}
+        out['topic:' + tid] = {'title': title, 'url': T.path(tid)}
     for r in _csv(THREADS):
         out['thread:' + r['id']] = {'title': r['label'], 'url': '/threads/' + r['id']}
     for p in sorted(glob.glob(os.path.join(ANALYSES, '*.md'))):

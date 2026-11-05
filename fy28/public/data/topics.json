@@ -153,6 +153,7 @@
   {
    "answer": "The voted school budget is the general fund. Every fund together spent $29,929,041 in FY2026, $3,641,567 more, and these pages show where it came from and which lines it paid.",
    "area": "school",
+   "board": "school-committee",
    "elsewhere": [],
    "groups": [
     {
@@ -225,6 +226,16 @@
     },
     {
      "section": null,
+     "title": "School buildings and fields",
+     "topics": [
+      "school-facilities-fund",
+      "school-field-upkeep",
+      "youth-league-payments",
+      "artificial-turf-fund"
+     ]
+    },
+    {
+     "section": null,
      "title": "Who grants and fees pay for",
      "topics": [
       "salaries-from-grants-and-fees",
@@ -251,6 +262,7 @@
   {
    "answer": "Buses are getting more expensive, in special education and in the regular-route contract. The state repays only a slice of special education busing. The athletic line rose because the district moved that cost from player fees to the town budget, mostly taxes.",
    "area": "school",
+   "board": "school-committee",
    "elsewhere": [],
    "groups": [
     {
@@ -291,9 +303,10 @@
   {
    "answer": "Athletics is paid from two pots, the town budget and a fee fund. The town’s ledger shows $463,034 spent in FY2026 and the fee fund $146,911; the district’s own sheets disagree on what each team costs, by a multiple.",
    "area": "school",
+   "board": "school-committee",
    "elsewhere": [
     {
-     "href": "/parks/youth-league-payments",
+     "href": "/school-all-funds/youth-league-payments",
      "title": "Youth league field payments"
     },
     {
@@ -355,6 +368,7 @@
   {
    "answer": "Out-of-district tuition was $1,205,949 in FY2025, and 39.3% of it was paid outside the general fund. The state repaid $579,142 in FY2026 through the circuit breaker, a year after the costs.",
    "area": "school",
+   "board": "school-committee",
    "elsewhere": [
     {
      "href": "/enrolment/children-schooled-elsewhere",
@@ -442,6 +456,7 @@
   {
    "answer": "1,568 children were in Lunenburg’s schools in FY2026, near where the count has sat since FY2015. Another 177 residents were schooled in other public districts, 97 of them at Monty Tech.",
    "area": "school",
+   "board": "school-committee",
    "elsewhere": [
     {
      "href": "/if-students-leave",
@@ -573,6 +588,7 @@
   {
    "answer": "The state counted 103.4 teacher FTE in FY2026; whether that is a rise or a fall depends on the year it is measured from. Paraprofessional FTE was 67.0 in FY2025, the most per pupil on the state’s sheet. Nothing published says which posts were filled.",
    "area": "school",
+   "board": "school-committee",
    "elsewhere": [
     {
      "href": "/what-we-cannot-answer",
@@ -635,6 +651,7 @@
   {
    "answer": "Chapter 70 was $9,229,410 of the $11,244,422 the state’s cherry sheet gave Lunenburg for FY2026. All of that year’s rise was the Legislature’s $150-a-pupil minimum; the formula itself added $0.",
    "area": "school",
+   "board": "school-committee",
    "elsewhere": [
     {
      "href": "/what-we-cannot-answer",
@@ -697,6 +714,7 @@
   {
    "answer": "Lunenburg spent $18,027 a pupil in FY2025, all funds, against a state median of $23,520, and has sat in the state’s bottom quarter for 17 years. Its school general fund spent under its revised budget every year from FY2010 to FY2026.",
    "area": "school",
+   "board": "school-committee",
    "elsewhere": [
     {
      "href": "/what-we-cannot-answer",
@@ -776,6 +794,7 @@
   {
    "answer": "Lunenburg High ran more classes in SY2025 than in SY2017, but a smaller share takes a language or history. Most announced cuts cannot be checked against any published count, and most budget lines cut to zero came back.",
    "area": "school",
+   "board": "school-committee",
    "elsewhere": [
     {
      "href": "/what-we-cannot-answer",
@@ -845,6 +864,7 @@
   {
    "answer": "From FY2008 to FY2024 net school spending rose 12.7% after inflation (61.3% as printed), while pupils fell 13.4% and teacher FTE 4.6%. None of it says why.",
    "area": "school",
+   "board": "school-committee",
    "elsewhere": [
     {
      "href": "/what-we-cannot-answer",
@@ -908,6 +928,7 @@
   {
    "answer": "Building upkeep’s budget nearly doubled in four years, $332,016 to $652,033, while spending grew 42%. These pages show what it buys, and where the difference sits.",
    "area": "school",
+   "board": "school-committee",
    "elsewhere": [],
    "groups": [
     {
@@ -1281,8 +1302,9 @@
    "title": "Boards and committees"
   },
   {
-   "answer": "Town Meeting voted the Parks department $134,434 for FY2026. Beside it, a fee fund held $84,818 at 31 March 2026, and rent for school fields goes to a school fund. Neither fund is part of the vote.",
+   "answer": "Town Meeting voted the Parks department $134,434 for FY2026. Beside it, a fee fund held $84,818 at 31 March 2026, outside the vote.",
    "area": "town",
+   "board": "parks-commission",
    "elsewhere": [
     {
      "href": "/athletics",
@@ -1310,16 +1332,6 @@
     },
     {
      "section": null,
-     "title": "Youth sports and fields",
-     "topics": [
-      "school-facilities-fund",
-      "school-field-upkeep",
-      "youth-league-payments",
-      "artificial-turf-fund"
-     ]
-    },
-    {
-     "section": null,
      "title": "Related pages",
      "topics": [
       "town-facilities-grounds"
@@ -1329,7 +1341,7 @@
    "id": "parks",
    "minutes": 1,
    "order": 56,
-   "path": "/parks",
+   "path": "/boards/parks-commission/reports",
    "ready": true,
    "related": [],
    "shelf": "Parks and recreation",
@@ -1696,15 +1708,15 @@
   },
   "artificial-turf-fund": {
    "finding": "The Artificial Turf fund took in $45,000 in FY2026 and held $69,390 at 31 March 2026.",
-   "generator": "scripts/build_parks_topics.py",
-   "home": "parks",
+   "generator": "scripts/build_school_fields_topics.py",
+   "home": "school-all-funds",
    "id": "artificial-turf-fund",
    "minutes": 1,
-   "path": "/parks/artificial-turf-fund",
+   "path": "/school-all-funds/artificial-turf-fund",
    "ready": true,
    "related": [],
    "shelves": [
-    "parks"
+    "school-all-funds"
    ],
    "title": "Artificial turf fund"
   },
@@ -3211,7 +3223,7 @@
    "home": "parks",
    "id": "grounds-maintenance-bid",
    "minutes": 1,
-   "path": "/parks/grounds-maintenance-bid",
+   "path": "/boards/parks-commission/reports/grounds-maintenance-bid",
    "ready": true,
    "related": [],
    "shelves": [
@@ -3961,7 +3973,7 @@
    "home": "parks",
    "id": "other-parks-funds",
    "minutes": 1,
-   "path": "/parks/other-parks-funds",
+   "path": "/boards/parks-commission/reports/other-parks-funds",
    "ready": true,
    "related": [],
    "shelves": [
@@ -4150,7 +4162,7 @@
    "home": "parks",
    "id": "park-revolving-fund",
    "minutes": 1,
-   "path": "/parks/park-revolving-fund",
+   "path": "/boards/parks-commission/reports/park-revolving-fund",
    "ready": true,
    "related": [],
    "shelves": [
@@ -4164,7 +4176,7 @@
    "home": "parks",
    "id": "parks-budget",
    "minutes": 1,
-   "path": "/parks/parks-budget",
+   "path": "/boards/parks-commission/reports/parks-budget",
    "ready": true,
    "related": [],
    "shelves": [
@@ -4178,7 +4190,7 @@
    "home": "parks",
    "id": "parks-spending",
    "minutes": 1,
-   "path": "/parks/parks-spending",
+   "path": "/boards/parks-commission/reports/parks-spending",
    "ready": true,
    "related": [],
    "shelves": [
@@ -4418,7 +4430,7 @@
    "home": "parks",
    "id": "registration-sales",
    "minutes": 1,
-   "path": "/parks/registration-sales",
+   "path": "/boards/parks-commission/reports/registration-sales",
    "ready": true,
    "related": [],
    "shelves": [
@@ -4630,30 +4642,68 @@
    "title": "School Committee funds"
   },
   "school-facilities-fund": {
-   "finding": "The schools’ rental fund rose $62,231 in FY2025, more than its receipts in any year FY2011–FY2023.",
-   "generator": "scripts/build_parks_topics.py",
-   "home": "parks",
+   "finding": "Fund 1306 took in $64,720 in FY2025 and paid out $2,489, which is why its balance jumped.",
+   "generator": "scripts/build_school_fields_topics.py",
+   "home": "school-all-funds",
    "id": "school-facilities-fund",
    "minutes": 1,
-   "path": "/parks/school-facilities-fund",
+   "path": "/school-all-funds/school-facilities-fund",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "youth-league-payments",
+     "path": "/school-all-funds/youth-league-payments",
+     "title": "Youth league payments",
+     "why": "One league’s receipts, list against journal"
+    },
+    {
+     "id": "school-field-upkeep",
+     "path": "/school-all-funds/school-field-upkeep",
+     "title": "School field upkeep",
+     "why": "What the district says rent pays for"
+    },
+    {
+     "id": "/school-funds/school-facilities-use-revolv",
+     "path": "/school-funds/school-facilities-use-revolv",
+     "title": "The fund, line by line",
+     "why": "Which budget lines it paid, year by year"
+    }
+   ],
    "shelves": [
-    "parks"
+    "school-all-funds"
    ],
    "title": "School facilities fund"
   },
   "school-field-upkeep": {
-   "finding": "The district says it pays to mow its grass fields from the fund the field rent goes into.",
-   "generator": "scripts/build_parks_topics.py",
-   "home": "parks",
+   "finding": "The district says rent pays for mowing; fund 1306 shows one FY2024 grounds bill, $19,400.",
+   "generator": "scripts/build_school_fields_topics.py",
+   "home": "school-all-funds",
    "id": "school-field-upkeep",
    "minutes": 1,
-   "path": "/parks/school-field-upkeep",
+   "path": "/school-all-funds/school-field-upkeep",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "school-facilities-fund",
+     "path": "/school-all-funds/school-facilities-fund",
+     "title": "School facilities fund",
+     "why": "All the rent, every receipt and every bill"
+    },
+    {
+     "id": "youth-league-payments",
+     "path": "/school-all-funds/youth-league-payments",
+     "title": "Youth league payments",
+     "why": "One league’s receipts, list against journal"
+    },
+    {
+     "id": "/school-funds/school-facilities-use-revolv",
+     "path": "/school-funds/school-facilities-use-revolv",
+     "title": "The fund, line by line",
+     "why": "Which budget lines it paid, year by year"
+    }
+   ],
    "shelves": [
-    "parks"
+    "school-all-funds"
    ],
    "title": "School field upkeep"
   },
@@ -4766,11 +4816,11 @@
    "title": "School revolving funds"
   },
   "school-scholarships": {
-   "finding": "The Town holds 14 scholarship and prize funds for its students; no record we hold says who receives them.",
+   "finding": "The scholarship funds paid out $80,448 in FY2011–FY2025; 4 funds that paid awards now hold under $200 each.",
    "generator": "scripts/build_school_scholarships.py",
    "home": "school-all-funds",
    "id": "school-scholarships",
-   "minutes": 1,
+   "minutes": 2,
    "path": "/school-all-funds/school-scholarships",
    "ready": true,
    "related": [],
@@ -6001,16 +6051,35 @@
    "title": "Years in the home"
   },
   "youth-league-payments": {
-   "finding": "One league’s field payments are on record: $39,073.50 across 7 receipts, FY2024 to FY2026.",
-   "generator": "scripts/build_parks_topics.py",
-   "home": "parks",
+   "finding": "Lunenburg Youth Soccer paid $39,073.50 into the schools’ fund 1306, the most of any group named.",
+   "generator": "scripts/build_school_fields_topics.py",
+   "home": "school-all-funds",
    "id": "youth-league-payments",
-   "minutes": 1,
-   "path": "/parks/youth-league-payments",
+   "minutes": 2,
+   "path": "/school-all-funds/youth-league-payments",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "school-facilities-fund",
+     "path": "/school-all-funds/school-facilities-fund",
+     "title": "School facilities fund",
+     "why": "All the rent, every receipt and every bill"
+    },
+    {
+     "id": "school-field-upkeep",
+     "path": "/school-all-funds/school-field-upkeep",
+     "title": "School field upkeep",
+     "why": "What the district says rent pays for"
+    },
+    {
+     "id": "/school-funds/school-facilities-use-revolv",
+     "path": "/school-funds/school-facilities-use-revolv",
+     "title": "The fund, line by line",
+     "why": "Which budget lines it paid, year by year"
+    }
+   ],
    "shelves": [
-    "parks"
+    "school-all-funds"
    ],
    "title": "Youth league payments"
   }

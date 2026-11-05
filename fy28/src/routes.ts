@@ -1,4 +1,5 @@
 import TOPIC_CATEGORIES from './data/topic-categories.json'
+import BOARD_SHELVES_JSON from './data/board-shelves.json'
 /** Which tab a URL means, and which URL a tab has.
  *
  *  Split out of App so it can be tested without a browser: the whole point of shareable
@@ -1015,6 +1016,7 @@ function resolvePath(pathname: string): Tab | null {
   // (src/data/topic-categories.json, written by scripts/build_topics_index.py). A hub's own
   // address wins over an older page that held the same slug -- that is the migration: the
   // hub replaces the report it was built from.
+  if (boardShelfTopic('/' + seg)) return 'topic'
   if (TOPIC_CATEGORIES.includes(seg.split('/')[0])) return 'topic'
   // ONE PAGE PER SCHOOL LINE AND PER FUND, /school-lines/<slug> and /school-funds/<slug>
   // (pages/FyItem.tsx). They ride the topic tab, as /people/<slug> rides the org charts', so they
@@ -1041,9 +1043,21 @@ function resolvePath(pathname: string): Tab | null {
   return BY_SLUG[seg] ?? null
 }
 
+/** A SHELF THAT LIVES UNDER A BOARD: /boards/<slug>/reports[/<id>] (scripts/topics.py). TJ,
+ *  5 November 2026: "relate them to the parks-commission BOARD, not be under a /parks". */
+const BOARD_SHELVES: Record<string, string> = BOARD_SHELVES_JSON
+function boardShelfTopic(pathname: string): string | null {
+  const m = /^\/boards\/([a-z0-9-]+)\/reports(?:\/([a-z0-9-]+))?\/?$/.exec(pathname.toLowerCase())
+  const shelf = m ? BOARD_SHELVES[m[1]] : undefined
+  if (!m || !shelf) return null
+  return m[2] ? (TOPIC_MERGED[m[2]] ?? m[2]) : shelf
+}
+
 /** The topic page or hub a `/transportation[/<id>]` or `/athletics[/<id>]` address names:
  *  the topic id, or the category id for a hub. scripts/topics.py is the registry. */
 export function topicIdFromPath(pathname: string): string | null {
+  const shelved = boardShelfTopic(pathname)
+  if (shelved) return shelved
   const m = /^\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?\/?$/.exec(pathname.toLowerCase())
   if (m && m[2] && TOPIC_PATHS[`${m[1]}/${m[2]}`]) return TOPIC_PATHS[`${m[1]}/${m[2]}`]
   if (m && !m[2] && TOPIC_ALIASES[m[1]]) return TOPIC_ALIASES[m[1]]
@@ -1098,6 +1112,13 @@ export const TOPIC_PATHS: Record<string, string> = {
  *  its old category still routes and the page is fetched by id, so
  *  /town-reserves/free-cash-balance renders and is moved to /free-cash/free-cash-balance. */
 export const TOPIC_ALIASES: Record<string, string> = {
+  // TJ, 5 November 2026: "i think we may have a duplicate page". /youth-sports said the fund's
+  // journal was not held; its board quotes and figures are on Youth league payments now.
+  'youth-sports': 'youth-league-payments', 'youth-soccer': 'youth-league-payments',
+  'field-rentals': 'youth-league-payments', 'the-leagues': 'youth-league-payments',
+  // The same for the Parks report the hub replaced.
+  'parks-and-recreation': 'parks', 'parks-and-rec': 'parks', recreation: 'parks',
+  'the-parks': 'parks', beach: 'parks',
   freecash: 'free-cash', 'certified-free-cash': 'free-cash',
   reserves: 'town-reserves', 'stabilization-funds': 'town-reserves',
   // The old Monty Tech report's aliases, since the hub took /monty-tech on 15 October 2026.
@@ -1164,6 +1185,13 @@ export function boardFinanceSlugFromPath(pathname: string): string | null {
 export function boardRecordsSlugFromPath(pathname: string): string | null {
   const m = /^\/boards\/([a-z0-9-]+)\/records\/?$/.exec(pathname.toLowerCase())
   return m ? m[1] : null
+}
+
+/** The board a `/boards/<slug>/reports` address names, when it is a list of shelves rather than
+ *  one shelf living there (boardShelfTopic): the School Committee's. */
+export function boardReportsSlugFromPath(pathname: string): string | null {
+  const m = /^\/boards\/([a-z0-9-]+)\/reports\/?$/.exec(pathname.toLowerCase())
+  return m && !BOARD_SHELVES[m[1]] ? m[1] : null
 }
 
 /** The board a `/boards/<slug>/transfers` address names, or null. Every board whose minutes

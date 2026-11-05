@@ -14,9 +14,9 @@ import { useOrgCharts } from '../lib/orgChartLink'
  *
  *  Reads `boards-nav.json` (build_boards.nav, ~11 KB), never boards.json (~15 MB): this bar
  *  sits on Finance, Records and Transfers too, which never needed the big payload. */
-export type BoardTab = 'overview' | 'meetings' | 'votes' | 'time' | 'schedule' | 'finance' | 'transfers' | 'records' | 'about'
+export type BoardTab = 'overview' | 'meetings' | 'votes' | 'time' | 'schedule' | 'finance' | 'reports' | 'transfers' | 'records' | 'about'
 
-type Nav = { boards: { slug: string; name: string; votes: number; time: boolean; schedule: boolean; finance: boolean; about: boolean }[] }
+type Nav = { boards: { slug: string; name: string; votes: number; time: boolean; schedule: boolean; finance: boolean; reports: boolean; about: boolean }[] }
 
 export function BoardNav({ slug, current }: { slug: string; current: BoardTab }) {
   const { d } = useReport<Nav>('boards-nav.json')
@@ -27,6 +27,8 @@ export function BoardNav({ slug, current }: { slug: string; current: BoardTab })
   const base = `/boards/${slug}`
   const tabs: { key: BoardTab | 'people'; href: string; label: string; show: boolean }[] = [
     { key: 'overview', href: base, label: 'Overview', show: true },
+    // Second, right after the overview. TJ, 5 November 2026.
+    { key: 'reports', href: `${base}/reports`, label: 'Reports', show: b.reports },
     { key: 'meetings', href: `${base}/meetings`, label: 'Meetings', show: true },
     { key: 'votes', href: `${base}/votes`, label: `All votes`, show: b.votes > 0 },
     { key: 'time', href: `${base}/time`, label: 'Time', show: b.time },

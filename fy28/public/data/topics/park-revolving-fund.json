@@ -160,6 +160,42 @@
     "open26"
    ],
    "text": "The annual report’s 30 June 2025 balance is $4,759 more than the ledger’s FY2026 opening."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$3,360",
+     "unit": "",
+     "value": 3360.0
+    },
+    "n": {
+     "text": "168",
+     "unit": "",
+     "value": 168
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the journal detail for fund 1500",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "1500"
+     ],
+     "text": "The minutes do not say which account took it."
+    }
+   ],
+   "rests_on": [
+    "yb",
+    "payers"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "League fees are real revenue that the fund totals on this page cannot show."
+   },
+   "text": "Minutes record youth baseball paying $3,360 for 168 players; no ledger we hold names a payer."
   }
  ],
  "facts": [
@@ -297,6 +333,20 @@
    }
   },
   {
+   "id": "yb",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "youth baseball’s user fees, as minuted (stated)"
+   },
+   "value": {
+    "text": "$3,360",
+    "unit": "",
+    "value": 3360.0
+   }
+  },
+  {
    "closes": "the FY2024 and FY2025 special-revenue reports for fund 1500",
    "id": "flows",
    "kind": "gap",
@@ -307,6 +357,17 @@
      "FY2025"
     ],
     "text": "receipts and spending, FY2024 and FY2025"
+   },
+   "value": null
+  },
+  {
+   "closes": "the journal detail for fund 1500",
+   "id": "payers",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "who pays into this fund, payer by payer"
    },
    "value": null
   }
@@ -358,7 +419,7 @@
  },
  "id": "park-revolving-fund",
  "kind": "topic",
- "path": "/parks/park-revolving-fund",
+ "path": "/boards/parks-commission/reports/park-revolving-fund",
  "said": [],
  "shelves": [
   "parks"
@@ -391,6 +452,10 @@
   {
    "href": "/docs/data/special-revenue-funds.csv",
    "label": "Lunenburg Budget Project — special-revenue-funds.csv (the same schedules, every edition)"
+  },
+  {
+   "href": "/docs/minutes/text/parks-commission/2024-11-06-minutes-6858.txt",
+   "label": "Town of Lunenburg — Parks Commission minutes, 6 November 2024"
   }
  ],
  "table": {

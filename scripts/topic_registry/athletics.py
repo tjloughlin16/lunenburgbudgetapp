@@ -15,7 +15,7 @@ CATEGORY = dict(
         ('The turf field', ['turf-field-capital-plans']),
     ],
     # The three long pages these pointed at are UNLISTED now; each question has a topic page.
-    elsewhere=[('/parks/youth-league-payments', 'Youth league field payments'),
+    elsewhere=[('/school-all-funds/youth-league-payments', 'Youth league field payments'),
                ('/budget-options/school-user-fees', 'School user fees'),
                ('/budget-options/extracurricular-cuts', 'Extracurricular cuts')])
 GENERATOR = 'build_athletics_topics.py'
