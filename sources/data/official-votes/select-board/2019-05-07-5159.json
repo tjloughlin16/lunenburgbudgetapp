@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-05-07",
  "docid": "5159",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the Boys & Girls Club tollbooth request for Saturday, May 18 from 9:00 AM to 2:00 PM",
+   "motion": "Approve the Boys & Girls Club of Lunenburg tollbooth request as presented.",
    "moved_by": "K. Adams",
    "seconded_by": "P. Luck",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion: k. adams to approve the tollbooth request as presented 2nd. p. luck vote: all in favor"
   },
   {
-   "motion": "Approve Cruise Night on Wednesday, June 12 from 4:00-8:00 PM on Memorial Drive with a rain date of June 19",
+   "motion": "Approve Cruise Night on Memorial Drive as presented, with a rain date of June 19.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
    "outcome": "passed",
@@ -28,58 +28,491 @@
    "quote": "motion: d. mcquaid 2\"i: p. luck to approve cruise night as presented with a rain date of june 19 vote: all in favor"
   },
   {
-   "motion": "Appoint Ken Jones as the Conservation Commission representative on the Land Acquisition Committee",
-   "moved_by": "D. McQuaid",
-   "seconded_by": "P. Luck",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: d. mcquaid 2nd: p. luck to appoint ken jones as the conservation commission representative on the land acquisition committee discussion: ms. ad",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Appoint Karin Menard to the Housing Authority with a term to expire May 1, 2021",
-   "moved_by": "K. Adams",
-   "seconded_by": "P. Luck",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: k. adams 2'd: p. luck to appoint karin menard to the housing authority with a term to expire may 1, 2021 vote: all in favor"
-  },
-  {
-   "motion": "Approve Weekday and Sunday Entertainment licenses for Famtasia The Sheep LLC, d/b/a Famtasia The Family Getaway at 138 Howard Street for Friday August 2 to Sunday August 4 with conditions of no more than 200 tickets sold and no more than eight hours of amplified music per day",
+   "motion": "Appoint Ken Jones as the Conservation Commission representative on the Land Acquisition Committee.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: d. mcquaid 2°: p. luck to approve the weekday and sunday entertainment licenses for friday, august 2 to sunday, august 4 for famtasia, the sheep llc, d/b/a famtasia, the family getaway at 138 howard street with the conditions that no more than 200 tickets be sold and they adhere to the noise hours that they presented and meet all the department head concerns discussion: ms. adams expressed concern about the hours and three days of amplified music. ms. lowe stated her intent was to al",
-   "quote_taken_from_text": true
+   "quote": "motion: d. mcquaid 2nd: p. luck to appoint ken jones as the conservation commission representative on the land acquisition committee"
   },
   {
-   "motion": "not stated",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "failed 2-2",
-   "procedural": true,
-   "quote": "vote: in favor- 2 (luck,adams) opposed- 2 ( mcquaid, toale) the motion failed."
-  },
-  {
-   "motion": "Read the Town Manager performance evaluation into the record in compliance with Open Meeting Law and hold a thoughtful discussion next week",
+   "motion": "Appoint Karin Menard to the Housing Authority (Governor's Appointee vacancy) with a term to expire May 1, 2021.",
    "moved_by": "K. Adams",
    "seconded_by": "P. Luck",
-   "outcome": "failed 2-2",
-   "procedural": true,
-   "quote": "motion: k. adams 2ºd: p. luck in order to comply with open meeting law that tonight we read this into the record and we have a thoughtful discussion next week mr. mcquaid stated if you see something that is wrong tonight you should respond so mr. toale can e",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: k. adams 2'd: p. luck to appoint karin menard to the housing authority with a term to expire may 1, 2021 vote: all in favor"
   },
   {
-   "motion": "Enter Executive Session under M.G.L. C. 30A, § 21(a), paragraph 2 to conduct strategy sessions in preparation for negotiations with non-union personnel regarding Town Manager and to adjourn afterwards",
+   "motion": "Approve the Weekday and Sunday Entertainment licenses for Famtasia, August 2-4, at 138 Howard Street, as amended to no more than eight hours of amplified music per day, with conditions on tickets, noise hours and department head concerns.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
    "outcome": "passed",
+   "procedural": false,
+   "quote": "mr. mcquaid amended the motion to no more than eight hours of amplified music per day. ms. luck seconded it. vote: all in favor"
+  },
+  {
+   "motion": "Motion on the Town Manager annual evaluation (the motion text is not legible in the OCR) to proceed as the Board discussed; the vote was split.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "failed",
+   "procedural": false,
+   "quote": "vote: in favor- 2 (luck,adams) opposed- 2 ( mcquaid, toale) the motion failed."
+  },
+  {
+   "motion": "In order to comply with Open Meeting Law, read the Town Manager composite evaluation into the record tonight and hold a thoughtful discussion next week.",
+   "moved_by": "K. Adams",
+   "seconded_by": "P. Luck",
+   "outcome": "failed",
+   "procedural": false,
+   "quote": "in favor- 2 (luck, adams) opposed - 2 (mcquaid, toale) motion fails."
+  },
+  {
+   "motion": "To enter Executive Session under M.G.L. C. 30A, § 21(a), paragraph 2, to conduct strategy sessions in preparation for negotiations with non-union personnel (Town Manager), and to adjourn afterwards.",
+   "moved_by": "D. McQuaid",
+   "seconded_by": "P. Luck",
+   "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: d. mcquaid 2nd: p. luck to enter executive session under m.g.l. c. 30a, § 21(a), paragraph 2: to conduct strategy sessions in preparation for negotiations with non-union personnel or to conduct collective bargaining sessions or contract negotiations with non-union personnel (town manager) and to adjourn afterwards vote: ms. adams-aye, ms. luck-aye, mr. mcquaid-aye, mr. toale-aye"
+   "quote": "motion: d. mcquaid 2nd: p. luck to enter executive session under m.g.l. c. 30a, § 21(a), paragraph 2"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision; all votes identified and verified against verbatim quotes",
- "cost_usd": 0.1616265
+ "note": "Text is macOS Vision OCR with visible errors (e.g., '2nd' rendered as '2\"i', '2'd', '2°'). Quotes are copied as printed. Pages 5, 18, 26 and 33 are partly garbled or blank. The motion text for the first failed Town Manager evaluation vote (page 5) is not legible, so its motion is described generally and moved_by is empty. The minutes do not state the wording of the Famtasia original motion separately from the amendment; the recorded vote is on the amended motion. Documents list heading is not printed. Attendance for Parks Commissioner Menard may refer to Karin Menard; recorded as printed.",
+ "cost_usd": 0.01648852,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen present: jamie toale, chairman; damon mcquaid, vice chairman; phyllis luck, clerk; katey adams, member"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen present: jamie toale, chairman; damon mcquaid, vice chairman; phyllis luck, clerk; katey adams, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board of selectmen present: jamie toale, chairman; damon mcquaid, vice chairman; phyllis luck, clerk; katey adams, member"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen present: jamie toale, chairman; damon mcquaid, vice chairman; phyllis luck, clerk; katey adams, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "citizen, Island Road",
+   "status": "present",
+   "quote": "dave macdonald, island road, thanked chairman jamie toale for his six years of service to the town"
+  },
+  {
+   "name": "Steve Weaver",
+   "role": "citizen, 288 Holman Street",
+   "status": "present",
+   "quote": "steve weaver, 288 holman street, in regards to the special event permit that is being drafted"
+  },
+  {
+   "name": "Michelle Belleza",
+   "role": "Executive Director, Boys & Girls Club of Lunenburg",
+   "status": "present",
+   "quote": "executive director michelle belleza presented for the fundraiser request for saturday, may 18"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "police chief jim marino presented the request for wednesday, june 12 from 4:00 - 8:00 pm"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "applicant for Housing Authority appointment",
+   "status": "present",
+   "quote": "karin menard stated she wanted to serve because she is one year into a three-year elected"
+  },
+  {
+   "name": "Sara Lowe",
+   "role": "presenter for Famtasia event",
+   "status": "present",
+   "quote": "sara lowe presented for the friday august 2 - sunday august 4 event for famtasia the sheep"
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "role": "Skate Park Committee, 1090 Massachusetts Ave.",
+   "status": "present",
+   "quote": "anthony caiozzo, 1090 massachusetts ave., reported they ran a battle of the bands fundraiser"
+  },
+  {
+   "name": "Aiden Moore",
+   "role": "Skate Park Committee, 59 Wildwood Road",
+   "status": "present",
+   "quote": "aiden moore, 59 wildwood road, reported they held a fortnite tournament at the high school"
+  },
+  {
+   "name": "Aiden Swift",
+   "role": "Skate Park Committee, 63 Oak Ave.",
+   "status": "present",
+   "quote": "aiden swift, 63 oak ave., reported they will holding a dodgeball tournament in the summer"
+  },
+  {
+   "name": "Chris Roy",
+   "role": "Skate Park Committee, 105 Chestnut Street",
+   "status": "present",
+   "quote": "chris roy, 105 chestnut street, stated they had banana bread donated to them by trudy's treats."
+  },
+  {
+   "name": "Mason Whitcomb",
+   "role": "Skate Park Committee",
+   "status": "present",
+   "quote": "mason whitcomb reported they have talked to the ceo of rollstone bank"
+  },
+  {
+   "name": "Menard",
+   "role": "Parks Commissioner (printed as 'Parks Commissioner Menard')",
+   "status": "present",
+   "quote": "parks commissioner menard stated we have not asked them to come back to us since the last time."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "citizen, 284 Lancaster Avenue",
+   "status": "present",
+   "quote": "tom alonzo, 284 lancaster avenue, as afar as the evaluation, i want to commend all the people"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board read the draft Town Manager composite evaluation aloud in public, with the chair reading it and members free to comment, while members deferred any vote and discussion on it to the following week.",
+   "quote": "mr. toale announced he would begin reading the draft composite evaluation and to feel free to stop him if you have any comments."
+  },
+  {
+   "decision": "The Town Manager will direct a constituent who raised Route 2A lighting concerns to the proper person.",
+   "quote": "ms. lemieux will direct her to the proper person."
+  },
+  {
+   "decision": "The Quarterly Financial Report under Department Reports was tabled to the next meeting.",
+   "quote": "this was tabled until the next meeting."
+  },
+  {
+   "decision": "The chair reminded the Famtasia applicant that she must keep working with the Town on the remaining details of the event.",
+   "quote": "mr. toale reminded ms. lowe that she is still required to keep working with the town on the other details."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Skate park fundraising totals",
+   "what_was_recorded": "Skate Park Committee members reported fundraising amounts, including a pledge and a total approaching a goal.",
+   "figures_as_printed": [
+    "over $2000",
+    "around $500",
+    "around $500",
+    "$2000",
+    "$3000",
+    "$50,000"
+   ],
+   "quote": "miles for myles has pledged $3000 to us. we are almost at the $50,000 mark."
+  },
+  {
+   "topic": "Skate park matching funds and new goal",
+   "what_was_recorded": "A bank promised a gift and foundation matching funds were sought, and the committee set a new fundraising goal after downsizing the park design.",
+   "figures_as_printed": [
+    "$2500",
+    "$20,000",
+    "$30,000",
+    "$200,000 to $250,000"
+   ],
+   "quote": "they have promised $2500 towards the skate park. he is also a trustee for the crocker and wallace foundation and will attempt to obtain $20,000 in matching funds from crocker and $30,000 in matching funds from wallace."
+  },
+  {
+   "topic": "FY20 budget recommendation for facilities and roads",
+   "what_was_recorded": "The Town Manager evaluation states the FY20 budget recommendation adds money to the facilities and town roads accounts.",
+   "figures_as_printed": [
+    "$40,000",
+    "$50,000"
+   ],
+   "quote": "the fy20 budget recommendation includes an additional $40,000 for maintenance of facilities and an additional $50,000 in the town roads account."
+  },
+  {
+   "topic": "Tax lien sale recovery",
+   "what_was_recorded": "The evaluation reports the Town recouped a sum from a tax lien sale of delinquent taxes.",
+   "figures_as_printed": [
+    "$130,000"
+   ],
+   "quote": "the town recouped approximately $130,000"
+  },
+  {
+   "topic": "Regionalization and Efficiency grant for Animal Control",
+   "what_was_recorded": "The evaluation says the Town Manager helped obtain a state grant for the regional animal control feasibility work.",
+   "figures_as_printed": [
+    "$42,000"
+   ],
+   "quote": "heather helped in the application process in order to receive a grant through the regionalization and efficiency grant program for $42,000"
+  },
+  {
+   "topic": "Regional Animal Control Facility design cost",
+   "what_was_recorded": "The Townsend Town Administrator relayed that the estimated design cost was too prohibitive to move forward; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the estimated cost for the design of a regional animal control facility"
+  },
+  {
+   "topic": "DPW paving spending",
+   "what_was_recorded": "The DPW Director reported about $500,000 of paving completed in the last month.",
+   "figures_as_printed": [
+    "$500,000"
+   ],
+   "quote": "they have done about $500,000 of paving in the last month"
+  },
+  {
+   "topic": "Recycling IQ Kit grant",
+   "what_was_recorded": "The Town Manager proposed applying for a MassDEP grant to fund a recycling education campaign and an 8-week curbside check.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "the grant award is up to $20,000 and up to 40 hours of technical assistance from our massdep municipal assistance coordinator."
+  },
+  {
+   "topic": "OPEB liability reduction",
+   "what_was_recorded": "The evaluation says health plan changes reduced OPEB liability costs; the amount was described only as millions.",
+   "figures_as_printed": [],
+   "quote": "reduced the town's opeb liability costs by millions due to these plan changes"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "Island Road",
+   "topic": "thanks to Chairman Toale; Town Manager evaluation",
+   "quote": "dave macdonald, island road, thanked chairman jamie toale for his six years of service to the town"
+  },
+  {
+   "speaker": "Steve Weaver",
+   "stated_role": "288 Holman Street",
+   "topic": "Special Event permit citizen input; Holman Street stormwater",
+   "quote": "steve weaver, 288 holman street, in regards to the special event permit that is being drafted, wanted to ensure there is more citizen participation for input."
+  },
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "284 Lancaster Avenue",
+   "topic": "Town Manager evaluation process; ballot error",
+   "quote": "tom alonzo, 284 lancaster avenue, as afar as the evaluation, i want to commend all the people on the board"
+  },
+  {
+   "speaker": "Chief Marino",
+   "stated_role": "Police Chief",
+   "topic": "Walmart intersection accident; police time log",
+   "quote": "chief marino, in regards to the question posed about the walmart intersection accident, stated he would be looking into it."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and opening announcements",
+   "resolution": "no action",
+   "quote": "the meeting opened at 7:00 pm with the pledge of allegiance.",
+   "tags": [
+    "opening",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "dave macdonald, island road, thanked chairman jamie toale for his six years of service to the town",
+   "tags": [
+    "public comment",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Boys & Girls Club tollbooth request",
+   "resolution": "approved",
+   "quote": "executive director michelle belleza presented for the fundraiser request for saturday, may 18",
+   "tags": [
+    "licenses",
+    "fundraiser"
+   ]
+  },
+  {
+   "topic": "Cruise Night - Memorial Drive",
+   "resolution": "approved with rain date June 19",
+   "quote": "police chief jim marino presented the request for wednesday, june 12 from 4:00 - 8:00 pm",
+   "tags": [
+    "road closure",
+    "events"
+   ]
+  },
+  {
+   "topic": "Land Acquisition Committee appointment (Ken Jones)",
+   "resolution": "appointed",
+   "quote": "to appoint ken jones as the conservation commission representative on the land acquisition committee",
+   "tags": [
+    "appointments",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Housing Authority appointment (Karin Menard)",
+   "resolution": "appointed",
+   "quote": "to appoint karin menard to the housing authority with a term to expire may 1, 2021",
+   "tags": [
+    "appointments",
+    "housing"
+   ]
+  },
+  {
+   "topic": "Famtasia special event entertainment licenses",
+   "resolution": "approved as amended (max eight hours amplified music per day)",
+   "quote": "sara lowe presented for the friday august 2 - sunday august 4 event for famtasia the sheep",
+   "tags": [
+    "licenses",
+    "special event",
+    "noise"
+   ]
+  },
+  {
+   "topic": "Skate Park Committee update",
+   "resolution": "no action; Board thanked committee",
+   "quote": "anthony caiozzo, 1090 massachusetts ave., reported they ran a battle of the bands fundraiser",
+   "tags": [
+    "skate park",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Town Manager annual performance evaluation",
+   "resolution": "two motions failed 2-2; draft read aloud into the record; no vote to adopt",
+   "quote": "mr. toale announced he would begin reading the draft composite evaluation and to feel free to stop him if you have any comments.",
+   "tags": [
+    "town manager",
+    "evaluation",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting follow-up: ballot questions error",
+   "resolution": "discussed; no action recorded",
+   "quote": "ms. adams stated she was concerned that the ballot questions that we voted on did not make it",
+   "tags": [
+    "town meeting",
+    "election",
+    "ballot"
+   ]
+  },
+  {
+   "topic": "Action file: Route 2A lighting",
+   "resolution": "referred to staff",
+   "quote": "ms. lemieux will direct her to the proper person.",
+   "tags": [
+    "state road",
+    "public safety"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported",
+   "quote": "ms. luck reported the central mass regional stormwater coalition is meeting tomorrow at",
+   "tags": [
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Department reports - Quarterly Financial Report",
+   "resolution": "tabled to next meeting",
+   "quote": "this was tabled until the next meeting.",
+   "tags": [
+    "finance"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported; Board endorsement requested for recycling grant (no vote recorded)",
+   "quote": "i would like to apply for massdep's recycling iq kit grant",
+   "tags": [
+    "recycling",
+    "grants",
+    "ADA",
+    "animal control",
+    "dementia friendly",
+    "town hall"
+   ]
+  },
+  {
+   "topic": "Public comment (closing) and executive session",
+   "resolution": "entered executive session; meeting adjourned 10:17 p.m.",
+   "quote": "to enter executive session under m.g.l. c. 30a, § 21(a), paragraph 2",
+   "tags": [
+    "executive session",
+    "town manager",
+    "public comment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "BOS Composite - Draft 5/7/2019",
+   "where": "text",
+   "quote": "bos composite - draft 5/7/2019"
+  },
+  {
+   "name": "Town of Lunenburg Town Manager Performance Evaluation (Heather Lemieux, dated 5/7/19)",
+   "where": "text",
+   "quote": "town of lunenburg town manager performance evaluation"
+  },
+  {
+   "name": "Special Event permit (being drafted)",
+   "where": "text",
+   "quote": "steve weaver, 288 holman street, in regards to the special event permit that is being drafted"
+  },
+  {
+   "name": "Email from Ms. Peterson to the Town Manager on Famtasia filing",
+   "where": "text",
+   "quote": "ms. peterson stated in an email to me that she did not see a problem with us starting that part of the process."
+  },
+  {
+   "name": "MassDEP Recycling IQ Kit Grant application",
+   "where": "text",
+   "quote": "i would like to apply for massdep's recycling iq kit grant"
+  },
+  {
+   "name": "Vertex report",
+   "where": "text",
+   "quote": "items listed in the vertex report needing attention"
+  },
+  {
+   "name": "Town Manager Report",
+   "where": "text",
+   "quote": "town manager report"
+  }
+ ],
+ "tags": [
+  "select board",
+  "town manager evaluation",
+  "open meeting law",
+  "appointments",
+  "licenses",
+  "special event",
+  "skate park",
+  "recycling",
+  "ADA",
+  "budget FY20",
+  "executive session",
+  "ballot error",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

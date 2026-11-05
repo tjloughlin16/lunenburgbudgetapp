@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2019-04-18",
  "docid": "483",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of January 17, 2019",
+   "motion": "Accept the minutes of January 17, 2019.",
    "moved_by": "A. Snow",
    "seconded_by": "R. Stober",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "a. snow moved to accept the minutes of jan 17, 2019 r. stober 2nd, j. marzuca abstained, all aye."
   },
   {
-   "motion": "Accept the minutes of February 21, 2019",
+   "motion": "Accept the minutes of February 21, 2019.",
    "moved_by": "A. Snow",
    "seconded_by": "R. Stober",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "a. snow moved to accept the minutes of feb 21, 2019 r. stober 2nd, all aye."
   },
   {
-   "motion": "Accept the minutes of March 21, 2019",
+   "motion": "Accept the minutes of March 21, 2019.",
    "moved_by": "A. Snow",
    "seconded_by": "R. Stober",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "a. snow moved to accept the minutes of march 21, 2019 r. stober 2nd, all aye"
   },
   {
-   "motion": "Appoint M. Fontaine and Y. Fusaro as the market management team for the Lunenburg Community Farmers Market",
+   "motion": "Appoint both M. Fontaine and Y. Fusaro as the farmers market management team.",
    "moved_by": "R. Stober",
    "seconded_by": "A. Snow",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "r. stober moved that both be appointed the market management team, a. snow 2nd, all aye."
   },
   {
-   "motion": "Recommend G. Burns for appointment to Agricultural Commission",
+   "motion": "Recommend G. Burns for appointment to AgCom.",
    "moved_by": "A. Snow",
    "seconded_by": "R. Stober",
    "outcome": "passed",
@@ -52,7 +52,7 @@
    "quote": "a. snow moved to recommend g. burns for appointment to agcom, r. stober 2nd, all aye."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "R. Stober",
    "seconded_by": "A. Snow",
    "outcome": "passed",
@@ -61,6 +61,147 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0854055
+ "note": "Minutes are a brief narrative summary. Votes are recorded as 'all aye' without numeric counts; the January 17 minutes motion records one abstention (J. Marzuca) but no count. No public comment period is recorded, and no dollar figures or documents are named. Attendee status for guests is inferred from their listed attendance and discussion.",
+ "cost_usd": 0.0033589200000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: m. allison, a. snow, r. stober, j. marzuca"
+  },
+  {
+   "name": "A. Snow",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: m. allison, a. snow, r. stober, j. marzuca"
+  },
+  {
+   "name": "R. Stober",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: m. allison, a. snow, r. stober, j. marzuca"
+  },
+  {
+   "name": "J. Marzuca",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: m. allison, a. snow, r. stober, j. marzuca"
+  },
+  {
+   "name": "M. Fontaine",
+   "role": "Guest",
+   "status": "present",
+   "quote": "guests: m. fontaine, y. fusaro, g. burns"
+  },
+  {
+   "name": "Y. Fusaro",
+   "role": "Guest",
+   "status": "present",
+   "quote": "guests: m. fontaine, y. fusaro, g. burns"
+  },
+  {
+   "name": "G. Burns",
+   "role": "Guest; applicant for AgCom membership",
+   "status": "present",
+   "quote": "g. burns expressed interest in becoming member to the agcom."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "All other agenda items were tabled to the next meeting.",
+   "quote": "all other items were tabled to the next meeting."
+  },
+  {
+   "decision": "R. Stober volunteered to retrieve the 2018 market signs, the market Facebook page credentials, and the key to the Ritter from the previous market manager.",
+   "quote": "r. stober volunteered to retrieve 2018 market signs, credentials for the market facebook page, and key to the ritter from the previous market manager."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes (Jan 17, Feb 21, Mar 21, 2019)",
+   "resolution": "approved",
+   "quote": "a. snow moved to accept the minutes of jan 17, 2019 r. stober 2nd, j. marzuca abstained, all aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "LHS student project",
+   "resolution": "no action; student did not attend",
+   "quote": "lhs student did not attend to discuss their project.",
+   "tags": [
+    "student project"
+   ]
+  },
+  {
+   "topic": "Economic Development Committee",
+   "resolution": "discussed; no action recorded",
+   "quote": "economic development committee discussion included mention that it had been initiated, created and then unanimously tabled by the bos.",
+   "tags": [
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Land Acquisition Committee",
+   "resolution": "discussed; no action recorded",
+   "quote": "land acquisition committee discussion included description of the focus parcels.",
+   "tags": [
+    "land acquisition"
+   ]
+  },
+  {
+   "topic": "Lunenburg Community Farmers Market (LCFM) management",
+   "resolution": "appointed market management team",
+   "quote": "r. stober moved that both be appointed the market management team, a. snow 2nd, all aye.",
+   "tags": [
+    "farmers market",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Market handover items from previous manager",
+   "resolution": "R. Stober volunteered to retrieve items",
+   "quote": "r. stober volunteered to retrieve 2018 market signs, credentials for the market facebook page, and key to the ritter from the previous market manager.",
+   "tags": [
+    "farmers market"
+   ]
+  },
+  {
+   "topic": "AgCom membership applicant G. Burns",
+   "resolution": "recommended for appointment",
+   "quote": "a. snow moved to recommend g. burns for appointment to agcom, r. stober 2nd, all aye.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Remaining agenda items",
+   "resolution": "tabled to next meeting",
+   "quote": "all other items were tabled to the next meeting.",
+   "tags": [
+    "tabled"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "agricultural commission",
+  "farmers market",
+  "appointments",
+  "minutes approval",
+  "economic development",
+  "land acquisition",
+  "tabled items"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

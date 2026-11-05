@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-04-29",
  "docid": "4039",
@@ -12,16 +12,338 @@
  },
  "votes": [
   {
-   "motion": "continue the concurrent subdivision hearings to May 13, 2019, 6:30 PM",
-   "moved_by": "P. Bertram",
-   "seconded_by": "T. Cole",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Continue the concurrent subdivision hearings to May 13, 2019, 6:30 PM.",
+   "moved_by": "Paula Bertram",
+   "seconded_by": "Tanner Cole",
+   "outcome": "passed (all aye; no count printed)",
+   "procedural": false,
    "quote": "p. bertram made motion to continue the concurrent subdivision hearing s to may 13, 2019, 6:30 pm, t. cole seconded, all aye",
    "quote_taken_from_text": true
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. This was a procedural motion to continue a public hearing.",
- "cost_usd": 0.0833455
+ "note": "Text is an extracted scan-like transcript with broken words and stray spaces (e.g., 'transfe r', 'Subdivi on'); quotes are copied with spacing collapsed. Only one motion is recorded (continuance, 'all aye', no count). Speakers listed by initial only ('D. Passios', 'D. Rodgers', 'J. Stephen') are matched by surname to earlier full names in the minutes, not confirmed. Hearing recessed at 8:44 PM with no vote recorded for the recess.",
+ "cost_usd": 0.007187219999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: kenneth chenis"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: adam costa, town counsel"
+  },
+  {
+   "name": "Don Borenstein",
+   "role": "Attorney, representing the applicant O’Brien Homes",
+   "status": "present",
+   "quote": "was represented by attorney don borenstein"
+  },
+  {
+   "name": "Kevin O’Brien",
+   "role": "Principal, O’Brien Homes",
+   "status": "present",
+   "quote": "also present were kevin o'brien, principal, o'brien homes, and wes flis"
+  },
+  {
+   "name": "Wes Flis",
+   "role": "Project Engineer, Whitman & Bingham Associates (WBA)",
+   "status": "present",
+   "quote": "wes flis, project engineer, whitman & bingham associates (wba)"
+  },
+  {
+   "name": "David Rodgers",
+   "role": "resident, 82 Highland Street",
+   "status": "present",
+   "quote": "david rodgers, 82 highland street - he had various concerns, i.e., the easement parking for individuals accessing"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "resident, 56 Whiting Street",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street- inquired if the access to the town forest will be via easement"
+  },
+  {
+   "name": "Jacob Stephen",
+   "role": "resident, 440 Howard Street",
+   "status": "present",
+   "quote": "jacob stephen, 440 howard street - believed consideration should be given to creating open space"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "resident, 284 Lancaster Avenue",
+   "status": "present",
+   "quote": "tom alonzo, 284 lancaster avenue - suggested access to the town forest should be deeded property"
+  },
+  {
+   "name": "Liz Mason",
+   "role": "resident, Sequoia Drive",
+   "status": "present",
+   "quote": "liz mason, sequoia drive - concerned with drainage, schools, and traffic."
+  },
+  {
+   "name": "Jona Kapuchi",
+   "role": "resident, 363 Howard Street",
+   "status": "present",
+   "quote": "jona kapuchi, 363 howard street - emphasized that the access drive for the site is situated on a blind corner"
+  },
+  {
+   "name": "Seth Mayer",
+   "role": "resident, 291 Howard Street",
+   "status": "present",
+   "quote": "seth mayer, 291 howard street- concerned with the road infrastructure."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board requested a site walk along the easement to the Town-owned property at the site's rear.",
+   "quote": "board members requested a site walk along the easement to the town"
+  },
+  {
+   "decision": "The Board will seek comments from the Conservation Commission.",
+   "quote": "the board will seek comments from the conservation commission."
+  },
+  {
+   "decision": "D. Borenstein will examine the easement access/road situation.",
+   "quote": "d. borenstein will examine the easement access/road situation."
+  },
+  {
+   "decision": "D. Borenstein will work on revising the access per the current discussion.",
+   "quote": "d. borenstein will work on revising the access per current discussion."
+  },
+  {
+   "decision": "WBA will provide PDFs of the plans to the Board, with documentation that the final peer review comments have been addressed.",
+   "quote": "along with documentation that shows the final peer review comments have been addressed"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cost of maintaining Town roads",
+   "what_was_recorded": "A public speaker raised the cost of maintaining Town roads in asking whether the Town must or may accept subdivision roads; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "due to the cost of maintaining the town roads"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Rodgers",
+   "stated_role": "resident, 82 Highland Street",
+   "topic": "Easement parking, busing, schools, drainage, phasing",
+   "quote": "he had various concerns, i.e., the easement parking for individuals accessing"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "resident, 56 Whiting Street",
+   "topic": "Access to Town forest by easement or deed",
+   "quote": "inquired if the access to the town forest will be via easement"
+  },
+  {
+   "speaker": "Jacob Stephen",
+   "stated_role": "resident, 440 Howard Street",
+   "topic": "Open space, environmental impact",
+   "quote": "believed consideration should be given to creating open space around the existing homes"
+  },
+  {
+   "speaker": "D. Passios",
+   "stated_role": "not stated",
+   "topic": "Bedroom count per home",
+   "quote": "inquired as to bedroom count for each home."
+  },
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "resident, 284 Lancaster Avenue",
+   "topic": "Deeded access versus easement; Town road acceptance",
+   "quote": "suggested access to the town forest should be deeded property instead of an easement."
+  },
+  {
+   "speaker": "Liz Mason",
+   "stated_role": "resident, Sequoia Drive",
+   "topic": "Drainage, schools, traffic study age",
+   "quote": "concerned with drainage, schools, and traffic."
+  },
+  {
+   "speaker": "Jona Kapuchi",
+   "stated_role": "resident, 363 Howard Street",
+   "topic": "Blind corner at site access drive",
+   "quote": "emphasized that the access drive for the site is situated on a blind corner"
+  },
+  {
+   "speaker": "Seth Mayer",
+   "stated_role": "resident, 291 Howard Street",
+   "topic": "Road infrastructure",
+   "quote": "concerned with the road infrastructure."
+  },
+  {
+   "speaker": "D. Rodgers",
+   "stated_role": "not stated",
+   "topic": "Multiple developers for the site",
+   "quote": "concerned with the possibility of the site having multiple developers instead of just one."
+  },
+  {
+   "speaker": "J. Stephen",
+   "stated_role": "not stated",
+   "topic": "Impact to abutters",
+   "quote": "reiterated his concern with impact to abutters."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Hearing opening and project background",
+   "resolution": "presented; no action",
+   "quote": "this project has been in litigation for a number of years and now a settlement agreement has been reached.",
+   "tags": [
+    "settlement agreement",
+    "background",
+    "litigation"
+   ]
+  },
+  {
+   "topic": "Revised plans under the Settlement Agreement",
+   "resolution": "presented; no action",
+   "quote": "wba presented two handouts to the board",
+   "tags": [
+    "plans",
+    "lot reduction",
+    "conservation land"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "received; questions to applicant",
+   "quote": "david rodgers, 82 highland street - he had various concerns",
+   "tags": [
+    "abutters",
+    "traffic",
+    "drainage",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Applicant response and Board discussion on access and plans",
+   "resolution": "applicant to revise access; Conservation Commission comments sought",
+   "quote": "p. bertram stated that she does not have an issue with the settlement agreement",
+   "tags": [
+    "access easement",
+    "Town forest",
+    "traffic",
+    "peer review"
+   ]
+  },
+  {
+   "topic": "Continuance of hearing",
+   "resolution": "continued to May 13, 2019",
+   "quote": "p. bertram made motion to continue the concurrent subdivision hearing s to may 13, 201",
+   "tags": [
+    "continuance"
+   ],
+   "quote_taken_from_text": true
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Definitive Subdivision Plans, Aro Estates 1-9",
+   "where": "list",
+   "quote": "definitive subdivision plans, aro estates 1-9"
+  },
+  {
+   "name": "Amendment Narrative",
+   "where": "list",
+   "quote": "amendment narrative"
+  },
+  {
+   "name": "Traffic Impact Update, Abend Associates, 02.11.13",
+   "where": "list",
+   "quote": "traffic impact update, abend associates, 02.11.13"
+  },
+  {
+   "name": "Letter, Fire Department, 03.01.13",
+   "where": "list",
+   "quote": "letter, fire department, 03.01.13"
+  },
+  {
+   "name": "Letter, Board of Health, 11.07.12",
+   "where": "list",
+   "quote": "letter, board of health, 11.07.12"
+  },
+  {
+   "name": "Review Letters, David E. Ross Associates, Inc., 01.24.13, 02.25.13, 03.29.13, 04.09.13, 04.17.13",
+   "where": "list",
+   "quote": "review letters, david e. ross associates, inc., 01.24.13, 02.25.13, 03.29.13, 04.09.13, 04.17.13"
+  },
+  {
+   "name": "Proposed Layout - 2012",
+   "where": "list",
+   "quote": "proposed layout - 2012"
+  },
+  {
+   "name": "Proposed Layout - 2019",
+   "where": "list",
+   "quote": "proposed layout - 2019"
+  },
+  {
+   "name": "Settlement Agreement",
+   "where": "text",
+   "quote": "this project has been in litigation for a number of years and now a settlement agreement has been reached."
+  },
+  {
+   "name": "2008 traffic study",
+   "where": "text",
+   "quote": "wba highlighted the recommendations of the 2008 traffic study and"
+  },
+  {
+   "name": "Code of Lunenburg, Chapter 325, Subdivision Regulations",
+   "where": "text",
+   "quote": "the hearing was to hear and discuss applications under the code of lunenburg, chapter 325"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "subdivision",
+  "public hearing",
+  "Aro Estates",
+  "Howard Street",
+  "settlement agreement",
+  "access easement",
+  "Town forest",
+  "traffic",
+  "drainage",
+  "conservation",
+  "continuance"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

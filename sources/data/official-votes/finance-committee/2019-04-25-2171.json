@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2019-04-25",
  "docid": "2171",
@@ -12,29 +12,335 @@
  },
  "votes": [
   {
-   "motion": "Recommend approval of the minutes from March 14, 2019",
-   "moved_by": "John",
-   "seconded_by": "Jay",
+   "motion": "Approve the minutes of 3.14.19 (recommend approval).",
+   "moved_by": "John Henshaw",
+   "seconded_by": "Jay Simeone",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "john made a motion to recommend approval, jay second. vote 5-0"
+   "quote": "3.14.19 john made a motion to recommend approval, jay second. vote 5-0"
   },
   {
-   "motion": "Recommend approval of the minutes from April 11, 2019",
-   "moved_by": "John",
-   "seconded_by": "Michelle",
+   "motion": "Approve the minutes of 4.11.19 (recommend approval).",
+   "moved_by": "John Henshaw",
+   "seconded_by": "Michelle Walton",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "john made a motion to recommend approval, michelle second. vote 5-0"
+   "quote": "4.11.19 john made a motion to recommend approval, michelle second. vote 5-0"
   },
   {
-   "motion": "Recommend a 2% cost of living adjustment to the SAP adjustment schedule for FY20, FY21, and FY22",
-   "outcome": "not stated",
+   "motion": "Recommend a 2% cost of living adjustment to the SAP adjustment schedule for FY20, FY21, & FY22, budgeted within FY20 (Article 8).",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "voted to recommend a 2% cost of living adjustment to the sap adjustment schedule for fy20, fy21, & fy22"
+   "quote": "article 8, salary administration plan, voted to recommend a 2% cost of living adjustment to the"
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes record \"5-0 at 8:20pm\" at the very end but do not explicitly state what motion this vote concerns; it appears disconnected from the preceding content and may represent adjournment or another procedural matter, but without a clear motion statement cannot be reliably included.",
- "cost_usd": 0.1241525
+ "note": "Scanned text (macOS Vision OCR) with garbled words; names and figures are as printed. Two motions are recorded only as minutes approvals and one Article 8 vote has no count printed. A line reading \"5-0 at 8:20pm\" appears near the end with no motion text, so it is not recorded as a vote. Article 34 was a decision to defer with no motion recorded. The Town Manager is not named in the text. Heather Lemieux is listed as a guest. Jen Benson is mentioned but not listed as attending.",
+ "cost_usd": 0.007706319999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, jay simeone"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, jay simeone"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, jay simeone"
+  },
+  {
+   "name": "Michelle Walton",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, jay simeone"
+  },
+  {
+   "name": "Marc Luescher",
+   "status": "absent",
+   "quote": "absent: marc luescher, george martin"
+  },
+  {
+   "name": "George Martin",
+   "status": "absent",
+   "quote": "absent: marc luescher, george martin"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Guest, TM",
+   "status": "present",
+   "quote": "guest: heather lemieux, tm."
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "",
+   "status": "present",
+   "quote": "carol archambault, 662 page street- school committee sent out a proclamation to the joint"
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "82 Highland",
+   "status": "present",
+   "quote": "dave rogers, 82 highland, would like to make sure that the veterans that would be affected by"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "town accountant",
+   "status": "present",
+   "quote": "karen brochu, town accountant, assured mr. rogers that this was an amount that was agreed on"
+  },
+  {
+   "name": "Town Manager",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager is going over articles that did not have a final number for expenses."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Article 34 of the Town Warrant: Finance Committee stayed with a position of defer, pending more information from the Parks Commission, ZBA, and possibly DPW, rather than recommend disapproval.",
+   "quote": "they decided to stay with the position of defer as they felt more information was needed from parks commision, zba, and possibly dpw"
+  },
+  {
+   "decision": "Terri reached out to Stephen Hase, Dean Tran, and Jen Benson to arrange an informational presentation on the interrelationship of town and state funding.",
+   "quote": "terri reached out to stephen hase, dean tran, and jen benson to schedule some kind of"
+  },
+  {
+   "decision": "Terri asked how many acres of town land are not taxed, with an answer hoped for at the next meeting.",
+   "quote": "terri would like to know how many acres of land does the town have that is not taxed? hoping to"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Article 4 prior year expense",
+   "what_was_recorded": "The Town Manager noted the prior year expense for Article 4.",
+   "figures_as_printed": [
+    "$500"
+   ],
+   "quote": "article 4- prior year expense was $500."
+  },
+  {
+   "topic": "Article 5 snow removal deficit, fire vehicle repair, and funding sources",
+   "what_was_recorded": "Article 5 would use veterans benefits and the full reserve fund to cover a snow removal deficit and fire department vehicle maintenance.",
+   "figures_as_printed": [
+    "$5,286",
+    "$75K",
+    "$64,655",
+    "$15,631"
+   ],
+   "quote": "taking $5,286 from the veterans benefits and full amount from the reserve fund of $75k to pay for the deficit of snow removal which is $64,655"
+  },
+  {
+   "topic": "Veterans benefits draw concern",
+   "what_was_recorded": "A resident asked whether veterans affected by the $5,286 draw from veterans benefits would be okay; the Town Manager and town accountant assured him it was agreed with minimal impact.",
+   "figures_as_printed": [
+    "$5,286"
+   ],
+   "quote": "dave rogers, 82 highland, would like to make sure that the veterans that would be affected by"
+  },
+  {
+   "topic": "Article 6 capital plan fuel tank state earmark",
+   "what_was_recorded": "Jen Benson secured a $160K state earmark, pending governor sign-off, that would pay for half the fuel tank project.",
+   "figures_as_printed": [
+    "$160K"
+   ],
+   "quote": "jen benson was able to secure $160k as an ear mark in state budget which still needs to be signed off by the governor"
+  },
+  {
+   "topic": "Fuel tank project cost",
+   "what_was_recorded": "A resident suggested raising and appropriating $220K for the fuel tank project if 50% of the cost comes from the state money.",
+   "figures_as_printed": [
+    "$220K"
+   ],
+   "quote": "so if that happens we should raise and appropriate the $220k, because we don't know, and when"
+  },
+  {
+   "topic": "Fire Department self-contained breathing apparatus earmark",
+   "what_was_recorded": "Jen Benson secured a $100K state earmark for the Fire Department self-contained breathing apparatus, subject to state budget approval.",
+   "figures_as_printed": [
+    "$100K"
+   ],
+   "quote": "jen benson was also able to ear mark $100k for the self-contained breathing apparatus for the fire department"
+  },
+  {
+   "topic": "Article 8 salary cost of living adjustment",
+   "what_was_recorded": "Article 8 recommends a 2% cost of living adjustment to the salary schedule, on top of step increases, budgeted in FY20.",
+   "figures_as_printed": [
+    "2%"
+   ],
+   "quote": "article 8, salary administration plan, voted to recommend a 2% cost of living adjustment to the"
+  },
+  {
+   "topic": "Chapter 70 state aid returning to schools",
+   "what_was_recorded": "Discussion of whether extra Chapter 70 money would go directly to the schools and how the School Committee would request it at Special Fall Town Meeting; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "would that chapter 70 money go back directly to the schools? the finance commitee believes that"
+  },
+  {
+   "topic": "Unused levy capacity from extra money",
+   "what_was_recorded": "Discussion of what happens to extra money not spent and whether levy capacity could offset taxes or pay down debt; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "jay wanted to know if there is access levy capacity could we 1) can we offset taxes with it or 2) put it towards debt?"
+  },
+  {
+   "topic": "Article 37 PILOT with Borrego",
+   "what_was_recorded": "The Town Manager explained the PILOT calculation; the last PILOT (Nexxiant) was $7 per kilowatt escalated 2.5% yearly over a 20-year agreement.",
+   "figures_as_printed": [
+    "$7",
+    "2.5%"
+   ],
+   "quote": "the last pilot was nexxiant which was a rate of $7 per kilowatt and then escalated 2.5% every year"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Veterans benefits account draw to fund the snow removal deficit and fire vehicle repair (Article 5).",
+   "amount_as_printed": "$5,286",
+   "outcome": "not stated: described as the planned funding source; no vote recorded",
+   "quote": "taking $5,286 from the veterans benefits and full amount from the reserve fund of $75k"
+  },
+  {
+   "description": "Full reserve fund transfer to cover the snow removal deficit and fire vehicle repair (Article 5).",
+   "amount_as_printed": "$75K",
+   "outcome": "not stated: described as the planned funding source; no vote recorded",
+   "quote": "taking $5,286 from the veterans benefits and full amount from the reserve fund of $75k"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Carol Archambault",
+   "stated_role": "",
+   "topic": "School Committee proclamation on education funding",
+   "quote": "carol archambault, 662 page street- school committee sent out a proclamation to the joint"
+  },
+  {
+   "speaker": "Dave Rogers",
+   "stated_role": "82 Highland",
+   "topic": "Veterans benefits draw for Article 5",
+   "quote": "dave rogers, 82 highland, would like to make sure that the veterans that would be affected by"
+  },
+  {
+   "speaker": "Dave Rogers",
+   "stated_role": "82 Highland",
+   "topic": "Fuel tank project cost and size",
+   "quote": "dave rogers, 82 highland, it is my impression that 50% of the cost could come from this money,"
+  },
+  {
+   "speaker": "Mr. Rogers",
+   "stated_role": "82 Highland",
+   "topic": "Extra money coming back to the Town",
+   "quote": "mr. rogers. 82 highland, is there a chance that when this is all settled out that there could be"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Open meeting and public comment on education funding",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "school funding"
+   ],
+   "quote": "the chair called the meeting to order at 7:00 pm."
+  },
+  {
+   "topic": "Communications: Town Hall bathroom closure",
+   "resolution": "noted",
+   "tags": [
+    "communications",
+    "town hall"
+   ],
+   "quote": "terri announced that the bathrooms are unavailable as construction is underway in town hall."
+  },
+  {
+   "topic": "Review warrant articles: Article 34 deferred",
+   "resolution": "deferred",
+   "tags": [
+    "warrant articles",
+    "Article 34"
+   ],
+   "quote": "article 34 of the town warrant brought on some discussion as the finance committee thought to"
+  },
+  {
+   "topic": "Committee liaison reports (Land Acquisition Committee)",
+   "resolution": "no action",
+   "tags": [
+    "committee reports",
+    "land acquisition",
+    "conservation"
+   ],
+   "quote": "met the night before. they will be going out to the property on northfield rd over the weekend to look at"
+  },
+  {
+   "topic": "Minutes of 3.14.19 and 4.11.19",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "3.14.19 john made a motion to recommend approval, jay second. vote 5-0"
+  },
+  {
+   "topic": "Town Manager and financial officer report on warrant articles 4, 5, 6, 8 and 37",
+   "resolution": "discussed; Article 8 recommended",
+   "tags": [
+    "warrant articles",
+    "snow removal",
+    "veterans benefits",
+    "capital plan",
+    "fuel tank",
+    "state earmark",
+    "PILOT",
+    "Chapter 70",
+    "levy capacity"
+   ],
+   "quote": "town manager is going over articles that did not have a final number for expenses."
+  },
+  {
+   "topic": "Public comment and announcements (state funding presentation, raffle)",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "state funding",
+    "fundraiser"
+   ],
+   "quote": "eagle house will be selling raffle tickets for the redsox game before the town meeting."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "School Committee proclamation to the Joint Committee on Education and Governor",
+   "where": "list",
+   "quote": "school committee proclamation to the joint committee on education and governor"
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "warrant articles",
+  "Town Meeting",
+  "snow removal",
+  "veterans benefits",
+  "capital plan",
+  "fuel tank",
+  "state earmark",
+  "Chapter 70",
+  "PILOT",
+  "school funding",
+  "salary administration"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments:"
+ },
+ "dropped_unquoted_by_field": {}
 }

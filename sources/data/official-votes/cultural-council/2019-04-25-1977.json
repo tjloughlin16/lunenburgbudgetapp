@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cultural-council",
  "meeting_date": "2019-04-25",
  "docid": "1977",
@@ -12,6 +12,143 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes explicitly state: \"It is noted that this is not a voting meeting since quorum is not met.\" No motions or vote outcomes are documented.",
- "cost_usd": 0.0775335
+ "note": "OCR text (macOS Vision) of a single page. The meeting was not a voting meeting because quorum was not met, and no motions or votes are recorded. The adjournment at 7:40 PM is recorded without a motion. Members are listed only in the roll call, so their stated roles are not printed. The Received and Filed stamp (May 21, 2019) is not a document in the minutes.",
+ "cost_usd": 0.00321962,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Laura Brzozoski",
+   "role": "member (role not printed)",
+   "status": "present",
+   "quote": "roll call of members present: laura brzozoski laura kelly ashly faherty minna scholten"
+  },
+  {
+   "name": "Laura Kelly",
+   "role": "member (role not printed)",
+   "status": "present",
+   "quote": "roll call of members present: laura brzozoski laura kelly ashly faherty minna scholten"
+  },
+  {
+   "name": "Ashly Faherty",
+   "role": "member (role not printed)",
+   "status": "present",
+   "quote": "roll call of members present: laura brzozoski laura kelly ashly faherty minna scholten"
+  },
+  {
+   "name": "Minna Scholten",
+   "role": "member (role not printed)",
+   "status": "present",
+   "quote": "roll call of members present: laura brzozoski laura kelly ashly faherty minna scholten"
+  },
+  {
+   "name": "Lamia Holden",
+   "role": "Community visitors",
+   "status": "present",
+   "quote": "community visitors lamia holden it is noted that this is not a voting meeting since quorum is not met"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Chair set agenda items for non-profit and community tables for the next meeting.",
+   "quote": "chair- set agenda items for non-profit and community tables for next meeting"
+  },
+  {
+   "decision": "An agenda item on t-shirts was set for the next meeting.",
+   "quote": "set an agenda item on t-shirts for next meeting"
+  },
+  {
+   "decision": "Discussion on festival volunteers was deferred to a later meeting.",
+   "quote": "discussion on festival volunteers will take place at a later meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Arts Festival marketing expenditure",
+   "what_was_recorded": "A Facebook ads expenditure for the Arts Festival was reported under Marketing.",
+   "figures_as_printed": [
+    "$11.99"
+   ],
+   "quote": "marketing- $11.99 expenditure on facebook ads"
+  },
+  {
+   "topic": "Saturday entertainment license application fee",
+   "what_was_recorded": "The Board of Selectmen request for a Saturday entertainment license includes a waived application fee; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "saturday entertainment license with waived application fee and present site plan."
+  },
+  {
+   "topic": "Festival sponsorships",
+   "what_was_recorded": "An update on current sponsorships was on the bookkeeping and finances agenda; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "bookkeeping/finances- update on current sponsorships"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Lamia Holden",
+   "stated_role": "Community visitors",
+   "topic": "Arts Festival website",
+   "quote": "lamia holden discussed putting the arts festival website together and briefly previewed the progress."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Officers reports",
+   "resolution": "Chair to set agenda items for next meeting; no other officer reports",
+   "tags": [
+    "officers",
+    "agenda"
+   ],
+   "quote": "chair- set agenda items for non-profit and community tables for next meeting"
+  },
+  {
+   "topic": "Public comment: Arts Festival website",
+   "resolution": "Previewed; council members asked to review later and offer suggestions",
+   "tags": [
+    "public comment",
+    "website"
+   ],
+   "quote": "she suggested that council members take a look at a later time and offer suggestions."
+  },
+  {
+   "topic": "Arts Festival task management",
+   "resolution": "Reports on entertainment, sponsorships, town coordination, marketing, and logistics; no action recorded",
+   "tags": [
+    "arts festival",
+    "entertainment",
+    "marketing",
+    "licensing",
+    "jurying"
+   ],
+   "quote": "arts festival task management"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "Meeting adjourned at 7:40 PM; no motion recorded",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "set an agenda item on t-shirts for next meeting adjourn 7:40 pm"
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "cultural council",
+  "arts festival",
+  "quorum not met",
+  "no votes",
+  "website",
+  "licensing",
+  "marketing",
+  "jurying",
+  "volunteers",
+  "t-shirts"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

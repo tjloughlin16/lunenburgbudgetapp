@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-04-22",
  "docid": "4041",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the ANR plan for 50 Page Street",
+   "motion": "Approve the ANR Plan for 50 Page Street.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "p. bertram made motion to approve the anr plan, t. cole seconded, all aye."
   },
   {
-   "motion": "Approve the ANR plan for 53 Prospect Street",
+   "motion": "Approve the ANR Plan for 53 Prospect Street.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -28,23 +28,31 @@
    "quote": "t. cole made motion to approve the anr plan, p. bertram seconded, all aye."
   },
   {
-   "motion": "Recommend approval of Article 38 at town meeting",
+   "motion": "Recommend approval of Article 38 at Town Meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "article 38 - p. bertram made motion to recommend approval of article at town meeting, t. cole seconded, all aye."
+   "quote": "p. bertram made motion to recommend approval of article at town meeting, t. cole seconded, all aye."
   },
   {
-   "motion": "Continue the hearing on Article 40 to April 29th",
+   "motion": "Continue the hearing on Article 40 to April 29.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "p. bertram made motion to continue the hearing on april 29th, t. cole seconded, discussion-t. cole felt that the board did not have answers for the questions posed at this hearing. the board also needs to look at the unintended consequences of allowing these types of uses in residential zoning. p. bertram has two questions for town counsel; 1) what constitutes an allowable use on private property; is it the use of public access, and 2) the potential impact on zoning with the passage of this article. vote taken, all aye."
+   "procedural": false,
+   "quote": "p. bertram made motion to continue the hearing on april 29th, t. cole seconded, discussion-t. cole felt that"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Send a memorandum to the Board of Selectmen noting the Planning Board should have been afforded a chance to weigh in on building re-use discussions.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "p. bertram made a motion that a memorandum be sent to the board of selectmen noting same."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -53,6 +61,233 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR-processed (macOS Vision). All votes legible.",
- "cost_usd": 0.1520835
+ "note": "OCR text (macOS Vision) with garbled words: 'April gt meeting', 'STOPMLATEr', 'sertram', 'probabilty'. The Storm Water Task Force line is partly unreadable and no dollar figures appear in the text. The Building Re-Use motion has no recorded second or result. The Article 38 vote is recorded as 'all aye' with no count. Minutes do not state the vote count for any motion. Text contains no budget figures.",
+ "cost_usd": 0.00574542,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "status": "absent",
+   "quote": "absent: kenneth chenis"
+  },
+  {
+   "name": "Jeff Stone",
+   "role": "property owner, 50 Page Street",
+   "status": "not stated",
+   "quote": "50 page street- property owner jeff stone was represented by david king, remax."
+  },
+  {
+   "name": "David King",
+   "role": "REMAX, representing property owner Jeff Stone",
+   "status": "present",
+   "quote": "50 page street- property owner jeff stone was represented by david king, remax."
+  },
+  {
+   "name": "Steve Ballard",
+   "role": "Whitman and Bingham, representing the property owner at 53 Prospect Street",
+   "status": "present",
+   "quote": "53 prospect street- property owner was represented by steve ballard, whitman and bingham."
+  },
+  {
+   "name": "John DiNapoli",
+   "role": "Municipal & Community Services Manager, UNITIL",
+   "status": "present",
+   "quote": "unitil was represented by john dinapoli, municipal & community services manager and sara sankowich, system arborist."
+  },
+  {
+   "name": "Sara Sankowich",
+   "role": "System Arborist, UNITIL",
+   "status": "present",
+   "quote": "unitil was represented by john dinapoli, municipal & community services manager and sara sankowich, system arborist."
+  },
+  {
+   "name": "Steve Weaver",
+   "role": "288 Holman Street, public comment",
+   "status": "present",
+   "quote": "steve weaver, 288 holman street- voiced concern with possible runoff into town roads from extensive tree removal."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "UNITIL will proceed with the planning process for the Storm Resiliency Program and return to the Board once it determines which trees would be removed; UNITIL will coordinate with A. Burney on a map and a proposed site walk.",
+   "quote": "unitil will coordinate with a. burney to provide a map to the board indicating locations of impacted trees and a proposed site walk."
+  },
+  {
+   "decision": "The minutes of 04/08/19 were not approved because there was no quorum.",
+   "quote": "minutes approval: 04/08/19- unable to approve due to lack of quorum."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Steve Weaver",
+   "stated_role": "288 Holman Street",
+   "topic": "runoff from tree removal",
+   "quote": "steve weaver, 288 holman street- voiced concern with possible runoff into town roads from extensive tree removal."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "ANR Plans: 50 Page Street and 53 Prospect Street",
+   "resolution": "both ANR plans approved",
+   "quote": "50 page street- property owner jeff stone was represented by david king, remax.",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "lots"
+   ]
+  },
+  {
+   "topic": "Appointment: UNITIL tree work discussion",
+   "resolution": "no vote; UNITIL to return to the Board with tree-removal details and a map",
+   "quote": "appointment: unitil, tree work discussion- unitil was represented by john dinapoli",
+   "tags": [
+    "UNITIL",
+    "tree removal",
+    "scenic roads",
+    "storm resiliency"
+   ]
+  },
+  {
+   "topic": "Public hearings: Zoning Warrant Articles",
+   "resolution": "Article 38 recommended for Town Meeting; Article 40 hearing continued to April 29",
+   "quote": "article 40 - p. bertram made motion to continue the hearing on april 29th, t. cole seconded",
+   "tags": [
+    "zoning",
+    "warrant articles",
+    "town meeting",
+    "citizen petition"
+   ]
+  },
+  {
+   "topic": "Building Re-Use",
+   "resolution": "motion to send memorandum to Board of Selectmen; no result recorded",
+   "quote": "building re-use- p. bertram noted that the board of selectmen had met with various committees/board",
+   "tags": [
+    "building re-use",
+    "Board of Selectmen"
+   ]
+  },
+  {
+   "topic": "Economic Development Committee",
+   "resolution": "discussion only, no action",
+   "quote": "economic development committee- the select board, at its april gt meeting, unanimously voted to table",
+   "tags": [
+    "economic development",
+    "committee formation"
+   ]
+  },
+  {
+   "topic": "Minutes approval 04/08/19",
+   "resolution": "not approved, lack of quorum",
+   "quote": "minutes approval: 04/08/19- unable to approve due to lack of quorum.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports only, no action",
+   "quote": "capital planning committee- no report",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "informational; possible Howard Street traffic count discussed",
+   "quote": "2019 traffic counts- mrc is preparing for the 2019 traffic count season",
+   "tags": [
+    "traffic counts",
+    "Howard Street",
+    "earth removal"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "informational",
+   "quote": "april 29- hearing for aro estates and continuation of citizen petition article 40.",
+   "tags": [
+    "schedule",
+    "hearings",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "deferred until full Board is in place",
+   "quote": "lunenburg code, section 250-4.15., solar energy systems will proceed once full board is in place.",
+   "tags": [
+    "solar",
+    "off-street parking",
+    "master plan",
+    "zoning code"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:25 PM",
+   "quote": "adjournment: t. cole made motion to adjourn, p. bertram seconded, all aye. adjourned 9:25 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "50 Page Street ANR Plan",
+   "where": "list",
+   "quote": "documents used at meeting: 50 page street anr plan 53 prospect street anr plan mrpc 2019 traffic counts"
+  },
+  {
+   "name": "53 Prospect Street ANR Plan",
+   "where": "list",
+   "quote": "documents used at meeting: 50 page street anr plan 53 prospect street anr plan mrpc 2019 traffic counts"
+  },
+  {
+   "name": "MRPC 2019 Traffic Counts",
+   "where": "list",
+   "quote": "documents used at meeting: 50 page street anr plan 53 prospect street anr plan mrpc 2019 traffic counts"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plans",
+  "UNITIL",
+  "tree removal",
+  "scenic roads",
+  "zoning warrant articles",
+  "town meeting",
+  "economic development",
+  "building re-use",
+  "traffic counts"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

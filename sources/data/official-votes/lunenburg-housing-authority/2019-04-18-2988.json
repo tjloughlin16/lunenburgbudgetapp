@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2019-04-18",
  "docid": "2988",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from the March 21, 2019 meeting",
+   "motion": "To accept the minutes of the March 21, 2019 meeting.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Linda McDonald",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "deborah christen made a motion to accept the minutes ; linda mcdonald seconded. all were in favor and the minutes were accepted."
   },
   {
-   "motion": "Accept the March 2019 financial report",
+   "motion": "To accept the March financial report.",
    "moved_by": "Linda McDonald",
    "seconded_by": "Deborah Christen",
    "outcome": "passed",
@@ -28,15 +28,15 @@
    "quote": "linda mcdonald made a motion to accept the march financial report. deborah christen seconded; all were in favor."
   },
   {
-   "motion": "Write off $3,059.20 as uncollectible debts effective April 2019",
+   "motion": "To write off $3,059.20 as uncollectible debts effective April 2019 (Resolution 201906, quarterly unrecoverable debts).",
    "moved_by": "Linda McDonald",
    "seconded_by": "Deborah Christen",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "motion made by linda mcdonald to write off $3,059.20 as uncollectible debts effective april 2019. seconded, deborah christen seconded the motion, and the motion was passed by a unanimous vote"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting at 7:01 p.m.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Linda McDonald",
    "outcome": "passed",
@@ -45,6 +45,211 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09421750000000001
+ "note": "Plain text extraction of a 2-page regular meeting. All four votes are recorded with movers and seconders. The write-off resolution refers to an attached list that is not in the text. No executive session or public speakers appear.",
+ "cost_usd": 0.00519612,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paul Doherty",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: paul doherty, chair linda mcdonald, vice chair deborah a.h. christen, member"
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: paul doherty, chair linda mcdonald, vice chair deborah a.h. christen, member"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: paul doherty, chair linda mcdonald, vice chair deborah a.h. christen, member"
+  },
+  {
+   "name": "Caroline Fortin",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: caroline fortin, member"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "also present: adam gautie, assistant executive director denise ivaldi, recording secretary"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "also present: adam gautie, assistant executive director denise ivaldi, recording secretary"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "March 2019 financial report - reserves",
+   "what_was_recorded": "Reserves were reported at a healthy 48.97 percent on the financial report.",
+   "figures_as_printed": [
+    "48.97%"
+   ],
+   "quote": "reserves are at a healthy 48.97%."
+  },
+  {
+   "topic": "Monthly payroll",
+   "what_was_recorded": "The monthly payroll was passed around for two board member signatures; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "monthly payroll passed around for two board member signatures."
+  },
+  {
+   "topic": "Resolution 201906 write-off of vacated tenant debt",
+   "what_was_recorded": "A former tenant who vacated owing rent owed $3,059.20 as of March 31, 2019, aged 90 days, and the board wrote it off as uncollectible.",
+   "figures_as_printed": [
+    "$3,059.20",
+    "March 31, 2019",
+    "90"
+   ],
+   "quote": "owed $3,059.20 as of march 31, 2019 ( see attached list)."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and quorum",
+   "resolution": "quorum declared; meeting opened 6:43 p.m.",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "the chair declared a quorum present and opened the meeting at 6:43 p.m."
+  },
+  {
+   "topic": "Approval of March 21, 2019 minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "the minutes of the march 21, 2019 meeting were presented."
+  },
+  {
+   "topic": "Executive Director Report",
+   "resolution": "received; new Assistant Executive Director introduced",
+   "tags": [
+    "staff",
+    "DHCD",
+    "training"
+   ],
+   "quote": "adam gautie introduced himself as the new assistant executive director as of april 15 th."
+  },
+  {
+   "topic": "Financial Report - March 2019",
+   "resolution": "accepted",
+   "tags": [
+    "finance",
+    "reserves",
+    "payroll"
+   ],
+   "quote": "reserves are at a healthy 48.97%."
+  },
+  {
+   "topic": "Modernization Report",
+   "resolution": "no action; no ongoing projects",
+   "tags": [
+    "modernization"
+   ],
+   "quote": "no ongoing projects at this time."
+  },
+  {
+   "topic": "State-Aided Housing Report",
+   "resolution": "received",
+   "tags": [
+    "waiting list",
+    "occupancy",
+    "applications"
+   ],
+   "quote": "we received 19 standard applications in march; 9 elderly/young disabled and 10 family"
+  },
+  {
+   "topic": "Old Business - crank-out windows",
+   "resolution": "update received; tenants to call in work orders",
+   "tags": [
+    "maintenance",
+    "windows"
+   ],
+   "quote": "the board previously asked for an update on the crank -out windows."
+  },
+  {
+   "topic": "New Business - Resolution 201906 write-off",
+   "resolution": "passed unanimously",
+   "tags": [
+    "debt write-off",
+    "tenant rent"
+   ],
+   "quote": "resolution to write-off quarterly unrecoverable debts"
+  },
+  {
+   "topic": "Other Correspondence",
+   "resolution": "noted",
+   "tags": [
+    "DHCD",
+    "notices"
+   ],
+   "quote": "dhcd public housing notices (march)"
+  },
+  {
+   "topic": "Resident participation",
+   "resolution": "none requested",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "no resident participation requested."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:01 p.m.",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "deborah christen made a motion to adjourn the meeting at 7:01 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Attached list of vacated tenant amounts owed as of March 31, 2019",
+   "where": "list",
+   "quote": "owed $3,059.20 as of march 31, 2019 ( see attached list)."
+  },
+  {
+   "name": "Resolution 201906 - Resolution to Write-Off Quarterly Unrecoverable Debts",
+   "where": "text",
+   "quote": "resolution to write-off quarterly unrecoverable debts resolution 201906"
+  },
+  {
+   "name": "DHCD PHN 2019-07 on Regionalization",
+   "where": "text",
+   "quote": "dhcd phn 2019 -07 on regionalization"
+  },
+  {
+   "name": "DHCD Public Housing Notices (March)",
+   "where": "text",
+   "quote": "dhcd public housing notices (march)"
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "financial report",
+  "tenant debt write-off",
+  "state-aided housing",
+  "waiting list",
+  "DHCD",
+  "maintenance",
+  "staffing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "( see attached list)"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,297 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "stormwater-task-force",
+ "board": "Stormwater Task Force",
+ "video_title": "Stormwater Task Force",
+ "meeting_date": "2026-11-04",
+ "video_id": "78xTgHLh6ZM",
+ "video_url": "https://www.youtube.com/watch?v=78xTgHLh6ZM",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/stormwater-task-force/2026-11-04-78xTgHLh6ZM.json",
+  "sha256": "a622fd69ca66f22d87e113ec04dd6c9908c5ab536fd9e41af3b7a4fed39ca44e",
+  "caption_lines": 109,
+  "segments": 940
+ },
+ "recording": {
+  "duration_s": 2315,
+  "duration": "0:38",
+  "spoken_chars": 25059,
+  "words_approx": 4176
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11042026-8111",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/stormwater-task-force/2026-11-04-agenda-8111.txt",
+   "path": "sources/meetings/stormwater-task-force/2026-11-04-agenda-8111.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-05T12:40:56Z",
+  "cost_usd": 0.1679326
+ },
+ "minutes": {
+  "headline": "Stormwater task force reviewed the ERU fee spreadsheet, fixed outliers, and prepared slides for Monday's library session.",
+  "summary": "The task force went through the scrubbed ERU/utility fee spreadsheet, correcting blank use codes, a large quarry property, the Carousel Lane and Tri Town entries, and renaming a column to impervious area. They agreed the figures are a best-effort starting point open to review, planned to send the file to FinCom via a town contact but not post it online, and arranged a Friday Zoom to review slides before a Monday public session at the library. A roll call vote was taken to adjourn.",
+  "attendees": [
+   {
+    "name_as_heard": "Renee Mki",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "John Beiel",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jenny",
+    "role": "member (remote, left early)"
+   },
+   {
+    "name_as_heard": "Bill",
+    "role": "member / town staff sharing screen"
+   },
+   {
+    "name_as_heard": "Tim",
+    "role": "member (arrived late)"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "fees",
+   "roads-and-dpw",
+   "town-departments",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 2230,
+    "motion": "Motion to adjourn, moved and seconded, vote by roll call",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 464,
+    "topic": "Utility fee for the quarry property on Lunenburg-Shirley Road",
+    "what_was_said": "Calculated utility fee on the property's large ERU count was discussed as significant relative to its tax levy; left in place as open to review.",
+    "figures_as_heard": [
+     "127.75 eru",
+     "10,858",
+     "52,000",
+     "20%"
+    ]
+   },
+   {
+    "t": 1015,
+    "topic": "Carousel Lane consolidated fee",
+    "what_was_said": "Consolidating the complex's impervious area gives a per-unit fee below a single-family home.",
+    "figures_as_heard": [
+     "85",
+     "60 bucks per unit",
+     "155",
+     "444,429.39"
+    ]
+   },
+   {
+    "t": 1269,
+    "topic": "Abatement columns",
+    "what_was_said": "A member suggested showing 75% and 50% payment columns; others said abatements are a couple of years out and will be in the presentation.",
+    "figures_as_heard": [
+     "75%",
+     "50%"
+    ]
+   },
+   {
+    "t": 1804,
+    "topic": "Per-ERU fee level and revenue",
+    "what_was_said": "The fee is expected near the stated level but is not final; the sum came over the sewer budget on purpose, and new permit requirements could raise costs.",
+    "figures_as_heard": [
+     "$85",
+     "80",
+     "90"
+    ]
+   },
+   {
+    "t": 1867,
+    "topic": "Collecting unpaid fees",
+    "what_was_said": "Unpaid fees would go on tax liens, with delay of over a year and possible legal fees.",
+    "figures_as_heard": [
+     "20%"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 545,
+    "decision": "Column header changed to impervious area; a note will say the spreadsheet figures are best effort and open to review."
+   },
+   {
+    "t": 1737,
+    "decision": "Spreadsheet will not be posted online; it will be sent to a town contact to share with FinCom."
+   },
+   {
+    "t": 1541,
+    "decision": "Tri Town entries to be zeroed, with a note that 37 Young's Road covers all of Tri Town."
+   },
+   {
+    "t": 2189,
+    "decision": "Zoom review of slides set for 9:00 Friday among three members."
+   },
+   {
+    "t": 2251,
+    "decision": "Library session meeting to be posted; scheduling of next meetings can be done offline."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 29,
+    "t_end": 69,
+    "topic": "Opening and roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 69,
+    "t_end": 545,
+    "topic": "ERU spreadsheet review: blank use codes and quarry property",
+    "resolution": "informational",
+    "tags": [
+     "fees",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 545,
+    "t_end": 1269,
+    "topic": "Vacant lots, Carousel Lane consolidation, GIS impervious data",
+    "resolution": "informational",
+    "tags": [
+     "fees",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 1269,
+    "t_end": 1737,
+    "topic": "Abatement columns, town-owned parcels, Tri Town entries",
+    "resolution": "informational",
+    "tags": [
+     "fees"
+    ]
+   },
+   {
+    "t_start": 1737,
+    "t_end": 2230,
+    "topic": "Sharing the file, fee uncertainty, Monday library session and slide review",
+    "resolution": "informational",
+    "tags": [
+     "fees"
+    ]
+   },
+   {
+    "t_start": 2230,
+    "t_end": 2312,
+    "topic": "Adjournment and scheduling",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Total of the fee roll (a number like 518 was mentioned, unclear what it measures)",
+   "Exact figures in the Carousel Lane calculation were garbled",
+   "Identity of some speakers"
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 380,
+    "kind": "liability or legal",
+    "about": "Quarry dust and sediment reaching town catch basins",
+    "who": "a member",
+    "words_as_heard": "It does. Yeah. from Reservoir Road down to the Shirley line. There's a bunch of catch basins there."
+   },
+   {
+    "t": 1867,
+    "kind": "liability or legal",
+    "about": "Unpaid fees collected via tax lien can cost legal fees and take over a year",
+    "who": "a member",
+    "words_as_heard": "it can cost you money to get the money."
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 49,
+    "name_as_heard": "the ERU spreadsheet",
+    "kind": "spreadsheet",
+    "words_as_heard": "approval of the ERU spreadsheet",
+    "shown": true
+   },
+   {
+    "t": 2037,
+    "name_as_heard": "the slides",
+    "kind": "presentation",
+    "words_as_heard": "who's assigned the slides",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "stormwater-fee-impact",
+    "title": "Stormwater fee impact",
+    "question": "What would the proposed stormwater utility fee cost different property owners, including businesses?",
+    "t": 464,
+    "words_as_heard": "I just did the eru the utility fee calculation based on the 127.75 eru. It comes up to 10,858.",
+    "data_in_play": [
+     "127.75 eru",
+     "10,858",
+     "$85"
+    ],
+    "existing": "thread:stormwater-fee"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The task force worked through the scrubbed utility fee spreadsheet and corrected blank use codes, the large quarry property, and the Carousel Lane and Tri Town entries.",
+    "t": 69
+   },
+   {
+    "line": "The column header was changed to impervious area, with a note that the spreadsheet figures are best effort and open to review.",
+    "t": 545
+   },
+   {
+    "line": "The spreadsheet will not be posted online; it will go to a town contact to share with FinCom.",
+    "t": 1737
+   },
+   {
+    "line": "The task force said the fee is expected near the stated level but is not final, and new permit requirements could raise costs.",
+    "t": 1804
+   },
+   {
+    "line": "A Zoom review of the slides was set for Friday at 9:00, ahead of a Monday public session at the library.",
+    "t": 2189
+   }
+  ],
+  "why_it_matters": [
+   "The stormwater utility fee would be a new charge on property owners, and the figures behind it are still a draft that could change before any bill is set.",
+   "Unpaid fees would go on tax liens, so a missed payment could carry a delay of over a year and possible legal fees."
+  ],
+  "watch_next": [
+   "Friday 9:00 Zoom review of the slides among three members.",
+   "Monday public session at the library, which is to be posted as a meeting."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-05T12:41:02Z",
+   "cost_usd": 0.022599099999999997
+  }
+ }
+}

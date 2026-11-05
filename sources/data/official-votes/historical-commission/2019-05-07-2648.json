@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2019-05-07",
  "docid": "2648",
@@ -11,7 +11,108 @@
   "doc_url": "/docs/meetings/historical-commission/2019-05-07-minutes-2648.pdf"
  },
  "votes": [],
- "dropped_unquoted": 0,
- "note": "This text is an agenda/notice of meeting only, not actual meeting minutes. It lists the agenda items but contains no recorded votes, motions, or outcomes. No voting language present.",
- "cost_usd": 0.0690005
+ "dropped_unquoted": 1,
+ "note": "The text is a meeting agenda (Notice of Meeting) only. It records no discussion, no motions or votes, no attendance names, no public comment, no budget figures, and no outcomes for any item. Agenda item 5 is printed as both \"New Business\" and \"5. Next Meeting\", so numbering is as printed. No documents list is printed.",
+ "cost_usd": 0.00234782,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Attendance/Quorum",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "1. attendance/ quorum",
+   "tags": [
+    "attendance",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Review of Minutes of April 2, 2019 meeting",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "2. review of minutes of april 2, 2019 meeting",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "3. correspondence 4. present business:",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Demolition Request: Richard McGrath",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "a. demolition request: richard mcgrath",
+   "tags": [
+    "demolition",
+    "historic preservation"
+   ]
+  },
+  {
+   "topic": "Update on 68 Elm Street",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "b. update on 68 elm street",
+   "tags": [
+    "68 Elm Street",
+    "update"
+   ]
+  },
+  {
+   "topic": "Community Preservation Act update",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "c. community preservation act- update",
+   "tags": [
+    "community preservation act"
+   ]
+  },
+  {
+   "topic": "Town Meeting reminder",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "d. town meeting reminder",
+   "tags": [
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "New Business (no items printed)",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "5. new business: 5. next meeting: june 4, 2019",
+   "tags": [
+    "new business"
+   ]
+  },
+  {
+   "topic": "Next Meeting",
+   "resolution": "listed on agenda; June 4, 2019 date printed",
+   "quote": "5. next meeting: june 4, 2019 6. adjournment",
+   "tags": [
+    "next meeting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "historical commission",
+  "agenda only",
+  "demolition request",
+  "68 Elm Street",
+  "community preservation act",
+  "town meeting",
+  "Ritter Building"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

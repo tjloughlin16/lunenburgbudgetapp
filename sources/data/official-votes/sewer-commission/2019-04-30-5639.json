@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2019-04-30",
  "docid": "5639",
@@ -12,29 +12,380 @@
  },
  "votes": [
   {
-   "motion": "Propose an amendment at Town Meeting to add Sewer as excluded in Section 4-2(i) in the Town Charter",
+   "motion": "Propose an amendment at Town Meeting to add Sewer as excluded in Section 4-2(i) in the Town Charter.",
    "moved_by": "Carl L.",
    "seconded_by": "Joe A.",
-   "outcome": "Unanimous",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "motion: carl l. second: joe a. to propose an amendment at town meeting to add sewer as excluded in section 4-2(i) in the town charter. vote: unanimous"
+   "quote": "to propose an amendment at town meeting to add sewer as excluded in section 4-2(i) in the town charter. vote: unanimous"
   },
   {
-   "motion": "Accept the minutes of 4/9/19",
-   "outcome": "Unanimous",
+   "motion": "Accept the minutes of 4/9/19.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "to accept the minutes of 4/9/19. vote: unanimous"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 7:45pm.",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
-   "outcome": "Unanimous",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "motion: carl l. to adjourn: 7:45pm second: ryan s. vote: unanimous"
+   "quote": "to adjourn: 7:45pm second: ryan s. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned document from macOS Vision; text is clear and complete for vote records.",
- "cost_usd": 0.1085965
+ "note": "OCR text from a scan (macOS Vision). No roll call or attendance list is printed, so attendance status is \"not stated\" except for members who made or seconded motions or appeared before the board. The motion to accept the 4/9/19 minutes and the Charter amendment motion record no mover or seconder for the minutes approval. The clerk's signature block is garbled in the OCR, so the clerk is not recorded as an attendee. Surnames for John, Heather, Eric and Jack are not given in full in the minutes, except \"John Londa\" appears once and is not clearly the same John. The Charter motion's vote is printed as \"Unanimous\" with no count.",
+ "cost_usd": 0.00665832,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl L.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: carl l."
+  },
+  {
+   "name": "Joe A.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "second: joe a."
+  },
+  {
+   "name": "Ryan S.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "second: ryan s."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "barb reported that she received 1 rfp response and the commission"
+  },
+  {
+   "name": "Jack",
+   "role": "DW Director",
+   "status": "not stated",
+   "quote": "barb will invite jack (dw director) to come participate in these evaluations."
+  },
+  {
+   "name": "John",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "john will compile the scope and the commission will discuss it at the 5/28 meeting."
+  },
+  {
+   "name": "Heather",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "they have asked to meet with barb, heather, john londa and nexamp rep, charlie nutter."
+  },
+  {
+   "name": "John Londa",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "they have asked to meet with barb, heather, john londa and nexamp rep, charlie nutter."
+  },
+  {
+   "name": "Eric",
+   "role": "Nexamp",
+   "status": "not stated",
+   "quote": "barb had advised eric at nexamp that the commission wished to sign up"
+  },
+  {
+   "name": "Charlie Nutter",
+   "role": "Nexamp rep",
+   "status": "not stated",
+   "quote": "john londa and nexamp rep, charlie nutter."
+  },
+  {
+   "name": "Jerry Lanni",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jerry inquired about the possibility of bringing sewer down chase road by lanni's farm."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "applicant, 16 Upland Ave extension",
+   "status": "not stated",
+   "quote": "appointment - dan proctor, 16 upland ave extension - cancelled because the request was withdrawn."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed to complete the I/I 3rd party review RFP evaluation at a meeting, to be placed on the 5/14 agenda.",
+   "quote": "the evaluation will be put on the 5/14 meeting agenda."
+  },
+  {
+   "decision": "The Commission will do the O&M contract RFP evaluation at the 5/14 meeting, and Barb will invite Jack (DW Director) to participate.",
+   "quote": "barb will invite jack (dw director) to come participate in these evaluations."
+  },
+  {
+   "decision": "Barb was asked to discuss with Nexamp the Commission's concern that Nexamp is an enterprise fund operating separately from the Town.",
+   "quote": "asked barb to discuss this with nexamp."
+  },
+  {
+   "decision": "John will compile the FOG audit scope and the Commission will discuss it at the 5/28 meeting.",
+   "quote": "john will compile the scope and the commission will discuss it at the 5/28 meeting."
+  },
+  {
+   "decision": "The Commission advised Jerry Lanni to go first to the Planning Board, the Land Use Director and the Water District regarding water service, and offered its support.",
+   "quote": "they suggested going first to the planning board, the land use director and the water district regarding water service."
+  },
+  {
+   "decision": "Carl will propose the charter amendment at Town Meeting.",
+   "quote": "carl will propose the amendment at the town meeting."
+  },
+  {
+   "decision": "The Commission agreed not to add the proposed agenda statement on items which may or may not be discussed during a meeting.",
+   "quote": "commission discussed the proposed agenda statement concerning items which may or may not be discussed during a meeting and agreed to not add the statement."
+  },
+  {
+   "decision": "Wright Pierce's requested documents will go direct to SWSS, as Jack suggested.",
+   "quote": "jack suggested having them go direct to swss. commission agreed."
+  },
+  {
+   "decision": "Carl asked that the 3/12 minutes be amended to add that one goal was to have a documentation procedure for maintenance.",
+   "quote": "minutes- 3/12 - carl asked to add that one goal was to have a documentation procedure for maintenance."
+  },
+  {
+   "decision": "The Upland extension appointment (Dan Proctor, 16 Upland Ave extension) was cancelled because the request was withdrawn.",
+   "quote": "cancelled because the request was withdrawn."
+  },
+  {
+   "decision": "Member agenda inputs for future meetings were listed: irrigation meter policy and implementation of new meters, RFPs for evaluation of O&M contract and I/I 3rd party review, and FOG audit scope.",
+   "quote": "member agenda inputs for future meetings --irrigation meter policy and implementation of the new meters,"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fitchburg invoice",
+   "what_was_recorded": "The Commission signed a Fitchburg invoice for a stated amount.",
+   "figures_as_printed": [
+    "$10,187.00"
+   ],
+   "quote": "the commission signed a fitchburg invoice for $10,187.00."
+  },
+  {
+   "topic": "FY19 budget update",
+   "what_was_recorded": "Barb passed out copies of the FY19 budget update and went over the figures; no figures are printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "barb passed out copies of the fy19 budget update and went over the figures."
+  },
+  {
+   "topic": "FY20 budget warrant articles",
+   "what_was_recorded": "Carl will read the motions for Articles 12 & 13 of the Annual Town Meeting warrant, under the FY20 Budget heading; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "annual town meeting warrant articles - fy20 budget-."
+  },
+  {
+   "topic": "Solar credit program and enterprise fund",
+   "what_was_recorded": "The Commission raised concern that Nexamp may not know the Commission is an enterprise fund operating separately from the Town; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "whether nexamp is aware that they are an enterprise fund and operate individually from the town"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Carl",
+   "stated_role": "not stated",
+   "topic": "Upland extension request, sewer connection rights",
+   "quote": "carl commented that properties within the sewer service area have the right to connect and do not have to show whether or not the property can perk or that they have to show a need"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Appointment - Dan Proctor, 16 Upland Ave extension",
+   "resolution": "cancelled, request withdrawn",
+   "quote": "appointment - dan proctor, 16 upland ave extension - cancelled because the request was withdrawn.",
+   "tags": [
+    "appointment",
+    "sewer extension"
+   ]
+  },
+  {
+   "topic": "Public comment on Upland extension request",
+   "resolution": "no action",
+   "quote": "carl commented that properties within the sewer service area have the right to connect",
+   "tags": [
+    "public comment",
+    "sewer connection"
+   ]
+  },
+  {
+   "topic": "I/I 3rd party review RFP responses",
+   "resolution": "evaluation set for 5/14 meeting",
+   "quote": "barb reported that she received 1 rfp response and the commission",
+   "tags": [
+    "RFP",
+    "inflow and infiltration"
+   ]
+  },
+  {
+   "topic": "RFP for O&M contract",
+   "resolution": "evaluation set for 5/14 meeting",
+   "quote": "the commission also will need to complete an evaluation for this rep.",
+   "tags": [
+    "RFP",
+    "operations and maintenance contract"
+   ]
+  },
+  {
+   "topic": "Solar credit program (Nexamp)",
+   "resolution": "Barb to raise enterprise fund concern with Nexamp",
+   "quote": "barb had advised eric at nexamp that the commission wished to sign up",
+   "tags": [
+    "solar",
+    "Nexamp"
+   ]
+  },
+  {
+   "topic": "Grease trap FOG audit",
+   "resolution": "John to compile scope; discuss 5/28",
+   "quote": "barb reported that the letters have been sent out and the next step is to coordinate the",
+   "tags": [
+    "FOG audit",
+    "grease trap"
+   ]
+  },
+  {
+   "topic": "Appointment - Jerry Lanni, sewer service area expansion to Chase Road",
+   "resolution": "Commission offered support; directed to Planning Board, Land Use Director, Water District",
+   "quote": "jerry inquired about the possibility of bringing sewer down chase road by lanni's farm.",
+   "tags": [
+    "sewer service area expansion",
+    "Chase Road",
+    "farm",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting warrant articles - FY20 budget and Charter",
+   "resolution": "passed motion to propose Charter amendment",
+   "quote": "to propose an amendment at town meeting to add sewer as excluded in section 4-2(i) in the town charter.",
+   "tags": [
+    "Town Meeting",
+    "Town Charter",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Proposed agenda statement",
+   "resolution": "not added",
+   "quote": "agreed to not add the statement.",
+   "tags": [
+    "agenda",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Minutes of 3/12",
+   "resolution": "addition requested by Carl",
+   "quote": "minutes- 3/12 - carl asked to add that one goal was to have a documentation procedure for maintenance.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Minutes of 4/9/19",
+   "resolution": "accepted unanimously",
+   "quote": "to accept the minutes of 4/9/19. vote: unanimous",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report",
+   "resolution": "received; FY19 budget update reviewed; Fitchburg invoice signed",
+   "quote": "business manager report - barb will be focusing on q4 billing and meter import in may.",
+   "tags": [
+    "business manager",
+    "billing",
+    "budget",
+    "maintenance plan"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "listed for future agendas",
+   "quote": "member agenda inputs for future meetings --irrigation meter policy and implementation of the new meters,",
+   "tags": [
+    "agenda planning"
+   ]
+  },
+  {
+   "topic": "Public comment (general)",
+   "resolution": "none",
+   "quote": "public comment- none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:45pm",
+   "quote": "to adjourn: 7:45pm second: ryan s. vote: unanimous",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "YTD FY19 Budget",
+   "where": "list",
+   "quote": "handout: ytd fy19 budget"
+  },
+  {
+   "name": "Fitchburg Invoice",
+   "where": "text",
+   "quote": "the commission signed a fitchburg invoice for $10,187.00."
+  },
+  {
+   "name": "Annual Town Meeting Warrant Articles 12 & 13",
+   "where": "text",
+   "quote": "carl will read the motions for articles 12 & 13."
+  },
+  {
+   "name": "Proposed agenda statement",
+   "where": "text",
+   "quote": "commission discussed the proposed agenda statement concerning items which"
+  },
+  {
+   "name": "RFP responses (I/I 3rd party review)",
+   "where": "text",
+   "quote": "barb reported that she received 1 rfp response and the commission"
+  },
+  {
+   "name": "RFP for O&M Contract",
+   "where": "text",
+   "quote": "rfp for o&m contract-- the commission also will need to complete an evaluation for this rep."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "RFP evaluation",
+  "inflow and infiltration",
+  "O&M contract",
+  "solar credit",
+  "Nexamp",
+  "FOG audit",
+  "sewer service expansion",
+  "Chase Road",
+  "Town Charter amendment",
+  "Town Meeting",
+  "FY19 budget",
+  "FY20 budget",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handout: ytd fy19 budget"
+ },
+ "dropped_unquoted_by_field": {}
 }

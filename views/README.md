@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**709 of 5717 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**711 of 5725 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **5008 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **5014 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -49,7 +49,7 @@ documents under wrong years. Every one of them is reachable through `by-group/`.
 | FY25 | 121 |
 | FY26 | 163 |
 | FY27 | 293 |
-| FY28 | 10 |
+| FY28 | 12 |
 | FY29 | 3 |
 | FY30 | 1 |
 | FY32 | 1 |
@@ -258,6 +258,7 @@ Listed so this view cannot look more complete than it is.
 - `data/agentic-spend.csv` — What the scripted reading cost, job by job
 - `data/ambulance-receipts-vs-gl-history.csv` — Ambulance receipts, compared with the general fund history
 - `data/ambulance-receipts.csv` — Ambulance receipts, FY2014-FY2025
+- `data/annual-report-catalogue-sort.csv` — Which catalogued tables we hold nothing of, and whether each is worth taking
 - `data/annual-report-catalogue.csv` — Every table in every annual report, catalogued
 - `data/annual-report-contents.csv` — What each report contains, section by section
 - `data/annual-report-coverage-datasets.csv` — Every dataset the annual reports feed, and whether it is in the database
@@ -380,8 +381,8 @@ Listed so this view cannot look more complete than it is.
 - `data/fy-signatures.csv` — How each school fiscal year began and ended, as announced
 - `data/gl-history.csv` — Every general fund account, budget and actual, FY2010–FY2025
 - `data/grant-watch-state.csv` — What is new from DESE: every grant and award list we have seen, and when
-- `data/gross-wages-refused.csv` — Payroll pages that would not read, and why each refused
-- `data/gross-wages.csv` — The town’s wage list, name by name — AN INCOMPLETE READ
+- `data/gross-wages-refused.csv` — Wage-list rows that would not read, and records the town printed twice
+- `data/gross-wages.csv` — The town’s wage list, name by name, FY2011–FY2025
 - `data/health-insurance-law.csv` — What Massachusetts law lets a town do about health insurance, and what it forbids
 - `data/heard-figures.csv` — Figures a person checked in the meeting recordings
 - `data/inflation-cost-index-map.csv` — Which price index each kind of school spending is measured against, and why
@@ -460,4 +461,3 @@ Listed so this view cannot look more complete than it is.
 - `data/report-auditors-cash-schedule.csv` — Annual-report extract: auditors cash schedule
 - `data/report-capital-project-costs.csv` — Annual-report extract: capital project costs
 - `data/report-capital-projects.csv` — Capital project authorisations
-- `data/report-cash-management.csv` — Annual-report extract: cash management

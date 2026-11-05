@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "land-acquisition-committee",
  "meeting_date": "2019-05-08",
  "docid": "2705",
@@ -12,23 +12,133 @@
  },
  "votes": [
   {
-   "motion": "Enter executive session to consider the purchase, exchange, taking, lease or value of real property at 994 Northfield Road",
+   "motion": "Enter executive session to consider the purchase, exchange, taking, lease or value of real property at 994 Northfield Road, not returning to public session.",
    "moved_by": "Phyllis Luck",
-   "seconded_by": "Ken Jones",
-   "outcome": "unanimous",
+   "outcome": "passed (roll call, unanimous)",
    "procedural": true,
-   "quote": "phyllis luck made a motion to enter executive session in order to consider the purchase, exchange, taking, lease or value of real property at 994 northfield road as discussion in open meeting may have a detrimental effect on the negotiating position of the governmental body, not to return to public session. motion was seconded by ken jones. a roll call vote was taken and vote was unanimous to enter executive session."
+   "quote": "phyllis luck made a motion to enter executive session in order to consider the purchase, exchange, taking, lease or value of real property at 994 northfield road",
+   "seconded_by": "Ken Jones"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ken",
-   "seconded_by": "Terri",
-   "outcome": "unanimous",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "ken made a motion to adjourn, terri seconded motion passed unanimously."
+   "quote": "ken made a motion to adjourn, terri seconded motion passed unanimously.",
+   "seconded_by": "Terri"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes (macOS Vision). The opening line is heavily corrupted and an apparent vote ('coss were approved unanimously approved') cannot be reliably extracted due to OCR degradation. The two main votes—entering executive session and adjourning—are legible.",
- "cost_usd": 0.10731750000000001
+ "note": "The opening of the OCR text is garbled (call to order and any earlier approval of prior minutes are unreadable; a fragment reads 'unanimously approved.' with no identifiable motion, so it is not recorded as a vote). Attendance is not listed in the minutes; statuses reflect the members who spoke or made motions. Karin Menard is mentioned only as a contact and is not recorded as attending. No dollar figures are printed.",
+ "cost_usd": 0.0039126000000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Phyllis Luck",
+   "status": "present",
+   "quote": "phyllis luck made a motion to enter executive session in order to consider the"
+  },
+  {
+   "name": "Ken Jones",
+   "status": "present",
+   "quote": "motion was seconded by ken jones."
+  },
+  {
+   "name": "Terri",
+   "status": "present",
+   "quote": "terri asked what she can discuss with the finance committee."
+  },
+  {
+   "name": "Brandon",
+   "status": "present",
+   "quote": "brandon responded that we can disclose that we reached verbal agreement with the seller."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "respectfully submitted, paula bertram"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Phyllis will request that an item be placed on the next Selectmen's meeting agenda in executive session and will post the agenda; Brandon will attend.",
+   "quote": "phyllis will request that an item be placed on the next selectmen's meeting and will post an agenda. brandon will attend."
+  },
+  {
+   "decision": "Paula will reach out to Karin Menard to find out whether the committee can get on the Parks Commission agenda; the Parks Commission must be involved.",
+   "quote": "paula will reach out to karin menard to find out if we can get on the agenda for the parks commission."
+  },
+  {
+   "decision": "Committee would like to meet with Brandon and Paula on May 15th in executive session; Paula will post the agenda if the meeting can be held on the 15th.",
+   "quote": "committee would like to meet with them on may 15th in executive session."
+  },
+  {
+   "decision": "Committee will attempt to schedule a site walk with Parks for the following weekend, including a site walk of the south parcel.",
+   "quote": "committee will attempt to schedule a site walk with parks for the following weekend."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Purchase of 994 Northfield Road",
+   "what_was_recorded": "Committee reported a verbal agreement reached with the seller, and asked whether to wait for the appraisal before proceeding; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "brandon responded that we can disclose that we reached verbal agreement with the seller."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session: 994 Northfield Road",
+   "resolution": "entered executive session (roll call, unanimous); follow-up scheduling discussed",
+   "quote": "phyllis luck made a motion to enter executive session in order to consider the purchase, exchange, taking, lease or value of real property at 994 northfield road",
+   "tags": [
+    "executive session",
+    "real property",
+    "purchase"
+   ]
+  },
+  {
+   "topic": "Next steps: Selectmen, Parks Commission, site walk",
+   "resolution": "no action; follow-up tasks assigned to members",
+   "quote": "paula will post agenda if we are able to meet on the 15th.",
+   "tags": [
+    "Selectmen",
+    "Parks Commission",
+    "site walk",
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:56 p.m.",
+   "quote": "ken made a motion to adjourn, terri seconded motion passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Appraisal (property at 994 Northfield Road)",
+   "where": "text",
+   "quote": "paula asked if there is anything else we need to do, or do we need to wait for the appraisal."
+  }
+ ],
+ "tags": [
+  "land acquisition",
+  "994 Northfield Road",
+  "executive session",
+  "verbal agreement with seller",
+  "appraisal",
+  "Parks Commission",
+  "Selectmen",
+  "site walk"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

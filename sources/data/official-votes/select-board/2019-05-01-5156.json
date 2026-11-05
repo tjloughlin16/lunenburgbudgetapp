@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-05-01",
  "docid": "5156",
@@ -12,24 +12,23 @@
  },
  "votes": [
   {
-   "motion": "To not allow requests to hunt turkeys with guns in the Woodruff Conservation area",
+   "motion": "Motion to not allow requests to hunt turkeys with guns in the Woodruff Conservation area during spring season.",
    "moved_by": "Ms. Adams",
    "seconded_by": "Ms. Luck",
    "outcome": "failed 2-2",
    "procedural": false,
-   "quote": "ms. adams motioned to not allow requests to hunt and ms. luck seconded the motion. discussion: mr. toale stated conservation lands are for ev",
-   "quote_taken_from_text": true
+   "quote": "ms. adams motioned to not allow requests to hunt and ms. luck seconded the motion."
   },
   {
-   "motion": "To grant permission to hunt with bow from sunrise to 9:00 a.m.",
+   "motion": "Grant permission to hunt with bow from sunrise to 9:00 a.m. on the Woodruff area.",
    "moved_by": "D. McQuaid",
    "seconded_by": "J. Toale",
    "outcome": "failed 2-2",
    "procedural": false,
-   "quote": "motion: d. mcquaid 2nd: j. toale to grant permission to hunt with bow from sunrise to 9:00 a.m. vote: 2 in favor (toale, mcquaid) 2 against (luck, adams)"
+   "quote": "motion: d. mcquaid 2nd: j. toale to grant permission to hunt with bow from sunrise to 9:00 a.m."
   },
   {
-   "motion": "To adjourn the meeting at 11:27 a.m.",
+   "motion": "Adjourn the meeting at 11:27 a.m.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
    "outcome": "passed",
@@ -38,6 +37,215 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. One motion (to not allow bow hunting until a policy drafted) was withdrawn before vote and not recorded here.",
- "cost_usd": 0.1457715
+ "note": "OCR text from a scan (OCR macOS Vision). Names are garbled in places and kept as printed (for example \"Damon micquaid\", \"Diane Now\" and \"Diane Nowd\", \"2nl\"). The minutes print no meeting date in the text; 2019-05-01 comes from the request. The hunting-policy motion by K. Adams was withdrawn before any vote, so it is not recorded as a vote. The 2-2 tie votes are recorded as failed because a tie does not pass; the minutes do not state the word \"failed\". Council on Aging members Cheryl Moison and Barbara Brown are listed without any stated participation.",
+ "cost_usd": 0.00562342,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen present, jamie toale, chairman, damon micquaid, vice chairman, phyllis luck,"
+  },
+  {
+   "name": "Damon micquaid",
+   "role": "Vice chairman",
+   "status": "present",
+   "quote": "board of selectmen present, jamie toale, chairman, damon micquaid, vice chairman, phyllis luck,"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board of selectmen present, jamie toale, chairman, damon micquaid, vice chairman, phyllis luck,"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "clerk; katey adams, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; muir haman, library director; sue doherty, coa director;"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Library Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; muir haman, library director; sue doherty, coa director;"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "COA Director",
+   "status": "present",
+   "quote": "sue doherty believed town should be one level and a community-accessible building."
+  },
+  {
+   "name": "Michelle Belleza",
+   "role": "Executive Director of the Lunenburg Boys & Girls Club",
+   "status": "present",
+   "quote": "michelle belleza, executive director of the lunenburg boys & girls club"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "Council on Aging Members",
+   "status": "present",
+   "quote": "council on aging members: diane nowd, sarah grant, cheryl moison, jane rabbitt, barbara brown"
+  },
+  {
+   "name": "Sarah Grant",
+   "role": "Council on Aging Members",
+   "status": "present",
+   "quote": "ms. grant said parking is easier at tcp and asked what would happen to this building."
+  },
+  {
+   "name": "Cheryl Moison",
+   "role": "Council on Aging Members",
+   "status": "not stated",
+   "quote": "council on aging members: diane nowd, sarah grant, cheryl moison, jane rabbitt, barbara brown"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Council on Aging Members",
+   "status": "present",
+   "quote": "jane rabbitt stated there has to be other towns that deal with children being close to public buildings."
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "Council on Aging Members",
+   "status": "not stated",
+   "quote": "council on aging members: diane nowd, sarah grant, cheryl moison, jane rabbitt, barbara brown"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board took no action on bow hunting; permission was not granted, and the Woodruff hunting question was referred to Attorney Costa's opinion.",
+   "quote": "the board took no action and permission was not granted."
+  },
+  {
+   "decision": "Land use policies will be taken up at a future policy workshop in the summer.",
+   "quote": "policies regarding land uses will be discussed in a future policy workshop in the summer."
+  },
+  {
+   "decision": "Town Manager evaluations are to be turned in to the Chairman.",
+   "quote": "mr. toale requested town manager evaluations be turned in to him."
+  },
+  {
+   "decision": "Town Manager directed the Board to Attorney Costa's opinion on the hunting issue.",
+   "quote": "ms. lemieux directed the board to attorney costa's opinion on the hunting issue."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed by the Board",
+   "what_was_recorded": "The Board signed an accounts payable warrant, a payroll warrant and a payroll deductions warrant.",
+   "figures_as_printed": [
+    "$622,586.12",
+    "$742,200.77",
+    "$577,241.63"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $622,586.12; a payroll warrant in the amount of $742,200.77 and a payroll deductions warrant in the amount of $577,241.63."
+  },
+  {
+   "topic": "Cost of moving Town Hall to the TC Passios Building",
+   "what_was_recorded": "Mr. Haman said long-term cost benefits might cost less; Mr. Toale said added space is a necessary added expense for school, teen center and senior center needs. No dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "mr. toale stated he looks at adding space as a necessary added expense for the school, teen center and senior center needs."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Sue Doherty",
+   "stated_role": "COA Director",
+   "topic": "TCP Passios Building move, community space",
+   "quote": "sue doherty believed town should be one level and a community-accessible building."
+  },
+  {
+   "speaker": "Diane Nowd",
+   "stated_role": "Council on Aging Members",
+   "topic": "one building for all town offices",
+   "quote": "diane now liked the idea of having everything in one building."
+  },
+  {
+   "speaker": "Sarah Grant",
+   "stated_role": "Council on Aging Members",
+   "topic": "parking and future of current Town Hall",
+   "quote": "ms. grant said parking is easier at tcp and asked what would happen to this building."
+  },
+  {
+   "speaker": "Michelle Belleza",
+   "stated_role": "Executive Director of the Lunenburg Boys & Girls Club",
+   "topic": "TCP space for club activities and secure entry",
+   "quote": "ms. belleza stated small and and the tcp would be valuable for their needs"
+  },
+  {
+   "speaker": "Jane Rabbitt",
+   "stated_role": "Council on Aging Members",
+   "topic": "one building with all town offices together",
+   "quote": "jane rabbitt stated there has to be other towns that deal with children being close to public buildings."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Abutter feedback on proposed Town Hall move to TC Passios Building",
+   "resolution": "feedback received; no action",
+   "quote": "mr. toale stated the reason this meeting was scheduled was to get feedback from the abutters to the tc passios building",
+   "tags": [
+    "Town Hall",
+    "TC Passios Building",
+    "abutters",
+    "senior center"
+   ]
+  },
+  {
+   "topic": "Spring turkey and bow hunting requests, Woodruff Conservation area",
+   "resolution": "no action; permission not granted",
+   "quote": "ms. lemieux reported there have been two requests to hunt turkeys with guns in the woodruff conservation area during spring turkey hunting season.",
+   "tags": [
+    "hunting",
+    "conservation land",
+    "Woodruff"
+   ]
+  },
+  {
+   "topic": "Accounts payable and payroll warrants",
+   "resolution": "signed",
+   "quote": "the board signed an accounts payable warrant in the amount of $622,586.12; a payroll warrant in the amount of $742,200.77",
+   "tags": [
+    "warrants",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Town Manager evaluations",
+   "resolution": "requested; turn in to Chairman",
+   "quote": "mr. toale requested town manager evaluations be turned in to him.",
+   "tags": [
+    "Town Manager",
+    "evaluation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "Town Hall relocation",
+  "TC Passios Building",
+  "abutters",
+  "senior center",
+  "library",
+  "hunting",
+  "conservation land",
+  "warrants",
+  "Town Manager"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2019-04-17",
  "docid": "6216",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Continue the public hearing on the Notice of Intent for 179 Island Road to May 1st",
+   "motion": "Continue the Notice of Intent hearing for Joseph O'Brien (179 Island Road) to the May 1 meeting.",
    "moved_by": "Cl",
    "seconded_by": "JR",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "cl moved to continue jr seconded and the commission voted unanimously to may 1st."
   },
   {
-   "motion": "Issue a negative determination on the Request for a Determination for an emergency generator at 30 and 50 Sunset Lane",
+   "motion": "Issue a negative determination on the Request for a Determination by Carl Luck (emergency generator and trench, 30 and 50 Sunset Lane).",
    "moved_by": "KJ",
    "seconded_by": "CC",
    "outcome": "passed unanimously",
@@ -28,7 +28,7 @@
    "quote": "kj moved for a negative determination cc seconded and the commission voted unanimously."
   },
   {
-   "motion": "Continue the public hearing on the Request for a Determination for a dock extension at 33 Birch Island Way to later in the meeting",
+   "motion": "Continue the Request for a Determination by Melissa Ribaudo (dock extension, 33 Birch Island Way) to later in the meeting.",
    "moved_by": "KJ",
    "seconded_by": "CC",
    "outcome": "passed unanimously",
@@ -36,7 +36,7 @@
    "quote": "motion made by kj to continue to later in the meeting cc seconded and the commission voted unanimously."
   },
   {
-   "motion": "Continue the public hearing on the Request for a Determination for a dock extension at 33 Birch Island Way to May 1, 2019 at 7 PM",
+   "motion": "Continue the Request for a Determination by Melissa Ribaudo to May 1, 2019 at 7 PM at 960 Mass Ave.",
    "moved_by": "KJ",
    "seconded_by": "CC",
    "outcome": "passed unanimously",
@@ -44,7 +44,7 @@
    "quote": "a motion was made to continue to may 1, 2019 at 7 pm at 960 mass ave by kj with a second from cc and a unanimous vote to approve"
   },
   {
-   "motion": "Approve the amended Order of Conditions for the LSIC project",
+   "motion": "Approve the amended Order of Conditions for the LSIC project.",
    "moved_by": "CL",
    "seconded_by": "KJ",
    "outcome": "passed unanimously",
@@ -52,7 +52,7 @@
    "quote": "a motion to approve the amended order was made by cl, seconded by kj and unanimously approved."
   },
   {
-   "motion": "Approve the Forest Stewardship and Bird Habitat Planning draft stewardship plan for 123 Hollis Road Conservation Area",
+   "motion": "Approve the Draft Stewardship Plan for the Forest Stewardship/Bird Habitat planning at 123 Hollis Road Conservation Area.",
    "moved_by": "CL",
    "seconded_by": "KJ",
    "outcome": "passed unanimously",
@@ -60,7 +60,364 @@
    "quote": "the stewardship plan was approved by a motion of cl and a second by kj with a unanimous vote to approve."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1185755
+ "dropped_unquoted": 1,
+ "note": "Extracted text, no scan. Attendance is not marked per member; members are listed in the header only, so their status is 'not stated' even though several voted. Motions name members by initials only ('CL', 'KJ', 'CC', 'JR', 'Cl'); 'CL' may be Catie Childs or Carl Luck, and Carl Luck is both a member and the RDA applicant, so those are not resolved. No vote totals are printed beyond 'unanimously'. The March 20, 2019 minutes are listed for approval but no vote is recorded. No adjournment motion is recorded. The enforcement items are listed as continued with no motion recorded. The Public Comment entry and several topic headings have no content.",
+ "cost_usd": 0.00799182,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "not stated",
+   "quote": "richard bursch, chair tel: (978) 582-4146"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "not stated",
+   "quote": "todd dwyer, vice-chair 960 massachusetts ave."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "member",
+   "status": "not stated",
+   "quote": "bob pease lunenburg, ma 01462"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "member",
+   "status": "not stated",
+   "quote": "catie childs carl luck jack rabbitt"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "member; also appeared as applicant for the RDA at 30 and 50 Sunset Lane",
+   "status": "present",
+   "quote": "mr. luck was present to represent himself."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "member",
+   "status": "not stated",
+   "quote": "jack rabbitt matthew s. marro,"
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "member",
+   "status": "not stated",
+   "quote": "kenneth jones conservation administrator"
+  },
+  {
+   "name": "Gary Gouldrup",
+   "role": "appeared before the commission on the Forest Stewardship plan",
+   "status": "present",
+   "quote": "gary gouldrup and jeff ritterson appeared before the commission."
+  },
+  {
+   "name": "Jeff Ritterson",
+   "role": "explained the Mass Audubon program",
+   "status": "present",
+   "quote": "gary gouldrup and jeff ritterson appeared before the commission."
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "outlined a plan for proposed restoration (Reservoir Road)",
+   "status": "present",
+   "quote": "brian marchetti outlined a plan for proposed restoration."
+  },
+  {
+   "name": "Mr. Rianeri",
+   "role": "respondent, 63 Prospect St. enforcement",
+   "status": "present",
+   "quote": "mr. rianeri noted that he had 2 additional trees he wanted to come down."
+  },
+  {
+   "name": "Joanna Billotta",
+   "role": "resident, 362 Sunset Lane",
+   "status": "present",
+   "quote": "joanna billotta 362 sunset lane inquired if pumps can be added to the generator"
+  },
+  {
+   "name": "Richard Tomkins",
+   "role": "resident, 601 flatt hill road",
+   "status": "present",
+   "quote": "richard tomkins 601 flatt hill road- are we losing species?"
+  },
+  {
+   "name": "Margaret Tomkins",
+   "role": "resident, 6012 flatt hill",
+   "status": "present",
+   "quote": "margaret tomkins 6012 flatt hill."
+  },
+  {
+   "name": "Lyn Mann",
+   "role": "public",
+   "status": "present",
+   "quote": "lyn mann inquired is the pollinator garden going to be impacted."
+  },
+  {
+   "name": "Jone Jones",
+   "role": "resident of Valley Road",
+   "status": "present",
+   "quote": "jone jones of valley road noted he goes on the property and has photographic catalogue"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission agreed that Commission member CC would help develop the process and information for the new home owner notification policy; the offer was accepted without a vote.",
+   "quote": "cc offered to help develop the process and information which was gratefully accepted."
+  },
+  {
+   "decision": "The LSIC President withdrew the previous request for a permit extension (June 6 to September 30, 2019); the Chair noted this could mean the lake could not be treated this summer.",
+   "quote": "the lsic president withdrew the previous request for an extension permit from june 6 to september 30, 2019."
+  },
+  {
+   "decision": "The Stewardship plan was described to the public as a 10 year plan with no implementation plans made at this point.",
+   "quote": "it was outlined to the public by the commission that the plan is a 10 year plan and at this point no plans for implementation have been made"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "CL",
+   "stated_role": "not stated",
+   "topic": "annual COLAP meeting presentations",
+   "quote": "public comment- cl spoke about the presentations of the annual colap meeting."
+  },
+  {
+   "speaker": "Joanna Billotta",
+   "stated_role": "resident, 362 Sunset Lane",
+   "topic": "generator pumps and outlets",
+   "quote": "joanna billotta 362 sunset lane inquired if pumps can be added to the generator"
+  },
+  {
+   "speaker": "Richard Tomkins",
+   "stated_role": "601 flatt hill road",
+   "topic": "whether species are being lost from forest management",
+   "quote": "richard tomkins 601 flatt hill road- are we losing species?"
+  },
+  {
+   "speaker": "Margaret Tomkins",
+   "stated_role": "6012 flatt hill",
+   "topic": "owls and woodpeckers and older trees",
+   "quote": "margaret tomkins 6012 flatt hill. she inquired about owls and wood peckers like older trees."
+  },
+  {
+   "speaker": "Lyn Mann",
+   "stated_role": "not stated",
+   "topic": "pollinator garden impact",
+   "quote": "lyn mann inquired is the pollinator garden going to be impacted."
+  },
+  {
+   "speaker": "Jone Jones",
+   "stated_role": "resident of Valley Road",
+   "topic": "photographic data on the property",
+   "quote": "jone jones of valley road noted he goes on the property and has photographic catalogue"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order / Announcements / Public Comment",
+   "resolution": "no action",
+   "quote": "public comment- cl spoke about the presentations of the annual colap meeting.",
+   "tags": [
+    "announcements",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "NOI hearing, Joseph O'Brien, 179 Island Road (single family home in buffer zone)",
+   "resolution": "continued to May 1, 2019",
+   "quote": "this is continued to the may 1st meeting due to the applicant issuing the wrong meeting date in the abutter notification.",
+   "tags": [
+    "notice of intent",
+    "wetlands",
+    "continued",
+    "island road"
+   ]
+  },
+  {
+   "topic": "RDA hearing, Carl Luck, 30 and 50 Sunset Lane (emergency generator and trench)",
+   "resolution": "negative determination issued",
+   "quote": "kj moved for a negative determination cc seconded and the commission voted unanimously.",
+   "tags": [
+    "request for determination",
+    "generator",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "RDA hearing, Melissa Ribaudo, 33 Birch Island Way (dock extension)",
+   "resolution": "continued to May 1, 2019",
+   "quote": "a motion was made to continue to may 1, 2019 at 7 pm at 960 mass ave by kj with a second from cc and a unanimous vote to approve",
+   "tags": [
+    "request for determination",
+    "dock",
+    "continued"
+   ]
+  },
+  {
+   "topic": "Enforcement actions and administrative hearings (multiple cases)",
+   "resolution": "continued; no final agreements on Reservoir Road restoration",
+   "quote": "eo -101 pleasant street - update/fines enf case 2019 -6 this continued from april 3, 2019",
+   "tags": [
+    "enforcement",
+    "violations",
+    "continued"
+   ]
+  },
+  {
+   "topic": "New Business: land acquisition proposal, Saliba, Northfield Road (#994)",
+   "resolution": "no action; committee formed",
+   "quote": "mm noted the comitee has been formed and will be soon commencing meetings",
+   "tags": [
+    "land acquisition",
+    "committee"
+   ]
+  },
+  {
+   "topic": "New Business: new home owner notification policy",
+   "resolution": "discussed; Commission member offered to help develop process",
+   "quote": "cc offered to help develop the process and information which was gratefully accepted.",
+   "tags": [
+    "policy",
+    "homeowner notification"
+   ]
+  },
+  {
+   "topic": "Old Business: LSIC Draft Order of Conditions",
+   "resolution": "amended order approved",
+   "quote": "a motion to approve the amended order was made by cl, seconded by kj and unanimously approved.",
+   "tags": [
+    "LSIC",
+    "order of conditions",
+    "lake"
+   ]
+  },
+  {
+   "topic": "LSIC Permit Extension",
+   "resolution": "request withdrawn by LSIC President",
+   "quote": "the lsic president withdrew the previous request for an extension permit from june 6 to september 30, 2019.",
+   "tags": [
+    "LSIC",
+    "lake treatment",
+    "extension"
+   ]
+  },
+  {
+   "topic": "Work at the Small Town Forest",
+   "resolution": "no action recorded",
+   "quote": "work at the small town forest-updates ( if any)",
+   "tags": [
+    "small town forest"
+   ]
+  },
+  {
+   "topic": "Forest Stewardship/Bird Habitat planning, 123 Hollis Road Conservation Area (draft stewardship plan)",
+   "resolution": "approved",
+   "quote": "the stewardship plan was approved by a motion of cl and a second by kj with a unanimous vote to approve.",
+   "tags": [
+    "forest stewardship",
+    "bird habitat",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Discussion and updates of rules and regulations",
+   "resolution": "no action recorded",
+   "quote": "discussion and updates of rules and regulations (if any)",
+   "tags": [
+    "regulations"
+   ]
+  },
+  {
+   "topic": "Certificates of Compliance",
+   "resolution": "none to present",
+   "quote": "certificates of compliance - none to present",
+   "tags": [
+    "certificates of compliance"
+   ]
+  },
+  {
+   "topic": "Minutes of previous meetings, March 20, 2019",
+   "resolution": "listed for review and approval; no vote recorded",
+   "quote": "minutes of previous meetings - review and approval of march 20, 2019",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Agent's report, legal, ADA grant, 183 Hemlock, 842R Chase Road, open space, LSIC and Hickory Hills",
+   "resolution": "no action recorded; 183 Hemlock update to be made in spring",
+   "quote": "183 hemlock, update to be made in spring",
+   "tags": [
+    "agent report",
+    "ADA grant",
+    "hemlock",
+    "chase road",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Communications, public comment, adjourn, meeting schedule",
+   "resolution": "next meeting set for May 1, 2019; no adjournment vote recorded",
+   "quote": "next meeting is may 1, 2019 at the ritter memorial land use building at 960 mass ave at 7 pm",
+   "tags": [
+    "adjournment",
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for a Determination from and a Sketch from the applicant dated April 2019",
+   "where": "list",
+   "quote": "documents presented for consideration was a request for a determination from and a sketch from the applicant dated april 2019"
+  },
+  {
+   "name": "Notice of Intent submitted by Joseph O’Brien for a single family home with garage, 179 Island Road",
+   "where": "text",
+   "quote": "a public hearing on a notice of intent submitted by joseph o'brien for the construction of a single family home with"
+  },
+  {
+   "name": "Request for a Determination by Carl Luck, 30 and 50 Sunset Lane",
+   "where": "text",
+   "quote": "a public hearing on a request for a determination by carl luck for the installation of an emergency generator"
+  },
+  {
+   "name": "Request for a Determination by Melissa Ribaudo, 33 Birch Island Way",
+   "where": "text",
+   "quote": "a public hearing on a request for a determination by melissa ribaudo for the extension of a dock at 33 birch island"
+  },
+  {
+   "name": "LSIC Draft Order of Conditions",
+   "where": "text",
+   "quote": "lsic- draft order of conditions discussion- the commission reviewed the final proposed changes."
+  },
+  {
+   "name": "Draft Stewardship Plan (Forest Stewardship/Bird Habitat planning, 123 Hollis Road Conservation Area)",
+   "where": "text",
+   "quote": "the stewardship plan was approved by a motion of cl and a second by kj with a unanimous vote to approve."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "request for determination",
+  "enforcement",
+  "forest stewardship",
+  "LSIC lake treatment",
+  "public hearing",
+  "continuances"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents presented for consideration was"
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

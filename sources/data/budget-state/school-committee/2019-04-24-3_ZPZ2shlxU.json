@@ -1,0 +1,65 @@
+{
+ "board": "School Committee",
+ "board_slug": "school-committee",
+ "meeting_date": "2019-04-24",
+ "source": {
+  "sha256": "9c21349033677b8c5d61283cade8ee486ba6435cccab6c24bbd52594ec2a7ecb",
+  "transcript": "sources/data/youtube-transcripts/school-committee/2019-04-24-3_ZPZ2shlxU.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "20 million 795 863",
+    "fiscal_year": 2020,
+    "kind": "budget_total",
+    "scope": "school",
+    "statement": "Motion to approve the FY20 school budget at this bottom line, a three percent increase budget.",
+    "status": "voted",
+    "t": 5733,
+    "who": "a member"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2020,
+    "kind": "free_cash",
+    "scope": "town",
+    "statement": "Free cash and stabilization amounts in the town budget follow the town financial policy, so not available to the schools.",
+    "status": "announced",
+    "t": 5290,
+    "who": "the superintendent"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "non-personnel expense lines",
+    "condition": null,
+    "fiscal_year": 2021,
+    "prediction": "Level funding of non-personnel lines is essentially a cut and cannot be sustained beyond this year; some lines will need increases.",
+    "scope": "school",
+    "t": 5624,
+    "who": "the superintendent"
+   },
+   {
+    "about": "staffing for August enrollment",
+    "condition": "if enrollment dictates hiring",
+    "fiscal_year": 2020,
+    "prediction": "The budget is tight and enrollment is unknown; the district might come to a fall town meeting to reallocate money for staff.",
+    "scope": "school",
+    "t": 5416,
+    "who": "the superintendent"
+   }
+  ]
+ },
+ "video_id": "3_ZPZ2shlxU",
+ "video_url": "https://www.youtube.com/watch?v=3_ZPZ2shlxU",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-11-05T12:47:29Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

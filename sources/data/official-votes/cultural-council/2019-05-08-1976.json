@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cultural-council",
  "meeting_date": "2019-05-08",
  "docid": "1976",
@@ -12,31 +12,140 @@
  },
  "votes": [
   {
-   "motion": "approval of prior meeting minutes",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the minutes of the prior meeting.",
    "outcome": "passed 5-0",
    "procedural": true,
    "quote": "reading and approval of minutes approved 5-0"
   },
   {
-   "motion": "approval of LCC Arts Festival Budget of $1,710.00",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the LCC Arts Festival Budget at $1,710.00.",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "approved lcc arts festival budget: $1,710.00 (5-0)"
   },
   {
-   "motion": "approval of press release",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the arts festival press release.",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "approved press release (5-0)"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes OCR'd via macOS Vision; text is clean and votes are clearly recorded.",
- "cost_usd": 0.08582050000000001
+ "note": "Text is an OCR (macOS Vision) of a scan with garbled headings: 'Ill.' for II., 'VIl.' for VII., and 'IV.' used twice. No movers or seconders recorded, no roll call, and no adjournment motion or vote shown (the 8:02pm time is printed under the Adjournment heading). Attendees have no role titles; Thea appears by first name only. Sponsorship line ('2 sponsors confirmed') and the Entertainment heading have no further detail. Public comment is 'None'.",
+ "cost_usd": 0.00274192,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ashley Faharty",
+   "status": "present",
+   "quote": "ashley faharty present thea present"
+  },
+  {
+   "name": "Thea",
+   "status": "present",
+   "quote": "ashley faharty present thea present"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "LCC Arts Festival Budget",
+   "what_was_recorded": "The board approved the LCC Arts Festival Budget at $1,710.00 by a 5-0 vote.",
+   "figures_as_printed": [
+    "$1,710.00"
+   ],
+   "quote": "approved lcc arts festival budget: $1,710.00 (5-0)"
+  },
+  {
+   "topic": "Facebook Ad marketing budget",
+   "what_was_recorded": "The minutes note that the Facebook Ad marketing budget number will be reviewed; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "will review the facebook ad marketing budget number"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Reading and approval of minutes",
+   "resolution": "approved 5-0",
+   "quote": "reading and approval of minutes approved 5-0",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Officers' reports and general discussion",
+   "resolution": "no action; chair noted quorum needed before the arts festival",
+   "quote": "make sure we make quorum for the meetings before the arts festival",
+   "tags": [
+    "officers",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; none offered",
+   "quote": "iv. public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Arts Festival task management",
+   "resolution": "budget approved; press release approved; food truck arrangement, sponsorship, and entertainment listed",
+   "quote": "v. arts festival task management",
+   "tags": [
+    "arts festival",
+    "budget",
+    "sponsorship",
+    "marketing",
+    "food trucks"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action; none recorded",
+   "quote": "vi. announcements vil. adjournment",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:02pm; no motion recorded",
+   "quote": "vil. adjournment 8:02pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LCC Arts Festival Budget",
+   "where": "text",
+   "quote": "approved lcc arts festival budget: $1,710.00 (5-0)"
+  },
+  {
+   "name": "press release",
+   "where": "text",
+   "quote": "approved press release (5-0)"
+  }
+ ],
+ "tags": [
+  "cultural council",
+  "arts festival",
+  "budget",
+  "sponsorship",
+  "marketing",
+  "press release",
+  "food trucks",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

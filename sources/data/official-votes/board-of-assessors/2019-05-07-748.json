@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2019-05-07",
  "docid": "748",
@@ -12,23 +12,254 @@
  },
  "votes": [
   {
-   "motion": "To agree on a new valuation of $885,000 for the property at 361 Massachusetts Ave.",
-   "moved_by": "Joshua Gendron",
-   "seconded_by": "",
+   "motion": "Agree to a new valuation of $885,000 for 361 Massachusetts Ave. in the ATB settlement (Docket #F-33766), as proposed by Joshua Gendron.",
    "outcome": "passed",
    "procedural": false,
    "quote": "joshua proposed a new valuation of $885,000 and the boa voted to agree on that valuation."
   },
   {
-   "motion": "To meet on Tuesday, June 11, 2019 at 5:00 pm",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Meet on Tuesday, June 11, 2019 at 5:00 pm.",
    "outcome": "passed",
    "procedural": true,
    "quote": "board voted to meet on tuesday, june 11, 2019 at 5:00 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1084555
+ "note": "Text is macOS Vision OCR with artifacts: the page 2 header reads \"las World Conversion Update\", \"April 29* through May 31s\", and the signature block is garbled (\"Louise Plaquette\"; printed name in the present line is \"Louise Paquette\"). The supplemental-bill letter's value/tax fields have labels but no figures. Two approvals are recorded without a motion, mover, seconder or count: the vouchers/payroll/abatements/warrants approval and the Chapter 61B release, so they are recorded as decisions, not votes. The $885,000 valuation vote has no mover, seconder or count; \"voted to agree\" was read as passed. No public comment section is printed. The page 1 text ends mid-sentence and page 2 begins mid-sentence, so a few lines may be lost at the page break.",
+ "cost_usd": 0.005804719999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, richard letarte, board member, rena swezey,"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, richard letarte, board member, rena swezey,"
+  },
+  {
+   "name": "Joshua Gendron",
+   "role": "Associate Assessor",
+   "status": "present",
+   "quote": "associate assessor, joshua gendron and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "associate assessor, joshua gendron and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Louis Franco",
+   "role": "Board Member",
+   "status": "absent",
+   "quote": "board member, louis franco not present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved current expense vouchers, payroll, abatements, warrants and commitments (no recorded motion or count).",
+   "quote": "board reviewed and approved current expense vouchers, payroll, abatements, warrants, commitments"
+  },
+  {
+   "decision": "The April 9, 2019 minutes were tabled.",
+   "quote": "and april 9, 2019 minutes were tabled."
+  },
+  {
+   "decision": "Board reviewed and approved the partial release of 35.07 acres under Chapter 61B; Louise to send the partial release lien to the Registry of Deeds for recording.",
+   "quote": "boa reviewed and approved the partial release of 35.07 acres being a portion of 209.74 acres classified under recreation"
+  },
+  {
+   "decision": "Board reviewed and signed the statutory reimbursement forms.",
+   "quote": "reviewed and signed the statutory reimbursement forms."
+  },
+  {
+   "decision": "The BOA wishes to seek further advice from Town Counsel; Louise will contact the Town Manager with the board's request.",
+   "quote": "the boa had several questions and wishes to seek further advice from town counsel. louise will contact town manager with their request."
+  },
+  {
+   "decision": "It was agreed that Lunenburg's CAMA conversion and implementation will be pushed back from the previously scheduled April 29 through May 31 dates.",
+   "quote": "it was agreed that lunenburg's conversion and implementation will be \"pushed back\" which was scheduled to take place"
+  },
+  {
+   "decision": "The Assessors will need to perform a field/desktop review required for any CAMA conversion; David Manzello (RRG) will handle this as Project Manager.",
+   "quote": "the assessors will need to perform a field/desktop review which is required for any cama conversion"
+  },
+  {
+   "decision": "Joshua will be in touch with the Trustee on the 361 Massachusetts Ave. settlement.",
+   "quote": "joshua stated that he will be in touch with the trustee."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Supplemental tax billing for new construction",
+   "what_was_recorded": "Eight supplemental bill notification letters were to be mailed to owners whose new-construction building values rose over fifty percent; the letter explains a prorated supplemental tax on top of the FY2019 bill, but no dollar figures are printed (the value and tax fields are blank).",
+   "figures_as_printed": [],
+   "quote": "eight (8) supplemental bill notification letters will be mailed tomorrow to property owners"
+  },
+  {
+   "topic": "Chapter 61B rollback tax",
+   "what_was_recorded": "A rollback tax was collected on the Chapter 61B partial release of 35.07 acres.",
+   "figures_as_printed": [
+    "$6,445.84"
+   ],
+   "quote": "a rollback tax of $6,445.84 was collected on april 18, 2019 in the amount of $6,445.84."
+  },
+  {
+   "topic": "Statutory exemptions",
+   "what_was_recorded": "Louise reported the total exemption amount granted across 140 statutory exemption applications.",
+   "figures_as_printed": [
+    "$88,586.19"
+   ],
+   "quote": "louise reported that the total exemption amount granted is $88,586.19 for 140 statutory exemption applications."
+  },
+  {
+   "topic": "CAMA/Assessing software contract and early-termination fees",
+   "what_was_recorded": "Town Counsel's review found the contract cannot be terminated now; early-termination fees apply through the second contract year, so the board sought further advice.",
+   "figures_as_printed": [],
+   "quote": "the contract states that through the second year of the contract there are fees associated with early termination"
+  },
+  {
+   "topic": "ATB appeal settlement, 361 Massachusetts Ave.",
+   "what_was_recorded": "The owner's representative reported a purchase and sale agreement accepted for the property; the board agreed to a settlement valuation below that price.",
+   "figures_as_printed": [
+    "$900,000",
+    "$885,000"
+   ],
+   "quote": "a purchase & sale agreement has been accepted for the property in the amount of $900,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Routine approvals: vouchers, payroll, abatements, warrants, commitments",
+   "resolution": "approved",
+   "quote": "board reviewed and approved current expense vouchers, payroll, abatements, warrants, commitments",
+   "tags": [
+    "vouchers",
+    "payroll",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "April 9, 2019 minutes",
+   "resolution": "tabled",
+   "quote": "and april 9, 2019 minutes were tabled.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Supplemental billing notices",
+   "resolution": "no action",
+   "quote": "eight (8) supplemental bill notification letters will be mailed tomorrow to property owners",
+   "tags": [
+    "supplemental tax",
+    "new construction"
+   ]
+  },
+  {
+   "topic": "Chapter 61B partial release, 994 Northfield Rd.",
+   "resolution": "approved release; lien to Registry of Deeds",
+   "quote": "boa reviewed and approved the partial release of 35.07 acres being a portion of 209.74 acres classified under recreation",
+   "tags": [
+    "Chapter 61B",
+    "rollback tax",
+    "land"
+   ]
+  },
+  {
+   "topic": "Statutory reimbursement forms and exemptions",
+   "resolution": "forms reviewed and signed",
+   "quote": "reviewed and signed the statutory reimbursement forms.",
+   "tags": [
+    "exemptions",
+    "reimbursement"
+   ]
+  },
+  {
+   "topic": "CAMA/Assessing software conversion update",
+   "resolution": "conversion pushed back; Town Counsel advice sought",
+   "quote": "in terms of the cama/ assessing project, the boa expressed their concerns over the implementation of the product",
+   "tags": [
+    "CAMA",
+    "software",
+    "contract",
+    "Town Counsel"
+   ]
+  },
+  {
+   "topic": "Report by Assessor: ATB Docket #F-33766, 361 Massachusetts Ave.",
+   "resolution": "valuation of $885,000 agreed",
+   "quote": "joshua proposed a new valuation of $885,000 and the boa voted to agree on that valuation.",
+   "tags": [
+    "ATB appeal",
+    "abatement",
+    "settlement"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "scheduled June 11, 2019 at 5:00 pm",
+   "quote": "board voted to meet on tuesday, june 11, 2019 at 5:00 pm.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Supplemental tax bill notification letter (explanation letter quoted in minutes)",
+   "where": "text",
+   "quote": "letter states as follows:"
+  },
+  {
+   "name": "ATB Case Docket #F-33766",
+   "where": "text",
+   "quote": "atb case docket #f-33766 that was received on april 1, 2019"
+  },
+  {
+   "name": "Master Services Agreement (CAMA/Assessing software)",
+   "where": "text",
+   "quote": "has reached out to the town manager regarding the master services agreement."
+  },
+  {
+   "name": "Purchase & Sale Agreement, 361 Massachusetts Ave.",
+   "where": "text",
+   "quote": "a purchase & sale agreement has been accepted for the property in the amount of $900,000."
+  },
+  {
+   "name": "Partial release lien (Chapter 61B, 994 Northfield Rd.)",
+   "where": "text",
+   "quote": "louise will send the partial release lien to registry of deeds for recording."
+  },
+  {
+   "name": "Statutory reimbursement forms",
+   "where": "text",
+   "quote": "reviewed and signed the statutory reimbursement forms."
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "property tax",
+  "supplemental tax",
+  "abatement",
+  "ATB appeal",
+  "Chapter 61B",
+  "exemptions",
+  "CAMA software",
+  "contract",
+  "scheduling"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }
