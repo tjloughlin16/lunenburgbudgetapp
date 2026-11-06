@@ -47,6 +47,9 @@ TIES_TOLERANCE = 0.005  # below a cent; a count either ties or it does not
 
 # Every family says what it is, for the source catalogue (build_source_index.py).
 FAMILIES = {
+    'revolving-fund-limits': ('Revolving fund spending limits voted at town meeting, 1992-FY2025',
+                   'The dollar limit town meeting voted on each revolving fund (fund, limit, and from FY2017 the spender, revenue source and purpose where the page prints them), '
+                   'read from the town meeting articles in each report. These are voted limits, not spending; articles passed over are not rows.'),
     'fire-calls': ('Fire Department calls by year and category, 1959-FY2025',
                    'What the Fire Department printed about its calls in every annual report: the '
                    'total and each category as printed, with the quote and the PDF page. Parts '
