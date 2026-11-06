@@ -47,6 +47,10 @@ TIES_TOLERANCE = 0.005  # below a cent; a count either ties or it does not
 
 # Every family says what it is, for the source catalogue (build_source_index.py).
 FAMILIES = {
+    'library-usage': ('Library usage: circulation, visits, volumes and hours, 1959-FY2025',
+                   'What the Ritter Memorial Library and Lunenburg Public Library reports print about use: circulation (by section where printed, with totals; physical and electronic '
+                   'counted separately in FY2025), visits, registered borrowers, volumes held and hours open. Wording, scope and rounding vary and are kept as printed; items in the 1960s-1970s '
+                   'include periodicals, and later counts add videos and audio. Not the library service values table.'),
     'coa-services': ('Council on Aging service counts: Meals on Wheels and the senior van, 1976-FY2019',
                    'The counts the Council on Aging report prints for meals delivered to homebound elders and rides on the senior van, with the number of clients '
                    'where printed (FY2015-FY2019), and the Eagle House meal-site meals where the same page prints them (1996-1999). Counts only; clients are never named. '
