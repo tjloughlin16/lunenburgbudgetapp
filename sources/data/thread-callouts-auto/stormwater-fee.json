@@ -1,16 +1,16 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "stormwater-fee",
- "picked_at": "2026-11-06T12:30:50Z",
+ "picked_at": "2026-11-06T16:08:05Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.1659,
- "input_sha256": "b440bd44d6fedca02d1bef87f1fb302bed6883fa5c2d8480f8aed9af852d1480",
+ "cost_usd": 0.1679,
+ "input_sha256": "f9c624735e78c5d99fc1b5498cb41d0e01c6116357f4d3ca20e5910b3936430a",
  "callouts": [
   {
    "kind": "fee",
    "value": "$85 a year",
-   "label": "estimated stormwater fee per household, not to exceed $100 for the first three years",
+   "label": "estimated stormwater fee per home unit, not set; would not exceed $100 for the first three years",
    "hook": "estimated stormwater fee",
    "quote": "current estimate is $85 per eru, not to exceed $100 for the first three years",
    "heard": [],
@@ -21,14 +21,14 @@
    "text": "meetings/text/select-board/2026-10-20-minutes-8080.txt",
    "where": "Select Board minutes, 20 Oct 2026",
    "verdict": {
-    "keep": false,
-    "why": "Evidence gives $85 per ERU (4,200 sq ft), not per household; flat rate only for 1–2 family homes. Rate also unfinalized and unverified."
+    "keep": true,
+    "why": "$85 per ERU is an estimate, capped at $100 for three years, rate not finalized. Later items don't change it."
    }
   },
   {
    "kind": "money",
-   "value": "$480,000 a year",
-   "label": "estimated yearly stormwater compliance need, versus about $100,000 spent now",
+   "value": "$480,000",
+   "label": "estimated yearly cost of stormwater compliance, versus about $100,000 spent now",
    "hook": "",
    "quote": "annual stormwater spending has been roughly $100,000, against an estimated $480,000 per year needed for compliance.",
    "heard": [],
@@ -40,27 +40,27 @@
    "where": "Select Board minutes, 20 Oct 2026",
    "verdict": {
     "keep": true,
-    "why": "DPW figures (~$100,000 spent vs ~$480,000 needed) stated in minutes; nothing later contradicts."
+    "why": "The minutes state both figures: about $100,000 spent now and an estimated $480,000 a year needed. Nothing later contradicts them."
    }
   },
   {
    "kind": "warrant",
-   "value": "Article 10",
-   "label": "non-binding Town Meeting question on funding stormwater by utility or operating budget",
+   "value": "Nov 17",
+   "label": "Special Town Meeting takes up the stormwater fee bylaw article",
    "hook": "",
-   "quote": "include Article 10 on the warrant",
+   "quote": "November 17th special town meeting",
    "heard": [],
-   "item_date": "2026-10-20",
+   "item_date": "2026-09-15",
    "item_board": "select-board",
    "basis": "heard",
    "board": "select-board",
-   "date": "2026-10-20",
-   "video_id": "z9j248Lu80E",
-   "t": 11472,
-   "where": "Select Board, 20 Oct 2026",
+   "date": "2026-09-15",
+   "video_id": "kig-BTakGjQ",
+   "t": 4336,
+   "where": "Select Board, 15 Sep 2026",
    "verdict": {
-    "keep": true,
-    "why": "Select Board voted 4-1 to include advisory Article 10 on the warrant on 20 Oct; nothing later contradicts."
+    "keep": false,
+    "why": "The Sept 15 evidence is about referring the stormwater fee bylaw articles to the planning board for the Nov 17 meeting. It doesn't say the meeting takes up the article. Later items put the fee on Articles 6 and 10, so this is stale and unsupported."
    }
   }
  ]

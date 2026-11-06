@@ -48,7 +48,7 @@
     "id": "stormwater-fee",
     "label": "The stormwater fee",
     "short": "The stormwater fee",
-    "hook": "",
+    "hook": "$85 a year estimated stormwater fee",
     "meetings": 11,
     "boards": 5,
     "days_since_last": 2
@@ -2756,11 +2756,11 @@
    "closure": null,
    "callouts": [
     {
-     "order": 2,
-     "kind": "money",
-     "value": "$480,000 a year",
-     "label": "estimated yearly stormwater compliance need, versus about $100,000 spent now",
-     "hook": "",
+     "order": 1,
+     "kind": "fee",
+     "value": "$85 a year",
+     "label": "estimated stormwater fee per home unit, not set; would not exceed $100 for the first three years",
+     "hook": "estimated stormwater fee",
      "sources": [
       {
        "basis": "printed",
@@ -2772,17 +2772,17 @@
      "auto": true
     },
     {
-     "order": 3,
-     "kind": "warrant",
-     "value": "Article 10",
-     "label": "non-binding Town Meeting question on funding stormwater by utility or operating budget",
+     "order": 2,
+     "kind": "money",
+     "value": "$480,000",
+     "label": "estimated yearly cost of stormwater compliance, versus about $100,000 spent now",
      "hook": "",
      "sources": [
       {
-       "basis": "heard",
-       "href": "https://www.youtube.com/watch?v=z9j248Lu80E&t=11472s",
-       "where": "Select Board, 20 Oct 2026",
-       "checked_against": "the captions"
+       "basis": "printed",
+       "href": "/docs/meetings/select-board/2026-10-20-minutes-8080.pdf",
+       "where": "Select Board minutes, 20 Oct 2026",
+       "checked_against": "the document"
       }
      ],
      "auto": true
@@ -27826,9 +27826,9 @@
     {
      "order": 1,
      "kind": "warrant",
-     "value": "Not on warrant",
-     "label": "Select Board voted down putting the trust fund vacancy article on the Town Meeting warrant",
-     "hook": "article left off the warrant",
+     "value": "Kept off warrant",
+     "label": "Select Board voted not to put the trust fund vacancy article on the Town Meeting warrant",
+     "hook": "article kept off warrant",
      "sources": [
       {
        "basis": "heard",
