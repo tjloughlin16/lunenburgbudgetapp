@@ -47,6 +47,10 @@ TIES_TOLERANCE = 0.005  # below a cent; a count either ties or it does not
 
 # Every family says what it is, for the source catalogue (build_source_index.py).
 FAMILIES = {
+    'oneoff-finance': ('One-off finance tables worth keeping, 1962-FY2025',
+                   'Single finance tables printed in one edition each: the 1958-62 five-year tax rate recap (1962), the county retirement assessment worked example (1981), '
+                   'the FY2020 revenue by source and department changes (FY2019 report), the FY2024 undesignated fund balance roll-forward (marked unaudited) and '
+                   'FY13-FY26 foundation enrolment with Chapter 70 aid (FY2025). Each table is its own row_group; the other editions print no such table in this family.'),
     'sped-indicators': ('Special education students served and state indicators, 1991-FY2025',
                    'What the Special Services reports say in sentences: students receiving special education and their share of the student population against the '
                    'state average, 504-plan counts, and from FY2013 the state indicators (graduation, dropout, suspension, parent involvement, MCAS index or scaled scores) '
