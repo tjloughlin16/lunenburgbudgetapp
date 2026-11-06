@@ -3686,16 +3686,21 @@ def page_suggested(st):
          'meetings read for suggestions &middot; %s</p></div>%s</div>'
          % (len(cur), len(old), len(gens), looked, looked + not_looked, st['generated'], tabs('suggested.html', st.get('questions')))]
     h.append('<div id="served" class="tiny" style="margin-bottom:8px"></div>')
-    h.append(score_chart(cur, old))
-    # TWO AREAS, BOTH VISIBLE. TJ, 5 November 2026: generated reports came first and ran long, so
-    # he never reached the list and thought it had not changed in a month. One closed line now,
-    # open only when a draft is running or waiting on him. KEEP remembers if he opens it.
+    # TWO AREAS, TWO TABS. TJ, 5 November 2026: generated reports came first and ran long, so he
+    # never reached the list and thought it had not changed in a month; then: "i think they
+    # should be tabbed". sessionStorage holds the tab across the page's own reload, as KEEP does.
     live = sum(1 for g in gens.values() if g['status'] in ('running', 'queued', 'needs-input'))
-    h.append('<details data-k="sr-generated" class="card"%s><summary style="cursor:pointer"><b>Generated reports</b> '
-             '<span class="tiny">%d%s</span></summary><div style="margin-top:8px">%s</div></details>'
-             % (' open' if live else '', len(gens), (' &middot; %d needs attention' % live) if live else '',
-                generated_section(gens).replace('<h2>Generated reports</h2>', '', 1)))
-    h.append('<h2>To write &middot; %d</h2>' % len(cur))
+    tab = ('<button type="button" class="srtab" data-pane="%s" style="background:none;border:0;border-bottom:2px solid '
+           'transparent;color:inherit;font:inherit;font-weight:600;padding:6px 2px;margin-right:18px;cursor:pointer">%s '
+           '<span class="tiny">%d</span>%s</button>')
+    h.append('<div role="tablist" style="border-bottom:1px solid rgba(128,128,128,.35);margin:10px 0 12px">%s%s</div>' % (
+        tab % ('sr-write', 'To write', len(cur), ''),
+        tab % ('sr-gen', 'Generated reports', len(gens),
+               ' <span class="pill warn">%d needs attention</span>' % live if live else '')))
+    h.append('<div id="sr-gen" class="srpane" hidden>%s</div>'
+             % generated_section(gens).replace('<h2>Generated reports</h2>', '', 1))
+    h.append('<div id="sr-write" class="srpane">')
+    h.append(score_chart(cur, old))
     if not cur:
         h.append('<div class="card idle">Nothing to write yet.</div>')
     part_names = [('meetings', 'meetings'), ('boards', 'boards'), ('threads', 'threads'),
@@ -3771,6 +3776,20 @@ def page_suggested(st):
                      % (SITE, esc(r['exists_at']), esc(r['title']), r['meetings'],
                         '' if r['meetings'] == '1' else 's', esc(r['last'])))
         h.append('</div>')
+    h.append('</div>')  # end of the To write pane
+    h.append("""<script>(function(){
+  var K='sr-tab',bs=[].slice.call(document.querySelectorAll('.srtab'));
+  function show(id,top){
+    [].forEach.call(document.querySelectorAll('.srpane'),function(p){p.hidden=p.id!==id});
+    bs.forEach(function(b){var on=b.dataset.pane===id;b.setAttribute('aria-selected',on);
+      b.style.borderBottomColor=on?'currentColor':'transparent';b.style.opacity=on?1:.6});
+    try{sessionStorage.setItem(K,id)}catch(e){}
+    if(top)window.scrollTo(0,0);
+  }
+  bs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.pane,true)})});
+  var v=null;try{v=sessionStorage.getItem(K)}catch(e){}
+  show(document.getElementById(v)?v:'sr-write');
+})();</script>""")
     W = SR.WEIGHTS
     h.append('<h2>How the score is built</h2><div class="card tiny">'
              'Our weights, not a measurement &mdash; each part is capped so no one signal carries a report. '
