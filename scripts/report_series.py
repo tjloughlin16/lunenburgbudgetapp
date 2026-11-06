@@ -62,6 +62,9 @@ FAMILIES = {
                    'the FY2017 report\'s financial pages (assessment on each of 18 member towns 1998-2017, FY2018 assessments by town, budget '
                    'build-up, ratio percentages, balance sheet) and the Educational Plan totals, grants and expense categories in the district\'s '
                    'reports to the towns, each tied to the total the page prints.'),
+    'town-facts': ('Town facts that change: population, registered voters, road miles and area, 1959-FY2025',
+                   'The measures on the About the Town / Lunenburg Profile page that change from year to year (population with its source kept apart: federal, state or '
+                   'town census; registered voters; road miles; area), plus the census list on the school statistics page 1959-1973. Valuation and tax rate are held elsewhere.'),
     'capital-plan-holes': ('Capital plans: the editions capital-plans.csv does not hold',
                    'Capital plan items by department, item and amount for the May 2008, 2009, 2011, 2012, 2013 and 2023-2025 editions, '
                    'each list tied to the plan total the page prints, with the FY2013 and FY2024 lists the extractor refused read from the page image.'),
