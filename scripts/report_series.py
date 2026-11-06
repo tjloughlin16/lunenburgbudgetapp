@@ -47,6 +47,9 @@ TIES_TOLERANCE = 0.005  # below a cent; a count either ties or it does not
 
 # Every family says what it is, for the source catalogue (build_source_index.py).
 FAMILIES = {
+    'pay-grades-fy2011': ('Pay grades by class title, FY2011 and FY2015, and 1984 pay rates',
+                   'The Classification Plan lists of class title and grade the report prints (FY2011 p89, FY2015 Schedule A), and the 1984 amended hourly, weekly and yearly rates by year of service, as printed. '
+                   'The 2010 list is in report-classification-plan.csv; the grade-and-step salary schedules are in salary-schedule.csv.'),
     'births-census': ('Births recorded and census counts, 1950-1981',
                    'The births the Town Clerk\'s report prints (a chart or tabulation: 1950-1959, 1961, 1965, 1963-1973, 1970-1981) and the dated census populations '
                    'the school Statistics page prints (1945 to the State census of 1971), as printed in each edition. Not the names in the vital-records lists, and not the ACS (census-acs.csv).'),
