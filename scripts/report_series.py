@@ -54,6 +54,11 @@ FAMILIES = {
     'tax-collection-holes': ('Tax collection by levy year: the editions the other two datasets do not hold',
                    'The Tax Collector\'s receivable table for 1961, 1962, 1967, FY2011-FY2013, FY2019 and '
                    'FY2024, by column and levy year, each column tied to the total the page prints.'),
+    'monty-tech-budgets': ('Monty Tech budgets and assessments, 1998-FY2025',
+                   'What the Montachusett Regional Vocational Technical School District printed in the annual reports about its own money: '
+                   'the FY2017 report\'s financial pages (assessment on each of 18 member towns 1998-2017, FY2018 assessments by town, budget '
+                   'build-up, ratio percentages, balance sheet) and the Educational Plan totals, grants and expense categories in the district\'s '
+                   'reports to the towns, each tied to the total the page prints.'),
 }
 
 
