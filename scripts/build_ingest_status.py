@@ -3742,7 +3742,11 @@ def page_suggested(st):
                  '<div class="tiny" style="margin-top:2px">score: %s</div>'
                  % (esc(r['slug']), i, esc(r['title']), esc(r['slug']),
                     metric % (r['meetings'], 'meeting' if r['meetings'] == '1' else 'meetings'),
-                    metric % ('{:,}'.format(days), 'day ago' if days == 1 else 'days ago'),
+                    # The date first, so a reader can see the list is live (TJ, 5 November 2026).
+                    metric % (dt.date.fromisoformat(r['last']).strftime('%b %-d, %Y'),
+                              'last raised, today' if days == 0 else
+                              'last raised, 1 day ago' if days == 1 else
+                              'last raised, {:,} days ago'.format(days)),
                     sc['total'], esc(r['question']), span, esc(r['fiscal_years'].replace(';', ', ')),
                     esc(r['boards'].replace(';', ', ')), ', '.join(thr) or 'none &mdash; a thread may be missing',
                     parts))
