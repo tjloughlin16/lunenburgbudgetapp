@@ -69,6 +69,9 @@ FAMILIES = {
     'town-facts': ('Town facts that change: population, registered voters, road miles and area, 1959-FY2025',
                    'The measures on the About the Town / Lunenburg Profile page that change from year to year (population with its source kept apart: federal, state or '
                    'town census; registered voters; road miles; area), plus the census list on the school statistics page 1959-1973. Valuation and tax rate are held elsewhere.'),
+    'cultural-council-grants': ('Cultural Council grants: applicant, project and amount, 1984-FY2024',
+                   'What the local Cultural Council (earlier the Arts Lottery Council) printed about its grants: amounts named in the 1984-1985 reports, totals distributed 1986-1991 and FY2015, '
+                   'the FY2016 account form, and applicant, project and amount lists for FY2016, FY2017, FY2018 and FY2021 (totals printed only for FY2016 and FY2018), with later totals and program counts.'),
     'capital-plan-holes': ('Capital plans: the editions capital-plans.csv does not hold',
                    'Capital plan items by department, item and amount for the May 2008, 2009, 2011, 2012, 2013 and 2023-2025 editions, '
                    'each list tied to the plan total the page prints, with the FY2013 and FY2024 lists the extractor refused read from the page image.'),
