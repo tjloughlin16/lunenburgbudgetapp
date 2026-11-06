@@ -64,7 +64,7 @@
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 4935 of these 4951 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 4978 of these 4994 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -2777,9 +2777,9 @@
      "stars": 2,
      "what": "Written by ingest.land_version(). Each row is a WORKING COPY -- the latest version, under the name the scripts read -- whose every version is held under a dated folder beside it. A working copy is ours; the dated versions are the publisher’s and are what the bucket keeps. Added 9 October 2026, after three changed versions sat on one disk while the backup check, comparing names, called them backed up.",
      "kind": "Data",
-     "bytes": 26175,
+     "bytes": 26358,
      "url": "/docs/data/working-copies.csv",
-     "count": 131,
+     "count": 132,
      "unit": "rows",
      "textUrl": "/docs/data/working-copies.csv"
     },
@@ -3894,9 +3894,9 @@
      "stars": 2,
      "what": "527 rows across six listings: the district’s roll-up of every employee and the five the District Office and the four schools keep themselves. THE GRAIN IS A PERSON AS ONE LISTING PRINTS THEM, never a person — somebody two buildings both list has two rows, which is the whole reason the per-school addresses were gathered, and folding them together would delete the finding. The first people-source here covering the district from OUTSIDE an annual report, and the first carrying an identifier rather than a name: 450 rows have an address the sheet prints, 55 one derived from the rule Turkey Hill’s own sheet states, and 22 nothing but a name. IT IS A CONTACT LIST — no FTE, no funding source, no reporting line, and no date beyond the day it was fetched, which is the only date any of the six has.",
      "kind": "Data",
-     "bytes": 792544,
+     "bytes": 989165,
      "url": "/docs/data/school-staff-directory.csv",
-     "count": 2122,
+     "count": 2649,
      "unit": "rows",
      "textUrl": "/docs/data/school-staff-directory.csv"
     },
@@ -4038,9 +4038,9 @@
      "stars": 2,
      "what": "Written by us, by `extract_dese_grants.py`, from the copies of DESE’s “Current Grants” list and each program’s own page that `fetch_dese_grants.py` keeps weekly (sources/state-dese/grants/). Fund code, program, dates, grant type, state or federal, unit and contact are DESE’s; `eligibility`, `purpose` and `funding_text` are quoted from the program page. `district_reading` and `reading_basis` ARE OURS: a conservative reading of the eligibility text by fixed rules, `unclear` when in doubt. DESE publishes only the current list, so our weekly copies are the only history of it.",
      "kind": "Data",
-     "bytes": 101054,
+     "bytes": 102162,
      "url": "/docs/data/dese-grant-opportunities.csv",
-     "count": 361,
+     "count": 362,
      "unit": "rows",
      "textUrl": "/docs/data/dese-grant-opportunities.csv"
     },
@@ -4067,6 +4067,18 @@
      "count": 803,
      "unit": "lines",
      "textUrl": "/docs/analyses/transportation.md"
+    },
+    {
+     "path": "data/staff-directory.csv",
+     "title": "Who works for the town TODAY, off its own staff directory",
+     "stars": 2,
+     "what": "147 people across 27 departments, each with the title the town prints beside their name, from 28 pages at `/m/directory/department?did=N`. THE ONLY PEOPLE SOURCE HERE NOT READ OUT OF AN ANNUAL REPORT, which is why it was fetched: a department that files no report is invisible to both of the others and they share the blind spot. Four departments appear here and in neither — Accounting, Human Resources, Facilities/Grounds/Recreation and Public Access Cable. IT IS A CONTACT LIST, NOT AN ORG CHART: no rank order, no reporting line and NO DATE, so it is a snapshot rather than a series and a later fetch will silently differ.",
+     "kind": "Data",
+     "bytes": 78630,
+     "url": "/docs/data/staff-directory.csv",
+     "count": 588,
+     "unit": "rows",
+     "textUrl": "/docs/data/staff-directory.csv"
     },
     {
      "path": "data/capital-plans.csv",
@@ -4103,18 +4115,6 @@
      "count": 436,
      "unit": "rows",
      "textUrl": "/docs/data/staffing-by-section.csv"
-    },
-    {
-     "path": "data/staff-directory.csv",
-     "title": "Who works for the town TODAY, off its own staff directory",
-     "stars": 2,
-     "what": "147 people across 27 departments, each with the title the town prints beside their name, from 28 pages at `/m/directory/department?did=N`. THE ONLY PEOPLE SOURCE HERE NOT READ OUT OF AN ANNUAL REPORT, which is why it was fetched: a department that files no report is invisible to both of the others and they share the blind spot. Four departments appear here and in neither — Accounting, Human Resources, Facilities/Grounds/Recreation and Public Access Cable. IT IS A CONTACT LIST, NOT AN ORG CHART: no rank order, no reporting line and NO DATE, so it is a snapshot rather than a series and a later fetch will silently differ.",
-     "kind": "Data",
-     "bytes": 59112,
-     "url": "/docs/data/staff-directory.csv",
-     "count": 442,
-     "unit": "rows",
-     "textUrl": "/docs/data/staff-directory.csv"
     },
     {
      "path": "data/table-corrections.csv",
@@ -4278,9 +4278,9 @@
      "stars": 2,
      "what": "Written by us, by `watch_grants.py`, from the dated copies `fetch_dese_grants.py` and `fetch_dese_awards.py` keep -- no fetch of its own. One row per grant program page and per award document version. `first_seen` is the day OUR fetcher landed the bytes, not the day DESE posted them; DESE prints neither. `basis` splits it: `seed` was adopted when the watch began and announced nothing, `carried` was not new by the rules, `observed` was announced, and only those carry a `notice` -- frozen as it was written. An award notice says Lunenburg is listed or is NOT LISTED, never that it lost: DESE lists winners only.",
      "kind": "Data",
-     "bytes": 26178,
+     "bytes": 26439,
      "url": "/docs/data/grant-watch-state.csv",
-     "count": 111,
+     "count": 112,
      "unit": "rows",
      "textUrl": "/docs/data/grant-watch-state.csv"
     },
@@ -4386,9 +4386,9 @@
      "stars": 2,
      "what": "Written by us, by `extract_dese_entitlements.py`. The name is DESE’s, from the newest allocation page that names the code (or, for a code only on the open-grants list, that list’s program name, verbatim). `federal_or_state` is DESE’s `Type of Funding` where the open-grants list carries the code, and empty otherwise. It is how /accounts names a town grant fund such as `FY25 #240`.",
      "kind": "Data",
-     "bytes": 18004,
+     "bytes": 18482,
      "url": "/docs/data/dese-fund-codes.csv",
-     "count": 84,
+     "count": 86,
      "unit": "rows",
      "textUrl": "/docs/data/dese-fund-codes.csv"
     },
@@ -4804,7 +4804,7 @@
      "stars": 1,
      "what": "OURS, written by a language model (claude -p) in scripts/write_article_summaries.py from the warrant’s own words, heard-figures.csv and our notes of the board discussion, and nothing else. A summary carrying a figure that neither the warrant nor a checked figure carries is refused. Each says what it was written from. The warrant is the record.",
      "kind": "JSON",
-     "bytes": 16442,
+     "bytes": 16592,
      "url": "/docs/data/article-summaries.json",
      "textUrl": "/docs/data/article-summaries.json"
     },
@@ -5953,9 +5953,9 @@
      "stars": 2,
      "what": "Generated. 4,671 rows: the verbatim title, our `kind`, the meeting date derived from the title with `date_source` saying which route was used, and `classified_by` naming the model. THE UNDETERMINED COUNT IS A DENOMINATOR and belongs anywhere this index is quoted.",
      "kind": "Data",
-     "bytes": 1065718,
+     "bytes": 1066157,
      "url": "/docs/data/youtube-video-classification.csv",
-     "count": 4751,
+     "count": 4753,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-classification.csv"
     },
@@ -5977,9 +5977,9 @@
      "stars": 2,
      "what": "4,671 rows: the video id, the title EXACTLY as posted, the URL and the channel rank (0 = newest). A flat channel extraction returns no upload dates, so `channel_rank` is the only chronology the channel gave us. It carries no classification at all — what board a video was for is a judgment about a string and lives in its own files.",
      "kind": "Data",
-     "bytes": 597149,
+     "bytes": 597397,
      "url": "/docs/data/youtube-videos.csv",
-     "count": 4751,
+     "count": 4753,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-videos.csv"
     },
@@ -6013,9 +6013,9 @@
      "stars": 2,
      "what": "Generated. There is no board column on a video: a tri-board meeting is three rows and is not a special case. `in_agenda_center` is NO for the bodies the town’s AgendaCenter does not carry.",
      "kind": "Data",
-     "bytes": 461018,
+     "bytes": 461161,
      "url": "/docs/data/youtube-video-boards.csv",
-     "count": 2947,
+     "count": 2948,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-boards.csv"
     },
@@ -7208,7 +7208,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 117387264,
+     "bytes": 117403648,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -7230,9 +7230,9 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 4023377,
+     "bytes": 4025211,
      "url": "/docs/data/meeting-register.csv",
-     "count": 7115,
+     "count": 7120,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-register.csv"
     },
@@ -7386,9 +7386,9 @@
      "stars": 3,
      "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
      "kind": "Data",
-     "bytes": 930808,
+     "bytes": 931394,
      "url": "/docs/data/agentic-spend.csv",
-     "count": 13376,
+     "count": 13383,
      "unit": "rows",
      "textUrl": "/docs/data/agentic-spend.csv"
     },
@@ -8228,9 +8228,9 @@
      "stars": 2,
      "what": "One row per PDF in the archive: what pdf_kind found (digital, scan, mixed), which pages carry no readable text, how many of those Amazon Textract has read, and whether our searchable copy is built. A searchable copy is the publisher’s file with every page image unchanged and invisible Textract words under the picture pages, served at /docs/searchable/<path>; the original stays at its own address. Ours, not the publisher’s. Rebuild with scripts/searchable_pdfs.py.",
      "kind": "Data",
-     "bytes": 2607915,
+     "bytes": 2608950,
      "url": "/docs/data/searchable-pdfs.csv",
-     "count": 16294,
+     "count": 16301,
      "unit": "rows",
      "textUrl": "/docs/data/searchable-pdfs.csv"
     },
@@ -8240,9 +8240,9 @@
      "stars": 2,
      "what": "12,039 rows: the /CreationDate and /ModDate the town’s own PDFs and Word files carry, with the hours between a document being made and its meeting, and the days between a meeting and its minutes being made. A creation date is a LOWER BOUND on posting — a file cannot be published before it exists — and never the posting date, which the AgendaCenter does not publish. Written by scripts/extract_document_timestamps.py; read into the meeting record.",
      "kind": "Data",
-     "bytes": 2598864,
+     "bytes": 2600012,
      "url": "/docs/data/meeting-document-timestamps.csv",
-     "count": 12239,
+     "count": 12245,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-document-timestamps.csv"
     },
@@ -8252,9 +8252,9 @@
      "stars": 2,
      "what": "Written by us, and it is an OBSERVATION LOG rather than a measurement — what this project’s crawler could see on the town’s AgendaCenter on a given day. One row per document, keyed on the town’s own file id. `first_seen` is the day OUR crawler first saw it and NOT the day the town posted it: the AgendaCenter publishes no posting timestamp, so any gap between a meeting and its minutes appearing is an upper bound bounded by how often we look. The 12,065 rows adopted when the watch was seeded carry an EMPTY first_seen, because we do not know — an empty cell rather than a guess — and the `basis` column says which rows those are. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1793313,
+     "bytes": 1794233,
      "url": "/docs/data/meeting-watch-state.csv",
-     "count": 12283,
+     "count": 12289,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-state.csv"
     },
@@ -8300,9 +8300,9 @@
      "stars": 2,
      "what": "Written by us. Topic tags for 77 pages and 259 documents so a search for a subject finds the page about it even where the word is not on it.",
      "kind": "Data",
-     "bytes": 615353,
+     "bytes": 616210,
      "url": "/docs/data/search-affinity.csv",
-     "count": 4363,
+     "count": 4367,
      "unit": "rows",
      "textUrl": "/docs/data/search-affinity.csv"
     },
@@ -8336,11 +8336,23 @@
      "stars": 2,
      "what": "The question underneath the one above. A link can still open and serve a different document — a Drive file can be replaced in place without its URL changing, and nothing in a link check would notice. So every address is fetched and the result compared to our copy by sha256. It also separates the ways bytes can differ without the document differing: a Google Doc is re-zipped on every export, and a PDF can be re-saved with a heading’s line-break in a new place. Only one of those is a change. Rebuild with scripts/verify_source_copies.py.",
      "kind": "Data",
-     "bytes": 422149,
+     "bytes": 451977,
      "url": "/docs/data/copy-status.csv",
-     "count": 1243,
+     "count": 1323,
      "unit": "rows",
      "textUrl": "/docs/data/copy-status.csv"
+    },
+    {
+     "path": "data/link-status.csv",
+     "title": "Whether each source document is still public",
+     "stars": 2,
+     "what": "For every archived document that records where its publisher put it, whether that address still opens. On 29 August 2026 it mostly did not: 57 of 184 returned a Google sign-in wall, every one of them a Drive or Docs link, while the town’s own web server answered 81 of 81. The district was asked to reopen them and did — on 31 August the same 187 came back 186 open. Both readings are the archive’s reason for existing, measured. Rebuild with scripts/check_source_links.py.",
+     "kind": "Data",
+     "bytes": 423460,
+     "url": "/docs/data/link-status.csv",
+     "count": 2136,
+     "unit": "rows",
+     "textUrl": "/docs/data/link-status.csv"
     },
     {
      "path": "data/fund-balances-fincom.csv",
@@ -8353,18 +8365,6 @@
      "count": 1820,
      "unit": "rows",
      "textUrl": "/docs/data/fund-balances-fincom.csv"
-    },
-    {
-     "path": "data/link-status.csv",
-     "title": "Whether each source document is still public",
-     "stars": 2,
-     "what": "For every archived document that records where its publisher put it, whether that address still opens. On 29 August 2026 it mostly did not: 57 of 184 returned a Google sign-in wall, every one of them a Drive or Docs link, while the town’s own web server answered 81 of 81. The district was asked to reopen them and did — on 31 August the same 187 came back 186 open. Both readings are the archive’s reason for existing, measured. Rebuild with scripts/check_source_links.py.",
-     "kind": "Data",
-     "bytes": 357833,
-     "url": "/docs/data/link-status.csv",
-     "count": 1936,
-     "unit": "rows",
-     "textUrl": "/docs/data/link-status.csv"
     },
     {
      "path": "data/department-budgets-fincom-fy27.csv",
@@ -8384,9 +8384,9 @@
      "stars": 2,
      "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
      "kind": "Data",
-     "bytes": 173099,
+     "bytes": 177882,
      "url": "/docs/data/refresh-runs.csv",
-     "count": 44,
+     "count": 45,
      "unit": "rows",
      "textUrl": "/docs/data/refresh-runs.csv"
     },
@@ -8528,9 +8528,9 @@
      "stars": 2,
      "what": "Written by us. One row per document the watch saw APPEAR — an agenda posted for a coming meeting, or minutes arriving for a meeting that had none. Everything present when the watch was seeded is deliberately absent: it was already known and was never new. This is the file that makes the feed deterministic, and scripts/check_meeting_watch_idempotent.py proves the point by running the detector twice and requiring the second run to announce nothing. `days_after_meeting_upper_bound` is named that way because it is one. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 35360,
+     "bytes": 36333,
      "url": "/docs/data/meeting-watch-events.csv",
-     "count": 218,
+     "count": 224,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-events.csv"
     },
@@ -8588,9 +8588,9 @@
      "stars": 2,
      "what": "Written by us. One row per meeting recording the caption fetcher was refused for, with YouTube’s reason. 102 rows, most from 2015–2017; notes/generated/NO-CAPTIONS.md lists them with what written record survives for the same date.",
      "kind": "Data",
-     "bytes": 24941,
+     "bytes": 25074,
      "url": "/docs/data/youtube-no-captions.csv",
-     "count": 199,
+     "count": 200,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-no-captions.csv"
     },
@@ -8720,9 +8720,9 @@
      "stars": 2,
      "what": "Written by us. One row per video the RSS watch first saw, with when. The channel itself is the record; this is the deterministic log the refresh reads.",
      "kind": "Data",
-     "bytes": 9338,
+     "bytes": 9562,
      "url": "/docs/data/youtube-watch-events.csv",
-     "count": 80,
+     "count": 82,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-watch-events.csv"
     },
@@ -8781,9 +8781,9 @@
      "stars": 2,
      "what": "Appended by the daily refresh, one row per look: the source, the day, and whether the look succeeded. A source is due again when its cadence has passed since its last successful look, so a failed one is retried the next morning. Written by scripts/refresh.py through scripts/source_cadence.py.",
      "kind": "Data",
-     "bytes": 4297,
+     "bytes": 4785,
      "url": "/docs/data/source-checks.csv",
-     "count": 134,
+     "count": 151,
      "unit": "rows",
      "textUrl": "/docs/data/source-checks.csv"
     },
@@ -8938,9 +8938,9 @@
      "stars": 2,
      "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1699,
+     "bytes": 1730,
      "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 52,
+     "count": 53,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
@@ -9467,7 +9467,7 @@
    "id": "district-page",
    "origin": "school",
    "title": "The district budget page, mirrored in full",
-   "blurb": "Every document linked from the district’s budget information page — 925 of them, back to FY18. Each row links to our copy and to the district’s original. Text has been extracted from all but one, including eleven scans that had no text layer until we read them.",
+   "blurb": "Every document linked from the district’s budget information page — 938 of them, back to FY18. Each row links to our copy and to the district’s original. Text has been extracted from all but one, including eleven scans that had no text layer until we read them.",
    "items": [
     {
      "path": "district-budget/docs/additional-town-revenue-spending-plan.pdf",
@@ -11871,6 +11871,16 @@
      "upstream": "https://www.lunenburgschools.net/contact"
     },
     {
+     "path": "district-budget/docs/personnel/staff-directory/2026-11-06/directory-of-staff.html",
+     "title": "Directory of Staff (the district's own index of the listings), fetched 2026-11-06",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 115734,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-11-06/directory-of-staff.html",
+     "upstream": "https://www.lunenburgschools.net/contact"
+    },
+    {
      "path": "district-budget/docs/personnel/staff-directory/2026-09-25/directory-of-staff-all-lunenburg-public-schools-staff.html",
      "title": "Directory of Staff - All Lunenburg Public Schools Staff (school staff directory), fetched 2026-09-25",
      "stars": 1,
@@ -11911,6 +11921,16 @@
      "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR9MlZ81EtnImzmf_Z2GNEl9iAIlHjOykEXoE_u4odon7HQ_-4ZA6McyzfKr3tI066sI8dYTKuIqwvs/pubhtml"
     },
     {
+     "path": "district-budget/docs/personnel/staff-directory/2026-11-06/directory-of-staff-all-lunenburg-public-schools-staff.html",
+     "title": "Directory of Staff - All Lunenburg Public Schools Staff (school staff directory), fetched 2026-11-06",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 58926,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-11-06/directory-of-staff-all-lunenburg-public-schools-staff.html",
+     "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR9MlZ81EtnImzmf_Z2GNEl9iAIlHjOykEXoE_u4odon7HQ_-4ZA6McyzfKr3tI066sI8dYTKuIqwvs/pubhtml"
+    },
+    {
      "path": "district-budget/docs/personnel/staff-directory/2026-09-25/directory-of-staff-all-lunenburg-public-schools-staff.csv",
      "title": "Directory of Staff - All Lunenburg Public Schools Staff (school staff directory, rows), fetched 2026-09-25",
      "stars": 1,
@@ -11948,6 +11968,16 @@
      "kind": "Data",
      "bytes": 23817,
      "url": "/docs/district-budget/docs/personnel/staff-directory/2026-10-30/directory-of-staff-all-lunenburg-public-schools-staff.csv",
+     "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR9MlZ81EtnImzmf_Z2GNEl9iAIlHjOykEXoE_u4odon7HQ_-4ZA6McyzfKr3tI066sI8dYTKuIqwvs/pub?gid=1144400950&single=true&output=csv"
+    },
+    {
+     "path": "district-budget/docs/personnel/staff-directory/2026-11-06/directory-of-staff-all-lunenburg-public-schools-staff.csv",
+     "title": "Directory of Staff - All Lunenburg Public Schools Staff (school staff directory, rows), fetched 2026-11-06",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "Data",
+     "bytes": 23679,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-11-06/directory-of-staff-all-lunenburg-public-schools-staff.csv",
      "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR9MlZ81EtnImzmf_Z2GNEl9iAIlHjOykEXoE_u4odon7HQ_-4ZA6McyzfKr3tI066sI8dYTKuIqwvs/pub?gid=1144400950&single=true&output=csv"
     },
     {
@@ -12046,6 +12076,16 @@
      "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQcd-h-MVa9GRDdMx_sXKEk9uxKuks2Cfc4LGmRtaMMn7zHOYeMFvQ-GVV-kAWAzm-kwWn6Kw94sAbG/pubhtml"
     },
     {
+     "path": "district-budget/docs/personnel/staff-directory/2026-11-06/district-office.html",
+     "title": "District Office (school staff directory), fetched 2026-11-06",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 58838,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-11-06/district-office.html",
+     "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQcd-h-MVa9GRDdMx_sXKEk9uxKuks2Cfc4LGmRtaMMn7zHOYeMFvQ-GVV-kAWAzm-kwWn6Kw94sAbG/pubhtml"
+    },
+    {
      "path": "district-budget/docs/personnel/staff-directory/2026-09-25/district-office.csv",
      "title": "District Office (school staff directory, rows), fetched 2026-09-25",
      "stars": 1,
@@ -12083,6 +12123,16 @@
      "kind": "Data",
      "bytes": 1591,
      "url": "/docs/district-budget/docs/personnel/staff-directory/2026-10-30/district-office.csv",
+     "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQcd-h-MVa9GRDdMx_sXKEk9uxKuks2Cfc4LGmRtaMMn7zHOYeMFvQ-GVV-kAWAzm-kwWn6Kw94sAbG/pub?gid=641141508&single=true&output=csv"
+    },
+    {
+     "path": "district-budget/docs/personnel/staff-directory/2026-11-06/district-office.csv",
+     "title": "District Office (school staff directory, rows), fetched 2026-11-06",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "Data",
+     "bytes": 1448,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-11-06/district-office.csv",
      "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQcd-h-MVa9GRDdMx_sXKEk9uxKuks2Cfc4LGmRtaMMn7zHOYeMFvQ-GVV-kAWAzm-kwWn6Kw94sAbG/pub?gid=641141508&single=true&output=csv"
     },
     {
@@ -15367,6 +15417,16 @@
      "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTAH5iEk29z7eJh0XDI0GGr9cTMRDZB_aEfruqiKohLwwEAW8XPgVavo26J8C3XYgZScmPWNsgY_2Fp/pubhtml"
     },
     {
+     "path": "district-budget/docs/personnel/staff-directory/2026-11-06/lunenburg-high-school.html",
+     "title": "Lunenburg High School (school staff directory), fetched 2026-11-06",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 58883,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-11-06/lunenburg-high-school.html",
+     "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTAH5iEk29z7eJh0XDI0GGr9cTMRDZB_aEfruqiKohLwwEAW8XPgVavo26J8C3XYgZScmPWNsgY_2Fp/pubhtml"
+    },
+    {
      "path": "district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-high-school.csv",
      "title": "Lunenburg High School (school staff directory, rows), fetched 2026-09-25",
      "stars": 1,
@@ -15404,6 +15464,16 @@
      "kind": "Data",
      "bytes": 5263,
      "url": "/docs/district-budget/docs/personnel/staff-directory/2026-10-30/lunenburg-high-school.csv",
+     "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTAH5iEk29z7eJh0XDI0GGr9cTMRDZB_aEfruqiKohLwwEAW8XPgVavo26J8C3XYgZScmPWNsgY_2Fp/pub?gid=1151319678&single=true&output=csv"
+    },
+    {
+     "path": "district-budget/docs/personnel/staff-directory/2026-11-06/lunenburg-high-school.csv",
+     "title": "Lunenburg High School (school staff directory, rows), fetched 2026-11-06",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "Data",
+     "bytes": 5263,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-11-06/lunenburg-high-school.csv",
      "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTAH5iEk29z7eJh0XDI0GGr9cTMRDZB_aEfruqiKohLwwEAW8XPgVavo26J8C3XYgZScmPWNsgY_2Fp/pub?gid=1151319678&single=true&output=csv"
     },
     {
@@ -15447,6 +15517,16 @@
      "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTwLEex6hF6OOegk9jx7XiCa57STXqESMtLq61rQuuv5jGBX1XLLS3mK0tEwcyYlCwEoDlClN3lZiAO/pubhtml"
     },
     {
+     "path": "district-budget/docs/personnel/staff-directory/2026-11-06/lunenburg-middle-school.html",
+     "title": "Lunenburg Middle School (school staff directory), fetched 2026-11-06",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 58733,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-11-06/lunenburg-middle-school.html",
+     "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTwLEex6hF6OOegk9jx7XiCa57STXqESMtLq61rQuuv5jGBX1XLLS3mK0tEwcyYlCwEoDlClN3lZiAO/pubhtml"
+    },
+    {
      "path": "district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-middle-school.csv",
      "title": "Lunenburg Middle School (school staff directory, rows), fetched 2026-09-25",
      "stars": 1,
@@ -15484,6 +15564,16 @@
      "kind": "Data",
      "bytes": 4854,
      "url": "/docs/district-budget/docs/personnel/staff-directory/2026-10-30/lunenburg-middle-school.csv",
+     "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTwLEex6hF6OOegk9jx7XiCa57STXqESMtLq61rQuuv5jGBX1XLLS3mK0tEwcyYlCwEoDlClN3lZiAO/pub?gid=674457793&single=true&output=csv"
+    },
+    {
+     "path": "district-budget/docs/personnel/staff-directory/2026-11-06/lunenburg-middle-school.csv",
+     "title": "Lunenburg Middle School (school staff directory, rows), fetched 2026-11-06",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "Data",
+     "bytes": 4786,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-11-06/lunenburg-middle-school.csv",
      "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTwLEex6hF6OOegk9jx7XiCa57STXqESMtLq61rQuuv5jGBX1XLLS3mK0tEwcyYlCwEoDlClN3lZiAO/pub?gid=674457793&single=true&output=csv"
     },
     {
@@ -15527,6 +15617,16 @@
      "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTAcMEzPhIJYS4H5JX1zFrrt-BJUTfQaKOvVP1i5f23ShyZ7jlwrqccO_n2fZnTLhblortPS9Urq0nL/pubhtml"
     },
     {
+     "path": "district-budget/docs/personnel/staff-directory/2026-11-06/lunenburg-primary-school.html",
+     "title": "Lunenburg Primary School (school staff directory), fetched 2026-11-06",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 58861,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-11-06/lunenburg-primary-school.html",
+     "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTAcMEzPhIJYS4H5JX1zFrrt-BJUTfQaKOvVP1i5f23ShyZ7jlwrqccO_n2fZnTLhblortPS9Urq0nL/pubhtml"
+    },
+    {
      "path": "district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-primary-school.csv",
      "title": "Lunenburg Primary School (school staff directory, rows), fetched 2026-09-25",
      "stars": 1,
@@ -15564,6 +15664,16 @@
      "kind": "Data",
      "bytes": 3976,
      "url": "/docs/district-budget/docs/personnel/staff-directory/2026-10-30/lunenburg-primary-school.csv",
+     "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTAcMEzPhIJYS4H5JX1zFrrt-BJUTfQaKOvVP1i5f23ShyZ7jlwrqccO_n2fZnTLhblortPS9Urq0nL/pub?gid=658881324&single=true&output=csv"
+    },
+    {
+     "path": "district-budget/docs/personnel/staff-directory/2026-11-06/lunenburg-primary-school.csv",
+     "title": "Lunenburg Primary School (school staff directory, rows), fetched 2026-11-06",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "Data",
+     "bytes": 3976,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-11-06/lunenburg-primary-school.csv",
      "upstream": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTAcMEzPhIJYS4H5JX1zFrrt-BJUTfQaKOvVP1i5f23ShyZ7jlwrqccO_n2fZnTLhblortPS9Urq0nL/pub?gid=658881324&single=true&output=csv"
     },
     {
@@ -19271,6 +19381,16 @@
      "upstream": "https://docs.google.com/spreadsheets/d/1aTMJoGPb4-j1oJAZs1oOvbZdYz7yvY9R0YyiC3j8KxA/edit?usp=sharing"
     },
     {
+     "path": "district-budget/docs/personnel/staff-directory/2026-11-06/turkey-hill-elementary-school.html",
+     "title": "Turkey Hill Elementary School (school staff directory), fetched 2026-11-06",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 278007,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-11-06/turkey-hill-elementary-school.html",
+     "upstream": "https://docs.google.com/spreadsheets/d/1aTMJoGPb4-j1oJAZs1oOvbZdYz7yvY9R0YyiC3j8KxA/edit?usp=sharing"
+    },
+    {
      "path": "district-budget/docs/personnel/staff-directory/2026-09-25/turkey-hill-elementary-school.csv",
      "title": "Turkey Hill Elementary School (school staff directory, rows), fetched 2026-09-25",
      "stars": 1,
@@ -19308,6 +19428,16 @@
      "kind": "Data",
      "bytes": 2303,
      "url": "/docs/district-budget/docs/personnel/staff-directory/2026-10-30/turkey-hill-elementary-school.csv",
+     "upstream": "https://docs.google.com/spreadsheets/d/1aTMJoGPb4-j1oJAZs1oOvbZdYz7yvY9R0YyiC3j8KxA/export?format=csv"
+    },
+    {
+     "path": "district-budget/docs/personnel/staff-directory/2026-11-06/turkey-hill-elementary-school.csv",
+     "title": "Turkey Hill Elementary School (school staff directory, rows), fetched 2026-11-06",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "Data",
+     "bytes": 2303,
+     "url": "/docs/district-budget/docs/personnel/staff-directory/2026-11-06/turkey-hill-elementary-school.csv",
      "upstream": "https://docs.google.com/spreadsheets/d/1aTMJoGPb4-j1oJAZs1oOvbZdYz7yvY9R0YyiC3j8KxA/export?format=csv"
     },
     {
@@ -24333,7 +24463,7 @@
    "id": "town-supplementary",
    "origin": "town",
    "title": "The town’s supplementary documents, mirrored",
-   "blurb": "The other 158 documents from the same town pages: tax billing and exemption forms, the senior work-off programme, police policies, HR forms, grant notices and an infrastructure assessment. Split out because a folder called budget should hold budgets — data, spreadsheets and plans — and these are supplementary to it. Nothing was discarded: they are mirrored on the same terms as everything else, and several bear on the budget indirectly.",
+   "blurb": "The other 187 documents from the same town pages: tax billing and exemption forms, the senior work-off programme, police policies, HR forms, grant notices and an infrastructure assessment. Split out because a folder called budget should hold budgets — data, spreadsheets and plans — and these are supplementary to it. Nothing was discarded: they are mirrored on the same terms as everything else, and several bear on the budget indirectly.",
    "items": [
     {
      "path": "town-supplementary/docs/394-1-40-school-resource-officer-pdf.pdf",
@@ -24432,6 +24562,16 @@
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=6"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-6.html",
+     "title": "Accounting Department (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 96751,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-6.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=6"
+    },
+    {
      "path": "town-supplementary/docs/board-159-agricultural-commission.html",
      "title": "Agricultural Commission (board page)",
      "stars": 1,
@@ -24482,6 +24622,16 @@
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=49"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-49.html",
+     "title": "Americans with Disabilities Committee (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 93076,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-49.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=49"
+    },
+    {
      "path": "town-supplementary/docs/staff-directory/2026-09-22/did-8.html",
      "title": "Animal Control Department (staff directory, fetched 2026-09-22)",
      "stars": 1,
@@ -24509,6 +24659,16 @@
      "kind": "HTML",
      "bytes": 95389,
      "url": "/docs/town-supplementary/docs/staff-directory/2026-10-23/did-8.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=8"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-8.html",
+     "title": "Animal Control Department (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 95389,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-8.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=8"
     },
     {
@@ -24559,6 +24719,16 @@
      "kind": "HTML",
      "bytes": 97745,
      "url": "/docs/town-supplementary/docs/staff-directory/2026-10-23/did-9.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=9"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-9.html",
+     "title": "Assessor's Department (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 97745,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-9.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=9"
     },
     {
@@ -24624,6 +24794,16 @@
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=16"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-16.html",
+     "title": "Board of Health Department (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 97143,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-16.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=16"
+    },
+    {
      "path": "town-supplementary/docs/board-398-board-of-registrars.html",
      "title": "Board of Registrars (board page)",
      "stars": 1,
@@ -24682,6 +24862,16 @@
      "kind": "HTML",
      "bytes": 97786,
      "url": "/docs/town-supplementary/docs/staff-directory/2026-10-23/did-10.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=10"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-10.html",
+     "title": "Building Department (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 97786,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-10.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=10"
     },
     {
@@ -24755,6 +24945,16 @@
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=18"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-18.html",
+     "title": "Cemetery Commission (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 96711,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-18.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=18"
+    },
+    {
      "path": "town-supplementary/docs/board-219-charter-review-committee.html",
      "title": "Charter Review Committee (board page)",
      "stars": 1,
@@ -24816,6 +25016,16 @@
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=24"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-24.html",
+     "title": "Conservation Commission (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 96262,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-24.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=24"
+    },
+    {
      "path": "town-supplementary/docs/board-229-council-on-aging.html",
      "title": "Council On Aging (board page)",
      "stars": 1,
@@ -24853,6 +25063,16 @@
      "kind": "HTML",
      "bytes": 100888,
      "url": "/docs/town-supplementary/docs/staff-directory/2026-10-23/did-25.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=25"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-25.html",
+     "title": "Council on Aging (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 100888,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-25.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=25"
     },
     {
@@ -24896,6 +25116,16 @@
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=26"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-26.html",
+     "title": "Department of Public Works (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 112748,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-26.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=26"
+    },
+    {
      "path": "town-supplementary/docs/board-250-economic-development-committee.html",
      "title": "Economic Development Committee (board page)",
      "stars": 1,
@@ -24933,6 +25163,16 @@
      "kind": "HTML",
      "bytes": 98948,
      "url": "/docs/town-supplementary/docs/staff-directory/2026-10-23/did-11.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=11"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-11.html",
+     "title": "Electrical Inspector (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 98948,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-11.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=11"
     },
     {
@@ -25076,6 +25316,16 @@
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=12"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-12.html",
+     "title": "Facilities, Grounds, & Recreation Department (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 99804,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-12.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=12"
+    },
+    {
      "path": "town-supplementary/docs/board-252-finance-committee.html",
      "title": "Finance Committee (board page)",
      "stars": 1,
@@ -25113,6 +25363,16 @@
      "kind": "HTML",
      "bytes": 149191,
      "url": "/docs/town-supplementary/docs/staff-directory/2026-10-23/did-13.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=13"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-13.html",
+     "title": "Fire Department (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 149191,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-13.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=13"
     },
     {
@@ -25166,6 +25426,16 @@
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=14"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-14.html",
+     "title": "Human Resources Department (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 98563,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-14.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=14"
+    },
+    {
      "path": "town-supplementary/docs/staff-directory/2026-09-22/did-19.html",
      "title": "Information Technology Department (staff directory, fetched 2026-09-22)",
      "stars": 1,
@@ -25193,6 +25463,16 @@
      "kind": "HTML",
      "bytes": 95551,
      "url": "/docs/town-supplementary/docs/staff-directory/2026-10-23/did-19.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=19"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-19.html",
+     "title": "Information Technology Department (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 95551,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-19.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=19"
     },
     {
@@ -25253,6 +25533,16 @@
      "kind": "HTML",
      "bytes": 92998,
      "url": "/docs/town-supplementary/docs/staff-directory/2026-10-23/did-20.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=20"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-20.html",
+     "title": "Land Use Department (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 92998,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-20.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=20"
     },
     {
@@ -25400,6 +25690,16 @@
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=38"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-38.html",
+     "title": "Parks Commission (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 103830,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-38.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=38"
+    },
+    {
      "path": "town-supplementary/docs/board-284-personnel-committee.html",
      "title": "Personnel Committee (board page)",
      "stars": 1,
@@ -25437,6 +25737,16 @@
      "kind": "HTML",
      "bytes": 93757,
      "url": "/docs/town-supplementary/docs/staff-directory/2026-10-23/did-39.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=39"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-39.html",
+     "title": "Personnel Committee (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 93757,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-39.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=39"
     },
     {
@@ -25480,6 +25790,16 @@
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=40"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-40.html",
+     "title": "Planning Board Department (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 97740,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-40.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=40"
+    },
+    {
      "path": "town-supplementary/docs/staff-directory/2026-09-22/did-21.html",
      "title": "Plumbing / Gas Inspector (staff directory, fetched 2026-09-22)",
      "stars": 1,
@@ -25507,6 +25827,16 @@
      "kind": "HTML",
      "bytes": 98627,
      "url": "/docs/town-supplementary/docs/staff-directory/2026-10-23/did-21.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=21"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-21.html",
+     "title": "Plumbing / Gas Inspector (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 98627,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-21.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=21"
     },
     {
@@ -25540,6 +25870,16 @@
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=22"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-22.html",
+     "title": "Police Department (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 140205,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-22.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=22"
+    },
+    {
      "path": "town-supplementary/docs/staff-directory/2026-09-22/did-41.html",
      "title": "Public Access Cable (PAC) (staff directory, fetched 2026-09-22)",
      "stars": 1,
@@ -25567,6 +25907,16 @@
      "kind": "HTML",
      "bytes": 101016,
      "url": "/docs/town-supplementary/docs/staff-directory/2026-10-23/did-41.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=41"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-41.html",
+     "title": "Public Access Cable (PAC) (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 99859,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-41.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=41"
     },
     {
@@ -25650,6 +26000,16 @@
      "kind": "HTML",
      "bytes": 96600,
      "url": "/docs/town-supplementary/docs/staff-directory/2026-10-23/did-42.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=42"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-42.html",
+     "title": "Select Board (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 96600,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-42.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=42"
     },
     {
@@ -25747,6 +26107,16 @@
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=32"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-32.html",
+     "title": "Town Clerk (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 97634,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-32.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=32"
+    },
+    {
      "path": "town-supplementary/docs/staff-directory/2026-09-22/did-36.html",
      "title": "Town Manager (staff directory, fetched 2026-09-22)",
      "stars": 1,
@@ -25774,6 +26144,16 @@
      "kind": "HTML",
      "bytes": 99637,
      "url": "/docs/town-supplementary/docs/staff-directory/2026-10-23/did-36.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=36"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-36.html",
+     "title": "Town Manager (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 99637,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-36.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=36"
     },
     {
@@ -25814,6 +26194,16 @@
      "kind": "HTML",
      "bytes": 99944,
      "url": "/docs/town-supplementary/docs/staff-directory/2026-10-23/did-43.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=43"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-43.html",
+     "title": "Treasurer And Tax Collector Department (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 99944,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-43.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=43"
     },
     {
@@ -25867,6 +26257,16 @@
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=44"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-44.html",
+     "title": "Veteran's Services Department (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 96780,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-44.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=44"
+    },
+    {
      "path": "town-supplementary/docs/182-w-4-federal-tax-form-pdf.pdf",
      "title": "W-4 Federal Tax Form (PDF)",
      "stars": 1,
@@ -25908,6 +26308,16 @@
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=45"
     },
     {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-45.html",
+     "title": "Weight & Measures (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 94882,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-45.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=45"
+    },
+    {
      "path": "town-supplementary/docs/board-322-zoning-board-of-appeals.html",
      "title": "Zoning Board of Appeals (board page)",
      "stars": 1,
@@ -25945,6 +26355,16 @@
      "kind": "HTML",
      "bytes": 97851,
      "url": "/docs/town-supplementary/docs/staff-directory/2026-10-23/did-47.html",
+     "upstream": "https://www.lunenburgma.gov/m/directory/department?did=47"
+    },
+    {
+     "path": "town-supplementary/docs/staff-directory/2026-11-06/did-47.html",
+     "title": "Zoning Board of Appeals (staff directory, fetched 2026-11-06)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 97851,
+     "url": "/docs/town-supplementary/docs/staff-directory/2026-11-06/did-47.html",
      "upstream": "https://www.lunenburgma.gov/m/directory/department?did=47"
     }
    ]
@@ -26726,7 +27146,7 @@
    "id": "state-dese",
    "origin": "state-dese",
    "title": "State enrollment data",
-   "blurb": "Lunenburg’s selected-population counts from the state, FY19 to FY26 — 429 files. The count of students with disabilities is the one quantity the budget cannot supply: special education spending is staff numbers times contract rates, and a budget only shows the product.",
+   "blurb": "Lunenburg’s selected-population counts from the state, FY19 to FY26 — 430 files. The count of students with disabilities is the one quantity the budget cannot supply: special education spending is staff numbers times contract rates, and a budget only shows the product.",
    "items": [
     {
      "path": "state-dese/603cmr28-special-education-regulations.html",
@@ -27298,7 +27718,7 @@
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
-     "bytes": 127093,
+     "bytes": 128251,
      "url": "/docs/state-dese/grants/grants.html",
      "upstream": "https://www.doe.mass.edu/grants/grants.aspx"
     },
@@ -30454,7 +30874,7 @@
     },
     {
      "path": "state-dese/grants/detail/2027-0347.html",
-     "title": "DESE grant program page: FY27 Playful Learning Institute, Preschool–3rd Grade (fund code 0347)",
+     "title": "DESE grant program page: FY27 Playful Learning Institute, Preschool–3rd Grade (fund code 0347 / 347A)",
      "stars": 1,
      "what": "Mirrored from the publisher. Not used in any figure on this site.",
      "kind": "HTML",
@@ -30611,6 +31031,16 @@
      "bytes": 70633,
      "url": "/docs/state-dese/grants/detail/2027-9600-9605-9610.html",
      "upstream": "https://www.doe.mass.edu/grants/2027/9600-9605-9610/"
+    },
+    {
+     "path": "state-dese/grants/detail/2027-0542.html",
+     "title": "DESE grant program page: FY27 Summer Food Service Program: Expansion, Access, Training and Start-Up (SFSP EATS) Grant for New and Existing Sponsors (fund code 0542)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "HTML",
+     "bytes": 59648,
+     "url": "/docs/state-dese/grants/detail/2027-0542.html",
+     "upstream": "https://www.doe.mass.edu/grants/2027/0542/"
     },
     {
      "path": "state-dese/grants/detail/2027-0220.html",
@@ -32029,7 +32459,8 @@
      "bytes": 1238582,
      "url": "/docs/state-law/2026-10-09/determinations/determination-12-24-2012-oml-2012-118-provincetown-historic-district-commission.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-118.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AcOu42UdHZNSwbscAjFLoPR%C3%897D4KI9NSAzKNeh6zGSCrdR1zfJ7opW7b%C3%81GNPwyvi9ElHnKb1exGNTNjQK30Kn4A%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AcOu42UdHZNSwbscAjFLoPR%C3%897D4KI9NSAzKNeh6zGSCrdR1zfJ7opW7b%C3%81GNPwyvi9ElHnKb1exGNTNjQK30Kn4A%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-12-24-2012-oml-2012-119-provincetown-historic-district-commission.pdf",
@@ -32073,7 +32504,8 @@
      "bytes": 1071694,
      "url": "/docs/state-law/2026-10-09/determinations/determination-2-21-2012-oml-2012-14-north-brookfield-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-14.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ATWjGp2Y8pqXSKdwDKYJ%C3%81LOycIRX7v51bwFERU5wy4%C3%81Qp7%C3%89vXH%C3%89qdxWTydwjv7UERxlXGvaqsXF6UGiWwd2iJVM%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ATWjGp2Y8pqXSKdwDKYJ%C3%81LOycIRX7v51bwFERU5wy4%C3%81Qp7%C3%89vXH%C3%89qdxWTydwjv7UERxlXGvaqsXF6UGiWwd2iJVM%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-2-27-2012-oml-2012-15-winchendon-public-safety-development-committee.pdf",
@@ -32227,7 +32659,8 @@
      "bytes": 1377498,
      "url": "/docs/state-law/2026-10-09/determinations/determination-4-3-2012-oml-2012-27-peabody-school-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-27.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AT5pUQXo%C3%89HmQc6aGeAcegShMQQYQV5xZDrDST01EDE7bEOv%C3%81bpF%C3%817tOQG1nZv3lzYn7rcCdDnP3yrt8zBpTs0sU%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AT5pUQXo%C3%89HmQc6aGeAcegShMQQYQV5xZDrDST01EDE7bEOv%C3%81bpF%C3%817tOQG1nZv3lzYn7rcCdDnP3yrt8zBpTs0sU%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-4-3-2012-oml-2012-28-montague-by-law-review-committee.pdf",
@@ -32271,7 +32704,8 @@
      "bytes": 1093784,
      "url": "/docs/state-law/2026-10-09/determinations/determination-4-9-2012-oml-2012-30-cotuit-fire-district-policy-advisory-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-30.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AVG9bjZt2EypXs2%C3%81VP40%C3%81wj22Ny4gC9CYJOWCRIEE5mf8OC3ER8JfHaHIt7ftoyhOvFX%C3%89adfmZecLv61mM59Ihg%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AVG9bjZt2EypXs2%C3%81VP40%C3%81wj22Ny4gC9CYJOWCRIEE5mf8OC3ER8JfHaHIt7ftoyhOvFX%C3%89adfmZecLv61mM59Ihg%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-4-24-2012-oml-2012-31-wenham-board-of-selectmen.pdf",
@@ -32293,7 +32727,8 @@
      "bytes": 1525985,
      "url": "/docs/state-law/2026-10-09/determinations/determination-4-24-2012-oml-2012-32-southbridge-town-council-education-and-human-services-subcommittee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-32.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ad%C3%81iFJniLdKs9YuU0z9d3h5DiZ%C3%89x1xUU4AskOh8NL3liXs8IbsCnvE8wLjWD%C3%89fgiRU0%C3%89B7BvOCwfVB6z3Ayi770%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ad%C3%81iFJniLdKs9YuU0z9d3h5DiZ%C3%89x1xUU4AskOh8NL3liXs8IbsCnvE8wLjWD%C3%89fgiRU0%C3%89B7BvOCwfVB6z3Ayi770%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-5-8-2012-oml-2012-33-falmouth-board-of-selectmen.pdf",
@@ -32403,7 +32838,8 @@
      "bytes": 1792597,
      "url": "/docs/state-law/2026-10-09/determinations/determination-6-1-2012-oml-2012-41-acton-school-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-41.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AU3TI1ZpPLbgK5JdQARcqUlNOyjJ%C3%81N%C3%816BaBgMorH%C3%89SWvNXcCKPb0SG5%C3%81MQOcL87MmnHH%C3%81MFVS1HgsUl9MS5Xkb4%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AU3TI1ZpPLbgK5JdQARcqUlNOyjJ%C3%81N%C3%816BaBgMorH%C3%89SWvNXcCKPb0SG5%C3%81MQOcL87MmnHH%C3%81MFVS1HgsUl9MS5Xkb4%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-6-1-2012-oml-2012-42-arlington-board-of-selectmen.pdf",
@@ -32414,7 +32850,8 @@
      "bytes": 1341822,
      "url": "/docs/state-law/2026-10-09/determinations/determination-6-1-2012-oml-2012-42-arlington-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-42.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AfBJCzsp36jCP9EZEfG%C3%89k6BdTa%C3%89DhthCTdobVRyLHZT6DILkxNoFbNmM6jxgfzDMJWwAUhlNpJlZkjTmJK7bQTg%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AfBJCzsp36jCP9EZEfG%C3%89k6BdTa%C3%89DhthCTdobVRyLHZT6DILkxNoFbNmM6jxgfzDMJWwAUhlNpJlZkjTmJK7bQTg%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-6-5-2012-oml-2012-43-barnstable-conservation-commission.pdf",
@@ -32436,7 +32873,8 @@
      "bytes": 1083043,
      "url": "/docs/state-law/2026-10-09/determinations/determination-6-5-2012-oml-2012-44-barnstable-town-council.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-44.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AST2GCoECNX%C3%89i6G64njy8cyoZrBdUsm06jO%C3%89qn9g8U5zMlB3M9uI8XELFapiUKlNXs6dgDadRkF8QO4HBtLHpaQ%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AST2GCoECNX%C3%89i6G64njy8cyoZrBdUsm06jO%C3%89qn9g8U5zMlB3M9uI8XELFapiUKlNXs6dgDadRkF8QO4HBtLHpaQ%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-6-11-2012-oml-2012-45-somerville-retirment-board.pdf",
@@ -32447,7 +32885,8 @@
      "bytes": 1111741,
      "url": "/docs/state-law/2026-10-09/determinations/determination-6-11-2012-oml-2012-45-somerville-retirment-board.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-45.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AdDReG6boEnCO6pFXAf1AciCAF7ESr859R6t9t6R9CqcxUMz24%C3%899bDp9qNav3cm94E3h4AjDfr4Cgrq7%C3%89oVsSvk%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AdDReG6boEnCO6pFXAf1AciCAF7ESr859R6t9t6R9CqcxUMz24%C3%899bDp9qNav3cm94E3h4AjDfr4Cgrq7%C3%89oVsSvk%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-6-11-2012-oml-2012-46-melrose-school-committee-superintendent-search-committee.pdf",
@@ -32524,7 +32963,8 @@
      "bytes": 1208926,
      "url": "/docs/state-law/2026-10-09/determinations/determination-6-25-2012-oml-2012-52-hubbardston-parks-commission.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-52.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AVXRbvxHVYYRySsFEQLUfHGUZBEHIb1Sgvk70CUqww69tuQhbY4%C3%899pnDL5G35Hqc6mdjN%C3%81jiJa72%C3%81aATAeQzyQY%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AVXRbvxHVYYRySsFEQLUfHGUZBEHIb1Sgvk70CUqww69tuQhbY4%C3%899pnDL5G35Hqc6mdjN%C3%81jiJa72%C3%81aATAeQzyQY%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-6-25-2012-oml-2012-53-taunton-school-committee.pdf",
@@ -32557,7 +32997,8 @@
      "bytes": 1406904,
      "url": "/docs/state-law/2026-10-09/determinations/determination-7-3-2012-oml-2012-55-chicopee-city-council.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-55.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AUzAk8Zje4ZXoqSYqBflEXL1e4Yz9XhecoY%C3%898S78zvifLBQ4D5iM6J8bedDEyLFOXx5T5vAbN9kIoNVWSreDntA%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AUzAk8Zje4ZXoqSYqBflEXL1e4Yz9XhecoY%C3%898S78zvifLBQ4D5iM6J8bedDEyLFOXx5T5vAbN9kIoNVWSreDntA%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-7-9-2012-oml-2012-56-westfield-city-council.pdf",
@@ -32590,7 +33031,8 @@
      "bytes": 1069276,
      "url": "/docs/state-law/2026-10-09/determinations/determination-7-18-2012-oml-2012-58-swansea-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-58.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AWhJvTCmiKB%C3%89MJQ2SU7MdFMvoaVGQh%C3%81ZMbTYaWHr5Ep1ZJmzunpORir6an%C3%811cIP1WoqCgVNwFehNQiewCWQHrU8%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AWhJvTCmiKB%C3%89MJQ2SU7MdFMvoaVGQh%C3%81ZMbTYaWHr5Ep1ZJmzunpORir6an%C3%811cIP1WoqCgVNwFehNQiewCWQHrU8%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-7-18-2012-oml-2012-59-freetown-soil-conservation-board.pdf",
@@ -32601,7 +33043,8 @@
      "bytes": 1183636,
      "url": "/docs/state-law/2026-10-09/determinations/determination-7-18-2012-oml-2012-59-freetown-soil-conservation-board.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-59.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AZB1BDMidI31GuuKw13evZjabOX%C3%89nO%C3%89sogakKlSsH5exOA1h%C3%81YhngU2BtlawCQAexjQi3V8SN6T5cZCk7nKE5GM%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AZB1BDMidI31GuuKw13evZjabOX%C3%89nO%C3%89sogakKlSsH5exOA1h%C3%81YhngU2BtlawCQAexjQi3V8SN6T5cZCk7nKE5GM%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-1-24-2012-oml-2012-6-marlborough-city-council.pdf",
@@ -32634,7 +33077,8 @@
      "bytes": 2266572,
      "url": "/docs/state-law/2026-10-09/determinations/determination-7-25-2012-oml-2012-61-barnstable-town-council.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-61.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AfA1tfh3kh6tavadyOP5P9w%C3%89zfhPc8T61mNL3Mgq1zuqSZXvHH16hNcf7r0zoeYkhcngBOpZpRk6LBwWSCYy93g%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AfA1tfh3kh6tavadyOP5P9w%C3%89zfhPc8T61mNL3Mgq1zuqSZXvHH16hNcf7r0zoeYkhcngBOpZpRk6LBwWSCYy93g%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-7-25-2012-oml-2012-62-barnstable-town-council.pdf",
@@ -32656,7 +33100,8 @@
      "bytes": 1611925,
      "url": "/docs/state-law/2026-10-09/determinations/determination-7-25-2012-oml-2012-63-washington-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-63.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AdKKiLdbJbMksomq%C3%89gkBUd0x9ojP5U56u5eOj%C3%89YcNf4ppn71%C3%81I%C3%89e94VaPaLGu9Nm7th9jr1hSjQRMDu9h2Et6jI%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AdKKiLdbJbMksomq%C3%89gkBUd0x9ojP5U56u5eOj%C3%89YcNf4ppn71%C3%81I%C3%89e94VaPaLGu9Nm7th9jr1hSjQRMDu9h2Et6jI%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-7-26-2012-oml-2012-64-egremont-finance-committee.pdf",
@@ -32678,7 +33123,8 @@
      "bytes": 1099187,
      "url": "/docs/state-law/2026-10-09/determinations/determination-7-26-2012-oml-2012-65-commonwealth-health-insurance-connector-authority.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-65.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AfrZ5WuUAgA%C3%81qRvPZXaLuyG60liPMMPf1zUJgBhnTluN0CERyX%C3%81kxZKlNfur9tjfxcZYkiNqXvIVQwiKLJKfQu8%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AfrZ5WuUAgA%C3%81qRvPZXaLuyG60liPMMPf1zUJgBhnTluN0CERyX%C3%81kxZKlNfur9tjfxcZYkiNqXvIVQwiKLJKfQu8%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-7-26-2012-oml-2012-66-lexington-school-committee.pdf",
@@ -32689,7 +33135,8 @@
      "bytes": 2595040,
      "url": "/docs/state-law/2026-10-09/determinations/determination-7-26-2012-oml-2012-66-lexington-school-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-66.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AZOmYvYSnhIDFhuIAm6kZ3WVICi%C3%81VVd1lSyio35uaxls8Bxl%C3%89TOLK%C3%81TP9RycBdqJTqBHI%C3%81%C3%89vudM4J98IN5bob5A%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AZOmYvYSnhIDFhuIAm6kZ3WVICi%C3%81VVd1lSyio35uaxls8Bxl%C3%89TOLK%C3%81TP9RycBdqJTqBHI%C3%81%C3%89vudM4J98IN5bob5A%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-7-26-2012-oml-2012-67-minuteman-regional-vocational-technical-school-committee.pdf",
@@ -32700,7 +33147,8 @@
      "bytes": 1174510,
      "url": "/docs/state-law/2026-10-09/determinations/determination-7-26-2012-oml-2012-67-minuteman-regional-vocational-technical-school-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-67.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AYDy9AHmX9pEvq3Kk3O1VIrsg06y453b0AUIllJzMeQsNrwV%C3%81UP7ZN407DPPHxwoR3EOr5EHNhZ3Gf5h3Z93I3M%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AYDy9AHmX9pEvq3Kk3O1VIrsg06y453b0AUIllJzMeQsNrwV%C3%81UP7ZN407DPPHxwoR3EOr5EHNhZ3Gf5h3Z93I3M%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-7-26-2012-oml-2012-68-northampton-board-of-selectmen.pdf",
@@ -32711,7 +33159,8 @@
      "bytes": 1835196,
      "url": "/docs/state-law/2026-10-09/determinations/determination-7-26-2012-oml-2012-68-northampton-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-68.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Af9Q7h74ElUAfQnf4ae0AYba7bKLTkzMNAnukeadMhYZQMSZPpbduy5Xztui8Xl%C3%89hVLRFNYsxi5KKOTf%C3%81F4efFc%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Af9Q7h74ElUAfQnf4ae0AYba7bKLTkzMNAnukeadMhYZQMSZPpbduy5Xztui8Xl%C3%89hVLRFNYsxi5KKOTf%C3%81F4efFc%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-7-26-2012-oml-2012-69-carver-board-of-selectmen.pdf",
@@ -32722,7 +33171,8 @@
      "bytes": 1966502,
      "url": "/docs/state-law/2026-10-09/determinations/determination-7-26-2012-oml-2012-69-carver-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-69.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AauNXcNEupFbQBj9TC4fOQAVwawYMT3RrdMQcBH8qEZYSl5FcVSru90M5E5ADUlDibFPP47PmgCg5ae62cX8nO8%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AauNXcNEupFbQBj9TC4fOQAVwawYMT3RrdMQcBH8qEZYSl5FcVSru90M5E5ADUlDibFPP47PmgCg5ae62cX8nO8%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-2-9-2012-oml-2012-7-rehoboth-board-of-selectmen.pdf",
@@ -32733,7 +33183,8 @@
      "bytes": 1308001,
      "url": "/docs/state-law/2026-10-09/determinations/determination-2-9-2012-oml-2012-7-rehoboth-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-7.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Abm7kVMuc3kmRKeTL6XdxYzwwVcTmSZSe2%C3%81Pv5guMKHmHIeGIB83jjTu7M0r2DRkNmF9Q9RHqDh%C3%89rSBEoXShs1o%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Abm7kVMuc3kmRKeTL6XdxYzwwVcTmSZSe2%C3%81Pv5guMKHmHIeGIB83jjTu7M0r2DRkNmF9Q9RHqDh%C3%89rSBEoXShs1o%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-7-27-2012-oml-2012-70-cambridge-city-council.pdf",
@@ -32744,7 +33195,8 @@
      "bytes": 1685211,
      "url": "/docs/state-law/2026-10-09/determinations/determination-7-27-2012-oml-2012-70-cambridge-city-council.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-70.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ARpi%C3%81CK7b9ueUbSMx3j8pacqB28vRW30yIZ1VFtsuSUYBQ9gRHJVfAIQl60h5%C3%81xWnEgP62aarpzSEqsR4yf%C3%81pRY%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ARpi%C3%81CK7b9ueUbSMx3j8pacqB28vRW30yIZ1VFtsuSUYBQ9gRHJVfAIQl60h5%C3%81xWnEgP62aarpzSEqsR4yf%C3%81pRY%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-7-30-2012-oml-2012-71-kingston-board-of-selectmen.pdf",
@@ -32755,7 +33207,8 @@
      "bytes": 1524094,
      "url": "/docs/state-law/2026-10-09/determinations/determination-7-30-2012-oml-2012-71-kingston-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-71.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AWck5AY03CuOxwv%C3%81NYVTCezuh8VWaWg3e2E30wrJyOQw1LJ7xIpjKG4qTLHYlGElxYt55M9iWp9ppwN83kUwA8k%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AWck5AY03CuOxwv%C3%81NYVTCezuh8VWaWg3e2E30wrJyOQw1LJ7xIpjKG4qTLHYlGElxYt55M9iWp9ppwN83kUwA8k%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-8-1-2012-oml-2012-72-rowe-board-of-selectmen.pdf",
@@ -32788,7 +33241,8 @@
      "bytes": 1295819,
      "url": "/docs/state-law/2026-10-09/determinations/determination-8-7-2012-oml-2012-74-phillipston-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-74.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ASALFSf05dtOX7hmKiY17ygJA5d4x4rdoMz8ME2DiT38trLCHQmeVXZYvOHZFnpTE1kBV722LmTRlVDu76VSWJk%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ASALFSf05dtOX7hmKiY17ygJA5d4x4rdoMz8ME2DiT38trLCHQmeVXZYvOHZFnpTE1kBV722LmTRlVDu76VSWJk%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-8-13-2012-oml-2012-75-chatham-planning-board.pdf",
@@ -32810,7 +33264,8 @@
      "bytes": 1772093,
      "url": "/docs/state-law/2026-10-09/determinations/determination-8-20-2012-oml-2012-76-southbridge-town-council.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-76.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ae%C3%89lPY1O5s2FW1j%C3%89OobNuozxfSHlaDqW0yZQg99E3%C3%89W33j0V3H98HtFZOwlLE%C3%814Tzi3p0Jl%C3%89ymDYPl1nkmqMLDg%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ae%C3%89lPY1O5s2FW1j%C3%89OobNuozxfSHlaDqW0yZQg99E3%C3%89W33j0V3H98HtFZOwlLE%C3%814Tzi3p0Jl%C3%89ymDYPl1nkmqMLDg%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-8-20-2012-oml-2012-77-becket-board-of-selectmen.pdf",
@@ -32876,7 +33331,8 @@
      "bytes": 2057132,
      "url": "/docs/state-law/2026-10-09/determinations/determination-8-24-2012-oml-2012-81-cape-and-vineyard-electric-cooperative.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-81.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQprM2O5cLnWaZlweP4E86pHdup1FagXVsqLv4ntzsyDkuE3OsTjsgtaZGCu3emYt0OKSreXBniTeWIowvWHPbM%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQprM2O5cLnWaZlweP4E86pHdup1FagXVsqLv4ntzsyDkuE3OsTjsgtaZGCu3emYt0OKSreXBniTeWIowvWHPbM%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-8-24-2012-oml-2012-82-barnstable-board-of-county-commissioners.pdf",
@@ -32909,7 +33365,8 @@
      "bytes": 1080913,
      "url": "/docs/state-law/2026-10-09/determinations/determination-8-28-2012-oml-2012-84-rowe-school-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-84.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AbMlNlBHRjX3rl1Rah7T7uQrLtOz9aEbk8LCig5tpixRFR9hFwrBHme8U59oAu1fbqde8IqaF%C3%819PHv9f5V9imps%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AbMlNlBHRjX3rl1Rah7T7uQrLtOz9aEbk8LCig5tpixRFR9hFwrBHme8U59oAu1fbqde8IqaF%C3%819PHv9f5V9imps%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-8-28-2012-oml-2012-85-webster-fire-department-board-of-engineers.pdf",
@@ -32931,7 +33388,8 @@
      "bytes": 1344070,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-4-2012-oml-2012-86-foxborough-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-86.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AcaWBCkppm79d08xjsWHq5%C3%89jw6529IqLiZ4lbkmIHRO9BU1iwKgxxO%C3%898HKRePGW1%C3%81mdGxuRjYZ2vCWFcbdZWeyQ%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AcaWBCkppm79d08xjsWHq5%C3%89jw6529IqLiZ4lbkmIHRO9BU1iwKgxxO%C3%898HKRePGW1%C3%81mdGxuRjYZ2vCWFcbdZWeyQ%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-4-2012-oml-2012-87-winchester-audit-advisory-committee.pdf",
@@ -32953,7 +33411,8 @@
      "bytes": 1123681,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-10-2012-oml-2012-88-sheffield-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-88.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AfSBaMHsoPWU5HQu4kSUi6%C3%81T75SZ4nrXCjCOdGMVBnsfyl9GVGzZs4TRTQrisSzcM9bVJDT1fPX70CBD3oVggeA%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AfSBaMHsoPWU5HQu4kSUi6%C3%81T75SZ4nrXCjCOdGMVBnsfyl9GVGzZs4TRTQrisSzcM9bVJDT1fPX70CBD3oVggeA%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-10-2012-oml-2012-89-swansea-board-of-assessors.pdf",
@@ -32964,7 +33423,8 @@
      "bytes": 1976578,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-10-2012-oml-2012-89-swansea-board-of-assessors.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-89.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AfRz2XKGByQbt8gw5%C3%89Dw16O94UmrXS0L0jviEosxeSnQ1QqfgFO1nqs%C3%81Y2yTw3DiaJq6BYxuoK1WBOfZOCZ4Jho%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AfRz2XKGByQbt8gw5%C3%89Dw16O94UmrXS0L0jviEosxeSnQ1QqfgFO1nqs%C3%81Y2yTw3DiaJq6BYxuoK1WBOfZOCZ4Jho%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-2-9-2012-oml-2012-9-north-attleborough-board-of-selectmen.pdf",
@@ -32975,7 +33435,8 @@
      "bytes": 1291623,
      "url": "/docs/state-law/2026-10-09/determinations/determination-2-9-2012-oml-2012-9-north-attleborough-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-9.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AZs54NqvASyMK%C3%81rZFjEBtOv8zRrfNWzNMCKYnBgk11N8xN5RIVzjq1sqEcpVcM9PI1noY6Sy%C3%89RImJBBM0pXSQOE%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AZs54NqvASyMK%C3%81rZFjEBtOv8zRrfNWzNMCKYnBgk11N8xN5RIVzjq1sqEcpVcM9PI1noY6Sy%C3%89RImJBBM0pXSQOE%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-10-2012-oml-2012-90-crocker-pond-recreation-area-committee.pdf",
@@ -32986,7 +33447,8 @@
      "bytes": 1461842,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-10-2012-oml-2012-90-crocker-pond-recreation-area-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-90.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQmAm81nYu3xN7BnVeUqQV2EBYXcnITEjEY1nVTiZX3SOnWKMa9sMiaX6OdjcXvqmgPUhdfoaQrfTAY0xWkUkz8%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQmAm81nYu3xN7BnVeUqQV2EBYXcnITEjEY1nVTiZX3SOnWKMa9sMiaX6OdjcXvqmgPUhdfoaQrfTAY0xWkUkz8%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-12-2012-oml-2012-91-carver-board-of-selectmen.pdf",
@@ -32997,7 +33459,8 @@
      "bytes": 1892968,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-12-2012-oml-2012-91-carver-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-91.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AVH8I0QV3V84A6uyTlFWFs7sRCHcb427ZoLegXiAiN2eSI5kLUF7nr93xUCmC2x0wet8LAv1NvcoPAEu3M%C3%89KDME%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AVH8I0QV3V84A6uyTlFWFs7sRCHcb427ZoLegXiAiN2eSI5kLUF7nr93xUCmC2x0wet8LAv1NvcoPAEu3M%C3%89KDME%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-17-2012-oml-2012-92-provincetown-historic-district-commission.pdf",
@@ -33041,7 +33504,8 @@
      "bytes": 1111254,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-20-2012-oml-2012-95-ashburnham-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-95.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AVq0%C3%895g71ai71ayIGsJr9pw4e9GxL1s6J36wBjQRFzbLPBRzJvkFRewl268LGIyW3jKvF4cUworU9jIVU4TE5DE%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AVq0%C3%895g71ai71ayIGsJr9pw4e9GxL1s6J36wBjQRFzbLPBRzJvkFRewl268LGIyW3jKvF4cUworU9jIVU4TE5DE%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-20-2012-oml-2012-96-lunenburg-board-of-selectmen.pdf",
@@ -33063,7 +33527,8 @@
      "bytes": 1146294,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-20-2012-oml-2012-97-stoneham-finance-and-advisory-board.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-97.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AZ%C3%81BtEdXFdI1FHitX1vtEQiXT2EvNmsjQKhmYeamdJblBj0D0Yxkffu6onrCNvnIPEPYFZjJhXy3FE7BFgCpbV0%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AZ%C3%81BtEdXFdI1FHitX1vtEQiXT2EvNmsjQKhmYeamdJblBj0D0Yxkffu6onrCNvnIPEPYFZjJhXy3FE7BFgCpbV0%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-24-2012-oml-2012-98-yarmouth-housing-authority.pdf",
@@ -33074,7 +33539,8 @@
      "bytes": 1290070,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-24-2012-oml-2012-98-yarmouth-housing-authority.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-98.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AdrSJ01fX4Jsx4NcRcwDsjLU%C3%89dnD9iX4LTnC%C3%89L3yev3E7dlTTTQ9d5ZZSOXPIZxAN9VIVQSlFjvvwEdVZI9L0XQ%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AdrSJ01fX4Jsx4NcRcwDsjLU%C3%89dnD9iX4LTnC%C3%89L3yev3E7dlTTTQ9d5ZZSOXPIZxAN9VIVQSlFjvvwEdVZI9L0XQ%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-24-2012-oml-2012-99-lee-energy-efficiency-committee.pdf",
@@ -33096,7 +33562,8 @@
      "bytes": 1110414,
      "url": "/docs/state-law/2026-10-09/determinations/determination-1-3-2013-oml-2013-1-taunton-city-council.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-1.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ARNxVy3g77YQml9%C3%81A35GGRgSbd6M4j8NZmDJjec0antEuKicevVccp4HnMwUVH0%C3%81z10myMxYoiKSPCFvxbzVUow%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ARNxVy3g77YQml9%C3%81A35GGRgSbd6M4j8NZmDJjec0antEuKicevVccp4HnMwUVH0%C3%81z10myMxYoiKSPCFvxbzVUow%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-1-28-2013-oml-2013-10-southeastern-regional-planning-and-economic-development-district-board-of-commissioners.pdf",
@@ -33107,7 +33574,8 @@
      "bytes": 1511978,
      "url": "/docs/state-law/2026-10-09/determinations/determination-1-28-2013-oml-2013-10-southeastern-regional-planning-and-economic-development-district-board-of-commissioners.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-10.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AXfT%C3%89kEQ4I1CWJiHO8KTo65Qa%C3%89bc3zzUNTh7OCD7bcyicoXmAXH9gd049h3JwMXfpd0mnrPApy0CiUVoXscO%C3%819A%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AXfT%C3%89kEQ4I1CWJiHO8KTo65Qa%C3%89bc3zzUNTh7OCD7bcyicoXmAXH9gd049h3JwMXfpd0mnrPApy0CiUVoXscO%C3%819A%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-7-22-2013-oml-2013-100-arlington-board-of-selectmen.pdf",
@@ -33140,7 +33608,8 @@
      "bytes": 1636169,
      "url": "/docs/state-law/2026-10-09/determinations/determination-7-22-2013-oml-2013-102-southbridge-liquor-licensing-board.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-102.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AVp46wot5IRwLto1XBlq5EyGXm5bAqS3nkpdxND%C3%896vUCvy6tf3%C3%81RG74udW%C3%897UB9ULCB0BRr4ffl0IwVwcgdrB2g%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AVp46wot5IRwLto1XBlq5EyGXm5bAqS3nkpdxND%C3%896vUCvy6tf3%C3%81RG74udW%C3%897UB9ULCB0BRr4ffl0IwVwcgdrB2g%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-7-22-2013-oml-2013-103-board-of-registration-in-pharmacy.pdf",
@@ -33151,7 +33620,8 @@
      "bytes": 1198705,
      "url": "/docs/state-law/2026-10-09/determinations/determination-7-22-2013-oml-2013-103-board-of-registration-in-pharmacy.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-103.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ASuUO2ZoGNgcZoV2IrIsbCY%C3%89Cs63UaynZ06dDgr3IFp6CqAyuDnZ5SuadsE3Wzyb7jpwEPWINyKjymhCv%C3%89K%C3%81d%C3%89E%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ASuUO2ZoGNgcZoV2IrIsbCY%C3%89Cs63UaynZ06dDgr3IFp6CqAyuDnZ5SuadsE3Wzyb7jpwEPWINyKjymhCv%C3%89K%C3%81d%C3%89E%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-7-23-2013-oml-2013-104-department-of-public-safety-board-of-appeals.pdf",
@@ -33162,7 +33632,8 @@
      "bytes": 1748941,
      "url": "/docs/state-law/2026-10-09/determinations/determination-7-23-2013-oml-2013-104-department-of-public-safety-board-of-appeals.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-104.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AUHDgdE20%C3%81g8qFb2CsQOsx8z1w9zJg0RpIwkuxH9ERqQmGewSlEr9%C3%89SkWvg5encFSAwlcN8T7929PLj8KJkgT1Y%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AUHDgdE20%C3%81g8qFb2CsQOsx8z1w9zJg0RpIwkuxH9ERqQmGewSlEr9%C3%89SkWvg5encFSAwlcN8T7929PLj8KJkgT1Y%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-7-29-2013-oml-2013-105-provincetown-board-of-selectmen.pdf",
@@ -33173,7 +33644,8 @@
      "bytes": 1785168,
      "url": "/docs/state-law/2026-10-09/determinations/determination-7-29-2013-oml-2013-105-provincetown-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-105.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AbpjpFyjI0qhgP5eY8lP8x%C3%81avbE3w4eryNWTZ6TPuyPHEBALYRMYGL844q4byagMg8cYA0lE0FObNHOxCFBzA6s%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AbpjpFyjI0qhgP5eY8lP8x%C3%81avbE3w4eryNWTZ6TPuyPHEBALYRMYGL844q4byagMg8cYA0lE0FObNHOxCFBzA6s%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-8-1-2013-oml-2013-106-barnstable-county-retirement-advisory-council.pdf",
@@ -33184,7 +33656,8 @@
      "bytes": 1626631,
      "url": "/docs/state-law/2026-10-09/determinations/determination-8-1-2013-oml-2013-106-barnstable-county-retirement-advisory-council.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-106.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ac6g44M7egoVBqXDUzVLSX4qUbBKz2Nr18IE%C3%81Ia7KmWESdHupyb3e3l4c3y%C3%89rz9uNUyuk4xFYCkqpQQ1%C3%81Br8JzU%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ac6g44M7egoVBqXDUzVLSX4qUbBKz2Nr18IE%C3%81Ia7KmWESdHupyb3e3l4c3y%C3%89rz9uNUyuk4xFYCkqpQQ1%C3%81Br8JzU%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-8-1-2013-oml-2013-107-nantucket-energy-committee.pdf",
@@ -33195,7 +33668,8 @@
      "bytes": 3264826,
      "url": "/docs/state-law/2026-10-09/determinations/determination-8-1-2013-oml-2013-107-nantucket-energy-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-107.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AfVZ3IqLaCnugVF91v%C3%89jXzZ9c5CAXW17UvJX7%C3%81DlAxul8L50PUqBa%C3%81h7tBQXr%C3%89PjTUeI4r5Ga3205kZ6G0guDhc%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AfVZ3IqLaCnugVF91v%C3%89jXzZ9c5CAXW17UvJX7%C3%81DlAxul8L50PUqBa%C3%81h7tBQXr%C3%89PjTUeI4r5Ga3205kZ6G0guDhc%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-8-1-2013-oml-2013-108-williamstown-board-of-selectmen.pdf",
@@ -33206,7 +33680,8 @@
      "bytes": 2366974,
      "url": "/docs/state-law/2026-10-09/determinations/determination-8-1-2013-oml-2013-108-williamstown-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-108.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ad0O5Lc187KYAoHpAe%C3%81ReOOTv8HIkVIcIcu25hDffchgQKn33JXdRSfLI6N4nNx9J7pwX0xHAE89rS1DuuejsVw%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ad0O5Lc187KYAoHpAe%C3%81ReOOTv8HIkVIcIcu25hDffchgQKn33JXdRSfLI6N4nNx9J7pwX0xHAE89rS1DuuejsVw%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-8-5-2013-oml-2013-109-boston-redevelopment-authority.pdf",
@@ -33217,7 +33692,8 @@
      "bytes": 1387204,
      "url": "/docs/state-law/2026-10-09/determinations/determination-8-5-2013-oml-2013-109-boston-redevelopment-authority.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-109.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AcGsjtbyRjUSebhMijh4GDc%C3%81PPPKfV%C3%81kuOT7S0b7GpoTQSJ2f%C3%899%C3%811W5jsx7gjl5iRU8MiRdckGeOcjy%C3%810JYQMuE%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AcGsjtbyRjUSebhMijh4GDc%C3%81PPPKfV%C3%81kuOT7S0b7GpoTQSJ2f%C3%899%C3%811W5jsx7gjl5iRU8MiRdckGeOcjy%C3%810JYQMuE%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-1-28-2013-oml-2013-11-sterling-personnel-board.pdf",
@@ -33228,7 +33704,8 @@
      "bytes": 1498066,
      "url": "/docs/state-law/2026-10-09/determinations/determination-1-28-2013-oml-2013-11-sterling-personnel-board.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-11.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AWPoBNA%C3%89kcr2ZomfhD3GLsLXSUB01ZrCc76MhKwPv%C3%89clR2ccoI068UYpCs9aahm96AQ2d41NK2wV8KZbgbC31l4%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AWPoBNA%C3%89kcr2ZomfhD3GLsLXSUB01ZrCc76MhKwPv%C3%89clR2ccoI068UYpCs9aahm96AQ2d41NK2wV8KZbgbC31l4%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-8-5-2013-oml-2013-110-malden-city-council.pdf",
@@ -33239,7 +33716,8 @@
      "bytes": 1298617,
      "url": "/docs/state-law/2026-10-09/determinations/determination-8-5-2013-oml-2013-110-malden-city-council.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-110.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Adm869JddFEs0J30xnUzIuIJ77XN4bfatAV7rItK28FGRoBqP%C3%81f2IQ3iLHpQraHAxZFKrl3yXbFcDKIJ6Mz3xWE%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Adm869JddFEs0J30xnUzIuIJ77XN4bfatAV7rItK28FGRoBqP%C3%81f2IQ3iLHpQraHAxZFKrl3yXbFcDKIJ6Mz3xWE%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-8-5-2013-oml-2013-111-wayland-board-of-selectmen.pdf",
@@ -33261,7 +33739,8 @@
      "bytes": 1962727,
      "url": "/docs/state-law/2026-10-09/determinations/determination-8-5-2013-oml-2013-112-wayland-surface-water-quality-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-112.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Aeti2aDBS6m2soqgtSfqYjTtQmTfP%C3%81aACnlmSse5e7MdAPeu%C3%89IGo8hTd%C3%89lOmMU0Is8vIDIO3gT%C3%89G%C3%81%C3%81BnljzBBR0%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Aeti2aDBS6m2soqgtSfqYjTtQmTfP%C3%81aACnlmSse5e7MdAPeu%C3%89IGo8hTd%C3%89lOmMU0Is8vIDIO3gT%C3%89G%C3%81%C3%81BnljzBBR0%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-8-5-2013-oml-2013-113-swansea-board-of-selectmen.pdf",
@@ -33294,7 +33773,8 @@
      "bytes": 1050502,
      "url": "/docs/state-law/2026-10-09/determinations/determination-8-9-2013-oml-2013-115-williamstown-affordable-housing-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-115.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ab%C3%81BF4f7i6xEwgYv4rwW1ttof%C3%81Kc2uY686iQax6ocDdfbCx3CY6moh%C3%81do35z4%C3%81dHTa9%C3%89bR4I%C3%896K9HJwhbpMWo30%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ab%C3%81BF4f7i6xEwgYv4rwW1ttof%C3%81Kc2uY686iQax6ocDdfbCx3CY6moh%C3%81do35z4%C3%81dHTa9%C3%89bR4I%C3%896K9HJwhbpMWo30%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-8-14-2013-oml-2013-116-montague-planning-board.pdf",
@@ -33316,7 +33796,8 @@
      "bytes": 2417014,
      "url": "/docs/state-law/2026-10-09/determinations/determination-8-14-2013-oml-2013-117-cape-light-compact.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-117.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ARh71R68sAuPBaC9PIOHvpJDA1ndX7mou86enP%C3%89nmFEjKFB4A21dyjM%C3%811ds45jcDgGlgXQ088vUvuzH1gCHP%C3%89Vc%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ARh71R68sAuPBaC9PIOHvpJDA1ndX7mou86enP%C3%89nmFEjKFB4A21dyjM%C3%811ds45jcDgGlgXQ088vUvuzH1gCHP%C3%89Vc%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-8-19-2013-oml-2013-118-hamilton-finance-and-advisory-committee.pdf",
@@ -33327,7 +33808,8 @@
      "bytes": 2229343,
      "url": "/docs/state-law/2026-10-09/determinations/determination-8-19-2013-oml-2013-118-hamilton-finance-and-advisory-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-118.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQtmxRozPv6wB5g%C3%89tnBCsFKIBw8yBwVEdNPVK0JobfGmoRoL0AoIzDviyyhJSrUuZwdAFG3PfBxUiC8DoEdZsgA%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQtmxRozPv6wB5g%C3%89tnBCsFKIBw8yBwVEdNPVK0JobfGmoRoL0AoIzDviyyhJSrUuZwdAFG3PfBxUiC8DoEdZsgA%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-8-19-2013-oml-2013-119-carver-board-of-selectmen.pdf",
@@ -33338,7 +33820,8 @@
      "bytes": 1347090,
      "url": "/docs/state-law/2026-10-09/determinations/determination-8-19-2013-oml-2013-119-carver-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-119.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ASxiHCBoJLbbDi%C3%89eYGSZYWwb3PWU1rxuVSGwUtHVtrZmVdEgUWPl4KTyn8bEeNb5tDYPe%C3%81gtb2T08RmJdk4ivYs%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ASxiHCBoJLbbDi%C3%89eYGSZYWwb3PWU1rxuVSGwUtHVtrZmVdEgUWPl4KTyn8bEeNb5tDYPe%C3%81gtb2T08RmJdk4ivYs%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-2-4-2013-oml-2013-12-ashland-board-of-selectmen.pdf",
@@ -33360,7 +33843,8 @@
      "bytes": 1439186,
      "url": "/docs/state-law/2026-10-09/determinations/determination-8-19-2013-oml-2013-120-southwick-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-120.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Af0nwYBIc0koKNVh2KXM2j7vFbfZpqxqP4oT3e%C3%89mZhhJu6d2d02QPi5jDzNPCAiYv7DvZgYqcAvxtJrB7VW2Xkw%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Af0nwYBIc0koKNVh2KXM2j7vFbfZpqxqP4oT3e%C3%89mZhhJu6d2d02QPi5jDzNPCAiYv7DvZgYqcAvxtJrB7VW2Xkw%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-8-19-2013-oml-2013-121-swansea-planning-board.pdf",
@@ -33371,7 +33855,8 @@
      "bytes": 1356020,
      "url": "/docs/state-law/2026-10-09/determinations/determination-8-19-2013-oml-2013-121-swansea-planning-board.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-121.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AejJJD%C3%89JuezFjFTOhfLBilYvs1998XwRUnXAWCAlrDTdInqneD%C3%81PL6cXW%C3%814bmmvmlSSjKpRXsdipmQ2mtdseDgw%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AejJJD%C3%89JuezFjFTOhfLBilYvs1998XwRUnXAWCAlrDTdInqneD%C3%81PL6cXW%C3%814bmmvmlSSjKpRXsdipmQ2mtdseDgw%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-8-26-2013-oml-2013-122-franklin-board-of-assessors.pdf",
@@ -33404,7 +33889,8 @@
      "bytes": 1132123,
      "url": "/docs/state-law/2026-10-09/determinations/determination-8-26-2013-oml-2013-124-franklin-board-of-assessors.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-124.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AVTp5ktG%C3%897SHAKr5cegM3nulQrsRVjRL5bDrfnPgh2a7h4Mxb%C3%893W8LbHsG1r9oS0aifgmD7id0pk9NqWNA7%C3%81pWU%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AVTp5ktG%C3%897SHAKr5cegM3nulQrsRVjRL5bDrfnPgh2a7h4Mxb%C3%893W8LbHsG1r9oS0aifgmD7id0pk9NqWNA7%C3%81pWU%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-8-26-2013-oml-2013-125-reid-middle-school-council-community-outreach-subcommittee.pdf",
@@ -33415,7 +33901,8 @@
      "bytes": 1202735,
      "url": "/docs/state-law/2026-10-09/determinations/determination-8-26-2013-oml-2013-125-reid-middle-school-council-community-outreach-subcommittee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-125.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ATKHjU8HXXGuo%C3%81xu5V5xqZNVGsDvBpRxY7wAHpXu36Xc1fwwkaGexnGXAzyD3R8Q7TDycJusp9f7%C3%89u8PqznfCCw%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ATKHjU8HXXGuo%C3%81xu5V5xqZNVGsDvBpRxY7wAHpXu36Xc1fwwkaGexnGXAzyD3R8Q7TDycJusp9f7%C3%89u8PqznfCCw%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-8-26-2013-oml-2013-126-reid-middle-school-council-community-outreach-subcommittee.pdf",
@@ -33437,7 +33924,8 @@
      "bytes": 1880392,
      "url": "/docs/state-law/2026-10-09/determinations/determination-8-26-2013-oml-2013-127-wayland-finance-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-127.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ASxZCmMKoDp71X7SKG%C3%895UEz%C3%81l7sVkVdbgxiAWmDVjjA7DHxpsDpSel2blK9gRH8RPaDOyXxwdLwPsygkjjzmoq4%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ASxZCmMKoDp71X7SKG%C3%895UEz%C3%81l7sVkVdbgxiAWmDVjjA7DHxpsDpSel2blK9gRH8RPaDOyXxwdLwPsygkjjzmoq4%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-3-2013-oml-2013-128-carver-zoning-board-of-appeals.pdf",
@@ -33448,7 +33936,8 @@
      "bytes": 3467939,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-3-2013-oml-2013-128-carver-zoning-board-of-appeals.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-128.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ad7KOUL09POR8oHSNNXxMGbB92nEYxEpLwT2XnE1u%C3%81Aby96gEQoJLiUvFiEb5Gyodh%C3%89WzZS%C3%89qk9ZhaMDYjvLMyM%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ad7KOUL09POR8oHSNNXxMGbB92nEYxEpLwT2XnE1u%C3%81Aby96gEQoJLiUvFiEb5Gyodh%C3%89WzZS%C3%89qk9ZhaMDYjvLMyM%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-3-2013-oml-2013-129-cohasset-board-of-selectmen.pdf",
@@ -33459,7 +33948,8 @@
      "bytes": 2227865,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-3-2013-oml-2013-129-cohasset-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-129.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ATRzCFbcIBObcy7c%C3%81aI6Xsdc4JMgvfvgXhzLw45RTAqvFY%C3%81oiKRwxPBk6NnKH9im25QgDOo7Nz61lToemumIPvI%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ATRzCFbcIBObcy7c%C3%81aI6Xsdc4JMgvfvgXhzLw45RTAqvFY%C3%81oiKRwxPBk6NnKH9im25QgDOo7Nz61lToemumIPvI%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-2-11-2013-oml-2013-13-provincetown-board-of-selectmen.pdf",
@@ -33481,7 +33971,8 @@
      "bytes": 2313996,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-3-2013-oml-2013-130-rowe-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-130.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AaKy4vp2uwDgIQGRd6PKK7lUWmFmAu8mIwXh544qFmU8bHiuXf96McBoqRovQnzQcaaHRuP7q%C3%898wq6SDJamqdvs%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AaKy4vp2uwDgIQGRd6PKK7lUWmFmAu8mIwXh544qFmU8bHiuXf96McBoqRovQnzQcaaHRuP7q%C3%898wq6SDJamqdvs%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-3-2013-oml-2013-131-southwick-board-of-selectmen.pdf",
@@ -33492,7 +33983,8 @@
      "bytes": 1911263,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-3-2013-oml-2013-131-southwick-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-131.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AfhNDR0AAIqLgUiODLEYgUtdisyoJ1ZGDbQmFM%C3%81%C3%89EuBjOA1r%C3%89BycKsfFMpRhVC%C3%89jG025w4Sipr%C3%81yg%C3%89q8tak9c20%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AfhNDR0AAIqLgUiODLEYgUtdisyoJ1ZGDbQmFM%C3%81%C3%89EuBjOA1r%C3%89BycKsfFMpRhVC%C3%89jG025w4Sipr%C3%81yg%C3%89q8tak9c20%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-9-2013-oml-2013-132-kingston-green-energy-committee.pdf",
@@ -33514,7 +34006,8 @@
      "bytes": 2016836,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-9-2013-oml-2013-133-nantucket-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-133.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AToe8fXABFeGsFzx02qF1796CeUVwHb%C3%81lxLQfEeAeCo%C3%89o7xgn5V99G0m1T5O0CznpeLqW%C3%81mDJpiizOxEBN0jUC0%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AToe8fXABFeGsFzx02qF1796CeUVwHb%C3%81lxLQfEeAeCo%C3%89o7xgn5V99G0m1T5O0CznpeLqW%C3%81mDJpiizOxEBN0jUC0%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-10-2013-oml-2013-134-southeastern-regional-school-district-committee.pdf",
@@ -33525,7 +34018,8 @@
      "bytes": 1851624,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-10-2013-oml-2013-134-southeastern-regional-school-district-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-134.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ac7XeF8xX5YSqL0Ia0S90wXtHon1cWlrAgzt5aSgWr5HZMdXtkKAGpGjeIDeG7T2yrcru2FMka%C3%89NHWPa%C3%89I2culM%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ac7XeF8xX5YSqL0Ia0S90wXtHon1cWlrAgzt5aSgWr5HZMdXtkKAGpGjeIDeG7T2yrcru2FMka%C3%89NHWPa%C3%89I2culM%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-10-2013-oml-2013-135-ashfield-select-board.pdf",
@@ -33536,7 +34030,8 @@
      "bytes": 1112162,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-10-2013-oml-2013-135-ashfield-select-board.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-135.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AYJtBbINnaWpn8CerGf0rquZ4ZwL6iBTfThQpbG2EHo7HFYne6s0J9J2e1CkkmIUJ9e%C3%89KJvd7KxaG8oVjNQ6%C3%81iQ%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AYJtBbINnaWpn8CerGf0rquZ4ZwL6iBTfThQpbG2EHo7HFYne6s0J9J2e1CkkmIUJ9e%C3%89KJvd7KxaG8oVjNQ6%C3%81iQ%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-10-2013-oml-2013-136-duxbury-town-counsel-search-committee.pdf",
@@ -33547,7 +34042,8 @@
      "bytes": 3952465,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-10-2013-oml-2013-136-duxbury-town-counsel-search-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-136.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AeeRWfHnAcVeLhEcVkdtOY2PzlUd8L9bT2l4BvALzexayg1tFFR12Z4qxQMUxn8OtPqwYakzFODADnD1FLseUKs%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AeeRWfHnAcVeLhEcVkdtOY2PzlUd8L9bT2l4BvALzexayg1tFFR12Z4qxQMUxn8OtPqwYakzFODADnD1FLseUKs%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-24-2013-oml-2013-137-north-attleborough-conservation-commission.pdf",
@@ -33558,7 +34054,8 @@
      "bytes": 1511350,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-24-2013-oml-2013-137-north-attleborough-conservation-commission.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-137.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ASTnO9m1Z61vxSJFrMZid72nR2W0f3hPJ15HHiRYfsrjPo9FoSQgQ%C3%89lDY65wQIM2MIs1%C3%89X4h4exn148MV%C3%89xWPh0%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ASTnO9m1Z61vxSJFrMZid72nR2W0f3hPJ15HHiRYfsrjPo9FoSQgQ%C3%89lDY65wQIM2MIs1%C3%89X4h4exn148MV%C3%89xWPh0%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-24-2013-oml-2013-138-west-bridgewater-board-of-selectmen.pdf",
@@ -33569,7 +34066,8 @@
      "bytes": 2678645,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-24-2013-oml-2013-138-west-bridgewater-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-138.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Aev04raTtRqenPeH2Ec6AXW8m2Prk2oEALnpRxMo0O9Qs4ujAru%C3%81gKXfyUC75GSBqCanoSmyRdQi1GQQKDyVEVk%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Aev04raTtRqenPeH2Ec6AXW8m2Prk2oEALnpRxMo0O9Qs4ujAru%C3%81gKXfyUC75GSBqCanoSmyRdQi1GQQKDyVEVk%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-24-2013-oml-2013-139-minuteman-regional-vocational-technical-school-committee.pdf",
@@ -33580,7 +34078,8 @@
      "bytes": 1958807,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-24-2013-oml-2013-139-minuteman-regional-vocational-technical-school-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-139.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AWcwNddsfpzVN2Jm2uZNcBM7etDw%C3%89%C3%89MSm2iHl10yyc7x8aDqqU4Ih%C3%81MQM0%C3%89LsabCyz9I%C3%81Vs%C3%89hnpBWEv91R78Vqs%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AWcwNddsfpzVN2Jm2uZNcBM7etDw%C3%89%C3%89MSm2iHl10yyc7x8aDqqU4Ih%C3%81MQM0%C3%89LsabCyz9I%C3%81Vs%C3%89hnpBWEv91R78Vqs%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-2-11-2013-oml-2013-14-ashfield-board-of-health.pdf",
@@ -33591,7 +34090,8 @@
      "bytes": 1853561,
      "url": "/docs/state-law/2026-10-09/determinations/determination-2-11-2013-oml-2013-14-ashfield-board-of-health.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-14.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AT5%C3%892zbtZQbJ%C3%81H0riMexh1KCqP3khOQ8%C3%89O4EbIZyYSC%C3%89TdPzqU1cLpwBvuJBkSer%C3%89EcMyKt%C3%89e0TB40iBkwIi%C3%89sI%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AT5%C3%892zbtZQbJ%C3%81H0riMexh1KCqP3khOQ8%C3%89O4EbIZyYSC%C3%89TdPzqU1cLpwBvuJBkSer%C3%89EcMyKt%C3%89e0TB40iBkwIi%C3%89sI%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-24-2013-oml-2013-140-wayland-finance-committee.pdf",
@@ -33602,7 +34102,8 @@
      "bytes": 2411031,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-24-2013-oml-2013-140-wayland-finance-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-140.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AceXU%C3%89Rh6w4nVWZuuS4a1GQNs7QEnxUnGziOJQb1riKO7EaFoG%C3%89JNkzk0bkvKUc5vBDVBgVr63SDmt4a1KxvNFU%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AceXU%C3%89Rh6w4nVWZuuS4a1GQNs7QEnxUnGziOJQb1riKO7EaFoG%C3%89JNkzk0bkvKUc5vBDVBgVr63SDmt4a1KxvNFU%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-30-2013-oml-2013-141-minuteman-regional-vocational-technical-school-committee.pdf",
@@ -33613,7 +34114,8 @@
      "bytes": 3457932,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-30-2013-oml-2013-141-minuteman-regional-vocational-technical-school-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-141.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQonYMHNR7iyGLx%C3%89cGLmQGjOEr7botFMgBbcKXXqCxy0n4h5MWpa9pcaVrnzzuZruvt5P%C3%81FRh7N5yOwCHxKF9z8%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQonYMHNR7iyGLx%C3%89cGLmQGjOEr7botFMgBbcKXXqCxy0n4h5MWpa9pcaVrnzzuZruvt5P%C3%81FRh7N5yOwCHxKF9z8%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-9-30-2013-oml-2013-142-swansea-recreation-commission.pdf",
@@ -33635,7 +34137,8 @@
      "bytes": 2264181,
      "url": "/docs/state-law/2026-10-09/determinations/determination-9-30-2013-oml-2013-143-masconomet-regional-school-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-143.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AY6nVgoZ4JUObllqLIrDNqPUFLk3sfBYKn%C3%89PxpnfqcBldOsobwAyNY6kJQCVZB3%C3%81sALevNBjroJoDbu5KKu2eTY%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AY6nVgoZ4JUObllqLIrDNqPUFLk3sfBYKn%C3%89PxpnfqcBldOsobwAyNY6kJQCVZB3%C3%81sALevNBjroJoDbu5KKu2eTY%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-7-2013-oml-2013-144-franklin-board-of-assessors.pdf",
@@ -33646,7 +34149,8 @@
      "bytes": 4331448,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-7-2013-oml-2013-144-franklin-board-of-assessors.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-144.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQ2Sb432J9J70tUu%C3%89PrYJ2qpnlrAUNp%C3%89xFNwbU8VOW748jfpMA7mOwWt6wq19mSZ%C3%81CtkM3dw4yNlZWfGdRn4jXM%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQ2Sb432J9J70tUu%C3%89PrYJ2qpnlrAUNp%C3%89xFNwbU8VOW748jfpMA7mOwWt6wq19mSZ%C3%81CtkM3dw4yNlZWfGdRn4jXM%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-7-2013-oml-2013-145-lynn-water-and-sewer-commission.pdf",
@@ -33657,7 +34161,8 @@
      "bytes": 3180248,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-7-2013-oml-2013-145-lynn-water-and-sewer-commission.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-145.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AakYPOf41Q%C3%891sICQE%C3%81EA3HLqooGmkusCKtVUXSzfLyrdeQeqoq5%C3%81JA3PhlsSQwYw3GaXb%C3%81QH8po0lnlZSJ99rI8%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AakYPOf41Q%C3%891sICQE%C3%81EA3HLqooGmkusCKtVUXSzfLyrdeQeqoq5%C3%81JA3PhlsSQwYw3GaXb%C3%81QH8po0lnlZSJ99rI8%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-15-2013-oml-2013-146-holland-board-of-selectmen.pdf",
@@ -33668,7 +34173,8 @@
      "bytes": 1618723,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-15-2013-oml-2013-146-holland-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-146.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ae%C3%81LjbW8%C3%81RkrLATzYBx%C3%81bAPEz7cWD3qcRSPY2qKeEYMKJJZlJ3WO6i%C3%81EVL1i8UlIND1DtZi2Bu9uyMFS5zn%C3%89ehE%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ae%C3%81LjbW8%C3%81RkrLATzYBx%C3%81bAPEz7cWD3qcRSPY2qKeEYMKJJZlJ3WO6i%C3%81EVL1i8UlIND1DtZi2Bu9uyMFS5zn%C3%89ehE%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-15-2013-oml-2013-147-conway-board-of-selectmen.pdf",
@@ -33679,7 +34185,8 @@
      "bytes": 2502110,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-15-2013-oml-2013-147-conway-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-147.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AfvHnHwIjqTwMA%C3%81SiqwBFRpzdHXixddxrQ%C3%81qMkgAinaC4%C3%89LZYfGiv11pzqmzbIBiCII%C3%89GiIgep1P2WBlATQWQrA%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AfvHnHwIjqTwMA%C3%81SiqwBFRpzdHXixddxrQ%C3%81qMkgAinaC4%C3%89LZYfGiv11pzqmzbIBiCII%C3%89GiIgep1P2WBlATQWQrA%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-15-2013-oml-2013-148-littleton-board-of-health.pdf",
@@ -33690,7 +34197,8 @@
      "bytes": 1285383,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-15-2013-oml-2013-148-littleton-board-of-health.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-148.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AYy5ZZU6LzYAsLSr2otFnfI6PteU6TOcMRWW0TjUdPBrMiap0ERD5sfkk2igrfQF9%C3%89BCqln2yQfqC94MCTOJB80%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AYy5ZZU6LzYAsLSr2otFnfI6PteU6TOcMRWW0TjUdPBrMiap0ERD5sfkk2igrfQF9%C3%89BCqln2yQfqC94MCTOJB80%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-16-2013-oml-2013-149-clarksburg-board-of-assessors.pdf",
@@ -33701,7 +34209,8 @@
      "bytes": 2194124,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-16-2013-oml-2013-149-clarksburg-board-of-assessors.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-149.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AWPk73BSNscC2gEzDRPR9jl2rJvmUxtJDIh0WS7DXMLgA2R6tU2LMuOSL3vsOmkh3aBI%C3%89YyoqjlNLv913awnurQ%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AWPk73BSNscC2gEzDRPR9jl2rJvmUxtJDIh0WS7DXMLgA2R6tU2LMuOSL3vsOmkh3aBI%C3%89YyoqjlNLv913awnurQ%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-2-11-2013-oml-2013-15-barnstable-board-of-county-commissioners.pdf",
@@ -33723,7 +34232,8 @@
      "bytes": 1453994,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-16-2013-oml-2013-150-carver-redevelopment-authority.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-150.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AYpAIUcTkOR0S4HLaeDCM5JM%C3%81D1Yi%C3%892XU4VYB1ok%C3%89rKzK8sMM7gKLmf9tI%C3%89XzrCDEBirQNKN5d8hzG8p6Qkj1d4%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AYpAIUcTkOR0S4HLaeDCM5JM%C3%81D1Yi%C3%892XU4VYB1ok%C3%89rKzK8sMM7gKLmf9tI%C3%89XzrCDEBirQNKN5d8hzG8p6Qkj1d4%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-21-2013-oml-2013-151-swansea-public-access-oversight-committee.pdf",
@@ -33734,7 +34244,8 @@
      "bytes": 2304518,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-21-2013-oml-2013-151-swansea-public-access-oversight-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-151.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AWF3ON6IknCXYJZd6ybxbZW3vIkpwFg8sISlopgIFO9HSTyysv2tLEKRe8TA3o1OiaiMjJo%C3%89iKBC60VATZObJk8%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AWF3ON6IknCXYJZd6ybxbZW3vIkpwFg8sISlopgIFO9HSTyysv2tLEKRe8TA3o1OiaiMjJo%C3%89iKBC60VATZObJk8%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-21-2013-oml-2013-152-seekonk-board-of-selectmen.pdf",
@@ -33745,7 +34256,8 @@
      "bytes": 1153615,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-21-2013-oml-2013-152-seekonk-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-152.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AcqAaUaKFEI1muCFFc6i%C3%81zcjt%C3%89Vuo%C3%89yYNwzhc1FDqskh4o6Ac8mOBDKoVZ4Jc8PwRhXy6sLJ15pSNly0sTxx0bI%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AcqAaUaKFEI1muCFFc6i%C3%81zcjt%C3%89Vuo%C3%89yYNwzhc1FDqskh4o6Ac8mOBDKoVZ4Jc8PwRhXy6sLJ15pSNly0sTxx0bI%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-21-2013-oml-2013-153-savoy-board-of-selectmen.pdf",
@@ -33756,7 +34268,8 @@
      "bytes": 1785195,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-21-2013-oml-2013-153-savoy-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-153.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AUbHH4O4MZ7qslGR18%C3%81IFqjuYizjTOQ1stP%C3%81aLs5%C3%81%C3%81g3PKoFcbSm5JE1bsk%C3%89VLwplH5iXf0MkBokFcfvQKaRs4Y%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AUbHH4O4MZ7qslGR18%C3%81IFqjuYizjTOQ1stP%C3%81aLs5%C3%81%C3%81g3PKoFcbSm5JE1bsk%C3%89VLwplH5iXf0MkBokFcfvQKaRs4Y%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-21-2013-oml-2013-154-wenham-audit-review-committee.pdf",
@@ -33778,7 +34291,8 @@
      "bytes": 5061077,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-25-2013-oml-2013-155-conway-town-administrator-search-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-155.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AeGlEUXvjb5Dlqp8TOKNCC95SwGa622Y%C3%81TSILZJizE5wLv6%C3%81r2B%C3%89Cg12caPRQQ0JY%C3%81b1U2Mkp1f1RscCsVfIpE8%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AeGlEUXvjb5Dlqp8TOKNCC95SwGa622Y%C3%81TSILZJizE5wLv6%C3%81r2B%C3%89Cg12caPRQQ0JY%C3%81b1U2Mkp1f1RscCsVfIpE8%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-25-2013-oml-2013-156-wenham-board-of-selectmen.pdf",
@@ -33789,7 +34303,8 @@
      "bytes": 2702311,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-25-2013-oml-2013-156-wenham-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-156.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQmmx70BnZGdkTkWe%C3%8971ZzoMmCsaxwwgbNFZ8NDL7MvtRStoxrhq5yyay5Od%C3%89EMX5wbC4GVH0m3N4I6VWt9rL5w%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQmmx70BnZGdkTkWe%C3%8971ZzoMmCsaxwwgbNFZ8NDL7MvtRStoxrhq5yyay5Od%C3%89EMX5wbC4GVH0m3N4I6VWt9rL5w%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-28-2013-oml-2013-157-cotuit-fire-district-prudential-committee.pdf",
@@ -33800,7 +34315,8 @@
      "bytes": 3590960,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-28-2013-oml-2013-157-cotuit-fire-district-prudential-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-157.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AaJg%C3%817WSGIV%C3%8113dDP9NkeZqPZMWPqq1xPk%C3%81f4%C3%815%C3%81AVD13iClA1xEjETSqMJ9wU2qZDa9FhsaFjEje25u%C3%89DxwhCM%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AaJg%C3%817WSGIV%C3%8113dDP9NkeZqPZMWPqq1xPk%C3%81f4%C3%815%C3%81AVD13iClA1xEjETSqMJ9wU2qZDa9FhsaFjEje25u%C3%89DxwhCM%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-28-2013-oml-2013-158-cotuit-fire-district-prudential-committee.pdf",
@@ -33811,7 +34327,8 @@
      "bytes": 3160386,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-28-2013-oml-2013-158-cotuit-fire-district-prudential-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-158.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ady%C3%89MPGCmrAx7WVypwEbD5S6NqC8K7crsIpm%C3%81WOMnAxSjCKZoLPEM4t8q6%C3%81YoGtdZ%C3%89tTGUNxJWAYNznEmhbZGRs%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ady%C3%89MPGCmrAx7WVypwEbD5S6NqC8K7crsIpm%C3%81WOMnAxSjCKZoLPEM4t8q6%C3%81YoGtdZ%C3%89tTGUNxJWAYNznEmhbZGRs%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-28-2013-oml-2013-159-west-newbury-conservation-commission.pdf",
@@ -33822,7 +34339,8 @@
      "bytes": 2199123,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-28-2013-oml-2013-159-west-newbury-conservation-commission.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-159.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQ4S2428Y2SLqm4JAe%C3%816dlWF0%C3%89cStyuZX8QSSxmI9szAPzqg4Bl12aONLDKopJGxvFqPV%C3%81g%C3%81txcUGfgiHzo24ik%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQ4S2428Y2SLqm4JAe%C3%816dlWF0%C3%89cStyuZX8QSSxmI9szAPzqg4Bl12aONLDKopJGxvFqPV%C3%81g%C3%81txcUGfgiHzo24ik%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-2-19-2013-oml-2013-16-holyoke-board-of-health.pdf",
@@ -33833,7 +34351,8 @@
      "bytes": 1297287,
      "url": "/docs/state-law/2026-10-09/determinations/determination-2-19-2013-oml-2013-16-holyoke-board-of-health.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-16.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AWcWoEVGJba4%C3%81%C3%81ehdjNtB96%C3%81f89%C3%89S71k8E4Ghv0hoMsfZRV5rxzDbeGDAfE3C6lP2QgKG8ian%C3%81k9BcTQXa%C3%89WVPI%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AWcWoEVGJba4%C3%81%C3%81ehdjNtB96%C3%81f89%C3%89S71k8E4Ghv0hoMsfZRV5rxzDbeGDAfE3C6lP2QgKG8ian%C3%81k9BcTQXa%C3%89WVPI%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-28-2013-oml-2013-160-barnstable-board-of-county-commissioners.pdf",
@@ -33844,7 +34363,8 @@
      "bytes": 2345862,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-28-2013-oml-2013-160-barnstable-board-of-county-commissioners.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-160.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AauUS1Z5MjbTQroa1XfNHanc6NAacnsfwqSd0ViGSnFE1S6WRa5OS1gW1k4PUY0vAhKPA1ME3buwm5J9YV3fLYo%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AauUS1Z5MjbTQroa1XfNHanc6NAacnsfwqSd0ViGSnFE1S6WRa5OS1gW1k4PUY0vAhKPA1ME3buwm5J9YV3fLYo%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-28-2013-oml-2013-161-mansfield-board-of-selectmen.pdf",
@@ -33855,7 +34375,8 @@
      "bytes": 1717644,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-28-2013-oml-2013-161-mansfield-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-161.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQVsFSl%C3%89Yvq%C3%81A2OO5m%C3%81pUQfQnUduWt%C3%897UzjkLc7ZimYvhsZuW6UD0jOk%C3%89XtcHsO2aq26rGPUNgLMeubynLXgJ04%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQVsFSl%C3%89Yvq%C3%81A2OO5m%C3%81pUQfQnUduWt%C3%897UzjkLc7ZimYvhsZuW6UD0jOk%C3%89XtcHsO2aq26rGPUNgLMeubynLXgJ04%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-28-2013-oml-2013-162-uxbridge-conservation-commission.pdf",
@@ -33866,7 +34387,8 @@
      "bytes": 1460875,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-28-2013-oml-2013-162-uxbridge-conservation-commission.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-162.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AUBW2APhS%C3%89eePB4bMUu%C3%81a1WxAJcaJa86SmYTdNqphyaD17dMYsbgQPMmRPomaiB8C6K0bJgSAcORfR91Vs6oC%C3%81w%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AUBW2APhS%C3%89eePB4bMUu%C3%81a1WxAJcaJa86SmYTdNqphyaD17dMYsbgQPMmRPomaiB8C6K0bJgSAcORfR91Vs6oC%C3%81w%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-28-2013-oml-2013-163-wakefield-school-committee.pdf",
@@ -33877,7 +34399,8 @@
      "bytes": 7905695,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-28-2013-oml-2013-163-wakefield-school-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-163.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AWpgaAcsjLBmIIKUY2DcMPHSqD%C3%810IcO6cppzrz%C3%81lba4VXO2l8E5%C3%81Z4XzGPJeWD8kxVpH5hvFEtAqkzrp420XDNc%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AWpgaAcsjLBmIIKUY2DcMPHSqD%C3%810IcO6cppzrz%C3%81lba4VXO2l8E5%C3%81Z4XzGPJeWD8kxVpH5hvFEtAqkzrp420XDNc%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-11-4-2013-oml-2013-164-ashfield-board-of-health.pdf",
@@ -33888,7 +34411,8 @@
      "bytes": 1110115,
      "url": "/docs/state-law/2026-10-09/determinations/determination-11-4-2013-oml-2013-164-ashfield-board-of-health.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-164.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Aa0Lc5Y8JCHonTQfkh%C3%89SEbDb6koZ6CLygvV%C3%89fxlJiydkSXitYBpZ0zsi7teEVlmKsmGV35veKx%C3%89%C3%81O5rG0aqFiT0%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Aa0Lc5Y8JCHonTQfkh%C3%89SEbDb6koZ6CLygvV%C3%89fxlJiydkSXitYBpZ0zsi7teEVlmKsmGV35veKx%C3%89%C3%81O5rG0aqFiT0%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-11-4-2013-oml-2013-165-arlington-redevelopment-board.pdf",
@@ -33899,7 +34423,8 @@
      "bytes": 1876598,
      "url": "/docs/state-law/2026-10-09/determinations/determination-11-4-2013-oml-2013-165-arlington-redevelopment-board.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-165.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQxNzUCKOoJ91MmoCssRDFJohXN5ZvrPvnPf7Yf85Eq3bAGgeLYKf3Z9MSWYR%C3%89NeZHTKV4F0UyDVnwpP83G12t0%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQxNzUCKOoJ91MmoCssRDFJohXN5ZvrPvnPf7Yf85Eq3bAGgeLYKf3Z9MSWYR%C3%89NeZHTKV4F0UyDVnwpP83G12t0%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-11-4-2013-oml-2013-166-orange-board-of-selectmen.pdf",
@@ -33910,7 +34435,8 @@
      "bytes": 1102720,
      "url": "/docs/state-law/2026-10-09/determinations/determination-11-4-2013-oml-2013-166-orange-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-166.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AW%C3%81fB0n3ifOKd%C3%81DZ6il0wwmDyWNkpKclHw3D7OLaIPu1s895mz3reU60iP%C3%81djTetVUFqkfQzo8cpVnMKsiv8GIY%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AW%C3%81fB0n3ifOKd%C3%81DZ6il0wwmDyWNkpKclHw3D7OLaIPu1s895mz3reU60iP%C3%81djTetVUFqkfQzo8cpVnMKsiv8GIY%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-11-4-2013-oml-2013-167-orleans-board-of-assessors.pdf",
@@ -33921,7 +34447,8 @@
      "bytes": 1079991,
      "url": "/docs/state-law/2026-10-09/determinations/determination-11-4-2013-oml-2013-167-orleans-board-of-assessors.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-167.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ARvvrPcj0N2bn86s%C3%81t7IlUdaTtfU07raG0nlUPDyELY4EB5J0ZbPl1nbSnIFOSRfsgTSabrp9y8Lkwl4cG1LpSo%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ARvvrPcj0N2bn86s%C3%81t7IlUdaTtfU07raG0nlUPDyELY4EB5J0ZbPl1nbSnIFOSRfsgTSabrp9y8Lkwl4cG1LpSo%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-11-12-2013-oml-2013-168-ashfield-board-of-health.pdf",
@@ -33932,7 +34459,8 @@
      "bytes": 1846463,
      "url": "/docs/state-law/2026-10-09/determinations/determination-11-12-2013-oml-2013-168-ashfield-board-of-health.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-168.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Adt1UFRIxmB2pkfmz1ijfc7qIQg3%C3%89aosWSmLpOP3E7LSliELbZ5qkbsjb65ROOSpHqrMR0MqzuNd4X09GsUTFd4%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Adt1UFRIxmB2pkfmz1ijfc7qIQg3%C3%89aosWSmLpOP3E7LSliELbZ5qkbsjb65ROOSpHqrMR0MqzuNd4X09GsUTFd4%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-11-12-2013-oml-2013-169-acton-morrison-farm-committee.pdf",
@@ -33943,7 +34471,8 @@
      "bytes": 2380815,
      "url": "/docs/state-law/2026-10-09/determinations/determination-11-12-2013-oml-2013-169-acton-morrison-farm-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-169.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AS2QNv7IfJ%C3%81ksK9%C3%89ey5JxKVM4%C3%81RH%C3%81t8d3PFv6aaYFTvsLBztfAbww4miyi5G%C3%816izFKuh2N9osR36RV68svZHEzk%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AS2QNv7IfJ%C3%81ksK9%C3%89ey5JxKVM4%C3%81RH%C3%81t8d3PFv6aaYFTvsLBztfAbww4miyi5G%C3%816izFKuh2N9osR36RV68svZHEzk%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-2-19-2013-oml-2013-17-brewster-finance-committee-budget-subcommittee.pdf",
@@ -33954,7 +34483,8 @@
      "bytes": 1507000,
      "url": "/docs/state-law/2026-10-09/determinations/determination-2-19-2013-oml-2013-17-brewster-finance-committee-budget-subcommittee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-17.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AbVI7jxdtFBft3TGGW2%C3%893SKzIRF%C3%89tHSP2x3%C3%81gB5ot6HJ1Lmo2OAxEm7B8rId6zShEIUsK83ast5XcvG%C3%81acosdfY%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AbVI7jxdtFBft3TGGW2%C3%893SKzIRF%C3%89tHSP2x3%C3%81gB5ot6HJ1Lmo2OAxEm7B8rId6zShEIUsK83ast5XcvG%C3%81acosdfY%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-11-12-2013-oml-2013-170-ashfield-board-of-health.pdf",
@@ -33965,7 +34495,8 @@
      "bytes": 2824627,
      "url": "/docs/state-law/2026-10-09/determinations/determination-11-12-2013-oml-2013-170-ashfield-board-of-health.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-170.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ATaXjOenZ1jA%C3%814z%C3%89Kyu7g5bb11oDt0Zy5x4LMjrXVxp09N8E8SO5k%C3%89QyWt5BdJQqomA%C3%89xtDjDjAMX5DgCih93lM%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ATaXjOenZ1jA%C3%814z%C3%89Kyu7g5bb11oDt0Zy5x4LMjrXVxp09N8E8SO5k%C3%89QyWt5BdJQqomA%C3%89xtDjDjAMX5DgCih93lM%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-11-18-2013-oml-2013-171-christa-mcauliffe-regional-charter-school-special-education-parent-advisory-council.pdf",
@@ -33976,7 +34507,8 @@
      "bytes": 1153134,
      "url": "/docs/state-law/2026-10-09/determinations/determination-11-18-2013-oml-2013-171-christa-mcauliffe-regional-charter-school-special-education-parent-advisory-council.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-171.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AaFH1q5ukZjNMxYMD%C3%89t9cyPAL%C3%89DnXqGEm1C4VMdkEF7Xtby7WkP6SctGt%C3%81rSanDzp7%C3%81AYW5%C3%81Rermdn7b%C3%898U7Yws%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AaFH1q5ukZjNMxYMD%C3%89t9cyPAL%C3%89DnXqGEm1C4VMdkEF7Xtby7WkP6SctGt%C3%81rSanDzp7%C3%81AYW5%C3%81Rermdn7b%C3%898U7Yws%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-11-18-2013-oml-2013-172-montague-board-of-selectmen.pdf",
@@ -33987,7 +34519,8 @@
      "bytes": 1066427,
      "url": "/docs/state-law/2026-10-09/determinations/determination-11-18-2013-oml-2013-172-montague-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-172.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ARkBkkQtVP9KC2nlKo6PdloEpmtycyWj9uU14FTAZ8wjeeddVkH6gH%C3%89HFj%C3%81BmRXnPCWtDHOvtE2xKpK2GxvaRy4%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ARkBkkQtVP9KC2nlKo6PdloEpmtycyWj9uU14FTAZ8wjeeddVkH6gH%C3%89HFj%C3%81BmRXnPCWtDHOvtE2xKpK2GxvaRy4%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-11-18-2013-oml-2013-173-wenham-audit-committee.pdf",
@@ -33998,7 +34531,8 @@
      "bytes": 1774924,
      "url": "/docs/state-law/2026-10-09/determinations/determination-11-18-2013-oml-2013-173-wenham-audit-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-173.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AZn%C3%890AQvnJoDclU3h2deuzTw%C3%89wplFUD1idax9HD9W1AO0N1CVxCWEnOXtDvvDKS0Gvw2sPMZdqjIqSw5Rf6zh4U%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AZn%C3%890AQvnJoDclU3h2deuzTw%C3%89wplFUD1idax9HD9W1AO0N1CVxCWEnOXtDvvDKS0Gvw2sPMZdqjIqSw5Rf6zh4U%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-11-25-2013-oml-2013-174-wayland-board-of-selectmen.pdf",
@@ -34009,7 +34543,8 @@
      "bytes": 6274155,
      "url": "/docs/state-law/2026-10-09/determinations/determination-11-25-2013-oml-2013-174-wayland-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-174.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AYqXuI42ciZzSX1RMFAF4xkD1An55tQImi%C3%812q32D2xCyRe5sRg%C3%81GNHPyGnIra%C3%89Gw8WPyVnrnXtYTwheDuR%C3%81vYuY%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AYqXuI42ciZzSX1RMFAF4xkD1An55tQImi%C3%812q32D2xCyRe5sRg%C3%81GNHPyGnIra%C3%89Gw8WPyVnrnXtYTwheDuR%C3%81vYuY%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-11-25-2013-oml-2013-175-sturbridge-board-of-selectmen.pdf",
@@ -34020,7 +34555,8 @@
      "bytes": 1950538,
      "url": "/docs/state-law/2026-10-09/determinations/determination-11-25-2013-oml-2013-175-sturbridge-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-175.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ATpSGhIdsLmd%C3%89Z%C3%89qLFrP22DyH92tNhaMyjBj4Pzmq2q6pIWZjG5Ug14D%C3%89ssBpouOOAkitMWhts8CW1JyXtQvL4A%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ATpSGhIdsLmd%C3%89Z%C3%89qLFrP22DyH92tNhaMyjBj4Pzmq2q6pIWZjG5Ug14D%C3%89ssBpouOOAkitMWhts8CW1JyXtQvL4A%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-11-25-2013-oml-2013-176-wilbraham-board-of-selectmen.pdf",
@@ -34031,7 +34567,8 @@
      "bytes": 1952816,
      "url": "/docs/state-law/2026-10-09/determinations/determination-11-25-2013-oml-2013-176-wilbraham-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-176.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQWSLK%C3%89y%C3%89GhZgdinaT%C3%81%C3%89hi9%C3%89krNbvPfgFu%C3%81jrQ%C3%89RRcfK6oQyx4JbTDc%C3%89hry3lDZHMLANQav8anexfrY9j5Tsrpg%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQWSLK%C3%89y%C3%89GhZgdinaT%C3%81%C3%89hi9%C3%89krNbvPfgFu%C3%81jrQ%C3%89RRcfK6oQyx4JbTDc%C3%89hry3lDZHMLANQav8anexfrY9j5Tsrpg%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-11-25-2013-oml-2013-177-advanced-math-science-academy-charter-school.pdf",
@@ -34042,7 +34579,8 @@
      "bytes": 2205068,
      "url": "/docs/state-law/2026-10-09/determinations/determination-11-25-2013-oml-2013-177-advanced-math-science-academy-charter-school.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-177.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AZ936RYBh7fjVYKsgSSwseCUM36ERwHE0%C3%81CcKvRv6Lel6jGEwEJjWoTNe7LFA2Ova8goS%C3%8930HM3cjW7P2JpRbTk%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AZ936RYBh7fjVYKsgSSwseCUM36ERwHE0%C3%81CcKvRv6Lel6jGEwEJjWoTNe7LFA2Ova8goS%C3%8930HM3cjW7P2JpRbTk%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-11-26-2013-oml-2013-178-worcester-city-council.pdf",
@@ -34053,7 +34591,8 @@
      "bytes": 1493925,
      "url": "/docs/state-law/2026-10-09/determinations/determination-11-26-2013-oml-2013-178-worcester-city-council.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-178.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AW53lQ9B67BaK12cF%C3%81F56IWPV46ZwuTKHFP92pX4RkWaAtwT4L8N5W2O0WE2vlMj65iRJqGsZ%C3%89VnOkHkS1CXjAc%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AW53lQ9B67BaK12cF%C3%81F56IWPV46ZwuTKHFP92pX4RkWaAtwT4L8N5W2O0WE2vlMj65iRJqGsZ%C3%89VnOkHkS1CXjAc%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-12-2-2013-oml-2013-179-arlington-cemetery-commission.pdf",
@@ -34064,7 +34603,8 @@
      "bytes": 1763707,
      "url": "/docs/state-law/2026-10-09/determinations/determination-12-2-2013-oml-2013-179-arlington-cemetery-commission.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-179.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AUKxBrTrvZuAHQuW%C3%81TGLsFq6Lb%C3%89%C3%89Y4c78qCmHP5Rw2%C3%81kfv8kiTOOQ3PEX2E7rVoQ%C3%81tNI%C3%89P9Pr7Io6b8W6qi71Og%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AUKxBrTrvZuAHQuW%C3%81TGLsFq6Lb%C3%89%C3%89Y4c78qCmHP5Rw2%C3%81kfv8kiTOOQ3PEX2E7rVoQ%C3%81tNI%C3%89P9Pr7Io6b8W6qi71Og%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-2-19-2013-oml-2013-18-hubbardston-capital-improvement-planning-committee.pdf",
@@ -34086,7 +34626,8 @@
      "bytes": 2470664,
      "url": "/docs/state-law/2026-10-09/determinations/determination-12-2-2013-oml-2013-180-arlington-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-180.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AW0mleEwrUeHsPdoECKrytj29u9jZRvCw0oDmP6hIZRDlKUWEJSylYnQBZWRvpKYh6jTu3Ax7PRe6fAmgk%C3%89WPro%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AW0mleEwrUeHsPdoECKrytj29u9jZRvCw0oDmP6hIZRDlKUWEJSylYnQBZWRvpKYh6jTu3Ax7PRe6fAmgk%C3%89WPro%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-12-9-2013-oml-2013-181-hinsdale-select-board.pdf",
@@ -34097,7 +34638,8 @@
      "bytes": 1134662,
      "url": "/docs/state-law/2026-10-09/determinations/determination-12-9-2013-oml-2013-181-hinsdale-select-board.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-181.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AV2P9nbz3GDqGmYE9e%C3%81jBv5LukS1WlFHN9kng3i%C3%81jrG8%C3%89nBXN4NzpEPG1lQBrnXYEbXfw9J7IWNZiNwPNyEPGWo%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AV2P9nbz3GDqGmYE9e%C3%81jBv5LukS1WlFHN9kng3i%C3%81jrG8%C3%89nBXN4NzpEPG1lQBrnXYEbXfw9J7IWNZiNwPNyEPGWo%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-12-9-2013-oml-2013-182-ashfield-board-of-health.pdf",
@@ -34108,7 +34650,8 @@
      "bytes": 1293044,
      "url": "/docs/state-law/2026-10-09/determinations/determination-12-9-2013-oml-2013-182-ashfield-board-of-health.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-182.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AT0Hg7azrO8MmEZ02xVuTavAyImoSeUD3VNt%C3%89Asu5qkHvdsH2F1rgVQZJcN9oAg0nUXJp5uucH92xXuEW3bh6bg%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AT0Hg7azrO8MmEZ02xVuTavAyImoSeUD3VNt%C3%89Asu5qkHvdsH2F1rgVQZJcN9oAg0nUXJp5uucH92xXuEW3bh6bg%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-12-9-2013-oml-2013-183-westfield-city-council.pdf",
@@ -34130,7 +34673,8 @@
      "bytes": 1454570,
      "url": "/docs/state-law/2026-10-09/determinations/determination-12-16-2013-oml-2013-184-minuteman-regional-vocational-school-district-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2013-184.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AblaYNquhfQ3FUt1LiP8Y%C3%89ohRVnUcauTEDGkus2eUUEPN3hn7FFjQ3J%C3%811%C3%81Y6lNI5NI5%C3%897%C3%897AV2Jz2rA75e8Scog%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AblaYNquhfQ3FUt1LiP8Y%C3%89ohRVnUcauTEDGkus2eUUEPN3hn7FFjQ3J%C3%811%C3%81Y6lNI5NI5%C3%897%C3%897AV2Jz2rA75e8Scog%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-12-16-2013-oml-2013-185-carver-redevelopment-authority.pdf",
@@ -63410,11 +63954,11 @@
   "boards": [
    {
     "name": "Select Board",
-    "documents": 1462
+    "documents": 1463
    },
    {
     "name": "Planning Board",
-    "documents": 1357
+    "documents": 1358
    },
    {
     "name": "Finance Committee",
@@ -63426,7 +63970,7 @@
    },
    {
     "name": "Conservation Commission",
-    "documents": 720
+    "documents": 721
    },
    {
     "name": "Board Of Health",
@@ -63494,7 +64038,7 @@
    },
    {
     "name": "Stormwater Task Force",
-    "documents": 198
+    "documents": 199
    },
    {
     "name": "Agricultural Commission",
@@ -63514,7 +64058,7 @@
    },
    {
     "name": "Cultural Council",
-    "documents": 86
+    "documents": 87
    },
    {
     "name": "By Law Committee",
@@ -63550,7 +64094,7 @@
    },
    {
     "name": "Board Of Registrars",
-    "documents": 39
+    "documents": 40
    },
    {
     "name": "Cable Advisory Committee",
@@ -63614,22 +64158,22 @@
    }
   ],
   "boardCount": 51,
-  "listed": 12289,
-  "fetched": 12239,
-  "agendas": 7509,
-  "minutes": 4780,
+  "listed": 12295,
+  "fetched": 12245,
+  "agendas": 7514,
+  "minutes": 4781,
   "from": "2009-01-05",
   "to": "2026-11-23",
-  "textFiles": 12241,
+  "textFiles": 12247,
   "note": "Every agenda and set of minutes the town publishes, across all boards. The extracted text is what the analysis reads and is what this site serves. The scanned originals — about 426MB — are archived too, and can be downloaded one at a time at /docs/minutes/<board>/<file>.pdf. They were never in the repository, so until September 2026 they existed on exactly one disk; they now have an off-site copy, which for an archive of public records that keeps losing its own links is the point.",
   "rebuild": "python3 scripts/fetch_agendas.py --from 2025 && python3 scripts/extract_minutes.py"
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 5726,
+  "documents": 5769,
   "groups": 33,
-  "bytes": 7345669699,
+  "bytes": 7349740842,
   "loadBearing": 220
  },
- "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 56 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
+ "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 170 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }
