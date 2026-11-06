@@ -1,54 +1,34 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "stormwater-fee",
- "picked_at": "2026-11-05T12:45:09Z",
+ "picked_at": "2026-11-06T12:30:50Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.1664,
- "input_sha256": "5c6659318d791c9796a5495f290082a161963688209a6a833c08e872c391f8fb",
+ "cost_usd": 0.1659,
+ "input_sha256": "b440bd44d6fedca02d1bef87f1fb302bed6883fa5c2d8480f8aed9af852d1480",
  "callouts": [
   {
    "kind": "fee",
    "value": "$85 a year",
-   "label": "proposed stormwater fee for a typical home, not final; capped at $100 for the first three years",
-   "hook": "proposed yearly stormwater fee",
+   "label": "estimated stormwater fee per household, not to exceed $100 for the first three years",
+   "hook": "estimated stormwater fee",
    "quote": "current estimate is $85 per eru, not to exceed $100 for the first three years",
    "heard": [],
    "item_date": "2026-10-20",
    "item_board": "select-board",
    "basis": "printed",
    "doc": "meetings/select-board/2026-10-20-minutes-8080.pdf",
-   "text": "meetings/text/select-board/2026-10-20-minutes-8080.pdf",
+   "text": "meetings/text/select-board/2026-10-20-minutes-8080.txt",
    "where": "Select Board minutes, 20 Oct 2026",
    "verdict": {
-    "keep": true,
-    "why": "$85 per ERU, flat for 1-2 family homes, cap $100 for three years, not finalized; all in minutes. Nothing later finalizes it."
-   }
-  },
-  {
-   "kind": "warrant",
-   "value": "Nov 17",
-   "label": "special Town Meeting, with the stormwater fee bylaw article on the warrant",
-   "hook": "",
-   "quote": "November 17th special town meeting",
-   "heard": [],
-   "item_date": "2026-09-15",
-   "item_board": "select-board",
-   "basis": "heard",
-   "board": "select-board",
-   "date": "2026-09-15",
-   "video_id": "kig-BTakGjQ",
-   "t": 4336,
-   "where": "Select Board, 15 Sep 2026",
-   "verdict": {
     "keep": false,
-    "why": "Evidence only says the Nov 17 meeting and a referral of the stormwater fee bylaw article to the planning board. It never says the article is on the warrant, and the label claims that."
+    "why": "Evidence gives $85 per ERU (4,200 sq ft), not per household; flat rate only for 1–2 family homes. Rate also unfinalized and unverified."
    }
   },
   {
    "kind": "money",
    "value": "$480,000 a year",
-   "label": "estimated needed for stormwater permit compliance; the town has spent about $100,000 a year",
+   "label": "estimated yearly stormwater compliance need, versus about $100,000 spent now",
    "hook": "",
    "quote": "annual stormwater spending has been roughly $100,000, against an estimated $480,000 per year needed for compliance.",
    "heard": [],
@@ -56,11 +36,31 @@
    "item_board": "select-board",
    "basis": "printed",
    "doc": "meetings/select-board/2026-10-20-minutes-8080.pdf",
-   "text": "meetings/text/select-board/2026-10-20-minutes-8080.pdf",
+   "text": "meetings/text/select-board/2026-10-20-minutes-8080.txt",
    "where": "Select Board minutes, 20 Oct 2026",
    "verdict": {
     "keep": true,
-    "why": "$480,000 needed and about $100,000 spent are stated in the minutes. Nothing later changes them."
+    "why": "DPW figures (~$100,000 spent vs ~$480,000 needed) stated in minutes; nothing later contradicts."
+   }
+  },
+  {
+   "kind": "warrant",
+   "value": "Article 10",
+   "label": "non-binding Town Meeting question on funding stormwater by utility or operating budget",
+   "hook": "",
+   "quote": "include Article 10 on the warrant",
+   "heard": [],
+   "item_date": "2026-10-20",
+   "item_board": "select-board",
+   "basis": "heard",
+   "board": "select-board",
+   "date": "2026-10-20",
+   "video_id": "z9j248Lu80E",
+   "t": 11472,
+   "where": "Select Board, 20 Oct 2026",
+   "verdict": {
+    "keep": true,
+    "why": "Select Board voted 4-1 to include advisory Article 10 on the warrant on 20 Oct; nothing later contradicts."
    }
   }
  ]

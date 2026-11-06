@@ -7,19 +7,19 @@
   "rank_basis": "when each last came up, newest first",
   "meetings_readable": 5170,
   "meetings_with_our_minutes": 2378,
-  "meetings_with_town_minutes_read": 4333,
+  "meetings_with_town_minutes_read": 4334,
   "boards_readable": 52,
-  "agendas_as_of": "2026-11-05",
+  "agendas_as_of": "2026-11-06",
   "agendas_matched": {
-   "agendas": 31,
-   "agendas_upcoming": 8,
-   "agendas_unreadable": 4,
-   "items": 237,
-   "business_items": 141,
-   "matched_items": 9,
-   "upcoming_business_items": 37,
-   "upcoming_matched_items": 1,
-   "threads_on_an_upcoming_agenda": 1
+   "agendas": 34,
+   "agendas_upcoming": 12,
+   "agendas_unreadable": 5,
+   "items": 262,
+   "business_items": 164,
+   "matched_items": 8,
+   "upcoming_business_items": 67,
+   "upcoming_matched_items": 2,
+   "threads_on_an_upcoming_agenda": 2
   },
   "town_meeting_readable": 17,
   "official_town_meeting_years": [
@@ -48,7 +48,7 @@
     "id": "stormwater-fee",
     "label": "The stormwater fee",
     "short": "The stormwater fee",
-    "hook": "$85 a year proposed yearly stormwater fee",
+    "hook": "",
     "meetings": 10,
     "boards": 5,
     "days_since_last": 2
@@ -2756,11 +2756,11 @@
    "closure": null,
    "callouts": [
     {
-     "order": 1,
-     "kind": "fee",
-     "value": "$85 a year",
-     "label": "proposed stormwater fee for a typical home, not final; capped at $100 for the first three years",
-     "hook": "proposed yearly stormwater fee",
+     "order": 2,
+     "kind": "money",
+     "value": "$480,000 a year",
+     "label": "estimated yearly stormwater compliance need, versus about $100,000 spent now",
+     "hook": "",
      "sources": [
       {
        "basis": "printed",
@@ -2773,16 +2773,16 @@
     },
     {
      "order": 3,
-     "kind": "money",
-     "value": "$480,000 a year",
-     "label": "estimated needed for stormwater permit compliance; the town has spent about $100,000 a year",
+     "kind": "warrant",
+     "value": "Article 10",
+     "label": "non-binding Town Meeting question on funding stormwater by utility or operating budget",
      "hook": "",
      "sources": [
       {
-       "basis": "printed",
-       "href": "/docs/meetings/select-board/2026-10-20-minutes-8080.pdf",
-       "where": "Select Board minutes, 20 Oct 2026",
-       "checked_against": "the document"
+       "basis": "heard",
+       "href": "https://www.youtube.com/watch?v=z9j248Lu80E&t=11472s",
+       "where": "Select Board, 20 Oct 2026",
+       "checked_against": "the captions"
       }
      ],
      "auto": true
@@ -4818,30 +4818,6 @@
    ],
    "on_agenda": [
     {
-     "board": "Finance Committee",
-     "board_slug": "finance-committee",
-     "date": "2026-10-22",
-     "body_as_printed": "",
-     "upcoming": false,
-     "line": "Stormwater Utility",
-     "parent": "New Business",
-     "by": "words",
-     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10222026-8087",
-     "agenda_doc": "/docs/meetings/finance-committee/2026-10-22-agenda-8087.pdf"
-    },
-    {
-     "board": "Stormwater Task Force",
-     "board_slug": "stormwater-task-force",
-     "date": "2026-10-22",
-     "body_as_printed": "",
-     "upcoming": false,
-     "line": "PRESENTATION TO FINANCE COMMITTEE",
-     "parent": "",
-     "by": "board",
-     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10222026-8088",
-     "agenda_doc": "/docs/meetings/stormwater-task-force/2026-10-22-agenda-8088.pdf"
-    },
-    {
      "board": "Select Board",
      "board_slug": "select-board",
      "date": "2026-10-27",
@@ -4864,6 +4840,18 @@
      "by": "board",
      "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11042026-8111",
      "agenda_doc": "/docs/meetings/stormwater-task-force/2026-11-04-agenda-8111.pdf"
+    },
+    {
+     "board": "Stormwater Task Force",
+     "board_slug": "stormwater-task-force",
+     "date": "2026-11-09",
+     "body_as_printed": "",
+     "upcoming": true,
+     "line": "PRESENTATION REGARDING STORMWATER UTILITY",
+     "parent": "",
+     "by": "words",
+     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11092026-8120",
+     "agenda_doc": "/docs/meetings/stormwater-task-force/2026-11-09-agenda-8120.pdf"
     }
    ],
    "chronology": [
@@ -7787,10 +7775,22 @@
        "video_url": "https://www.youtube.com/watch?v=hB7nDLUXqXk",
        "source": "ours",
        "recording_note": ""
+      },
+      {
+       "source": "town",
+       "doc_url": "/docs/meetings/conservation-commission/2026-10-21-minutes-8082.pdf",
+       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10212026-8082",
+       "kind": "topic",
+       "text": "Communications / public comment (Open Space, Stormwater). no action",
+       "outcome": "",
+       "quote": "a. open space committee none",
+       "t": null,
+       "video_url": ""
       }
      ],
      "records": [
-      "ours"
+      "ours",
+      "town"
      ]
     },
     {
@@ -8032,8 +8032,8 @@
     {
      "order": 2,
      "kind": "warrant",
-     "value": "Held",
-     "label": "Select Board held both veterans exemption articles off the warrant for now",
+     "value": "Held off",
+     "label": "Select Board kept both veterans exemption articles off the warrant over effective-date questions",
      "hook": "",
      "sources": [
       {
@@ -8048,14 +8048,14 @@
     {
      "order": 3,
      "kind": "impact",
-     "value": "No state refund",
-     "label": "Any increase in the veterans exemption would be paid by the town, not reimbursed",
+     "value": "Double",
+     "label": "one proposed article would virtually double all veterans exemptions",
      "hook": "",
      "sources": [
       {
        "basis": "heard",
-       "href": "https://www.youtube.com/watch?v=Qimi3yNAudg&t=2039s",
-       "where": "Board of Assessors, 9 Sep 2026",
+       "href": "https://www.youtube.com/watch?v=PGOQeBuvgog&t=2293s",
+       "where": "Board of Assessors, 30 Sep 2026",
        "checked_against": "the captions"
       }
      ],

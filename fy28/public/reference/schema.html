@@ -247,7 +247,7 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
 <div class="metrics">
   <div class="metric"><div class="v">211</div><div class="l">tables</div></div>
   <div class="metric"><div class="v">16</div><div class="l">views</div></div>
-  <div class="metric"><div class="v">416,283</div><div class="l">rows</div></div>
+  <div class="metric"><div class="v">416,326</div><div class="l">rows</div></div>
   <div class="metric"><div class="v">3419</div><div class="l">columns</div></div>
   <div class="metric"><div class="v">77%</div><div class="l">columns described</div></div>
 </div>
@@ -5890,7 +5890,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 </details>
-<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>12 tables &middot; 14,466 rows</span></summary>
+<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>12 tables &middot; 14,509 rows</span></summary>
 <p class="cap">Which document a figure came from, what has been read, and what these tables mean.</p>
 <p class="tierhead"><b>Tier 2 · categories</b><span>whether a category — guidance, special education, transport — is over</span></p>
 <details class="t"><summary><span class="srow"><code>build_inputs</code> <span class="tag scope sarchive">archive</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">provenance</span> <span class="n">198 rows</span><button class="open" data-t="build_inputs" data-q="SELECT count(*) AS files FROM build_inputs">Query table</button></span><span class="gr">one row per CSV file this database was built from</span></summary>
@@ -5916,7 +5916,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 <p class="cap sm">First 2 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>key</th><th>value</th></tr>
-<tr><td>built_at</td><td>2026-11-06T05:17:09Z</td></tr>
+<tr><td>built_at</td><td>2026-11-06T12:36:01Z</td></tr>
 <tr><td>inputs</td><td>198</td></tr>
 </table></div>
 </details>
@@ -6036,7 +6036,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>report-monty-tech</td><td>FY2017</td><td>70</td><td>142,143</td><td>2</td><td>0</td><td>0</td><td>4124-fy-2017-annual-town-report.pdf</td><td>FY 2017 Annual Town Report</td><td>https://www.lunenburgma.gov/DocumentCenter/…</td><td>4c6fbf70d0aff247bc2e18914ec1b0dcfddeeb33da8…</td><td>37102314</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>document</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">5,423 rows</span><button class="open" data-t="document">Query table</button></span><span class="gr">one row per source document</span></summary>
+<details class="t"><summary><span class="srow"><code>document</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">5,466 rows</span><button class="open" data-t="document">Query table</button></span><span class="gr">one row per source document</span></summary>
 <p class="ans">One row per source document: its archive path, how it reached us, its publisher URL, whether that link still opens (<code>link_state</code>), whether our copy still matches the publisher&#x27;s (<code>copy_state</code>), and both checksums. Also which columns a workbook HIDES from a reader.</p>
 <p class="warn"><code>link_state</code> says whether the publisher&#x27;s copy still opens; <code>copy_state</code> whether it still matches ours.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -6056,7 +6056,7 @@ to $325</td><td>quoted in source</td></tr>
 <div class="scroll"><table class="samp"><tr><th>doc_id</th><th>path</th><th>source_type</th><th>basis</th><th>ledger_at</th><th>hidden_columns</th><th>url</th><th>link_state</th><th>copy_state</th><th>remote_sha256</th><th>local_sha256</th></tr>
 <tr><td>sources/district-budget/docs/sc-meetings/20…</td><td>sources/district-budget/docs/sc-meetings/20…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>https://drive.google.com/file/d/1PbYN1A8s17…</td><td>200</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>3f48ff31a5a63e8507d7a1b3bb34e7a3eabfa8dde12…</td></tr>
 <tr><td>sources/district-budget/docs/personnel/staf…</td><td>sources/district-budget/docs/personnel/staf…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>https://docs.google.com/spreadsheets/d/e/2P…</td><td>200</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>87cfc459488cd17abcdb9ad2299706924c21d46eb08…</td></tr>
-<tr><td>sources/town-supplementary/docs/staff-direc…</td><td>sources/town-supplementary/docs/staff-direc…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>https://www.lunenburgma.gov/m/directory/dep…</td><td>200</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>c36b45a31b30e5b4029c99416b9d3a7ea26273a96f2…</td></tr>
+<tr><td>sources/town-supplementary/docs/staff-direc…</td><td>sources/town-supplementary/docs/staff-direc…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>https://www.lunenburgma.gov/m/directory/dep…</td><td>200</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>962268de89315b7db22eb6a7f3a1ed894daf6673b07…</td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>extraction_plan</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">555 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="extraction_plan">Query table</button></span><span class="gr">one row per planned extract</span></summary>

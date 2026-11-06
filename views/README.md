@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**711 of 5725 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**711 of 5726 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **5014 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **5015 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -218,6 +218,7 @@ Listed so this view cannot look more complete than it is.
 - `contracts/pdf/shrewsbury-teachers-2025-2028.pdf` — Shrewsbury Education Association agreement, 25 August 2025 to 24 August 2028
 - `contracts/pdf/tyngsborough-teachers-2024-2027.pdf` — Tyngsborough Unit A agreement, 1 September 2024 to 31 August 2027
 - `contracts/pdf/wachusett-teachers-2023-2026.pdf` — Wachusett Regional Education Association agreement, 1 July 2023 to 30 June 2026
+- `correspondence/2025-08-07-parks-information-request-thread.pdf` — The request and the Facilities Director’s answers
 - `correspondence/2026-03-30-ski-coop-invoice.md` — How the ski co-op invoice reached us, and what it does not show
 - `correspondence/2026-03-30-ski-coop-invoice.xlsx` — The ski co-op invoice, 2025-26 season
 - `correspondence/2026-10-21-brooks-house-presentation-draft.pdf` — Selling the Brooks House: issues to resolve (draft)
@@ -460,4 +461,3 @@ Listed so this view cannot look more complete than it is.
 - `data/report-appropriations.csv` — The general fund appropriations, both tables, FY2011–FY2025
 - `data/report-auditors-cash-schedule.csv` — Annual-report extract: auditors cash schedule
 - `data/report-capital-project-costs.csv` — Annual-report extract: capital project costs
-- `data/report-capital-projects.csv` — Capital project authorisations

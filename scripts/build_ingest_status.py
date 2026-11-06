@@ -4450,58 +4450,43 @@ def write(open_it=False):
     shell = ('<!doctype html><meta charset=utf-8><meta name=viewport '
              'content="width=device-width,initial-scale=1"><title>%s</title>'
              '%s<style>%s</style>%s')
-    with open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8') as fh:
-        fh.write(shell % ('Ingestion', '<meta http-equiv="refresh" content="20">', CSS,
-                          page_live(st)) + '<script>' + KEEP + '</script>')
-    # Composed before the file is opened, for the reason given at backlog.html below.
-    _refresh = (shell % ('Daily refresh', '<meta http-equiv="refresh" content="20">', CSS,
-                         page_refresh(st)) + '<script>' + KEEP + '</script>')
-    with open(os.path.join(OUT, 'refresh.html'), 'w', encoding='utf-8') as fh:
-        fh.write(_refresh)
+    # ALWAYS WHOLE. `open(path, 'w')` empties the file at once, and index.html was composed
+    # inside that open, so it sat at zero bytes for as long as the page took to build. TJ, 6
+    # November 2026: "always white when i return to it and i have to force refresh". Measured:
+    # 86 of 1,707 requests for / came back empty. The page reloads itself every 20 seconds, and
+    # an empty page has no refresh tag, so one unlucky reload left the tab white for good.
+    # Compose first, write beside it, swap by rename: a reader gets the old page or the new one,
+    # and a crash while composing leaves the old one (a KeyError once emptied backlog.html).
+    def put(name, text):
+        path = os.path.join(OUT, name)
+        tmp = '%s.%d.tmp' % (path, os.getpid())
+        with open(tmp, 'w', encoding='utf-8') as fh:
+            fh.write(text)
+        os.replace(tmp, path)
+    put('index.html', shell % ('Ingestion', '<meta http-equiv="refresh" content="20">', CSS,
+                               page_live(st)) + '<script>' + KEEP + '</script>')
+    put('refresh.html', shell % ('Daily refresh', '<meta http-equiv="refresh" content="20">', CSS,
+                                 page_refresh(st)) + '<script>' + KEEP + '</script>')
     # The document list is written as a <script>, not JSON: a browser will not fetch() a
     # local file but will happily <script src> one.
-    with open(os.path.join(OUT, 'docs.js'), 'w', encoding='utf-8') as fh:
-        fh.write('const DOCS=' + json.dumps(docs, separators=(',', ':')) + ';')
-    # BUILD IT, THEN OPEN THE FILE. `open(path, 'w')` truncates immediately, so a crash
-    # while the page is still being composed -- inside the write call -- leaves ZERO
-    # BYTES where a working page was. That is what happened: a KeyError in the plan
-    # section emptied backlog.html, and the browser then reported
-    # "Unsafe attempt to load URL file://... 'file:' URLs are treated as unique security
-    # origins", which is what Chrome says about an empty document and names nothing about
-    # the real cause two frames away.
-    #
-    # Composed first, the previous good page survives a failure. A stale dashboard is a
-    # far better failure than a blank one, because a blank one looks like a browser
-    # problem and gets debugged in the wrong place.
-    _backlog = (shell % ('Backlog', '<meta http-equiv="refresh" content="60">', CSS,
-                         page_backlog(st)) + '<script>' + KEEP + '</script>')
-    with open(os.path.join(OUT, 'backlog.html'), 'w', encoding='utf-8') as fh:
-        fh.write(_backlog)
+    put('docs.js', 'const DOCS=' + json.dumps(docs, separators=(',', ':')) + ';')
+    put('backlog.html', shell % ('Backlog', '<meta http-equiv="refresh" content="60">', CSS,
+                                 page_backlog(st)) + '<script>' + KEEP + '</script>')
     # NO META REFRESH HERE: it would throw away an answer half typed. GEN_JS reloads every 30s
     # instead, and skips the reload while any answer box holds text.
-    _suggested = (shell % ('Suggested reports', '', CSS,
-                           page_suggested(st)) + '<script src="/token.js"></script><script>' + KEEP + GEN_JS + '</script>')
-    with open(os.path.join(OUT, 'suggested.html'), 'w', encoding='utf-8') as fh:
-        fh.write(_suggested)
-    _review = (shell % ('Review', '', CSS, page_review(st))
-               + '<script src="/token.js"></script><script>' + KEEP + REVIEW_JS + '</script>')
-    with open(os.path.join(OUT, 'review.html'), 'w', encoding='utf-8') as fh:
-        fh.write(_review)
-    _questions = (shell % ('Questions', '<meta http-equiv="refresh" content="60">', CSS,
-                           page_questions(st)) + '<script>' + KEEP + '</script>')
-    with open(os.path.join(OUT, 'questions.html'), 'w', encoding='utf-8') as fh:
-        fh.write(_questions)
-    _searches = (shell % ('Searches', '<meta http-equiv="refresh" content="60">', CSS,
-                          page_searches(st)) + '<script>' + KEEP + '</script>')
-    with open(os.path.join(OUT, 'searches.html'), 'w', encoding='utf-8') as fh:
-        fh.write(_searches)
-    with open(os.path.join(OUT, 'sources.html'), 'w', encoding='utf-8') as fh:
-        counts = collections.Counter(d[5] for d in docs)
-        counts[''] = len(docs)
-        kinds = collections.Counter(d[6] for d in docs)
-        fh.write(shell % ('Documents', '', CSS,
-                                 page_sources(st, len(docs), counts, kinds, docs))
-                 + '<script src="docs.js"></script><script>' + JS + '</script>')
+    put('suggested.html', shell % ('Suggested reports', '', CSS, page_suggested(st))
+        + '<script src="/token.js"></script><script>' + KEEP + GEN_JS + '</script>')
+    put('review.html', shell % ('Review', '', CSS, page_review(st))
+        + '<script src="/token.js"></script><script>' + KEEP + REVIEW_JS + '</script>')
+    put('questions.html', shell % ('Questions', '<meta http-equiv="refresh" content="60">', CSS,
+                                   page_questions(st)) + '<script>' + KEEP + '</script>')
+    put('searches.html', shell % ('Searches', '<meta http-equiv="refresh" content="60">', CSS,
+                                  page_searches(st)) + '<script>' + KEEP + '</script>')
+    counts = collections.Counter(d[5] for d in docs)
+    counts[''] = len(docs)
+    kinds = collections.Counter(d[6] for d in docs)
+    put('sources.html', shell % ('Documents', '', CSS, page_sources(st, len(docs), counts, kinds, docs))
+        + '<script src="docs.js"></script><script>' + JS + '</script>')
     return st, len(docs)
 
 def main():
