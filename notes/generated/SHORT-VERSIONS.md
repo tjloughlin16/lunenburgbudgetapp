@@ -424,7 +424,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Conservation Commission — budget schedule](/boards/conservation-commission/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Conservation Commission — where the time goes](/boards/conservation-commission/time) | reference | — / 5.9 min | *(none declared)* |
 | [Conservation Commission: transfers](/boards/conservation-commission/transfers) | reference | — / 7.2 min | *(none declared)* |
-| [Conservation Commission — votes](/boards/conservation-commission/votes) | reference | — / 187.2 min | *(none declared)* |
+| [Conservation Commission — votes](/boards/conservation-commission/votes) | reference | — / 189.5 min | *(none declared)* |
 | [Council on Aging](/boards/council-on-aging) | reference | — / 7.8 min | *(none declared)* |
 | [Council on Aging — about](/boards/council-on-aging/about) | reference | — / 6.5 min | *(none declared)* |
 | [Council on Aging — finances](/boards/council-on-aging/finance) | reference | — / 15.1 min | *(none declared)* |
@@ -452,7 +452,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Economic Development Committee — votes](/boards/economic-development-committee/votes) | reference | — / 9.2 min | *(none declared)* |
 | [Federal Energy Regulatory Commission](/boards/ferc) | reference | — / 6.0 min | *(none declared)* |
 | [Federal Energy Regulatory Commission — meetings](/boards/ferc/meetings) | reference | — / 5.9 min | *(none declared)* |
-| [Finance Committee](/boards/finance-committee) | reference | — / 8.6 min | *(none declared)* |
+| [Finance Committee](/boards/finance-committee) | reference | — / 8.7 min | *(none declared)* |
 | [Finance Committee Appointing Committee](/boards/finance-committee-appointing-committee) | reference | — / 7.7 min | *(none declared)* |
 | [Finance Committee Appointing Committee — meetings](/boards/finance-committee-appointing-committee/meetings) | reference | — / 7.1 min | *(none declared)* |
 | [Finance Committee Appointing Committee — missing records](/boards/finance-committee-appointing-committee/records) | reference | — / 8.3 min | *(none declared)* |
@@ -3588,8 +3588,8 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Analysis: Town and Schools](/reports) | reference | — / 51.5 min | *(none declared)* |
 | [Search — everything this project holds](/search) | reference | — / 6.7 min | *(none declared)* |
 | [Sources](/sources) | reference | — / 20.3 min | *(none declared)* |
-| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 22.1 min | *(none declared)* |
-| [What the town is deciding now](/threads) | reference | — / 15.5 min | *(none declared)* |
-| [Every Town Meeting vote](/town-meeting-votes) | reference | — / 483.2 min | *(none declared)* |
+| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 22.5 min | *(none declared)* |
+| [What the town is deciding now](/threads) | reference | — / 16.1 min | *(none declared)* |
+| [Every Town Meeting vote](/town-meeting-votes) | reference | — / 492.0 min | *(none declared)* |
 | [Commercial growth scenarios](/try-growth) | tool | — / 21.5 min | *(none declared)* |
 | [What we cannot answer](/what-we-cannot-answer) | reference | — / 376.9 min | *(none declared)* |
