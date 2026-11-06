@@ -19,6 +19,8 @@ It writes `sources/data/series-<family>.csv`, which build_db.py loads by glob, a
 
     python3 scripts/report_series.py            # rebuild every family
     python3 scripts/report_series.py --check    # fail if a read fails or an output is stale
+    python3 scripts/report_series.py --find REGEX        # every edition, page and line that matches
+    python3 scripts/report_series.py --page 1975 32      # one page's text, every layer we hold
 
 `our_grouping` is ours and says so in its name: the town's category names change by era, and
 a grouping across them is a judgement, not something the reports print.
@@ -198,7 +200,43 @@ def build(eds, problems):
     return outputs
 
 
+def raw_pages(path):
+    with open(path, errors='replace') as f:
+        parts = re.split(r'===PAGE (\d+)===[^\n]*\n?', f.read())
+    return {int(parts[i]): parts[i + 1] for i in range(1, len(parts), 2)}
+
+
+def find(pattern):
+    """A survey tool. A search that finds nothing is a fact about this search (rule 13c)."""
+    rx, eds = re.compile(pattern, re.I), editions()
+    for ed in sorted(eds):
+        seen, hits = set(), 0
+        for path in eds[ed]:
+            for page, text in sorted(raw_pages(path).items()):
+                for line in text.split('\n'):
+                    line = re.sub(r'^\s*\d+\|', '', line).strip()
+                    if rx.search(line) and (page, line) not in seen:
+                        seen.add((page, line))
+                        hits += 1
+                        if hits <= 12:
+                            print('%s p%d: %s' % (ed, page, line[:130]))
+        print('== %s: %d line(s)' % (ed, hits))
+    return 0
+
+
+def show_page(edition, page):
+    for path in editions().get(edition, []):
+        print('--- %s' % os.path.basename(path))
+        print(raw_pages(path).get(page, '(no such page in this layer)'))
+    return 0
+
+
 def main():
+    if '--find' in sys.argv:
+        return find(sys.argv[sys.argv.index('--find') + 1])
+    if '--page' in sys.argv:
+        i = sys.argv.index('--page')
+        return show_page(sys.argv[i + 1], int(sys.argv[i + 2]))
     check = '--check' in sys.argv
     eds, problems = editions(), []
     outputs = build(eds, problems)
