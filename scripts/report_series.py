@@ -47,6 +47,10 @@ TIES_TOLERANCE = 0.005  # below a cent; a count either ties or it does not
 
 # Every family says what it is, for the source catalogue (build_source_index.py).
 FAMILIES = {
+    'veterans-services': ('Veterans services: recipients and dollars paid, 1959-FY2025',
+                   'The counts and dollars the Veterans\' Agent or Veterans Services Officer report prints: families, cases, recipients or clients aided, dollars paid out and (from 1962) '
+                   'reimbursed by the State, as printed. Wording and measure change by era (families aided to 1968, cases 1965-1982, monthly average recipients from FY2021) and are kept as printed. '
+                   'Not the 1964 and 1971 tables (report-veterans-services.csv). Most editions print no count.'),
     'library-usage': ('Library usage: circulation, visits, volumes and hours, 1959-FY2025',
                    'What the Ritter Memorial Library and Lunenburg Public Library reports print about use: circulation (by section where printed, with totals; physical and electronic '
                    'counted separately in FY2025), visits, registered borrowers, volumes held and hours open. Wording, scope and rounding vary and are kept as printed; items in the 1960s-1970s '
