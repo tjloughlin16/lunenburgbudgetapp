@@ -116,6 +116,9 @@ FAMILIES = {
     'capital-plan-holes': ('Capital plans: the editions capital-plans.csv does not hold',
                    'Capital plan items by department, item and amount for the May 2008, 2009, 2011, 2012, 2013 and 2023-2025 editions, '
                    'each list tied to the plan total the page prints, with the FY2013 and FY2024 lists the extractor refused read from the page image.'),
+    'building-activity': ('Building permits issued by year, 1963-FY2025',
+                   'What the Building Department (before 1975, the Zoning Authorities) printed about permits: applications received and permits issued by type with the printed totals for 1967-1982, '
+                   'the sentence counts for 1986-2005, and the permits issued by type from FY2019 to FY2025 with the printed total. The definition of a permit changes (zoning permits to 1974, building permits only to 2005, then building, electrical, plumbing and gas together), so rows are only comparable within a run.'),
 }
 
 
