@@ -47,6 +47,10 @@ TIES_TOLERANCE = 0.005  # below a cent; a count either ties or it does not
 
 # Every family says what it is, for the source catalogue (build_source_index.py).
 FAMILIES = {
+    'coa-services': ('Council on Aging service counts: Meals on Wheels and the senior van, 1976-FY2019',
+                   'The counts the Council on Aging report prints for meals delivered to homebound elders and rides on the senior van, with the number of clients '
+                   'where printed (FY2015-FY2019), and the Eagle House meal-site meals where the same page prints them (1996-1999). Counts only; clients are never named. '
+                   'Wording and period vary (the year the page names to 1990, fiscal years from 1996, monthly averages in 1984, 1986 and 1987, one-way trips in 1996) and are kept as printed.'),
     'oneoff-finance': ('One-off finance tables worth keeping, 1962-FY2025',
                    'Single finance tables printed in one edition each: the 1958-62 five-year tax rate recap (1962), the county retirement assessment worked example (1981), '
                    'the FY2020 revenue by source and department changes (FY2019 report), the FY2024 undesignated fund balance roll-forward (marked unaudited) and '
