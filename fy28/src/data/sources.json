@@ -3906,9 +3906,9 @@
      "stars": 2,
      "what": "Written by us, by scripts/build_town_meetings.py: one row per meeting and article -- its title, amount and sponsor, and each stage (proposed, on the warrant, recommended by the Finance Committee and the Select Board, voted, recorded by the Clerk) with the record it rests on. A stage with no record is blank. A result taken from our minutes of a recording says so in `result_basis` (ours) and gives way to the Clerk’s printed record once that year is read.",
      "kind": "Data",
-     "bytes": 745234,
+     "bytes": 756611,
      "url": "/docs/data/warrant-articles.csv",
-     "count": 684,
+     "count": 675,
      "unit": "rows",
      "textUrl": "/docs/data/warrant-articles.csv"
     },
@@ -4477,6 +4477,18 @@
      "textUrl": "/docs/data/school-job-postings.csv"
     },
     {
+     "path": "data/town-meetings.csv",
+     "title": "Every Town Meeting, found from the record",
+     "stars": 2,
+     "what": "Written by us, by scripts/build_town_meetings.py, with no model: one row per Annual or Special Town Meeting from May 2011, the signals it was found from (a legal notice, the warrant, a Select Board vote, an agenda, the Town Clerk’s record, a recording), when it was called and the warrant posted, the document for each, and how many articles are on record.",
+     "kind": "Data",
+     "bytes": 11912,
+     "url": "/docs/data/town-meetings.csv",
+     "count": 33,
+     "unit": "rows",
+     "textUrl": "/docs/data/town-meetings.csv"
+    },
+    {
      "path": "data/report-filing.csv",
      "title": "Which bodies file an annual report, and which say they did not",
      "stars": 2,
@@ -4487,18 +4499,6 @@
      "count": 109,
      "unit": "rows",
      "textUrl": "/docs/data/report-filing.csv"
-    },
-    {
-     "path": "data/town-meetings.csv",
-     "title": "Every Town Meeting, found from the record",
-     "stars": 2,
-     "what": "Written by us, by scripts/build_town_meetings.py, with no model: one row per Annual or Special Town Meeting from May 2011, the signals it was found from (a legal notice, the warrant, a Select Board vote, an agenda, the Town Clerk’s record, a recording), when it was called and the warrant posted, the document for each, and how many articles are on record.",
-     "kind": "Data",
-     "bytes": 11409,
-     "url": "/docs/data/town-meetings.csv",
-     "count": 33,
-     "unit": "rows",
-     "textUrl": "/docs/data/town-meetings.csv"
     },
     {
      "path": "data/school-job-posting-changes.csv",
@@ -4732,7 +4732,7 @@
      "stars": 1,
      "what": "Written by us, by scripts/build_town_meetings.py, with no model: a thread for every Town Meeting, and one for each article discussed well beyond its routine stops, which build_threads.py merges beside the hand registry in threads.csv.",
      "kind": "JSON",
-     "bytes": 2330229,
+     "bytes": 2654653,
      "url": "/docs/data/threads-auto/town-meetings.json",
      "textUrl": "/docs/data/threads-auto/town-meetings.json"
     },
@@ -5318,7 +5318,7 @@
      "stars": 1,
      "what": "Written by us: a figure our notes of a recording heard, which a person then listened for at the cited second of the video, with who checked it and when. Captions mishear numbers, so these are the only heard figures an article summary may carry. Cite the video at its timestamp, never this file.",
      "kind": "Data",
-     "bytes": 2964,
+     "bytes": 3072,
      "url": "/docs/data/heard-figures.csv",
      "count": 8,
      "unit": "rows",
@@ -7408,9 +7408,9 @@
      "stars": 3,
      "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
      "kind": "Data",
-     "bytes": 931974,
+     "bytes": 932019,
      "url": "/docs/data/agentic-spend.csv",
-     "count": 13390,
+     "count": 13391,
      "unit": "rows",
      "textUrl": "/docs/data/agentic-spend.csv"
     },
@@ -64258,7 +64258,7 @@
  "totals": {
   "documents": 5771,
   "groups": 33,
-  "bytes": 7349838955,
+  "bytes": 7350175412,
   "loadBearing": 220
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 234 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

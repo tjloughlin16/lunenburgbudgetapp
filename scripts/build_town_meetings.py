@@ -1572,8 +1572,8 @@ def warrant_payload(m, arts, children, items=()):
         })
     for h in heard_figures():
         if h['meeting'] == m['id'] and not any(re.search(h['article_match'], a['title'], re.I) for a in arts):
-            raise SystemExit('REFUSING: heard figure %s (%r) matches no article of %s'
-                             % (h['figure'], h['article_match'], m['id']))
+            raise SystemExit('REFUSING: heard figure %s (%r) matches no article of %s. Its articles: %s'
+                             % (h['figure'], h['article_match'], m['id'], '; '.join(a['title'] for a in arts)))
     # MONEY OR DEBATE LEADS. A promoted article first, then the largest sum, then the number.
     # A HEARD FIGURE COUNTS AS MONEY FOR THE ORDER: the largest commitment leads.
     for r in rows:

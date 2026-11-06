@@ -52,6 +52,7 @@ import json
 import os
 import shutil
 import subprocess
+import time
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -61,9 +62,20 @@ TRAILER = 'Refresh-Run:'
 PUSH_TRIES = 3
 
 
+LOCK_TRIES = 12
+LOCK_WAIT_SECONDS = 5
+
+
 def git(root, *args, check=True, env=None, input=None):
-    r = subprocess.run(['git', *args], cwd=root, capture_output=True, text=True,
-                       env=env, input=input)
+    # ANOTHER GIT COMMAND HOLDING THE INDEX FOR A MOMENT IS NOT A FAILURE. On 6 November 2026 two
+    # commits in one run died on `index.lock`, the lock was gone minutes later, and the run did
+    # not deploy. A lock that outlasts a minute is still reported.
+    for attempt in range(LOCK_TRIES):
+        r = subprocess.run(['git', *args], cwd=root, capture_output=True, text=True,
+                           env=env, input=input)
+        if r.returncode == 0 or 'index.lock' not in (r.stderr or ''):
+            break
+        time.sleep(LOCK_WAIT_SECONDS)
     if check and r.returncode != 0:
         raise GitError('git %s failed (%d): %s' % (' '.join(args[:3]), r.returncode,
                                                     (r.stderr or r.stdout).strip()[:400]))
