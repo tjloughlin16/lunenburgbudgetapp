@@ -47,6 +47,11 @@ TIES_TOLERANCE = 0.005  # below a cent; a count either ties or it does not
 
 # Every family says what it is, for the source catalogue (build_source_index.py).
 FAMILIES = {
+    'mcas-from-reports': ('School test results (MCAS) as the annual reports print them, 1998-FY2025',
+                   'Lunenburg MCAS results as printed: the share of students at each performance level by grade and subject (1998-2005), '
+                   'the share at the top levels against the state for the middle school and the high school (2006-FY2025), grade 3 Primary School results, '
+                   'state rank and percentile where printed, and the FY2013 index scores for students with disabilities. Two different scales run through it: '
+                   'Advanced / Proficient (to 2016) and Meeting / Exceeding Expectations (from 2017); they are not merged, and each row says which it is.'),
     'police-activity': ('Police Department activity counts by year, 1959-FY2025',
                    'The headline counts the Police Department printed each year: calls for service, incidents or complaints handled, arrests or court cases, '
                    'motor vehicle stops, accidents and protective custody, with the tabulation totals where the page ties its parts. The wording of the headline '
