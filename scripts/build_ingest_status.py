@@ -3687,8 +3687,15 @@ def page_suggested(st):
          % (len(cur), len(old), len(gens), looked, looked + not_looked, st['generated'], tabs('suggested.html', st.get('questions')))]
     h.append('<div id="served" class="tiny" style="margin-bottom:8px"></div>')
     h.append(score_chart(cur, old))
-    h.append(generated_section(gens))
-    h.append('<h2>To write</h2>')
+    # TWO AREAS, BOTH VISIBLE. TJ, 5 November 2026: generated reports came first and ran long, so
+    # he never reached the list and thought it had not changed in a month. One closed line now,
+    # open only when a draft is running or waiting on him. KEEP remembers if he opens it.
+    live = sum(1 for g in gens.values() if g['status'] in ('running', 'queued', 'needs-input'))
+    h.append('<details data-k="sr-generated" class="card"%s><summary style="cursor:pointer"><b>Generated reports</b> '
+             '<span class="tiny">%d%s</span></summary><div style="margin-top:8px">%s</div></details>'
+             % (' open' if live else '', len(gens), (' &middot; %d needs attention' % live) if live else '',
+                generated_section(gens).replace('<h2>Generated reports</h2>', '', 1)))
+    h.append('<h2>To write &middot; %d</h2>' % len(cur))
     if not cur:
         h.append('<div class="card idle">Nothing to write yet.</div>')
     part_names = [('meetings', 'meetings'), ('boards', 'boards'), ('threads', 'threads'),
