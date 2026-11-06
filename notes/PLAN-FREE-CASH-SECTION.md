@@ -1,3 +1,9 @@
+---
+status: reference
+updated: 2026-11-06
+genlock: G-M9C9K, parked -- next steps and the hold live there (genlock goal show G-M9C9K)
+---
+
 # Plan: free cash, and the schools' part in it (a future report). ON HOLD
 
 TJ, 30 October 2026: *"I'm inclined definitely to show that"*. He also said: *"write that up as a

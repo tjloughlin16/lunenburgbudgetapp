@@ -1,3 +1,9 @@
+---
+status: reference
+updated: 2026-11-06
+genlock: G-WGP9J -- checked 6 Nov 2026; items 3 and 4 are done, item 5 moved there
+---
+
 # Feedback queue — raised while reading, not yet done
 
 TJ reads the generated pages and gives feedback faster than it can be acted on. Losing an

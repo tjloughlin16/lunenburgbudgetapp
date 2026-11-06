@@ -1,7 +1,7 @@
 ---
 status: reference
-updated: 2026-11-04
-next: read before running report_review.py on a newly Textracted report
+updated: 2026-11-06
+genlock: G-H5ZJ5 -- the debt-schedule fix is a next thing there; read this before running report_review.py on a new report
 ---
 
 # Handoff: the annual-report review (P6) on debt schedules

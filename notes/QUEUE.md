@@ -1,3 +1,9 @@
+---
+status: reference
+updated: 2026-11-06
+genlock: G-HQ3PM, G-AWHRV, G-H5ZJ5 -- checked item by item 6 Nov 2026; the reasoning stays here
+---
+
 # What is queued, in order
 
 

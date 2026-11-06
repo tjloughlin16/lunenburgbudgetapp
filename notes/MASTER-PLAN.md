@@ -1,3 +1,9 @@
+---
+status: reference
+updated: 2026-11-06
+genlock: G-HQ3PM, G-H5ZJ5, G-7E4NS, G-AWHRV, G-WGP9J, G-AFST6, G-596EF -- checked item by item 6 Nov 2026; what stayed open moved there. Deadlines are also kept below on purpose
+---
+
 # Master plan — 22 October 2026
 
 ONE list. It compiles TJ's 22 October brief, `QUEUE.md`, `FEEDBACK-QUEUE.md`, `DATA-TO-INGEST.md`,

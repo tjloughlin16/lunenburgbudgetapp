@@ -1294,11 +1294,11 @@ worktree here shares them, nothing else does, and they are not in git.
 reference, how-to -- and a goal points at it with `genlock ref`. Do not write a new
 `notes/HANDOFF-*.md`; that is `genlock checkpoint`.
 
-**The handoffs are being ported one at a time, not in bulk.** A handoff whose next steps are
-in genlock carries `status: reference` and a line naming its goal; its `next:` is gone. One
-still `open` or `parked` has NOT been ported, and its status block is still its state:
-
-    grep -A3 '^status:' notes/HANDOFF-*.md notes/PLAN-*.md
+**All the handoffs and plans in `notes/` are ported (6 November 2026), and TJ works only from
+goals and tasks.** TJ: *"I want to work only from goals and tasks from now on."* Each file
+carries `status: reference` and a `genlock:` line naming its goal; its text is background, not
+a to-do list. The older design documents in `notes/plans/` were not checked in that pass: a
+next thing on G-HQ3PM says to.
 
 `scripts/check_handoffs.py --check` still enforces those blocks, and still fails on any path
 to a handoff that no longer exists. It cannot see a BARE filename (`HANDOFF-X.md` with no

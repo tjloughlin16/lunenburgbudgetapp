@@ -1,3 +1,9 @@
+---
+status: reference
+updated: 2026-11-06
+genlock: G-H5ZJ5 -- what is still open from this plan is there; the design stays here
+---
+
 # Plan: annual reports from the town archive to proven figures, paced by what each step spends
 
 Written 27 October 2026. TJ's ask, in his words:

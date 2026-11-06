@@ -1,3 +1,9 @@
+---
+status: reference
+updated: 2026-11-06
+genlock: G-HQ3PM -- checked 6 Nov 2026; only PreK/K enrolment remained; the notes on each file stay here
+---
+
 # Data to ingest — a running queue
 
 Things TJ has found or downloaded that are not yet in the archive. **Nothing here has been

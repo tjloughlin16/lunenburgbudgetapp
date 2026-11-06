@@ -1,3 +1,9 @@
+---
+status: reference
+updated: 2026-11-06
+genlock: G-AWHRV -- checked 6 Nov 2026; what is left is there; each report's question, data and limits stay here
+---
+
 # Reports to generate -- every one, in the order to build them
 
 ONE LIST, from 6 October 2026: the Finance Committee reports agreed on 5 October (1-11, kept

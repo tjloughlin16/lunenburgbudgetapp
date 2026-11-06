@@ -1,3 +1,9 @@
+---
+status: reference
+updated: 2026-11-06
+genlock: G-H5ZJ5 -- every year is done (scripts/annual_report_progress.py); tooling residue is there; the learning loop stays here
+---
+
 # Getting the annual reports to zero: the plan
 
 **BEFORE ANYTHING, RUN THIS. It answers *what is done* and *what is next*:**

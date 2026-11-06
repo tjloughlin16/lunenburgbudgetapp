@@ -1,3 +1,9 @@
+---
+status: reference
+updated: 2026-11-06
+genlock: G-7E4NS, parked -- next steps and prohibitions live there (genlock goal show G-7E4NS)
+---
+
 # Plan: review every page, now that the template is gone
 
 **Status, 31 October 2026:** written; not started. TJ wants it kicked off *after* the review of

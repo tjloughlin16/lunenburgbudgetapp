@@ -1,7 +1,7 @@
 ---
-status: open
-updated: 2026-11-04
-next: (0) DONE 4 Nov: scholarships deployed with payouts and purposes (notes/handoffs-done/HANDOFF-SCHOLARSHIPS.md; its left_open lists the residue). (1) re-pair FY2011's contents page as FY2012's was (board chairs and report filing misattribute through it). (2) settle the 7 split families in annual-report-catalogue-sort.csv (sort_catalogue.py --consistency). (3) salary-schedule.csv has two writers -- decide which owns the 2010 rows before running extract_salary_schedule.py.
+status: reference
+updated: 2026-11-06
+genlock: G-H5ZJ5 -- next steps, prohibitions and open questions live there (genlock goal show G-H5ZJ5)
 ---
 
 # Plan: everything the annual reports print, in the database
