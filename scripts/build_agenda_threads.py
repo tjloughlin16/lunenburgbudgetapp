@@ -16,6 +16,7 @@ Reads  fy28/public/data/meeting-feed.json   `as_of`, the date of the last live c
        sources/data/meeting-notices-email.csv  agendas that arrived some other way
        sources/data/meeting-register.csv    what the agenda calls the body (body_as_printed)
        sources/data/threads.csv             the registry: each thread's own patterns
+       sources/data/threads-auto/           threads the build generated, while they are open
 Writes fy28/public/data/agenda-threads.json
 
 NO MODEL. The match is the thread's OWN `match`, `qualify` and `exclude` patterns -- the
@@ -47,6 +48,7 @@ RECENT_DAYS to plus HORIZON_DAYS, so --check reproduces on any day the feed does
 """
 import argparse
 import csv
+import glob
 import datetime as dt
 import json
 import os
@@ -59,6 +61,7 @@ TEXT = os.path.join(ROOT, 'sources', 'meetings', 'text')
 EMAIL = os.path.join(ROOT, 'sources', 'data', 'meeting-notices-email.csv')
 REGISTER = os.path.join(ROOT, 'sources', 'data', 'meeting-register.csv')
 THREADS = os.path.join(ROOT, 'sources', 'data', 'threads.csv')
+AUTO = os.path.join(ROOT, 'sources', 'data', 'threads-auto')
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'agenda-threads.json')
 SITE_DOCS = '/docs/meetings/'
 
@@ -247,6 +250,24 @@ def compile_threads():
         out.append({'id': t['id'], 'label': t['label'], 'status': t['status'],
                     'match': c('match'), 'qualify': c('qualify'), 'exclude': c('exclude'),
                     'boards': {b.strip() for b in (t.get('boards') or '').split(';') if b.strip()}})
+    # THE GENERATED THREADS TOO. Reading only the hand registry meant "Special Town Meeting,
+    # November 17, 2026" on the Select Board's agenda reached nothing, while the thread for that
+    # meeting was on the site. A thread open_threads.py opened is matched like a registry one.
+    for f in sorted(glob.glob(os.path.join(AUTO, '*.json'))):
+        for t in json.load(open(f, encoding='utf-8'))['threads']:
+            if t.get('status') != 'open':
+                continue
+            c = lambda k: re.compile(t[k], re.I) if (t.get(k) or '').strip() else None
+            match = c('match')
+            # An open Town Meeting's thread carries no pattern: the meeting's kind in words, or a
+            # numbered article, is how an agenda names it.
+            if not match and (t.get('warrant') or {}).get('kind') == 'special':
+                match = re.compile(r'\bspecial town meeting\b|\barticle\s+\d+\b', re.I)
+            elif not match and t.get('warrant'):
+                match = re.compile(r'\bannual town meeting\b|\barticle\s+\d+\b', re.I)
+            if match:
+                out.append({'id': t['id'], 'label': t['label'], 'status': t['status'], 'match': match,
+                            'qualify': c('qualify'), 'exclude': c('exclude'), 'boards': set()})
     return out
 
 

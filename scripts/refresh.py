@@ -1193,7 +1193,11 @@ def finish_shipping(a, delta_row, deployed, notes, ctx):
         # check: build_source_index.py rewrites sources.json and the row's public copy, and it
         # does so even under check_generated. Left for the next session's check, those three
         # sat dirty and the next morning's refresh called them somebody else's work.
-        for g in ('build_source_index.py', 'build_notices.py', 'build_readme.py', 'build_app_metrics.py'):
+        # THE REST OF WHAT LATE STEPS MOVE, also measured 6 November: that morning's commit left 46
+        # views/ links and four stale payloads behind. Each of these takes seconds and reads only
+        # what the run already wrote, so running them here costs little and leaves nothing.
+        for g in ('build_views.py', 'build_vote_lists.py', 'build_question_bank.py', 'build_agent_manifest.py',
+                  'build_source_index.py', 'build_notices.py', 'build_readme.py', 'build_app_metrics.py'):
             py(g, check=False)
         commit_run(a, notes, ctx, 'run row')
     settle_row()
