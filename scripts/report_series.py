@@ -47,6 +47,10 @@ TIES_TOLERANCE = 0.005  # below a cent; a count either ties or it does not
 
 # Every family says what it is, for the source catalogue (build_source_index.py).
 FAMILIES = {
+    'nashoba-public-health': ('Nashoba Associated Boards of Health services for Lunenburg, 1959-FY2025',
+                   'The counts the annual reports print for what Nashoba did in Lunenburg: sanitation and environmental health inspections and tests, '
+                   'septic and well work, nursing and home health visits, clinics, school dental programme, and (from 1963) communicable disease cases, '
+                   'by disease where listed. Measures are kept as printed; renamed services are not merged. 2001-2007 are held in report-dept-activity.csv.'),
     'ballot-questions-local': ('Local ballot questions: votes by precinct, 1960-FY2025',
                    'Every question the Town put to its own voters that the annual reports print a tally for (debt exclusions, overrides, regional school, charter, '
                    'advisory questions, local acts and liquor licensing), with Yes, No and Blanks by precinct and the total the page prints. State questions and '
