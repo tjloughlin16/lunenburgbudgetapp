@@ -47,6 +47,10 @@ TIES_TOLERANCE = 0.005  # below a cent; a count either ties or it does not
 
 # Every family says what it is, for the source catalogue (build_source_index.py).
 FAMILIES = {
+    'monty-tech-enrollment': ('Monty Tech enrolment of Lunenburg students, 1971-FY2016',
+                   'How many Lunenburg students the Montachusett Regional Vocational Technical School report or the School Committee report prints as enrolled: the member-town list '
+                   'in the school\'s annual report (2002-FY2016, on October 1 or, FY2014-FY2016, June 1), plus the 1971 entrants and the 1973 students sent. '
+                   'Not the DESE enrolment file (dese-enrollment.csv), and no school-wide totals or shop lists.'),
     'veterans-services': ('Veterans services: recipients and dollars paid, 1959-FY2025',
                    'The counts and dollars the Veterans\' Agent or Veterans Services Officer report prints: families, cases, recipients or clients aided, dollars paid out and (from 1962) '
                    'reimbursed by the State, as printed. Wording and measure change by era (families aided to 1968, cases 1965-1982, monthly average recipients from FY2021) and are kept as printed. '
